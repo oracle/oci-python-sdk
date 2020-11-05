@@ -24,6 +24,13 @@ Mysql
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.mysql.models.AddAnalyticsClusterDetails
+    oci.mysql.models.AnalyticsCluster
+    oci.mysql.models.AnalyticsClusterMemoryEstimate
+    oci.mysql.models.AnalyticsClusterNode
+    oci.mysql.models.AnalyticsClusterSchemaMemoryEstimate
+    oci.mysql.models.AnalyticsClusterSummary
+    oci.mysql.models.AnalyticsClusterTableMemoryEstimate
     oci.mysql.models.Backup
     oci.mysql.models.BackupPolicy
     oci.mysql.models.BackupSummary
@@ -48,6 +55,7 @@ Mysql
     oci.mysql.models.RestartDbSystemDetails
     oci.mysql.models.ShapeSummary
     oci.mysql.models.StopDbSystemDetails
+    oci.mysql.models.UpdateAnalyticsClusterDetails
     oci.mysql.models.UpdateBackupDetails
     oci.mysql.models.UpdateBackupPolicyDetails
     oci.mysql.models.UpdateConfigurationDetails

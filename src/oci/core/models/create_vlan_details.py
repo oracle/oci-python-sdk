@@ -132,6 +132,7 @@ class CreateVlanDetails(object):
         hosts outside the VLAN. The CIDR must maintain the following rules -
 
         a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
 
         Example: `192.0.2.0/24`
 
@@ -149,6 +150,7 @@ class CreateVlanDetails(object):
         hosts outside the VLAN. The CIDR must maintain the following rules -
 
         a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
 
         Example: `192.0.2.0/24`
 

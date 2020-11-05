@@ -49,6 +49,10 @@ class CreateLoadBalancerDetails(object):
             Allowed values for this property are: "IPV4", "IPV6"
         :type ip_mode: str
 
+        :param reserved_ips:
+            The value to assign to the reserved_ips property of this CreateLoadBalancerDetails.
+        :type reserved_ips: list[ReservedIP]
+
         :param listeners:
             The value to assign to the listeners property of this CreateLoadBalancerDetails.
         :type listeners: dict(str, ListenerDetails)
@@ -100,6 +104,7 @@ class CreateLoadBalancerDetails(object):
             'shape_name': 'str',
             'is_private': 'bool',
             'ip_mode': 'str',
+            'reserved_ips': 'list[ReservedIP]',
             'listeners': 'dict(str, ListenerDetails)',
             'hostnames': 'dict(str, HostnameDetails)',
             'backend_sets': 'dict(str, BackendSetDetails)',
@@ -119,6 +124,7 @@ class CreateLoadBalancerDetails(object):
             'shape_name': 'shapeName',
             'is_private': 'isPrivate',
             'ip_mode': 'ipMode',
+            'reserved_ips': 'reservedIps',
             'listeners': 'listeners',
             'hostnames': 'hostnames',
             'backend_sets': 'backendSets',
@@ -137,6 +143,7 @@ class CreateLoadBalancerDetails(object):
         self._shape_name = None
         self._is_private = None
         self._ip_mode = None
+        self._reserved_ips = None
         self._listeners = None
         self._hostnames = None
         self._backend_sets = None
@@ -332,6 +339,30 @@ class CreateLoadBalancerDetails(object):
                 .format(allowed_values)
             )
         self._ip_mode = ip_mode
+
+    @property
+    def reserved_ips(self):
+        """
+        Gets the reserved_ips of this CreateLoadBalancerDetails.
+        An array of reserved Ips.
+
+
+        :return: The reserved_ips of this CreateLoadBalancerDetails.
+        :rtype: list[ReservedIP]
+        """
+        return self._reserved_ips
+
+    @reserved_ips.setter
+    def reserved_ips(self, reserved_ips):
+        """
+        Sets the reserved_ips of this CreateLoadBalancerDetails.
+        An array of reserved Ips.
+
+
+        :param reserved_ips: The reserved_ips of this CreateLoadBalancerDetails.
+        :type: list[ReservedIP]
+        """
+        self._reserved_ips = reserved_ips
 
     @property
     def listeners(self):

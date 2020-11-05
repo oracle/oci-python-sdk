@@ -102,7 +102,7 @@ class TsigKeySummary(object):
     @property
     def algorithm(self):
         """
-        Gets the algorithm of this TsigKeySummary.
+        **[Required]** Gets the algorithm of this TsigKeySummary.
         TSIG key algorithms are encoded as domain names, but most consist of only one
         non-empty label, which is not required to be explicitly absolute.
         Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256,
@@ -136,7 +136,7 @@ class TsigKeySummary(object):
     @property
     def name(self):
         """
-        Gets the name of this TsigKeySummary.
+        **[Required]** Gets the name of this TsigKeySummary.
         A globally unique domain name identifying the key for a given pair of hosts.
 
 
@@ -160,7 +160,7 @@ class TsigKeySummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this TsigKeySummary.
+        **[Required]** Gets the compartment_id of this TsigKeySummary.
         The OCID of the compartment containing the TSIG key.
 
 
@@ -184,7 +184,7 @@ class TsigKeySummary(object):
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this TsigKeySummary.
+        **[Required]** Gets the freeform_tags of this TsigKeySummary.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
 
@@ -220,7 +220,7 @@ class TsigKeySummary(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this TsigKeySummary.
+        **[Required]** Gets the defined_tags of this TsigKeySummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -256,7 +256,7 @@ class TsigKeySummary(object):
     @property
     def id(self):
         """
-        Gets the id of this TsigKeySummary.
+        **[Required]** Gets the id of this TsigKeySummary.
         The OCID of the resource.
 
 
@@ -280,7 +280,7 @@ class TsigKeySummary(object):
     @property
     def _self(self):
         """
-        Gets the _self of this TsigKeySummary.
+        **[Required]** Gets the _self of this TsigKeySummary.
         The canonical absolute URL of the resource.
 
 
@@ -304,7 +304,7 @@ class TsigKeySummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this TsigKeySummary.
+        **[Required]** Gets the time_created of this TsigKeySummary.
         The date and time the resource was created, expressed in RFC 3339 timestamp format.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -332,7 +332,7 @@ class TsigKeySummary(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this TsigKeySummary.
+        **[Required]** Gets the lifecycle_state of this TsigKeySummary.
         The current state of the resource.
 
         Allowed values for this property are: "ACTIVE", "CREATING", 'UNKNOWN_ENUM_VALUE'.

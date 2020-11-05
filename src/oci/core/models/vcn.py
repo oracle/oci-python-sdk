@@ -40,6 +40,10 @@ class Vcn(object):
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
+    #: A constant which can be used with the lifecycle_state property of a Vcn.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Vcn object with values from keyword arguments.
@@ -48,6 +52,10 @@ class Vcn(object):
         :param cidr_block:
             The value to assign to the cidr_block property of this Vcn.
         :type cidr_block: str
+
+        :param cidr_blocks:
+            The value to assign to the cidr_blocks property of this Vcn.
+        :type cidr_blocks: list[str]
 
         :param compartment_id:
             The value to assign to the compartment_id property of this Vcn.
@@ -95,7 +103,7 @@ class Vcn(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Vcn.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -110,6 +118,7 @@ class Vcn(object):
         """
         self.swagger_types = {
             'cidr_block': 'str',
+            'cidr_blocks': 'list[str]',
             'compartment_id': 'str',
             'default_dhcp_options_id': 'str',
             'default_route_table_id': 'str',
@@ -128,6 +137,7 @@ class Vcn(object):
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
+            'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
             'default_dhcp_options_id': 'defaultDhcpOptionsId',
             'default_route_table_id': 'defaultRouteTableId',
@@ -145,6 +155,7 @@ class Vcn(object):
         }
 
         self._cidr_block = None
+        self._cidr_blocks = None
         self._compartment_id = None
         self._default_dhcp_options_id = None
         self._default_route_table_id = None
@@ -164,7 +175,7 @@ class Vcn(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this Vcn.
-        The CIDR IP address block of the VCN.
+        Deprecated. The first CIDR IP address from cidrBlocks.
 
         Example: `172.16.0.0/16`
 
@@ -178,7 +189,7 @@ class Vcn(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this Vcn.
-        The CIDR IP address block of the VCN.
+        Deprecated. The first CIDR IP address from cidrBlocks.
 
         Example: `172.16.0.0/16`
 
@@ -187,6 +198,30 @@ class Vcn(object):
         :type: str
         """
         self._cidr_block = cidr_block
+
+    @property
+    def cidr_blocks(self):
+        """
+        **[Required]** Gets the cidr_blocks of this Vcn.
+        The list of IPv4 CIDR blocks the VCN will use.
+
+
+        :return: The cidr_blocks of this Vcn.
+        :rtype: list[str]
+        """
+        return self._cidr_blocks
+
+    @cidr_blocks.setter
+    def cidr_blocks(self, cidr_blocks):
+        """
+        Sets the cidr_blocks of this Vcn.
+        The list of IPv4 CIDR blocks the VCN will use.
+
+
+        :param cidr_blocks: The cidr_blocks of this Vcn.
+        :type: list[str]
+        """
+        self._cidr_blocks = cidr_blocks
 
     @property
     def compartment_id(self):
@@ -538,7 +573,7 @@ class Vcn(object):
         **[Required]** Gets the lifecycle_state of this Vcn.
         The VCN's current state.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -557,7 +592,7 @@ class Vcn(object):
         :param lifecycle_state: The lifecycle_state of this Vcn.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_add_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'AddAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'AddAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='AddAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.add_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                add_analytics_cluster_details=request.pop(util.camelize('AddAnalyticsClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'AddAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'analyticsCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_create_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'CreateDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -74,6 +115,46 @@ def test_create_db_system(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_delete_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'DeleteAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'DeleteAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='DeleteAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.delete_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'DeleteAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_analytics_cluster',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_delete_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'DeleteDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -109,6 +190,126 @@ def test_delete_db_system(testing_service_client):
             service_error,
             'delete_db_system',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_generate_analytics_cluster_memory_estimate(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'GenerateAnalyticsClusterMemoryEstimate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'GenerateAnalyticsClusterMemoryEstimate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='GenerateAnalyticsClusterMemoryEstimate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.generate_analytics_cluster_memory_estimate(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'GenerateAnalyticsClusterMemoryEstimate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'analyticsClusterMemoryEstimate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_get_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'GetAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'GetAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='GetAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.get_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'GetAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'analyticsCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_get_analytics_cluster_memory_estimate(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'GetAnalyticsClusterMemoryEstimate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'GetAnalyticsClusterMemoryEstimate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='GetAnalyticsClusterMemoryEstimate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.get_analytics_cluster_memory_estimate(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'GetAnalyticsClusterMemoryEstimate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'analyticsClusterMemoryEstimate',
+            False,
             False
         )
 
@@ -214,6 +415,46 @@ def test_list_db_systems(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_restart_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'RestartAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'RestartAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='RestartAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.restart_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'RestartAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'restart_analytics_cluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_restart_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'RestartDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -249,6 +490,46 @@ def test_restart_db_system(testing_service_client):
             result,
             service_error,
             'restart_db_system',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_start_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'StartAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'StartAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='StartAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.start_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'StartAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'start_analytics_cluster',
             False,
             False
         )
@@ -295,6 +576,46 @@ def test_start_db_system(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_stop_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'StopAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'StopAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='StopAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.stop_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'StopAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stop_analytics_cluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_stop_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'StopDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -330,6 +651,47 @@ def test_stop_db_system(testing_service_client):
             result,
             service_error,
             'stop_db_system',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_update_analytics_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'UpdateAnalyticsCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'UpdateAnalyticsCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='UpdateAnalyticsCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.update_analytics_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                update_analytics_cluster_details=request.pop(util.camelize('UpdateAnalyticsClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'UpdateAnalyticsCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_analytics_cluster',
             False,
             False
         )

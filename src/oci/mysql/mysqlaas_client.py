@@ -511,6 +511,11 @@ class MysqlaasClient(object):
             contact Oracle about a specific request, please provide the request
             ID that you supplied in this header with the request.
 
+        :param list[str] is_supported_for: (optional)
+            Return shapes that are supported by the service feature.
+
+            Allowed values are: "DBSYSTEM", "ANALYTICSCLUSTER"
+
         :param str availability_domain: (optional)
             The name of the Availability Domain.
 
@@ -535,6 +540,7 @@ class MysqlaasClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
+            "is_supported_for",
             "availability_domain",
             "name"
         ]
@@ -543,7 +549,16 @@ class MysqlaasClient(object):
             raise ValueError(
                 "list_shapes got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'is_supported_for' in kwargs:
+            is_supported_for_allowed_values = ["DBSYSTEM", "ANALYTICSCLUSTER"]
+            for is_supported_for_item in kwargs['is_supported_for']:
+                if is_supported_for_item not in is_supported_for_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `is_supported_for`, must be one of {0}".format(is_supported_for_allowed_values)
+                    )
+
         query_params = {
+            "isSupportedFor": self.base_client.generate_collection_format_param(kwargs.get("is_supported_for", missing), 'multi'),
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": compartment_id,
             "name": kwargs.get("name", missing)

@@ -38,13 +38,18 @@ class UpdateVlanDetails(object):
             The value to assign to the route_table_id property of this UpdateVlanDetails.
         :type route_table_id: str
 
+        :param cidr_block:
+            The value to assign to the cidr_block property of this UpdateVlanDetails.
+        :type cidr_block: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'nsg_ids': 'list[str]',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'cidr_block': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class UpdateVlanDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'nsg_ids': 'nsgIds',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'cidr_block': 'cidrBlock'
         }
 
         self._defined_tags = None
@@ -60,6 +66,7 @@ class UpdateVlanDetails(object):
         self._freeform_tags = None
         self._nsg_ids = None
         self._route_table_id = None
+        self._cidr_block = None
 
     @property
     def defined_tags(self):
@@ -208,6 +215,42 @@ class UpdateVlanDetails(object):
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def cidr_block(self):
+        """
+        Gets the cidr_block of this UpdateVlanDetails.
+        The CIDR IP address block of the Vlan. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
+        c. The old and new CIDR ranges both use the same base address. Example: 10.0.0.0/25 and 10.0.0.0/24.
+        d. The new CIDR range contains all previously allocated private IP addresses in the old CIDR range.
+        e. No previously allocated IP address overlaps the broadcast address (the last IP of a subnet CIDR range) of the new CIDR range.
+
+
+        :return: The cidr_block of this UpdateVlanDetails.
+        :rtype: str
+        """
+        return self._cidr_block
+
+    @cidr_block.setter
+    def cidr_block(self, cidr_block):
+        """
+        Sets the cidr_block of this UpdateVlanDetails.
+        The CIDR IP address block of the Vlan. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
+        c. The old and new CIDR ranges both use the same base address. Example: 10.0.0.0/25 and 10.0.0.0/24.
+        d. The new CIDR range contains all previously allocated private IP addresses in the old CIDR range.
+        e. No previously allocated IP address overlaps the broadcast address (the last IP of a subnet CIDR range) of the new CIDR range.
+
+
+        :param cidr_block: The cidr_block of this UpdateVlanDetails.
+        :type: str
+        """
+        self._cidr_block = cidr_block
 
     def __repr__(self):
         return formatted_flat_dict(self)

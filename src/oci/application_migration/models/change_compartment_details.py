@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeCompartmentDetails(object):
     """
-    Provides the updated compartment OCID
+    Moves the resource to the specified compartment.
     """
 
     def __init__(self, **kwargs):
@@ -38,7 +38,7 @@ class ChangeCompartmentDetails(object):
         """
         **[Required]** Gets the compartment_id of this ChangeCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the resource should be moved.
+        to move the resource to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -53,7 +53,7 @@ class ChangeCompartmentDetails(object):
         """
         Sets the compartment_id of this ChangeCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the resource should be moved.
+        to move the resource to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

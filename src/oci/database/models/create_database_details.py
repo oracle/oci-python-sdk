@@ -48,6 +48,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the admin_password property of this CreateDatabaseDetails.
         :type admin_password: str
 
+        :param tde_wallet_password:
+            The value to assign to the tde_wallet_password property of this CreateDatabaseDetails.
+        :type tde_wallet_password: str
+
         :param character_set:
             The value to assign to the character_set property of this CreateDatabaseDetails.
         :type character_set: str
@@ -80,6 +84,7 @@ class CreateDatabaseDetails(object):
             'database_software_image_id': 'str',
             'pdb_name': 'str',
             'admin_password': 'str',
+            'tde_wallet_password': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
             'db_workload': 'str',
@@ -94,6 +99,7 @@ class CreateDatabaseDetails(object):
             'database_software_image_id': 'databaseSoftwareImageId',
             'pdb_name': 'pdbName',
             'admin_password': 'adminPassword',
+            'tde_wallet_password': 'tdeWalletPassword',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
             'db_workload': 'dbWorkload',
@@ -107,6 +113,7 @@ class CreateDatabaseDetails(object):
         self._database_software_image_id = None
         self._pdb_name = None
         self._admin_password = None
+        self._tde_wallet_password = None
         self._character_set = None
         self._ncharacter_set = None
         self._db_workload = None
@@ -237,6 +244,30 @@ class CreateDatabaseDetails(object):
         :type: str
         """
         self._admin_password = admin_password
+
+    @property
+    def tde_wallet_password(self):
+        """
+        Gets the tde_wallet_password of this CreateDatabaseDetails.
+        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :return: The tde_wallet_password of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._tde_wallet_password
+
+    @tde_wallet_password.setter
+    def tde_wallet_password(self, tde_wallet_password):
+        """
+        Sets the tde_wallet_password of this CreateDatabaseDetails.
+        The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :param tde_wallet_password: The tde_wallet_password of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._tde_wallet_password = tde_wallet_password
 
     @property
     def character_set(self):

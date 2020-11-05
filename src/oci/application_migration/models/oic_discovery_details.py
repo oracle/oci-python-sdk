@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OicDiscoveryDetails(DiscoveryDetails):
     """
-    Specifies the credentials to access the source OIC instance
+    Credentials to access the Oracle Integration application in the source environment. Application Migration connects to the
+    application in the source environment with the supplied credentials.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +55,7 @@ class OicDiscoveryDetails(DiscoveryDetails):
     def service_instance_user(self):
         """
         **[Required]** Gets the service_instance_user of this OicDiscoveryDetails.
-        The OIC instance admin user
+        Application administrator username to access the Oracle Integration Classic instance in the source environment.
 
 
         :return: The service_instance_user of this OicDiscoveryDetails.
@@ -66,7 +67,7 @@ class OicDiscoveryDetails(DiscoveryDetails):
     def service_instance_user(self, service_instance_user):
         """
         Sets the service_instance_user of this OicDiscoveryDetails.
-        The OIC instance admin user
+        Application administrator username to access the Oracle Integration Classic instance in the source environment.
 
 
         :param service_instance_user: The service_instance_user of this OicDiscoveryDetails.
@@ -78,7 +79,7 @@ class OicDiscoveryDetails(DiscoveryDetails):
     def service_instance_password(self):
         """
         **[Required]** Gets the service_instance_password of this OicDiscoveryDetails.
-        The OIC instance admin password
+        Password for this user.
 
 
         :return: The service_instance_password of this OicDiscoveryDetails.
@@ -90,7 +91,7 @@ class OicDiscoveryDetails(DiscoveryDetails):
     def service_instance_password(self, service_instance_password):
         """
         Sets the service_instance_password of this OicDiscoveryDetails.
-        The OIC instance admin password
+        Password for this user.
 
 
         :param service_instance_password: The service_instance_password of this OicDiscoveryDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateLoadBalancerShapeDetails(object):
     """
-    The configuration details for update a load balancer to a different shape.
+    UpdateLoadBalancerShapeDetails model.
     """
 
     def __init__(self, **kwargs):
@@ -37,11 +37,13 @@ class UpdateLoadBalancerShapeDetails(object):
     def shape_name(self):
         """
         **[Required]** Gets the shape_name of this UpdateLoadBalancerShapeDetails.
-        A template that determines the total pre-provisioned bandwidth (ingress plus egress).
-        To get a list of available shapes, use the :func:`list_shapes`
-        operation.
+        The new shape name for the load balancer.
 
-        Example: `100Mbps`
+        Allowed values are :
+          *  10Mbps
+          *  100Mbps
+          *  400Mbps
+          *  8000Mbps
 
 
         :return: The shape_name of this UpdateLoadBalancerShapeDetails.
@@ -53,11 +55,13 @@ class UpdateLoadBalancerShapeDetails(object):
     def shape_name(self, shape_name):
         """
         Sets the shape_name of this UpdateLoadBalancerShapeDetails.
-        A template that determines the total pre-provisioned bandwidth (ingress plus egress).
-        To get a list of available shapes, use the :func:`list_shapes`
-        operation.
+        The new shape name for the load balancer.
 
-        Example: `100Mbps`
+        Allowed values are :
+          *  10Mbps
+          *  100Mbps
+          *  400Mbps
+          *  8000Mbps
 
 
         :param shape_name: The shape_name of this UpdateLoadBalancerShapeDetails.

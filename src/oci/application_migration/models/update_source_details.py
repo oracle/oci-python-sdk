@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSourceDetails(object):
     """
-    The Source object. Sources represent external locations from which
-    applications may be imported into an OCI tenancy.
+    You can update the authorization details to access the source environment from which you want to migrate applications to
+    Oracle Cloud Infrastructure. You can also update the description and tags of a source.
     """
 
     def __init__(self, **kwargs):
@@ -73,7 +73,7 @@ class UpdateSourceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateSourceDetails.
-        Human-readable name of the source.
+        Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :return: The display_name of this UpdateSourceDetails.
@@ -85,7 +85,7 @@ class UpdateSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSourceDetails.
-        Human-readable name of the source.
+        Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :param display_name: The display_name of this UpdateSourceDetails.
@@ -97,7 +97,7 @@ class UpdateSourceDetails(object):
     def description(self):
         """
         Gets the description of this UpdateSourceDetails.
-        Description of the source.
+        Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :return: The description of this UpdateSourceDetails.
@@ -109,7 +109,7 @@ class UpdateSourceDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateSourceDetails.
-        Description of the source.
+        Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :param description: The description of this UpdateSourceDetails.
@@ -161,8 +161,10 @@ class UpdateSourceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateSourceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateSourceDetails.
@@ -174,8 +176,10 @@ class UpdateSourceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateSourceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateSourceDetails.
@@ -188,7 +192,9 @@ class UpdateSourceDetails(object):
         """
         Gets the defined_tags of this UpdateSourceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateSourceDetails.
@@ -201,7 +207,9 @@ class UpdateSourceDetails(object):
         """
         Sets the defined_tags of this UpdateSourceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateSourceDetails.

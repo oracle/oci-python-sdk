@@ -116,7 +116,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
     @property
     def db_version(self):
         """
-        **[Required]** Gets the db_version of this CreateDbHomeWithVmClusterIdDetails.
+        Gets the db_version of this CreateDbHomeWithVmClusterIdDetails.
         A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 

@@ -23,6 +23,14 @@ class Zone(object):
     #: This constant has a value of "SECONDARY"
     ZONE_TYPE_SECONDARY = "SECONDARY"
 
+    #: A constant which can be used with the scope property of a Zone.
+    #: This constant has a value of "GLOBAL"
+    SCOPE_GLOBAL = "GLOBAL"
+
+    #: A constant which can be used with the scope property of a Zone.
+    #: This constant has a value of "PRIVATE"
+    SCOPE_PRIVATE = "PRIVATE"
+
     #: A constant which can be used with the lifecycle_state property of a Zone.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -62,6 +70,16 @@ class Zone(object):
             The value to assign to the compartment_id property of this Zone.
         :type compartment_id: str
 
+        :param view_id:
+            The value to assign to the view_id property of this Zone.
+        :type view_id: str
+
+        :param scope:
+            The value to assign to the scope property of this Zone.
+            Allowed values for this property are: "GLOBAL", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type scope: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Zone.
         :type freeform_tags: dict(str, str)
@@ -100,6 +118,10 @@ class Zone(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param is_protected:
+            The value to assign to the is_protected property of this Zone.
+        :type is_protected: bool
+
         :param nameservers:
             The value to assign to the nameservers property of this Zone.
         :type nameservers: list[Nameserver]
@@ -109,6 +131,8 @@ class Zone(object):
             'name': 'str',
             'zone_type': 'str',
             'compartment_id': 'str',
+            'view_id': 'str',
+            'scope': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'external_masters': 'list[ExternalMaster]',
@@ -118,6 +142,7 @@ class Zone(object):
             'version': 'str',
             'serial': 'int',
             'lifecycle_state': 'str',
+            'is_protected': 'bool',
             'nameservers': 'list[Nameserver]'
         }
 
@@ -125,6 +150,8 @@ class Zone(object):
             'name': 'name',
             'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
+            'view_id': 'viewId',
+            'scope': 'scope',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'external_masters': 'externalMasters',
@@ -134,12 +161,15 @@ class Zone(object):
             'version': 'version',
             'serial': 'serial',
             'lifecycle_state': 'lifecycleState',
+            'is_protected': 'isProtected',
             'nameservers': 'nameservers'
         }
 
         self._name = None
         self._zone_type = None
         self._compartment_id = None
+        self._view_id = None
+        self._scope = None
         self._freeform_tags = None
         self._defined_tags = None
         self._external_masters = None
@@ -149,12 +179,13 @@ class Zone(object):
         self._version = None
         self._serial = None
         self._lifecycle_state = None
+        self._is_protected = None
         self._nameservers = None
 
     @property
     def name(self):
         """
-        Gets the name of this Zone.
+        **[Required]** Gets the name of this Zone.
         The name of the zone.
 
 
@@ -178,8 +209,8 @@ class Zone(object):
     @property
     def zone_type(self):
         """
-        Gets the zone_type of this Zone.
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+        **[Required]** Gets the zone_type of this Zone.
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
         Allowed values for this property are: "PRIMARY", "SECONDARY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -194,7 +225,7 @@ class Zone(object):
     def zone_type(self, zone_type):
         """
         Sets the zone_type of this Zone.
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
 
         :param zone_type: The zone_type of this Zone.
@@ -208,7 +239,7 @@ class Zone(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Zone.
+        **[Required]** Gets the compartment_id of this Zone.
         The OCID of the compartment containing the zone.
 
 
@@ -230,9 +261,67 @@ class Zone(object):
         self._compartment_id = compartment_id
 
     @property
+    def view_id(self):
+        """
+        Gets the view_id of this Zone.
+        The OCID of the private view containing the zone. This value will
+        be null for zones in the global DNS, which are publicly resolvable and
+        not part of a private view.
+
+
+        :return: The view_id of this Zone.
+        :rtype: str
+        """
+        return self._view_id
+
+    @view_id.setter
+    def view_id(self, view_id):
+        """
+        Sets the view_id of this Zone.
+        The OCID of the private view containing the zone. This value will
+        be null for zones in the global DNS, which are publicly resolvable and
+        not part of a private view.
+
+
+        :param view_id: The view_id of this Zone.
+        :type: str
+        """
+        self._view_id = view_id
+
+    @property
+    def scope(self):
+        """
+        **[Required]** Gets the scope of this Zone.
+        The scope of the zone.
+
+        Allowed values for this property are: "GLOBAL", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The scope of this Zone.
+        :rtype: str
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """
+        Sets the scope of this Zone.
+        The scope of the zone.
+
+
+        :param scope: The scope of this Zone.
+        :type: str
+        """
+        allowed_values = ["GLOBAL", "PRIVATE"]
+        if not value_allowed_none_or_none_sentinel(scope, allowed_values):
+            scope = 'UNKNOWN_ENUM_VALUE'
+        self._scope = scope
+
+    @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this Zone.
+        **[Required]** Gets the freeform_tags of this Zone.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
 
@@ -268,7 +357,7 @@ class Zone(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this Zone.
+        **[Required]** Gets the defined_tags of this Zone.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -304,7 +393,7 @@ class Zone(object):
     @property
     def external_masters(self):
         """
-        Gets the external_masters of this Zone.
+        **[Required]** Gets the external_masters of this Zone.
         External master servers for the zone. `externalMasters` becomes a
         required parameter when the `zoneType` value is `SECONDARY`.
 
@@ -330,7 +419,7 @@ class Zone(object):
     @property
     def self_uri(self):
         """
-        Gets the self_uri of this Zone.
+        **[Required]** Gets the self_uri of this Zone.
         The canonical absolute URL of the resource.
 
 
@@ -354,7 +443,7 @@ class Zone(object):
     @property
     def id(self):
         """
-        Gets the id of this Zone.
+        **[Required]** Gets the id of this Zone.
         The OCID of the zone.
 
 
@@ -378,8 +467,8 @@ class Zone(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Zone.
-        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
+        **[Required]** Gets the time_created of this Zone.
+        The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -394,7 +483,7 @@ class Zone(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Zone.
-        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
+        The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -408,7 +497,7 @@ class Zone(object):
     @property
     def version(self):
         """
-        Gets the version of this Zone.
+        **[Required]** Gets the version of this Zone.
         Version is the never-repeating, totally-orderable, version of the
         zone, from which the serial field of the zone's SOA record is
         derived.
@@ -436,7 +525,7 @@ class Zone(object):
     @property
     def serial(self):
         """
-        Gets the serial of this Zone.
+        **[Required]** Gets the serial of this Zone.
         The current serial of the zone. As seen in the zone's SOA record.
 
 
@@ -460,7 +549,7 @@ class Zone(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Zone.
+        **[Required]** Gets the lifecycle_state of this Zone.
         The current state of the zone resource.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -488,9 +577,33 @@ class Zone(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def is_protected(self):
+        """
+        **[Required]** Gets the is_protected of this Zone.
+        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+
+
+        :return: The is_protected of this Zone.
+        :rtype: bool
+        """
+        return self._is_protected
+
+    @is_protected.setter
+    def is_protected(self, is_protected):
+        """
+        Sets the is_protected of this Zone.
+        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+
+
+        :param is_protected: The is_protected of this Zone.
+        :type: bool
+        """
+        self._is_protected = is_protected
+
+    @property
     def nameservers(self):
         """
-        Gets the nameservers of this Zone.
+        **[Required]** Gets the nameservers of this Zone.
         The authoritative nameservers for the zone.
 
 

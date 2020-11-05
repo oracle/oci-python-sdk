@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OacDiscoveryDetails(DiscoveryDetails):
     """
-    Specifies the credentials to access the source OAC instance
+    Details about the Oracle Analytics Cloud - Classic application in the source environment.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,7 @@ class OacDiscoveryDetails(DiscoveryDetails):
     def service_instance_user(self):
         """
         **[Required]** Gets the service_instance_user of this OacDiscoveryDetails.
-        The OAC instance admin user
+        This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
 
 
         :return: The service_instance_user of this OacDiscoveryDetails.
@@ -66,7 +66,7 @@ class OacDiscoveryDetails(DiscoveryDetails):
     def service_instance_user(self, service_instance_user):
         """
         Sets the service_instance_user of this OacDiscoveryDetails.
-        The OAC instance admin user
+        This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
 
 
         :param service_instance_user: The service_instance_user of this OacDiscoveryDetails.
@@ -78,7 +78,7 @@ class OacDiscoveryDetails(DiscoveryDetails):
     def service_instance_password(self):
         """
         **[Required]** Gets the service_instance_password of this OacDiscoveryDetails.
-        The OAC instance admin password
+        This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
 
 
         :return: The service_instance_password of this OacDiscoveryDetails.
@@ -90,7 +90,7 @@ class OacDiscoveryDetails(DiscoveryDetails):
     def service_instance_password(self, service_instance_password):
         """
         Sets the service_instance_password of this OacDiscoveryDetails.
-        The OAC instance admin password
+        This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
 
 
         :param service_instance_password: The service_instance_password of this OacDiscoveryDetails.

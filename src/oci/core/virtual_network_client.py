@@ -253,6 +253,107 @@ class VirtualNetworkClient(object):
                 body=add_public_ip_pool_capacity_details,
                 response_type="PublicIpPool")
 
+    def add_vcn_cidr(self, vcn_id, add_vcn_cidr_details, **kwargs):
+        """
+        Add a CIDR to a VCN. The new CIDR must maintain the following rules -
+
+        a. The CIDR provided is valid
+        b. The new CIDR range should not overlap with any existing CIDRs
+        c. The new CIDR should not exceed the max limit of CIDRs per VCNs
+        d. The new CIDR range does not overlap with any peered VCNs
+
+
+        :param str vcn_id: (required)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param AddVcnCidrDetails add_vcn_cidr_details: (required)
+            Details object for deleting a VCN CIDR.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vcns/{vcnId}/actions/addCidr"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vcnId": vcn_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_vcn_cidr_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_vcn_cidr_details)
+
     def advertise_byoip_range(self, byoip_range_id, **kwargs):
         """
         initiate route advertisements for the Byoip Range prefix.
@@ -4356,16 +4457,23 @@ class VirtualNetworkClient(object):
         Creates a new virtual cloud network (VCN). For more information, see
         `VCNs and Subnets`__.
 
-        For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
-        private IP address ranges specified in `RFC 1918`__ (10.0.0.0/8,
-        172.16/12, and 192.168/16). Example: 172.16.0.0/16. The CIDR block can range from /16 to /30, and it
-        must not overlap with your on-premises network. You can't change the size of the VCN after creation.
+        To create the VCN, you may specify a list of IPv4 CIDR blocks. The CIDRs must maintain
+        the following rules -
+
+        a. The list of CIDRs provided are valid
+        b. There is no overlap between different CIDRs
+        c. The list of CIDRs does not exceed the max limit of CIDRs per VCN
+
+        Oracle recommends using one of the private IP address ranges specified in `RFC 1918]
+        (https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example:
+        172.16.0.0/16. The CIDR blocks can range from /16 to /30, and they must not overlap with
+        your on-premises network.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
         reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
         compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
         Networking Service components. For more information about compartments and access control, see
-        `Overview of the IAM Service`__. For information about OCIDs, see
+        [Overview of the IAM Service`__. For information about OCIDs, see
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
@@ -4384,7 +4492,6 @@ class VirtualNetworkClient(object):
         `Overview of the Networking Service`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
-        __ https://tools.ietf.org/html/rfc1918
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
@@ -9257,6 +9364,81 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="Vcn")
 
+    def get_vcn_dns_resolver_association(self, vcn_id, **kwargs):
+        """
+        Get the associated DNS resolver information with a vcn
+
+
+        :param str vcn_id: (required)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VcnDnsResolverAssociation`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vcns/{vcnId}/dnsResolverAssociation"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_vcn_dns_resolver_association got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vcnId": vcn_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VcnDnsResolverAssociation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="VcnDnsResolverAssociation")
+
     def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
         Gets the specified virtual circuit's information.
@@ -13035,7 +13217,7 @@ class VirtualNetworkClient(object):
         :param str lifecycle_state: (optional)
             A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13082,7 +13264,7 @@ class VirtualNetworkClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -13175,7 +13357,7 @@ class VirtualNetworkClient(object):
         :param str lifecycle_state: (optional)
             A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13221,7 +13403,7 @@ class VirtualNetworkClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -13723,6 +13905,109 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[Vlan]")
 
+    def modify_vcn_cidr(self, vcn_id, modify_vcn_cidr_details, **kwargs):
+        """
+        Update a CIDR from a VCN. The new CIDR must maintain the following rules -
+
+        a. The CIDR provided is valid
+        b. The new CIDR range should not overlap with any existing CIDRs
+        c. The new CIDR should not exceed the max limit of CIDRs per VCNs
+        d. The new CIDR range does not overlap with any peered VCNs
+        e. The new CIDR should overlap with any existing route rule within a VCN
+        f. All existing subnet CIDRs are subsets of the updated CIDR ranges
+
+
+        :param str vcn_id: (required)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
+            Details object for updating a VCN CIDR.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vcns/{vcnId}/actions/modifyCidr"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "modify_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vcnId": vcn_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=modify_vcn_cidr_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=modify_vcn_cidr_details)
+
     def remove_network_security_group_security_rules(self, network_security_group_id, remove_network_security_group_security_rules_details, **kwargs):
         """
         Removes one or more security rules from the specified network security group.
@@ -13880,6 +14165,103 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=remove_public_ip_pool_capacity_details,
                 response_type="PublicIpPool")
+
+    def remove_vcn_cidr(self, vcn_id, remove_vcn_cidr_details, **kwargs):
+        """
+        Remove a CIDR from a VCN. The CIDR being removed should not have
+        any resources allocated from it.
+
+
+        :param str vcn_id: (required)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
+            Details object for removing a VCN CIDR.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vcns/{vcnId}/actions/removeCidr"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vcnId": vcn_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_vcn_cidr_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_vcn_cidr_details)
 
     def update_byoip_range(self, byoip_range_id, update_byoip_range_details, **kwargs):
         """

@@ -10,7 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMigrationDetails(object):
     """
-    Update the details and configuration of a migration.
+    Provide configuration information about the application in the target environment. Application Migration migrates the
+    application to the target environment only after you provide this information. The information that you must provide varies
+    depending on the type of application that you are migrating.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +83,7 @@ class UpdateMigrationDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateMigrationDetails.
-        Human-readable name of the migration.
+        User-friendly name of the migration.
 
 
         :return: The display_name of this UpdateMigrationDetails.
@@ -91,7 +95,7 @@ class UpdateMigrationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateMigrationDetails.
-        Human-readable name of the migration.
+        User-friendly name of the migration.
 
 
         :param display_name: The display_name of this UpdateMigrationDetails.
@@ -147,7 +151,9 @@ class UpdateMigrationDetails(object):
     def service_config(self):
         """
         Gets the service_config of this UpdateMigrationDetails.
-        Configuration required to migrate the application. In addition to the key and value, additional fields are provided to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the CreateMigration operation.
+        Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+        to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+        CreateMigration operation.
 
 
         :return: The service_config of this UpdateMigrationDetails.
@@ -159,7 +165,9 @@ class UpdateMigrationDetails(object):
     def service_config(self, service_config):
         """
         Sets the service_config of this UpdateMigrationDetails.
-        Configuration required to migrate the application. In addition to the key and value, additional fields are provided to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the CreateMigration operation.
+        Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+        to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+        CreateMigration operation.
 
 
         :param service_config: The service_config of this UpdateMigrationDetails.
@@ -171,7 +179,9 @@ class UpdateMigrationDetails(object):
     def application_config(self):
         """
         Gets the application_config of this UpdateMigrationDetails.
-        Configuration required to migrate the application. In addition to the key and value, additional fields are provided to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the CreateMigration operation.
+        Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+        to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+        CreateMigration operation.
 
 
         :return: The application_config of this UpdateMigrationDetails.
@@ -183,7 +193,9 @@ class UpdateMigrationDetails(object):
     def application_config(self, application_config):
         """
         Sets the application_config of this UpdateMigrationDetails.
-        Configuration required to migrate the application. In addition to the key and value, additional fields are provided to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the CreateMigration operation.
+        Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+        to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+        CreateMigration operation.
 
 
         :param application_config: The application_config of this UpdateMigrationDetails.
@@ -195,8 +207,10 @@ class UpdateMigrationDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateMigrationDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateMigrationDetails.
@@ -208,8 +222,10 @@ class UpdateMigrationDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateMigrationDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateMigrationDetails.
@@ -222,7 +238,9 @@ class UpdateMigrationDetails(object):
         """
         Gets the defined_tags of this UpdateMigrationDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateMigrationDetails.
@@ -235,7 +253,9 @@ class UpdateMigrationDetails(object):
         """
         Sets the defined_tags of this UpdateMigrationDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateMigrationDetails.

@@ -10,7 +10,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceDetails(object):
     """
-    Base model for different source environment types
+    Specify one of the following values depending for the 'type' attribute based on the application that you want to migrate.
+
+    Specify `OCIC` if you want to migrate Oracle Java Cloud Service, Oracle Analytics Cloud - Classic, Oracle Integration, and Oracle
+    SOA Cloud Service applications from Oracle Cloud Infrastructure - Classic.
+
+    Specify `INTERNAL_COMPUTE` if you have a traditional Oracle Cloud Infrastructure - Classic account and you want to migrate Oracle
+    Process Cloud Service or Oracle Integration Cloud Service applications.
     """
 
     #: A constant which can be used with the type property of a SourceDetails.
@@ -68,7 +74,7 @@ class SourceDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this SourceDetails.
-        The type of source environment
+        The type of source environment.
 
         Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -83,7 +89,7 @@ class SourceDetails(object):
     def type(self, type):
         """
         Sets the type of this SourceDetails.
-        The type of source environment
+        The type of source environment.
 
 
         :param type: The type of this SourceDetails.

@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_change_resolver_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ChangeResolverCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ChangeResolverCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ChangeResolverCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.change_resolver_compartment(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                change_resolver_compartment_details=request.pop(util.camelize('ChangeResolverCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ChangeResolverCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_resolver_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_change_steering_policy_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeSteeringPolicyCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -116,6 +157,47 @@ def test_change_tsig_key_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_change_view_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ChangeViewCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ChangeViewCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ChangeViewCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.change_view_compartment(
+                view_id=request.pop(util.camelize('viewId')),
+                change_view_compartment_details=request.pop(util.camelize('ChangeViewCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ChangeViewCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_view_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_change_zone_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeZoneCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -151,6 +233,47 @@ def test_change_zone_compartment(testing_service_client):
             result,
             service_error,
             'change_zone_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_create_resolver_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'CreateResolverEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateResolverEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateResolverEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.create_resolver_endpoint(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                create_resolver_endpoint_details=request.pop(util.camelize('CreateResolverEndpointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'CreateResolverEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolverEndpoint',
             False,
             False
         )
@@ -277,6 +400,46 @@ def test_create_tsig_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_create_view(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'CreateView'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateView')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateView')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.create_view(
+                create_view_details=request.pop(util.camelize('CreateViewDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'CreateView',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'view',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_create_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -352,6 +515,47 @@ def test_delete_domain_records(testing_service_client):
             result,
             service_error,
             'delete_domain_records',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_delete_resolver_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'DeleteResolverEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteResolverEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteResolverEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_resolver_endpoint(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                resolver_endpoint_name=request.pop(util.camelize('resolverEndpointName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'DeleteResolverEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_resolver_endpoint',
             True,
             False
         )
@@ -520,6 +724,46 @@ def test_delete_tsig_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_delete_view(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'DeleteView'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteView')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteView')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_view(
+                view_id=request.pop(util.camelize('viewId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'DeleteView',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_view',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_delete_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -619,6 +863,87 @@ def test_get_domain_records(testing_service_client):
             'recordCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_get_resolver(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'GetResolver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetResolver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetResolver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.get_resolver(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetResolver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolver',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_get_resolver_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'GetResolverEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetResolverEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetResolverEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.get_resolver_endpoint(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                resolver_endpoint_name=request.pop(util.camelize('resolverEndpointName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetResolverEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolverEndpoint',
+            False,
+            False
         )
 
 
@@ -809,6 +1134,46 @@ def test_get_tsig_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_get_view(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'GetView'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetView')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetView')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.get_view(
+                view_id=request.pop(util.camelize('viewId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetView',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'view',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_get_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -903,6 +1268,126 @@ def test_get_zone_records(testing_service_client):
             result,
             service_error,
             'recordCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_list_resolver_endpoints(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ListResolverEndpoints'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListResolverEndpoints')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListResolverEndpoints')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.list_resolver_endpoints(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_resolver_endpoints(
+                    resolver_id=request.pop(util.camelize('resolverId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_resolver_endpoints(
+                        resolver_id=request.pop(util.camelize('resolverId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListResolverEndpoints',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolverEndpointSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_list_resolvers(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ListResolvers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListResolvers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListResolvers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.list_resolvers(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_resolvers(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_resolvers(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListResolvers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolverSummary',
             False,
             True
         )
@@ -1083,6 +1568,66 @@ def test_list_tsig_keys(testing_service_client):
             result,
             service_error,
             'tsigKeySummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_list_views(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ListViews'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListViews')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListViews')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.list_views(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_views(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_views(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListViews',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'viewSummary',
             False,
             True
         )
@@ -1317,6 +1862,89 @@ def test_update_domain_records(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_update_resolver(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'UpdateResolver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateResolver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateResolver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.update_resolver(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                update_resolver_details=request.pop(util.camelize('UpdateResolverDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'UpdateResolver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolver',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_update_resolver_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'UpdateResolverEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateResolverEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateResolverEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.update_resolver_endpoint(
+                resolver_id=request.pop(util.camelize('resolverId')),
+                resolver_endpoint_name=request.pop(util.camelize('resolverEndpointName')),
+                update_resolver_endpoint_details=request.pop(util.camelize('UpdateResolverEndpointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'UpdateResolverEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resolverEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_update_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1477,6 +2105,47 @@ def test_update_tsig_key(testing_service_client):
             result,
             service_error,
             'tsigKey',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_update_view(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'UpdateView'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateView')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateView')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.update_view(
+                view_id=request.pop(util.camelize('viewId')),
+                update_view_details=request.pop(util.camelize('UpdateViewDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'UpdateView',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'view',
             False,
             False
         )

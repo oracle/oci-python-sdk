@@ -26,19 +26,26 @@ class IpAddress(object):
             The value to assign to the is_public property of this IpAddress.
         :type is_public: bool
 
+        :param reserved_ip:
+            The value to assign to the reserved_ip property of this IpAddress.
+        :type reserved_ip: ReservedIP
+
         """
         self.swagger_types = {
             'ip_address': 'str',
-            'is_public': 'bool'
+            'is_public': 'bool',
+            'reserved_ip': 'ReservedIP'
         }
 
         self.attribute_map = {
             'ip_address': 'ipAddress',
-            'is_public': 'isPublic'
+            'is_public': 'isPublic',
+            'reserved_ip': 'reservedIp'
         }
 
         self._ip_address = None
         self._is_public = None
+        self._reserved_ip = None
 
     @property
     def ip_address(self):
@@ -99,6 +106,26 @@ class IpAddress(object):
         :type: bool
         """
         self._is_public = is_public
+
+    @property
+    def reserved_ip(self):
+        """
+        Gets the reserved_ip of this IpAddress.
+
+        :return: The reserved_ip of this IpAddress.
+        :rtype: ReservedIP
+        """
+        return self._reserved_ip
+
+    @reserved_ip.setter
+    def reserved_ip(self, reserved_ip):
+        """
+        Sets the reserved_ip of this IpAddress.
+
+        :param reserved_ip: The reserved_ip of this IpAddress.
+        :type: ReservedIP
+        """
+        self._reserved_ip = reserved_ip
 
     def __repr__(self):
         return formatted_flat_dict(self)

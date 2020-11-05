@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoacsDiscoveryDetails(DiscoveryDetails):
     """
-    Specifies the credentials to access the source SOACS instance
+    Credentials to access the Oracle SOA Cloud Service application in the source environment. When you create and update a migration,
+    Application Migration connects to the application in the source environment with the supplied credentials and exports the domain
+    configuration.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +56,7 @@ class SoacsDiscoveryDetails(DiscoveryDetails):
     def weblogic_user(self):
         """
         **[Required]** Gets the weblogic_user of this SoacsDiscoveryDetails.
-        The SOACS instance weblogic admin user
+        WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
 
 
         :return: The weblogic_user of this SoacsDiscoveryDetails.
@@ -66,7 +68,7 @@ class SoacsDiscoveryDetails(DiscoveryDetails):
     def weblogic_user(self, weblogic_user):
         """
         Sets the weblogic_user of this SoacsDiscoveryDetails.
-        The SOACS instance weblogic admin user
+        WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
 
 
         :param weblogic_user: The weblogic_user of this SoacsDiscoveryDetails.
@@ -78,7 +80,7 @@ class SoacsDiscoveryDetails(DiscoveryDetails):
     def weblogic_password(self):
         """
         **[Required]** Gets the weblogic_password of this SoacsDiscoveryDetails.
-        The SOACS instance weblogic admin password
+        Password for this user.
 
 
         :return: The weblogic_password of this SoacsDiscoveryDetails.
@@ -90,7 +92,7 @@ class SoacsDiscoveryDetails(DiscoveryDetails):
     def weblogic_password(self, weblogic_password):
         """
         Sets the weblogic_password of this SoacsDiscoveryDetails.
-        The SOACS instance weblogic admin password
+        Password for this user.
 
 
         :param weblogic_password: The weblogic_password of this SoacsDiscoveryDetails.

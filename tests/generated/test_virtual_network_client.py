@@ -115,6 +115,47 @@ def test_add_public_ip_pool_capacity(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_add_vcn_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddVcnCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddVcnCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddVcnCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_vcn_cidr(
+                vcn_id=request.pop(util.camelize('vcnId')),
+                add_vcn_cidr_details=request.pop(util.camelize('AddVcnCidrDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddVcnCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_vcn_cidr',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
 def test_advertise_byoip_range(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AdvertiseByoipRange'):
@@ -4747,6 +4788,46 @@ def test_get_vcn(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_vcn_dns_resolver_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetVcnDnsResolverAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetVcnDnsResolverAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVcnDnsResolverAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_vcn_dns_resolver_association(
+                vcn_id=request.pop(util.camelize('vcnId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetVcnDnsResolverAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vcnDnsResolverAssociation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_get_virtual_circuit(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVirtualCircuit'):
@@ -7041,6 +7122,47 @@ def test_list_vlans(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_modify_vcn_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ModifyVcnCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ModifyVcnCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ModifyVcnCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.modify_vcn_cidr(
+                vcn_id=request.pop(util.camelize('vcnId')),
+                modify_vcn_cidr_details=request.pop(util.camelize('ModifyVcnCidrDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ModifyVcnCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modify_vcn_cidr',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_remove_network_security_group_security_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'RemoveNetworkSecurityGroupSecurityRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7117,6 +7239,47 @@ def test_remove_public_ip_pool_capacity(testing_service_client):
             result,
             service_error,
             'publicIpPool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_remove_vcn_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveVcnCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveVcnCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveVcnCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_vcn_cidr(
+                vcn_id=request.pop(util.camelize('vcnId')),
+                remove_vcn_cidr_details=request.pop(util.camelize('RemoveVcnCidrDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveVcnCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_vcn_cidr',
             False,
             False
         )

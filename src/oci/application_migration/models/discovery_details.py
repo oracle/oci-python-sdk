@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DiscoveryDetails(object):
     """
-    Base model for different application discovery requirements
+    Base model for different application discovery requirements.
     """
 
     #: A constant which can be used with the type property of a DiscoveryDetails.
@@ -99,7 +99,7 @@ class DiscoveryDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this DiscoveryDetails.
-        The type of migration
+        The type of application that you want to migrate.
 
         Allowed values for this property are: "JCS", "SOACS", "OIC", "OAC", "ICS", "PCS"
 
@@ -113,7 +113,7 @@ class DiscoveryDetails(object):
     def type(self, type):
         """
         Sets the type of this DiscoveryDetails.
-        The type of migration
+        The type of application that you want to migrate.
 
 
         :param type: The type of this DiscoveryDetails.

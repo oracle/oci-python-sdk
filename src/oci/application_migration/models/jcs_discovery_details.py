@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JcsDiscoveryDetails(DiscoveryDetails):
     """
-    Specifies the credentials to access the source JCS instance
+    Credentials to access the Oracle Java Cloud Service application in the source environment. When you create and update a migration,
+    Application Migration connects to the application in the source environment with the supplied credentials and exports the domain
+    configuration.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +56,7 @@ class JcsDiscoveryDetails(DiscoveryDetails):
     def weblogic_user(self):
         """
         **[Required]** Gets the weblogic_user of this JcsDiscoveryDetails.
-        The JCS instance weblogic admin user
+        WebLogic administrator username for the Oracle Java Cloud Service application in the source environment.
 
 
         :return: The weblogic_user of this JcsDiscoveryDetails.
@@ -66,7 +68,7 @@ class JcsDiscoveryDetails(DiscoveryDetails):
     def weblogic_user(self, weblogic_user):
         """
         Sets the weblogic_user of this JcsDiscoveryDetails.
-        The JCS instance weblogic admin user
+        WebLogic administrator username for the Oracle Java Cloud Service application in the source environment.
 
 
         :param weblogic_user: The weblogic_user of this JcsDiscoveryDetails.
@@ -78,7 +80,7 @@ class JcsDiscoveryDetails(DiscoveryDetails):
     def weblogic_password(self):
         """
         **[Required]** Gets the weblogic_password of this JcsDiscoveryDetails.
-        The JCS instance weblogic admin password
+        The password of the WebLogic administrator for the Oracle Java Cloud Service application in the source environment.
 
 
         :return: The weblogic_password of this JcsDiscoveryDetails.
@@ -90,7 +92,7 @@ class JcsDiscoveryDetails(DiscoveryDetails):
     def weblogic_password(self, weblogic_password):
         """
         Sets the weblogic_password of this JcsDiscoveryDetails.
-        The JCS instance weblogic admin password
+        The password of the WebLogic administrator for the Oracle Java Cloud Service application in the source environment.
 
 
         :param weblogic_password: The weblogic_password of this JcsDiscoveryDetails.

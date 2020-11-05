@@ -18,7 +18,10 @@ missing = Sentinel("Missing")
 
 class ApplicationMigrationClient(object):
     """
-    API for the Application Migration service. Use this API to migrate applications from Oracle Cloud Infrastructure - Classic to Oracle Cloud Infrastructure.
+    Application Migration simplifies the migration of applications from Oracle Cloud Infrastructure Classic to Oracle Cloud Infrastructure.
+    You can use Application Migration API to migrate applications, such as Oracle Java Cloud Service, SOA Cloud Service, and Integration Classic
+    instances, to Oracle Cloud Infrastructure. For more information, see
+    [Overview of Application Migration](/iaas/application-migration/appmigrationoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -87,11 +90,16 @@ class ApplicationMigrationClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        Cancels the specified work request
+        Cancels the specified work request. When you cancel a work request, it causes the in-progress task to be canceled.
+        For example, if the create migration work request is in the accepted or in progress state for a long time, you can cancel the work request.
+
+        When you cancel a work request, the state of the work request changes to cancelling, and then to the cancelled state.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -99,7 +107,7 @@ class ApplicationMigrationClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -165,18 +173,23 @@ class ApplicationMigrationClient(object):
 
     def change_migration_compartment(self, migration_id, change_migration_compartment_details, **kwargs):
         """
-        Moves a Migration into a different compartment.
+        Moves the specified migration into a different compartment within the same tenancy. For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str migration_id: (required)
-            The application OCID
+            The `OCID`__ of the migration.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ChangeCompartmentDetails change_migration_compartment_details: (required)
             The updated compartment details
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -259,18 +272,23 @@ class ApplicationMigrationClient(object):
 
     def change_source_compartment(self, source_id, change_source_compartment_details, **kwargs):
         """
-        Moves a Source into a different compartment.
+        Moves the specified source into a different compartment within the same tenancy. For information about moving resources
+        between compartments, see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str source_id: (required)
-            The source OCID
+            The `OCID`__ of the source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ChangeCompartmentDetails change_source_compartment_details: (required)
             The updated compartment details
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -353,8 +371,29 @@ class ApplicationMigrationClient(object):
 
     def create_migration(self, create_migration_details, **kwargs):
         """
-        Creates an application migration in the specified compartment.
-        Specify the compartment using the compartment ID.
+        Creates a migration. A migration represents the end-to-end workflow of moving an application from a source environment to Oracle Cloud
+        Infrastructure. Each migration moves a single application to Oracle Cloud Infrastructure. For more information,
+        see `Manage Migrations`__.
+
+        When you create a migration, provide the required information to let Application Migration access the source environment.
+        Application Migration uses this information to access the application in the source environment and discover application artifacts.
+
+        All Oracle Cloud Infrastructure resources, including migrations, get an Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID).
+        When you create a resource, you can find its OCID in the response. You can also retrieve a resource's OCID by using a List API operation on
+        that resource type, or by viewing the resource in the Console. For more information, see Resource Identifiers.
+
+        After you send your request, a migration is created in the compartment that contains the source. The new migration's lifecycle state
+        will temporarily be <code>CREATING</code> and the state of the migration will be <code>DISCOVERING_APPLICATION</code>. During this phase,
+        Application Migration sets the template for the <code>serviceConfig</code> and <code>applicationConfig</code> fields of the migration.
+        When this operation is complete, the state of the migration changes to <code>MISSING_CONFIG_VALUES</code>.
+        Next, you'll need to update the migration to provide configuration values. Before updating the
+        migration, ensure that its state has changed to <code>MISSING_CONFIG_VALUES</code>.
+
+        To track the progress of this operation, you can monitor the status of the Create Migration and Discover Application work requests
+        by using the <code>:func:`get_work_request`</code> REST API operation on the work request or by viewing the status of the work request in
+        the console.
+
+        __ https://docs.cloud.oracle.com/iaas/application-migration/manage_migrations.htm
 
 
         :param CreateMigrationDetails create_migration_details: (required)
@@ -428,8 +467,25 @@ class ApplicationMigrationClient(object):
 
     def create_source(self, create_source_details, **kwargs):
         """
-        Creates a migration source in the specified compartment.
-        Specify the compartment using the compartment ID.
+        Creates a source in the specified compartment. In Application Migration, a source refers to the environment from which the application
+        is being migrated. For more information, see `Manage Sources`__.
+
+        All Oracle Cloud Infrastructure resources, including sources, get an Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID).
+        When you create a resource, you can find its OCID in the response. You can also retrieve a resource's OCID by using a List API operation
+        on that resource type, or by viewing the resource in the Console.
+
+        After you send your request, a source is created in the specified compartment. The new source's lifecycle state will temporarily be
+        <code>CREATING</code>. Application Migration connects to the source environment with the authentication credentials that you have provided.
+        If the connection is established, the status of the source changes to <code>ACTIVE</code> and Application Migration fetches the list of
+        applications that are available for migration in the source environment.
+
+        To track the progress of the operation, you can monitor the status of the Create Source work request by using the
+        <code>:func:`get_work_request`</code> REST API operation on the work request or by viewing the status of the work request in the console.
+
+        Ensure that the state of the source has changed to <code>ACTIVE</code>, before you retrieve the list of applications from
+        the source environment using the <code>:func:`list_source_applications`</code> REST API call.
+
+        __ https://docs.cloud.oracle.com/iaas/application-migration/manage_sources.htm
 
 
         :param CreateSourceDetails create_source_details: (required)
@@ -503,11 +559,17 @@ class ApplicationMigrationClient(object):
 
     def delete_migration(self, migration_id, **kwargs):
         """
-        Deletes the specified Application object.
+        Deletes the specified migration.
+
+        If you have migrated the application or for any other reason if you no longer require a migration, then you can delete the
+        relevant migration. You can delete a migration, irrespective of its state. If any work request is being processed for the migration
+        that you want to delete, then the associated work requests are cancelled and then the migration is deleted.
 
 
         :param str migration_id: (required)
-            The application OCID
+            The `OCID`__ of the migration.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -515,7 +577,7 @@ class ApplicationMigrationClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -581,11 +643,17 @@ class ApplicationMigrationClient(object):
 
     def delete_source(self, source_id, **kwargs):
         """
-        Deletes the specified Source object.
+        Deletes the specified source.
+
+        Before deleting a source, you must delete all the migrations associated with the source.
+        If you have migrated all the required applications in a source or for any other reason you no longer require a source, then you can
+        delete the relevant source.
 
 
         :param str source_id: (required)
-            The source OCID
+            The `OCID`__ of the source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -593,7 +661,7 @@ class ApplicationMigrationClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -659,11 +727,13 @@ class ApplicationMigrationClient(object):
 
     def get_migration(self, migration_id, **kwargs):
         """
-        Gets an application migration using the ID.
+        Retrieves details of the specified migration.
 
 
         :param str migration_id: (required)
-            The application OCID
+            The `OCID`__ of the migration.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -732,11 +802,13 @@ class ApplicationMigrationClient(object):
 
     def get_source(self, source_id, **kwargs):
         """
-        Gets a migration source using the source ID.
+        Retrieves details of the specified source. Specify the OCID of the source for which you want to retrieve details.
 
 
         :param str source_id: (required)
-            The source OCID
+            The `OCID`__ of the source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -805,11 +877,13 @@ class ApplicationMigrationClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets the details of a work request.
+        Gets the details of the specified work request.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -878,18 +952,22 @@ class ApplicationMigrationClient(object):
 
     def list_migrations(self, compartment_id, **kwargs):
         """
-        Returns a list of migrations in a given compartment.
+        Retrieves details of all the migrations that are available in the specified compartment.
 
 
         :param str compartment_id: (required)
-            The compartment OCID on which to filter.
+            The `OCID`__ of a compartment. Retrieves details of objects in the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
         :param str id: (optional)
-            The OCID on which to query for an application.
+            The `OCID`__ on which to query for a migration.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -919,7 +997,9 @@ class ApplicationMigrationClient(object):
             Display name on which to query.
 
         :param str lifecycle_state: (optional)
-            The lifecycle state on which to filter.
+            This field is not supported. Do not use.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "SUCCEEDED", "DELETING", "DELETED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -966,6 +1046,13 @@ class ApplicationMigrationClient(object):
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "SUCCEEDED", "DELETING", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": kwargs.get("id", missing),
@@ -1007,14 +1094,20 @@ class ApplicationMigrationClient(object):
 
     def list_source_applications(self, source_id, compartment_id, **kwargs):
         """
-        Returns a list of applications running in the source environment. This list is generated dynamically by interrogating the source and changes as applications are started or stopped in that environment.
+        Retrieves details of all the applications associated with the specified source.
+        This list is generated dynamically by interrogating the source and the list changes as applications are started or
+        stopped in the source environment.
 
 
         :param str source_id: (required)
-            The source OCID
+            The `OCID`__ of the source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
-            The compartment OCID on which to filter.
+            The `OCID`__ of a compartment. Retrieves details of objects in the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1141,18 +1234,25 @@ class ApplicationMigrationClient(object):
 
     def list_sources(self, compartment_id, **kwargs):
         """
-        Returns a list of migration sources in a specified compartment.
+        Retrieves details of all the sources that are available in the specified compartment and match the specified query criteria.
+        If you don't specify any query criteria, then details of all the sources are displayed.
+        To filter the retrieved results, you can pass one or more of the following query parameters, by appending them to the URI
+        as shown in the following example.
 
 
         :param str compartment_id: (required)
-            The compartment OCID on which to filter.
+            The `OCID`__ of a compartment. Retrieves details of objects in the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
         :param str id: (optional)
-            The OCID on which to query for a source.
+            The `OCID`__ on which to query for a source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -1182,7 +1282,9 @@ class ApplicationMigrationClient(object):
             Display name on which to query.
 
         :param str lifecycle_state: (optional)
-            The lifecycle state on which to filter.
+            Retrieves details of sources in the specified lifecycle state.
+
+            Allowed values are: "CREATING", "DELETING", "UPDATING", "ACTIVE", "INACTIVE", "DELETED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1229,6 +1331,13 @@ class ApplicationMigrationClient(object):
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "DELETING", "UPDATING", "ACTIVE", "INACTIVE", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": kwargs.get("id", missing),
@@ -1270,11 +1379,13 @@ class ApplicationMigrationClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Gets the errors for a work request.
+        Retrieves details of the errors encountered while executing an operation that is tracked by the specified work request.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -1379,11 +1490,13 @@ class ApplicationMigrationClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Gets the logs for a work request.
+        Retrieves logs for the specified work request.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -1488,14 +1601,18 @@ class ApplicationMigrationClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists the work requests in a compartment or for a specified resource.
+        Retrieves details of all the work requests and match the specified query criteria. To filter the retrieved results, you can pass one or more of the following query parameters, by appending them to the URI as shown in the following example.
 
 
         :param str compartment_id: (required)
-            The compartment OCID on which to filter.
+            The `OCID`__ of a compartment. Retrieves details of objects in the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_id: (optional)
-            The OCID of the resource.
+            The `OCID`__ for a resource. Retrieves details of the specified resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1577,15 +1694,39 @@ class ApplicationMigrationClient(object):
 
     def migrate_application(self, migration_id, **kwargs):
         """
-        Validates target configuration and migrates a PaaS application running in a Source environment into the customers Oracle Cloud Infrastructure tenancy. This an optional action and only required if automatic start of migration was not selected when creating the migration.
+        Starts migrating the specified application to Oracle Cloud Infrastructure.
+
+        Before sending this request, ensure that you have provided configuration details to update the migration and the state of the migration
+        is <code>READY</code>.
+
+        After you send this request, the migration's state will temporarily be <code>MIGRATING</code>.
+
+        To track the progress of the operation, you can monitor the status of the Migrate Application work request by using the
+        <code>:func:`get_work_request`</code> REST API operation on the work request or by viewing the status of the work request in the console.
+        When this work request is processed successfully, Application Migration creates the required resources in the target environment
+        and the state of the migration changes to <code>MIGRATION_SUCCEEDED</code>.
 
 
         :param str migration_id: (required)
-            The application OCID
+            The `OCID`__ of the migration.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of retrying the same action. Retry tokens expire after
+            24 hours, but can be invalidated before then due to conflicting operations. For example,
+            if a resource has been deleted and purged from the system, then a retry of the original
+            creation request may be rejected.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1604,7 +1745,9 @@ class ApplicationMigrationClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1624,7 +1767,9 @@ class ApplicationMigrationClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1633,6 +1778,8 @@ class ApplicationMigrationClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1648,11 +1795,43 @@ class ApplicationMigrationClient(object):
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
-        Update the configuration for an application migration.
+        Updates the configuration details for the specified migration.
+
+        When you create a migration, Application Migration sets the template for the <code>serviceConfig</code> and <code>applicationConfig</code>
+        attributes of the migration.
+        When you update the migration, you must provide values for these fields to specify configuration information for the application in the
+        target environment.
+
+
+
+        Before updating the migration, complete the following tasks:
+        <ol>
+        <li>Identify the migration that you want to update and ensure that the migration is in the <code>MISSING_CONFIG_VALUES</code> state.</li>
+        <li>Get details of the migration using the <code>GetMigration</code> command. This returns the  template for the <code>serviceConfig</code>
+        and <code>applicationConfig</code> attributes of the migration.</li>
+        <li>You must fill out the required details for the <code>serviceConfig</code> and <code>applicationConfig</code> attributes.
+        The <code>isRequired</code> attribute of a configuration property indicates whether it is mandatory to provide a value.</li>
+        <li>You can provide values for the optional configuration properties or you can delete the optional properties for which you do not
+        provide values. Note that you cannot add any property that is not present in the template.</li>
+        </ol>
+
+        To update the migration, pass the configuration values in the request body. The information that you must provide depends on the type
+        of application that you are migrating. For reference information about configuration fields, see
+        `Provide Configuration Information`__.
+
+        To track the progress of the operation, you can monitor the status of the Update Migration work request by using the
+        <code>:func:`get_work_request`</code> REST API operation on the work request or by viewing the status of the work request in the console.
+
+        When the migration has been updated, the state of the migration changes to <code>READY</code>. After updating the migration,
+        you can start the migration whenever you are ready.
+
+        __ https://docs.cloud.oracle.com/iaas/application-migration/manage_migrations.htm#provide_configuration_details
 
 
         :param str migration_id: (required)
-            The application OCID
+            The `OCID`__ of the migration.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateMigrationDetails update_migration_details: (required)
             Updated configuration for the migration.
@@ -1670,7 +1849,7 @@ class ApplicationMigrationClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1742,11 +1921,16 @@ class ApplicationMigrationClient(object):
 
     def update_source(self, source_id, update_source_details, **kwargs):
         """
-        Update source details.
+        You can update the authorization details to access the source environment from which you want to migrate applications to Oracle Cloud
+        Infrastructure. You can also update the description and tags of a source.
+
+        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
 
         :param str source_id: (required)
-            The source OCID
+            The `OCID`__ of the source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateSourceDetails update_source_details: (required)
             Updated configuration for the source.
@@ -1757,7 +1941,7 @@ class ApplicationMigrationClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+            parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)

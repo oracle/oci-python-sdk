@@ -52,13 +52,28 @@ class AutonomousDbVersionSummary(object):
             The value to assign to the is_free_tier_enabled property of this AutonomousDbVersionSummary.
         :type is_free_tier_enabled: bool
 
+        :param is_paid_enabled:
+            The value to assign to the is_paid_enabled property of this AutonomousDbVersionSummary.
+        :type is_paid_enabled: bool
+
+        :param is_default_for_free:
+            The value to assign to the is_default_for_free property of this AutonomousDbVersionSummary.
+        :type is_default_for_free: bool
+
+        :param is_default_for_paid:
+            The value to assign to the is_default_for_paid property of this AutonomousDbVersionSummary.
+        :type is_default_for_paid: bool
+
         """
         self.swagger_types = {
             'version': 'str',
             'db_workload': 'str',
             'is_dedicated': 'bool',
             'details': 'str',
-            'is_free_tier_enabled': 'bool'
+            'is_free_tier_enabled': 'bool',
+            'is_paid_enabled': 'bool',
+            'is_default_for_free': 'bool',
+            'is_default_for_paid': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +81,10 @@ class AutonomousDbVersionSummary(object):
             'db_workload': 'dbWorkload',
             'is_dedicated': 'isDedicated',
             'details': 'details',
-            'is_free_tier_enabled': 'isFreeTierEnabled'
+            'is_free_tier_enabled': 'isFreeTierEnabled',
+            'is_paid_enabled': 'isPaidEnabled',
+            'is_default_for_free': 'isDefaultForFree',
+            'is_default_for_paid': 'isDefaultForPaid'
         }
 
         self._version = None
@@ -74,6 +92,9 @@ class AutonomousDbVersionSummary(object):
         self._is_dedicated = None
         self._details = None
         self._is_free_tier_enabled = None
+        self._is_paid_enabled = None
+        self._is_default_for_free = None
+        self._is_default_for_paid = None
 
     @property
     def version(self):
@@ -212,6 +233,78 @@ class AutonomousDbVersionSummary(object):
         :type: bool
         """
         self._is_free_tier_enabled = is_free_tier_enabled
+
+    @property
+    def is_paid_enabled(self):
+        """
+        Gets the is_paid_enabled of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software has payments enabled.
+
+
+        :return: The is_paid_enabled of this AutonomousDbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_paid_enabled
+
+    @is_paid_enabled.setter
+    def is_paid_enabled(self, is_paid_enabled):
+        """
+        Sets the is_paid_enabled of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software has payments enabled.
+
+
+        :param is_paid_enabled: The is_paid_enabled of this AutonomousDbVersionSummary.
+        :type: bool
+        """
+        self._is_paid_enabled = is_paid_enabled
+
+    @property
+    def is_default_for_free(self):
+        """
+        Gets the is_default_for_free of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software's default is free.
+
+
+        :return: The is_default_for_free of this AutonomousDbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_default_for_free
+
+    @is_default_for_free.setter
+    def is_default_for_free(self, is_default_for_free):
+        """
+        Sets the is_default_for_free of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software's default is free.
+
+
+        :param is_default_for_free: The is_default_for_free of this AutonomousDbVersionSummary.
+        :type: bool
+        """
+        self._is_default_for_free = is_default_for_free
+
+    @property
+    def is_default_for_paid(self):
+        """
+        Gets the is_default_for_paid of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software's default is paid.
+
+
+        :return: The is_default_for_paid of this AutonomousDbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_default_for_paid
+
+    @is_default_for_paid.setter
+    def is_default_for_paid(self, is_default_for_paid):
+        """
+        Sets the is_default_for_paid of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software's default is paid.
+
+
+        :param is_default_for_paid: The is_default_for_paid of this AutonomousDbVersionSummary.
+        :type: bool
+        """
+        self._is_default_for_paid = is_default_for_paid
 
     def __repr__(self):
         return formatted_flat_dict(self)

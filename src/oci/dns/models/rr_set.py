@@ -39,7 +39,7 @@ class RRSet(object):
     @property
     def items(self):
         """
-        Gets the items of this RRSet.
+        **[Required]** Gets the items of this RRSet.
 
         :return: The items of this RRSet.
         :rtype: list[Record]

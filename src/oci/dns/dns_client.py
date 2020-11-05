@@ -86,6 +86,126 @@ class DnsClient(object):
         self.base_client = BaseClient("dns", config, signer, dns_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def change_resolver_compartment(self, resolver_id, change_resolver_compartment_details, **kwargs):
+        """
+        Moves a resolver into a different compartment along with its protected default view and any endpoints.
+        Zones in the default view are not moved.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param ChangeResolverCompartmentDetails change_resolver_compartment_details: (required)
+            Details for moving a resolver, along with its protected default view and endpoints, into a
+            different compartment.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_resolver_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=change_resolver_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=change_resolver_compartment_details)
+
     def change_steering_policy_compartment(self, steering_policy_id, change_steering_policy_compartment_details, **kwargs):
         """
         Moves a steering policy into a different compartment.
@@ -117,6 +237,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -136,7 +261,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -152,6 +278,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -174,6 +312,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_steering_policy_compartment_details)
         else:
@@ -181,6 +320,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_steering_policy_compartment_details)
 
@@ -215,6 +355,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -234,7 +379,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -250,6 +396,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -272,6 +430,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_tsig_key_compartment_details)
         else:
@@ -279,12 +438,132 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_tsig_key_compartment_details)
 
+    def change_view_compartment(self, view_id, change_view_compartment_details, **kwargs):
+        """
+        Moves a view into a different compartment. Protected views cannot have their compartment changed.
+
+
+        :param str view_id: (required)
+            The OCID of the target view.
+
+        :param ChangeViewCompartmentDetails change_view_compartment_details: (required)
+            Details for moving a view into a different compartment.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/views/{viewId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_view_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "viewId": view_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=change_view_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=change_view_compartment_details)
+
     def change_zone_compartment(self, zone_id, change_zone_compartment_details, **kwargs):
         """
-        Moves a zone into a different compartment.
+        Moves a zone into a different compartment. Protected zones cannot have their compartment changed.
+
         **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
 
 
@@ -314,6 +593,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -333,7 +617,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -349,6 +634,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -371,6 +668,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_zone_compartment_details)
         else:
@@ -378,8 +676,120 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_zone_compartment_details)
+
+    def create_resolver_endpoint(self, resolver_id, create_resolver_endpoint_details, **kwargs):
+        """
+        Creates a new resolver endpoint.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param CreateResolverEndpointDetails create_resolver_endpoint_details: (required)
+            Details for creating a new resolver endpoint.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.ResolverEndpoint`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}/endpoints"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_resolver_endpoint_details,
+                response_type="ResolverEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_resolver_endpoint_details,
+                response_type="ResolverEndpoint")
 
     def create_steering_policy(self, create_steering_policy_details, **kwargs):
         """
@@ -405,6 +815,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -423,12 +838,25 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -449,6 +877,7 @@ class DnsClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_details,
                 response_type="SteeringPolicy")
@@ -456,6 +885,7 @@ class DnsClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_details,
                 response_type="SteeringPolicy")
@@ -486,6 +916,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -504,12 +939,25 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -530,6 +978,7 @@ class DnsClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_attachment_details,
                 response_type="SteeringPolicyAttachment")
@@ -537,6 +986,7 @@ class DnsClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_attachment_details,
                 response_type="SteeringPolicyAttachment")
@@ -555,6 +1005,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -572,12 +1027,25 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -595,6 +1063,7 @@ class DnsClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_tsig_key_details,
                 response_type="TsigKey")
@@ -602,15 +1071,112 @@ class DnsClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_tsig_key_details,
                 response_type="TsigKey")
 
+    def create_view(self, create_view_details, **kwargs):
+        """
+        Creates a new view in the specified compartment.
+
+
+        :param CreateViewDetails create_view_details: (required)
+            Details for creating a new view.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.View`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/views"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_view got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_view_details,
+                response_type="View")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_view_details,
+                response_type="View")
+
     def create_zone(self, create_zone_details, **kwargs):
         """
-        Creates a new zone in the specified compartment. The `compartmentId`
-        query parameter is required if the `Content-Type` header for the
-        request is `text/dns`.
+        Creates a new zone in the specified compartment. If the `Content-Type` header for the request is `text/dns`, the
+        `compartmentId` query parameter is required. Additionally, for `text/dns`, the `scope` and `viewId` query
+        parameters are required to create a private zone.
 
 
         :param CreateZoneBaseDetails create_zone_details: (required)
@@ -623,6 +1189,14 @@ class DnsClient(object):
 
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -642,15 +1216,26 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
-            "compartment_id"
+            "compartment_id",
+            "scope",
+            "view_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_zone got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -713,6 +1298,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -736,6 +1329,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -754,8 +1349,133 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+
+    def delete_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
+        """
+        Deletes the specified resolver endpoint. Note that attempting to delete a resolver endpoint in the
+        DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+        Resolver endpoints may not be deleted if they are referenced by a resolver rule.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param str resolver_endpoint_name: (required)
+            The name of the target resolver endpoint.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id,
+            "resolverEndpointName": resolver_endpoint_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -824,6 +1544,14 @@ class DnsClient(object):
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -844,7 +1572,9 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
-            "compartment_id"
+            "compartment_id",
+            "scope",
+            "view_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -863,8 +1593,17 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -927,6 +1666,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -946,7 +1690,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -962,6 +1707,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -982,12 +1739,14 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def delete_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
@@ -1018,6 +1777,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1037,7 +1801,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1053,6 +1818,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1073,12 +1850,14 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def delete_tsig_key(self, tsig_key_id, **kwargs):
@@ -1108,6 +1887,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1127,7 +1911,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1143,6 +1928,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1163,18 +1960,135 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+
+    def delete_view(self, view_id, **kwargs):
+        """
+        Deletes the specified view. Note that attempting to delete a
+        view in the DELETED lifecycleState will result in a 404 to be
+        consistent with other operations of the API. Views can not be
+        deleted if they are referenced by non-deleted zones or resolvers.
+        Protected views cannot be deleted.
+
+
+        :param str view_id: (required)
+            The OCID of the target view.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/views/{viewId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_view got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "viewId": view_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
         Deletes the specified zone and all its steering policy attachments.
-        A `204` response indicates that zone has been successfully deleted.
+        A `204` response indicates that the zone has been successfully deleted.
+        Protected zones cannot be deleted.
 
 
         :param str zone_name_or_id: (required)
@@ -1199,6 +2113,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -1222,6 +2144,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1239,7 +2163,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -1318,6 +2251,14 @@ class DnsClient(object):
 
             __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str sort_by: (optional)
             The field by which to sort records.
 
@@ -1355,6 +2296,8 @@ class DnsClient(object):
             "page",
             "zone_version",
             "rtype",
+            "scope",
+            "view_id",
             "sort_by",
             "sort_order",
             "compartment_id"
@@ -1375,6 +2318,13 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["rtype", "ttl"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
@@ -1394,6 +2344,8 @@ class DnsClient(object):
             "page": kwargs.get("page", missing),
             "zoneVersion": kwargs.get("zone_version", missing),
             "rtype": kwargs.get("rtype", missing),
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -1430,6 +2382,233 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="RecordCollection")
+
+    def get_resolver(self, resolver_id, **kwargs):
+        """
+        Get information about a specific resolver. Note that attempting to get a
+        resolver in the DELETED lifecycleState will result in a 404 to be
+        consistent with other operations of the API.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.Resolver`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_modified_since",
+            "if_none_match",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_resolver got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Resolver")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Resolver")
+
+    def get_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
+        """
+        Get information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
+        in the DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param str resolver_endpoint_name: (required)
+            The name of the target resolver endpoint.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.ResolverEndpoint`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_modified_since",
+            "if_none_match",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id,
+            "resolverEndpointName": resolver_endpoint_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResolverEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResolverEndpoint")
 
     def get_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
@@ -1475,6 +2654,14 @@ class DnsClient(object):
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1498,7 +2685,9 @@ class DnsClient(object):
             "limit",
             "page",
             "zone_version",
-            "compartment_id"
+            "compartment_id",
+            "scope",
+            "view_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1517,11 +2706,20 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "zoneVersion": kwargs.get("zone_version", missing),
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1581,6 +2779,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1600,7 +2803,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1616,6 +2820,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1636,6 +2852,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="SteeringPolicy")
         else:
@@ -1643,6 +2860,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="SteeringPolicy")
 
@@ -1671,6 +2889,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1690,7 +2913,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1706,6 +2930,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1726,6 +2962,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="SteeringPolicyAttachment")
         else:
@@ -1733,6 +2970,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="SteeringPolicyAttachment")
 
@@ -1761,6 +2999,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1780,7 +3023,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1796,6 +3040,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1816,6 +3072,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="TsigKey")
         else:
@@ -1823,8 +3080,121 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="TsigKey")
+
+    def get_view(self, view_id, **kwargs):
+        """
+        Get information about a specific view. Note that attempting to get a
+        view in the DELETED lifecycleState will result in a 404 to be
+        consistent with other operations of the API.
+
+
+        :param str view_id: (required)
+            The OCID of the target view.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.View`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/views/{viewId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_modified_since",
+            "if_none_match",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_view got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "viewId": view_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="View")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="View")
 
     def get_zone(self, zone_name_or_id, **kwargs):
         """
@@ -1852,6 +3222,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -1875,6 +3253,8 @@ class DnsClient(object):
             "if_none_match",
             "if_modified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1892,7 +3272,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -1993,6 +3382,14 @@ class DnsClient(object):
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2021,7 +3418,9 @@ class DnsClient(object):
             "rtype",
             "sort_by",
             "sort_order",
-            "compartment_id"
+            "compartment_id",
+            "scope",
+            "view_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2052,6 +3451,13 @@ class DnsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2061,7 +3467,9 @@ class DnsClient(object):
             "rtype": kwargs.get("rtype", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2095,6 +3503,310 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="RecordCollection")
+
+    def list_resolver_endpoints(self, resolver_id, **kwargs):
+        """
+        Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
+        It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
+        query parameter is provided that the collection does not include resolver endpoints in the DELETED
+        lifecycle state to be consistent with other operations of the API.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str name: (optional)
+            The name of a resource.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a page of the collection.
+
+        :param str sort_order: (optional)
+            The order to sort the resources.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field by which to sort resolver endpoints.
+
+            Allowed values are: "name", "timeCreated"
+
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.ResolverEndpointSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}/endpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "lifecycle_state",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resolver_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name", "timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ResolverEndpointSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ResolverEndpointSummary]")
+
+    def list_resolvers(self, compartment_id, **kwargs):
+        """
+        Gets a list of all resolvers within a compartment. The collection can
+        be filtered by display name, id, or lifecycle state. It can be sorted
+        on creation time or displayName both in ASC or DESC order. Note that
+        when no lifecycleState query parameter is provided that the collection
+        does not include resolvers in the DELETED lifecycleState to be consistent
+        with other operations of the API.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str display_name: (optional)
+            The displayName of a resource.
+
+        :param str id: (optional)
+            The OCID of a resource.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a page of the collection.
+
+        :param str sort_order: (optional)
+            The order to sort the resources.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field by which to sort resolvers.
+
+            Allowed values are: "displayName", "timeCreated"
+
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.ResolverSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "display_name",
+            "id",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "lifecycle_state",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resolvers got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName", "timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "id": kwargs.get("id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ResolverSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ResolverSummary]")
 
     def list_steering_policies(self, compartment_id, **kwargs):
         """
@@ -2160,6 +3872,11 @@ class DnsClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2189,7 +3906,8 @@ class DnsClient(object):
             "template",
             "lifecycle_state",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2217,6 +3935,13 @@ class DnsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2230,7 +3955,8 @@ class DnsClient(object):
             "template": kwargs.get("template", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "scope": kwargs.get("scope", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2329,6 +4055,11 @@ class DnsClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2359,7 +4090,8 @@ class DnsClient(object):
             "time_created_less_than",
             "lifecycle_state",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2387,6 +4119,13 @@ class DnsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2401,7 +4140,8 @@ class DnsClient(object):
             "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "scope": kwargs.get("scope", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2472,6 +4212,11 @@ class DnsClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2496,7 +4241,8 @@ class DnsClient(object):
             "name",
             "lifecycle_state",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2524,6 +4270,13 @@ class DnsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2532,7 +4285,8 @@ class DnsClient(object):
             "name": kwargs.get("name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "scope": kwargs.get("scope", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2563,10 +4317,160 @@ class DnsClient(object):
                 header_params=header_params,
                 response_type="list[TsigKeySummary]")
 
+    def list_views(self, compartment_id, **kwargs):
+        """
+        Gets a list of all views within a compartment. The collection can
+        be filtered by display name, id, or lifecycle state. It can be sorted
+        on creation time or displayName both in ASC or DESC order. Note that
+        when no lifecycleState query parameter is provided that the collection
+        does not include views in the DELETED lifecycleState to be consistent
+        with other operations of the API.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str display_name: (optional)
+            The displayName of a resource.
+
+        :param str id: (optional)
+            The OCID of a resource.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a page of the collection.
+
+        :param str sort_order: (optional)
+            The order to sort the resources.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field by which to sort views.
+
+            Allowed values are: "displayName", "timeCreated"
+
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "ACTIVE", "DELETED", "DELETING", "UPDATING"
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.ViewSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/views"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "display_name",
+            "id",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "lifecycle_state",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_views got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName", "timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "DELETED", "DELETING", "UPDATING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "id": kwargs.get("id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ViewSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ViewSummary]")
+
     def list_zones(self, compartment_id, **kwargs):
         """
         Gets a list of all zones in the specified compartment. The collection
-        can be filtered by name, time created, and zone type.
+        can be filtered by name, time created, scope, associated view, and zone type.
 
 
         :param str compartment_id: (required)
@@ -2624,6 +4528,14 @@ class DnsClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2651,7 +4563,9 @@ class DnsClient(object):
             "time_created_less_than",
             "lifecycle_state",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "scope",
+            "view_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2686,6 +4600,13 @@ class DnsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2697,7 +4618,9 @@ class DnsClient(object):
             "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2764,6 +4687,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2787,6 +4718,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2805,7 +4738,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -2879,6 +4821,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2902,6 +4852,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2921,7 +4873,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -2992,6 +4953,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -3015,6 +4984,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3032,7 +5003,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -3108,6 +5088,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -3131,6 +5119,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3149,7 +5139,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -3187,6 +5186,244 @@ class DnsClient(object):
                 body=update_domain_records_details,
                 response_type="RecordCollection")
 
+    def update_resolver(self, resolver_id, update_resolver_details, **kwargs):
+        """
+        Updates the specified resolver with your new information.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param UpdateResolverDetails update_resolver_details: (required)
+            New data for the resolver.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.Resolver`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_resolver got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_resolver_details,
+                response_type="Resolver")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_resolver_details,
+                response_type="Resolver")
+
+    def update_resolver_endpoint(self, resolver_id, resolver_endpoint_name, update_resolver_endpoint_details, **kwargs):
+        """
+        Updates the specified resolver endpoint with your new information.
+
+
+        :param str resolver_id: (required)
+            The OCID of the target resolver.
+
+        :param str resolver_endpoint_name: (required)
+            The name of the target resolver endpoint.
+
+        :param UpdateResolverEndpointDetails update_resolver_endpoint_details: (required)
+            New data for the resolver endpoint.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.ResolverEndpoint`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resolverId": resolver_id,
+            "resolverEndpointName": resolver_endpoint_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_resolver_endpoint_details,
+                response_type="ResolverEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_resolver_endpoint_details,
+                response_type="ResolverEndpoint")
+
     def update_rr_set(self, zone_name_or_id, domain, rtype, update_rr_set_details, **kwargs):
         """
         Replaces records in the specified RRSet.
@@ -3223,6 +5460,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -3246,6 +5491,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3265,7 +5512,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -3333,6 +5589,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3352,7 +5613,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3368,6 +5630,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -3388,6 +5662,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_details,
                 response_type="SteeringPolicy")
@@ -3396,6 +5671,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_details,
                 response_type="SteeringPolicy")
@@ -3430,6 +5706,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3449,7 +5730,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3465,6 +5747,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -3485,6 +5779,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_attachment_details,
                 response_type="SteeringPolicyAttachment")
@@ -3493,6 +5788,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_attachment_details,
                 response_type="SteeringPolicyAttachment")
@@ -3527,6 +5823,11 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3546,7 +5847,8 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
-            "opc_request_id"
+            "opc_request_id",
+            "scope"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3562,6 +5864,18 @@ class DnsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -3582,6 +5896,7 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_tsig_key_details,
                 response_type="TsigKey")
@@ -3590,9 +5905,127 @@ class DnsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_tsig_key_details,
                 response_type="TsigKey")
+
+    def update_view(self, view_id, update_view_details, **kwargs):
+        """
+        Updates the specified view with your new information.
+
+
+        :param str view_id: (required)
+            The OCID of the target view.
+
+        :param UpdateViewDetails update_view_details: (required)
+            New data for the view.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.View`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/views/{viewId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_view got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "viewId": view_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_view_details,
+                response_type="View")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_view_details,
+                response_type="View")
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
@@ -3628,6 +6061,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -3651,6 +6092,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3668,7 +6111,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -3740,6 +6192,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -3763,6 +6223,8 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since",
             "opc_request_id",
+            "scope",
+            "view_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3780,7 +6242,16 @@ class DnsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
         query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

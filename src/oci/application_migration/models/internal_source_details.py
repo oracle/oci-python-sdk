@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InternalSourceDetails(SourceDetails):
     """
-    Specifies configuration specific to the source environment.
+    Details about the Oracle Cloud Infrastructure - Classic account, the source environment from which you want to migrate the application.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class InternalSourceDetails(SourceDetails):
     def account_name(self):
         """
         **[Required]** Gets the account_name of this InternalSourceDetails.
-        The tradition cloud account name
+        The identity domain ID of your traditional Oracle Cloud Infrastructure - Classic account.
 
 
         :return: The account_name of this InternalSourceDetails.
@@ -59,7 +59,7 @@ class InternalSourceDetails(SourceDetails):
     def account_name(self, account_name):
         """
         Sets the account_name of this InternalSourceDetails.
-        The tradition cloud account name
+        The identity domain ID of your traditional Oracle Cloud Infrastructure - Classic account.
 
 
         :param account_name: The account_name of this InternalSourceDetails.
