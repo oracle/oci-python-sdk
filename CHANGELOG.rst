@@ -4,12 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.23.5 - TBD
+2.23.5 - 2020-11-10
 ====================
 
 Added
 -----
-* TBD
+* Support for the 21C autonomous database version in the Database service
+* Support for creating a Data Guard association with a standby database from a database software image in the Database service
+* Support for specifying a TDE wallet password when creating a database or database system in the Database service
+* Support for enabling access control lists for autonomous databases on Exadata Cloud At Customer in the Database service
+* Support for private DNS resolvers, resolver endpoints, and views in the DNS service
+* Support for getting a VCN and resolver association in the Networking service
+* Support for additional parameters when updating subnets and VLANs in the Networking service
+* Support for analytics clusters (database accelerators) in the MySQL Database service
+* Support for migrations to Java Cloud Service and Oracle Weblogic Server instances that use existing databases in the Application Migration service
+* Support for specifying reserved IPs when creating load balancers in the Load Balancing service
+
+Changed
+-------
+* Removed support for Python 3.5, since it is end of life
+* Support for Python 3.7, 3.8 and 3.9
 
 ====================
 2.23.4 - 2020-11-03
