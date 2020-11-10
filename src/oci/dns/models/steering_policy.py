@@ -166,7 +166,7 @@ class SteeringPolicy(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this SteeringPolicy.
+        **[Required]** Gets the compartment_id of this SteeringPolicy.
         The OCID of the compartment containing the steering policy.
 
 
@@ -190,7 +190,7 @@ class SteeringPolicy(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this SteeringPolicy.
+        **[Required]** Gets the display_name of this SteeringPolicy.
         A user-friendly name for the steering policy. Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
@@ -216,7 +216,7 @@ class SteeringPolicy(object):
     @property
     def ttl(self):
         """
-        Gets the ttl of this SteeringPolicy.
+        **[Required]** Gets the ttl of this SteeringPolicy.
         The Time To Live (TTL) for responses from the steering policy, in seconds.
         If not specified during creation, a value of 30 seconds will be used.
 
@@ -286,7 +286,7 @@ class SteeringPolicy(object):
     @property
     def template(self):
         """
-        Gets the template of this SteeringPolicy.
+        **[Required]** Gets the template of this SteeringPolicy.
         A set of predefined rules based on the desired purpose of the steering policy. Each
         template utilizes Traffic Management's rules in a different order to produce the desired
         results when answering DNS queries.
@@ -402,7 +402,7 @@ class SteeringPolicy(object):
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this SteeringPolicy.
+        **[Required]** Gets the freeform_tags of this SteeringPolicy.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
 
@@ -438,7 +438,7 @@ class SteeringPolicy(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this SteeringPolicy.
+        **[Required]** Gets the defined_tags of this SteeringPolicy.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -474,7 +474,7 @@ class SteeringPolicy(object):
     @property
     def answers(self):
         """
-        Gets the answers of this SteeringPolicy.
+        **[Required]** Gets the answers of this SteeringPolicy.
         The set of all answers that can potentially issue from the steering policy.
 
 
@@ -498,7 +498,7 @@ class SteeringPolicy(object):
     @property
     def rules(self):
         """
-        Gets the rules of this SteeringPolicy.
+        **[Required]** Gets the rules of this SteeringPolicy.
         The series of rules that will be processed in sequence to reduce the pool of answers
         to a response for any given request.
 
@@ -534,7 +534,7 @@ class SteeringPolicy(object):
     @property
     def _self(self):
         """
-        Gets the _self of this SteeringPolicy.
+        **[Required]** Gets the _self of this SteeringPolicy.
         The canonical absolute URL of the resource.
 
 
@@ -558,7 +558,7 @@ class SteeringPolicy(object):
     @property
     def id(self):
         """
-        Gets the id of this SteeringPolicy.
+        **[Required]** Gets the id of this SteeringPolicy.
         The OCID of the resource.
 
 
@@ -582,7 +582,7 @@ class SteeringPolicy(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this SteeringPolicy.
+        **[Required]** Gets the time_created of this SteeringPolicy.
         The date and time the resource was created, expressed in RFC 3339 timestamp format.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -610,7 +610,7 @@ class SteeringPolicy(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this SteeringPolicy.
+        **[Required]** Gets the lifecycle_state of this SteeringPolicy.
         The current state of the resource.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.

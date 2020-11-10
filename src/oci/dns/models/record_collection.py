@@ -36,7 +36,7 @@ class RecordCollection(object):
     @property
     def items(self):
         """
-        Gets the items of this RecordCollection.
+        **[Required]** Gets the items of this RecordCollection.
 
         :return: The items of this RecordCollection.
         :rtype: list[Record]

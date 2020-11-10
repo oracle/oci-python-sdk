@@ -34,6 +34,14 @@ class DbSystemSummary(object):
             The value to assign to the compartment_id property of this DbSystemSummary.
         :type compartment_id: str
 
+        :param is_analytics_cluster_attached:
+            The value to assign to the is_analytics_cluster_attached property of this DbSystemSummary.
+        :type is_analytics_cluster_attached: bool
+
+        :param analytics_cluster:
+            The value to assign to the analytics_cluster property of this DbSystemSummary.
+        :type analytics_cluster: AnalyticsClusterSummary
+
         :param availability_domain:
             The value to assign to the availability_domain property of this DbSystemSummary.
         :type availability_domain: str
@@ -76,6 +84,8 @@ class DbSystemSummary(object):
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
+            'is_analytics_cluster_attached': 'bool',
+            'analytics_cluster': 'AnalyticsClusterSummary',
             'availability_domain': 'str',
             'fault_domain': 'str',
             'endpoints': 'list[DbSystemEndpoint]',
@@ -92,6 +102,8 @@ class DbSystemSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
+            'is_analytics_cluster_attached': 'isAnalyticsClusterAttached',
+            'analytics_cluster': 'analyticsCluster',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'endpoints': 'endpoints',
@@ -107,6 +119,8 @@ class DbSystemSummary(object):
         self._display_name = None
         self._description = None
         self._compartment_id = None
+        self._is_analytics_cluster_attached = None
+        self._analytics_cluster = None
         self._availability_domain = None
         self._fault_domain = None
         self._endpoints = None
@@ -212,6 +226,50 @@ class DbSystemSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def is_analytics_cluster_attached(self):
+        """
+        Gets the is_analytics_cluster_attached of this DbSystemSummary.
+        If the DB System has an Analytics Cluster attached.
+
+
+        :return: The is_analytics_cluster_attached of this DbSystemSummary.
+        :rtype: bool
+        """
+        return self._is_analytics_cluster_attached
+
+    @is_analytics_cluster_attached.setter
+    def is_analytics_cluster_attached(self, is_analytics_cluster_attached):
+        """
+        Sets the is_analytics_cluster_attached of this DbSystemSummary.
+        If the DB System has an Analytics Cluster attached.
+
+
+        :param is_analytics_cluster_attached: The is_analytics_cluster_attached of this DbSystemSummary.
+        :type: bool
+        """
+        self._is_analytics_cluster_attached = is_analytics_cluster_attached
+
+    @property
+    def analytics_cluster(self):
+        """
+        Gets the analytics_cluster of this DbSystemSummary.
+
+        :return: The analytics_cluster of this DbSystemSummary.
+        :rtype: AnalyticsClusterSummary
+        """
+        return self._analytics_cluster
+
+    @analytics_cluster.setter
+    def analytics_cluster(self, analytics_cluster):
+        """
+        Sets the analytics_cluster of this DbSystemSummary.
+
+        :param analytics_cluster: The analytics_cluster of this DbSystemSummary.
+        :type: AnalyticsClusterSummary
+        """
+        self._analytics_cluster = analytics_cluster
 
     @property
     def availability_domain(self):

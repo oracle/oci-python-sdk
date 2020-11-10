@@ -13,6 +13,74 @@ class WorkRequestSummary(object):
     A summary of the status of a work request.
     """
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_SOURCE"
+    OPERATION_TYPE_CREATE_SOURCE = "CREATE_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_SOURCE"
+    OPERATION_TYPE_UPDATE_SOURCE = "UPDATE_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_SOURCE"
+    OPERATION_TYPE_DELETE_SOURCE = "DELETE_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_MIGRATION"
+    OPERATION_TYPE_CREATE_MIGRATION = "CREATE_MIGRATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_MIGRATION"
+    OPERATION_TYPE_UPDATE_MIGRATION = "UPDATE_MIGRATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_MIGRATION"
+    OPERATION_TYPE_DELETE_MIGRATION = "DELETE_MIGRATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "AUTHORIZE_SOURCE"
+    OPERATION_TYPE_AUTHORIZE_SOURCE = "AUTHORIZE_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DISCOVER_APPLICATION"
+    OPERATION_TYPE_DISCOVER_APPLICATION = "DISCOVER_APPLICATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "MIGRATE_APPLICATION"
+    OPERATION_TYPE_MIGRATE_APPLICATION = "MIGRATE_APPLICATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_SOURCE_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_SOURCE_COMPARTMENT = "CHANGE_SOURCE_COMPARTMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_MIGRATION_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_MIGRATION_COMPARTMENT = "CHANGE_MIGRATION_COMPARTMENT"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "ACCEPTED"
+    STATUS_ACCEPTED = "ACCEPTED"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "IN_PROGRESS"
+    STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "FAILED"
+    STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "SUCCEEDED"
+    STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "CANCELING"
+    STATUS_CANCELING = "CANCELING"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "CANCELED"
+    STATUS_CANCELED = "CANCELED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSummary object with values from keyword arguments.
@@ -20,10 +88,14 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
+            Allowed values for this property are: "CREATE_SOURCE", "UPDATE_SOURCE", "DELETE_SOURCE", "CREATE_MIGRATION", "UPDATE_MIGRATION", "DELETE_MIGRATION", "AUTHORIZE_SOURCE", "DISCOVER_APPLICATION", "MIGRATE_APPLICATION", "CHANGE_SOURCE_COMPARTMENT", "CHANGE_MIGRATION_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param status:
             The value to assign to the status property of this WorkRequestSummary.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
         :param id:
@@ -88,6 +160,9 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The asynchronous operation tracked by this work request.
 
+        Allowed values for this property are: "CREATE_SOURCE", "UPDATE_SOURCE", "DELETE_SOURCE", "CREATE_MIGRATION", "UPDATE_MIGRATION", "DELETE_MIGRATION", "AUTHORIZE_SOURCE", "DISCOVER_APPLICATION", "MIGRATE_APPLICATION", "CHANGE_SOURCE_COMPARTMENT", "CHANGE_MIGRATION_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The operation_type of this WorkRequestSummary.
         :rtype: str
@@ -104,6 +179,9 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
+        allowed_values = ["CREATE_SOURCE", "UPDATE_SOURCE", "DELETE_SOURCE", "CREATE_MIGRATION", "UPDATE_MIGRATION", "DELETE_MIGRATION", "AUTHORIZE_SOURCE", "DISCOVER_APPLICATION", "MIGRATE_APPLICATION", "CHANGE_SOURCE_COMPARTMENT", "CHANGE_MIGRATION_COMPARTMENT"]
+        if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
+            operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
 
     @property
@@ -111,6 +189,9 @@ class WorkRequestSummary(object):
         """
         **[Required]** Gets the status of this WorkRequestSummary.
         The status of the work request.
+
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The status of this WorkRequestSummary.
@@ -128,6 +209,9 @@ class WorkRequestSummary(object):
         :param status: The status of this WorkRequestSummary.
         :type: str
         """
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
 
     @property
@@ -192,7 +276,7 @@ class WorkRequestSummary(object):
     def percent_complete(self):
         """
         **[Required]** Gets the percent_complete of this WorkRequestSummary.
-        The percentage complete of the operation tracked by this work request.
+        The percentage completion of the operation tracked by this work request.
 
 
         :return: The percent_complete of this WorkRequestSummary.
@@ -204,7 +288,7 @@ class WorkRequestSummary(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequestSummary.
-        The percentage complete of the operation tracked by this work request.
+        The percentage completion of the operation tracked by this work request.
 
 
         :param percent_complete: The percent_complete of this WorkRequestSummary.

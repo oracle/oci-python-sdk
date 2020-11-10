@@ -10,9 +10,40 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Source(object):
     """
-    The Source object. Sources represent external locations from which
-    applications may be imported into an OCI tenancy.
+    The properties that define a source. Source refers to the source environment from which you migrate an application to Oracle Cloud
+    Infrastructure. For more information, see `Manage Sources`__.
+
+    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're
+    an administrator who needs to write policies to give users access, see `Getting Started with
+    Policies`__.
+
+    __ https://docs.cloud.oracle.com/iaas/application-migration/manage_sources.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
+
+    #: A constant which can be used with the lifecycle_state property of a Source.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Source.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Source.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Source.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Source.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Source.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """
@@ -41,6 +72,8 @@ class Source(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Source.
+            Allowed values for this property are: "CREATING", "DELETING", "UPDATING", "ACTIVE", "INACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -101,7 +134,9 @@ class Source(object):
     def id(self):
         """
         Gets the id of this Source.
-        Unique identifier (OCID) for the source
+        The `OCID`__ of the source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Source.
@@ -113,7 +148,9 @@ class Source(object):
     def id(self, id):
         """
         Sets the id of this Source.
-        Unique identifier (OCID) for the source
+        The `OCID`__ of the source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Source.
@@ -125,7 +162,9 @@ class Source(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Source.
-        Unique idenfifier (OCID) for the compartment where the Source is located.
+        The `OCID`__ of the compartment that contains the source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Source.
@@ -137,7 +176,9 @@ class Source(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Source.
-        Unique idenfifier (OCID) for the compartment where the Source is located.
+        The `OCID`__ of the compartment that contains the source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Source.
@@ -149,7 +190,7 @@ class Source(object):
     def display_name(self):
         """
         Gets the display_name of this Source.
-        Human-readable name of the source.
+        Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :return: The display_name of this Source.
@@ -161,7 +202,7 @@ class Source(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Source.
-        Human-readable name of the source.
+        Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :param display_name: The display_name of this Source.
@@ -173,7 +214,7 @@ class Source(object):
     def description(self):
         """
         Gets the description of this Source.
-        Description of the source.
+        Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :return: The description of this Source.
@@ -185,7 +226,7 @@ class Source(object):
     def description(self, description):
         """
         Sets the description of this Source.
-        Description of the source.
+        Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :param description: The description of this Source.
@@ -197,7 +238,7 @@ class Source(object):
     def time_created(self):
         """
         Gets the time_created of this Source.
-        The date and time at which the source was created
+        The date and time at which the source was created, in the format defined by RFC3339.
 
 
         :return: The time_created of this Source.
@@ -209,7 +250,7 @@ class Source(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Source.
-        The date and time at which the source was created
+        The date and time at which the source was created, in the format defined by RFC3339.
 
 
         :param time_created: The time_created of this Source.
@@ -221,7 +262,10 @@ class Source(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Source.
-        The current state of the Source
+        The current state of the source.
+
+        Allowed values for this property are: "CREATING", "DELETING", "UPDATING", "ACTIVE", "INACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this Source.
@@ -233,19 +277,22 @@ class Source(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Source.
-        The current state of the Source
+        The current state of the source.
 
 
         :param lifecycle_state: The lifecycle_state of this Source.
         :type: str
         """
+        allowed_values = ["CREATING", "DELETING", "UPDATING", "ACTIVE", "INACTIVE", "DELETED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Source.
-        Details about the current lifecycle state
+        Details about the current lifecycle state of the source.
 
 
         :return: The lifecycle_details of this Source.
@@ -257,7 +304,7 @@ class Source(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Source.
-        Details about the current lifecycle state
+        Details about the current lifecycle state of the source.
 
 
         :param lifecycle_details: The lifecycle_details of this Source.
@@ -289,8 +336,10 @@ class Source(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Source.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Source.
@@ -302,8 +351,10 @@ class Source(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Source.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Source.
@@ -316,7 +367,9 @@ class Source(object):
         """
         Gets the defined_tags of this Source.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Source.
@@ -329,7 +382,9 @@ class Source(object):
         """
         Sets the defined_tags of this Source.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Source.

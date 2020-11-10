@@ -124,7 +124,7 @@ class SteeringPolicyAnswer(object):
     def rtype(self):
         """
         **[Required]** Gets the rtype of this SteeringPolicyAnswer.
-        The canonical name for the record's type. Only A, AAAA, and CNAME are supported. For more
+        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
         information, see `Supported DNS Resource Record Types`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
@@ -139,7 +139,7 @@ class SteeringPolicyAnswer(object):
     def rtype(self, rtype):
         """
         Sets the rtype of this SteeringPolicyAnswer.
-        The canonical name for the record's type. Only A, AAAA, and CNAME are supported. For more
+        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
         information, see `Supported DNS Resource Record Types`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm

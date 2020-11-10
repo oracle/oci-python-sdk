@@ -42,6 +42,10 @@ class UpdateSubnetDetails(object):
             The value to assign to the security_list_ids property of this UpdateSubnetDetails.
         :type security_list_ids: list[str]
 
+        :param cidr_block:
+            The value to assign to the cidr_block property of this UpdateSubnetDetails.
+        :type cidr_block: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -49,7 +53,8 @@ class UpdateSubnetDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'route_table_id': 'str',
-            'security_list_ids': 'list[str]'
+            'security_list_ids': 'list[str]',
+            'cidr_block': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class UpdateSubnetDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'route_table_id': 'routeTableId',
-            'security_list_ids': 'securityListIds'
+            'security_list_ids': 'securityListIds',
+            'cidr_block': 'cidrBlock'
         }
 
         self._defined_tags = None
@@ -67,6 +73,7 @@ class UpdateSubnetDetails(object):
         self._freeform_tags = None
         self._route_table_id = None
         self._security_list_ids = None
+        self._cidr_block = None
 
     @property
     def defined_tags(self):
@@ -239,6 +246,46 @@ class UpdateSubnetDetails(object):
         :type: list[str]
         """
         self._security_list_ids = security_list_ids
+
+    @property
+    def cidr_block(self):
+        """
+        Gets the cidr_block of this UpdateSubnetDetails.
+        The CIDR IP address block of the Subnet. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
+        c. The old and new CIDR ranges both use the same base address. Example: 10.0.0.0/25 and 10.0.0.0/24.
+        d. The new CIDR range contains all previously allocated private IP addresses in the old CIDR range.
+        e. No previously allocated IP address overlaps the broadcast address (the last IP of a subnet CIDR range) of the new CIDR range.
+
+        Example: `172.16.0.0/16`
+
+
+        :return: The cidr_block of this UpdateSubnetDetails.
+        :rtype: str
+        """
+        return self._cidr_block
+
+    @cidr_block.setter
+    def cidr_block(self, cidr_block):
+        """
+        Sets the cidr_block of this UpdateSubnetDetails.
+        The CIDR IP address block of the Subnet. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
+        c. The old and new CIDR ranges both use the same base address. Example: 10.0.0.0/25 and 10.0.0.0/24.
+        d. The new CIDR range contains all previously allocated private IP addresses in the old CIDR range.
+        e. No previously allocated IP address overlaps the broadcast address (the last IP of a subnet CIDR range) of the new CIDR range.
+
+        Example: `172.16.0.0/16`
+
+
+        :param cidr_block: The cidr_block of this UpdateSubnetDetails.
+        :type: str
+        """
+        self._cidr_block = cidr_block
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -110,7 +110,7 @@ class WorkRequestResource(object):
     def entity_type(self):
         """
         **[Required]** Gets the entity_type of this WorkRequestResource.
-        The resource type the work request affects.
+        The resource type that the work request affects, source or migration.
 
 
         :return: The entity_type of this WorkRequestResource.
@@ -122,7 +122,7 @@ class WorkRequestResource(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this WorkRequestResource.
-        The resource type the work request affects.
+        The resource type that the work request affects, source or migration.
 
 
         :param entity_type: The entity_type of this WorkRequestResource.

@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceApplicationSummary(object):
     """
-    An application running in the source environment that is available for export.
+    The properties that define an application, that is running in the source environment and which can be migrated to Oracle
+    Cloud Infrastructure.
     """
 
     #: A constant which can be used with the type property of a SourceApplicationSummary.
@@ -91,7 +92,7 @@ class SourceApplicationSummary(object):
     def name(self):
         """
         Gets the name of this SourceApplicationSummary.
-        The name of the application
+        The name of the application.
 
 
         :return: The name of this SourceApplicationSummary.
@@ -103,7 +104,7 @@ class SourceApplicationSummary(object):
     def name(self, name):
         """
         Sets the name of this SourceApplicationSummary.
-        The name of the application
+        The name of the application.
 
 
         :param name: The name of this SourceApplicationSummary.
@@ -115,7 +116,7 @@ class SourceApplicationSummary(object):
     def type(self):
         """
         Gets the type of this SourceApplicationSummary.
-        The type of application
+        The type of the application.
 
         Allowed values for this property are: "JCS", "SOACS", "OIC", "OAC", "ICS", "PCS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -130,7 +131,7 @@ class SourceApplicationSummary(object):
     def type(self, type):
         """
         Sets the type of this SourceApplicationSummary.
-        The type of application
+        The type of the application.
 
 
         :param type: The type of this SourceApplicationSummary.
@@ -145,7 +146,9 @@ class SourceApplicationSummary(object):
     def source_id(self):
         """
         Gets the source_id of this SourceApplicationSummary.
-        Unique identifier (OCID) for the Source to which the application belongs
+        The `OCID`__ of the source to which the application belongs.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this SourceApplicationSummary.
@@ -157,7 +160,9 @@ class SourceApplicationSummary(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this SourceApplicationSummary.
-        Unique identifier (OCID) for the Source to which the application belongs
+        The `OCID`__ of the source to which the application belongs.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this SourceApplicationSummary.
@@ -169,7 +174,7 @@ class SourceApplicationSummary(object):
     def version(self):
         """
         Gets the version of this SourceApplicationSummary.
-        The version of the application server
+        The version of the application.
 
 
         :return: The version of this SourceApplicationSummary.
@@ -181,7 +186,7 @@ class SourceApplicationSummary(object):
     def version(self, version):
         """
         Sets the version of this SourceApplicationSummary.
-        The version of the application server
+        The version of the application.
 
 
         :param version: The version of this SourceApplicationSummary.
@@ -193,7 +198,7 @@ class SourceApplicationSummary(object):
     def state(self):
         """
         Gets the state of this SourceApplicationSummary.
-        The current application running state
+        The current state of the application.
 
 
         :return: The state of this SourceApplicationSummary.
@@ -205,7 +210,7 @@ class SourceApplicationSummary(object):
     def state(self, state):
         """
         Sets the state of this SourceApplicationSummary.
-        The current application running state
+        The current state of the application.
 
 
         :param state: The state of this SourceApplicationSummary.

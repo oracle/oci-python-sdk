@@ -152,7 +152,7 @@ class SteeringPolicySummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this SteeringPolicySummary.
+        **[Required]** Gets the compartment_id of this SteeringPolicySummary.
         The OCID of the compartment containing the steering policy.
 
 
@@ -176,7 +176,7 @@ class SteeringPolicySummary(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this SteeringPolicySummary.
+        **[Required]** Gets the display_name of this SteeringPolicySummary.
         A user-friendly name for the steering policy. Does not have to be unique and can be changed.
         Avoid entering confidential information.
 
@@ -202,7 +202,7 @@ class SteeringPolicySummary(object):
     @property
     def ttl(self):
         """
-        Gets the ttl of this SteeringPolicySummary.
+        **[Required]** Gets the ttl of this SteeringPolicySummary.
         The Time To Live (TTL) for responses from the steering policy, in seconds.
         If not specified during creation, a value of 30 seconds will be used.
 
@@ -272,7 +272,7 @@ class SteeringPolicySummary(object):
     @property
     def template(self):
         """
-        Gets the template of this SteeringPolicySummary.
+        **[Required]** Gets the template of this SteeringPolicySummary.
         A set of predefined rules based on the desired purpose of the steering policy. Each
         template utilizes Traffic Management's rules in a different order to produce the desired
         results when answering DNS queries.
@@ -388,7 +388,7 @@ class SteeringPolicySummary(object):
     @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this SteeringPolicySummary.
+        **[Required]** Gets the freeform_tags of this SteeringPolicySummary.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
 
@@ -424,7 +424,7 @@ class SteeringPolicySummary(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this SteeringPolicySummary.
+        **[Required]** Gets the defined_tags of this SteeringPolicySummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -460,7 +460,7 @@ class SteeringPolicySummary(object):
     @property
     def _self(self):
         """
-        Gets the _self of this SteeringPolicySummary.
+        **[Required]** Gets the _self of this SteeringPolicySummary.
         The canonical absolute URL of the resource.
 
 
@@ -484,7 +484,7 @@ class SteeringPolicySummary(object):
     @property
     def id(self):
         """
-        Gets the id of this SteeringPolicySummary.
+        **[Required]** Gets the id of this SteeringPolicySummary.
         The OCID of the resource.
 
 
@@ -508,7 +508,7 @@ class SteeringPolicySummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this SteeringPolicySummary.
+        **[Required]** Gets the time_created of this SteeringPolicySummary.
         The date and time the resource was created, expressed in RFC 3339 timestamp format.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -536,7 +536,7 @@ class SteeringPolicySummary(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this SteeringPolicySummary.
+        **[Required]** Gets the lifecycle_state of this SteeringPolicySummary.
         The current state of the resource.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.

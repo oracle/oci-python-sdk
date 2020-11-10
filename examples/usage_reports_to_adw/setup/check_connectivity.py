@@ -12,11 +12,13 @@
 ##########################################################################
 import oci
 import requests
+import sys
 
 # Get Instance Principles Signer
 signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 config = {'region': signer.region, 'tenancy': signer.tenancy_id}
 tenancy_id = signer.tenancy_id
+curr_region = signer.region
 
 try:
     print("\n   Connecting to Identity Service...")
@@ -26,6 +28,21 @@ try:
     print("\n   Check Tenancy Details Access...")
     tenancy = identity.get_tenancy(tenancy_id).data
     print("   Okay.")
+
+    print("\n   Get List of Regions...")
+    regions = identity.list_regions()
+    print("   Okay.")
+
+    print("\n   Check running in home region...")
+    home_region_array = next(item for item in regions.data if str(item.key) == str(tenancy.home_region_key))
+    home_region = str(home_region_array.name)
+    print("   Home    Region = " + home_region)
+    print("   Current Region = " + curr_region)
+    if home_region == curr_region:
+        print("   Okay.")
+    else:
+        print("   Error, Installation must be in Home Region, please change to " + home_region + " and re-run the stack, Aborting...")
+        sys.exit()
 
     print("\n   Check Compartment List Access...")
     all_compartments = identity.list_compartments(tenancy_id, compartment_id_in_subtree=True).data

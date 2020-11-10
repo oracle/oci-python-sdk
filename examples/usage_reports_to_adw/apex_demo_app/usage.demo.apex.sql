@@ -28,7 +28,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   16:19 Thursday October 22, 2020
+--   Date and Time:   12:30 Tuesday November 3, 2020
 --   Exported By:     ADIZOHAR
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,7 +36,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 --       Items:                   88
 --       Computations:            28
 --       Processes:                4
---       Regions:                 61
+--       Regions:                 62
 --       Buttons:                  5
 --       Dynamic Actions:         32
 --     Shared Components:
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 20.10.27'
+,p_flow_version=>'Release 20.11.10'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -120,7 +120,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20201021161853'
+,p_last_upd_yyyymmddhh24miss=>'20201103122939'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -15716,7 +15716,7 @@ wwv_flow_api.create_page(
 '#P5_REPORT_SELECTOR { background-color: #F5FBB4; font-weight: bold; font-size: 13px;}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20201021150631'
+,p_last_upd_yyyymmddhh24miss=>'20201103122726'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(22846551592241693)
@@ -15780,6 +15780,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end product_name,',
 '    sum(COST_MY_COST) TOTAL,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''MM'') = ''01'' then COST_MY_COST else null end) Jan,',
@@ -15820,6 +15821,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end',
 'having sum(COST_MY_COST)>0;',
 ''))
@@ -16098,6 +16100,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'		when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end product_name,',
 '    sum(COST_MY_COST) TOTAL,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''DD'') = ''01'' then COST_MY_COST else null end) D01,',
@@ -16157,6 +16160,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end',
 'having sum(COST_MY_COST)>0;'))
 ,p_ajax_enabled=>'Y'
@@ -16576,6 +16580,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(12140504386985910)
 ,p_query_column_id=>26
@@ -16591,9 +16598,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(12140643012985911)
 ,p_query_column_id=>27
@@ -16722,6 +16726,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end product_name,',
 '    sum(COST_MY_COST) TOTAL,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''WW'') = ''01'' then COST_MY_COST else null end) W01,',
@@ -16802,6 +16807,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end',
 'having sum(COST_MY_COST)>0;'))
 ,p_ajax_enabled=>'Y'
@@ -17526,6 +17532,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(12276887785302635)
 ,p_query_column_id=>53
@@ -17552,9 +17561,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(12278275925302649)
 ,p_name=>'Daily Product Unit Report - Single'
@@ -18420,6 +18426,9 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_zoom_order_quarters=>false
 ,p_zoom_order_years=>false
 );
+end;
+/
+begin
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(14186775683270008)
 ,p_chart_id=>wwv_flow_api.id(14186570488270006)
@@ -18443,9 +18452,6 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_zoom_order_quarters=>false
 ,p_zoom_order_years=>false
 );
-end;
-/
-begin
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(15050972044989901)
 ,p_plug_name=>'Cost By Service - &P5_PERIOD.'
@@ -19289,6 +19295,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15055763819989949)
 ,p_query_column_id=>24
@@ -19317,9 +19326,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15082638529497501)
 ,p_query_column_id=>26
@@ -20244,6 +20250,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15102519216532013)
 ,p_query_column_id=>51
@@ -20272,9 +20281,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15102752424532015)
 ,p_query_column_id=>53
@@ -20698,6 +20704,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end product_name,',
 '    sum(COST_MY_COST) TOTAL,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''HH24'') = ''00'' then COST_MY_COST else null end) H00,',
@@ -20750,6 +20757,7 @@ wwv_flow_api.create_report_region(
 '                else prd_compartment_path ',
 '            end ',
 '		when :P5_REPORT_GROUP = ''Compartment'' then nvl(prd_compartment_name,''No Compartment'')',
+'        when :P5_REPORT_GROUP = ''Tenant'' then nvl(tenant_id,''No TenantId'')',
 '	end',
 'having sum(COST_MY_COST)>0;'))
 ,p_ajax_enabled=>'Y'
@@ -21123,6 +21131,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(16828165381029014)
 ,p_query_column_id=>26
@@ -21242,9 +21253,6 @@ wwv_flow_api.create_report_region(
 ,p_sort_null=>'L'
 ,p_plug_query_strip_html=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(16767038146841206)
 ,p_query_column_id=>1
@@ -21935,6 +21943,9 @@ wwv_flow_api.create_page_item(
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(11933828594191631)
 ,p_name=>'P5_REPORT_GROUP'
@@ -21943,7 +21954,7 @@ wwv_flow_api.create_page_item(
 ,p_item_default=>'Product'
 ,p_prompt=>'Report Group Option'
 ,p_display_as=>'NATIVE_SELECT_LIST'
-,p_lov=>'STATIC2:Product;Product,Region;Region,Top Compartment;Top Compartment,Compartment;Compartment'
+,p_lov=>'STATIC2:Product;Product,Region;Region,Top Compartment;Top Compartment,Compartment;Compartment,Tenant;Tenant'
 ,p_cHeight=>1
 ,p_begin_on_new_line=>'N'
 ,p_colspan=>2
@@ -22137,9 +22148,6 @@ wwv_flow_api.create_page_item(
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(12053398346076066)
 ,p_name=>'P5_TAG_DATA'
@@ -22709,6 +22717,9 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_elements_type=>'REGION'
 ,p_affected_region_id=>wwv_flow_api.id(23961814581267567)
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(14171343211086683)
 ,p_event_id=>wwv_flow_api.id(14170929538086679)
@@ -22879,9 +22890,6 @@ wwv_flow_api.create_page_da_event(
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'ready'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(15053197892989923)
 ,p_event_id=>wwv_flow_api.id(15053003375989922)
@@ -23178,7 +23186,7 @@ wwv_flow_api.create_page_da_event(
 ,p_event_sequence=>220
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'IN_LIST'
-,p_triggering_expression=>'Daily Cost Report,Weekly Cost Report,Monthly Cost Report'
+,p_triggering_expression=>'Daily Cost Report,Weekly Cost Report,Monthly Cost Report,Hourly Cost Report'
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'ready'
 );
@@ -23220,7 +23228,7 @@ wwv_flow_api.create_page(
 '}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20201021161801'
+,p_last_upd_yyyymmddhh24miss=>'20201103122042'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11208064619636616)
@@ -23665,6 +23673,7 @@ wwv_flow_api.create_page_plug(
 '    b.AVG_COST_DAY,',
 '    b.MAX_COST_DAY,',
 '    nvl(b.NUM_FULL_DAYS,0) NUM_FULL_DAYS,',
+'    (select count(*) from OCI_COST_REFERENCE b where a.tenant_name=b.tenant_name and ref_type=''TENANT_ID'') sub_tenants,',
 '    LAST_LOAD,',
 '    AGENT_VERSION',
 'from',
@@ -23709,7 +23718,6 @@ wwv_flow_api.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_show_search_bar=>'N'
-,p_report_list_mode=>'TABS'
 ,p_show_detail_link=>'N'
 ,p_owner=>'ADI.ZOHAR@ORACLE.COM'
 ,p_internal_uid=>13350953403239106
@@ -23815,9 +23823,18 @@ wwv_flow_api.create_worksheet_column(
 ,p_format_mask=>'999G999G999G999G990'
 );
 wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(16674398414602122)
+,p_db_column_name=>'SUB_TENANTS'
+,p_display_order=>110
+,p_column_identifier=>'M'
+,p_column_label=>'Sub Tenants'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(13352074223239117)
 ,p_db_column_name=>'LAST_LOAD'
-,p_display_order=>110
+,p_display_order=>120
 ,p_column_identifier=>'K'
 ,p_column_label=>'Last Load'
 ,p_column_html_expression=>'<span style="white-space:nowrap;">#LAST_LOAD#</span>'
@@ -23828,7 +23845,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(13352104278239118)
 ,p_db_column_name=>'AGENT_VERSION'
-,p_display_order=>120
+,p_display_order=>130
 ,p_column_identifier=>'L'
 ,p_column_label=>'Agent Version'
 ,p_column_type=>'STRING'
@@ -23841,7 +23858,7 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_report_alias=>'135723'
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
-,p_report_columns=>'TENANT_NAME:MIN_FILE_TIME:MAX_FILE_TIME:MIN_FILE_ID:MAX_FILE_ID:NUM_FILES:NUM_ROWS:AVG_COST_DAY:MAX_COST_DAY:NUM_FULL_DAYS:LAST_LOAD:AGENT_VERSION'
+,p_report_columns=>'TENANT_NAME:MIN_FILE_TIME:MAX_FILE_TIME:MIN_FILE_ID:MAX_FILE_ID:NUM_FILES:NUM_ROWS:AVG_COST_DAY:MAX_COST_DAY:NUM_FULL_DAYS:SUB_TENANTS:LAST_LOAD:AGENT_VERSION:'
 ,p_sum_columns_on_break=>'NUM_ROWS:NUM_FILES'
 );
 wwv_flow_api.create_page_plug(
@@ -24101,6 +24118,86 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_is_default=>'Y'
 ,p_report_columns=>'TENANT_NAME:DAY7:DAY6:DAY5:DAY4:DAY3:DAY2:DAY1:YEAR::DAY1_COLOR:DAY2_COLOR:DAY3_COLOR:DAY4_COLOR:DAY5_COLOR:DAY6_COLOR:DAY7_COLOR'
 );
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(16674406142602123)
+,p_plug_name=>'Storage Statistics'
+,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(9765042323688020)
+,p_plug_display_sequence=>60
+,p_plug_grid_column_span=>3
+,p_plug_display_point=>'BODY'
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select',
+'    ''Cost Tables and Indexes'' area,',
+'    to_char(sum(bytes/1024/1024/1024),''999,999.99'') GB',
+'from',
+'    user_segments',
+'where segment_name like ''%OCI_COST%''',
+'union all',
+'select',
+'    ''Usage Tables and Indexes'' object_name,',
+'    to_char(sum(bytes/1024/1024/1024),''999,999.99'') GB',
+'from',
+'    user_segments',
+'where segment_name like ''%OCI_USAGE%''',
+'union all',
+'select',
+'    ''Other Objects'' object_name,',
+'    to_char(sum(bytes/1024/1024/1024),''999,999.99'') GB',
+'from',
+'    user_segments',
+'where segment_name not like ''BIN%'' and segment_name not like ''%OCI_USAGE%'' and segment_name not like ''%OCI_COST%''',
+'union all',
+'select',
+'    ''Total All Objects'' object_name,',
+'    to_char(sum(bytes/1024/1024/1024),''999,999.99'') GB',
+'from',
+'    user_segments',
+'where segment_name not like ''BIN%''',
+''))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+end;
+/
+begin
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(16674695736602125)
+,p_max_row_count=>'1000000'
+,p_show_nulls_as=>'-'
+,p_show_search_bar=>'N'
+,p_show_detail_link=>'N'
+,p_owner=>'ADIZOHAR'
+,p_internal_uid=>16674695736602125
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(16675890928602137)
+,p_db_column_name=>'AREA'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>'Area'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(16675916346602138)
+,p_db_column_name=>'GB'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'GB'
+,p_column_type=>'STRING'
+,p_column_alignment=>'RIGHT'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(22814282525347815)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'228143'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'AREA:GB'
+);
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(11208116210636617)
 ,p_name=>'P6_MONTH1'
@@ -24133,9 +24230,6 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(11208533441636621)
 ,p_name=>'P6_MONTH5'

@@ -10,8 +10,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSourceDetails(object):
     """
-    The Source object. Sources represent external locations from which
-    applications may be imported into an OCI tenancy.
+    The configuration details for creating a source.
+
+    When you create a source, provide the required information to let Application Migration access the source environment.
+    You must also assign a name and provide a description for the source. This helps you to identify the appropriate source environment when you
+    have multiple sources defined.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -80,7 +85,9 @@ class CreateSourceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateSourceDetails.
-        Unique idenfifier (OCID) for the compartment where the Source is located.
+        The `OCID`__ of the compartment that contains the source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateSourceDetails.
@@ -92,7 +99,9 @@ class CreateSourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateSourceDetails.
-        Unique idenfifier (OCID) for the compartment where the Source is located.
+        The `OCID`__ of the compartment that contains the source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateSourceDetails.
@@ -104,7 +113,7 @@ class CreateSourceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateSourceDetails.
-        Human-readable name of the source.
+        Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :return: The display_name of this CreateSourceDetails.
@@ -116,7 +125,7 @@ class CreateSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSourceDetails.
-        Human-readable name of the source.
+        Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :param display_name: The display_name of this CreateSourceDetails.
@@ -128,7 +137,7 @@ class CreateSourceDetails(object):
     def description(self):
         """
         Gets the description of this CreateSourceDetails.
-        Description of the source.
+        Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :return: The description of this CreateSourceDetails.
@@ -140,7 +149,7 @@ class CreateSourceDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateSourceDetails.
-        Description of the source.
+        Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
 
 
         :param description: The description of this CreateSourceDetails.
@@ -192,8 +201,10 @@ class CreateSourceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateSourceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateSourceDetails.
@@ -205,8 +216,10 @@ class CreateSourceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateSourceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__. Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateSourceDetails.
@@ -219,7 +232,9 @@ class CreateSourceDetails(object):
         """
         Gets the defined_tags of this CreateSourceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateSourceDetails.
@@ -232,7 +247,9 @@ class CreateSourceDetails(object):
         """
         Sets the defined_tags of this CreateSourceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For more information, see `Resource Tags`__. Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateSourceDetails.

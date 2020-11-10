@@ -18,6 +18,14 @@ class ShapeSummary(object):
     __ https://docs.cloud.oracle.com/mysql-database/doc/shapes.htm
     """
 
+    #: A constant which can be used with the is_supported_for property of a ShapeSummary.
+    #: This constant has a value of "DBSYSTEM"
+    IS_SUPPORTED_FOR_DBSYSTEM = "DBSYSTEM"
+
+    #: A constant which can be used with the is_supported_for property of a ShapeSummary.
+    #: This constant has a value of "ANALYTICSCLUSTER"
+    IS_SUPPORTED_FOR_ANALYTICSCLUSTER = "ANALYTICSCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ShapeSummary object with values from keyword arguments.
@@ -35,22 +43,31 @@ class ShapeSummary(object):
             The value to assign to the memory_size_in_gbs property of this ShapeSummary.
         :type memory_size_in_gbs: int
 
+        :param is_supported_for:
+            The value to assign to the is_supported_for property of this ShapeSummary.
+            Allowed values for items in this list are: "DBSYSTEM", "ANALYTICSCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type is_supported_for: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
             'cpu_core_count': 'int',
-            'memory_size_in_gbs': 'int'
+            'memory_size_in_gbs': 'int',
+            'is_supported_for': 'list[str]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'cpu_core_count': 'cpuCoreCount',
-            'memory_size_in_gbs': 'memorySizeInGBs'
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'is_supported_for': 'isSupportedFor'
         }
 
         self._name = None
         self._cpu_core_count = None
         self._memory_size_in_gbs = None
+        self._is_supported_for = None
 
     @property
     def name(self):
@@ -123,6 +140,36 @@ class ShapeSummary(object):
         :type: int
         """
         self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def is_supported_for(self):
+        """
+        Gets the is_supported_for of this ShapeSummary.
+        What service features the shape is supported for.
+
+        Allowed values for items in this list are: "DBSYSTEM", "ANALYTICSCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The is_supported_for of this ShapeSummary.
+        :rtype: list[str]
+        """
+        return self._is_supported_for
+
+    @is_supported_for.setter
+    def is_supported_for(self, is_supported_for):
+        """
+        Sets the is_supported_for of this ShapeSummary.
+        What service features the shape is supported for.
+
+
+        :param is_supported_for: The is_supported_for of this ShapeSummary.
+        :type: list[str]
+        """
+        allowed_values = ["DBSYSTEM", "ANALYTICSCLUSTER"]
+        if is_supported_for:
+            is_supported_for[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in is_supported_for]
+        self._is_supported_for = is_supported_for
 
     def __repr__(self):
         return formatted_flat_dict(self)

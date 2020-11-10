@@ -21,6 +21,10 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         of this class is ``ExistingDbSystem`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type database_software_image_id: str
+
         :param database_admin_password:
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type database_admin_password: str
@@ -49,6 +53,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
 
         """
         self.swagger_types = {
+            'database_software_image_id': 'str',
             'database_admin_password': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
@@ -58,6 +63,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         }
 
         self.attribute_map = {
+            'database_software_image_id': 'databaseSoftwareImageId',
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
@@ -66,6 +72,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             'peer_db_home_id': 'peerDbHomeId'
         }
 
+        self._database_software_image_id = None
         self._database_admin_password = None
         self._protection_mode = None
         self._transport_type = None

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OcicAuthorizationDetails(AuthorizationDetails):
     """
-    Specifies the credentials to access the source Oracle Cloud Infrastructure - Classic environment.
+    Credentials to access Oracle Cloud Infrastructure - Classic, which is the source environment from which you want to migrate the application.
     """
 
     def __init__(self, **kwargs):

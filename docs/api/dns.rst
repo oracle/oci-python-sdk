@@ -18,13 +18,20 @@ DNS
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.dns.models.AttachedView
+    oci.dns.models.AttachedViewDetails
+    oci.dns.models.ChangeResolverCompartmentDetails
     oci.dns.models.ChangeSteeringPolicyCompartmentDetails
     oci.dns.models.ChangeTsigKeyCompartmentDetails
+    oci.dns.models.ChangeViewCompartmentDetails
     oci.dns.models.ChangeZoneCompartmentDetails
     oci.dns.models.CreateMigratedDynectZoneDetails
+    oci.dns.models.CreateResolverEndpointDetails
+    oci.dns.models.CreateResolverVnicEndpointDetails
     oci.dns.models.CreateSteeringPolicyAttachmentDetails
     oci.dns.models.CreateSteeringPolicyDetails
     oci.dns.models.CreateTsigKeyDetails
+    oci.dns.models.CreateViewDetails
     oci.dns.models.CreateZoneBaseDetails
     oci.dns.models.CreateZoneDetails
     oci.dns.models.DynectMigrationDetails
@@ -39,6 +46,16 @@ DNS
     oci.dns.models.RecordCollection
     oci.dns.models.RecordDetails
     oci.dns.models.RecordOperation
+    oci.dns.models.Resolver
+    oci.dns.models.ResolverEndpoint
+    oci.dns.models.ResolverEndpointSummary
+    oci.dns.models.ResolverForwardRule
+    oci.dns.models.ResolverForwardRuleDetails
+    oci.dns.models.ResolverRule
+    oci.dns.models.ResolverRuleDetails
+    oci.dns.models.ResolverSummary
+    oci.dns.models.ResolverVnicEndpoint
+    oci.dns.models.ResolverVnicEndpointSummary
     oci.dns.models.SteeringPolicy
     oci.dns.models.SteeringPolicyAnswer
     oci.dns.models.SteeringPolicyAttachment
@@ -63,10 +80,16 @@ DNS
     oci.dns.models.TsigKeySummary
     oci.dns.models.UpdateDomainRecordsDetails
     oci.dns.models.UpdateRRSetDetails
+    oci.dns.models.UpdateResolverDetails
+    oci.dns.models.UpdateResolverEndpointDetails
+    oci.dns.models.UpdateResolverVnicEndpointDetails
     oci.dns.models.UpdateSteeringPolicyAttachmentDetails
     oci.dns.models.UpdateSteeringPolicyDetails
     oci.dns.models.UpdateTsigKeyDetails
+    oci.dns.models.UpdateViewDetails
     oci.dns.models.UpdateZoneDetails
     oci.dns.models.UpdateZoneRecordsDetails
+    oci.dns.models.View
+    oci.dns.models.ViewSummary
     oci.dns.models.Zone
     oci.dns.models.ZoneSummary

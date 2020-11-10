@@ -37,6 +37,34 @@ class WorkRequestSummary(object):
     #: This constant has a value of "RESTART_DBSYSTEM"
     OPERATION_TYPE_RESTART_DBSYSTEM = "RESTART_DBSYSTEM"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "ADD_ANALYTICS_CLUSTER"
+    OPERATION_TYPE_ADD_ANALYTICS_CLUSTER = "ADD_ANALYTICS_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_ANALYTICS_CLUSTER"
+    OPERATION_TYPE_UPDATE_ANALYTICS_CLUSTER = "UPDATE_ANALYTICS_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_ANALYTICS_CLUSTER"
+    OPERATION_TYPE_DELETE_ANALYTICS_CLUSTER = "DELETE_ANALYTICS_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "START_ANALYTICS_CLUSTER"
+    OPERATION_TYPE_START_ANALYTICS_CLUSTER = "START_ANALYTICS_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "STOP_ANALYTICS_CLUSTER"
+    OPERATION_TYPE_STOP_ANALYTICS_CLUSTER = "STOP_ANALYTICS_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "RESTART_ANALYTICS_CLUSTER"
+    OPERATION_TYPE_RESTART_ANALYTICS_CLUSTER = "RESTART_ANALYTICS_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"
+    OPERATION_TYPE_GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE = "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -72,7 +100,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -164,7 +192,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         the original operation ID requested
 
-        Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -183,7 +211,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM"]
+        allowed_values = ["CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

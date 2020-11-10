@@ -22,6 +22,10 @@ class CreateVcnDetails(object):
             The value to assign to the cidr_block property of this CreateVcnDetails.
         :type cidr_block: str
 
+        :param cidr_blocks:
+            The value to assign to the cidr_blocks property of this CreateVcnDetails.
+        :type cidr_blocks: list[str]
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateVcnDetails.
         :type compartment_id: str
@@ -53,6 +57,7 @@ class CreateVcnDetails(object):
         """
         self.swagger_types = {
             'cidr_block': 'str',
+            'cidr_blocks': 'list[str]',
             'compartment_id': 'str',
             'ipv6_cidr_block': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -64,6 +69,7 @@ class CreateVcnDetails(object):
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
+            'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
             'ipv6_cidr_block': 'ipv6CidrBlock',
             'defined_tags': 'definedTags',
@@ -74,6 +80,7 @@ class CreateVcnDetails(object):
         }
 
         self._cidr_block = None
+        self._cidr_blocks = None
         self._compartment_id = None
         self._ipv6_cidr_block = None
         self._defined_tags = None
@@ -85,8 +92,9 @@ class CreateVcnDetails(object):
     @property
     def cidr_block(self):
         """
-        **[Required]** Gets the cidr_block of this CreateVcnDetails.
-        The CIDR IP address block of the VCN.
+        Gets the cidr_block of this CreateVcnDetails.
+        Deprecated. Instead use 'cidrBlocks'. It is an error to set both cidrBlock and
+        cidrBlocks.
         Example: `10.0.0.0/16`
 
 
@@ -99,7 +107,8 @@ class CreateVcnDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this CreateVcnDetails.
-        The CIDR IP address block of the VCN.
+        Deprecated. Instead use 'cidrBlocks'. It is an error to set both cidrBlock and
+        cidrBlocks.
         Example: `10.0.0.0/16`
 
 
@@ -107,6 +116,42 @@ class CreateVcnDetails(object):
         :type: str
         """
         self._cidr_block = cidr_block
+
+    @property
+    def cidr_blocks(self):
+        """
+        Gets the cidr_blocks of this CreateVcnDetails.
+        List of IPv4 CIDR blocks associated with the VCN. The CIDRs must maintain the following
+        rules -
+
+        a. The list of CIDRs provided are valid
+        b. There is no overlap between different CIDRs
+        c. The number of CIDRs should not exceed the max limit of CIDRs per VCN
+        d. It is an error to set both cidrBlock and cidrBlocks.
+
+
+        :return: The cidr_blocks of this CreateVcnDetails.
+        :rtype: list[str]
+        """
+        return self._cidr_blocks
+
+    @cidr_blocks.setter
+    def cidr_blocks(self, cidr_blocks):
+        """
+        Sets the cidr_blocks of this CreateVcnDetails.
+        List of IPv4 CIDR blocks associated with the VCN. The CIDRs must maintain the following
+        rules -
+
+        a. The list of CIDRs provided are valid
+        b. There is no overlap between different CIDRs
+        c. The number of CIDRs should not exceed the max limit of CIDRs per VCN
+        d. It is an error to set both cidrBlock and cidrBlocks.
+
+
+        :param cidr_blocks: The cidr_blocks of this CreateVcnDetails.
+        :type: list[str]
+        """
+        self._cidr_blocks = cidr_blocks
 
     @property
     def compartment_id(self):

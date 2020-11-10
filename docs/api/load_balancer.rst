@@ -69,6 +69,7 @@ Load Balancer
     oci.load_balancer.models.RedirectUri
     oci.load_balancer.models.RemoveHttpRequestHeaderRule
     oci.load_balancer.models.RemoveHttpResponseHeaderRule
+    oci.load_balancer.models.ReservedIP
     oci.load_balancer.models.Rule
     oci.load_balancer.models.RuleCondition
     oci.load_balancer.models.RuleSet

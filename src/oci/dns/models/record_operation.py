@@ -239,8 +239,7 @@ class RecordOperation(object):
     def rtype(self):
         """
         Gets the rtype of this RecordOperation.
-        The canonical name for the record's type, such as A or CNAME. For more
-        information, see `Resource Record (RR) TYPEs`__.
+        The type of DNS record, such as A or CNAME. For more information, see `Resource Record (RR) TYPEs`__.
 
         __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 
@@ -254,8 +253,7 @@ class RecordOperation(object):
     def rtype(self, rtype):
         """
         Sets the rtype of this RecordOperation.
-        The canonical name for the record's type, such as A or CNAME. For more
-        information, see `Resource Record (RR) TYPEs`__.
+        The type of DNS record, such as A or CNAME. For more information, see `Resource Record (RR) TYPEs`__.
 
         __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 
