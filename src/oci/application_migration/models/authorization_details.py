@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuthorizationDetails(object):
     """
-    Base model for different source authorization methods
+    Details of the source environment from which you want to migrate applications to Oracle Cloud Infrastructure. It also contains access
+    credentials.
     """
 
     #: A constant which can be used with the type property of a AuthorizationDetails.
@@ -67,7 +68,7 @@ class AuthorizationDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this AuthorizationDetails.
-        The type of source environment
+        Type of the source environment from which you are migrating applications to Oracle Cloud Infrastructure.
 
         Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE"
 
@@ -81,7 +82,7 @@ class AuthorizationDetails(object):
     def type(self, type):
         """
         Sets the type of this AuthorizationDetails.
-        The type of source environment
+        Type of the source environment from which you are migrating applications to Oracle Cloud Infrastructure.
 
 
         :param type: The type of this AuthorizationDetails.

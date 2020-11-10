@@ -50,6 +50,10 @@ class CreateDataGuardAssociationDetails(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateDataGuardAssociationDetails.
+        :type database_software_image_id: str
+
         :param database_admin_password:
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationDetails.
         :type database_admin_password: str
@@ -70,6 +74,7 @@ class CreateDataGuardAssociationDetails(object):
 
         """
         self.swagger_types = {
+            'database_software_image_id': 'str',
             'database_admin_password': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
@@ -77,12 +82,14 @@ class CreateDataGuardAssociationDetails(object):
         }
 
         self.attribute_map = {
+            'database_software_image_id': 'databaseSoftwareImageId',
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType'
         }
 
+        self._database_software_image_id = None
         self._database_admin_password = None
         self._protection_mode = None
         self._transport_type = None
@@ -106,6 +113,34 @@ class CreateDataGuardAssociationDetails(object):
             return 'CreateDataGuardAssociationToExistingDbSystemDetails'
         else:
             return 'CreateDataGuardAssociationDetails'
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this CreateDataGuardAssociationDetails.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this CreateDataGuardAssociationDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this CreateDataGuardAssociationDetails.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this CreateDataGuardAssociationDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     @property
     def database_admin_password(self):

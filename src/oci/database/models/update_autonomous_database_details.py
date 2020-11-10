@@ -106,6 +106,10 @@ class UpdateAutonomousDatabaseDetails(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param is_access_control_enabled:
+            The value to assign to the is_access_control_enabled property of this UpdateAutonomousDatabaseDetails.
+        :type is_access_control_enabled: bool
+
         :param whitelisted_ips:
             The value to assign to the whitelisted_ips property of this UpdateAutonomousDatabaseDetails.
         :type whitelisted_ips: list[str]
@@ -165,6 +169,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'db_workload': 'str',
             'license_model': 'str',
+            'is_access_control_enabled': 'bool',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
             'is_refreshable_clone': 'bool',
@@ -189,6 +194,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'defined_tags': 'definedTags',
             'db_workload': 'dbWorkload',
             'license_model': 'licenseModel',
+            'is_access_control_enabled': 'isAccessControlEnabled',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_refreshable_clone': 'isRefreshableClone',
@@ -212,6 +218,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._defined_tags = None
         self._db_workload = None
         self._license_model = None
+        self._is_access_control_enabled = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
         self._is_refreshable_clone = None
@@ -519,15 +526,55 @@ class UpdateAutonomousDatabaseDetails(object):
         self._license_model = license_model
 
     @property
+    def is_access_control_enabled(self):
+        """
+        Gets the is_access_control_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates if the database-level access control is enabled.
+        If disabled, database access is defined by the network security rules.
+        If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional,
+         if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
+        When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
+
+        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+
+
+        :return: The is_access_control_enabled of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_access_control_enabled
+
+    @is_access_control_enabled.setter
+    def is_access_control_enabled(self, is_access_control_enabled):
+        """
+        Sets the is_access_control_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates if the database-level access control is enabled.
+        If disabled, database access is defined by the network security rules.
+        If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional,
+         if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
+        When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
+
+        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+
+
+        :param is_access_control_enabled: The is_access_control_enabled of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_access_control_enabled = is_access_control_enabled
+
+    @property
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        The client IP access control list (ACL). This feature is available for autonomous databases on `shared Exadata infrastructure`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 
-        To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
-        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+        For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+        For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -541,12 +588,16 @@ class UpdateAutonomousDatabaseDetails(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        The client IP access control list (ACL). This feature is available for autonomous databases on `shared Exadata infrastructure`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 
-        To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
-        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+        For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+        For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 

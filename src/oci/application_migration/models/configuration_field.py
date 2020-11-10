@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigurationField(object):
     """
-    Information required to migrate an application. Populated by the service as the source application is introspected
+    Provide configuration information about the application in the target environment. Application Migration migrates the application to
+    the target environment only after you provide this information. The information that you must provide varies depending on the type of
+    application that you are migrating.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +81,7 @@ class ConfigurationField(object):
     def name(self):
         """
         Gets the name of this ConfigurationField.
-        The name of the configuration field
+        The name of the configuration field.
 
 
         :return: The name of this ConfigurationField.
@@ -91,7 +93,7 @@ class ConfigurationField(object):
     def name(self, name):
         """
         Sets the name of this ConfigurationField.
-        The name of the configuration field
+        The name of the configuration field.
 
 
         :param name: The name of this ConfigurationField.
@@ -127,7 +129,7 @@ class ConfigurationField(object):
     def type(self):
         """
         Gets the type of this ConfigurationField.
-        The configuration field type
+        The type of the configuration field.
 
 
         :return: The type of this ConfigurationField.
@@ -139,7 +141,7 @@ class ConfigurationField(object):
     def type(self, type):
         """
         Sets the type of this ConfigurationField.
-        The configuration field type
+        The type of the configuration field.
 
 
         :param type: The type of this ConfigurationField.
@@ -151,7 +153,7 @@ class ConfigurationField(object):
     def value(self):
         """
         Gets the value of this ConfigurationField.
-        The value of the field
+        The value of the field.
 
 
         :return: The value of this ConfigurationField.
@@ -163,7 +165,7 @@ class ConfigurationField(object):
     def value(self, value):
         """
         Sets the value of this ConfigurationField.
-        The value of the field
+        The value of the field.
 
 
         :param value: The value of this ConfigurationField.
@@ -175,7 +177,7 @@ class ConfigurationField(object):
     def description(self):
         """
         Gets the description of this ConfigurationField.
-        Help text to guide the customer in setting the configuration value
+        Help text to guide the user in setting the configuration value.
 
 
         :return: The description of this ConfigurationField.
@@ -187,7 +189,7 @@ class ConfigurationField(object):
     def description(self, description):
         """
         Sets the description of this ConfigurationField.
-        Help text to guide the customer in setting the configuration value
+        Help text to guide the user in setting the configuration value.
 
 
         :param description: The description of this ConfigurationField.
@@ -199,7 +201,7 @@ class ConfigurationField(object):
     def is_required(self):
         """
         Gets the is_required of this ConfigurationField.
-        Indicates whether or not the field is required (defaults to true)
+        Indicates whether or not the field is required (defaults to `true`).
 
 
         :return: The is_required of this ConfigurationField.
@@ -211,7 +213,7 @@ class ConfigurationField(object):
     def is_required(self, is_required):
         """
         Sets the is_required of this ConfigurationField.
-        Indicates whether or not the field is required (defaults to true)
+        Indicates whether or not the field is required (defaults to `true`).
 
 
         :param is_required: The is_required of this ConfigurationField.
@@ -223,7 +225,7 @@ class ConfigurationField(object):
     def is_mutable(self):
         """
         Gets the is_mutable of this ConfigurationField.
-        Indicates whether or not the field may be modified (defaults to true)
+        Indicates whether or not the field may be modified (defaults to `true`).
 
 
         :return: The is_mutable of this ConfigurationField.
@@ -235,7 +237,7 @@ class ConfigurationField(object):
     def is_mutable(self, is_mutable):
         """
         Sets the is_mutable of this ConfigurationField.
-        Indicates whether or not the field may be modified (defaults to true)
+        Indicates whether or not the field may be modified (defaults to `true`).
 
 
         :param is_mutable: The is_mutable of this ConfigurationField.

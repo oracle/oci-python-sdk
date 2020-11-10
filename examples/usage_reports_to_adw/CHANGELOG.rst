@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.11.10 - 2020-11-10
+=====================
+* Added tenant aggregation for cost report
+* Added sub tenants in daily report
+
+=====================
 20.11.03 - 2020-11-03
 =====================
 * Added functionality for faster deployment (Step by Step installation amended)

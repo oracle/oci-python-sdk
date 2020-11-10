@@ -44,6 +44,10 @@ class Subnet(object):
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
+    #: A constant which can be used with the lifecycle_state property of a Subnet.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Subnet object with values from keyword arguments.
@@ -99,7 +103,7 @@ class Subnet(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Subnet.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -586,7 +590,7 @@ class Subnet(object):
         **[Required]** Gets the lifecycle_state of this Subnet.
         The subnet's current state.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -605,7 +609,7 @@ class Subnet(object):
         :param lifecycle_state: The lifecycle_state of this Subnet.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

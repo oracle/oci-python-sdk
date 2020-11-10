@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OcicSourceDetails(SourceDetails):
     """
-    Specifies configuration specific to the source environment.
+    Details about the Oracle Cloud Infrastructure Classic account, the source environment from which you want to migrate the application.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,7 @@ class OcicSourceDetails(SourceDetails):
     def region(self):
         """
         **[Required]** Gets the region of this OcicSourceDetails.
-        The Oracle Cloud Infrastructure - Classic region name (e.g. us2-z11 or uscom-central-1)
+        The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
 
 
         :return: The region of this OcicSourceDetails.
@@ -66,7 +66,7 @@ class OcicSourceDetails(SourceDetails):
     def region(self, region):
         """
         Sets the region of this OcicSourceDetails.
-        The Oracle Cloud Infrastructure - Classic region name (e.g. us2-z11 or uscom-central-1)
+        The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
 
 
         :param region: The region of this OcicSourceDetails.
@@ -78,7 +78,11 @@ class OcicSourceDetails(SourceDetails):
     def compute_account(self):
         """
         **[Required]** Gets the compute_account of this OcicSourceDetails.
-        The compute account id
+        If you are using a Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+        For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
+        then enter 567890123.
+
+        If you are using a traditional Oracle Cloud Infrastructure - Classic account, enter your identity domain ID.
 
 
         :return: The compute_account of this OcicSourceDetails.
@@ -90,7 +94,11 @@ class OcicSourceDetails(SourceDetails):
     def compute_account(self, compute_account):
         """
         Sets the compute_account of this OcicSourceDetails.
-        The compute account id
+        If you are using a Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+        For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
+        then enter 567890123.
+
+        If you are using a traditional Oracle Cloud Infrastructure - Classic account, enter your identity domain ID.
 
 
         :param compute_account: The compute_account of this OcicSourceDetails.

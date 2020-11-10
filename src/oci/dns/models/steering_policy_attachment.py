@@ -118,7 +118,7 @@ class SteeringPolicyAttachment(object):
     @property
     def steering_policy_id(self):
         """
-        Gets the steering_policy_id of this SteeringPolicyAttachment.
+        **[Required]** Gets the steering_policy_id of this SteeringPolicyAttachment.
         The OCID of the attached steering policy.
 
 
@@ -142,7 +142,7 @@ class SteeringPolicyAttachment(object):
     @property
     def zone_id(self):
         """
-        Gets the zone_id of this SteeringPolicyAttachment.
+        **[Required]** Gets the zone_id of this SteeringPolicyAttachment.
         The OCID of the attached zone.
 
 
@@ -166,7 +166,7 @@ class SteeringPolicyAttachment(object):
     @property
     def domain_name(self):
         """
-        Gets the domain_name of this SteeringPolicyAttachment.
+        **[Required]** Gets the domain_name of this SteeringPolicyAttachment.
         The attached domain within the attached zone.
 
 
@@ -190,7 +190,7 @@ class SteeringPolicyAttachment(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this SteeringPolicyAttachment.
+        **[Required]** Gets the display_name of this SteeringPolicyAttachment.
         A user-friendly name for the steering policy attachment.
         Does not have to be unique and can be changed.
         Avoid entering confidential information.
@@ -218,7 +218,7 @@ class SteeringPolicyAttachment(object):
     @property
     def rtypes(self):
         """
-        Gets the rtypes of this SteeringPolicyAttachment.
+        **[Required]** Gets the rtypes of this SteeringPolicyAttachment.
         The record types covered by the attachment at the domain. The set of record types is
         determined by aggregating the record types from the answers defined in the steering
         policy.
@@ -246,7 +246,7 @@ class SteeringPolicyAttachment(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this SteeringPolicyAttachment.
+        **[Required]** Gets the compartment_id of this SteeringPolicyAttachment.
         The OCID of the compartment containing the steering policy attachment.
 
 
@@ -270,7 +270,7 @@ class SteeringPolicyAttachment(object):
     @property
     def _self(self):
         """
-        Gets the _self of this SteeringPolicyAttachment.
+        **[Required]** Gets the _self of this SteeringPolicyAttachment.
         The canonical absolute URL of the resource.
 
 
@@ -294,7 +294,7 @@ class SteeringPolicyAttachment(object):
     @property
     def id(self):
         """
-        Gets the id of this SteeringPolicyAttachment.
+        **[Required]** Gets the id of this SteeringPolicyAttachment.
         The OCID of the resource.
 
 
@@ -318,7 +318,7 @@ class SteeringPolicyAttachment(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this SteeringPolicyAttachment.
+        **[Required]** Gets the time_created of this SteeringPolicyAttachment.
         The date and time the resource was created, expressed in RFC 3339 timestamp format.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -346,7 +346,7 @@ class SteeringPolicyAttachment(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this SteeringPolicyAttachment.
+        **[Required]** Gets the lifecycle_state of this SteeringPolicyAttachment.
         The current state of the resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", 'UNKNOWN_ENUM_VALUE'.

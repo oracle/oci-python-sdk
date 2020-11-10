@@ -28,6 +28,7 @@ Core Services
     oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.AddPublicIpPoolCapacityDetails
     oci.core.models.AddSecurityRuleDetails
+    oci.core.models.AddVcnCidrDetails
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
     oci.core.models.AppCatalogListing
     oci.core.models.AppCatalogListingResourceVersion
@@ -262,6 +263,7 @@ Core Services
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
+    oci.core.models.ModifyVcnCidrDetails
     oci.core.models.NatGateway
     oci.core.models.NetworkSecurityGroup
     oci.core.models.NetworkSecurityGroupVnic
@@ -276,6 +278,7 @@ Core Services
     oci.core.models.RemotePeeringConnection
     oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.RemovePublicIpPoolCapacityDetails
+    oci.core.models.RemoveVcnCidrDetails
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList
@@ -351,6 +354,7 @@ Core Services
     oci.core.models.UpdateVolumeKmsKeyDetails
     oci.core.models.UpdatedNetworkSecurityGroupSecurityRules
     oci.core.models.Vcn
+    oci.core.models.VcnDnsResolverAssociation
     oci.core.models.VirtualCircuit
     oci.core.models.VirtualCircuitBandwidthShape
     oci.core.models.VirtualCircuitPublicPrefix

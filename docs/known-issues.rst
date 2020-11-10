@@ -4,9 +4,15 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~
 These are the current known issues for the Python SDK.
 
+create_job_and_wait_for_state() fails with KeyError for ResourceManagerClientCompositeOperations (versions 2.20.0 and above)
+============================================================================================================================
+`ResourceManagerClientCompositeOperations.create_job_and_wait_for_state() <https://docs.cloud.oracle.com/en-us/iaas/tools/python/latest/api/resource_manager/client/oci.resource_manager.ResourceManagerClientCompositeOperations.html#oci.resource_manager.ResourceManagerClientCompositeOperations.create_stack_and_wait_for_state>`_ fails with KeyError: 'opc-work-request-id'.
+
+**Workaround:** Use `create_stack() <https://docs.cloud.oracle.com/en-us/iaas/tools/python/latest/api/resource_manager/client/oci.resource_manager.ResourceManagerClient.html#oci.resource_manager.ResourceManagerClient.create_stack>`_ and then implement `waiters <https://docs.cloud.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html#oci.wait_until>`_. You can find an example to use waiters `here <https://github.com/oracle/oci-python-sdk/blob/master/examples/wait_for_resource_in_state.py>`_.
+
 UploadManager.upload_stream() raises MultipartUploadError in oci v2.23.2
 ========================================================================
-`UploadManager.upload_stream() <https://docs.cloud.oracle.com/en-us/iaas/tools/python/2.23.2/api/upload_manager.html#oci.object_storage.UploadManager.upload_stream>`_ raises MultipartUploadError when a timeout is set on the underlying object storage client, and the operation takes more than the read timeout to complete. Prior to v2.23.2, we were overwriting the timeout to None in the operations (please see this `known issue <https://docs.cloud.oracle.com/en-us/iaas/tools/python/2.23.2/known-issues.html#uploadmanager-generates-ssl3-write-pending-error-when-a-read-timeout-is-set-for-the-object-storage-client>`_). The default timeout is a read timeout of 60 seconds, hence this scenario will be triggered by default in v2.23.2 on any use of this operation where the operation takes 60 or more seconds to complete.
+`UploadManager.upload_stream() <https://docs.cloud.oracle.com/en-us/iaas/tools/python/latest/api/upload_manager.html#oci.object_storage.UploadManager.upload_stream>`_ raises MultipartUploadError when a timeout is set on the underlying object storage client, and the operation takes more than the read timeout to complete. Prior to v2.23.2, we were overwriting the timeout to None in the operations (please see this `known issue <https://docs.cloud.oracle.com/en-us/iaas/tools/python/latest/known-issues.html#uploadmanager-generates-ssl3-write-pending-error-when-a-read-timeout-is-set-for-the-object-storage-client>`_). The default timeout is a read timeout of 60 seconds, hence this scenario will be triggered by default in v2.23.2 on any use of this operation where the operation takes 60 or more seconds to complete.
 You can work around the issue by explicitly setting the timeout to None. For example,
 
 .. code-block:: python

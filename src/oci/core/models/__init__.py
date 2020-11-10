@@ -8,6 +8,7 @@ from .add_image_shape_compatibility_entry_details import AddImageShapeCompatibil
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
 from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
+from .add_vcn_cidr_details import AddVcnCidrDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
 from .app_catalog_listing import AppCatalogListing
 from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
@@ -242,6 +243,7 @@ from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetai
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .modify_vcn_cidr_details import ModifyVcnCidrDetails
 from .nat_gateway import NatGateway
 from .network_security_group import NetworkSecurityGroup
 from .network_security_group_vnic import NetworkSecurityGroupVnic
@@ -256,6 +258,7 @@ from .public_ip_pool_summary import PublicIpPoolSummary
 from .remote_peering_connection import RemotePeeringConnection
 from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
 from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDetails
+from .remove_vcn_cidr_details import RemoveVcnCidrDetails
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -331,6 +334,7 @@ from .update_volume_group_details import UpdateVolumeGroupDetails
 from .update_volume_kms_key_details import UpdateVolumeKmsKeyDetails
 from .updated_network_security_group_security_rules import UpdatedNetworkSecurityGroupSecurityRules
 from .vcn import Vcn
+from .vcn_dns_resolver_association import VcnDnsResolverAssociation
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
@@ -360,6 +364,7 @@ core_type_mapping = {
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
     "AddPublicIpPoolCapacityDetails": AddPublicIpPoolCapacityDetails,
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
+    "AddVcnCidrDetails": AddVcnCidrDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
     "AppCatalogListing": AppCatalogListing,
     "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
@@ -594,6 +599,7 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
     "NatGateway": NatGateway,
     "NetworkSecurityGroup": NetworkSecurityGroup,
     "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
@@ -608,6 +614,7 @@ core_type_mapping = {
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
     "RemovePublicIpPoolCapacityDetails": RemovePublicIpPoolCapacityDetails,
+    "RemoveVcnCidrDetails": RemoveVcnCidrDetails,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
@@ -683,6 +690,7 @@ core_type_mapping = {
     "UpdateVolumeKmsKeyDetails": UpdateVolumeKmsKeyDetails,
     "UpdatedNetworkSecurityGroupSecurityRules": UpdatedNetworkSecurityGroupSecurityRules,
     "Vcn": Vcn,
+    "VcnDnsResolverAssociation": VcnDnsResolverAssociation,
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,

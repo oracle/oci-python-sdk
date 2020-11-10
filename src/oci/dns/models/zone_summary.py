@@ -23,6 +23,14 @@ class ZoneSummary(object):
     #: This constant has a value of "SECONDARY"
     ZONE_TYPE_SECONDARY = "SECONDARY"
 
+    #: A constant which can be used with the scope property of a ZoneSummary.
+    #: This constant has a value of "GLOBAL"
+    SCOPE_GLOBAL = "GLOBAL"
+
+    #: A constant which can be used with the scope property of a ZoneSummary.
+    #: This constant has a value of "PRIVATE"
+    SCOPE_PRIVATE = "PRIVATE"
+
     #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -62,6 +70,16 @@ class ZoneSummary(object):
             The value to assign to the compartment_id property of this ZoneSummary.
         :type compartment_id: str
 
+        :param view_id:
+            The value to assign to the view_id property of this ZoneSummary.
+        :type view_id: str
+
+        :param scope:
+            The value to assign to the scope property of this ZoneSummary.
+            Allowed values for this property are: "GLOBAL", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type scope: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ZoneSummary.
         :type freeform_tags: dict(str, str)
@@ -96,11 +114,17 @@ class ZoneSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param is_protected:
+            The value to assign to the is_protected property of this ZoneSummary.
+        :type is_protected: bool
+
         """
         self.swagger_types = {
             'name': 'str',
             'zone_type': 'str',
             'compartment_id': 'str',
+            'view_id': 'str',
+            'scope': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'self_uri': 'str',
@@ -108,13 +132,16 @@ class ZoneSummary(object):
             'time_created': 'datetime',
             'version': 'str',
             'serial': 'int',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'is_protected': 'bool'
         }
 
         self.attribute_map = {
             'name': 'name',
             'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
+            'view_id': 'viewId',
+            'scope': 'scope',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'self_uri': 'self',
@@ -122,12 +149,15 @@ class ZoneSummary(object):
             'time_created': 'timeCreated',
             'version': 'version',
             'serial': 'serial',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'is_protected': 'isProtected'
         }
 
         self._name = None
         self._zone_type = None
         self._compartment_id = None
+        self._view_id = None
+        self._scope = None
         self._freeform_tags = None
         self._defined_tags = None
         self._self_uri = None
@@ -136,11 +166,12 @@ class ZoneSummary(object):
         self._version = None
         self._serial = None
         self._lifecycle_state = None
+        self._is_protected = None
 
     @property
     def name(self):
         """
-        Gets the name of this ZoneSummary.
+        **[Required]** Gets the name of this ZoneSummary.
         The name of the zone.
 
 
@@ -164,8 +195,8 @@ class ZoneSummary(object):
     @property
     def zone_type(self):
         """
-        Gets the zone_type of this ZoneSummary.
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+        **[Required]** Gets the zone_type of this ZoneSummary.
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
         Allowed values for this property are: "PRIMARY", "SECONDARY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -180,7 +211,7 @@ class ZoneSummary(object):
     def zone_type(self, zone_type):
         """
         Sets the zone_type of this ZoneSummary.
-        The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+        The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
 
 
         :param zone_type: The zone_type of this ZoneSummary.
@@ -194,7 +225,7 @@ class ZoneSummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this ZoneSummary.
+        **[Required]** Gets the compartment_id of this ZoneSummary.
         The OCID of the compartment containing the zone.
 
 
@@ -216,9 +247,67 @@ class ZoneSummary(object):
         self._compartment_id = compartment_id
 
     @property
+    def view_id(self):
+        """
+        Gets the view_id of this ZoneSummary.
+        The OCID of the private view containing the zone. This value will
+        be null for zones in the global DNS, which are publicly resolvable and
+        not part of a private view.
+
+
+        :return: The view_id of this ZoneSummary.
+        :rtype: str
+        """
+        return self._view_id
+
+    @view_id.setter
+    def view_id(self, view_id):
+        """
+        Sets the view_id of this ZoneSummary.
+        The OCID of the private view containing the zone. This value will
+        be null for zones in the global DNS, which are publicly resolvable and
+        not part of a private view.
+
+
+        :param view_id: The view_id of this ZoneSummary.
+        :type: str
+        """
+        self._view_id = view_id
+
+    @property
+    def scope(self):
+        """
+        **[Required]** Gets the scope of this ZoneSummary.
+        The scope of the zone.
+
+        Allowed values for this property are: "GLOBAL", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The scope of this ZoneSummary.
+        :rtype: str
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """
+        Sets the scope of this ZoneSummary.
+        The scope of the zone.
+
+
+        :param scope: The scope of this ZoneSummary.
+        :type: str
+        """
+        allowed_values = ["GLOBAL", "PRIVATE"]
+        if not value_allowed_none_or_none_sentinel(scope, allowed_values):
+            scope = 'UNKNOWN_ENUM_VALUE'
+        self._scope = scope
+
+    @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this ZoneSummary.
+        **[Required]** Gets the freeform_tags of this ZoneSummary.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
 
@@ -254,7 +343,7 @@ class ZoneSummary(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this ZoneSummary.
+        **[Required]** Gets the defined_tags of this ZoneSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
@@ -290,7 +379,7 @@ class ZoneSummary(object):
     @property
     def self_uri(self):
         """
-        Gets the self_uri of this ZoneSummary.
+        **[Required]** Gets the self_uri of this ZoneSummary.
         The canonical absolute URL of the resource.
 
 
@@ -314,7 +403,7 @@ class ZoneSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this ZoneSummary.
+        **[Required]** Gets the id of this ZoneSummary.
         The OCID of the zone.
 
 
@@ -338,8 +427,8 @@ class ZoneSummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this ZoneSummary.
-        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
+        **[Required]** Gets the time_created of this ZoneSummary.
+        The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -354,7 +443,7 @@ class ZoneSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ZoneSummary.
-        The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
+        The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
         with a Z offset, as defined by RFC 3339.
 
         **Example:** `2016-07-22T17:23:59:60Z`
@@ -368,7 +457,7 @@ class ZoneSummary(object):
     @property
     def version(self):
         """
-        Gets the version of this ZoneSummary.
+        **[Required]** Gets the version of this ZoneSummary.
         Version is the never-repeating, totally-orderable, version of the
         zone, from which the serial field of the zone's SOA record is
         derived.
@@ -396,7 +485,7 @@ class ZoneSummary(object):
     @property
     def serial(self):
         """
-        Gets the serial of this ZoneSummary.
+        **[Required]** Gets the serial of this ZoneSummary.
         The current serial of the zone. As seen in the zone's SOA record.
 
 
@@ -420,7 +509,7 @@ class ZoneSummary(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this ZoneSummary.
+        **[Required]** Gets the lifecycle_state of this ZoneSummary.
         The current state of the zone resource.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -446,6 +535,30 @@ class ZoneSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_protected(self):
+        """
+        **[Required]** Gets the is_protected of this ZoneSummary.
+        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+
+
+        :return: The is_protected of this ZoneSummary.
+        :rtype: bool
+        """
+        return self._is_protected
+
+    @is_protected.setter
+    def is_protected(self, is_protected):
+        """
+        Sets the is_protected of this ZoneSummary.
+        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+
+
+        :param is_protected: The is_protected of this ZoneSummary.
+        :type: bool
+        """
+        self._is_protected = is_protected
 
     def __repr__(self):
         return formatted_flat_dict(self)

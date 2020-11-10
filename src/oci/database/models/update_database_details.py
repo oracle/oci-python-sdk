@@ -28,6 +28,18 @@ class UpdateDatabaseDetails(object):
             The value to assign to the db_home_id property of this UpdateDatabaseDetails.
         :type db_home_id: str
 
+        :param new_admin_password:
+            The value to assign to the new_admin_password property of this UpdateDatabaseDetails.
+        :type new_admin_password: str
+
+        :param old_tde_wallet_password:
+            The value to assign to the old_tde_wallet_password property of this UpdateDatabaseDetails.
+        :type old_tde_wallet_password: str
+
+        :param new_tde_wallet_password:
+            The value to assign to the new_tde_wallet_password property of this UpdateDatabaseDetails.
+        :type new_tde_wallet_password: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -40,6 +52,9 @@ class UpdateDatabaseDetails(object):
         self.swagger_types = {
             'db_backup_config': 'DbBackupConfig',
             'db_home_id': 'str',
+            'new_admin_password': 'str',
+            'old_tde_wallet_password': 'str',
+            'new_tde_wallet_password': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -47,12 +62,18 @@ class UpdateDatabaseDetails(object):
         self.attribute_map = {
             'db_backup_config': 'dbBackupConfig',
             'db_home_id': 'dbHomeId',
+            'new_admin_password': 'newAdminPassword',
+            'old_tde_wallet_password': 'oldTdeWalletPassword',
+            'new_tde_wallet_password': 'newTdeWalletPassword',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._db_backup_config = None
         self._db_home_id = None
+        self._new_admin_password = None
+        self._old_tde_wallet_password = None
+        self._new_tde_wallet_password = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -103,6 +124,78 @@ class UpdateDatabaseDetails(object):
         :type: str
         """
         self._db_home_id = db_home_id
+
+    @property
+    def new_admin_password(self):
+        """
+        Gets the new_admin_password of this UpdateDatabaseDetails.
+        A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :return: The new_admin_password of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._new_admin_password
+
+    @new_admin_password.setter
+    def new_admin_password(self, new_admin_password):
+        """
+        Sets the new_admin_password of this UpdateDatabaseDetails.
+        A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :param new_admin_password: The new_admin_password of this UpdateDatabaseDetails.
+        :type: str
+        """
+        self._new_admin_password = new_admin_password
+
+    @property
+    def old_tde_wallet_password(self):
+        """
+        Gets the old_tde_wallet_password of this UpdateDatabaseDetails.
+        The existing password to open the TDE wallet. It is required to set a new tde password.
+
+
+        :return: The old_tde_wallet_password of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._old_tde_wallet_password
+
+    @old_tde_wallet_password.setter
+    def old_tde_wallet_password(self, old_tde_wallet_password):
+        """
+        Sets the old_tde_wallet_password of this UpdateDatabaseDetails.
+        The existing password to open the TDE wallet. It is required to set a new tde password.
+
+
+        :param old_tde_wallet_password: The old_tde_wallet_password of this UpdateDatabaseDetails.
+        :type: str
+        """
+        self._old_tde_wallet_password = old_tde_wallet_password
+
+    @property
+    def new_tde_wallet_password(self):
+        """
+        Gets the new_tde_wallet_password of this UpdateDatabaseDetails.
+        The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :return: The new_tde_wallet_password of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._new_tde_wallet_password
+
+    @new_tde_wallet_password.setter
+    def new_tde_wallet_password(self, new_tde_wallet_password):
+        """
+        Sets the new_tde_wallet_password of this UpdateDatabaseDetails.
+        The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+
+
+        :param new_tde_wallet_password: The new_tde_wallet_password of this UpdateDatabaseDetails.
+        :type: str
+        """
+        self._new_tde_wallet_password = new_tde_wallet_password
 
     @property
     def freeform_tags(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntry(object):
     """
-    A log message from executing an operation that is tracked by a work request.
+    A log message about the execution of an operation that is tracked by a work request.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class WorkRequestLogEntry(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestLogEntry.
-        A human-readable log message.
+        A user-friendly log message.
 
 
         :return: The message of this WorkRequestLogEntry.
@@ -56,7 +56,7 @@ class WorkRequestLogEntry(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestLogEntry.
-        A human-readable log message.
+        A user-friendly log message.
 
 
         :param message: The message of this WorkRequestLogEntry.

@@ -55,6 +55,7 @@ from .redirect_rule import RedirectRule
 from .redirect_uri import RedirectUri
 from .remove_http_request_header_rule import RemoveHttpRequestHeaderRule
 from .remove_http_response_header_rule import RemoveHttpResponseHeaderRule
+from .reserved_ip import ReservedIP
 from .rule import Rule
 from .rule_condition import RuleCondition
 from .rule_set import RuleSet
@@ -134,6 +135,7 @@ load_balancer_type_mapping = {
     "RedirectUri": RedirectUri,
     "RemoveHttpRequestHeaderRule": RemoveHttpRequestHeaderRule,
     "RemoveHttpResponseHeaderRule": RemoveHttpResponseHeaderRule,
+    "ReservedIP": ReservedIP,
     "Rule": Rule,
     "RuleCondition": RuleCondition,
     "RuleSet": RuleSet,

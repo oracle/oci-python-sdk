@@ -4,6 +4,13 @@
 
 from __future__ import absolute_import
 
+from .add_analytics_cluster_details import AddAnalyticsClusterDetails
+from .analytics_cluster import AnalyticsCluster
+from .analytics_cluster_memory_estimate import AnalyticsClusterMemoryEstimate
+from .analytics_cluster_node import AnalyticsClusterNode
+from .analytics_cluster_schema_memory_estimate import AnalyticsClusterSchemaMemoryEstimate
+from .analytics_cluster_summary import AnalyticsClusterSummary
+from .analytics_cluster_table_memory_estimate import AnalyticsClusterTableMemoryEstimate
 from .backup import Backup
 from .backup_policy import BackupPolicy
 from .backup_summary import BackupSummary
@@ -28,6 +35,7 @@ from .maintenance_details import MaintenanceDetails
 from .restart_db_system_details import RestartDbSystemDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
+from .update_analytics_cluster_details import UpdateAnalyticsClusterDetails
 from .update_backup_details import UpdateBackupDetails
 from .update_backup_policy_details import UpdateBackupPolicyDetails
 from .update_configuration_details import UpdateConfigurationDetails
@@ -43,6 +51,13 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for mysql services.
 mysql_type_mapping = {
+    "AddAnalyticsClusterDetails": AddAnalyticsClusterDetails,
+    "AnalyticsCluster": AnalyticsCluster,
+    "AnalyticsClusterMemoryEstimate": AnalyticsClusterMemoryEstimate,
+    "AnalyticsClusterNode": AnalyticsClusterNode,
+    "AnalyticsClusterSchemaMemoryEstimate": AnalyticsClusterSchemaMemoryEstimate,
+    "AnalyticsClusterSummary": AnalyticsClusterSummary,
+    "AnalyticsClusterTableMemoryEstimate": AnalyticsClusterTableMemoryEstimate,
     "Backup": Backup,
     "BackupPolicy": BackupPolicy,
     "BackupSummary": BackupSummary,
@@ -67,6 +82,7 @@ mysql_type_mapping = {
     "RestartDbSystemDetails": RestartDbSystemDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,
+    "UpdateAnalyticsClusterDetails": UpdateAnalyticsClusterDetails,
     "UpdateBackupDetails": UpdateBackupDetails,
     "UpdateBackupPolicyDetails": UpdateBackupPolicyDetails,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,
