@@ -28,7 +28,7 @@ def unpack_authorization_header(authorization_header):
 
 
 def generate_key(key_size=2048):
-    return rsa.generate_private_key(public_exponent=66537, key_size=key_size, backend=default_backend())
+    return rsa.generate_private_key(public_exponent=65537, key_size=key_size, backend=default_backend())
 
 
 def serialize_key(private_key=None, public_key=None, password=None, encoding="pem", format="pkcs1"):
