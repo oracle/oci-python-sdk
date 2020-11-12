@@ -423,7 +423,7 @@ class IdentityClient(object):
     def bulk_delete_tags(self, bulk_delete_tags_details, **kwargs):
         """
         Deletes the specified tag key definitions. This operation triggers a process that removes the
-        tags from all resources in your tenancy.
+        tags from all resources in your tenancy. The tag key definitions must be within the same tag namespace.
 
         The following actions happen immediately:
         \u00A0
@@ -511,6 +511,92 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=bulk_delete_tags_details)
+
+    def bulk_edit_tags(self, **kwargs):
+        """
+        Edits the specified list of tag key definitions for the selected resources.
+        This operation triggers a process that edits the tags on all selected resources. The possible actions are:
+
+          * Add a defined tag when the tag does not already exist on the resource.
+          * Update the value for a defined tag when the tag is present on the resource.
+          * Add a defined tag when it does not already exist on the resource or update the value for a defined tag when the tag is present on the resource.
+          * Remove a defined tag from a resource. The tag is removed from the resource regardless of the tag value.
+
+        See :func:`bulk_edit_operation_details` for more information.
+
+        The edits can include a combination of operations and tag sets.
+        However, multiple operations cannot apply to one key definition in the same request.
+        For example, if one request adds `tag set-1` to a resource and sets a tag value to `tag set-2`,
+        `tag set-1` and `tag set-2` cannot have any common tag definitions.
+
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param BulkEditTagsDetails bulk_edit_tags_details: (optional)
+            The request object for bulk editing tags on resources in the compartment.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tags/actions/bulkEdit"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "bulk_edit_tags_details"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "bulk_edit_tags got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=kwargs.get('bulk_edit_tags_details'))
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=kwargs.get('bulk_edit_tags_details'))
 
     def bulk_move_resources(self, compartment_id, bulk_move_resources_details, **kwargs):
         """
@@ -986,7 +1072,7 @@ class IdentityClient(object):
     def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
         """
         Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-        compatible API. For information, see
+        compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
         `Managing User Credentials`__.
 
         You must specify a *description* for the secret key (although it can be an empty string). It does not
@@ -5394,6 +5480,73 @@ class IdentityClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="BulkActionResourceTypeCollection")
+
+    def list_bulk_edit_tags_resource_types(self, **kwargs):
+        """
+        Lists the resource types that support bulk tag editing.
+
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.BulkEditTagsResourceTypeCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tags/bulkEditResourceTypes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_bulk_edit_tags_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="BulkEditTagsResourceTypeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="BulkEditTagsResourceTypeCollection")
 
     def list_compartments(self, compartment_id, **kwargs):
         """

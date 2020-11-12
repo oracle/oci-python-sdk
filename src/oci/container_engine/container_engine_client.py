@@ -1369,8 +1369,6 @@ class ContainerEngineClient(object):
         :param list[str] status: (optional)
             A work request status to filter on. Can have multiple parameters of this name.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
-
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
@@ -1436,14 +1434,6 @@ class ContainerEngineClient(object):
                 raise ValueError(
                     "Invalid value for `resource_type`, must be one of {0}".format(resource_type_allowed_values)
                 )
-
-        if 'status' in kwargs:
-            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
-            for status_item in kwargs['status']:
-                if status_item not in status_allowed_values:
-                    raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
-                    )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]

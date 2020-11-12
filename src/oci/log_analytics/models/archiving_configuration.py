@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ArchivingConfiguration(object):
     """
-    configuration for archiving data in object storage
+    This is the configuration for data archiving in object storage
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ArchivingConfiguration(object):
     def active_storage_duration(self):
         """
         Gets the active_storage_duration of this ArchivingConfiguration.
-        duration in active storage before data is archived, as described in
+        Thi is the duration data in active storage before data is archived, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations.
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 
@@ -58,7 +58,7 @@ class ArchivingConfiguration(object):
     def active_storage_duration(self, active_storage_duration):
         """
         Sets the active_storage_duration of this ArchivingConfiguration.
-        duration in active storage before data is archived, as described in
+        Thi is the duration data in active storage before data is archived, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations.
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 
@@ -72,7 +72,7 @@ class ArchivingConfiguration(object):
     def archival_storage_duration(self):
         """
         Gets the archival_storage_duration of this ArchivingConfiguration.
-        duration before data is deleted from object storage, as described in
+        The is the duration before archived data is deleted from object storage, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 
@@ -86,7 +86,7 @@ class ArchivingConfiguration(object):
     def archival_storage_duration(self, archival_storage_duration):
         """
         Sets the archival_storage_duration of this ArchivingConfiguration.
-        duration before data is deleted from object storage, as described in
+        The is the duration before archived data is deleted from object storage, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 

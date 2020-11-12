@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.dashx</groupId>
         <artifactId>management-dashboard-spec</artifactId>
-        <version>0.1.175</version>
+        <version>1.0.63</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

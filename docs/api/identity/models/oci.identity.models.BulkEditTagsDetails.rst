@@ -1,9 +1,9 @@
-LogAnalyticsSummary
+BulkEditTagsDetails
 ===================
 
-.. currentmodule:: oci.log_analytics.models
+.. currentmodule:: oci.identity.models
 
-.. autoclass:: LogAnalyticsSummary
+.. autoclass:: BulkEditTagsDetails
     :show-inheritance:
     :special-members: __init__
     :members:

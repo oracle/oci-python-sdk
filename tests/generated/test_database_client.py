@@ -3467,6 +3467,47 @@ def test_get_database_software_image(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_database_upgrade_history_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetDatabaseUpgradeHistoryEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDatabaseUpgradeHistoryEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDatabaseUpgradeHistoryEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_database_upgrade_history_entry(
+                database_id=request.pop(util.camelize('databaseId')),
+                upgrade_history_entry_id=request.pop(util.camelize('upgradeHistoryEntryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetDatabaseUpgradeHistoryEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'databaseUpgradeHistoryEntry',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5588,6 +5629,66 @@ def test_list_database_software_images(testing_service_client):
             result,
             service_error,
             'databaseSoftwareImageSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_database_upgrade_history_entries(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListDatabaseUpgradeHistoryEntries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDatabaseUpgradeHistoryEntries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDatabaseUpgradeHistoryEntries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_database_upgrade_history_entries(
+                database_id=request.pop(util.camelize('databaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_database_upgrade_history_entries(
+                    database_id=request.pop(util.camelize('databaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_database_upgrade_history_entries(
+                        database_id=request.pop(util.camelize('databaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListDatabaseUpgradeHistoryEntries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'databaseUpgradeHistoryEntrySummary',
             False,
             True
         )
@@ -8381,6 +8482,47 @@ def test_update_vm_cluster_network(testing_service_client):
             result,
             service_error,
             'vmClusterNetwork',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_upgrade_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpgradeDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpgradeDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpgradeDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.upgrade_database(
+                database_id=request.pop(util.camelize('databaseId')),
+                upgrade_database_details=request.pop(util.camelize('UpgradeDatabaseDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpgradeDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'database',
             False,
             False
         )

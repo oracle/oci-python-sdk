@@ -29,6 +29,11 @@ Identity
     oci.identity.models.BulkActionResourceTypeCollection
     oci.identity.models.BulkDeleteResourcesDetails
     oci.identity.models.BulkDeleteTagsDetails
+    oci.identity.models.BulkEditOperationDetails
+    oci.identity.models.BulkEditResource
+    oci.identity.models.BulkEditTagsDetails
+    oci.identity.models.BulkEditTagsResourceType
+    oci.identity.models.BulkEditTagsResourceTypeCollection
     oci.identity.models.BulkMoveResourcesDetails
     oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment

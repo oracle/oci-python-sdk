@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RecallArchivedDataDetails(object):
     """
-    Work request details to recall archived data
+    This is the input used to recall archived data
     """
 
     #: A constant which can be used with the data_type property of a RecallArchivedDataDetails.
@@ -67,7 +67,7 @@ class RecallArchivedDataDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this RecallArchivedDataDetails.
-        the compartment OCID for permission checking
+        This is the compartment OCID for permission checking
 
 
         :return: The compartment_id of this RecallArchivedDataDetails.
@@ -79,7 +79,7 @@ class RecallArchivedDataDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this RecallArchivedDataDetails.
-        the compartment OCID for permission checking
+        This is the compartment OCID for permission checking
 
 
         :param compartment_id: The compartment_id of this RecallArchivedDataDetails.
@@ -91,7 +91,7 @@ class RecallArchivedDataDetails(object):
     def time_data_ended(self):
         """
         **[Required]** Gets the time_data_ended of this RecallArchivedDataDetails.
-        the end of the time interval
+        This is the end of the time interval
 
 
         :return: The time_data_ended of this RecallArchivedDataDetails.
@@ -103,7 +103,7 @@ class RecallArchivedDataDetails(object):
     def time_data_ended(self, time_data_ended):
         """
         Sets the time_data_ended of this RecallArchivedDataDetails.
-        the end of the time interval
+        This is the end of the time interval
 
 
         :param time_data_ended: The time_data_ended of this RecallArchivedDataDetails.
@@ -115,7 +115,7 @@ class RecallArchivedDataDetails(object):
     def time_data_started(self):
         """
         **[Required]** Gets the time_data_started of this RecallArchivedDataDetails.
-        the start of the time interval
+        This is the start of the time interval
 
 
         :return: The time_data_started of this RecallArchivedDataDetails.
@@ -127,7 +127,7 @@ class RecallArchivedDataDetails(object):
     def time_data_started(self, time_data_started):
         """
         Sets the time_data_started of this RecallArchivedDataDetails.
-        the start of the time interval
+        This is the start of the time interval
 
 
         :param time_data_started: The time_data_started of this RecallArchivedDataDetails.
@@ -139,7 +139,7 @@ class RecallArchivedDataDetails(object):
     def data_type(self):
         """
         Gets the data_type of this RecallArchivedDataDetails.
-        the type of the log data to be purged
+        This is the type of the log data to be recalled
 
         Allowed values for this property are: "LOG", "LOOKUP"
 
@@ -153,7 +153,7 @@ class RecallArchivedDataDetails(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this RecallArchivedDataDetails.
-        the type of the log data to be purged
+        This is the type of the log data to be recalled
 
 
         :param data_type: The data_type of this RecallArchivedDataDetails.

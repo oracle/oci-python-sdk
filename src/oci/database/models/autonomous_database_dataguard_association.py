@@ -154,6 +154,14 @@ class AutonomousDatabaseDataguardAssociation(object):
             The value to assign to the apply_rate property of this AutonomousDatabaseDataguardAssociation.
         :type apply_rate: str
 
+        :param transport_lag:
+            The value to assign to the transport_lag property of this AutonomousDatabaseDataguardAssociation.
+        :type transport_lag: str
+
+        :param time_last_synced:
+            The value to assign to the time_last_synced property of this AutonomousDatabaseDataguardAssociation.
+        :type time_last_synced: datetime
+
         :param time_created:
             The value to assign to the time_created property of this AutonomousDatabaseDataguardAssociation.
         :type time_created: datetime
@@ -175,6 +183,8 @@ class AutonomousDatabaseDataguardAssociation(object):
             'protection_mode': 'str',
             'apply_lag': 'str',
             'apply_rate': 'str',
+            'transport_lag': 'str',
+            'time_last_synced': 'datetime',
             'time_created': 'datetime',
             'time_last_role_changed': 'datetime'
         }
@@ -191,6 +201,8 @@ class AutonomousDatabaseDataguardAssociation(object):
             'protection_mode': 'protectionMode',
             'apply_lag': 'applyLag',
             'apply_rate': 'applyRate',
+            'transport_lag': 'transportLag',
+            'time_last_synced': 'timeLastSynced',
             'time_created': 'timeCreated',
             'time_last_role_changed': 'timeLastRoleChanged'
         }
@@ -206,6 +218,8 @@ class AutonomousDatabaseDataguardAssociation(object):
         self._protection_mode = None
         self._apply_lag = None
         self._apply_rate = None
+        self._transport_lag = None
+        self._time_last_synced = None
         self._time_created = None
         self._time_last_role_changed = None
 
@@ -528,6 +542,60 @@ class AutonomousDatabaseDataguardAssociation(object):
         :type: str
         """
         self._apply_rate = apply_rate
+
+    @property
+    def transport_lag(self):
+        """
+        Gets the transport_lag of this AutonomousDatabaseDataguardAssociation.
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database,
+        as computed by the reporting database.
+
+        Example: `7 seconds`
+
+
+        :return: The transport_lag of this AutonomousDatabaseDataguardAssociation.
+        :rtype: str
+        """
+        return self._transport_lag
+
+    @transport_lag.setter
+    def transport_lag(self, transport_lag):
+        """
+        Sets the transport_lag of this AutonomousDatabaseDataguardAssociation.
+        The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database,
+        as computed by the reporting database.
+
+        Example: `7 seconds`
+
+
+        :param transport_lag: The transport_lag of this AutonomousDatabaseDataguardAssociation.
+        :type: str
+        """
+        self._transport_lag = transport_lag
+
+    @property
+    def time_last_synced(self):
+        """
+        Gets the time_last_synced of this AutonomousDatabaseDataguardAssociation.
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+
+
+        :return: The time_last_synced of this AutonomousDatabaseDataguardAssociation.
+        :rtype: datetime
+        """
+        return self._time_last_synced
+
+    @time_last_synced.setter
+    def time_last_synced(self, time_last_synced):
+        """
+        Sets the time_last_synced of this AutonomousDatabaseDataguardAssociation.
+        The date and time of the last update to the apply lag, apply rate, and transport lag values.
+
+
+        :param time_last_synced: The time_last_synced of this AutonomousDatabaseDataguardAssociation.
+        :type: datetime
+        """
+        self._time_last_synced = time_last_synced
 
     @property
     def time_created(self):

@@ -631,7 +631,7 @@ def test_delete_associations(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'errorDetails',
+            'delete_associations',
             False,
             False
         )
@@ -1533,7 +1533,7 @@ def test_get_column_names(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'get_column_names',
+            'columnNameCollection',
             False,
             False
         )

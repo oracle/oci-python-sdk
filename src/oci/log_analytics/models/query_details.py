@@ -202,7 +202,7 @@ class QueryDetails(object):
     def saved_search_id(self):
         """
         Gets the saved_search_id of this QueryDetails.
-        Saved search OCID for this query if known, used to track usage of saved search queryString.
+        Saved search OCID for this query if known.
 
 
         :return: The saved_search_id of this QueryDetails.
@@ -214,7 +214,7 @@ class QueryDetails(object):
     def saved_search_id(self, saved_search_id):
         """
         Sets the saved_search_id of this QueryDetails.
-        Saved search OCID for this query if known, used to track usage of saved search queryString.
+        Saved search OCID for this query if known.
 
 
         :param saved_search_id: The saved_search_id of this QueryDetails.
@@ -226,7 +226,7 @@ class QueryDetails(object):
     def query_string(self):
         """
         **[Required]** Gets the query_string of this QueryDetails.
-        Query to perform.
+        Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
 
 
         :return: The query_string of this QueryDetails.
@@ -238,7 +238,7 @@ class QueryDetails(object):
     def query_string(self, query_string):
         """
         Sets the query_string of this QueryDetails.
-        Query to perform.
+        Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
 
 
         :param query_string: The query_string of this QueryDetails.
@@ -374,7 +374,7 @@ class QueryDetails(object):
     def should_run_async(self):
         """
         Gets the should_run_async of this QueryDetails.
-        Option to run the query asynchronously. This will lead to a LogAnalyticsQueryJobWorkRequest being submitted and the {workRequestId} will be returned to fetch the results.
+        Option to run the query asynchronously. This will lead to a LogAnalyticsQueryJobWorkRequest being submitted and the {workRequestId} will be returned to use for fetching the results.
 
 
         :return: The should_run_async of this QueryDetails.
@@ -386,7 +386,7 @@ class QueryDetails(object):
     def should_run_async(self, should_run_async):
         """
         Sets the should_run_async of this QueryDetails.
-        Option to run the query asynchronously. This will lead to a LogAnalyticsQueryJobWorkRequest being submitted and the {workRequestId} will be returned to fetch the results.
+        Option to run the query asynchronously. This will lead to a LogAnalyticsQueryJobWorkRequest being submitted and the {workRequestId} will be returned to use for fetching the results.
 
 
         :param should_run_async: The should_run_async of this QueryDetails.
@@ -398,7 +398,7 @@ class QueryDetails(object):
     def async_mode(self):
         """
         Gets the async_mode of this QueryDetails.
-        Execution mode for the query if running asynchronously  (shouldRunAsync is true).
+        Execution mode for the query if running asynchronously i.e (shouldRunAsync is set to true).
 
         Allowed values for this property are: "FOREGROUND", "BACKGROUND"
 
@@ -412,7 +412,7 @@ class QueryDetails(object):
     def async_mode(self, async_mode):
         """
         Sets the async_mode of this QueryDetails.
-        Execution mode for the query if running asynchronously  (shouldRunAsync is true).
+        Execution mode for the query if running asynchronously i.e (shouldRunAsync is set to true).
 
 
         :param async_mode: The async_mode of this QueryDetails.
@@ -502,7 +502,7 @@ class QueryDetails(object):
     def should_use_acceleration(self):
         """
         Gets the should_use_acceleration of this QueryDetails.
-        Controls if query should ignore pre-calculated results if available and only use raw data.
+        Controls if query should ignore pre-calculated results if available and only use raw data. If set and no acceleration data is found it will fallback to raw data.
 
 
         :return: The should_use_acceleration of this QueryDetails.
@@ -514,7 +514,7 @@ class QueryDetails(object):
     def should_use_acceleration(self, should_use_acceleration):
         """
         Sets the should_use_acceleration of this QueryDetails.
-        Controls if query should ignore pre-calculated results if available and only use raw data.
+        Controls if query should ignore pre-calculated results if available and only use raw data. If set and no acceleration data is found it will fallback to raw data.
 
 
         :param should_use_acceleration: The should_use_acceleration of this QueryDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StorageWorkRequestSummary(object):
     """
-    Storage work request summary for list operation.
+    This is the summary of a storage work request.
     """
 
     #: A constant which can be used with the status property of a StorageWorkRequestSummary.
@@ -221,7 +221,7 @@ class StorageWorkRequestSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this StorageWorkRequestSummary.
-        Unique OCID identifier to reference this storage work Request with.
+        This is the OCID of the storage work Request.
 
 
         :return: The id of this StorageWorkRequestSummary.
@@ -233,7 +233,7 @@ class StorageWorkRequestSummary(object):
     def id(self, id):
         """
         Sets the id of this StorageWorkRequestSummary.
-        Unique OCID identifier to reference this storage work Request with.
+        This is the OCID of the storage work Request.
 
 
         :param id: The id of this StorageWorkRequestSummary.
@@ -393,7 +393,7 @@ class StorageWorkRequestSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this StorageWorkRequestSummary.
-        Work request status.
+        This is the work request status.
 
         Allowed values for this property are: "ACCEPTED", "CANCELED", "FAILED", "IN_PROGRESS", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -408,7 +408,7 @@ class StorageWorkRequestSummary(object):
     def status(self, status):
         """
         Sets the status of this StorageWorkRequestSummary.
-        Work request status.
+        This is the work request status.
 
 
         :param status: The status of this StorageWorkRequestSummary.
@@ -423,7 +423,7 @@ class StorageWorkRequestSummary(object):
     def time_data_started(self):
         """
         Gets the time_data_started of this StorageWorkRequestSummary.
-        the start of the time interval
+        This is the start of the time interval
 
 
         :return: The time_data_started of this StorageWorkRequestSummary.
@@ -435,7 +435,7 @@ class StorageWorkRequestSummary(object):
     def time_data_started(self, time_data_started):
         """
         Sets the time_data_started of this StorageWorkRequestSummary.
-        the start of the time interval
+        This is the start of the time interval
 
 
         :param time_data_started: The time_data_started of this StorageWorkRequestSummary.
@@ -447,7 +447,7 @@ class StorageWorkRequestSummary(object):
     def time_data_ended(self):
         """
         **[Required]** Gets the time_data_ended of this StorageWorkRequestSummary.
-        the end of the time interval
+        This is the end of the time interval
 
 
         :return: The time_data_ended of this StorageWorkRequestSummary.
@@ -459,7 +459,7 @@ class StorageWorkRequestSummary(object):
     def time_data_ended(self, time_data_ended):
         """
         Sets the time_data_ended of this StorageWorkRequestSummary.
-        the end of the time interval
+        This is the end of the time interval
 
 
         :param time_data_ended: The time_data_ended of this StorageWorkRequestSummary.
@@ -471,7 +471,7 @@ class StorageWorkRequestSummary(object):
     def purge_query_string(self):
         """
         Gets the purge_query_string of this StorageWorkRequestSummary.
-        the solr data filter query, '*' means all
+        This is the solr query used to filter data for purge, '*' means all
 
 
         :return: The purge_query_string of this StorageWorkRequestSummary.
@@ -483,7 +483,7 @@ class StorageWorkRequestSummary(object):
     def purge_query_string(self, purge_query_string):
         """
         Sets the purge_query_string of this StorageWorkRequestSummary.
-        the solr data filter query, '*' means all
+        This is the solr query used to filter data for purge, '*' means all
 
 
         :param purge_query_string: The purge_query_string of this StorageWorkRequestSummary.
@@ -495,7 +495,7 @@ class StorageWorkRequestSummary(object):
     def data_type(self):
         """
         **[Required]** Gets the data_type of this StorageWorkRequestSummary.
-        the type of the log data to be purged
+        Thie is the type of data to be purged
 
         Allowed values for this property are: "LOG", "LOOKUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -510,7 +510,7 @@ class StorageWorkRequestSummary(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this StorageWorkRequestSummary.
-        the type of the log data to be purged
+        Thie is the type of data to be purged
 
 
         :param data_type: The data_type of this StorageWorkRequestSummary.
@@ -525,7 +525,7 @@ class StorageWorkRequestSummary(object):
     def status_details(self):
         """
         Gets the status_details of this StorageWorkRequestSummary.
-        more detailed status if applicable
+        This provides more detailed status if applicable
 
 
         :return: The status_details of this StorageWorkRequestSummary.
@@ -537,7 +537,7 @@ class StorageWorkRequestSummary(object):
     def status_details(self, status_details):
         """
         Sets the status_details of this StorageWorkRequestSummary.
-        more detailed status if applicable
+        This provides more detailed status if applicable
 
 
         :param status_details: The status_details of this StorageWorkRequestSummary.
@@ -549,7 +549,7 @@ class StorageWorkRequestSummary(object):
     def operation_details(self):
         """
         Gets the operation_details of this StorageWorkRequestSummary.
-        more detailed info about this operation if applicable
+        This provides more detailed info about the work request if applicable
 
 
         :return: The operation_details of this StorageWorkRequestSummary.
@@ -561,7 +561,7 @@ class StorageWorkRequestSummary(object):
     def operation_details(self, operation_details):
         """
         Sets the operation_details of this StorageWorkRequestSummary.
-        more detailed info about this operation if applicable
+        This provides more detailed info about the work request if applicable
 
 
         :param operation_details: The operation_details of this StorageWorkRequestSummary.
@@ -573,7 +573,7 @@ class StorageWorkRequestSummary(object):
     def policy_name(self):
         """
         Gets the policy_name of this StorageWorkRequestSummary.
-        policy name if applicable (e.g. purge policy)
+        This is the policy name if applicable (e.g. purge policy)
 
 
         :return: The policy_name of this StorageWorkRequestSummary.
@@ -585,7 +585,7 @@ class StorageWorkRequestSummary(object):
     def policy_name(self, policy_name):
         """
         Sets the policy_name of this StorageWorkRequestSummary.
-        policy name if applicable (e.g. purge policy)
+        This is the policy name if applicable (e.g. purge policy)
 
 
         :param policy_name: The policy_name of this StorageWorkRequestSummary.
@@ -597,7 +597,7 @@ class StorageWorkRequestSummary(object):
     def policy_id(self):
         """
         Gets the policy_id of this StorageWorkRequestSummary.
-        purge policy ID
+        This is the purge policy ID if applicable
 
 
         :return: The policy_id of this StorageWorkRequestSummary.
@@ -609,7 +609,7 @@ class StorageWorkRequestSummary(object):
     def policy_id(self, policy_id):
         """
         Sets the policy_id of this StorageWorkRequestSummary.
-        purge policy ID
+        This is the purge policy ID if applicable
 
 
         :param policy_id: The policy_id of this StorageWorkRequestSummary.
@@ -621,7 +621,7 @@ class StorageWorkRequestSummary(object):
     def storage_usage_in_bytes(self):
         """
         Gets the storage_usage_in_bytes of this StorageWorkRequestSummary.
-        storage usage in bytes if applicable
+        This is the data usage in bytes if applicable
 
 
         :return: The storage_usage_in_bytes of this StorageWorkRequestSummary.
@@ -633,7 +633,7 @@ class StorageWorkRequestSummary(object):
     def storage_usage_in_bytes(self, storage_usage_in_bytes):
         """
         Sets the storage_usage_in_bytes of this StorageWorkRequestSummary.
-        storage usage in bytes if applicable
+        This is the data usage in bytes if applicable
 
 
         :param storage_usage_in_bytes: The storage_usage_in_bytes of this StorageWorkRequestSummary.
@@ -645,7 +645,7 @@ class StorageWorkRequestSummary(object):
     def compartment_id_in_subtree(self):
         """
         Gets the compartment_id_in_subtree of this StorageWorkRequestSummary.
-        if true, purge child compartments data, only applicable to purge request
+        If true, purge child compartments data, only applicable to purge request
 
 
         :return: The compartment_id_in_subtree of this StorageWorkRequestSummary.
@@ -657,7 +657,7 @@ class StorageWorkRequestSummary(object):
     def compartment_id_in_subtree(self, compartment_id_in_subtree):
         """
         Sets the compartment_id_in_subtree of this StorageWorkRequestSummary.
-        if true, purge child compartments data, only applicable to purge request
+        If true, purge child compartments data, only applicable to purge request
 
 
         :param compartment_id_in_subtree: The compartment_id_in_subtree of this StorageWorkRequestSummary.
@@ -669,7 +669,7 @@ class StorageWorkRequestSummary(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this StorageWorkRequestSummary.
-        Asynchronous storage request name.
+        This is the type of the work request.
 
         Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -684,7 +684,7 @@ class StorageWorkRequestSummary(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this StorageWorkRequestSummary.
-        Asynchronous storage request name.
+        This is the type of the work request.
 
 
         :param operation_type: The operation_type of this StorageWorkRequestSummary.

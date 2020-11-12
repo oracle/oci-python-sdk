@@ -136,6 +136,10 @@ class DatabaseSoftwareImage(object):
             The value to assign to the ls_inventory property of this DatabaseSoftwareImage.
         :type ls_inventory: str
 
+        :param is_upgrade_supported:
+            The value to assign to the is_upgrade_supported property of this DatabaseSoftwareImage.
+        :type is_upgrade_supported: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -153,7 +157,8 @@ class DatabaseSoftwareImage(object):
             'database_software_image_included_patches': 'list[str]',
             'included_patches_summary': 'str',
             'database_software_image_one_off_patches': 'list[str]',
-            'ls_inventory': 'str'
+            'ls_inventory': 'str',
+            'is_upgrade_supported': 'bool'
         }
 
         self.attribute_map = {
@@ -172,7 +177,8 @@ class DatabaseSoftwareImage(object):
             'database_software_image_included_patches': 'databaseSoftwareImageIncludedPatches',
             'included_patches_summary': 'includedPatchesSummary',
             'database_software_image_one_off_patches': 'databaseSoftwareImageOneOffPatches',
-            'ls_inventory': 'lsInventory'
+            'ls_inventory': 'lsInventory',
+            'is_upgrade_supported': 'isUpgradeSupported'
         }
 
         self._id = None
@@ -191,6 +197,7 @@ class DatabaseSoftwareImage(object):
         self._included_patches_summary = None
         self._database_software_image_one_off_patches = None
         self._ls_inventory = None
+        self._is_upgrade_supported = None
 
     @property
     def id(self):
@@ -617,6 +624,30 @@ class DatabaseSoftwareImage(object):
         :type: str
         """
         self._ls_inventory = ls_inventory
+
+    @property
+    def is_upgrade_supported(self):
+        """
+        Gets the is_upgrade_supported of this DatabaseSoftwareImage.
+        True if this Database software image is supported for Upgrade.
+
+
+        :return: The is_upgrade_supported of this DatabaseSoftwareImage.
+        :rtype: bool
+        """
+        return self._is_upgrade_supported
+
+    @is_upgrade_supported.setter
+    def is_upgrade_supported(self, is_upgrade_supported):
+        """
+        Sets the is_upgrade_supported of this DatabaseSoftwareImage.
+        True if this Database software image is supported for Upgrade.
+
+
+        :param is_upgrade_supported: The is_upgrade_supported of this DatabaseSoftwareImage.
+        :type: bool
+        """
+        self._is_upgrade_supported = is_upgrade_supported
 
     def __repr__(self):
         return formatted_flat_dict(self)

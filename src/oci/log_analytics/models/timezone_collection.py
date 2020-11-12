@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TimezoneCollection(object):
     """
-    Set of supported timezones.
+    List of supported timezones.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class TimezoneCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this TimezoneCollection.
-        timezones.
+        List of supported timezones.
 
 
         :return: The items of this TimezoneCollection.
@@ -49,7 +49,7 @@ class TimezoneCollection(object):
     def items(self, items):
         """
         Sets the items of this TimezoneCollection.
-        timezones.
+        List of supported timezones.
 
 
         :param items: The items of this TimezoneCollection.

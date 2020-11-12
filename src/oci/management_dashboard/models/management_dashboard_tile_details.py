@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementDashboardTileDetails(object):
     """
-    Properties of dashboard tile representing a saved search.
+    Properties of the dashboard tile representing a saved search.
+    Tiles are laid out in a twelve column grid system with (0,0) at upper left corner.
     """
 
     #: A constant which can be used with the state property of a ManagementDashboardTileDetails.
@@ -121,7 +122,7 @@ class ManagementDashboardTileDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagementDashboardTileDetails.
-        Display name for saved search.
+        Display name of the saved search.
 
 
         :return: The display_name of this ManagementDashboardTileDetails.
@@ -133,7 +134,7 @@ class ManagementDashboardTileDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagementDashboardTileDetails.
-        Display name for saved search.
+        Display name of the saved search.
 
 
         :param display_name: The display_name of this ManagementDashboardTileDetails.
@@ -145,7 +146,7 @@ class ManagementDashboardTileDetails(object):
     def saved_search_id(self):
         """
         **[Required]** Gets the saved_search_id of this ManagementDashboardTileDetails.
-        Id of saved search.
+        ID of the saved search.
 
 
         :return: The saved_search_id of this ManagementDashboardTileDetails.
@@ -157,7 +158,7 @@ class ManagementDashboardTileDetails(object):
     def saved_search_id(self, saved_search_id):
         """
         Sets the saved_search_id of this ManagementDashboardTileDetails.
-        Id of saved search.
+        ID of the saved search.
 
 
         :param saved_search_id: The saved_search_id of this ManagementDashboardTileDetails.
@@ -169,7 +170,7 @@ class ManagementDashboardTileDetails(object):
     def row(self):
         """
         **[Required]** Gets the row of this ManagementDashboardTileDetails.
-        Row, Y position
+        Tile's row number.
 
 
         :return: The row of this ManagementDashboardTileDetails.
@@ -181,7 +182,7 @@ class ManagementDashboardTileDetails(object):
     def row(self, row):
         """
         Sets the row of this ManagementDashboardTileDetails.
-        Row, Y position
+        Tile's row number.
 
 
         :param row: The row of this ManagementDashboardTileDetails.
@@ -193,7 +194,7 @@ class ManagementDashboardTileDetails(object):
     def column(self):
         """
         **[Required]** Gets the column of this ManagementDashboardTileDetails.
-        Column, X position
+        Tile's column number.
 
 
         :return: The column of this ManagementDashboardTileDetails.
@@ -205,7 +206,7 @@ class ManagementDashboardTileDetails(object):
     def column(self, column):
         """
         Sets the column of this ManagementDashboardTileDetails.
-        Column, X position
+        Tile's column number.
 
 
         :param column: The column of this ManagementDashboardTileDetails.
@@ -217,7 +218,7 @@ class ManagementDashboardTileDetails(object):
     def height(self):
         """
         **[Required]** Gets the height of this ManagementDashboardTileDetails.
-        Height position
+        The number of rows the tile occupies.
 
 
         :return: The height of this ManagementDashboardTileDetails.
@@ -229,7 +230,7 @@ class ManagementDashboardTileDetails(object):
     def height(self, height):
         """
         Sets the height of this ManagementDashboardTileDetails.
-        Height position
+        The number of rows the tile occupies.
 
 
         :param height: The height of this ManagementDashboardTileDetails.
@@ -241,7 +242,7 @@ class ManagementDashboardTileDetails(object):
     def width(self):
         """
         **[Required]** Gets the width of this ManagementDashboardTileDetails.
-        Width position
+        The number of columns the tile occupies.
 
 
         :return: The width of this ManagementDashboardTileDetails.
@@ -253,7 +254,7 @@ class ManagementDashboardTileDetails(object):
     def width(self, width):
         """
         Sets the width of this ManagementDashboardTileDetails.
-        Width position
+        The number of columns the tile occupies.
 
 
         :param width: The width of this ManagementDashboardTileDetails.
@@ -265,7 +266,7 @@ class ManagementDashboardTileDetails(object):
     def nls(self):
         """
         **[Required]** Gets the nls of this ManagementDashboardTileDetails.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :return: The nls of this ManagementDashboardTileDetails.
@@ -277,7 +278,7 @@ class ManagementDashboardTileDetails(object):
     def nls(self, nls):
         """
         Sets the nls of this ManagementDashboardTileDetails.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :param nls: The nls of this ManagementDashboardTileDetails.
@@ -289,7 +290,7 @@ class ManagementDashboardTileDetails(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementDashboardTileDetails.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :return: The ui_config of this ManagementDashboardTileDetails.
@@ -301,7 +302,7 @@ class ManagementDashboardTileDetails(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementDashboardTileDetails.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :param ui_config: The ui_config of this ManagementDashboardTileDetails.
@@ -313,7 +314,7 @@ class ManagementDashboardTileDetails(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementDashboardTileDetails.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :return: The data_config of this ManagementDashboardTileDetails.
@@ -325,7 +326,7 @@ class ManagementDashboardTileDetails(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementDashboardTileDetails.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :param data_config: The data_config of this ManagementDashboardTileDetails.
@@ -337,7 +338,7 @@ class ManagementDashboardTileDetails(object):
     def state(self):
         """
         **[Required]** Gets the state of this ManagementDashboardTileDetails.
-        State of saved search.
+        Current state of the saved search.
 
         Allowed values for this property are: "DELETED", "UNAUTHORIZED", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -352,7 +353,7 @@ class ManagementDashboardTileDetails(object):
     def state(self, state):
         """
         Sets the state of this ManagementDashboardTileDetails.
-        State of saved search.
+        Current state of the saved search.
 
 
         :param state: The state of this ManagementDashboardTileDetails.
@@ -367,7 +368,7 @@ class ManagementDashboardTileDetails(object):
     def drilldown_config(self):
         """
         **[Required]** Gets the drilldown_config of this ManagementDashboardTileDetails.
-        Drill down configuration
+        Drill-down configuration to define the destination of a drill-down action.
 
 
         :return: The drilldown_config of this ManagementDashboardTileDetails.
@@ -379,7 +380,7 @@ class ManagementDashboardTileDetails(object):
     def drilldown_config(self, drilldown_config):
         """
         Sets the drilldown_config of this ManagementDashboardTileDetails.
-        Drill down configuration
+        Drill-down configuration to define the destination of a drill-down action.
 
 
         :param drilldown_config: The drilldown_config of this ManagementDashboardTileDetails.

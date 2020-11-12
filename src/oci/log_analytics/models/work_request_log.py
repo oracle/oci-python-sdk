@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLog(object):
     """
-    A log message from the execution of a work request.
+    This is a log message from the execution of a work request.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class WorkRequestLog(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestLog.
-        Human-readable log message.
+        This is a human-readable log message.
 
 
         :return: The message of this WorkRequestLog.
@@ -56,7 +56,7 @@ class WorkRequestLog(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestLog.
-        Human-readable log message.
+        This is a human-readable log message.
 
 
         :param message: The message of this WorkRequestLog.
@@ -68,7 +68,7 @@ class WorkRequestLog(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLog.
-        The time the log message was written. An RFC3339 formatted datetime string
+        This is the time the log message was written. An RFC3339 formatted datetime string
 
 
         :return: The timestamp of this WorkRequestLog.
@@ -80,7 +80,7 @@ class WorkRequestLog(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLog.
-        The time the log message was written. An RFC3339 formatted datetime string
+        This is the time the log message was written. An RFC3339 formatted datetime string
 
 
         :param timestamp: The timestamp of this WorkRequestLog.

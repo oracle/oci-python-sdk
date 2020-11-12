@@ -56,7 +56,7 @@ class FilterDetails(object):
     def query_string(self):
         """
         **[Required]** Gets the query_string of this FilterDetails.
-        Query to update.
+        Query to apply edits to.
 
 
         :return: The query_string of this FilterDetails.
@@ -68,7 +68,7 @@ class FilterDetails(object):
     def query_string(self, query_string):
         """
         Sets the query_string of this FilterDetails.
-        Query to update.
+        Query to apply edits to.
 
 
         :param query_string: The query_string of this FilterDetails.

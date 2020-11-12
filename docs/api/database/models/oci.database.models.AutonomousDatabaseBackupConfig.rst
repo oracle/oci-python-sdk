@@ -1,9 +1,9 @@
-GenerateAgentObjectNameDetails
+AutonomousDatabaseBackupConfig
 ==============================
 
-.. currentmodule:: oci.log_analytics.models
+.. currentmodule:: oci.database.models
 
-.. autoclass:: GenerateAgentObjectNameDetails
+.. autoclass:: AutonomousDatabaseBackupConfig
     :show-inheritance:
     :special-members: __init__
     :members:

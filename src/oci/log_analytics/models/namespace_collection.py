@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NamespaceCollection(object):
     """
-    List of NamespaceSummary: there is at most one item.
+    This is a list of NamespaceSummary: there is at most one item in the list.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class NamespaceCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this NamespaceCollection.
-        List of NamespaceSummary: there is at most one item.
+        There is at most one item in the items array.
 
 
         :return: The items of this NamespaceCollection.
@@ -49,7 +49,7 @@ class NamespaceCollection(object):
     def items(self, items):
         """
         Sets the items of this NamespaceCollection.
-        List of NamespaceSummary: there is at most one item.
+        There is at most one item in the items array.
 
 
         :param items: The items of this NamespaceCollection.

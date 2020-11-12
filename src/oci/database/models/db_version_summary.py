@@ -38,25 +38,32 @@ class DbVersionSummary(object):
             The value to assign to the is_preview_db_version property of this DbVersionSummary.
         :type is_preview_db_version: bool
 
+        :param is_upgrade_supported:
+            The value to assign to the is_upgrade_supported property of this DbVersionSummary.
+        :type is_upgrade_supported: bool
+
         """
         self.swagger_types = {
             'version': 'str',
             'is_latest_for_major_version': 'bool',
             'supports_pdb': 'bool',
-            'is_preview_db_version': 'bool'
+            'is_preview_db_version': 'bool',
+            'is_upgrade_supported': 'bool'
         }
 
         self.attribute_map = {
             'version': 'version',
             'is_latest_for_major_version': 'isLatestForMajorVersion',
             'supports_pdb': 'supportsPdb',
-            'is_preview_db_version': 'isPreviewDbVersion'
+            'is_preview_db_version': 'isPreviewDbVersion',
+            'is_upgrade_supported': 'isUpgradeSupported'
         }
 
         self._version = None
         self._is_latest_for_major_version = None
         self._supports_pdb = None
         self._is_preview_db_version = None
+        self._is_upgrade_supported = None
 
     @property
     def version(self):
@@ -153,6 +160,30 @@ class DbVersionSummary(object):
         :type: bool
         """
         self._is_preview_db_version = is_preview_db_version
+
+    @property
+    def is_upgrade_supported(self):
+        """
+        Gets the is_upgrade_supported of this DbVersionSummary.
+        True if this version of the Oracle Database software is supported for Upgrade.
+
+
+        :return: The is_upgrade_supported of this DbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_upgrade_supported
+
+    @is_upgrade_supported.setter
+    def is_upgrade_supported(self, is_upgrade_supported):
+        """
+        Sets the is_upgrade_supported of this DbVersionSummary.
+        True if this version of the Oracle Database software is supported for Upgrade.
+
+
+        :param is_upgrade_supported: The is_upgrade_supported of this DbVersionSummary.
+        :type: bool
+        """
+        self._is_upgrade_supported = is_upgrade_supported
 
     def __repr__(self):
         return formatted_flat_dict(self)

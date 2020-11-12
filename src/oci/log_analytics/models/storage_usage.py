@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StorageUsage(object):
     """
-    Storage usage of a tenancy in Logan Analytics application
+    This is the storage usage information of a tenancy in Logan Analytics application
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class StorageUsage(object):
     def active_data_size_in_bytes(self):
         """
         **[Required]** Gets the active_data_size_in_bytes of this StorageUsage.
-        number of bytes
+        This is the number of bytes of active data (non-archived)
 
 
         :return: The active_data_size_in_bytes of this StorageUsage.
@@ -63,7 +63,7 @@ class StorageUsage(object):
     def active_data_size_in_bytes(self, active_data_size_in_bytes):
         """
         Sets the active_data_size_in_bytes of this StorageUsage.
-        number of bytes
+        This is the number of bytes of active data (non-archived)
 
 
         :param active_data_size_in_bytes: The active_data_size_in_bytes of this StorageUsage.
@@ -75,7 +75,7 @@ class StorageUsage(object):
     def archived_data_size_in_bytes(self):
         """
         **[Required]** Gets the archived_data_size_in_bytes of this StorageUsage.
-        number of bytes archived in object store
+        This is the number of bytes of archived data in object storage
 
 
         :return: The archived_data_size_in_bytes of this StorageUsage.
@@ -87,7 +87,7 @@ class StorageUsage(object):
     def archived_data_size_in_bytes(self, archived_data_size_in_bytes):
         """
         Sets the archived_data_size_in_bytes of this StorageUsage.
-        number of bytes archived in object store
+        This is the number of bytes of archived data in object storage
 
 
         :param archived_data_size_in_bytes: The archived_data_size_in_bytes of this StorageUsage.
@@ -99,7 +99,7 @@ class StorageUsage(object):
     def recalled_archived_data_size_in_bytes(self):
         """
         **[Required]** Gets the recalled_archived_data_size_in_bytes of this StorageUsage.
-        number of bytes recalled from archived data in object store
+        This is the number of bytes of recalled data from archived in object store
 
 
         :return: The recalled_archived_data_size_in_bytes of this StorageUsage.
@@ -111,7 +111,7 @@ class StorageUsage(object):
     def recalled_archived_data_size_in_bytes(self, recalled_archived_data_size_in_bytes):
         """
         Sets the recalled_archived_data_size_in_bytes of this StorageUsage.
-        number of bytes recalled from archived data in object store
+        This is the number of bytes of recalled data from archived in object store
 
 
         :param recalled_archived_data_size_in_bytes: The recalled_archived_data_size_in_bytes of this StorageUsage.

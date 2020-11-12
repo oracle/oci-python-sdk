@@ -20,7 +20,7 @@ class LogAnalyticsParserFilter(object):
 
         :param id:
             The value to assign to the id property of this LogAnalyticsParserFilter.
-        :type id: object
+        :type id: str
 
         :param parser:
             The value to assign to the parser property of this LogAnalyticsParserFilter.
@@ -48,7 +48,7 @@ class LogAnalyticsParserFilter(object):
 
         """
         self.swagger_types = {
-            'id': 'object',
+            'id': 'str',
             'parser': 'LogAnalyticsParser',
             'agent_version': 'str',
             'is_in_use': 'int',
@@ -83,7 +83,7 @@ class LogAnalyticsParserFilter(object):
 
 
         :return: The id of this LogAnalyticsParserFilter.
-        :rtype: object
+        :rtype: str
         """
         return self._id
 
@@ -95,7 +95,7 @@ class LogAnalyticsParserFilter(object):
 
 
         :param id: The id of this LogAnalyticsParserFilter.
-        :type: object
+        :type: str
         """
         self._id = id
 
