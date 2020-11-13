@@ -1,7 +1,32 @@
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+##########################################################################
+# object_storage_bulk_restore.py
+#
+# @author: Tim S and Adi Z
+#
+# Supports Python 3
+##########################################################################
+# Info:
+#    Bulk restore with parallel threads
+#
+##########################################################################
+# Application Command line parameters
+#
+#   -c config  - Config file section to use (tenancy profile)
+#   -t profile - Profile in config file, DEFAULT as default
+#   -p proxy   - Set Proxy (i.e. www-proxy-server.com:80)
+#   -ip        - Use Instance Principals for Authentication
+#   -dt        - Use Instance Principals with delegation token for cloud shell
+#   -sb source_bucket
+#   -sp source_prefix_include
+#   -sr source_region
+##########################################################################
 
+import threading
+import time
+import queue
 import oci
 import argparse
 import datetime
@@ -21,8 +46,7 @@ parser.add_argument('-dt', action='store_true', default=False, dest='is_delegati
 parser.add_argument('-c', type=argparse.FileType('r'), dest='config_file', help="Config File (default=~/.oci/config)")
 parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket Name')
 parser.add_argument('-sp', default="", dest='source_prefix_include', help='Source Prefix Include')
-parser.add_argument('-f', type=argparse.FileType('w'), dest='file', help="Output to file (as csv)")
-parser.add_argument('-co', action='store_true', default=False, dest='count_only', help='Count only files and size')
+parser.add_argument('-sr', default="", dest='source_region', help='Source Region')
 cmd = parser.parse_args()
 
 if len(sys.argv) < 1:
@@ -34,9 +58,27 @@ if not cmd.source_bucket:
     parser.print_help()
     raise SystemExit
 
+# Parameters
+restore_hours = 240
+worker_count = 40
+status_interval = 60
+
+base_retry_timeout = 2
+max_retry_timeout = 16**2
+
+# global queue
+q = queue.Queue()
+
 # Update Variables based on the parameters
 config_file = (cmd.config_file if cmd.config_file else oci.config.DEFAULT_LOCATION)
 config_profile = (cmd.config_profile if cmd.config_profile else oci.config.DEFAULT_PROFILE)
+
+# Global Variables
+object_storage_client = None
+source_namespace = ""
+source_bucket = cmd.source_bucket
+source_prefix = cmd.source_prefix_include
+source_region = cmd.source_region
 
 
 ##########################################################################
@@ -133,24 +175,127 @@ def print_header(name):
 ##########################################################################
 # Print Info
 ##########################################################################
-def print_command_info(source_namespace):
-    print_header("Running List/Count Objects")
-    print("Written By Adi Zohar, June 2020")
-    print("Starts at       :" + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-    print("Command Line    : " + ' '.join(x for x in sys.argv[1:]))
-    print("Source Namespace: " + source_namespace)
-    print("Source Bucket   : " + cmd.source_bucket)
-    print("Source Prefix   : " + cmd.source_prefix_include)
+def print_command_info():
+    print_header("Running Object Storage Bulk Restore")
+    print("Written by Tim S and Adi Z, July 2020")
+    print("Starts at             : " + get_time(full=True))
+    print("Command Line          : " + ' '.join(x for x in sys.argv[1:]))
+    print("Source Namespace      : " + source_namespace)
+    print("Source Bucket         : " + source_bucket)
+    print("Source Prefix Include : " + source_prefix)
 
 
 ##############################################################################
-# Count Objects
+# Worker
+##############################################################################
+def worker():
+    while True:
+        object_ = q.get()
+
+        interval_exp = base_retry_timeout
+        while True:
+            response = None
+            try:
+                response = restore_object(source_namespace, source_bucket, object_, restore_hours)
+                break
+
+            except Exception as e:
+                if e.status == 400:
+                    break
+
+                if interval_exp > max_retry_timeout:
+                    print("  ERROR: Failed to request restore of %s" % (object_))
+                    raise
+
+                if response:
+                    print("  Received %s from API for object %s, will wait %s seconds before retrying." % (response.status, object_, interval_exp))
+                else:
+                    print("  Received error from API for object %s, will wait %s seconds before retrying." % (object_, interval_exp))
+
+                time.sleep(interval_exp)
+                interval_exp **= 2
+                continue
+
+        q.task_done()
+
+
+##############################################################################
+# Add object to Q
+##############################################################################
+def add_objects_to_queue(ns, source_bucket):
+    global q
+
+    count = 0
+    next_starts_with = None
+    while True:
+        response = object_storage_client.list_objects(ns, source_bucket, start=next_starts_with, prefix=source_prefix)
+        next_starts_with = response.data.next_start_with
+
+        for object_ in response.data.objects:
+            q.put(object_.name)
+            count += 1
+
+            if count % 100000 == 0:
+                print(get_time() + " -    Added " + str(count) + " files to queue...")
+
+        if not next_starts_with:
+            break
+
+    return count
+
+
+##############################################################################
+# Restore object function
+##############################################################################
+def restore_object(ns, b, o, hours):
+    restore_request = oci.object_storage.models.RestoreObjectsDetails()
+    restore_request.object_name = o
+    restore_request.hours = hours
+
+    return object_storage_client.restore_objects(ns, b, restore_request)
+
+
+##############################################################################
+# connect to object storage
+##############################################################################
+def connect_to_object_storage():
+    global source_namespace
+    global object_storage_client
+
+    # get signer
+    config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
+
+    # if region is specified
+    if source_region:
+        config['region'] = source_region
+
+    try:
+        # connect and fetch namespace
+        print("\nConnecting to Object Storage Service...")
+        object_storage_client = oci.object_storage.ObjectStorageClient(config, signer=signer)
+        if cmd.proxy:
+            object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
+
+        # retrieve namespace from object storage
+        source_namespace = object_storage_client.get_namespace().data
+        print("Succeed.")
+
+    except Exception as e:
+        print("\nError connecting to Object Storage - " + str(e))
+        raise SystemExit
+
+
+##############################################################################
+# Main
 ##############################################################################
 def main():
-    object_storage_client = None
-    source_namespace = None
-    source_bucket = cmd.source_bucket
-    source_prefix = cmd.source_prefix_include
+
+    # connect to object storage
+    connect_to_object_storage()
+
+    # global parameters
+    global source_namespace
+    global object_storage_client
 
     # get signer
     config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
@@ -164,60 +309,39 @@ def main():
 
         # retrieve namespace from object storage
         source_namespace = object_storage_client.get_namespace().data
+        print("Succeed.")
 
     except Exception as e:
         raise RuntimeError("\nError extracting namespace - " + str(e))
 
-    # print information
-    print_command_info(source_namespace)
-    print_header("Start Processing...")
-    if cmd.count_only:
-        print("Count only...")
-    if cmd.file:
-        print("Writing to file..." + cmd.file.name)
+    # command info
+    print_command_info()
 
-    # if output to file
-    file = None
-    if cmd.file:
-        file = open(cmd.file.name + ".txt", "w+")
+    print_header("Start Processing")
+    print(get_time() + " - Creating %s workers." % (worker_count))
+    for i in range(worker_count):
+        w = threading.Thread(target=worker)
+        w.daemon = True
+        w.start()
 
-    # start processing
-    count = 0
-    size = 0
-    next_starts_with = None
+    print(get_time() + " - Getting list of objects from source source_bucket (%s). Restores will start immediately." % (source_bucket))
+    count = add_objects_to_queue(source_namespace, source_bucket)
+    print(get_time() + " - Enqueued %s objects to be restored" % (count))
 
-    while True:
-        response = object_storage_client.list_objects(source_namespace, source_bucket, start=next_starts_with, prefix=source_prefix, fields='size')
-        next_starts_with = response.data.next_start_with
+    while count > 0:
+        print(get_time() + " - Waiting %s seconds before checking status." % (status_interval))
+        time.sleep(status_interval)
 
-        for object_file in response.data.objects:
-            count += 1
-            size += object_file.size
-
-            # if write to file:
-            if cmd.file:
-                file.write(str(object_file.name) + "," + str(object_file.size) + "\n")
-
-            # if print to screen
-            if not (cmd.file or cmd.count_only):
-                print(str(f"{object_file.size:,}").rjust(18) + " - " + str(object_file.name))
-
-            # feedback if write to file or count every 100k rows
-            if (cmd.file or cmd.count_only) and count % 100000 == 0:
-                print(get_time() + " -    Files : " + str(f"{count:,}").rjust(10) + "  Size : " + str(f"{size:,}").rjust(20))
-
-        if not next_starts_with:
+        if q.qsize() == 0:
+            print(get_time() + " - Restoration of all objects has been requested.")
             break
+        else:
+            print(get_time() + " - %s object restores remaining to requested." % (q.qsize()))
 
-    # final output
+    q.join()
+
     print_header("Completed")
     print("Completed at :  " + get_time(True))
-    print("Total Files  : " + str(f"{count:,}").rjust(20))
-    print("Total Size   : " + str(f"{size:,}").rjust(20))
-
-    if cmd.file:
-        file.write("Total Files : " + str(f"{count:,}").rjust(10) + ", Size  : " + str(f"{size:,}").rjust(20))
-        file.close()
 
 
 ##############################################################################
