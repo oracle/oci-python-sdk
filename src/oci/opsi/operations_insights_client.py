@@ -102,7 +102,7 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param IngestSqlBucketDetails ingest_sql_bucket_details: (required)
+        :param oci.opsi.models.IngestSqlBucketDetails ingest_sql_bucket_details: (required)
             Collection of SQL bucket objects for a particular database.
 
         :param str opc_request_id: (optional)
@@ -202,7 +202,7 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param IngestSqlPlanLinesDetails ingest_sql_plan_lines_details: (required)
+        :param oci.opsi.models.IngestSqlPlanLinesDetails ingest_sql_plan_lines_details: (required)
             Collection of SQL plan line objects for a particular database.
 
         :param str opc_request_id: (optional)
@@ -303,7 +303,7 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param IngestSqlTextDetails ingest_sql_text_details: (required)
+        :param oci.opsi.models.IngestSqlTextDetails ingest_sql_text_details: (required)
             Collection of SQL text objects for a particular database.
 
         :param str opc_request_id: (optional)
@@ -563,7 +563,7 @@ class OperationsInsightsClient(object):
             Unique SQL_ID for a SQL Statement.
             Example: `6rgjh9bjmy2s7`
 
-        :param list[int] plan_hash: (required)
+        :param oci.opsi.models.list[int] plan_hash: (required)
             Unique plan hash for a SQL Plan of a particular SQL Statement.
             Example: `9820154385`
 
@@ -758,7 +758,7 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param list[str] sql_identifier: (required)
+        :param oci.opsi.models.list[str] sql_identifier: (required)
             One or more unique SQL_IDs for a SQL Statement.
             Example: `6rgjh9bjmy2s7`
 

@@ -99,7 +99,7 @@ class LoadBalancerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeLoadBalancerCompartmentDetails change_load_balancer_compartment_details: (required)
+        :param oci.load_balancer.models.ChangeLoadBalancerCompartmentDetails change_load_balancer_compartment_details: (required)
             The configuration details for moving a load balancer to a different compartment.
 
         :param str opc_request_id: (optional)
@@ -192,7 +192,7 @@ class LoadBalancerClient(object):
         Adds a backend server to a backend set.
 
 
-        :param CreateBackendDetails create_backend_details: (required)
+        :param oci.load_balancer.models.CreateBackendDetails create_backend_details: (required)
             The details to add a backend server to a backend set.
 
         :param str load_balancer_id: (required)
@@ -287,7 +287,7 @@ class LoadBalancerClient(object):
         Adds a backend set to a load balancer.
 
 
-        :param CreateBackendSetDetails create_backend_set_details: (required)
+        :param oci.load_balancer.models.CreateBackendSetDetails create_backend_set_details: (required)
             The details for adding a backend set.
 
         :param str load_balancer_id: (required)
@@ -376,7 +376,7 @@ class LoadBalancerClient(object):
         Creates an asynchronous request to add an SSL certificate bundle.
 
 
-        :param CreateCertificateDetails create_certificate_details: (required)
+        :param oci.load_balancer.models.CreateCertificateDetails create_certificate_details: (required)
             The details of the certificate bundle to add.
 
         :param str load_balancer_id: (required)
@@ -468,7 +468,7 @@ class LoadBalancerClient(object):
         __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
 
-        :param CreateHostnameDetails create_hostname_details: (required)
+        :param oci.load_balancer.models.CreateHostnameDetails create_hostname_details: (required)
             The details of the hostname resource to add to the specified load balancer.
 
         :param str load_balancer_id: (required)
@@ -557,7 +557,7 @@ class LoadBalancerClient(object):
         Adds a listener to a load balancer.
 
 
-        :param CreateListenerDetails create_listener_details: (required)
+        :param oci.load_balancer.models.CreateListenerDetails create_listener_details: (required)
             Details to add a listener.
 
         :param str load_balancer_id: (required)
@@ -677,7 +677,7 @@ class LoadBalancerClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateLoadBalancerDetails create_load_balancer_details: (required)
+        :param oci.load_balancer.models.CreateLoadBalancerDetails create_load_balancer_details: (required)
             The configuration details for creating a load balancer.
 
         :param str opc_request_id: (optional)
@@ -752,7 +752,7 @@ class LoadBalancerClient(object):
         __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
 
-        :param CreatePathRouteSetDetails create_path_route_set_details: (required)
+        :param oci.load_balancer.models.CreatePathRouteSetDetails create_path_route_set_details: (required)
             The details of the path route set to add.
 
         :param str load_balancer_id: (required)
@@ -849,7 +849,7 @@ class LoadBalancerClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CreateRuleSetDetails create_rule_set_details: (required)
+        :param oci.load_balancer.models.CreateRuleSetDetails create_rule_set_details: (required)
             The configuration details for the rule set to create.
 
         :param str opc_request_id: (optional)
@@ -922,7 +922,7 @@ class LoadBalancerClient(object):
         Creates a custom SSL cipher suite.
 
 
-        :param CreateSSLCipherSuiteDetails create_ssl_cipher_suite_details: (required)
+        :param oci.load_balancer.models.CreateSSLCipherSuiteDetails create_ssl_cipher_suite_details: (required)
             The details of the SSL cipher suite to add.
 
         :param str load_balancer_id: (required)
@@ -3926,7 +3926,7 @@ class LoadBalancerClient(object):
         Updates the configuration of a backend server within the specified backend set.
 
 
-        :param UpdateBackendDetails update_backend_details: (required)
+        :param oci.load_balancer.models.UpdateBackendDetails update_backend_details: (required)
             Details for updating a backend server.
 
         :param str load_balancer_id: (required)
@@ -4027,7 +4027,7 @@ class LoadBalancerClient(object):
         Updates a backend set.
 
 
-        :param UpdateBackendSetDetails update_backend_set_details: (required)
+        :param oci.load_balancer.models.UpdateBackendSetDetails update_backend_set_details: (required)
             The details to update a backend set.
 
         :param str load_balancer_id: (required)
@@ -4122,7 +4122,7 @@ class LoadBalancerClient(object):
         Updates the health check policy for a given load balancer and backend set.
 
 
-        :param UpdateHealthCheckerDetails health_checker: (required)
+        :param oci.load_balancer.models.UpdateHealthCheckerDetails health_checker: (required)
             The health check policy configuration details.
 
         :param str load_balancer_id: (required)
@@ -4218,7 +4218,7 @@ class LoadBalancerClient(object):
         virtual hostname.
 
 
-        :param UpdateHostnameDetails update_hostname_details: (required)
+        :param oci.load_balancer.models.UpdateHostnameDetails update_hostname_details: (required)
             The configuration details to update a virtual hostname.
 
         :param str load_balancer_id: (required)
@@ -4303,7 +4303,7 @@ class LoadBalancerClient(object):
         Updates a listener for a given load balancer.
 
 
-        :param UpdateListenerDetails update_listener_details: (required)
+        :param oci.load_balancer.models.UpdateListenerDetails update_listener_details: (required)
             Details to update a listener.
 
         :param str load_balancer_id: (required)
@@ -4398,7 +4398,7 @@ class LoadBalancerClient(object):
         Updates a load balancer's configuration.
 
 
-        :param UpdateLoadBalancerDetails update_load_balancer_details: (required)
+        :param oci.load_balancer.models.UpdateLoadBalancerDetails update_load_balancer_details: (required)
             The details for updating a load balancer's configuration.
 
         :param str load_balancer_id: (required)
@@ -4497,7 +4497,7 @@ class LoadBalancerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
+        :param oci.load_balancer.models.UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
             The details for updating a load balancer's shape. This contains the new, desired shape.
 
         :param str opc_request_id: (optional)
@@ -4581,7 +4581,7 @@ class LoadBalancerClient(object):
         Updates the network security groups associated with the specified load balancer.
 
 
-        :param UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
+        :param oci.load_balancer.models.UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
             The details for updating the NSGs associated with the specified load balancer.
 
         :param str load_balancer_id: (required)
@@ -4675,7 +4675,7 @@ class LoadBalancerClient(object):
         both the new path route rule to add and the existing path route rules to retain.
 
 
-        :param UpdatePathRouteSetDetails update_path_route_set_details: (required)
+        :param oci.load_balancer.models.UpdatePathRouteSetDetails update_path_route_set_details: (required)
             The configuration details to update a path route set.
 
         :param str load_balancer_id: (required)
@@ -4783,7 +4783,7 @@ class LoadBalancerClient(object):
 
             Example: `example_rule_set`
 
-        :param UpdateRuleSetDetails update_rule_set_details: (required)
+        :param oci.load_balancer.models.UpdateRuleSetDetails update_rule_set_details: (required)
             The configuration details to update a set of rules.
 
         :param str opc_request_id: (optional)
@@ -4857,7 +4857,7 @@ class LoadBalancerClient(object):
         Updates an existing SSL cipher suite for the specified load balancer.
 
 
-        :param UpdateSSLCipherSuiteDetails update_ssl_cipher_suite_details: (required)
+        :param oci.load_balancer.models.UpdateSSLCipherSuiteDetails update_ssl_cipher_suite_details: (required)
             The configuration details to update an SSL cipher suite.
 
         :param str load_balancer_id: (required)

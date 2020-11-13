@@ -96,7 +96,7 @@ class HealthChecksClient(object):
         :param str monitor_id: (required)
             The OCID of a monitor.
 
-        :param ChangeHttpMonitorCompartmentDetails change_http_monitor_compartment_details: (required)
+        :param oci.healthchecks.models.ChangeHttpMonitorCompartmentDetails change_http_monitor_compartment_details: (required)
             The details needed to move the monitor.
 
         :param str if_match: (optional)
@@ -193,7 +193,7 @@ class HealthChecksClient(object):
         :param str monitor_id: (required)
             The OCID of a monitor.
 
-        :param ChangePingMonitorCompartmentDetails change_ping_monitor_compartment_details: (required)
+        :param oci.healthchecks.models.ChangePingMonitorCompartmentDetails change_ping_monitor_compartment_details: (required)
             The details needed to move the monitor.
 
         :param str if_match: (optional)
@@ -288,7 +288,7 @@ class HealthChecksClient(object):
         specified by `intervalInSeconds`.
 
 
-        :param CreateHttpMonitorDetails create_http_monitor_details: (required)
+        :param oci.healthchecks.models.CreateHttpMonitorDetails create_http_monitor_details: (required)
             The configuration details for creating an HTTP monitor.
 
         :param str opc_request_id: (optional)
@@ -366,7 +366,7 @@ class HealthChecksClient(object):
         *Note:* On-demand probe configurations are not saved.
 
 
-        :param CreateOnDemandHttpProbeDetails create_on_demand_http_probe_details: (required)
+        :param oci.healthchecks.models.CreateOnDemandHttpProbeDetails create_on_demand_http_probe_details: (required)
             The configuration of the HTTP probe.
 
         :param str opc_request_id: (optional)
@@ -432,7 +432,7 @@ class HealthChecksClient(object):
         *Note:* The on-demand probe configuration is not saved.
 
 
-        :param CreateOnDemandPingProbeDetails create_on_demand_ping_probe_details: (required)
+        :param oci.healthchecks.models.CreateOnDemandPingProbeDetails create_on_demand_ping_probe_details: (required)
             Configuration details for creating an on-demand ping probe.
 
         :param str opc_request_id: (optional)
@@ -497,7 +497,7 @@ class HealthChecksClient(object):
         specified by `intervalInSeconds`.
 
 
-        :param CreatePingMonitorDetails create_ping_monitor_details: (required)
+        :param oci.healthchecks.models.CreatePingMonitorDetails create_ping_monitor_details: (required)
             The configuration details for creating a ping monitor.
 
         :param str opc_request_id: (optional)
@@ -1495,7 +1495,7 @@ class HealthChecksClient(object):
         :param str monitor_id: (required)
             The OCID of a monitor.
 
-        :param UpdateHttpMonitorDetails update_http_monitor_details: (required)
+        :param oci.healthchecks.models.UpdateHttpMonitorDetails update_http_monitor_details: (required)
             The configuration details to update for the HTTP monitor.
 
         :param str opc_request_id: (optional)
@@ -1583,7 +1583,7 @@ class HealthChecksClient(object):
         :param str monitor_id: (required)
             The OCID of a monitor.
 
-        :param UpdatePingMonitorDetails update_ping_monitor_details: (required)
+        :param oci.healthchecks.models.UpdatePingMonitorDetails update_ping_monitor_details: (required)
             Details for updating a Ping monitor.
 
         :param str opc_request_id: (optional)

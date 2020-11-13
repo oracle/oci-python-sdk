@@ -91,7 +91,7 @@ class KmsCryptoClient(object):
         __ https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/DecryptDataDetails
 
 
-        :param DecryptDataDetails decrypt_data_details: (required)
+        :param oci.key_management.models.DecryptDataDetails decrypt_data_details: (required)
             DecryptDataDetails
 
         :param str opc_request_id: (optional)
@@ -158,7 +158,7 @@ class KmsCryptoClient(object):
         __ https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/EncryptDataDetails
 
 
-        :param EncryptDataDetails encrypt_data_details: (required)
+        :param oci.key_management.models.EncryptDataDetails encrypt_data_details: (required)
             EncryptDataDetails
 
         :param str opc_request_id: (optional)
@@ -224,7 +224,7 @@ class KmsCryptoClient(object):
         stored on the server. For export, the key version is encrypted by an RSA public key that you provide.
 
 
-        :param ExportKeyDetails export_key_details: (required)
+        :param oci.key_management.models.ExportKeyDetails export_key_details: (required)
             ExportKeyDetails
 
         :param obj retry_strategy: (optional)
@@ -277,7 +277,7 @@ class KmsCryptoClient(object):
         Generates a key that you can use to encrypt or decrypt data.
 
 
-        :param GenerateKeyDetails generate_key_details: (required)
+        :param oci.key_management.models.GenerateKeyDetails generate_key_details: (required)
             GenerateKeyDetails
 
         :param str opc_request_id: (optional)

@@ -92,7 +92,7 @@ class ContainerEngineClient(object):
         Create a new cluster.
 
 
-        :param CreateClusterDetails create_cluster_details: (required)
+        :param oci.container_engine.models.CreateClusterDetails create_cluster_details: (required)
             The details of the cluster to create.
 
         :param str opc_retry_token: (optional)
@@ -240,7 +240,7 @@ class ContainerEngineClient(object):
         Create a new node pool.
 
 
-        :param CreateNodePoolDetails create_node_pool_details: (required)
+        :param oci.container_engine.models.CreateNodePoolDetails create_node_pool_details: (required)
             The details of the node pool to create.
 
         :param str opc_retry_token: (optional)
@@ -1497,7 +1497,7 @@ class ContainerEngineClient(object):
         :param str cluster_id: (required)
             The OCID of the cluster.
 
-        :param UpdateClusterDetails update_cluster_details: (required)
+        :param oci.container_engine.models.UpdateClusterDetails update_cluster_details: (required)
             The details of the cluster to update.
 
         :param str if_match: (optional)
@@ -1580,7 +1580,7 @@ class ContainerEngineClient(object):
         :param str node_pool_id: (required)
             The OCID of the node pool.
 
-        :param UpdateNodePoolDetails update_node_pool_details: (required)
+        :param oci.container_engine.models.UpdateNodePoolDetails update_node_pool_details: (required)
             The fields to update in a node pool.
 
         :param str if_match: (optional)

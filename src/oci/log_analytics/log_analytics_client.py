@@ -96,7 +96,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param AddEntityAssociationDetails add_entity_association_details: (required)
+        :param oci.log_analytics.models.AddEntityAssociationDetails add_entity_association_details: (required)
             This parameter specifies the entity OCIDs with which associations are to be created. Specify destination OCIDs as comma separated string.
 
         :param str opc_request_id: (optional)
@@ -192,7 +192,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param LabelNames basic_details: (required)
+        :param oci.log_analytics.models.LabelNames basic_details: (required)
             List of label names to get information on
 
         :param bool is_include_deleted: (required)
@@ -405,7 +405,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param ChangeLogAnalyticsEntityCompartmentDetails change_log_analytics_entity_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeLogAnalyticsEntityCompartmentDetails change_log_analytics_entity_compartment_details: (required)
             Log analytics entity compartment Id to be updated.
 
         :param str if_match: (optional)
@@ -504,7 +504,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_log_group_id: (required)
             unique logAnalytics log group identifier
 
-        :param ChangeLogAnalyticsLogGroupCompartmentDetails change_log_analytics_log_group_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeLogAnalyticsLogGroupCompartmentDetails change_log_analytics_log_group_compartment_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -605,7 +605,7 @@ class LogAnalyticsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails change_log_analytics_object_collection_rule_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails change_log_analytics_object_collection_rule_compartment_details: (required)
             The new compartment this Object Collection Rule will be moved to.
 
         :param str if_match: (optional)
@@ -694,7 +694,7 @@ class LogAnalyticsClient(object):
             Unique scheduledTask id returned from task create.
             If invalid will lead to a 404 not found.
 
-        :param ChangeScheduledTaskCompartmentDetails change_scheduled_task_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeScheduledTaskCompartmentDetails change_scheduled_task_compartment_details: (required)
             The destination compartment identifier.
 
         :param str if_match: (optional)
@@ -895,7 +895,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
             Details for the new log analytics entity.
 
         :param str opc_retry_token: (optional)
@@ -983,7 +983,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsEntityTypeDetails create_log_analytics_entity_type_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsEntityTypeDetails create_log_analytics_entity_type_details: (required)
             Definition for custom log analytics entity type.
 
         :param str opc_request_id: (optional)
@@ -1069,7 +1069,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsLogGroupDetails create_log_analytics_log_group_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsLogGroupDetails create_log_analytics_log_group_details: (required)
             Details for the new Log-Analytics group.
 
         :param str opc_retry_token: (optional)
@@ -1157,7 +1157,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
             Details of the rule to be created.
 
         :param str opc_request_id: (optional)
@@ -1234,7 +1234,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateScheduledTaskDetails create_scheduled_task_details: (required)
+        :param oci.log_analytics.models.CreateScheduledTaskDetails create_scheduled_task_details: (required)
             Scheduled task to be created.
 
         :param str opc_request_id: (optional)
@@ -1322,7 +1322,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
             details for association
 
         :param str opc_retry_token: (optional)
@@ -2606,7 +2606,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param EstimatePurgeDataSizeDetails estimate_purge_data_size_details: (required)
+        :param oci.log_analytics.models.EstimatePurgeDataSizeDetails estimate_purge_data_size_details: (required)
             This is the input to estimate the size of data to be purged.
 
         :param str opc_request_id: (optional)
@@ -2703,7 +2703,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param ExportContent export_custom_content_details: (required)
+        :param oci.log_analytics.models.ExportContent export_custom_content_details: (required)
             content to export
 
         :param str opc_retry_token: (optional)
@@ -2791,7 +2791,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param ExportDetails export_details: (required)
+        :param oci.log_analytics.models.ExportDetails export_details: (required)
             Query to be exported
 
         :param str opc_request_id: (optional)
@@ -2868,7 +2868,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param LogAnalyticsParser logan_parser_details: (required)
+        :param oci.log_analytics.models.LogAnalyticsParser logan_parser_details: (required)
             parser definition
 
         :param str parser_type: (optional)
@@ -2976,7 +2976,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param LogAnalyticsParser logan_parser_details: (required)
+        :param oci.log_analytics.models.LogAnalyticsParser logan_parser_details: (required)
             parser definition
 
         :param str parser_type: (optional)
@@ -3084,7 +3084,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param FilterDetails filter_details: (required)
+        :param oci.log_analytics.models.FilterDetails filter_details: (required)
             Query string and filters to add or remove
 
         :param str opc_request_id: (optional)
@@ -9909,7 +9909,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param ParseQueryDetails parse_query_details: (required)
+        :param oci.log_analytics.models.ParseQueryDetails parse_query_details: (required)
             Query string to be parsed
 
         :param str opc_request_id: (optional)
@@ -9987,7 +9987,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param PurgeStorageDataDetails purge_storage_data_details: (required)
+        :param oci.log_analytics.models.PurgeStorageDataDetails purge_storage_data_details: (required)
             This is the input to purge old data.
 
         :param str opc_request_id: (optional)
@@ -10169,7 +10169,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param QueryDetails query_details: (required)
+        :param oci.log_analytics.models.QueryDetails query_details: (required)
             Query to be executed.
 
         :param str page: (optional)
@@ -10262,7 +10262,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param RecallArchivedDataDetails recall_archived_data_details: (required)
+        :param oci.log_analytics.models.RecallArchivedDataDetails recall_archived_data_details: (required)
             This is the input to recall archived data.
 
         :param str opc_request_id: (optional)
@@ -10501,7 +10501,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param ReleaseRecalledDataDetails release_recalled_data_details: (required)
+        :param oci.log_analytics.models.ReleaseRecalledDataDetails release_recalled_data_details: (required)
             This is the input to release recalled data
 
         :param str opc_request_id: (optional)
@@ -10599,7 +10599,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param RemoveEntityAssociationsDetails remove_entity_associations_details: (required)
+        :param oci.log_analytics.models.RemoveEntityAssociationsDetails remove_entity_associations_details: (required)
             This parameter specifies the entity OCIDs with which associations are to be deleted. Specify destination OCIDs as comma separated string.
 
         :param str if_match: (optional)
@@ -10801,7 +10801,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param SuggestDetails suggest_details: (required)
+        :param oci.log_analytics.models.SuggestDetails suggest_details: (required)
             Query string seeking suggestions for.
 
         :param str opc_request_id: (optional)
@@ -10878,7 +10878,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param TestParserPayloadDetails test_parser_payload_details: (required)
+        :param oci.log_analytics.models.TestParserPayloadDetails test_parser_payload_details: (required)
             Details for test payload
 
         :param str scope: (optional)
@@ -10994,7 +10994,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -11081,7 +11081,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpdateLogAnalyticsEntityTypeDetails update_log_analytics_entity_type_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsEntityTypeDetails update_log_analytics_entity_type_details: (required)
             Log analytics entity type update details.
 
         :param str entity_type_name: (required)
@@ -11172,7 +11172,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_log_group_id: (required)
             unique logAnalytics log group identifier
 
-        :param UpdateLogAnalyticsLogGroupDetails update_log_analytics_log_group_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsLogGroupDetails update_log_analytics_log_group_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -11264,7 +11264,7 @@ class LogAnalyticsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
             The rule config to be updated.
 
         :param str if_match: (optional)
@@ -11355,7 +11355,7 @@ class LogAnalyticsClient(object):
             Unique scheduledTask id returned from task create.
             If invalid will lead to a 404 not found.
 
-        :param UpdateScheduledTaskDetails update_scheduled_task_details: (required)
+        :param oci.log_analytics.models.UpdateScheduledTaskDetails update_scheduled_task_details: (required)
             Update details.
             Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
 
@@ -11443,7 +11443,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpdateStorageDetails update_storage_details: (required)
+        :param oci.log_analytics.models.UpdateStorageDetails update_storage_details: (required)
             This is the archiving configuration
 
         :param str opc_request_id: (optional)
@@ -11702,7 +11702,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
             list of association details
 
         :param bool is_from_republish: (optional)
@@ -11799,7 +11799,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsFieldDetails upsert_log_analytics_field_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsFieldDetails upsert_log_analytics_field_details: (required)
             Details for the new LogAnalyticsFieldDetails.
 
         :param str opc_retry_token: (optional)
@@ -11896,7 +11896,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsLabelDetails upsert_log_analytics_label_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsLabelDetails upsert_log_analytics_label_details: (required)
             Details for the new LogAnalyticsTagDetails.
 
         :param str opc_retry_token: (optional)
@@ -11993,7 +11993,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsParserDetails upsert_log_analytics_parser_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsParserDetails upsert_log_analytics_parser_details: (required)
             Details for the new LoganParserDetails.
 
         :param str opc_retry_token: (optional)
@@ -12090,7 +12090,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
             Details for the new LoganSourceDetails.
 
         :param int create_like_source_id: (optional)
@@ -12208,7 +12208,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
             Details for the new log analytics associations.
 
         :param int limit: (optional)
@@ -12426,7 +12426,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
             Details for the new LoganSourceDetails.
 
         :param int create_like_source_id: (optional)
@@ -12535,7 +12535,7 @@ class LogAnalyticsClient(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param LogAnalyticsSource log_analytics_source: (required)
+        :param oci.log_analytics.models.LogAnalyticsSource log_analytics_source: (required)
             Details for the new LogAnalyticsSource.
 
         :param str opc_retry_token: (optional)

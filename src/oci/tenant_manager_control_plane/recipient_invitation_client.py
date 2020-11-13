@@ -452,7 +452,7 @@ class RecipientInvitationClient(object):
         :param str recipient_invitation_id: (required)
             OCID of the recipient invitation to update.
 
-        :param UpdateRecipientInvitationDetails update_recipient_invitation_details: (required)
+        :param oci.tenant_manager_control_plane.models.UpdateRecipientInvitationDetails update_recipient_invitation_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

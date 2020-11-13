@@ -204,7 +204,7 @@ class ServiceConnectorClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
+        :param oci.sch.models.ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
             The configuration details for moving a service connector to a different compartment.
 
         :param str if_match: (optional)
@@ -308,7 +308,7 @@ class ServiceConnectorClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
 
 
-        :param CreateServiceConnectorDetails create_service_connector_details: (required)
+        :param oci.sch.models.CreateServiceConnectorDetails create_service_connector_details: (required)
             Configuration details for the new service connector.
 
         :param str opc_retry_token: (optional)
@@ -1150,7 +1150,7 @@ class ServiceConnectorClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateServiceConnectorDetails update_service_connector_details: (required)
+        :param oci.sch.models.UpdateServiceConnectorDetails update_service_connector_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

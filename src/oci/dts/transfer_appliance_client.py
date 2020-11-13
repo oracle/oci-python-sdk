@@ -175,7 +175,7 @@ class TransferApplianceClient(object):
         :param str transfer_appliance_label: (required)
             Label of the Transfer Appliance
 
-        :param TransferAppliancePublicKey admin_public_key: (required)
+        :param oci.dts.models.TransferAppliancePublicKey admin_public_key: (required)
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -598,7 +598,7 @@ class TransferApplianceClient(object):
         :param str transfer_appliance_label: (required)
             Label of the Transfer Appliance
 
-        :param UpdateTransferApplianceDetails update_transfer_appliance_details: (required)
+        :param oci.dts.models.UpdateTransferApplianceDetails update_transfer_appliance_details: (required)
             fields to update
 
         :param str if_match: (optional)

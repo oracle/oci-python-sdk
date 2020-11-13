@@ -96,7 +96,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param AddBlockStorageDetails add_block_storage_details: (required)
+        :param oci.bds.models.AddBlockStorageDetails add_block_storage_details: (required)
             Details for the newly added block storage
 
         :param str opc_request_id: (optional)
@@ -192,7 +192,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param AddCloudSqlDetails add_cloud_sql_details: (required)
+        :param oci.bds.models.AddCloudSqlDetails add_cloud_sql_details: (required)
             Details for the Cloud SQL capability
 
         :param str opc_request_id: (optional)
@@ -288,7 +288,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param AddWorkerNodesDetails add_worker_nodes_details: (required)
+        :param oci.bds.models.AddWorkerNodesDetails add_worker_nodes_details: (required)
             Details for the newly added nodes
 
         :param str opc_request_id: (optional)
@@ -383,7 +383,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param ChangeBdsInstanceCompartmentDetails change_bds_instance_compartment_details: (required)
+        :param oci.bds.models.ChangeBdsInstanceCompartmentDetails change_bds_instance_compartment_details: (required)
             Details for the comparment change.
 
         :param str opc_request_id: (optional)
@@ -480,7 +480,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param ChangeShapeDetails change_shape_details: (required)
+        :param oci.bds.models.ChangeShapeDetails change_shape_details: (required)
             Details for the changed nodes nodes
 
         :param str opc_request_id: (optional)
@@ -572,7 +572,7 @@ class BdsClient(object):
         Creates a new BDS instance.
 
 
-        :param CreateBdsInstanceDetails create_bds_instance_details: (required)
+        :param oci.bds.models.CreateBdsInstanceDetails create_bds_instance_details: (required)
             Details for the new BDS instace.
 
         :param str opc_request_id: (optional)
@@ -1335,7 +1335,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param RemoveCloudSqlDetails remove_cloud_sql_details: (required)
+        :param oci.bds.models.RemoveCloudSqlDetails remove_cloud_sql_details: (required)
             Details for the Cloud SQL capability
 
         :param str opc_request_id: (optional)
@@ -1419,7 +1419,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param RestartNodeDetails restart_node_details: (required)
+        :param oci.bds.models.RestartNodeDetails restart_node_details: (required)
             Details for restarting the node.
 
         :param str opc_request_id: (optional)
@@ -1514,7 +1514,7 @@ class BdsClient(object):
         :param str bds_instance_id: (required)
             The OCID of the BDS instance
 
-        :param UpdateBdsInstanceDetails update_bds_instance_details: (required)
+        :param oci.bds.models.UpdateBdsInstanceDetails update_bds_instance_details: (required)
             Details for the to-be-updated BDS instace.
 
         :param str if_match: (optional)

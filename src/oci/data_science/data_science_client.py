@@ -340,7 +340,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param ChangeModelCompartmentDetails change_model_compartment_details: (required)
+        :param oci.data_science.models.ChangeModelCompartmentDetails change_model_compartment_details: (required)
             Details for changing the compartment of a model.
 
         :param str if_match: (optional)
@@ -433,7 +433,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param ChangeNotebookSessionCompartmentDetails change_notebook_session_compartment_details: (required)
+        :param oci.data_science.models.ChangeNotebookSessionCompartmentDetails change_notebook_session_compartment_details: (required)
             Details for changing the compartment of a notebook session.
 
         :param str if_match: (optional)
@@ -526,7 +526,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param ChangeProjectCompartmentDetails change_project_compartment_details: (required)
+        :param oci.data_science.models.ChangeProjectCompartmentDetails change_project_compartment_details: (required)
             Details for changing the compartment of a project.
 
         :param str if_match: (optional)
@@ -614,7 +614,7 @@ class DataScienceClient(object):
         Creates a new model.
 
 
-        :param CreateModelDetails create_model_details: (required)
+        :param oci.data_science.models.CreateModelDetails create_model_details: (required)
             Details for creating a new model.
 
         :param str opc_request_id: (optional)
@@ -801,7 +801,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param CreateModelProvenanceDetails create_model_provenance_details: (required)
+        :param oci.data_science.models.CreateModelProvenanceDetails create_model_provenance_details: (required)
             Provenance information for specified model.
 
         :param str opc_request_id: (optional)
@@ -882,7 +882,7 @@ class DataScienceClient(object):
         Creates a new notebook session.
 
 
-        :param CreateNotebookSessionDetails create_notebook_session_details: (required)
+        :param oci.data_science.models.CreateNotebookSessionDetails create_notebook_session_details: (required)
             Details for creating a new notebook session.
 
         :param str opc_request_id: (optional)
@@ -951,7 +951,7 @@ class DataScienceClient(object):
         Creates a new project.
 
 
-        :param CreateProjectDetails create_project_details: (required)
+        :param oci.data_science.models.CreateProjectDetails create_project_details: (required)
             Details for creating a new project.
 
         :param str opc_request_id: (optional)
@@ -2830,7 +2830,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateModelDetails update_model_details: (required)
+        :param oci.data_science.models.UpdateModelDetails update_model_details: (required)
             Details for updating a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
 
         :param str if_match: (optional)
@@ -2918,7 +2918,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateModelProvenanceDetails update_model_provenance_details: (required)
+        :param oci.data_science.models.UpdateModelProvenanceDetails update_model_provenance_details: (required)
             Provenance information for the specified model.
 
         :param str opc_request_id: (optional)
@@ -3008,7 +3008,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateNotebookSessionDetails update_notebook_session_details: (required)
+        :param oci.data_science.models.UpdateNotebookSessionDetails update_notebook_session_details: (required)
             Details for updating a notebook session. `notebookSessionConfigurationDetails` can only be updated while the notebook session is in the `INACTIVE` state.
             Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
 
@@ -3097,7 +3097,7 @@ class DataScienceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateProjectDetails update_project_details: (required)
+        :param oci.data_science.models.UpdateProjectDetails update_project_details: (required)
             Details for updating a project. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
 
         :param str if_match: (optional)

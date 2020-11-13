@@ -90,7 +90,7 @@ class TransferApplianceEntitlementClient(object):
         Create the Entitlement to use a Transfer Appliance. It requires some offline process of review and signatures before request is granted.
 
 
-        :param CreateTransferApplianceEntitlementDetails create_transfer_appliance_entitlement_details: (required)
+        :param oci.dts.models.CreateTransferApplianceEntitlementDetails create_transfer_appliance_entitlement_details: (required)
             Creates a Transfer Appliance Entitlement
 
         :param str opc_retry_token: (optional)

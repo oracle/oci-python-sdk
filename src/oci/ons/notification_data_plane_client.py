@@ -102,7 +102,7 @@ class NotificationDataPlaneClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCompartmentDetails change_subscription_compartment_details: (required)
+        :param oci.ons.models.ChangeCompartmentDetails change_subscription_compartment_details: (required)
             The configuration details for the move operation.
 
         :param str opc_retry_token: (optional)
@@ -199,7 +199,7 @@ class NotificationDataPlaneClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub
 
 
-        :param CreateSubscriptionDetails create_subscription_details: (required)
+        :param oci.ons.models.CreateSubscriptionDetails create_subscription_details: (required)
             The subscription to create.
 
         :param str opc_retry_token: (optional)
@@ -757,7 +757,7 @@ class NotificationDataPlaneClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param MessageDetails message_details: (required)
+        :param oci.ons.models.MessageDetails message_details: (required)
             The message to publish.
 
         :param str opc_request_id: (optional)
@@ -923,7 +923,7 @@ class NotificationDataPlaneClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateSubscriptionDetails update_subscription_details: (required)
+        :param oci.ons.models.UpdateSubscriptionDetails update_subscription_details: (required)
             The configuration details for updating the subscription.
 
         :param str opc_request_id: (optional)

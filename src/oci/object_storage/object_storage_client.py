@@ -266,7 +266,7 @@ class ObjectStorageClient(object):
         :param str upload_id: (required)
             The upload ID for a multipart upload.
 
-        :param CommitMultipartUploadDetails commit_multipart_upload_details: (required)
+        :param oci.object_storage.models.CommitMultipartUploadDetails commit_multipart_upload_details: (required)
             The part numbers and entity tags (ETags) for the parts you want to commit.
 
         :param str if_match: (optional)
@@ -367,7 +367,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param CopyObjectDetails copy_object_details: (required)
+        :param oci.object_storage.models.CopyObjectDetails copy_object_details: (required)
             The source and destination of the object to be copied.
 
         :param str opc_client_request_id: (optional)
@@ -498,7 +498,7 @@ class ObjectStorageClient(object):
         :param str namespace_name: (required)
             The Object Storage namespace used for the request.
 
-        :param CreateBucketDetails create_bucket_details: (required)
+        :param oci.object_storage.models.CreateBucketDetails create_bucket_details: (required)
             Request object for creating a bucket.
 
         :param str opc_client_request_id: (optional)
@@ -579,7 +579,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param CreateMultipartUploadDetails create_multipart_upload_details: (required)
+        :param oci.object_storage.models.CreateMultipartUploadDetails create_multipart_upload_details: (required)
             Request object for creating a multipart upload.
 
         :param str if_match: (optional)
@@ -700,7 +700,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param CreatePreauthenticatedRequestDetails create_preauthenticated_request_details: (required)
+        :param oci.object_storage.models.CreatePreauthenticatedRequestDetails create_preauthenticated_request_details: (required)
             Information needed to create the pre-authenticated request.
 
         :param str opc_client_request_id: (optional)
@@ -782,7 +782,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param CreateReplicationPolicyDetails create_replication_policy_details: (required)
+        :param oci.object_storage.models.CreateReplicationPolicyDetails create_replication_policy_details: (required)
             The replication policy.
 
         :param str opc_client_request_id: (optional)
@@ -865,7 +865,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param CreateRetentionRuleDetails create_retention_rule_details: (required)
+        :param oci.object_storage.models.CreateRetentionRuleDetails create_retention_rule_details: (required)
             The retention rule to create for the bucket.
 
         :param str opc_client_request_id: (optional)
@@ -4010,7 +4010,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param PutObjectLifecyclePolicyDetails put_object_lifecycle_policy_details: (required)
+        :param oci.object_storage.models.PutObjectLifecyclePolicyDetails put_object_lifecycle_policy_details: (required)
             The lifecycle policy to apply to the bucket.
 
         :param str opc_client_request_id: (optional)
@@ -4206,7 +4206,7 @@ class ObjectStorageClient(object):
             The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
-        :param ReencryptObjectDetails reencrypt_object_details: (required)
+        :param oci.object_storage.models.ReencryptObjectDetails reencrypt_object_details: (required)
             Request object for re-encrypting the data encryption key associated with an object.
 
         :param str version_id: (optional)
@@ -4303,7 +4303,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param RenameObjectDetails rename_object_details: (required)
+        :param oci.object_storage.models.RenameObjectDetails rename_object_details: (required)
             The sourceName and newName of rename operation.
 
         :param str opc_client_request_id: (optional)
@@ -4384,7 +4384,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param RestoreObjectsDetails restore_objects_details: (required)
+        :param oci.object_storage.models.RestoreObjectsDetails restore_objects_details: (required)
             Request to restore objects.
 
         :param str opc_client_request_id: (optional)
@@ -4470,7 +4470,7 @@ class ObjectStorageClient(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param UpdateBucketDetails update_bucket_details: (required)
+        :param oci.object_storage.models.UpdateBucketDetails update_bucket_details: (required)
             Request object for updating a bucket.
 
         :param str if_match: (optional)
@@ -4560,7 +4560,7 @@ class ObjectStorageClient(object):
         :param str namespace_name: (required)
             The Object Storage namespace used for the request.
 
-        :param UpdateNamespaceMetadataDetails update_namespace_metadata_details: (required)
+        :param oci.object_storage.models.UpdateNamespaceMetadataDetails update_namespace_metadata_details: (required)
             Request object for update NamespaceMetadata.
 
         :param str opc_client_request_id: (optional)
@@ -4644,7 +4644,7 @@ class ObjectStorageClient(object):
         :param str retention_rule_id: (required)
             The ID of the retention rule.
 
-        :param UpdateRetentionRuleDetails update_retention_rule_details: (required)
+        :param oci.object_storage.models.UpdateRetentionRuleDetails update_retention_rule_details: (required)
             Request object for updating the retention rule.
 
         :param str if_match: (optional)

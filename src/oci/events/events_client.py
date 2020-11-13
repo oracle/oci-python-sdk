@@ -99,7 +99,7 @@ class EventsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeRuleCompartmentDetails change_rule_compartment_details: (required)
+        :param oci.events.models.ChangeRuleCompartmentDetails change_rule_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
@@ -189,7 +189,7 @@ class EventsClient(object):
         Creates a new rule.
 
 
-        :param CreateRuleDetails create_rule_details: (required)
+        :param oci.events.models.CreateRuleDetails create_rule_details: (required)
             Specification of the rule to create
 
         :param str opc_retry_token: (optional)
@@ -569,7 +569,7 @@ class EventsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateRuleDetails update_rule_details: (required)
+        :param oci.events.models.UpdateRuleDetails update_rule_details: (required)
             The new rule spec to apply
 
         :param str if_match: (optional)

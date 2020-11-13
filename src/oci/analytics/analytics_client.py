@@ -94,7 +94,7 @@ class AnalyticsClient(object):
         :param str analytics_instance_id: (required)
             The OCID of the AnalyticsInstance.
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.analytics.models.ChangeCompartmentDetails change_compartment_details: (required)
             Input payload to move the resource to a different compartment.
 
         :param str if_match: (optional)
@@ -189,7 +189,7 @@ class AnalyticsClient(object):
         :param str analytics_instance_id: (required)
             The OCID of the AnalyticsInstance.
 
-        :param ChangeAnalyticsInstanceNetworkEndpointDetails change_analytics_instance_network_endpoint_details: (required)
+        :param oci.analytics.models.ChangeAnalyticsInstanceNetworkEndpointDetails change_analytics_instance_network_endpoint_details: (required)
             Input payload for changing an Analytics instance network endpoint.
 
         :param str if_match: (optional)
@@ -281,7 +281,7 @@ class AnalyticsClient(object):
         and creates a new WorkRequest.
 
 
-        :param CreateAnalyticsInstanceDetails create_analytics_instance_details: (required)
+        :param oci.analytics.models.CreateAnalyticsInstanceDetails create_analytics_instance_details: (required)
             Analytics Instance details.
 
         :param str opc_request_id: (optional)
@@ -1188,7 +1188,7 @@ class AnalyticsClient(object):
         :param str analytics_instance_id: (required)
             The OCID of the AnalyticsInstance.
 
-        :param ScaleAnalyticsInstanceDetails scale_analytics_instance_details: (required)
+        :param oci.analytics.models.ScaleAnalyticsInstanceDetails scale_analytics_instance_details: (required)
             Input payload for scaling an Analytics instance up or down.
 
         :param str if_match: (optional)
@@ -1463,7 +1463,7 @@ class AnalyticsClient(object):
         :param str analytics_instance_id: (required)
             The OCID of the AnalyticsInstance.
 
-        :param UpdateAnalyticsInstanceDetails update_analytics_instance_details: (required)
+        :param oci.analytics.models.UpdateAnalyticsInstanceDetails update_analytics_instance_details: (required)
             The Analytics Instance fields to update. Fields that are not provided
             will not be updated.
 

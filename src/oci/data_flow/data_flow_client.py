@@ -94,7 +94,7 @@ class DataFlowClient(object):
         :param str application_id: (required)
             The unique ID for an application.
 
-        :param ChangeApplicationCompartmentDetails change_application_compartment_details: (required)
+        :param oci.data_flow.models.ChangeApplicationCompartmentDetails change_application_compartment_details: (required)
             Details for changing an application's compartment.
 
         :param str opc_request_id: (optional)
@@ -187,7 +187,7 @@ class DataFlowClient(object):
         :param str private_endpoint_id: (required)
             The unique ID for a private endpoint.
 
-        :param ChangePrivateEndpointCompartmentDetails change_private_endpoint_compartment_details: (required)
+        :param oci.data_flow.models.ChangePrivateEndpointCompartmentDetails change_private_endpoint_compartment_details: (required)
             Details for changing a private endpoint's compartment.
 
         :param str opc_request_id: (optional)
@@ -273,7 +273,7 @@ class DataFlowClient(object):
         :param str run_id: (required)
             The unique ID for the run
 
-        :param ChangeRunCompartmentDetails change_run_compartment_details: (required)
+        :param oci.data_flow.models.ChangeRunCompartmentDetails change_run_compartment_details: (required)
             Details for changing a run's compartment.
 
         :param str opc_request_id: (optional)
@@ -363,7 +363,7 @@ class DataFlowClient(object):
         Creates an application.
 
 
-        :param CreateApplicationDetails create_application_details: (required)
+        :param oci.data_flow.models.CreateApplicationDetails create_application_details: (required)
             Details to create an application.
 
         :param str opc_retry_token: (optional)
@@ -436,7 +436,7 @@ class DataFlowClient(object):
         Creates a private endpoint to be used by an application.
 
 
-        :param CreatePrivateEndpointDetails create_private_endpoint_details: (required)
+        :param oci.data_flow.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
             Details to create a private endpoint.
 
         :param str opc_retry_token: (optional)
@@ -509,7 +509,7 @@ class DataFlowClient(object):
         Creates a run for an application.
 
 
-        :param CreateRunDetails create_run_details: (required)
+        :param oci.data_flow.models.CreateRunDetails create_run_details: (required)
             Details for creating a run of an application.
 
         :param str opc_retry_token: (optional)
@@ -1939,7 +1939,7 @@ class DataFlowClient(object):
         Updates an application using an `applicationId`.
 
 
-        :param UpdateApplicationDetails update_application_details: (required)
+        :param oci.data_flow.models.UpdateApplicationDetails update_application_details: (required)
             Details for updating an application.
 
         :param str application_id: (required)
@@ -2026,7 +2026,7 @@ class DataFlowClient(object):
         that a conflict has been detected.
 
 
-        :param UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
+        :param oci.data_flow.models.UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
             Details for updating a private endpoint.
 
         :param str private_endpoint_id: (required)
@@ -2109,7 +2109,7 @@ class DataFlowClient(object):
         Updates a run using a `runId`.
 
 
-        :param UpdateRunDetails update_run_details: (required)
+        :param oci.data_flow.models.UpdateRunDetails update_run_details: (required)
             Details for updating a run.
 
         :param str run_id: (required)

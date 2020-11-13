@@ -94,7 +94,7 @@ class OdaClient(object):
         :param str oda_instance_id: (required)
             Unique Digital Assistant instance identifier.
 
-        :param ChangeOdaInstanceCompartmentDetails change_oda_instance_compartment_details: (required)
+        :param oci.oda.models.ChangeOdaInstanceCompartmentDetails change_oda_instance_compartment_details: (required)
             The compartment to which the Digital Assistant instance should be moved.
 
         :param str if_match: (optional)
@@ -191,7 +191,7 @@ class OdaClient(object):
         header value and use it to call `GET /workRequests/{workRequestID}`.
 
 
-        :param CreateOdaInstanceDetails create_oda_instance_details: (required)
+        :param oci.oda.models.CreateOdaInstanceDetails create_oda_instance_details: (required)
             Details for the new Digital Assistant instance.
 
         :param str opc_request_id: (optional)
@@ -1196,7 +1196,7 @@ class OdaClient(object):
         :param str oda_instance_id: (required)
             Unique Digital Assistant instance identifier.
 
-        :param UpdateOdaInstanceDetails update_oda_instance_details: (required)
+        :param oci.oda.models.UpdateOdaInstanceDetails update_oda_instance_details: (required)
             The information to update.
 
         :param str if_match: (optional)

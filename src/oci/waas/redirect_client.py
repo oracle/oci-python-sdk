@@ -95,7 +95,7 @@ class RedirectClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeHttpRedirectCompartmentDetails change_http_redirect_compartment_details: (required)
+        :param oci.waas.models.ChangeHttpRedirectCompartmentDetails change_http_redirect_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -179,7 +179,7 @@ class RedirectClient(object):
         Creates a new HTTP Redirect on the WAF edge.
 
 
-        :param CreateHttpRedirectDetails create_http_redirect_details: (required)
+        :param oci.waas.models.CreateHttpRedirectDetails create_http_redirect_details: (required)
             The details of the HTTP Redirect.
 
         :param str opc_request_id: (optional)
@@ -553,7 +553,7 @@ class RedirectClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateHttpRedirectDetails update_http_redirect_details: (required)
+        :param oci.waas.models.UpdateHttpRedirectDetails update_http_redirect_details: (required)
             The details of the HTTP Redirect to update.
 
         :param str opc_request_id: (optional)

@@ -90,7 +90,7 @@ class LogSearchClient(object):
         Submit a query to search logs.
 
 
-        :param SearchLogsDetails search_logs_details: (required)
+        :param oci.loggingsearch.models.SearchLogsDetails search_logs_details: (required)
             Search request.
 
         :param str opc_request_id: (optional)

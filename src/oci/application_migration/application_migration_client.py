@@ -184,7 +184,7 @@ class ApplicationMigrationClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCompartmentDetails change_migration_compartment_details: (required)
+        :param oci.application_migration.models.ChangeCompartmentDetails change_migration_compartment_details: (required)
             The updated compartment details
 
         :param str if_match: (optional)
@@ -283,7 +283,7 @@ class ApplicationMigrationClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCompartmentDetails change_source_compartment_details: (required)
+        :param oci.application_migration.models.ChangeCompartmentDetails change_source_compartment_details: (required)
             The updated compartment details
 
         :param str if_match: (optional)
@@ -396,7 +396,7 @@ class ApplicationMigrationClient(object):
         __ https://docs.cloud.oracle.com/iaas/application-migration/manage_migrations.htm
 
 
-        :param CreateMigrationDetails create_migration_details: (required)
+        :param oci.application_migration.models.CreateMigrationDetails create_migration_details: (required)
             The properties for creating a migration.
 
         :param str opc_request_id: (optional)
@@ -488,7 +488,7 @@ class ApplicationMigrationClient(object):
         __ https://docs.cloud.oracle.com/iaas/application-migration/manage_sources.htm
 
 
-        :param CreateSourceDetails create_source_details: (required)
+        :param oci.application_migration.models.CreateSourceDetails create_source_details: (required)
             The properties for creating a source.
 
         :param str opc_request_id: (optional)
@@ -1833,7 +1833,7 @@ class ApplicationMigrationClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateMigrationDetails update_migration_details: (required)
+        :param oci.application_migration.models.UpdateMigrationDetails update_migration_details: (required)
             Updated configuration for the migration.
 
         :param str opc_request_id: (optional)
@@ -1932,7 +1932,7 @@ class ApplicationMigrationClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateSourceDetails update_source_details: (required)
+        :param oci.application_migration.models.UpdateSourceDetails update_source_details: (required)
             Updated configuration for the source.
 
         :param str opc_request_id: (optional)

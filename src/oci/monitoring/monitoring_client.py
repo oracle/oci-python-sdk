@@ -101,7 +101,7 @@ class MonitoringClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeAlarmCompartmentDetails change_alarm_compartment_details: (required)
+        :param oci.monitoring.models.ChangeAlarmCompartmentDetails change_alarm_compartment_details: (required)
             The configuration details for moving an alarm.
 
         :param str if_match: (optional)
@@ -199,7 +199,7 @@ class MonitoringClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
 
-        :param CreateAlarmDetails create_alarm_details: (required)
+        :param oci.monitoring.models.CreateAlarmDetails create_alarm_details: (required)
             Document for creating an alarm.
 
         :param str opc_request_id: (optional)
@@ -907,7 +907,7 @@ class MonitoringClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ListMetricsDetails list_metrics_details: (required)
+        :param oci.monitoring.models.ListMetricsDetails list_metrics_details: (required)
             The dimensions used to filter metrics.
 
         :param str opc_request_id: (optional)
@@ -1027,7 +1027,7 @@ class MonitoringClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts
 
 
-        :param PostMetricDataDetails post_metric_data_details: (required)
+        :param oci.monitoring.models.PostMetricDataDetails post_metric_data_details: (required)
             An array of metric objects containing raw metric data points to be posted to the Monitoring service.
 
         :param str opc_request_id: (optional)
@@ -1193,7 +1193,7 @@ class MonitoringClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param SummarizeMetricsDataDetails summarize_metrics_data_details: (required)
+        :param oci.monitoring.models.SummarizeMetricsDataDetails summarize_metrics_data_details: (required)
             The dimensions used to filter for metrics.
 
         :param str opc_request_id: (optional)
@@ -1284,7 +1284,7 @@ class MonitoringClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAlarmDetails update_alarm_details: (required)
+        :param oci.monitoring.models.UpdateAlarmDetails update_alarm_details: (required)
             Document for updating an alarm.
 
         :param str if_match: (optional)

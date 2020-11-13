@@ -93,7 +93,7 @@ class TransferJobClient(object):
         :param str transfer_job_id: (required)
             ID of the Transfer Job
 
-        :param ChangeTransferJobCompartmentDetails change_transfer_job_compartment_details: (required)
+        :param oci.dts.models.ChangeTransferJobCompartmentDetails change_transfer_job_compartment_details: (required)
             CompartmentId of the destination compartment
 
         :param str if_match: (optional)
@@ -183,7 +183,7 @@ class TransferJobClient(object):
         Create a new Transfer Job that corresponds with customer's logical dataset e.g. a DB or a filesystem.
 
 
-        :param CreateTransferJobDetails create_transfer_job_details: (required)
+        :param oci.dts.models.CreateTransferJobDetails create_transfer_job_details: (required)
             Creates a New Transfer Job
 
         :param str opc_retry_token: (optional)
@@ -506,7 +506,7 @@ class TransferJobClient(object):
         :param str id: (required)
             ID of the Transfer Job
 
-        :param UpdateTransferJobDetails update_transfer_job_details: (required)
+        :param oci.dts.models.UpdateTransferJobDetails update_transfer_job_details: (required)
             fields to update
 
         :param str if_match: (optional)

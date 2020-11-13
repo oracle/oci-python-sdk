@@ -93,7 +93,7 @@ class OceInstanceClient(object):
         :param str oce_instance_id: (required)
             unique OceInstance identifier
 
-        :param ChangeOceInstanceCompartmentDetails change_oce_instance_compartment_details: (required)
+        :param oci.oce.models.ChangeOceInstanceCompartmentDetails change_oce_instance_compartment_details: (required)
             The information about compartment details to be moved.
 
         :param str if_match: (optional)
@@ -185,7 +185,7 @@ class OceInstanceClient(object):
         Creates a new OceInstance.
 
 
-        :param CreateOceInstanceDetails create_oce_instance_details: (required)
+        :param oci.oce.models.CreateOceInstanceDetails create_oce_instance_details: (required)
             Details for the new OceInstance.
 
         :param str opc_retry_token: (optional)
@@ -866,7 +866,7 @@ class OceInstanceClient(object):
         :param str oce_instance_id: (required)
             unique OceInstance identifier
 
-        :param UpdateOceInstanceDetails update_oce_instance_details: (required)
+        :param oci.oce.models.UpdateOceInstanceDetails update_oce_instance_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
