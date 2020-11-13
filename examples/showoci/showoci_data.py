@@ -439,12 +439,14 @@ class ShowOCIData(object):
 
     def __get_core_network_vcn_drg_details(self, drg_attachment):
         retStr = ""
+        name = ""
         try:
             drg_id = drg_attachment['drg_id']
 
             # get DRG name
             drg = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_DRG, 'id', drg_id)
             if drg:
+                name = drg['name']
                 retStr = drg['name']
 
             # check if IPSEC
@@ -461,11 +463,11 @@ class ShowOCIData(object):
             if drg_attachment['route_table_id'] != "None":
                 retStr += " + Transit Route(" + str(self.__get_core_network_route(drg_attachment['route_table_id']) + ")")
 
-            return retStr
+            return retStr, name
 
         except Exception as e:
             self.__print_error("__get_core_network_vcn_drg_details", e)
-            return retStr
+            return retStr, name
 
     ##########################################################################
     # get Network VCN DRG Attached
@@ -477,9 +479,11 @@ class ShowOCIData(object):
 
             list_drg_attachments = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'vcn_id', vcn_id)
             for da in list_drg_attachments:
-                val = self.__get_core_network_vcn_drg_details(da)
+                val, display_name = self.__get_core_network_vcn_drg_details(da)
                 value = {'id': da['id'],
                          'drg_id': da['drg_id'],
+                         'route_table_id': da['route_table_id'],
+                         'display_name': display_name,
                          'name': val,
                          'compartment_name': da['compartment_name'],
                          'compartment_id': da['compartment_id'],
@@ -568,8 +572,11 @@ class ShowOCIData(object):
                     'compartment_name': subnet['compartment_name'],
                     'compartment_id': subnet['compartment_id'],
                     'dhcp_options': dhcp_options,
+                    'dhcp_options_id': subnet['dhcp_options_id'],
                     'security_list': sec_lists,
+                    'security_list_ids': subnet['security_list_ids'],
                     'route': route_name,
+                    'route_table_id': subnet['route_table_id'],
                     'time_created': subnet['time_created'],
                     'defined_tags': subnet['defined_tags'],
                     'freeform_tags': subnet['freeform_tags']
@@ -759,6 +766,9 @@ class ShowOCIData(object):
                     route_rules.append(
                         {'network_entity_id': rl['network_entity_id'],
                          'destination': rl['destination'],
+                         'cidr_block': rl['cidr_block'],
+                         'destination_type': rl['destination_type'],
+                         'description': rl['description'],
                          'desc': self.__get_core_network_vcn_route_rule(rl)
                          })
 
@@ -1472,6 +1482,8 @@ class ShowOCIData(object):
                     if 'vnic_details' in vnic:
                         if 'display_name' in vnic['vnic_details']:
                             val = {'id': vnic['vnic_id'], 'desc': vnic['vnic_details']['display_name'] + str(comp_text), 'details': vnic['vnic_details']}
+                            if 'ip_addresses' in vnic['vnic_details']:
+                                val['ip_addresses'] = vnic['vnic_details']['ip_addresses']
                             vnicdata.append(val)
 
                 inst['vnic'] = vnicdata
@@ -2329,6 +2341,7 @@ class ShowOCIData(object):
             data['nsg_ids'] = lb['nsg_ids']
             data['nsg_names'] = lb['nsg_names']
             data['hostnames'] = [x['desc'] for x in lb['hostnames']]
+            data['rule_sets'] = lb['rule_sets']
             data['compartment_name'] = lb['compartment_name']
             data['compartment_id'] = lb['compartment_id']
             data['subnet_ids'] = lb['subnet_ids']

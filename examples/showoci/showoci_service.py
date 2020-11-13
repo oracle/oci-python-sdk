@@ -133,7 +133,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.21.4"
+    oci_compatible_version = "2.23.4"
 
     ##########################################################################
     # Global Constants
@@ -2093,7 +2093,14 @@ class ShowOCIService(object):
                 for rt in route_tables:
                     val = {'id': str(rt.id), 'vcn_id': str(rt.vcn_id), 'name': str(rt.display_name),
                            'time_created': str(rt.time_created),
-                           'route_rules': [{'destination': str(es.destination), 'network_entity_id': str(es.network_entity_id)} for es in rt.route_rules],
+                           'route_rules': [
+                               {
+                                   'destination': str(es.destination),
+                                   'network_entity_id': str(es.network_entity_id),
+                                   'cidr_block': "" if str(es.cidr_block) == "None" else str(es.cidr_block),
+                                   'description': "" if str(es.description) == "None" else str(es.description),
+                                   'destination_type': str(es.destination_type)
+                               } for es in rt.route_rules],
                            'compartment_name': str(compartment['name']),
                            'defined_tags': [] if rt.defined_tags is None else rt.defined_tags,
                            'freeform_tags': [] if rt.freeform_tags is None else rt.freeform_tags,
@@ -2921,9 +2928,13 @@ class ShowOCIService(object):
                 # arr = oci.core.models.DrgAttachment
                 for arr in arrs:
                     if arr.lifecycle_state == oci.core.models.DrgAttachment.LIFECYCLE_STATE_ATTACHED:
-                        val = {'id': str(arr.id), 'vcn_id': str(arr.vcn_id), 'drg_id': str(arr.drg_id),
-                               'time_created': str(arr.time_created), 'route_table_id': str(arr.route_table_id),
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                        val = {'id': str(arr.id),
+                               'vcn_id': str(arr.vcn_id),
+                               'drg_id': str(arr.drg_id),
+                               'time_created': str(arr.time_created),
+                               'route_table_id': "" if str(arr.route_table_id) == "None" else str(arr.route_table_id),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
                         data.append(val)
                         cnt += 1
@@ -4086,6 +4097,23 @@ class ShowOCIService(object):
             # subnet
             data['dbdesc'] = data['display_name']
             data['display_name'] += subnet_display
+
+            # get all private_ip_addresses for vnic
+            data['ip_addresses'] = []
+            private_ip_addresses = virtual_network.list_private_ips(vnic_id=vnic_id).data
+            for pip in private_ip_addresses:
+                data['ip_addresses'].append({'ip_address': str(pip.ip_address), 'id': str(pip.id), 'type': "Private"})
+
+                # get public ip assigned to the private ip
+                try:
+                    privdetails = oci.core.models.GetPublicIpByPrivateIpIdDetails()
+                    privdetails.private_ip_id = pip.id
+                    pub_ip = virtual_network.get_public_ip_by_private_ip_id(privdetails)
+                    if pub_ip.status == 200:
+                        data['ip_addresses'].append({'ip_address': str(pub_ip.data.ip_address), 'id': str(pub_ip.data.id), 'type': "Public"})
+                except Exception:
+                    pass
+
             return data
 
         except oci.exceptions.RequestException as e:
@@ -4709,6 +4737,11 @@ class ShowOCIService(object):
                         datahosts.append({'name': str(ho.name), 'desc': str(ho.name).ljust(20) + " - " + str(ho.hostname)})
                     val['hostnames'] = datahosts
 
+                    # RuleSets
+                    val['rule_sets'] = []
+                    if arr.rule_sets:
+                        val['rule_sets'] = self.__load_core_load_balancer_ruleset(arr.rule_sets)
+
                     # Add data
                     data.append(val)
                     cnt += 1
@@ -4724,6 +4757,58 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_load_balancers", e)
+            return data
+
+    ##########################################################################
+    # data compute read block volume backups
+    ##########################################################################
+    def __load_core_load_balancer_ruleset(self, rule_sets):
+
+        data = []
+
+        try:
+            for rule_name in rule_sets.keys():
+                val = {}
+                val['name'] = rule_name
+                val['items'] = []
+
+                # get items
+                for ri in rule_sets[rule_name].items:
+                    valitem = {}
+                    if ri.action == oci.load_balancer.models.Rule.ACTION_ADD_HTTP_REQUEST_HEADER:
+                        valitem = {'action': str(ri.action), 'header': str(ri.header), 'value': str(ri.value)}
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_ADD_HTTP_RESPONSE_HEADER:
+                        valitem = {'action': str(ri.action), 'header': str(ri.header)}
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_ALLOW:
+                        valitem = {'action': str(ri.action)}
+                        if ri.conditions:
+                            valitem['conditions'] = [str(item.attribute_name) + ":" + str(item.attribute_value) for item in ri.conditions]
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_CONTROL_ACCESS_USING_HTTP_METHODS:
+                        valitem = {'action': str(ri.action), 'allowed_methods': str(ri.allowed_methods), 'status_code': str(ri.status_code)}
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_EXTEND_HTTP_RESPONSE_HEADER_VALUE:
+                        valitem = {'action': str(ri.action), 'header': str(ri.header), 'prefix': str(ri.prefix), 'suffix': str(ri.suffix)}
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_HTTP_HEADER:
+                        valitem = {'action': str(ri.action), 'are_invalid_characters_allowed': str(ri.are_invalid_characters_allowed), 'http_large_header_size_in_kb': str(ri.http_large_header_size_in_kb)}
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_REDIRECT:
+                        valitem = {'action': str(ri.action), 'response_code': str(ri.response_code)}
+                        if ri.conditions:
+                            valitem['conditions'] = [str(item.attribute_name) + ":" + str(item.attribute_value) for item in ri.conditions]
+                        valitem['redirect_host'] = str(ri.redirect_uri.host) + ":" + str(ri.redirect_uri.port)
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_REMOVE_HTTP_REQUEST_HEADER:
+                        valitem = {'action': str(ri.action), 'header': str(ri.header)}
+                    elif ri.action == oci.load_balancer.models.Rule.ACTION_REMOVE_HTTP_RESPONSE_HEADER:
+                        valitem = {'action': str(ri.action), 'header': str(ri.header)}
+                    else:
+                        valitem = {'action': str(ri.action)}
+                    val['items'].append(valitem)
+
+                # add the rule
+                data.append(val)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("__load_core_load_balancer_ruleset", e)
             return data
 
     ##########################################################################
