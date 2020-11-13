@@ -47,7 +47,7 @@ class RetryStrategyBuilder(object):
             for scenarios such as "keep retrying for 5 minutes".  If not provided this defaults to False
             (i.e. this check will not be done)
 
-        :param int max_atttemps (optional):
+        :param int max_attempts (optional):
             If we are checking that we don't exceed a certain number of attempts, what that number of
             attempts should be. This only applies if we are performing a check on the maximum number of
             attempts and will be ignored otherwise. If we are performing a check on the maximum number of
