@@ -48,7 +48,7 @@ otherwise you must pass `-e` or run tests directly:
     tox
 
     # This will run tests against a specific Python versions
-    tox -e py36
+    tox -e py27
 
 If you wish to run an individual test then you can run:
 
