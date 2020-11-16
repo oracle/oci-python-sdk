@@ -99,6 +99,12 @@ class UploadManager:
         :param dict metadata (optional):
             A dictionary of string to string values to associate with the object to upload
 
+        :param str storage_tier: (optional)
+            The storage tier that the object should be stored in. If not specified, the object will be stored in
+            the same storage tier as the bucket.
+
+            Allowed values are: "Standard", "InfrequentAccess", "Archive"
+
         :return:
             The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None.
             For a multipart upload (non-empty stream data) the :class:`~oci.response.Response` will contain the :code:`opc-multipart-md5` header and for a non-multipart upload
@@ -208,6 +214,12 @@ class UploadManager:
 
         :param dict metadata (optional):
             A dictionary of string to string values to associate with the object to upload
+
+        :param str storage_tier: (optional)
+            The storage tier that the object should be stored in. If not specified, the object will be stored in
+            the same storage tier as the bucket.
+
+            Allowed values are: "Standard", "InfrequentAccess", "Archive"
 
         :return:
             The response from multipart commit operation or the put operation.  In both cases this will be a :class:`~oci.response.Response` object with data of type None.

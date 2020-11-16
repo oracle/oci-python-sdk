@@ -98,6 +98,12 @@ class MultipartObjectAssembler:
 
         :param str opc_sse_customer_key_sha256 (optional):
             The base64-encoded SHA256 hash of the encryption key.
+
+        :param str storage_tier: (optional)
+            The storage tier that the object should be stored in. If not specified, the object will be stored in
+            the same storage tier as the bucket.
+
+            Allowed values are: "Standard", "InfrequentAccess", "Archive"
         """
         self.object_storage_client = object_storage_client
 
@@ -122,7 +128,9 @@ class MultipartObjectAssembler:
         self.metadata = None
         if 'metadata' in kwargs:
             self.metadata = kwargs['metadata']
-
+        self.storage_tier = None
+        if 'storage_tier' in kwargs:
+            self.storage_tier = kwargs['storage_tier']
         self.parallel_process_count = DEFAULT_PARALLEL_PROCESS_COUNT
         if 'parallel_process_count' in kwargs:
             if kwargs['parallel_process_count'] == 0:
@@ -361,7 +369,8 @@ class MultipartObjectAssembler:
             self.metadata = processed_metadata
 
             request.metadata = self.metadata
-
+        if self.storage_tier:
+            request.storage_tier = self.storage_tier
         client_request_id = None
         if 'opc_client_request_id' in kwargs:
             client_request_id = kwargs['opc_client_request_id']

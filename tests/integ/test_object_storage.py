@@ -14,6 +14,7 @@ import os
 import os.path
 import pytest
 from oci._vendor import requests
+import io
 
 LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 
@@ -334,6 +335,194 @@ class TestObjectStorage:
                 assert response.status == 204
 
             # Clean up
+            response = object_storage.delete_bucket(namespace, bucket_name)
+            assert response.status == 204
+
+    def test_object_ia_basic(self, object_storage):
+        with test_config_container.create_vcr().use_cassette('test_object_ia_basic.yml'):
+            object_name = 'a'
+            object_name_std = 'a-std'
+            object_name_ia = 'a-ia'
+
+            # Setup a bucket to use
+            bucket_name = unique_name('test_object_ia_basic')
+            test_data = 'This is a test ' + random_number_string() + '!/n/r/\/~%s;"/,{}><+=:.*)('''  # noqa: W605
+            namespace = object_storage.get_namespace().data
+
+            request = oci.object_storage.models.CreateBucketDetails()
+            request.name = bucket_name
+            request.compartment_id = util.COMPARTMENT_ID
+            response = object_storage.create_bucket(namespace, request)
+            assert response.status == 200
+
+            # Put objects
+            response = object_storage.put_object(namespace, bucket_name, object_name, test_data)
+            assert response.status == 200
+            response = object_storage.put_object(namespace, bucket_name, object_name_std, test_data)
+            assert response.status == 200
+            response = object_storage.put_object(namespace, bucket_name, object_name_ia, test_data, storage_tier="InfrequentAccess")
+            assert response.status == 200
+
+            # Head objects
+            response = object_storage.head_object(namespace, bucket_name, object_name)
+            assert response.status == 200
+            assert len(test_data) == int(response.headers['content-length'])
+            assert 'storage-tier' in response.headers
+            assert 'Standard' == response.headers['storage-tier']
+
+            response = object_storage.head_object(namespace, bucket_name, object_name_std)
+            assert response.status == 200
+            assert len(test_data) == int(response.headers['content-length'])
+            assert 'storage-tier' in response.headers
+            assert 'Standard' == response.headers['storage-tier']
+
+            response = object_storage.head_object(namespace, bucket_name, object_name_ia)
+            assert response.status == 200
+            assert len(test_data) == int(response.headers['content-length'])
+            assert 'storage-tier' in response.headers
+            assert 'InfrequentAccess' == response.headers['storage-tier']
+
+            # Update the storage tier
+            request = oci.object_storage.models.UpdateObjectStorageTierDetails()
+            request.storage_tier = 'InfrequentAccess'
+            request.object_name = object_name_std
+            response = object_storage.update_object_storage_tier(namespace, bucket_name, request)
+            assert response.status == 200
+            response = object_storage.head_object(namespace, bucket_name, object_name_std)
+            assert response.status == 200
+            assert 'storage-tier' in response.headers
+            assert 'InfrequentAccess' == response.headers['storage-tier']
+
+            # List the objects
+            response = object_storage.list_objects(namespace, bucket_name, fields='name,storageTier')
+            assert response.status == 200
+            object_list = response.data
+            assert isinstance(object_list, oci.object_storage.models.ListObjects)
+            assert type(object_list.objects[0]) is oci.object_storage.models.ObjectSummary
+            for object in object_list.objects:
+                if object.name == object_name:
+                    assert 'Standard' == object.storage_tier
+                elif object.name == object_name_ia:
+                    assert 'InfrequentAccess' == object.storage_tier
+            response = object_storage.list_objects(namespace, bucket_name, fields='name,size')
+            assert response.status == 200
+            object_list = response.data
+            assert isinstance(object_list, oci.object_storage.models.ListObjects)
+            assert type(object_list.objects[0]) is oci.object_storage.models.ObjectSummary
+            for object in object_list.objects:
+                assert object.name is not None
+                assert object.size is not None
+                assert object.storage_tier is None
+
+            part_size = 1024
+            object_name_stream = "ioByteTest"
+            # The data we are uploading
+            data = b'0123456789abcdefg'
+            # Upload
+            s = io.BytesIO(data)
+            upload_manager = oci.object_storage.UploadManager(object_storage)
+            upload_manager.upload_stream(namespace, bucket_name, object_name_stream, s, part_size=part_size, storage_tier='InfrequentAccess')
+            # verify the object's storage-tier
+            response = object_storage.head_object(namespace, bucket_name, object_name_stream)
+            assert response.status == 200
+            assert 'storage-tier' in response.headers
+            assert 'InfrequentAccess' == response.headers['storage-tier']
+
+            # --------------<Clean Up>-------------- #
+
+            # Delete the objects
+            response = object_storage.list_objects(namespace, bucket_name, fields='name,size')
+            assert response.status == 200
+            object_list = response.data
+            for summary in object_list.objects:
+                response = object_storage.delete_object(namespace, bucket_name, summary.name)
+                assert response.status == 204
+
+            # Delete the bucket
+            response = object_storage.delete_bucket(namespace, bucket_name)
+            assert response.status == 204
+
+    def test_object_ia_upload_file(self, object_storage, content_input_file):
+        object_name_multipart = 'a-multipart'
+
+        # Setup a bucket to use
+        bucket_name = unique_name('test_object_ia_upload_file')
+        namespace = object_storage.get_namespace().data
+
+        request = oci.object_storage.models.CreateBucketDetails()
+        request.name = bucket_name
+        request.compartment_id = util.COMPARTMENT_ID
+        response = object_storage.create_bucket(namespace, request)
+        assert response.status == 200
+
+        # Multipart upload
+
+        # explicitly use part_size < file size to trigger multipart
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        # The value for the content_input_file is returned by the content_input_file() function.
+        response = upload_manager.upload_file(
+            namespace, bucket_name, object_name_multipart, content_input_file, part_size=part_size_in_bytes, storage_tier='InfrequentAccess')
+        util.validate_response(response)
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-multipart-md5']
+        # verify the object's storage-tier
+        response = object_storage.head_object(namespace, bucket_name, object_name_multipart)
+        assert response.status == 200
+        assert 'storage-tier' in response.headers
+        assert 'InfrequentAccess' == response.headers['storage-tier']
+
+        # --------------<Clean Up>-------------- #
+
+        # Delete the objects
+        response = object_storage.list_objects(namespace, bucket_name, fields='name,size')
+        assert response.status == 200
+        object_list = response.data
+        for summary in object_list.objects:
+            response = object_storage.delete_object(namespace, bucket_name, summary.name)
+            assert response.status == 204
+
+        # Delete the bucket
+        response = object_storage.delete_bucket(namespace, bucket_name)
+        assert response.status == 204
+
+    def test_object_ia_upload_stream(self, object_storage):
+        with test_config_container.create_vcr().use_cassette('test_object_ia_upload_stream.yml'):
+            # Setup a bucket to use
+            bucket_name = unique_name('test_object_ia_upload_stream')
+            namespace = object_storage.get_namespace().data
+
+            request = oci.object_storage.models.CreateBucketDetails()
+            request.name = bucket_name
+            request.compartment_id = util.COMPARTMENT_ID
+            response = object_storage.create_bucket(namespace, request)
+            assert response.status == 200
+
+            part_size = 1024
+            object_name_stream = "ioByteTest"
+            # The data we are uploading
+            data = b'0123456789abcdefg'
+            # Upload
+            s = io.BytesIO(data)
+            upload_manager = oci.object_storage.UploadManager(object_storage)
+            upload_manager.upload_stream(namespace, bucket_name, object_name_stream, s, part_size=part_size, storage_tier='InfrequentAccess')
+            # verify the object's storage-tier
+            response = object_storage.head_object(namespace, bucket_name, object_name_stream)
+            assert response.status == 200
+            assert 'storage-tier' in response.headers
+            assert 'InfrequentAccess' == response.headers['storage-tier']
+
+            # --------------<Clean Up>-------------- #
+
+            # Delete the objects
+            response = object_storage.list_objects(namespace, bucket_name, fields='name,size')
+            assert response.status == 200
+            object_list = response.data
+            for summary in object_list.objects:
+                response = object_storage.delete_object(namespace, bucket_name, summary.name)
+                assert response.status == 204
+
+            # Delete the bucket
             response = object_storage.delete_bucket(namespace, bucket_name)
             assert response.status == 204
 
