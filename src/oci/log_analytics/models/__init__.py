@@ -12,11 +12,9 @@ from .abstract_parser_test_result_log_line import AbstractParserTestResultLogLin
 from .action import Action
 from .add_entity_association_details import AddEntityAssociationDetails
 from .add_fields_command_descriptor import AddFieldsCommandDescriptor
-from .agent_upload import AgentUpload
 from .archiving_configuration import ArchivingConfiguration
 from .argument import Argument
 from .association_summary_report import AssociationSummaryReport
-from .attribute import Attribute
 from .auto_lookups import AutoLookups
 from .bottom_command_descriptor import BottomCommandDescriptor
 from .bucket_command_descriptor import BucketCommandDescriptor
@@ -43,7 +41,6 @@ from .create_log_analytics_entity_details import CreateLogAnalyticsEntityDetails
 from .create_log_analytics_entity_type_details import CreateLogAnalyticsEntityTypeDetails
 from .create_log_analytics_log_group_details import CreateLogAnalyticsLogGroupDetails
 from .create_log_analytics_object_collection_rule_details import CreateLogAnalyticsObjectCollectionRuleDetails
-from .create_namespace_details import CreateNamespaceDetails
 from .create_scheduled_task_details import CreateScheduledTaskDetails
 from .create_standard_task_details import CreateStandardTaskDetails
 from .cron_schedule import CronSchedule
@@ -69,7 +66,6 @@ from .extract_log_header_details import ExtractLogHeaderDetails
 from .extract_log_header_results import ExtractLogHeaderResults
 from .field import Field
 from .field_argument import FieldArgument
-from .field_map import FieldMap
 from .field_summary_command_descriptor import FieldSummaryCommandDescriptor
 from .field_summary_report import FieldSummaryReport
 from .field_value import FieldValue
@@ -81,7 +77,6 @@ from .filter_details import FilterDetails
 from .filter_output import FilterOutput
 from .fixed_frequency_schedule import FixedFrequencySchedule
 from .function_field import FunctionField
-from .generate_agent_object_name_details import GenerateAgentObjectNameDetails
 from .head_command_descriptor import HeadCommandDescriptor
 from .highlight_command_descriptor import HighlightCommandDescriptor
 from .highlight_rows_command_descriptor import HighlightRowsCommandDescriptor
@@ -95,14 +90,12 @@ from .label_summary_report import LabelSummaryReport
 from .link_command_descriptor import LinkCommandDescriptor
 from .link_details_command_descriptor import LinkDetailsCommandDescriptor
 from .literal_argument import LiteralArgument
-from .log_analytics import LogAnalytics
 from .log_analytics_associated_entity import LogAnalyticsAssociatedEntity
 from .log_analytics_associated_entity_collection import LogAnalyticsAssociatedEntityCollection
 from .log_analytics_association import LogAnalyticsAssociation
 from .log_analytics_association_collection import LogAnalyticsAssociationCollection
 from .log_analytics_association_parameter import LogAnalyticsAssociationParameter
 from .log_analytics_association_parameter_collection import LogAnalyticsAssociationParameterCollection
-from .log_analytics_collection_warning import LogAnalyticsCollectionWarning
 from .log_analytics_config_work_request import LogAnalyticsConfigWorkRequest
 from .log_analytics_config_work_request_collection import LogAnalyticsConfigWorkRequestCollection
 from .log_analytics_config_work_request_payload import LogAnalyticsConfigWorkRequestPayload
@@ -167,7 +160,6 @@ from .log_analytics_source_metric import LogAnalyticsSourceMetric
 from .log_analytics_source_pattern import LogAnalyticsSourcePattern
 from .log_analytics_source_pattern_collection import LogAnalyticsSourcePatternCollection
 from .log_analytics_source_summary import LogAnalyticsSourceSummary
-from .log_analytics_summary import LogAnalyticsSummary
 from .log_group_summary_report import LogGroupSummaryReport
 from .lookup_command_descriptor import LookupCommandDescriptor
 from .lookup_field import LookupField
@@ -177,7 +169,6 @@ from .multi_search_command_descriptor import MultiSearchCommandDescriptor
 from .namespace import Namespace
 from .namespace_collection import NamespaceCollection
 from .namespace_summary import NamespaceSummary
-from .out_of_box_entity_type_details import OutOfBoxEntityTypeDetails
 from .parse_query_details import ParseQueryDetails
 from .parse_query_output import ParseQueryOutput
 from .parsed_content import ParsedContent
@@ -187,17 +178,14 @@ from .parser_test_result import ParserTestResult
 from .property_override import PropertyOverride
 from .purge_action import PurgeAction
 from .purge_storage_data_details import PurgeStorageDataDetails
-from .query import Query
 from .query_aggregation import QueryAggregation
 from .query_details import QueryDetails
 from .query_work_request import QueryWorkRequest
 from .query_work_request_collection import QueryWorkRequestCollection
-from .query_work_request_resource import QueryWorkRequestResource
 from .query_work_request_summary import QueryWorkRequestSummary
 from .recall_archived_data_details import RecallArchivedDataDetails
 from .regex_command_descriptor import RegexCommandDescriptor
 from .regex_match_result import RegexMatchResult
-from .register_entity_types_details import RegisterEntityTypesDetails
 from .release_recalled_data_details import ReleaseRecalledDataDetails
 from .remove_entity_associations_details import RemoveEntityAssociationsDetails
 from .rename_command_descriptor import RenameCommandDescriptor
@@ -210,7 +198,6 @@ from .scheduler_resource import SchedulerResource
 from .scope_filter import ScopeFilter
 from .search_command_descriptor import SearchCommandDescriptor
 from .search_lookup_command_descriptor import SearchLookupCommandDescriptor
-from .service_tenancy import ServiceTenancy
 from .sort_command_descriptor import SortCommandDescriptor
 from .sort_field import SortField
 from .source_mapping_response import SourceMappingResponse
@@ -226,7 +213,6 @@ from .storage_work_request import StorageWorkRequest
 from .storage_work_request_collection import StorageWorkRequestCollection
 from .storage_work_request_summary import StorageWorkRequestSummary
 from .stream_action import StreamAction
-from .string_list_details import StringListDetails
 from .success import Success
 from .suggest_details import SuggestDetails
 from .suggest_output import SuggestOutput
@@ -283,11 +269,9 @@ log_analytics_type_mapping = {
     "Action": Action,
     "AddEntityAssociationDetails": AddEntityAssociationDetails,
     "AddFieldsCommandDescriptor": AddFieldsCommandDescriptor,
-    "AgentUpload": AgentUpload,
     "ArchivingConfiguration": ArchivingConfiguration,
     "Argument": Argument,
     "AssociationSummaryReport": AssociationSummaryReport,
-    "Attribute": Attribute,
     "AutoLookups": AutoLookups,
     "BottomCommandDescriptor": BottomCommandDescriptor,
     "BucketCommandDescriptor": BucketCommandDescriptor,
@@ -314,7 +298,6 @@ log_analytics_type_mapping = {
     "CreateLogAnalyticsEntityTypeDetails": CreateLogAnalyticsEntityTypeDetails,
     "CreateLogAnalyticsLogGroupDetails": CreateLogAnalyticsLogGroupDetails,
     "CreateLogAnalyticsObjectCollectionRuleDetails": CreateLogAnalyticsObjectCollectionRuleDetails,
-    "CreateNamespaceDetails": CreateNamespaceDetails,
     "CreateScheduledTaskDetails": CreateScheduledTaskDetails,
     "CreateStandardTaskDetails": CreateStandardTaskDetails,
     "CronSchedule": CronSchedule,
@@ -340,7 +323,6 @@ log_analytics_type_mapping = {
     "ExtractLogHeaderResults": ExtractLogHeaderResults,
     "Field": Field,
     "FieldArgument": FieldArgument,
-    "FieldMap": FieldMap,
     "FieldSummaryCommandDescriptor": FieldSummaryCommandDescriptor,
     "FieldSummaryReport": FieldSummaryReport,
     "FieldValue": FieldValue,
@@ -352,7 +334,6 @@ log_analytics_type_mapping = {
     "FilterOutput": FilterOutput,
     "FixedFrequencySchedule": FixedFrequencySchedule,
     "FunctionField": FunctionField,
-    "GenerateAgentObjectNameDetails": GenerateAgentObjectNameDetails,
     "HeadCommandDescriptor": HeadCommandDescriptor,
     "HighlightCommandDescriptor": HighlightCommandDescriptor,
     "HighlightRowsCommandDescriptor": HighlightRowsCommandDescriptor,
@@ -366,14 +347,12 @@ log_analytics_type_mapping = {
     "LinkCommandDescriptor": LinkCommandDescriptor,
     "LinkDetailsCommandDescriptor": LinkDetailsCommandDescriptor,
     "LiteralArgument": LiteralArgument,
-    "LogAnalytics": LogAnalytics,
     "LogAnalyticsAssociatedEntity": LogAnalyticsAssociatedEntity,
     "LogAnalyticsAssociatedEntityCollection": LogAnalyticsAssociatedEntityCollection,
     "LogAnalyticsAssociation": LogAnalyticsAssociation,
     "LogAnalyticsAssociationCollection": LogAnalyticsAssociationCollection,
     "LogAnalyticsAssociationParameter": LogAnalyticsAssociationParameter,
     "LogAnalyticsAssociationParameterCollection": LogAnalyticsAssociationParameterCollection,
-    "LogAnalyticsCollectionWarning": LogAnalyticsCollectionWarning,
     "LogAnalyticsConfigWorkRequest": LogAnalyticsConfigWorkRequest,
     "LogAnalyticsConfigWorkRequestCollection": LogAnalyticsConfigWorkRequestCollection,
     "LogAnalyticsConfigWorkRequestPayload": LogAnalyticsConfigWorkRequestPayload,
@@ -438,7 +417,6 @@ log_analytics_type_mapping = {
     "LogAnalyticsSourcePattern": LogAnalyticsSourcePattern,
     "LogAnalyticsSourcePatternCollection": LogAnalyticsSourcePatternCollection,
     "LogAnalyticsSourceSummary": LogAnalyticsSourceSummary,
-    "LogAnalyticsSummary": LogAnalyticsSummary,
     "LogGroupSummaryReport": LogGroupSummaryReport,
     "LookupCommandDescriptor": LookupCommandDescriptor,
     "LookupField": LookupField,
@@ -448,7 +426,6 @@ log_analytics_type_mapping = {
     "Namespace": Namespace,
     "NamespaceCollection": NamespaceCollection,
     "NamespaceSummary": NamespaceSummary,
-    "OutOfBoxEntityTypeDetails": OutOfBoxEntityTypeDetails,
     "ParseQueryDetails": ParseQueryDetails,
     "ParseQueryOutput": ParseQueryOutput,
     "ParsedContent": ParsedContent,
@@ -458,17 +435,14 @@ log_analytics_type_mapping = {
     "PropertyOverride": PropertyOverride,
     "PurgeAction": PurgeAction,
     "PurgeStorageDataDetails": PurgeStorageDataDetails,
-    "Query": Query,
     "QueryAggregation": QueryAggregation,
     "QueryDetails": QueryDetails,
     "QueryWorkRequest": QueryWorkRequest,
     "QueryWorkRequestCollection": QueryWorkRequestCollection,
-    "QueryWorkRequestResource": QueryWorkRequestResource,
     "QueryWorkRequestSummary": QueryWorkRequestSummary,
     "RecallArchivedDataDetails": RecallArchivedDataDetails,
     "RegexCommandDescriptor": RegexCommandDescriptor,
     "RegexMatchResult": RegexMatchResult,
-    "RegisterEntityTypesDetails": RegisterEntityTypesDetails,
     "ReleaseRecalledDataDetails": ReleaseRecalledDataDetails,
     "RemoveEntityAssociationsDetails": RemoveEntityAssociationsDetails,
     "RenameCommandDescriptor": RenameCommandDescriptor,
@@ -481,7 +455,6 @@ log_analytics_type_mapping = {
     "ScopeFilter": ScopeFilter,
     "SearchCommandDescriptor": SearchCommandDescriptor,
     "SearchLookupCommandDescriptor": SearchLookupCommandDescriptor,
-    "ServiceTenancy": ServiceTenancy,
     "SortCommandDescriptor": SortCommandDescriptor,
     "SortField": SortField,
     "SourceMappingResponse": SourceMappingResponse,
@@ -497,7 +470,6 @@ log_analytics_type_mapping = {
     "StorageWorkRequestCollection": StorageWorkRequestCollection,
     "StorageWorkRequestSummary": StorageWorkRequestSummary,
     "StreamAction": StreamAction,
-    "StringListDetails": StringListDetails,
     "Success": Success,
     "SuggestDetails": SuggestDetails,
     "SuggestOutput": SuggestOutput,

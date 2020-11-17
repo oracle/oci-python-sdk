@@ -90,7 +90,7 @@ class UserClient(object):
         Create user to request Customer Support Identifier(CSI) to Customer User Administrator(CUA).
 
 
-        :param CreateUserDetails create_user_details: (required)
+        :param oci.cims.models.CreateUserDetails create_user_details: (required)
             User information
 
         :param str ocid: (required)

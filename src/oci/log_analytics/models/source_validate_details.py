@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceValidateDetails(object):
     """
-    SourceValidateDetails model.
+    source validation details
     """
 
     def __init__(self, **kwargs):

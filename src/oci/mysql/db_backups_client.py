@@ -90,7 +90,7 @@ class DbBackupsClient(object):
         Create a backup of a DB System.
 
 
-        :param CreateBackupDetails create_backup_details: (required)
+        :param oci.mysql.models.CreateBackupDetails create_backup_details: (required)
             Create a Backup of a DB System.
 
         :param str opc_request_id: (optional)
@@ -480,7 +480,7 @@ class DbBackupsClient(object):
         :param str backup_id: (required)
             The OCID of the Backup
 
-        :param UpdateBackupDetails update_backup_details: (required)
+        :param oci.mysql.models.UpdateBackupDetails update_backup_details: (required)
             Request to update a Backup's metadata.
 
         :param str if_match: (optional)

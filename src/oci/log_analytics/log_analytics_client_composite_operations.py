@@ -29,7 +29,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
             Details for the new log analytics entity.
@@ -70,7 +70,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
             Details of the rule to be created.
@@ -111,7 +111,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param CreateScheduledTaskDetails create_scheduled_task_details: (required)
             Scheduled task to be created.
@@ -146,13 +146,54 @@ class LogAnalyticsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_associations_and_wait_for_state(self, namespace_name, delete_log_analytics_association_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_associations` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
+            details for association
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_associations`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.delete_associations(namespace_name, delete_log_analytics_association_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def offboard_namespace_and_wait_for_state(self, namespace_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.offboard_namespace` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
@@ -190,7 +231,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
@@ -228,10 +269,10 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param PurgeStorageDataDetails purge_storage_data_details: (required)
-            purge old data request details
+            This is the input to purge old data.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
@@ -269,7 +310,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param QueryDetails query_details: (required)
             Query to be executed.
@@ -310,10 +351,10 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param RecallArchivedDataDetails recall_archived_data_details: (required)
-            recall archived data request details
+            This is the input to recall archived data.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
@@ -351,10 +392,10 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param ReleaseRecalledDataDetails release_recalled_data_details: (required)
-            release recalled data request details
+            This is the input to release recalled data
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
@@ -392,7 +433,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
@@ -436,10 +477,10 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The log analytics os collection rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -482,7 +523,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
@@ -528,7 +569,7 @@ class LogAnalyticsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
             list of association details

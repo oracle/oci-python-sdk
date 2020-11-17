@@ -37,7 +37,7 @@ class UploadCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this UploadCollection.
-        list of UploadSummary objects.
+        List of UploadSummary objects.
 
 
         :return: The items of this UploadCollection.
@@ -49,7 +49,7 @@ class UploadCollection(object):
     def items(self, items):
         """
         Sets the items of this UploadCollection.
-        list of UploadSummary objects.
+        List of UploadSummary objects.
 
 
         :param items: The items of this UploadCollection.

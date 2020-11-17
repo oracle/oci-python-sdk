@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StorageWorkRequestCollection(object):
     """
-    List of work request summaries.
+    This is a list of work request summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class StorageWorkRequestCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this StorageWorkRequestCollection.
-        List of work request summaries.
+        This is an array of work request summaries.
 
 
         :return: The items of this StorageWorkRequestCollection.
@@ -49,7 +49,7 @@ class StorageWorkRequestCollection(object):
     def items(self, items):
         """
         Sets the items of this StorageWorkRequestCollection.
-        List of work request summaries.
+        This is an array of work request summaries.
 
 
         :param items: The items of this StorageWorkRequestCollection.

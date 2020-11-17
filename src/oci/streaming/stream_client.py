@@ -262,7 +262,7 @@ class StreamClient(object):
         :param str stream_id: (required)
             The OCID of the stream.
 
-        :param CreateCursorDetails create_cursor_details: (required)
+        :param oci.streaming.models.CreateCursorDetails create_cursor_details: (required)
             The information used to create the cursor.
 
         :param str opc_request_id: (optional)
@@ -340,7 +340,7 @@ class StreamClient(object):
         :param str stream_id: (required)
             The OCID of the stream.
 
-        :param CreateGroupCursorDetails create_group_cursor_details: (required)
+        :param oci.streaming.models.CreateGroupCursorDetails create_group_cursor_details: (required)
             The information used to create the cursor.
 
         :param str opc_request_id: (optional)
@@ -589,7 +589,7 @@ class StreamClient(object):
         :param str stream_id: (required)
             The OCID of the stream.
 
-        :param PutMessagesDetails put_messages_details: (required)
+        :param oci.streaming.models.PutMessagesDetails put_messages_details: (required)
             Array of messages to put into the stream.
 
         :param str opc_request_id: (optional)
@@ -672,7 +672,7 @@ class StreamClient(object):
         :param str group_name: (required)
             The name of the consumer group.
 
-        :param UpdateGroupDetails update_group_details: (required)
+        :param oci.streaming.models.UpdateGroupDetails update_group_details: (required)
             The information used to modify the group.
 
         :param str opc_request_id: (optional)

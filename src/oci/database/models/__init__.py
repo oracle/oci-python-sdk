@@ -19,6 +19,7 @@ from .autonomous_data_warehouse_console_token_details import AutonomousDataWareh
 from .autonomous_data_warehouse_summary import AutonomousDataWarehouseSummary
 from .autonomous_database import AutonomousDatabase
 from .autonomous_database_backup import AutonomousDatabaseBackup
+from .autonomous_database_backup_config import AutonomousDatabaseBackupConfig
 from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
@@ -107,6 +108,12 @@ from .database_connection_strings import DatabaseConnectionStrings
 from .database_software_image import DatabaseSoftwareImage
 from .database_software_image_summary import DatabaseSoftwareImageSummary
 from .database_summary import DatabaseSummary
+from .database_upgrade_history_entry import DatabaseUpgradeHistoryEntry
+from .database_upgrade_history_entry_summary import DatabaseUpgradeHistoryEntrySummary
+from .database_upgrade_source_base import DatabaseUpgradeSourceBase
+from .database_upgrade_with_database_software_image_details import DatabaseUpgradeWithDatabaseSoftwareImageDetails
+from .database_upgrade_with_db_home_details import DatabaseUpgradeWithDbHomeDetails
+from .database_upgrade_with_db_version_details import DatabaseUpgradeWithDbVersionDetails
 from .day_of_week import DayOfWeek
 from .db_backup_config import DbBackupConfig
 from .db_home import DbHome
@@ -158,6 +165,7 @@ from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
 from .patch_history_entry_summary import PatchHistoryEntrySummary
 from .patch_summary import PatchSummary
+from .peer_autonomous_container_database_backup_config import PeerAutonomousContainerDatabaseBackupConfig
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .restore_autonomous_data_warehouse_details import RestoreAutonomousDataWarehouseDetails
@@ -189,6 +197,7 @@ from .update_maintenance_run_details import UpdateMaintenanceRunDetails
 from .update_summary import UpdateSummary
 from .update_vm_cluster_details import UpdateVmClusterDetails
 from .update_vm_cluster_network_details import UpdateVmClusterNetworkDetails
+from .upgrade_database_details import UpgradeDatabaseDetails
 from .vm_cluster import VmCluster
 from .vm_cluster_network import VmClusterNetwork
 from .vm_cluster_network_details import VmClusterNetworkDetails
@@ -214,6 +223,7 @@ database_type_mapping = {
     "AutonomousDataWarehouseSummary": AutonomousDataWarehouseSummary,
     "AutonomousDatabase": AutonomousDatabase,
     "AutonomousDatabaseBackup": AutonomousDatabaseBackup,
+    "AutonomousDatabaseBackupConfig": AutonomousDatabaseBackupConfig,
     "AutonomousDatabaseBackupSummary": AutonomousDatabaseBackupSummary,
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
@@ -302,6 +312,12 @@ database_type_mapping = {
     "DatabaseSoftwareImage": DatabaseSoftwareImage,
     "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
     "DatabaseSummary": DatabaseSummary,
+    "DatabaseUpgradeHistoryEntry": DatabaseUpgradeHistoryEntry,
+    "DatabaseUpgradeHistoryEntrySummary": DatabaseUpgradeHistoryEntrySummary,
+    "DatabaseUpgradeSourceBase": DatabaseUpgradeSourceBase,
+    "DatabaseUpgradeWithDatabaseSoftwareImageDetails": DatabaseUpgradeWithDatabaseSoftwareImageDetails,
+    "DatabaseUpgradeWithDbHomeDetails": DatabaseUpgradeWithDbHomeDetails,
+    "DatabaseUpgradeWithDbVersionDetails": DatabaseUpgradeWithDbVersionDetails,
     "DayOfWeek": DayOfWeek,
     "DbBackupConfig": DbBackupConfig,
     "DbHome": DbHome,
@@ -353,6 +369,7 @@ database_type_mapping = {
     "PatchHistoryEntry": PatchHistoryEntry,
     "PatchHistoryEntrySummary": PatchHistoryEntrySummary,
     "PatchSummary": PatchSummary,
+    "PeerAutonomousContainerDatabaseBackupConfig": PeerAutonomousContainerDatabaseBackupConfig,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "RestoreAutonomousDataWarehouseDetails": RestoreAutonomousDataWarehouseDetails,
@@ -384,6 +401,7 @@ database_type_mapping = {
     "UpdateSummary": UpdateSummary,
     "UpdateVmClusterDetails": UpdateVmClusterDetails,
     "UpdateVmClusterNetworkDetails": UpdateVmClusterNetworkDetails,
+    "UpgradeDatabaseDetails": UpgradeDatabaseDetails,
     "VmCluster": VmCluster,
     "VmClusterNetwork": VmClusterNetwork,
     "VmClusterNetworkDetails": VmClusterNetworkDetails,

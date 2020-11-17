@@ -103,7 +103,7 @@ class BlockstorageClient(object):
         :param str boot_volume_backup_id: (required)
             The OCID of the boot volume backup.
 
-        :param ChangeBootVolumeBackupCompartmentDetails change_boot_volume_backup_compartment_details: (required)
+        :param oci.core.models.ChangeBootVolumeBackupCompartmentDetails change_boot_volume_backup_compartment_details: (required)
             Request to change the compartment of given boot volume backup.
 
         :param str opc_request_id: (optional)
@@ -183,7 +183,7 @@ class BlockstorageClient(object):
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
-        :param ChangeBootVolumeCompartmentDetails change_boot_volume_compartment_details: (required)
+        :param oci.core.models.ChangeBootVolumeCompartmentDetails change_boot_volume_compartment_details: (required)
             Request to change the compartment of given boot volume.
 
         :param str opc_request_id: (optional)
@@ -263,7 +263,7 @@ class BlockstorageClient(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :param ChangeVolumeBackupCompartmentDetails change_volume_backup_compartment_details: (required)
+        :param oci.core.models.ChangeVolumeBackupCompartmentDetails change_volume_backup_compartment_details: (required)
             Request to change the compartment of given volume backup.
 
         :param str opc_request_id: (optional)
@@ -343,7 +343,7 @@ class BlockstorageClient(object):
         :param str volume_id: (required)
             The OCID of the volume.
 
-        :param ChangeVolumeCompartmentDetails change_volume_compartment_details: (required)
+        :param oci.core.models.ChangeVolumeCompartmentDetails change_volume_compartment_details: (required)
             Request to change the compartment of given volume.
 
         :param str opc_request_id: (optional)
@@ -423,7 +423,7 @@ class BlockstorageClient(object):
         :param str volume_group_backup_id: (required)
             The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
 
-        :param ChangeVolumeGroupBackupCompartmentDetails change_volume_group_backup_compartment_details: (required)
+        :param oci.core.models.ChangeVolumeGroupBackupCompartmentDetails change_volume_group_backup_compartment_details: (required)
             Request to change the compartment of given volume group backup.
 
         :param str opc_request_id: (optional)
@@ -503,7 +503,7 @@ class BlockstorageClient(object):
         :param str volume_group_id: (required)
             The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
 
-        :param ChangeVolumeGroupCompartmentDetails change_volume_group_compartment_details: (required)
+        :param oci.core.models.ChangeVolumeGroupCompartmentDetails change_volume_group_compartment_details: (required)
             Request to change the compartment of given volume group.
 
         :param str opc_request_id: (optional)
@@ -582,7 +582,7 @@ class BlockstorageClient(object):
         :param str boot_volume_backup_id: (required)
             The OCID of the boot volume backup.
 
-        :param CopyBootVolumeBackupDetails copy_boot_volume_backup_details: (required)
+        :param oci.core.models.CopyBootVolumeBackupDetails copy_boot_volume_backup_details: (required)
             Request to create a cross-region copy of given boot volume backup.
 
         :param str opc_retry_token: (optional)
@@ -674,7 +674,7 @@ class BlockstorageClient(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :param CopyVolumeBackupDetails copy_volume_backup_details: (required)
+        :param oci.core.models.CopyVolumeBackupDetails copy_volume_backup_details: (required)
             Request to create a cross-region copy of given backup.
 
         :param str opc_retry_token: (optional)
@@ -765,7 +765,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumes.htm
 
 
-        :param CreateBootVolumeDetails create_boot_volume_details: (required)
+        :param oci.core.models.CreateBootVolumeDetails create_boot_volume_details: (required)
             Request to create a new boot volume.
 
         :param str opc_retry_token: (optional)
@@ -840,7 +840,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumebackups.htm
 
 
-        :param CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
+        :param oci.core.models.CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
             Request to create a new backup of given boot volume.
 
         :param str opc_retry_token: (optional)
@@ -925,7 +925,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
-        :param CreateVolumeDetails create_volume_details: (required)
+        :param oci.core.models.CreateVolumeDetails create_volume_details: (required)
             Request to create a new volume.
 
         :param str opc_retry_token: (optional)
@@ -1000,7 +1000,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm
 
 
-        :param CreateVolumeBackupDetails create_volume_backup_details: (required)
+        :param oci.core.models.CreateVolumeBackupDetails create_volume_backup_details: (required)
             Request to create a new backup of given volume.
 
         :param str opc_retry_token: (optional)
@@ -1073,7 +1073,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
-        :param CreateVolumeBackupPolicyDetails create_volume_backup_policy_details: (required)
+        :param oci.core.models.CreateVolumeBackupPolicyDetails create_volume_backup_policy_details: (required)
             Request to create a new scheduled backup policy.
 
         :param str opc_retry_token: (optional)
@@ -1149,7 +1149,7 @@ class BlockstorageClient(object):
         has a different backup policy assigned, the prior backup policy will be silently unassigned.
 
 
-        :param CreateVolumeBackupPolicyAssignmentDetails create_volume_backup_policy_assignment_details: (required)
+        :param oci.core.models.CreateVolumeBackupPolicyAssignmentDetails create_volume_backup_policy_assignment_details: (required)
             Request to assign a specified policy to a particular volume.
 
         :param obj retry_strategy: (optional)
@@ -1210,7 +1210,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
-        :param CreateVolumeGroupDetails create_volume_group_details: (required)
+        :param oci.core.models.CreateVolumeGroupDetails create_volume_group_details: (required)
             Request to create a new volume group.
 
         :param str opc_retry_token: (optional)
@@ -1281,7 +1281,7 @@ class BlockstorageClient(object):
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
 
-        :param CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
+        :param oci.core.models.CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
             Request to create a new backup group of given volume group.
 
         :param str opc_retry_token: (optional)
@@ -3746,7 +3746,7 @@ class BlockstorageClient(object):
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
-        :param UpdateBootVolumeDetails update_boot_volume_details: (required)
+        :param oci.core.models.UpdateBootVolumeDetails update_boot_volume_details: (required)
             Update boot volume's display name.
 
         :param str if_match: (optional)
@@ -3826,7 +3826,7 @@ class BlockstorageClient(object):
         :param str boot_volume_backup_id: (required)
             The OCID of the boot volume backup.
 
-        :param UpdateBootVolumeBackupDetails update_boot_volume_backup_details: (required)
+        :param oci.core.models.UpdateBootVolumeBackupDetails update_boot_volume_backup_details: (required)
             Update boot volume backup fields
 
         :param str if_match: (optional)
@@ -3905,7 +3905,7 @@ class BlockstorageClient(object):
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
-        :param UpdateBootVolumeKmsKeyDetails update_boot_volume_kms_key_details: (required)
+        :param oci.core.models.UpdateBootVolumeKmsKeyDetails update_boot_volume_kms_key_details: (required)
             Updates the Key Management master encryption key assigned to the specified boot volume.
 
         :param str if_match: (optional)
@@ -3985,7 +3985,7 @@ class BlockstorageClient(object):
         :param str volume_id: (required)
             The OCID of the volume.
 
-        :param UpdateVolumeDetails update_volume_details: (required)
+        :param oci.core.models.UpdateVolumeDetails update_volume_details: (required)
             Update volume's display name. Avoid entering confidential information.
 
         :param str if_match: (optional)
@@ -4065,7 +4065,7 @@ class BlockstorageClient(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
+        :param oci.core.models.UpdateVolumeBackupDetails update_volume_backup_details: (required)
             Update volume backup fields
 
         :param str if_match: (optional)
@@ -4150,7 +4150,7 @@ class BlockstorageClient(object):
         :param str policy_id: (required)
             The OCID of the volume backup policy.
 
-        :param UpdateVolumeBackupPolicyDetails update_volume_backup_policy_details: (required)
+        :param oci.core.models.UpdateVolumeBackupPolicyDetails update_volume_backup_policy_details: (required)
             Update volume backup policy fields
 
         :param str if_match: (optional)
@@ -4253,7 +4253,7 @@ class BlockstorageClient(object):
         :param str volume_group_id: (required)
             The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
 
-        :param UpdateVolumeGroupDetails update_volume_group_details: (required)
+        :param oci.core.models.UpdateVolumeGroupDetails update_volume_group_details: (required)
             Update volume group's set of volumes and/or display name
 
         :param str if_match: (optional)
@@ -4334,7 +4334,7 @@ class BlockstorageClient(object):
         :param str volume_group_backup_id: (required)
             The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
 
-        :param UpdateVolumeGroupBackupDetails update_volume_group_backup_details: (required)
+        :param oci.core.models.UpdateVolumeGroupBackupDetails update_volume_group_backup_details: (required)
             Update volume group backup fields
 
         :param str if_match: (optional)
@@ -4413,7 +4413,7 @@ class BlockstorageClient(object):
         :param str volume_id: (required)
             The OCID of the volume.
 
-        :param UpdateVolumeKmsKeyDetails update_volume_kms_key_details: (required)
+        :param oci.core.models.UpdateVolumeKmsKeyDetails update_volume_kms_key_details: (required)
             Updates the Key Management master encryption key assigned to the specified volume.
 
         :param str if_match: (optional)

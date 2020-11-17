@@ -94,7 +94,7 @@ class LoggingClient(object):
         :param str log_id: (required)
             OCID of a log to work with.
 
-        :param PutLogsDetails put_logs_details: (required)
+        :param oci.loggingingestion.models.PutLogsDetails put_logs_details: (required)
             The logs to emit.
 
         :param datetime timestamp_opc_agent_processing: (optional)

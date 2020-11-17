@@ -93,7 +93,7 @@ class IntegrationInstanceClient(object):
         :param str integration_instance_id: (required)
             Unique Integration Instance identifier.
 
-        :param ChangeIntegrationInstanceCompartmentDetails change_integration_instance_compartment_details: (required)
+        :param oci.integration.models.ChangeIntegrationInstanceCompartmentDetails change_integration_instance_compartment_details: (required)
             Details for the update integration instance
 
         :param str if_match: (optional)
@@ -186,7 +186,7 @@ class IntegrationInstanceClient(object):
         Creates a new Integration Instance.
 
 
-        :param CreateIntegrationInstanceDetails create_integration_instance_details: (required)
+        :param oci.integration.models.CreateIntegrationInstanceDetails create_integration_instance_details: (required)
             Details for the new Integration Instance.
 
         :param str opc_retry_token: (optional)
@@ -1060,7 +1060,7 @@ class IntegrationInstanceClient(object):
         :param str integration_instance_id: (required)
             Unique Integration Instance identifier.
 
-        :param UpdateIntegrationInstanceDetails update_integration_instance_details: (required)
+        :param oci.integration.models.UpdateIntegrationInstanceDetails update_integration_instance_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

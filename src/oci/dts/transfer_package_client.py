@@ -96,7 +96,7 @@ class TransferPackageClient(object):
         :param str transfer_package_label: (required)
             Label of the Transfer Package
 
-        :param AttachDevicesDetails attach_devices_details: (required)
+        :param oci.dts.models.AttachDevicesDetails attach_devices_details: (required)
             Labels of Transfer Devices to attach
 
         :param obj retry_strategy: (optional)
@@ -310,7 +310,7 @@ class TransferPackageClient(object):
         :param str transfer_package_label: (required)
             Label of the Transfer Package
 
-        :param DetachDevicesDetails detach_devices_details: (required)
+        :param oci.dts.models.DetachDevicesDetails detach_devices_details: (required)
             Labels of Transfer Devices to detach
 
         :param obj retry_strategy: (optional)
@@ -538,7 +538,7 @@ class TransferPackageClient(object):
         :param str transfer_package_label: (required)
             Label of the Transfer Package
 
-        :param UpdateTransferPackageDetails update_transfer_package_details: (required)
+        :param oci.dts.models.UpdateTransferPackageDetails update_transfer_package_details: (required)
             fields to update
 
         :param str if_match: (optional)

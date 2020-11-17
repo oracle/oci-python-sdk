@@ -266,7 +266,7 @@ class VaultsClient(object):
         :param str secret_id: (required)
             The OCID of the secret.
 
-        :param ChangeSecretCompartmentDetails change_secret_compartment_details: (required)
+        :param oci.vault.models.ChangeSecretCompartmentDetails change_secret_compartment_details: (required)
             The updated compartment details.
 
         :param str if_match: (optional)
@@ -363,7 +363,7 @@ class VaultsClient(object):
         This operation is not supported by the Oracle Cloud Infrastructure Terraform Provider.
 
 
-        :param CreateSecretDetails create_secret_details: (required)
+        :param oci.vault.models.CreateSecretDetails create_secret_details: (required)
             Request to create a new secret.
 
         :param str opc_request_id: (optional)
@@ -847,7 +847,7 @@ class VaultsClient(object):
         :param str secret_id: (required)
             The OCID of the secret.
 
-        :param ScheduleSecretDeletionDetails schedule_secret_deletion_details: (required)
+        :param oci.vault.models.ScheduleSecretDeletionDetails schedule_secret_deletion_details: (required)
             Request to schedule the deletion of a secret.
 
         :param str if_match: (optional)
@@ -937,7 +937,7 @@ class VaultsClient(object):
         :param int secret_version_number: (required)
             The version number of the secret.
 
-        :param ScheduleSecretVersionDeletionDetails schedule_secret_version_deletion_details: (required)
+        :param oci.vault.models.ScheduleSecretVersionDeletionDetails schedule_secret_version_deletion_details: (required)
             Request to delete a secret version.
 
         :param str if_match: (optional)
@@ -1029,7 +1029,7 @@ class VaultsClient(object):
         :param str secret_id: (required)
             The OCID of the secret.
 
-        :param UpdateSecretDetails update_secret_details: (required)
+        :param oci.vault.models.UpdateSecretDetails update_secret_details: (required)
             Request to update a secret.
 
         :param str if_match: (optional)

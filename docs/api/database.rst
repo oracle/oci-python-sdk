@@ -33,6 +33,7 @@ Database
     oci.database.models.AutonomousDataWarehouseSummary
     oci.database.models.AutonomousDatabase
     oci.database.models.AutonomousDatabaseBackup
+    oci.database.models.AutonomousDatabaseBackupConfig
     oci.database.models.AutonomousDatabaseBackupSummary
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
@@ -121,6 +122,12 @@ Database
     oci.database.models.DatabaseSoftwareImage
     oci.database.models.DatabaseSoftwareImageSummary
     oci.database.models.DatabaseSummary
+    oci.database.models.DatabaseUpgradeHistoryEntry
+    oci.database.models.DatabaseUpgradeHistoryEntrySummary
+    oci.database.models.DatabaseUpgradeSourceBase
+    oci.database.models.DatabaseUpgradeWithDatabaseSoftwareImageDetails
+    oci.database.models.DatabaseUpgradeWithDbHomeDetails
+    oci.database.models.DatabaseUpgradeWithDbVersionDetails
     oci.database.models.DayOfWeek
     oci.database.models.DbBackupConfig
     oci.database.models.DbHome
@@ -172,6 +179,7 @@ Database
     oci.database.models.PatchHistoryEntry
     oci.database.models.PatchHistoryEntrySummary
     oci.database.models.PatchSummary
+    oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.RestoreAutonomousDataWarehouseDetails
@@ -203,6 +211,7 @@ Database
     oci.database.models.UpdateSummary
     oci.database.models.UpdateVmClusterDetails
     oci.database.models.UpdateVmClusterNetworkDetails
+    oci.database.models.UpgradeDatabaseDetails
     oci.database.models.VmCluster
     oci.database.models.VmClusterNetwork
     oci.database.models.VmClusterNetworkDetails

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails(object):
     """
-    Log Analytics Object Storage based collection rule compartment to be updated to.
+    The new compartment this Object Collection Rule will be moved to.
     """
 
     def __init__(self, **kwargs):

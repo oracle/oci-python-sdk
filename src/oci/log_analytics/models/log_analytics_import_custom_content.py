@@ -137,8 +137,6 @@ class LogAnalyticsImportCustomContent(object):
     def change_list(self):
         """
         Gets the change_list of this LogAnalyticsImportCustomContent.
-        changeList
-
 
         :return: The change_list of this LogAnalyticsImportCustomContent.
         :rtype: LogAnalyticsImportCustomChangeList
@@ -149,8 +147,6 @@ class LogAnalyticsImportCustomContent(object):
     def change_list(self, change_list):
         """
         Sets the change_list of this LogAnalyticsImportCustomContent.
-        changeList
-
 
         :param change_list: The change_list of this LogAnalyticsImportCustomContent.
         :type: LogAnalyticsImportCustomChangeList

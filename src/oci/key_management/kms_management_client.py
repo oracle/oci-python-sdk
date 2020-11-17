@@ -412,7 +412,7 @@ class KmsManagementClient(object):
         :param str key_id: (required)
             The OCID of the key.
 
-        :param ChangeKeyCompartmentDetails change_key_compartment_details: (required)
+        :param oci.key_management.models.ChangeKeyCompartmentDetails change_key_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -511,7 +511,7 @@ class KmsManagementClient(object):
         requests per second for a given tenancy.
 
 
-        :param CreateKeyDetails create_key_details: (required)
+        :param oci.key_management.models.CreateKeyDetails create_key_details: (required)
             CreateKeyDetails
 
         :param str opc_request_id: (optional)
@@ -1107,7 +1107,7 @@ class KmsManagementClient(object):
         that are exactly 16, 24, or 32 bytes. Furthermore, the key length must match what you specify at the time of import.
 
 
-        :param ImportKeyDetails import_key_details: (required)
+        :param oci.key_management.models.ImportKeyDetails import_key_details: (required)
             ImportKeyDetails
 
         :param str opc_request_id: (optional)
@@ -1190,7 +1190,7 @@ class KmsManagementClient(object):
         :param str key_id: (required)
             The OCID of the key.
 
-        :param ImportKeyVersionDetails import_key_version_details: (required)
+        :param oci.key_management.models.ImportKeyVersionDetails import_key_version_details: (required)
             ImportKeyVersionDetails
 
         :param str opc_request_id: (optional)
@@ -1757,7 +1757,7 @@ class KmsManagementClient(object):
         :param str key_id: (required)
             The OCID of the key.
 
-        :param ScheduleKeyDeletionDetails schedule_key_deletion_details: (required)
+        :param oci.key_management.models.ScheduleKeyDeletionDetails schedule_key_deletion_details: (required)
             ScheduleKeyDeletionDetails
 
         :param str if_match: (optional)
@@ -1866,7 +1866,7 @@ class KmsManagementClient(object):
         :param str key_version_id: (required)
             The OCID of the key version.
 
-        :param ScheduleKeyVersionDeletionDetails schedule_key_version_deletion_details: (required)
+        :param oci.key_management.models.ScheduleKeyVersionDeletionDetails schedule_key_version_deletion_details: (required)
             ScheduleKeyVersionDeletionDetails
 
         :param str if_match: (optional)
@@ -1974,7 +1974,7 @@ class KmsManagementClient(object):
         :param str key_id: (required)
             The OCID of the key.
 
-        :param UpdateKeyDetails update_key_details: (required)
+        :param oci.key_management.models.UpdateKeyDetails update_key_details: (required)
             UpdateKeyDetails
 
         :param str if_match: (optional)

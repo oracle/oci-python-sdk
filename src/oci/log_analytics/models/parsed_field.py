@@ -44,7 +44,7 @@ class ParsedField(object):
     def log_content(self):
         """
         Gets the log_content of this ParsedField.
-        Log Content
+        Sample log entries picked up from the given file for validation
 
 
         :return: The log_content of this ParsedField.
@@ -56,7 +56,7 @@ class ParsedField(object):
     def log_content(self, log_content):
         """
         Sets the log_content of this ParsedField.
-        Log Content
+        Sample log entries picked up from the given file for validation
 
 
         :param log_content: The log_content of this ParsedField.

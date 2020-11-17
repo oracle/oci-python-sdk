@@ -90,7 +90,7 @@ class MysqlaasClient(object):
         Creates a new Configuration.
 
 
-        :param CreateConfigurationDetails create_configuration_details: (required)
+        :param oci.mysql.models.CreateConfigurationDetails create_configuration_details: (required)
             Request to create a Configuration.
 
         :param str opc_request_id: (optional)
@@ -673,7 +673,7 @@ class MysqlaasClient(object):
         :param str configuration_id: (required)
             The OCID of the Configuration.
 
-        :param UpdateConfigurationDetails update_configuration_details: (required)
+        :param oci.mysql.models.UpdateConfigurationDetails update_configuration_details: (required)
             Request to update a Configuration.
 
         :param str if_match: (optional)

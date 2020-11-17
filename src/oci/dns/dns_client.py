@@ -95,7 +95,7 @@ class DnsClient(object):
         :param str resolver_id: (required)
             The OCID of the target resolver.
 
-        :param ChangeResolverCompartmentDetails change_resolver_compartment_details: (required)
+        :param oci.dns.models.ChangeResolverCompartmentDetails change_resolver_compartment_details: (required)
             Details for moving a resolver, along with its protected default view and endpoints, into a
             different compartment.
 
@@ -214,7 +214,7 @@ class DnsClient(object):
         :param str steering_policy_id: (required)
             The OCID of the target steering policy.
 
-        :param ChangeSteeringPolicyCompartmentDetails change_steering_policy_compartment_details: (required)
+        :param oci.dns.models.ChangeSteeringPolicyCompartmentDetails change_steering_policy_compartment_details: (required)
             Details for moving a steering policy into a different compartment.
 
         :param str if_match: (optional)
@@ -332,7 +332,7 @@ class DnsClient(object):
         :param str tsig_key_id: (required)
             The OCID of the target TSIG key.
 
-        :param ChangeTsigKeyCompartmentDetails change_tsig_key_compartment_details: (required)
+        :param oci.dns.models.ChangeTsigKeyCompartmentDetails change_tsig_key_compartment_details: (required)
             Details for moving a TSIG key into a different compartment.
 
         :param str if_match: (optional)
@@ -450,7 +450,7 @@ class DnsClient(object):
         :param str view_id: (required)
             The OCID of the target view.
 
-        :param ChangeViewCompartmentDetails change_view_compartment_details: (required)
+        :param oci.dns.models.ChangeViewCompartmentDetails change_view_compartment_details: (required)
             Details for moving a view into a different compartment.
 
         :param str if_match: (optional)
@@ -570,7 +570,7 @@ class DnsClient(object):
         :param str zone_id: (required)
             The OCID of the target zone.
 
-        :param ChangeZoneCompartmentDetails change_zone_compartment_details: (required)
+        :param oci.dns.models.ChangeZoneCompartmentDetails change_zone_compartment_details: (required)
             Details for moving a zone into a different compartment.
 
         :param str if_match: (optional)
@@ -688,7 +688,7 @@ class DnsClient(object):
         :param str resolver_id: (required)
             The OCID of the target resolver.
 
-        :param CreateResolverEndpointDetails create_resolver_endpoint_details: (required)
+        :param oci.dns.models.CreateResolverEndpointDetails create_resolver_endpoint_details: (required)
             Details for creating a new resolver endpoint.
 
         :param str opc_retry_token: (optional)
@@ -799,7 +799,7 @@ class DnsClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
 
 
-        :param CreateSteeringPolicyDetails create_steering_policy_details: (required)
+        :param oci.dns.models.CreateSteeringPolicyDetails create_steering_policy_details: (required)
             Details for creating a new steering policy.
 
         :param str opc_retry_token: (optional)
@@ -900,7 +900,7 @@ class DnsClient(object):
         into the same compartment as the domain's zone.
 
 
-        :param CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
+        :param oci.dns.models.CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
             Details for creating a new steering policy attachment.
 
         :param str opc_retry_token: (optional)
@@ -997,7 +997,7 @@ class DnsClient(object):
         `opc-retry-token` header since TSIG key names must be globally unique.
 
 
-        :param CreateTsigKeyDetails create_tsig_key_details: (required)
+        :param oci.dns.models.CreateTsigKeyDetails create_tsig_key_details: (required)
             Details for creating a new TSIG key.
 
         :param str opc_request_id: (optional)
@@ -1081,7 +1081,7 @@ class DnsClient(object):
         Creates a new view in the specified compartment.
 
 
-        :param CreateViewDetails create_view_details: (required)
+        :param oci.dns.models.CreateViewDetails create_view_details: (required)
             Details for creating a new view.
 
         :param str opc_retry_token: (optional)
@@ -1179,7 +1179,7 @@ class DnsClient(object):
         parameters are required to create a private zone.
 
 
-        :param CreateZoneBaseDetails create_zone_details: (required)
+        :param oci.dns.models.CreateZoneBaseDetails create_zone_details: (required)
             Details for creating a new zone.
 
         :param str opc_request_id: (optional)
@@ -4665,7 +4665,7 @@ class DnsClient(object):
         :param str domain: (required)
             The target fully-qualified domain name (FQDN) within the target zone.
 
-        :param PatchDomainRecordsDetails patch_domain_records_details: (required)
+        :param oci.dns.models.PatchDomainRecordsDetails patch_domain_records_details: (required)
             Operations describing how to modify the collection of records.
 
         :param str if_match: (optional)
@@ -4799,7 +4799,7 @@ class DnsClient(object):
         :param str rtype: (required)
             The type of the target RRSet within the target zone.
 
-        :param PatchRRSetDetails patch_rr_set_details: (required)
+        :param oci.dns.models.PatchRRSetDetails patch_rr_set_details: (required)
             Operations describing how to modify the collection of records.
 
         :param str if_match: (optional)
@@ -4931,7 +4931,7 @@ class DnsClient(object):
         :param str zone_name_or_id: (required)
             The name or OCID of the target zone.
 
-        :param PatchZoneRecordsDetails patch_zone_records_details: (required)
+        :param oci.dns.models.PatchZoneRecordsDetails patch_zone_records_details: (required)
             The operations describing how to modify the collection of records.
 
         :param str if_match: (optional)
@@ -5066,7 +5066,7 @@ class DnsClient(object):
         :param str domain: (required)
             The target fully-qualified domain name (FQDN) within the target zone.
 
-        :param UpdateDomainRecordsDetails update_domain_records_details: (required)
+        :param oci.dns.models.UpdateDomainRecordsDetails update_domain_records_details: (required)
             A full list of records for the domain.
 
         :param str if_match: (optional)
@@ -5194,7 +5194,7 @@ class DnsClient(object):
         :param str resolver_id: (required)
             The OCID of the target resolver.
 
-        :param UpdateResolverDetails update_resolver_details: (required)
+        :param oci.dns.models.UpdateResolverDetails update_resolver_details: (required)
             New data for the resolver.
 
         :param str if_match: (optional)
@@ -5314,7 +5314,7 @@ class DnsClient(object):
         :param str resolver_endpoint_name: (required)
             The name of the target resolver endpoint.
 
-        :param UpdateResolverEndpointDetails update_resolver_endpoint_details: (required)
+        :param oci.dns.models.UpdateResolverEndpointDetails update_resolver_endpoint_details: (required)
             New data for the resolver endpoint.
 
         :param str if_match: (optional)
@@ -5438,7 +5438,7 @@ class DnsClient(object):
         :param str rtype: (required)
             The type of the target RRSet within the target zone.
 
-        :param UpdateRRSetDetails update_rr_set_details: (required)
+        :param oci.dns.models.UpdateRRSetDetails update_rr_set_details: (required)
             A full list of records for the RRSet.
 
         :param str if_match: (optional)
@@ -5567,7 +5567,7 @@ class DnsClient(object):
         :param str steering_policy_id: (required)
             The OCID of the target steering policy.
 
-        :param UpdateSteeringPolicyDetails update_steering_policy_details: (required)
+        :param oci.dns.models.UpdateSteeringPolicyDetails update_steering_policy_details: (required)
             New data for the steering policy.
 
         :param str if_match: (optional)
@@ -5684,7 +5684,7 @@ class DnsClient(object):
         :param str steering_policy_attachment_id: (required)
             The OCID of the target steering policy attachment.
 
-        :param UpdateSteeringPolicyAttachmentDetails update_steering_policy_attachment_details: (required)
+        :param oci.dns.models.UpdateSteeringPolicyAttachmentDetails update_steering_policy_attachment_details: (required)
             New data for the steering policy attachment.
 
         :param str if_match: (optional)
@@ -5801,7 +5801,7 @@ class DnsClient(object):
         :param str tsig_key_id: (required)
             The OCID of the target TSIG key.
 
-        :param UpdateTsigKeyDetails update_tsig_key_details: (required)
+        :param oci.dns.models.UpdateTsigKeyDetails update_tsig_key_details: (required)
             New data for the TSIG key.
 
         :param str if_match: (optional)
@@ -5918,7 +5918,7 @@ class DnsClient(object):
         :param str view_id: (required)
             The OCID of the target view.
 
-        :param UpdateViewDetails update_view_details: (required)
+        :param oci.dns.models.UpdateViewDetails update_view_details: (required)
             New data for the view.
 
         :param str if_match: (optional)
@@ -6039,7 +6039,7 @@ class DnsClient(object):
         :param str zone_name_or_id: (required)
             The name or OCID of the target zone.
 
-        :param UpdateZoneDetails update_zone_details: (required)
+        :param oci.dns.models.UpdateZoneDetails update_zone_details: (required)
             New data for the zone.
 
         :param str if_match: (optional)
@@ -6170,7 +6170,7 @@ class DnsClient(object):
         :param str zone_name_or_id: (required)
             The name or OCID of the target zone.
 
-        :param UpdateZoneRecordsDetails update_zone_records_details: (required)
+        :param oci.dns.models.UpdateZoneRecordsDetails update_zone_records_details: (required)
             A full list of records for the zone.
 
         :param str if_match: (optional)

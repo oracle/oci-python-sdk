@@ -223,7 +223,7 @@ class Upload(object):
     def warnings_count(self):
         """
         Gets the warnings_count of this Upload.
-        Warnings summary.
+        Number of warnings associated to the upload.
 
 
         :return: The warnings_count of this Upload.
@@ -235,7 +235,7 @@ class Upload(object):
     def warnings_count(self, warnings_count):
         """
         Sets the warnings_count of this Upload.
-        Warnings summary.
+        Number of warnings associated to the upload.
 
 
         :param warnings_count: The warnings_count of this Upload.

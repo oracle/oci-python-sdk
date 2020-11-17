@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Storage(object):
     """
-    Storage configuration and status of a tenancy in Logan Analytics application
+    This is the storage configuration and status of a tenancy in Logan Analytics application
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class Storage(object):
     def is_archiving_enabled(self):
         """
         **[Required]** Gets the is_archiving_enabled of this Storage.
-        if old data can be archived for a tenancy
+        This indicates if old data can be archived for a tenancy
 
 
         :return: The is_archiving_enabled of this Storage.
@@ -56,7 +56,7 @@ class Storage(object):
     def is_archiving_enabled(self, is_archiving_enabled):
         """
         Sets the is_archiving_enabled of this Storage.
-        if old data can be archived for a tenancy
+        This indicates if old data can be archived for a tenancy
 
 
         :param is_archiving_enabled: The is_archiving_enabled of this Storage.

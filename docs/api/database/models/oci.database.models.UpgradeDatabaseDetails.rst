@@ -1,9 +1,9 @@
-CreateNamespaceDetails
+UpgradeDatabaseDetails
 ======================
 
-.. currentmodule:: oci.log_analytics.models
+.. currentmodule:: oci.database.models
 
-.. autoclass:: CreateNamespaceDetails
+.. autoclass:: UpgradeDatabaseDetails
     :show-inheritance:
     :special-members: __init__
     :members:

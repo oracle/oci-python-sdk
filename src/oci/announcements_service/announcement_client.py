@@ -379,7 +379,7 @@ class AnnouncementClient(object):
         :param str announcement_id: (required)
             The OCID of the announcement.
 
-        :param AnnouncementUserStatusDetails status_details: (required)
+        :param oci.announcements_service.models.AnnouncementUserStatusDetails status_details: (required)
             The information to use to update the announcement's read status.
 
         :param str if_match: (optional)

@@ -735,6 +735,10 @@ class ShowOCIOutput(object):
                 for hostname in lb['hostnames']:
                     print(self.tabs + "Hostname   : " + hostname)
 
+            if 'rule_sets' in lb:
+                for rs in lb['rule_sets']:
+                    print(self.tabs + "RuleSet    : " + rs['name'] + ": " + str(', '.join(x['action'] for x in rs['items'])))
+
         except Exception as e:
             self.__print_error("__print_load_balancer_details", e)
 
@@ -1583,6 +1587,8 @@ class ShowOCIOutput(object):
                         if 'nsg_names' in vnic['details']:
                             if vnic['details']['nsg_names']:
                                 print(self.tabs2 + "     : SecGrp: " + vnic['details']['nsg_names'])
+                        if 'ip_addresses' in vnic:
+                            print(self.tabs2 + "     : IP Addresses : " + str(', '.join(x['ip_address'] for x in vnic['ip_addresses'])))
 
                 if 'console' in instance:
                     if instance['console']:

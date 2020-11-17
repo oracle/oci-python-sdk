@@ -97,7 +97,7 @@ class EmailClient(object):
         :param str sender_id: (required)
             The unique OCID of the sender.
 
-        :param ChangeSenderCompartmentDetails change_sender_compartment_details: (required)
+        :param oci.email.models.ChangeSenderCompartmentDetails change_sender_compartment_details: (required)
             Details for moving a sender into a different compartment.
 
         :param str if_match: (optional)
@@ -176,7 +176,7 @@ class EmailClient(object):
         Creates a sender for a tenancy in a given compartment.
 
 
-        :param CreateSenderDetails create_sender_details: (required)
+        :param oci.email.models.CreateSenderDetails create_sender_details: (required)
             Create a sender.
 
         :param str opc_request_id: (optional)
@@ -241,7 +241,7 @@ class EmailClient(object):
         suppression list are normalized to include only lowercase letters.
 
 
-        :param CreateSuppressionDetails create_suppression_details: (required)
+        :param oci.email.models.CreateSuppressionDetails create_suppression_details: (required)
             Adds a single email address to the suppression list for a compartment's tenancy.
 
         :param str opc_request_id: (optional)
@@ -887,7 +887,7 @@ class EmailClient(object):
         :param str sender_id: (required)
             The unique OCID of the sender.
 
-        :param UpdateSenderDetails update_sender_details: (required)
+        :param oci.email.models.UpdateSenderDetails update_sender_details: (required)
             update details for sender.
 
         :param str if_match: (optional)

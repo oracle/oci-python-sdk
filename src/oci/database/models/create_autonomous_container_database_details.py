@@ -72,6 +72,18 @@ class CreateAutonomousContainerDatabaseDetails(object):
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"
         :type protection_mode: str
 
+        :param peer_autonomous_vm_cluster_id:
+            The value to assign to the peer_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_autonomous_vm_cluster_id: str
+
+        :param peer_autonomous_container_database_compartment_id:
+            The value to assign to the peer_autonomous_container_database_compartment_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_autonomous_container_database_compartment_id: str
+
+        :param peer_autonomous_container_database_backup_config:
+            The value to assign to the peer_autonomous_container_database_backup_config property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_autonomous_container_database_backup_config: PeerAutonomousContainerDatabaseBackupConfig
+
         :param autonomous_vm_cluster_id:
             The value to assign to the autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
         :type autonomous_vm_cluster_id: str
@@ -130,6 +142,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_exadata_infrastructure_id': 'str',
             'peer_autonomous_container_database_display_name': 'str',
             'protection_mode': 'str',
+            'peer_autonomous_vm_cluster_id': 'str',
+            'peer_autonomous_container_database_compartment_id': 'str',
+            'peer_autonomous_container_database_backup_config': 'PeerAutonomousContainerDatabaseBackupConfig',
             'autonomous_vm_cluster_id': 'str',
             'compartment_id': 'str',
             'patch_model': 'str',
@@ -152,6 +167,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_exadata_infrastructure_id': 'peerAutonomousExadataInfrastructureId',
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'protection_mode': 'protectionMode',
+            'peer_autonomous_vm_cluster_id': 'peerAutonomousVmClusterId',
+            'peer_autonomous_container_database_compartment_id': 'peerAutonomousContainerDatabaseCompartmentId',
+            'peer_autonomous_container_database_backup_config': 'peerAutonomousContainerDatabaseBackupConfig',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'compartment_id': 'compartmentId',
             'patch_model': 'patchModel',
@@ -173,6 +191,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._peer_autonomous_exadata_infrastructure_id = None
         self._peer_autonomous_container_database_display_name = None
         self._protection_mode = None
+        self._peer_autonomous_vm_cluster_id = None
+        self._peer_autonomous_container_database_compartment_id = None
+        self._peer_autonomous_container_database_backup_config = None
         self._autonomous_vm_cluster_id = None
         self._compartment_id = None
         self._patch_model = None
@@ -377,6 +398,84 @@ class CreateAutonomousContainerDatabaseDetails(object):
                 .format(allowed_values)
             )
         self._protection_mode = protection_mode
+
+    @property
+    def peer_autonomous_vm_cluster_id(self):
+        """
+        Gets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The `OCID`__ of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_autonomous_vm_cluster_id
+
+    @peer_autonomous_vm_cluster_id.setter
+    def peer_autonomous_vm_cluster_id(self, peer_autonomous_vm_cluster_id):
+        """
+        Sets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The `OCID`__ of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_autonomous_vm_cluster_id: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._peer_autonomous_vm_cluster_id = peer_autonomous_vm_cluster_id
+
+    @property
+    def peer_autonomous_container_database_compartment_id(self):
+        """
+        Gets the peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseDetails.
+        The `OCID`__ of the compartment where the standby Autonomous Container Database
+        will be created.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_autonomous_container_database_compartment_id
+
+    @peer_autonomous_container_database_compartment_id.setter
+    def peer_autonomous_container_database_compartment_id(self, peer_autonomous_container_database_compartment_id):
+        """
+        Sets the peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseDetails.
+        The `OCID`__ of the compartment where the standby Autonomous Container Database
+        will be created.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_autonomous_container_database_compartment_id: The peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._peer_autonomous_container_database_compartment_id = peer_autonomous_container_database_compartment_id
+
+    @property
+    def peer_autonomous_container_database_backup_config(self):
+        """
+        Gets the peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
+
+        :return: The peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: PeerAutonomousContainerDatabaseBackupConfig
+        """
+        return self._peer_autonomous_container_database_backup_config
+
+    @peer_autonomous_container_database_backup_config.setter
+    def peer_autonomous_container_database_backup_config(self, peer_autonomous_container_database_backup_config):
+        """
+        Sets the peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
+
+        :param peer_autonomous_container_database_backup_config: The peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
+        :type: PeerAutonomousContainerDatabaseBackupConfig
+        """
+        self._peer_autonomous_container_database_backup_config = peer_autonomous_container_database_backup_config
 
     @property
     def autonomous_vm_cluster_id(self):

@@ -95,7 +95,7 @@ class FileStorageClient(object):
         :param str file_system_id: (required)
             The OCID of the file system.
 
-        :param ChangeFileSystemCompartmentDetails change_file_system_compartment_details: (required)
+        :param oci.file_storage.models.ChangeFileSystemCompartmentDetails change_file_system_compartment_details: (required)
             Details for changing the compartment.
 
         :param str if_match: (optional)
@@ -182,7 +182,7 @@ class FileStorageClient(object):
         :param str mount_target_id: (required)
             The OCID of the mount target.
 
-        :param ChangeMountTargetCompartmentDetails change_mount_target_compartment_details: (required)
+        :param oci.file_storage.models.ChangeMountTargetCompartmentDetails change_mount_target_compartment_details: (required)
             Details for changing the compartment.
 
         :param str if_match: (optional)
@@ -265,7 +265,7 @@ class FileStorageClient(object):
         file system.
 
 
-        :param CreateExportDetails create_export_details: (required)
+        :param oci.file_storage.models.CreateExportDetails create_export_details: (required)
             Details for creating a new export.
 
         :param str opc_retry_token: (optional)
@@ -371,7 +371,7 @@ class FileStorageClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
-        :param CreateFileSystemDetails create_file_system_details: (required)
+        :param oci.file_storage.models.CreateFileSystemDetails create_file_system_details: (required)
             Details for creating a new file system.
 
         :param str opc_retry_token: (optional)
@@ -479,7 +479,7 @@ class FileStorageClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
-        :param CreateMountTargetDetails create_mount_target_details: (required)
+        :param oci.file_storage.models.CreateMountTargetDetails create_mount_target_details: (required)
             Details for creating a new mount target.
 
         :param str opc_retry_token: (optional)
@@ -554,7 +554,7 @@ class FileStorageClient(object):
         can access the snapshot at `.snapshot/<name>`.
 
 
-        :param CreateSnapshotDetails create_snapshot_details: (required)
+        :param oci.file_storage.models.CreateSnapshotDetails create_snapshot_details: (required)
             Details for creating a new snapshot.
 
         :param str opc_retry_token: (optional)
@@ -2094,7 +2094,7 @@ class FileStorageClient(object):
         :param str export_id: (required)
             The OCID of the export.
 
-        :param UpdateExportDetails update_export_details: (required)
+        :param oci.file_storage.models.UpdateExportDetails update_export_details: (required)
             Details object for updating an export.
 
         :param str if_match: (optional)
@@ -2181,7 +2181,7 @@ class FileStorageClient(object):
         :param str export_set_id: (required)
             The OCID of the export set.
 
-        :param UpdateExportSetDetails update_export_set_details: (required)
+        :param oci.file_storage.models.UpdateExportSetDetails update_export_set_details: (required)
             Details object for updating an export set.
 
         :param str if_match: (optional)
@@ -2269,7 +2269,7 @@ class FileStorageClient(object):
         :param str file_system_id: (required)
             The OCID of the file system.
 
-        :param UpdateFileSystemDetails update_file_system_details: (required)
+        :param oci.file_storage.models.UpdateFileSystemDetails update_file_system_details: (required)
             Details object for updating a file system.
 
         :param str if_match: (optional)
@@ -2356,7 +2356,7 @@ class FileStorageClient(object):
         :param str mount_target_id: (required)
             The OCID of the mount target.
 
-        :param UpdateMountTargetDetails update_mount_target_details: (required)
+        :param oci.file_storage.models.UpdateMountTargetDetails update_mount_target_details: (required)
             Details object for updating a mount target.
 
         :param str if_match: (optional)
@@ -2443,7 +2443,7 @@ class FileStorageClient(object):
         :param str snapshot_id: (required)
             The OCID of the snapshot.
 
-        :param UpdateSnapshotDetails update_snapshot_details: (required)
+        :param oci.file_storage.models.UpdateSnapshotDetails update_snapshot_details: (required)
             Details object for updating a snapshot.
 
         :param str if_match: (optional)

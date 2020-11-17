@@ -202,7 +202,7 @@ class ManagementSavedSearch(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagementSavedSearch.
-        id for saved search.  Must be provided if OOB, otherwise must not be provided.
+        ID of the saved search.
 
 
         :return: The id of this ManagementSavedSearch.
@@ -214,7 +214,7 @@ class ManagementSavedSearch(object):
     def id(self, id):
         """
         Sets the id of this ManagementSavedSearch.
-        id for saved search.  Must be provided if OOB, otherwise must not be provided.
+        ID of the saved search.
 
 
         :param id: The id of this ManagementSavedSearch.
@@ -226,7 +226,7 @@ class ManagementSavedSearch(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagementSavedSearch.
-        Display name for saved search.
+        Display name of the saved search.
 
 
         :return: The display_name of this ManagementSavedSearch.
@@ -238,7 +238,7 @@ class ManagementSavedSearch(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagementSavedSearch.
-        Display name for saved search.
+        Display name of the saved search.
 
 
         :param display_name: The display_name of this ManagementSavedSearch.
@@ -250,7 +250,7 @@ class ManagementSavedSearch(object):
     def provider_id(self):
         """
         **[Required]** Gets the provider_id of this ManagementSavedSearch.
-        Id for application (LA, APM, etc.) that owners this saved search.  Each owner has a unique Id.
+        ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
 
 
         :return: The provider_id of this ManagementSavedSearch.
@@ -262,7 +262,7 @@ class ManagementSavedSearch(object):
     def provider_id(self, provider_id):
         """
         Sets the provider_id of this ManagementSavedSearch.
-        Id for application (LA, APM, etc.) that owners this saved search.  Each owner has a unique Id.
+        ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
 
 
         :param provider_id: The provider_id of this ManagementSavedSearch.
@@ -274,7 +274,7 @@ class ManagementSavedSearch(object):
     def provider_version(self):
         """
         **[Required]** Gets the provider_version of this ManagementSavedSearch.
-        Version.
+        Version of the service that owns this saved search.
 
 
         :return: The provider_version of this ManagementSavedSearch.
@@ -286,7 +286,7 @@ class ManagementSavedSearch(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this ManagementSavedSearch.
-        Version.
+        Version of the service that owns this saved search.
 
 
         :param provider_version: The provider_version of this ManagementSavedSearch.
@@ -298,7 +298,7 @@ class ManagementSavedSearch(object):
     def provider_name(self):
         """
         **[Required]** Gets the provider_name of this ManagementSavedSearch.
-        Name for application (LA, APM, etc.) that owners this saved search.
+        Name of the service (for example, Logging Analytics) that owns the saved search.
 
 
         :return: The provider_name of this ManagementSavedSearch.
@@ -310,7 +310,7 @@ class ManagementSavedSearch(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this ManagementSavedSearch.
-        Name for application (LA, APM, etc.) that owners this saved search.
+        Name of the service (for example, Logging Analytics) that owns the saved search.
 
 
         :param provider_name: The provider_name of this ManagementSavedSearch.
@@ -322,7 +322,7 @@ class ManagementSavedSearch(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagementSavedSearch.
-        The ocid of the compartment that owns the saved search.
+        OCID of the compartment in which the saved search resides.
 
 
         :return: The compartment_id of this ManagementSavedSearch.
@@ -334,7 +334,7 @@ class ManagementSavedSearch(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagementSavedSearch.
-        The ocid of the compartment that owns the saved search.
+        OCID of the compartment in which the saved search resides.
 
 
         :param compartment_id: The compartment_id of this ManagementSavedSearch.
@@ -346,7 +346,7 @@ class ManagementSavedSearch(object):
     def is_oob_saved_search(self):
         """
         **[Required]** Gets the is_oob_saved_search of this ManagementSavedSearch.
-        String boolean (\"true\" or \"false\") to indicate Out Of the Box saved search.
+        Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
 
 
         :return: The is_oob_saved_search of this ManagementSavedSearch.
@@ -358,7 +358,7 @@ class ManagementSavedSearch(object):
     def is_oob_saved_search(self, is_oob_saved_search):
         """
         Sets the is_oob_saved_search of this ManagementSavedSearch.
-        String boolean (\"true\" or \"false\") to indicate Out Of the Box saved search.
+        Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
 
 
         :param is_oob_saved_search: The is_oob_saved_search of this ManagementSavedSearch.
@@ -370,7 +370,7 @@ class ManagementSavedSearch(object):
     def description(self):
         """
         **[Required]** Gets the description of this ManagementSavedSearch.
-        Description.
+        Description of the saved search.
 
 
         :return: The description of this ManagementSavedSearch.
@@ -382,7 +382,7 @@ class ManagementSavedSearch(object):
     def description(self, description):
         """
         Sets the description of this ManagementSavedSearch.
-        Description.
+        Description of the saved search.
 
 
         :param description: The description of this ManagementSavedSearch.
@@ -394,7 +394,7 @@ class ManagementSavedSearch(object):
     def nls(self):
         """
         **[Required]** Gets the nls of this ManagementSavedSearch.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :return: The nls of this ManagementSavedSearch.
@@ -406,7 +406,7 @@ class ManagementSavedSearch(object):
     def nls(self, nls):
         """
         Sets the nls of this ManagementSavedSearch.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :param nls: The nls of this ManagementSavedSearch.
@@ -418,7 +418,7 @@ class ManagementSavedSearch(object):
     def type(self):
         """
         **[Required]** Gets the type of this ManagementSavedSearch.
-        How to show the saved search.
+        Determines how the saved search is displayed in a dashboard.
 
         Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -433,7 +433,7 @@ class ManagementSavedSearch(object):
     def type(self, type):
         """
         Sets the type of this ManagementSavedSearch.
-        How to show the saved search.
+        Determines how the saved search is displayed in a dashboard.
 
 
         :param type: The type of this ManagementSavedSearch.
@@ -448,7 +448,7 @@ class ManagementSavedSearch(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementSavedSearch.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :return: The ui_config of this ManagementSavedSearch.
@@ -460,7 +460,7 @@ class ManagementSavedSearch(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementSavedSearch.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :param ui_config: The ui_config of this ManagementSavedSearch.
@@ -472,7 +472,7 @@ class ManagementSavedSearch(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementSavedSearch.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :return: The data_config of this ManagementSavedSearch.
@@ -484,7 +484,7 @@ class ManagementSavedSearch(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementSavedSearch.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :param data_config: The data_config of this ManagementSavedSearch.
@@ -496,7 +496,7 @@ class ManagementSavedSearch(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this ManagementSavedSearch.
-        Created by which user.
+        User who created the saved search.
 
 
         :return: The created_by of this ManagementSavedSearch.
@@ -508,7 +508,7 @@ class ManagementSavedSearch(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this ManagementSavedSearch.
-        Created by which user.
+        User who created the saved search.
 
 
         :param created_by: The created_by of this ManagementSavedSearch.
@@ -520,7 +520,7 @@ class ManagementSavedSearch(object):
     def updated_by(self):
         """
         **[Required]** Gets the updated_by of this ManagementSavedSearch.
-        Updated by which user.
+        User who updated the saved search.
 
 
         :return: The updated_by of this ManagementSavedSearch.
@@ -532,7 +532,7 @@ class ManagementSavedSearch(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this ManagementSavedSearch.
-        Updated by which user.
+        User who updated the saved search.
 
 
         :param updated_by: The updated_by of this ManagementSavedSearch.
@@ -544,7 +544,7 @@ class ManagementSavedSearch(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ManagementSavedSearch.
-        Time created.  Passed in to keep UI cache valid (operation is synchronous).
+        Date and time the saved search was created.
 
 
         :return: The time_created of this ManagementSavedSearch.
@@ -556,7 +556,7 @@ class ManagementSavedSearch(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ManagementSavedSearch.
-        Time created.  Passed in to keep UI cache valid (operation is synchronous).
+        Date and time the saved search was created.
 
 
         :param time_created: The time_created of this ManagementSavedSearch.
@@ -568,7 +568,7 @@ class ManagementSavedSearch(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this ManagementSavedSearch.
-        Time updated.
+        Date and time the saved search was updated.
 
 
         :return: The time_updated of this ManagementSavedSearch.
@@ -580,7 +580,7 @@ class ManagementSavedSearch(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ManagementSavedSearch.
-        Time updated.
+        Date and time the saved search was updated.
 
 
         :param time_updated: The time_updated of this ManagementSavedSearch.
@@ -592,7 +592,7 @@ class ManagementSavedSearch(object):
     def screen_image(self):
         """
         **[Required]** Gets the screen_image of this ManagementSavedSearch.
-        Screenshot.
+        Screen image of the saved search.
 
 
         :return: The screen_image of this ManagementSavedSearch.
@@ -604,7 +604,7 @@ class ManagementSavedSearch(object):
     def screen_image(self, screen_image):
         """
         Sets the screen_image of this ManagementSavedSearch.
-        Screenshot.
+        Screen image of the saved search.
 
 
         :param screen_image: The screen_image of this ManagementSavedSearch.
@@ -640,7 +640,7 @@ class ManagementSavedSearch(object):
     def widget_template(self):
         """
         **[Required]** Gets the widget_template of this ManagementSavedSearch.
-        Template.
+        Reference to the HTML file of the widget.
 
 
         :return: The widget_template of this ManagementSavedSearch.
@@ -652,7 +652,7 @@ class ManagementSavedSearch(object):
     def widget_template(self, widget_template):
         """
         Sets the widget_template of this ManagementSavedSearch.
-        Template.
+        Reference to the HTML file of the widget.
 
 
         :param widget_template: The widget_template of this ManagementSavedSearch.
@@ -664,7 +664,7 @@ class ManagementSavedSearch(object):
     def widget_vm(self):
         """
         **[Required]** Gets the widget_vm of this ManagementSavedSearch.
-        View Model
+        Reference to the view model of the widget.
 
 
         :return: The widget_vm of this ManagementSavedSearch.
@@ -676,7 +676,7 @@ class ManagementSavedSearch(object):
     def widget_vm(self, widget_vm):
         """
         Sets the widget_vm of this ManagementSavedSearch.
-        View Model
+        Reference to the view model of the widget.
 
 
         :param widget_vm: The widget_vm of this ManagementSavedSearch.

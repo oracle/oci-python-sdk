@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.24.0 - 2020-11-17
+====================
+
+Added
+-----
+* Support for specifying memory for AMD E3 shapes during node pool creation and update in the Container Engine for Kubernetes service
+* Support for upgrading a database on a VM database system in the Database service
+* Support for listing autonomous database clones in the Database service
+* Support for Data Guard with autonomous container databases on Exadata Cloud at Customer in the Database service
+* Support for getting the last login time of a user in the Identity service
+* Support to bulk editing tags on resources in the Identity service
+
+Breaking
+--------
+* The models `AgentUpload`, `Attribute`, `CreateNamespaceDetails`, `FieldMap`, `GenerateAgentObjectNameDetails`, `LogAnalytics`, `LogAnalyticsCollectionWarning`, `LogAnalyticsSummary`, `OutOfBoxEntityTypeDetails`, `Query`, `QueryWorkRequestResource`, `RegisterEntityTypesDetails`, `ServiceTenancy`, `StringListDetails` are removed from the Log Analytics service
+* The enum `name` removed value `CUSLTER_SPLIT` and added `CLUSTER_SPLIT` in the Log Analytics service
+* The value for enum `status` is not validated against allowed values and will not raise `ValueError` in the Container Engine service
+
+====================
 2.23.5 - 2020-11-10
 ====================
 

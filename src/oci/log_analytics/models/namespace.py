@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Namespace(object):
     """
-    Namespace of a tenancy in Logan Analytics application
+    This is the namespace details of a tenancy in Logan Analytics application
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class Namespace(object):
     def namespace_name(self):
         """
         **[Required]** Gets the namespace_name of this Namespace.
-        namespace name
+        This is the namespace name of a tenancy
 
 
         :return: The namespace_name of this Namespace.
@@ -63,7 +63,7 @@ class Namespace(object):
     def namespace_name(self, namespace_name):
         """
         Sets the namespace_name of this Namespace.
-        namespace name
+        This is the namespace name of a tenancy
 
 
         :param namespace_name: The namespace_name of this Namespace.
@@ -75,7 +75,7 @@ class Namespace(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Namespace.
-        Tenancy ID
+        The is the tenancy ID
 
 
         :return: The compartment_id of this Namespace.
@@ -87,7 +87,7 @@ class Namespace(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Namespace.
-        Tenancy ID
+        The is the tenancy ID
 
 
         :param compartment_id: The compartment_id of this Namespace.
@@ -99,7 +99,7 @@ class Namespace(object):
     def is_onboarded(self):
         """
         **[Required]** Gets the is_onboarded of this Namespace.
-        if tenancy is onboarded to logging analytics
+        This indicates if the tenancy is onboarded to Logging Analytics
 
 
         :return: The is_onboarded of this Namespace.
@@ -111,7 +111,7 @@ class Namespace(object):
     def is_onboarded(self, is_onboarded):
         """
         Sets the is_onboarded of this Namespace.
-        if tenancy is onboarded to logging analytics
+        This indicates if the tenancy is onboarded to Logging Analytics
 
 
         :param is_onboarded: The is_onboarded of this Namespace.

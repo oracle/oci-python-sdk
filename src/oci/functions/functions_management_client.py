@@ -98,7 +98,7 @@ class FunctionsManagementClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeApplicationCompartmentDetails change_application_compartment_details: (required)
+        :param oci.functions.models.ChangeApplicationCompartmentDetails change_application_compartment_details: (required)
             Properties to change the compartment of an application.
 
         :param str if_match: (optional)
@@ -178,7 +178,7 @@ class FunctionsManagementClient(object):
         Creates a new application.
 
 
-        :param CreateApplicationDetails create_application_details: (required)
+        :param oci.functions.models.CreateApplicationDetails create_application_details: (required)
             Specification of the application to create
 
         :param str opc_request_id: (optional)
@@ -241,7 +241,7 @@ class FunctionsManagementClient(object):
         Creates a new function.
 
 
-        :param CreateFunctionDetails create_function_details: (required)
+        :param oci.functions.models.CreateFunctionDetails create_function_details: (required)
             Specification of the function to create
 
         :param str opc_request_id: (optional)
@@ -907,7 +907,7 @@ class FunctionsManagementClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateApplicationDetails update_application_details: (required)
+        :param oci.functions.models.UpdateApplicationDetails update_application_details: (required)
             The new application spec to apply
 
         :param str if_match: (optional)
@@ -994,7 +994,7 @@ class FunctionsManagementClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateFunctionDetails update_function_details: (required)
+        :param oci.functions.models.UpdateFunctionDetails update_function_details: (required)
             The new function spec to apply
 
         :param str if_match: (optional)

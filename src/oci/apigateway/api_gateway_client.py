@@ -95,7 +95,7 @@ class ApiGatewayClient(object):
         :param str api_id: (required)
             The ocid of the API.
 
-        :param ChangeApiCompartmentDetails change_api_compartment_details: (required)
+        :param oci.apigateway.models.ChangeApiCompartmentDetails change_api_compartment_details: (required)
             Details of the target compartment.
 
         :param str opc_retry_token: (optional)
@@ -190,7 +190,7 @@ class ApiGatewayClient(object):
         :param str certificate_id: (required)
             The ocid of the certificate.
 
-        :param ChangeCertificateCompartmentDetails change_certificate_compartment_details: (required)
+        :param oci.apigateway.models.ChangeCertificateCompartmentDetails change_certificate_compartment_details: (required)
             Details of the target compartment.
 
         :param str opc_retry_token: (optional)
@@ -282,7 +282,7 @@ class ApiGatewayClient(object):
         Creates a new API.
 
 
-        :param CreateApiDetails create_api_details: (required)
+        :param oci.apigateway.models.CreateApiDetails create_api_details: (required)
             Details for the new API.
 
         :param str opc_retry_token: (optional)
@@ -355,7 +355,7 @@ class ApiGatewayClient(object):
         Creates a new Certificate.
 
 
-        :param CreateCertificateDetails create_certificate_details: (required)
+        :param oci.apigateway.models.CreateCertificateDetails create_certificate_details: (required)
             Details for the new certificate
 
         :param str opc_retry_token: (optional)
@@ -1238,7 +1238,7 @@ class ApiGatewayClient(object):
         :param str api_id: (required)
             The ocid of the API.
 
-        :param UpdateApiDetails update_api_details: (required)
+        :param oci.apigateway.models.UpdateApiDetails update_api_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -1322,7 +1322,7 @@ class ApiGatewayClient(object):
         :param str certificate_id: (required)
             The ocid of the certificate.
 
-        :param UpdateCertificateDetails update_certificate_details: (required)
+        :param oci.apigateway.models.UpdateCertificateDetails update_certificate_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

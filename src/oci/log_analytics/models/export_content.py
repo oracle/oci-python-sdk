@@ -75,6 +75,8 @@ class ExportContent(object):
     def parser_names(self):
         """
         Gets the parser_names of this ExportContent.
+        parserNames
+
 
         :return: The parser_names of this ExportContent.
         :rtype: list[str]
@@ -85,6 +87,8 @@ class ExportContent(object):
     def parser_names(self, parser_names):
         """
         Sets the parser_names of this ExportContent.
+        parserNames
+
 
         :param parser_names: The parser_names of this ExportContent.
         :type: list[str]

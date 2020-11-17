@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeManagementDashboardsCompartmentDetails(object):
     """
-    Compartment to move the dashboard to.
+    Compartment to which the dashboard is being moved.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeManagementDashboardsCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeManagementDashboardsCompartmentDetails.
-        Compartment Identifier
+        OCID of the compartment to which the dashboard is being moved.
 
 
         :return: The compartment_id of this ChangeManagementDashboardsCompartmentDetails.
@@ -49,7 +49,7 @@ class ChangeManagementDashboardsCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeManagementDashboardsCompartmentDetails.
-        Compartment Identifier
+        OCID of the compartment to which the dashboard is being moved.
 
 
         :param compartment_id: The compartment_id of this ChangeManagementDashboardsCompartmentDetails.

@@ -99,7 +99,7 @@ class SddcClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeSddcCompartmentDetails change_sddc_compartment_details: (required)
+        :param oci.ocvp.models.ChangeSddcCompartmentDetails change_sddc_compartment_details: (required)
             Request to change the compartment of the specified SDDC
 
         :param str if_match: (optional)
@@ -195,7 +195,7 @@ class SddcClient(object):
         creation of the SDDC.
 
 
-        :param CreateSddcDetails create_sddc_details: (required)
+        :param oci.ocvp.models.CreateSddcDetails create_sddc_details: (required)
             Details for the SDDC.
 
         :param str opc_retry_token: (optional)
@@ -679,7 +679,7 @@ class SddcClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateSddcDetails update_sddc_details: (required)
+        :param oci.ocvp.models.UpdateSddcDetails update_sddc_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BucketRange(object):
     """
-    Represents querylanguage bucket command input arguments in parse endpoint output.
+    Represents querylanguage bucket command input arguments in parse output.
     """
 
     def __init__(self, **kwargs):

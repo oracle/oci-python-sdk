@@ -290,9 +290,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         """
         **[Required]** Gets the collection_type of this LogAnalyticsObjectCollectionRuleSummary.
         The type of collection.
-        Accepted values are: LIVE.
-        Collection type LIVE indicates to enable log collection from the time of this rule creation,
-        and continue until the rule exists.
+        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
 
         Allowed values for this property are: "LIVE", "HISTORIC", "HISTORIC_LIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -308,9 +306,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         """
         Sets the collection_type of this LogAnalyticsObjectCollectionRuleSummary.
         The type of collection.
-        Accepted values are: LIVE.
-        Collection type LIVE indicates to enable log collection from the time of this rule creation,
-        and continue until the rule exists.
+        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
 
 
         :param collection_type: The collection_type of this LogAnalyticsObjectCollectionRuleSummary.

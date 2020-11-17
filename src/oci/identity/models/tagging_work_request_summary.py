@@ -17,6 +17,18 @@ class TaggingWorkRequestSummary(object):
     #: This constant has a value of "DELETE_TAG_DEFINITION"
     OPERATION_TYPE_DELETE_TAG_DEFINITION = "DELETE_TAG_DEFINITION"
 
+    #: A constant which can be used with the operation_type property of a TaggingWorkRequestSummary.
+    #: This constant has a value of "DELETE_NON_EMPTY_TAG_NAMESPACE"
+    OPERATION_TYPE_DELETE_NON_EMPTY_TAG_NAMESPACE = "DELETE_NON_EMPTY_TAG_NAMESPACE"
+
+    #: A constant which can be used with the operation_type property of a TaggingWorkRequestSummary.
+    #: This constant has a value of "BULK_DELETE_TAG_DEFINITION"
+    OPERATION_TYPE_BULK_DELETE_TAG_DEFINITION = "BULK_DELETE_TAG_DEFINITION"
+
+    #: A constant which can be used with the operation_type property of a TaggingWorkRequestSummary.
+    #: This constant has a value of "BULK_EDIT_OF_TAGS"
+    OPERATION_TYPE_BULK_EDIT_OF_TAGS = "BULK_EDIT_OF_TAGS"
+
     #: A constant which can be used with the status property of a TaggingWorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -32,6 +44,10 @@ class TaggingWorkRequestSummary(object):
     #: A constant which can be used with the status property of a TaggingWorkRequestSummary.
     #: This constant has a value of "SUCCEEDED"
     STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the status property of a TaggingWorkRequestSummary.
+    #: This constant has a value of "PARTIALLY_SUCCEEDED"
+    STATUS_PARTIALLY_SUCCEEDED = "PARTIALLY_SUCCEEDED"
 
     #: A constant which can be used with the status property of a TaggingWorkRequestSummary.
     #: This constant has a value of "CANCELING"
@@ -52,7 +68,7 @@ class TaggingWorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this TaggingWorkRequestSummary.
-            Allowed values for this property are: "DELETE_TAG_DEFINITION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -62,7 +78,7 @@ class TaggingWorkRequestSummary(object):
 
         :param status:
             The value to assign to the status property of this TaggingWorkRequestSummary.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "PARTIALLY_SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -151,7 +167,7 @@ class TaggingWorkRequestSummary(object):
         **[Required]** Gets the operation_type of this TaggingWorkRequestSummary.
         An enum-like description of the type of work the work request is doing.
 
-        Allowed values for this property are: "DELETE_TAG_DEFINITION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -170,7 +186,7 @@ class TaggingWorkRequestSummary(object):
         :param operation_type: The operation_type of this TaggingWorkRequestSummary.
         :type: str
         """
-        allowed_values = ["DELETE_TAG_DEFINITION"]
+        allowed_values = ["DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -205,7 +221,7 @@ class TaggingWorkRequestSummary(object):
         **[Required]** Gets the status of this TaggingWorkRequestSummary.
         The current status of the work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "PARTIALLY_SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -224,7 +240,7 @@ class TaggingWorkRequestSummary(object):
         :param status: The status of this TaggingWorkRequestSummary.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "PARTIALLY_SUCCEEDED", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

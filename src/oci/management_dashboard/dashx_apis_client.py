@@ -18,8 +18,7 @@ missing = Sentinel("Missing")
 
 class DashxApisClient(object):
     """
-    Management Dashboard micro-service provides a set of CRUD, import, export, and compartment related APIs (such as change compartment)   to support dashboard and saved search metadata preservation.  These APIs are mainly for client UIs, for various UI activities such as get list of all saved searches in a compartment, create a dashboard, open a saved search, etc.  Use export to retrieve  dashboards and their saved searches, then edit the Json if necessary (for example change compartmentIds), then import the result to  destination dashboard service.
-    APIs validate all required properties to ensure properties are present and have correct type and values.
+    API for the Management Dashboard micro-service. Use this API for dashboard and saved search metadata preservation and to perform  tasks such as creating a dashboard, creating a saved search, and obtaining a list of dashboards and saved searches in a compartment.
     """
 
     def __init__(self, config, **kwargs):
@@ -88,14 +87,14 @@ class DashxApisClient(object):
 
     def change_management_dashboards_compartment(self, management_dashboard_id, change_management_dashboards_compartment_details, **kwargs):
         """
-        Move the dashboard from existing compartment to a new compartment.
+        Moves the dashboard from the existing compartment to a new compartment.
 
 
         :param str management_dashboard_id: (required)
-            unique dashboard identifier
+            A unique dashboard identifier.
 
-        :param ChangeManagementDashboardsCompartmentDetails change_management_dashboards_compartment_details: (required)
-            Id for dashboard to be moved.
+        :param oci.management_dashboard.models.ChangeManagementDashboardsCompartmentDetails change_management_dashboards_compartment_details: (required)
+            ID of the dashboard that is being moved.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -183,14 +182,14 @@ class DashxApisClient(object):
 
     def change_management_saved_searches_compartment(self, management_saved_search_id, change_management_saved_searches_compartment_details, **kwargs):
         """
-        Move the saved search from existing compartment to a new compartment.
+        Moves the saved search from the existing compartment to a new compartment.
 
 
         :param str management_saved_search_id: (required)
-            unique saved search identifier
+            A unique saved search identifier.
 
-        :param ChangeManagementSavedSearchesCompartmentDetails change_management_saved_searches_compartment_details: (required)
-            Compartment id to move the saved search to.
+        :param oci.management_dashboard.models.ChangeManagementSavedSearchesCompartmentDetails change_management_saved_searches_compartment_details: (required)
+            ID of the saved search that is being moved.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -281,8 +280,8 @@ class DashxApisClient(object):
         Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20.
 
 
-        :param CreateManagementDashboardDetails create_management_dashboard_details: (required)
-            Json metadata for creating a new dashboard.
+        :param oci.management_dashboard.models.CreateManagementDashboardDetails create_management_dashboard_details: (required)
+            JSON metadata for creating a new dashboard.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -354,8 +353,8 @@ class DashxApisClient(object):
         Creates a new saved search.
 
 
-        :param CreateManagementSavedSearchDetails create_management_saved_search_details: (required)
-            Json metadata for the saved search.
+        :param oci.management_dashboard.models.CreateManagementSavedSearchDetails create_management_saved_search_details: (required)
+            JSON metadata for the saved search.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -424,11 +423,11 @@ class DashxApisClient(object):
 
     def delete_management_dashboard(self, management_dashboard_id, **kwargs):
         """
-        Deletes a Dashboard by id.
+        Deletes a Dashboard by ID.
 
 
         :param str management_dashboard_id: (required)
-            unique dashboard identifier
+            A unique dashboard identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -503,11 +502,11 @@ class DashxApisClient(object):
 
     def delete_management_saved_search(self, management_saved_search_id, **kwargs):
         """
-        Deletes a saved search by Id
+        Deletes a saved search by ID.
 
 
         :param str management_saved_search_id: (required)
-            unique saved search identifier
+            A unique saved search identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -665,11 +664,11 @@ class DashxApisClient(object):
 
     def get_management_dashboard(self, management_dashboard_id, **kwargs):
         """
-        Get a Dashboard and its saved searches by id.  Deleted or unauthorized saved searches are marked by tile's state property.
+        Gets a dashboard and its saved searches by ID.  Deleted or unauthorized saved searches are marked by tile's state property.
 
 
         :param str management_dashboard_id: (required)
-            unique dashboard identifier
+            A unique dashboard identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -748,11 +747,11 @@ class DashxApisClient(object):
 
     def get_management_saved_search(self, management_saved_search_id, **kwargs):
         """
-        Get a saved search by Id.
+        Gets a saved search by ID.
 
 
         :param str management_saved_search_id: (required)
-            unique saved search identifier
+            A unique saved search identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -831,11 +830,11 @@ class DashxApisClient(object):
 
     def import_dashboard(self, management_dashboard_import_details, **kwargs):
         """
-        Import an array of dashboards and their saved searches.
+        Imports an array of dashboards and their saved searches.
 
 
-        :param ManagementDashboardImportDetails management_dashboard_import_details: (required)
-            Json metadata for dashboards and their saved searches to import.
+        :param oci.management_dashboard.models.ManagementDashboardImportDetails management_dashboard_import_details: (required)
+            JSON metadata for importing dashboards and their saved searches.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -911,7 +910,7 @@ class DashxApisClient(object):
 
     def list_management_dashboards(self, compartment_id, **kwargs):
         """
-        Gets list of dashboards and their saved searches for compartment with pagination.  Returned properties are a summary.
+        Gets the list of dashboards and their saved searches in a compartment with pagination.  Returned properties are the summary.
 
 
         :param str compartment_id: (required)
@@ -927,7 +926,7 @@ class DashxApisClient(object):
             The maximum number of items to return.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            The page token representing the page on which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -935,7 +934,7 @@ class DashxApisClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is the default.
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -1021,7 +1020,7 @@ class DashxApisClient(object):
 
     def list_management_saved_searches(self, compartment_id, **kwargs):
         """
-        Gets list of saved searches with pagination.  Returned properties are a summary.
+        Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
 
 
         :param str compartment_id: (required)
@@ -1037,7 +1036,7 @@ class DashxApisClient(object):
             The maximum number of items to return.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            The page token representing the page on which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -1045,7 +1044,7 @@ class DashxApisClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is the default.
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -1131,14 +1130,14 @@ class DashxApisClient(object):
 
     def update_management_dashboard(self, management_dashboard_id, update_management_dashboard_details, **kwargs):
         """
-        Updates an existing dashboard identified by id path parameter.  Limit for number of saved searches in a dashboard is 20.
+        Updates an existing dashboard identified by ID path parameter.  CompartmentId can be modified only by the changeCompartment API. Limit for number of saved searches in a dashboard is 20.
 
 
         :param str management_dashboard_id: (required)
-            unique dashboard identifier
+            A unique dashboard identifier.
 
-        :param UpdateManagementDashboardDetails update_management_dashboard_details: (required)
-            Json Metadata for changed dashboard properties.
+        :param oci.management_dashboard.models.UpdateManagementDashboardDetails update_management_dashboard_details: (required)
+            JSON metadata for changed dashboard properties.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1228,14 +1227,14 @@ class DashxApisClient(object):
 
     def update_management_saved_search(self, management_saved_search_id, update_management_saved_search_details, **kwargs):
         """
-        Update an existing saved search.  Id cannot be updated.
+        Updates an existing saved search identified by ID path parameter.  CompartmentId can be modified only by the changeCompartment API.
 
 
         :param str management_saved_search_id: (required)
-            unique saved search identifier
+            A unique saved search identifier.
 
-        :param UpdateManagementSavedSearchDetails update_management_saved_search_details: (required)
-            Json metadata for changed properties in existing saved search.
+        :param oci.management_dashboard.models.UpdateManagementSavedSearchDetails update_management_saved_search_details: (required)
+            JSON metadata for changed saved search properties.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

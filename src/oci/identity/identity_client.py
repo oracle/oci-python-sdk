@@ -95,7 +95,7 @@ class IdentityClient(object):
         :param str mfa_totp_device_id: (required)
             The OCID of the MFA TOTP device.
 
-        :param MfaTotpToken mfa_totp_token: (required)
+        :param oci.identity.models.MfaTotpToken mfa_totp_token: (required)
             MFA TOTP token
 
         :param str if_match: (optional)
@@ -186,7 +186,7 @@ class IdentityClient(object):
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
 
-        :param AddUserToGroupDetails add_user_to_group_details: (required)
+        :param oci.identity.models.AddUserToGroupDetails add_user_to_group_details: (required)
             Request object for adding a user to a group.
 
         :param str opc_retry_token: (optional)
@@ -341,7 +341,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param BulkDeleteResourcesDetails bulk_delete_resources_details: (required)
+        :param oci.identity.models.BulkDeleteResourcesDetails bulk_delete_resources_details: (required)
             Request object for bulk delete resources in a compartment.
 
         :param str opc_request_id: (optional)
@@ -423,7 +423,7 @@ class IdentityClient(object):
     def bulk_delete_tags(self, bulk_delete_tags_details, **kwargs):
         """
         Deletes the specified tag key definitions. This operation triggers a process that removes the
-        tags from all resources in your tenancy.
+        tags from all resources in your tenancy. The tag key definitions must be within the same tag namespace.
 
         The following actions happen immediately:
         \u00A0
@@ -445,7 +445,7 @@ class IdentityClient(object):
         to retire a tag.
 
 
-        :param BulkDeleteTagsDetails bulk_delete_tags_details: (required)
+        :param oci.identity.models.BulkDeleteTagsDetails bulk_delete_tags_details: (required)
             Request object for deleting tags in bulk.
 
         :param str opc_request_id: (optional)
@@ -512,6 +512,92 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=bulk_delete_tags_details)
 
+    def bulk_edit_tags(self, **kwargs):
+        """
+        Edits the specified list of tag key definitions for the selected resources.
+        This operation triggers a process that edits the tags on all selected resources. The possible actions are:
+
+          * Add a defined tag when the tag does not already exist on the resource.
+          * Update the value for a defined tag when the tag is present on the resource.
+          * Add a defined tag when it does not already exist on the resource or update the value for a defined tag when the tag is present on the resource.
+          * Remove a defined tag from a resource. The tag is removed from the resource regardless of the tag value.
+
+        See :func:`bulk_edit_operation_details` for more information.
+
+        The edits can include a combination of operations and tag sets.
+        However, multiple operations cannot apply to one key definition in the same request.
+        For example, if one request adds `tag set-1` to a resource and sets a tag value to `tag set-2`,
+        `tag set-1` and `tag set-2` cannot have any common tag definitions.
+
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param BulkEditTagsDetails bulk_edit_tags_details: (optional)
+            The request object for bulk editing tags on resources in the compartment.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tags/actions/bulkEdit"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "bulk_edit_tags_details"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "bulk_edit_tags got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=kwargs.get('bulk_edit_tags_details'))
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=kwargs.get('bulk_edit_tags_details'))
+
     def bulk_move_resources(self, compartment_id, bulk_move_resources_details, **kwargs):
         """
         Moves multiple resources from one compartment to another. All resources must be in the same compartment.
@@ -526,7 +612,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param BulkMoveResourcesDetails bulk_move_resources_details: (required)
+        :param oci.identity.models.BulkMoveResourcesDetails bulk_move_resources_details: (required)
             Request object for bulk move resources in the compartment.
 
         :param str opc_request_id: (optional)
@@ -727,7 +813,7 @@ class IdentityClient(object):
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
 
-        :param ChangeTagNamespaceCompartmentDetail change_tag_namespace_compartment_detail: (required)
+        :param oci.identity.models.ChangeTagNamespaceCompartmentDetail change_tag_namespace_compartment_detail: (required)
             Request object for changing the compartment of a tag namespace.
 
         :param str opc_retry_token: (optional)
@@ -816,7 +902,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
 
 
-        :param CreateAuthTokenDetails create_auth_token_details: (required)
+        :param oci.identity.models.CreateAuthTokenDetails create_auth_token_details: (required)
             Request object for creating a new auth token.
 
         :param str user_id: (required)
@@ -920,7 +1006,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
 
 
-        :param CreateCompartmentDetails create_compartment_details: (required)
+        :param oci.identity.models.CreateCompartmentDetails create_compartment_details: (required)
             Request object for creating a new compartment.
 
         :param str opc_retry_token: (optional)
@@ -986,7 +1072,7 @@ class IdentityClient(object):
     def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
         """
         Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-        compatible API. For information, see
+        compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
         `Managing User Credentials`__.
 
         You must specify a *description* for the secret key (although it can be an empty string). It does not
@@ -1000,7 +1086,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
 
 
-        :param CreateCustomerSecretKeyDetails create_customer_secret_key_details: (required)
+        :param oci.identity.models.CreateCustomerSecretKeyDetails create_customer_secret_key_details: (required)
             Request object for creating a new secret key.
 
         :param str user_id: (required)
@@ -1103,7 +1189,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
 
 
-        :param CreateDynamicGroupDetails create_dynamic_group_details: (required)
+        :param oci.identity.models.CreateDynamicGroupDetails create_dynamic_group_details: (required)
             Request object for creating a new dynamic group.
 
         :param str opc_retry_token: (optional)
@@ -1194,7 +1280,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
 
 
-        :param CreateGroupDetails create_group_details: (required)
+        :param oci.identity.models.CreateGroupDetails create_group_details: (required)
             Request object for creating a new group.
 
         :param str opc_retry_token: (optional)
@@ -1282,7 +1368,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateIdentityProviderDetails create_identity_provider_details: (required)
+        :param oci.identity.models.CreateIdentityProviderDetails create_identity_provider_details: (required)
             Request object for creating a new SAML2 identity provider.
 
         :param str opc_retry_token: (optional)
@@ -1351,7 +1437,7 @@ class IdentityClient(object):
         :class:`Group`.
 
 
-        :param CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
+        :param oci.identity.models.CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
             Add a mapping from an SAML2.0 identity provider group to a BMC group.
 
         :param str identity_provider_id: (required)
@@ -1536,7 +1622,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm
 
 
-        :param CreateNetworkSourceDetails create_network_source_details: (required)
+        :param oci.identity.models.CreateNetworkSourceDetails create_network_source_details: (required)
             Request object for creating a new network source.
 
         :param str opc_retry_token: (optional)
@@ -1607,7 +1693,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param CreateOAuth2ClientCredentialDetails create_o_auth2_client_credential_details: (required)
+        :param oci.identity.models.CreateOAuth2ClientCredentialDetails create_o_auth2_client_credential_details: (required)
             Request object containing the information required to generate an Oauth token.
 
         :param str opc_retry_token: (optional)
@@ -1797,7 +1883,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
 
 
-        :param CreatePolicyDetails create_policy_details: (required)
+        :param oci.identity.models.CreatePolicyDetails create_policy_details: (required)
             Request object for creating a new policy.
 
         :param str opc_retry_token: (optional)
@@ -1865,7 +1951,7 @@ class IdentityClient(object):
         Creates a subscription to a region for a tenancy.
 
 
-        :param CreateRegionSubscriptionDetails create_region_subscription_details: (required)
+        :param oci.identity.models.CreateRegionSubscriptionDetails create_region_subscription_details: (required)
             Request object for activate a new region.
 
         :param str tenancy_id: (required)
@@ -1951,7 +2037,7 @@ class IdentityClient(object):
         :func:`update_smtp_credential`.
 
 
-        :param CreateSmtpCredentialDetails create_smtp_credential_details: (required)
+        :param oci.identity.models.CreateSmtpCredentialDetails create_smtp_credential_details: (required)
             Request object for creating a new SMTP credential with the user.
 
         :param str user_id: (required)
@@ -2047,7 +2133,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
 
 
-        :param CreateSwiftPasswordDetails create_swift_password_details: (required)
+        :param oci.identity.models.CreateSwiftPasswordDetails create_swift_password_details: (required)
             Request object for creating a new swift password.
 
         :param str user_id: (required)
@@ -2154,7 +2240,7 @@ class IdentityClient(object):
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
 
-        :param CreateTagDetails create_tag_details: (required)
+        :param oci.identity.models.CreateTagDetails create_tag_details: (required)
             Request object for creating a new tag in the specified tag namespace.
 
         :param str opc_retry_token: (optional)
@@ -2241,7 +2327,7 @@ class IdentityClient(object):
         * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
 
 
-        :param CreateTagDefaultDetails create_tag_default_details: (required)
+        :param oci.identity.models.CreateTagDefaultDetails create_tag_default_details: (required)
             Request object for creating a new tag default.
 
         :param str opc_retry_token: (optional)
@@ -2328,7 +2414,7 @@ class IdentityClient(object):
         :func:`update_tag_namespace`.
 
 
-        :param CreateTagNamespaceDetails create_tag_namespace_details: (required)
+        :param oci.identity.models.CreateTagNamespaceDetails create_tag_namespace_details: (required)
             Request object for creating a new tag namespace.
 
         :param str opc_retry_token: (optional)
@@ -2434,7 +2520,7 @@ class IdentityClient(object):
         __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm
 
 
-        :param CreateUserDetails create_user_details: (required)
+        :param oci.identity.models.CreateUserDetails create_user_details: (required)
             Request object for creating a new user.
 
         :param str opc_retry_token: (optional)
@@ -5395,6 +5481,73 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="BulkActionResourceTypeCollection")
 
+    def list_bulk_edit_tags_resource_types(self, **kwargs):
+        """
+        Lists the resource types that support bulk tag editing.
+
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.BulkEditTagsResourceTypeCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tags/bulkEditResourceTypes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_bulk_edit_tags_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="BulkEditTagsResourceTypeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="BulkEditTagsResourceTypeCollection")
+
     def list_compartments(self, compartment_id, **kwargs):
         """
         Lists the compartments in a specified compartment. The members of the list
@@ -7919,7 +8072,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param MoveCompartmentDetails move_compartment_details: (required)
+        :param oci.identity.models.MoveCompartmentDetails move_compartment_details: (required)
             Request object for moving a compartment.
 
         :param str if_match: (optional)
@@ -8231,7 +8384,7 @@ class IdentityClient(object):
         :param str auth_token_id: (required)
             The OCID of the auth token.
 
-        :param UpdateAuthTokenDetails update_auth_token_details: (required)
+        :param oci.identity.models.UpdateAuthTokenDetails update_auth_token_details: (required)
             Request object for updating an auth token.
 
         :param str if_match: (optional)
@@ -8311,7 +8464,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param UpdateAuthenticationPolicyDetails update_authentication_policy_details: (required)
+        :param oci.identity.models.UpdateAuthenticationPolicyDetails update_authentication_policy_details: (required)
             Request object for updating the authentication policy.
 
         :param str if_match: (optional)
@@ -8390,7 +8543,7 @@ class IdentityClient(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param UpdateCompartmentDetails update_compartment_details: (required)
+        :param oci.identity.models.UpdateCompartmentDetails update_compartment_details: (required)
             Request object for updating a compartment.
 
         :param str if_match: (optional)
@@ -8472,7 +8625,7 @@ class IdentityClient(object):
         :param str customer_secret_key_id: (required)
             The OCID of the secret key.
 
-        :param UpdateCustomerSecretKeyDetails update_customer_secret_key_details: (required)
+        :param oci.identity.models.UpdateCustomerSecretKeyDetails update_customer_secret_key_details: (required)
             Request object for updating a secret key.
 
         :param str if_match: (optional)
@@ -8552,7 +8705,7 @@ class IdentityClient(object):
         :param str dynamic_group_id: (required)
             The OCID of the dynamic group.
 
-        :param UpdateDynamicGroupDetails update_dynamic_group_details: (required)
+        :param oci.identity.models.UpdateDynamicGroupDetails update_dynamic_group_details: (required)
             Request object for updating an dynamic group.
 
         :param str if_match: (optional)
@@ -8631,7 +8784,7 @@ class IdentityClient(object):
         :param str group_id: (required)
             The OCID of the group.
 
-        :param UpdateGroupDetails update_group_details: (required)
+        :param oci.identity.models.UpdateGroupDetails update_group_details: (required)
             Request object for updating a group.
 
         :param str if_match: (optional)
@@ -8710,7 +8863,7 @@ class IdentityClient(object):
         :param str identity_provider_id: (required)
             The OCID of the identity provider.
 
-        :param UpdateIdentityProviderDetails update_identity_provider_details: (required)
+        :param oci.identity.models.UpdateIdentityProviderDetails update_identity_provider_details: (required)
             Request object for updating a identity provider.
 
         :param str if_match: (optional)
@@ -8792,7 +8945,7 @@ class IdentityClient(object):
         :param str mapping_id: (required)
             The OCID of the group mapping.
 
-        :param UpdateIdpGroupMappingDetails update_idp_group_mapping_details: (required)
+        :param oci.identity.models.UpdateIdpGroupMappingDetails update_idp_group_mapping_details: (required)
             Request object for updating an identity provider group mapping
 
         :param str if_match: (optional)
@@ -8872,7 +9025,7 @@ class IdentityClient(object):
         :param str network_source_id: (required)
             The OCID of the network source.
 
-        :param UpdateNetworkSourceDetails update_network_source_details: (required)
+        :param oci.identity.models.UpdateNetworkSourceDetails update_network_source_details: (required)
             Request object for updating a network source.
 
         :param str if_match: (optional)
@@ -8954,7 +9107,7 @@ class IdentityClient(object):
         :param str oauth2_client_credential_id: (required)
             The ID of the Oauth credential.
 
-        :param UpdateOAuth2ClientCredentialDetails update_o_auth2_client_credential_details: (required)
+        :param oci.identity.models.UpdateOAuth2ClientCredentialDetails update_o_auth2_client_credential_details: (required)
             Request object containing the information required to generate an Oauth token.
 
         :param str if_match: (optional)
@@ -9036,7 +9189,7 @@ class IdentityClient(object):
         :param str policy_id: (required)
             The OCID of the policy.
 
-        :param UpdatePolicyDetails update_policy_details: (required)
+        :param oci.identity.models.UpdatePolicyDetails update_policy_details: (required)
             Request object for updating a policy.
 
         :param str if_match: (optional)
@@ -9118,7 +9271,7 @@ class IdentityClient(object):
         :param str smtp_credential_id: (required)
             The OCID of the SMTP credential.
 
-        :param UpdateSmtpCredentialDetails update_smtp_credential_details: (required)
+        :param oci.identity.models.UpdateSmtpCredentialDetails update_smtp_credential_details: (required)
             Request object for updating a SMTP credential.
 
         :param str if_match: (optional)
@@ -9203,7 +9356,7 @@ class IdentityClient(object):
         :param str swift_password_id: (required)
             The OCID of the Swift password.
 
-        :param UpdateSwiftPasswordDetails update_swift_password_details: (required)
+        :param oci.identity.models.UpdateSwiftPasswordDetails update_swift_password_details: (required)
             Request object for updating a Swift password.
 
         :param str if_match: (optional)
@@ -9295,7 +9448,7 @@ class IdentityClient(object):
         :param str tag_name: (required)
             The name of the tag.
 
-        :param UpdateTagDetails update_tag_details: (required)
+        :param oci.identity.models.UpdateTagDetails update_tag_details: (required)
             Request object for updating a tag.
 
         :param str if_match: (optional)
@@ -9380,7 +9533,7 @@ class IdentityClient(object):
         :param str tag_default_id: (required)
             The OCID of the tag default.
 
-        :param UpdateTagDefaultDetails update_tag_default_details: (required)
+        :param oci.identity.models.UpdateTagDefaultDetails update_tag_default_details: (required)
             Request object for updating a tag default.
 
         :param str if_match: (optional)
@@ -9475,7 +9628,7 @@ class IdentityClient(object):
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
 
-        :param UpdateTagNamespaceDetails update_tag_namespace_details: (required)
+        :param oci.identity.models.UpdateTagNamespaceDetails update_tag_namespace_details: (required)
             Request object for updating a namespace.
 
         :param obj retry_strategy: (optional)
@@ -9543,7 +9696,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param UpdateUserDetails update_user_details: (required)
+        :param oci.identity.models.UpdateUserDetails update_user_details: (required)
             Request object for updating a user.
 
         :param str if_match: (optional)
@@ -9622,7 +9775,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param UpdateUserCapabilitiesDetails update_user_capabilities_details: (required)
+        :param oci.identity.models.UpdateUserCapabilitiesDetails update_user_capabilities_details: (required)
             Request object for updating user capabilities.
 
         :param str if_match: (optional)
@@ -9701,7 +9854,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param UpdateStateDetails update_state_details: (required)
+        :param oci.identity.models.UpdateStateDetails update_state_details: (required)
             Request object for updating a user state.
 
         :param str if_match: (optional)
@@ -9794,7 +9947,7 @@ class IdentityClient(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param CreateApiKeyDetails create_api_key_details: (required)
+        :param oci.identity.models.CreateApiKeyDetails create_api_key_details: (required)
             Request object for uploading an API key for a user.
 
         :param str opc_retry_token: (optional)

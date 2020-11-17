@@ -107,7 +107,7 @@ class AutoScalingClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeAutoScalingCompartmentDetails change_compartment_details: (required)
+        :param oci.autoscaling.models.ChangeAutoScalingCompartmentDetails change_compartment_details: (required)
             Request to change the compartment of given autoscaling configuration.
 
         :param str opc_request_id: (optional)
@@ -196,7 +196,7 @@ class AutoScalingClient(object):
         Creates an autoscaling configuration.
 
 
-        :param CreateAutoScalingConfigurationDetails create_auto_scaling_configuration_details: (required)
+        :param oci.autoscaling.models.CreateAutoScalingConfigurationDetails create_auto_scaling_configuration_details: (required)
             Creation details for an autoscaling configuration.
 
         :param str opc_request_id: (optional)
@@ -273,7 +273,7 @@ class AutoScalingClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CreateAutoScalingPolicyDetails create_auto_scaling_policy_details: (required)
+        :param oci.autoscaling.models.CreateAutoScalingPolicyDetails create_auto_scaling_policy_details: (required)
             Creation details for an autoscaling policy.
 
         :param str opc_request_id: (optional)
@@ -926,7 +926,7 @@ class AutoScalingClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutoScalingConfigurationDetails update_auto_scaling_configuration_details: (required)
+        :param oci.autoscaling.models.UpdateAutoScalingConfigurationDetails update_auto_scaling_configuration_details: (required)
             Update details for an autoscaling configuration.
 
         :param str if_match: (optional)
@@ -1025,7 +1025,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_policy_id: (required)
             The ID of the autoscaling policy.
 
-        :param UpdateAutoScalingPolicyDetails update_auto_scaling_policy_details: (required)
+        :param oci.autoscaling.models.UpdateAutoScalingPolicyDetails update_auto_scaling_policy_details: (required)
             Update details for an autoscaling policy.
 
         :param str if_match: (optional)

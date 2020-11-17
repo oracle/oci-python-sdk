@@ -92,7 +92,7 @@ class ContainerEngineClient(object):
         Create a new cluster.
 
 
-        :param CreateClusterDetails create_cluster_details: (required)
+        :param oci.container_engine.models.CreateClusterDetails create_cluster_details: (required)
             The details of the cluster to create.
 
         :param str opc_retry_token: (optional)
@@ -240,7 +240,7 @@ class ContainerEngineClient(object):
         Create a new node pool.
 
 
-        :param CreateNodePoolDetails create_node_pool_details: (required)
+        :param oci.container_engine.models.CreateNodePoolDetails create_node_pool_details: (required)
             The details of the node pool to create.
 
         :param str opc_retry_token: (optional)
@@ -1369,8 +1369,6 @@ class ContainerEngineClient(object):
         :param list[str] status: (optional)
             A work request status to filter on. Can have multiple parameters of this name.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
-
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
@@ -1437,14 +1435,6 @@ class ContainerEngineClient(object):
                     "Invalid value for `resource_type`, must be one of {0}".format(resource_type_allowed_values)
                 )
 
-        if 'status' in kwargs:
-            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
-            for status_item in kwargs['status']:
-                if status_item not in status_allowed_values:
-                    raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
-                    )
-
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -1507,7 +1497,7 @@ class ContainerEngineClient(object):
         :param str cluster_id: (required)
             The OCID of the cluster.
 
-        :param UpdateClusterDetails update_cluster_details: (required)
+        :param oci.container_engine.models.UpdateClusterDetails update_cluster_details: (required)
             The details of the cluster to update.
 
         :param str if_match: (optional)
@@ -1590,7 +1580,7 @@ class ContainerEngineClient(object):
         :param str node_pool_id: (required)
             The OCID of the node pool.
 
-        :param UpdateNodePoolDetails update_node_pool_details: (required)
+        :param oci.container_engine.models.UpdateNodePoolDetails update_node_pool_details: (required)
             The fields to update in a node pool.
 
         :param str if_match: (optional)

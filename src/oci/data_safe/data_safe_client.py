@@ -93,7 +93,7 @@ class DataSafeClient(object):
         :param str data_safe_private_endpoint_id: (required)
             The OCID of the private endpoint.
 
-        :param ChangeDataSafePrivateEndpointCompartmentDetails change_data_safe_private_endpoint_compartment_details: (required)
+        :param oci.data_safe.models.ChangeDataSafePrivateEndpointCompartmentDetails change_data_safe_private_endpoint_compartment_details: (required)
             The details used to change the compartment of a Data Safe private endpoint.
 
         :param str opc_request_id: (optional)
@@ -174,7 +174,7 @@ class DataSafeClient(object):
         Creates a new Data Safe private endpoint.
 
 
-        :param CreateDataSafePrivateEndpointDetails create_data_safe_private_endpoint_details: (required)
+        :param oci.data_safe.models.CreateDataSafePrivateEndpointDetails create_data_safe_private_endpoint_details: (required)
             Details to create a new private endpoint.
 
         :param str opc_retry_token: (optional)
@@ -323,7 +323,7 @@ class DataSafeClient(object):
         Enables Data Safe in the tenancy and region.
 
 
-        :param EnableDataSafeConfigurationDetails enable_data_safe_configuration_details: (required)
+        :param oci.data_safe.models.EnableDataSafeConfigurationDetails enable_data_safe_configuration_details: (required)
             The details used to enable Data Safe.
 
         :param str compartment_id: (optional)
@@ -1015,7 +1015,7 @@ class DataSafeClient(object):
         :param str data_safe_private_endpoint_id: (required)
             The OCID of the private endpoint.
 
-        :param UpdateDataSafePrivateEndpointDetails update_data_safe_private_endpoint_details: (required)
+        :param oci.data_safe.models.UpdateDataSafePrivateEndpointDetails update_data_safe_private_endpoint_details: (required)
             The details used to update a Data Safe private endpoint.
 
         :param str if_match: (optional)

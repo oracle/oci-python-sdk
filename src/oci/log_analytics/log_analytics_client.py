@@ -91,12 +91,12 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param AddEntityAssociationDetails add_entity_association_details: (required)
+        :param oci.log_analytics.models.AddEntityAssociationDetails add_entity_association_details: (required)
             This parameter specifies the entity OCIDs with which associations are to be created. Specify destination OCIDs as comma separated string.
 
         :param str opc_request_id: (optional)
@@ -190,9 +190,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param LabelNames basic_details: (required)
+        :param oci.log_analytics.models.LabelNames basic_details: (required)
             List of label names to get information on
 
         :param bool is_include_deleted: (required)
@@ -315,7 +315,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -400,12 +400,12 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param ChangeLogAnalyticsEntityCompartmentDetails change_log_analytics_entity_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeLogAnalyticsEntityCompartmentDetails change_log_analytics_entity_compartment_details: (required)
             Log analytics entity compartment Id to be updated.
 
         :param str if_match: (optional)
@@ -499,12 +499,12 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_log_group_id: (required)
             unique logAnalytics log group identifier
 
-        :param ChangeLogAnalyticsLogGroupCompartmentDetails change_log_analytics_log_group_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeLogAnalyticsLogGroupCompartmentDetails change_log_analytics_log_group_compartment_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -598,15 +598,15 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The log analytics os collection rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails change_log_analytics_object_collection_rule_compartment_details: (required)
-            Log Analytics Object Storage based collection rule compartment to be updated to.
+        :param oci.log_analytics.models.ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails change_log_analytics_object_collection_rule_compartment_details: (required)
+            The new compartment this Object Collection Rule will be moved to.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -688,13 +688,13 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
             If invalid will lead to a 404 not found.
 
-        :param ChangeScheduledTaskCompartmentDetails change_scheduled_task_compartment_details: (required)
+        :param oci.log_analytics.models.ChangeScheduledTaskCompartmentDetails change_scheduled_task_compartment_details: (required)
             The destination compartment identifier.
 
         :param str if_match: (optional)
@@ -789,7 +789,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
@@ -893,9 +893,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
             Details for the new log analytics entity.
 
         :param str opc_retry_token: (optional)
@@ -981,9 +981,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsEntityTypeDetails create_log_analytics_entity_type_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsEntityTypeDetails create_log_analytics_entity_type_details: (required)
             Definition for custom log analytics entity type.
 
         :param str opc_request_id: (optional)
@@ -1067,9 +1067,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsLogGroupDetails create_log_analytics_log_group_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsLogGroupDetails create_log_analytics_log_group_details: (required)
             Details for the new Log-Analytics group.
 
         :param str opc_retry_token: (optional)
@@ -1155,9 +1155,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
             Details of the rule to be created.
 
         :param str opc_request_id: (optional)
@@ -1232,9 +1232,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param CreateScheduledTaskDetails create_scheduled_task_details: (required)
+        :param oci.log_analytics.models.CreateScheduledTaskDetails create_scheduled_task_details: (required)
             Scheduled task to be created.
 
         :param str opc_request_id: (optional)
@@ -1320,9 +1320,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
             details for association
 
         :param str opc_retry_token: (optional)
@@ -1343,7 +1343,7 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ErrorDetails`
+        :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/delete"
@@ -1391,16 +1391,14 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=delete_log_analytics_association_details,
-                response_type="ErrorDetails")
+                body=delete_log_analytics_association_details)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=delete_log_analytics_association_details,
-                response_type="ErrorDetails")
+                body=delete_log_analytics_association_details)
 
     def delete_field(self, namespace_name, field_name, **kwargs):
         """
@@ -1408,7 +1406,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str field_name: (required)
             name of the field to get
@@ -1502,7 +1500,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str label_name: (required)
             name of the label to get
@@ -1596,7 +1594,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
@@ -1679,7 +1677,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str entity_type_name: (required)
             Log analytics entity type name.
@@ -1762,7 +1760,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_log_group_id: (required)
             unique logAnalytics log group identifier
@@ -1846,10 +1844,10 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The log analytics os collection rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1931,7 +1929,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str parser_name: (required)
             parserName
@@ -2025,7 +2023,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
@@ -2109,7 +2107,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str source_name: (required)
             source name
@@ -2204,7 +2202,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
             Unique internal identifier to refer to upload container
@@ -2288,7 +2286,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
             Unique internal identifier to refer to upload container
@@ -2366,7 +2364,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
             Unique internal identifier to refer to upload container
@@ -2440,11 +2438,11 @@ class LogAnalyticsClient(object):
 
     def disable_archiving(self, namespace_name, **kwargs):
         """
-        disable archiving
+        This API disables archiving.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2521,11 +2519,11 @@ class LogAnalyticsClient(object):
 
     def enable_archiving(self, namespace_name, **kwargs):
         """
-        enable archiving.
+        THis API enables archiving.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2602,14 +2600,14 @@ class LogAnalyticsClient(object):
 
     def estimate_purge_data_size(self, namespace_name, estimate_purge_data_size_details, **kwargs):
         """
-        estimate the size of data to be purged based on query parameters.
+        This API estimates the size of data to be purged based based on time interval, purge query etc.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param EstimatePurgeDataSizeDetails estimate_purge_data_size_details: (required)
-            Parameters used to estimate purge data size
+        :param oci.log_analytics.models.EstimatePurgeDataSizeDetails estimate_purge_data_size_details: (required)
+            This is the input to estimate the size of data to be purged.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2703,9 +2701,10 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param ExportContent export_custom_content_details: (required)
+        :param oci.log_analytics.models.ExportContent export_custom_content_details: (required)
+            content to export
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2790,9 +2789,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param ExportDetails export_details: (required)
+        :param oci.log_analytics.models.ExportDetails export_details: (required)
             Query to be exported
 
         :param str opc_request_id: (optional)
@@ -2867,9 +2866,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param LogAnalyticsParser logan_parser_details: (required)
+        :param oci.log_analytics.models.LogAnalyticsParser logan_parser_details: (required)
             parser definition
 
         :param str parser_type: (optional)
@@ -2975,9 +2974,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param LogAnalyticsParser logan_parser_details: (required)
+        :param oci.log_analytics.models.LogAnalyticsParser logan_parser_details: (required)
             parser definition
 
         :param str parser_type: (optional)
@@ -3079,13 +3078,13 @@ class LogAnalyticsClient(object):
 
     def filter(self, namespace_name, filter_details, **kwargs):
         """
-        Each filter specifies an operator, a field and one or more values.
+        Each filter specifies an operator, a field and one or more values to be inserted into the provided query as criteria.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param FilterDetails filter_details: (required)
+        :param oci.log_analytics.models.FilterDetails filter_details: (required)
             Query string and filters to add or remove
 
         :param str opc_request_id: (optional)
@@ -3160,7 +3159,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -3242,7 +3241,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str sql_query: (required)
             sql query to get the columns
@@ -3265,7 +3264,7 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ColumnNameCollection`
         :rtype: :class:`~oci.response.Response`
         """
         resource_path = "/namespaces/{namespaceName}/sources/sqlColumnNames"
@@ -3318,14 +3317,16 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                response_type="ColumnNameCollection")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                response_type="ColumnNameCollection")
 
     def get_config_work_request(self, namespace_name, work_request_id, **kwargs):
         """
@@ -3333,7 +3334,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -3411,7 +3412,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str field_name: (required)
             name of the field to get
@@ -3487,7 +3488,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param bool is_show_detail: (optional)
             show detail flag
@@ -3570,7 +3571,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str label_name: (required)
             name of the label to get
@@ -3646,7 +3647,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3718,7 +3719,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -3800,7 +3801,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
@@ -3876,7 +3877,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str entity_type_name: (required)
             Log analytics entity type name.
@@ -3952,7 +3953,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_log_group_id: (required)
             unique logAnalytics log group identifier
@@ -4028,7 +4029,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -4110,10 +4111,10 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The log analytics os collection rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -4184,11 +4185,11 @@ class LogAnalyticsClient(object):
 
     def get_namespace(self, namespace_name, **kwargs):
         """
-        Get Namespace of a tenancy already onboarded in Log Analytics Application
+        This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4260,7 +4261,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str parser_name: (required)
             parserName
@@ -4336,7 +4337,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4409,7 +4410,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -4527,7 +4528,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -4605,7 +4606,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
@@ -4682,7 +4683,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str source_name: (required)
             source name
@@ -4768,7 +4769,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4836,11 +4837,11 @@ class LogAnalyticsClient(object):
 
     def get_storage(self, namespace_name, **kwargs):
         """
-        Storage configuration and status.
+        This API gets the storage configuration of a tenancy
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4908,11 +4909,12 @@ class LogAnalyticsClient(object):
 
     def get_storage_usage(self, namespace_name, **kwargs):
         """
-        Storage usage info includes active, archived or recalled data.  The unit of return value is in bytes.
+        This API gets storage usage information of a tenancy.  Storage usage information includes active, archived or recalled
+        data.  The unit of return data is in bytes.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4980,8 +4982,8 @@ class LogAnalyticsClient(object):
 
     def get_storage_work_request(self, work_request_id, namespace_name, **kwargs):
         """
-        Retrieve work request details by key. This endpoint can be polled for status tracking of work request.
-        Clients should poll using the interval returned in retry-after header.
+        This API returns work request details specified by {workRequestId}. This API can be polled for status tracking of
+        work request.  Clients should poll using the interval returned in retry-after header.
 
 
         :param str work_request_id: (required)
@@ -4990,7 +4992,7 @@ class LogAnalyticsClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5063,7 +5065,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
             Unique internal identifier to refer to upload container
@@ -5139,7 +5141,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -5217,7 +5219,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param stream import_custom_content_file_body: (required)
             The file to upload which contains the custom content.
@@ -5333,7 +5335,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -5468,7 +5470,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -5582,7 +5584,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
@@ -5717,7 +5719,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -5871,7 +5873,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param bool is_match_all: (optional)
             isMatchAll
@@ -6036,7 +6038,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -6124,7 +6126,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str label_name: (optional)
             label name
@@ -6245,7 +6247,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str label_name: (optional)
             label name
@@ -6409,7 +6411,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -6603,7 +6605,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str name: (optional)
             A filter to return only log analytics entity types whose name matches the entire name given. The match is
@@ -6761,13 +6763,13 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str display_name: (optional)
-            A filter to return only log analytics entities whose displayName matches the entire display name given.
+            A filter to return only log analytics log groups whose displayName matches the entire display name given.
             The match is case-insensitive.
 
         :param int limit: (optional)
@@ -6887,7 +6889,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -7027,7 +7029,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -7036,7 +7038,7 @@ class LogAnalyticsClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            orderBy
+            sort by field
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -7130,7 +7132,8 @@ class LogAnalyticsClient(object):
 
     def list_namespaces(self, compartment_id, **kwargs):
         """
-        List Namespaces.
+        Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
+        result also indicates if the tenancy is onboarded with Logging Analytics.
 
 
         :param str compartment_id: (required)
@@ -7201,7 +7204,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str parser_name: (optional)
             parserName
@@ -7213,7 +7216,7 @@ class LogAnalyticsClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            orderBy
+            sort by field
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -7313,7 +7316,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -7322,7 +7325,7 @@ class LogAnalyticsClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            orderBy
+            sort by field
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -7420,7 +7423,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param bool is_match_all: (optional)
             isMatchAll
@@ -7593,7 +7596,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -7727,7 +7730,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str task_type: (required)
             Required parameter to specify schedule task type.
@@ -7864,7 +7867,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str source_name: (required)
             sourceName
@@ -8012,7 +8015,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str source_name: (required)
             source name
@@ -8132,7 +8135,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -8141,7 +8144,7 @@ class LogAnalyticsClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            orderBy
+            sort by field
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -8239,7 +8242,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -8248,7 +8251,7 @@ class LogAnalyticsClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            orderBy
+            sort by field
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -8346,7 +8349,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str source_name: (required)
             source name
@@ -8471,7 +8474,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -8627,7 +8630,7 @@ class LogAnalyticsClient(object):
 
     def list_storage_work_request_errors(self, compartment_id, work_request_id, namespace_name, **kwargs):
         """
-        Retrieve work request errors if any
+        This API returns the list of work request errors if any.
 
 
         :param str compartment_id: (required)
@@ -8639,7 +8642,7 @@ class LogAnalyticsClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8753,14 +8756,14 @@ class LogAnalyticsClient(object):
 
     def list_storage_work_requests(self, compartment_id, namespace_name, **kwargs):
         """
-        List non-expired storage manager work requests.
+        This API lists storage work requests.  Use query parameters to narrow down or sort the result list.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8777,31 +8780,32 @@ class LogAnalyticsClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending. If no value is specified timeAccepted is default.
+            This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeAccepted
+            is descending. If no value is specified timeAccepted is default.
 
             Allowed values are: "timeAccepted", "timeExpires", "timeFinished"
 
         :param str operation_type: (optional)
-            storage operation type
+            The is the work request type query parameter
 
             Allowed values are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA"
 
         :param str status: (optional)
-            storage operation status
+            The is the work request status query parameter
 
             Allowed values are: "ACCEPTED", "CANCELED", "FAILED", "IN_PROGRESS", "SUCCEEDED"
 
         :param datetime time_started: (optional)
-            storage operation started time
+            The is the query parameter of when the processing of work request was started
 
         :param datetime time_finished: (optional)
-            storage operation time finished
+            The is the query parameter of when the processing of work request was finished
 
         :param str policy_name: (optional)
-            policy name e.g. purge policy
+            This is the query parameter of purge policy name
 
         :param str policy_id: (optional)
-            policy ID e.g. purge policy ID
+            This is the query parameter of purge policy ID
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8925,7 +8929,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -9013,7 +9017,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -9101,7 +9105,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
             Unique internal identifier to refer to upload container
@@ -9123,10 +9127,10 @@ class LogAnalyticsClient(object):
             Allowed values are: "timeCreated", "fileName", "logGroup", "sourceName", "status"
 
         :param str search_str: (optional)
-            Search string
+            Search string used to filtering uploads based on file name, log group name and log source name.
 
         :param list[str] status: (optional)
-            Status
+            Upload Status.
 
             Allowed values are: "IN_PROGRESS", "SUCCESSFUL", "FAILED"
 
@@ -9241,7 +9245,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
             Unique internal identifier to refer to upload container
@@ -9334,7 +9338,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str name: (optional)
             Name of the upload container.
@@ -9461,7 +9465,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -9555,7 +9559,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -9649,7 +9653,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
@@ -9741,10 +9745,17 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9763,7 +9774,8 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9783,7 +9795,8 @@ class LogAnalyticsClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -9792,6 +9805,8 @@ class LogAnalyticsClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -9811,7 +9826,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -9892,9 +9907,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param ParseQueryDetails parse_query_details: (required)
+        :param oci.log_analytics.models.ParseQueryDetails parse_query_details: (required)
             Query string to be parsed
 
         :param str opc_request_id: (optional)
@@ -9965,14 +9980,15 @@ class LogAnalyticsClient(object):
 
     def purge_storage_data(self, namespace_name, purge_storage_data_details, **kwargs):
         """
-        submit work requests to purge old data based on the type.
+        This API submits a work request to purge data. Only data from log groups that the user has permission to delete
+        will be purged.  To purge all data, the user must have permission to all log groups.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param PurgeStorageDataDetails purge_storage_data_details: (required)
-            purge old data request details
+        :param oci.log_analytics.models.PurgeStorageDataDetails purge_storage_data_details: (required)
+            This is the input to purge old data.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -10060,11 +10076,11 @@ class LogAnalyticsClient(object):
 
     def put_query_work_request_background(self, namespace_name, work_request_id, **kwargs):
         """
-        Put the work request specified by {workRequestId} into the background.
+        Put the work request specified by {workRequestId} into the background. Backgrounded queries will preserve query results on query completion for up to 7 days for recall. After 7 days the results and query expire.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
@@ -10151,9 +10167,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param QueryDetails query_details: (required)
+        :param oci.log_analytics.models.QueryDetails query_details: (required)
             Query to be executed.
 
         :param str page: (optional)
@@ -10240,14 +10256,14 @@ class LogAnalyticsClient(object):
 
     def recall_archived_data(self, namespace_name, recall_archived_data_details, **kwargs):
         """
-        submit work requests to recall archived data.
+        This API submits a work request to recall archived data based on time interval and data type.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param RecallArchivedDataDetails recall_archived_data_details: (required)
-            recall archived data request details
+        :param oci.log_analytics.models.RecallArchivedDataDetails recall_archived_data_details: (required)
+            This is the input to recall archived data.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -10339,7 +10355,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str type: (required)
             type - possible values are Lookup or Dictionary
@@ -10357,7 +10373,7 @@ class LogAnalyticsClient(object):
             Description of the fields to get
 
         :param str char_encoding: (optional)
-            character Encoding
+            Character Encoding
 
         :param bool is_hidden: (optional)
             is hidden
@@ -10479,14 +10495,14 @@ class LogAnalyticsClient(object):
 
     def release_recalled_data(self, namespace_name, release_recalled_data_details, **kwargs):
         """
-        submit work requests to release recalled data.
+        This API submits a work request to release recalled data based on time interval and data type.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param ReleaseRecalledDataDetails release_recalled_data_details: (required)
-            release recalled data request details
+        :param oci.log_analytics.models.ReleaseRecalledDataDetails release_recalled_data_details: (required)
+            This is the input to release recalled data
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -10578,12 +10594,12 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param RemoveEntityAssociationsDetails remove_entity_associations_details: (required)
+        :param oci.log_analytics.models.RemoveEntityAssociationsDetails remove_entity_associations_details: (required)
             This parameter specifies the entity OCIDs with which associations are to be deleted. Specify destination OCIDs as comma separated string.
 
         :param str if_match: (optional)
@@ -10679,7 +10695,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
@@ -10779,13 +10795,13 @@ class LogAnalyticsClient(object):
 
     def suggest(self, namespace_name, suggest_details, **kwargs):
         """
-        Returns a context specific list of either commands, fields, or values to add to the end of the query string.
+        Returns a context specific list of either commands, fields, or values to append to the end of the specified query string if applicable.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param SuggestDetails suggest_details: (required)
+        :param oci.log_analytics.models.SuggestDetails suggest_details: (required)
             Query string seeking suggestions for.
 
         :param str opc_request_id: (optional)
@@ -10860,9 +10876,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param TestParserPayloadDetails test_parser_payload_details: (required)
+        :param oci.log_analytics.models.TestParserPayloadDetails test_parser_payload_details: (required)
             Details for test payload
 
         :param str scope: (optional)
@@ -10973,12 +10989,12 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -11063,9 +11079,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpdateLogAnalyticsEntityTypeDetails update_log_analytics_entity_type_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsEntityTypeDetails update_log_analytics_entity_type_details: (required)
             Log analytics entity type update details.
 
         :param str entity_type_name: (required)
@@ -11151,12 +11167,12 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_log_group_id: (required)
             unique logAnalytics log group identifier
 
-        :param UpdateLogAnalyticsLogGroupDetails update_log_analytics_log_group_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsLogGroupDetails update_log_analytics_log_group_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -11241,14 +11257,14 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The log analytics os collection rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
             The rule config to be updated.
 
         :param str if_match: (optional)
@@ -11333,13 +11349,13 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str scheduled_task_id: (required)
             Unique scheduledTask id returned from task create.
             If invalid will lead to a 404 not found.
 
-        :param UpdateScheduledTaskDetails update_scheduled_task_details: (required)
+        :param oci.log_analytics.models.UpdateScheduledTaskDetails update_scheduled_task_details: (required)
             Update details.
             Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
 
@@ -11421,14 +11437,14 @@ class LogAnalyticsClient(object):
 
     def update_storage(self, namespace_name, update_storage_details, **kwargs):
         """
-        update the archiving configuration
+        This API updates the archiving configuration
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpdateStorageDetails update_storage_details: (required)
-            archiving configuration
+        :param oci.log_analytics.models.UpdateStorageDetails update_storage_details: (required)
+            This is the archiving configuration
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -11507,11 +11523,11 @@ class LogAnalyticsClient(object):
 
     def upload_log_file(self, namespace_name, upload_name, log_source_name, filename, opc_meta_loggrpid, upload_log_file_body, **kwargs):
         """
-        Accepts log data for processing by Log Analytics.
+        Accepts log data for processing by Logging Analytics.
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str upload_name: (required)
             The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.
@@ -11524,7 +11540,6 @@ class LogAnalyticsClient(object):
 
         :param str opc_meta_loggrpid: (required)
             The log group OCID to which the log data in this upload will be mapped to.
-              Example: `ocid1.loganalyticsloggroup.oc1..aaaaaaaad3q4sosi5i7z7onw2kgbwyk1581620537198`
 
         :param stream upload_log_file_body: (required)
             Log data
@@ -11536,7 +11551,7 @@ class LogAnalyticsClient(object):
             Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
 
         :param str char_encoding: (optional)
-            character Encoding
+            Character Encoding
 
         :param str date_format: (optional)
             This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
@@ -11551,14 +11566,14 @@ class LogAnalyticsClient(object):
             The client request ID for tracing.
 
         :param str content_md5: (optional)
-            The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Log Analytics performs an integrity check
+            The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
             on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
             If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
         :param str content_type: (optional)
-            The content type of the log data. Defaults to 'application/octet-stream' if not overridden during the UploadLogFile call.
+            The content type of the log data.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -11685,9 +11700,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
             list of association details
 
         :param bool is_from_republish: (optional)
@@ -11782,9 +11797,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsFieldDetails upsert_log_analytics_field_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsFieldDetails upsert_log_analytics_field_details: (required)
             Details for the new LogAnalyticsFieldDetails.
 
         :param str opc_retry_token: (optional)
@@ -11879,9 +11894,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsLabelDetails upsert_log_analytics_label_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsLabelDetails upsert_log_analytics_label_details: (required)
             Details for the new LogAnalyticsTagDetails.
 
         :param str opc_retry_token: (optional)
@@ -11976,9 +11991,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsParserDetails upsert_log_analytics_parser_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsParserDetails upsert_log_analytics_parser_details: (required)
             Details for the new LoganParserDetails.
 
         :param str opc_retry_token: (optional)
@@ -12073,9 +12088,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
             Details for the new LoganSourceDetails.
 
         :param int create_like_source_id: (optional)
@@ -12191,9 +12206,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
             Details for the new log analytics associations.
 
         :param int limit: (optional)
@@ -12323,7 +12338,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str object_location: (required)
             Location of the log file
@@ -12409,9 +12424,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsSourceDetails upsert_log_analytics_source_details: (required)
             Details for the new LoganSourceDetails.
 
         :param int create_like_source_id: (optional)
@@ -12518,9 +12533,9 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
-        :param LogAnalyticsSource log_analytics_source: (required)
+        :param oci.log_analytics.models.LogAnalyticsSource log_analytics_source: (required)
             Details for the new LogAnalyticsSource.
 
         :param str opc_retry_token: (optional)
@@ -12606,7 +12621,7 @@ class LogAnalyticsClient(object):
 
 
         :param str namespace_name: (required)
-            The Log Analytics namespace used for the request.
+            The Logging Analytics namespace used for the request.
 
         :param str object_location: (required)
             Location of the log file

@@ -51,7 +51,7 @@ class FileValidationResponse(object):
     def input_file(self):
         """
         **[Required]** Gets the input_file of this FileValidationResponse.
-        Input File
+        Input File Name.
 
 
         :return: The input_file of this FileValidationResponse.
@@ -63,7 +63,7 @@ class FileValidationResponse(object):
     def input_file(self, input_file):
         """
         Sets the input_file of this FileValidationResponse.
-        Input File
+        Input File Name.
 
 
         :param input_file: The input_file of this FileValidationResponse.
@@ -75,7 +75,7 @@ class FileValidationResponse(object):
     def object_location(self):
         """
         **[Required]** Gets the object_location of this FileValidationResponse.
-        Object Location
+        Object Location where file content is available.
 
 
         :return: The object_location of this FileValidationResponse.
@@ -87,7 +87,7 @@ class FileValidationResponse(object):
     def object_location(self, object_location):
         """
         Sets the object_location of this FileValidationResponse.
-        Object Location
+        Object Location where file content is available.
 
 
         :param object_location: The object_location of this FileValidationResponse.
@@ -99,7 +99,7 @@ class FileValidationResponse(object):
     def files(self):
         """
         Gets the files of this FileValidationResponse.
-        Files
+        List of files inside the given archive file and their corresponding status information.
 
 
         :return: The files of this FileValidationResponse.
@@ -111,7 +111,7 @@ class FileValidationResponse(object):
     def files(self, files):
         """
         Sets the files of this FileValidationResponse.
-        Files
+        List of files inside the given archive file and their corresponding status information.
 
 
         :param files: The files of this FileValidationResponse.

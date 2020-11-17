@@ -51,7 +51,7 @@ class ManagementDashboardExportDetails(object):
     def dashboards(self):
         """
         **[Required]** Gets the dashboards of this ManagementDashboardExportDetails.
-        Array of dashboards
+        Array of dashboards.
 
 
         :return: The dashboards of this ManagementDashboardExportDetails.
@@ -63,7 +63,7 @@ class ManagementDashboardExportDetails(object):
     def dashboards(self, dashboards):
         """
         Sets the dashboards of this ManagementDashboardExportDetails.
-        Array of dashboards
+        Array of dashboards.
 
 
         :param dashboards: The dashboards of this ManagementDashboardExportDetails.

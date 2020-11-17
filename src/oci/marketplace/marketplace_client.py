@@ -91,7 +91,7 @@ class MarketplaceClient(object):
         terms of use for a package before you can deploy the package.
 
 
-        :param CreateAcceptedAgreementDetails create_accepted_agreement_details: (required)
+        :param oci.marketplace.models.CreateAcceptedAgreementDetails create_accepted_agreement_details: (required)
             Details necessary to accept an agreement.
 
         :param str opc_request_id: (optional)
@@ -1593,7 +1593,7 @@ class MarketplaceClient(object):
         :param str accepted_agreement_id: (required)
             The unique identifier for the accepted terms of use agreement.
 
-        :param UpdateAcceptedAgreementDetails update_accepted_agreement_details: (required)
+        :param oci.marketplace.models.UpdateAcceptedAgreementDetails update_accepted_agreement_details: (required)
             Details to update for an accepted agreement.
 
         :param str opc_request_id: (optional)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeManagementSavedSearchesCompartmentDetails(object):
     """
-    Details required for changing the compartment of saved search.
+    Compartment to which the saved search is being moved.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeManagementSavedSearchesCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeManagementSavedSearchesCompartmentDetails.
-        Compartment Identifier
+        OCID of the compartment to which the saved search is being moved.
 
 
         :return: The compartment_id of this ChangeManagementSavedSearchesCompartmentDetails.
@@ -49,7 +49,7 @@ class ChangeManagementSavedSearchesCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeManagementSavedSearchesCompartmentDetails.
-        Compartment Identifier
+        OCID of the compartment to which the saved search is being moved.
 
 
         :param compartment_id: The compartment_id of this ChangeManagementSavedSearchesCompartmentDetails.

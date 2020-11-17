@@ -96,7 +96,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+        :param oci.data_catalog.models.DataSelectorPatternDetails data_selector_pattern_details: (required)
             The information used to add the patterns for deriving logical entities.
 
         :param str opc_request_id: (optional)
@@ -197,7 +197,7 @@ class DataCatalogClient(object):
         :param str type_key: (required)
             Unique type key.
 
-        :param TypeCustomPropertyDetails associate_custom_property_details: (required)
+        :param oci.data_catalog.models.TypeCustomPropertyDetails associate_custom_property_details: (required)
             The information used to associate the custom property for the type.
 
         :param str opc_request_id: (optional)
@@ -292,7 +292,7 @@ class DataCatalogClient(object):
         Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
 
 
-        :param AttachCatalogPrivateEndpointDetails attach_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.AttachCatalogPrivateEndpointDetails attach_catalog_private_endpoint_details: (required)
             Details for private reverse connection endpoint to be used for attachment.
 
         :param str catalog_id: (required)
@@ -387,7 +387,7 @@ class DataCatalogClient(object):
         Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
 
 
-        :param ChangeCatalogCompartmentDetails change_catalog_compartment_details: (required)
+        :param oci.data_catalog.models.ChangeCatalogCompartmentDetails change_catalog_compartment_details: (required)
             Details for the target compartment.
 
         :param str catalog_id: (required)
@@ -471,7 +471,7 @@ class DataCatalogClient(object):
         Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
 
 
-        :param ChangeCatalogPrivateEndpointCompartmentDetails change_catalog_private_endpoint_compartment_details: (required)
+        :param oci.data_catalog.models.ChangeCatalogPrivateEndpointCompartmentDetails change_catalog_private_endpoint_compartment_details: (required)
             Details for the target compartment.
 
         :param str catalog_private_endpoint_id: (required)
@@ -564,7 +564,7 @@ class DataCatalogClient(object):
         :param str entity_key: (required)
             Unique entity key.
 
-        :param CreateAttributeDetails create_attribute_details: (required)
+        :param oci.data_catalog.models.CreateAttributeDetails create_attribute_details: (required)
             The information used to create an entity attribute.
 
         :param str opc_request_id: (optional)
@@ -663,7 +663,7 @@ class DataCatalogClient(object):
         :param str attribute_key: (required)
             Unique attribute key.
 
-        :param CreateTagDetails create_attribute_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_attribute_tag_details: (required)
             The information used to create an entity attribute tag.
 
         :param str opc_request_id: (optional)
@@ -752,7 +752,7 @@ class DataCatalogClient(object):
         For more information, please see the documentation.
 
 
-        :param CreateCatalogDetails create_catalog_details: (required)
+        :param oci.data_catalog.models.CreateCatalogDetails create_catalog_details: (required)
             Details for the new data catalog.
 
         :param str opc_retry_token: (optional)
@@ -823,7 +823,7 @@ class DataCatalogClient(object):
         Create a new private reverse connection endpoint.
 
 
-        :param CreateCatalogPrivateEndpointDetails create_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.CreateCatalogPrivateEndpointDetails create_catalog_private_endpoint_details: (required)
             The information used to create the private reverse connection.
 
         :param str opc_request_id: (optional)
@@ -900,7 +900,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateConnectionDetails create_connection_details: (required)
+        :param oci.data_catalog.models.CreateConnectionDetails create_connection_details: (required)
             The information used to create the connection.
 
         :param str opc_request_id: (optional)
@@ -992,7 +992,7 @@ class DataCatalogClient(object):
         :param str namespace_id: (required)
             Unique namespace identifier.
 
-        :param CreateCustomPropertyDetails create_custom_property_details: (required)
+        :param oci.data_catalog.models.CreateCustomPropertyDetails create_custom_property_details: (required)
             The information used to create the Custom Property.
 
         :param str opc_request_id: (optional)
@@ -1081,7 +1081,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateDataAssetDetails create_data_asset_details: (required)
+        :param oci.data_catalog.models.CreateDataAssetDetails create_data_asset_details: (required)
             The information used to create the data asset.
 
         :param str opc_request_id: (optional)
@@ -1172,7 +1172,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateTagDetails create_data_asset_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_data_asset_tag_details: (required)
             The information used to create the data asset tag.
 
         :param str opc_request_id: (optional)
@@ -1264,7 +1264,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateEntityDetails create_entity_details: (required)
+        :param oci.data_catalog.models.CreateEntityDetails create_entity_details: (required)
             The information used to create the data entity.
 
         :param str opc_request_id: (optional)
@@ -1359,7 +1359,7 @@ class DataCatalogClient(object):
         :param str entity_key: (required)
             Unique entity key.
 
-        :param CreateTagDetails create_entity_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_entity_tag_details: (required)
             The information used to create the entity tag.
 
         :param str opc_request_id: (optional)
@@ -1452,7 +1452,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateFolderDetails create_folder_details: (required)
+        :param oci.data_catalog.models.CreateFolderDetails create_folder_details: (required)
             The information used to create the folder.
 
         :param str opc_request_id: (optional)
@@ -1547,7 +1547,7 @@ class DataCatalogClient(object):
         :param str folder_key: (required)
             Unique folder key.
 
-        :param CreateTagDetails create_folder_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_folder_tag_details: (required)
             The information used to create the folder tag.
 
         :param str opc_request_id: (optional)
@@ -1637,7 +1637,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateGlossaryDetails create_glossary_details: (required)
+        :param oci.data_catalog.models.CreateGlossaryDetails create_glossary_details: (required)
             The information used to create the glossary.
 
         :param str opc_request_id: (optional)
@@ -1725,7 +1725,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateJobDetails create_job_details: (required)
+        :param oci.data_catalog.models.CreateJobDetails create_job_details: (required)
             The information used to create the job.
 
         :param str opc_request_id: (optional)
@@ -1813,7 +1813,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateJobDefinitionDetails create_job_definition_details: (required)
+        :param oci.data_catalog.models.CreateJobDefinitionDetails create_job_definition_details: (required)
             The information used to create the job definition.
 
         :param str opc_request_id: (optional)
@@ -1904,7 +1904,7 @@ class DataCatalogClient(object):
         :param str job_key: (required)
             Unique job key.
 
-        :param CreateJobExecutionDetails create_job_execution_details: (required)
+        :param oci.data_catalog.models.CreateJobExecutionDetails create_job_execution_details: (required)
             The information used to create the job execution.
 
         :param str opc_request_id: (optional)
@@ -1993,7 +1993,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateNamespaceDetails create_namespace_details: (required)
+        :param oci.data_catalog.models.CreateNamespaceDetails create_namespace_details: (required)
             The information used to create the Namespace.
 
         :param str opc_request_id: (optional)
@@ -2081,7 +2081,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreatePatternDetails create_pattern_details: (required)
+        :param oci.data_catalog.models.CreatePatternDetails create_pattern_details: (required)
             The information used to create the pattern.
 
         :param str opc_request_id: (optional)
@@ -2172,7 +2172,7 @@ class DataCatalogClient(object):
         :param str glossary_key: (required)
             Unique glossary key.
 
-        :param CreateTermDetails create_term_details: (required)
+        :param oci.data_catalog.models.CreateTermDetails create_term_details: (required)
             The information used to create the term.
 
         :param str opc_request_id: (optional)
@@ -2267,7 +2267,7 @@ class DataCatalogClient(object):
         :param str term_key: (required)
             Unique glossary term key.
 
-        :param CreateTermRelationshipDetails create_term_relationship_details: (required)
+        :param oci.data_catalog.models.CreateTermRelationshipDetails create_term_relationship_details: (required)
             The information used to create the term relationship.
 
         :param str opc_request_id: (optional)
@@ -3991,7 +3991,7 @@ class DataCatalogClient(object):
         Detaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
 
 
-        :param DetachCatalogPrivateEndpointDetails detach_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.DetachCatalogPrivateEndpointDetails detach_catalog_private_endpoint_details: (required)
             Details for private reverse connection endpoint to be used for attachment
 
         :param str catalog_id: (required)
@@ -4081,7 +4081,7 @@ class DataCatalogClient(object):
         :param str type_key: (required)
             Unique type key.
 
-        :param TypeCustomPropertyDetails disassociate_custom_property_details: (required)
+        :param oci.data_catalog.models.TypeCustomPropertyDetails disassociate_custom_property_details: (required)
             The information used to remove the custom properties.
 
         :param str opc_request_id: (optional)
@@ -6708,7 +6708,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param ImportConnectionDetails import_connection_details: (required)
+        :param oci.data_catalog.models.ImportConnectionDetails import_connection_details: (required)
             The information used to create the connections through import.
 
         :param str opc_request_id: (optional)
@@ -6809,7 +6809,7 @@ class DataCatalogClient(object):
         :param str glossary_key: (required)
             Unique glossary key.
 
-        :param ImportGlossaryDetails import_glossary_details: (required)
+        :param oci.data_catalog.models.ImportGlossaryDetails import_glossary_details: (required)
             The file contents to import the glossary.
 
         :param bool is_relationship_imported: (optional)
@@ -12152,7 +12152,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param ParseConnectionDetails parse_connection_details: (required)
+        :param oci.data_catalog.models.ParseConnectionDetails parse_connection_details: (required)
             The information used to parse the connections from payload or connection detail.
 
         :param str connection_key: (optional)
@@ -12255,7 +12255,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+        :param oci.data_catalog.models.DataSelectorPatternDetails data_selector_pattern_details: (required)
             The information used to remove the data selector patterns.
 
         :param str opc_request_id: (optional)
@@ -12606,7 +12606,7 @@ class DataCatalogClient(object):
         :param str attribute_key: (required)
             Unique attribute key.
 
-        :param UpdateAttributeDetails update_attribute_details: (required)
+        :param oci.data_catalog.models.UpdateAttributeDetails update_attribute_details: (required)
             The information to be updated in the attribute.
 
         :param str if_match: (optional)
@@ -12695,7 +12695,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param UpdateCatalogDetails update_catalog_details: (required)
+        :param oci.data_catalog.models.UpdateCatalogDetails update_catalog_details: (required)
             The data catalog information to be updated.
 
         :param str if_match: (optional)
@@ -12781,7 +12781,7 @@ class DataCatalogClient(object):
         :param str catalog_private_endpoint_id: (required)
             Unique private reverse connection identifier.
 
-        :param UpdateCatalogPrivateEndpointDetails update_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.UpdateCatalogPrivateEndpointDetails update_catalog_private_endpoint_details: (required)
             The information to be updated in private reverse connection
 
         :param str if_match: (optional)
@@ -12871,7 +12871,7 @@ class DataCatalogClient(object):
         :param str connection_key: (required)
             Unique connection key.
 
-        :param UpdateConnectionDetails update_connection_details: (required)
+        :param oci.data_catalog.models.UpdateConnectionDetails update_connection_details: (required)
             The information to be updated in the connection.
 
         :param str if_match: (optional)
@@ -12965,7 +12965,7 @@ class DataCatalogClient(object):
         :param str custom_property_key: (required)
             Unique Custom Property key
 
-        :param UpdateCustomPropertyDetails update_custom_property_details: (required)
+        :param oci.data_catalog.models.UpdateCustomPropertyDetails update_custom_property_details: (required)
             The information to be updated in the custom property.
 
         :param str if_match: (optional)
@@ -13056,7 +13056,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param UpdateDataAssetDetails update_data_asset_details: (required)
+        :param oci.data_catalog.models.UpdateDataAssetDetails update_data_asset_details: (required)
             The information to be updated in the data asset.
 
         :param str if_match: (optional)
@@ -13149,7 +13149,7 @@ class DataCatalogClient(object):
         :param str entity_key: (required)
             Unique entity key.
 
-        :param UpdateEntityDetails update_entity_details: (required)
+        :param oci.data_catalog.models.UpdateEntityDetails update_entity_details: (required)
             The information to be updated in the data entity.
 
         :param str if_match: (optional)
@@ -13243,7 +13243,7 @@ class DataCatalogClient(object):
         :param str folder_key: (required)
             Unique folder key.
 
-        :param UpdateFolderDetails update_folder_details: (required)
+        :param oci.data_catalog.models.UpdateFolderDetails update_folder_details: (required)
             The information to be updated in the folder.
 
         :param str if_match: (optional)
@@ -13334,7 +13334,7 @@ class DataCatalogClient(object):
         :param str glossary_key: (required)
             Unique glossary key.
 
-        :param UpdateGlossaryDetails update_glossary_details: (required)
+        :param oci.data_catalog.models.UpdateGlossaryDetails update_glossary_details: (required)
             The information to be updated in the glossary.
 
         :param str if_match: (optional)
@@ -13424,7 +13424,7 @@ class DataCatalogClient(object):
         :param str job_key: (required)
             Unique job key.
 
-        :param UpdateJobDetails update_job_details: (required)
+        :param oci.data_catalog.models.UpdateJobDetails update_job_details: (required)
             The information to be updated in the job.
 
         :param str if_match: (optional)
@@ -13514,7 +13514,7 @@ class DataCatalogClient(object):
         :param str job_definition_key: (required)
             Unique job definition key.
 
-        :param UpdateJobDefinitionDetails update_job_definition_details: (required)
+        :param oci.data_catalog.models.UpdateJobDefinitionDetails update_job_definition_details: (required)
             The information to be updated in the job definition.
 
         :param str if_match: (optional)
@@ -13604,7 +13604,7 @@ class DataCatalogClient(object):
         :param str namespace_id: (required)
             Unique namespace identifier.
 
-        :param UpdateNamespaceDetails update_namespace_details: (required)
+        :param oci.data_catalog.models.UpdateNamespaceDetails update_namespace_details: (required)
             The information to be updated in the namespace.
 
         :param str if_match: (optional)
@@ -13694,7 +13694,7 @@ class DataCatalogClient(object):
         :param str pattern_key: (required)
             Unique pattern key.
 
-        :param UpdatePatternDetails update_pattern_details: (required)
+        :param oci.data_catalog.models.UpdatePatternDetails update_pattern_details: (required)
             The information to be updated in the pattern.
 
         :param str if_match: (optional)
@@ -13787,7 +13787,7 @@ class DataCatalogClient(object):
         :param str term_key: (required)
             Unique glossary term key.
 
-        :param UpdateTermDetails update_term_details: (required)
+        :param oci.data_catalog.models.UpdateTermDetails update_term_details: (required)
             The information to be updated in the term.
 
         :param str if_match: (optional)
@@ -13884,7 +13884,7 @@ class DataCatalogClient(object):
         :param str term_relationship_key: (required)
             Unique glossary term relationship key.
 
-        :param UpdateTermRelationshipDetails update_term_relationship_details: (required)
+        :param oci.data_catalog.models.UpdateTermRelationshipDetails update_term_relationship_details: (required)
             The information to be updated in the term relationship.
 
         :param str if_match: (optional)
@@ -13979,7 +13979,7 @@ class DataCatalogClient(object):
         :param str connection_key: (required)
             Unique connection key.
 
-        :param UploadCredentialsDetails upload_credentials_details: (required)
+        :param oci.data_catalog.models.UploadCredentialsDetails upload_credentials_details: (required)
             The information used to upload the credentials file and metadata for updating this connection.
 
         :param str opc_request_id: (optional)
@@ -14197,7 +14197,7 @@ class DataCatalogClient(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param ValidateConnectionDetails validate_connection_details: (required)
+        :param oci.data_catalog.models.ValidateConnectionDetails validate_connection_details: (required)
             The information used to validate the connections.
 
         :param str opc_request_id: (optional)
@@ -14289,7 +14289,7 @@ class DataCatalogClient(object):
         :param str pattern_key: (required)
             Unique pattern key.
 
-        :param ValidatePatternDetails validate_pattern_details: (required)
+        :param oci.data_catalog.models.ValidatePatternDetails validate_pattern_details: (required)
             The information used to validate the pattern.
 
         :param str opc_request_id: (optional)

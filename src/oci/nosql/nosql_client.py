@@ -96,7 +96,7 @@ class NosqlClient(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param ChangeTableCompartmentDetails change_table_compartment_details: (required)
+        :param oci.nosql.models.ChangeTableCompartmentDetails change_table_compartment_details: (required)
             Specifications of the source and target compartments.
 
         :param str opc_retry_token: (optional)
@@ -193,7 +193,7 @@ class NosqlClient(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param CreateIndexDetails create_index_details: (required)
+        :param oci.nosql.models.CreateIndexDetails create_index_details: (required)
             Specifications for the new index.
 
         :param str opc_retry_token: (optional)
@@ -278,7 +278,7 @@ class NosqlClient(object):
         Create a new table.
 
 
-        :param CreateTableDetails create_table_details: (required)
+        :param oci.nosql.models.CreateTableDetails create_table_details: (required)
             Specifications for the new table.
 
         :param str opc_retry_token: (optional)
@@ -455,7 +455,7 @@ class NosqlClient(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param list[str] key: (required)
+        :param oci.nosql.models.list[str] key: (required)
             An array of strings, each of the format \"column-name:value\",
             representing the primary key of the row.
 
@@ -830,7 +830,7 @@ class NosqlClient(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param list[str] key: (required)
+        :param oci.nosql.models.list[str] key: (required)
             An array of strings, each of the format \"column-name:value\",
             representing the primary key of the row.
 
@@ -1808,7 +1808,7 @@ class NosqlClient(object):
         Execute a SQL query.
 
 
-        :param QueryDetails query_details: (required)
+        :param oci.nosql.models.QueryDetails query_details: (required)
             SQL query statement and ancillary information.
 
         :param int limit: (optional)
@@ -1962,7 +1962,7 @@ class NosqlClient(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param UpdateRowDetails update_row_details: (required)
+        :param oci.nosql.models.UpdateRowDetails update_row_details: (required)
             Specifications for the putting of a table row.
 
         :param str if_match: (optional)
@@ -2049,7 +2049,7 @@ class NosqlClient(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param UpdateTableDetails update_table_details: (required)
+        :param oci.nosql.models.UpdateTableDetails update_table_details: (required)
             Specifications for the alteration.
 
         :param str if_match: (optional)

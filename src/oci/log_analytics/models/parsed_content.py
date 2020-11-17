@@ -144,7 +144,7 @@ class ParsedContent(object):
     def log_content(self):
         """
         Gets the log_content of this ParsedContent.
-        Log Content
+        Sample log entries picked up from the given file for validation
 
 
         :return: The log_content of this ParsedContent.
@@ -156,7 +156,7 @@ class ParsedContent(object):
     def log_content(self, log_content):
         """
         Sets the log_content of this ParsedContent.
-        Log Content
+        Sample log entries picked up from the given file for validation
 
 
         :param log_content: The log_content of this ParsedContent.
@@ -168,7 +168,7 @@ class ParsedContent(object):
     def sample_size(self):
         """
         Gets the sample_size of this ParsedContent.
-        Sample Size
+        Sample Size taken for validation
 
 
         :return: The sample_size of this ParsedContent.
@@ -180,7 +180,7 @@ class ParsedContent(object):
     def sample_size(self, sample_size):
         """
         Sets the sample_size of this ParsedContent.
-        Sample Size
+        Sample Size taken for validation
 
 
         :param sample_size: The sample_size of this ParsedContent.

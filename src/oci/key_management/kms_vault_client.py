@@ -310,7 +310,7 @@ class KmsVaultClient(object):
         :param str vault_id: (required)
             The OCID of the vault.
 
-        :param ChangeVaultCompartmentDetails change_vault_compartment_details: (required)
+        :param oci.key_management.models.ChangeVaultCompartmentDetails change_vault_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -412,7 +412,7 @@ class KmsVaultClient(object):
         write operations exceeds 10 requests per second for a given tenancy.
 
 
-        :param CreateVaultDetails create_vault_details: (required)
+        :param oci.key_management.models.CreateVaultDetails create_vault_details: (required)
             CreateVaultDetails
 
         :param str opc_request_id: (optional)
@@ -996,7 +996,7 @@ class KmsVaultClient(object):
         :param str vault_id: (required)
             The OCID of the vault.
 
-        :param ScheduleVaultDeletionDetails schedule_vault_deletion_details: (required)
+        :param oci.key_management.models.ScheduleVaultDeletionDetails schedule_vault_deletion_details: (required)
             ScheduleVaultDeletionDetails
 
         :param str if_match: (optional)
@@ -1103,7 +1103,7 @@ class KmsVaultClient(object):
         :param str vault_id: (required)
             The OCID of the vault.
 
-        :param UpdateVaultDetails update_vault_details: (required)
+        :param oci.key_management.models.UpdateVaultDetails update_vault_details: (required)
             UpdateVaultDetails
 
         :param str if_match: (optional)
