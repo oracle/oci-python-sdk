@@ -47,6 +47,8 @@ parser.add_argument('-dt', action='store_true', default=False, dest='is_delegati
 parser.add_argument('-c', type=argparse.FileType('r'), dest='config_file', help="Config File (default=~/.oci/config)")
 parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket Name')
 parser.add_argument('-sp', default="", dest='source_prefix', help='Source Prefix Include')
+parser.add_argument('-se', default="", dest='source_prefix_exclude', help='Source Prefix Exclude')
+parser.add_argument('-exclude_dirs', action='store_true', default=False, dest='source_exclude_dirs', help='Exclude Directories')
 parser.add_argument('-sr', default="", dest='source_region', help='Source Region')
 cmd = parser.parse_args()
 
@@ -78,7 +80,9 @@ object_storage_client = None
 source_namespace = ""
 source_bucket = cmd.source_bucket
 source_prefix = cmd.source_prefix
+source_prefix_exclude = cmd.source_prefix_exclude
 source_region = cmd.source_region
+source_exclude_dirs = cmd.source_exclude_dirs
 
 # Update Variables based on the parameters
 config_file = (cmd.config_file if cmd.config_file else oci.config.DEFAULT_LOCATION)
@@ -187,7 +191,10 @@ def print_command_info():
     print("Source Namespace      : " + source_namespace)
     print("Source Bucket         : " + source_bucket)
     print("Source Prefix Include : " + source_prefix)
+    print("Source Prefix Exclude : " + source_prefix_exclude)
     print("Source Region         : " + source_region)
+    if source_exclude_dirs:
+        print("Source Exclude Dirs   : True")
 
 
 ##############################################################################
@@ -237,6 +244,11 @@ def add_objects_to_queue(ns, source_bucket):
         next_starts_with = response.data.next_start_with
 
         for object_ in response.data.objects:
+            if source_prefix_exclude and object_.name.startswith(source_prefix_exclude):
+                continue
+            if source_exclude_dirs and "/" in object_.name:
+                continue
+
             q.put(object_.name)
             count += 1
 
