@@ -124,6 +124,14 @@ class User(object):
             The value to assign to the is_mfa_activated property of this User.
         :type is_mfa_activated: bool
 
+        :param last_successful_login_time:
+            The value to assign to the last_successful_login_time property of this User.
+        :type last_successful_login_time: datetime
+
+        :param previous_successful_login_time:
+            The value to assign to the previous_successful_login_time property of this User.
+        :type previous_successful_login_time: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -140,7 +148,9 @@ class User(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'capabilities': 'UserCapabilities',
-            'is_mfa_activated': 'bool'
+            'is_mfa_activated': 'bool',
+            'last_successful_login_time': 'datetime',
+            'previous_successful_login_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -158,7 +168,9 @@ class User(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'capabilities': 'capabilities',
-            'is_mfa_activated': 'isMfaActivated'
+            'is_mfa_activated': 'isMfaActivated',
+            'last_successful_login_time': 'lastSuccessfulLoginTime',
+            'previous_successful_login_time': 'previousSuccessfulLoginTime'
         }
 
         self._id = None
@@ -176,6 +188,8 @@ class User(object):
         self._defined_tags = None
         self._capabilities = None
         self._is_mfa_activated = None
+        self._last_successful_login_time = None
+        self._previous_successful_login_time = None
 
     @property
     def id(self):
@@ -576,6 +590,94 @@ class User(object):
         :type: bool
         """
         self._is_mfa_activated = is_mfa_activated
+
+    @property
+    def last_successful_login_time(self):
+        """
+        Gets the last_successful_login_time of this User.
+        The date and time of when the user most recently logged in the
+        format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+        If there is no login history, this field is null.
+
+        For illustrative purposes, suppose we have a user who has logged in
+        at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+        They then login again on July 2nd, 2020 at 1500 PST.
+
+        Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+
+        Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+
+
+        :return: The last_successful_login_time of this User.
+        :rtype: datetime
+        """
+        return self._last_successful_login_time
+
+    @last_successful_login_time.setter
+    def last_successful_login_time(self, last_successful_login_time):
+        """
+        Sets the last_successful_login_time of this User.
+        The date and time of when the user most recently logged in the
+        format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+        If there is no login history, this field is null.
+
+        For illustrative purposes, suppose we have a user who has logged in
+        at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+        They then login again on July 2nd, 2020 at 1500 PST.
+
+        Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+
+        Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+
+
+        :param last_successful_login_time: The last_successful_login_time of this User.
+        :type: datetime
+        """
+        self._last_successful_login_time = last_successful_login_time
+
+    @property
+    def previous_successful_login_time(self):
+        """
+        Gets the previous_successful_login_time of this User.
+        The date and time of when the user most recently logged in the
+        format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+        If there is no login history, this field is null.
+
+        For illustrative purposes, suppose we have a user who has logged in
+        at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+        They then login again on July 2nd, 2020 at 1500 PST.
+
+        Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+
+        Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+
+
+        :return: The previous_successful_login_time of this User.
+        :rtype: datetime
+        """
+        return self._previous_successful_login_time
+
+    @previous_successful_login_time.setter
+    def previous_successful_login_time(self, previous_successful_login_time):
+        """
+        Sets the previous_successful_login_time of this User.
+        The date and time of when the user most recently logged in the
+        format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+        If there is no login history, this field is null.
+
+        For illustrative purposes, suppose we have a user who has logged in
+        at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+        They then login again on July 2nd, 2020 at 1500 PST.
+
+        Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+
+        Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+
+
+        :param previous_successful_login_time: The previous_successful_login_time of this User.
+        :type: datetime
+        """
+        self._previous_successful_login_time = previous_successful_login_time
 
     def __repr__(self):
         return formatted_flat_dict(self)

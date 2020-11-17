@@ -361,8 +361,6 @@ class LogAnalyticsLookup(object):
     def referring_sources(self):
         """
         Gets the referring_sources of this LogAnalyticsLookup.
-        sources using
-
 
         :return: The referring_sources of this LogAnalyticsLookup.
         :rtype: AutoLookups
@@ -373,8 +371,6 @@ class LogAnalyticsLookup(object):
     def referring_sources(self, referring_sources):
         """
         Sets the referring_sources of this LogAnalyticsLookup.
-        sources using
-
 
         :param referring_sources: The referring_sources of this LogAnalyticsLookup.
         :type: AutoLookups
@@ -385,8 +381,6 @@ class LogAnalyticsLookup(object):
     def status_summary(self):
         """
         Gets the status_summary of this LogAnalyticsLookup.
-        status summary
-
 
         :return: The status_summary of this LogAnalyticsLookup.
         :rtype: StatusSummary
@@ -397,8 +391,6 @@ class LogAnalyticsLookup(object):
     def status_summary(self, status_summary):
         """
         Sets the status_summary of this LogAnalyticsLookup.
-        status summary
-
 
         :param status_summary: The status_summary of this LogAnalyticsLookup.
         :type: StatusSummary

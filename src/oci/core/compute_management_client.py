@@ -101,7 +101,7 @@ class ComputeManagementClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AttachLoadBalancerDetails attach_load_balancer_details: (required)
+        :param oci.core.models.AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
 
         :param str opc_retry_token: (optional)
@@ -200,7 +200,7 @@ class ComputeManagementClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeClusterNetworkCompartmentDetails change_cluster_network_compartment_details: (required)
+        :param oci.core.models.ChangeClusterNetworkCompartmentDetails change_cluster_network_compartment_details: (required)
             Request to change the compartment of given cluster network.
 
         :param str if_match: (optional)
@@ -309,7 +309,7 @@ class ComputeManagementClient(object):
         :param str instance_configuration_id: (required)
             The OCID of the instance configuration.
 
-        :param ChangeInstanceConfigurationCompartmentDetails change_instance_configuration_compartment_details: (required)
+        :param oci.core.models.ChangeInstanceConfigurationCompartmentDetails change_instance_configuration_compartment_details: (required)
             Request to change the compartment of given instance configuration.
 
         :param str if_match: (optional)
@@ -412,7 +412,7 @@ class ComputeManagementClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeInstancePoolCompartmentDetails change_instance_pool_compartment_details: (required)
+        :param oci.core.models.ChangeInstancePoolCompartmentDetails change_instance_pool_compartment_details: (required)
             Request to change the compartment of given instance pool.
 
         :param str if_match: (optional)
@@ -506,7 +506,7 @@ class ComputeManagementClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
-        :param CreateClusterNetworkDetails create_cluster_network_details: (required)
+        :param oci.core.models.CreateClusterNetworkDetails create_cluster_network_details: (required)
             Cluster network creation details
 
         :param str opc_retry_token: (optional)
@@ -575,7 +575,7 @@ class ComputeManagementClient(object):
         settings to use when creating Compute instances.
 
 
-        :param CreateInstanceConfigurationBase create_instance_configuration: (required)
+        :param oci.core.models.CreateInstanceConfigurationBase create_instance_configuration: (required)
             Instance configuration creation details
 
         :param str opc_retry_token: (optional)
@@ -643,7 +643,7 @@ class ComputeManagementClient(object):
         Create an instance pool.
 
 
-        :param CreateInstancePoolDetails create_instance_pool_details: (required)
+        :param oci.core.models.CreateInstancePoolDetails create_instance_pool_details: (required)
             Instance pool creation details
 
         :param str opc_retry_token: (optional)
@@ -788,7 +788,7 @@ class ComputeManagementClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param DetachLoadBalancerDetails detach_load_balancer_details: (required)
+        :param oci.core.models.DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
 
         :param str opc_retry_token: (optional)
@@ -1146,7 +1146,7 @@ class ComputeManagementClient(object):
         :param str instance_configuration_id: (required)
             The OCID of the instance configuration.
 
-        :param InstanceConfigurationInstanceDetails instance_configuration: (required)
+        :param oci.core.models.InstanceConfigurationInstanceDetails instance_configuration: (required)
             Instance configuration Instance Details
 
         :param str opc_retry_token: (optional)
@@ -2419,7 +2419,7 @@ class ComputeManagementClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateClusterNetworkDetails update_cluster_network_details: (required)
+        :param oci.core.models.UpdateClusterNetworkDetails update_cluster_network_details: (required)
             Update cluster network
 
         :param str opc_retry_token: (optional)
@@ -2509,7 +2509,7 @@ class ComputeManagementClient(object):
         :param str instance_configuration_id: (required)
             The OCID of the instance configuration.
 
-        :param UpdateInstanceConfigurationDetails update_instance_configuration_details: (required)
+        :param oci.core.models.UpdateInstanceConfigurationDetails update_instance_configuration_details: (required)
             Updates the freeFormTags, definedTags, and display name of an instance configuration.
 
         :param str opc_retry_token: (optional)
@@ -2603,7 +2603,7 @@ class ComputeManagementClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateInstancePoolDetails update_instance_pool_details: (required)
+        :param oci.core.models.UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration
 
         :param str opc_retry_token: (optional)

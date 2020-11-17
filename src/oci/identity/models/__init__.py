@@ -15,6 +15,11 @@ from .bulk_action_resource_type import BulkActionResourceType
 from .bulk_action_resource_type_collection import BulkActionResourceTypeCollection
 from .bulk_delete_resources_details import BulkDeleteResourcesDetails
 from .bulk_delete_tags_details import BulkDeleteTagsDetails
+from .bulk_edit_operation_details import BulkEditOperationDetails
+from .bulk_edit_resource import BulkEditResource
+from .bulk_edit_tags_details import BulkEditTagsDetails
+from .bulk_edit_tags_resource_type import BulkEditTagsResourceType
+from .bulk_edit_tags_resource_type_collection import BulkEditTagsResourceTypeCollection
 from .bulk_move_resources_details import BulkMoveResourcesDetails
 from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
 from .compartment import Compartment
@@ -122,6 +127,11 @@ identity_type_mapping = {
     "BulkActionResourceTypeCollection": BulkActionResourceTypeCollection,
     "BulkDeleteResourcesDetails": BulkDeleteResourcesDetails,
     "BulkDeleteTagsDetails": BulkDeleteTagsDetails,
+    "BulkEditOperationDetails": BulkEditOperationDetails,
+    "BulkEditResource": BulkEditResource,
+    "BulkEditTagsDetails": BulkEditTagsDetails,
+    "BulkEditTagsResourceType": BulkEditTagsResourceType,
+    "BulkEditTagsResourceTypeCollection": BulkEditTagsResourceTypeCollection,
     "BulkMoveResourcesDetails": BulkMoveResourcesDetails,
     "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
     "Compartment": Compartment,

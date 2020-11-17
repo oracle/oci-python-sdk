@@ -95,7 +95,7 @@ class GatewayClient(object):
         :param str gateway_id: (required)
             The ocid of the gateway.
 
-        :param ChangeGatewayCompartmentDetails change_gateway_compartment_details: (required)
+        :param oci.apigateway.models.ChangeGatewayCompartmentDetails change_gateway_compartment_details: (required)
             Details of the target compartment.
 
         :param str opc_retry_token: (optional)
@@ -187,7 +187,7 @@ class GatewayClient(object):
         Creates a new gateway.
 
 
-        :param CreateGatewayDetails create_gateway_details: (required)
+        :param oci.apigateway.models.CreateGatewayDetails create_gateway_details: (required)
             Details for the new gateway.
 
         :param str opc_retry_token: (optional)
@@ -550,7 +550,7 @@ class GatewayClient(object):
         :param str gateway_id: (required)
             The ocid of the gateway.
 
-        :param UpdateGatewayDetails update_gateway_details: (required)
+        :param oci.apigateway.models.UpdateGatewayDetails update_gateway_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

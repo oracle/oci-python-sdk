@@ -97,7 +97,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
+        :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
             The activation details for the Exadata infrastructure.
 
         :param str opc_request_id: (optional)
@@ -187,7 +187,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
+        :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
             Request details for manually refreshing an Autonomous Database refreshable clone.
 
         :param str if_match: (optional)
@@ -283,7 +283,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move Autonomous Container Database to a different compartment
 
         :param str autonomous_container_database_id: (required)
@@ -382,7 +382,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move Autonomous Database to a different compartment
 
         :param str autonomous_database_id: (required)
@@ -481,7 +481,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move an Autonomous Exadata Infrastructure resource to a different compartment.
 
         :param str autonomous_exadata_infrastructure_id: (required)
@@ -577,7 +577,7 @@ class DatabaseClient(object):
         :func:`change_autonomous_vm_cluster_compartment` operation.
 
 
-        :param ChangeAutonomousVmClusterCompartmentDetails change_autonomous_vm_cluster_compartment_details: (required)
+        :param oci.database.models.ChangeAutonomousVmClusterCompartmentDetails change_autonomous_vm_cluster_compartment_details: (required)
             Request to move Autonomous VM cluster to a different compartment
 
         :param str autonomous_vm_cluster_id: (required)
@@ -676,7 +676,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move backup destination to a different compartment.
 
         :param str backup_destination_id: (required)
@@ -772,7 +772,7 @@ class DatabaseClient(object):
         :func:`change_cloud_exadata_infrastructure_compartment` operation.
 
 
-        :param ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
+        :param oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
             Request to move cloud Exadata infrastructure resource to a different compartment.
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -868,7 +868,7 @@ class DatabaseClient(object):
         :func:`change_cloud_vm_cluster_compartment` operation.
 
 
-        :param ChangeCloudVmClusterCompartmentDetails change_cloud_vm_cluster_compartment_details: (required)
+        :param oci.database.models.ChangeCloudVmClusterCompartmentDetails change_cloud_vm_cluster_compartment_details: (required)
             Request to move cloud VM cluster to a different compartment
 
         :param str cloud_vm_cluster_id: (required)
@@ -967,7 +967,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move Database Software Image to a different compartment
 
         :param str database_software_image_id: (required)
@@ -1066,7 +1066,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move the DB system to a different compartment.
 
         :param str db_system_id: (required)
@@ -1162,7 +1162,7 @@ class DatabaseClient(object):
         :func:`change_exadata_infrastructure_compartment` operation.
 
 
-        :param ChangeExadataInfrastructureCompartmentDetails change_exadata_infrastructure_compartment_details: (required)
+        :param oci.database.models.ChangeExadataInfrastructureCompartmentDetails change_exadata_infrastructure_compartment_details: (required)
             Request to move Exadata infrastructure to a different compartment
 
         :param str exadata_infrastructure_id: (required)
@@ -1261,7 +1261,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
-        :param ChangeKeyStoreCompartmentDetails change_key_store_compartment_details: (required)
+        :param oci.database.models.ChangeKeyStoreCompartmentDetails change_key_store_compartment_details: (required)
             Request to move key store to a different compartment
 
         :param str key_store_id: (required)
@@ -1357,7 +1357,7 @@ class DatabaseClient(object):
         :func:`change_vm_cluster_compartment` operation.
 
 
-        :param ChangeVmClusterCompartmentDetails change_vm_cluster_compartment_details: (required)
+        :param oci.database.models.ChangeVmClusterCompartmentDetails change_vm_cluster_compartment_details: (required)
             Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
 
         :param str vm_cluster_id: (required)
@@ -1461,7 +1461,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
+        :param oci.database.models.CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
             Updates the status of the backup resource.
 
         :param str if_match: (optional)
@@ -1548,7 +1548,7 @@ class DatabaseClient(object):
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 
 
-        :param CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
+        :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
             Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
 
         :param str opc_retry_token: (optional)
@@ -1616,7 +1616,7 @@ class DatabaseClient(object):
         **Deprecated.** To create a new Autonomous Data Warehouse, use the :func:`create_autonomous_database` operation and specify `DW` as the workload type.
 
 
-        :param CreateAutonomousDataWarehouseDetails create_autonomous_data_warehouse_details: (required)
+        :param oci.database.models.CreateAutonomousDataWarehouseDetails create_autonomous_data_warehouse_details: (required)
             Request to create a new Autonomous Data Warehouse.
 
         :param str opc_retry_token: (optional)
@@ -1684,7 +1684,7 @@ class DatabaseClient(object):
         **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the :func:`create_autonomous_database_backup` operation.
 
 
-        :param CreateAutonomousDataWarehouseBackupDetails create_autonomous_data_warehouse_backup_details: (required)
+        :param oci.database.models.CreateAutonomousDataWarehouseBackupDetails create_autonomous_data_warehouse_backup_details: (required)
             Request to create a new Autonomous Data Warehouse backup.
 
         :param str opc_retry_token: (optional)
@@ -1752,7 +1752,7 @@ class DatabaseClient(object):
         Creates a new Autonomous Database.
 
 
-        :param CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
+        :param oci.database.models.CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
             Request to create a new Autonomous Database.
 
         :param str opc_retry_token: (optional)
@@ -1825,7 +1825,7 @@ class DatabaseClient(object):
         Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
 
 
-        :param CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
+        :param oci.database.models.CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
             Request to create a new Autonomous Database backup.
 
         :param str opc_retry_token: (optional)
@@ -1898,7 +1898,7 @@ class DatabaseClient(object):
         Creates an Autonomous VM cluster for Exadata Cloud@Customer.
 
 
-        :param CreateAutonomousVmClusterDetails create_autonomous_vm_cluster_details: (required)
+        :param oci.database.models.CreateAutonomousVmClusterDetails create_autonomous_vm_cluster_details: (required)
             Request to create an Autonomous VM cluster.
 
         :param str opc_retry_token: (optional)
@@ -1971,7 +1971,7 @@ class DatabaseClient(object):
         Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
 
 
-        :param CreateBackupDetails create_backup_details: (required)
+        :param oci.database.models.CreateBackupDetails create_backup_details: (required)
             Request to create a new database backup.
 
         :param str opc_retry_token: (optional)
@@ -2039,7 +2039,7 @@ class DatabaseClient(object):
         Creates a backup destination in an Exadata Cloud@Customer system.
 
 
-        :param CreateBackupDestinationDetails create_backup_destination_details: (required)
+        :param oci.database.models.CreateBackupDestinationDetails create_backup_destination_details: (required)
             Request to create a new backup destination.
 
         :param str opc_retry_token: (optional)
@@ -2112,7 +2112,7 @@ class DatabaseClient(object):
         Creates a cloud Exadata infrastructure resource.
 
 
-        :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
+        :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
             Request to create cloud Exadata infrastructure.
 
         :param str opc_retry_token: (optional)
@@ -2185,7 +2185,7 @@ class DatabaseClient(object):
         Creates a cloud VM cluster.
 
 
-        :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
+        :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster.
 
         :param str opc_retry_token: (optional)
@@ -2260,7 +2260,7 @@ class DatabaseClient(object):
         you connect to the console using SSH.
 
 
-        :param CreateConsoleConnectionDetails create_console_connection_details: (required)
+        :param oci.database.models.CreateConsoleConnectionDetails create_console_connection_details: (required)
             Request object for creating an CreateConsoleConnection
 
         :param str db_node_id: (required)
@@ -2360,7 +2360,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
+        :param oci.database.models.CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
 
         :param str opc_retry_token: (optional)
@@ -2440,7 +2440,7 @@ class DatabaseClient(object):
         Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata and Exadata Cloud@Customer systems.
 
 
-        :param CreateDatabaseBase create_new_database_details: (required)
+        :param oci.database.models.CreateDatabaseBase create_new_database_details: (required)
             Request to create a new database.
 
         :param str opc_retry_token: (optional)
@@ -2513,7 +2513,7 @@ class DatabaseClient(object):
         create database software image in the specified compartment.
 
 
-        :param CreateDatabaseSoftwareImageDetails create_database_software_image_details: (required)
+        :param oci.database.models.CreateDatabaseSoftwareImageDetails create_database_software_image_details: (required)
             Request to create database software image.
 
         :param str opc_retry_token: (optional)
@@ -2581,7 +2581,7 @@ class DatabaseClient(object):
         Creates a new Database Home in the specified database system based on the request parameters you provide. Applies to bare metal DB systems, Exadata systems, and Exadata Cloud@Customer systems.
 
 
-        :param CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
+        :param oci.database.models.CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
             Request to create a new Database Home.
 
         :param str opc_retry_token: (optional)
@@ -2649,7 +2649,7 @@ class DatabaseClient(object):
         Creates Exadata Cloud@Customer infrastructure.
 
 
-        :param CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
+        :param oci.database.models.CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
             Request to create Exadata Cloud@Customer infrastructure.
 
         :param str opc_retry_token: (optional)
@@ -2726,7 +2726,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
 
 
-        :param CreateExternalBackupJobDetails create_external_backup_job_details: (required)
+        :param oci.database.models.CreateExternalBackupJobDetails create_external_backup_job_details: (required)
             Request to create a cloud backup resource for a database running outside the cloud.
 
         :param str opc_retry_token: (optional)
@@ -2794,7 +2794,7 @@ class DatabaseClient(object):
         Creates a Key Store.
 
 
-        :param CreateKeyStoreDetails create_key_store_details: (required)
+        :param oci.database.models.CreateKeyStoreDetails create_key_store_details: (required)
             Request to create a new key store.
 
         :param str opc_retry_token: (optional)
@@ -2867,7 +2867,7 @@ class DatabaseClient(object):
         Creates an Exadata Cloud@Customer VM cluster.
 
 
-        :param CreateVmClusterDetails create_vm_cluster_details: (required)
+        :param oci.database.models.CreateVmClusterDetails create_vm_cluster_details: (required)
             Request to create an Exadata Cloud@Customer VM cluster.
 
         :param str opc_retry_token: (optional)
@@ -2945,7 +2945,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param VmClusterNetworkDetails vm_cluster_network_details: (required)
+        :param oci.database.models.VmClusterNetworkDetails vm_cluster_network_details: (required)
             Request to create the Cloud@Customer VM cluster network.
 
         :param str opc_retry_token: (optional)
@@ -4944,7 +4944,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
+        :param oci.database.models.FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
 
         :param str if_match: (optional)
@@ -5026,7 +5026,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param GenerateAutonomousDataWarehouseWalletDetails generate_autonomous_data_warehouse_wallet_details: (required)
+        :param oci.database.models.GenerateAutonomousDataWarehouseWalletDetails generate_autonomous_data_warehouse_wallet_details: (required)
             Request to create a new Autonomous Data Warehouse wallet.
 
         :param str opc_request_id: (optional)
@@ -5116,7 +5116,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param GenerateAutonomousDatabaseWalletDetails generate_autonomous_database_wallet_details: (required)
+        :param oci.database.models.GenerateAutonomousDatabaseWalletDetails generate_autonomous_database_wallet_details: (required)
             Request to create a new Autonomous Database wallet.
 
         :param str opc_request_id: (optional)
@@ -5206,7 +5206,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param GenerateRecommendedNetworkDetails generate_recommended_network_details: (required)
+        :param oci.database.models.GenerateRecommendedNetworkDetails generate_recommended_network_details: (required)
             Request to generate a recommended Cloud@Customer VM cluster network configuration.
 
         :param str opc_request_id: (optional)
@@ -6907,6 +6907,86 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="DatabaseSoftwareImage")
 
+    def get_database_upgrade_history_entry(self, database_id, upgrade_history_entry_id, **kwargs):
+        """
+        gets the upgrade history for a specified database.
+
+
+        :param str database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str upgrade_history_entry_id: (required)
+            The database upgrade History `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseUpgradeHistoryEntry`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/databases/{databaseId}/upgradeHistoryEntries/{upgradeHistoryEntryId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_database_upgrade_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "databaseId": database_id,
+            "upgradeHistoryEntryId": upgrade_history_entry_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DatabaseUpgradeHistoryEntry")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DatabaseUpgradeHistoryEntry")
+
     def get_db_home(self, db_home_id, **kwargs):
         """
         Gets information about the specified Database Home.
@@ -8116,7 +8196,7 @@ class DatabaseClient(object):
         Creates a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
 
 
-        :param LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
+        :param oci.database.models.LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
             Request to create an Autonomous Exadata Infrastructure resource.
 
         :param str opc_retry_token: (optional)
@@ -8194,7 +8274,7 @@ class DatabaseClient(object):
         __ https://docs.cloud.oracle.com/Content/Database/Tasks/exacreatingDBsystem.htm#DefaultOptionsfortheInitialDatabase
 
 
-        :param LaunchDbSystemBase launch_db_system_details: (required)
+        :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB system.
 
         :param str opc_retry_token: (optional)
@@ -10790,6 +10870,9 @@ class DatabaseClient(object):
 
             Allowed values are: "VM_BM_SHAPE", "EXADATA_SHAPE"
 
+        :param bool is_upgrade_supported: (optional)
+            If provided, filters the results to the set of database versions which are supported for Upgrade.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10814,7 +10897,8 @@ class DatabaseClient(object):
             "lifecycle_state",
             "display_name",
             "image_type",
-            "image_shape_family"
+            "image_shape_family",
+            "is_upgrade_supported"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10865,7 +10949,8 @@ class DatabaseClient(object):
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
             "imageType": kwargs.get("image_type", missing),
-            "imageShapeFamily": kwargs.get("image_shape_family", missing)
+            "imageShapeFamily": kwargs.get("image_shape_family", missing),
+            "isUpgradeSupported": kwargs.get("is_upgrade_supported", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -10893,6 +10978,152 @@ class DatabaseClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[DatabaseSoftwareImageSummary]")
+
+    def list_database_upgrade_history_entries(self, database_id, **kwargs):
+        """
+        gets the upgrade history for a specified database.
+
+
+        :param str database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str upgrade_action: (optional)
+            A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+
+            Allowed values are: "PRECHECK", "UPGRADE", "ROLLBACK"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
+
+            Allowed values are: "SUCCEEDED", "FAILED", "IN_PROGRESS"
+
+        :param str sort_by: (optional)
+            The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is ascending.
+
+            Allowed values are: "TIMESTARTED"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseUpgradeHistoryEntrySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/databases/{databaseId}/upgradeHistoryEntries"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "upgrade_action",
+            "lifecycle_state",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_database_upgrade_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "databaseId": database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'upgrade_action' in kwargs:
+            upgrade_action_allowed_values = ["PRECHECK", "UPGRADE", "ROLLBACK"]
+            if kwargs['upgrade_action'] not in upgrade_action_allowed_values:
+                raise ValueError(
+                    "Invalid value for `upgrade_action`, must be one of {0}".format(upgrade_action_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["SUCCEEDED", "FAILED", "IN_PROGRESS"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMESTARTED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "upgradeAction": kwargs.get("upgrade_action", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DatabaseUpgradeHistoryEntrySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DatabaseUpgradeHistoryEntrySummary]")
 
     def list_databases(self, compartment_id, **kwargs):
         """
@@ -10933,7 +11164,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"
 
         :param str db_name: (optional)
             A filter to return only resources that match the entire database name given. The match is not case sensitive.
@@ -10984,7 +11215,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -11882,6 +12113,9 @@ class DatabaseClient(object):
 
             Allowed values are: "ASM", "LVM"
 
+        :param bool is_upgrade_supported: (optional)
+            If provided, filters the results to the set of database versions which are supported for Upgrade.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11903,7 +12137,8 @@ class DatabaseClient(object):
             "page",
             "db_system_shape",
             "db_system_id",
-            "storage_management"
+            "storage_management",
+            "is_upgrade_supported"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11923,7 +12158,8 @@ class DatabaseClient(object):
             "page": kwargs.get("page", missing),
             "dbSystemShape": kwargs.get("db_system_shape", missing),
             "dbSystemId": kwargs.get("db_system_id", missing),
-            "storageManagement": kwargs.get("storage_management", missing)
+            "storageManagement": kwargs.get("storage_management", missing),
+            "isUpgradeSupported": kwargs.get("is_upgrade_supported", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -13113,7 +13349,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
+        :param oci.database.models.ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
 
         :param str if_match: (optional)
@@ -13352,7 +13588,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
+        :param oci.database.models.RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
             Request to perform an Autonomous Data Warehouse restore.
 
         :param str if_match: (optional)
@@ -13433,7 +13669,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
+        :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous Database restore.
 
         :param str if_match: (optional)
@@ -13514,7 +13750,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreDatabaseDetails restore_database_details: (required)
+        :param oci.database.models.RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
 
         :param str if_match: (optional)
@@ -14276,7 +14512,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
+        :param oci.database.models.SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
 
         :param str if_match: (optional)
@@ -14580,7 +14816,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
+        :param oci.database.models.UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
             Request to update the properties of an Autonomous Container Database.
 
         :param str if_match: (optional)
@@ -14661,7 +14897,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
+        :param oci.database.models.UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
             Request to update the properties of an Autonomous Data Warehouse.
 
         :param str if_match: (optional)
@@ -14742,7 +14978,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous Database.
 
         :param str if_match: (optional)
@@ -14823,7 +15059,7 @@ class DatabaseClient(object):
         Updates the Autonomous Database regional wallet.
 
 
-        :param UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
             Request to update the properties of Autonomous Database regional wallet.
 
         :param str opc_request_id: (optional)
@@ -14888,7 +15124,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
             Request to update the properties of an Autonomous Database wallet.
 
         :param str opc_request_id: (optional)
@@ -14965,7 +15201,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
+        :param oci.database.models.UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
             Request to update the properties of a Autonomous Exadata Infrastructure.
 
         :param str if_match: (optional)
@@ -15046,7 +15282,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
+        :param oci.database.models.UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
             Request to update the attributes of an Autonomous VM cluster.
 
         :param str if_match: (optional)
@@ -15134,7 +15370,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateBackupDestinationDetails update_backup_destination_details: (required)
+        :param oci.database.models.UpdateBackupDestinationDetails update_backup_destination_details: (required)
             For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
             For an NFS backup destination, request to update the NFS location.
 
@@ -15221,7 +15457,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
+        :param oci.database.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             Request to update the properties of an cloud Exadata infrastructure resource.
 
         :param str if_match: (optional)
@@ -15307,7 +15543,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
+        :param oci.database.models.UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
 
         :param str if_match: (optional)
@@ -15393,7 +15629,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
+        :param oci.database.models.ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
             Request to perform database update.
 
         :param str opc_request_id: (optional)
@@ -15479,7 +15715,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDatabaseDetails update_database_details: (required)
+        :param oci.database.models.UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
 
         :param str if_match: (optional)
@@ -15560,7 +15796,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDatabaseSoftwareImageDetails update_database_software_image_details: (required)
+        :param oci.database.models.UpdateDatabaseSoftwareImageDetails update_database_software_image_details: (required)
             Request to update the properties of a DB system.
 
         :param str if_match: (optional)
@@ -15641,7 +15877,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbHomeDetails update_db_home_details: (required)
+        :param oci.database.models.UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a Database Home.
 
         :param str if_match: (optional)
@@ -15722,7 +15958,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbSystemDetails update_db_system_details: (required)
+        :param oci.database.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
 
         :param str if_match: (optional)
@@ -15803,7 +16039,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
+        :param oci.database.models.UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
             Request to update the properties of an Exadata Cloud@Customer infrastructure.
 
         :param str if_match: (optional)
@@ -15889,7 +16125,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
+        :param oci.database.models.ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.
 
         :param str opc_request_id: (optional)
@@ -15975,7 +16211,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateKeyStoreDetails update_key_store_details: (required)
+        :param oci.database.models.UpdateKeyStoreDetails update_key_store_details: (required)
             Request to update the attributes of a key store.
 
         :param str if_match: (optional)
@@ -16059,7 +16295,7 @@ class DatabaseClient(object):
         :param str maintenance_run_id: (required)
             The maintenance run OCID.
 
-        :param UpdateMaintenanceRunDetails update_maintenance_run_details: (required)
+        :param oci.database.models.UpdateMaintenanceRunDetails update_maintenance_run_details: (required)
             Request to update the properties of a maintenance run.
 
         :param str if_match: (optional)
@@ -16140,7 +16376,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVmClusterDetails update_vm_cluster_details: (required)
+        :param oci.database.models.UpdateVmClusterDetails update_vm_cluster_details: (required)
             Request to update the attributes of a VM cluster.
 
         :param str if_match: (optional)
@@ -16231,7 +16467,7 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
+        :param oci.database.models.UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
             Request to update the properties of a VM cluster network.
 
         :param str if_match: (optional)
@@ -16307,6 +16543,92 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=update_vm_cluster_network_details,
                 response_type="VmClusterNetwork")
+
+    def upgrade_database(self, database_id, upgrade_database_details, **kwargs):
+        """
+        Upgrade the specified database.
+
+
+        :param str database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
+            Request to perform database upgrade.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/databases/{databaseId}/actions/upgrade"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "upgrade_database got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "databaseId": database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=upgrade_database_details,
+                response_type="Database")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=upgrade_database_details,
+                response_type="Database")
 
     def validate_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """

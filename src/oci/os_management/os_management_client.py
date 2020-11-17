@@ -94,7 +94,7 @@ class OsManagementClient(object):
         :param str software_source_id: (required)
             The OCID of the software source.
 
-        :param AddPackagesToSoftwareSourceDetails add_packages_to_software_source_details: (required)
+        :param oci.os_management.models.AddPackagesToSoftwareSourceDetails add_packages_to_software_source_details: (required)
             A list of package identifiers
 
         :param str opc_request_id: (optional)
@@ -171,7 +171,7 @@ class OsManagementClient(object):
         :param str managed_instance_id: (required)
             OCID for the managed instance
 
-        :param AttachChildSoftwareSourceToManagedInstanceDetails attach_child_software_source_to_managed_instance_details: (required)
+        :param oci.os_management.models.AttachChildSoftwareSourceToManagedInstanceDetails attach_child_software_source_to_managed_instance_details: (required)
             Details for attaching a Software Source to a Managed Instance
 
         :param str opc_request_id: (optional)
@@ -354,7 +354,7 @@ class OsManagementClient(object):
         :param str managed_instance_id: (required)
             OCID for the managed instance
 
-        :param AttachParentSoftwareSourceToManagedInstanceDetails attach_parent_software_source_to_managed_instance_details: (required)
+        :param oci.os_management.models.AttachParentSoftwareSourceToManagedInstanceDetails attach_parent_software_source_to_managed_instance_details: (required)
             Details for attaching a Software Source to a Managed Instance
 
         :param str opc_request_id: (optional)
@@ -441,7 +441,7 @@ class OsManagementClient(object):
         :param str managed_instance_group_id: (required)
             OCID for the managed instance group
 
-        :param ChangeManagedInstanceGroupCompartmentDetails change_managed_instance_group_compartment_details: (required)
+        :param oci.os_management.models.ChangeManagedInstanceGroupCompartmentDetails change_managed_instance_group_compartment_details: (required)
             OCID for the compartment to which the resource will be moved.
 
         :param str opc_request_id: (optional)
@@ -537,7 +537,7 @@ class OsManagementClient(object):
         :param str scheduled_job_id: (required)
             The ID of the scheduled job.
 
-        :param ChangeScheduledJobCompartmentDetails change_scheduled_job_compartment_details: (required)
+        :param oci.os_management.models.ChangeScheduledJobCompartmentDetails change_scheduled_job_compartment_details: (required)
             OCID for the compartment to which the resource will be moved.
 
         :param str opc_request_id: (optional)
@@ -633,7 +633,7 @@ class OsManagementClient(object):
         :param str software_source_id: (required)
             The OCID of the software source.
 
-        :param ChangeSoftwareSourceCompartmentDetails change_software_source_compartment_details: (required)
+        :param oci.os_management.models.ChangeSoftwareSourceCompartmentDetails change_software_source_compartment_details: (required)
             OCID for the compartment to which the resource will be moved.
 
         :param str opc_request_id: (optional)
@@ -727,7 +727,7 @@ class OsManagementClient(object):
         and they must be added later.
 
 
-        :param CreateManagedInstanceGroupDetails create_managed_instance_group_details: (required)
+        :param oci.os_management.models.CreateManagedInstanceGroupDetails create_managed_instance_group_details: (required)
             Details about a Managed Instance Group to create
 
         :param str opc_request_id: (optional)
@@ -803,7 +803,7 @@ class OsManagementClient(object):
         that repeats on a defined interval.
 
 
-        :param CreateScheduledJobDetails create_scheduled_job_details: (required)
+        :param oci.os_management.models.CreateScheduledJobDetails create_scheduled_job_details: (required)
             Details about a Scheduled Job to create
 
         :param str opc_request_id: (optional)
@@ -878,7 +878,7 @@ class OsManagementClient(object):
         and they must be added later.
 
 
-        :param CreateSoftwareSourceDetails create_software_source_details: (required)
+        :param oci.os_management.models.CreateSoftwareSourceDetails create_software_source_details: (required)
             Details about a Sofware Source to create
 
         :param str opc_request_id: (optional)
@@ -1192,7 +1192,7 @@ class OsManagementClient(object):
         :param str managed_instance_id: (required)
             OCID for the managed instance
 
-        :param DetachChildSoftwareSourceFromManagedInstanceDetails detach_child_software_source_from_managed_instance_details: (required)
+        :param oci.os_management.models.DetachChildSoftwareSourceFromManagedInstanceDetails detach_child_software_source_from_managed_instance_details: (required)
             Details for detaching a Software Source from a Managed Instance
 
         :param str opc_request_id: (optional)
@@ -1370,7 +1370,7 @@ class OsManagementClient(object):
         :param str managed_instance_id: (required)
             OCID for the managed instance
 
-        :param DetachParentSoftwareSourceFromManagedInstanceDetails detach_parent_software_source_from_managed_instance_details: (required)
+        :param oci.os_management.models.DetachParentSoftwareSourceFromManagedInstanceDetails detach_parent_software_source_from_managed_instance_details: (required)
             Details for detaching a Software Source from a Managed Instance
 
         :param str opc_request_id: (optional)
@@ -4662,7 +4662,7 @@ class OsManagementClient(object):
         :param str software_source_id: (required)
             The OCID of the software source.
 
-        :param RemovePackagesFromSoftwareSourceDetails remove_packages_from_software_source_details: (required)
+        :param oci.os_management.models.RemovePackagesFromSoftwareSourceDetails remove_packages_from_software_source_details: (required)
             A list of package identifiers
 
         :param str opc_request_id: (optional)
@@ -5039,7 +5039,7 @@ class OsManagementClient(object):
         :param str managed_instance_group_id: (required)
             OCID for the managed instance group
 
-        :param UpdateManagedInstanceGroupDetails update_managed_instance_group_details: (required)
+        :param oci.os_management.models.UpdateManagedInstanceGroupDetails update_managed_instance_group_details: (required)
             Details about a Managed Instance Group to update
 
         :param str opc_request_id: (optional)
@@ -5125,7 +5125,7 @@ class OsManagementClient(object):
         :param str scheduled_job_id: (required)
             The ID of the scheduled job.
 
-        :param UpdateScheduledJobDetails update_scheduled_job_details: (required)
+        :param oci.os_management.models.UpdateScheduledJobDetails update_scheduled_job_details: (required)
             Details about a Scheduled Job to update
 
         :param str opc_request_id: (optional)
@@ -5211,7 +5211,7 @@ class OsManagementClient(object):
         :param str software_source_id: (required)
             The OCID of the software source.
 
-        :param UpdateSoftwareSourceDetails update_software_source_details: (required)
+        :param oci.os_management.models.UpdateSoftwareSourceDetails update_software_source_details: (required)
             Details about a Sofware Source to update
 
         :param str opc_request_id: (optional)

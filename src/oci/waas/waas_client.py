@@ -269,7 +269,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeAddressListCompartmentDetails change_address_list_compartment_details: (required)
+        :param oci.waas.models.ChangeAddressListCompartmentDetails change_address_list_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -361,7 +361,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCertificateCompartmentDetails change_certificate_compartment_details: (required)
+        :param oci.waas.models.ChangeCertificateCompartmentDetails change_certificate_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -452,7 +452,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCustomProtectionRuleCompartmentDetails change_custom_protection_rule_compartment_details: (required)
+        :param oci.waas.models.ChangeCustomProtectionRuleCompartmentDetails change_custom_protection_rule_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -544,7 +544,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeWaasPolicyCompartmentDetails change_waas_policy_compartment_details: (required)
+        :param oci.waas.models.ChangeWaasPolicyCompartmentDetails change_waas_policy_compartment_details: (required)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -628,7 +628,7 @@ class WaasClient(object):
         Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
 
 
-        :param CreateAddressListDetails create_address_list_details: (required)
+        :param oci.waas.models.CreateAddressListDetails create_address_list_details: (required)
             The details of the address list resource to create.
 
         :param str opc_request_id: (optional)
@@ -702,7 +702,7 @@ class WaasClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm
 
 
-        :param CreateCertificateDetails create_certificate_details: (required)
+        :param oci.waas.models.CreateCertificateDetails create_certificate_details: (required)
             The details of the SSL certificate resource to create.
 
         :param str opc_request_id: (optional)
@@ -777,7 +777,7 @@ class WaasClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
 
 
-        :param CreateCustomProtectionRuleDetails create_custom_protection_rule_details: (required)
+        :param oci.waas.models.CreateCustomProtectionRuleDetails create_custom_protection_rule_details: (required)
             The details of the custom protection rule.
 
         :param str opc_request_id: (optional)
@@ -862,7 +862,7 @@ class WaasClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateWaasPolicyDetails create_waas_policy_details: (required)
+        :param oci.waas.models.CreateWaasPolicyDetails create_waas_policy_details: (required)
             The details of the WAAS policy.
 
         :param str opc_request_id: (optional)
@@ -4535,7 +4535,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[AccessRule] access_rules: (required)
+        :param oci.waas.models.list[AccessRule] access_rules: (required)
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -4717,7 +4717,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[CachingRule] caching_rules_details: (required)
+        :param oci.waas.models.list[CachingRule] caching_rules_details: (required)
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -4814,7 +4814,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[Captcha] captchas: (required)
+        :param oci.waas.models.list[Captcha] captchas: (required)
             A list of CAPTCHA details.
 
         :param str opc_request_id: (optional)
@@ -4989,7 +4989,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCustomProtectionRuleDetails update_custom_protection_rule_details: (required)
+        :param oci.waas.models.UpdateCustomProtectionRuleDetails update_custom_protection_rule_details: (required)
             The details of the custom protection rule to update.
 
         :param str opc_request_id: (optional)
@@ -5085,7 +5085,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param DeviceFingerprintChallenge update_device_fingerprint_challenge_details: (required)
+        :param oci.waas.models.DeviceFingerprintChallenge update_device_fingerprint_challenge_details: (required)
             The device fingerprint challenge settings to be updated.
 
         :param str opc_request_id: (optional)
@@ -5179,7 +5179,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[GoodBot] good_bots: (required)
+        :param oci.waas.models.list[GoodBot] good_bots: (required)
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -5268,7 +5268,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param HumanInteractionChallenge update_human_interaction_challenge_details: (required)
+        :param oci.waas.models.HumanInteractionChallenge update_human_interaction_challenge_details: (required)
             The human interaction challenge settings.
 
         :param str opc_request_id: (optional)
@@ -5360,7 +5360,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param JsChallenge update_js_challenge_details: (required)
+        :param oci.waas.models.JsChallenge update_js_challenge_details: (required)
             The JavaScript challenge settings to be updated.
 
         :param str opc_request_id: (optional)
@@ -5450,7 +5450,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param PolicyConfig update_policy_config_details: (required)
+        :param oci.waas.models.PolicyConfig update_policy_config_details: (required)
             The new configuration to apply to a WAAS policy.
 
         :param str opc_request_id: (optional)
@@ -5544,7 +5544,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[ProtectionRuleAction] protection_rules: (required)
+        :param oci.waas.models.list[ProtectionRuleAction] protection_rules: (required)
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -5625,7 +5625,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ProtectionSettings update_protection_settings_details: (required)
+        :param oci.waas.models.ProtectionSettings update_protection_settings_details: (required)
             The details of the protection settings to be updated.
 
         :param str opc_request_id: (optional)
@@ -5715,7 +5715,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[ThreatFeedAction] threat_feeds: (required)
+        :param oci.waas.models.list[ThreatFeedAction] threat_feeds: (required)
             A list of threat feeds for which to update the actions.
 
         :param str opc_request_id: (optional)
@@ -5799,7 +5799,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateWaasPolicyDetails update_waas_policy_details: (required)
+        :param oci.waas.models.UpdateWaasPolicyDetails update_waas_policy_details: (required)
             The details of the WAAS policy to update.
 
         :param str opc_request_id: (optional)
@@ -5891,7 +5891,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[CustomProtectionRuleSetting] update_custom_protection_rules_details: (required)
+        :param oci.waas.models.list[CustomProtectionRuleSetting] update_custom_protection_rules_details: (required)
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -5980,7 +5980,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddressRateLimiting update_waf_address_rate_limiting_details: (required)
+        :param oci.waas.models.AddressRateLimiting update_waf_address_rate_limiting_details: (required)
             The address rate limiting settings.
 
         :param str opc_request_id: (optional)
@@ -6077,7 +6077,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param WafConfig update_waf_config_details: (required)
+        :param oci.waas.models.WafConfig update_waf_config_details: (required)
             The new Web Application Firewall configuration to apply to a WAAS policy.
 
         :param str opc_request_id: (optional)
@@ -6175,7 +6175,7 @@ class WaasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param list[Whitelist] whitelists: (required)
+        :param oci.waas.models.list[Whitelist] whitelists: (required)
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

@@ -102,7 +102,7 @@ class NotificationControlPlaneClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCompartmentDetails change_topic_compartment_details: (required)
+        :param oci.ons.models.ChangeCompartmentDetails change_topic_compartment_details: (required)
             The configuration details for the move operation.
 
         :param str opc_retry_token: (optional)
@@ -210,7 +210,7 @@ class NotificationControlPlaneClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateTopicDetails create_topic_details: (required)
+        :param oci.ons.models.CreateTopicDetails create_topic_details: (required)
             The topic to create.
 
         :param str opc_retry_token: (optional)
@@ -590,7 +590,7 @@ class NotificationControlPlaneClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param TopicAttributesDetails topic_attributes_details: (required)
+        :param oci.ons.models.TopicAttributesDetails topic_attributes_details: (required)
             TopicAttributes
 
         :param str opc_request_id: (optional)

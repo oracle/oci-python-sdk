@@ -184,7 +184,7 @@ class ResourceManagerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeConfigurationSourceProviderCompartmentDetails change_configuration_source_provider_compartment_details: (required)
+        :param oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails change_configuration_source_provider_compartment_details: (required)
             Defines the properties of changeConfigurationSourceProviderCompartment operation.
 
         :param str if_match: (optional)
@@ -280,7 +280,7 @@ class ResourceManagerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeStackCompartmentDetails change_stack_compartment_details: (required)
+        :param oci.resource_manager.models.ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             Defines the properties of changeStackCompartment operation.
 
         :param str if_match: (optional)
@@ -375,7 +375,7 @@ class ResourceManagerClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateConfigurationSourceProvider
 
 
-        :param CreateConfigurationSourceProviderDetails create_configuration_source_provider_details: (required)
+        :param oci.resource_manager.models.CreateConfigurationSourceProviderDetails create_configuration_source_provider_details: (required)
             The properties for creating a ConfigurationSourceProvider.
 
         :param str opc_request_id: (optional)
@@ -449,7 +449,7 @@ class ResourceManagerClient(object):
         Creates a job.
 
 
-        :param CreateJobDetails create_job_details: (required)
+        :param oci.resource_manager.models.CreateJobDetails create_job_details: (required)
             The properties for a request to create a job.
 
         :param str opc_request_id: (optional)
@@ -530,7 +530,7 @@ class ResourceManagerClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack
 
 
-        :param CreateStackDetails create_stack_details: (required)
+        :param oci.resource_manager.models.CreateStackDetails create_stack_details: (required)
             The properties for creating a stack.
 
         :param str opc_request_id: (optional)
@@ -2723,7 +2723,7 @@ class ResourceManagerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateConfigurationSourceProviderDetails update_configuration_source_provider_details: (required)
+        :param oci.resource_manager.models.UpdateConfigurationSourceProviderDetails update_configuration_source_provider_details: (required)
             Updated information provided for the ConfigurationSourceProvider.
 
         :param str opc_request_id: (optional)
@@ -2810,7 +2810,7 @@ class ResourceManagerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateJobDetails update_job_details: (required)
+        :param oci.resource_manager.models.UpdateJobDetails update_job_details: (required)
             Updates properties for the specified job.
 
         :param str opc_request_id: (optional)
@@ -2905,7 +2905,7 @@ class ResourceManagerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateStackDetails update_stack_details: (required)
+        :param oci.resource_manager.models.UpdateStackDetails update_stack_details: (required)
             Updated information provided for the stack.
 
         :param str opc_request_id: (optional)

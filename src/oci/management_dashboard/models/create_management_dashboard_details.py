@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateManagementDashboardDetails(object):
     """
-    Properties for a dashboard.  Id is not required if not Out Of the Box dashboard.
+    Properties of a dashboard.  ID of the dashboard must only be provided for Out-of-the-Box (OOB) dashboards.
     """
 
     def __init__(self, **kwargs):
@@ -170,7 +170,7 @@ class CreateManagementDashboardDetails(object):
     def dashboard_id(self):
         """
         Gets the dashboard_id of this CreateManagementDashboardDetails.
-        Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+        ID of the dashboard, which must only be provided for Out-of-the-Box (OOB) dashboards.
 
 
         :return: The dashboard_id of this CreateManagementDashboardDetails.
@@ -182,7 +182,7 @@ class CreateManagementDashboardDetails(object):
     def dashboard_id(self, dashboard_id):
         """
         Sets the dashboard_id of this CreateManagementDashboardDetails.
-        Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+        ID of the dashboard, which must only be provided for Out-of-the-Box (OOB) dashboards.
 
 
         :param dashboard_id: The dashboard_id of this CreateManagementDashboardDetails.
@@ -194,7 +194,7 @@ class CreateManagementDashboardDetails(object):
     def provider_id(self):
         """
         **[Required]** Gets the provider_id of this CreateManagementDashboardDetails.
-        Provider Id.
+        ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
 
 
         :return: The provider_id of this CreateManagementDashboardDetails.
@@ -206,7 +206,7 @@ class CreateManagementDashboardDetails(object):
     def provider_id(self, provider_id):
         """
         Sets the provider_id of this CreateManagementDashboardDetails.
-        Provider Id.
+        ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
 
 
         :param provider_id: The provider_id of this CreateManagementDashboardDetails.
@@ -218,7 +218,7 @@ class CreateManagementDashboardDetails(object):
     def provider_name(self):
         """
         **[Required]** Gets the provider_name of this CreateManagementDashboardDetails.
-        Provider name.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :return: The provider_name of this CreateManagementDashboardDetails.
@@ -230,7 +230,7 @@ class CreateManagementDashboardDetails(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this CreateManagementDashboardDetails.
-        Provider name.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :param provider_name: The provider_name of this CreateManagementDashboardDetails.
@@ -242,7 +242,7 @@ class CreateManagementDashboardDetails(object):
     def provider_version(self):
         """
         **[Required]** Gets the provider_version of this CreateManagementDashboardDetails.
-        Provider version.
+        Version of the service that owns the dashboard.
 
 
         :return: The provider_version of this CreateManagementDashboardDetails.
@@ -254,7 +254,7 @@ class CreateManagementDashboardDetails(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this CreateManagementDashboardDetails.
-        Provider version.
+        Version of the service that owns the dashboard.
 
 
         :param provider_version: The provider_version of this CreateManagementDashboardDetails.
@@ -266,7 +266,7 @@ class CreateManagementDashboardDetails(object):
     def tiles(self):
         """
         **[Required]** Gets the tiles of this CreateManagementDashboardDetails.
-        Dashboard tiles array.
+        Array of dashboard tiles.
 
 
         :return: The tiles of this CreateManagementDashboardDetails.
@@ -278,7 +278,7 @@ class CreateManagementDashboardDetails(object):
     def tiles(self, tiles):
         """
         Sets the tiles of this CreateManagementDashboardDetails.
-        Dashboard tiles array.
+        Array of dashboard tiles.
 
 
         :param tiles: The tiles of this CreateManagementDashboardDetails.
@@ -290,7 +290,7 @@ class CreateManagementDashboardDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateManagementDashboardDetails.
-        Display name for dashboard.
+        Display name of the dashboard.
 
 
         :return: The display_name of this CreateManagementDashboardDetails.
@@ -302,7 +302,7 @@ class CreateManagementDashboardDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateManagementDashboardDetails.
-        Display name for dashboard.
+        Display name of the dashboard.
 
 
         :param display_name: The display_name of this CreateManagementDashboardDetails.
@@ -314,7 +314,7 @@ class CreateManagementDashboardDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this CreateManagementDashboardDetails.
-        Dashboard's description.
+        Description of the dashboard.
 
 
         :return: The description of this CreateManagementDashboardDetails.
@@ -326,7 +326,7 @@ class CreateManagementDashboardDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateManagementDashboardDetails.
-        Dashboard's description.
+        Description of the dashboard.
 
 
         :param description: The description of this CreateManagementDashboardDetails.
@@ -338,7 +338,7 @@ class CreateManagementDashboardDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateManagementDashboardDetails.
-        The ocid of the compartment that owns the dashboard.
+        OCID of the compartment in which the dashboard resides.
 
 
         :return: The compartment_id of this CreateManagementDashboardDetails.
@@ -350,7 +350,7 @@ class CreateManagementDashboardDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateManagementDashboardDetails.
-        The ocid of the compartment that owns the dashboard.
+        OCID of the compartment in which the dashboard resides.
 
 
         :param compartment_id: The compartment_id of this CreateManagementDashboardDetails.
@@ -362,7 +362,7 @@ class CreateManagementDashboardDetails(object):
     def is_oob_dashboard(self):
         """
         **[Required]** Gets the is_oob_dashboard of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").  OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+        Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
 
 
         :return: The is_oob_dashboard of this CreateManagementDashboardDetails.
@@ -374,7 +374,7 @@ class CreateManagementDashboardDetails(object):
     def is_oob_dashboard(self, is_oob_dashboard):
         """
         Sets the is_oob_dashboard of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").  OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+        Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
 
 
         :param is_oob_dashboard: The is_oob_dashboard of this CreateManagementDashboardDetails.
@@ -386,7 +386,7 @@ class CreateManagementDashboardDetails(object):
     def is_show_in_home(self):
         """
         **[Required]** Gets the is_show_in_home of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+        Determines whether the dashboard will be displayed in Dashboard Home.
 
 
         :return: The is_show_in_home of this CreateManagementDashboardDetails.
@@ -398,7 +398,7 @@ class CreateManagementDashboardDetails(object):
     def is_show_in_home(self, is_show_in_home):
         """
         Sets the is_show_in_home of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+        Determines whether the dashboard will be displayed in Dashboard Home.
 
 
         :param is_show_in_home: The is_show_in_home of this CreateManagementDashboardDetails.
@@ -434,7 +434,7 @@ class CreateManagementDashboardDetails(object):
     def is_show_description(self):
         """
         **[Required]** Gets the is_show_description of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").  Whether to show the dashboard description.
+        Determines whether the description of the dashboard is displayed.
 
 
         :return: The is_show_description of this CreateManagementDashboardDetails.
@@ -446,7 +446,7 @@ class CreateManagementDashboardDetails(object):
     def is_show_description(self, is_show_description):
         """
         Sets the is_show_description of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").  Whether to show the dashboard description.
+        Determines whether the description of the dashboard is displayed.
 
 
         :param is_show_description: The is_show_description of this CreateManagementDashboardDetails.
@@ -458,7 +458,7 @@ class CreateManagementDashboardDetails(object):
     def screen_image(self):
         """
         **[Required]** Gets the screen_image of this CreateManagementDashboardDetails.
-        screen image.
+        Screen image of the dashboard.
 
 
         :return: The screen_image of this CreateManagementDashboardDetails.
@@ -470,7 +470,7 @@ class CreateManagementDashboardDetails(object):
     def screen_image(self, screen_image):
         """
         Sets the screen_image of this CreateManagementDashboardDetails.
-        screen image.
+        Screen image of the dashboard.
 
 
         :param screen_image: The screen_image of this CreateManagementDashboardDetails.
@@ -482,7 +482,7 @@ class CreateManagementDashboardDetails(object):
     def nls(self):
         """
         **[Required]** Gets the nls of this CreateManagementDashboardDetails.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :return: The nls of this CreateManagementDashboardDetails.
@@ -494,7 +494,7 @@ class CreateManagementDashboardDetails(object):
     def nls(self, nls):
         """
         Sets the nls of this CreateManagementDashboardDetails.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :param nls: The nls of this CreateManagementDashboardDetails.
@@ -506,7 +506,7 @@ class CreateManagementDashboardDetails(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this CreateManagementDashboardDetails.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :return: The ui_config of this CreateManagementDashboardDetails.
@@ -518,7 +518,7 @@ class CreateManagementDashboardDetails(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this CreateManagementDashboardDetails.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :param ui_config: The ui_config of this CreateManagementDashboardDetails.
@@ -530,7 +530,7 @@ class CreateManagementDashboardDetails(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this CreateManagementDashboardDetails.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :return: The data_config of this CreateManagementDashboardDetails.
@@ -542,7 +542,7 @@ class CreateManagementDashboardDetails(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this CreateManagementDashboardDetails.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :param data_config: The data_config of this CreateManagementDashboardDetails.
@@ -554,7 +554,7 @@ class CreateManagementDashboardDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this CreateManagementDashboardDetails.
-        NORMAL means single dashboard, or SET means dashboard set.
+        Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
 
 
         :return: The type of this CreateManagementDashboardDetails.
@@ -566,7 +566,7 @@ class CreateManagementDashboardDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateManagementDashboardDetails.
-        NORMAL means single dashboard, or SET means dashboard set.
+        Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
 
 
         :param type: The type of this CreateManagementDashboardDetails.
@@ -578,7 +578,7 @@ class CreateManagementDashboardDetails(object):
     def is_favorite(self):
         """
         **[Required]** Gets the is_favorite of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").
+        Determines whether the dashboard is set as favorite.
 
 
         :return: The is_favorite of this CreateManagementDashboardDetails.
@@ -590,7 +590,7 @@ class CreateManagementDashboardDetails(object):
     def is_favorite(self, is_favorite):
         """
         Sets the is_favorite of this CreateManagementDashboardDetails.
-        String boolean (\"true\" or \"false\").
+        Determines whether the dashboard is set as favorite.
 
 
         :param is_favorite: The is_favorite of this CreateManagementDashboardDetails.

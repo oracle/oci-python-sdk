@@ -124,7 +124,7 @@ class Filter(object):
     def field_name(self):
         """
         Gets the field_name of this Filter.
-        Field filter references when inserting filter into the query string. Field must be a valid enterprise logging out-of-the-box field, virtual field calculated in the query or a user defined field.
+        Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
 
 
         :return: The field_name of this Filter.
@@ -136,7 +136,7 @@ class Filter(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this Filter.
-        Field filter references when inserting filter into the query string. Field must be a valid enterprise logging out-of-the-box field, virtual field calculated in the query or a user defined field.
+        Field filter references when inserting filter into the query string. Field must be a valid logging analytics out-of-the-box field, virtual field calculated in the query or a user defined field.
 
 
         :param field_name: The field_name of this Filter.

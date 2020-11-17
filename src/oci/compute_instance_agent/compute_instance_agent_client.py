@@ -168,7 +168,7 @@ class ComputeInstanceAgentClient(object):
         Create command for one or more managed instances
 
 
-        :param CreateInstanceAgentCommandDetails create_instance_agent_command_details: (required)
+        :param oci.compute_instance_agent.models.CreateInstanceAgentCommandDetails create_instance_agent_command_details: (required)
             Create Instance agent command details
 
         :param str opc_request_id: (optional)

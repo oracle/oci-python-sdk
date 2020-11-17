@@ -1,9 +1,9 @@
-QueryWorkRequestResource
+BulkEditOperationDetails
 ========================
 
-.. currentmodule:: oci.log_analytics.models
+.. currentmodule:: oci.identity.models
 
-.. autoclass:: QueryWorkRequestResource
+.. autoclass:: BulkEditOperationDetails
     :show-inheritance:
     :special-members: __init__
     :members:

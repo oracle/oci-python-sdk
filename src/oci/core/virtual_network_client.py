@@ -101,7 +101,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddNetworkSecurityGroupSecurityRulesDetails add_network_security_group_security_rules_details: (required)
+        :param oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails add_network_security_group_security_rules_details: (required)
             Request with one or more security rules to be associated with the network security group.
 
         :param obj retry_strategy: (optional)
@@ -172,7 +172,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
+        :param oci.core.models.AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
             Byoip Range prefix and a cidr from it
 
         :param str opc_request_id: (optional)
@@ -268,7 +268,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddVcnCidrDetails add_vcn_cidr_details: (required)
+        :param oci.core.models.AddVcnCidrDetails add_vcn_cidr_details: (required)
             Details object for deleting a VCN CIDR.
 
         :param str opc_request_id: (optional)
@@ -445,7 +445,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ServiceIdRequestDetails attach_service_details: (required)
+        :param oci.core.models.ServiceIdRequestDetails attach_service_details: (required)
             ServiceId of Service to be attached to a service gateway.
 
         :param str if_match: (optional)
@@ -527,7 +527,7 @@ class VirtualNetworkClient(object):
         :param str virtual_circuit_id: (required)
             The OCID of the virtual circuit.
 
-        :param BulkAddVirtualCircuitPublicPrefixesDetails bulk_add_virtual_circuit_public_prefixes_details: (required)
+        :param oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails bulk_add_virtual_circuit_public_prefixes_details: (required)
             Request with publix prefixes to be added to the virtual circuit
 
         :param obj retry_strategy: (optional)
@@ -596,7 +596,7 @@ class VirtualNetworkClient(object):
         :param str virtual_circuit_id: (required)
             The OCID of the virtual circuit.
 
-        :param BulkDeleteVirtualCircuitPublicPrefixesDetails bulk_delete_virtual_circuit_public_prefixes_details: (required)
+        :param oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails bulk_delete_virtual_circuit_public_prefixes_details: (required)
             Request with publix prefixes to be deleted from the virtual circuit
 
         :param obj retry_strategy: (optional)
@@ -666,7 +666,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The OCID of the Byoip Range object.
 
-        :param ChangeByoipRangeCompartmentDetails change_byoip_range_compartment_details: (required)
+        :param oci.core.models.ChangeByoipRangeCompartmentDetails change_byoip_range_compartment_details: (required)
             Request to change the compartment of a Byoip Range.
 
         :param str opc_request_id: (optional)
@@ -757,7 +757,7 @@ class VirtualNetworkClient(object):
         :param str cpe_id: (required)
             The OCID of the CPE.
 
-        :param ChangeCpeCompartmentDetails change_cpe_compartment_details: (required)
+        :param oci.core.models.ChangeCpeCompartmentDetails change_cpe_compartment_details: (required)
             Request to change the compartment of a CPE.
 
         :param str opc_request_id: (optional)
@@ -848,7 +848,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_id: (required)
             The OCID of the cross-connect.
 
-        :param ChangeCrossConnectCompartmentDetails change_cross_connect_compartment_details: (required)
+        :param oci.core.models.ChangeCrossConnectCompartmentDetails change_cross_connect_compartment_details: (required)
             Request to change the compartment of a Cross Connect.
 
         :param str opc_request_id: (optional)
@@ -939,7 +939,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_group_id: (required)
             The OCID of the cross-connect group.
 
-        :param ChangeCrossConnectGroupCompartmentDetails change_cross_connect_group_compartment_details: (required)
+        :param oci.core.models.ChangeCrossConnectGroupCompartmentDetails change_cross_connect_group_compartment_details: (required)
             Request to change the compartment of a Cross Connect Group.
 
         :param str opc_request_id: (optional)
@@ -1030,7 +1030,7 @@ class VirtualNetworkClient(object):
         :param str dhcp_id: (required)
             The OCID for the set of DHCP options.
 
-        :param ChangeDhcpOptionsCompartmentDetails change_dhcp_options_compartment_details: (required)
+        :param oci.core.models.ChangeDhcpOptionsCompartmentDetails change_dhcp_options_compartment_details: (required)
             Request to change the compartment of a set of DHCP Options.
 
         :param str opc_request_id: (optional)
@@ -1121,7 +1121,7 @@ class VirtualNetworkClient(object):
         :param str drg_id: (required)
             The OCID of the DRG.
 
-        :param ChangeDrgCompartmentDetails change_drg_compartment_details: (required)
+        :param oci.core.models.ChangeDrgCompartmentDetails change_drg_compartment_details: (required)
             Request to change the compartment of a DRG.
 
         :param str opc_request_id: (optional)
@@ -1212,7 +1212,7 @@ class VirtualNetworkClient(object):
         :param str ig_id: (required)
             The OCID of the internet gateway.
 
-        :param ChangeInternetGatewayCompartmentDetails change_internet_gateway_compartment_details: (required)
+        :param oci.core.models.ChangeInternetGatewayCompartmentDetails change_internet_gateway_compartment_details: (required)
             Request to change the compartment of an internet gateway.
 
         :param str opc_request_id: (optional)
@@ -1303,7 +1303,7 @@ class VirtualNetworkClient(object):
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
-        :param ChangeIPSecConnectionCompartmentDetails change_ip_sec_connection_compartment_details: (required)
+        :param oci.core.models.ChangeIPSecConnectionCompartmentDetails change_ip_sec_connection_compartment_details: (required)
             Request to change the compartment of a Ipsec Connection.
 
         :param str opc_request_id: (optional)
@@ -1394,7 +1394,7 @@ class VirtualNetworkClient(object):
         :param str local_peering_gateway_id: (required)
             The OCID of the local peering gateway.
 
-        :param ChangeLocalPeeringGatewayCompartmentDetails change_local_peering_gateway_compartment_details: (required)
+        :param oci.core.models.ChangeLocalPeeringGatewayCompartmentDetails change_local_peering_gateway_compartment_details: (required)
             Request to change the compartment of a given local peering gateway.
 
         :param str opc_request_id: (optional)
@@ -1487,7 +1487,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeNatGatewayCompartmentDetails change_nat_gateway_compartment_details: (required)
+        :param oci.core.models.ChangeNatGatewayCompartmentDetails change_nat_gateway_compartment_details: (required)
             Request to change the compartment of a given NAT Gateway.
 
         :param str opc_request_id: (optional)
@@ -1579,7 +1579,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeNetworkSecurityGroupCompartmentDetails change_network_security_group_compartment_details: (required)
+        :param oci.core.models.ChangeNetworkSecurityGroupCompartmentDetails change_network_security_group_compartment_details: (required)
             Request to change the compartment of a network security group.
 
         :param str opc_request_id: (optional)
@@ -1673,7 +1673,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_id: (required)
             The OCID of the public IP.
 
-        :param ChangePublicIpCompartmentDetails change_public_ip_compartment_details: (required)
+        :param oci.core.models.ChangePublicIpCompartmentDetails change_public_ip_compartment_details: (required)
             Request to change the compartment of a Public IP.
 
         :param str opc_request_id: (optional)
@@ -1764,7 +1764,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param ChangePublicIpPoolCompartmentDetails change_public_ip_pool_compartment_details: (required)
+        :param oci.core.models.ChangePublicIpPoolCompartmentDetails change_public_ip_pool_compartment_details: (required)
             Request to change the compartment of a Public IP pool.
 
         :param str opc_request_id: (optional)
@@ -1855,7 +1855,7 @@ class VirtualNetworkClient(object):
         :param str remote_peering_connection_id: (required)
             The OCID of the remote peering connection (RPC).
 
-        :param ChangeRemotePeeringConnectionCompartmentDetails change_remote_peering_connection_compartment_details: (required)
+        :param oci.core.models.ChangeRemotePeeringConnectionCompartmentDetails change_remote_peering_connection_compartment_details: (required)
             Request to change the compartment of a Remote Peering Connection.
 
         :param str opc_request_id: (optional)
@@ -1946,7 +1946,7 @@ class VirtualNetworkClient(object):
         :param str rt_id: (required)
             The OCID of the route table.
 
-        :param ChangeRouteTableCompartmentDetails change_route_table_compartment_details: (required)
+        :param oci.core.models.ChangeRouteTableCompartmentDetails change_route_table_compartment_details: (required)
             Request to change the compartment of a given route table.
 
         :param str opc_request_id: (optional)
@@ -2037,7 +2037,7 @@ class VirtualNetworkClient(object):
         :param str security_list_id: (required)
             The OCID of the security list.
 
-        :param ChangeSecurityListCompartmentDetails change_security_list_compartment_details: (required)
+        :param oci.core.models.ChangeSecurityListCompartmentDetails change_security_list_compartment_details: (required)
             Request to change the compartment of a given security list.
 
         :param str opc_request_id: (optional)
@@ -2130,7 +2130,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeServiceGatewayCompartmentDetails change_service_gateway_compartment_details: (required)
+        :param oci.core.models.ChangeServiceGatewayCompartmentDetails change_service_gateway_compartment_details: (required)
             Request to change the compartment of a given Service Gateway.
 
         :param str opc_request_id: (optional)
@@ -2221,7 +2221,7 @@ class VirtualNetworkClient(object):
         :param str subnet_id: (required)
             The OCID of the subnet.
 
-        :param ChangeSubnetCompartmentDetails change_subnet_compartment_details: (required)
+        :param oci.core.models.ChangeSubnetCompartmentDetails change_subnet_compartment_details: (required)
             Request to change the compartment of a given subnet.
 
         :param str opc_request_id: (optional)
@@ -2314,7 +2314,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeVcnCompartmentDetails change_vcn_compartment_details: (required)
+        :param oci.core.models.ChangeVcnCompartmentDetails change_vcn_compartment_details: (required)
             Request to change the compartment of a given VCN.
 
         :param str opc_request_id: (optional)
@@ -2405,7 +2405,7 @@ class VirtualNetworkClient(object):
         :param str virtual_circuit_id: (required)
             The OCID of the virtual circuit.
 
-        :param ChangeVirtualCircuitCompartmentDetails change_virtual_circuit_compartment_details: (required)
+        :param oci.core.models.ChangeVirtualCircuitCompartmentDetails change_virtual_circuit_compartment_details: (required)
             Request to change the compartment of a virtual circuit.
 
         :param str opc_request_id: (optional)
@@ -2498,7 +2498,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeVlanCompartmentDetails change_vlan_compartment_details: (required)
+        :param oci.core.models.ChangeVlanCompartmentDetails change_vlan_compartment_details: (required)
             Request to change the compartment of a given VLAN.
 
         :param str if_match: (optional)
@@ -2601,7 +2601,7 @@ class VirtualNetworkClient(object):
         :param str local_peering_gateway_id: (required)
             The OCID of the local peering gateway.
 
-        :param ConnectLocalPeeringGatewaysDetails connect_local_peering_gateways_details: (required)
+        :param oci.core.models.ConnectLocalPeeringGatewaysDetails connect_local_peering_gateways_details: (required)
             Details regarding the local peering gateway to connect.
 
         :param obj retry_strategy: (optional)
@@ -2676,7 +2676,7 @@ class VirtualNetworkClient(object):
         :param str remote_peering_connection_id: (required)
             The OCID of the remote peering connection (RPC).
 
-        :param ConnectRemotePeeringConnectionsDetails connect_remote_peering_connections_details: (required)
+        :param oci.core.models.ConnectRemotePeeringConnectionsDetails connect_remote_peering_connections_details: (required)
             Details to connect peering connection with peering connection from remote region
 
         :param obj retry_strategy: (optional)
@@ -2739,7 +2739,7 @@ class VirtualNetworkClient(object):
         Creates a Byoip Range prefix.
 
 
-        :param CreateByoipRangeDetails create_byoip_range_details: (required)
+        :param oci.core.models.CreateByoipRangeDetails create_byoip_range_details: (required)
             Create Byoip Range details.
 
         :param str opc_request_id: (optional)
@@ -2832,7 +2832,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm
 
 
-        :param CreateCpeDetails create_cpe_details: (required)
+        :param oci.core.models.CreateCpeDetails create_cpe_details: (required)
             Details for creating a CPE.
 
         :param str opc_retry_token: (optional)
@@ -2922,7 +2922,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateCrossConnectDetails create_cross_connect_details: (required)
+        :param oci.core.models.CreateCrossConnectDetails create_cross_connect_details: (required)
             Details to create a CrossConnect
 
         :param str opc_retry_token: (optional)
@@ -3008,7 +3008,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
+        :param oci.core.models.CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
             Details to create a CrossConnectGroup
 
         :param str opc_retry_token: (optional)
@@ -3090,7 +3090,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateDhcpDetails create_dhcp_details: (required)
+        :param oci.core.models.CreateDhcpDetails create_dhcp_details: (required)
             Request object for creating a new set of DHCP options.
 
         :param str opc_retry_token: (optional)
@@ -3173,7 +3173,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateDrgDetails create_drg_details: (required)
+        :param oci.core.models.CreateDrgDetails create_drg_details: (required)
             Details for creating a DRG.
 
         :param str opc_retry_token: (optional)
@@ -3254,7 +3254,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
 
 
-        :param CreateDrgAttachmentDetails create_drg_attachment_details: (required)
+        :param oci.core.models.CreateDrgAttachmentDetails create_drg_attachment_details: (required)
             Details for creating a `DrgAttachment`.
 
         :param str opc_retry_token: (optional)
@@ -3346,7 +3346,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
+        :param oci.core.models.CreateInternetGatewayDetails create_internet_gateway_details: (required)
             Details for creating a new internet gateway.
 
         :param str opc_retry_token: (optional)
@@ -3447,7 +3447,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm
 
 
-        :param CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
+        :param oci.core.models.CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
             Details for creating an `IPSecConnection`.
 
         :param str opc_retry_token: (optional)
@@ -3515,7 +3515,7 @@ class VirtualNetworkClient(object):
         Creates an IPv6 for the specified VNIC.
 
 
-        :param CreateIpv6Details create_ipv6_details: (required)
+        :param oci.core.models.CreateIpv6Details create_ipv6_details: (required)
             Create IPv6 details.
 
         :param str opc_request_id: (optional)
@@ -3589,7 +3589,7 @@ class VirtualNetworkClient(object):
         Creates a new local peering gateway (LPG) for the specified VCN.
 
 
-        :param CreateLocalPeeringGatewayDetails create_local_peering_gateway_details: (required)
+        :param oci.core.models.CreateLocalPeeringGatewayDetails create_local_peering_gateway_details: (required)
             Details for creating a new local peering gateway.
 
         :param str opc_retry_token: (optional)
@@ -3658,7 +3658,7 @@ class VirtualNetworkClient(object):
         NAT gateway as the rule's target. See :class:`RouteTable`.
 
 
-        :param CreateNatGatewayDetails create_nat_gateway_details: (required)
+        :param oci.core.models.CreateNatGatewayDetails create_nat_gateway_details: (required)
             Details for creating a NAT gateway.
 
         :param str opc_retry_token: (optional)
@@ -3726,7 +3726,7 @@ class VirtualNetworkClient(object):
         Creates a new network security group for the specified VCN.
 
 
-        :param CreateNetworkSecurityGroupDetails create_network_security_group_details: (required)
+        :param oci.core.models.CreateNetworkSecurityGroupDetails create_network_security_group_details: (required)
             Details for creating a network security group.
 
         :param str opc_retry_token: (optional)
@@ -3798,7 +3798,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
 
 
-        :param CreatePrivateIpDetails create_private_ip_details: (required)
+        :param oci.core.models.CreatePrivateIpDetails create_private_ip_details: (required)
             Create private IP details.
 
         :param str opc_retry_token: (optional)
@@ -3888,7 +3888,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
 
 
-        :param CreatePublicIpDetails create_public_ip_details: (required)
+        :param oci.core.models.CreatePublicIpDetails create_public_ip_details: (required)
             Create public IP details.
 
         :param str opc_retry_token: (optional)
@@ -3956,7 +3956,7 @@ class VirtualNetworkClient(object):
         Creates a Public Ip Pool
 
 
-        :param CreatePublicIpPoolDetails create_public_ip_pool_details: (required)
+        :param oci.core.models.CreatePublicIpPoolDetails create_public_ip_pool_details: (required)
             Create Public Ip Pool details
 
         :param str opc_request_id: (optional)
@@ -4030,7 +4030,7 @@ class VirtualNetworkClient(object):
         Creates a new remote peering connection (RPC) for the specified DRG.
 
 
-        :param CreateRemotePeeringConnectionDetails create_remote_peering_connection_details: (required)
+        :param oci.core.models.CreateRemotePeeringConnectionDetails create_remote_peering_connection_details: (required)
             Request to create peering connection to remote region
 
         :param str opc_retry_token: (optional)
@@ -4117,7 +4117,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateRouteTableDetails create_route_table_details: (required)
+        :param oci.core.models.CreateRouteTableDetails create_route_table_details: (required)
             Details for creating a new route table.
 
         :param str opc_retry_token: (optional)
@@ -4203,7 +4203,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateSecurityListDetails create_security_list_details: (required)
+        :param oci.core.models.CreateSecurityListDetails create_security_list_details: (required)
             Details regarding the security list to create.
 
         :param str opc_retry_token: (optional)
@@ -4282,7 +4282,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param CreateServiceGatewayDetails create_service_gateway_details: (required)
+        :param oci.core.models.CreateServiceGatewayDetails create_service_gateway_details: (required)
             Details for creating a service gateway.
 
         :param str opc_retry_token: (optional)
@@ -4389,7 +4389,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
-        :param CreateSubnetDetails create_subnet_details: (required)
+        :param oci.core.models.CreateSubnetDetails create_subnet_details: (required)
             Details for creating a subnet.
 
         :param str opc_retry_token: (optional)
@@ -4498,7 +4498,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
 
 
-        :param CreateVcnDetails create_vcn_details: (required)
+        :param oci.core.models.CreateVcnDetails create_vcn_details: (required)
             Details for creating a new VCN.
 
         :param str opc_retry_token: (optional)
@@ -4591,7 +4591,7 @@ class VirtualNetworkClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
 
 
-        :param CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
+        :param oci.core.models.CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
             Details to create a VirtualCircuit.
 
         :param str opc_retry_token: (optional)
@@ -4659,7 +4659,7 @@ class VirtualNetworkClient(object):
         Creates a VLAN in the specified VCN and the specified compartment.
 
 
-        :param CreateVlanDetails create_vlan_details: (required)
+        :param oci.core.models.CreateVlanDetails create_vlan_details: (required)
             Details for creating a VLAN
 
         :param str opc_retry_token: (optional)
@@ -6605,7 +6605,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ServiceIdRequestDetails detach_service_details: (required)
+        :param oci.core.models.ServiceIdRequestDetails detach_service_details: (required)
             ServiceId of Service to be detached from a service gateway.
 
         :param str if_match: (optional)
@@ -8554,7 +8554,7 @@ class VirtualNetworkClient(object):
         `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
 
 
-        :param GetPublicIpByIpAddressDetails get_public_ip_by_ip_address_details: (required)
+        :param oci.core.models.GetPublicIpByIpAddressDetails get_public_ip_by_ip_address_details: (required)
             IP address details for fetching the public IP.
 
         :param obj retry_strategy: (optional)
@@ -8617,7 +8617,7 @@ class VirtualNetworkClient(object):
         `assignedEntityId` = OCID of the target private IP.
 
 
-        :param GetPublicIpByPrivateIpIdDetails get_public_ip_by_private_ip_id_details: (required)
+        :param oci.core.models.GetPublicIpByPrivateIpIdDetails get_public_ip_by_private_ip_id_details: (required)
             Private IP details for fetching the public IP.
 
         :param obj retry_strategy: (optional)
@@ -13922,7 +13922,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
+        :param oci.core.models.ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
             Details object for updating a VCN CIDR.
 
         :param str opc_request_id: (optional)
@@ -14018,7 +14018,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RemoveNetworkSecurityGroupSecurityRulesDetails remove_network_security_group_security_rules_details: (required)
+        :param oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails remove_network_security_group_security_rules_details: (required)
             Request with one or more security rules associated with the network security group that
             will be removed.
 
@@ -14085,7 +14085,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
+        :param oci.core.models.RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
             The Cidr to be removed from the Public Ip Pool
 
         :param str opc_request_id: (optional)
@@ -14177,7 +14177,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
+        :param oci.core.models.RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
             Details object for removing a VCN CIDR.
 
         :param str opc_request_id: (optional)
@@ -14271,7 +14271,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The OCID of the Byoip Range object.
 
-        :param UpdateByoipRangeDetails update_byoip_range_details: (required)
+        :param oci.core.models.UpdateByoipRangeDetails update_byoip_range_details: (required)
             Byoip Range details.
 
         :param str opc_request_id: (optional)
@@ -14357,7 +14357,7 @@ class VirtualNetworkClient(object):
         :param str cpe_id: (required)
             The OCID of the CPE.
 
-        :param UpdateCpeDetails update_cpe_details: (required)
+        :param oci.core.models.UpdateCpeDetails update_cpe_details: (required)
             Details object for updating a CPE.
 
         :param str if_match: (optional)
@@ -14436,7 +14436,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_id: (required)
             The OCID of the cross-connect.
 
-        :param UpdateCrossConnectDetails update_cross_connect_details: (required)
+        :param oci.core.models.UpdateCrossConnectDetails update_cross_connect_details: (required)
             Update CrossConnect fields.
 
         :param str if_match: (optional)
@@ -14516,7 +14516,7 @@ class VirtualNetworkClient(object):
         :param str cross_connect_group_id: (required)
             The OCID of the cross-connect group.
 
-        :param UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
+        :param oci.core.models.UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
             Update CrossConnectGroup fields
 
         :param str if_match: (optional)
@@ -14598,7 +14598,7 @@ class VirtualNetworkClient(object):
         :param str dhcp_id: (required)
             The OCID for the set of DHCP options.
 
-        :param UpdateDhcpDetails update_dhcp_details: (required)
+        :param oci.core.models.UpdateDhcpDetails update_dhcp_details: (required)
             Request object for updating a set of DHCP options.
 
         :param str if_match: (optional)
@@ -14677,7 +14677,7 @@ class VirtualNetworkClient(object):
         :param str drg_id: (required)
             The OCID of the DRG.
 
-        :param UpdateDrgDetails update_drg_details: (required)
+        :param oci.core.models.UpdateDrgDetails update_drg_details: (required)
             Details object for updating a DRG.
 
         :param str if_match: (optional)
@@ -14757,7 +14757,7 @@ class VirtualNetworkClient(object):
         :param str drg_attachment_id: (required)
             The OCID of the DRG attachment.
 
-        :param UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
+        :param oci.core.models.UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
             Details object for updating a `DrgAttachment`.
 
         :param str if_match: (optional)
@@ -14840,7 +14840,7 @@ class VirtualNetworkClient(object):
         :param str ig_id: (required)
             The OCID of the internet gateway.
 
-        :param UpdateInternetGatewayDetails update_internet_gateway_details: (required)
+        :param oci.core.models.UpdateInternetGatewayDetails update_internet_gateway_details: (required)
             Details for updating the internet gateway.
 
         :param str if_match: (optional)
@@ -14922,7 +14922,7 @@ class VirtualNetworkClient(object):
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
-        :param UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
+        :param oci.core.models.UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
             Details object for updating a IPSec connection.
 
         :param str if_match: (optional)
@@ -15017,7 +15017,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
+        :param oci.core.models.UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
             Details object for updating a IPSecConnection tunnel's details.
 
         :param str if_match: (optional)
@@ -15110,7 +15110,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateIPSecConnectionTunnelSharedSecretDetails update_ip_sec_connection_tunnel_shared_secret_details: (required)
+        :param oci.core.models.UpdateIPSecConnectionTunnelSharedSecretDetails update_ip_sec_connection_tunnel_shared_secret_details: (required)
             Details object for updating a IPSec connection tunnel's sharedSecret.
 
         :param str if_match: (optional)
@@ -15198,7 +15198,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateIpv6Details update_ipv6_details: (required)
+        :param oci.core.models.UpdateIpv6Details update_ipv6_details: (required)
             IPv6 details to be updated.
 
         :param str if_match: (optional)
@@ -15283,7 +15283,7 @@ class VirtualNetworkClient(object):
         :param str local_peering_gateway_id: (required)
             The OCID of the local peering gateway.
 
-        :param UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
+        :param oci.core.models.UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
             Details object for updating a local peering gateway.
 
         :param str if_match: (optional)
@@ -15364,7 +15364,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateNatGatewayDetails update_nat_gateway_details: (required)
+        :param oci.core.models.UpdateNatGatewayDetails update_nat_gateway_details: (required)
             Details object for updating a NAT gateway.
 
         :param str if_match: (optional)
@@ -15459,7 +15459,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateNetworkSecurityGroupDetails update_network_security_group_details: (required)
+        :param oci.core.models.UpdateNetworkSecurityGroupDetails update_network_security_group_details: (required)
             Details object for updating a network security group.
 
         :param str if_match: (optional)
@@ -15540,7 +15540,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateNetworkSecurityGroupSecurityRulesDetails update_network_security_group_security_rules_details: (required)
+        :param oci.core.models.UpdateNetworkSecurityGroupSecurityRulesDetails update_network_security_group_security_rules_details: (required)
             Request with one or more security rules associated with the network security group that
             will be updated.
 
@@ -15618,7 +15618,7 @@ class VirtualNetworkClient(object):
         :param str private_ip_id: (required)
             The OCID of the private IP.
 
-        :param UpdatePrivateIpDetails update_private_ip_details: (required)
+        :param oci.core.models.UpdatePrivateIpDetails update_private_ip_details: (required)
             Private IP details.
 
         :param str if_match: (optional)
@@ -15737,7 +15737,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_id: (required)
             The OCID of the public IP.
 
-        :param UpdatePublicIpDetails update_public_ip_details: (required)
+        :param oci.core.models.UpdatePublicIpDetails update_public_ip_details: (required)
             Public IP details.
 
         :param str if_match: (optional)
@@ -15816,7 +15816,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
+        :param oci.core.models.UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
             Public Ip Pool details.
 
         :param str opc_request_id: (optional)
@@ -15901,7 +15901,7 @@ class VirtualNetworkClient(object):
         :param str remote_peering_connection_id: (required)
             The OCID of the remote peering connection (RPC).
 
-        :param UpdateRemotePeeringConnectionDetails update_remote_peering_connection_details: (required)
+        :param oci.core.models.UpdateRemotePeeringConnectionDetails update_remote_peering_connection_details: (required)
             Request to the update the peering connection to remote region
 
         :param str if_match: (optional)
@@ -15983,7 +15983,7 @@ class VirtualNetworkClient(object):
         :param str rt_id: (required)
             The OCID of the route table.
 
-        :param UpdateRouteTableDetails update_route_table_details: (required)
+        :param oci.core.models.UpdateRouteTableDetails update_route_table_details: (required)
             Details object for updating a route table.
 
         :param str if_match: (optional)
@@ -16066,7 +16066,7 @@ class VirtualNetworkClient(object):
         :param str security_list_id: (required)
             The OCID of the security list.
 
-        :param UpdateSecurityListDetails update_security_list_details: (required)
+        :param oci.core.models.UpdateSecurityListDetails update_security_list_details: (required)
             Updated details for the security list.
 
         :param str if_match: (optional)
@@ -16148,7 +16148,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateServiceGatewayDetails update_service_gateway_details: (required)
+        :param oci.core.models.UpdateServiceGatewayDetails update_service_gateway_details: (required)
             Details object for updating a service gateway.
 
         :param str if_match: (optional)
@@ -16227,7 +16227,7 @@ class VirtualNetworkClient(object):
         :param str subnet_id: (required)
             The OCID of the subnet.
 
-        :param UpdateSubnetDetails update_subnet_details: (required)
+        :param oci.core.models.UpdateSubnetDetails update_subnet_details: (required)
             Details object for updating a subnet.
 
         :param str if_match: (optional)
@@ -16313,7 +16313,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateTunnelCpeDeviceConfigDetails update_tunnel_cpe_device_config_details: (required)
+        :param oci.core.models.UpdateTunnelCpeDeviceConfigDetails update_tunnel_cpe_device_config_details: (required)
             Request to input the tunnel's cpe configuration parameters
 
         :param str if_match: (optional)
@@ -16412,7 +16412,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVcnDetails update_vcn_details: (required)
+        :param oci.core.models.UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.
 
         :param str if_match: (optional)
@@ -16516,7 +16516,7 @@ class VirtualNetworkClient(object):
         :param str virtual_circuit_id: (required)
             The OCID of the virtual circuit.
 
-        :param UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
+        :param oci.core.models.UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
             Update VirtualCircuit fields.
 
         :param str if_match: (optional)
@@ -16599,7 +16599,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVlanDetails update_vlan_details: (required)
+        :param oci.core.models.UpdateVlanDetails update_vlan_details: (required)
             Details object for updating a subnet.
 
         :param str if_match: (optional)
@@ -16684,7 +16684,7 @@ class VirtualNetworkClient(object):
         :param str vnic_id: (required)
             The OCID of the VNIC.
 
-        :param UpdateVnicDetails update_vnic_details: (required)
+        :param oci.core.models.UpdateVnicDetails update_vnic_details: (required)
             Details object for updating a VNIC.
 
         :param str if_match: (optional)

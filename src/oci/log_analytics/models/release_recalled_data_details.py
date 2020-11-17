@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReleaseRecalledDataDetails(object):
     """
-    Work request details to release recalled data
+    This is the input used to release recalled data
     """
 
     #: A constant which can be used with the data_type property of a ReleaseRecalledDataDetails.
@@ -67,7 +67,7 @@ class ReleaseRecalledDataDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ReleaseRecalledDataDetails.
-        the compartment OCID for permission checking
+        This is the compartment OCID for permission checking
 
 
         :return: The compartment_id of this ReleaseRecalledDataDetails.
@@ -79,7 +79,7 @@ class ReleaseRecalledDataDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ReleaseRecalledDataDetails.
-        the compartment OCID for permission checking
+        This is the compartment OCID for permission checking
 
 
         :param compartment_id: The compartment_id of this ReleaseRecalledDataDetails.
@@ -91,7 +91,7 @@ class ReleaseRecalledDataDetails(object):
     def time_data_ended(self):
         """
         **[Required]** Gets the time_data_ended of this ReleaseRecalledDataDetails.
-        the end of the time interval
+        This is the end of the time interval
 
 
         :return: The time_data_ended of this ReleaseRecalledDataDetails.
@@ -103,7 +103,7 @@ class ReleaseRecalledDataDetails(object):
     def time_data_ended(self, time_data_ended):
         """
         Sets the time_data_ended of this ReleaseRecalledDataDetails.
-        the end of the time interval
+        This is the end of the time interval
 
 
         :param time_data_ended: The time_data_ended of this ReleaseRecalledDataDetails.
@@ -115,7 +115,7 @@ class ReleaseRecalledDataDetails(object):
     def time_data_started(self):
         """
         **[Required]** Gets the time_data_started of this ReleaseRecalledDataDetails.
-        the start of the time interval
+        This is the start of the time interval
 
 
         :return: The time_data_started of this ReleaseRecalledDataDetails.
@@ -127,7 +127,7 @@ class ReleaseRecalledDataDetails(object):
     def time_data_started(self, time_data_started):
         """
         Sets the time_data_started of this ReleaseRecalledDataDetails.
-        the start of the time interval
+        This is the start of the time interval
 
 
         :param time_data_started: The time_data_started of this ReleaseRecalledDataDetails.
@@ -139,7 +139,7 @@ class ReleaseRecalledDataDetails(object):
     def data_type(self):
         """
         Gets the data_type of this ReleaseRecalledDataDetails.
-        the type of the log data to be purged
+        This is the type of the recalled data to be released
 
         Allowed values for this property are: "LOG", "LOOKUP"
 
@@ -153,7 +153,7 @@ class ReleaseRecalledDataDetails(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this ReleaseRecalledDataDetails.
-        the type of the log data to be purged
+        This is the type of the recalled data to be released
 
 
         :param data_type: The data_type of this ReleaseRecalledDataDetails.

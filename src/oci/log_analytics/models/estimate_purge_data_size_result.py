@@ -37,7 +37,7 @@ class EstimatePurgeDataSizeResult(object):
     def purge_data_size_in_bytes(self):
         """
         **[Required]** Gets the purge_data_size_in_bytes of this EstimatePurgeDataSizeResult.
-        purge data size in bytes
+        This is the size of data to be purged in bytes
 
 
         :return: The purge_data_size_in_bytes of this EstimatePurgeDataSizeResult.
@@ -49,7 +49,7 @@ class EstimatePurgeDataSizeResult(object):
     def purge_data_size_in_bytes(self, purge_data_size_in_bytes):
         """
         Sets the purge_data_size_in_bytes of this EstimatePurgeDataSizeResult.
-        purge data size in bytes
+        This is the size of data to be purged in bytes
 
 
         :param purge_data_size_in_bytes: The purge_data_size_in_bytes of this EstimatePurgeDataSizeResult.

@@ -26,11 +26,9 @@ Log Analytics
     oci.log_analytics.models.Action
     oci.log_analytics.models.AddEntityAssociationDetails
     oci.log_analytics.models.AddFieldsCommandDescriptor
-    oci.log_analytics.models.AgentUpload
     oci.log_analytics.models.ArchivingConfiguration
     oci.log_analytics.models.Argument
     oci.log_analytics.models.AssociationSummaryReport
-    oci.log_analytics.models.Attribute
     oci.log_analytics.models.AutoLookups
     oci.log_analytics.models.BottomCommandDescriptor
     oci.log_analytics.models.BucketCommandDescriptor
@@ -57,7 +55,6 @@ Log Analytics
     oci.log_analytics.models.CreateLogAnalyticsEntityTypeDetails
     oci.log_analytics.models.CreateLogAnalyticsLogGroupDetails
     oci.log_analytics.models.CreateLogAnalyticsObjectCollectionRuleDetails
-    oci.log_analytics.models.CreateNamespaceDetails
     oci.log_analytics.models.CreateScheduledTaskDetails
     oci.log_analytics.models.CreateStandardTaskDetails
     oci.log_analytics.models.CronSchedule
@@ -83,7 +80,6 @@ Log Analytics
     oci.log_analytics.models.ExtractLogHeaderResults
     oci.log_analytics.models.Field
     oci.log_analytics.models.FieldArgument
-    oci.log_analytics.models.FieldMap
     oci.log_analytics.models.FieldSummaryCommandDescriptor
     oci.log_analytics.models.FieldSummaryReport
     oci.log_analytics.models.FieldValue
@@ -95,7 +91,6 @@ Log Analytics
     oci.log_analytics.models.FilterOutput
     oci.log_analytics.models.FixedFrequencySchedule
     oci.log_analytics.models.FunctionField
-    oci.log_analytics.models.GenerateAgentObjectNameDetails
     oci.log_analytics.models.HeadCommandDescriptor
     oci.log_analytics.models.HighlightCommandDescriptor
     oci.log_analytics.models.HighlightRowsCommandDescriptor
@@ -109,14 +104,12 @@ Log Analytics
     oci.log_analytics.models.LinkCommandDescriptor
     oci.log_analytics.models.LinkDetailsCommandDescriptor
     oci.log_analytics.models.LiteralArgument
-    oci.log_analytics.models.LogAnalytics
     oci.log_analytics.models.LogAnalyticsAssociatedEntity
     oci.log_analytics.models.LogAnalyticsAssociatedEntityCollection
     oci.log_analytics.models.LogAnalyticsAssociation
     oci.log_analytics.models.LogAnalyticsAssociationCollection
     oci.log_analytics.models.LogAnalyticsAssociationParameter
     oci.log_analytics.models.LogAnalyticsAssociationParameterCollection
-    oci.log_analytics.models.LogAnalyticsCollectionWarning
     oci.log_analytics.models.LogAnalyticsConfigWorkRequest
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestCollection
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestPayload
@@ -181,7 +174,6 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsSourcePattern
     oci.log_analytics.models.LogAnalyticsSourcePatternCollection
     oci.log_analytics.models.LogAnalyticsSourceSummary
-    oci.log_analytics.models.LogAnalyticsSummary
     oci.log_analytics.models.LogGroupSummaryReport
     oci.log_analytics.models.LookupCommandDescriptor
     oci.log_analytics.models.LookupField
@@ -191,7 +183,6 @@ Log Analytics
     oci.log_analytics.models.Namespace
     oci.log_analytics.models.NamespaceCollection
     oci.log_analytics.models.NamespaceSummary
-    oci.log_analytics.models.OutOfBoxEntityTypeDetails
     oci.log_analytics.models.ParseQueryDetails
     oci.log_analytics.models.ParseQueryOutput
     oci.log_analytics.models.ParsedContent
@@ -201,17 +192,14 @@ Log Analytics
     oci.log_analytics.models.PropertyOverride
     oci.log_analytics.models.PurgeAction
     oci.log_analytics.models.PurgeStorageDataDetails
-    oci.log_analytics.models.Query
     oci.log_analytics.models.QueryAggregation
     oci.log_analytics.models.QueryDetails
     oci.log_analytics.models.QueryWorkRequest
     oci.log_analytics.models.QueryWorkRequestCollection
-    oci.log_analytics.models.QueryWorkRequestResource
     oci.log_analytics.models.QueryWorkRequestSummary
     oci.log_analytics.models.RecallArchivedDataDetails
     oci.log_analytics.models.RegexCommandDescriptor
     oci.log_analytics.models.RegexMatchResult
-    oci.log_analytics.models.RegisterEntityTypesDetails
     oci.log_analytics.models.ReleaseRecalledDataDetails
     oci.log_analytics.models.RemoveEntityAssociationsDetails
     oci.log_analytics.models.RenameCommandDescriptor
@@ -224,7 +212,6 @@ Log Analytics
     oci.log_analytics.models.ScopeFilter
     oci.log_analytics.models.SearchCommandDescriptor
     oci.log_analytics.models.SearchLookupCommandDescriptor
-    oci.log_analytics.models.ServiceTenancy
     oci.log_analytics.models.SortCommandDescriptor
     oci.log_analytics.models.SortField
     oci.log_analytics.models.SourceMappingResponse
@@ -240,7 +227,6 @@ Log Analytics
     oci.log_analytics.models.StorageWorkRequestCollection
     oci.log_analytics.models.StorageWorkRequestSummary
     oci.log_analytics.models.StreamAction
-    oci.log_analytics.models.StringListDetails
     oci.log_analytics.models.Success
     oci.log_analytics.models.SuggestDetails
     oci.log_analytics.models.SuggestOutput

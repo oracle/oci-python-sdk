@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementDashboard(object):
     """
-    Properties for a dashboard, including dashboard id.
+    Properties of a dashboard, including dashboard ID.
     """
 
     def __init__(self, **kwargs):
@@ -205,7 +205,7 @@ class ManagementDashboard(object):
     def dashboard_id(self):
         """
         **[Required]** Gets the dashboard_id of this ManagementDashboard.
-        Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+        ID of the dashboard.
 
 
         :return: The dashboard_id of this ManagementDashboard.
@@ -217,7 +217,7 @@ class ManagementDashboard(object):
     def dashboard_id(self, dashboard_id):
         """
         Sets the dashboard_id of this ManagementDashboard.
-        Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+        ID of the dashboard.
 
 
         :param dashboard_id: The dashboard_id of this ManagementDashboard.
@@ -229,7 +229,7 @@ class ManagementDashboard(object):
     def provider_id(self):
         """
         **[Required]** Gets the provider_id of this ManagementDashboard.
-        Provider Id.
+        ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
 
 
         :return: The provider_id of this ManagementDashboard.
@@ -241,7 +241,7 @@ class ManagementDashboard(object):
     def provider_id(self, provider_id):
         """
         Sets the provider_id of this ManagementDashboard.
-        Provider Id.
+        ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
 
 
         :param provider_id: The provider_id of this ManagementDashboard.
@@ -253,7 +253,7 @@ class ManagementDashboard(object):
     def provider_name(self):
         """
         **[Required]** Gets the provider_name of this ManagementDashboard.
-        Provider name.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :return: The provider_name of this ManagementDashboard.
@@ -265,7 +265,7 @@ class ManagementDashboard(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this ManagementDashboard.
-        Provider name.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :param provider_name: The provider_name of this ManagementDashboard.
@@ -277,7 +277,7 @@ class ManagementDashboard(object):
     def provider_version(self):
         """
         **[Required]** Gets the provider_version of this ManagementDashboard.
-        Provider version.
+        Version of the service that owns the dashboard.
 
 
         :return: The provider_version of this ManagementDashboard.
@@ -289,7 +289,7 @@ class ManagementDashboard(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this ManagementDashboard.
-        Provider version.
+        Version of the service that owns the dashboard.
 
 
         :param provider_version: The provider_version of this ManagementDashboard.
@@ -301,7 +301,7 @@ class ManagementDashboard(object):
     def tiles(self):
         """
         **[Required]** Gets the tiles of this ManagementDashboard.
-        Dashboard tiles array
+        Array of dashboard tiles.
 
 
         :return: The tiles of this ManagementDashboard.
@@ -313,7 +313,7 @@ class ManagementDashboard(object):
     def tiles(self, tiles):
         """
         Sets the tiles of this ManagementDashboard.
-        Dashboard tiles array
+        Array of dashboard tiles.
 
 
         :param tiles: The tiles of this ManagementDashboard.
@@ -325,7 +325,7 @@ class ManagementDashboard(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagementDashboard.
-        Display name for dashboard.
+        Display name of the dashboard.
 
 
         :return: The display_name of this ManagementDashboard.
@@ -337,7 +337,7 @@ class ManagementDashboard(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagementDashboard.
-        Display name for dashboard.
+        Display name of the dashboard.
 
 
         :param display_name: The display_name of this ManagementDashboard.
@@ -349,7 +349,7 @@ class ManagementDashboard(object):
     def description(self):
         """
         **[Required]** Gets the description of this ManagementDashboard.
-        Dashboard's description.
+        Description of the dashboard.
 
 
         :return: The description of this ManagementDashboard.
@@ -361,7 +361,7 @@ class ManagementDashboard(object):
     def description(self, description):
         """
         Sets the description of this ManagementDashboard.
-        Dashboard's description.
+        Description of the dashboard.
 
 
         :param description: The description of this ManagementDashboard.
@@ -373,7 +373,7 @@ class ManagementDashboard(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagementDashboard.
-        The ocid of the compartment that owns the dashboard.
+        OCID of the compartment in which the dashboard resides.
 
 
         :return: The compartment_id of this ManagementDashboard.
@@ -385,7 +385,7 @@ class ManagementDashboard(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagementDashboard.
-        The ocid of the compartment that owns the dashboard.
+        OCID of the compartment in which the dashboard resides.
 
 
         :param compartment_id: The compartment_id of this ManagementDashboard.
@@ -397,7 +397,7 @@ class ManagementDashboard(object):
     def is_oob_dashboard(self):
         """
         **[Required]** Gets the is_oob_dashboard of this ManagementDashboard.
-        String boolean (\"true\" or \"false\"). OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+        Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
 
 
         :return: The is_oob_dashboard of this ManagementDashboard.
@@ -409,7 +409,7 @@ class ManagementDashboard(object):
     def is_oob_dashboard(self, is_oob_dashboard):
         """
         Sets the is_oob_dashboard of this ManagementDashboard.
-        String boolean (\"true\" or \"false\"). OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+        Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
 
 
         :param is_oob_dashboard: The is_oob_dashboard of this ManagementDashboard.
@@ -421,7 +421,7 @@ class ManagementDashboard(object):
     def is_show_in_home(self):
         """
         **[Required]** Gets the is_show_in_home of this ManagementDashboard.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+        Determines whether the dashboard will be displayed in Dashboard Home.
 
 
         :return: The is_show_in_home of this ManagementDashboard.
@@ -433,7 +433,7 @@ class ManagementDashboard(object):
     def is_show_in_home(self, is_show_in_home):
         """
         Sets the is_show_in_home of this ManagementDashboard.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+        Determines whether the dashboard will be displayed in Dashboard Home.
 
 
         :param is_show_in_home: The is_show_in_home of this ManagementDashboard.
@@ -445,7 +445,7 @@ class ManagementDashboard(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this ManagementDashboard.
-        Created by which user.
+        User who created the dashboard.
 
 
         :return: The created_by of this ManagementDashboard.
@@ -457,7 +457,7 @@ class ManagementDashboard(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this ManagementDashboard.
-        Created by which user.
+        User who created the dashboard.
 
 
         :param created_by: The created_by of this ManagementDashboard.
@@ -469,7 +469,7 @@ class ManagementDashboard(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ManagementDashboard.
-        Time created.
+        Date and time the dashboard was created.
 
 
         :return: The time_created of this ManagementDashboard.
@@ -481,7 +481,7 @@ class ManagementDashboard(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ManagementDashboard.
-        Time created.
+        Date and time the dashboard was created.
 
 
         :param time_created: The time_created of this ManagementDashboard.
@@ -493,7 +493,7 @@ class ManagementDashboard(object):
     def updated_by(self):
         """
         **[Required]** Gets the updated_by of this ManagementDashboard.
-        Updated by which user.
+        User who updated the dashboard.
 
 
         :return: The updated_by of this ManagementDashboard.
@@ -505,7 +505,7 @@ class ManagementDashboard(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this ManagementDashboard.
-        Updated by which user.
+        User who updated the dashboard.
 
 
         :param updated_by: The updated_by of this ManagementDashboard.
@@ -517,7 +517,7 @@ class ManagementDashboard(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this ManagementDashboard.
-        Time updated.
+        Date and time the dashboard was updated.
 
 
         :return: The time_updated of this ManagementDashboard.
@@ -529,7 +529,7 @@ class ManagementDashboard(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ManagementDashboard.
-        Time updated.
+        Date and time the dashboard was updated.
 
 
         :param time_updated: The time_updated of this ManagementDashboard.
@@ -565,7 +565,7 @@ class ManagementDashboard(object):
     def is_show_description(self):
         """
         **[Required]** Gets the is_show_description of this ManagementDashboard.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not automatically refreshed in intervals.
+        Determines whether the description of the dashboard is displayed.
 
 
         :return: The is_show_description of this ManagementDashboard.
@@ -577,7 +577,7 @@ class ManagementDashboard(object):
     def is_show_description(self, is_show_description):
         """
         Sets the is_show_description of this ManagementDashboard.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not automatically refreshed in intervals.
+        Determines whether the description of the dashboard is displayed.
 
 
         :param is_show_description: The is_show_description of this ManagementDashboard.
@@ -589,7 +589,7 @@ class ManagementDashboard(object):
     def screen_image(self):
         """
         **[Required]** Gets the screen_image of this ManagementDashboard.
-        screen image.
+        Screen image of the dashboard.
 
 
         :return: The screen_image of this ManagementDashboard.
@@ -601,7 +601,7 @@ class ManagementDashboard(object):
     def screen_image(self, screen_image):
         """
         Sets the screen_image of this ManagementDashboard.
-        screen image.
+        Screen image of the dashboard.
 
 
         :param screen_image: The screen_image of this ManagementDashboard.
@@ -613,7 +613,7 @@ class ManagementDashboard(object):
     def nls(self):
         """
         **[Required]** Gets the nls of this ManagementDashboard.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :return: The nls of this ManagementDashboard.
@@ -625,7 +625,7 @@ class ManagementDashboard(object):
     def nls(self, nls):
         """
         Sets the nls of this ManagementDashboard.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :param nls: The nls of this ManagementDashboard.
@@ -637,7 +637,7 @@ class ManagementDashboard(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementDashboard.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :return: The ui_config of this ManagementDashboard.
@@ -649,7 +649,7 @@ class ManagementDashboard(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementDashboard.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :param ui_config: The ui_config of this ManagementDashboard.
@@ -661,7 +661,7 @@ class ManagementDashboard(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementDashboard.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :return: The data_config of this ManagementDashboard.
@@ -673,7 +673,7 @@ class ManagementDashboard(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementDashboard.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :param data_config: The data_config of this ManagementDashboard.
@@ -685,7 +685,7 @@ class ManagementDashboard(object):
     def type(self):
         """
         **[Required]** Gets the type of this ManagementDashboard.
-        NORMAL means single dashboard, SET means dashboard set.
+        Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
 
 
         :return: The type of this ManagementDashboard.
@@ -697,7 +697,7 @@ class ManagementDashboard(object):
     def type(self, type):
         """
         Sets the type of this ManagementDashboard.
-        NORMAL means single dashboard, SET means dashboard set.
+        Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
 
 
         :param type: The type of this ManagementDashboard.
@@ -709,7 +709,7 @@ class ManagementDashboard(object):
     def is_favorite(self):
         """
         **[Required]** Gets the is_favorite of this ManagementDashboard.
-        String boolean (\"true\" or \"false\").
+        Determines whether the dashboard is set as favorite.
 
 
         :return: The is_favorite of this ManagementDashboard.
@@ -721,7 +721,7 @@ class ManagementDashboard(object):
     def is_favorite(self, is_favorite):
         """
         Sets the is_favorite of this ManagementDashboard.
-        String boolean (\"true\" or \"false\").
+        Determines whether the dashboard is set as favorite.
 
 
         :param is_favorite: The is_favorite of this ManagementDashboard.
@@ -733,7 +733,7 @@ class ManagementDashboard(object):
     def saved_searches(self):
         """
         **[Required]** Gets the saved_searches of this ManagementDashboard.
-        Array of saved searches.
+        Array of saved searches in the dashboard.
 
 
         :return: The saved_searches of this ManagementDashboard.
@@ -745,7 +745,7 @@ class ManagementDashboard(object):
     def saved_searches(self, saved_searches):
         """
         Sets the saved_searches of this ManagementDashboard.
-        Array of saved searches.
+        Array of saved searches in the dashboard.
 
 
         :param saved_searches: The saved_searches of this ManagementDashboard.

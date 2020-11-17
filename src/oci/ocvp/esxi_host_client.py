@@ -95,7 +95,7 @@ class EsxiHostClient(object):
         creation of the ESXi host.
 
 
-        :param CreateEsxiHostDetails create_esxi_host_details: (required)
+        :param oci.ocvp.models.CreateEsxiHostDetails create_esxi_host_details: (required)
             Details for the ESXi host.
 
         :param str opc_retry_token: (optional)
@@ -501,7 +501,7 @@ class EsxiHostClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateEsxiHostDetails update_esxi_host_details: (required)
+        :param oci.ocvp.models.UpdateEsxiHostDetails update_esxi_host_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

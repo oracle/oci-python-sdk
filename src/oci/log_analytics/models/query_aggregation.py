@@ -165,7 +165,7 @@ class QueryAggregation(object):
     def partial_result_reason(self):
         """
         Gets the partial_result_reason of this QueryAggregation.
-        Explanation of why results may be partial. Only set if isPartialResults is true.
+        Explanation of why results may be partial. Only set if arePartialResults is true.
 
 
         :return: The partial_result_reason of this QueryAggregation.
@@ -177,7 +177,7 @@ class QueryAggregation(object):
     def partial_result_reason(self, partial_result_reason):
         """
         Sets the partial_result_reason of this QueryAggregation.
-        Explanation of why results may be partial. Only set if isPartialResults is true.
+        Explanation of why results may be partial. Only set if arePartialResults is true.
 
 
         :param partial_result_reason: The partial_result_reason of this QueryAggregation.

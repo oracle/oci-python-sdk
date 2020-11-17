@@ -93,7 +93,7 @@ class BudgetClient(object):
         :param str budget_id: (required)
             The unique Budget OCID
 
-        :param CreateAlertRuleDetails create_alert_rule_details: (required)
+        :param oci.budget.models.CreateAlertRuleDetails create_alert_rule_details: (required)
             Details for the new Alert Rule.
 
         :param str opc_retry_token: (optional)
@@ -178,7 +178,7 @@ class BudgetClient(object):
         Creates a new Budget.
 
 
-        :param CreateBudgetDetails create_budget_details: (required)
+        :param oci.budget.models.CreateBudgetDetails create_budget_details: (required)
             Details for the new Budget.
 
         :param str opc_retry_token: (optional)
@@ -860,7 +860,7 @@ class BudgetClient(object):
         :param str alert_rule_id: (required)
             The unique Alert Rule OCID
 
-        :param UpdateAlertRuleDetails update_alert_rule_details: (required)
+        :param oci.budget.models.UpdateAlertRuleDetails update_alert_rule_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -947,7 +947,7 @@ class BudgetClient(object):
         :param str budget_id: (required)
             The unique Budget OCID
 
-        :param UpdateBudgetDetails update_budget_details: (required)
+        :param oci.budget.models.UpdateBudgetDetails update_budget_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

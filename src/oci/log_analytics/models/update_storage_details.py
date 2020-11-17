@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateStorageDetails(object):
     """
-    Update storage configuration of a tenancy in Logan Analytics application
+    This is the input to update storage configuration of a tenancy in Logan Analytics application
     """
 
     def __init__(self, **kwargs):

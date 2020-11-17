@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementDashboardForImportExportDetails(object):
     """
-    Properties for a dashboard, including dashboard id, and saved searches, for import purposes.
+    Properties of a dashboard, including dashboard ID and saved searches, for import purposes.
     """
 
     def __init__(self, **kwargs):
@@ -177,7 +177,7 @@ class ManagementDashboardForImportExportDetails(object):
     def dashboard_id(self):
         """
         **[Required]** Gets the dashboard_id of this ManagementDashboardForImportExportDetails.
-        Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+        ID of the dashboard.
 
 
         :return: The dashboard_id of this ManagementDashboardForImportExportDetails.
@@ -189,7 +189,7 @@ class ManagementDashboardForImportExportDetails(object):
     def dashboard_id(self, dashboard_id):
         """
         Sets the dashboard_id of this ManagementDashboardForImportExportDetails.
-        Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+        ID of the dashboard.
 
 
         :param dashboard_id: The dashboard_id of this ManagementDashboardForImportExportDetails.
@@ -201,7 +201,7 @@ class ManagementDashboardForImportExportDetails(object):
     def provider_id(self):
         """
         **[Required]** Gets the provider_id of this ManagementDashboardForImportExportDetails.
-        Provider Id.
+        ID of the service (for example log-analytics) that owns the dashboard. Each service has a unique ID.
 
 
         :return: The provider_id of this ManagementDashboardForImportExportDetails.
@@ -213,7 +213,7 @@ class ManagementDashboardForImportExportDetails(object):
     def provider_id(self, provider_id):
         """
         Sets the provider_id of this ManagementDashboardForImportExportDetails.
-        Provider Id.
+        ID of the service (for example log-analytics) that owns the dashboard. Each service has a unique ID.
 
 
         :param provider_id: The provider_id of this ManagementDashboardForImportExportDetails.
@@ -225,7 +225,7 @@ class ManagementDashboardForImportExportDetails(object):
     def provider_name(self):
         """
         **[Required]** Gets the provider_name of this ManagementDashboardForImportExportDetails.
-        Provider name.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :return: The provider_name of this ManagementDashboardForImportExportDetails.
@@ -237,7 +237,7 @@ class ManagementDashboardForImportExportDetails(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this ManagementDashboardForImportExportDetails.
-        Provider name.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :param provider_name: The provider_name of this ManagementDashboardForImportExportDetails.
@@ -249,7 +249,7 @@ class ManagementDashboardForImportExportDetails(object):
     def provider_version(self):
         """
         **[Required]** Gets the provider_version of this ManagementDashboardForImportExportDetails.
-        Provider version.
+        Version of the service that owns the dashboard.
 
 
         :return: The provider_version of this ManagementDashboardForImportExportDetails.
@@ -261,7 +261,7 @@ class ManagementDashboardForImportExportDetails(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this ManagementDashboardForImportExportDetails.
-        Provider version.
+        Version of the service that owns the dashboard.
 
 
         :param provider_version: The provider_version of this ManagementDashboardForImportExportDetails.
@@ -273,7 +273,7 @@ class ManagementDashboardForImportExportDetails(object):
     def tiles(self):
         """
         **[Required]** Gets the tiles of this ManagementDashboardForImportExportDetails.
-        Dashboard tiles array
+        Array of dashboard tiles.
 
 
         :return: The tiles of this ManagementDashboardForImportExportDetails.
@@ -285,7 +285,7 @@ class ManagementDashboardForImportExportDetails(object):
     def tiles(self, tiles):
         """
         Sets the tiles of this ManagementDashboardForImportExportDetails.
-        Dashboard tiles array
+        Array of dashboard tiles.
 
 
         :param tiles: The tiles of this ManagementDashboardForImportExportDetails.
@@ -297,7 +297,7 @@ class ManagementDashboardForImportExportDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagementDashboardForImportExportDetails.
-        Display name for dashboard.
+        Display name of the dashboard.
 
 
         :return: The display_name of this ManagementDashboardForImportExportDetails.
@@ -309,7 +309,7 @@ class ManagementDashboardForImportExportDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagementDashboardForImportExportDetails.
-        Display name for dashboard.
+        Display name of the dashboard.
 
 
         :param display_name: The display_name of this ManagementDashboardForImportExportDetails.
@@ -321,7 +321,7 @@ class ManagementDashboardForImportExportDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this ManagementDashboardForImportExportDetails.
-        Dashboard's description.
+        Description of the dashboard.
 
 
         :return: The description of this ManagementDashboardForImportExportDetails.
@@ -333,7 +333,7 @@ class ManagementDashboardForImportExportDetails(object):
     def description(self, description):
         """
         Sets the description of this ManagementDashboardForImportExportDetails.
-        Dashboard's description.
+        Description of the dashboard.
 
 
         :param description: The description of this ManagementDashboardForImportExportDetails.
@@ -345,7 +345,7 @@ class ManagementDashboardForImportExportDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagementDashboardForImportExportDetails.
-        The ocid of the compartment that owns the dashboard.
+        OCID of the compartment in which the dashboard resides.
 
 
         :return: The compartment_id of this ManagementDashboardForImportExportDetails.
@@ -357,7 +357,7 @@ class ManagementDashboardForImportExportDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagementDashboardForImportExportDetails.
-        The ocid of the compartment that owns the dashboard.
+        OCID of the compartment in which the dashboard resides.
 
 
         :param compartment_id: The compartment_id of this ManagementDashboardForImportExportDetails.
@@ -369,7 +369,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_oob_dashboard(self):
         """
         **[Required]** Gets the is_oob_dashboard of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\"). OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+        Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
 
 
         :return: The is_oob_dashboard of this ManagementDashboardForImportExportDetails.
@@ -381,7 +381,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_oob_dashboard(self, is_oob_dashboard):
         """
         Sets the is_oob_dashboard of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\"). OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+        Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
 
 
         :param is_oob_dashboard: The is_oob_dashboard of this ManagementDashboardForImportExportDetails.
@@ -393,7 +393,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_show_in_home(self):
         """
         **[Required]** Gets the is_show_in_home of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+        Determines whether the dashboard will be displayed in Dashboard Home.
 
 
         :return: The is_show_in_home of this ManagementDashboardForImportExportDetails.
@@ -405,7 +405,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_show_in_home(self, is_show_in_home):
         """
         Sets the is_show_in_home of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+        Determines whether the dashboard will be displayed in Dashboard Home.
 
 
         :param is_show_in_home: The is_show_in_home of this ManagementDashboardForImportExportDetails.
@@ -441,7 +441,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_show_description(self):
         """
         **[Required]** Gets the is_show_description of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not automatically refreshed in intervals.
+        Determines whether the description of the dashboard is displayed.
 
 
         :return: The is_show_description of this ManagementDashboardForImportExportDetails.
@@ -453,7 +453,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_show_description(self, is_show_description):
         """
         Sets the is_show_description of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\").  When false, dashboard is not automatically refreshed in intervals.
+        Determines whether the description of the dashboard is displayed.
 
 
         :param is_show_description: The is_show_description of this ManagementDashboardForImportExportDetails.
@@ -465,7 +465,7 @@ class ManagementDashboardForImportExportDetails(object):
     def screen_image(self):
         """
         **[Required]** Gets the screen_image of this ManagementDashboardForImportExportDetails.
-        screen image.
+        Screen image of the dashboard.
 
 
         :return: The screen_image of this ManagementDashboardForImportExportDetails.
@@ -477,7 +477,7 @@ class ManagementDashboardForImportExportDetails(object):
     def screen_image(self, screen_image):
         """
         Sets the screen_image of this ManagementDashboardForImportExportDetails.
-        screen image.
+        Screen image of the dashboard.
 
 
         :param screen_image: The screen_image of this ManagementDashboardForImportExportDetails.
@@ -489,7 +489,7 @@ class ManagementDashboardForImportExportDetails(object):
     def nls(self):
         """
         **[Required]** Gets the nls of this ManagementDashboardForImportExportDetails.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :return: The nls of this ManagementDashboardForImportExportDetails.
@@ -501,7 +501,7 @@ class ManagementDashboardForImportExportDetails(object):
     def nls(self, nls):
         """
         Sets the nls of this ManagementDashboardForImportExportDetails.
-        Json for internationalization.
+        JSON that contains internationalization options.
 
 
         :param nls: The nls of this ManagementDashboardForImportExportDetails.
@@ -513,7 +513,7 @@ class ManagementDashboardForImportExportDetails(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementDashboardForImportExportDetails.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :return: The ui_config of this ManagementDashboardForImportExportDetails.
@@ -525,7 +525,7 @@ class ManagementDashboardForImportExportDetails(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementDashboardForImportExportDetails.
-        Json to contain options for UI.
+        JSON that contains user interface options.
 
 
         :param ui_config: The ui_config of this ManagementDashboardForImportExportDetails.
@@ -537,7 +537,7 @@ class ManagementDashboardForImportExportDetails(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementDashboardForImportExportDetails.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :return: The data_config of this ManagementDashboardForImportExportDetails.
@@ -549,7 +549,7 @@ class ManagementDashboardForImportExportDetails(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementDashboardForImportExportDetails.
-        Array of Json to contain options for source of data.
+        Array of JSON that contain data source options.
 
 
         :param data_config: The data_config of this ManagementDashboardForImportExportDetails.
@@ -561,7 +561,7 @@ class ManagementDashboardForImportExportDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this ManagementDashboardForImportExportDetails.
-        NORMAL means single dashboard, SET means dashboard set.
+        Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
 
 
         :return: The type of this ManagementDashboardForImportExportDetails.
@@ -573,7 +573,7 @@ class ManagementDashboardForImportExportDetails(object):
     def type(self, type):
         """
         Sets the type of this ManagementDashboardForImportExportDetails.
-        NORMAL means single dashboard, SET means dashboard set.
+        Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
 
 
         :param type: The type of this ManagementDashboardForImportExportDetails.
@@ -585,7 +585,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_favorite(self):
         """
         **[Required]** Gets the is_favorite of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\").
+        Determines whether the dashboard is set as favorite.
 
 
         :return: The is_favorite of this ManagementDashboardForImportExportDetails.
@@ -597,7 +597,7 @@ class ManagementDashboardForImportExportDetails(object):
     def is_favorite(self, is_favorite):
         """
         Sets the is_favorite of this ManagementDashboardForImportExportDetails.
-        String boolean (\"true\" or \"false\").
+        Determines whether the dashboard is set as favorite.
 
 
         :param is_favorite: The is_favorite of this ManagementDashboardForImportExportDetails.
@@ -609,7 +609,7 @@ class ManagementDashboardForImportExportDetails(object):
     def saved_searches(self):
         """
         **[Required]** Gets the saved_searches of this ManagementDashboardForImportExportDetails.
-        Array of saved searches.
+        Array of saved searches in the dashboard.
 
 
         :return: The saved_searches of this ManagementDashboardForImportExportDetails.
@@ -621,7 +621,7 @@ class ManagementDashboardForImportExportDetails(object):
     def saved_searches(self, saved_searches):
         """
         Sets the saved_searches of this ManagementDashboardForImportExportDetails.
-        Array of saved searches.
+        Array of saved searches in the dashboard.
 
 
         :param saved_searches: The saved_searches of this ManagementDashboardForImportExportDetails.

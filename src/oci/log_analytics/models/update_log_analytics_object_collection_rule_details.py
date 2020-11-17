@@ -112,7 +112,7 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     def log_group_id(self):
         """
         Gets the log_group_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
-        Log Analytics Log group OCID to associate the processed logs with.
+        Logging Analytics Log group OCID to associate the processed logs with.
 
 
         :return: The log_group_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
@@ -124,7 +124,7 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     def log_group_id(self, log_group_id):
         """
         Sets the log_group_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
-        Log Analytics Log group OCID to associate the processed logs with.
+        Logging Analytics Log group OCID to associate the processed logs with.
 
 
         :param log_group_id: The log_group_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
@@ -136,7 +136,7 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     def log_source_name(self):
         """
         Gets the log_source_name of this UpdateLogAnalyticsObjectCollectionRuleDetails.
-        Name of the Log Analytics Source to use for the processing.
+        Name of the Logging Analytics Source to use for the processing.
 
 
         :return: The log_source_name of this UpdateLogAnalyticsObjectCollectionRuleDetails.
@@ -148,7 +148,7 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     def log_source_name(self, log_source_name):
         """
         Sets the log_source_name of this UpdateLogAnalyticsObjectCollectionRuleDetails.
-        Name of the Log Analytics Source to use for the processing.
+        Name of the Logging Analytics Source to use for the processing.
 
 
         :param log_source_name: The log_source_name of this UpdateLogAnalyticsObjectCollectionRuleDetails.
@@ -160,7 +160,7 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     def entity_id(self):
         """
         Gets the entity_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
-        Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 
 
         :return: The entity_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
@@ -172,7 +172,7 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     def entity_id(self, entity_id):
         """
         Sets the entity_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
-        Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
+        Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 
 
         :param entity_id: The entity_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.

@@ -44,7 +44,7 @@ class ScopeFilter(object):
     def field_name(self):
         """
         **[Required]** Gets the field_name of this ScopeFilter.
-        Field must be a valid enterprise logging out-of-the-box field.
+        Field must be a valid logging-analytics out-of-the-box field.
 
 
         :return: The field_name of this ScopeFilter.
@@ -56,7 +56,7 @@ class ScopeFilter(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this ScopeFilter.
-        Field must be a valid enterprise logging out-of-the-box field.
+        Field must be a valid logging-analytics out-of-the-box field.
 
 
         :param field_name: The field_name of this ScopeFilter.

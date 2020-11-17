@@ -174,7 +174,7 @@ class ComputeClient(object):
         Attaches the specified boot volume to the specified instance.
 
 
-        :param AttachBootVolumeDetails attach_boot_volume_details: (required)
+        :param oci.core.models.AttachBootVolumeDetails attach_boot_volume_details: (required)
             Attach boot volume request
 
         :param str opc_retry_token: (optional)
@@ -246,7 +246,7 @@ class ComputeClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
 
 
-        :param AttachVnicDetails attach_vnic_details: (required)
+        :param oci.core.models.AttachVnicDetails attach_vnic_details: (required)
             Attach VNIC details.
 
         :param str opc_retry_token: (optional)
@@ -314,7 +314,7 @@ class ComputeClient(object):
         Attaches the specified storage volume to the specified instance.
 
 
-        :param AttachVolumeDetails attach_volume_details: (required)
+        :param oci.core.models.AttachVolumeDetails attach_volume_details: (required)
             Attach volume request
 
         :param str opc_retry_token: (optional)
@@ -398,7 +398,7 @@ class ComputeClient(object):
         and the console history data.
 
 
-        :param CaptureConsoleHistoryDetails capture_console_history_details: (required)
+        :param oci.core.models.CaptureConsoleHistoryDetails capture_console_history_details: (required)
             Console history details
 
         :param str opc_retry_token: (optional)
@@ -473,7 +473,7 @@ class ComputeClient(object):
         :param str compute_image_capability_schema_id: (required)
             The id of the compute image capability schema or the image ocid
 
-        :param ChangeComputeImageCapabilitySchemaCompartmentDetails change_compute_image_capability_schema_compartment_details: (required)
+        :param oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails change_compute_image_capability_schema_compartment_details: (required)
             Compute Image Capability Schema change compartment details
 
         :param str if_match: (optional)
@@ -567,7 +567,7 @@ class ComputeClient(object):
         :param str dedicated_vm_host_id: (required)
             The OCID of the dedicated VM host.
 
-        :param ChangeDedicatedVmHostCompartmentDetails change_dedicated_vm_host_compartment_details: (required)
+        :param oci.core.models.ChangeDedicatedVmHostCompartmentDetails change_dedicated_vm_host_compartment_details: (required)
             The request to move the dedicated virtual machine host to a different compartment.
 
         :param str if_match: (optional)
@@ -667,7 +667,7 @@ class ComputeClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeImageCompartmentDetails change_image_compartment_details: (required)
+        :param oci.core.models.ChangeImageCompartmentDetails change_image_compartment_details: (required)
             Request to change the compartment of a given image.
 
         :param str if_match: (optional)
@@ -768,7 +768,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :param ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
+        :param oci.core.models.ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
             Request to change the compartment of a given instance.
 
         :param str if_match: (optional)
@@ -859,7 +859,7 @@ class ComputeClient(object):
         Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
 
 
-        :param CreateAppCatalogSubscriptionDetails create_app_catalog_subscription_details: (required)
+        :param oci.core.models.CreateAppCatalogSubscriptionDetails create_app_catalog_subscription_details: (required)
             Request for the creation of a subscription for listing resource version for a compartment.
 
         :param str opc_retry_token: (optional)
@@ -927,7 +927,7 @@ class ComputeClient(object):
         Creates compute image capability schema.
 
 
-        :param CreateComputeImageCapabilitySchemaDetails create_compute_image_capability_schema_details: (required)
+        :param oci.core.models.CreateComputeImageCapabilitySchemaDetails create_compute_image_capability_schema_details: (required)
             Compute Image Capability Schema creation details
 
         :param str opc_retry_token: (optional)
@@ -1000,7 +1000,7 @@ class ComputeClient(object):
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm
 
 
-        :param CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
+        :param oci.core.models.CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
             The details for creating a new dedicated virtual machine host.
 
         :param str opc_request_id: (optional)
@@ -1101,7 +1101,7 @@ class ComputeClient(object):
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
 
 
-        :param CreateImageDetails create_image_details: (required)
+        :param oci.core.models.CreateImageDetails create_image_details: (required)
             Image creation details
 
         :param str opc_retry_token: (optional)
@@ -1175,7 +1175,7 @@ class ComputeClient(object):
         __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
 
 
-        :param CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
+        :param oci.core.models.CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
             Request object for creating an InstanceConsoleConnection
 
         :param str opc_retry_token: (optional)
@@ -1925,7 +1925,7 @@ class ComputeClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ExportImageDetails export_image_details: (required)
+        :param oci.core.models.ExportImageDetails export_image_details: (required)
             Details for the image export.
 
         :param str opc_retry_token: (optional)
@@ -3323,7 +3323,7 @@ class ComputeClient(object):
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
 
 
-        :param LaunchInstanceDetails launch_instance_details: (required)
+        :param oci.core.models.LaunchInstanceDetails launch_instance_details: (required)
             Instance details
 
         :param str opc_retry_token: (optional)
@@ -5991,7 +5991,7 @@ class ComputeClient(object):
         :param str compute_image_capability_schema_id: (required)
             The id of the compute image capability schema or the image ocid
 
-        :param UpdateComputeImageCapabilitySchemaDetails update_compute_image_capability_schema_details: (required)
+        :param oci.core.models.UpdateComputeImageCapabilitySchemaDetails update_compute_image_capability_schema_details: (required)
             Updates the freeFormTags, definedTags, and display name of the image capability schema
 
         :param str if_match: (optional)
@@ -6070,7 +6070,7 @@ class ComputeClient(object):
         :param str instance_console_history_id: (required)
             The OCID of the console history.
 
-        :param UpdateConsoleHistoryDetails update_console_history_details: (required)
+        :param oci.core.models.UpdateConsoleHistoryDetails update_console_history_details: (required)
             Update instance fields
 
         :param str if_match: (optional)
@@ -6150,7 +6150,7 @@ class ComputeClient(object):
         :param str dedicated_vm_host_id: (required)
             The OCID of the dedicated VM host.
 
-        :param UpdateDedicatedVmHostDetails update_dedicated_vm_host_details: (required)
+        :param oci.core.models.UpdateDedicatedVmHostDetails update_dedicated_vm_host_details: (required)
             Update dedicated VM host details
 
         :param str if_match: (optional)
@@ -6248,7 +6248,7 @@ class ComputeClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateImageDetails update_image_details: (required)
+        :param oci.core.models.UpdateImageDetails update_image_details: (required)
             Updates the image display name field. Avoid entering confidential information.
 
         :param str opc_retry_token: (optional)
@@ -6344,7 +6344,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :param UpdateInstanceDetails update_instance_details: (required)
+        :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields
 
         :param str opc_retry_token: (optional)
@@ -6434,7 +6434,7 @@ class ComputeClient(object):
         :param str instance_console_connection_id: (required)
             The OCID of the instance console connection.
 
-        :param UpdateInstanceConsoleConnectionDetails update_instance_console_connection_details: (required)
+        :param oci.core.models.UpdateInstanceConsoleConnectionDetails update_instance_console_connection_details: (required)
             Update instanceConsoleConnection tags
 
         :param str opc_request_id: (optional)

@@ -93,7 +93,7 @@ class BlockchainPlatformClient(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param ChangeBlockchainPlatformCompartmentDetails change_blockchain_platform_compartment_details: (required)
+        :param oci.blockchain.models.ChangeBlockchainPlatformCompartmentDetails change_blockchain_platform_compartment_details: (required)
             Input payload to move the resource to a different compartment.
 
         :param str if_match: (optional)
@@ -185,7 +185,7 @@ class BlockchainPlatformClient(object):
         Creates a new Blockchain Platform.
 
 
-        :param CreateBlockchainPlatformDetails create_blockchain_platform_details: (required)
+        :param oci.blockchain.models.CreateBlockchainPlatformDetails create_blockchain_platform_details: (required)
             Details for the new service.
 
         :param str opc_retry_token: (optional)
@@ -259,7 +259,7 @@ class BlockchainPlatformClient(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param CreateOsnDetails create_osn_details: (required)
+        :param oci.blockchain.models.CreateOsnDetails create_osn_details: (required)
             Input payload to create blockchain platform OSN. The payload cannot be empty.
 
         :param str if_match: (optional)
@@ -354,7 +354,7 @@ class BlockchainPlatformClient(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param CreatePeerDetails create_peer_details: (required)
+        :param oci.blockchain.models.CreatePeerDetails create_peer_details: (required)
             Input payload to create a blockchain platform peer. The payload cannot be empty.
 
         :param str opc_request_id: (optional)
@@ -1737,7 +1737,7 @@ class BlockchainPlatformClient(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param ScaleBlockchainPlatformDetails scale_blockchain_platform_details: (required)
+        :param oci.blockchain.models.ScaleBlockchainPlatformDetails scale_blockchain_platform_details: (required)
             Input payload to scaleout blockchain platform. The payload cannot be empty.
 
         :param str opc_request_id: (optional)
@@ -1814,7 +1814,7 @@ class BlockchainPlatformClient(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param ScaleBlockchainPlatformDetails scale_blockchain_platform_details: (required)
+        :param oci.blockchain.models.ScaleBlockchainPlatformDetails scale_blockchain_platform_details: (required)
             Input payload to scaleout blockchain platform. The payload cannot be empty.
 
         :param str if_match: (optional)
@@ -2064,7 +2064,7 @@ class BlockchainPlatformClient(object):
         Update a particular of a Blockchain Platform
 
 
-        :param UpdateBlockchainPlatformDetails update_blockchain_platform_details: (required)
+        :param oci.blockchain.models.UpdateBlockchainPlatformDetails update_blockchain_platform_details: (required)
             The Blockchain Platform fields to update. Fields that are not provided will not be updated.
 
         :param str blockchain_platform_id: (required)
@@ -2154,7 +2154,7 @@ class BlockchainPlatformClient(object):
         :param str osn_id: (required)
             OSN identifier.
 
-        :param UpdateOsnDetails update_osn_details: (required)
+        :param oci.blockchain.models.UpdateOsnDetails update_osn_details: (required)
             Input payload to update a blockchain platform OSN. The payload cannot be empty.
 
         :param str if_match: (optional)
@@ -2253,7 +2253,7 @@ class BlockchainPlatformClient(object):
         :param str peer_id: (required)
             Peer identifier.
 
-        :param UpdatePeerDetails update_peer_details: (required)
+        :param oci.blockchain.models.UpdatePeerDetails update_peer_details: (required)
             Input payload to update a blockchain platform peer. The payload cannot be empty.
 
         :param str if_match: (optional)

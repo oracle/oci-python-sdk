@@ -248,6 +248,10 @@ class AutonomousDatabase(object):
             The value to assign to the time_deletion_of_free_autonomous_database property of this AutonomousDatabase.
         :type time_deletion_of_free_autonomous_database: datetime
 
+        :param backup_config:
+            The value to assign to the backup_config property of this AutonomousDatabase.
+        :type backup_config: AutonomousDatabaseBackupConfig
+
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this AutonomousDatabase.
         :type cpu_core_count: int
@@ -467,6 +471,7 @@ class AutonomousDatabase(object):
             'system_tags': 'dict(str, dict(str, object))',
             'time_reclamation_of_free_autonomous_database': 'datetime',
             'time_deletion_of_free_autonomous_database': 'datetime',
+            'backup_config': 'AutonomousDatabaseBackupConfig',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
             'infrastructure_type': 'str',
@@ -526,6 +531,7 @@ class AutonomousDatabase(object):
             'system_tags': 'systemTags',
             'time_reclamation_of_free_autonomous_database': 'timeReclamationOfFreeAutonomousDatabase',
             'time_deletion_of_free_autonomous_database': 'timeDeletionOfFreeAutonomousDatabase',
+            'backup_config': 'backupConfig',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'infrastructure_type': 'infrastructureType',
@@ -584,6 +590,7 @@ class AutonomousDatabase(object):
         self._system_tags = None
         self._time_reclamation_of_free_autonomous_database = None
         self._time_deletion_of_free_autonomous_database = None
+        self._backup_config = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
         self._infrastructure_type = None
@@ -867,6 +874,26 @@ class AutonomousDatabase(object):
         :type: datetime
         """
         self._time_deletion_of_free_autonomous_database = time_deletion_of_free_autonomous_database
+
+    @property
+    def backup_config(self):
+        """
+        Gets the backup_config of this AutonomousDatabase.
+
+        :return: The backup_config of this AutonomousDatabase.
+        :rtype: AutonomousDatabaseBackupConfig
+        """
+        return self._backup_config
+
+    @backup_config.setter
+    def backup_config(self, backup_config):
+        """
+        Sets the backup_config of this AutonomousDatabase.
+
+        :param backup_config: The backup_config of this AutonomousDatabase.
+        :type: AutonomousDatabaseBackupConfig
+        """
+        self._backup_config = backup_config
 
     @property
     def cpu_core_count(self):

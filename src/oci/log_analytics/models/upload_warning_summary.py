@@ -82,7 +82,7 @@ class UploadWarningSummary(object):
     def status(self):
         """
         Gets the status of this UploadWarningSummary.
-        Status
+        Status of the upload. Ex - Failed
 
 
         :return: The status of this UploadWarningSummary.
@@ -94,7 +94,7 @@ class UploadWarningSummary(object):
     def status(self, status):
         """
         Sets the status of this UploadWarningSummary.
-        Status
+        Status of the upload. Ex - Failed
 
 
         :param status: The status of this UploadWarningSummary.

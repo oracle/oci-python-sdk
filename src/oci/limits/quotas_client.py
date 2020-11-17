@@ -90,7 +90,7 @@ class QuotasClient(object):
         Creates a new quota with the details supplied.
 
 
-        :param CreateQuotaDetails create_quota_details: (required)
+        :param oci.limits.models.CreateQuotaDetails create_quota_details: (required)
             Request object for creating a new quota.
 
         :param str opc_request_id: (optional)
@@ -443,7 +443,7 @@ class QuotasClient(object):
         :param str quota_id: (required)
             The OCID of the quota.
 
-        :param UpdateQuotaDetails update_quota_details: (required)
+        :param oci.limits.models.UpdateQuotaDetails update_quota_details: (required)
             Request object for updating a quota.
 
         :param str opc_request_id: (optional)

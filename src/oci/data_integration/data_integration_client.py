@@ -93,7 +93,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.data_integration.models.ChangeCompartmentDetails change_compartment_details: (required)
             The information needed to move a workspace to a specified compartment.
 
         :param str if_match: (optional)
@@ -184,7 +184,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateApplicationDetails create_application_details: (required)
+        :param oci.data_integration.models.CreateApplicationDetails create_application_details: (required)
             The details needed to create an application.
 
         :param str opc_request_id: (optional)
@@ -270,7 +270,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateConnectionDetails create_connection_details: (required)
+        :param oci.data_integration.models.CreateConnectionDetails create_connection_details: (required)
             The information needed to create a connection.
 
         :param str opc_request_id: (optional)
@@ -356,7 +356,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateConnectionValidationDetails create_connection_validation_details: (required)
+        :param oci.data_integration.models.CreateConnectionValidationDetails create_connection_validation_details: (required)
             The information needed to validate a connection.
 
         :param str opc_request_id: (optional)
@@ -442,7 +442,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateDataAssetDetails create_data_asset_details: (required)
+        :param oci.data_integration.models.CreateDataAssetDetails create_data_asset_details: (required)
             The information needed to create a data asset.
 
         :param str opc_request_id: (optional)
@@ -528,7 +528,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateDataFlowDetails create_data_flow_details: (required)
+        :param oci.data_integration.models.CreateDataFlowDetails create_data_flow_details: (required)
             The details needed to create a new data flow.
 
         :param str opc_retry_token: (optional)
@@ -614,7 +614,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateDataFlowValidationDetails create_data_flow_validation_details: (required)
+        :param oci.data_integration.models.CreateDataFlowValidationDetails create_data_flow_validation_details: (required)
             The information needed to create the data flow validation for the data flow object.
 
         :param str opc_request_id: (optional)
@@ -706,7 +706,7 @@ class DataIntegrationClient(object):
         :param str schema_resource_name: (required)
             The schema resource name used for retrieving schemas.
 
-        :param CreateEntityShapeDetails create_entity_shape_details: (required)
+        :param oci.data_integration.models.CreateEntityShapeDetails create_entity_shape_details: (required)
             The details needed to create the data entity shape.
 
         :param str opc_request_id: (optional)
@@ -804,7 +804,7 @@ class DataIntegrationClient(object):
         :param str task_key: (required)
             The task key.
 
-        :param CreateExternalPublicationDetails create_external_publication_details: (required)
+        :param oci.data_integration.models.CreateExternalPublicationDetails create_external_publication_details: (required)
             Details needed to publish a task to OCI DataFlow application.
 
         :param str opc_request_id: (optional)
@@ -894,7 +894,7 @@ class DataIntegrationClient(object):
         :param str task_key: (required)
             The task key.
 
-        :param CreateExternalPublicationValidationDetails create_external_publication_validation_details: (required)
+        :param oci.data_integration.models.CreateExternalPublicationValidationDetails create_external_publication_validation_details: (required)
             The information needed to create a task validation.
 
         :param str opc_request_id: (optional)
@@ -982,7 +982,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateFolderDetails create_folder_details: (required)
+        :param oci.data_integration.models.CreateFolderDetails create_folder_details: (required)
             The details needed to create a folder.
 
         :param str opc_retry_token: (optional)
@@ -1071,7 +1071,7 @@ class DataIntegrationClient(object):
         :param str application_key: (required)
             The application key.
 
-        :param CreatePatchDetails create_patch_details: (required)
+        :param oci.data_integration.models.CreatePatchDetails create_patch_details: (required)
             Detailed needed to create a patch in an application.
 
         :param str opc_request_id: (optional)
@@ -1158,7 +1158,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateProjectDetails create_project_details: (required)
+        :param oci.data_integration.models.CreateProjectDetails create_project_details: (required)
             The details needed to create a project in a workspace.
 
         :param str opc_retry_token: (optional)
@@ -1244,7 +1244,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateTaskDetails create_task_details: (required)
+        :param oci.data_integration.models.CreateTaskDetails create_task_details: (required)
             The details needed to create a new task.
 
         :param str opc_retry_token: (optional)
@@ -1333,7 +1333,7 @@ class DataIntegrationClient(object):
         :param str application_key: (required)
             The application key.
 
-        :param CreateTaskRunDetails create_task_run_details: (required)
+        :param oci.data_integration.models.CreateTaskRunDetails create_task_run_details: (required)
             The details needed to create a task run.
 
         :param str opc_retry_token: (optional)
@@ -1420,7 +1420,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param CreateTaskValidationDetails create_task_validation_details: (required)
+        :param oci.data_integration.models.CreateTaskValidationDetails create_task_validation_details: (required)
             The information needed to create a task validation.
 
         :param str opc_request_id: (optional)
@@ -1503,7 +1503,7 @@ class DataIntegrationClient(object):
         Creates a new Data Integration workspace ready for performing data integration tasks.
 
 
-        :param CreateWorkspaceDetails create_workspace_details: (required)
+        :param oci.data_integration.models.CreateWorkspaceDetails create_workspace_details: (required)
             The information needed to create a new Data Integration workspace.
 
         :param str opc_retry_token: (optional)
@@ -8268,7 +8268,7 @@ class DataIntegrationClient(object):
         :param str application_key: (required)
             The application key.
 
-        :param UpdateApplicationDetails update_application_details: (required)
+        :param oci.data_integration.models.UpdateApplicationDetails update_application_details: (required)
             The details needed to update an application.
 
         :param str if_match: (optional)
@@ -8358,7 +8358,7 @@ class DataIntegrationClient(object):
         :param str connection_key: (required)
             The connection key.
 
-        :param UpdateConnectionDetails update_connection_details: (required)
+        :param oci.data_integration.models.UpdateConnectionDetails update_connection_details: (required)
             The information needed to update a connection.
 
         :param str opc_request_id: (optional)
@@ -8448,7 +8448,7 @@ class DataIntegrationClient(object):
         :param str data_asset_key: (required)
             The data asset key.
 
-        :param UpdateDataAssetDetails update_data_asset_details: (required)
+        :param oci.data_integration.models.UpdateDataAssetDetails update_data_asset_details: (required)
             The information needed to update a data asset.
 
         :param str opc_request_id: (optional)
@@ -8538,7 +8538,7 @@ class DataIntegrationClient(object):
         :param str data_flow_key: (required)
             The data flow key.
 
-        :param UpdateDataFlowDetails update_data_flow_details: (required)
+        :param oci.data_integration.models.UpdateDataFlowDetails update_data_flow_details: (required)
             The details needed to updated a data flow.
 
         :param str opc_request_id: (optional)
@@ -8631,7 +8631,7 @@ class DataIntegrationClient(object):
         :param str external_publications_key: (required)
             The external published object key.
 
-        :param UpdateExternalPublicationDetails update_external_publication_details: (required)
+        :param oci.data_integration.models.UpdateExternalPublicationDetails update_external_publication_details: (required)
             The information to be updated.
 
         :param str opc_request_id: (optional)
@@ -8722,7 +8722,7 @@ class DataIntegrationClient(object):
         :param str folder_key: (required)
             The folder key.
 
-        :param UpdateFolderDetails update_folder_details: (required)
+        :param oci.data_integration.models.UpdateFolderDetails update_folder_details: (required)
             The details needed to update a folder.
 
         :param str opc_request_id: (optional)
@@ -8812,7 +8812,7 @@ class DataIntegrationClient(object):
         :param str project_key: (required)
             The project key.
 
-        :param UpdateProjectDetails update_project_details: (required)
+        :param oci.data_integration.models.UpdateProjectDetails update_project_details: (required)
             The details needed to update a project.
 
         :param str opc_request_id: (optional)
@@ -8905,7 +8905,7 @@ class DataIntegrationClient(object):
         :param str reference_key: (required)
             The reference key.
 
-        :param UpdateReferenceDetails update_reference_details: (required)
+        :param oci.data_integration.models.UpdateReferenceDetails update_reference_details: (required)
             The details needed to update the references.
 
         :param str opc_request_id: (optional)
@@ -9003,7 +9003,7 @@ class DataIntegrationClient(object):
         :param str task_key: (required)
             The task key.
 
-        :param UpdateTaskDetails update_task_details: (required)
+        :param oci.data_integration.models.UpdateTaskDetails update_task_details: (required)
             The details needed to update a task.
 
         :param str opc_request_id: (optional)
@@ -9096,7 +9096,7 @@ class DataIntegrationClient(object):
         :param str task_run_key: (required)
             The task run key.
 
-        :param UpdateTaskRunDetails update_task_run_details: (required)
+        :param oci.data_integration.models.UpdateTaskRunDetails update_task_run_details: (required)
             The details needed to update the status of a task run.
 
         :param str opc_request_id: (optional)
@@ -9184,7 +9184,7 @@ class DataIntegrationClient(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param UpdateWorkspaceDetails update_workspace_details: (required)
+        :param oci.data_integration.models.UpdateWorkspaceDetails update_workspace_details: (required)
             The information needed to update the workspace.
 
         :param str if_match: (optional)

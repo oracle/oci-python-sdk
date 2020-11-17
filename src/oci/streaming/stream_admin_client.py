@@ -93,7 +93,7 @@ class StreamAdminClient(object):
         :param str connect_harness_id: (required)
             The OCID of the connect harness.
 
-        :param ChangeConnectHarnessCompartmentDetails change_connect_harness_compartment_details: (required)
+        :param oci.streaming.models.ChangeConnectHarnessCompartmentDetails change_connect_harness_compartment_details: (required)
             The connect harness will be moved into the compartment specified within this entity.
 
         :param str if_match: (optional)
@@ -176,7 +176,7 @@ class StreamAdminClient(object):
         :param str stream_id: (required)
             The OCID of the stream.
 
-        :param ChangeStreamCompartmentDetails change_stream_compartment_details: (required)
+        :param oci.streaming.models.ChangeStreamCompartmentDetails change_stream_compartment_details: (required)
             The stream will be moved into the compartment specified within this entity.
 
         :param str if_match: (optional)
@@ -257,7 +257,7 @@ class StreamAdminClient(object):
         :param str stream_pool_id: (required)
             The OCID of the stream pool.
 
-        :param ChangeStreamPoolCompartmentDetails change_stream_pool_compartment_details: (required)
+        :param oci.streaming.models.ChangeStreamPoolCompartmentDetails change_stream_pool_compartment_details: (required)
             The stream pool will be moved into the compartment specified within this entity.
 
         :param str if_match: (optional)
@@ -336,7 +336,7 @@ class StreamAdminClient(object):
         To track the progress of the provisioning, you can periodically call :class:`ConnectHarness` object tells you its current state.
 
 
-        :param CreateConnectHarnessDetails create_connect_harness_details: (required)
+        :param oci.streaming.models.CreateConnectHarnessDetails create_connect_harness_details: (required)
             The connect harness to create.
 
         :param str opc_request_id: (optional)
@@ -410,7 +410,7 @@ class StreamAdminClient(object):
         In the response, the `lifecycleState` parameter of the :class:`Stream` object tells you its current state.
 
 
-        :param CreateStreamDetails create_stream_details: (required)
+        :param oci.streaming.models.CreateStreamDetails create_stream_details: (required)
             The stream to create.
 
         :param str opc_request_id: (optional)
@@ -475,7 +475,7 @@ class StreamAdminClient(object):
         In the response, the `lifecycleState` parameter of the object tells you its current state.
 
 
-        :param CreateStreamPoolDetails create_stream_pool_details: (required)
+        :param oci.streaming.models.CreateStreamPoolDetails create_stream_pool_details: (required)
             The stream pool to create.
 
         :param str opc_request_id: (optional)
@@ -1403,7 +1403,7 @@ class StreamAdminClient(object):
         :param str connect_harness_id: (required)
             The OCID of the connect harness.
 
-        :param UpdateConnectHarnessDetails update_connect_harness_details: (required)
+        :param oci.streaming.models.UpdateConnectHarnessDetails update_connect_harness_details: (required)
             The connect harness is updated with the tags provided.
 
         :param str opc_request_id: (optional)
@@ -1486,7 +1486,7 @@ class StreamAdminClient(object):
         :param str stream_id: (required)
             The OCID of the stream.
 
-        :param UpdateStreamDetails update_stream_details: (required)
+        :param oci.streaming.models.UpdateStreamDetails update_stream_details: (required)
             The stream is updated with the values provided.
 
         :param str opc_request_id: (optional)
@@ -1569,7 +1569,7 @@ class StreamAdminClient(object):
         :param str stream_pool_id: (required)
             The OCID of the stream pool.
 
-        :param UpdateStreamPoolDetails update_stream_pool_details: (required)
+        :param oci.streaming.models.UpdateStreamPoolDetails update_stream_pool_details: (required)
             The pool is updated with the provided fields.
 
         :param str opc_request_id: (optional)

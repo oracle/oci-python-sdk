@@ -239,7 +239,7 @@ class ResourceSearchClient(object):
         You can also sort results based on a specified resource attribute.
 
 
-        :param SearchDetails search_details: (required)
+        :param oci.resource_search.models.SearchDetails search_details: (required)
             Request parameters that describe query criteria.
 
         :param int limit: (optional)

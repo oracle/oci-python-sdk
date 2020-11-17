@@ -96,7 +96,7 @@ class LoggingManagementClient(object):
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
-        :param ChangeLogGroupCompartmentDetails change_log_group_compartment_details: (required)
+        :param oci.logging.models.ChangeLogGroupCompartmentDetails change_log_group_compartment_details: (required)
             Request to change the compartment of a given resource.
 
         :param str if_match: (optional)
@@ -184,7 +184,7 @@ class LoggingManagementClient(object):
         :param str log_id: (required)
             OCID of a log to work with.
 
-        :param ChangeLogLogGroupDetails change_log_log_group_details: (required)
+        :param oci.logging.models.ChangeLogLogGroupDetails change_log_log_group_details: (required)
             Request to change the log group of a given log.
 
         :param str if_match: (optional)
@@ -273,7 +273,7 @@ class LoggingManagementClient(object):
         :param str log_saved_search_id: (required)
             OCID of the logSavedSearch
 
-        :param ChangeLogSavedSearchCompartmentDetails change_log_saved_search_compartment_details: (required)
+        :param oci.logging.models.ChangeLogSavedSearchCompartmentDetails change_log_saved_search_compartment_details: (required)
             Contains details indicating which compartment the resource should move to.
 
         :param str opc_retry_token: (optional)
@@ -373,7 +373,7 @@ class LoggingManagementClient(object):
         :param str unified_agent_configuration_id: (required)
             The OCID of the Unified Agent configuration.
 
-        :param ChangeUnifiedAgentConfigurationCompartmentDetails change_unified_agent_configuration_compartment_details: (required)
+        :param oci.logging.models.ChangeUnifiedAgentConfigurationCompartmentDetails change_unified_agent_configuration_compartment_details: (required)
             Request to change the compartment of a given resource.
 
         :param str opc_retry_token: (optional)
@@ -471,7 +471,7 @@ class LoggingManagementClient(object):
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
-        :param CreateLogDetails create_log_details: (required)
+        :param oci.logging.models.CreateLogDetails create_log_details: (required)
             Log object configuration details.
 
         :param str opc_retry_token: (optional)
@@ -557,7 +557,7 @@ class LoggingManagementClient(object):
         if the log group is already created with the same displayName in the compartment.
 
 
-        :param CreateLogGroupDetails create_log_group_details: (required)
+        :param oci.logging.models.CreateLogGroupDetails create_log_group_details: (required)
             Details to create log group.
 
         :param str opc_retry_token: (optional)
@@ -630,7 +630,7 @@ class LoggingManagementClient(object):
         Creates a new LogSavedSearch.
 
 
-        :param CreateLogSavedSearchDetails create_log_saved_search_details: (required)
+        :param oci.logging.models.CreateLogSavedSearchDetails create_log_saved_search_details: (required)
             Specification of the Saved Search to create
 
         :param str opc_retry_token: (optional)
@@ -705,7 +705,7 @@ class LoggingManagementClient(object):
         Create unified agent configuration registration.
 
 
-        :param CreateUnifiedAgentConfigurationDetails create_unified_agent_configuration_details: (required)
+        :param oci.logging.models.CreateUnifiedAgentConfigurationDetails create_unified_agent_configuration_details: (required)
             Unified agent configuration creation object.
 
         :param str opc_request_id: (optional)
@@ -2687,7 +2687,7 @@ class LoggingManagementClient(object):
         :param str log_id: (required)
             OCID of a log to work with.
 
-        :param UpdateLogDetails update_log_details: (required)
+        :param oci.logging.models.UpdateLogDetails update_log_details: (required)
             Log config parameters to update.
 
         :param str if_match: (optional)
@@ -2774,7 +2774,7 @@ class LoggingManagementClient(object):
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
-        :param UpdateLogGroupDetails update_log_group_details: (required)
+        :param oci.logging.models.UpdateLogGroupDetails update_log_group_details: (required)
             LogGroup config parameters to update.
 
         :param str if_match: (optional)
@@ -2859,7 +2859,7 @@ class LoggingManagementClient(object):
         :param str log_saved_search_id: (required)
             OCID of the logSavedSearch
 
-        :param UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
+        :param oci.logging.models.UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
             Updates to the saved search.
 
         :param str if_match: (optional)
@@ -2947,7 +2947,7 @@ class LoggingManagementClient(object):
         :param str unified_agent_configuration_id: (required)
             The OCID of the Unified Agent configuration.
 
-        :param UpdateUnifiedAgentConfigurationDetails update_unified_agent_configuration_details: (required)
+        :param oci.logging.models.UpdateUnifiedAgentConfigurationDetails update_unified_agent_configuration_details: (required)
             Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.
 
         :param str if_match: (optional)

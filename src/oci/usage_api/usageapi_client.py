@@ -158,7 +158,7 @@ class UsageapiClient(object):
         Returns usage for the given account.
 
 
-        :param RequestSummarizedUsagesDetails request_summarized_usages_details: (required)
+        :param oci.usage_api.models.RequestSummarizedUsagesDetails request_summarized_usages_details: (required)
             getUsageRequest contains query inforamtion.
 
         :param str opc_request_id: (optional)

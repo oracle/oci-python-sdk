@@ -93,7 +93,7 @@ class ApplianceExportJobClient(object):
         :param str appliance_export_job_id: (required)
             ID of the Appliance Export Job
 
-        :param ChangeApplianceExportJobCompartmentDetails change_appliance_export_job_compartment_details: (required)
+        :param oci.dts.models.ChangeApplianceExportJobCompartmentDetails change_appliance_export_job_compartment_details: (required)
             CompartmentId of the destination compartment
 
         :param str if_match: (optional)
@@ -183,7 +183,7 @@ class ApplianceExportJobClient(object):
         Creates a new Appliance Export Job that corresponds with customer's logical dataset
 
 
-        :param CreateApplianceExportJobDetails create_appliance_export_job_details: (required)
+        :param oci.dts.models.CreateApplianceExportJobDetails create_appliance_export_job_details: (required)
             Creates a new Appliance Export Job
 
         :param str opc_retry_token: (optional)
@@ -517,7 +517,7 @@ class ApplianceExportJobClient(object):
         :param str appliance_export_job_id: (required)
             ID of the Appliance Export Job
 
-        :param UpdateApplianceExportJobDetails update_appliance_export_job_details: (required)
+        :param oci.dts.models.UpdateApplianceExportJobDetails update_appliance_export_job_details: (required)
             fields to update
 
         :param str if_match: (optional)

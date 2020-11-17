@@ -90,7 +90,7 @@ class IncidentClient(object):
         Enables the customer to create an support ticket.
 
 
-        :param CreateIncident create_incident_details: (required)
+        :param oci.cims.models.CreateIncident create_incident_details: (required)
             Incident information
 
         :param str ocid: (required)
@@ -610,7 +610,7 @@ class IncidentClient(object):
         :param str csi: (required)
             The Customer Support Identifier associated with the support account.
 
-        :param UpdateIncident update_incident_details: (required)
+        :param oci.cims.models.UpdateIncident update_incident_details: (required)
             Details about the support ticket being updated.
 
         :param str ocid: (required)

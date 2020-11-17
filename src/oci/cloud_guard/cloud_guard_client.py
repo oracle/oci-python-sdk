@@ -93,7 +93,7 @@ class CloudGuardClient(object):
         :param str detector_recipe_id: (required)
             DetectorRecipe OCID
 
-        :param ChangeDetectorRecipeCompartmentDetails change_detector_recipe_compartment_details: (required)
+        :param oci.cloud_guard.models.ChangeDetectorRecipeCompartmentDetails change_detector_recipe_compartment_details: (required)
             The target compartment id.
 
         :param str if_match: (optional)
@@ -188,7 +188,7 @@ class CloudGuardClient(object):
         :param str managed_list_id: (required)
             The cloudguard list OCID to be passed in the request.
 
-        :param ChangeManagedListCompartmentDetails change_managed_list_compartment_details: (required)
+        :param oci.cloud_guard.models.ChangeManagedListCompartmentDetails change_managed_list_compartment_details: (required)
             The compartment id of the ManagedList
 
         :param str if_match: (optional)
@@ -283,7 +283,7 @@ class CloudGuardClient(object):
         :param str responder_recipe_id: (required)
             OCID of ResponderRecipe
 
-        :param ChangeResponderRecipeCompartmentDetails change_responder_recipe_compartment_details: (required)
+        :param oci.cloud_guard.models.ChangeResponderRecipeCompartmentDetails change_responder_recipe_compartment_details: (required)
             The target compartment id.
 
         :param str if_match: (optional)
@@ -375,7 +375,7 @@ class CloudGuardClient(object):
         Creates a DetectorRecipe
 
 
-        :param CreateDetectorRecipeDetails create_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.CreateDetectorRecipeDetails create_detector_recipe_details: (required)
             Details for the new DetectorRecipe.
 
         :param str opc_retry_token: (optional)
@@ -448,7 +448,7 @@ class CloudGuardClient(object):
         Creates a new ManagedList.
 
 
-        :param CreateManagedListDetails create_managed_list_details: (required)
+        :param oci.cloud_guard.models.CreateManagedListDetails create_managed_list_details: (required)
             Details for the new ManagedList.
 
         :param str opc_retry_token: (optional)
@@ -521,7 +521,7 @@ class CloudGuardClient(object):
         Create a ResponderRecipe.
 
 
-        :param CreateResponderRecipeDetails create_responder_recipe_details: (required)
+        :param oci.cloud_guard.models.CreateResponderRecipeDetails create_responder_recipe_details: (required)
             Details for ResponderRecipe.
 
         :param str opc_retry_token: (optional)
@@ -594,7 +594,7 @@ class CloudGuardClient(object):
         Creates a new Target
 
 
-        :param CreateTargetDetails create_target_details: (required)
+        :param oci.cloud_guard.models.CreateTargetDetails create_target_details: (required)
             Details for the new Target.
 
         :param str opc_retry_token: (optional)
@@ -670,7 +670,7 @@ class CloudGuardClient(object):
         :param str target_id: (required)
             OCID of target
 
-        :param AttachTargetDetectorRecipeDetails attach_target_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.AttachTargetDetectorRecipeDetails attach_target_detector_recipe_details: (required)
             Details for associating DetectorRecipe to Target
 
         :param str opc_retry_token: (optional)
@@ -758,7 +758,7 @@ class CloudGuardClient(object):
         :param str target_id: (required)
             OCID of target
 
-        :param AttachTargetResponderRecipeDetails attach_target_responder_recipe_details: (required)
+        :param oci.cloud_guard.models.AttachTargetResponderRecipeDetails attach_target_responder_recipe_details: (required)
             Details for associating ResponderRecipe to Target
 
         :param str opc_retry_token: (optional)
@@ -6353,7 +6353,7 @@ class CloudGuardClient(object):
         set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
 
-        :param list[str] list_dimensions: (required)
+        :param oci.cloud_guard.models.list[str] list_dimensions: (required)
             The possible attributes based on which the problems can be distinguished.
 
             Allowed values are: "RESOURCE_TYPE", "REGION", "COMPARTMENT_ID", "RISK_LEVEL"
@@ -6480,7 +6480,7 @@ class CloudGuardClient(object):
         set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
 
-        :param list[str] responder_executions_dimensions: (required)
+        :param oci.cloud_guard.models.list[str] responder_executions_dimensions: (required)
             The possible attributes based on which the responder executions can be distinguished
 
             Allowed values are: "RESPONDER_RULE_TYPE", "RESPONDER_EXECUTION_STATUS"
@@ -7118,7 +7118,7 @@ class CloudGuardClient(object):
         The operation is atomic in nature
 
 
-        :param SkipBulkResponderExecutionDetails skip_bulk_responder_execution_details: (required)
+        :param oci.cloud_guard.models.SkipBulkResponderExecutionDetails skip_bulk_responder_execution_details: (required)
             A list of responder execution ids to skip the execution
 
         :param str opc_request_id: (optional)
@@ -7281,7 +7281,7 @@ class CloudGuardClient(object):
         :param str problem_id: (required)
             OCId of the problem.
 
-        :param TriggerResponderDetails trigger_responder_details: (required)
+        :param oci.cloud_guard.models.TriggerResponderDetails trigger_responder_details: (required)
             The responder may update the problem.
 
         :param str opc_retry_token: (optional)
@@ -7374,7 +7374,7 @@ class CloudGuardClient(object):
         The operation is atomic in nature
 
 
-        :param UpdateBulkProblemStatusDetails update_bulk_problem_status_details: (required)
+        :param oci.cloud_guard.models.UpdateBulkProblemStatusDetails update_bulk_problem_status_details: (required)
             A list of problem ids to be passed in to update the Problem status
 
         :param str opc_request_id: (optional)
@@ -7434,7 +7434,7 @@ class CloudGuardClient(object):
         Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
 
 
-        :param UpdateConfigurationDetails update_configuration_details: (required)
+        :param oci.cloud_guard.models.UpdateConfigurationDetails update_configuration_details: (required)
             Update Configuration Details of Cloud Guard for a Tenancy.
 
         :param str compartment_id: (required)
@@ -7529,7 +7529,7 @@ class CloudGuardClient(object):
         :param str detector_recipe_id: (required)
             DetectorRecipe OCID
 
-        :param UpdateDetectorRecipeDetails update_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateDetectorRecipeDetails update_detector_recipe_details: (required)
             Details for the DetectorRecipe to be updated
 
         :param str if_match: (optional)
@@ -7629,7 +7629,7 @@ class CloudGuardClient(object):
         :param str detector_rule_id: (required)
             The key of Detector Rule.
 
-        :param UpdateDetectorRecipeDetectorRuleDetails update_detector_recipe_detector_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateDetectorRecipeDetectorRuleDetails update_detector_recipe_detector_rule_details: (required)
             The details to be updated for DetectorRule.
 
         :param str if_match: (optional)
@@ -7716,7 +7716,7 @@ class CloudGuardClient(object):
         :param str managed_list_id: (required)
             The cloudguard list OCID to be passed in the request.
 
-        :param UpdateManagedListDetails update_managed_list_details: (required)
+        :param oci.cloud_guard.models.UpdateManagedListDetails update_managed_list_details: (required)
             Details for the ManagedList to be updated
 
         :param str if_match: (optional)
@@ -7813,7 +7813,7 @@ class CloudGuardClient(object):
         :param str problem_id: (required)
             OCId of the problem.
 
-        :param UpdateProblemStatusDetails update_problem_status_details: (required)
+        :param oci.cloud_guard.models.UpdateProblemStatusDetails update_problem_status_details: (required)
             The additional details for the problem.
 
         :param str opc_retry_token: (optional)
@@ -7910,7 +7910,7 @@ class CloudGuardClient(object):
         :param str responder_recipe_id: (required)
             OCID of ResponderRecipe
 
-        :param UpdateResponderRecipeDetails update_responder_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateResponderRecipeDetails update_responder_recipe_details: (required)
             The details to be updated.
 
         :param str if_match: (optional)
@@ -7999,7 +7999,7 @@ class CloudGuardClient(object):
         :param str responder_rule_id: (required)
             The id of ResponderRule
 
-        :param UpdateResponderRecipeResponderRuleDetails update_responder_recipe_responder_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateResponderRecipeResponderRuleDetails update_responder_recipe_responder_rule_details: (required)
             The details to be updated for ResponderRule.
 
         :param str if_match: (optional)
@@ -8086,7 +8086,7 @@ class CloudGuardClient(object):
         :param str target_id: (required)
             OCID of target
 
-        :param UpdateTargetDetails update_target_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetDetails update_target_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
@@ -8175,7 +8175,7 @@ class CloudGuardClient(object):
         :param str target_detector_recipe_id: (required)
             OCID of TargetDetectorRecipe
 
-        :param UpdateTargetDetectorRecipeDetails update_target_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetails update_target_detector_recipe_details: (required)
             The details to be updated.
 
         :param str if_match: (optional)
@@ -8268,7 +8268,7 @@ class CloudGuardClient(object):
         :param str detector_rule_id: (required)
             The id of DetectorRule
 
-        :param UpdateTargetDetectorRecipeDetectorRuleDetails update_target_detector_recipe_detector_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetectorRuleDetails update_target_detector_recipe_detector_rule_details: (required)
             The details to be updated for DetectorRule.
 
         :param str if_match: (optional)
@@ -8359,7 +8359,7 @@ class CloudGuardClient(object):
         :param str target_responder_recipe_id: (required)
             OCID of TargetResponderRecipe
 
-        :param UpdateTargetResponderRecipeDetails update_target_responder_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetResponderRecipeDetails update_target_responder_recipe_details: (required)
             The details to be updated.
 
         :param str if_match: (optional)
@@ -8452,7 +8452,7 @@ class CloudGuardClient(object):
         :param str responder_rule_id: (required)
             The id of ResponderRule
 
-        :param UpdateTargetResponderRecipeResponderRuleDetails update_target_responder_recipe_responder_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetResponderRecipeResponderRuleDetails update_target_responder_recipe_responder_rule_details: (required)
             The details to be updated for ResponderRule.
 
         :param str if_match: (optional)

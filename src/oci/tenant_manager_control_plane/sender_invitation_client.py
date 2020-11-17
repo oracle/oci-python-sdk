@@ -180,7 +180,7 @@ class SenderInvitationClient(object):
         Creates a sender invitation and asynchronously sends the invitation to recipient.
 
 
-        :param CreateSenderInvitationDetails create_sender_invitation_details: (required)
+        :param oci.tenant_manager_control_plane.models.CreateSenderInvitationDetails create_sender_invitation_details: (required)
             Parameters for sender invitation creation.
 
         :param str opc_retry_token: (optional)
@@ -471,7 +471,7 @@ class SenderInvitationClient(object):
         :param str sender_invitation_id: (required)
             OCID of the sender invitation to update.
 
-        :param UpdateSenderInvitationDetails update_sender_invitation_details: (required)
+        :param oci.tenant_manager_control_plane.models.UpdateSenderInvitationDetails update_sender_invitation_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)

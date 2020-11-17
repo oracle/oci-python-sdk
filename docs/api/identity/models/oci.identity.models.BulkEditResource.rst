@@ -1,9 +1,9 @@
-ServiceTenancy
-==============
+BulkEditResource
+================
 
-.. currentmodule:: oci.log_analytics.models
+.. currentmodule:: oci.identity.models
 
-.. autoclass:: ServiceTenancy
+.. autoclass:: BulkEditResource
     :show-inheritance:
     :special-members: __init__
     :members:

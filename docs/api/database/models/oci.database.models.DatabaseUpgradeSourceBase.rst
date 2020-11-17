@@ -1,9 +1,9 @@
-OutOfBoxEntityTypeDetails
+DatabaseUpgradeSourceBase
 =========================
 
-.. currentmodule:: oci.log_analytics.models
+.. currentmodule:: oci.database.models
 
-.. autoclass:: OutOfBoxEntityTypeDetails
+.. autoclass:: DatabaseUpgradeSourceBase
     :show-inheritance:
     :special-members: __init__
     :members:

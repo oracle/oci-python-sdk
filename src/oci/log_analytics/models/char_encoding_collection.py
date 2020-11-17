@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CharEncodingCollection(object):
     """
-    Set of valid character encodings
+    List of supported character encodings
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CharEncodingCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this CharEncodingCollection.
-        character encodings
+        List of supported character encodings
 
 
         :return: The items of this CharEncodingCollection.
@@ -49,7 +49,7 @@ class CharEncodingCollection(object):
     def items(self, items):
         """
         Sets the items of this CharEncodingCollection.
-        character encodings
+        List of supported character encodings
 
 
         :param items: The items of this CharEncodingCollection.

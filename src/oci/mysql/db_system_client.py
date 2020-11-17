@@ -95,7 +95,7 @@ class DbSystemClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddAnalyticsClusterDetails add_analytics_cluster_details: (required)
+        :param oci.mysql.models.AddAnalyticsClusterDetails add_analytics_cluster_details: (required)
             Request to add an Analytics Cluster.
 
         :param str if_match: (optional)
@@ -192,7 +192,7 @@ class DbSystemClient(object):
         Creates and launches a DB System.
 
 
-        :param CreateDbSystemDetails create_db_system_details: (required)
+        :param oci.mysql.models.CreateDbSystemDetails create_db_system_details: (required)
             Request to create a DB System.
 
         :param str opc_request_id: (optional)
@@ -1032,7 +1032,7 @@ class DbSystemClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestartDbSystemDetails restart_db_system_details: (required)
+        :param oci.mysql.models.RestartDbSystemDetails restart_db_system_details: (required)
             Optional parameters for the stop portion of the restart action.
 
         :param str if_match: (optional)
@@ -1419,7 +1419,7 @@ class DbSystemClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param StopDbSystemDetails stop_db_system_details: (required)
+        :param oci.mysql.models.StopDbSystemDetails stop_db_system_details: (required)
             Optional parameters for the stop action.
 
         :param str if_match: (optional)
@@ -1519,7 +1519,7 @@ class DbSystemClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAnalyticsClusterDetails update_analytics_cluster_details: (required)
+        :param oci.mysql.models.UpdateAnalyticsClusterDetails update_analytics_cluster_details: (required)
             Request to update an Analytics Cluster.
 
         :param str if_match: (optional)
@@ -1614,7 +1614,7 @@ class DbSystemClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbSystemDetails update_db_system_details: (required)
+        :param oci.mysql.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update a DB System.
 
         :param str if_match: (optional)

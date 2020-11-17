@@ -11,8 +11,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CustomerSecretKey(object):
     """
     A `CustomerSecretKey` is an Oracle-provided key for using the Object Storage Service's
-    `Amazon S3 compatible API`__.
-    A user can have up to two secret keys at a time.
+    `Amazon S3 compatible API`__. The key consists of a
+    secret key/access key pair. A user can have up to two secret keys at a time.
 
     **Note:** The secret key is always an Oracle-generated string; you can't change it to a string of your choice.
 
@@ -141,7 +141,7 @@ class CustomerSecretKey(object):
     def id(self):
         """
         Gets the id of this CustomerSecretKey.
-        The OCID of the secret key.
+        The access key portion of the key pair.
 
 
         :return: The id of this CustomerSecretKey.
@@ -153,7 +153,7 @@ class CustomerSecretKey(object):
     def id(self, id):
         """
         Sets the id of this CustomerSecretKey.
-        The OCID of the secret key.
+        The access key portion of the key pair.
 
 
         :param id: The id of this CustomerSecretKey.

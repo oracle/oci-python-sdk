@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PurgeStorageDataDetails(object):
     """
-    Work request details to purge old data
+    This is the input used to purge data
     """
 
     #: A constant which can be used with the data_type property of a PurgeStorageDataDetails.
@@ -74,7 +74,7 @@ class PurgeStorageDataDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this PurgeStorageDataDetails.
-        the compartment OCID under which the data will be purged and required permission will be checked
+        This is the compartment OCID under which the data will be purged and required permission will be checked
 
 
         :return: The compartment_id of this PurgeStorageDataDetails.
@@ -86,7 +86,7 @@ class PurgeStorageDataDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PurgeStorageDataDetails.
-        the compartment OCID under which the data will be purged and required permission will be checked
+        This is the compartment OCID under which the data will be purged and required permission will be checked
 
 
         :param compartment_id: The compartment_id of this PurgeStorageDataDetails.
@@ -98,7 +98,7 @@ class PurgeStorageDataDetails(object):
     def compartment_id_in_subtree(self):
         """
         Gets the compartment_id_in_subtree of this PurgeStorageDataDetails.
-        if true, purge child compartments data
+        If true, purge child compartments data
 
 
         :return: The compartment_id_in_subtree of this PurgeStorageDataDetails.
@@ -110,7 +110,7 @@ class PurgeStorageDataDetails(object):
     def compartment_id_in_subtree(self, compartment_id_in_subtree):
         """
         Sets the compartment_id_in_subtree of this PurgeStorageDataDetails.
-        if true, purge child compartments data
+        If true, purge child compartments data
 
 
         :param compartment_id_in_subtree: The compartment_id_in_subtree of this PurgeStorageDataDetails.
@@ -122,7 +122,7 @@ class PurgeStorageDataDetails(object):
     def time_data_ended(self):
         """
         **[Required]** Gets the time_data_ended of this PurgeStorageDataDetails.
-        the end of the time interval
+        This is the end of the purge time interval
 
 
         :return: The time_data_ended of this PurgeStorageDataDetails.
@@ -134,7 +134,7 @@ class PurgeStorageDataDetails(object):
     def time_data_ended(self, time_data_ended):
         """
         Sets the time_data_ended of this PurgeStorageDataDetails.
-        the end of the time interval
+        This is the end of the purge time interval
 
 
         :param time_data_ended: The time_data_ended of this PurgeStorageDataDetails.
@@ -146,7 +146,7 @@ class PurgeStorageDataDetails(object):
     def purge_query_string(self):
         """
         Gets the purge_query_string of this PurgeStorageDataDetails.
-        the solr data filter query, '*' means all
+        This is the solr query used to filter data, '*' means all
 
 
         :return: The purge_query_string of this PurgeStorageDataDetails.
@@ -158,7 +158,7 @@ class PurgeStorageDataDetails(object):
     def purge_query_string(self, purge_query_string):
         """
         Sets the purge_query_string of this PurgeStorageDataDetails.
-        the solr data filter query, '*' means all
+        This is the solr query used to filter data, '*' means all
 
 
         :param purge_query_string: The purge_query_string of this PurgeStorageDataDetails.
@@ -170,7 +170,7 @@ class PurgeStorageDataDetails(object):
     def data_type(self):
         """
         Gets the data_type of this PurgeStorageDataDetails.
-        the type of the log data to be purged
+        This is the type of the log data to be purged
 
         Allowed values for this property are: "LOG", "LOOKUP"
 
@@ -184,7 +184,7 @@ class PurgeStorageDataDetails(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this PurgeStorageDataDetails.
-        the type of the log data to be purged
+        This is the type of the log data to be purged
 
 
         :param data_type: The data_type of this PurgeStorageDataDetails.

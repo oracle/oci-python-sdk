@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestErrorCollection(object):
     """
-    List of errors for the specified work request if any.
+    This is a list of errors for the work request.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class WorkRequestErrorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestErrorCollection.
-        List of errors for the specified work request if any.
+        This is an array of errors for the work request.
 
 
         :return: The items of this WorkRequestErrorCollection.
@@ -49,7 +49,7 @@ class WorkRequestErrorCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestErrorCollection.
-        List of errors for the specified work request if any.
+        This is an array of errors for the work request.
 
 
         :param items: The items of this WorkRequestErrorCollection.
