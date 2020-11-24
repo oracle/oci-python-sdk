@@ -22,7 +22,8 @@
 #   -co        - count only
 #   -f         - write to file
 #   -sb source_bucket
-#   -sp source_prefix
+#   -sp source_prefix_include
+#   -se source_prefix_exclude
 #   -sr source_region
 ##########################################################################
 import oci
@@ -44,7 +45,9 @@ parser.add_argument('-dt', action='store_true', default=False, dest='is_delegati
 parser.add_argument('-c', type=argparse.FileType('r'), dest='config_file', help="Config File (default=~/.oci/config)")
 parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket Name')
 parser.add_argument('-sp', default="", dest='source_prefix', help='Source Prefix Include')
+parser.add_argument('-se', default="", dest='source_prefix_exclude', help='Source Prefix Exclude')
 parser.add_argument('-sr', default="", dest='source_region', help='Source Region')
+parser.add_argument('-exclude_dirs', action='store_true', default=False, dest='source_exclude_dirs', help='Exclude Directories')
 parser.add_argument('-f', type=argparse.FileType('w'), dest='file', help="Output to file (as csv)")
 parser.add_argument('-co', action='store_true', default=False, dest='count_only', help='Count only files and size')
 cmd = parser.parse_args()
@@ -160,11 +163,14 @@ def print_header(name):
 def print_command_info(source_namespace):
     print_header("Running List/Count Objects")
     print("Written By Adi Zohar, June 2020")
-    print("Starts at       :" + get_time(full=True))
-    print("Command Line    : " + ' '.join(x for x in sys.argv[1:]))
-    print("Source Namespace: " + source_namespace)
-    print("Source Bucket   : " + cmd.source_bucket)
-    print("Source Prefix   : " + cmd.source_prefix)
+    print("Starts at           :" + get_time(full=True))
+    print("Command Line        : " + ' '.join(x for x in sys.argv[1:]))
+    print("Source Namespace    : " + source_namespace)
+    print("Source Bucket       : " + cmd.source_bucket)
+    print("Source Prefix       : " + cmd.source_prefix)
+    print("Source Pre-Exclude  : " + cmd.source_prefix_exclude)
+    if cmd.source_exclude_dirs:
+        print("Source Exclude Dirs : True")
 
 
 ##############################################################################
@@ -175,6 +181,8 @@ def main():
     source_namespace = None
     source_bucket = cmd.source_bucket
     source_prefix = cmd.source_prefix
+    source_prefix_exclude = cmd.source_prefix_exclude
+    source_exclude_dirs = cmd.source_exclude_dirs
 
     # get signer
     config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
@@ -222,6 +230,11 @@ def main():
         next_starts_with = response.data.next_start_with
 
         for object_file in response.data.objects:
+            if source_prefix_exclude and object_file.name.startswith(source_prefix_exclude):
+                continue
+            if source_exclude_dirs and "/" in object_file.name:
+                continue
+
             count += 1
             size += object_file.size
 

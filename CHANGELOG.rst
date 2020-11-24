@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.24.1 - 2020-11-24
+====================
+
+Added
+-----
+* Provide example for pagination that creates a *Details object for pagination
+* Provide example to turn response and model to JSON
+
+Security
+-----
+* cryptography pinning to cryptography=3.2.1 to address vulnerability `Github security alerts <https://github.com/oracle/oci-python-sdk/pull/299>`__
+
+====================
 2.24.0 - 2020-11-17
 ====================
 
