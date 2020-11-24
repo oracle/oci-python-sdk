@@ -216,7 +216,7 @@ class CreateBackupDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateBackupDetails.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -229,7 +229,7 @@ class CreateBackupDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateBackupDetails.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -242,7 +242,7 @@ class CreateBackupDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateBackupDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -255,7 +255,7 @@ class CreateBackupDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateBackupDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
