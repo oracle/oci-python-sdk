@@ -839,6 +839,9 @@ class ShowOCIData(object):
                                  'name': vcn['name'],
                                  'display_name': vcn['display_name'],
                                  'cidr_block': vcn['cidr_block'],
+                                 'cidr_blocks': vcn['cidr_blocks'],
+                                 'ipv6_cidr_block': vcn['ipv6_cidr_block'],
+                                 'ipv6_public_cidr_block': vcn['ipv6_public_cidr_block'],
                                  'compartment_name': str(compartment['name']),
                                  'compartment_id': str(compartment['id']),
                                  'data': val})

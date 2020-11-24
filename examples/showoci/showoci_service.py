@@ -133,7 +133,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.23.4"
+    oci_compatible_version = "2.23.5"
 
     ##########################################################################
     # Global Constants
@@ -1851,13 +1851,18 @@ class ShowOCIService(object):
                 # loop on the array
                 # vcn = oci.core.models.Vcn()
                 for vcn in vcns:
-                    val = {'id': str(vcn.id), 'name': str(vcn.cidr_block) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
+                    val = {'id': str(vcn.id), 'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
                            'display_name': str(vcn.display_name),
                            'cidr_block': str(vcn.cidr_block),
-                           'time_created': str(vcn.time_created), 'compartment_name': str(compartment['name']),
+                           'cidr_blocks': vcn.cidr_blocks,
+                           'ipv6_cidr_block': str(vcn.ipv6_cidr_block),
+                           'ipv6_public_cidr_block': str(vcn.ipv6_public_cidr_block),
+                           'time_created': str(vcn.time_created),
+                           'compartment_name': str(compartment['name']),
                            'defined_tags': [] if vcn.defined_tags is None else vcn.defined_tags,
                            'freeform_tags': [] if vcn.freeform_tags is None else vcn.freeform_tags,
-                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])}
                     data.append(val)
                     cnt += 1
 
@@ -2751,7 +2756,7 @@ class ShowOCIService(object):
                     for vcn in vcns:
                         if str(subnet.vcn_id) == vcn['id']:
                             val['vcn_name'] = vcn['display_name']
-                            val['vcn_cidr'] = vcn['cidr_block']
+                            val['vcn_cidr'] = str(', '.join(x for x in vcn['cidr_blocks']))
 
                     data.append(val)
                     cnt += 1
@@ -4663,7 +4668,10 @@ class ShowOCIService(object):
                             raise
 
                     # add the rest
-                    val = {'id': str(arr.id), 'shape_name': str(arr.shape_name), 'display_name': str(arr.display_name), 'is_private': str(arr.is_private),
+                    val = {'id': str(arr.id),
+                           'shape_name': str(arr.shape_name),
+                           'display_name': str(arr.display_name),
+                           'is_private': str(arr.is_private),
                            'status': str(status),
                            'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private")) for ip in arr.ip_addresses],
                            'compartment_name': str(compartment['name']),
@@ -4672,7 +4680,8 @@ class ShowOCIService(object):
                            'nsg_names': "",
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'region_name': str(self.config['region']), 'subnet_ids': []}
+                           'region_name': str(self.config['region']),
+                           'subnet_ids': []}
 
                     # subnets
                     if arr.subnet_ids:
