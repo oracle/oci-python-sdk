@@ -21,6 +21,18 @@ class ManagementAgentSummary(object):
     #: This constant has a value of "WINDOWS"
     PLATFORM_TYPE_WINDOWS = "WINDOWS"
 
+    #: A constant which can be used with the availability_status property of a ManagementAgentSummary.
+    #: This constant has a value of "ACTIVE"
+    AVAILABILITY_STATUS_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the availability_status property of a ManagementAgentSummary.
+    #: This constant has a value of "SILENT"
+    AVAILABILITY_STATUS_SILENT = "SILENT"
+
+    #: A constant which can be used with the availability_status property of a ManagementAgentSummary.
+    #: This constant has a value of "NOT_AVAILABLE"
+    AVAILABILITY_STATUS_NOT_AVAILABLE = "NOT_AVAILABLE"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -108,6 +120,16 @@ class ManagementAgentSummary(object):
             The value to assign to the compartment_id property of this ManagementAgentSummary.
         :type compartment_id: str
 
+        :param time_last_heartbeat:
+            The value to assign to the time_last_heartbeat property of this ManagementAgentSummary.
+        :type time_last_heartbeat: datetime
+
+        :param availability_status:
+            The value to assign to the availability_status property of this ManagementAgentSummary.
+            Allowed values for this property are: "ACTIVE", "SILENT", "NOT_AVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type availability_status: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagementAgentSummary.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -140,6 +162,8 @@ class ManagementAgentSummary(object):
             'host': 'str',
             'plugin_list': 'list[ManagementAgentPluginDetails]',
             'compartment_id': 'str',
+            'time_last_heartbeat': 'datetime',
+            'availability_status': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -159,6 +183,8 @@ class ManagementAgentSummary(object):
             'host': 'host',
             'plugin_list': 'pluginList',
             'compartment_id': 'compartmentId',
+            'time_last_heartbeat': 'timeLastHeartbeat',
+            'availability_status': 'availabilityStatus',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -177,6 +203,8 @@ class ManagementAgentSummary(object):
         self._host = None
         self._plugin_list = None
         self._compartment_id = None
+        self._time_last_heartbeat = None
+        self._availability_status = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -475,6 +503,60 @@ class ManagementAgentSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def time_last_heartbeat(self):
+        """
+        Gets the time_last_heartbeat of this ManagementAgentSummary.
+        The time the Management Agent has last recorded its heartbeat. An RFC3339 formatted datetime string
+
+
+        :return: The time_last_heartbeat of this ManagementAgentSummary.
+        :rtype: datetime
+        """
+        return self._time_last_heartbeat
+
+    @time_last_heartbeat.setter
+    def time_last_heartbeat(self, time_last_heartbeat):
+        """
+        Sets the time_last_heartbeat of this ManagementAgentSummary.
+        The time the Management Agent has last recorded its heartbeat. An RFC3339 formatted datetime string
+
+
+        :param time_last_heartbeat: The time_last_heartbeat of this ManagementAgentSummary.
+        :type: datetime
+        """
+        self._time_last_heartbeat = time_last_heartbeat
+
+    @property
+    def availability_status(self):
+        """
+        Gets the availability_status of this ManagementAgentSummary.
+        The current availability status of managementAgent
+
+        Allowed values for this property are: "ACTIVE", "SILENT", "NOT_AVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The availability_status of this ManagementAgentSummary.
+        :rtype: str
+        """
+        return self._availability_status
+
+    @availability_status.setter
+    def availability_status(self, availability_status):
+        """
+        Sets the availability_status of this ManagementAgentSummary.
+        The current availability status of managementAgent
+
+
+        :param availability_status: The availability_status of this ManagementAgentSummary.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "SILENT", "NOT_AVAILABLE"]
+        if not value_allowed_none_or_none_sentinel(availability_status, allowed_values):
+            availability_status = 'UNKNOWN_ENUM_VALUE'
+        self._availability_status = availability_status
 
     @property
     def lifecycle_state(self):

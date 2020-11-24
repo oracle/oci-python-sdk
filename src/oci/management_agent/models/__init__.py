@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .availability_history_summary import AvailabilityHistorySummary
 from .create_management_agent_install_key_details import CreateManagementAgentInstallKeyDetails
 from .deploy_plugins_details import DeployPluginsDetails
 from .management_agent import ManagementAgent
@@ -27,6 +28,7 @@ from .work_submission_key import WorkSubmissionKey
 
 # Maps type names to classes for management_agent services.
 management_agent_type_mapping = {
+    "AvailabilityHistorySummary": AvailabilityHistorySummary,
     "CreateManagementAgentInstallKeyDetails": CreateManagementAgentInstallKeyDetails,
     "DeployPluginsDetails": DeployPluginsDetails,
     "ManagementAgent": ManagementAgent,

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSafeConfiguration(object):
     """
-    A Data Safe Configuration that allows customer to enable Data Safe in their tenancy.
+    A Data Safe configuration for a tenancy and region.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DataSafeConfiguration.
@@ -108,7 +108,7 @@ class DataSafeConfiguration(object):
     @property
     def is_enabled(self):
         """
-        Gets the is_enabled of this DataSafeConfiguration.
+        **[Required]** Gets the is_enabled of this DataSafeConfiguration.
         Indicates if Data Safe is enabled.
 
 
@@ -181,7 +181,9 @@ class DataSafeConfiguration(object):
     def time_enabled(self):
         """
         Gets the time_enabled of this DataSafeConfiguration.
-        The specific time when Data Safe configuration was enabled.
+        The date and time Data Safe was enabled, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_enabled of this DataSafeConfiguration.
@@ -193,7 +195,9 @@ class DataSafeConfiguration(object):
     def time_enabled(self, time_enabled):
         """
         Sets the time_enabled of this DataSafeConfiguration.
-        The specific time when Data Safe configuration was enabled.
+        The date and time Data Safe was enabled, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_enabled: The time_enabled of this DataSafeConfiguration.
@@ -205,7 +209,7 @@ class DataSafeConfiguration(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DataSafeConfiguration.
-        The current state of Data Safe configuration.
+        The current state of Data Safe.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -220,7 +224,7 @@ class DataSafeConfiguration(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DataSafeConfiguration.
-        The current state of Data Safe configuration.
+        The current state of Data Safe.
 
 
         :param lifecycle_state: The lifecycle_state of this DataSafeConfiguration.
@@ -269,7 +273,7 @@ class DataSafeConfiguration(object):
         Gets the defined_tags of this DataSafeConfiguration.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
 
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
@@ -285,7 +289,7 @@ class DataSafeConfiguration(object):
         Sets the defined_tags of this DataSafeConfiguration.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
 
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 

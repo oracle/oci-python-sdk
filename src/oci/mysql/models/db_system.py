@@ -11,6 +11,8 @@ from oci.decorators import init_model_state_from_kwargs
 class DbSystem(object):
     """
     A DB System is the core logical unit of MySQL Database Service.
+    # NOTE: definitions/DbSystemSnapshot is a snapshot version of DbSystem which is stored during backup. Any
+    # addition/deletion of properties should also consider snapshot's definition
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbSystem.
@@ -126,6 +128,10 @@ class DbSystem(object):
             The value to assign to the endpoints property of this DbSystem.
         :type endpoints: list[DbSystemEndpoint]
 
+        :param channels:
+            The value to assign to the channels property of this DbSystem.
+        :type channels: list[ChannelSummary]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbSystem.
             Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -178,6 +184,7 @@ class DbSystem(object):
             'port': 'int',
             'port_x': 'int',
             'endpoints': 'list[DbSystemEndpoint]',
+            'channels': 'list[ChannelSummary]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'maintenance': 'MaintenanceDetails',
@@ -208,6 +215,7 @@ class DbSystem(object):
             'port': 'port',
             'port_x': 'portX',
             'endpoints': 'endpoints',
+            'channels': 'channels',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'maintenance': 'maintenance',
@@ -237,6 +245,7 @@ class DbSystem(object):
         self._port = None
         self._port_x = None
         self._endpoints = None
+        self._channels = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._maintenance = None
@@ -734,6 +743,30 @@ class DbSystem(object):
         self._endpoints = endpoints
 
     @property
+    def channels(self):
+        """
+        Gets the channels of this DbSystem.
+        A list with a summary of all the Channels attached to the DB System.
+
+
+        :return: The channels of this DbSystem.
+        :rtype: list[ChannelSummary]
+        """
+        return self._channels
+
+    @channels.setter
+    def channels(self, channels):
+        """
+        Sets the channels of this DbSystem.
+        A list with a summary of all the Channels attached to the DB System.
+
+
+        :param channels: The channels of this DbSystem.
+        :type: list[ChannelSummary]
+        """
+        self._channels = channels
+
+    @property
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbSystem.
@@ -859,7 +892,7 @@ class DbSystem(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this DbSystem.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -872,7 +905,7 @@ class DbSystem(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this DbSystem.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -885,7 +918,7 @@ class DbSystem(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this DbSystem.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -898,7 +931,7 @@ class DbSystem(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this DbSystem.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 

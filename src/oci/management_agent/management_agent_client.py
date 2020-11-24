@@ -765,6 +765,140 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 response_type="WorkRequest")
 
+    def list_availability_histories(self, management_agent_id, **kwargs):
+        """
+        Lists the availability history records of Management Agent
+
+
+        :param str management_agent_id: (required)
+            Unique Management Agent identifier
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param datetime time_availability_status_ended_greater_than: (optional)
+            Filter to limit the availability history results to that of time after the input time including the boundary record.
+            Defaulted to current date minus one year.
+            The date and time to be given as described in `RFC 3339`__, section 14.29.
+
+            __ https://tools.ietf.org/rfc/rfc3339
+
+        :param datetime time_availability_status_started_less_than: (optional)
+            Filter to limit the availability history results to that of time before the input time including the boundary record
+            Defaulted to current date.
+            The date and time to be given as described in `RFC 3339`__, section 14.29.
+
+            __ https://tools.ietf.org/rfc/rfc3339
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Default order for timeAvailabilityStatusStarted is descending.
+
+            Allowed values are: "timeAvailabilityStatusStarted"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.management_agent.models.AvailabilityHistorySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/managementAgents/{managementAgentId}/availabilityHistories"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "time_availability_status_ended_greater_than",
+            "time_availability_status_started_less_than",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_availability_histories got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managementAgentId": management_agent_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAvailabilityStatusStarted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "timeAvailabilityStatusEndedGreaterThan": kwargs.get("time_availability_status_ended_greater_than", missing),
+            "timeAvailabilityStatusStartedLessThan": kwargs.get("time_availability_status_started_less_than", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AvailabilityHistorySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AvailabilityHistorySummary]")
+
     def list_management_agent_images(self, compartment_id, **kwargs):
         """
         Get supported agent image information

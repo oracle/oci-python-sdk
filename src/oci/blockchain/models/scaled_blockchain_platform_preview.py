@@ -238,7 +238,7 @@ class ScaledBlockchainPlatformPreview(object):
     def compute_shape(self):
         """
         **[Required]** Gets the compute_shape of this ScaledBlockchainPlatformPreview.
-        Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 
 
         :return: The compute_shape of this ScaledBlockchainPlatformPreview.
@@ -250,7 +250,7 @@ class ScaledBlockchainPlatformPreview(object):
     def compute_shape(self, compute_shape):
         """
         Sets the compute_shape of this ScaledBlockchainPlatformPreview.
-        Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 
 
         :param compute_shape: The compute_shape of this ScaledBlockchainPlatformPreview.

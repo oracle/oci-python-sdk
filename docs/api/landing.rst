@@ -60,6 +60,7 @@ API Reference
 * :doc:`Dashx Apis <management_dashboard/client/oci.management_dashboard.DashxApisClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
+* :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`

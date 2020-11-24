@@ -146,6 +146,9 @@ class UpdateBackupPolicyDetails(object):
         """
         Gets the freeform_tags of this UpdateBackupPolicyDetails.
         Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
+        Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -159,6 +162,9 @@ class UpdateBackupPolicyDetails(object):
         """
         Sets the freeform_tags of this UpdateBackupPolicyDetails.
         Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
+        Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
