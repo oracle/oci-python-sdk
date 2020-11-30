@@ -4,12 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.24.2 - TBD
+2.25.0 - 2020-12-01
 ====================
 
 Added
 -----
-* TBD
+* Support for calling Oracle Cloud Infrastructure services in the sa-santiago-1 region
+* Support for peer and OSN resources, as well as retry tokens, in the Blockchain Platform service
+* Support for getting the availability status of management agents in the Management Agent service
+* Support for the on-prem-connector resource type in the Data Safe service
+* Support for service channels in the MySQL Database service
+* Support for getting the creation type of backups, and for filtering backups by creation type in the MySQL Database service
+
+Breaking
+--------
+* Parameter `compartment_id` changed from optional to required for method `list_work_requests` in the Data Safe service
+* Return type of method `create_data_safe_private_endpoint` changed from `None` to `oci.data_safe.models.DataSafePrivateEndpoint` in the Data Safe service
+* Parameters `freeform_tags` and `defined_tags` are removed from model `EnableDataSafeConfigurationDetails` in the Data Safe service
 
 ====================
 2.24.1 - 2020-11-24
