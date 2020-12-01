@@ -31,6 +31,7 @@ class CreateDbSystemSourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.mysql.models.CreateDbSystemSourceFromBackupDetails`
+        * :class:`~oci.mysql.models.CreateDbSystemSourceFromNoneDetails`
         * :class:`~oci.mysql.models.CreateDbSystemSourceImportFromUrlDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -61,6 +62,9 @@ class CreateDbSystemSourceDetails(object):
 
         if type == 'BACKUP':
             return 'CreateDbSystemSourceFromBackupDetails'
+
+        if type == 'NONE':
+            return 'CreateDbSystemSourceFromNoneDetails'
 
         if type == 'IMPORTURL':
             return 'CreateDbSystemSourceImportFromUrlDetails'

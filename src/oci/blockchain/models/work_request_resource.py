@@ -56,25 +56,32 @@ class WorkRequestResource(object):
             The value to assign to the entity_uri property of this WorkRequestResource.
         :type entity_uri: str
 
+        :param sub_type_details:
+            The value to assign to the sub_type_details property of this WorkRequestResource.
+        :type sub_type_details: list[WorkRequestResourceSubTypeDetail]
+
         """
         self.swagger_types = {
             'entity_type': 'str',
             'action_type': 'str',
             'identifier': 'str',
-            'entity_uri': 'str'
+            'entity_uri': 'str',
+            'sub_type_details': 'list[WorkRequestResourceSubTypeDetail]'
         }
 
         self.attribute_map = {
             'entity_type': 'entityType',
             'action_type': 'actionType',
             'identifier': 'identifier',
-            'entity_uri': 'entityUri'
+            'entity_uri': 'entityUri',
+            'sub_type_details': 'subTypeDetails'
         }
 
         self._entity_type = None
         self._action_type = None
         self._identifier = None
         self._entity_uri = None
+        self._sub_type_details = None
 
     @property
     def entity_type(self):
@@ -183,6 +190,30 @@ class WorkRequestResource(object):
         :type: str
         """
         self._entity_uri = entity_uri
+
+    @property
+    def sub_type_details(self):
+        """
+        Gets the sub_type_details of this WorkRequestResource.
+        Collection of SubType information for a work request resource\u00A9
+
+
+        :return: The sub_type_details of this WorkRequestResource.
+        :rtype: list[WorkRequestResourceSubTypeDetail]
+        """
+        return self._sub_type_details
+
+    @sub_type_details.setter
+    def sub_type_details(self, sub_type_details):
+        """
+        Sets the sub_type_details of this WorkRequestResource.
+        Collection of SubType information for a work request resource\u00A9
+
+
+        :param sub_type_details: The sub_type_details of this WorkRequestResource.
+        :type: list[WorkRequestResourceSubTypeDetail]
+        """
+        self._sub_type_details = sub_type_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

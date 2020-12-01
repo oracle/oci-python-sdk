@@ -5,6 +5,8 @@
 from __future__ import absolute_import
 
 
+from .channels_client import ChannelsClient
+from .channels_client_composite_operations import ChannelsClientCompositeOperations
 from .db_backups_client import DbBackupsClient
 from .db_backups_client_composite_operations import DbBackupsClientCompositeOperations
 from .db_system_client import DbSystemClient
@@ -15,4 +17,4 @@ from .work_requests_client import WorkRequestsClient
 from .work_requests_client_composite_operations import WorkRequestsClientCompositeOperations
 from . import models
 
-__all__ = ["DbBackupsClient", "DbBackupsClientCompositeOperations", "DbSystemClient", "DbSystemClientCompositeOperations", "MysqlaasClient", "MysqlaasClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]
+__all__ = ["ChannelsClient", "ChannelsClientCompositeOperations", "DbBackupsClient", "DbBackupsClientCompositeOperations", "DbSystemClient", "DbSystemClientCompositeOperations", "MysqlaasClient", "MysqlaasClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]

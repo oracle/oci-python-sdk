@@ -45,6 +45,14 @@ class BlockchainPlatform(object):
     #: This constant has a value of "ENTERPRISE_CUSTOM"
     COMPUTE_SHAPE_ENTERPRISE_CUSTOM = "ENTERPRISE_CUSTOM"
 
+    #: A constant which can be used with the platform_shape_type property of a BlockchainPlatform.
+    #: This constant has a value of "DEFAULT"
+    PLATFORM_SHAPE_TYPE_DEFAULT = "DEFAULT"
+
+    #: A constant which can be used with the platform_shape_type property of a BlockchainPlatform.
+    #: This constant has a value of "CUSTOM"
+    PLATFORM_SHAPE_TYPE_CUSTOM = "CUSTOM"
+
     #: A constant which can be used with the lifecycle_state property of a BlockchainPlatform.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -126,6 +134,12 @@ class BlockchainPlatform(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compute_shape: str
 
+        :param platform_shape_type:
+            The value to assign to the platform_shape_type property of this BlockchainPlatform.
+            Allowed values for this property are: "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type platform_shape_type: str
+
         :param service_endpoint:
             The value to assign to the service_endpoint property of this BlockchainPlatform.
         :type service_endpoint: str
@@ -188,6 +202,7 @@ class BlockchainPlatform(object):
             'service_version': 'str',
             'platform_role': 'str',
             'compute_shape': 'str',
+            'platform_shape_type': 'str',
             'service_endpoint': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -213,6 +228,7 @@ class BlockchainPlatform(object):
             'service_version': 'serviceVersion',
             'platform_role': 'platformRole',
             'compute_shape': 'computeShape',
+            'platform_shape_type': 'platformShapeType',
             'service_endpoint': 'serviceEndpoint',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -237,6 +253,7 @@ class BlockchainPlatform(object):
         self._service_version = None
         self._platform_role = None
         self._compute_shape = None
+        self._platform_shape_type = None
         self._service_endpoint = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -446,7 +463,7 @@ class BlockchainPlatform(object):
     def platform_role(self):
         """
         **[Required]** Gets the platform_role of this BlockchainPlatform.
-        Role of platform - founder or participant
+        Role of platform - FOUNDER or PARTICIPANT
 
         Allowed values for this property are: "FOUNDER", "PARTICIPANT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -461,7 +478,7 @@ class BlockchainPlatform(object):
     def platform_role(self, platform_role):
         """
         Sets the platform_role of this BlockchainPlatform.
-        Role of platform - founder or participant
+        Role of platform - FOUNDER or PARTICIPANT
 
 
         :param platform_role: The platform_role of this BlockchainPlatform.
@@ -476,7 +493,7 @@ class BlockchainPlatform(object):
     def compute_shape(self):
         """
         **[Required]** Gets the compute_shape of this BlockchainPlatform.
-        Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 
         Allowed values for this property are: "STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -491,7 +508,7 @@ class BlockchainPlatform(object):
     def compute_shape(self, compute_shape):
         """
         Sets the compute_shape of this BlockchainPlatform.
-        Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 
 
         :param compute_shape: The compute_shape of this BlockchainPlatform.
@@ -501,6 +518,36 @@ class BlockchainPlatform(object):
         if not value_allowed_none_or_none_sentinel(compute_shape, allowed_values):
             compute_shape = 'UNKNOWN_ENUM_VALUE'
         self._compute_shape = compute_shape
+
+    @property
+    def platform_shape_type(self):
+        """
+        Gets the platform_shape_type of this BlockchainPlatform.
+        Type of Platform shape - DEFAULT or CUSTOM
+
+        Allowed values for this property are: "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The platform_shape_type of this BlockchainPlatform.
+        :rtype: str
+        """
+        return self._platform_shape_type
+
+    @platform_shape_type.setter
+    def platform_shape_type(self, platform_shape_type):
+        """
+        Sets the platform_shape_type of this BlockchainPlatform.
+        Type of Platform shape - DEFAULT or CUSTOM
+
+
+        :param platform_shape_type: The platform_shape_type of this BlockchainPlatform.
+        :type: str
+        """
+        allowed_values = ["DEFAULT", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(platform_shape_type, allowed_values):
+            platform_shape_type = 'UNKNOWN_ENUM_VALUE'
+        self._platform_shape_type = platform_shape_type
 
     @property
     def service_endpoint(self):

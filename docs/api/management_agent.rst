@@ -18,6 +18,7 @@ Management Agent
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.management_agent.models.AvailabilityHistorySummary
     oci.management_agent.models.CreateManagementAgentInstallKeyDetails
     oci.management_agent.models.DeployPluginsDetails
     oci.management_agent.models.ManagementAgent

@@ -1770,22 +1770,22 @@ class ObjectStorageClient(object):
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str http_response_content_disposition: (optional)
-            This value will be used in Content-Disposition header of the response.
+            Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
 
         :param str http_response_cache_control: (optional)
-            This value will be used in Cache-Control header of the response.
+            Specify this query parameter to override the Cache-Control response header in the GetObject response.
 
         :param str http_response_content_type: (optional)
-            This value will be used in Content-Type header of the response.
+            Specify this query parameter to override the Content-Type response header in the GetObject response.
 
         :param str http_response_content_language: (optional)
-            This value will be used in Content-Language header of the response.
+            Specify this query parameter to override the Content-Language response header in the GetObject response.
 
         :param str http_response_content_encoding: (optional)
-            This value will be used in Content-Encoding header of the response
+            Specify this query parameter to override the Content-Encoding response header in the GetObject response.
 
         :param str http_response_expires: (optional)
-            This value will be used in Expires header of the response
+            Specify this query parameter to override the Expires response header in the GetObject response.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

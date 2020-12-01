@@ -33,6 +33,26 @@ class WorkRequest(object):
     #: This constant has a value of "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT"
     OPERATION_TYPE_CHANGE_PRIVATE_ENDPOINT_COMPARTMENT = "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_ONPREM_CONNECTOR"
+    OPERATION_TYPE_CREATE_ONPREM_CONNECTOR = "CREATE_ONPREM_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_ONPREM_CONNECTOR"
+    OPERATION_TYPE_UPDATE_ONPREM_CONNECTOR = "UPDATE_ONPREM_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_ONPREM_CONNECTOR"
+    OPERATION_TYPE_DELETE_ONPREM_CONNECTOR = "DELETE_ONPREM_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_ONPREM_CONNECTOR_WALLET"
+    OPERATION_TYPE_UPDATE_ONPREM_CONNECTOR_WALLET = "UPDATE_ONPREM_CONNECTOR_WALLET"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CHANGE_ONPREM_CONNECTOR_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_ONPREM_CONNECTOR_COMPARTMENT = "CHANGE_ONPREM_CONNECTOR_COMPARTMENT"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -56,7 +76,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "ENABLE_DATA_SAFE_CONFIGURATION", "CREATE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ENABLE_DATA_SAFE_CONFIGURATION", "CREATE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT", "CREATE_ONPREM_CONNECTOR", "UPDATE_ONPREM_CONNECTOR", "DELETE_ONPREM_CONNECTOR", "UPDATE_ONPREM_CONNECTOR_WALLET", "CHANGE_ONPREM_CONNECTOR_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -133,9 +153,9 @@ class WorkRequest(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this WorkRequest.
-        The asynchronous operation tracked by this work request.
+        The resources that are affected by the work request.
 
-        Allowed values for this property are: "ENABLE_DATA_SAFE_CONFIGURATION", "CREATE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ENABLE_DATA_SAFE_CONFIGURATION", "CREATE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT", "CREATE_ONPREM_CONNECTOR", "UPDATE_ONPREM_CONNECTOR", "DELETE_ONPREM_CONNECTOR", "UPDATE_ONPREM_CONNECTOR_WALLET", "CHANGE_ONPREM_CONNECTOR_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -148,13 +168,13 @@ class WorkRequest(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequest.
-        The asynchronous operation tracked by this work request.
+        The resources that are affected by the work request.
 
 
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["ENABLE_DATA_SAFE_CONFIGURATION", "CREATE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT"]
+        allowed_values = ["ENABLE_DATA_SAFE_CONFIGURATION", "CREATE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "CHANGE_PRIVATE_ENDPOINT_COMPARTMENT", "CREATE_ONPREM_CONNECTOR", "UPDATE_ONPREM_CONNECTOR", "DELETE_ONPREM_CONNECTOR", "UPDATE_ONPREM_CONNECTOR_WALLET", "CHANGE_ONPREM_CONNECTOR_COMPARTMENT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -163,7 +183,7 @@ class WorkRequest(object):
     def status(self):
         """
         **[Required]** Gets the status of this WorkRequest.
-        The status of the work request.
+        The current status of the work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -178,7 +198,7 @@ class WorkRequest(object):
     def status(self, status):
         """
         Sets the status of this WorkRequest.
-        The status of the work request.
+        The current status of the work request.
 
 
         :param status: The status of this WorkRequest.
@@ -265,7 +285,7 @@ class WorkRequest(object):
     def percent_complete(self):
         """
         **[Required]** Gets the percent_complete of this WorkRequest.
-        Progress of the request in percentage.
+        Progress of the work request in percentage.
 
 
         :return: The percent_complete of this WorkRequest.
@@ -277,7 +297,7 @@ class WorkRequest(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequest.
-        Progress of the request in percentage.
+        Progress of the work request in percentage.
 
 
         :param percent_complete: The percent_complete of this WorkRequest.
@@ -289,7 +309,9 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        The date and time the work request was created, in the format defined by RFC3339.
+        The date and time the work request was accepted, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_accepted of this WorkRequest.
@@ -301,7 +323,9 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        The date and time the work request was created, in the format defined by RFC3339.
+        The date and time the work request was accepted, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_accepted: The time_accepted of this WorkRequest.
@@ -313,7 +337,9 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, in the format defined by RFC3339.
+        The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_started of this WorkRequest.
@@ -325,7 +351,9 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, in the format defined by RFC3339.
+        The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_started: The time_started of this WorkRequest.
@@ -337,7 +365,9 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The date and time the work request reached a terminal state, either FAILED or SUCCEEDED. Format is defined by RFC3339.
+        The date and time the work request reached a terminal state, either FAILED or SUCCEEDED. Format is defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_finished of this WorkRequest.
@@ -349,7 +379,9 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The date and time the work request reached a terminal state, either FAILED or SUCCEEDED. Format is defined by RFC3339.
+        The date and time the work request reached a terminal state, either FAILED or SUCCEEDED. Format is defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_finished: The time_finished of this WorkRequest.

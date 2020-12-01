@@ -41,6 +41,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CUSTOMIZE_PLATFORM"
     OPERATION_TYPE_CUSTOMIZE_PLATFORM = "CUSTOMIZE_PLATFORM"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "SCALE_STORAGE"
+    OPERATION_TYPE_SCALE_STORAGE = "SCALE_STORAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSummary object with values from keyword arguments.
@@ -48,7 +52,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_PLATFORM", "UPDATE_PLATFORM", "DELETE_PLATFORM", "SCALE_PLATFORM", "START_PLATFORM", "STOP_PLATFORM", "CUSTOMIZE_PLATFORM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_PLATFORM", "UPDATE_PLATFORM", "DELETE_PLATFORM", "SCALE_PLATFORM", "START_PLATFORM", "STOP_PLATFORM", "CUSTOMIZE_PLATFORM", "SCALE_STORAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -125,7 +129,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         type of the work request
 
-        Allowed values for this property are: "CREATE_PLATFORM", "UPDATE_PLATFORM", "DELETE_PLATFORM", "SCALE_PLATFORM", "START_PLATFORM", "STOP_PLATFORM", "CUSTOMIZE_PLATFORM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_PLATFORM", "UPDATE_PLATFORM", "DELETE_PLATFORM", "SCALE_PLATFORM", "START_PLATFORM", "STOP_PLATFORM", "CUSTOMIZE_PLATFORM", "SCALE_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -144,7 +148,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_PLATFORM", "UPDATE_PLATFORM", "DELETE_PLATFORM", "SCALE_PLATFORM", "START_PLATFORM", "STOP_PLATFORM", "CUSTOMIZE_PLATFORM"]
+        allowed_values = ["CREATE_PLATFORM", "UPDATE_PLATFORM", "DELETE_PLATFORM", "SCALE_PLATFORM", "START_PLATFORM", "STOP_PLATFORM", "CUSTOMIZE_PLATFORM", "SCALE_STORAGE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

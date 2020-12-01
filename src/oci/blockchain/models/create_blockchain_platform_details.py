@@ -203,7 +203,7 @@ class CreateBlockchainPlatformDetails(object):
     def compute_shape(self):
         """
         **[Required]** Gets the compute_shape of this CreateBlockchainPlatformDetails.
-        Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 
 
         :return: The compute_shape of this CreateBlockchainPlatformDetails.
@@ -215,7 +215,7 @@ class CreateBlockchainPlatformDetails(object):
     def compute_shape(self, compute_shape):
         """
         Sets the compute_shape of this CreateBlockchainPlatformDetails.
-        Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 
 
         :param compute_shape: The compute_shape of this CreateBlockchainPlatformDetails.
@@ -251,7 +251,7 @@ class CreateBlockchainPlatformDetails(object):
     def idcs_access_token(self):
         """
         Gets the idcs_access_token of this CreateBlockchainPlatformDetails.
-        IDCS access token
+        IDCS access token with Identity Domain Administrator role
 
 
         :return: The idcs_access_token of this CreateBlockchainPlatformDetails.
@@ -263,7 +263,7 @@ class CreateBlockchainPlatformDetails(object):
     def idcs_access_token(self, idcs_access_token):
         """
         Sets the idcs_access_token of this CreateBlockchainPlatformDetails.
-        IDCS access token
+        IDCS access token with Identity Domain Administrator role
 
 
         :param idcs_access_token: The idcs_access_token of this CreateBlockchainPlatformDetails.

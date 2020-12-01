@@ -54,4 +54,5 @@ Blockchain
     oci.blockchain.models.WorkRequestLogEntry
     oci.blockchain.models.WorkRequestLogEntryCollection
     oci.blockchain.models.WorkRequestResource
+    oci.blockchain.models.WorkRequestResourceSubTypeDetail
     oci.blockchain.models.WorkRequestSummary

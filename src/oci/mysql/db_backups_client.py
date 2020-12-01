@@ -356,6 +356,11 @@ class DbBackupsClient(object):
         :param str display_name: (optional)
             A filter to return only the resource matching the given display name exactly.
 
+        :param str creation_type: (optional)
+            Backup creationType
+
+            Allowed values are: "MANUAL", "AUTOMATIC"
+
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
 
@@ -401,6 +406,7 @@ class DbBackupsClient(object):
             "lifecycle_state",
             "db_system_id",
             "display_name",
+            "creation_type",
             "sort_by",
             "sort_order",
             "limit",
@@ -416,6 +422,13 @@ class DbBackupsClient(object):
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'creation_type' in kwargs:
+            creation_type_allowed_values = ["MANUAL", "AUTOMATIC"]
+            if kwargs['creation_type'] not in creation_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `creation_type`, must be one of {0}".format(creation_type_allowed_values)
                 )
 
         if 'sort_by' in kwargs:
@@ -438,6 +451,7 @@ class DbBackupsClient(object):
             "compartmentId": compartment_id,
             "dbSystemId": kwargs.get("db_system_id", missing),
             "displayName": kwargs.get("display_name", missing),
+            "creationType": kwargs.get("creation_type", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),

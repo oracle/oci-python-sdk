@@ -374,7 +374,9 @@ class DataSafePrivateEndpoint(object):
     def time_created(self):
         """
         Gets the time_created of this DataSafePrivateEndpoint.
-        The date and time the private endpoint was created, in the format defined by RFC3339.
+        The date and time the private endpoint was created, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this DataSafePrivateEndpoint.
@@ -386,7 +388,9 @@ class DataSafePrivateEndpoint(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DataSafePrivateEndpoint.
-        The date and time the private endpoint was created, in the format defined by RFC3339.
+        The date and time the private endpoint was created, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this DataSafePrivateEndpoint.
@@ -486,7 +490,7 @@ class DataSafePrivateEndpoint(object):
         Gets the defined_tags of this DataSafePrivateEndpoint.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
 
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
@@ -502,7 +506,7 @@ class DataSafePrivateEndpoint(object):
         Sets the defined_tags of this DataSafePrivateEndpoint.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
 
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
