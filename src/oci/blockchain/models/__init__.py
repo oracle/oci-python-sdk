@@ -40,6 +40,7 @@ from .work_request_error_collection import WorkRequestErrorCollection
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_log_entry_collection import WorkRequestLogEntryCollection
 from .work_request_resource import WorkRequestResource
+from .work_request_resource_sub_type_detail import WorkRequestResourceSubTypeDetail
 from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for blockchain services.
@@ -80,5 +81,6 @@ blockchain_type_mapping = {
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestLogEntryCollection": WorkRequestLogEntryCollection,
     "WorkRequestResource": WorkRequestResource,
+    "WorkRequestResourceSubTypeDetail": WorkRequestResourceSubTypeDetail,
     "WorkRequestSummary": WorkRequestSummary
 }

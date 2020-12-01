@@ -46,6 +46,10 @@ class ConfigurationVariables(object):
     TRANSACTION_ISOLATION_READ_COMMITED = "READ-COMMITED"
 
     #: A constant which can be used with the transaction_isolation property of a ConfigurationVariables.
+    #: This constant has a value of "READ-COMMITTED"
+    TRANSACTION_ISOLATION_READ_COMMITTED = "READ-COMMITTED"
+
+    #: A constant which can be used with the transaction_isolation property of a ConfigurationVariables.
     #: This constant has a value of "REPEATABLE-READ"
     TRANSACTION_ISOLATION_REPEATABLE_READ = "REPEATABLE-READ"
 
@@ -72,7 +76,7 @@ class ConfigurationVariables(object):
 
         :param transaction_isolation:
             The value to assign to the transaction_isolation property of this ConfigurationVariables.
-            Allowed values for this property are: "READ-UNCOMMITTED", "READ-COMMITED", "REPEATABLE-READ", "SERIALIZABLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "READ-UNCOMMITTED", "READ-COMMITED", "READ-COMMITTED", "REPEATABLE-READ", "SERIALIZABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type transaction_isolation: str
 
@@ -256,6 +260,10 @@ class ConfigurationVariables(object):
             The value to assign to the mysqlx_zstd_max_client_compression_level property of this ConfigurationVariables.
         :type mysqlx_zstd_max_client_compression_level: int
 
+        :param mysqlx_zstd_default_compression_level:
+            The value to assign to the mysqlx_zstd_default_compression_level property of this ConfigurationVariables.
+        :type mysqlx_zstd_default_compression_level: int
+
         :param mysql_zstd_default_compression_level:
             The value to assign to the mysql_zstd_default_compression_level property of this ConfigurationVariables.
         :type mysql_zstd_default_compression_level: int
@@ -310,6 +318,7 @@ class ConfigurationVariables(object):
             'mysqlx_lz4_max_client_compression_level': 'int',
             'mysqlx_lz4_default_compression_level': 'int',
             'mysqlx_zstd_max_client_compression_level': 'int',
+            'mysqlx_zstd_default_compression_level': 'int',
             'mysql_zstd_default_compression_level': 'int'
         }
 
@@ -362,6 +371,7 @@ class ConfigurationVariables(object):
             'mysqlx_lz4_max_client_compression_level': 'mysqlxLz4MaxClientCompressionLevel',
             'mysqlx_lz4_default_compression_level': 'mysqlxLz4DefaultCompressionLevel',
             'mysqlx_zstd_max_client_compression_level': 'mysqlxZstdMaxClientCompressionLevel',
+            'mysqlx_zstd_default_compression_level': 'mysqlxZstdDefaultCompressionLevel',
             'mysql_zstd_default_compression_level': 'mysqlZstdDefaultCompressionLevel'
         }
 
@@ -413,6 +423,7 @@ class ConfigurationVariables(object):
         self._mysqlx_lz4_max_client_compression_level = None
         self._mysqlx_lz4_default_compression_level = None
         self._mysqlx_zstd_max_client_compression_level = None
+        self._mysqlx_zstd_default_compression_level = None
         self._mysql_zstd_default_compression_level = None
 
     @property
@@ -481,7 +492,7 @@ class ConfigurationVariables(object):
         Gets the transaction_isolation of this ConfigurationVariables.
         (\"transaction_isolation\")
 
-        Allowed values for this property are: "READ-UNCOMMITTED", "READ-COMMITED", "REPEATABLE-READ", "SERIALIZABLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "READ-UNCOMMITTED", "READ-COMMITED", "READ-COMMITTED", "REPEATABLE-READ", "SERIALIZABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -500,7 +511,7 @@ class ConfigurationVariables(object):
         :param transaction_isolation: The transaction_isolation of this ConfigurationVariables.
         :type: str
         """
-        allowed_values = ["READ-UNCOMMITTED", "READ-COMMITED", "REPEATABLE-READ", "SERIALIZABLE"]
+        allowed_values = ["READ-UNCOMMITTED", "READ-COMMITED", "READ-COMMITTED", "REPEATABLE-READ", "SERIALIZABLE"]
         if not value_allowed_none_or_none_sentinel(transaction_isolation, allowed_values):
             transaction_isolation = 'UNKNOWN_ENUM_VALUE'
         self._transaction_isolation = transaction_isolation
@@ -677,7 +688,7 @@ class ConfigurationVariables(object):
     def mysqlx_enable_hello_notice(self):
         """
         Gets the mysqlx_enable_hello_notice of this ConfigurationVariables.
-        (\"mysqlx_enable_hello_notice\")
+        (\"mysqlx_enable_hello_notice\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_enable_hello_notice of this ConfigurationVariables.
@@ -689,7 +700,7 @@ class ConfigurationVariables(object):
     def mysqlx_enable_hello_notice(self, mysqlx_enable_hello_notice):
         """
         Sets the mysqlx_enable_hello_notice of this ConfigurationVariables.
-        (\"mysqlx_enable_hello_notice\")
+        (\"mysqlx_enable_hello_notice\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_enable_hello_notice: The mysqlx_enable_hello_notice of this ConfigurationVariables.
@@ -749,7 +760,7 @@ class ConfigurationVariables(object):
     def binlog_expire_logs_seconds(self):
         """
         Gets the binlog_expire_logs_seconds of this ConfigurationVariables.
-        (\"binlog_expire_logs_seconds\")
+        (\"binlog_expire_logs_seconds\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The binlog_expire_logs_seconds of this ConfigurationVariables.
@@ -761,7 +772,7 @@ class ConfigurationVariables(object):
     def binlog_expire_logs_seconds(self, binlog_expire_logs_seconds):
         """
         Sets the binlog_expire_logs_seconds of this ConfigurationVariables.
-        (\"binlog_expire_logs_seconds\")
+        (\"binlog_expire_logs_seconds\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param binlog_expire_logs_seconds: The binlog_expire_logs_seconds of this ConfigurationVariables.
@@ -917,7 +928,7 @@ class ConfigurationVariables(object):
     def generated_random_password_length(self):
         """
         Gets the generated_random_password_length of this ConfigurationVariables.
-        (\"generated_random_password_length\")
+        (\"generated_random_password_length\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The generated_random_password_length of this ConfigurationVariables.
@@ -929,7 +940,7 @@ class ConfigurationVariables(object):
     def generated_random_password_length(self, generated_random_password_length):
         """
         Sets the generated_random_password_length of this ConfigurationVariables.
-        (\"generated_random_password_length\")
+        (\"generated_random_password_length\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param generated_random_password_length: The generated_random_password_length of this ConfigurationVariables.
@@ -1157,7 +1168,7 @@ class ConfigurationVariables(object):
     def mysqlx_connect_timeout(self):
         """
         Gets the mysqlx_connect_timeout of this ConfigurationVariables.
-        (\"mysqlx_connect_timeout\")
+        (\"mysqlx_connect_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_connect_timeout of this ConfigurationVariables.
@@ -1169,7 +1180,7 @@ class ConfigurationVariables(object):
     def mysqlx_connect_timeout(self, mysqlx_connect_timeout):
         """
         Sets the mysqlx_connect_timeout of this ConfigurationVariables.
-        (\"mysqlx_connect_timeout\")
+        (\"mysqlx_connect_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_connect_timeout: The mysqlx_connect_timeout of this ConfigurationVariables.
@@ -1181,7 +1192,7 @@ class ConfigurationVariables(object):
     def mysqlx_document_id_unique_prefix(self):
         """
         Gets the mysqlx_document_id_unique_prefix of this ConfigurationVariables.
-        (\"mysqlx_document_id_unique_prefix\")
+        (\"mysqlx_document_id_unique_prefix\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_document_id_unique_prefix of this ConfigurationVariables.
@@ -1193,7 +1204,7 @@ class ConfigurationVariables(object):
     def mysqlx_document_id_unique_prefix(self, mysqlx_document_id_unique_prefix):
         """
         Sets the mysqlx_document_id_unique_prefix of this ConfigurationVariables.
-        (\"mysqlx_document_id_unique_prefix\")
+        (\"mysqlx_document_id_unique_prefix\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_document_id_unique_prefix: The mysqlx_document_id_unique_prefix of this ConfigurationVariables.
@@ -1205,7 +1216,7 @@ class ConfigurationVariables(object):
     def mysqlx_idle_worker_thread_timeout(self):
         """
         Gets the mysqlx_idle_worker_thread_timeout of this ConfigurationVariables.
-        (\"mysqlx_idle_worker_thread_timeout\")
+        (\"mysqlx_idle_worker_thread_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_idle_worker_thread_timeout of this ConfigurationVariables.
@@ -1217,7 +1228,7 @@ class ConfigurationVariables(object):
     def mysqlx_idle_worker_thread_timeout(self, mysqlx_idle_worker_thread_timeout):
         """
         Sets the mysqlx_idle_worker_thread_timeout of this ConfigurationVariables.
-        (\"mysqlx_idle_worker_thread_timeout\")
+        (\"mysqlx_idle_worker_thread_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_idle_worker_thread_timeout: The mysqlx_idle_worker_thread_timeout of this ConfigurationVariables.
@@ -1229,7 +1240,7 @@ class ConfigurationVariables(object):
     def mysqlx_interactive_timeout(self):
         """
         Gets the mysqlx_interactive_timeout of this ConfigurationVariables.
-        (\"mysqlx_interactive_timeout\")
+        (\"mysqlx_interactive_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_interactive_timeout of this ConfigurationVariables.
@@ -1241,7 +1252,7 @@ class ConfigurationVariables(object):
     def mysqlx_interactive_timeout(self, mysqlx_interactive_timeout):
         """
         Sets the mysqlx_interactive_timeout of this ConfigurationVariables.
-        (\"mysqlx_interactive_timeout\")
+        (\"mysqlx_interactive_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_interactive_timeout: The mysqlx_interactive_timeout of this ConfigurationVariables.
@@ -1253,7 +1264,7 @@ class ConfigurationVariables(object):
     def mysqlx_max_allowed_packet(self):
         """
         Gets the mysqlx_max_allowed_packet of this ConfigurationVariables.
-        (\"mysqlx_max_allowed_packet\")
+        (\"mysqlx_max_allowed_packet\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_max_allowed_packet of this ConfigurationVariables.
@@ -1265,7 +1276,7 @@ class ConfigurationVariables(object):
     def mysqlx_max_allowed_packet(self, mysqlx_max_allowed_packet):
         """
         Sets the mysqlx_max_allowed_packet of this ConfigurationVariables.
-        (\"mysqlx_max_allowed_packet\")
+        (\"mysqlx_max_allowed_packet\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_max_allowed_packet: The mysqlx_max_allowed_packet of this ConfigurationVariables.
@@ -1277,7 +1288,7 @@ class ConfigurationVariables(object):
     def mysqlx_min_worker_threads(self):
         """
         Gets the mysqlx_min_worker_threads of this ConfigurationVariables.
-        (\"mysqlx_min_worker_threads\")
+        (\"mysqlx_min_worker_threads\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_min_worker_threads of this ConfigurationVariables.
@@ -1289,7 +1300,7 @@ class ConfigurationVariables(object):
     def mysqlx_min_worker_threads(self, mysqlx_min_worker_threads):
         """
         Sets the mysqlx_min_worker_threads of this ConfigurationVariables.
-        (\"mysqlx_min_worker_threads\")
+        (\"mysqlx_min_worker_threads\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_min_worker_threads: The mysqlx_min_worker_threads of this ConfigurationVariables.
@@ -1301,7 +1312,7 @@ class ConfigurationVariables(object):
     def mysqlx_read_timeout(self):
         """
         Gets the mysqlx_read_timeout of this ConfigurationVariables.
-        (\"mysqlx_read_timeout\")
+        (\"mysqlx_read_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_read_timeout of this ConfigurationVariables.
@@ -1313,7 +1324,7 @@ class ConfigurationVariables(object):
     def mysqlx_read_timeout(self, mysqlx_read_timeout):
         """
         Sets the mysqlx_read_timeout of this ConfigurationVariables.
-        (\"mysqlx_read_timeout\")
+        (\"mysqlx_read_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_read_timeout: The mysqlx_read_timeout of this ConfigurationVariables.
@@ -1325,7 +1336,7 @@ class ConfigurationVariables(object):
     def mysqlx_wait_timeout(self):
         """
         Gets the mysqlx_wait_timeout of this ConfigurationVariables.
-        (\"mysqlx_wait_timeout\")
+        (\"mysqlx_wait_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_wait_timeout of this ConfigurationVariables.
@@ -1337,7 +1348,7 @@ class ConfigurationVariables(object):
     def mysqlx_wait_timeout(self, mysqlx_wait_timeout):
         """
         Sets the mysqlx_wait_timeout of this ConfigurationVariables.
-        (\"mysqlx_wait_timeout\")
+        (\"mysqlx_wait_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_wait_timeout: The mysqlx_wait_timeout of this ConfigurationVariables.
@@ -1349,7 +1360,7 @@ class ConfigurationVariables(object):
     def mysqlx_write_timeout(self):
         """
         Gets the mysqlx_write_timeout of this ConfigurationVariables.
-        (\"mysqlx_write_timeout\")
+        (\"mysqlx_write_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The mysqlx_write_timeout of this ConfigurationVariables.
@@ -1361,7 +1372,7 @@ class ConfigurationVariables(object):
     def mysqlx_write_timeout(self, mysqlx_write_timeout):
         """
         Sets the mysqlx_write_timeout of this ConfigurationVariables.
-        (\"mysqlx_write_timeout\")
+        (\"mysqlx_write_timeout\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param mysqlx_write_timeout: The mysqlx_write_timeout of this ConfigurationVariables.
@@ -1397,7 +1408,7 @@ class ConfigurationVariables(object):
     def query_alloc_block_size(self):
         """
         Gets the query_alloc_block_size of this ConfigurationVariables.
-        (\"query_alloc_block_size\")
+        (\"query_alloc_block_size\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The query_alloc_block_size of this ConfigurationVariables.
@@ -1409,7 +1420,7 @@ class ConfigurationVariables(object):
     def query_alloc_block_size(self, query_alloc_block_size):
         """
         Sets the query_alloc_block_size of this ConfigurationVariables.
-        (\"query_alloc_block_size\")
+        (\"query_alloc_block_size\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param query_alloc_block_size: The query_alloc_block_size of this ConfigurationVariables.
@@ -1421,7 +1432,7 @@ class ConfigurationVariables(object):
     def query_prealloc_size(self):
         """
         Gets the query_prealloc_size of this ConfigurationVariables.
-        (\"query_prealloc_size\")
+        (\"query_prealloc_size\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :return: The query_prealloc_size of this ConfigurationVariables.
@@ -1433,7 +1444,7 @@ class ConfigurationVariables(object):
     def query_prealloc_size(self, query_prealloc_size):
         """
         Sets the query_prealloc_size of this ConfigurationVariables.
-        (\"query_prealloc_size\")
+        (\"query_prealloc_size\") DEPRECATED -- variable should not be settable and will be ignored
 
 
         :param query_prealloc_size: The query_prealloc_size of this ConfigurationVariables.
@@ -1586,10 +1597,34 @@ class ConfigurationVariables(object):
         self._mysqlx_zstd_max_client_compression_level = mysqlx_zstd_max_client_compression_level
 
     @property
+    def mysqlx_zstd_default_compression_level(self):
+        """
+        Gets the mysqlx_zstd_default_compression_level of this ConfigurationVariables.
+        Set the default compression level for the zstd algorithm. (\"mysqlx_zstd_default_compression_level\")
+
+
+        :return: The mysqlx_zstd_default_compression_level of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._mysqlx_zstd_default_compression_level
+
+    @mysqlx_zstd_default_compression_level.setter
+    def mysqlx_zstd_default_compression_level(self, mysqlx_zstd_default_compression_level):
+        """
+        Sets the mysqlx_zstd_default_compression_level of this ConfigurationVariables.
+        Set the default compression level for the zstd algorithm. (\"mysqlx_zstd_default_compression_level\")
+
+
+        :param mysqlx_zstd_default_compression_level: The mysqlx_zstd_default_compression_level of this ConfigurationVariables.
+        :type: int
+        """
+        self._mysqlx_zstd_default_compression_level = mysqlx_zstd_default_compression_level
+
+    @property
     def mysql_zstd_default_compression_level(self):
         """
         Gets the mysql_zstd_default_compression_level of this ConfigurationVariables.
-        Set the default compression level for the zstd algorithm. (\"mysqlx_zstd_default_compression_level\")
+        DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 
 
         :return: The mysql_zstd_default_compression_level of this ConfigurationVariables.
@@ -1601,7 +1636,7 @@ class ConfigurationVariables(object):
     def mysql_zstd_default_compression_level(self, mysql_zstd_default_compression_level):
         """
         Sets the mysql_zstd_default_compression_level of this ConfigurationVariables.
-        Set the default compression level for the zstd algorithm. (\"mysqlx_zstd_default_compression_level\")
+        DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
 
 
         :param mysql_zstd_default_compression_level: The mysql_zstd_default_compression_level of this ConfigurationVariables.

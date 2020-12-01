@@ -49,6 +49,10 @@ class BackupSummary(object):
             The value to assign to the backup_type property of this BackupSummary.
         :type backup_type: str
 
+        :param creation_type:
+            The value to assign to the creation_type property of this BackupSummary.
+        :type creation_type: str
+
         :param db_system_id:
             The value to assign to the db_system_id property of this BackupSummary.
         :type db_system_id: str
@@ -89,6 +93,7 @@ class BackupSummary(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'backup_type': 'str',
+            'creation_type': 'str',
             'db_system_id': 'str',
             'data_storage_size_in_gbs': 'int',
             'backup_size_in_gbs': 'int',
@@ -106,6 +111,7 @@ class BackupSummary(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'backup_type': 'backupType',
+            'creation_type': 'creationType',
             'db_system_id': 'dbSystemId',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'backup_size_in_gbs': 'backupSizeInGBs',
@@ -122,6 +128,7 @@ class BackupSummary(object):
         self._time_created = None
         self._lifecycle_state = None
         self._backup_type = None
+        self._creation_type = None
         self._db_system_id = None
         self._data_storage_size_in_gbs = None
         self._backup_size_in_gbs = None
@@ -276,6 +283,30 @@ class BackupSummary(object):
         self._backup_type = backup_type
 
     @property
+    def creation_type(self):
+        """
+        **[Required]** Gets the creation_type of this BackupSummary.
+        If the backup was created automatically, or by a manual request.
+
+
+        :return: The creation_type of this BackupSummary.
+        :rtype: str
+        """
+        return self._creation_type
+
+    @creation_type.setter
+    def creation_type(self, creation_type):
+        """
+        Sets the creation_type of this BackupSummary.
+        If the backup was created automatically, or by a manual request.
+
+
+        :param creation_type: The creation_type of this BackupSummary.
+        :type: str
+        """
+        self._creation_type = creation_type
+
+    @property
     def db_system_id(self):
         """
         **[Required]** Gets the db_system_id of this BackupSummary.
@@ -423,7 +454,7 @@ class BackupSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this BackupSummary.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -436,7 +467,7 @@ class BackupSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this BackupSummary.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -449,7 +480,7 @@ class BackupSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this BackupSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -462,7 +493,7 @@ class BackupSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this BackupSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 

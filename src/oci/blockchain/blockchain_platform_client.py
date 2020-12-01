@@ -1919,6 +1919,13 @@ class BlockchainPlatformClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1937,7 +1944,8 @@ class BlockchainPlatformClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1958,7 +1966,8 @@ class BlockchainPlatformClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1967,6 +1976,8 @@ class BlockchainPlatformClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -1998,6 +2009,13 @@ class BlockchainPlatformClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2016,7 +2034,8 @@ class BlockchainPlatformClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2037,7 +2056,8 @@ class BlockchainPlatformClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2046,6 +2066,8 @@ class BlockchainPlatformClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2080,6 +2102,13 @@ class BlockchainPlatformClient(object):
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2098,7 +2127,8 @@ class BlockchainPlatformClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
-            "if_match"
+            "if_match",
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2119,7 +2149,8 @@ class BlockchainPlatformClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "if-match": kwargs.get("if_match", missing)
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2128,6 +2159,8 @@ class BlockchainPlatformClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -2266,6 +2299,13 @@ class BlockchainPlatformClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2284,7 +2324,8 @@ class BlockchainPlatformClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2306,7 +2347,8 @@ class BlockchainPlatformClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2315,6 +2357,8 @@ class BlockchainPlatformClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,

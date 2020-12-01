@@ -296,7 +296,7 @@ class CreateDbSystemDetails(object):
     @property
     def configuration_id(self):
         """
-        **[Required]** Gets the configuration_id of this CreateDbSystemDetails.
+        Gets the configuration_id of this CreateDbSystemDetails.
         The OCID of the Configuration to be used for this DB System.
 
 

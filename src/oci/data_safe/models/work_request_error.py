@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestError(object):
     """
-    An error encountered while executing an operation that is tracked by a work request.
+    An error related to a work request.
     """
 
     def __init__(self, **kwargs):
@@ -51,8 +51,9 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable error code. For a list of common errors, see `API Errors`__.
+
+        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
 
 
         :return: The code of this WorkRequestError.
@@ -64,8 +65,9 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable error code. For a list of common errors, see `API Errors`__.
+
+        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
 
 
         :param code: The code of this WorkRequestError.
@@ -101,7 +103,9 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The date and time the error occurred, in the format defined by RFC3339.
+        The date and time the error occurred, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The timestamp of this WorkRequestError.
@@ -113,7 +117,9 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The date and time the error occurred, in the format defined by RFC3339.
+        The date and time the error occurred, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestError.

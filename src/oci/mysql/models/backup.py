@@ -121,6 +121,10 @@ class Backup(object):
             The value to assign to the db_system_id property of this Backup.
         :type db_system_id: str
 
+        :param db_system_snapshot:
+            The value to assign to the db_system_snapshot property of this Backup.
+        :type db_system_snapshot: DbSystemSnapshot
+
         :param backup_size_in_gbs:
             The value to assign to the backup_size_in_gbs property of this Backup.
         :type backup_size_in_gbs: int
@@ -162,6 +166,7 @@ class Backup(object):
             'backup_type': 'str',
             'creation_type': 'str',
             'db_system_id': 'str',
+            'db_system_snapshot': 'DbSystemSnapshot',
             'backup_size_in_gbs': 'int',
             'retention_in_days': 'int',
             'data_storage_size_in_gbs': 'int',
@@ -183,6 +188,7 @@ class Backup(object):
             'backup_type': 'backupType',
             'creation_type': 'creationType',
             'db_system_id': 'dbSystemId',
+            'db_system_snapshot': 'dbSystemSnapshot',
             'backup_size_in_gbs': 'backupSizeInGBs',
             'retention_in_days': 'retentionInDays',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
@@ -203,6 +209,7 @@ class Backup(object):
         self._backup_type = None
         self._creation_type = None
         self._db_system_id = None
+        self._db_system_snapshot = None
         self._backup_size_in_gbs = None
         self._retention_in_days = None
         self._data_storage_size_in_gbs = None
@@ -494,6 +501,26 @@ class Backup(object):
         self._db_system_id = db_system_id
 
     @property
+    def db_system_snapshot(self):
+        """
+        Gets the db_system_snapshot of this Backup.
+
+        :return: The db_system_snapshot of this Backup.
+        :rtype: DbSystemSnapshot
+        """
+        return self._db_system_snapshot
+
+    @db_system_snapshot.setter
+    def db_system_snapshot(self, db_system_snapshot):
+        """
+        Sets the db_system_snapshot of this Backup.
+
+        :param db_system_snapshot: The db_system_snapshot of this Backup.
+        :type: DbSystemSnapshot
+        """
+        self._db_system_snapshot = db_system_snapshot
+
+    @property
     def backup_size_in_gbs(self):
         """
         Gets the backup_size_in_gbs of this Backup.
@@ -617,7 +644,7 @@ class Backup(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Backup.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -630,7 +657,7 @@ class Backup(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Backup.
-        Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -643,7 +670,7 @@ class Backup(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Backup.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -656,7 +683,7 @@ class Backup(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Backup.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 

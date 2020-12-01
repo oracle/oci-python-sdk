@@ -31,6 +31,7 @@ class DbSystemSource(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.mysql.models.DbSystemSourceFromBackup`
+        * :class:`~oci.mysql.models.DbSystemSourceFromNone`
         * :class:`~oci.mysql.models.DbSystemSourceImportFromUrl`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -62,6 +63,9 @@ class DbSystemSource(object):
 
         if type == 'BACKUP':
             return 'DbSystemSourceFromBackup'
+
+        if type == 'NONE':
+            return 'DbSystemSourceFromNone'
 
         if type == 'IMPORTURL':
             return 'DbSystemSourceImportFromUrl'
