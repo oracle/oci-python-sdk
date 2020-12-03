@@ -1649,7 +1649,7 @@ class AutonomousDatabase(object):
     def operations_insights_status(self):
         """
         Gets the operations_insights_status of this AutonomousDatabase.
-        Status of the Operations Insights for this Autonomous Database.
+        Status of Operations Insights for this Autonomous Database.
 
         Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "NOT_ENABLED", "FAILED_ENABLING", "FAILED_DISABLING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1664,7 +1664,7 @@ class AutonomousDatabase(object):
     def operations_insights_status(self, operations_insights_status):
         """
         Sets the operations_insights_status of this AutonomousDatabase.
-        Status of the Operations Insights for this Autonomous Database.
+        Status of Operations Insights for this Autonomous Database.
 
 
         :param operations_insights_status: The operations_insights_status of this AutonomousDatabase.

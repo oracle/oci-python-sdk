@@ -61,6 +61,10 @@ class MaintenanceRunSummary(object):
     #: This constant has a value of "CLOUD_EXADATA_INFRASTRUCTURE"
     TARGET_RESOURCE_TYPE_CLOUD_EXADATA_INFRASTRUCTURE = "CLOUD_EXADATA_INFRASTRUCTURE"
 
+    #: A constant which can be used with the target_resource_type property of a MaintenanceRunSummary.
+    #: This constant has a value of "EXACC_INFRASTRUCTURE"
+    TARGET_RESOURCE_TYPE_EXACC_INFRASTRUCTURE = "EXACC_INFRASTRUCTURE"
+
     #: A constant which can be used with the maintenance_type property of a MaintenanceRunSummary.
     #: This constant has a value of "PLANNED"
     MAINTENANCE_TYPE_PLANNED = "PLANNED"
@@ -126,7 +130,7 @@ class MaintenanceRunSummary(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this MaintenanceRunSummary.
-            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
@@ -435,7 +439,7 @@ class MaintenanceRunSummary(object):
         Gets the target_resource_type of this MaintenanceRunSummary.
         The type of the target resource on which the maintenance run occurs.
 
-        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -454,7 +458,7 @@ class MaintenanceRunSummary(object):
         :param target_resource_type: The target_resource_type of this MaintenanceRunSummary.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE"]
+        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type

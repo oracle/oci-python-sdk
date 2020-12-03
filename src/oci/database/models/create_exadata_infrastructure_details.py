@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExadataInfrastructureDetails(object):
     """
-    Request to create Exadata Cloud@Customer infrastructure resource.
+    Request to create Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+    See :func:`create_cloud_exadata_infrastructure_details` for information on creating a cloud Exadata infrastructure resource in an Exadata Cloud Service instance.
     """
 
     def __init__(self, **kwargs):
@@ -66,6 +67,10 @@ class CreateExadataInfrastructureDetails(object):
             The value to assign to the contacts property of this CreateExadataInfrastructureDetails.
         :type contacts: list[ExadataInfrastructureContact]
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this CreateExadataInfrastructureDetails.
+        :type maintenance_window: MaintenanceWindow
+
         :param dns_server:
             The value to assign to the dns_server property of this CreateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -96,6 +101,7 @@ class CreateExadataInfrastructureDetails(object):
             'infini_band_network_cidr': 'str',
             'corporate_proxy': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
+            'maintenance_window': 'MaintenanceWindow',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -115,6 +121,7 @@ class CreateExadataInfrastructureDetails(object):
             'infini_band_network_cidr': 'infiniBandNetworkCIDR',
             'corporate_proxy': 'corporateProxy',
             'contacts': 'contacts',
+            'maintenance_window': 'maintenanceWindow',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'freeform_tags': 'freeformTags',
@@ -133,6 +140,7 @@ class CreateExadataInfrastructureDetails(object):
         self._infini_band_network_cidr = None
         self._corporate_proxy = None
         self._contacts = None
+        self._maintenance_window = None
         self._dns_server = None
         self._ntp_server = None
         self._freeform_tags = None
@@ -435,6 +443,26 @@ class CreateExadataInfrastructureDetails(object):
         :type: list[ExadataInfrastructureContact]
         """
         self._contacts = contacts
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this CreateExadataInfrastructureDetails.
+
+        :return: The maintenance_window of this CreateExadataInfrastructureDetails.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this CreateExadataInfrastructureDetails.
+
+        :param maintenance_window: The maintenance_window of this CreateExadataInfrastructureDetails.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     @property
     def dns_server(self):

@@ -309,7 +309,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -324,7 +324,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseDataguardAssociation.
@@ -421,7 +421,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_life_cycle_state(self):
         """
         Gets the peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -436,7 +436,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_life_cycle_state(self, peer_autonomous_database_life_cycle_state):
         """
         Sets the peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
 
         :param peer_autonomous_database_life_cycle_state: The peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.

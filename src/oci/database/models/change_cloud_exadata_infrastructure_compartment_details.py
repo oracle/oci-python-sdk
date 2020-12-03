@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeCloudExadataInfrastructureCompartmentDetails(object):
     """
-    The configuration details for moving the resource.
+    The configuration details for moving the cloud Exadata infrastructure resource to another compartment. Applies to Exadata Cloud Service instances only.
     """
 
     def __init__(self, **kwargs):

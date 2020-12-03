@@ -55,6 +55,18 @@ class UpdateIntegrationInstanceDetails(object):
             The value to assign to the is_file_server_enabled property of this UpdateIntegrationInstanceDetails.
         :type is_file_server_enabled: bool
 
+        :param is_visual_builder_enabled:
+            The value to assign to the is_visual_builder_enabled property of this UpdateIntegrationInstanceDetails.
+        :type is_visual_builder_enabled: bool
+
+        :param custom_endpoint:
+            The value to assign to the custom_endpoint property of this UpdateIntegrationInstanceDetails.
+        :type custom_endpoint: UpdateCustomEndpointDetails
+
+        :param alternate_custom_endpoints:
+            The value to assign to the alternate_custom_endpoints property of this UpdateIntegrationInstanceDetails.
+        :type alternate_custom_endpoints: list[UpdateCustomEndpointDetails]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -63,7 +75,10 @@ class UpdateIntegrationInstanceDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_byol': 'bool',
             'message_packs': 'int',
-            'is_file_server_enabled': 'bool'
+            'is_file_server_enabled': 'bool',
+            'is_visual_builder_enabled': 'bool',
+            'custom_endpoint': 'UpdateCustomEndpointDetails',
+            'alternate_custom_endpoints': 'list[UpdateCustomEndpointDetails]'
         }
 
         self.attribute_map = {
@@ -73,7 +88,10 @@ class UpdateIntegrationInstanceDetails(object):
             'defined_tags': 'definedTags',
             'is_byol': 'isByol',
             'message_packs': 'messagePacks',
-            'is_file_server_enabled': 'isFileServerEnabled'
+            'is_file_server_enabled': 'isFileServerEnabled',
+            'is_visual_builder_enabled': 'isVisualBuilderEnabled',
+            'custom_endpoint': 'customEndpoint',
+            'alternate_custom_endpoints': 'alternateCustomEndpoints'
         }
 
         self._display_name = None
@@ -83,6 +101,9 @@ class UpdateIntegrationInstanceDetails(object):
         self._is_byol = None
         self._message_packs = None
         self._is_file_server_enabled = None
+        self._is_visual_builder_enabled = None
+        self._custom_endpoint = None
+        self._alternate_custom_endpoints = None
 
     @property
     def display_name(self):
@@ -267,6 +288,76 @@ class UpdateIntegrationInstanceDetails(object):
         :type: bool
         """
         self._is_file_server_enabled = is_file_server_enabled
+
+    @property
+    def is_visual_builder_enabled(self):
+        """
+        Gets the is_visual_builder_enabled of this UpdateIntegrationInstanceDetails.
+        Visual Builder is enabled or not.
+
+
+        :return: The is_visual_builder_enabled of this UpdateIntegrationInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_visual_builder_enabled
+
+    @is_visual_builder_enabled.setter
+    def is_visual_builder_enabled(self, is_visual_builder_enabled):
+        """
+        Sets the is_visual_builder_enabled of this UpdateIntegrationInstanceDetails.
+        Visual Builder is enabled or not.
+
+
+        :param is_visual_builder_enabled: The is_visual_builder_enabled of this UpdateIntegrationInstanceDetails.
+        :type: bool
+        """
+        self._is_visual_builder_enabled = is_visual_builder_enabled
+
+    @property
+    def custom_endpoint(self):
+        """
+        Gets the custom_endpoint of this UpdateIntegrationInstanceDetails.
+
+        :return: The custom_endpoint of this UpdateIntegrationInstanceDetails.
+        :rtype: UpdateCustomEndpointDetails
+        """
+        return self._custom_endpoint
+
+    @custom_endpoint.setter
+    def custom_endpoint(self, custom_endpoint):
+        """
+        Sets the custom_endpoint of this UpdateIntegrationInstanceDetails.
+
+        :param custom_endpoint: The custom_endpoint of this UpdateIntegrationInstanceDetails.
+        :type: UpdateCustomEndpointDetails
+        """
+        self._custom_endpoint = custom_endpoint
+
+    @property
+    def alternate_custom_endpoints(self):
+        """
+        Gets the alternate_custom_endpoints of this UpdateIntegrationInstanceDetails.
+        A list of alternate custom endpoints to be used for the integration instance URL
+        (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+
+
+        :return: The alternate_custom_endpoints of this UpdateIntegrationInstanceDetails.
+        :rtype: list[UpdateCustomEndpointDetails]
+        """
+        return self._alternate_custom_endpoints
+
+    @alternate_custom_endpoints.setter
+    def alternate_custom_endpoints(self, alternate_custom_endpoints):
+        """
+        Sets the alternate_custom_endpoints of this UpdateIntegrationInstanceDetails.
+        A list of alternate custom endpoints to be used for the integration instance URL
+        (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+
+
+        :param alternate_custom_endpoints: The alternate_custom_endpoints of this UpdateIntegrationInstanceDetails.
+        :type: list[UpdateCustomEndpointDetails]
+        """
+        self._alternate_custom_endpoints = alternate_custom_endpoints
 
     def __repr__(self):
         return formatted_flat_dict(self)

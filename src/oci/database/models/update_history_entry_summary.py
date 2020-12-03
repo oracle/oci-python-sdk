@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateHistoryEntrySummary(object):
     """
-    The record of an update action on a specified target.
+    The record of an maintenance update action on a specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
     """
 
     #: A constant which can be used with the update_action property of a UpdateHistoryEntrySummary.

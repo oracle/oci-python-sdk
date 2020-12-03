@@ -19,9 +19,12 @@ Integration
     :template: autosummary/model_class.rst
 
     oci.integration.models.ChangeIntegrationInstanceCompartmentDetails
+    oci.integration.models.CreateCustomEndpointDetails
     oci.integration.models.CreateIntegrationInstanceDetails
+    oci.integration.models.CustomEndpointDetails
     oci.integration.models.IntegrationInstance
     oci.integration.models.IntegrationInstanceSummary
+    oci.integration.models.UpdateCustomEndpointDetails
     oci.integration.models.UpdateIntegrationInstanceDetails
     oci.integration.models.WorkRequest
     oci.integration.models.WorkRequestError

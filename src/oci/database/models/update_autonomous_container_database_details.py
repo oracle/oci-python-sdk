@@ -165,7 +165,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         """
         Gets the standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
         The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
-        This value represents the number of days before the primary database maintenance schedule.
+        This value represents the number of days before schedlued maintenance of the primary database.
 
 
         :return: The standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
@@ -178,7 +178,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         """
         Sets the standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
         The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
-        This value represents the number of days before the primary database maintenance schedule.
+        This value represents the number of days before schedlued maintenance of the primary database.
 
 
         :param standby_maintenance_buffer_in_days: The standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.

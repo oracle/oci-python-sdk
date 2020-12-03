@@ -5,9 +5,12 @@
 from __future__ import absolute_import
 
 from .change_integration_instance_compartment_details import ChangeIntegrationInstanceCompartmentDetails
+from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_integration_instance_details import CreateIntegrationInstanceDetails
+from .custom_endpoint_details import CustomEndpointDetails
 from .integration_instance import IntegrationInstance
 from .integration_instance_summary import IntegrationInstanceSummary
+from .update_custom_endpoint_details import UpdateCustomEndpointDetails
 from .update_integration_instance_details import UpdateIntegrationInstanceDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -18,9 +21,12 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for integration services.
 integration_type_mapping = {
     "ChangeIntegrationInstanceCompartmentDetails": ChangeIntegrationInstanceCompartmentDetails,
+    "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateIntegrationInstanceDetails": CreateIntegrationInstanceDetails,
+    "CustomEndpointDetails": CustomEndpointDetails,
     "IntegrationInstance": IntegrationInstance,
     "IntegrationInstanceSummary": IntegrationInstanceSummary,
+    "UpdateCustomEndpointDetails": UpdateCustomEndpointDetails,
     "UpdateIntegrationInstanceDetails": UpdateIntegrationInstanceDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

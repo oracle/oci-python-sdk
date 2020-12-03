@@ -7224,6 +7224,86 @@ def test_rotate_autonomous_database_encryption_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_rotate_ords_certs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateOrdsCerts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateOrdsCerts')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateOrdsCerts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_ords_certs(
+                autonomous_exadata_infrastructure_id=request.pop(util.camelize('autonomousExadataInfrastructureId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotateOrdsCerts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rotate_ords_certs',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_rotate_ssl_certs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateSslCerts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateSslCerts')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateSslCerts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_ssl_certs(
+                autonomous_exadata_infrastructure_id=request.pop(util.camelize('autonomousExadataInfrastructureId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotateSslCerts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rotate_ssl_certs',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_start_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StartAutonomousDataWarehouse'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

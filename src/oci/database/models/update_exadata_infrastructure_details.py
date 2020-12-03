@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExadataInfrastructureDetails(object):
     """
-    Updates the Exadata Cloud@Customer infrastructure.
+    Updates the Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+    See :func:`update_cloud_exadata_infrastructure_details` for information on updating Exadata Cloud Service cloud Exadata infrastructure resources.
     """
 
     def __init__(self, **kwargs):
@@ -50,6 +51,10 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the contacts property of this UpdateExadataInfrastructureDetails.
         :type contacts: list[ExadataInfrastructureContact]
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this UpdateExadataInfrastructureDetails.
+        :type maintenance_window: MaintenanceWindow
+
         :param dns_server:
             The value to assign to the dns_server property of this UpdateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -80,6 +85,7 @@ class UpdateExadataInfrastructureDetails(object):
             'infini_band_network_cidr': 'str',
             'corporate_proxy': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
+            'maintenance_window': 'MaintenanceWindow',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'time_zone': 'str',
@@ -96,6 +102,7 @@ class UpdateExadataInfrastructureDetails(object):
             'infini_band_network_cidr': 'infiniBandNetworkCIDR',
             'corporate_proxy': 'corporateProxy',
             'contacts': 'contacts',
+            'maintenance_window': 'maintenanceWindow',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'time_zone': 'timeZone',
@@ -111,6 +118,7 @@ class UpdateExadataInfrastructureDetails(object):
         self._infini_band_network_cidr = None
         self._corporate_proxy = None
         self._contacts = None
+        self._maintenance_window = None
         self._dns_server = None
         self._ntp_server = None
         self._time_zone = None
@@ -308,6 +316,26 @@ class UpdateExadataInfrastructureDetails(object):
         :type: list[ExadataInfrastructureContact]
         """
         self._contacts = contacts
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this UpdateExadataInfrastructureDetails.
+
+        :return: The maintenance_window of this UpdateExadataInfrastructureDetails.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this UpdateExadataInfrastructureDetails.
+
+        :param maintenance_window: The maintenance_window of this UpdateExadataInfrastructureDetails.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     @property
     def dns_server(self):

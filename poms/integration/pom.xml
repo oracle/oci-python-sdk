@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.oracleintegration.spec</groupId>
         <artifactId>oracle-integration-cp-apiserver-user-spec</artifactId>
-        <version>1.0.12</version>
+        <version>1.0.16</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

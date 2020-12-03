@@ -787,8 +787,8 @@ class AutonomousContainerDatabaseSummary(object):
     def standby_maintenance_buffer_in_days(self):
         """
         Gets the standby_maintenance_buffer_in_days of this AutonomousContainerDatabaseSummary.
-        The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database.
-        This value represents the number of days before the primary database maintenance schedule.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before scheduled maintenance of the primary database.
 
 
         :return: The standby_maintenance_buffer_in_days of this AutonomousContainerDatabaseSummary.
@@ -800,8 +800,8 @@ class AutonomousContainerDatabaseSummary(object):
     def standby_maintenance_buffer_in_days(self, standby_maintenance_buffer_in_days):
         """
         Sets the standby_maintenance_buffer_in_days of this AutonomousContainerDatabaseSummary.
-        The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database.
-        This value represents the number of days before the primary database maintenance schedule.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before scheduled maintenance of the primary database.
 
 
         :param standby_maintenance_buffer_in_days: The standby_maintenance_buffer_in_days of this AutonomousContainerDatabaseSummary.
