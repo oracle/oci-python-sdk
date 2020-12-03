@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.12.08 - 20.12.08
+=====================
+* Added retry policy to all pagination calls
+* Added job id for resource manager
+* Added Exadata Infrastructure and VM Clusters
+
+=====================
 20.11.24 - 20.11.24
 =====================
 * Added multiple VCN CIDR blocks
