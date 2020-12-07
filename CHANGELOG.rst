@@ -4,12 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.25.1 - TBD
+2.25.1 - 2020-12-08
 ====================
 
 Added
 -----
-* TBD
+* Support for Integration Service custom endpoint feature
+* Support for metadata field in IdentityProvider Get and List response
+* Support for fine-grained data analysis and improved SQL insights
+* Support for ADB Dedicated - ORDS and SSL cert rotation at AEI
+* Support for Maintenance Schedule feature for Exadata Infrastructure resources for ExaCC
 
 ====================
 2.25.0 - 2020-12-01
