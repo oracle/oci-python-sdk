@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExadataInfrastructureSummary(object):
     """
-    Details of the Exadata Cloud@Customer infrastructure.
+    Details of the Exadata Cloud@Customer infrastructure. Applies to Exadata Cloud@Customer instances only.
+    See :func:`cloud_exadata_infrastructure_summary` for details of the cloud Exadata infrastructure resource used by Exadata Cloud Service instances.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
@@ -53,6 +54,10 @@ class ExadataInfrastructureSummary(object):
     #: This constant has a value of "DISCONNECTED"
     LIFECYCLE_STATE_DISCONNECTED = "DISCONNECTED"
 
+    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataInfrastructureSummary object with values from keyword arguments.
@@ -68,7 +73,7 @@ class ExadataInfrastructureSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExadataInfrastructureSummary.
-            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -168,6 +173,10 @@ class ExadataInfrastructureSummary(object):
             The value to assign to the contacts property of this ExadataInfrastructureSummary.
         :type contacts: list[ExadataInfrastructureContact]
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this ExadataInfrastructureSummary.
+        :type maintenance_window: MaintenanceWindow
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructureSummary.
         :type freeform_tags: dict(str, str)
@@ -205,6 +214,7 @@ class ExadataInfrastructureSummary(object):
             'lifecycle_details': 'str',
             'csi_number': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
+            'maintenance_window': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -237,6 +247,7 @@ class ExadataInfrastructureSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'csi_number': 'csiNumber',
             'contacts': 'contacts',
+            'maintenance_window': 'maintenanceWindow',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -268,6 +279,7 @@ class ExadataInfrastructureSummary(object):
         self._lifecycle_details = None
         self._csi_number = None
         self._contacts = None
+        self._maintenance_window = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -333,7 +345,7 @@ class ExadataInfrastructureSummary(object):
         **[Required]** Gets the lifecycle_state of this ExadataInfrastructureSummary.
         The current lifecycle state of the Exadata infrastructure.
 
-        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -352,7 +364,7 @@ class ExadataInfrastructureSummary(object):
         :param lifecycle_state: The lifecycle_state of this ExadataInfrastructureSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED"]
+        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -936,6 +948,26 @@ class ExadataInfrastructureSummary(object):
         :type: list[ExadataInfrastructureContact]
         """
         self._contacts = contacts
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this ExadataInfrastructureSummary.
+
+        :return: The maintenance_window of this ExadataInfrastructureSummary.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this ExadataInfrastructureSummary.
+
+        :param maintenance_window: The maintenance_window of this ExadataInfrastructureSummary.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     @property
     def freeform_tags(self):

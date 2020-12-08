@@ -72,6 +72,10 @@ class Saml2IdentityProvider(IdentityProvider):
             The value to assign to the metadata_url property of this Saml2IdentityProvider.
         :type metadata_url: str
 
+        :param metadata:
+            The value to assign to the metadata property of this Saml2IdentityProvider.
+        :type metadata: str
+
         :param signing_certificate:
             The value to assign to the signing_certificate property of this Saml2IdentityProvider.
         :type signing_certificate: str
@@ -98,6 +102,7 @@ class Saml2IdentityProvider(IdentityProvider):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'metadata_url': 'str',
+            'metadata': 'str',
             'signing_certificate': 'str',
             'redirect_url': 'str',
             'freeform_attributes': 'dict(str, str)'
@@ -116,6 +121,7 @@ class Saml2IdentityProvider(IdentityProvider):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'metadata_url': 'metadataUrl',
+            'metadata': 'metadata',
             'signing_certificate': 'signingCertificate',
             'redirect_url': 'redirectUrl',
             'freeform_attributes': 'freeformAttributes'
@@ -133,6 +139,7 @@ class Saml2IdentityProvider(IdentityProvider):
         self._freeform_tags = None
         self._defined_tags = None
         self._metadata_url = None
+        self._metadata = None
         self._signing_certificate = None
         self._redirect_url = None
         self._freeform_attributes = None
@@ -163,6 +170,30 @@ class Saml2IdentityProvider(IdentityProvider):
         :type: str
         """
         self._metadata_url = metadata_url
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this Saml2IdentityProvider.
+        The XML that contains the information required for federating Identity with SAML2 Identity Provider.
+
+
+        :return: The metadata of this Saml2IdentityProvider.
+        :rtype: str
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this Saml2IdentityProvider.
+        The XML that contains the information required for federating Identity with SAML2 Identity Provider.
+
+
+        :param metadata: The metadata of this Saml2IdentityProvider.
+        :type: str
+        """
+        self._metadata = metadata
 
     @property
     def signing_certificate(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVmClusterNetworkDetails(object):
     """
-    Details for an Exadata Cloud@Customer VM cluster network.
+    Details for an Exadata VM cluster network. Applies to Exadata Cloud@Customer instances only.
     """
 
     def __init__(self, **kwargs):

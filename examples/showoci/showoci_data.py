@@ -1859,16 +1859,106 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # Database
+    # Exadata Infra
     ##########################################################################
-    #
-    # class oci.database.DatabaseClient(config, **kwargs)
-    #
-    # Below APIs not done:
-    # list_db_home_patch_history_entries
-    # list_db_system_patch_history_entries
-    # list_data_guard_associations
-    #
+    def __get_database_db_exadata(self, region_name, compartment):
+
+        data = []
+        try:
+            list_exas = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXADATA, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for dbs in list_exas:
+                value = {
+                    'id': dbs['id'],
+                    'display_name': dbs['display_name'],
+                    'shape': dbs['shape'],
+                    'shape_ocpu': dbs['shape_ocpu'],
+                    'shape_memory_gb': dbs['shape_memory_gb'],
+                    'shape_storage_tb': dbs['shape_storage_tb'],
+                    'version': dbs['version'],
+                    'lifecycle_state': dbs['lifecycle_state'],
+                    'lifecycle_details': dbs['lifecycle_details'],
+                    'availability_domain': dbs['availability_domain'],
+                    'compute_count': dbs['compute_count'],
+                    'storage_count': dbs['storage_count'],
+                    'total_storage_size_in_gbs': dbs['total_storage_size_in_gbs'],
+                    'available_storage_size_in_gbs': dbs['available_storage_size_in_gbs'],
+                    'compartment_name': dbs['compartment_name'],
+                    'compartment_id': dbs['compartment_id'],
+                    'time_created': dbs['time_created'],
+                    'last_maintenance_run': dbs['last_maintenance_run'],
+                    'next_maintenance_run': dbs['next_maintenance_run'],
+                    'maintenance_window': dbs['maintenance_window'],
+                    'defined_tags': dbs['defined_tags'],
+                    'freeform_tags': dbs['freeform_tags'],
+                    'region_name': dbs['region_name'],
+                    'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
+                    'sum_info': 'Database XP - ' + dbs['shape'],
+                    'sum_info_storage': 'Database - Storage (GB)',
+                    'sum_size_gb': dbs['total_storage_size_in_gbs'],
+                    'data': str(dbs['available_storage_size_in_gbs']) + "GB",
+                    'vm_clusters': []
+                }
+
+                for vm in dbs['vm_clusters']:
+                    valvm = {
+                        'id': vm['id'],
+                        'cluster_name': vm['cluster_name'],
+                        'hostname': vm['hostname'],
+                        'compartment_id': vm['compartment_id'],
+                        'availability_domain': vm['availability_domain'],
+                        'data_subnet_id': vm['data_subnet_id'],
+                        'data_subnet': vm['data_subnet'],
+                        'backup_subnet_id': vm['backup_subnet_id'],
+                        'backup_subnet': vm['backup_subnet'],
+                        'nsg_ids': vm['nsg_ids'],
+                        'backup_network_nsg_ids': vm['backup_network_nsg_ids'],
+                        'last_update_history_entry_id': vm['last_update_history_entry_id'],
+                        'shape': vm['shape'],
+                        'listener_port': vm['listener_port'],
+                        'lifecycle_state': vm['lifecycle_state'],
+                        'node_count': vm['node_count'],
+                        'storage_size_in_gbs': vm['storage_size_in_gbs'],
+                        'display_name': vm['display_name'],
+                        'time_created': vm['time_created'],
+                        'lifecycle_details': vm['lifecycle_details'],
+                        'time_zone': vm['time_zone'],
+                        'domain': vm['domain'],
+                        'cpu_core_count': vm['cpu_core_count'],
+                        'data_storage_percentage': vm['data_storage_percentage'],
+                        'is_local_backup_enabled': vm['is_local_backup_enabled'],
+                        'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
+                        'gi_version': vm['gi_version'],
+                        'system_version': vm['system_version'],
+                        'ssh_public_keys': vm['ssh_public_keys'],
+                        'license_model': vm['license_model'],
+                        'disk_redundancy': vm['disk_redundancy'],
+                        'scan_ip_ids': vm['scan_ip_ids'],
+                        'scan_ips': vm['scan_ips'],
+                        'vip_ids': vm['vip_ids'],
+                        'vip_ips': vm['vip_ips'],
+                        'scan_dns_record_id': vm['scan_dns_record_id'],
+                        'defined_tags': vm['defined_tags'],
+                        'freeform_tags': vm['freeform_tags'],
+                        'region_name': vm['region_name'],
+                        'sum_info': 'Database XP - ' + dbs['shape'],
+                        'sum_info_storage': 'Database - Storage (GB)',
+                        'sum_size_gb': vm['storage_size_in_gbs'],
+                        'patches': self.__get_database_db_patches(vm['patches']),
+                        'db_homes': self.__get_database_db_homes(vm['db_homes']),
+                        'db_nodes': self.__get_database_db_nodes(vm['db_nodes'])
+                    }
+                    value['vm_clusters'].append(valvm)
+
+                data.append(value)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_db_exadata", e)
+            return data
+
+    ##########################################################################
+    # Database Systems
     ##########################################################################
     def __get_database_db_systems(self, region_name, compartment):
 
@@ -2085,6 +2175,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['db_system'] = data
+
+            data = self.__get_database_db_exadata(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['exadata_infrustructure'] = data
 
             data = self.__get_database_autonomous_databases(region_name, compartment)
             if data:
@@ -2422,6 +2517,7 @@ class ShowOCIData(object):
                            'stack_name': str(stack['display_name']) + " - " + str(stack['description']),
                            'display_name': stack['display_name'],
                            'description': stack['description'],
+                           'jobs': stack['jobs'],
                            'compartment_id': stack['compartment_id'],
                            'compartment_name': stack['compartment_name'],
                            'region_name': stack['region_name'],
@@ -2429,18 +2525,6 @@ class ShowOCIData(object):
                            'defined_tags': stack['defined_tags'],
                            'freeform_tags': stack['freeform_tags']}
 
-                # query jobs
-                datajob = []
-                for job in stack['jobs']:
-                    datajob.append(
-                        str(job['display_name']) + " - " +
-                        str(job['operation']).ljust(10) + " - " +
-                        str(job['lifecycle_state']).ljust(10) + " - " +
-                        str(job['time_finished'])[0:16]
-                    )
-
-                # add the jobs to the array
-                dataval['jobs'] = datajob
                 data.append(dataval)
 
             return data

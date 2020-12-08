@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDetails(object):
     """
-    Details specifying which maintenance update to apply to the target and which actions are to be performed by the maintenance update.
+    Details specifying which maintenance update to apply to the cloud VM cluster and which actions are to be performed by the maintenance update. Applies to Exadata Cloud Service instances only.
     """
 
     #: A constant which can be used with the update_action property of a UpdateDetails.

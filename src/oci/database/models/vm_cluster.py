@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmCluster(object):
     """
-    Details of the Exadata Cloud@Customer VM cluster.
+    Details of the VM cluster resource. Applies to Exadata Cloud@Customer instances only.
     """
 
     #: A constant which can be used with the lifecycle_state property of a VmCluster.
@@ -36,6 +36,10 @@ class VmCluster(object):
     #: A constant which can be used with the lifecycle_state property of a VmCluster.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a VmCluster.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
     #: A constant which can be used with the license_model property of a VmCluster.
     #: This constant has a value of "LICENSE_INCLUDED"
@@ -64,7 +68,7 @@ class VmCluster(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VmCluster.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -306,7 +310,7 @@ class VmCluster(object):
         Gets the lifecycle_state of this VmCluster.
         The current state of the VM cluster.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -325,7 +329,7 @@ class VmCluster(object):
         :param lifecycle_state: The lifecycle_state of this VmCluster.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

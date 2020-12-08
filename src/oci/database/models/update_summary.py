@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSummary(object):
     """
-    A maintenance update for a cloud VM cluster.
+    A maintenance update for a cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access,

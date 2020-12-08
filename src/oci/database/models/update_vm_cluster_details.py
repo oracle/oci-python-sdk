@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVmClusterDetails(object):
     """
-    Details for updating the Exadata Cloud@Customer VM cluster.
+    Details for updating the VM cluster. Applies to Exadata Cloud@Customer instances only.
+    For details on updating a cloud VM cluster in an Exadata Cloud Service instance, see :func:`update_cloud_vm_cluster_details`
     """
 
     #: A constant which can be used with the license_model property of a UpdateVmClusterDetails.

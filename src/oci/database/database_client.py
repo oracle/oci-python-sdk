@@ -89,7 +89,7 @@ class DatabaseClient(object):
 
     def activate_exadata_infrastructure(self, exadata_infrastructure_id, activate_exadata_infrastructure_details, **kwargs):
         """
-        Activates the specified Exadata Cloud@Customer infrastructure.
+        Activates the specified Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -768,8 +768,9 @@ class DatabaseClient(object):
 
     def change_cloud_exadata_infrastructure_compartment(self, change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, **kwargs):
         """
-        To move a cloud Exadata infrastructure resource and its dependent resources to another compartment, use the
-        :func:`change_cloud_exadata_infrastructure_compartment` operation.
+        Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only. For more information about moving resources to a different compartment, see `Moving Database Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
@@ -864,8 +865,7 @@ class DatabaseClient(object):
 
     def change_cloud_vm_cluster_compartment(self, change_cloud_vm_cluster_compartment_details, cloud_vm_cluster_id, **kwargs):
         """
-        To move a cloud VM cluster and its dependent resources to another compartment, use the
-        :func:`change_cloud_vm_cluster_compartment` operation.
+        Moves a cloud VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only.
 
 
         :param oci.database.models.ChangeCloudVmClusterCompartmentDetails change_cloud_vm_cluster_compartment_details: (required)
@@ -1059,7 +1059,7 @@ class DatabaseClient(object):
 
     def change_db_system_compartment(self, change_compartment_details, db_system_id, **kwargs):
         """
-        Move the DB system and its dependent resources to the specified compartment.
+        Moves the DB system and its dependent resources to the specified compartment.
         For more information about moving DB systems, see
         `Moving Database Resources to a Different Compartment`__.
 
@@ -1158,8 +1158,8 @@ class DatabaseClient(object):
 
     def change_exadata_infrastructure_compartment(self, change_exadata_infrastructure_compartment_details, exadata_infrastructure_id, **kwargs):
         """
-        To move an Exadata Cloud@Customer infrastructure resource and its dependent resources to another compartment, use the
-        :func:`change_exadata_infrastructure_compartment` operation.
+        Moves an Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
+        To move an Exadata Cloud Service infrastructure resource to another compartment, use the  :func:`change_cloud_exadata_infrastructure_compartment` operation.
 
 
         :param oci.database.models.ChangeExadataInfrastructureCompartmentDetails change_exadata_infrastructure_compartment_details: (required)
@@ -1353,8 +1353,8 @@ class DatabaseClient(object):
 
     def change_vm_cluster_compartment(self, change_vm_cluster_compartment_details, vm_cluster_id, **kwargs):
         """
-        To move an Exadata Cloud@Customer VM cluster and its dependent resources to another compartment, use the
-        :func:`change_vm_cluster_compartment` operation.
+        Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
+        To move a cloud VM cluster in an Exadata Cloud Service instance to another compartment, use the :func:`change_cloud_vm_cluster_compartment` operation.
 
 
         :param oci.database.models.ChangeVmClusterCompartmentDetails change_vm_cluster_compartment_details: (required)
@@ -2109,11 +2109,15 @@ class DatabaseClient(object):
 
     def create_cloud_exadata_infrastructure(self, create_cloud_exadata_infrastructure_details, **kwargs):
         """
-        Creates a cloud Exadata infrastructure resource.
+        Creates a cloud Exadata infrastructure resource. This resource is used to create an `Exadata Cloud Service`__ instance.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
 
         :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
-            Request to create cloud Exadata infrastructure.
+            Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
+
+            __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2186,7 +2190,9 @@ class DatabaseClient(object):
 
 
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
-            Request to create a cloud VM cluster.
+            Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2646,7 +2652,8 @@ class DatabaseClient(object):
 
     def create_exadata_infrastructure(self, create_exadata_infrastructure_details, **kwargs):
         """
-        Creates Exadata Cloud@Customer infrastructure.
+        Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+        To create an Exadata Cloud Service infrastructure resource, use the  :func:`create_cloud_exadata_infrastructure` operation.
 
 
         :param oci.database.models.CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
@@ -2868,7 +2875,8 @@ class DatabaseClient(object):
 
 
         :param oci.database.models.CreateVmClusterDetails create_vm_cluster_details: (required)
-            Request to create an Exadata Cloud@Customer VM cluster.
+            Request to create a VM cluster. Applies to Exadata Cloud@Customer instances only.
+            See :func:`create_cloud_vm_cluster_details` for details on creating a cloud VM cluster in an Exadata Cloud Service instance.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2937,7 +2945,8 @@ class DatabaseClient(object):
 
     def create_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_details, **kwargs):
         """
-        Creates the Exadata Cloud@Customer VM cluster network.
+        Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
+        To create a cloud VM cluster in an Exadata Cloud Service instance, use the :func:`create_cloud_vm_cluster` operation.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -3523,7 +3532,7 @@ class DatabaseClient(object):
 
     def delete_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Deletes the cloud Exadata infrastructure resource.
+        Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -3613,7 +3622,7 @@ class DatabaseClient(object):
 
     def delete_cloud_vm_cluster(self, cloud_vm_cluster_id, **kwargs):
         """
-        Deletes the specified cloud VM cluster.
+        Deletes the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -4189,7 +4198,7 @@ class DatabaseClient(object):
 
     def delete_vm_cluster(self, vm_cluster_id, **kwargs):
         """
-        Deletes the specified Exadata Cloud@Customer VM cluster.
+        Deletes the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str vm_cluster_id: (required)
@@ -4268,7 +4277,8 @@ class DatabaseClient(object):
 
     def delete_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        Deletes the specified Exadata Cloud@Customer VM cluster network.
+        Deletes the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+        To delete a cloud VM cluster in an Exadata Cloud Service instance, use the :func:`delete_cloud_vm_cluster` operation.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -4588,7 +4598,7 @@ class DatabaseClient(object):
 
     def download_vm_cluster_network_config_file(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        Downloads the configuration file for the specified Exadata Cloud@Customer VM cluster network.
+        Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -6256,7 +6266,7 @@ class DatabaseClient(object):
 
     def get_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Gets information about the specified cloud Exadata infrastructure resource.
+        Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -6330,7 +6340,7 @@ class DatabaseClient(object):
 
     def get_cloud_vm_cluster(self, cloud_vm_cluster_id, **kwargs):
         """
-        Gets information about the specified cloud VM cluster.
+        Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -6404,7 +6414,7 @@ class DatabaseClient(object):
 
     def get_cloud_vm_cluster_iorm_config(self, cloud_vm_cluster_id, **kwargs):
         """
-        Gets the IORM configuration for the specified cloud VM cluster.
+        Gets the IORM configuration for the specified cloud VM cluster in an Exadata Cloud Service instance.
         If you have not specified an IORM configuration, the default configuration is returned.
 
 
@@ -6479,7 +6489,7 @@ class DatabaseClient(object):
 
     def get_cloud_vm_cluster_update(self, cloud_vm_cluster_id, update_id, **kwargs):
         """
-        Gets information about a specified maintenance update package.
+        Gets information about a specified maintenance update package for a cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -6559,7 +6569,7 @@ class DatabaseClient(object):
 
     def get_cloud_vm_cluster_update_history_entry(self, cloud_vm_cluster_id, update_history_entry_id, **kwargs):
         """
-        Gets the maintenance update history details for the specified update history entry.
+        Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -7468,7 +7478,8 @@ class DatabaseClient(object):
 
     def get_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
-        Gets information about the specified Exadata Cloud@Customer infrastructure.
+        Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+        To get information on an Exadata Cloud Service infrastructure resource, use the  :func:`get_cloud_exadata_infrastructure` operation.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -7897,7 +7908,7 @@ class DatabaseClient(object):
 
     def get_vm_cluster(self, vm_cluster_id, **kwargs):
         """
-        Gets information about the specified Exadata Cloud@Customer VM cluster.
+        Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str vm_cluster_id: (required)
@@ -7971,7 +7982,8 @@ class DatabaseClient(object):
 
     def get_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        Gets information about the specified Exadata Cloud@Customer VM cluster network.
+        Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+        To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the :func:`get_cloud_vm_cluster` operation.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -8339,7 +8351,7 @@ class DatabaseClient(object):
 
     def list_autonomous_container_database_dataguard_associations(self, autonomous_container_database_id, **kwargs):
         """
-        Gets a list of the Autonomous Container Databases with Autonomous Data Guard enabled associated with the specified Autonomous Container Database.
+        Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
 
 
         :param str autonomous_container_database_id: (required)
@@ -10124,7 +10136,7 @@ class DatabaseClient(object):
 
     def list_cloud_exadata_infrastructures(self, compartment_id, **kwargs):
         """
-        Gets a list of the cloud Exadata infrastructure in the specified compartment.
+        Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances only.
 
 
         :param str compartment_id: (required)
@@ -10250,7 +10262,7 @@ class DatabaseClient(object):
 
     def list_cloud_vm_cluster_update_history_entries(self, cloud_vm_cluster_id, **kwargs):
         """
-        Gets the history of the maintenance update actions performed on the specified cloud VM cluster.
+        Gets the history of the maintenance update actions performed on the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -10354,7 +10366,7 @@ class DatabaseClient(object):
 
     def list_cloud_vm_cluster_updates(self, cloud_vm_cluster_id, **kwargs):
         """
-        Lists the maintenance updates that can be applied to the requested cloud VM cluster.
+        Lists the maintenance updates that can be applied to the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -10458,7 +10470,7 @@ class DatabaseClient(object):
 
     def list_cloud_vm_clusters(self, compartment_id, **kwargs):
         """
-        Gets a list of the cloud VM clusters in the specified compartment.
+        Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances only.
 
 
         :param str compartment_id: (required)
@@ -12190,7 +12202,8 @@ class DatabaseClient(object):
 
     def list_exadata_infrastructures(self, compartment_id, **kwargs):
         """
-        Gets a list of the Exadata Cloud@Customer infrastructure resources in the specified compartment.
+        Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+        To list the Exadata Cloud Service infrastructure resources in a compartment, use the  :func:`list_cloud_exadata_infrastructures` operation.
 
 
         :param str compartment_id: (required)
@@ -12220,7 +12233,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED"
+            Allowed values are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -12270,7 +12283,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED"]
+            lifecycle_state_allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -12501,7 +12514,7 @@ class DatabaseClient(object):
         :param str target_resource_type: (optional)
             The type of the target resource.
 
-            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE"
+            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"
 
         :param str maintenance_type: (optional)
             The maintenance type.
@@ -12567,7 +12580,7 @@ class DatabaseClient(object):
                 "list_maintenance_runs got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'target_resource_type' in kwargs:
-            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE"]
+            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)
@@ -12642,7 +12655,7 @@ class DatabaseClient(object):
 
     def list_vm_cluster_networks(self, exadata_infrastructure_id, compartment_id, **kwargs):
         """
-        Gets a list of the Exadata Cloud@Customer VM cluster networks in the specified compartment.
+        Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -12953,7 +12966,8 @@ class DatabaseClient(object):
 
     def list_vm_clusters(self, compartment_id, **kwargs):
         """
-        Gets a list of the Exadata Cloud@Customer VM clusters in the specified compartment.
+        Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+        To list the cloud VM clusters in an Exadata Cloud Service instance, use the :func:`list_cloud_vm_clusters` operation.
 
 
         :param str compartment_id: (required)
@@ -12983,7 +12997,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -13037,7 +13051,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -14009,6 +14023,186 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="AutonomousDatabase")
 
+    def rotate_ords_certs(self, autonomous_exadata_infrastructure_id, **kwargs):
+        """
+        Rotates Oracle REST Data Services (ORDS) certs for an Autonomous Exadata Infrastructure resource.
+
+
+        :param str autonomous_exadata_infrastructure_id: (required)
+            The Autonomous Exadata Infrastructure  `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateOrdsCerts"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "rotate_ords_certs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def rotate_ssl_certs(self, autonomous_exadata_infrastructure_id, **kwargs):
+        """
+        Rotates SSL certs for an Autonomous Exadata Infrastructure resource.
+
+
+        :param str autonomous_exadata_infrastructure_id: (required)
+            The Autonomous Exadata Infrastructure  `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateSslCerts"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "rotate_ssl_certs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def start_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
         **Deprecated.** To start an Autonomous Data Warehouse, use the :func:`start_autonomous_database` operation.
@@ -14320,7 +14514,7 @@ class DatabaseClient(object):
 
     def switchover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
-        Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association into a standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
+        Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
 
         A switchover incurs no data loss.
 
@@ -15449,7 +15643,7 @@ class DatabaseClient(object):
 
     def update_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **kwargs):
         """
-        Updates the Cloud Exadata infrastructure resource.
+        Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -15535,7 +15729,7 @@ class DatabaseClient(object):
 
     def update_cloud_vm_cluster(self, cloud_vm_cluster_id, update_cloud_vm_cluster_details, **kwargs):
         """
-        Updates the specified cloud VM cluster.
+        Updates the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -15621,7 +15815,7 @@ class DatabaseClient(object):
 
     def update_cloud_vm_cluster_iorm_config(self, cloud_vm_cluster_id, cloud_vm_cluster_iorm_config_update_details, **kwargs):
         """
-        Updates the IORM settings for the specified cloud VM cluster.
+        Updates the IORM settings for the specified cloud VM cluster in an Exadata Cloud Service instance.
 
 
         :param str cloud_vm_cluster_id: (required)
@@ -16031,7 +16225,8 @@ class DatabaseClient(object):
 
     def update_exadata_infrastructure(self, exadata_infrastructure_id, update_exadata_infrastructure_details, **kwargs):
         """
-        Updates the Exadata Cloud@Customer infrastructure.
+        Updates the Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+        To update an Exadata Cloud Service infrastructure resource, use the  :func:`update_cloud_exadata_infrastructure` operation.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -16368,7 +16563,7 @@ class DatabaseClient(object):
 
     def update_vm_cluster(self, vm_cluster_id, update_vm_cluster_details, **kwargs):
         """
-        Updates the specified Exadata Cloud@Customer VM cluster.
+        Updates the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str vm_cluster_id: (required)
@@ -16454,7 +16649,8 @@ class DatabaseClient(object):
 
     def update_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, update_vm_cluster_network_details, **kwargs):
         """
-        Updates the specified Exadata Cloud@Customer VM cluster network.
+        Updates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+        To update a cloud VM cluster in an Exadata Cloud Service instance, use the :func:`update_cloud_vm_cluster` operation.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -16632,7 +16828,7 @@ class DatabaseClient(object):
 
     def validate_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        Validates the specified Exadata Cloud@Customer VM cluster network.
+        Validates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
 
 
         :param str exadata_infrastructure_id: (required)
