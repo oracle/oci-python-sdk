@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenerateRecommendedNetworkDetails(object):
     """
-    Generates a recommended VM cluster network configuration for an Exadata Cloud@Customer system.
+    Generates a recommended VM cluster network configuration for an Exadata Cloud@Customer system. Applies to Exadata Cloud@Customer instances only.
     """
 
     def __init__(self, **kwargs):

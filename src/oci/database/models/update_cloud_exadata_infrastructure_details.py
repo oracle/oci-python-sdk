@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateCloudExadataInfrastructureDetails(object):
     """
-    Updates the cloud Exadata infrastructure.
+    Updates the cloud Exadata infrastructure. Applies to Exadata Cloud Service instances only.
     """
 
     def __init__(self, **kwargs):

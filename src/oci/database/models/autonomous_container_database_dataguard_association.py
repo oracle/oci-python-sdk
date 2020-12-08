@@ -314,7 +314,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -329,7 +329,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
@@ -450,7 +450,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def peer_lifecycle_state(self):
         """
         Gets the peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -465,7 +465,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def peer_lifecycle_state(self, peer_lifecycle_state):
         """
         Sets the peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
-        The current state of the Autonomous Data Guard.
+        The current state of Autonomous Data Guard.
 
 
         :param peer_lifecycle_state: The peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateCloudVmClusterDetails(object):
     """
-    Details for updating the cloud VM cluster.
+    Details for updating the cloud VM cluster. Applies to Exadata Cloud Service instances only.
     """
 
     #: A constant which can be used with the license_model property of a UpdateCloudVmClusterDetails.
@@ -164,7 +164,7 @@ class UpdateCloudVmClusterDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateCloudVmClusterDetails.
-        The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -178,7 +178,7 @@ class UpdateCloudVmClusterDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateCloudVmClusterDetails.
-        The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
 
 
         :param license_model: The license_model of this UpdateCloudVmClusterDetails.

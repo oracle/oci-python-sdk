@@ -71,6 +71,18 @@ class CreateIntegrationInstanceDetails(object):
             The value to assign to the message_packs property of this CreateIntegrationInstanceDetails.
         :type message_packs: int
 
+        :param is_visual_builder_enabled:
+            The value to assign to the is_visual_builder_enabled property of this CreateIntegrationInstanceDetails.
+        :type is_visual_builder_enabled: bool
+
+        :param custom_endpoint:
+            The value to assign to the custom_endpoint property of this CreateIntegrationInstanceDetails.
+        :type custom_endpoint: CreateCustomEndpointDetails
+
+        :param alternate_custom_endpoints:
+            The value to assign to the alternate_custom_endpoints property of this CreateIntegrationInstanceDetails.
+        :type alternate_custom_endpoints: list[CreateCustomEndpointDetails]
+
         :param consumption_model:
             The value to assign to the consumption_model property of this CreateIntegrationInstanceDetails.
             Allowed values for this property are: "UCM", "GOV", "OIC4SAAS"
@@ -90,6 +102,9 @@ class CreateIntegrationInstanceDetails(object):
             'is_byol': 'bool',
             'idcs_at': 'str',
             'message_packs': 'int',
+            'is_visual_builder_enabled': 'bool',
+            'custom_endpoint': 'CreateCustomEndpointDetails',
+            'alternate_custom_endpoints': 'list[CreateCustomEndpointDetails]',
             'consumption_model': 'str',
             'is_file_server_enabled': 'bool'
         }
@@ -103,6 +118,9 @@ class CreateIntegrationInstanceDetails(object):
             'is_byol': 'isByol',
             'idcs_at': 'idcsAt',
             'message_packs': 'messagePacks',
+            'is_visual_builder_enabled': 'isVisualBuilderEnabled',
+            'custom_endpoint': 'customEndpoint',
+            'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
             'is_file_server_enabled': 'isFileServerEnabled'
         }
@@ -115,6 +133,9 @@ class CreateIntegrationInstanceDetails(object):
         self._is_byol = None
         self._idcs_at = None
         self._message_packs = None
+        self._is_visual_builder_enabled = None
+        self._custom_endpoint = None
+        self._alternate_custom_endpoints = None
         self._consumption_model = None
         self._is_file_server_enabled = None
 
@@ -325,6 +346,76 @@ class CreateIntegrationInstanceDetails(object):
         :type: int
         """
         self._message_packs = message_packs
+
+    @property
+    def is_visual_builder_enabled(self):
+        """
+        Gets the is_visual_builder_enabled of this CreateIntegrationInstanceDetails.
+        Visual Builder is enabled or not.
+
+
+        :return: The is_visual_builder_enabled of this CreateIntegrationInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_visual_builder_enabled
+
+    @is_visual_builder_enabled.setter
+    def is_visual_builder_enabled(self, is_visual_builder_enabled):
+        """
+        Sets the is_visual_builder_enabled of this CreateIntegrationInstanceDetails.
+        Visual Builder is enabled or not.
+
+
+        :param is_visual_builder_enabled: The is_visual_builder_enabled of this CreateIntegrationInstanceDetails.
+        :type: bool
+        """
+        self._is_visual_builder_enabled = is_visual_builder_enabled
+
+    @property
+    def custom_endpoint(self):
+        """
+        Gets the custom_endpoint of this CreateIntegrationInstanceDetails.
+
+        :return: The custom_endpoint of this CreateIntegrationInstanceDetails.
+        :rtype: CreateCustomEndpointDetails
+        """
+        return self._custom_endpoint
+
+    @custom_endpoint.setter
+    def custom_endpoint(self, custom_endpoint):
+        """
+        Sets the custom_endpoint of this CreateIntegrationInstanceDetails.
+
+        :param custom_endpoint: The custom_endpoint of this CreateIntegrationInstanceDetails.
+        :type: CreateCustomEndpointDetails
+        """
+        self._custom_endpoint = custom_endpoint
+
+    @property
+    def alternate_custom_endpoints(self):
+        """
+        Gets the alternate_custom_endpoints of this CreateIntegrationInstanceDetails.
+        A list of alternate custom endpoints to be used for the integration instance URL
+        (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+
+
+        :return: The alternate_custom_endpoints of this CreateIntegrationInstanceDetails.
+        :rtype: list[CreateCustomEndpointDetails]
+        """
+        return self._alternate_custom_endpoints
+
+    @alternate_custom_endpoints.setter
+    def alternate_custom_endpoints(self, alternate_custom_endpoints):
+        """
+        Sets the alternate_custom_endpoints of this CreateIntegrationInstanceDetails.
+        A list of alternate custom endpoints to be used for the integration instance URL
+        (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+
+
+        :param alternate_custom_endpoints: The alternate_custom_endpoints of this CreateIntegrationInstanceDetails.
+        :type: list[CreateCustomEndpointDetails]
+        """
+        self._alternate_custom_endpoints = alternate_custom_endpoints
 
     @property
     def consumption_model(self):

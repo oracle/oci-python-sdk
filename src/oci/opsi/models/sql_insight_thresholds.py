@@ -42,6 +42,10 @@ class SqlInsightThresholds(object):
             The value to assign to the increase_in_inefficient_wait_in_pct property of this SqlInsightThresholds.
         :type increase_in_inefficient_wait_in_pct: int
 
+        :param improved_in_pct:
+            The value to assign to the improved_in_pct property of this SqlInsightThresholds.
+        :type improved_in_pct: int
+
         """
         self.swagger_types = {
             'degradation_in_pct': 'int',
@@ -49,7 +53,8 @@ class SqlInsightThresholds(object):
             'inefficiency_in_pct': 'int',
             'increase_in_io_in_pct': 'int',
             'increase_in_cpu_in_pct': 'int',
-            'increase_in_inefficient_wait_in_pct': 'int'
+            'increase_in_inefficient_wait_in_pct': 'int',
+            'improved_in_pct': 'int'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class SqlInsightThresholds(object):
             'inefficiency_in_pct': 'inefficiencyInPct',
             'increase_in_io_in_pct': 'increaseInIOInPct',
             'increase_in_cpu_in_pct': 'increaseInCPUInPct',
-            'increase_in_inefficient_wait_in_pct': 'increaseInInefficientWaitInPct'
+            'increase_in_inefficient_wait_in_pct': 'increaseInInefficientWaitInPct',
+            'improved_in_pct': 'improvedInPct'
         }
 
         self._degradation_in_pct = None
@@ -67,6 +73,7 @@ class SqlInsightThresholds(object):
         self._increase_in_io_in_pct = None
         self._increase_in_cpu_in_pct = None
         self._increase_in_inefficient_wait_in_pct = None
+        self._improved_in_pct = None
 
     @property
     def degradation_in_pct(self):
@@ -223,6 +230,30 @@ class SqlInsightThresholds(object):
         :type: int
         """
         self._increase_in_inefficient_wait_in_pct = increase_in_inefficient_wait_in_pct
+
+    @property
+    def improved_in_pct(self):
+        """
+        **[Required]** Gets the improved_in_pct of this SqlInsightThresholds.
+        Improved Percent Threshold is used to derive improving SQLs.
+
+
+        :return: The improved_in_pct of this SqlInsightThresholds.
+        :rtype: int
+        """
+        return self._improved_in_pct
+
+    @improved_in_pct.setter
+    def improved_in_pct(self, improved_in_pct):
+        """
+        Sets the improved_in_pct of this SqlInsightThresholds.
+        Improved Percent Threshold is used to derive improving SQLs.
+
+
+        :param improved_in_pct: The improved_in_pct of this SqlInsightThresholds.
+        :type: int
+        """
+        self._improved_in_pct = improved_in_pct
 
     def __repr__(self):
         return formatted_flat_dict(self)

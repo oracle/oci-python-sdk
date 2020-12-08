@@ -826,6 +826,124 @@ class ShowOCIOutput(object):
             self.__print_error("__print_file_storage_main", e)
 
     ##########################################################################
+    # database exadata
+    ##########################################################################
+    def __print_database_db_exadata_infra(self, list_exadata):
+
+        try:
+            for dbs in list_exadata:
+                print("")
+
+                print(self.taba + "ExaCS   : " + dbs['name'])
+                print(self.tabs + "AD      : " + dbs['availability_domain'])
+
+                if 'compute_count' in dbs:
+                    if dbs['compute_count'] != "None":
+                        print(self.tabs + "VM Hosts: " + str(dbs['compute_count']))
+
+                if 'storage_count' in dbs:
+                    if dbs['storage_count'] != "None" and dbs['total_storage_size_in_gbs'] != "None":
+                        print(self.tabs + "Storage : Hosts = " + str(dbs['storage_count']) + ", Total = " + str(
+                            dbs['total_storage_size_in_gbs']) + "GB, Available = " + str(dbs['available_storage_size_in_gbs']) + "GB")
+
+                if 'maintenance_window' in dbs:
+                    if dbs['maintenance_window']:
+                        print(self.tabs + "Maint   : Window : " + dbs['maintenance_window']['display'])
+
+                if 'last_maintenance_run' in dbs:
+                    if dbs['last_maintenance_run']:
+                        print(self.tabs + "Maint   : Last   : " + dbs['last_maintenance_run']['description'])
+                        print(self.tabs + "                 : " + dbs['last_maintenance_run']['maintenance_display'])
+
+                if 'next_maintenance_run' in dbs:
+                    if dbs['next_maintenance_run']:
+                        print(self.tabs + "Maint   : Next   : " + dbs['next_maintenance_run']['description'])
+                        print(self.tabs + "                 : " + dbs['next_maintenance_run']['maintenance_display'])
+                        if dbs['next_maintenance_run']['maintenance_alert']:
+                            print(self.tabs + "          Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
+
+                # clusters
+                for vm in dbs['vm_clusters']:
+
+                    if 'cpu_core_count' in vm:
+                        print(self.tabs + "Cores   : " + str(vm['cpu_core_count']))
+
+                    if 'node_count' in vm:
+                        if vm['node_count']:
+                            print(self.tabs + "Nodes   : " + str(vm['node_count']))
+
+                    if 'domain' in vm:
+                        if vm['domain']:
+                            print(self.tabs + "Domain  : " + vm['domain'])
+
+                    if 'cluster_name' in vm:
+                        if vm['cluster_name']:
+                            print(self.tabs + "Cluster : " + vm['cluster_name'])
+
+                    if 'data_subnet' in vm:
+                        if vm['data_subnet']:
+                            print(self.tabs + "DataSub : " + vm['data_subnet'])
+
+                    if 'backup_subnet' in vm:
+                        if vm['backup_subnet']:
+                            print(self.tabs + "BackSub : " + vm['backup_subnet'])
+
+                    if 'scan_dns' in vm:
+                        if vm['scan_dns']:
+                            print(self.tabs + "Scan    : " + vm['scan_dns_name'])
+
+                    if 'scan_ips' in vm:
+                        for ip in vm['scan_ips']:
+                            print(self.tabs + "Scan Ips: " + ip)
+
+                    if 'vip_ips' in vm:
+                        for ip in vm['vip_ips']:
+                            print(self.tabs + "VIP Ips : " + ip)
+
+                    if 'listener_port' in vm:
+                        print(self.tabs + "Port    : " + vm['listener_port'])
+
+                    if 'patches' in vm:
+                        for p in vm['patches']:
+                            print(self.tabs + "Patches : " + p)
+
+                    # db nodes
+                    for db_node in vm['db_nodes']:
+                        print(self.tabs + db_node['desc'])
+                        if 'nsg_names' in db_node:
+                            if db_node['nsg_names']:
+                                print(self.tabs + "        : SecGrp : " + db_node['nsg_names'])
+
+                        if 'time_maintenance_window_start' in db_node:
+                            if db_node['maintenance_type'] != "None":
+                                print(self.tabs + self.tabs + "     Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
+
+                    # db homes
+                    for db_home in vm['db_homes']:
+                        print(self.tabs + "Home    : " + db_home['home'])
+
+                        # patches
+                        for p in db_home['patches']:
+                            print(self.tabs + self.tabs + " PT : " + p)
+
+                        # databases
+                        for db in db_home['databases']:
+                            print(self.tabs + self.tabs + " DB : " + db['name'])
+
+                            # print data guard
+                            for dg in db['dataguard']:
+                                print(self.tabs + self.tabs + "      " + dg['name'])
+
+                            # print backups
+                            for backup in db['backups']:
+                                print(self.tabs + self.tabs + "      " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
+
+                        print(self.tabs + "        : " + '-' * 90)
+
+        except Exception as e:
+            self.__print_error("__print_database_db_exadata_infra", e)
+
+    ##########################################################################
     # print database db system
     ##########################################################################
 
@@ -1031,6 +1149,11 @@ class ShowOCIOutput(object):
 
             if len(list_databases) == 0:
                 return
+
+            if 'exadata_infrustructure' in list_databases:
+                self.print_header("Exadata Infrastructure", 2)
+                self.__print_database_db_exadata_infra(list_databases['exadata_infrustructure'])
+                print("")
 
             if 'db_system' in list_databases:
                 self.print_header("databases DB Systems", 2)
@@ -1535,8 +1658,12 @@ class ShowOCIOutput(object):
                 print(self.taba + str(val['stack_name']))
                 if 'jobs' in val:
                     for job in val['jobs']:
-                        print(self.tabs + str(job))
-
+                        print(self.tabs +
+                              str(job['display_name']) + " - " +
+                              str(job['operation']).ljust(10) + " - " +
+                              str(job['lifecycle_state']).ljust(10) + " - " +
+                              str(job['time_finished'])[0:16]
+                              )
                 print("")
 
         except Exception as e:
@@ -2083,6 +2210,9 @@ class ShowOCISummary(object):
             if len(list_databases) == 0:
                 return
 
+            if 'exadata_infrustructure' in list_databases:
+                self.__summary_database_db_exadata(list_databases['exadata_infrustructure'])
+
             if 'db_system' in list_databases:
                 self.__summary_database_db_system(list_databases['db_system'])
 
@@ -2142,6 +2272,32 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_database_db_system", e)
+
+    ##########################################################################
+    # Database Exadata
+    ##########################################################################
+    def __summary_database_db_exadata(self, list_exa):
+
+        try:
+            for dbs in list_exa:
+                for vm in dbs['vm_clusters']:
+                    if 'cpu_core_count' in vm:
+                        self.summary_global_list.append({'type': 'Total OCPUs - ExaCS Database', 'size': float(vm['cpu_core_count'])})
+                        self.summary_global_list.append({'type': vm['sum_info'] + " OCPUs", 'size': float(vm['cpu_core_count'])})
+
+                    # add db to summary
+                    if dbs['lifecycle_state'] == 'STOPPED':
+                        self.summary_global_list.append({'type': 'Stopped ' + vm['sum_info'], 'size': 1})
+                    else:
+                        self.summary_global_list.append({'type': vm['sum_info'], 'size': 1})
+
+                    # db homes
+                    for db_home in vm['db_homes']:
+                        for db in db_home['databases']:
+                            self.__summary_core_size(db['backups'])
+
+        except Exception as e:
+            self.__print_error("__summary_database_db_exadata", e)
 
     ##########################################################################
     # Database mysql db system
@@ -2981,6 +3137,94 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_db_system", e)
 
     ##########################################################################
+    # csv database exadata
+    ##########################################################################
+    def __csv_database_db_exadata(self, region_name, list_exa):
+
+        try:
+            for dbs in list_exa:
+                for vm in dbs['vm_clusters']:
+                    # Db Exa CSV
+                    dbsd = {'region_name': region_name,
+                            'availability_domain': dbs['availability_domain'],
+                            'compartment_name': dbs['compartment_name'],
+                            'status': dbs['lifecycle_state'],
+                            'type': "ExaCS",
+                            'name': dbs['display_name'],
+                            'shape': dbs['shape'],
+                            'cpu_core_count': vm['cpu_core_count'],
+                            'db_storage_gb': vm['sum_size_gb'],
+                            'shape_ocpus': dbs['shape_ocpu'],
+                            'memory_gb': dbs['shape_memory_gb'],
+                            'local_storage_tb': dbs['shape_storage_tb'],
+                            'node_count': len(vm['db_nodes']),
+                            'version_license_model': dbs['version'],
+                            'data_subnet': vm['data_subnet'],
+                            'backup_subnet': vm['backup_subnet'],
+                            'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
+                            'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                            'cluster_name': vm['cluster_name'],
+                            'time_created': vm['time_created'][0:16],
+                            'domain': vm['domain'],
+                            'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                            'freeform_tags': str(', '.join(key + "=" + vm['freeform_tags'][key] for key in vm['freeform_tags'].keys())),
+                            'defined_tags': self.__get_defined_tags(vm['defined_tags']),
+                            'maintenance_window': "",
+                            'last_maintenance_run': "",
+                            'next_maintenance_run': "",
+                            'dbsystem_id': vm['id']
+                            }
+
+                    if dbs['maintenance_window']:
+                        dbsd['maintenance_window'] = dbs['maintenance_window']['display']
+                    if dbs['last_maintenance_run']:
+                        dbsd['last_maintenance_run'] = dbs['last_maintenance_run']['maintenance_display']
+                    if dbs['next_maintenance_run']:
+                        dbsd['next_maintenance_run'] = dbs['next_maintenance_run']['maintenance_display']
+
+                    self.csv_db_system.append(dbsd)
+
+                    # Build the database CSV
+                    for db_home in vm['db_homes']:
+
+                        for db in db_home['databases']:
+
+                            # Database CSV
+                            data = {'region_name': region_name,
+                                    'availability_domain': dbs['availability_domain'],
+                                    'compartment_name': dbs['compartment_name'],
+                                    'status': dbs['lifecycle_state'],
+                                    'type': "ExaCS",
+                                    'name': dbs['display_name'],
+                                    'shape': dbs['shape'],
+                                    'cpu_core_count': vm['cpu_core_count'],
+                                    'db_storage_gb': dbs['sum_size_gb'],
+                                    'shape_ocpus': dbs['shape_ocpu'],
+                                    'memory_gb': dbs['shape_memory_gb'],
+                                    'local_storage_tb': dbs['shape_storage_tb'],
+                                    'node_count': len(vm['db_nodes']),
+                                    'database': db['name'],
+                                    'version_license_model': dbs['version'],
+                                    'data_subnet': vm['data_subnet'],
+                                    'backup_subnet': vm['backup_subnet'],
+                                    'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
+                                    'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                                    'cluster_name': vm['cluster_name'],
+                                    'time_created': vm['time_created'][0:16],
+                                    'domain': vm['domain'],
+                                    'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                                    'freeform_tags': str(', '.join(key + "=" + vm['freeform_tags'][key] for key in vm['freeform_tags'].keys())),
+                                    'defined_tags': self.__get_defined_tags(vm['defined_tags']),
+                                    'database_id': db['id'],
+                                    'dbsystem_id': vm['id']
+                                    }
+
+                            self.csv_database.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_database_db_exadata", e)
+
+    ##########################################################################
     # csv database db system
     ##########################################################################
 
@@ -3087,6 +3331,9 @@ class ShowOCICSV(object):
 
             if len(list_databases) == 0:
                 return
+
+            if 'exadata_infrustructure' in list_databases:
+                self.__csv_database_db_exadata(region_name, list_databases['exadata_infrustructure'])
 
             if 'db_system' in list_databases:
                 self.__csv_database_db_system(region_name, list_databases['db_system'])

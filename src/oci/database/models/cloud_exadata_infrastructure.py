@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloudExadataInfrastructure(object):
     """
-    Details of the cloud Exadata infrastructure resource.
+    Details of the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
     """
 
     #: A constant which can be used with the lifecycle_state property of a CloudExadataInfrastructure.

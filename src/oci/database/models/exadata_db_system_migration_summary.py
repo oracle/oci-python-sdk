@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExadataDbSystemMigrationSummary(object):
     """
-    Information about Exadata DB system migration. The migration is used to move the system to the Exadata infrastructure resource model.
+    Information about the Exadata DB system migration. The migration is used to move the Exadata Cloud Service instance from the DB system resource model to the new cloud Exadata infrastructure resource model.
     """
 
     def __init__(self, **kwargs):

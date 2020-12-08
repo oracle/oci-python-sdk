@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVmClusterDetails(object):
     """
-    Details for the create Exadata Cloud@Customer VM cluster operation.
+    Details for the create Exadata VM cluster operation. Applies to Exadata Cloud@Customer instances only.
+    For details on the create cloud Exadata VM cluster operation used with Exadata Cloud Service instances, see :func:`create_cloud_vm_cluster_details`
     """
 
     #: A constant which can be used with the license_model property of a CreateVmClusterDetails.

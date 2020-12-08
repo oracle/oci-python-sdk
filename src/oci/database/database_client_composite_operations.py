@@ -1198,7 +1198,9 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
-            Request to create cloud Exadata infrastructure.
+            Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
+
+            __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1233,7 +1235,9 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
-            Request to create cloud Exadata infrastructure.
+            Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
+
+            __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudExadataInfrastructure.lifecycle_state`
@@ -1271,7 +1275,9 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
-            Request to create a cloud VM cluster.
+            Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1306,7 +1312,9 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
-            Request to create a cloud VM cluster.
+            Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
@@ -1835,7 +1843,8 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateVmClusterDetails create_vm_cluster_details: (required)
-            Request to create an Exadata Cloud@Customer VM cluster.
+            Request to create a VM cluster. Applies to Exadata Cloud@Customer instances only.
+            See :func:`create_cloud_vm_cluster_details` for details on creating a cloud VM cluster in an Exadata Cloud Service instance.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1870,7 +1879,8 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateVmClusterDetails create_vm_cluster_details: (required)
-            Request to create an Exadata Cloud@Customer VM cluster.
+            Request to create a VM cluster. Applies to Exadata Cloud@Customer instances only.
+            See :func:`create_cloud_vm_cluster_details` for details on creating a cloud VM cluster in an Exadata Cloud Service instance.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.VmCluster.lifecycle_state`
@@ -3913,6 +3923,80 @@ class DatabaseClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def rotate_ords_certs_and_wait_for_work_request(self, autonomous_exadata_infrastructure_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.rotate_ords_certs` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str autonomous_exadata_infrastructure_id: (required)
+            The Autonomous Exadata Infrastructure  `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.rotate_ords_certs`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.rotate_ords_certs(autonomous_exadata_infrastructure_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def rotate_ssl_certs_and_wait_for_work_request(self, autonomous_exadata_infrastructure_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.rotate_ssl_certs` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str autonomous_exadata_infrastructure_id: (required)
+            The Autonomous Exadata Infrastructure  `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.rotate_ssl_certs`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.rotate_ssl_certs(autonomous_exadata_infrastructure_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

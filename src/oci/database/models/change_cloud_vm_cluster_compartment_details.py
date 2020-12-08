@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeCloudVmClusterCompartmentDetails(object):
     """
-    The configuration details for moving the cloud VM cluster to another compartment.
+    The configuration details for moving the cloud VM cluster to another compartment. Applies to Exadata Cloud Service instances only.
     """
 
     def __init__(self, **kwargs):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateCloudVmClusterDetails(object):
     """
-    Details for the create cloud VM cluster operation.
+    Details for the create cloud VM cluster operation. Applies to Exadata Cloud Service instances only.
     """
 
     #: A constant which can be used with the license_model property of a CreateCloudVmClusterDetails.
@@ -448,6 +448,7 @@ class CreateCloudVmClusterDetails(object):
         A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
         resolver is enabled for the specified subnet, the domain name for the subnet is used
         (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        Applies to Exadata Cloud Service instances only.
 
 
         :return: The domain of this CreateCloudVmClusterDetails.
@@ -462,6 +463,7 @@ class CreateCloudVmClusterDetails(object):
         A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
         resolver is enabled for the specified subnet, the domain name for the subnet is used
         (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+        Applies to Exadata Cloud Service instances only.
 
 
         :param domain: The domain of this CreateCloudVmClusterDetails.
