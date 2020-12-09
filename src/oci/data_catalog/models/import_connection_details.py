@@ -20,7 +20,7 @@ class ImportConnectionDetails(object):
 
         :param connection_detail:
             The value to assign to the connection_detail property of this ImportConnectionDetails.
-        :type connection_detail: CreateConnectionDetails
+        :type connection_detail: oci.data_catalog.models.CreateConnectionDetails
 
         :param connection_payload:
             The value to assign to the connection_payload property of this ImportConnectionDetails.
@@ -46,7 +46,7 @@ class ImportConnectionDetails(object):
         Gets the connection_detail of this ImportConnectionDetails.
 
         :return: The connection_detail of this ImportConnectionDetails.
-        :rtype: CreateConnectionDetails
+        :rtype: oci.data_catalog.models.CreateConnectionDetails
         """
         return self._connection_detail
 
@@ -56,7 +56,7 @@ class ImportConnectionDetails(object):
         Sets the connection_detail of this ImportConnectionDetails.
 
         :param connection_detail: The connection_detail of this ImportConnectionDetails.
-        :type: CreateConnectionDetails
+        :type: oci.data_catalog.models.CreateConnectionDetails
         """
         self._connection_detail = connection_detail
 

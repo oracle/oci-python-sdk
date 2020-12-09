@@ -122,7 +122,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_boot_volume_backup_compartment.py.html>`__ to see an example of how to use change_boot_volume_backup_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_backup_compartment.py.html>`__ to see an example of how to use change_boot_volume_backup_compartment API.
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/changeCompartment"
         method = "POST"
@@ -205,7 +205,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_boot_volume_compartment.py.html>`__ to see an example of how to use change_boot_volume_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_compartment.py.html>`__ to see an example of how to use change_boot_volume_compartment API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}/actions/changeCompartment"
         method = "POST"
@@ -288,7 +288,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_volume_backup_compartment.py.html>`__ to see an example of how to use change_volume_backup_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_backup_compartment.py.html>`__ to see an example of how to use change_volume_backup_compartment API.
         """
         resource_path = "/volumeBackups/{volumeBackupId}/actions/changeCompartment"
         method = "POST"
@@ -371,7 +371,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_volume_compartment.py.html>`__ to see an example of how to use change_volume_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_compartment.py.html>`__ to see an example of how to use change_volume_compartment API.
         """
         resource_path = "/volumes/{volumeId}/actions/changeCompartment"
         method = "POST"
@@ -454,7 +454,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_volume_group_backup_compartment.py.html>`__ to see an example of how to use change_volume_group_backup_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_backup_compartment.py.html>`__ to see an example of how to use change_volume_group_backup_compartment API.
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}/actions/changeCompartment"
         method = "POST"
@@ -537,7 +537,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_volume_group_compartment.py.html>`__ to see an example of how to use change_volume_group_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_compartment.py.html>`__ to see an example of how to use change_volume_group_compartment API.
         """
         resource_path = "/volumeGroups/{volumeGroupId}/actions/changeCompartment"
         method = "POST"
@@ -626,7 +626,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/copy_boot_volume_backup.py.html>`__ to see an example of how to use copy_boot_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_boot_volume_backup.py.html>`__ to see an example of how to use copy_boot_volume_backup API.
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/copy"
         method = "POST"
@@ -721,7 +721,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/copy_volume_backup.py.html>`__ to see an example of how to use copy_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_backup.py.html>`__ to see an example of how to use copy_volume_backup API.
         """
         resource_path = "/volumeBackups/{volumeBackupId}/actions/copy"
         method = "POST"
@@ -811,7 +811,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_boot_volume.py.html>`__ to see an example of how to use create_boot_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume.py.html>`__ to see an example of how to use create_boot_volume API.
         """
         resource_path = "/bootVolumes"
         method = "POST"
@@ -889,7 +889,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_boot_volume_backup.py.html>`__ to see an example of how to use create_boot_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume_backup.py.html>`__ to see an example of how to use create_boot_volume_backup API.
         """
         resource_path = "/bootVolumeBackups"
         method = "POST"
@@ -977,7 +977,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_volume.py.html>`__ to see an example of how to use create_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume.py.html>`__ to see an example of how to use create_volume API.
         """
         resource_path = "/volumes"
         method = "POST"
@@ -1055,7 +1055,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_volume_backup.py.html>`__ to see an example of how to use create_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup.py.html>`__ to see an example of how to use create_volume_backup API.
         """
         resource_path = "/volumeBackups"
         method = "POST"
@@ -1135,7 +1135,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_volume_backup_policy.py.html>`__ to see an example of how to use create_volume_backup_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy.py.html>`__ to see an example of how to use create_volume_backup_policy API.
         """
         resource_path = "/volumeBackupPolicies"
         method = "POST"
@@ -1203,7 +1203,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_volume_backup_policy_assignment.py.html>`__ to see an example of how to use create_volume_backup_policy_assignment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy_assignment.py.html>`__ to see an example of how to use create_volume_backup_policy_assignment API.
         """
         resource_path = "/volumeBackupPolicyAssignments"
         method = "POST"
@@ -1274,7 +1274,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_volume_group.py.html>`__ to see an example of how to use create_volume_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group.py.html>`__ to see an example of how to use create_volume_group API.
         """
         resource_path = "/volumeGroups"
         method = "POST"
@@ -1348,7 +1348,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_volume_group_backup.py.html>`__ to see an example of how to use create_volume_group_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group_backup.py.html>`__ to see an example of how to use create_volume_group_backup API.
         """
         resource_path = "/volumeGroupBackups"
         method = "POST"
@@ -1422,7 +1422,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_boot_volume.py.html>`__ to see an example of how to use delete_boot_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume.py.html>`__ to see an example of how to use delete_boot_volume API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "DELETE"
@@ -1497,7 +1497,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_boot_volume_backup.py.html>`__ to see an example of how to use delete_boot_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_backup.py.html>`__ to see an example of how to use delete_boot_volume_backup API.
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "DELETE"
@@ -1572,7 +1572,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_boot_volume_kms_key.py.html>`__ to see an example of how to use delete_boot_volume_kms_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_kms_key.py.html>`__ to see an example of how to use delete_boot_volume_kms_key API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "DELETE"
@@ -1652,7 +1652,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume.py.html>`__ to see an example of how to use delete_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume.py.html>`__ to see an example of how to use delete_volume API.
         """
         resource_path = "/volumes/{volumeId}"
         method = "DELETE"
@@ -1727,7 +1727,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume_backup.py.html>`__ to see an example of how to use delete_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup.py.html>`__ to see an example of how to use delete_volume_backup API.
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "DELETE"
@@ -1812,7 +1812,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume_backup_policy.py.html>`__ to see an example of how to use delete_volume_backup_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy.py.html>`__ to see an example of how to use delete_volume_backup_policy API.
         """
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "DELETE"
@@ -1889,7 +1889,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume_backup_policy_assignment.py.html>`__ to see an example of how to use delete_volume_backup_policy_assignment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy_assignment.py.html>`__ to see an example of how to use delete_volume_backup_policy_assignment API.
         """
         resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
         method = "DELETE"
@@ -1967,7 +1967,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume_group.py.html>`__ to see an example of how to use delete_volume_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group.py.html>`__ to see an example of how to use delete_volume_group API.
         """
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "DELETE"
@@ -2044,7 +2044,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume_group_backup.py.html>`__ to see an example of how to use delete_volume_group_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group_backup.py.html>`__ to see an example of how to use delete_volume_group_backup API.
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "DELETE"
@@ -2119,7 +2119,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_volume_kms_key.py.html>`__ to see an example of how to use delete_volume_kms_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_kms_key.py.html>`__ to see an example of how to use delete_volume_kms_key API.
         """
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "DELETE"
@@ -2189,7 +2189,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_boot_volume.py.html>`__ to see an example of how to use get_boot_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume.py.html>`__ to see an example of how to use get_boot_volume API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "GET"
@@ -2255,7 +2255,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_boot_volume_backup.py.html>`__ to see an example of how to use get_boot_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_backup.py.html>`__ to see an example of how to use get_boot_volume_backup API.
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "GET"
@@ -2326,7 +2326,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_boot_volume_kms_key.py.html>`__ to see an example of how to use get_boot_volume_kms_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_kms_key.py.html>`__ to see an example of how to use get_boot_volume_kms_key API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "GET"
@@ -2398,7 +2398,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume.py.html>`__ to see an example of how to use get_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume.py.html>`__ to see an example of how to use get_volume API.
         """
         resource_path = "/volumes/{volumeId}"
         method = "GET"
@@ -2464,7 +2464,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_backup.py.html>`__ to see an example of how to use get_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup.py.html>`__ to see an example of how to use get_volume_backup API.
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
@@ -2530,7 +2530,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_backup_policy.py.html>`__ to see an example of how to use get_volume_backup_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy.py.html>`__ to see an example of how to use get_volume_backup_policy API.
         """
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "GET"
@@ -2614,7 +2614,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_backup_policy_asset_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_asset_assignment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_asset_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_asset_assignment API.
         """
         resource_path = "/volumeBackupPolicyAssignments"
         method = "GET"
@@ -2682,7 +2682,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_backup_policy_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_assignment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_assignment API.
         """
         resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
         method = "GET"
@@ -2750,7 +2750,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_group.py.html>`__ to see an example of how to use get_volume_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group.py.html>`__ to see an example of how to use get_volume_group API.
         """
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "GET"
@@ -2818,7 +2818,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_group_backup.py.html>`__ to see an example of how to use get_volume_group_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_backup.py.html>`__ to see an example of how to use get_volume_group_backup API.
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "GET"
@@ -2889,7 +2889,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_volume_kms_key.py.html>`__ to see an example of how to use get_volume_kms_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_kms_key.py.html>`__ to see an example of how to use get_volume_kms_key API.
         """
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "GET"
@@ -3011,7 +3011,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_boot_volume_backups.py.html>`__ to see an example of how to use list_boot_volume_backups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_backups.py.html>`__ to see an example of how to use list_boot_volume_backups API.
         """
         resource_path = "/bootVolumeBackups"
         method = "GET"
@@ -3138,7 +3138,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_boot_volumes.py.html>`__ to see an example of how to use list_boot_volumes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volumes.py.html>`__ to see an example of how to use list_boot_volumes API.
         """
         resource_path = "/bootVolumes"
         method = "GET"
@@ -3231,7 +3231,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_volume_backup_policies.py.html>`__ to see an example of how to use list_volume_backup_policies API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backup_policies.py.html>`__ to see an example of how to use list_volume_backup_policies API.
         """
         resource_path = "/volumeBackupPolicies"
         method = "GET"
@@ -3350,7 +3350,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_volume_backups.py.html>`__ to see an example of how to use list_volume_backups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backups.py.html>`__ to see an example of how to use list_volume_backups API.
         """
         resource_path = "/volumeBackups"
         method = "GET"
@@ -3496,7 +3496,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_volume_group_backups.py.html>`__ to see an example of how to use list_volume_group_backups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_backups.py.html>`__ to see an example of how to use list_volume_group_backups API.
         """
         resource_path = "/volumeGroupBackups"
         method = "GET"
@@ -3638,7 +3638,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_volume_groups.py.html>`__ to see an example of how to use list_volume_groups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_groups.py.html>`__ to see an example of how to use list_volume_groups API.
         """
         resource_path = "/volumeGroups"
         method = "GET"
@@ -3789,7 +3789,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_volumes.py.html>`__ to see an example of how to use list_volumes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volumes.py.html>`__ to see an example of how to use list_volumes API.
         """
         resource_path = "/volumes"
         method = "GET"
@@ -3898,7 +3898,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_boot_volume.py.html>`__ to see an example of how to use update_boot_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume.py.html>`__ to see an example of how to use update_boot_volume API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "PUT"
@@ -3981,7 +3981,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_boot_volume_backup.py.html>`__ to see an example of how to use update_boot_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_backup.py.html>`__ to see an example of how to use update_boot_volume_backup API.
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "PUT"
@@ -4063,7 +4063,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_boot_volume_kms_key.py.html>`__ to see an example of how to use update_boot_volume_kms_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_kms_key.py.html>`__ to see an example of how to use update_boot_volume_kms_key API.
         """
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "PUT"
@@ -4146,7 +4146,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_volume.py.html>`__ to see an example of how to use update_volume API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume.py.html>`__ to see an example of how to use update_volume API.
         """
         resource_path = "/volumes/{volumeId}"
         method = "PUT"
@@ -4229,7 +4229,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_volume_backup.py.html>`__ to see an example of how to use update_volume_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup.py.html>`__ to see an example of how to use update_volume_backup API.
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "PUT"
@@ -4328,7 +4328,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_volume_backup_policy.py.html>`__ to see an example of how to use update_volume_backup_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup_policy.py.html>`__ to see an example of how to use update_volume_backup_policy API.
         """
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "PUT"
@@ -4423,7 +4423,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_volume_group.py.html>`__ to see an example of how to use update_volume_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group.py.html>`__ to see an example of how to use update_volume_group API.
         """
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "PUT"
@@ -4507,7 +4507,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_volume_group_backup.py.html>`__ to see an example of how to use update_volume_group_backup API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group_backup.py.html>`__ to see an example of how to use update_volume_group_backup API.
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "PUT"
@@ -4589,7 +4589,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_volume_kms_key.py.html>`__ to see an example of how to use update_volume_kms_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_kms_key.py.html>`__ to see an example of how to use update_volume_kms_key API.
         """
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "PUT"

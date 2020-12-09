@@ -20,7 +20,7 @@ class TargetCollection(object):
 
         :param items:
             The value to assign to the items property of this TargetCollection.
-        :type items: list[TargetSummary]
+        :type items: list[oci.cloud_guard.models.TargetSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TargetCollection(object):
 
 
         :return: The items of this TargetCollection.
-        :rtype: list[TargetSummary]
+        :rtype: list[oci.cloud_guard.models.TargetSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TargetCollection(object):
 
 
         :param items: The items of this TargetCollection.
-        :type: list[TargetSummary]
+        :type: list[oci.cloud_guard.models.TargetSummary]
         """
         self._items = items
 

@@ -20,7 +20,7 @@ class RetentionRuleCollection(object):
 
         :param items:
             The value to assign to the items property of this RetentionRuleCollection.
-        :type items: list[RetentionRuleSummary]
+        :type items: list[oci.object_storage.models.RetentionRuleSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RetentionRuleCollection(object):
 
 
         :return: The items of this RetentionRuleCollection.
-        :rtype: list[RetentionRuleSummary]
+        :rtype: list[oci.object_storage.models.RetentionRuleSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RetentionRuleCollection(object):
 
 
         :param items: The items of this RetentionRuleCollection.
-        :type: list[RetentionRuleSummary]
+        :type: list[oci.object_storage.models.RetentionRuleSummary]
         """
         self._items = items
 

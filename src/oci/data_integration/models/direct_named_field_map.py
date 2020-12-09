@@ -38,11 +38,11 @@ class DirectNamedFieldMap(FieldMap):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DirectNamedFieldMap.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this DirectNamedFieldMap.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param source_typed_object:
             The value to assign to the source_typed_object property of this DirectNamedFieldMap.
@@ -160,7 +160,7 @@ class DirectNamedFieldMap(FieldMap):
         Gets the parent_ref of this DirectNamedFieldMap.
 
         :return: The parent_ref of this DirectNamedFieldMap.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -170,7 +170,7 @@ class DirectNamedFieldMap(FieldMap):
         Sets the parent_ref of this DirectNamedFieldMap.
 
         :param parent_ref: The parent_ref of this DirectNamedFieldMap.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -180,7 +180,7 @@ class DirectNamedFieldMap(FieldMap):
         Gets the config_values of this DirectNamedFieldMap.
 
         :return: The config_values of this DirectNamedFieldMap.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -190,7 +190,7 @@ class DirectNamedFieldMap(FieldMap):
         Sets the config_values of this DirectNamedFieldMap.
 
         :param config_values: The config_values of this DirectNamedFieldMap.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 

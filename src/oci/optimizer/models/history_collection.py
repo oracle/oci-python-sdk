@@ -20,7 +20,7 @@ class HistoryCollection(object):
 
         :param items:
             The value to assign to the items property of this HistoryCollection.
-        :type items: list[HistorySummary]
+        :type items: list[oci.optimizer.models.HistorySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class HistoryCollection(object):
 
 
         :return: The items of this HistoryCollection.
-        :rtype: list[HistorySummary]
+        :rtype: list[oci.optimizer.models.HistorySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class HistoryCollection(object):
 
 
         :param items: The items of this HistoryCollection.
-        :type: list[HistorySummary]
+        :type: list[oci.optimizer.models.HistorySummary]
         """
         self._items = items
 

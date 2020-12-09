@@ -136,11 +136,11 @@ class DetectorRecipeDetectorRuleSummary(object):
 
         :param candidate_responder_rules:
             The value to assign to the candidate_responder_rules property of this DetectorRecipeDetectorRuleSummary.
-        :type candidate_responder_rules: list[CandidateResponderRule]
+        :type candidate_responder_rules: list[oci.cloud_guard.models.CandidateResponderRule]
 
         :param detector_details:
             The value to assign to the detector_details property of this DetectorRecipeDetectorRuleSummary.
-        :type detector_details: DetectorDetails
+        :type detector_details: oci.cloud_guard.models.DetectorDetails
 
         :param time_created:
             The value to assign to the time_created property of this DetectorRecipeDetectorRuleSummary.
@@ -422,7 +422,7 @@ class DetectorRecipeDetectorRuleSummary(object):
 
 
         :return: The candidate_responder_rules of this DetectorRecipeDetectorRuleSummary.
-        :rtype: list[CandidateResponderRule]
+        :rtype: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         return self._candidate_responder_rules
 
@@ -434,7 +434,7 @@ class DetectorRecipeDetectorRuleSummary(object):
 
 
         :param candidate_responder_rules: The candidate_responder_rules of this DetectorRecipeDetectorRuleSummary.
-        :type: list[CandidateResponderRule]
+        :type: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         self._candidate_responder_rules = candidate_responder_rules
 
@@ -444,7 +444,7 @@ class DetectorRecipeDetectorRuleSummary(object):
         Gets the detector_details of this DetectorRecipeDetectorRuleSummary.
 
         :return: The detector_details of this DetectorRecipeDetectorRuleSummary.
-        :rtype: DetectorDetails
+        :rtype: oci.cloud_guard.models.DetectorDetails
         """
         return self._detector_details
 
@@ -454,7 +454,7 @@ class DetectorRecipeDetectorRuleSummary(object):
         Sets the detector_details of this DetectorRecipeDetectorRuleSummary.
 
         :param detector_details: The detector_details of this DetectorRecipeDetectorRuleSummary.
-        :type: DetectorDetails
+        :type: oci.cloud_guard.models.DetectorDetails
         """
         self._detector_details = detector_details
 

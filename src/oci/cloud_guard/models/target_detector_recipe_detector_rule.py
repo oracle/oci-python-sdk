@@ -130,7 +130,7 @@ class TargetDetectorRecipeDetectorRule(object):
 
         :param details:
             The value to assign to the details property of this TargetDetectorRecipeDetectorRule.
-        :type details: TargetDetectorDetails
+        :type details: oci.cloud_guard.models.TargetDetectorDetails
 
         :param managed_list_types:
             The value to assign to the managed_list_types property of this TargetDetectorRecipeDetectorRule.
@@ -383,7 +383,7 @@ class TargetDetectorRecipeDetectorRule(object):
         Gets the details of this TargetDetectorRecipeDetectorRule.
 
         :return: The details of this TargetDetectorRecipeDetectorRule.
-        :rtype: TargetDetectorDetails
+        :rtype: oci.cloud_guard.models.TargetDetectorDetails
         """
         return self._details
 
@@ -393,7 +393,7 @@ class TargetDetectorRecipeDetectorRule(object):
         Sets the details of this TargetDetectorRecipeDetectorRule.
 
         :param details: The details of this TargetDetectorRecipeDetectorRule.
-        :type: TargetDetectorDetails
+        :type: oci.cloud_guard.models.TargetDetectorDetails
         """
         self._details = details
 

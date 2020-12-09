@@ -50,7 +50,7 @@ class AuditEvent(object):
 
         :param data:
             The value to assign to the data property of this AuditEvent.
-        :type data: Data
+        :type data: oci.audit.models.Data
 
         """
         self.swagger_types = {
@@ -310,7 +310,7 @@ class AuditEvent(object):
         Gets the data of this AuditEvent.
 
         :return: The data of this AuditEvent.
-        :rtype: Data
+        :rtype: oci.audit.models.Data
         """
         return self._data
 
@@ -320,7 +320,7 @@ class AuditEvent(object):
         Sets the data of this AuditEvent.
 
         :param data: The data of this AuditEvent.
-        :type: Data
+        :type: oci.audit.models.Data
         """
         self._data = data
 

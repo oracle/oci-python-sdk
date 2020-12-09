@@ -66,7 +66,7 @@ class AvailableUpdateSummary(object):
 
         :param errata:
             The value to assign to the errata property of this AvailableUpdateSummary.
-        :type errata: list[Id]
+        :type errata: list[oci.os_management.models.Id]
 
         :param related_cves:
             The value to assign to the related_cves property of this AvailableUpdateSummary.
@@ -74,7 +74,7 @@ class AvailableUpdateSummary(object):
 
         :param software_sources:
             The value to assign to the software_sources property of this AvailableUpdateSummary.
-        :type software_sources: list[SoftwareSourceId]
+        :type software_sources: list[oci.os_management.models.SoftwareSourceId]
 
         """
         self.swagger_types = {
@@ -296,7 +296,7 @@ class AvailableUpdateSummary(object):
 
 
         :return: The errata of this AvailableUpdateSummary.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._errata
 
@@ -308,7 +308,7 @@ class AvailableUpdateSummary(object):
 
 
         :param errata: The errata of this AvailableUpdateSummary.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._errata = errata
 
@@ -344,7 +344,7 @@ class AvailableUpdateSummary(object):
 
 
         :return: The software_sources of this AvailableUpdateSummary.
-        :rtype: list[SoftwareSourceId]
+        :rtype: list[oci.os_management.models.SoftwareSourceId]
         """
         return self._software_sources
 
@@ -356,7 +356,7 @@ class AvailableUpdateSummary(object):
 
 
         :param software_sources: The software_sources of this AvailableUpdateSummary.
-        :type: list[SoftwareSourceId]
+        :type: list[oci.os_management.models.SoftwareSourceId]
         """
         self._software_sources = software_sources
 

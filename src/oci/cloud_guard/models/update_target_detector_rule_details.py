@@ -20,7 +20,7 @@ class UpdateTargetDetectorRuleDetails(object):
 
         :param condition_groups:
             The value to assign to the condition_groups property of this UpdateTargetDetectorRuleDetails.
-        :type condition_groups: list[ConditionGroup]
+        :type condition_groups: list[oci.cloud_guard.models.ConditionGroup]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UpdateTargetDetectorRuleDetails(object):
 
 
         :return: The condition_groups of this UpdateTargetDetectorRuleDetails.
-        :rtype: list[ConditionGroup]
+        :rtype: list[oci.cloud_guard.models.ConditionGroup]
         """
         return self._condition_groups
 
@@ -53,7 +53,7 @@ class UpdateTargetDetectorRuleDetails(object):
 
 
         :param condition_groups: The condition_groups of this UpdateTargetDetectorRuleDetails.
-        :type: list[ConditionGroup]
+        :type: list[oci.cloud_guard.models.ConditionGroup]
         """
         self._condition_groups = condition_groups
 

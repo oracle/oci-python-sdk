@@ -88,11 +88,11 @@ class WaasPolicy(object):
 
         :param policy_config:
             The value to assign to the policy_config property of this WaasPolicy.
-        :type policy_config: PolicyConfig
+        :type policy_config: oci.waas.models.PolicyConfig
 
         :param waf_config:
             The value to assign to the waf_config property of this WaasPolicy.
-        :type waf_config: WafConfig
+        :type waf_config: oci.waas.models.WafConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this WaasPolicy.
@@ -412,7 +412,7 @@ class WaasPolicy(object):
         Gets the policy_config of this WaasPolicy.
 
         :return: The policy_config of this WaasPolicy.
-        :rtype: PolicyConfig
+        :rtype: oci.waas.models.PolicyConfig
         """
         return self._policy_config
 
@@ -422,7 +422,7 @@ class WaasPolicy(object):
         Sets the policy_config of this WaasPolicy.
 
         :param policy_config: The policy_config of this WaasPolicy.
-        :type: PolicyConfig
+        :type: oci.waas.models.PolicyConfig
         """
         self._policy_config = policy_config
 
@@ -432,7 +432,7 @@ class WaasPolicy(object):
         Gets the waf_config of this WaasPolicy.
 
         :return: The waf_config of this WaasPolicy.
-        :rtype: WafConfig
+        :rtype: oci.waas.models.WafConfig
         """
         return self._waf_config
 
@@ -442,7 +442,7 @@ class WaasPolicy(object):
         Sets the waf_config of this WaasPolicy.
 
         :param waf_config: The waf_config of this WaasPolicy.
-        :type: WafConfig
+        :type: oci.waas.models.WafConfig
         """
         self._waf_config = waf_config
 

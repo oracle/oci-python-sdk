@@ -31,7 +31,7 @@ class OdaClientCompositeOperations(object):
         :param str oda_instance_id: (required)
             Unique Digital Assistant instance identifier.
 
-        :param ChangeOdaInstanceCompartmentDetails change_oda_instance_compartment_details: (required)
+        :param oci.oda.models.ChangeOdaInstanceCompartmentDetails change_oda_instance_compartment_details: (required)
             The compartment to which the Digital Assistant instance should be moved.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class OdaClientCompositeOperations(object):
         Calls :py:func:`~oci.oda.OdaClient.create_oda_instance` and waits for the :py:class:`~oci.oda.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateOdaInstanceDetails create_oda_instance_details: (required)
+        :param oci.oda.models.CreateOdaInstanceDetails create_oda_instance_details: (required)
             Details for the new Digital Assistant instance.
 
         :param list[str] wait_for_states:
@@ -232,7 +232,7 @@ class OdaClientCompositeOperations(object):
         :param str oda_instance_id: (required)
             Unique Digital Assistant instance identifier.
 
-        :param UpdateOdaInstanceDetails update_oda_instance_details: (required)
+        :param oci.oda.models.UpdateOdaInstanceDetails update_oda_instance_details: (required)
             The information to update.
 
         :param list[str] wait_for_states:

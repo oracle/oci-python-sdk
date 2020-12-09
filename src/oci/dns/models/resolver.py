@@ -100,15 +100,15 @@ class Resolver(object):
 
         :param endpoints:
             The value to assign to the endpoints property of this Resolver.
-        :type endpoints: list[ResolverEndpointSummary]
+        :type endpoints: list[oci.dns.models.ResolverEndpointSummary]
 
         :param attached_views:
             The value to assign to the attached_views property of this Resolver.
-        :type attached_views: list[AttachedView]
+        :type attached_views: list[oci.dns.models.AttachedView]
 
         :param rules:
             The value to assign to the rules property of this Resolver.
-        :type rules: list[ResolverRule]
+        :type rules: list[oci.dns.models.ResolverRule]
 
         """
         self.swagger_types = {
@@ -501,7 +501,7 @@ class Resolver(object):
 
 
         :return: The endpoints of this Resolver.
-        :rtype: list[ResolverEndpointSummary]
+        :rtype: list[oci.dns.models.ResolverEndpointSummary]
         """
         return self._endpoints
 
@@ -513,7 +513,7 @@ class Resolver(object):
 
 
         :param endpoints: The endpoints of this Resolver.
-        :type: list[ResolverEndpointSummary]
+        :type: list[oci.dns.models.ResolverEndpointSummary]
         """
         self._endpoints = endpoints
 
@@ -525,7 +525,7 @@ class Resolver(object):
 
 
         :return: The attached_views of this Resolver.
-        :rtype: list[AttachedView]
+        :rtype: list[oci.dns.models.AttachedView]
         """
         return self._attached_views
 
@@ -537,7 +537,7 @@ class Resolver(object):
 
 
         :param attached_views: The attached_views of this Resolver.
-        :type: list[AttachedView]
+        :type: list[oci.dns.models.AttachedView]
         """
         self._attached_views = attached_views
 
@@ -549,7 +549,7 @@ class Resolver(object):
 
 
         :return: The rules of this Resolver.
-        :rtype: list[ResolverRule]
+        :rtype: list[oci.dns.models.ResolverRule]
         """
         return self._rules
 
@@ -561,7 +561,7 @@ class Resolver(object):
 
 
         :param rules: The rules of this Resolver.
-        :type: list[ResolverRule]
+        :type: list[oci.dns.models.ResolverRule]
         """
         self._rules = rules
 

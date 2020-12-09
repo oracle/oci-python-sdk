@@ -44,7 +44,7 @@ class LogAnalyticsParserFunctionParameter(object):
 
         :param parser_meta_plugin_parameter:
             The value to assign to the parser_meta_plugin_parameter property of this LogAnalyticsParserFunctionParameter.
-        :type parser_meta_plugin_parameter: LogAnalyticsParserMetaPluginParameter
+        :type parser_meta_plugin_parameter: oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter
 
         """
         self.swagger_types = {
@@ -225,7 +225,7 @@ class LogAnalyticsParserFunctionParameter(object):
         Gets the parser_meta_plugin_parameter of this LogAnalyticsParserFunctionParameter.
 
         :return: The parser_meta_plugin_parameter of this LogAnalyticsParserFunctionParameter.
-        :rtype: LogAnalyticsParserMetaPluginParameter
+        :rtype: oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter
         """
         return self._parser_meta_plugin_parameter
 
@@ -235,7 +235,7 @@ class LogAnalyticsParserFunctionParameter(object):
         Sets the parser_meta_plugin_parameter of this LogAnalyticsParserFunctionParameter.
 
         :param parser_meta_plugin_parameter: The parser_meta_plugin_parameter of this LogAnalyticsParserFunctionParameter.
-        :type: LogAnalyticsParserMetaPluginParameter
+        :type: oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter
         """
         self._parser_meta_plugin_parameter = parser_meta_plugin_parameter
 

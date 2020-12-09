@@ -32,7 +32,7 @@ class CreateSecurityListDetails(object):
 
         :param egress_security_rules:
             The value to assign to the egress_security_rules property of this CreateSecurityListDetails.
-        :type egress_security_rules: list[EgressSecurityRule]
+        :type egress_security_rules: list[oci.core.models.EgressSecurityRule]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSecurityListDetails.
@@ -40,7 +40,7 @@ class CreateSecurityListDetails(object):
 
         :param ingress_security_rules:
             The value to assign to the ingress_security_rules property of this CreateSecurityListDetails.
-        :type ingress_security_rules: list[IngressSecurityRule]
+        :type ingress_security_rules: list[oci.core.models.IngressSecurityRule]
 
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateSecurityListDetails.
@@ -165,7 +165,7 @@ class CreateSecurityListDetails(object):
 
 
         :return: The egress_security_rules of this CreateSecurityListDetails.
-        :rtype: list[EgressSecurityRule]
+        :rtype: list[oci.core.models.EgressSecurityRule]
         """
         return self._egress_security_rules
 
@@ -177,7 +177,7 @@ class CreateSecurityListDetails(object):
 
 
         :param egress_security_rules: The egress_security_rules of this CreateSecurityListDetails.
-        :type: list[EgressSecurityRule]
+        :type: list[oci.core.models.EgressSecurityRule]
         """
         self._egress_security_rules = egress_security_rules
 
@@ -223,7 +223,7 @@ class CreateSecurityListDetails(object):
 
 
         :return: The ingress_security_rules of this CreateSecurityListDetails.
-        :rtype: list[IngressSecurityRule]
+        :rtype: list[oci.core.models.IngressSecurityRule]
         """
         return self._ingress_security_rules
 
@@ -235,7 +235,7 @@ class CreateSecurityListDetails(object):
 
 
         :param ingress_security_rules: The ingress_security_rules of this CreateSecurityListDetails.
-        :type: list[IngressSecurityRule]
+        :type: list[oci.core.models.IngressSecurityRule]
         """
         self._ingress_security_rules = ingress_security_rules
 

@@ -20,7 +20,7 @@ class EnrollmentStatusCollection(object):
 
         :param items:
             The value to assign to the items property of this EnrollmentStatusCollection.
-        :type items: list[EnrollmentStatusSummary]
+        :type items: list[oci.optimizer.models.EnrollmentStatusSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class EnrollmentStatusCollection(object):
 
 
         :return: The items of this EnrollmentStatusCollection.
-        :rtype: list[EnrollmentStatusSummary]
+        :rtype: list[oci.optimizer.models.EnrollmentStatusSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class EnrollmentStatusCollection(object):
 
 
         :param items: The items of this EnrollmentStatusCollection.
-        :type: list[EnrollmentStatusSummary]
+        :type: list[oci.optimizer.models.EnrollmentStatusSummary]
         """
         self._items = items
 

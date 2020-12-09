@@ -128,7 +128,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/add_block_storage.py.html>`__ to see an example of how to use add_block_storage API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_block_storage.py.html>`__ to see an example of how to use add_block_storage API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addBlockStorage"
         method = "POST"
@@ -227,7 +227,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/add_cloud_sql.py.html>`__ to see an example of how to use add_cloud_sql API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_cloud_sql.py.html>`__ to see an example of how to use add_cloud_sql API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addCloudSql"
         method = "POST"
@@ -326,7 +326,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/add_worker_nodes.py.html>`__ to see an example of how to use add_worker_nodes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_worker_nodes.py.html>`__ to see an example of how to use add_worker_nodes API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addWorkerNodes"
         method = "POST"
@@ -424,7 +424,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/change_bds_instance_compartment.py.html>`__ to see an example of how to use change_bds_instance_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/change_bds_instance_compartment.py.html>`__ to see an example of how to use change_bds_instance_compartment API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/changeCompartment"
         method = "POST"
@@ -524,7 +524,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/change_shape.py.html>`__ to see an example of how to use change_shape API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/change_shape.py.html>`__ to see an example of how to use change_shape API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/changeShape"
         method = "POST"
@@ -612,7 +612,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/create_bds_instance.py.html>`__ to see an example of how to use create_bds_instance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/create_bds_instance.py.html>`__ to see an example of how to use create_bds_instance API.
         """
         resource_path = "/bdsInstances"
         method = "POST"
@@ -686,7 +686,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/delete_bds_instance.py.html>`__ to see an example of how to use delete_bds_instance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/delete_bds_instance.py.html>`__ to see an example of how to use delete_bds_instance API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "DELETE"
@@ -761,7 +761,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/get_bds_instance.py.html>`__ to see an example of how to use get_bds_instance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_bds_instance.py.html>`__ to see an example of how to use get_bds_instance API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "GET"
@@ -836,7 +836,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -935,7 +935,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/list_bds_instances.py.html>`__ to see an example of how to use list_bds_instances API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_bds_instances.py.html>`__ to see an example of how to use list_bds_instances API.
         """
         resource_path = "/bdsInstances"
         method = "GET"
@@ -1054,7 +1054,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -1173,7 +1173,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1295,7 +1295,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1399,7 +1399,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/remove_cloud_sql.py.html>`__ to see an example of how to use remove_cloud_sql API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/remove_cloud_sql.py.html>`__ to see an example of how to use remove_cloud_sql API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/removeCloudSql"
         method = "POST"
@@ -1493,7 +1493,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/restart_node.py.html>`__ to see an example of how to use restart_node API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/restart_node.py.html>`__ to see an example of how to use restart_node API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/restartNode"
         method = "POST"
@@ -1584,7 +1584,7 @@ class BdsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/bds/update_bds_instance.py.html>`__ to see an example of how to use update_bds_instance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/update_bds_instance.py.html>`__ to see an example of how to use update_bds_instance API.
         """
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "PUT"

@@ -51,7 +51,7 @@ class ListingPackage(object):
 
         :param pricing:
             The value to assign to the pricing property of this ListingPackage.
-        :type pricing: PricingModel
+        :type pricing: oci.marketplace.models.PricingModel
 
         :param resource_id:
             The value to assign to the resource_id property of this ListingPackage.
@@ -214,7 +214,7 @@ class ListingPackage(object):
         Gets the pricing of this ListingPackage.
 
         :return: The pricing of this ListingPackage.
-        :rtype: PricingModel
+        :rtype: oci.marketplace.models.PricingModel
         """
         return self._pricing
 
@@ -224,7 +224,7 @@ class ListingPackage(object):
         Sets the pricing of this ListingPackage.
 
         :param pricing: The pricing of this ListingPackage.
-        :type: PricingModel
+        :type: oci.marketplace.models.PricingModel
         """
         self._pricing = pricing
 

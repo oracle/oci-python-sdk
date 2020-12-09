@@ -28,7 +28,7 @@ class ManagementAgentClientCompositeOperations(object):
         Calls :py:func:`~oci.management_agent.ManagementAgentClient.create_management_agent_install_key` and waits for the :py:class:`~oci.management_agent.models.ManagementAgentInstallKey` acted upon
         to enter the given state(s).
 
-        :param CreateManagementAgentInstallKeyDetails create_management_agent_install_key_details: (required)
+        :param oci.management_agent.models.CreateManagementAgentInstallKeyDetails create_management_agent_install_key_details: (required)
             Details of the Agent install Key
 
         :param list[str] wait_for_states:
@@ -160,7 +160,7 @@ class ManagementAgentClientCompositeOperations(object):
         Calls :py:func:`~oci.management_agent.ManagementAgentClient.deploy_plugins` and waits for the :py:class:`~oci.management_agent.models.WorkRequest`
         to enter the given state(s).
 
-        :param DeployPluginsDetails deploy_plugins_details: (required)
+        :param oci.management_agent.models.DeployPluginsDetails deploy_plugins_details: (required)
             Details of Plugins to be deployed for a given list of Management Agents.
 
         :param list[str] wait_for_states:
@@ -201,7 +201,7 @@ class ManagementAgentClientCompositeOperations(object):
         :param str management_agent_id: (required)
             Unique Management Agent identifier
 
-        :param UpdateManagementAgentDetails update_management_agent_details: (required)
+        :param oci.management_agent.models.UpdateManagementAgentDetails update_management_agent_details: (required)
             Details required for changing the console managed properties of the Management Agent.
 
         :param list[str] wait_for_states:
@@ -242,7 +242,7 @@ class ManagementAgentClientCompositeOperations(object):
         :param str management_agent_install_key_id: (required)
             Unique Management Agent Install Key identifier
 
-        :param UpdateManagementAgentInstallKeyDetails update_management_agent_install_key_details: (required)
+        :param oci.management_agent.models.UpdateManagementAgentInstallKeyDetails update_management_agent_install_key_details: (required)
             Details required for changing the modifiable properties of the Management Agent install key.
 
         :param list[str] wait_for_states:

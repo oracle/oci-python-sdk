@@ -28,7 +28,7 @@ class UpdateReferenceDetails(object):
 
         :param child_references:
             The value to assign to the child_references property of this UpdateReferenceDetails.
-        :type child_references: list[ChildReferenceDetail]
+        :type child_references: list[oci.data_integration.models.ChildReferenceDetail]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class UpdateReferenceDetails(object):
 
 
         :return: The child_references of this UpdateReferenceDetails.
-        :rtype: list[ChildReferenceDetail]
+        :rtype: list[oci.data_integration.models.ChildReferenceDetail]
         """
         return self._child_references
 
@@ -115,7 +115,7 @@ class UpdateReferenceDetails(object):
 
 
         :param child_references: The child_references of this UpdateReferenceDetails.
-        :type: list[ChildReferenceDetail]
+        :type: list[oci.data_integration.models.ChildReferenceDetail]
         """
         self._child_references = child_references
 

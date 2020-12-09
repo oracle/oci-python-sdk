@@ -20,7 +20,7 @@ class ResourceSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this ResourceSummaryCollection.
-        :type items: list[ResourceSummary]
+        :type items: list[oci.resource_search.models.ResourceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ResourceSummaryCollection(object):
 
 
         :return: The items of this ResourceSummaryCollection.
-        :rtype: list[ResourceSummary]
+        :rtype: list[oci.resource_search.models.ResourceSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ResourceSummaryCollection(object):
 
 
         :param items: The items of this ResourceSummaryCollection.
-        :type: list[ResourceSummary]
+        :type: list[oci.resource_search.models.ResourceSummary]
         """
         self._items = items
 

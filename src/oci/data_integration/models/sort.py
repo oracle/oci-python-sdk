@@ -26,7 +26,7 @@ class Sort(PushDownOperation):
 
         :param sort_clauses:
             The value to assign to the sort_clauses property of this Sort.
-        :type sort_clauses: list[SortClause]
+        :type sort_clauses: list[oci.data_integration.models.SortClause]
 
         """
         self.swagger_types = {
@@ -51,7 +51,7 @@ class Sort(PushDownOperation):
 
 
         :return: The sort_clauses of this Sort.
-        :rtype: list[SortClause]
+        :rtype: list[oci.data_integration.models.SortClause]
         """
         return self._sort_clauses
 
@@ -63,7 +63,7 @@ class Sort(PushDownOperation):
 
 
         :param sort_clauses: The sort_clauses of this Sort.
-        :type: list[SortClause]
+        :type: list[oci.data_integration.models.SortClause]
         """
         self._sort_clauses = sort_clauses
 

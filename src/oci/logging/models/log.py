@@ -86,7 +86,7 @@ class Log(object):
 
         :param configuration:
             The value to assign to the configuration property of this Log.
-        :type configuration: Configuration
+        :type configuration: oci.logging.models.Configuration
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Log.
@@ -384,7 +384,7 @@ class Log(object):
         Gets the configuration of this Log.
 
         :return: The configuration of this Log.
-        :rtype: Configuration
+        :rtype: oci.logging.models.Configuration
         """
         return self._configuration
 
@@ -394,7 +394,7 @@ class Log(object):
         Sets the configuration of this Log.
 
         :param configuration: The configuration of this Log.
-        :type: Configuration
+        :type: oci.logging.models.Configuration
         """
         self._configuration = configuration
 

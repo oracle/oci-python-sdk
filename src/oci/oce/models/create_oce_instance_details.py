@@ -64,7 +64,7 @@ class CreateOceInstanceDetails(object):
 
         :param identity_stripe:
             The value to assign to the identity_stripe property of this CreateOceInstanceDetails.
-        :type identity_stripe: IdentityStripeDetails
+        :type identity_stripe: oci.oce.models.IdentityStripeDetails
 
         :param tenancy_name:
             The value to assign to the tenancy_name property of this CreateOceInstanceDetails.
@@ -291,7 +291,7 @@ class CreateOceInstanceDetails(object):
         Gets the identity_stripe of this CreateOceInstanceDetails.
 
         :return: The identity_stripe of this CreateOceInstanceDetails.
-        :rtype: IdentityStripeDetails
+        :rtype: oci.oce.models.IdentityStripeDetails
         """
         return self._identity_stripe
 
@@ -301,7 +301,7 @@ class CreateOceInstanceDetails(object):
         Sets the identity_stripe of this CreateOceInstanceDetails.
 
         :param identity_stripe: The identity_stripe of this CreateOceInstanceDetails.
-        :type: IdentityStripeDetails
+        :type: oci.oce.models.IdentityStripeDetails
         """
         self._identity_stripe = identity_stripe
 

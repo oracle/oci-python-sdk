@@ -34,11 +34,11 @@ class InputField(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this InputField.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this InputField.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this InputField.
@@ -54,7 +54,7 @@ class InputField(TypedObject):
 
         :param type:
             The value to assign to the type property of this InputField.
-        :type type: BaseType
+        :type type: oci.data_integration.models.BaseType
 
         :param labels:
             The value to assign to the labels property of this InputField.
@@ -105,7 +105,7 @@ class InputField(TypedObject):
         Gets the type of this InputField.
 
         :return: The type of this InputField.
-        :rtype: BaseType
+        :rtype: oci.data_integration.models.BaseType
         """
         return self._type
 
@@ -115,7 +115,7 @@ class InputField(TypedObject):
         Sets the type of this InputField.
 
         :param type: The type of this InputField.
-        :type: BaseType
+        :type: oci.data_integration.models.BaseType
         """
         self._type = type
 

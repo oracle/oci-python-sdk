@@ -38,19 +38,19 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this StatsCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this StatsCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param group_by_fields:
             The value to assign to the group_by_fields property of this StatsCommandDescriptor.
-        :type group_by_fields: list[AbstractField]
+        :type group_by_fields: list[oci.log_analytics.models.AbstractField]
 
         :param functions:
             The value to assign to the functions property of this StatsCommandDescriptor.
-        :type functions: list[FunctionField]
+        :type functions: list[oci.log_analytics.models.FunctionField]
 
         """
         self.swagger_types = {
@@ -93,7 +93,7 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The group_by_fields of this StatsCommandDescriptor.
-        :rtype: list[AbstractField]
+        :rtype: list[oci.log_analytics.models.AbstractField]
         """
         return self._group_by_fields
 
@@ -105,7 +105,7 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param group_by_fields: The group_by_fields of this StatsCommandDescriptor.
-        :type: list[AbstractField]
+        :type: list[oci.log_analytics.models.AbstractField]
         """
         self._group_by_fields = group_by_fields
 
@@ -117,7 +117,7 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The functions of this StatsCommandDescriptor.
-        :rtype: list[FunctionField]
+        :rtype: list[oci.log_analytics.models.FunctionField]
         """
         return self._functions
 
@@ -129,7 +129,7 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param functions: The functions of this StatsCommandDescriptor.
-        :type: list[FunctionField]
+        :type: list[oci.log_analytics.models.FunctionField]
         """
         self._functions = functions
 

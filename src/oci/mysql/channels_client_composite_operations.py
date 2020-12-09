@@ -28,7 +28,7 @@ class ChannelsClientCompositeOperations(object):
         Calls :py:func:`~oci.mysql.ChannelsClient.create_channel` and waits for the :py:class:`~oci.mysql.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateChannelDetails create_channel_details: (required)
+        :param oci.mysql.models.CreateChannelDetails create_channel_details: (required)
             The parameters of the request to create the Channel.
 
         :param list[str] wait_for_states:
@@ -199,7 +199,7 @@ class ChannelsClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateChannelDetails update_channel_details: (required)
+        :param oci.mysql.models.UpdateChannelDetails update_channel_details: (required)
             The parameters of the request to update the Channel.
 
         :param list[str] wait_for_states:

@@ -40,7 +40,7 @@ class Osn(object):
 
         :param ocpu_allocation_param:
             The value to assign to the ocpu_allocation_param property of this Osn.
-        :type ocpu_allocation_param: OcpuAllocationNumberParam
+        :type ocpu_allocation_param: oci.blockchain.models.OcpuAllocationNumberParam
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Osn.
@@ -122,7 +122,7 @@ class Osn(object):
         Gets the ocpu_allocation_param of this Osn.
 
         :return: The ocpu_allocation_param of this Osn.
-        :rtype: OcpuAllocationNumberParam
+        :rtype: oci.blockchain.models.OcpuAllocationNumberParam
         """
         return self._ocpu_allocation_param
 
@@ -132,7 +132,7 @@ class Osn(object):
         Sets the ocpu_allocation_param of this Osn.
 
         :param ocpu_allocation_param: The ocpu_allocation_param of this Osn.
-        :type: OcpuAllocationNumberParam
+        :type: oci.blockchain.models.OcpuAllocationNumberParam
         """
         self._ocpu_allocation_param = ocpu_allocation_param
 

@@ -34,7 +34,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskSummaryFromDataLoaderTask.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskSummaryFromDataLoaderTask.
@@ -58,27 +58,27 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
 
         :param input_ports:
             The value to assign to the input_ports property of this TaskSummaryFromDataLoaderTask.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this TaskSummaryFromDataLoaderTask.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this TaskSummaryFromDataLoaderTask.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this TaskSummaryFromDataLoaderTask.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this TaskSummaryFromDataLoaderTask.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param metadata:
             The value to assign to the metadata property of this TaskSummaryFromDataLoaderTask.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this TaskSummaryFromDataLoaderTask.
@@ -86,7 +86,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
 
         :param data_flow:
             The value to assign to the data_flow property of this TaskSummaryFromDataLoaderTask.
-        :type data_flow: DataFlow
+        :type data_flow: oci.data_integration.models.DataFlow
 
         """
         self.swagger_types = {
@@ -154,7 +154,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
         Gets the data_flow of this TaskSummaryFromDataLoaderTask.
 
         :return: The data_flow of this TaskSummaryFromDataLoaderTask.
-        :rtype: DataFlow
+        :rtype: oci.data_integration.models.DataFlow
         """
         return self._data_flow
 
@@ -164,7 +164,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
         Sets the data_flow of this TaskSummaryFromDataLoaderTask.
 
         :param data_flow: The data_flow of this TaskSummaryFromDataLoaderTask.
-        :type: DataFlow
+        :type: oci.data_integration.models.DataFlow
         """
         self._data_flow = data_flow
 

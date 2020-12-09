@@ -24,7 +24,7 @@ class UpdateDetectorRecipeDetectorRule(object):
 
         :param details:
             The value to assign to the details property of this UpdateDetectorRecipeDetectorRule.
-        :type details: UpdateDetectorRuleDetails
+        :type details: oci.cloud_guard.models.UpdateDetectorRuleDetails
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class UpdateDetectorRecipeDetectorRule(object):
         **[Required]** Gets the details of this UpdateDetectorRecipeDetectorRule.
 
         :return: The details of this UpdateDetectorRecipeDetectorRule.
-        :rtype: UpdateDetectorRuleDetails
+        :rtype: oci.cloud_guard.models.UpdateDetectorRuleDetails
         """
         return self._details
 
@@ -80,7 +80,7 @@ class UpdateDetectorRecipeDetectorRule(object):
         Sets the details of this UpdateDetectorRecipeDetectorRule.
 
         :param details: The details of this UpdateDetectorRecipeDetectorRule.
-        :type: UpdateDetectorRuleDetails
+        :type: oci.cloud_guard.models.UpdateDetectorRuleDetails
         """
         self._details = details
 

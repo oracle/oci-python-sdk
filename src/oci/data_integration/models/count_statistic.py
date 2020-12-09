@@ -20,7 +20,7 @@ class CountStatistic(object):
 
         :param object_type_count_list:
             The value to assign to the object_type_count_list property of this CountStatistic.
-        :type object_type_count_list: list[CountStatisticSummary]
+        :type object_type_count_list: list[oci.data_integration.models.CountStatisticSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class CountStatistic(object):
 
 
         :return: The object_type_count_list of this CountStatistic.
-        :rtype: list[CountStatisticSummary]
+        :rtype: list[oci.data_integration.models.CountStatisticSummary]
         """
         return self._object_type_count_list
 
@@ -53,7 +53,7 @@ class CountStatistic(object):
 
 
         :param object_type_count_list: The object_type_count_list of this CountStatistic.
-        :type: list[CountStatisticSummary]
+        :type: list[oci.data_integration.models.CountStatisticSummary]
         """
         self._object_type_count_list = object_type_count_list
 

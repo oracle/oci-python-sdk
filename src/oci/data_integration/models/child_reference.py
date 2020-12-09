@@ -78,7 +78,7 @@ class ChildReference(object):
 
         :param used_by:
             The value to assign to the used_by property of this ChildReference.
-        :type used_by: list[ReferenceUsedBy]
+        :type used_by: list[oci.data_integration.models.ReferenceUsedBy]
 
         """
         self.swagger_types = {
@@ -321,7 +321,7 @@ class ChildReference(object):
 
 
         :return: The used_by of this ChildReference.
-        :rtype: list[ReferenceUsedBy]
+        :rtype: list[oci.data_integration.models.ReferenceUsedBy]
         """
         return self._used_by
 
@@ -333,7 +333,7 @@ class ChildReference(object):
 
 
         :param used_by: The used_by of this ChildReference.
-        :type: list[ReferenceUsedBy]
+        :type: list[oci.data_integration.models.ReferenceUsedBy]
         """
         self._used_by = used_by
 

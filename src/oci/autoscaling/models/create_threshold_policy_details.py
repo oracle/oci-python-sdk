@@ -24,7 +24,7 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
 
         :param capacity:
             The value to assign to the capacity property of this CreateThresholdPolicyDetails.
-        :type capacity: Capacity
+        :type capacity: oci.autoscaling.models.Capacity
 
         :param display_name:
             The value to assign to the display_name property of this CreateThresholdPolicyDetails.
@@ -40,7 +40,7 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
 
         :param rules:
             The value to assign to the rules property of this CreateThresholdPolicyDetails.
-        :type rules: list[CreateConditionDetails]
+        :type rules: list[oci.autoscaling.models.CreateConditionDetails]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
         **[Required]** Gets the rules of this CreateThresholdPolicyDetails.
 
         :return: The rules of this CreateThresholdPolicyDetails.
-        :rtype: list[CreateConditionDetails]
+        :rtype: list[oci.autoscaling.models.CreateConditionDetails]
         """
         return self._rules
 
@@ -82,7 +82,7 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
         Sets the rules of this CreateThresholdPolicyDetails.
 
         :param rules: The rules of this CreateThresholdPolicyDetails.
-        :type: list[CreateConditionDetails]
+        :type: list[oci.autoscaling.models.CreateConditionDetails]
         """
         self._rules = rules
 

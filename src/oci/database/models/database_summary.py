@@ -125,7 +125,7 @@ class DatabaseSummary(object):
 
         :param db_backup_config:
             The value to assign to the db_backup_config property of this DatabaseSummary.
-        :type db_backup_config: DbBackupConfig
+        :type db_backup_config: oci.database.models.DbBackupConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DatabaseSummary.
@@ -137,7 +137,7 @@ class DatabaseSummary(object):
 
         :param connection_strings:
             The value to assign to the connection_strings property of this DatabaseSummary.
-        :type connection_strings: DatabaseConnectionStrings
+        :type connection_strings: oci.database.models.DatabaseConnectionStrings
 
         :param source_database_point_in_time_recovery_timestamp:
             The value to assign to the source_database_point_in_time_recovery_timestamp property of this DatabaseSummary.
@@ -610,7 +610,7 @@ class DatabaseSummary(object):
         Gets the db_backup_config of this DatabaseSummary.
 
         :return: The db_backup_config of this DatabaseSummary.
-        :rtype: DbBackupConfig
+        :rtype: oci.database.models.DbBackupConfig
         """
         return self._db_backup_config
 
@@ -620,7 +620,7 @@ class DatabaseSummary(object):
         Sets the db_backup_config of this DatabaseSummary.
 
         :param db_backup_config: The db_backup_config of this DatabaseSummary.
-        :type: DbBackupConfig
+        :type: oci.database.models.DbBackupConfig
         """
         self._db_backup_config = db_backup_config
 
@@ -696,7 +696,7 @@ class DatabaseSummary(object):
 
 
         :return: The connection_strings of this DatabaseSummary.
-        :rtype: DatabaseConnectionStrings
+        :rtype: oci.database.models.DatabaseConnectionStrings
         """
         return self._connection_strings
 
@@ -708,7 +708,7 @@ class DatabaseSummary(object):
 
 
         :param connection_strings: The connection_strings of this DatabaseSummary.
-        :type: DatabaseConnectionStrings
+        :type: oci.database.models.DatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
 

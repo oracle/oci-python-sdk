@@ -28,7 +28,7 @@ class ParsedContent(object):
 
         :param parsed_field_values:
             The value to assign to the parsed_field_values property of this ParsedContent.
-        :type parsed_field_values: list[ParsedField]
+        :type parsed_field_values: list[oci.log_analytics.models.ParsedField]
 
         :param log_content:
             The value to assign to the log_content property of this ParsedContent.
@@ -124,7 +124,7 @@ class ParsedContent(object):
 
 
         :return: The parsed_field_values of this ParsedContent.
-        :rtype: list[ParsedField]
+        :rtype: list[oci.log_analytics.models.ParsedField]
         """
         return self._parsed_field_values
 
@@ -136,7 +136,7 @@ class ParsedContent(object):
 
 
         :param parsed_field_values: The parsed_field_values of this ParsedContent.
-        :type: list[ParsedField]
+        :type: list[oci.log_analytics.models.ParsedField]
         """
         self._parsed_field_values = parsed_field_values
 

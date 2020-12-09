@@ -31,7 +31,7 @@ class OceInstanceClientCompositeOperations(object):
         :param str oce_instance_id: (required)
             unique OceInstance identifier
 
-        :param ChangeOceInstanceCompartmentDetails change_oce_instance_compartment_details: (required)
+        :param oci.oce.models.ChangeOceInstanceCompartmentDetails change_oce_instance_compartment_details: (required)
             The information about compartment details to be moved.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class OceInstanceClientCompositeOperations(object):
         Calls :py:func:`~oci.oce.OceInstanceClient.create_oce_instance` and waits for the :py:class:`~oci.oce.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateOceInstanceDetails create_oce_instance_details: (required)
+        :param oci.oce.models.CreateOceInstanceDetails create_oce_instance_details: (required)
             Details for the new OceInstance.
 
         :param list[str] wait_for_states:
@@ -156,7 +156,7 @@ class OceInstanceClientCompositeOperations(object):
         :param str oce_instance_id: (required)
             unique OceInstance identifier
 
-        :param UpdateOceInstanceDetails update_oce_instance_details: (required)
+        :param oci.oce.models.UpdateOceInstanceDetails update_oce_instance_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

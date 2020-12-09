@@ -44,11 +44,11 @@ class CreateAutoScalingConfigurationDetails(object):
 
         :param policies:
             The value to assign to the policies property of this CreateAutoScalingConfigurationDetails.
-        :type policies: list[CreateAutoScalingPolicyDetails]
+        :type policies: list[oci.autoscaling.models.CreateAutoScalingPolicyDetails]
 
         :param resource:
             The value to assign to the resource property of this CreateAutoScalingConfigurationDetails.
-        :type resource: Resource
+        :type resource: oci.autoscaling.models.Resource
 
         """
         self.swagger_types = {
@@ -258,7 +258,7 @@ class CreateAutoScalingConfigurationDetails(object):
         **[Required]** Gets the policies of this CreateAutoScalingConfigurationDetails.
 
         :return: The policies of this CreateAutoScalingConfigurationDetails.
-        :rtype: list[CreateAutoScalingPolicyDetails]
+        :rtype: list[oci.autoscaling.models.CreateAutoScalingPolicyDetails]
         """
         return self._policies
 
@@ -268,7 +268,7 @@ class CreateAutoScalingConfigurationDetails(object):
         Sets the policies of this CreateAutoScalingConfigurationDetails.
 
         :param policies: The policies of this CreateAutoScalingConfigurationDetails.
-        :type: list[CreateAutoScalingPolicyDetails]
+        :type: list[oci.autoscaling.models.CreateAutoScalingPolicyDetails]
         """
         self._policies = policies
 
@@ -278,7 +278,7 @@ class CreateAutoScalingConfigurationDetails(object):
         **[Required]** Gets the resource of this CreateAutoScalingConfigurationDetails.
 
         :return: The resource of this CreateAutoScalingConfigurationDetails.
-        :rtype: Resource
+        :rtype: oci.autoscaling.models.Resource
         """
         return self._resource
 
@@ -288,7 +288,7 @@ class CreateAutoScalingConfigurationDetails(object):
         Sets the resource of this CreateAutoScalingConfigurationDetails.
 
         :param resource: The resource of this CreateAutoScalingConfigurationDetails.
-        :type: Resource
+        :type: oci.autoscaling.models.Resource
         """
         self._resource = resource
 

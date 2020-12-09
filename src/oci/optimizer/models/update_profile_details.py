@@ -34,7 +34,7 @@ class UpdateProfileDetails(object):
 
         :param levels_configuration:
             The value to assign to the levels_configuration property of this UpdateProfileDetails.
-        :type levels_configuration: LevelsConfiguration
+        :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
         """
         self.swagger_types = {
@@ -154,7 +154,7 @@ class UpdateProfileDetails(object):
         Gets the levels_configuration of this UpdateProfileDetails.
 
         :return: The levels_configuration of this UpdateProfileDetails.
-        :rtype: LevelsConfiguration
+        :rtype: oci.optimizer.models.LevelsConfiguration
         """
         return self._levels_configuration
 
@@ -164,7 +164,7 @@ class UpdateProfileDetails(object):
         Sets the levels_configuration of this UpdateProfileDetails.
 
         :param levels_configuration: The levels_configuration of this UpdateProfileDetails.
-        :type: LevelsConfiguration
+        :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
 

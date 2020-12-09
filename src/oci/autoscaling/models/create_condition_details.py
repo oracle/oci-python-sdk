@@ -20,7 +20,7 @@ class CreateConditionDetails(object):
 
         :param action:
             The value to assign to the action property of this CreateConditionDetails.
-        :type action: Action
+        :type action: oci.autoscaling.models.Action
 
         :param display_name:
             The value to assign to the display_name property of this CreateConditionDetails.
@@ -28,7 +28,7 @@ class CreateConditionDetails(object):
 
         :param metric:
             The value to assign to the metric property of this CreateConditionDetails.
-        :type metric: Metric
+        :type metric: oci.autoscaling.models.Metric
 
         """
         self.swagger_types = {
@@ -53,7 +53,7 @@ class CreateConditionDetails(object):
         **[Required]** Gets the action of this CreateConditionDetails.
 
         :return: The action of this CreateConditionDetails.
-        :rtype: Action
+        :rtype: oci.autoscaling.models.Action
         """
         return self._action
 
@@ -63,7 +63,7 @@ class CreateConditionDetails(object):
         Sets the action of this CreateConditionDetails.
 
         :param action: The action of this CreateConditionDetails.
-        :type: Action
+        :type: oci.autoscaling.models.Action
         """
         self._action = action
 
@@ -97,7 +97,7 @@ class CreateConditionDetails(object):
         **[Required]** Gets the metric of this CreateConditionDetails.
 
         :return: The metric of this CreateConditionDetails.
-        :rtype: Metric
+        :rtype: oci.autoscaling.models.Metric
         """
         return self._metric
 
@@ -107,7 +107,7 @@ class CreateConditionDetails(object):
         Sets the metric of this CreateConditionDetails.
 
         :param metric: The metric of this CreateConditionDetails.
-        :type: Metric
+        :type: oci.autoscaling.models.Metric
         """
         self._metric = metric
 

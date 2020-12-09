@@ -20,7 +20,7 @@ class LogAnalyticsMetaSourceTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsMetaSourceTypeCollection.
-        :type items: list[LogAnalyticsMetaSourceType]
+        :type items: list[oci.log_analytics.models.LogAnalyticsMetaSourceType]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsMetaSourceTypeCollection(object):
 
 
         :return: The items of this LogAnalyticsMetaSourceTypeCollection.
-        :rtype: list[LogAnalyticsMetaSourceType]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsMetaSourceType]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsMetaSourceTypeCollection(object):
 
 
         :param items: The items of this LogAnalyticsMetaSourceTypeCollection.
-        :type: list[LogAnalyticsMetaSourceType]
+        :type: list[oci.log_analytics.models.LogAnalyticsMetaSourceType]
         """
         self._items = items
 

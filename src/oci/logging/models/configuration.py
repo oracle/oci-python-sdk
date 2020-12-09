@@ -24,11 +24,11 @@ class Configuration(object):
 
         :param source:
             The value to assign to the source property of this Configuration.
-        :type source: Source
+        :type source: oci.logging.models.Source
 
         :param archiving:
             The value to assign to the archiving property of this Configuration.
-        :type archiving: Archiving
+        :type archiving: oci.logging.models.Archiving
 
         """
         self.swagger_types = {
@@ -77,7 +77,7 @@ class Configuration(object):
         **[Required]** Gets the source of this Configuration.
 
         :return: The source of this Configuration.
-        :rtype: Source
+        :rtype: oci.logging.models.Source
         """
         return self._source
 
@@ -87,7 +87,7 @@ class Configuration(object):
         Sets the source of this Configuration.
 
         :param source: The source of this Configuration.
-        :type: Source
+        :type: oci.logging.models.Source
         """
         self._source = source
 
@@ -97,7 +97,7 @@ class Configuration(object):
         Gets the archiving of this Configuration.
 
         :return: The archiving of this Configuration.
-        :rtype: Archiving
+        :rtype: oci.logging.models.Archiving
         """
         return self._archiving
 
@@ -107,7 +107,7 @@ class Configuration(object):
         Sets the archiving of this Configuration.
 
         :param archiving: The archiving of this Configuration.
-        :type: Archiving
+        :type: oci.logging.models.Archiving
         """
         self._archiving = archiving
 

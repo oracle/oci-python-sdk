@@ -62,7 +62,7 @@ class UpdateDataAssetFromOracle(UpdateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateDataAssetFromOracle.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param host:
             The value to assign to the host property of this UpdateDataAssetFromOracle.
@@ -90,7 +90,7 @@ class UpdateDataAssetFromOracle(UpdateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this UpdateDataAssetFromOracle.
-        :type default_connection: UpdateConnectionFromOracle
+        :type default_connection: oci.data_integration.models.UpdateConnectionFromOracle
 
         """
         self.swagger_types = {
@@ -305,7 +305,7 @@ class UpdateDataAssetFromOracle(UpdateDataAssetDetails):
         Gets the default_connection of this UpdateDataAssetFromOracle.
 
         :return: The default_connection of this UpdateDataAssetFromOracle.
-        :rtype: UpdateConnectionFromOracle
+        :rtype: oci.data_integration.models.UpdateConnectionFromOracle
         """
         return self._default_connection
 
@@ -315,7 +315,7 @@ class UpdateDataAssetFromOracle(UpdateDataAssetDetails):
         Sets the default_connection of this UpdateDataAssetFromOracle.
 
         :param default_connection: The default_connection of this UpdateDataAssetFromOracle.
-        :type: UpdateConnectionFromOracle
+        :type: oci.data_integration.models.UpdateConnectionFromOracle
         """
         self._default_connection = default_connection
 

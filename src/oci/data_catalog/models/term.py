@@ -138,11 +138,11 @@ class Term(object):
 
         :param associated_objects:
             The value to assign to the associated_objects property of this Term.
-        :type associated_objects: list[TermAssociatedObject]
+        :type associated_objects: list[oci.data_catalog.models.TermAssociatedObject]
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this Term.
-        :type custom_property_members: list[CustomPropertyGetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
 
         """
         self.swagger_types = {
@@ -622,7 +622,7 @@ class Term(object):
 
 
         :return: The associated_objects of this Term.
-        :rtype: list[TermAssociatedObject]
+        :rtype: list[oci.data_catalog.models.TermAssociatedObject]
         """
         return self._associated_objects
 
@@ -634,7 +634,7 @@ class Term(object):
 
 
         :param associated_objects: The associated_objects of this Term.
-        :type: list[TermAssociatedObject]
+        :type: list[oci.data_catalog.models.TermAssociatedObject]
         """
         self._associated_objects = associated_objects
 
@@ -646,7 +646,7 @@ class Term(object):
 
 
         :return: The custom_property_members of this Term.
-        :rtype: list[CustomPropertyGetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         return self._custom_property_members
 
@@ -658,7 +658,7 @@ class Term(object):
 
 
         :param custom_property_members: The custom_property_members of this Term.
-        :type: list[CustomPropertyGetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         self._custom_property_members = custom_property_members
 

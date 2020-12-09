@@ -29,7 +29,7 @@ class LaunchInstanceDetails(object):
 
         :param create_vnic_details:
             The value to assign to the create_vnic_details property of this LaunchInstanceDetails.
-        :type create_vnic_details: CreateVnicDetails
+        :type create_vnic_details: oci.core.models.CreateVnicDetails
 
         :param dedicated_vm_host_id:
             The value to assign to the dedicated_vm_host_id property of this LaunchInstanceDetails.
@@ -69,15 +69,15 @@ class LaunchInstanceDetails(object):
 
         :param launch_options:
             The value to assign to the launch_options property of this LaunchInstanceDetails.
-        :type launch_options: LaunchOptions
+        :type launch_options: oci.core.models.LaunchOptions
 
         :param instance_options:
             The value to assign to the instance_options property of this LaunchInstanceDetails.
-        :type instance_options: InstanceOptions
+        :type instance_options: oci.core.models.InstanceOptions
 
         :param availability_config:
             The value to assign to the availability_config property of this LaunchInstanceDetails.
-        :type availability_config: LaunchInstanceAvailabilityConfigDetails
+        :type availability_config: oci.core.models.LaunchInstanceAvailabilityConfigDetails
 
         :param metadata:
             The value to assign to the metadata property of this LaunchInstanceDetails.
@@ -85,7 +85,7 @@ class LaunchInstanceDetails(object):
 
         :param agent_config:
             The value to assign to the agent_config property of this LaunchInstanceDetails.
-        :type agent_config: LaunchInstanceAgentConfigDetails
+        :type agent_config: oci.core.models.LaunchInstanceAgentConfigDetails
 
         :param shape:
             The value to assign to the shape property of this LaunchInstanceDetails.
@@ -93,11 +93,11 @@ class LaunchInstanceDetails(object):
 
         :param shape_config:
             The value to assign to the shape_config property of this LaunchInstanceDetails.
-        :type shape_config: LaunchInstanceShapeConfigDetails
+        :type shape_config: oci.core.models.LaunchInstanceShapeConfigDetails
 
         :param source_details:
             The value to assign to the source_details property of this LaunchInstanceDetails.
-        :type source_details: InstanceSourceDetails
+        :type source_details: oci.core.models.InstanceSourceDetails
 
         :param subnet_id:
             The value to assign to the subnet_id property of this LaunchInstanceDetails.
@@ -242,7 +242,7 @@ class LaunchInstanceDetails(object):
 
 
         :return: The create_vnic_details of this LaunchInstanceDetails.
-        :rtype: CreateVnicDetails
+        :rtype: oci.core.models.CreateVnicDetails
         """
         return self._create_vnic_details
 
@@ -255,7 +255,7 @@ class LaunchInstanceDetails(object):
 
 
         :param create_vnic_details: The create_vnic_details of this LaunchInstanceDetails.
-        :type: CreateVnicDetails
+        :type: oci.core.models.CreateVnicDetails
         """
         self._create_vnic_details = create_vnic_details
 
@@ -606,7 +606,7 @@ class LaunchInstanceDetails(object):
 
 
         :return: The launch_options of this LaunchInstanceDetails.
-        :rtype: LaunchOptions
+        :rtype: oci.core.models.LaunchOptions
         """
         return self._launch_options
 
@@ -619,7 +619,7 @@ class LaunchInstanceDetails(object):
 
 
         :param launch_options: The launch_options of this LaunchInstanceDetails.
-        :type: LaunchOptions
+        :type: oci.core.models.LaunchOptions
         """
         self._launch_options = launch_options
 
@@ -629,7 +629,7 @@ class LaunchInstanceDetails(object):
         Gets the instance_options of this LaunchInstanceDetails.
 
         :return: The instance_options of this LaunchInstanceDetails.
-        :rtype: InstanceOptions
+        :rtype: oci.core.models.InstanceOptions
         """
         return self._instance_options
 
@@ -639,7 +639,7 @@ class LaunchInstanceDetails(object):
         Sets the instance_options of this LaunchInstanceDetails.
 
         :param instance_options: The instance_options of this LaunchInstanceDetails.
-        :type: InstanceOptions
+        :type: oci.core.models.InstanceOptions
         """
         self._instance_options = instance_options
 
@@ -651,7 +651,7 @@ class LaunchInstanceDetails(object):
 
 
         :return: The availability_config of this LaunchInstanceDetails.
-        :rtype: LaunchInstanceAvailabilityConfigDetails
+        :rtype: oci.core.models.LaunchInstanceAvailabilityConfigDetails
         """
         return self._availability_config
 
@@ -663,7 +663,7 @@ class LaunchInstanceDetails(object):
 
 
         :param availability_config: The availability_config of this LaunchInstanceDetails.
-        :type: LaunchInstanceAvailabilityConfigDetails
+        :type: oci.core.models.LaunchInstanceAvailabilityConfigDetails
         """
         self._availability_config = availability_config
 
@@ -797,7 +797,7 @@ class LaunchInstanceDetails(object):
         Gets the agent_config of this LaunchInstanceDetails.
 
         :return: The agent_config of this LaunchInstanceDetails.
-        :rtype: LaunchInstanceAgentConfigDetails
+        :rtype: oci.core.models.LaunchInstanceAgentConfigDetails
         """
         return self._agent_config
 
@@ -807,7 +807,7 @@ class LaunchInstanceDetails(object):
         Sets the agent_config of this LaunchInstanceDetails.
 
         :param agent_config: The agent_config of this LaunchInstanceDetails.
-        :type: LaunchInstanceAgentConfigDetails
+        :type: oci.core.models.LaunchInstanceAgentConfigDetails
         """
         self._agent_config = agent_config
 
@@ -847,7 +847,7 @@ class LaunchInstanceDetails(object):
         Gets the shape_config of this LaunchInstanceDetails.
 
         :return: The shape_config of this LaunchInstanceDetails.
-        :rtype: LaunchInstanceShapeConfigDetails
+        :rtype: oci.core.models.LaunchInstanceShapeConfigDetails
         """
         return self._shape_config
 
@@ -857,7 +857,7 @@ class LaunchInstanceDetails(object):
         Sets the shape_config of this LaunchInstanceDetails.
 
         :param shape_config: The shape_config of this LaunchInstanceDetails.
-        :type: LaunchInstanceShapeConfigDetails
+        :type: oci.core.models.LaunchInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
 
@@ -870,7 +870,7 @@ class LaunchInstanceDetails(object):
 
 
         :return: The source_details of this LaunchInstanceDetails.
-        :rtype: InstanceSourceDetails
+        :rtype: oci.core.models.InstanceSourceDetails
         """
         return self._source_details
 
@@ -883,7 +883,7 @@ class LaunchInstanceDetails(object):
 
 
         :param source_details: The source_details of this LaunchInstanceDetails.
-        :type: InstanceSourceDetails
+        :type: oci.core.models.InstanceSourceDetails
         """
         self._source_details = source_details
 

@@ -28,7 +28,7 @@ class UpdateNodePoolDetails(object):
 
         :param initial_node_labels:
             The value to assign to the initial_node_labels property of this UpdateNodePoolDetails.
-        :type initial_node_labels: list[KeyValue]
+        :type initial_node_labels: list[oci.container_engine.models.KeyValue]
 
         :param quantity_per_subnet:
             The value to assign to the quantity_per_subnet property of this UpdateNodePoolDetails.
@@ -40,7 +40,7 @@ class UpdateNodePoolDetails(object):
 
         :param node_config_details:
             The value to assign to the node_config_details property of this UpdateNodePoolDetails.
-        :type node_config_details: UpdateNodePoolNodeConfigDetails
+        :type node_config_details: oci.container_engine.models.UpdateNodePoolNodeConfigDetails
 
         :param node_metadata:
             The value to assign to the node_metadata property of this UpdateNodePoolDetails.
@@ -48,7 +48,7 @@ class UpdateNodePoolDetails(object):
 
         :param node_source_details:
             The value to assign to the node_source_details property of this UpdateNodePoolDetails.
-        :type node_source_details: NodeSourceDetails
+        :type node_source_details: oci.container_engine.models.NodeSourceDetails
 
         :param ssh_public_key:
             The value to assign to the ssh_public_key property of this UpdateNodePoolDetails.
@@ -60,7 +60,7 @@ class UpdateNodePoolDetails(object):
 
         :param node_shape_config:
             The value to assign to the node_shape_config property of this UpdateNodePoolDetails.
-        :type node_shape_config: UpdateNodeShapeConfigDetails
+        :type node_shape_config: oci.container_engine.models.UpdateNodeShapeConfigDetails
 
         """
         self.swagger_types = {
@@ -159,7 +159,7 @@ class UpdateNodePoolDetails(object):
 
 
         :return: The initial_node_labels of this UpdateNodePoolDetails.
-        :rtype: list[KeyValue]
+        :rtype: list[oci.container_engine.models.KeyValue]
         """
         return self._initial_node_labels
 
@@ -171,7 +171,7 @@ class UpdateNodePoolDetails(object):
 
 
         :param initial_node_labels: The initial_node_labels of this UpdateNodePoolDetails.
-        :type: list[KeyValue]
+        :type: list[oci.container_engine.models.KeyValue]
         """
         self._initial_node_labels = initial_node_labels
 
@@ -246,7 +246,7 @@ class UpdateNodePoolDetails(object):
 
 
         :return: The node_config_details of this UpdateNodePoolDetails.
-        :rtype: UpdateNodePoolNodeConfigDetails
+        :rtype: oci.container_engine.models.UpdateNodePoolNodeConfigDetails
         """
         return self._node_config_details
 
@@ -261,7 +261,7 @@ class UpdateNodePoolDetails(object):
 
 
         :param node_config_details: The node_config_details of this UpdateNodePoolDetails.
-        :type: UpdateNodePoolNodeConfigDetails
+        :type: oci.container_engine.models.UpdateNodePoolNodeConfigDetails
         """
         self._node_config_details = node_config_details
 
@@ -297,7 +297,7 @@ class UpdateNodePoolDetails(object):
 
 
         :return: The node_source_details of this UpdateNodePoolDetails.
-        :rtype: NodeSourceDetails
+        :rtype: oci.container_engine.models.NodeSourceDetails
         """
         return self._node_source_details
 
@@ -309,7 +309,7 @@ class UpdateNodePoolDetails(object):
 
 
         :param node_source_details: The node_source_details of this UpdateNodePoolDetails.
-        :type: NodeSourceDetails
+        :type: oci.container_engine.models.NodeSourceDetails
         """
         self._node_source_details = node_source_details
 
@@ -369,7 +369,7 @@ class UpdateNodePoolDetails(object):
 
 
         :return: The node_shape_config of this UpdateNodePoolDetails.
-        :rtype: UpdateNodeShapeConfigDetails
+        :rtype: oci.container_engine.models.UpdateNodeShapeConfigDetails
         """
         return self._node_shape_config
 
@@ -381,7 +381,7 @@ class UpdateNodePoolDetails(object):
 
 
         :param node_shape_config: The node_shape_config of this UpdateNodePoolDetails.
-        :type: UpdateNodeShapeConfigDetails
+        :type: oci.container_engine.models.UpdateNodeShapeConfigDetails
         """
         self._node_shape_config = node_shape_config
 

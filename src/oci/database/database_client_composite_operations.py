@@ -37,7 +37,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
+        :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
             The activation details for the Exadata infrastructure.
 
         :param list[str] work_request_states: (optional)
@@ -77,7 +77,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
+        :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
             The activation details for the Exadata infrastructure.
 
         :param list[str] wait_for_states:
@@ -120,7 +120,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
+        :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
             Request details for manually refreshing an Autonomous Database refreshable clone.
 
         :param list[str] work_request_states: (optional)
@@ -160,7 +160,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
+        :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
             Request details for manually refreshing an Autonomous Database refreshable clone.
 
         :param list[str] wait_for_states:
@@ -198,7 +198,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_autonomous_container_database_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move Autonomous Container Database to a different compartment
 
         :param str autonomous_container_database_id: (required)
@@ -238,7 +238,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_autonomous_database_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move Autonomous Database to a different compartment
 
         :param str autonomous_database_id: (required)
@@ -278,7 +278,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_autonomous_exadata_infrastructure_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move an Autonomous Exadata Infrastructure resource to a different compartment.
 
         :param str autonomous_exadata_infrastructure_id: (required)
@@ -318,7 +318,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_autonomous_vm_cluster_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeAutonomousVmClusterCompartmentDetails change_autonomous_vm_cluster_compartment_details: (required)
+        :param oci.database.models.ChangeAutonomousVmClusterCompartmentDetails change_autonomous_vm_cluster_compartment_details: (required)
             Request to move Autonomous VM cluster to a different compartment
 
         :param str autonomous_vm_cluster_id: (required)
@@ -358,7 +358,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_backup_destination_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move backup destination to a different compartment.
 
         :param str backup_destination_id: (required)
@@ -398,7 +398,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_cloud_exadata_infrastructure_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
+        :param oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
             Request to move cloud Exadata infrastructure resource to a different compartment.
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -438,7 +438,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_cloud_vm_cluster_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCloudVmClusterCompartmentDetails change_cloud_vm_cluster_compartment_details: (required)
+        :param oci.database.models.ChangeCloudVmClusterCompartmentDetails change_cloud_vm_cluster_compartment_details: (required)
             Request to move cloud VM cluster to a different compartment
 
         :param str cloud_vm_cluster_id: (required)
@@ -478,7 +478,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_database_software_image_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move Database Software Image to a different compartment
 
         :param str database_software_image_id: (required)
@@ -518,7 +518,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_db_system_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move the DB system to a different compartment.
 
         :param str db_system_id: (required)
@@ -558,7 +558,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_exadata_infrastructure_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeExadataInfrastructureCompartmentDetails change_exadata_infrastructure_compartment_details: (required)
+        :param oci.database.models.ChangeExadataInfrastructureCompartmentDetails change_exadata_infrastructure_compartment_details: (required)
             Request to move Exadata infrastructure to a different compartment
 
         :param str exadata_infrastructure_id: (required)
@@ -598,7 +598,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_key_store_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeKeyStoreCompartmentDetails change_key_store_compartment_details: (required)
+        :param oci.database.models.ChangeKeyStoreCompartmentDetails change_key_store_compartment_details: (required)
             Request to move key store to a different compartment
 
         :param str key_store_id: (required)
@@ -638,7 +638,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.change_vm_cluster_compartment` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param ChangeVmClusterCompartmentDetails change_vm_cluster_compartment_details: (required)
+        :param oci.database.models.ChangeVmClusterCompartmentDetails change_vm_cluster_compartment_details: (required)
             Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
 
         :param str vm_cluster_id: (required)
@@ -683,7 +683,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
+        :param oci.database.models.CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
             Updates the status of the backup resource.
 
         :param list[str] work_request_states: (optional)
@@ -718,7 +718,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_container_database` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
+        :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
             Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
 
         :param list[str] work_request_states: (optional)
@@ -753,7 +753,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_container_database` and waits for the :py:class:`~oci.database.models.AutonomousContainerDatabase` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
+        :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
             Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
 
         :param list[str] wait_for_states:
@@ -791,7 +791,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_data_warehouse` and waits for the :py:class:`~oci.database.models.AutonomousDataWarehouse` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousDataWarehouseDetails create_autonomous_data_warehouse_details: (required)
+        :param oci.database.models.CreateAutonomousDataWarehouseDetails create_autonomous_data_warehouse_details: (required)
             Request to create a new Autonomous Data Warehouse.
 
         :param list[str] wait_for_states:
@@ -829,7 +829,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_data_warehouse_backup` and waits for the :py:class:`~oci.database.models.AutonomousDataWarehouseBackup` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousDataWarehouseBackupDetails create_autonomous_data_warehouse_backup_details: (required)
+        :param oci.database.models.CreateAutonomousDataWarehouseBackupDetails create_autonomous_data_warehouse_backup_details: (required)
             Request to create a new Autonomous Data Warehouse backup.
 
         :param list[str] wait_for_states:
@@ -867,7 +867,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_database` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
+        :param oci.database.models.CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
             Request to create a new Autonomous Database.
 
         :param list[str] work_request_states: (optional)
@@ -902,7 +902,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_database` and waits for the :py:class:`~oci.database.models.AutonomousDatabase` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
+        :param oci.database.models.CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
             Request to create a new Autonomous Database.
 
         :param list[str] wait_for_states:
@@ -940,7 +940,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_database_backup` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
+        :param oci.database.models.CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
             Request to create a new Autonomous Database backup.
 
         :param list[str] work_request_states: (optional)
@@ -975,7 +975,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_database_backup` and waits for the :py:class:`~oci.database.models.AutonomousDatabaseBackup` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
+        :param oci.database.models.CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
             Request to create a new Autonomous Database backup.
 
         :param list[str] wait_for_states:
@@ -1013,7 +1013,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateAutonomousVmClusterDetails create_autonomous_vm_cluster_details: (required)
+        :param oci.database.models.CreateAutonomousVmClusterDetails create_autonomous_vm_cluster_details: (required)
             Request to create an Autonomous VM cluster.
 
         :param list[str] work_request_states: (optional)
@@ -1048,7 +1048,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_vm_cluster` and waits for the :py:class:`~oci.database.models.AutonomousVmCluster` acted upon
         to enter the given state(s).
 
-        :param CreateAutonomousVmClusterDetails create_autonomous_vm_cluster_details: (required)
+        :param oci.database.models.CreateAutonomousVmClusterDetails create_autonomous_vm_cluster_details: (required)
             Request to create an Autonomous VM cluster.
 
         :param list[str] wait_for_states:
@@ -1086,7 +1086,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_backup` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateBackupDetails create_backup_details: (required)
+        :param oci.database.models.CreateBackupDetails create_backup_details: (required)
             Request to create a new database backup.
 
         :param list[str] work_request_states: (optional)
@@ -1121,7 +1121,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_backup` and waits for the :py:class:`~oci.database.models.Backup` acted upon
         to enter the given state(s).
 
-        :param CreateBackupDetails create_backup_details: (required)
+        :param oci.database.models.CreateBackupDetails create_backup_details: (required)
             Request to create a new database backup.
 
         :param list[str] wait_for_states:
@@ -1159,7 +1159,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_backup_destination` and waits for the :py:class:`~oci.database.models.BackupDestination` acted upon
         to enter the given state(s).
 
-        :param CreateBackupDestinationDetails create_backup_destination_details: (required)
+        :param oci.database.models.CreateBackupDestinationDetails create_backup_destination_details: (required)
             Request to create a new backup destination.
 
         :param list[str] wait_for_states:
@@ -1197,7 +1197,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_cloud_exadata_infrastructure` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
+        :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
             Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
 
             __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
@@ -1234,7 +1234,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_cloud_exadata_infrastructure` and waits for the :py:class:`~oci.database.models.CloudExadataInfrastructure` acted upon
         to enter the given state(s).
 
-        :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
+        :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
             Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
 
             __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
@@ -1274,7 +1274,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_cloud_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
+        :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
             __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
@@ -1311,7 +1311,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_cloud_vm_cluster` and waits for the :py:class:`~oci.database.models.CloudVmCluster` acted upon
         to enter the given state(s).
 
-        :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
+        :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
             __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
@@ -1351,7 +1351,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_console_connection` and waits for the :py:class:`~oci.database.models.ConsoleConnection` acted upon
         to enter the given state(s).
 
-        :param CreateConsoleConnectionDetails create_console_connection_details: (required)
+        :param oci.database.models.CreateConsoleConnectionDetails create_console_connection_details: (required)
             Request object for creating an CreateConsoleConnection
 
         :param str db_node_id: (required)
@@ -1399,7 +1399,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
+        :param oci.database.models.CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
 
         :param list[str] work_request_states: (optional)
@@ -1439,7 +1439,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
+        :param oci.database.models.CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
 
         :param list[str] wait_for_states:
@@ -1477,7 +1477,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_database` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateDatabaseBase create_new_database_details: (required)
+        :param oci.database.models.CreateDatabaseBase create_new_database_details: (required)
             Request to create a new database.
 
         :param list[str] work_request_states: (optional)
@@ -1512,7 +1512,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_database` and waits for the :py:class:`~oci.database.models.Database` acted upon
         to enter the given state(s).
 
-        :param CreateDatabaseBase create_new_database_details: (required)
+        :param oci.database.models.CreateDatabaseBase create_new_database_details: (required)
             Request to create a new database.
 
         :param list[str] wait_for_states:
@@ -1550,7 +1550,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_database_software_image` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateDatabaseSoftwareImageDetails create_database_software_image_details: (required)
+        :param oci.database.models.CreateDatabaseSoftwareImageDetails create_database_software_image_details: (required)
             Request to create database software image.
 
         :param list[str] work_request_states: (optional)
@@ -1585,7 +1585,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_database_software_image` and waits for the :py:class:`~oci.database.models.DatabaseSoftwareImage` acted upon
         to enter the given state(s).
 
-        :param CreateDatabaseSoftwareImageDetails create_database_software_image_details: (required)
+        :param oci.database.models.CreateDatabaseSoftwareImageDetails create_database_software_image_details: (required)
             Request to create database software image.
 
         :param list[str] wait_for_states:
@@ -1623,7 +1623,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_db_home` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
+        :param oci.database.models.CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
             Request to create a new Database Home.
 
         :param list[str] work_request_states: (optional)
@@ -1658,7 +1658,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_db_home` and waits for the :py:class:`~oci.database.models.DbHome` acted upon
         to enter the given state(s).
 
-        :param CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
+        :param oci.database.models.CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
             Request to create a new Database Home.
 
         :param list[str] wait_for_states:
@@ -1696,7 +1696,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_exadata_infrastructure` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
+        :param oci.database.models.CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
             Request to create Exadata Cloud@Customer infrastructure.
 
         :param list[str] work_request_states: (optional)
@@ -1731,7 +1731,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_exadata_infrastructure` and waits for the :py:class:`~oci.database.models.ExadataInfrastructure` acted upon
         to enter the given state(s).
 
-        :param CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
+        :param oci.database.models.CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
             Request to create Exadata Cloud@Customer infrastructure.
 
         :param list[str] wait_for_states:
@@ -1769,7 +1769,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_external_backup_job` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateExternalBackupJobDetails create_external_backup_job_details: (required)
+        :param oci.database.models.CreateExternalBackupJobDetails create_external_backup_job_details: (required)
             Request to create a cloud backup resource for a database running outside the cloud.
 
         :param list[str] work_request_states: (optional)
@@ -1804,7 +1804,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_key_store` and waits for the :py:class:`~oci.database.models.KeyStore` acted upon
         to enter the given state(s).
 
-        :param CreateKeyStoreDetails create_key_store_details: (required)
+        :param oci.database.models.CreateKeyStoreDetails create_key_store_details: (required)
             Request to create a new key store.
 
         :param list[str] wait_for_states:
@@ -1842,7 +1842,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateVmClusterDetails create_vm_cluster_details: (required)
+        :param oci.database.models.CreateVmClusterDetails create_vm_cluster_details: (required)
             Request to create a VM cluster. Applies to Exadata Cloud@Customer instances only.
             See :func:`create_cloud_vm_cluster_details` for details on creating a cloud VM cluster in an Exadata Cloud Service instance.
 
@@ -1878,7 +1878,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_vm_cluster` and waits for the :py:class:`~oci.database.models.VmCluster` acted upon
         to enter the given state(s).
 
-        :param CreateVmClusterDetails create_vm_cluster_details: (required)
+        :param oci.database.models.CreateVmClusterDetails create_vm_cluster_details: (required)
             Request to create a VM cluster. Applies to Exadata Cloud@Customer instances only.
             See :func:`create_cloud_vm_cluster_details` for details on creating a cloud VM cluster in an Exadata Cloud Service instance.
 
@@ -1922,7 +1922,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param VmClusterNetworkDetails vm_cluster_network_details: (required)
+        :param oci.database.models.VmClusterNetworkDetails vm_cluster_network_details: (required)
             Request to create the Cloud@Customer VM cluster network.
 
         :param list[str] work_request_states: (optional)
@@ -1962,7 +1962,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param VmClusterNetworkDetails vm_cluster_network_details: (required)
+        :param oci.database.models.VmClusterNetworkDetails vm_cluster_network_details: (required)
             Request to create the Cloud@Customer VM cluster network.
 
         :param list[str] wait_for_states:
@@ -2931,7 +2931,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
+        :param oci.database.models.FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
 
         :param list[str] work_request_states: (optional)
@@ -2976,7 +2976,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
+        :param oci.database.models.FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
 
         :param list[str] wait_for_states:
@@ -3014,7 +3014,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.launch_autonomous_exadata_infrastructure` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
+        :param oci.database.models.LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
             Request to create an Autonomous Exadata Infrastructure resource.
 
         :param list[str] work_request_states: (optional)
@@ -3049,7 +3049,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.launch_autonomous_exadata_infrastructure` and waits for the :py:class:`~oci.database.models.AutonomousExadataInfrastructure` acted upon
         to enter the given state(s).
 
-        :param LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
+        :param oci.database.models.LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
             Request to create an Autonomous Exadata Infrastructure resource.
 
         :param list[str] wait_for_states:
@@ -3087,7 +3087,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.launch_db_system` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param LaunchDbSystemBase launch_db_system_details: (required)
+        :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB system.
 
         :param list[str] work_request_states: (optional)
@@ -3122,7 +3122,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.launch_db_system` and waits for the :py:class:`~oci.database.models.DbSystem` acted upon
         to enter the given state(s).
 
-        :param LaunchDbSystemBase launch_db_system_details: (required)
+        :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB system.
 
         :param list[str] wait_for_states:
@@ -3331,7 +3331,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
+        :param oci.database.models.ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
 
         :param list[str] work_request_states: (optional)
@@ -3376,7 +3376,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
+        :param oci.database.models.ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
 
         :param list[str] wait_for_states:
@@ -3573,7 +3573,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
+        :param oci.database.models.RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
             Request to perform an Autonomous Data Warehouse restore.
 
         :param list[str] wait_for_states:
@@ -3616,7 +3616,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
+        :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous Database restore.
 
         :param list[str] work_request_states: (optional)
@@ -3656,7 +3656,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
+        :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous Database restore.
 
         :param list[str] wait_for_states:
@@ -3699,7 +3699,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreDatabaseDetails restore_database_details: (required)
+        :param oci.database.models.RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
 
         :param list[str] work_request_states: (optional)
@@ -3739,7 +3739,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestoreDatabaseDetails restore_database_details: (required)
+        :param oci.database.models.RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
 
         :param list[str] wait_for_states:
@@ -4413,7 +4413,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
+        :param oci.database.models.SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
 
         :param list[str] work_request_states: (optional)
@@ -4458,7 +4458,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
+        :param oci.database.models.SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
 
         :param list[str] wait_for_states:
@@ -4612,7 +4612,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
+        :param oci.database.models.UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
             Request to update the properties of an Autonomous Container Database.
 
         :param list[str] work_request_states: (optional)
@@ -4652,7 +4652,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
+        :param oci.database.models.UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
             Request to update the properties of an Autonomous Container Database.
 
         :param list[str] wait_for_states:
@@ -4695,7 +4695,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
+        :param oci.database.models.UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
             Request to update the properties of an Autonomous Data Warehouse.
 
         :param list[str] wait_for_states:
@@ -4738,7 +4738,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous Database.
 
         :param list[str] work_request_states: (optional)
@@ -4778,7 +4778,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous Database.
 
         :param list[str] wait_for_states:
@@ -4816,7 +4816,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.update_autonomous_database_regional_wallet` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
             Request to update the properties of Autonomous Database regional wallet.
 
         :param list[str] work_request_states: (optional)
@@ -4856,7 +4856,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
+        :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
             Request to update the properties of an Autonomous Database wallet.
 
         :param list[str] work_request_states: (optional)
@@ -4896,7 +4896,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
+        :param oci.database.models.UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
             Request to update the properties of a Autonomous Exadata Infrastructure.
 
         :param list[str] work_request_states: (optional)
@@ -4936,7 +4936,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
+        :param oci.database.models.UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
             Request to update the properties of a Autonomous Exadata Infrastructure.
 
         :param list[str] wait_for_states:
@@ -4979,7 +4979,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
+        :param oci.database.models.UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
             Request to update the attributes of an Autonomous VM cluster.
 
         :param list[str] work_request_states: (optional)
@@ -5019,7 +5019,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
+        :param oci.database.models.UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
             Request to update the attributes of an Autonomous VM cluster.
 
         :param list[str] wait_for_states:
@@ -5062,7 +5062,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateBackupDestinationDetails update_backup_destination_details: (required)
+        :param oci.database.models.UpdateBackupDestinationDetails update_backup_destination_details: (required)
             For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
             For an NFS backup destination, request to update the NFS location.
 
@@ -5106,7 +5106,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
+        :param oci.database.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             Request to update the properties of an cloud Exadata infrastructure resource.
 
         :param list[str] work_request_states: (optional)
@@ -5146,7 +5146,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
+        :param oci.database.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             Request to update the properties of an cloud Exadata infrastructure resource.
 
         :param list[str] wait_for_states:
@@ -5189,7 +5189,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
+        :param oci.database.models.UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
 
         :param list[str] work_request_states: (optional)
@@ -5229,7 +5229,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
+        :param oci.database.models.UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
 
         :param list[str] wait_for_states:
@@ -5272,7 +5272,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
+        :param oci.database.models.ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
             Request to perform database update.
 
         :param list[str] work_request_states: (optional)
@@ -5312,7 +5312,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDatabaseDetails update_database_details: (required)
+        :param oci.database.models.UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
 
         :param list[str] work_request_states: (optional)
@@ -5352,7 +5352,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDatabaseDetails update_database_details: (required)
+        :param oci.database.models.UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
 
         :param list[str] wait_for_states:
@@ -5395,7 +5395,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDatabaseSoftwareImageDetails update_database_software_image_details: (required)
+        :param oci.database.models.UpdateDatabaseSoftwareImageDetails update_database_software_image_details: (required)
             Request to update the properties of a DB system.
 
         :param list[str] wait_for_states:
@@ -5438,7 +5438,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbHomeDetails update_db_home_details: (required)
+        :param oci.database.models.UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a Database Home.
 
         :param list[str] work_request_states: (optional)
@@ -5478,7 +5478,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbHomeDetails update_db_home_details: (required)
+        :param oci.database.models.UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a Database Home.
 
         :param list[str] wait_for_states:
@@ -5521,7 +5521,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbSystemDetails update_db_system_details: (required)
+        :param oci.database.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
 
         :param list[str] work_request_states: (optional)
@@ -5561,7 +5561,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbSystemDetails update_db_system_details: (required)
+        :param oci.database.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
 
         :param list[str] wait_for_states:
@@ -5604,7 +5604,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
+        :param oci.database.models.UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
             Request to update the properties of an Exadata Cloud@Customer infrastructure.
 
         :param list[str] work_request_states: (optional)
@@ -5644,7 +5644,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
+        :param oci.database.models.UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
             Request to update the properties of an Exadata Cloud@Customer infrastructure.
 
         :param list[str] wait_for_states:
@@ -5687,7 +5687,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
+        :param oci.database.models.ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.
 
         :param list[str] work_request_states: (optional)
@@ -5727,7 +5727,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
+        :param oci.database.models.ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.
 
         :param list[str] wait_for_states:
@@ -5770,7 +5770,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateKeyStoreDetails update_key_store_details: (required)
+        :param oci.database.models.UpdateKeyStoreDetails update_key_store_details: (required)
             Request to update the attributes of a key store.
 
         :param list[str] wait_for_states:
@@ -5811,7 +5811,7 @@ class DatabaseClientCompositeOperations(object):
         :param str maintenance_run_id: (required)
             The maintenance run OCID.
 
-        :param UpdateMaintenanceRunDetails update_maintenance_run_details: (required)
+        :param oci.database.models.UpdateMaintenanceRunDetails update_maintenance_run_details: (required)
             Request to update the properties of a maintenance run.
 
         :param list[str] wait_for_states:
@@ -5854,7 +5854,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVmClusterDetails update_vm_cluster_details: (required)
+        :param oci.database.models.UpdateVmClusterDetails update_vm_cluster_details: (required)
             Request to update the attributes of a VM cluster.
 
         :param list[str] work_request_states: (optional)
@@ -5894,7 +5894,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVmClusterDetails update_vm_cluster_details: (required)
+        :param oci.database.models.UpdateVmClusterDetails update_vm_cluster_details: (required)
             Request to update the attributes of a VM cluster.
 
         :param list[str] wait_for_states:
@@ -5942,7 +5942,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
+        :param oci.database.models.UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
             Request to update the properties of a VM cluster network.
 
         :param list[str] work_request_states: (optional)
@@ -5987,7 +5987,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
+        :param oci.database.models.UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
             Request to update the properties of a VM cluster network.
 
         :param list[str] wait_for_states:
@@ -6030,7 +6030,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpgradeDatabaseDetails upgrade_database_details: (required)
+        :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
             Request to perform database upgrade.
 
         :param list[str] work_request_states: (optional)
@@ -6070,7 +6070,7 @@ class DatabaseClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpgradeDatabaseDetails upgrade_database_details: (required)
+        :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
             Request to perform database upgrade.
 
         :param list[str] wait_for_states:

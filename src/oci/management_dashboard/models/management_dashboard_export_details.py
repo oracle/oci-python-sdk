@@ -20,7 +20,7 @@ class ManagementDashboardExportDetails(object):
 
         :param dashboards:
             The value to assign to the dashboards property of this ManagementDashboardExportDetails.
-        :type dashboards: list[ManagementDashboardForImportExportDetails]
+        :type dashboards: list[oci.management_dashboard.models.ManagementDashboardForImportExportDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboardExportDetails.
@@ -55,7 +55,7 @@ class ManagementDashboardExportDetails(object):
 
 
         :return: The dashboards of this ManagementDashboardExportDetails.
-        :rtype: list[ManagementDashboardForImportExportDetails]
+        :rtype: list[oci.management_dashboard.models.ManagementDashboardForImportExportDetails]
         """
         return self._dashboards
 
@@ -67,7 +67,7 @@ class ManagementDashboardExportDetails(object):
 
 
         :param dashboards: The dashboards of this ManagementDashboardExportDetails.
-        :type: list[ManagementDashboardForImportExportDetails]
+        :type: list[oci.management_dashboard.models.ManagementDashboardForImportExportDetails]
         """
         self._dashboards = dashboards
 

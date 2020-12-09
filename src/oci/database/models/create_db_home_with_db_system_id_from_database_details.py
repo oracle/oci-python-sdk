@@ -46,7 +46,7 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
 
         :param database:
             The value to assign to the database property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
-        :type database: CreateDatabaseFromAnotherDatabaseDetails
+        :type database: oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
 
         """
         self.swagger_types = {
@@ -112,7 +112,7 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
         **[Required]** Gets the database of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
 
         :return: The database of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
-        :rtype: CreateDatabaseFromAnotherDatabaseDetails
+        :rtype: oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
         """
         return self._database
 
@@ -122,7 +122,7 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
         Sets the database of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
 
         :param database: The database of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
-        :type: CreateDatabaseFromAnotherDatabaseDetails
+        :type: oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
         """
         self._database = database
 

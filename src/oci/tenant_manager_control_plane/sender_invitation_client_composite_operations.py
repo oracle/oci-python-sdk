@@ -66,7 +66,7 @@ class SenderInvitationClientCompositeOperations(object):
         Calls :py:func:`~oci.tenant_manager_control_plane.SenderInvitationClient.create_sender_invitation` and waits for the :py:class:`~oci.tenant_manager_control_plane.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateSenderInvitationDetails create_sender_invitation_details: (required)
+        :param oci.tenant_manager_control_plane.models.CreateSenderInvitationDetails create_sender_invitation_details: (required)
             Parameters for sender invitation creation.
 
         :param list[str] wait_for_states:
@@ -107,7 +107,7 @@ class SenderInvitationClientCompositeOperations(object):
         :param str sender_invitation_id: (required)
             OCID of the sender invitation to update.
 
-        :param UpdateSenderInvitationDetails update_sender_invitation_details: (required)
+        :param oci.tenant_manager_control_plane.models.UpdateSenderInvitationDetails update_sender_invitation_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

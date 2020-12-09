@@ -32,7 +32,7 @@ class UpdateManagementDashboardDetails(object):
 
         :param tiles:
             The value to assign to the tiles property of this UpdateManagementDashboardDetails.
-        :type tiles: list[ManagementDashboardTileDetails]
+        :type tiles: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
 
         :param display_name:
             The value to assign to the display_name property of this UpdateManagementDashboardDetails.
@@ -239,7 +239,7 @@ class UpdateManagementDashboardDetails(object):
 
 
         :return: The tiles of this UpdateManagementDashboardDetails.
-        :rtype: list[ManagementDashboardTileDetails]
+        :rtype: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
         """
         return self._tiles
 
@@ -251,7 +251,7 @@ class UpdateManagementDashboardDetails(object):
 
 
         :param tiles: The tiles of this UpdateManagementDashboardDetails.
-        :type: list[ManagementDashboardTileDetails]
+        :type: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
         """
         self._tiles = tiles
 

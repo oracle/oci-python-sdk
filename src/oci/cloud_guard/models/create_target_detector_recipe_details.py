@@ -24,7 +24,7 @@ class CreateTargetDetectorRecipeDetails(object):
 
         :param detector_rules:
             The value to assign to the detector_rules property of this CreateTargetDetectorRecipeDetails.
-        :type detector_rules: list[UpdateTargetRecipeDetectorRuleDetails]
+        :type detector_rules: list[oci.cloud_guard.models.UpdateTargetRecipeDetectorRuleDetails]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class CreateTargetDetectorRecipeDetails(object):
 
 
         :return: The detector_rules of this CreateTargetDetectorRecipeDetails.
-        :rtype: list[UpdateTargetRecipeDetectorRuleDetails]
+        :rtype: list[oci.cloud_guard.models.UpdateTargetRecipeDetectorRuleDetails]
         """
         return self._detector_rules
 
@@ -84,7 +84,7 @@ class CreateTargetDetectorRecipeDetails(object):
 
 
         :param detector_rules: The detector_rules of this CreateTargetDetectorRecipeDetails.
-        :type: list[UpdateTargetRecipeDetectorRuleDetails]
+        :type: list[oci.cloud_guard.models.UpdateTargetRecipeDetectorRuleDetails]
         """
         self._detector_rules = detector_rules
 

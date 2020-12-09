@@ -172,15 +172,15 @@ class BlockchainPlatform(object):
 
         :param component_details:
             The value to assign to the component_details property of this BlockchainPlatform.
-        :type component_details: BlockchainPlatformComponentDetails
+        :type component_details: oci.blockchain.models.BlockchainPlatformComponentDetails
 
         :param replicas:
             The value to assign to the replicas property of this BlockchainPlatform.
-        :type replicas: ReplicaDetails
+        :type replicas: oci.blockchain.models.ReplicaDetails
 
         :param host_ocpu_utilization_info:
             The value to assign to the host_ocpu_utilization_info property of this BlockchainPlatform.
-        :type host_ocpu_utilization_info: list[OcpuUtilizationInfo]
+        :type host_ocpu_utilization_info: list[oci.blockchain.models.OcpuUtilizationInfo]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BlockchainPlatform.
@@ -729,7 +729,7 @@ class BlockchainPlatform(object):
         Gets the component_details of this BlockchainPlatform.
 
         :return: The component_details of this BlockchainPlatform.
-        :rtype: BlockchainPlatformComponentDetails
+        :rtype: oci.blockchain.models.BlockchainPlatformComponentDetails
         """
         return self._component_details
 
@@ -739,7 +739,7 @@ class BlockchainPlatform(object):
         Sets the component_details of this BlockchainPlatform.
 
         :param component_details: The component_details of this BlockchainPlatform.
-        :type: BlockchainPlatformComponentDetails
+        :type: oci.blockchain.models.BlockchainPlatformComponentDetails
         """
         self._component_details = component_details
 
@@ -749,7 +749,7 @@ class BlockchainPlatform(object):
         Gets the replicas of this BlockchainPlatform.
 
         :return: The replicas of this BlockchainPlatform.
-        :rtype: ReplicaDetails
+        :rtype: oci.blockchain.models.ReplicaDetails
         """
         return self._replicas
 
@@ -759,7 +759,7 @@ class BlockchainPlatform(object):
         Sets the replicas of this BlockchainPlatform.
 
         :param replicas: The replicas of this BlockchainPlatform.
-        :type: ReplicaDetails
+        :type: oci.blockchain.models.ReplicaDetails
         """
         self._replicas = replicas
 
@@ -771,7 +771,7 @@ class BlockchainPlatform(object):
 
 
         :return: The host_ocpu_utilization_info of this BlockchainPlatform.
-        :rtype: list[OcpuUtilizationInfo]
+        :rtype: list[oci.blockchain.models.OcpuUtilizationInfo]
         """
         return self._host_ocpu_utilization_info
 
@@ -783,7 +783,7 @@ class BlockchainPlatform(object):
 
 
         :param host_ocpu_utilization_info: The host_ocpu_utilization_info of this BlockchainPlatform.
-        :type: list[OcpuUtilizationInfo]
+        :type: list[oci.blockchain.models.OcpuUtilizationInfo]
         """
         self._host_ocpu_utilization_info = host_ocpu_utilization_info
 

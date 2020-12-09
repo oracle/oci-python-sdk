@@ -123,7 +123,7 @@ class ApplianceExportJobClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/change_appliance_export_job_compartment.py.html>`__ to see an example of how to use change_appliance_export_job_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/change_appliance_export_job_compartment.py.html>`__ to see an example of how to use change_appliance_export_job_compartment API.
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}/actions/changeCompartment"
         method = "POST"
@@ -212,7 +212,7 @@ class ApplianceExportJobClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/create_appliance_export_job.py.html>`__ to see an example of how to use create_appliance_export_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_appliance_export_job.py.html>`__ to see an example of how to use create_appliance_export_job API.
         """
         resource_path = "/applianceExportJobs"
         method = "POST"
@@ -286,7 +286,7 @@ class ApplianceExportJobClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/delete_appliance_export_job.py.html>`__ to see an example of how to use delete_appliance_export_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/delete_appliance_export_job.py.html>`__ to see an example of how to use delete_appliance_export_job API.
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "DELETE"
@@ -362,7 +362,7 @@ class ApplianceExportJobClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/get_appliance_export_job.py.html>`__ to see an example of how to use get_appliance_export_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_appliance_export_job.py.html>`__ to see an example of how to use get_appliance_export_job API.
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "GET"
@@ -462,7 +462,7 @@ class ApplianceExportJobClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/list_appliance_export_jobs.py.html>`__ to see an example of how to use list_appliance_export_jobs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_appliance_export_jobs.py.html>`__ to see an example of how to use list_appliance_export_jobs API.
         """
         resource_path = "/applianceExportJobs"
         method = "GET"
@@ -555,7 +555,7 @@ class ApplianceExportJobClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/update_appliance_export_job.py.html>`__ to see an example of how to use update_appliance_export_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/update_appliance_export_job.py.html>`__ to see an example of how to use update_appliance_export_job API.
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "PUT"

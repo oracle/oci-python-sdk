@@ -20,7 +20,7 @@ class LogEntryBatch(object):
 
         :param entries:
             The value to assign to the entries property of this LogEntryBatch.
-        :type entries: list[LogEntry]
+        :type entries: list[oci.loggingingestion.models.LogEntry]
 
         :param source:
             The value to assign to the source property of this LogEntryBatch.
@@ -69,7 +69,7 @@ class LogEntryBatch(object):
 
 
         :return: The entries of this LogEntryBatch.
-        :rtype: list[LogEntry]
+        :rtype: list[oci.loggingingestion.models.LogEntry]
         """
         return self._entries
 
@@ -81,7 +81,7 @@ class LogEntryBatch(object):
 
 
         :param entries: The entries of this LogEntryBatch.
-        :type: list[LogEntry]
+        :type: list[oci.loggingingestion.models.LogEntry]
         """
         self._entries = entries
 

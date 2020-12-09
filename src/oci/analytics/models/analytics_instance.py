@@ -92,7 +92,7 @@ class AnalyticsInstance(object):
 
         :param capacity:
             The value to assign to the capacity property of this AnalyticsInstance.
-        :type capacity: Capacity
+        :type capacity: oci.analytics.models.Capacity
 
         :param license_type:
             The value to assign to the license_type property of this AnalyticsInstance.
@@ -106,7 +106,7 @@ class AnalyticsInstance(object):
 
         :param network_endpoint_details:
             The value to assign to the network_endpoint_details property of this AnalyticsInstance.
-        :type network_endpoint_details: NetworkEndpointDetails
+        :type network_endpoint_details: oci.analytics.models.NetworkEndpointDetails
 
         :param service_url:
             The value to assign to the service_url property of this AnalyticsInstance.
@@ -343,7 +343,7 @@ class AnalyticsInstance(object):
         **[Required]** Gets the capacity of this AnalyticsInstance.
 
         :return: The capacity of this AnalyticsInstance.
-        :rtype: Capacity
+        :rtype: oci.analytics.models.Capacity
         """
         return self._capacity
 
@@ -353,7 +353,7 @@ class AnalyticsInstance(object):
         Sets the capacity of this AnalyticsInstance.
 
         :param capacity: The capacity of this AnalyticsInstance.
-        :type: Capacity
+        :type: oci.analytics.models.Capacity
         """
         self._capacity = capacity
 
@@ -417,7 +417,7 @@ class AnalyticsInstance(object):
         **[Required]** Gets the network_endpoint_details of this AnalyticsInstance.
 
         :return: The network_endpoint_details of this AnalyticsInstance.
-        :rtype: NetworkEndpointDetails
+        :rtype: oci.analytics.models.NetworkEndpointDetails
         """
         return self._network_endpoint_details
 
@@ -427,7 +427,7 @@ class AnalyticsInstance(object):
         Sets the network_endpoint_details of this AnalyticsInstance.
 
         :param network_endpoint_details: The network_endpoint_details of this AnalyticsInstance.
-        :type: NetworkEndpointDetails
+        :type: oci.analytics.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
 

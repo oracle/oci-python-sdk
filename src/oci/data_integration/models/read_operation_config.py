@@ -35,23 +35,23 @@ class ReadOperationConfig(AbstractDataOperationConfig):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ReadOperationConfig.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param operations:
             The value to assign to the operations property of this ReadOperationConfig.
-        :type operations: list[PushDownOperation]
+        :type operations: list[oci.data_integration.models.PushDownOperation]
 
         :param data_format:
             The value to assign to the data_format property of this ReadOperationConfig.
-        :type data_format: DataFormat
+        :type data_format: oci.data_integration.models.DataFormat
 
         :param partition_config:
             The value to assign to the partition_config property of this ReadOperationConfig.
-        :type partition_config: PartitionConfig
+        :type partition_config: oci.data_integration.models.PartitionConfig
 
         :param read_attribute:
             The value to assign to the read_attribute property of this ReadOperationConfig.
-        :type read_attribute: AbstractReadAttribute
+        :type read_attribute: oci.data_integration.models.AbstractReadAttribute
 
         :param object_status:
             The value to assign to the object_status property of this ReadOperationConfig.
@@ -147,7 +147,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Gets the parent_ref of this ReadOperationConfig.
 
         :return: The parent_ref of this ReadOperationConfig.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -157,7 +157,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Sets the parent_ref of this ReadOperationConfig.
 
         :param parent_ref: The parent_ref of this ReadOperationConfig.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -169,7 +169,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
 
 
         :return: The operations of this ReadOperationConfig.
-        :rtype: list[PushDownOperation]
+        :rtype: list[oci.data_integration.models.PushDownOperation]
         """
         return self._operations
 
@@ -181,7 +181,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
 
 
         :param operations: The operations of this ReadOperationConfig.
-        :type: list[PushDownOperation]
+        :type: list[oci.data_integration.models.PushDownOperation]
         """
         self._operations = operations
 
@@ -191,7 +191,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Gets the data_format of this ReadOperationConfig.
 
         :return: The data_format of this ReadOperationConfig.
-        :rtype: DataFormat
+        :rtype: oci.data_integration.models.DataFormat
         """
         return self._data_format
 
@@ -201,7 +201,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Sets the data_format of this ReadOperationConfig.
 
         :param data_format: The data_format of this ReadOperationConfig.
-        :type: DataFormat
+        :type: oci.data_integration.models.DataFormat
         """
         self._data_format = data_format
 
@@ -211,7 +211,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Gets the partition_config of this ReadOperationConfig.
 
         :return: The partition_config of this ReadOperationConfig.
-        :rtype: PartitionConfig
+        :rtype: oci.data_integration.models.PartitionConfig
         """
         return self._partition_config
 
@@ -221,7 +221,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Sets the partition_config of this ReadOperationConfig.
 
         :param partition_config: The partition_config of this ReadOperationConfig.
-        :type: PartitionConfig
+        :type: oci.data_integration.models.PartitionConfig
         """
         self._partition_config = partition_config
 
@@ -231,7 +231,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Gets the read_attribute of this ReadOperationConfig.
 
         :return: The read_attribute of this ReadOperationConfig.
-        :rtype: AbstractReadAttribute
+        :rtype: oci.data_integration.models.AbstractReadAttribute
         """
         return self._read_attribute
 
@@ -241,7 +241,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         Sets the read_attribute of this ReadOperationConfig.
 
         :param read_attribute: The read_attribute of this ReadOperationConfig.
-        :type: AbstractReadAttribute
+        :type: oci.data_integration.models.AbstractReadAttribute
         """
         self._read_attribute = read_attribute
 

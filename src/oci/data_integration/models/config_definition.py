@@ -32,7 +32,7 @@ class ConfigDefinition(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConfigDefinition.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ConfigDefinition.
@@ -160,7 +160,7 @@ class ConfigDefinition(object):
         Gets the parent_ref of this ConfigDefinition.
 
         :return: The parent_ref of this ConfigDefinition.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -170,7 +170,7 @@ class ConfigDefinition(object):
         Sets the parent_ref of this ConfigDefinition.
 
         :param parent_ref: The parent_ref of this ConfigDefinition.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 

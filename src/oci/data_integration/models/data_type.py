@@ -43,7 +43,7 @@ class DataType(BaseType):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this DataType.
@@ -69,7 +69,7 @@ class DataType(BaseType):
 
         :param config_definition:
             The value to assign to the config_definition property of this DataType.
-        :type config_definition: ConfigDefinition
+        :type config_definition: oci.data_integration.models.ConfigDefinition
 
         """
         self.swagger_types = {
@@ -170,7 +170,7 @@ class DataType(BaseType):
         Gets the config_definition of this DataType.
 
         :return: The config_definition of this DataType.
-        :rtype: ConfigDefinition
+        :rtype: oci.data_integration.models.ConfigDefinition
         """
         return self._config_definition
 
@@ -180,7 +180,7 @@ class DataType(BaseType):
         Sets the config_definition of this DataType.
 
         :param config_definition: The config_definition of this DataType.
-        :type: ConfigDefinition
+        :type: oci.data_integration.models.ConfigDefinition
         """
         self._config_definition = config_definition
 

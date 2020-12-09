@@ -54,11 +54,11 @@ class KeyStoreSummary(object):
 
         :param type_details:
             The value to assign to the type_details property of this KeyStoreSummary.
-        :type type_details: KeyStoreTypeDetails
+        :type type_details: oci.database.models.KeyStoreTypeDetails
 
         :param associated_databases:
             The value to assign to the associated_databases property of this KeyStoreSummary.
-        :type associated_databases: list[KeyStoreAssociatedDatabaseDetails]
+        :type associated_databases: list[oci.database.models.KeyStoreAssociatedDatabaseDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this KeyStoreSummary.
@@ -270,7 +270,7 @@ class KeyStoreSummary(object):
         **[Required]** Gets the type_details of this KeyStoreSummary.
 
         :return: The type_details of this KeyStoreSummary.
-        :rtype: KeyStoreTypeDetails
+        :rtype: oci.database.models.KeyStoreTypeDetails
         """
         return self._type_details
 
@@ -280,7 +280,7 @@ class KeyStoreSummary(object):
         Sets the type_details of this KeyStoreSummary.
 
         :param type_details: The type_details of this KeyStoreSummary.
-        :type: KeyStoreTypeDetails
+        :type: oci.database.models.KeyStoreTypeDetails
         """
         self._type_details = type_details
 
@@ -292,7 +292,7 @@ class KeyStoreSummary(object):
 
 
         :return: The associated_databases of this KeyStoreSummary.
-        :rtype: list[KeyStoreAssociatedDatabaseDetails]
+        :rtype: list[oci.database.models.KeyStoreAssociatedDatabaseDetails]
         """
         return self._associated_databases
 
@@ -304,7 +304,7 @@ class KeyStoreSummary(object):
 
 
         :param associated_databases: The associated_databases of this KeyStoreSummary.
-        :type: list[KeyStoreAssociatedDatabaseDetails]
+        :type: list[oci.database.models.KeyStoreAssociatedDatabaseDetails]
         """
         self._associated_databases = associated_databases
 

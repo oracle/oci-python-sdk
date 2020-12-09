@@ -31,7 +31,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
-        :param ChangeLogGroupCompartmentDetails change_log_group_compartment_details: (required)
+        :param oci.logging.models.ChangeLogGroupCompartmentDetails change_log_group_compartment_details: (required)
             Request to change the compartment of a given resource.
 
         :param list[str] wait_for_states:
@@ -75,7 +75,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str log_id: (required)
             OCID of a log to work with.
 
-        :param ChangeLogLogGroupDetails change_log_log_group_details: (required)
+        :param oci.logging.models.ChangeLogLogGroupDetails change_log_log_group_details: (required)
             Request to change the log group of a given log.
 
         :param list[str] wait_for_states:
@@ -116,7 +116,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str unified_agent_configuration_id: (required)
             The OCID of the Unified Agent configuration.
 
-        :param ChangeUnifiedAgentConfigurationCompartmentDetails change_unified_agent_configuration_compartment_details: (required)
+        :param oci.logging.models.ChangeUnifiedAgentConfigurationCompartmentDetails change_unified_agent_configuration_compartment_details: (required)
             Request to change the compartment of a given resource.
 
         :param list[str] wait_for_states:
@@ -157,7 +157,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
-        :param CreateLogDetails create_log_details: (required)
+        :param oci.logging.models.CreateLogDetails create_log_details: (required)
             Log object configuration details.
 
         :param list[str] wait_for_states:
@@ -195,7 +195,7 @@ class LoggingManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.logging.LoggingManagementClient.create_log_group` and waits for the :py:class:`~oci.logging.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateLogGroupDetails create_log_group_details: (required)
+        :param oci.logging.models.CreateLogGroupDetails create_log_group_details: (required)
             Details to create log group.
 
         :param list[str] wait_for_states:
@@ -233,7 +233,7 @@ class LoggingManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.logging.LoggingManagementClient.create_log_saved_search` and waits for the :py:class:`~oci.logging.models.LogSavedSearch` acted upon
         to enter the given state(s).
 
-        :param CreateLogSavedSearchDetails create_log_saved_search_details: (required)
+        :param oci.logging.models.CreateLogSavedSearchDetails create_log_saved_search_details: (required)
             Specification of the Saved Search to create
 
         :param list[str] wait_for_states:
@@ -271,7 +271,7 @@ class LoggingManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.logging.LoggingManagementClient.create_unified_agent_configuration` and waits for the :py:class:`~oci.logging.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateUnifiedAgentConfigurationDetails create_unified_agent_configuration_details: (required)
+        :param oci.logging.models.CreateUnifiedAgentConfigurationDetails create_unified_agent_configuration_details: (required)
             Unified agent configuration creation object.
 
         :param list[str] wait_for_states:
@@ -549,7 +549,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str log_id: (required)
             OCID of a log to work with.
 
-        :param UpdateLogDetails update_log_details: (required)
+        :param oci.logging.models.UpdateLogDetails update_log_details: (required)
             Log config parameters to update.
 
         :param list[str] wait_for_states:
@@ -590,7 +590,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
-        :param UpdateLogGroupDetails update_log_group_details: (required)
+        :param oci.logging.models.UpdateLogGroupDetails update_log_group_details: (required)
             LogGroup config parameters to update.
 
         :param list[str] wait_for_states:
@@ -631,7 +631,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str log_saved_search_id: (required)
             OCID of the logSavedSearch
 
-        :param UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
+        :param oci.logging.models.UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
             Updates to the saved search.
 
         :param list[str] wait_for_states:
@@ -672,7 +672,7 @@ class LoggingManagementClientCompositeOperations(object):
         :param str unified_agent_configuration_id: (required)
             The OCID of the Unified Agent configuration.
 
-        :param UpdateUnifiedAgentConfigurationDetails update_unified_agent_configuration_details: (required)
+        :param oci.logging.models.UpdateUnifiedAgentConfigurationDetails update_unified_agent_configuration_details: (required)
             Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.
 
         :param list[str] wait_for_states:

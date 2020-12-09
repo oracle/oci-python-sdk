@@ -67,7 +67,7 @@ class BaseType(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this BaseType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this BaseType.
@@ -222,7 +222,7 @@ class BaseType(object):
         Gets the parent_ref of this BaseType.
 
         :return: The parent_ref of this BaseType.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -232,7 +232,7 @@ class BaseType(object):
         Sets the parent_ref of this BaseType.
 
         :param parent_ref: The parent_ref of this BaseType.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 

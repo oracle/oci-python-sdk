@@ -110,11 +110,11 @@ class QueryWorkRequest(object):
 
         :param time_filter:
             The value to assign to the time_filter property of this QueryWorkRequest.
-        :type time_filter: TimeRange
+        :type time_filter: oci.log_analytics.models.TimeRange
 
         :param scope_filters:
             The value to assign to the scope_filters property of this QueryWorkRequest.
-        :type scope_filters: list[ScopeFilter]
+        :type scope_filters: list[oci.log_analytics.models.ScopeFilter]
 
         :param sub_system:
             The value to assign to the sub_system property of this QueryWorkRequest.
@@ -478,7 +478,7 @@ class QueryWorkRequest(object):
         Gets the time_filter of this QueryWorkRequest.
 
         :return: The time_filter of this QueryWorkRequest.
-        :rtype: TimeRange
+        :rtype: oci.log_analytics.models.TimeRange
         """
         return self._time_filter
 
@@ -488,7 +488,7 @@ class QueryWorkRequest(object):
         Sets the time_filter of this QueryWorkRequest.
 
         :param time_filter: The time_filter of this QueryWorkRequest.
-        :type: TimeRange
+        :type: oci.log_analytics.models.TimeRange
         """
         self._time_filter = time_filter
 
@@ -500,7 +500,7 @@ class QueryWorkRequest(object):
 
 
         :return: The scope_filters of this QueryWorkRequest.
-        :rtype: list[ScopeFilter]
+        :rtype: list[oci.log_analytics.models.ScopeFilter]
         """
         return self._scope_filters
 
@@ -512,7 +512,7 @@ class QueryWorkRequest(object):
 
 
         :param scope_filters: The scope_filters of this QueryWorkRequest.
-        :type: list[ScopeFilter]
+        :type: list[oci.log_analytics.models.ScopeFilter]
         """
         self._scope_filters = scope_filters
 

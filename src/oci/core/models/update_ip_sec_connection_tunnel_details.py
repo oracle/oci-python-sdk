@@ -50,7 +50,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
 
         :param bgp_session_config:
             The value to assign to the bgp_session_config property of this UpdateIPSecConnectionTunnelDetails.
-        :type bgp_session_config: UpdateIPSecTunnelBgpSessionDetails
+        :type bgp_session_config: oci.core.models.UpdateIPSecTunnelBgpSessionDetails
 
         """
         self.swagger_types = {
@@ -170,7 +170,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
 
 
         :return: The bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
-        :rtype: UpdateIPSecTunnelBgpSessionDetails
+        :rtype: oci.core.models.UpdateIPSecTunnelBgpSessionDetails
         """
         return self._bgp_session_config
 
@@ -182,7 +182,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
 
 
         :param bgp_session_config: The bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
-        :type: UpdateIPSecTunnelBgpSessionDetails
+        :type: oci.core.models.UpdateIPSecTunnelBgpSessionDetails
         """
         self._bgp_session_config = bgp_session_config
 

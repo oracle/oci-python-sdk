@@ -40,7 +40,7 @@ class OAuth2ClientCredentialSummary(object):
 
         :param scopes:
             The value to assign to the scopes property of this OAuth2ClientCredentialSummary.
-        :type scopes: list[FullyQualifiedScope]
+        :type scopes: list[oci.identity.models.FullyQualifiedScope]
 
         :param user_id:
             The value to assign to the user_id property of this OAuth2ClientCredentialSummary.
@@ -119,7 +119,7 @@ class OAuth2ClientCredentialSummary(object):
 
 
         :return: The scopes of this OAuth2ClientCredentialSummary.
-        :rtype: list[FullyQualifiedScope]
+        :rtype: list[oci.identity.models.FullyQualifiedScope]
         """
         return self._scopes
 
@@ -131,7 +131,7 @@ class OAuth2ClientCredentialSummary(object):
 
 
         :param scopes: The scopes of this OAuth2ClientCredentialSummary.
-        :type: list[FullyQualifiedScope]
+        :type: list[oci.identity.models.FullyQualifiedScope]
         """
         self._scopes = scopes
 

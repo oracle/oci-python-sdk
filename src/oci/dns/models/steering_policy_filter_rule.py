@@ -30,11 +30,11 @@ class SteeringPolicyFilterRule(SteeringPolicyRule):
 
         :param cases:
             The value to assign to the cases property of this SteeringPolicyFilterRule.
-        :type cases: list[SteeringPolicyFilterRuleCase]
+        :type cases: list[oci.dns.models.SteeringPolicyFilterRuleCase]
 
         :param default_answer_data:
             The value to assign to the default_answer_data property of this SteeringPolicyFilterRule.
-        :type default_answer_data: list[SteeringPolicyFilterAnswerData]
+        :type default_answer_data: list[oci.dns.models.SteeringPolicyFilterAnswerData]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class SteeringPolicyFilterRule(SteeringPolicyRule):
 
 
         :return: The cases of this SteeringPolicyFilterRule.
-        :rtype: list[SteeringPolicyFilterRuleCase]
+        :rtype: list[oci.dns.models.SteeringPolicyFilterRuleCase]
         """
         return self._cases
 
@@ -91,7 +91,7 @@ class SteeringPolicyFilterRule(SteeringPolicyRule):
 
 
         :param cases: The cases of this SteeringPolicyFilterRule.
-        :type: list[SteeringPolicyFilterRuleCase]
+        :type: list[oci.dns.models.SteeringPolicyFilterRuleCase]
         """
         self._cases = cases
 
@@ -106,7 +106,7 @@ class SteeringPolicyFilterRule(SteeringPolicyRule):
 
 
         :return: The default_answer_data of this SteeringPolicyFilterRule.
-        :rtype: list[SteeringPolicyFilterAnswerData]
+        :rtype: list[oci.dns.models.SteeringPolicyFilterAnswerData]
         """
         return self._default_answer_data
 
@@ -121,7 +121,7 @@ class SteeringPolicyFilterRule(SteeringPolicyRule):
 
 
         :param default_answer_data: The default_answer_data of this SteeringPolicyFilterRule.
-        :type: list[SteeringPolicyFilterAnswerData]
+        :type: list[oci.dns.models.SteeringPolicyFilterAnswerData]
         """
         self._default_answer_data = default_answer_data
 

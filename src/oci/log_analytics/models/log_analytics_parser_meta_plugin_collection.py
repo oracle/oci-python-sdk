@@ -20,7 +20,7 @@ class LogAnalyticsParserMetaPluginCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsParserMetaPluginCollection.
-        :type items: list[LogAnalyticsParserMetaPlugin]
+        :type items: list[oci.log_analytics.models.LogAnalyticsParserMetaPlugin]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsParserMetaPluginCollection(object):
 
 
         :return: The items of this LogAnalyticsParserMetaPluginCollection.
-        :rtype: list[LogAnalyticsParserMetaPlugin]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserMetaPlugin]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsParserMetaPluginCollection(object):
 
 
         :param items: The items of this LogAnalyticsParserMetaPluginCollection.
-        :type: list[LogAnalyticsParserMetaPlugin]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserMetaPlugin]
         """
         self._items = items
 

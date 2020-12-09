@@ -32,11 +32,11 @@ class HealthChecksVantagePointSummary(object):
 
         :param geo:
             The value to assign to the geo property of this HealthChecksVantagePointSummary.
-        :type geo: Geolocation
+        :type geo: oci.healthchecks.models.Geolocation
 
         :param routing:
             The value to assign to the routing property of this HealthChecksVantagePointSummary.
-        :type routing: list[Routing]
+        :type routing: list[oci.healthchecks.models.Routing]
 
         """
         self.swagger_types = {
@@ -145,7 +145,7 @@ class HealthChecksVantagePointSummary(object):
         Gets the geo of this HealthChecksVantagePointSummary.
 
         :return: The geo of this HealthChecksVantagePointSummary.
-        :rtype: Geolocation
+        :rtype: oci.healthchecks.models.Geolocation
         """
         return self._geo
 
@@ -155,7 +155,7 @@ class HealthChecksVantagePointSummary(object):
         Sets the geo of this HealthChecksVantagePointSummary.
 
         :param geo: The geo of this HealthChecksVantagePointSummary.
-        :type: Geolocation
+        :type: oci.healthchecks.models.Geolocation
         """
         self._geo = geo
 
@@ -176,7 +176,7 @@ class HealthChecksVantagePointSummary(object):
 
 
         :return: The routing of this HealthChecksVantagePointSummary.
-        :rtype: list[Routing]
+        :rtype: list[oci.healthchecks.models.Routing]
         """
         return self._routing
 
@@ -197,7 +197,7 @@ class HealthChecksVantagePointSummary(object):
 
 
         :param routing: The routing of this HealthChecksVantagePointSummary.
-        :type: list[Routing]
+        :type: list[oci.healthchecks.models.Routing]
         """
         self._routing = routing
 

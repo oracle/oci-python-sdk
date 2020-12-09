@@ -20,7 +20,7 @@ class UpdateDomainRecordsDetails(object):
 
         :param items:
             The value to assign to the items property of this UpdateDomainRecordsDetails.
-        :type items: list[RecordDetails]
+        :type items: list[oci.dns.models.RecordDetails]
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class UpdateDomainRecordsDetails(object):
         Gets the items of this UpdateDomainRecordsDetails.
 
         :return: The items of this UpdateDomainRecordsDetails.
-        :rtype: list[RecordDetails]
+        :rtype: list[oci.dns.models.RecordDetails]
         """
         return self._items
 
@@ -49,7 +49,7 @@ class UpdateDomainRecordsDetails(object):
         Sets the items of this UpdateDomainRecordsDetails.
 
         :param items: The items of this UpdateDomainRecordsDetails.
-        :type: list[RecordDetails]
+        :type: list[oci.dns.models.RecordDetails]
         """
         self._items = items
 

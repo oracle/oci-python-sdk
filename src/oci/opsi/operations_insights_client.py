@@ -134,7 +134,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/ingest_sql_bucket.py.html>`__ to see an example of how to use ingest_sql_bucket API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/ingest_sql_bucket.py.html>`__ to see an example of how to use ingest_sql_bucket API.
         """
         resource_path = "/databaseInsights/actions/ingestSqlBucket"
         method = "POST"
@@ -237,7 +237,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/ingest_sql_plan_lines.py.html>`__ to see an example of how to use ingest_sql_plan_lines API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/ingest_sql_plan_lines.py.html>`__ to see an example of how to use ingest_sql_plan_lines API.
         """
         resource_path = "/databaseInsights/actions/ingestSqlPlanLines"
         method = "POST"
@@ -341,7 +341,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/ingest_sql_text.py.html>`__ to see an example of how to use ingest_sql_text API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/ingest_sql_text.py.html>`__ to see an example of how to use ingest_sql_text API.
         """
         resource_path = "/databaseInsights/actions/ingestSqlText"
         method = "POST"
@@ -465,7 +465,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/list_database_insights.py.html>`__ to see an example of how to use list_database_insights API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_database_insights.py.html>`__ to see an example of how to use list_database_insights API.
         """
         resource_path = "/databaseInsights"
         method = "GET"
@@ -602,7 +602,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/list_sql_plans.py.html>`__ to see an example of how to use list_sql_plans API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_sql_plans.py.html>`__ to see an example of how to use list_sql_plans API.
         """
         resource_path = "/databaseInsights/sqlPlans"
         method = "GET"
@@ -710,7 +710,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/list_sql_searches.py.html>`__ to see an example of how to use list_sql_searches API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_sql_searches.py.html>`__ to see an example of how to use list_sql_searches API.
         """
         resource_path = "/databaseInsights/sqlSearches"
         method = "GET"
@@ -808,7 +808,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/list_sql_texts.py.html>`__ to see an example of how to use list_sql_texts API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_sql_texts.py.html>`__ to see an example of how to use list_sql_texts API.
         """
         resource_path = "/databaseInsights/sqlTexts"
         method = "GET"
@@ -947,7 +947,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_database_insight_resource_capacity_trend.py.html>`__ to see an example of how to use summarize_database_insight_resource_capacity_trend API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_database_insight_resource_capacity_trend.py.html>`__ to see an example of how to use summarize_database_insight_resource_capacity_trend API.
         """
         resource_path = "/databaseInsights/resourceCapacityTrend"
         method = "GET"
@@ -1142,7 +1142,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_database_insight_resource_forecast_trend.py.html>`__ to see an example of how to use summarize_database_insight_resource_forecast_trend API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_database_insight_resource_forecast_trend.py.html>`__ to see an example of how to use summarize_database_insight_resource_forecast_trend API.
         """
         resource_path = "/databaseInsights/resourceForecastTrend"
         method = "GET"
@@ -1338,7 +1338,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_database_insight_resource_statistics.py.html>`__ to see an example of how to use summarize_database_insight_resource_statistics API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_database_insight_resource_statistics.py.html>`__ to see an example of how to use summarize_database_insight_resource_statistics API.
         """
         resource_path = "/databaseInsights/resourceStatistics"
         method = "GET"
@@ -1504,7 +1504,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_database_insight_resource_usage.py.html>`__ to see an example of how to use summarize_database_insight_resource_usage API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_database_insight_resource_usage.py.html>`__ to see an example of how to use summarize_database_insight_resource_usage API.
         """
         resource_path = "/databaseInsights/resourceUsageSummary"
         method = "GET"
@@ -1652,7 +1652,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_database_insight_resource_usage_trend.py.html>`__ to see an example of how to use summarize_database_insight_resource_usage_trend API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_database_insight_resource_usage_trend.py.html>`__ to see an example of how to use summarize_database_insight_resource_usage_trend API.
         """
         resource_path = "/databaseInsights/resourceUsageTrend"
         method = "GET"
@@ -1808,7 +1808,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_database_insight_resource_utilization_insight.py.html>`__ to see an example of how to use summarize_database_insight_resource_utilization_insight API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_database_insight_resource_utilization_insight.py.html>`__ to see an example of how to use summarize_database_insight_resource_utilization_insight API.
         """
         resource_path = "/databaseInsights/resourceUtilizationInsight"
         method = "GET"
@@ -1944,7 +1944,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_sql_insights.py.html>`__ to see an example of how to use summarize_sql_insights API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_sql_insights.py.html>`__ to see an example of how to use summarize_sql_insights API.
         """
         resource_path = "/databaseInsights/sqlInsights"
         method = "GET"
@@ -2074,7 +2074,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_sql_plan_insights.py.html>`__ to see an example of how to use summarize_sql_plan_insights API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_sql_plan_insights.py.html>`__ to see an example of how to use summarize_sql_plan_insights API.
         """
         resource_path = "/databaseInsights/sqlPlanInsights"
         method = "GET"
@@ -2192,7 +2192,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_sql_response_time_distributions.py.html>`__ to see an example of how to use summarize_sql_response_time_distributions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_sql_response_time_distributions.py.html>`__ to see an example of how to use summarize_sql_response_time_distributions API.
         """
         resource_path = "/databaseInsights/sqlResponseTimeDistributions"
         method = "GET"
@@ -2344,7 +2344,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_sql_statistics.py.html>`__ to see an example of how to use summarize_sql_statistics API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_sql_statistics.py.html>`__ to see an example of how to use summarize_sql_statistics API.
         """
         resource_path = "/databaseInsights/sqlStatistics"
         method = "GET"
@@ -2506,7 +2506,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_sql_statistics_time_series.py.html>`__ to see an example of how to use summarize_sql_statistics_time_series API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_sql_statistics_time_series.py.html>`__ to see an example of how to use summarize_sql_statistics_time_series API.
         """
         resource_path = "/databaseInsights/sqlStatisticsTimeSeries"
         method = "GET"
@@ -2625,7 +2625,7 @@ class OperationsInsightsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/opsi/summarize_sql_statistics_time_series_by_plan.py.html>`__ to see an example of how to use summarize_sql_statistics_time_series_by_plan API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_sql_statistics_time_series_by_plan.py.html>`__ to see an example of how to use summarize_sql_statistics_time_series_by_plan API.
         """
         resource_path = "/databaseInsights/sqlStatisticsTimeSeriesByPlan"
         method = "GET"

@@ -46,7 +46,7 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
 
         :param mount_type_details:
             The value to assign to the mount_type_details property of this CreateNFSBackupDestinationDetails.
-        :type mount_type_details: MountTypeDetails
+        :type mount_type_details: oci.database.models.MountTypeDetails
 
         """
         self.swagger_types = {
@@ -110,7 +110,7 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
         Gets the mount_type_details of this CreateNFSBackupDestinationDetails.
 
         :return: The mount_type_details of this CreateNFSBackupDestinationDetails.
-        :rtype: MountTypeDetails
+        :rtype: oci.database.models.MountTypeDetails
         """
         return self._mount_type_details
 
@@ -120,7 +120,7 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
         Sets the mount_type_details of this CreateNFSBackupDestinationDetails.
 
         :param mount_type_details: The mount_type_details of this CreateNFSBackupDestinationDetails.
-        :type: MountTypeDetails
+        :type: oci.database.models.MountTypeDetails
         """
         self._mount_type_details = mount_type_details
 

@@ -24,7 +24,7 @@ class TermRelationshipCollection(object):
 
         :param items:
             The value to assign to the items property of this TermRelationshipCollection.
-        :type items: list[TermRelationshipSummary]
+        :type items: list[oci.data_catalog.models.TermRelationshipSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class TermRelationshipCollection(object):
 
 
         :return: The items of this TermRelationshipCollection.
-        :rtype: list[TermRelationshipSummary]
+        :rtype: list[oci.data_catalog.models.TermRelationshipSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class TermRelationshipCollection(object):
 
 
         :param items: The items of this TermRelationshipCollection.
-        :type: list[TermRelationshipSummary]
+        :type: list[oci.data_catalog.models.TermRelationshipSummary]
         """
         self._items = items
 

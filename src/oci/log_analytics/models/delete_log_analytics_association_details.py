@@ -24,7 +24,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
 
         :param items:
             The value to assign to the items property of this DeleteLogAnalyticsAssociationDetails.
-        :type items: list[DeleteLogAnalyticsAssociation]
+        :type items: list[oci.log_analytics.models.DeleteLogAnalyticsAssociation]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
 
 
         :return: The items of this DeleteLogAnalyticsAssociationDetails.
-        :rtype: list[DeleteLogAnalyticsAssociation]
+        :rtype: list[oci.log_analytics.models.DeleteLogAnalyticsAssociation]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
 
 
         :param items: The items of this DeleteLogAnalyticsAssociationDetails.
-        :type: list[DeleteLogAnalyticsAssociation]
+        :type: list[oci.log_analytics.models.DeleteLogAnalyticsAssociation]
         """
         self._items = items
 

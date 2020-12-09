@@ -20,7 +20,7 @@ class RenameQueryParameterPolicy(object):
 
         :param items:
             The value to assign to the items property of this RenameQueryParameterPolicy.
-        :type items: list[RenameQueryParameterPolicyItem]
+        :type items: list[oci.apigateway.models.RenameQueryParameterPolicyItem]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RenameQueryParameterPolicy(object):
 
 
         :return: The items of this RenameQueryParameterPolicy.
-        :rtype: list[RenameQueryParameterPolicyItem]
+        :rtype: list[oci.apigateway.models.RenameQueryParameterPolicyItem]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RenameQueryParameterPolicy(object):
 
 
         :param items: The items of this RenameQueryParameterPolicy.
-        :type: list[RenameQueryParameterPolicyItem]
+        :type: list[oci.apigateway.models.RenameQueryParameterPolicyItem]
         """
         self._items = items
 

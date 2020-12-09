@@ -28,11 +28,11 @@ class UpdateTargetResponderRuleDetails(object):
 
         :param condition:
             The value to assign to the condition property of this UpdateTargetResponderRuleDetails.
-        :type condition: Condition
+        :type condition: oci.cloud_guard.models.Condition
 
         :param configurations:
             The value to assign to the configurations property of this UpdateTargetResponderRuleDetails.
-        :type configurations: list[ResponderConfiguration]
+        :type configurations: list[oci.cloud_guard.models.ResponderConfiguration]
 
         :param mode:
             The value to assign to the mode property of this UpdateTargetResponderRuleDetails.
@@ -62,7 +62,7 @@ class UpdateTargetResponderRuleDetails(object):
         Gets the condition of this UpdateTargetResponderRuleDetails.
 
         :return: The condition of this UpdateTargetResponderRuleDetails.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._condition
 
@@ -72,7 +72,7 @@ class UpdateTargetResponderRuleDetails(object):
         Sets the condition of this UpdateTargetResponderRuleDetails.
 
         :param condition: The condition of this UpdateTargetResponderRuleDetails.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._condition = condition
 
@@ -84,7 +84,7 @@ class UpdateTargetResponderRuleDetails(object):
 
 
         :return: The configurations of this UpdateTargetResponderRuleDetails.
-        :rtype: list[ResponderConfiguration]
+        :rtype: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         return self._configurations
 
@@ -96,7 +96,7 @@ class UpdateTargetResponderRuleDetails(object):
 
 
         :param configurations: The configurations of this UpdateTargetResponderRuleDetails.
-        :type: list[ResponderConfiguration]
+        :type: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         self._configurations = configurations
 

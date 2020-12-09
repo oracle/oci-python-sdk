@@ -28,7 +28,7 @@ class CreateLogAnalyticsEntityTypeDetails(object):
 
         :param properties:
             The value to assign to the properties property of this CreateLogAnalyticsEntityTypeDetails.
-        :type properties: list[EntityTypeProperty]
+        :type properties: list[oci.log_analytics.models.EntityTypeProperty]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class CreateLogAnalyticsEntityTypeDetails(object):
 
 
         :return: The properties of this CreateLogAnalyticsEntityTypeDetails.
-        :rtype: list[EntityTypeProperty]
+        :rtype: list[oci.log_analytics.models.EntityTypeProperty]
         """
         return self._properties
 
@@ -115,7 +115,7 @@ class CreateLogAnalyticsEntityTypeDetails(object):
 
 
         :param properties: The properties of this CreateLogAnalyticsEntityTypeDetails.
-        :type: list[EntityTypeProperty]
+        :type: list[oci.log_analytics.models.EntityTypeProperty]
         """
         self._properties = properties
 

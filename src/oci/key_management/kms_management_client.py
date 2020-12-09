@@ -113,7 +113,7 @@ class KmsManagementClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param BackupKeyDetails backup_key_details: (optional)
+        :param oci.key_management.models.BackupKeyDetails backup_key_details: (optional)
             BackupKeyDetails
 
         :param obj retry_strategy: (optional)
@@ -128,7 +128,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/backup_key.py.html>`__ to see an example of how to use backup_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/backup_key.py.html>`__ to see an example of how to use backup_key API.
         """
         resource_path = "/20180608/keys/{keyId}/actions/backup"
         method = "POST"
@@ -236,7 +236,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/cancel_key_deletion.py.html>`__ to see an example of how to use cancel_key_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/cancel_key_deletion.py.html>`__ to see an example of how to use cancel_key_deletion API.
         """
         resource_path = "/20180608/keys/{keyId}/actions/cancelDeletion"
         method = "POST"
@@ -344,7 +344,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/cancel_key_version_deletion.py.html>`__ to see an example of how to use cancel_key_version_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/cancel_key_version_deletion.py.html>`__ to see an example of how to use cancel_key_version_deletion API.
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/cancelDeletion"
         method = "POST"
@@ -455,7 +455,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/change_key_compartment.py.html>`__ to see an example of how to use change_key_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/change_key_compartment.py.html>`__ to see an example of how to use change_key_compartment API.
         """
         resource_path = "/20180608/keys/{keyId}/actions/changeCompartment"
         method = "POST"
@@ -551,7 +551,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/create_key.py.html>`__ to see an example of how to use create_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_key.py.html>`__ to see an example of how to use create_key API.
         """
         resource_path = "/20180608/keys"
         method = "POST"
@@ -638,7 +638,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/create_key_version.py.html>`__ to see an example of how to use create_key_version API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_key_version.py.html>`__ to see an example of how to use create_key_version API.
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "POST"
@@ -740,7 +740,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/disable_key.py.html>`__ to see an example of how to use disable_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/disable_key.py.html>`__ to see an example of how to use disable_key API.
         """
         resource_path = "/20180608/keys/{keyId}/actions/disable"
         method = "POST"
@@ -844,7 +844,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/enable_key.py.html>`__ to see an example of how to use enable_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/enable_key.py.html>`__ to see an example of how to use enable_key API.
         """
         resource_path = "/20180608/keys/{keyId}/actions/enable"
         method = "POST"
@@ -932,7 +932,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/get_key.py.html>`__ to see an example of how to use get_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_key.py.html>`__ to see an example of how to use get_key API.
         """
         resource_path = "/20180608/keys/{keyId}"
         method = "GET"
@@ -1017,7 +1017,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/get_key_version.py.html>`__ to see an example of how to use get_key_version API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_key_version.py.html>`__ to see an example of how to use get_key_version API.
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}"
         method = "GET"
@@ -1093,7 +1093,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/get_wrapping_key.py.html>`__ to see an example of how to use get_wrapping_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_wrapping_key.py.html>`__ to see an example of how to use get_wrapping_key API.
         """
         resource_path = "/20180608/wrappingKeys"
         method = "GET"
@@ -1168,7 +1168,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/import_key.py.html>`__ to see an example of how to use import_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/import_key.py.html>`__ to see an example of how to use import_key API.
         """
         resource_path = "/20180608/keys/import"
         method = "POST"
@@ -1254,7 +1254,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/import_key_version.py.html>`__ to see an example of how to use import_key_version API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/import_key_version.py.html>`__ to see an example of how to use import_key_version API.
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/import"
         method = "POST"
@@ -1364,7 +1364,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/list_key_versions.py.html>`__ to see an example of how to use list_key_versions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_key_versions.py.html>`__ to see an example of how to use list_key_versions API.
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "GET"
@@ -1502,7 +1502,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/list_keys.py.html>`__ to see an example of how to use list_keys API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_keys.py.html>`__ to see an example of how to use list_keys API.
         """
         resource_path = "/20180608/keys"
         method = "GET"
@@ -1634,7 +1634,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/restore_key_from_file.py.html>`__ to see an example of how to use restore_key_from_file API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_key_from_file.py.html>`__ to see an example of how to use restore_key_from_file API.
         """
         resource_path = "/20180608/keys/actions/restoreFromFile"
         method = "POST"
@@ -1730,7 +1730,7 @@ class KmsManagementClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param RestoreKeyFromObjectStoreDetails restore_key_from_object_store_details: (optional)
+        :param oci.key_management.models.RestoreKeyFromObjectStoreDetails restore_key_from_object_store_details: (optional)
             Location to restore the backup from
 
         :param obj retry_strategy: (optional)
@@ -1745,7 +1745,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/restore_key_from_object_store.py.html>`__ to see an example of how to use restore_key_from_object_store API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_key_from_object_store.py.html>`__ to see an example of how to use restore_key_from_object_store API.
         """
         resource_path = "/20180608/keys/actions/restoreFromObjectStore"
         method = "POST"
@@ -1843,7 +1843,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/schedule_key_deletion.py.html>`__ to see an example of how to use schedule_key_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/schedule_key_deletion.py.html>`__ to see an example of how to use schedule_key_deletion API.
         """
         resource_path = "/20180608/keys/{keyId}/actions/scheduleDeletion"
         method = "POST"
@@ -1955,7 +1955,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/schedule_key_version_deletion.py.html>`__ to see an example of how to use schedule_key_version_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/schedule_key_version_deletion.py.html>`__ to see an example of how to use schedule_key_version_deletion API.
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/scheduleDeletion"
         method = "POST"
@@ -2058,7 +2058,7 @@ class KmsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/update_key.py.html>`__ to see an example of how to use update_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/update_key.py.html>`__ to see an example of how to use update_key API.
         """
         resource_path = "/20180608/keys/{keyId}"
         method = "PUT"

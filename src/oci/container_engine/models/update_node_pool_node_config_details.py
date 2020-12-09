@@ -24,7 +24,7 @@ class UpdateNodePoolNodeConfigDetails(object):
 
         :param placement_configs:
             The value to assign to the placement_configs property of this UpdateNodePoolNodeConfigDetails.
-        :type placement_configs: list[NodePoolPlacementConfigDetails]
+        :type placement_configs: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
 
         """
         self.swagger_types = {
@@ -77,7 +77,7 @@ class UpdateNodePoolNodeConfigDetails(object):
 
 
         :return: The placement_configs of this UpdateNodePoolNodeConfigDetails.
-        :rtype: list[NodePoolPlacementConfigDetails]
+        :rtype: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
         """
         return self._placement_configs
 
@@ -94,7 +94,7 @@ class UpdateNodePoolNodeConfigDetails(object):
 
 
         :param placement_configs: The placement_configs of this UpdateNodePoolNodeConfigDetails.
-        :type: list[NodePoolPlacementConfigDetails]
+        :type: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
         """
         self._placement_configs = placement_configs
 

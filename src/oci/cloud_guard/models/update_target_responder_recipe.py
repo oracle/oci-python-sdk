@@ -24,7 +24,7 @@ class UpdateTargetResponderRecipe(object):
 
         :param responder_rules:
             The value to assign to the responder_rules property of this UpdateTargetResponderRecipe.
-        :type responder_rules: list[UpdateTargetRecipeResponderRuleDetails]
+        :type responder_rules: list[oci.cloud_guard.models.UpdateTargetRecipeResponderRuleDetails]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class UpdateTargetResponderRecipe(object):
 
 
         :return: The responder_rules of this UpdateTargetResponderRecipe.
-        :rtype: list[UpdateTargetRecipeResponderRuleDetails]
+        :rtype: list[oci.cloud_guard.models.UpdateTargetRecipeResponderRuleDetails]
         """
         return self._responder_rules
 
@@ -84,7 +84,7 @@ class UpdateTargetResponderRecipe(object):
 
 
         :param responder_rules: The responder_rules of this UpdateTargetResponderRecipe.
-        :type: list[UpdateTargetRecipeResponderRuleDetails]
+        :type: list[oci.cloud_guard.models.UpdateTargetRecipeResponderRuleDetails]
         """
         self._responder_rules = responder_rules
 

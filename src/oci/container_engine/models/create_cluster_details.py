@@ -40,7 +40,7 @@ class CreateClusterDetails(object):
 
         :param options:
             The value to assign to the options property of this CreateClusterDetails.
-        :type options: ClusterCreateOptions
+        :type options: oci.container_engine.models.ClusterCreateOptions
 
         """
         self.swagger_types = {
@@ -198,7 +198,7 @@ class CreateClusterDetails(object):
 
 
         :return: The options of this CreateClusterDetails.
-        :rtype: ClusterCreateOptions
+        :rtype: oci.container_engine.models.ClusterCreateOptions
         """
         return self._options
 
@@ -210,7 +210,7 @@ class CreateClusterDetails(object):
 
 
         :param options: The options of this CreateClusterDetails.
-        :type: ClusterCreateOptions
+        :type: oci.container_engine.models.ClusterCreateOptions
         """
         self._options = options
 

@@ -20,7 +20,7 @@ class SourceValidateResults(object):
 
         :param items:
             The value to assign to the items property of this SourceValidateResults.
-        :type items: list[SourceValidateDetails]
+        :type items: list[oci.log_analytics.models.SourceValidateDetails]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SourceValidateResults(object):
 
 
         :return: The items of this SourceValidateResults.
-        :rtype: list[SourceValidateDetails]
+        :rtype: list[oci.log_analytics.models.SourceValidateDetails]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SourceValidateResults(object):
 
 
         :param items: The items of this SourceValidateResults.
-        :type: list[SourceValidateDetails]
+        :type: list[oci.log_analytics.models.SourceValidateDetails]
         """
         self._items = items
 

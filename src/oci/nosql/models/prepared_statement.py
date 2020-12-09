@@ -24,7 +24,7 @@ class PreparedStatement(object):
 
         :param usage:
             The value to assign to the usage property of this PreparedStatement.
-        :type usage: RequestUsage
+        :type usage: oci.nosql.models.RequestUsage
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class PreparedStatement(object):
         Gets the usage of this PreparedStatement.
 
         :return: The usage of this PreparedStatement.
-        :rtype: RequestUsage
+        :rtype: oci.nosql.models.RequestUsage
         """
         return self._usage
 
@@ -82,7 +82,7 @@ class PreparedStatement(object):
         Sets the usage of this PreparedStatement.
 
         :param usage: The usage of this PreparedStatement.
-        :type: RequestUsage
+        :type: oci.nosql.models.RequestUsage
         """
         self._usage = usage
 

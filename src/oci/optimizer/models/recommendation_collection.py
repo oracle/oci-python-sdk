@@ -20,7 +20,7 @@ class RecommendationCollection(object):
 
         :param items:
             The value to assign to the items property of this RecommendationCollection.
-        :type items: list[RecommendationSummary]
+        :type items: list[oci.optimizer.models.RecommendationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RecommendationCollection(object):
 
 
         :return: The items of this RecommendationCollection.
-        :rtype: list[RecommendationSummary]
+        :rtype: list[oci.optimizer.models.RecommendationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RecommendationCollection(object):
 
 
         :param items: The items of this RecommendationCollection.
-        :type: list[RecommendationSummary]
+        :type: list[oci.optimizer.models.RecommendationSummary]
         """
         self._items = items
 

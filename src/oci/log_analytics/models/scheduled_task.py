@@ -74,11 +74,11 @@ class ScheduledTask(object):
 
         :param schedules:
             The value to assign to the schedules property of this ScheduledTask.
-        :type schedules: list[Schedule]
+        :type schedules: list[oci.log_analytics.models.Schedule]
 
         :param action:
             The value to assign to the action property of this ScheduledTask.
-        :type action: Action
+        :type action: oci.log_analytics.models.Action
 
         :param task_status:
             The value to assign to the task_status property of this ScheduledTask.
@@ -266,7 +266,7 @@ class ScheduledTask(object):
 
 
         :return: The schedules of this ScheduledTask.
-        :rtype: list[Schedule]
+        :rtype: list[oci.log_analytics.models.Schedule]
         """
         return self._schedules
 
@@ -278,7 +278,7 @@ class ScheduledTask(object):
 
 
         :param schedules: The schedules of this ScheduledTask.
-        :type: list[Schedule]
+        :type: list[oci.log_analytics.models.Schedule]
         """
         self._schedules = schedules
 
@@ -288,7 +288,7 @@ class ScheduledTask(object):
         **[Required]** Gets the action of this ScheduledTask.
 
         :return: The action of this ScheduledTask.
-        :rtype: Action
+        :rtype: oci.log_analytics.models.Action
         """
         return self._action
 
@@ -298,7 +298,7 @@ class ScheduledTask(object):
         Sets the action of this ScheduledTask.
 
         :param action: The action of this ScheduledTask.
-        :type: Action
+        :type: oci.log_analytics.models.Action
         """
         self._action = action
 

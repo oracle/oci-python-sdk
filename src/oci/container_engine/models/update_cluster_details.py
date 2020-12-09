@@ -28,7 +28,7 @@ class UpdateClusterDetails(object):
 
         :param options:
             The value to assign to the options property of this UpdateClusterDetails.
-        :type options: UpdateClusterOptionsDetails
+        :type options: oci.container_engine.models.UpdateClusterOptionsDetails
 
         """
         self.swagger_types = {
@@ -101,7 +101,7 @@ class UpdateClusterDetails(object):
         Gets the options of this UpdateClusterDetails.
 
         :return: The options of this UpdateClusterDetails.
-        :rtype: UpdateClusterOptionsDetails
+        :rtype: oci.container_engine.models.UpdateClusterOptionsDetails
         """
         return self._options
 
@@ -111,7 +111,7 @@ class UpdateClusterDetails(object):
         Sets the options of this UpdateClusterDetails.
 
         :param options: The options of this UpdateClusterDetails.
-        :type: UpdateClusterOptionsDetails
+        :type: oci.container_engine.models.UpdateClusterOptionsDetails
         """
         self._options = options
 

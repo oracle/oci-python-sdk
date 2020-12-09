@@ -20,7 +20,7 @@ class UpdateSubscriptionDetails(object):
 
         :param delivery_policy:
             The value to assign to the delivery_policy property of this UpdateSubscriptionDetails.
-        :type delivery_policy: DeliveryPolicy
+        :type delivery_policy: oci.ons.models.DeliveryPolicy
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateSubscriptionDetails.
@@ -55,7 +55,7 @@ class UpdateSubscriptionDetails(object):
 
 
         :return: The delivery_policy of this UpdateSubscriptionDetails.
-        :rtype: DeliveryPolicy
+        :rtype: oci.ons.models.DeliveryPolicy
         """
         return self._delivery_policy
 
@@ -67,7 +67,7 @@ class UpdateSubscriptionDetails(object):
 
 
         :param delivery_policy: The delivery_policy of this UpdateSubscriptionDetails.
-        :type: DeliveryPolicy
+        :type: oci.ons.models.DeliveryPolicy
         """
         self._delivery_policy = delivery_policy
 

@@ -93,7 +93,7 @@ class Announcement(BaseAnnouncement):
 
         :param affected_resources:
             The value to assign to the affected_resources property of this Announcement.
-        :type affected_resources: list[AffectedResource]
+        :type affected_resources: list[oci.announcements_service.models.AffectedResource]
 
         """
         self.swagger_types = {
@@ -220,7 +220,7 @@ class Announcement(BaseAnnouncement):
 
 
         :return: The affected_resources of this Announcement.
-        :rtype: list[AffectedResource]
+        :rtype: list[oci.announcements_service.models.AffectedResource]
         """
         return self._affected_resources
 
@@ -232,7 +232,7 @@ class Announcement(BaseAnnouncement):
 
 
         :param affected_resources: The affected_resources of this Announcement.
-        :type: list[AffectedResource]
+        :type: list[oci.announcements_service.models.AffectedResource]
         """
         self._affected_resources = affected_resources
 

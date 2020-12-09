@@ -44,7 +44,7 @@ class NetworkSourcesSummary(object):
 
         :param virtual_source_list:
             The value to assign to the virtual_source_list property of this NetworkSourcesSummary.
-        :type virtual_source_list: list[NetworkSourcesVirtualSourceList]
+        :type virtual_source_list: list[oci.identity.models.NetworkSourcesVirtualSourceList]
 
         :param services:
             The value to assign to the services property of this NetworkSourcesSummary.
@@ -231,7 +231,7 @@ class NetworkSourcesSummary(object):
 
 
         :return: The virtual_source_list of this NetworkSourcesSummary.
-        :rtype: list[NetworkSourcesVirtualSourceList]
+        :rtype: list[oci.identity.models.NetworkSourcesVirtualSourceList]
         """
         return self._virtual_source_list
 
@@ -244,7 +244,7 @@ class NetworkSourcesSummary(object):
 
 
         :param virtual_source_list: The virtual_source_list of this NetworkSourcesSummary.
-        :type: list[NetworkSourcesVirtualSourceList]
+        :type: list[oci.identity.models.NetworkSourcesVirtualSourceList]
         """
         self._virtual_source_list = virtual_source_list
 

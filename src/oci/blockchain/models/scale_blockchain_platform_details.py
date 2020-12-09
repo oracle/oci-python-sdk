@@ -29,27 +29,27 @@ class ScaleBlockchainPlatformDetails(object):
 
         :param add_osns:
             The value to assign to the add_osns property of this ScaleBlockchainPlatformDetails.
-        :type add_osns: list[CreateOsnDetails]
+        :type add_osns: list[oci.blockchain.models.CreateOsnDetails]
 
         :param add_replicas:
             The value to assign to the add_replicas property of this ScaleBlockchainPlatformDetails.
-        :type add_replicas: ReplicaDetails
+        :type add_replicas: oci.blockchain.models.ReplicaDetails
 
         :param add_peers:
             The value to assign to the add_peers property of this ScaleBlockchainPlatformDetails.
-        :type add_peers: list[CreatePeerDetails]
+        :type add_peers: list[oci.blockchain.models.CreatePeerDetails]
 
         :param add_storage:
             The value to assign to the add_storage property of this ScaleBlockchainPlatformDetails.
-        :type add_storage: ScaleStorageDetails
+        :type add_storage: oci.blockchain.models.ScaleStorageDetails
 
         :param modify_peers:
             The value to assign to the modify_peers property of this ScaleBlockchainPlatformDetails.
-        :type modify_peers: list[ModifyPeerDetails]
+        :type modify_peers: list[oci.blockchain.models.ModifyPeerDetails]
 
         :param remove_replicas:
             The value to assign to the remove_replicas property of this ScaleBlockchainPlatformDetails.
-        :type remove_replicas: ReplicaDetails
+        :type remove_replicas: oci.blockchain.models.ReplicaDetails
 
         :param remove_osns:
             The value to assign to the remove_osns property of this ScaleBlockchainPlatformDetails.
@@ -99,7 +99,7 @@ class ScaleBlockchainPlatformDetails(object):
 
 
         :return: The add_osns of this ScaleBlockchainPlatformDetails.
-        :rtype: list[CreateOsnDetails]
+        :rtype: list[oci.blockchain.models.CreateOsnDetails]
         """
         return self._add_osns
 
@@ -111,7 +111,7 @@ class ScaleBlockchainPlatformDetails(object):
 
 
         :param add_osns: The add_osns of this ScaleBlockchainPlatformDetails.
-        :type: list[CreateOsnDetails]
+        :type: list[oci.blockchain.models.CreateOsnDetails]
         """
         self._add_osns = add_osns
 
@@ -121,7 +121,7 @@ class ScaleBlockchainPlatformDetails(object):
         Gets the add_replicas of this ScaleBlockchainPlatformDetails.
 
         :return: The add_replicas of this ScaleBlockchainPlatformDetails.
-        :rtype: ReplicaDetails
+        :rtype: oci.blockchain.models.ReplicaDetails
         """
         return self._add_replicas
 
@@ -131,7 +131,7 @@ class ScaleBlockchainPlatformDetails(object):
         Sets the add_replicas of this ScaleBlockchainPlatformDetails.
 
         :param add_replicas: The add_replicas of this ScaleBlockchainPlatformDetails.
-        :type: ReplicaDetails
+        :type: oci.blockchain.models.ReplicaDetails
         """
         self._add_replicas = add_replicas
 
@@ -143,7 +143,7 @@ class ScaleBlockchainPlatformDetails(object):
 
 
         :return: The add_peers of this ScaleBlockchainPlatformDetails.
-        :rtype: list[CreatePeerDetails]
+        :rtype: list[oci.blockchain.models.CreatePeerDetails]
         """
         return self._add_peers
 
@@ -155,7 +155,7 @@ class ScaleBlockchainPlatformDetails(object):
 
 
         :param add_peers: The add_peers of this ScaleBlockchainPlatformDetails.
-        :type: list[CreatePeerDetails]
+        :type: list[oci.blockchain.models.CreatePeerDetails]
         """
         self._add_peers = add_peers
 
@@ -165,7 +165,7 @@ class ScaleBlockchainPlatformDetails(object):
         Gets the add_storage of this ScaleBlockchainPlatformDetails.
 
         :return: The add_storage of this ScaleBlockchainPlatformDetails.
-        :rtype: ScaleStorageDetails
+        :rtype: oci.blockchain.models.ScaleStorageDetails
         """
         return self._add_storage
 
@@ -175,7 +175,7 @@ class ScaleBlockchainPlatformDetails(object):
         Sets the add_storage of this ScaleBlockchainPlatformDetails.
 
         :param add_storage: The add_storage of this ScaleBlockchainPlatformDetails.
-        :type: ScaleStorageDetails
+        :type: oci.blockchain.models.ScaleStorageDetails
         """
         self._add_storage = add_storage
 
@@ -187,7 +187,7 @@ class ScaleBlockchainPlatformDetails(object):
 
 
         :return: The modify_peers of this ScaleBlockchainPlatformDetails.
-        :rtype: list[ModifyPeerDetails]
+        :rtype: list[oci.blockchain.models.ModifyPeerDetails]
         """
         return self._modify_peers
 
@@ -199,7 +199,7 @@ class ScaleBlockchainPlatformDetails(object):
 
 
         :param modify_peers: The modify_peers of this ScaleBlockchainPlatformDetails.
-        :type: list[ModifyPeerDetails]
+        :type: list[oci.blockchain.models.ModifyPeerDetails]
         """
         self._modify_peers = modify_peers
 
@@ -209,7 +209,7 @@ class ScaleBlockchainPlatformDetails(object):
         Gets the remove_replicas of this ScaleBlockchainPlatformDetails.
 
         :return: The remove_replicas of this ScaleBlockchainPlatformDetails.
-        :rtype: ReplicaDetails
+        :rtype: oci.blockchain.models.ReplicaDetails
         """
         return self._remove_replicas
 
@@ -219,7 +219,7 @@ class ScaleBlockchainPlatformDetails(object):
         Sets the remove_replicas of this ScaleBlockchainPlatformDetails.
 
         :param remove_replicas: The remove_replicas of this ScaleBlockchainPlatformDetails.
-        :type: ReplicaDetails
+        :type: oci.blockchain.models.ReplicaDetails
         """
         self._remove_replicas = remove_replicas
 

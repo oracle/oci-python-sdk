@@ -76,7 +76,7 @@ class WorkRequestSummary(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequestSummary.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.nosql.models.WorkRequestResource]
 
         :param percent_complete:
             The value to assign to the percent_complete property of this WorkRequestSummary.
@@ -245,7 +245,7 @@ class WorkRequestSummary(object):
 
 
         :return: The resources of this WorkRequestSummary.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.nosql.models.WorkRequestResource]
         """
         return self._resources
 
@@ -257,7 +257,7 @@ class WorkRequestSummary(object):
 
 
         :param resources: The resources of this WorkRequestSummary.
-        :type: list[WorkRequestResource]
+        :type: list[oci.nosql.models.WorkRequestResource]
         """
         self._resources = resources
 

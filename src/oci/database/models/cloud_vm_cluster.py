@@ -64,7 +64,7 @@ class CloudVmCluster(object):
 
         :param iorm_config_cache:
             The value to assign to the iorm_config_cache property of this CloudVmCluster.
-        :type iorm_config_cache: ExadataIormConfig
+        :type iorm_config_cache: oci.database.models.ExadataIormConfig
 
         :param id:
             The value to assign to the id property of this CloudVmCluster.
@@ -334,7 +334,7 @@ class CloudVmCluster(object):
         Gets the iorm_config_cache of this CloudVmCluster.
 
         :return: The iorm_config_cache of this CloudVmCluster.
-        :rtype: ExadataIormConfig
+        :rtype: oci.database.models.ExadataIormConfig
         """
         return self._iorm_config_cache
 
@@ -344,7 +344,7 @@ class CloudVmCluster(object):
         Sets the iorm_config_cache of this CloudVmCluster.
 
         :param iorm_config_cache: The iorm_config_cache of this CloudVmCluster.
-        :type: ExadataIormConfig
+        :type: oci.database.models.ExadataIormConfig
         """
         self._iorm_config_cache = iorm_config_cache
 

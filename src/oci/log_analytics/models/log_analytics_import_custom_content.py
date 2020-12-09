@@ -32,7 +32,7 @@ class LogAnalyticsImportCustomContent(object):
 
         :param change_list:
             The value to assign to the change_list property of this LogAnalyticsImportCustomContent.
-        :type change_list: LogAnalyticsImportCustomChangeList
+        :type change_list: oci.log_analytics.models.LogAnalyticsImportCustomChangeList
 
         :param content_name:
             The value to assign to the content_name property of this LogAnalyticsImportCustomContent.
@@ -139,7 +139,7 @@ class LogAnalyticsImportCustomContent(object):
         Gets the change_list of this LogAnalyticsImportCustomContent.
 
         :return: The change_list of this LogAnalyticsImportCustomContent.
-        :rtype: LogAnalyticsImportCustomChangeList
+        :rtype: oci.log_analytics.models.LogAnalyticsImportCustomChangeList
         """
         return self._change_list
 
@@ -149,7 +149,7 @@ class LogAnalyticsImportCustomContent(object):
         Sets the change_list of this LogAnalyticsImportCustomContent.
 
         :param change_list: The change_list of this LogAnalyticsImportCustomContent.
-        :type: LogAnalyticsImportCustomChangeList
+        :type: oci.log_analytics.models.LogAnalyticsImportCustomChangeList
         """
         self._change_list = change_list
 

@@ -20,7 +20,7 @@ class LogAnalyticsLogGroupSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsLogGroupSummaryCollection.
-        :type items: list[LogAnalyticsLogGroupSummary]
+        :type items: list[oci.log_analytics.models.LogAnalyticsLogGroupSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsLogGroupSummaryCollection(object):
 
 
         :return: The items of this LogAnalyticsLogGroupSummaryCollection.
-        :rtype: list[LogAnalyticsLogGroupSummary]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLogGroupSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsLogGroupSummaryCollection(object):
 
 
         :param items: The items of this LogAnalyticsLogGroupSummaryCollection.
-        :type: list[LogAnalyticsLogGroupSummary]
+        :type: list[oci.log_analytics.models.LogAnalyticsLogGroupSummary]
         """
         self._items = items
 

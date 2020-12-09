@@ -36,7 +36,7 @@ class UpdateInstancePoolDetails(object):
 
         :param placement_configurations:
             The value to assign to the placement_configurations property of this UpdateInstancePoolDetails.
-        :type placement_configurations: list[UpdateInstancePoolPlacementConfigurationDetails]
+        :type placement_configurations: list[oci.core.models.UpdateInstancePoolPlacementConfigurationDetails]
 
         :param size:
             The value to assign to the size property of this UpdateInstancePoolDetails.
@@ -205,7 +205,7 @@ class UpdateInstancePoolDetails(object):
 
 
         :return: The placement_configurations of this UpdateInstancePoolDetails.
-        :rtype: list[UpdateInstancePoolPlacementConfigurationDetails]
+        :rtype: list[oci.core.models.UpdateInstancePoolPlacementConfigurationDetails]
         """
         return self._placement_configurations
 
@@ -222,7 +222,7 @@ class UpdateInstancePoolDetails(object):
 
 
         :param placement_configurations: The placement_configurations of this UpdateInstancePoolDetails.
-        :type: list[UpdateInstancePoolPlacementConfigurationDetails]
+        :type: list[oci.core.models.UpdateInstancePoolPlacementConfigurationDetails]
         """
         self._placement_configurations = placement_configurations
 

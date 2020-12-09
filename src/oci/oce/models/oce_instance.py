@@ -114,7 +114,7 @@ class OceInstance(object):
 
         :param identity_stripe:
             The value to assign to the identity_stripe property of this OceInstance.
-        :type identity_stripe: IdentityStripeDetails
+        :type identity_stripe: oci.oce.models.IdentityStripeDetails
 
         :param instance_usage_type:
             The value to assign to the instance_usage_type property of this OceInstance.
@@ -483,7 +483,7 @@ class OceInstance(object):
         Gets the identity_stripe of this OceInstance.
 
         :return: The identity_stripe of this OceInstance.
-        :rtype: IdentityStripeDetails
+        :rtype: oci.oce.models.IdentityStripeDetails
         """
         return self._identity_stripe
 
@@ -493,7 +493,7 @@ class OceInstance(object):
         Sets the identity_stripe of this OceInstance.
 
         :param identity_stripe: The identity_stripe of this OceInstance.
-        :type: IdentityStripeDetails
+        :type: oci.oce.models.IdentityStripeDetails
         """
         self._identity_stripe = identity_stripe
 

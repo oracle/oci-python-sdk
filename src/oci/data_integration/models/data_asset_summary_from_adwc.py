@@ -58,7 +58,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummaryFromAdwc.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummaryFromAdwc.
@@ -66,11 +66,11 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummaryFromAdwc.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummaryFromAdwc.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param service_name:
             The value to assign to the service_name property of this DataAssetSummaryFromAdwc.
@@ -86,7 +86,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromAdwc.
-        :type default_connection: ConnectionSummaryFromAdwc
+        :type default_connection: oci.data_integration.models.ConnectionSummaryFromAdwc
 
         """
         self.swagger_types = {
@@ -226,7 +226,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromAdwc.
 
         :return: The default_connection of this DataAssetSummaryFromAdwc.
-        :rtype: ConnectionSummaryFromAdwc
+        :rtype: oci.data_integration.models.ConnectionSummaryFromAdwc
         """
         return self._default_connection
 
@@ -236,7 +236,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromAdwc.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromAdwc.
-        :type: ConnectionSummaryFromAdwc
+        :type: oci.data_integration.models.ConnectionSummaryFromAdwc
         """
         self._default_connection = default_connection
 

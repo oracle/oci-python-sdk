@@ -20,7 +20,7 @@ class ColumnNameCollection(object):
 
         :param items:
             The value to assign to the items property of this ColumnNameCollection.
-        :type items: list[ColumnName]
+        :type items: list[oci.log_analytics.models.ColumnName]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ColumnNameCollection(object):
 
 
         :return: The items of this ColumnNameCollection.
-        :rtype: list[ColumnName]
+        :rtype: list[oci.log_analytics.models.ColumnName]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ColumnNameCollection(object):
 
 
         :param items: The items of this ColumnNameCollection.
-        :type: list[ColumnName]
+        :type: list[oci.log_analytics.models.ColumnName]
         """
         self._items = items
 

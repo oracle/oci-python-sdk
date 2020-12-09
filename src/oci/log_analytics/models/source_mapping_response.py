@@ -20,7 +20,7 @@ class SourceMappingResponse(object):
 
         :param parsed_response:
             The value to assign to the parsed_response property of this SourceMappingResponse.
-        :type parsed_response: list[ParsedContent]
+        :type parsed_response: list[oci.log_analytics.models.ParsedContent]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SourceMappingResponse(object):
 
 
         :return: The parsed_response of this SourceMappingResponse.
-        :rtype: list[ParsedContent]
+        :rtype: list[oci.log_analytics.models.ParsedContent]
         """
         return self._parsed_response
 
@@ -53,7 +53,7 @@ class SourceMappingResponse(object):
 
 
         :param parsed_response: The parsed_response of this SourceMappingResponse.
-        :type: list[ParsedContent]
+        :type: list[oci.log_analytics.models.ParsedContent]
         """
         self._parsed_response = parsed_response
 

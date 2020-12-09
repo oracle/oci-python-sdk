@@ -25,7 +25,7 @@ class CpeDeviceShapeSummary(object):
 
         :param cpe_device_info:
             The value to assign to the cpe_device_info property of this CpeDeviceShapeSummary.
-        :type cpe_device_info: CpeDeviceInfo
+        :type cpe_device_info: oci.core.models.CpeDeviceInfo
 
         """
         self.swagger_types = {
@@ -79,7 +79,7 @@ class CpeDeviceShapeSummary(object):
 
 
         :return: The cpe_device_info of this CpeDeviceShapeSummary.
-        :rtype: CpeDeviceInfo
+        :rtype: oci.core.models.CpeDeviceInfo
         """
         return self._cpe_device_info
 
@@ -91,7 +91,7 @@ class CpeDeviceShapeSummary(object):
 
 
         :param cpe_device_info: The cpe_device_info of this CpeDeviceShapeSummary.
-        :type: CpeDeviceInfo
+        :type: oci.core.models.CpeDeviceInfo
         """
         self._cpe_device_info = cpe_device_info
 

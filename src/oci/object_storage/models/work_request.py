@@ -72,7 +72,7 @@ class WorkRequest(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequest.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.object_storage.models.WorkRequestResource]
 
         :param percent_complete:
             The value to assign to the percent_complete property of this WorkRequest.
@@ -253,7 +253,7 @@ class WorkRequest(object):
         Gets the resources of this WorkRequest.
 
         :return: The resources of this WorkRequest.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.object_storage.models.WorkRequestResource]
         """
         return self._resources
 
@@ -263,7 +263,7 @@ class WorkRequest(object):
         Sets the resources of this WorkRequest.
 
         :param resources: The resources of this WorkRequest.
-        :type: list[WorkRequestResource]
+        :type: list[oci.object_storage.models.WorkRequestResource]
         """
         self._resources = resources
 

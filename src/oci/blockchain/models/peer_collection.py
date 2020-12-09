@@ -20,7 +20,7 @@ class PeerCollection(object):
 
         :param items:
             The value to assign to the items property of this PeerCollection.
-        :type items: list[PeerSummary]
+        :type items: list[oci.blockchain.models.PeerSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PeerCollection(object):
 
 
         :return: The items of this PeerCollection.
-        :rtype: list[PeerSummary]
+        :rtype: list[oci.blockchain.models.PeerSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class PeerCollection(object):
 
 
         :param items: The items of this PeerCollection.
-        :type: list[PeerSummary]
+        :type: list[oci.blockchain.models.PeerSummary]
         """
         self._items = items
 

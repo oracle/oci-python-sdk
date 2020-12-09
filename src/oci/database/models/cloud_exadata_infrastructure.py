@@ -98,7 +98,7 @@ class CloudExadataInfrastructure(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this CloudExadataInfrastructure.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this CloudExadataInfrastructure.
@@ -483,7 +483,7 @@ class CloudExadataInfrastructure(object):
         Gets the maintenance_window of this CloudExadataInfrastructure.
 
         :return: The maintenance_window of this CloudExadataInfrastructure.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -493,7 +493,7 @@ class CloudExadataInfrastructure(object):
         Sets the maintenance_window of this CloudExadataInfrastructure.
 
         :param maintenance_window: The maintenance_window of this CloudExadataInfrastructure.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

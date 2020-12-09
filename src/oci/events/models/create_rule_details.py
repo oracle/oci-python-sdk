@@ -40,7 +40,7 @@ class CreateRuleDetails(object):
 
         :param actions:
             The value to assign to the actions property of this CreateRuleDetails.
-        :type actions: ActionDetailsList
+        :type actions: oci.events.models.ActionDetailsList
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRuleDetails.
@@ -272,7 +272,7 @@ class CreateRuleDetails(object):
         **[Required]** Gets the actions of this CreateRuleDetails.
 
         :return: The actions of this CreateRuleDetails.
-        :rtype: ActionDetailsList
+        :rtype: oci.events.models.ActionDetailsList
         """
         return self._actions
 
@@ -282,7 +282,7 @@ class CreateRuleDetails(object):
         Sets the actions of this CreateRuleDetails.
 
         :param actions: The actions of this CreateRuleDetails.
-        :type: ActionDetailsList
+        :type: oci.events.models.ActionDetailsList
         """
         self._actions = actions
 

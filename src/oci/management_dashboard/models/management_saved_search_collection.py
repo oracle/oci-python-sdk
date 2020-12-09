@@ -20,7 +20,7 @@ class ManagementSavedSearchCollection(object):
 
         :param items:
             The value to assign to the items property of this ManagementSavedSearchCollection.
-        :type items: list[ManagementSavedSearchSummary]
+        :type items: list[oci.management_dashboard.models.ManagementSavedSearchSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ManagementSavedSearchCollection(object):
 
 
         :return: The items of this ManagementSavedSearchCollection.
-        :rtype: list[ManagementSavedSearchSummary]
+        :rtype: list[oci.management_dashboard.models.ManagementSavedSearchSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ManagementSavedSearchCollection(object):
 
 
         :param items: The items of this ManagementSavedSearchCollection.
-        :type: list[ManagementSavedSearchSummary]
+        :type: list[oci.management_dashboard.models.ManagementSavedSearchSummary]
         """
         self._items = items
 

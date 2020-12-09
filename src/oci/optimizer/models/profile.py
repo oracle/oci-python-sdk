@@ -82,7 +82,7 @@ class Profile(object):
 
         :param levels_configuration:
             The value to assign to the levels_configuration property of this Profile.
-        :type levels_configuration: LevelsConfiguration
+        :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Profile.
@@ -306,7 +306,7 @@ class Profile(object):
         Gets the levels_configuration of this Profile.
 
         :return: The levels_configuration of this Profile.
-        :rtype: LevelsConfiguration
+        :rtype: oci.optimizer.models.LevelsConfiguration
         """
         return self._levels_configuration
 
@@ -316,7 +316,7 @@ class Profile(object):
         Sets the levels_configuration of this Profile.
 
         :param levels_configuration: The levels_configuration of this Profile.
-        :type: LevelsConfiguration
+        :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
 

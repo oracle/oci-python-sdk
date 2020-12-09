@@ -109,7 +109,7 @@ class ResourceSearchClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcesearch/get_resource_type.py.html>`__ to see an example of how to use get_resource_type API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcesearch/get_resource_type.py.html>`__ to see an example of how to use get_resource_type API.
         """
         resource_path = "/resourceTypes/{name}"
         method = "GET"
@@ -188,7 +188,7 @@ class ResourceSearchClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcesearch/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcesearch/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
         """
         resource_path = "/resourceTypes"
         method = "GET"
@@ -273,7 +273,7 @@ class ResourceSearchClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcesearch/search_resources.py.html>`__ to see an example of how to use search_resources API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcesearch/search_resources.py.html>`__ to see an example of how to use search_resources API.
         """
         resource_path = "/resources"
         method = "POST"

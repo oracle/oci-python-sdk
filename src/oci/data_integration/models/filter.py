@@ -34,7 +34,7 @@ class Filter(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Filter.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Filter.
@@ -50,11 +50,11 @@ class Filter(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this Filter.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Filter.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Filter.
@@ -66,15 +66,15 @@ class Filter(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this Filter.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Filter.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param filter_condition:
             The value to assign to the filter_condition property of this Filter.
-        :type filter_condition: Expression
+        :type filter_condition: oci.data_integration.models.Expression
 
         """
         self.swagger_types = {
@@ -133,7 +133,7 @@ class Filter(Operator):
         Gets the filter_condition of this Filter.
 
         :return: The filter_condition of this Filter.
-        :rtype: Expression
+        :rtype: oci.data_integration.models.Expression
         """
         return self._filter_condition
 
@@ -143,7 +143,7 @@ class Filter(Operator):
         Sets the filter_condition of this Filter.
 
         :param filter_condition: The filter_condition of this Filter.
-        :type: Expression
+        :type: oci.data_integration.models.Expression
         """
         self._filter_condition = filter_condition
 

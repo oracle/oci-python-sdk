@@ -67,7 +67,7 @@ class CreateDatabaseDetails(object):
 
         :param db_backup_config:
             The value to assign to the db_backup_config property of this CreateDatabaseDetails.
-        :type db_backup_config: DbBackupConfig
+        :type db_backup_config: oci.database.models.DbBackupConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDatabaseDetails.
@@ -361,7 +361,7 @@ class CreateDatabaseDetails(object):
         Gets the db_backup_config of this CreateDatabaseDetails.
 
         :return: The db_backup_config of this CreateDatabaseDetails.
-        :rtype: DbBackupConfig
+        :rtype: oci.database.models.DbBackupConfig
         """
         return self._db_backup_config
 
@@ -371,7 +371,7 @@ class CreateDatabaseDetails(object):
         Sets the db_backup_config of this CreateDatabaseDetails.
 
         :param db_backup_config: The db_backup_config of this CreateDatabaseDetails.
-        :type: DbBackupConfig
+        :type: oci.database.models.DbBackupConfig
         """
         self._db_backup_config = db_backup_config
 

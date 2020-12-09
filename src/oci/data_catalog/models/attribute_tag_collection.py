@@ -24,7 +24,7 @@ class AttributeTagCollection(object):
 
         :param items:
             The value to assign to the items property of this AttributeTagCollection.
-        :type items: list[AttributeTagSummary]
+        :type items: list[oci.data_catalog.models.AttributeTagSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class AttributeTagCollection(object):
 
 
         :return: The items of this AttributeTagCollection.
-        :rtype: list[AttributeTagSummary]
+        :rtype: list[oci.data_catalog.models.AttributeTagSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class AttributeTagCollection(object):
 
 
         :param items: The items of this AttributeTagCollection.
-        :type: list[AttributeTagSummary]
+        :type: list[oci.data_catalog.models.AttributeTagSummary]
         """
         self._items = items
 

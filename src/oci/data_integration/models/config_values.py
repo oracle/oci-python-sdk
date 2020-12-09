@@ -24,7 +24,7 @@ class ConfigValues(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConfigValues.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class ConfigValues(object):
         Gets the parent_ref of this ConfigValues.
 
         :return: The parent_ref of this ConfigValues.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -80,7 +80,7 @@ class ConfigValues(object):
         Sets the parent_ref of this ConfigValues.
 
         :param parent_ref: The parent_ref of this ConfigValues.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 

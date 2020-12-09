@@ -76,7 +76,7 @@ class Configuration(object):
 
         :param variables:
             The value to assign to the variables property of this Configuration.
-        :type variables: ConfigurationVariables
+        :type variables: oci.mysql.models.ConfigurationVariables
 
         :param parent_configuration_id:
             The value to assign to the parent_configuration_id property of this Configuration.
@@ -379,7 +379,7 @@ class Configuration(object):
         **[Required]** Gets the variables of this Configuration.
 
         :return: The variables of this Configuration.
-        :rtype: ConfigurationVariables
+        :rtype: oci.mysql.models.ConfigurationVariables
         """
         return self._variables
 
@@ -389,7 +389,7 @@ class Configuration(object):
         Sets the variables of this Configuration.
 
         :param variables: The variables of this Configuration.
-        :type: ConfigurationVariables
+        :type: oci.mysql.models.ConfigurationVariables
         """
         self._variables = variables
 

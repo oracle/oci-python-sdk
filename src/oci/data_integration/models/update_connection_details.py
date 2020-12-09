@@ -66,7 +66,7 @@ class UpdateConnectionDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UpdateConnectionDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this UpdateConnectionDetails.
@@ -90,11 +90,11 @@ class UpdateConnectionDetails(object):
 
         :param connection_properties:
             The value to assign to the connection_properties property of this UpdateConnectionDetails.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateConnectionDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -251,7 +251,7 @@ class UpdateConnectionDetails(object):
         Gets the parent_ref of this UpdateConnectionDetails.
 
         :return: The parent_ref of this UpdateConnectionDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -261,7 +261,7 @@ class UpdateConnectionDetails(object):
         Sets the parent_ref of this UpdateConnectionDetails.
 
         :param parent_ref: The parent_ref of this UpdateConnectionDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -393,7 +393,7 @@ class UpdateConnectionDetails(object):
 
 
         :return: The connection_properties of this UpdateConnectionDetails.
-        :rtype: list[ConnectionProperty]
+        :rtype: list[oci.data_integration.models.ConnectionProperty]
         """
         return self._connection_properties
 
@@ -405,7 +405,7 @@ class UpdateConnectionDetails(object):
 
 
         :param connection_properties: The connection_properties of this UpdateConnectionDetails.
-        :type: list[ConnectionProperty]
+        :type: list[oci.data_integration.models.ConnectionProperty]
         """
         self._connection_properties = connection_properties
 
@@ -415,7 +415,7 @@ class UpdateConnectionDetails(object):
         Gets the registry_metadata of this UpdateConnectionDetails.
 
         :return: The registry_metadata of this UpdateConnectionDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -425,7 +425,7 @@ class UpdateConnectionDetails(object):
         Sets the registry_metadata of this UpdateConnectionDetails.
 
         :param registry_metadata: The registry_metadata of this UpdateConnectionDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

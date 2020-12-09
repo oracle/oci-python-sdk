@@ -58,7 +58,7 @@ class DataAssetSummaryFromJdbc(DataAssetSummary):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummaryFromJdbc.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummaryFromJdbc.
@@ -66,11 +66,11 @@ class DataAssetSummaryFromJdbc(DataAssetSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummaryFromJdbc.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummaryFromJdbc.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param host:
             The value to assign to the host property of this DataAssetSummaryFromJdbc.
@@ -86,7 +86,7 @@ class DataAssetSummaryFromJdbc(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromJdbc.
-        :type default_connection: ConnectionSummaryFromJdbc
+        :type default_connection: oci.data_integration.models.ConnectionSummaryFromJdbc
 
         """
         self.swagger_types = {
@@ -226,7 +226,7 @@ class DataAssetSummaryFromJdbc(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromJdbc.
 
         :return: The default_connection of this DataAssetSummaryFromJdbc.
-        :rtype: ConnectionSummaryFromJdbc
+        :rtype: oci.data_integration.models.ConnectionSummaryFromJdbc
         """
         return self._default_connection
 
@@ -236,7 +236,7 @@ class DataAssetSummaryFromJdbc(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromJdbc.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromJdbc.
-        :type: ConnectionSummaryFromJdbc
+        :type: oci.data_integration.models.ConnectionSummaryFromJdbc
         """
         self._default_connection = default_connection
 

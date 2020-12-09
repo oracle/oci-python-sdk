@@ -24,15 +24,15 @@ class ClusterCreateOptions(object):
 
         :param kubernetes_network_config:
             The value to assign to the kubernetes_network_config property of this ClusterCreateOptions.
-        :type kubernetes_network_config: KubernetesNetworkConfig
+        :type kubernetes_network_config: oci.container_engine.models.KubernetesNetworkConfig
 
         :param add_ons:
             The value to assign to the add_ons property of this ClusterCreateOptions.
-        :type add_ons: AddOnOptions
+        :type add_ons: oci.container_engine.models.AddOnOptions
 
         :param admission_controller_options:
             The value to assign to the admission_controller_options property of this ClusterCreateOptions.
-        :type admission_controller_options: AdmissionControllerOptions
+        :type admission_controller_options: oci.container_engine.models.AdmissionControllerOptions
 
         """
         self.swagger_types = {
@@ -86,7 +86,7 @@ class ClusterCreateOptions(object):
 
 
         :return: The kubernetes_network_config of this ClusterCreateOptions.
-        :rtype: KubernetesNetworkConfig
+        :rtype: oci.container_engine.models.KubernetesNetworkConfig
         """
         return self._kubernetes_network_config
 
@@ -98,7 +98,7 @@ class ClusterCreateOptions(object):
 
 
         :param kubernetes_network_config: The kubernetes_network_config of this ClusterCreateOptions.
-        :type: KubernetesNetworkConfig
+        :type: oci.container_engine.models.KubernetesNetworkConfig
         """
         self._kubernetes_network_config = kubernetes_network_config
 
@@ -110,7 +110,7 @@ class ClusterCreateOptions(object):
 
 
         :return: The add_ons of this ClusterCreateOptions.
-        :rtype: AddOnOptions
+        :rtype: oci.container_engine.models.AddOnOptions
         """
         return self._add_ons
 
@@ -122,7 +122,7 @@ class ClusterCreateOptions(object):
 
 
         :param add_ons: The add_ons of this ClusterCreateOptions.
-        :type: AddOnOptions
+        :type: oci.container_engine.models.AddOnOptions
         """
         self._add_ons = add_ons
 
@@ -134,7 +134,7 @@ class ClusterCreateOptions(object):
 
 
         :return: The admission_controller_options of this ClusterCreateOptions.
-        :rtype: AdmissionControllerOptions
+        :rtype: oci.container_engine.models.AdmissionControllerOptions
         """
         return self._admission_controller_options
 
@@ -146,7 +146,7 @@ class ClusterCreateOptions(object):
 
 
         :param admission_controller_options: The admission_controller_options of this ClusterCreateOptions.
-        :type: AdmissionControllerOptions
+        :type: oci.container_engine.models.AdmissionControllerOptions
         """
         self._admission_controller_options = admission_controller_options
 

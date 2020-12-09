@@ -56,7 +56,7 @@ class CreateBootVolumeDetails(object):
 
         :param source_details:
             The value to assign to the source_details property of this CreateBootVolumeDetails.
-        :type source_details: BootVolumeSourceDetails
+        :type source_details: oci.core.models.BootVolumeSourceDetails
 
         :param is_auto_tune_enabled:
             The value to assign to the is_auto_tune_enabled property of this CreateBootVolumeDetails.
@@ -378,7 +378,7 @@ class CreateBootVolumeDetails(object):
 
 
         :return: The source_details of this CreateBootVolumeDetails.
-        :rtype: BootVolumeSourceDetails
+        :rtype: oci.core.models.BootVolumeSourceDetails
         """
         return self._source_details
 
@@ -391,7 +391,7 @@ class CreateBootVolumeDetails(object):
 
 
         :param source_details: The source_details of this CreateBootVolumeDetails.
-        :type: BootVolumeSourceDetails
+        :type: oci.core.models.BootVolumeSourceDetails
         """
         self._source_details = source_details
 

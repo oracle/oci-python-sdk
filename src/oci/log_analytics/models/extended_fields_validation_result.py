@@ -20,7 +20,7 @@ class ExtendedFieldsValidationResult(object):
 
         :param items:
             The value to assign to the items property of this ExtendedFieldsValidationResult.
-        :type items: list[EfdRegexResult]
+        :type items: list[oci.log_analytics.models.EfdRegexResult]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ExtendedFieldsValidationResult(object):
 
 
         :return: The items of this ExtendedFieldsValidationResult.
-        :rtype: list[EfdRegexResult]
+        :rtype: list[oci.log_analytics.models.EfdRegexResult]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ExtendedFieldsValidationResult(object):
 
 
         :param items: The items of this ExtendedFieldsValidationResult.
-        :type: list[EfdRegexResult]
+        :type: list[oci.log_analytics.models.EfdRegexResult]
         """
         self._items = items
 

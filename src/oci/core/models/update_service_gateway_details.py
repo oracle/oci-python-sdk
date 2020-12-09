@@ -40,7 +40,7 @@ class UpdateServiceGatewayDetails(object):
 
         :param services:
             The value to assign to the services property of this UpdateServiceGatewayDetails.
-        :type services: list[ServiceIdRequestDetails]
+        :type services: list[oci.core.models.ServiceIdRequestDetails]
 
         """
         self.swagger_types = {
@@ -242,7 +242,7 @@ class UpdateServiceGatewayDetails(object):
 
 
         :return: The services of this UpdateServiceGatewayDetails.
-        :rtype: list[ServiceIdRequestDetails]
+        :rtype: list[oci.core.models.ServiceIdRequestDetails]
         """
         return self._services
 
@@ -264,7 +264,7 @@ class UpdateServiceGatewayDetails(object):
 
 
         :param services: The services of this UpdateServiceGatewayDetails.
-        :type: list[ServiceIdRequestDetails]
+        :type: list[oci.core.models.ServiceIdRequestDetails]
         """
         self._services = services
 

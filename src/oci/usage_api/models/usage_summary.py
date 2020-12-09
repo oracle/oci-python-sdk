@@ -128,7 +128,7 @@ class UsageSummary(object):
 
         :param tags:
             The value to assign to the tags property of this UsageSummary.
-        :type tags: list[Tag]
+        :type tags: list[oci.usage_api.models.Tag]
 
         """
         self.swagger_types = {
@@ -878,7 +878,7 @@ class UsageSummary(object):
 
 
         :return: The tags of this UsageSummary.
-        :rtype: list[Tag]
+        :rtype: list[oci.usage_api.models.Tag]
         """
         return self._tags
 
@@ -890,7 +890,7 @@ class UsageSummary(object):
 
 
         :param tags: The tags of this UsageSummary.
-        :type: list[Tag]
+        :type: list[oci.usage_api.models.Tag]
         """
         self._tags = tags
 

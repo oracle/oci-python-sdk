@@ -40,7 +40,7 @@ class LogAnalyticsSourcePattern(object):
 
         :param fields:
             The value to assign to the fields property of this LogAnalyticsSourcePattern.
-        :type fields: list[LogAnalyticsParserField]
+        :type fields: list[oci.log_analytics.models.LogAnalyticsParserField]
 
         :param is_include:
             The value to assign to the is_include property of this LogAnalyticsSourcePattern.
@@ -52,7 +52,7 @@ class LogAnalyticsSourcePattern(object):
 
         :param pattern_filter:
             The value to assign to the pattern_filter property of this LogAnalyticsSourcePattern.
-        :type pattern_filter: LogAnalyticsPatternFilter
+        :type pattern_filter: oci.log_analytics.models.LogAnalyticsPatternFilter
 
         :param alias:
             The value to assign to the alias property of this LogAnalyticsSourcePattern.
@@ -287,7 +287,7 @@ class LogAnalyticsSourcePattern(object):
 
 
         :return: The fields of this LogAnalyticsSourcePattern.
-        :rtype: list[LogAnalyticsParserField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         return self._fields
 
@@ -299,7 +299,7 @@ class LogAnalyticsSourcePattern(object):
 
 
         :param fields: The fields of this LogAnalyticsSourcePattern.
-        :type: list[LogAnalyticsParserField]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         self._fields = fields
 
@@ -357,7 +357,7 @@ class LogAnalyticsSourcePattern(object):
         Gets the pattern_filter of this LogAnalyticsSourcePattern.
 
         :return: The pattern_filter of this LogAnalyticsSourcePattern.
-        :rtype: LogAnalyticsPatternFilter
+        :rtype: oci.log_analytics.models.LogAnalyticsPatternFilter
         """
         return self._pattern_filter
 
@@ -367,7 +367,7 @@ class LogAnalyticsSourcePattern(object):
         Sets the pattern_filter of this LogAnalyticsSourcePattern.
 
         :param pattern_filter: The pattern_filter of this LogAnalyticsSourcePattern.
-        :type: LogAnalyticsPatternFilter
+        :type: oci.log_analytics.models.LogAnalyticsPatternFilter
         """
         self._pattern_filter = pattern_filter
 

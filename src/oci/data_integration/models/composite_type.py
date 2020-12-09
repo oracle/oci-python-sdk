@@ -34,7 +34,7 @@ class CompositeType(BaseType):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CompositeType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CompositeType.
@@ -50,15 +50,15 @@ class CompositeType(BaseType):
 
         :param parent_type:
             The value to assign to the parent_type property of this CompositeType.
-        :type parent_type: CompositeType
+        :type parent_type: oci.data_integration.models.CompositeType
 
         :param elements:
             The value to assign to the elements property of this CompositeType.
-        :type elements: list[TypedObject]
+        :type elements: list[oci.data_integration.models.TypedObject]
 
         :param config_definition:
             The value to assign to the config_definition property of this CompositeType.
-        :type config_definition: ConfigDefinition
+        :type config_definition: oci.data_integration.models.ConfigDefinition
 
         """
         self.swagger_types = {
@@ -105,7 +105,7 @@ class CompositeType(BaseType):
         Gets the parent_type of this CompositeType.
 
         :return: The parent_type of this CompositeType.
-        :rtype: CompositeType
+        :rtype: oci.data_integration.models.CompositeType
         """
         return self._parent_type
 
@@ -115,7 +115,7 @@ class CompositeType(BaseType):
         Sets the parent_type of this CompositeType.
 
         :param parent_type: The parent_type of this CompositeType.
-        :type: CompositeType
+        :type: oci.data_integration.models.CompositeType
         """
         self._parent_type = parent_type
 
@@ -127,7 +127,7 @@ class CompositeType(BaseType):
 
 
         :return: The elements of this CompositeType.
-        :rtype: list[TypedObject]
+        :rtype: list[oci.data_integration.models.TypedObject]
         """
         return self._elements
 
@@ -139,7 +139,7 @@ class CompositeType(BaseType):
 
 
         :param elements: The elements of this CompositeType.
-        :type: list[TypedObject]
+        :type: list[oci.data_integration.models.TypedObject]
         """
         self._elements = elements
 
@@ -149,7 +149,7 @@ class CompositeType(BaseType):
         Gets the config_definition of this CompositeType.
 
         :return: The config_definition of this CompositeType.
-        :rtype: ConfigDefinition
+        :rtype: oci.data_integration.models.ConfigDefinition
         """
         return self._config_definition
 
@@ -159,7 +159,7 @@ class CompositeType(BaseType):
         Sets the config_definition of this CompositeType.
 
         :param config_definition: The config_definition of this CompositeType.
-        :type: ConfigDefinition
+        :type: oci.data_integration.models.ConfigDefinition
         """
         self._config_definition = config_definition
 

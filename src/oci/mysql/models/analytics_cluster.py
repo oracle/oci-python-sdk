@@ -60,7 +60,7 @@ class AnalyticsCluster(object):
 
         :param cluster_nodes:
             The value to assign to the cluster_nodes property of this AnalyticsCluster.
-        :type cluster_nodes: list[AnalyticsClusterNode]
+        :type cluster_nodes: list[oci.mysql.models.AnalyticsClusterNode]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AnalyticsCluster.
@@ -196,7 +196,7 @@ class AnalyticsCluster(object):
 
 
         :return: The cluster_nodes of this AnalyticsCluster.
-        :rtype: list[AnalyticsClusterNode]
+        :rtype: list[oci.mysql.models.AnalyticsClusterNode]
         """
         return self._cluster_nodes
 
@@ -208,7 +208,7 @@ class AnalyticsCluster(object):
 
 
         :param cluster_nodes: The cluster_nodes of this AnalyticsCluster.
-        :type: list[AnalyticsClusterNode]
+        :type: list[oci.mysql.models.AnalyticsClusterNode]
         """
         self._cluster_nodes = cluster_nodes
 

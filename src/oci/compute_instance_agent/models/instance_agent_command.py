@@ -48,11 +48,11 @@ class InstanceAgentCommand(object):
 
         :param target:
             The value to assign to the target property of this InstanceAgentCommand.
-        :type target: InstanceAgentCommandTarget
+        :type target: oci.compute_instance_agent.models.InstanceAgentCommandTarget
 
         :param content:
             The value to assign to the content property of this InstanceAgentCommand.
-        :type content: InstanceAgentCommandContent
+        :type content: oci.compute_instance_agent.models.InstanceAgentCommandContent
 
         """
         self.swagger_types = {
@@ -263,7 +263,7 @@ class InstanceAgentCommand(object):
         **[Required]** Gets the target of this InstanceAgentCommand.
 
         :return: The target of this InstanceAgentCommand.
-        :rtype: InstanceAgentCommandTarget
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandTarget
         """
         return self._target
 
@@ -273,7 +273,7 @@ class InstanceAgentCommand(object):
         Sets the target of this InstanceAgentCommand.
 
         :param target: The target of this InstanceAgentCommand.
-        :type: InstanceAgentCommandTarget
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandTarget
         """
         self._target = target
 
@@ -283,7 +283,7 @@ class InstanceAgentCommand(object):
         **[Required]** Gets the content of this InstanceAgentCommand.
 
         :return: The content of this InstanceAgentCommand.
-        :rtype: InstanceAgentCommandContent
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandContent
         """
         return self._content
 
@@ -293,7 +293,7 @@ class InstanceAgentCommand(object):
         Sets the content of this InstanceAgentCommand.
 
         :param content: The content of this InstanceAgentCommand.
-        :type: InstanceAgentCommandContent
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandContent
         """
         self._content = content
 

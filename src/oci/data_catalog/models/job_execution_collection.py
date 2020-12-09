@@ -24,7 +24,7 @@ class JobExecutionCollection(object):
 
         :param items:
             The value to assign to the items property of this JobExecutionCollection.
-        :type items: list[JobExecutionSummary]
+        :type items: list[oci.data_catalog.models.JobExecutionSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class JobExecutionCollection(object):
 
 
         :return: The items of this JobExecutionCollection.
-        :rtype: list[JobExecutionSummary]
+        :rtype: list[oci.data_catalog.models.JobExecutionSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class JobExecutionCollection(object):
 
 
         :param items: The items of this JobExecutionCollection.
-        :type: list[JobExecutionSummary]
+        :type: list[oci.data_catalog.models.JobExecutionSummary]
         """
         self._items = items
 

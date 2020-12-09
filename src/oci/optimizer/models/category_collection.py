@@ -20,7 +20,7 @@ class CategoryCollection(object):
 
         :param items:
             The value to assign to the items property of this CategoryCollection.
-        :type items: list[CategorySummary]
+        :type items: list[oci.optimizer.models.CategorySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class CategoryCollection(object):
 
 
         :return: The items of this CategoryCollection.
-        :rtype: list[CategorySummary]
+        :rtype: list[oci.optimizer.models.CategorySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class CategoryCollection(object):
 
 
         :param items: The items of this CategoryCollection.
-        :type: list[CategorySummary]
+        :type: list[oci.optimizer.models.CategorySummary]
         """
         self._items = items
 

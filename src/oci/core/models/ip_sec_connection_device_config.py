@@ -35,7 +35,7 @@ class IPSecConnectionDeviceConfig(object):
 
         :param tunnels:
             The value to assign to the tunnels property of this IPSecConnectionDeviceConfig.
-        :type tunnels: list[TunnelConfig]
+        :type tunnels: list[oci.core.models.TunnelConfig]
 
         """
         self.swagger_types = {
@@ -137,7 +137,7 @@ class IPSecConnectionDeviceConfig(object):
 
 
         :return: The tunnels of this IPSecConnectionDeviceConfig.
-        :rtype: list[TunnelConfig]
+        :rtype: list[oci.core.models.TunnelConfig]
         """
         return self._tunnels
 
@@ -149,7 +149,7 @@ class IPSecConnectionDeviceConfig(object):
 
 
         :param tunnels: The tunnels of this IPSecConnectionDeviceConfig.
-        :type: list[TunnelConfig]
+        :type: list[oci.core.models.TunnelConfig]
         """
         self._tunnels = tunnels
 

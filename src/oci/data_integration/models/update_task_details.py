@@ -46,7 +46,7 @@ class UpdateTaskDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UpdateTaskDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this UpdateTaskDetails.
@@ -70,27 +70,27 @@ class UpdateTaskDetails(object):
 
         :param input_ports:
             The value to assign to the input_ports property of this UpdateTaskDetails.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this UpdateTaskDetails.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this UpdateTaskDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this UpdateTaskDetails.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this UpdateTaskDetails.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateTaskDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -247,7 +247,7 @@ class UpdateTaskDetails(object):
         Gets the parent_ref of this UpdateTaskDetails.
 
         :return: The parent_ref of this UpdateTaskDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -257,7 +257,7 @@ class UpdateTaskDetails(object):
         Sets the parent_ref of this UpdateTaskDetails.
 
         :param parent_ref: The parent_ref of this UpdateTaskDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -389,7 +389,7 @@ class UpdateTaskDetails(object):
 
 
         :return: The input_ports of this UpdateTaskDetails.
-        :rtype: list[InputPort]
+        :rtype: list[oci.data_integration.models.InputPort]
         """
         return self._input_ports
 
@@ -401,7 +401,7 @@ class UpdateTaskDetails(object):
 
 
         :param input_ports: The input_ports of this UpdateTaskDetails.
-        :type: list[InputPort]
+        :type: list[oci.data_integration.models.InputPort]
         """
         self._input_ports = input_ports
 
@@ -413,7 +413,7 @@ class UpdateTaskDetails(object):
 
 
         :return: The output_ports of this UpdateTaskDetails.
-        :rtype: list[OutputPort]
+        :rtype: list[oci.data_integration.models.OutputPort]
         """
         return self._output_ports
 
@@ -425,7 +425,7 @@ class UpdateTaskDetails(object):
 
 
         :param output_ports: The output_ports of this UpdateTaskDetails.
-        :type: list[OutputPort]
+        :type: list[oci.data_integration.models.OutputPort]
         """
         self._output_ports = output_ports
 
@@ -437,7 +437,7 @@ class UpdateTaskDetails(object):
 
 
         :return: The parameters of this UpdateTaskDetails.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -449,7 +449,7 @@ class UpdateTaskDetails(object):
 
 
         :param parameters: The parameters of this UpdateTaskDetails.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -459,7 +459,7 @@ class UpdateTaskDetails(object):
         Gets the op_config_values of this UpdateTaskDetails.
 
         :return: The op_config_values of this UpdateTaskDetails.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._op_config_values
 
@@ -469,7 +469,7 @@ class UpdateTaskDetails(object):
         Sets the op_config_values of this UpdateTaskDetails.
 
         :param op_config_values: The op_config_values of this UpdateTaskDetails.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._op_config_values = op_config_values
 
@@ -479,7 +479,7 @@ class UpdateTaskDetails(object):
         Gets the config_provider_delegate of this UpdateTaskDetails.
 
         :return: The config_provider_delegate of this UpdateTaskDetails.
-        :rtype: ConfigProvider
+        :rtype: oci.data_integration.models.ConfigProvider
         """
         return self._config_provider_delegate
 
@@ -489,7 +489,7 @@ class UpdateTaskDetails(object):
         Sets the config_provider_delegate of this UpdateTaskDetails.
 
         :param config_provider_delegate: The config_provider_delegate of this UpdateTaskDetails.
-        :type: ConfigProvider
+        :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
 
@@ -499,7 +499,7 @@ class UpdateTaskDetails(object):
         Gets the registry_metadata of this UpdateTaskDetails.
 
         :return: The registry_metadata of this UpdateTaskDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -509,7 +509,7 @@ class UpdateTaskDetails(object):
         Sets the registry_metadata of this UpdateTaskDetails.
 
         :param registry_metadata: The registry_metadata of this UpdateTaskDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

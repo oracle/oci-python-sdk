@@ -36,7 +36,7 @@ class IncidentType(object):
 
         :param classifier_list:
             The value to assign to the classifier_list property of this IncidentType.
-        :type classifier_list: list[Classifier]
+        :type classifier_list: list[oci.cims.models.Classifier]
 
         """
         self.swagger_types = {
@@ -165,7 +165,7 @@ class IncidentType(object):
 
 
         :return: The classifier_list of this IncidentType.
-        :rtype: list[Classifier]
+        :rtype: list[oci.cims.models.Classifier]
         """
         return self._classifier_list
 
@@ -177,7 +177,7 @@ class IncidentType(object):
 
 
         :param classifier_list: The classifier_list of this IncidentType.
-        :type: list[Classifier]
+        :type: list[oci.cims.models.Classifier]
         """
         self._classifier_list = classifier_list
 

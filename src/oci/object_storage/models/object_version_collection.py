@@ -24,7 +24,7 @@ class ObjectVersionCollection(object):
 
         :param items:
             The value to assign to the items property of this ObjectVersionCollection.
-        :type items: list[ObjectVersionSummary]
+        :type items: list[oci.object_storage.models.ObjectVersionSummary]
 
         :param prefixes:
             The value to assign to the prefixes property of this ObjectVersionCollection.
@@ -52,7 +52,7 @@ class ObjectVersionCollection(object):
 
 
         :return: The items of this ObjectVersionCollection.
-        :rtype: list[ObjectVersionSummary]
+        :rtype: list[oci.object_storage.models.ObjectVersionSummary]
         """
         return self._items
 
@@ -64,7 +64,7 @@ class ObjectVersionCollection(object):
 
 
         :param items: The items of this ObjectVersionCollection.
-        :type: list[ObjectVersionSummary]
+        :type: list[oci.object_storage.models.ObjectVersionSummary]
         """
         self._items = items
 

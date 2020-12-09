@@ -32,7 +32,7 @@ class UpdateDhcpDetails(object):
 
         :param options:
             The value to assign to the options property of this UpdateDhcpDetails.
-        :type options: list[DhcpOption]
+        :type options: list[oci.core.models.DhcpOption]
 
         """
         self.swagger_types = {
@@ -154,7 +154,7 @@ class UpdateDhcpDetails(object):
         Gets the options of this UpdateDhcpDetails.
 
         :return: The options of this UpdateDhcpDetails.
-        :rtype: list[DhcpOption]
+        :rtype: list[oci.core.models.DhcpOption]
         """
         return self._options
 
@@ -164,7 +164,7 @@ class UpdateDhcpDetails(object):
         Sets the options of this UpdateDhcpDetails.
 
         :param options: The options of this UpdateDhcpDetails.
-        :type: list[DhcpOption]
+        :type: list[oci.core.models.DhcpOption]
         """
         self._options = options
 

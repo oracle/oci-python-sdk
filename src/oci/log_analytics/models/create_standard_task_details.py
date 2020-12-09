@@ -65,11 +65,11 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
 
         :param schedules:
             The value to assign to the schedules property of this CreateStandardTaskDetails.
-        :type schedules: list[Schedule]
+        :type schedules: list[oci.log_analytics.models.Schedule]
 
         :param action:
             The value to assign to the action property of this CreateStandardTaskDetails.
-        :type action: Action
+        :type action: oci.log_analytics.models.Action
 
         """
         self.swagger_types = {
@@ -144,7 +144,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
 
 
         :return: The schedules of this CreateStandardTaskDetails.
-        :rtype: list[Schedule]
+        :rtype: list[oci.log_analytics.models.Schedule]
         """
         return self._schedules
 
@@ -156,7 +156,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
 
 
         :param schedules: The schedules of this CreateStandardTaskDetails.
-        :type: list[Schedule]
+        :type: list[oci.log_analytics.models.Schedule]
         """
         self._schedules = schedules
 
@@ -166,7 +166,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
         **[Required]** Gets the action of this CreateStandardTaskDetails.
 
         :return: The action of this CreateStandardTaskDetails.
-        :rtype: Action
+        :rtype: oci.log_analytics.models.Action
         """
         return self._action
 
@@ -176,7 +176,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
         Sets the action of this CreateStandardTaskDetails.
 
         :param action: The action of this CreateStandardTaskDetails.
-        :type: Action
+        :type: oci.log_analytics.models.Action
         """
         self._action = action
 

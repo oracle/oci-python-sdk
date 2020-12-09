@@ -20,7 +20,7 @@ class IngestSqlTextDetails(object):
 
         :param items:
             The value to assign to the items property of this IngestSqlTextDetails.
-        :type items: list[SqlText]
+        :type items: list[oci.opsi.models.SqlText]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class IngestSqlTextDetails(object):
 
 
         :return: The items of this IngestSqlTextDetails.
-        :rtype: list[SqlText]
+        :rtype: list[oci.opsi.models.SqlText]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class IngestSqlTextDetails(object):
 
 
         :param items: The items of this IngestSqlTextDetails.
-        :type: list[SqlText]
+        :type: list[oci.opsi.models.SqlText]
         """
         self._items = items
 

@@ -79,7 +79,7 @@ class Stack(object):
 
         :param config_source:
             The value to assign to the config_source property of this Stack.
-        :type config_source: ConfigSource
+        :type config_source: oci.resource_manager.models.ConfigSource
 
         :param variables:
             The value to assign to the variables property of this Stack.
@@ -330,7 +330,7 @@ class Stack(object):
         Gets the config_source of this Stack.
 
         :return: The config_source of this Stack.
-        :rtype: ConfigSource
+        :rtype: oci.resource_manager.models.ConfigSource
         """
         return self._config_source
 
@@ -340,7 +340,7 @@ class Stack(object):
         Sets the config_source of this Stack.
 
         :param config_source: The config_source of this Stack.
-        :type: ConfigSource
+        :type: oci.resource_manager.models.ConfigSource
         """
         self._config_source = config_source
 

@@ -30,7 +30,7 @@ class TunnelCpeDeviceConfig(object):
 
         :param tunnel_cpe_device_config_parameter:
             The value to assign to the tunnel_cpe_device_config_parameter property of this TunnelCpeDeviceConfig.
-        :type tunnel_cpe_device_config_parameter: list[CpeDeviceConfigAnswer]
+        :type tunnel_cpe_device_config_parameter: list[oci.core.models.CpeDeviceConfigAnswer]
 
         """
         self.swagger_types = {
@@ -49,7 +49,7 @@ class TunnelCpeDeviceConfig(object):
         Gets the tunnel_cpe_device_config_parameter of this TunnelCpeDeviceConfig.
 
         :return: The tunnel_cpe_device_config_parameter of this TunnelCpeDeviceConfig.
-        :rtype: list[CpeDeviceConfigAnswer]
+        :rtype: list[oci.core.models.CpeDeviceConfigAnswer]
         """
         return self._tunnel_cpe_device_config_parameter
 
@@ -59,7 +59,7 @@ class TunnelCpeDeviceConfig(object):
         Sets the tunnel_cpe_device_config_parameter of this TunnelCpeDeviceConfig.
 
         :param tunnel_cpe_device_config_parameter: The tunnel_cpe_device_config_parameter of this TunnelCpeDeviceConfig.
-        :type: list[CpeDeviceConfigAnswer]
+        :type: list[oci.core.models.CpeDeviceConfigAnswer]
         """
         self._tunnel_cpe_device_config_parameter = tunnel_cpe_device_config_parameter
 

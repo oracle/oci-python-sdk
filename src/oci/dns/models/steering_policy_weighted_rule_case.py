@@ -24,7 +24,7 @@ class SteeringPolicyWeightedRuleCase(object):
 
         :param answer_data:
             The value to assign to the answer_data property of this SteeringPolicyWeightedRuleCase.
-        :type answer_data: list[SteeringPolicyWeightedAnswerData]
+        :type answer_data: list[oci.dns.models.SteeringPolicyWeightedAnswerData]
 
         """
         self.swagger_types = {
@@ -82,7 +82,7 @@ class SteeringPolicyWeightedRuleCase(object):
 
 
         :return: The answer_data of this SteeringPolicyWeightedRuleCase.
-        :rtype: list[SteeringPolicyWeightedAnswerData]
+        :rtype: list[oci.dns.models.SteeringPolicyWeightedAnswerData]
         """
         return self._answer_data
 
@@ -94,7 +94,7 @@ class SteeringPolicyWeightedRuleCase(object):
 
 
         :param answer_data: The answer_data of this SteeringPolicyWeightedRuleCase.
-        :type: list[SteeringPolicyWeightedAnswerData]
+        :type: list[oci.dns.models.SteeringPolicyWeightedAnswerData]
         """
         self._answer_data = answer_data
 

@@ -20,7 +20,7 @@ class ScheduledTaskCollection(object):
 
         :param items:
             The value to assign to the items property of this ScheduledTaskCollection.
-        :type items: list[ScheduledTaskSummary]
+        :type items: list[oci.log_analytics.models.ScheduledTaskSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ScheduledTaskCollection(object):
 
 
         :return: The items of this ScheduledTaskCollection.
-        :rtype: list[ScheduledTaskSummary]
+        :rtype: list[oci.log_analytics.models.ScheduledTaskSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ScheduledTaskCollection(object):
 
 
         :param items: The items of this ScheduledTaskCollection.
-        :type: list[ScheduledTaskSummary]
+        :type: list[oci.log_analytics.models.ScheduledTaskSummary]
         """
         self._items = items
 

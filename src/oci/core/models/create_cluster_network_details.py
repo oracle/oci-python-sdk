@@ -36,11 +36,11 @@ class CreateClusterNetworkDetails(object):
 
         :param instance_pools:
             The value to assign to the instance_pools property of this CreateClusterNetworkDetails.
-        :type instance_pools: list[CreateClusterNetworkInstancePoolDetails]
+        :type instance_pools: list[oci.core.models.CreateClusterNetworkInstancePoolDetails]
 
         :param placement_configuration:
             The value to assign to the placement_configuration property of this CreateClusterNetworkDetails.
-        :type placement_configuration: ClusterNetworkPlacementConfigurationDetails
+        :type placement_configuration: oci.core.models.ClusterNetworkPlacementConfigurationDetails
 
         """
         self.swagger_types = {
@@ -202,7 +202,7 @@ class CreateClusterNetworkDetails(object):
 
 
         :return: The instance_pools of this CreateClusterNetworkDetails.
-        :rtype: list[CreateClusterNetworkInstancePoolDetails]
+        :rtype: list[oci.core.models.CreateClusterNetworkInstancePoolDetails]
         """
         return self._instance_pools
 
@@ -216,7 +216,7 @@ class CreateClusterNetworkDetails(object):
 
 
         :param instance_pools: The instance_pools of this CreateClusterNetworkDetails.
-        :type: list[CreateClusterNetworkInstancePoolDetails]
+        :type: list[oci.core.models.CreateClusterNetworkInstancePoolDetails]
         """
         self._instance_pools = instance_pools
 
@@ -228,7 +228,7 @@ class CreateClusterNetworkDetails(object):
 
 
         :return: The placement_configuration of this CreateClusterNetworkDetails.
-        :rtype: ClusterNetworkPlacementConfigurationDetails
+        :rtype: oci.core.models.ClusterNetworkPlacementConfigurationDetails
         """
         return self._placement_configuration
 
@@ -240,7 +240,7 @@ class CreateClusterNetworkDetails(object):
 
 
         :param placement_configuration: The placement_configuration of this CreateClusterNetworkDetails.
-        :type: ClusterNetworkPlacementConfigurationDetails
+        :type: oci.core.models.ClusterNetworkPlacementConfigurationDetails
         """
         self._placement_configuration = placement_configuration
 

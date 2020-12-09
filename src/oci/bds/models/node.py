@@ -104,7 +104,7 @@ class Node(object):
 
         :param attached_block_volumes:
             The value to assign to the attached_block_volumes property of this Node.
-        :type attached_block_volumes: list[VolumeAttachmentDetail]
+        :type attached_block_volumes: list[oci.bds.models.VolumeAttachmentDetail]
 
         :param subnet_id:
             The value to assign to the subnet_id property of this Node.
@@ -335,7 +335,7 @@ class Node(object):
 
 
         :return: The attached_block_volumes of this Node.
-        :rtype: list[VolumeAttachmentDetail]
+        :rtype: list[oci.bds.models.VolumeAttachmentDetail]
         """
         return self._attached_block_volumes
 
@@ -347,7 +347,7 @@ class Node(object):
 
 
         :param attached_block_volumes: The attached_block_volumes of this Node.
-        :type: list[VolumeAttachmentDetail]
+        :type: list[oci.bds.models.VolumeAttachmentDetail]
         """
         self._attached_block_volumes = attached_block_volumes
 

@@ -20,7 +20,7 @@ class LogAnalyticsSourceFunction(object):
 
         :param arguments:
             The value to assign to the arguments property of this LogAnalyticsSourceFunction.
-        :type arguments: list[LogAnalyticsMetaFunctionArgument]
+        :type arguments: list[oci.log_analytics.models.LogAnalyticsMetaFunctionArgument]
 
         :param is_enabled:
             The value to assign to the is_enabled property of this LogAnalyticsSourceFunction.
@@ -28,7 +28,7 @@ class LogAnalyticsSourceFunction(object):
 
         :param function:
             The value to assign to the function property of this LogAnalyticsSourceFunction.
-        :type function: LogAnalyticsMetaFunction
+        :type function: oci.log_analytics.models.LogAnalyticsMetaFunction
 
         :param function_id:
             The value to assign to the function_id property of this LogAnalyticsSourceFunction.
@@ -118,7 +118,7 @@ class LogAnalyticsSourceFunction(object):
 
 
         :return: The arguments of this LogAnalyticsSourceFunction.
-        :rtype: list[LogAnalyticsMetaFunctionArgument]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsMetaFunctionArgument]
         """
         return self._arguments
 
@@ -130,7 +130,7 @@ class LogAnalyticsSourceFunction(object):
 
 
         :param arguments: The arguments of this LogAnalyticsSourceFunction.
-        :type: list[LogAnalyticsMetaFunctionArgument]
+        :type: list[oci.log_analytics.models.LogAnalyticsMetaFunctionArgument]
         """
         self._arguments = arguments
 
@@ -164,7 +164,7 @@ class LogAnalyticsSourceFunction(object):
         Gets the function of this LogAnalyticsSourceFunction.
 
         :return: The function of this LogAnalyticsSourceFunction.
-        :rtype: LogAnalyticsMetaFunction
+        :rtype: oci.log_analytics.models.LogAnalyticsMetaFunction
         """
         return self._function
 
@@ -174,7 +174,7 @@ class LogAnalyticsSourceFunction(object):
         Sets the function of this LogAnalyticsSourceFunction.
 
         :param function: The function of this LogAnalyticsSourceFunction.
-        :type: LogAnalyticsMetaFunction
+        :type: oci.log_analytics.models.LogAnalyticsMetaFunction
         """
         self._function = function
 

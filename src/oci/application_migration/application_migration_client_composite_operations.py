@@ -33,7 +33,7 @@ class ApplicationMigrationClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCompartmentDetails change_migration_compartment_details: (required)
+        :param oci.application_migration.models.ChangeCompartmentDetails change_migration_compartment_details: (required)
             The updated compartment details
 
         :param list[str] wait_for_states:
@@ -76,7 +76,7 @@ class ApplicationMigrationClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeCompartmentDetails change_source_compartment_details: (required)
+        :param oci.application_migration.models.ChangeCompartmentDetails change_source_compartment_details: (required)
             The updated compartment details
 
         :param list[str] wait_for_states:
@@ -114,7 +114,7 @@ class ApplicationMigrationClientCompositeOperations(object):
         Calls :py:func:`~oci.application_migration.ApplicationMigrationClient.create_migration` and waits for the :py:class:`~oci.application_migration.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateMigrationDetails create_migration_details: (required)
+        :param oci.application_migration.models.CreateMigrationDetails create_migration_details: (required)
             The properties for creating a migration.
 
         :param list[str] wait_for_states:
@@ -152,7 +152,7 @@ class ApplicationMigrationClientCompositeOperations(object):
         Calls :py:func:`~oci.application_migration.ApplicationMigrationClient.create_source` and waits for the :py:class:`~oci.application_migration.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateSourceDetails create_source_details: (required)
+        :param oci.application_migration.models.CreateSourceDetails create_source_details: (required)
             The properties for creating a source.
 
         :param list[str] wait_for_states:
@@ -331,7 +331,7 @@ class ApplicationMigrationClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateMigrationDetails update_migration_details: (required)
+        :param oci.application_migration.models.UpdateMigrationDetails update_migration_details: (required)
             Updated configuration for the migration.
 
         :param list[str] wait_for_states:
@@ -374,7 +374,7 @@ class ApplicationMigrationClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateSourceDetails update_source_details: (required)
+        :param oci.application_migration.models.UpdateSourceDetails update_source_details: (required)
             Updated configuration for the source.
 
         :param list[str] wait_for_states:

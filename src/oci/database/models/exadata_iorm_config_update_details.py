@@ -45,7 +45,7 @@ class ExadataIormConfigUpdateDetails(object):
 
         :param db_plans:
             The value to assign to the db_plans property of this ExadataIormConfigUpdateDetails.
-        :type db_plans: list[DbIormConfigUpdateDetail]
+        :type db_plans: list[oci.database.models.DbIormConfigUpdateDetail]
 
         """
         self.swagger_types = {
@@ -104,7 +104,7 @@ class ExadataIormConfigUpdateDetails(object):
 
 
         :return: The db_plans of this ExadataIormConfigUpdateDetails.
-        :rtype: list[DbIormConfigUpdateDetail]
+        :rtype: list[oci.database.models.DbIormConfigUpdateDetail]
         """
         return self._db_plans
 
@@ -117,7 +117,7 @@ class ExadataIormConfigUpdateDetails(object):
 
 
         :param db_plans: The db_plans of this ExadataIormConfigUpdateDetails.
-        :type: list[DbIormConfigUpdateDetail]
+        :type: list[oci.database.models.DbIormConfigUpdateDetail]
         """
         self._db_plans = db_plans
 

@@ -40,7 +40,7 @@ class CreateServiceGatewayDetails(object):
 
         :param services:
             The value to assign to the services property of this CreateServiceGatewayDetails.
-        :type services: list[ServiceIdRequestDetails]
+        :type services: list[oci.core.models.ServiceIdRequestDetails]
 
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateServiceGatewayDetails.
@@ -255,7 +255,7 @@ class CreateServiceGatewayDetails(object):
 
 
         :return: The services of this CreateServiceGatewayDetails.
-        :rtype: list[ServiceIdRequestDetails]
+        :rtype: list[oci.core.models.ServiceIdRequestDetails]
         """
         return self._services
 
@@ -275,7 +275,7 @@ class CreateServiceGatewayDetails(object):
 
 
         :param services: The services of this CreateServiceGatewayDetails.
-        :type: list[ServiceIdRequestDetails]
+        :type: list[oci.core.models.ServiceIdRequestDetails]
         """
         self._services = services
 

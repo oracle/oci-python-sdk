@@ -34,7 +34,7 @@ class ConnectionFromObjectStorage(Connection):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConnectionFromObjectStorage.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ConnectionFromObjectStorage.
@@ -58,11 +58,11 @@ class ConnectionFromObjectStorage(Connection):
 
         :param primary_schema:
             The value to assign to the primary_schema property of this ConnectionFromObjectStorage.
-        :type primary_schema: Schema
+        :type primary_schema: oci.data_integration.models.Schema
 
         :param connection_properties:
             The value to assign to the connection_properties property of this ConnectionFromObjectStorage.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param is_default:
             The value to assign to the is_default property of this ConnectionFromObjectStorage.
@@ -70,7 +70,7 @@ class ConnectionFromObjectStorage(Connection):
 
         :param metadata:
             The value to assign to the metadata property of this ConnectionFromObjectStorage.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this ConnectionFromObjectStorage.

@@ -28,7 +28,7 @@ class Region(object):
 
         :param countries:
             The value to assign to the countries property of this Region.
-        :type countries: list[Item]
+        :type countries: list[oci.marketplace.models.Item]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class Region(object):
 
 
         :return: The countries of this Region.
-        :rtype: list[Item]
+        :rtype: list[oci.marketplace.models.Item]
         """
         return self._countries
 
@@ -115,7 +115,7 @@ class Region(object):
 
 
         :param countries: The countries of this Region.
-        :type: list[Item]
+        :type: list[oci.marketplace.models.Item]
         """
         self._countries = countries
 

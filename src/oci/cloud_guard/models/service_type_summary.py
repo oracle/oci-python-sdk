@@ -24,7 +24,7 @@ class ServiceTypeSummary(object):
 
         :param resource_types:
             The value to assign to the resource_types property of this ServiceTypeSummary.
-        :type resource_types: list[ResourceTypeSummary]
+        :type resource_types: list[oci.cloud_guard.models.ResourceTypeSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class ServiceTypeSummary(object):
 
 
         :return: The resource_types of this ServiceTypeSummary.
-        :rtype: list[ResourceTypeSummary]
+        :rtype: list[oci.cloud_guard.models.ResourceTypeSummary]
         """
         return self._resource_types
 
@@ -84,7 +84,7 @@ class ServiceTypeSummary(object):
 
 
         :param resource_types: The resource_types of this ServiceTypeSummary.
-        :type: list[ResourceTypeSummary]
+        :type: list[oci.cloud_guard.models.ResourceTypeSummary]
         """
         self._resource_types = resource_types
 

@@ -20,7 +20,7 @@ class DeliveryPolicy(object):
 
         :param backoff_retry_policy:
             The value to assign to the backoff_retry_policy property of this DeliveryPolicy.
-        :type backoff_retry_policy: BackoffRetryPolicy
+        :type backoff_retry_policy: oci.ons.models.BackoffRetryPolicy
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class DeliveryPolicy(object):
         Gets the backoff_retry_policy of this DeliveryPolicy.
 
         :return: The backoff_retry_policy of this DeliveryPolicy.
-        :rtype: BackoffRetryPolicy
+        :rtype: oci.ons.models.BackoffRetryPolicy
         """
         return self._backoff_retry_policy
 
@@ -49,7 +49,7 @@ class DeliveryPolicy(object):
         Sets the backoff_retry_policy of this DeliveryPolicy.
 
         :param backoff_retry_policy: The backoff_retry_policy of this DeliveryPolicy.
-        :type: BackoffRetryPolicy
+        :type: oci.ons.models.BackoffRetryPolicy
         """
         self._backoff_retry_policy = backoff_retry_policy
 

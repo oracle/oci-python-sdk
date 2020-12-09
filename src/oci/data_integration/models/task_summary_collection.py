@@ -20,7 +20,7 @@ class TaskSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this TaskSummaryCollection.
-        :type items: list[TaskSummary]
+        :type items: list[oci.data_integration.models.TaskSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TaskSummaryCollection(object):
 
 
         :return: The items of this TaskSummaryCollection.
-        :rtype: list[TaskSummary]
+        :rtype: list[oci.data_integration.models.TaskSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TaskSummaryCollection(object):
 
 
         :param items: The items of this TaskSummaryCollection.
-        :type: list[TaskSummary]
+        :type: list[oci.data_integration.models.TaskSummary]
         """
         self._items = items
 

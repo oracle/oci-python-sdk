@@ -117,7 +117,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/activate_model.py.html>`__ to see an example of how to use activate_model API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model.py.html>`__ to see an example of how to use activate_model API.
         """
         resource_path = "/models/{modelId}/actions/activate"
         method = "POST"
@@ -203,7 +203,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/activate_notebook_session.py.html>`__ to see an example of how to use activate_notebook_session API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_notebook_session.py.html>`__ to see an example of how to use activate_notebook_session API.
         """
         resource_path = "/notebookSessions/{notebookSessionId}/actions/activate"
         method = "POST"
@@ -287,7 +287,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
@@ -377,7 +377,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
         """
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
@@ -473,7 +473,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/change_notebook_session_compartment.py.html>`__ to see an example of how to use change_notebook_session_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_notebook_session_compartment.py.html>`__ to see an example of how to use change_notebook_session_compartment API.
         """
         resource_path = "/notebookSessions/{notebookSessionId}/actions/changeCompartment"
         method = "POST"
@@ -569,7 +569,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
@@ -653,7 +653,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/create_model.py.html>`__ to see an example of how to use create_model API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model.py.html>`__ to see an example of how to use create_model API.
         """
         resource_path = "/models"
         method = "POST"
@@ -736,7 +736,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/create_model_artifact.py.html>`__ to see an example of how to use create_model_artifact API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_artifact.py.html>`__ to see an example of how to use create_model_artifact API.
         """
         resource_path = "/models/{modelId}/artifact"
         method = "POST"
@@ -846,7 +846,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/create_model_provenance.py.html>`__ to see an example of how to use create_model_provenance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_provenance.py.html>`__ to see an example of how to use create_model_provenance API.
         """
         resource_path = "/models/{modelId}/provenance"
         method = "POST"
@@ -930,7 +930,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/create_notebook_session.py.html>`__ to see an example of how to use create_notebook_session API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_notebook_session.py.html>`__ to see an example of how to use create_notebook_session API.
         """
         resource_path = "/notebookSessions"
         method = "POST"
@@ -1002,7 +1002,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/create_project.py.html>`__ to see an example of how to use create_project API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_project.py.html>`__ to see an example of how to use create_project API.
         """
         resource_path = "/projects"
         method = "POST"
@@ -1080,7 +1080,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/deactivate_model.py.html>`__ to see an example of how to use deactivate_model API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model.py.html>`__ to see an example of how to use deactivate_model API.
         """
         resource_path = "/models/{modelId}/actions/deactivate"
         method = "POST"
@@ -1166,7 +1166,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/deactivate_notebook_session.py.html>`__ to see an example of how to use deactivate_notebook_session API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_notebook_session.py.html>`__ to see an example of how to use deactivate_notebook_session API.
         """
         resource_path = "/notebookSessions/{notebookSessionId}/actions/deactivate"
         method = "POST"
@@ -1250,7 +1250,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/delete_model.py.html>`__ to see an example of how to use delete_model API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model.py.html>`__ to see an example of how to use delete_model API.
         """
         resource_path = "/models/{modelId}"
         method = "DELETE"
@@ -1334,7 +1334,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/delete_notebook_session.py.html>`__ to see an example of how to use delete_notebook_session API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_notebook_session.py.html>`__ to see an example of how to use delete_notebook_session API.
         """
         resource_path = "/notebookSessions/{notebookSessionId}"
         method = "DELETE"
@@ -1418,7 +1418,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/delete_project.py.html>`__ to see an example of how to use delete_project API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
         resource_path = "/projects/{projectId}"
         method = "DELETE"
@@ -1495,7 +1495,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/get_model.py.html>`__ to see an example of how to use get_model API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model.py.html>`__ to see an example of how to use get_model API.
         """
         resource_path = "/models/{modelId}"
         method = "GET"
@@ -1578,7 +1578,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/get_model_artifact_content.py.html>`__ to see an example of how to use get_model_artifact_content API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_artifact_content.py.html>`__ to see an example of how to use get_model_artifact_content API.
         """
         resource_path = "/models/{modelId}/artifact/content"
         method = "GET"
@@ -1657,7 +1657,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/get_model_provenance.py.html>`__ to see an example of how to use get_model_provenance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_provenance.py.html>`__ to see an example of how to use get_model_provenance API.
         """
         resource_path = "/models/{modelId}/provenance"
         method = "GET"
@@ -1734,7 +1734,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/get_notebook_session.py.html>`__ to see an example of how to use get_notebook_session API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_notebook_session.py.html>`__ to see an example of how to use get_notebook_session API.
         """
         resource_path = "/notebookSessions/{notebookSessionId}"
         method = "GET"
@@ -1811,7 +1811,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/get_project.py.html>`__ to see an example of how to use get_project API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_project.py.html>`__ to see an example of how to use get_project API.
         """
         resource_path = "/projects/{projectId}"
         method = "GET"
@@ -1888,7 +1888,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -1965,7 +1965,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/head_model_artifact.py.html>`__ to see an example of how to use head_model_artifact API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_artifact.py.html>`__ to see an example of how to use head_model_artifact API.
         """
         resource_path = "/models/{modelId}/artifact/content"
         method = "HEAD"
@@ -2094,7 +2094,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_models.py.html>`__ to see an example of how to use list_models API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_models.py.html>`__ to see an example of how to use list_models API.
         """
         resource_path = "/models"
         method = "GET"
@@ -2223,7 +2223,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_notebook_session_shapes.py.html>`__ to see an example of how to use list_notebook_session_shapes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_notebook_session_shapes.py.html>`__ to see an example of how to use list_notebook_session_shapes API.
         """
         resource_path = "/notebookSessionShapes"
         method = "GET"
@@ -2354,7 +2354,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_notebook_sessions.py.html>`__ to see an example of how to use list_notebook_sessions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_notebook_sessions.py.html>`__ to see an example of how to use list_notebook_sessions API.
         """
         resource_path = "/notebookSessions"
         method = "GET"
@@ -2515,7 +2515,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_projects.py.html>`__ to see an example of how to use list_projects API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
         resource_path = "/projects"
         method = "GET"
@@ -2624,7 +2624,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -2701,7 +2701,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -2821,7 +2821,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -2945,7 +2945,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/update_model.py.html>`__ to see an example of how to use update_model API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model.py.html>`__ to see an example of how to use update_model API.
         """
         resource_path = "/models/{modelId}"
         method = "PUT"
@@ -3036,7 +3036,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/update_model_provenance.py.html>`__ to see an example of how to use update_model_provenance API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_provenance.py.html>`__ to see an example of how to use update_model_provenance API.
         """
         resource_path = "/models/{modelId}/provenance"
         method = "PUT"
@@ -3130,7 +3130,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/update_notebook_session.py.html>`__ to see an example of how to use update_notebook_session API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_notebook_session.py.html>`__ to see an example of how to use update_notebook_session API.
         """
         resource_path = "/notebookSessions/{notebookSessionId}"
         method = "PUT"
@@ -3221,7 +3221,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datascience/update_project.py.html>`__ to see an example of how to use update_project API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_project.py.html>`__ to see an example of how to use update_project API.
         """
         resource_path = "/projects/{projectId}"
         method = "PUT"

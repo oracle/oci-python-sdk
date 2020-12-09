@@ -37,7 +37,7 @@ class ComputeManagementClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AttachLoadBalancerDetails attach_load_balancer_details: (required)
+        :param oci.core.models.AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
 
         :param list[str] wait_for_states:
@@ -75,7 +75,7 @@ class ComputeManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeManagementClient.create_cluster_network` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateClusterNetworkDetails create_cluster_network_details: (required)
+        :param oci.core.models.CreateClusterNetworkDetails create_cluster_network_details: (required)
             Cluster network creation details
 
         :param list[str] work_request_states: (optional)
@@ -110,7 +110,7 @@ class ComputeManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeManagementClient.create_cluster_network` and waits for the :py:class:`~oci.core.models.ClusterNetwork` acted upon
         to enter the given state(s).
 
-        :param CreateClusterNetworkDetails create_cluster_network_details: (required)
+        :param oci.core.models.CreateClusterNetworkDetails create_cluster_network_details: (required)
             Cluster network creation details
 
         :param list[str] wait_for_states:
@@ -148,7 +148,7 @@ class ComputeManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeManagementClient.create_instance_pool` and waits for the :py:class:`~oci.core.models.InstancePool` acted upon
         to enter the given state(s).
 
-        :param CreateInstancePoolDetails create_instance_pool_details: (required)
+        :param oci.core.models.CreateInstancePoolDetails create_instance_pool_details: (required)
             Instance pool creation details
 
         :param list[str] wait_for_states:
@@ -191,7 +191,7 @@ class ComputeManagementClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param DetachLoadBalancerDetails detach_load_balancer_details: (required)
+        :param oci.core.models.DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
 
         :param list[str] wait_for_states:
@@ -232,7 +232,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_configuration_id: (required)
             The OCID of the instance configuration.
 
-        :param InstanceConfigurationInstanceDetails instance_configuration: (required)
+        :param oci.core.models.InstanceConfigurationInstanceDetails instance_configuration: (required)
             Instance configuration Instance Details
 
         :param list[str] work_request_states: (optional)
@@ -518,7 +518,7 @@ class ComputeManagementClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateClusterNetworkDetails update_cluster_network_details: (required)
+        :param oci.core.models.UpdateClusterNetworkDetails update_cluster_network_details: (required)
             Update cluster network
 
         :param list[str] wait_for_states:
@@ -561,7 +561,7 @@ class ComputeManagementClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateInstancePoolDetails update_instance_pool_details: (required)
+        :param oci.core.models.UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration
 
         :param list[str] wait_for_states:

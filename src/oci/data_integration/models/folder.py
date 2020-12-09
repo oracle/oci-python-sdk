@@ -52,7 +52,7 @@ class Folder(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Folder.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_version:
             The value to assign to the object_version property of this Folder.
@@ -60,7 +60,7 @@ class Folder(object):
 
         :param metadata:
             The value to assign to the metadata property of this Folder.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this Folder.
@@ -308,7 +308,7 @@ class Folder(object):
         Gets the parent_ref of this Folder.
 
         :return: The parent_ref of this Folder.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -318,7 +318,7 @@ class Folder(object):
         Sets the parent_ref of this Folder.
 
         :param parent_ref: The parent_ref of this Folder.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -352,7 +352,7 @@ class Folder(object):
         Gets the metadata of this Folder.
 
         :return: The metadata of this Folder.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -362,7 +362,7 @@ class Folder(object):
         Sets the metadata of this Folder.
 
         :param metadata: The metadata of this Folder.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

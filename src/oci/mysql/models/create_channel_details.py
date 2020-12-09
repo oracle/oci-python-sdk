@@ -32,11 +32,11 @@ class CreateChannelDetails(object):
 
         :param source:
             The value to assign to the source property of this CreateChannelDetails.
-        :type source: CreateChannelSourceDetails
+        :type source: oci.mysql.models.CreateChannelSourceDetails
 
         :param target:
             The value to assign to the target property of this CreateChannelDetails.
-        :type target: CreateChannelTargetDetails
+        :type target: oci.mysql.models.CreateChannelTargetDetails
 
         :param description:
             The value to assign to the description property of this CreateChannelDetails.
@@ -162,7 +162,7 @@ class CreateChannelDetails(object):
         **[Required]** Gets the source of this CreateChannelDetails.
 
         :return: The source of this CreateChannelDetails.
-        :rtype: CreateChannelSourceDetails
+        :rtype: oci.mysql.models.CreateChannelSourceDetails
         """
         return self._source
 
@@ -172,7 +172,7 @@ class CreateChannelDetails(object):
         Sets the source of this CreateChannelDetails.
 
         :param source: The source of this CreateChannelDetails.
-        :type: CreateChannelSourceDetails
+        :type: oci.mysql.models.CreateChannelSourceDetails
         """
         self._source = source
 
@@ -182,7 +182,7 @@ class CreateChannelDetails(object):
         **[Required]** Gets the target of this CreateChannelDetails.
 
         :return: The target of this CreateChannelDetails.
-        :rtype: CreateChannelTargetDetails
+        :rtype: oci.mysql.models.CreateChannelTargetDetails
         """
         return self._target
 
@@ -192,7 +192,7 @@ class CreateChannelDetails(object):
         Sets the target of this CreateChannelDetails.
 
         :param target: The target of this CreateChannelDetails.
-        :type: CreateChannelTargetDetails
+        :type: oci.mysql.models.CreateChannelTargetDetails
         """
         self._target = target
 

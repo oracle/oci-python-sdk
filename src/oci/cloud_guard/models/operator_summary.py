@@ -50,7 +50,7 @@ class OperatorSummary(object):
 
         :param operators:
             The value to assign to the operators property of this OperatorSummary.
-        :type operators: list[ConditionOperator]
+        :type operators: list[oci.cloud_guard.models.ConditionOperator]
 
         :param multi_list_types:
             The value to assign to the multi_list_types property of this OperatorSummary.
@@ -219,7 +219,7 @@ class OperatorSummary(object):
 
 
         :return: The operators of this OperatorSummary.
-        :rtype: list[ConditionOperator]
+        :rtype: list[oci.cloud_guard.models.ConditionOperator]
         """
         return self._operators
 
@@ -231,7 +231,7 @@ class OperatorSummary(object):
 
 
         :param operators: The operators of this OperatorSummary.
-        :type: list[ConditionOperator]
+        :type: list[oci.cloud_guard.models.ConditionOperator]
         """
         self._operators = operators
 

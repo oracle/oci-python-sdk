@@ -36,7 +36,7 @@ class CreateNewDatabaseDetails(CreateDatabaseBase):
 
         :param database:
             The value to assign to the database property of this CreateNewDatabaseDetails.
-        :type database: CreateDatabaseDetails
+        :type database: oci.database.models.CreateDatabaseDetails
 
         """
         self.swagger_types = {
@@ -65,7 +65,7 @@ class CreateNewDatabaseDetails(CreateDatabaseBase):
         **[Required]** Gets the database of this CreateNewDatabaseDetails.
 
         :return: The database of this CreateNewDatabaseDetails.
-        :rtype: CreateDatabaseDetails
+        :rtype: oci.database.models.CreateDatabaseDetails
         """
         return self._database
 
@@ -75,7 +75,7 @@ class CreateNewDatabaseDetails(CreateDatabaseBase):
         Sets the database of this CreateNewDatabaseDetails.
 
         :param database: The database of this CreateNewDatabaseDetails.
-        :type: CreateDatabaseDetails
+        :type: oci.database.models.CreateDatabaseDetails
         """
         self._database = database
 

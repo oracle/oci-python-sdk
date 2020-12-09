@@ -34,11 +34,11 @@ class OracleAdwcWriteAttribute(AbstractWriteAttribute):
 
         :param staging_data_asset:
             The value to assign to the staging_data_asset property of this OracleAdwcWriteAttribute.
-        :type staging_data_asset: DataAsset
+        :type staging_data_asset: oci.data_integration.models.DataAsset
 
         :param staging_connection:
             The value to assign to the staging_connection property of this OracleAdwcWriteAttribute.
-        :type staging_connection: Connection
+        :type staging_connection: oci.data_integration.models.Connection
 
         """
         self.swagger_types = {
@@ -118,7 +118,7 @@ class OracleAdwcWriteAttribute(AbstractWriteAttribute):
         Gets the staging_data_asset of this OracleAdwcWriteAttribute.
 
         :return: The staging_data_asset of this OracleAdwcWriteAttribute.
-        :rtype: DataAsset
+        :rtype: oci.data_integration.models.DataAsset
         """
         return self._staging_data_asset
 
@@ -128,7 +128,7 @@ class OracleAdwcWriteAttribute(AbstractWriteAttribute):
         Sets the staging_data_asset of this OracleAdwcWriteAttribute.
 
         :param staging_data_asset: The staging_data_asset of this OracleAdwcWriteAttribute.
-        :type: DataAsset
+        :type: oci.data_integration.models.DataAsset
         """
         self._staging_data_asset = staging_data_asset
 
@@ -138,7 +138,7 @@ class OracleAdwcWriteAttribute(AbstractWriteAttribute):
         Gets the staging_connection of this OracleAdwcWriteAttribute.
 
         :return: The staging_connection of this OracleAdwcWriteAttribute.
-        :rtype: Connection
+        :rtype: oci.data_integration.models.Connection
         """
         return self._staging_connection
 
@@ -148,7 +148,7 @@ class OracleAdwcWriteAttribute(AbstractWriteAttribute):
         Sets the staging_connection of this OracleAdwcWriteAttribute.
 
         :param staging_connection: The staging_connection of this OracleAdwcWriteAttribute.
-        :type: Connection
+        :type: oci.data_integration.models.Connection
         """
         self._staging_connection = staging_connection
 

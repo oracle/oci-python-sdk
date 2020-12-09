@@ -20,7 +20,7 @@ class BackupVaultDetails(object):
 
         :param backup_location:
             The value to assign to the backup_location property of this BackupVaultDetails.
-        :type backup_location: BackupLocation
+        :type backup_location: oci.key_management.models.BackupLocation
 
         :param is_include_keys:
             The value to assign to the is_include_keys property of this BackupVaultDetails.
@@ -46,7 +46,7 @@ class BackupVaultDetails(object):
         Gets the backup_location of this BackupVaultDetails.
 
         :return: The backup_location of this BackupVaultDetails.
-        :rtype: BackupLocation
+        :rtype: oci.key_management.models.BackupLocation
         """
         return self._backup_location
 
@@ -56,7 +56,7 @@ class BackupVaultDetails(object):
         Sets the backup_location of this BackupVaultDetails.
 
         :param backup_location: The backup_location of this BackupVaultDetails.
-        :type: BackupLocation
+        :type: oci.key_management.models.BackupLocation
         """
         self._backup_location = backup_location
 

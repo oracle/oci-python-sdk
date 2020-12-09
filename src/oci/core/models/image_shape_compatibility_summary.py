@@ -28,11 +28,11 @@ class ImageShapeCompatibilitySummary(object):
 
         :param memory_constraints:
             The value to assign to the memory_constraints property of this ImageShapeCompatibilitySummary.
-        :type memory_constraints: ImageMemoryConstraints
+        :type memory_constraints: oci.core.models.ImageMemoryConstraints
 
         :param ocpu_constraints:
             The value to assign to the ocpu_constraints property of this ImageShapeCompatibilitySummary.
-        :type ocpu_constraints: ImageOcpuConstraints
+        :type ocpu_constraints: oci.core.models.ImageOcpuConstraints
 
         """
         self.swagger_types = {
@@ -112,7 +112,7 @@ class ImageShapeCompatibilitySummary(object):
         Gets the memory_constraints of this ImageShapeCompatibilitySummary.
 
         :return: The memory_constraints of this ImageShapeCompatibilitySummary.
-        :rtype: ImageMemoryConstraints
+        :rtype: oci.core.models.ImageMemoryConstraints
         """
         return self._memory_constraints
 
@@ -122,7 +122,7 @@ class ImageShapeCompatibilitySummary(object):
         Sets the memory_constraints of this ImageShapeCompatibilitySummary.
 
         :param memory_constraints: The memory_constraints of this ImageShapeCompatibilitySummary.
-        :type: ImageMemoryConstraints
+        :type: oci.core.models.ImageMemoryConstraints
         """
         self._memory_constraints = memory_constraints
 
@@ -132,7 +132,7 @@ class ImageShapeCompatibilitySummary(object):
         Gets the ocpu_constraints of this ImageShapeCompatibilitySummary.
 
         :return: The ocpu_constraints of this ImageShapeCompatibilitySummary.
-        :rtype: ImageOcpuConstraints
+        :rtype: oci.core.models.ImageOcpuConstraints
         """
         return self._ocpu_constraints
 
@@ -142,7 +142,7 @@ class ImageShapeCompatibilitySummary(object):
         Sets the ocpu_constraints of this ImageShapeCompatibilitySummary.
 
         :param ocpu_constraints: The ocpu_constraints of this ImageShapeCompatibilitySummary.
-        :type: ImageOcpuConstraints
+        :type: oci.core.models.ImageOcpuConstraints
         """
         self._ocpu_constraints = ocpu_constraints
 

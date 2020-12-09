@@ -40,7 +40,7 @@ class DbSystemSummary(object):
 
         :param analytics_cluster:
             The value to assign to the analytics_cluster property of this DbSystemSummary.
-        :type analytics_cluster: AnalyticsClusterSummary
+        :type analytics_cluster: oci.mysql.models.AnalyticsClusterSummary
 
         :param availability_domain:
             The value to assign to the availability_domain property of this DbSystemSummary.
@@ -52,7 +52,7 @@ class DbSystemSummary(object):
 
         :param endpoints:
             The value to assign to the endpoints property of this DbSystemSummary.
-        :type endpoints: list[DbSystemEndpoint]
+        :type endpoints: list[oci.mysql.models.DbSystemEndpoint]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbSystemSummary.
@@ -257,7 +257,7 @@ class DbSystemSummary(object):
         Gets the analytics_cluster of this DbSystemSummary.
 
         :return: The analytics_cluster of this DbSystemSummary.
-        :rtype: AnalyticsClusterSummary
+        :rtype: oci.mysql.models.AnalyticsClusterSummary
         """
         return self._analytics_cluster
 
@@ -267,7 +267,7 @@ class DbSystemSummary(object):
         Sets the analytics_cluster of this DbSystemSummary.
 
         :param analytics_cluster: The analytics_cluster of this DbSystemSummary.
-        :type: AnalyticsClusterSummary
+        :type: oci.mysql.models.AnalyticsClusterSummary
         """
         self._analytics_cluster = analytics_cluster
 
@@ -327,7 +327,7 @@ class DbSystemSummary(object):
 
 
         :return: The endpoints of this DbSystemSummary.
-        :rtype: list[DbSystemEndpoint]
+        :rtype: list[oci.mysql.models.DbSystemEndpoint]
         """
         return self._endpoints
 
@@ -339,7 +339,7 @@ class DbSystemSummary(object):
 
 
         :param endpoints: The endpoints of this DbSystemSummary.
-        :type: list[DbSystemEndpoint]
+        :type: list[oci.mysql.models.DbSystemEndpoint]
         """
         self._endpoints = endpoints
 

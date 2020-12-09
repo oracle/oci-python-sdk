@@ -122,7 +122,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/change_application_compartment.py.html>`__ to see an example of how to use change_application_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/change_application_compartment.py.html>`__ to see an example of how to use change_application_compartment API.
         """
         resource_path = "/applications/{applicationId}/actions/changeCompartment"
         method = "POST"
@@ -200,7 +200,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/create_application.py.html>`__ to see an example of how to use create_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/create_application.py.html>`__ to see an example of how to use create_application API.
         """
         resource_path = "/applications"
         method = "POST"
@@ -266,7 +266,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/create_function.py.html>`__ to see an example of how to use create_function API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/create_function.py.html>`__ to see an example of how to use create_function API.
         """
         resource_path = "/functions"
         method = "POST"
@@ -339,7 +339,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/delete_application.py.html>`__ to see an example of how to use delete_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/delete_application.py.html>`__ to see an example of how to use delete_application API.
         """
         resource_path = "/applications/{applicationId}"
         method = "DELETE"
@@ -422,7 +422,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/delete_function.py.html>`__ to see an example of how to use delete_function API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/delete_function.py.html>`__ to see an example of how to use delete_function API.
         """
         resource_path = "/functions/{functionId}"
         method = "DELETE"
@@ -500,7 +500,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/get_application.py.html>`__ to see an example of how to use get_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/get_application.py.html>`__ to see an example of how to use get_application API.
         """
         resource_path = "/applications/{applicationId}"
         method = "GET"
@@ -578,7 +578,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/get_function.py.html>`__ to see an example of how to use get_function API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/get_function.py.html>`__ to see an example of how to use get_function API.
         """
         resource_path = "/functions/{functionId}"
         method = "GET"
@@ -695,7 +695,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/list_applications.py.html>`__ to see an example of how to use list_applications API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/list_applications.py.html>`__ to see an example of how to use list_applications API.
         """
         resource_path = "/applications"
         method = "GET"
@@ -842,7 +842,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/list_functions.py.html>`__ to see an example of how to use list_functions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/list_functions.py.html>`__ to see an example of how to use list_functions API.
         """
         resource_path = "/functions"
         method = "GET"
@@ -958,7 +958,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/update_application.py.html>`__ to see an example of how to use update_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/update_application.py.html>`__ to see an example of how to use update_application API.
         """
         resource_path = "/applications/{applicationId}"
         method = "PUT"
@@ -1048,7 +1048,7 @@ class FunctionsManagementClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/functions/update_function.py.html>`__ to see an example of how to use update_function API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/update_function.py.html>`__ to see an example of how to use update_function API.
         """
         resource_path = "/functions/{functionId}"
         method = "PUT"

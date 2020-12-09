@@ -128,7 +128,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/add_data_selector_patterns.py.html>`__ to see an example of how to use add_data_selector_patterns API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/add_data_selector_patterns.py.html>`__ to see an example of how to use add_data_selector_patterns API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/addDataSelectorPatterns"
         method = "POST"
@@ -232,7 +232,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/associate_custom_property.py.html>`__ to see an example of how to use associate_custom_property API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/associate_custom_property.py.html>`__ to see an example of how to use associate_custom_property API.
         """
         resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/associateCustomProperties"
         method = "POST"
@@ -333,7 +333,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/attach_catalog_private_endpoint.py.html>`__ to see an example of how to use attach_catalog_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/attach_catalog_private_endpoint.py.html>`__ to see an example of how to use attach_catalog_private_endpoint API.
         """
         resource_path = "/catalogs/{catalogId}/actions/attachCatalogPrivateEndpoint"
         method = "POST"
@@ -424,7 +424,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/change_catalog_compartment.py.html>`__ to see an example of how to use change_catalog_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/change_catalog_compartment.py.html>`__ to see an example of how to use change_catalog_compartment API.
         """
         resource_path = "/catalogs/{catalogId}/actions/changeCompartment"
         method = "POST"
@@ -511,7 +511,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/change_catalog_private_endpoint_compartment.py.html>`__ to see an example of how to use change_catalog_private_endpoint_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/change_catalog_private_endpoint_compartment.py.html>`__ to see an example of how to use change_catalog_private_endpoint_compartment API.
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
@@ -604,7 +604,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_attribute.py.html>`__ to see an example of how to use create_attribute API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_attribute.py.html>`__ to see an example of how to use create_attribute API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes"
         method = "POST"
@@ -706,7 +706,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_attribute_tag.py.html>`__ to see an example of how to use create_attribute_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_attribute_tag.py.html>`__ to see an example of how to use create_attribute_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags"
         method = "POST"
@@ -798,7 +798,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_catalog.py.html>`__ to see an example of how to use create_catalog API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_catalog.py.html>`__ to see an example of how to use create_catalog API.
         """
         resource_path = "/catalogs"
         method = "POST"
@@ -872,7 +872,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_catalog_private_endpoint.py.html>`__ to see an example of how to use create_catalog_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_catalog_private_endpoint.py.html>`__ to see an example of how to use create_catalog_private_endpoint API.
         """
         resource_path = "/catalogPrivateEndpoints"
         method = "POST"
@@ -952,7 +952,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_connection.py.html>`__ to see an example of how to use create_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections"
         method = "POST"
@@ -1047,7 +1047,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_custom_property.py.html>`__ to see an example of how to use create_custom_property API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_custom_property.py.html>`__ to see an example of how to use create_custom_property API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
         method = "POST"
@@ -1139,7 +1139,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets"
         method = "POST"
@@ -1233,7 +1233,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_data_asset_tag.py.html>`__ to see an example of how to use create_data_asset_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_data_asset_tag.py.html>`__ to see an example of how to use create_data_asset_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags"
         method = "POST"
@@ -1328,7 +1328,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_entity.py.html>`__ to see an example of how to use create_entity API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_entity.py.html>`__ to see an example of how to use create_entity API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities"
         method = "POST"
@@ -1426,7 +1426,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_entity_tag.py.html>`__ to see an example of how to use create_entity_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_entity_tag.py.html>`__ to see an example of how to use create_entity_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags"
         method = "POST"
@@ -1522,7 +1522,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_folder.py.html>`__ to see an example of how to use create_folder API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_folder.py.html>`__ to see an example of how to use create_folder API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders"
         method = "POST"
@@ -1620,7 +1620,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_folder_tag.py.html>`__ to see an example of how to use create_folder_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_folder_tag.py.html>`__ to see an example of how to use create_folder_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags"
         method = "POST"
@@ -1713,7 +1713,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_glossary.py.html>`__ to see an example of how to use create_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_glossary.py.html>`__ to see an example of how to use create_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries"
         method = "POST"
@@ -1804,7 +1804,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_job.py.html>`__ to see an example of how to use create_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_job.py.html>`__ to see an example of how to use create_job API.
         """
         resource_path = "/catalogs/{catalogId}/jobs"
         method = "POST"
@@ -1895,7 +1895,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_job_definition.py.html>`__ to see an example of how to use create_job_definition API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_job_definition.py.html>`__ to see an example of how to use create_job_definition API.
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions"
         method = "POST"
@@ -1989,7 +1989,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_job_execution.py.html>`__ to see an example of how to use create_job_execution API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_job_execution.py.html>`__ to see an example of how to use create_job_execution API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions"
         method = "POST"
@@ -2081,7 +2081,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_namespace.py.html>`__ to see an example of how to use create_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_namespace.py.html>`__ to see an example of how to use create_namespace API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces"
         method = "POST"
@@ -2172,7 +2172,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_pattern.py.html>`__ to see an example of how to use create_pattern API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_pattern.py.html>`__ to see an example of how to use create_pattern API.
         """
         resource_path = "/catalogs/{catalogId}/patterns"
         method = "POST"
@@ -2266,7 +2266,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_term.py.html>`__ to see an example of how to use create_term API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_term.py.html>`__ to see an example of how to use create_term API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms"
         method = "POST"
@@ -2364,7 +2364,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/create_term_relationship.py.html>`__ to see an example of how to use create_term_relationship API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_term_relationship.py.html>`__ to see an example of how to use create_term_relationship API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships"
         method = "POST"
@@ -2463,7 +2463,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_attribute.py.html>`__ to see an example of how to use delete_attribute API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_attribute.py.html>`__ to see an example of how to use delete_attribute API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "DELETE"
@@ -2560,7 +2560,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_attribute_tag.py.html>`__ to see an example of how to use delete_attribute_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_attribute_tag.py.html>`__ to see an example of how to use delete_attribute_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags/{tagKey}"
         method = "DELETE"
@@ -2646,7 +2646,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_catalog.py.html>`__ to see an example of how to use delete_catalog API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_catalog.py.html>`__ to see an example of how to use delete_catalog API.
         """
         resource_path = "/catalogs/{catalogId}"
         method = "DELETE"
@@ -2728,7 +2728,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_catalog_private_endpoint.py.html>`__ to see an example of how to use delete_catalog_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_catalog_private_endpoint.py.html>`__ to see an example of how to use delete_catalog_private_endpoint API.
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "DELETE"
@@ -2816,7 +2816,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "DELETE"
@@ -2906,7 +2906,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_custom_property.py.html>`__ to see an example of how to use delete_custom_property API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_custom_property.py.html>`__ to see an example of how to use delete_custom_property API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "DELETE"
@@ -2993,7 +2993,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
@@ -3082,7 +3082,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_data_asset_tag.py.html>`__ to see an example of how to use delete_data_asset_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_data_asset_tag.py.html>`__ to see an example of how to use delete_data_asset_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags/{tagKey}"
         method = "DELETE"
@@ -3172,7 +3172,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_entity.py.html>`__ to see an example of how to use delete_entity API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_entity.py.html>`__ to see an example of how to use delete_entity API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "DELETE"
@@ -3265,7 +3265,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_entity_tag.py.html>`__ to see an example of how to use delete_entity_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_entity_tag.py.html>`__ to see an example of how to use delete_entity_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags/{tagKey}"
         method = "DELETE"
@@ -3356,7 +3356,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_folder.py.html>`__ to see an example of how to use delete_folder API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_folder.py.html>`__ to see an example of how to use delete_folder API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "DELETE"
@@ -3449,7 +3449,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_folder_tag.py.html>`__ to see an example of how to use delete_folder_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_folder_tag.py.html>`__ to see an example of how to use delete_folder_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags/{tagKey}"
         method = "DELETE"
@@ -3537,7 +3537,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_glossary.py.html>`__ to see an example of how to use delete_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_glossary.py.html>`__ to see an example of how to use delete_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "DELETE"
@@ -3623,7 +3623,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_job.py.html>`__ to see an example of how to use delete_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_job.py.html>`__ to see an example of how to use delete_job API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "DELETE"
@@ -3709,7 +3709,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_job_definition.py.html>`__ to see an example of how to use delete_job_definition API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_job_definition.py.html>`__ to see an example of how to use delete_job_definition API.
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "DELETE"
@@ -3795,7 +3795,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_namespace.py.html>`__ to see an example of how to use delete_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_namespace.py.html>`__ to see an example of how to use delete_namespace API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "DELETE"
@@ -3881,7 +3881,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_pattern.py.html>`__ to see an example of how to use delete_pattern API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_pattern.py.html>`__ to see an example of how to use delete_pattern API.
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "DELETE"
@@ -3970,7 +3970,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_term.py.html>`__ to see an example of how to use delete_term API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_term.py.html>`__ to see an example of how to use delete_term API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "DELETE"
@@ -4063,7 +4063,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/delete_term_relationship.py.html>`__ to see an example of how to use delete_term_relationship API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_term_relationship.py.html>`__ to see an example of how to use delete_term_relationship API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "DELETE"
@@ -4151,7 +4151,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/detach_catalog_private_endpoint.py.html>`__ to see an example of how to use detach_catalog_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/detach_catalog_private_endpoint.py.html>`__ to see an example of how to use detach_catalog_private_endpoint API.
         """
         resource_path = "/catalogs/{catalogId}/actions/detachCatalogPrivateEndpoint"
         method = "POST"
@@ -4248,7 +4248,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/disassociate_custom_property.py.html>`__ to see an example of how to use disassociate_custom_property API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/disassociate_custom_property.py.html>`__ to see an example of how to use disassociate_custom_property API.
         """
         resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/disassociateCustomProperties"
         method = "POST"
@@ -4342,7 +4342,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/expand_tree_for_glossary.py.html>`__ to see an example of how to use expand_tree_for_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/expand_tree_for_glossary.py.html>`__ to see an example of how to use expand_tree_for_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/expandTree"
         method = "POST"
@@ -4435,7 +4435,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/export_glossary.py.html>`__ to see an example of how to use export_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/export_glossary.py.html>`__ to see an example of how to use export_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/export"
         method = "POST"
@@ -4537,7 +4537,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_attribute.py.html>`__ to see an example of how to use get_attribute API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_attribute.py.html>`__ to see an example of how to use get_attribute API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "GET"
@@ -4648,7 +4648,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_attribute_tag.py.html>`__ to see an example of how to use get_attribute_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_attribute_tag.py.html>`__ to see an example of how to use get_attribute_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags/{tagKey}"
         method = "GET"
@@ -4743,7 +4743,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_catalog.py.html>`__ to see an example of how to use get_catalog API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_catalog.py.html>`__ to see an example of how to use get_catalog API.
         """
         resource_path = "/catalogs/{catalogId}"
         method = "GET"
@@ -4818,7 +4818,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_catalog_private_endpoint.py.html>`__ to see an example of how to use get_catalog_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_catalog_private_endpoint.py.html>`__ to see an example of how to use get_catalog_private_endpoint API.
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "GET"
@@ -4904,7 +4904,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_connection.py.html>`__ to see an example of how to use get_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "GET"
@@ -5008,7 +5008,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_custom_property.py.html>`__ to see an example of how to use get_custom_property API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_custom_property.py.html>`__ to see an example of how to use get_custom_property API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "GET"
@@ -5109,7 +5109,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "GET"
@@ -5212,7 +5212,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_data_asset_tag.py.html>`__ to see an example of how to use get_data_asset_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_data_asset_tag.py.html>`__ to see an example of how to use get_data_asset_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags/{tagKey}"
         method = "GET"
@@ -5316,7 +5316,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_entity.py.html>`__ to see an example of how to use get_entity API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_entity.py.html>`__ to see an example of how to use get_entity API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "GET"
@@ -5423,7 +5423,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_entity_tag.py.html>`__ to see an example of how to use get_entity_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_entity_tag.py.html>`__ to see an example of how to use get_entity_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags/{tagKey}"
         method = "GET"
@@ -5528,7 +5528,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_folder.py.html>`__ to see an example of how to use get_folder API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_folder.py.html>`__ to see an example of how to use get_folder API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "GET"
@@ -5635,7 +5635,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_folder_tag.py.html>`__ to see an example of how to use get_folder_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_folder_tag.py.html>`__ to see an example of how to use get_folder_tag API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags/{tagKey}"
         method = "GET"
@@ -5737,7 +5737,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_glossary.py.html>`__ to see an example of how to use get_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_glossary.py.html>`__ to see an example of how to use get_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "GET"
@@ -5837,7 +5837,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_job.py.html>`__ to see an example of how to use get_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job.py.html>`__ to see an example of how to use get_job API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "GET"
@@ -5937,7 +5937,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_job_definition.py.html>`__ to see an example of how to use get_job_definition API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_definition.py.html>`__ to see an example of how to use get_job_definition API.
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "GET"
@@ -6040,7 +6040,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_job_execution.py.html>`__ to see an example of how to use get_job_execution API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_execution.py.html>`__ to see an example of how to use get_job_execution API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}"
         method = "GET"
@@ -6147,7 +6147,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_job_log.py.html>`__ to see an example of how to use get_job_log API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_log.py.html>`__ to see an example of how to use get_job_log API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/logs/{jobLogKey}"
         method = "GET"
@@ -6255,7 +6255,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_job_metrics.py.html>`__ to see an example of how to use get_job_metrics API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_metrics.py.html>`__ to see an example of how to use get_job_metrics API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/metrics/{jobMetricsKey}"
         method = "GET"
@@ -6357,7 +6357,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_namespace.py.html>`__ to see an example of how to use get_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_namespace.py.html>`__ to see an example of how to use get_namespace API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "GET"
@@ -6457,7 +6457,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_pattern.py.html>`__ to see an example of how to use get_pattern API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_pattern.py.html>`__ to see an example of how to use get_pattern API.
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "GET"
@@ -6560,7 +6560,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_term.py.html>`__ to see an example of how to use get_term API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_term.py.html>`__ to see an example of how to use get_term API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "GET"
@@ -6667,7 +6667,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_term_relationship.py.html>`__ to see an example of how to use get_term_relationship API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_term_relationship.py.html>`__ to see an example of how to use get_term_relationship API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "GET"
@@ -6769,7 +6769,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_type.py.html>`__ to see an example of how to use get_type API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_type.py.html>`__ to see an example of how to use get_type API.
         """
         resource_path = "/catalogs/{catalogId}/types/{typeKey}"
         method = "GET"
@@ -6861,7 +6861,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -6956,7 +6956,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/import_connection.py.html>`__ to see an example of how to use import_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/import_connection.py.html>`__ to see an example of how to use import_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/importConnection"
         method = "POST"
@@ -7056,7 +7056,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/import_glossary.py.html>`__ to see an example of how to use import_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/import_glossary.py.html>`__ to see an example of how to use import_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/import"
         method = "POST"
@@ -7155,7 +7155,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_aggregated_physical_entities.py.html>`__ to see an example of how to use list_aggregated_physical_entities API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_aggregated_physical_entities.py.html>`__ to see an example of how to use list_aggregated_physical_entities API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/actions/listAggregatedPhysicalEntities"
         method = "POST"
@@ -7300,7 +7300,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_attribute_tags.py.html>`__ to see an example of how to use list_attribute_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_attribute_tags.py.html>`__ to see an example of how to use list_attribute_tags API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags"
         method = "GET"
@@ -7518,7 +7518,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_attributes.py.html>`__ to see an example of how to use list_attributes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_attributes.py.html>`__ to see an example of how to use list_attributes API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes"
         method = "GET"
@@ -7696,7 +7696,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_catalog_private_endpoints.py.html>`__ to see an example of how to use list_catalog_private_endpoints API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_catalog_private_endpoints.py.html>`__ to see an example of how to use list_catalog_private_endpoints API.
         """
         resource_path = "/catalogPrivateEndpoints"
         method = "GET"
@@ -7823,7 +7823,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_catalogs.py.html>`__ to see an example of how to use list_catalogs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_catalogs.py.html>`__ to see an example of how to use list_catalogs API.
         """
         resource_path = "/catalogs"
         method = "GET"
@@ -7990,7 +7990,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_connections.py.html>`__ to see an example of how to use list_connections API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections"
         method = "GET"
@@ -8194,7 +8194,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_custom_properties.py.html>`__ to see an example of how to use list_custom_properties API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_custom_properties.py.html>`__ to see an example of how to use list_custom_properties API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
         method = "GET"
@@ -8395,7 +8395,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_data_asset_tags.py.html>`__ to see an example of how to use list_data_asset_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_data_asset_tags.py.html>`__ to see an example of how to use list_data_asset_tags API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags"
         method = "GET"
@@ -8584,7 +8584,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets"
         method = "GET"
@@ -8739,7 +8739,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_derived_logical_entities.py.html>`__ to see an example of how to use list_derived_logical_entities API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_derived_logical_entities.py.html>`__ to see an example of how to use list_derived_logical_entities API.
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/listDerivedLogicalEntities"
         method = "POST"
@@ -8908,7 +8908,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_entities.py.html>`__ to see an example of how to use list_entities API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_entities.py.html>`__ to see an example of how to use list_entities API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities"
         method = "GET"
@@ -9119,7 +9119,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_entity_tags.py.html>`__ to see an example of how to use list_entity_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_entity_tags.py.html>`__ to see an example of how to use list_entity_tags API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags"
         method = "GET"
@@ -9302,7 +9302,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_folder_tags.py.html>`__ to see an example of how to use list_folder_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_folder_tags.py.html>`__ to see an example of how to use list_folder_tags API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags"
         method = "GET"
@@ -9506,7 +9506,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_folders.py.html>`__ to see an example of how to use list_folders API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_folders.py.html>`__ to see an example of how to use list_folders API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders"
         method = "GET"
@@ -9708,7 +9708,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_glossaries.py.html>`__ to see an example of how to use list_glossaries API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_glossaries.py.html>`__ to see an example of how to use list_glossaries API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries"
         method = "GET"
@@ -9914,7 +9914,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_job_definitions.py.html>`__ to see an example of how to use list_job_definitions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_definitions.py.html>`__ to see an example of how to use list_job_definitions API.
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions"
         method = "GET"
@@ -10160,7 +10160,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_job_executions.py.html>`__ to see an example of how to use list_job_executions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_executions.py.html>`__ to see an example of how to use list_job_executions API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions"
         method = "GET"
@@ -10371,7 +10371,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_job_logs.py.html>`__ to see an example of how to use list_job_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_logs.py.html>`__ to see an example of how to use list_job_logs API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/logs"
         method = "GET"
@@ -10577,7 +10577,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_job_metrics.py.html>`__ to see an example of how to use list_job_metrics API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_metrics.py.html>`__ to see an example of how to use list_job_metrics API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/metrics"
         method = "GET"
@@ -10806,7 +10806,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
         """
         resource_path = "/catalogs/{catalogId}/jobs"
         method = "GET"
@@ -11022,7 +11022,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_namespaces.py.html>`__ to see an example of how to use list_namespaces API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_namespaces.py.html>`__ to see an example of how to use list_namespaces API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces"
         method = "GET"
@@ -11206,7 +11206,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_patterns.py.html>`__ to see an example of how to use list_patterns API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_patterns.py.html>`__ to see an example of how to use list_patterns API.
         """
         resource_path = "/catalogs/{catalogId}/patterns"
         method = "GET"
@@ -11374,7 +11374,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_tags.py.html>`__ to see an example of how to use list_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_tags.py.html>`__ to see an example of how to use list_tags API.
         """
         resource_path = "/catalogs/{catalogId}/tags"
         method = "GET"
@@ -11540,7 +11540,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_term_relationships.py.html>`__ to see an example of how to use list_term_relationships API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_term_relationships.py.html>`__ to see an example of how to use list_term_relationships API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships"
         method = "GET"
@@ -11719,7 +11719,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_terms.py.html>`__ to see an example of how to use list_terms API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_terms.py.html>`__ to see an example of how to use list_terms API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms"
         method = "GET"
@@ -11905,7 +11905,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_types.py.html>`__ to see an example of how to use list_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_types.py.html>`__ to see an example of how to use list_types API.
         """
         resource_path = "/catalogs/{catalogId}/types"
         method = "GET"
@@ -12055,7 +12055,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -12174,7 +12174,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -12283,7 +12283,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -12373,7 +12373,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/object_stats.py.html>`__ to see an example of how to use object_stats API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/object_stats.py.html>`__ to see an example of how to use object_stats API.
         """
         resource_path = "/catalogs/{catalogId}/actions/objectStats"
         method = "POST"
@@ -12492,7 +12492,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/parse_connection.py.html>`__ to see an example of how to use parse_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/parse_connection.py.html>`__ to see an example of how to use parse_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/parseConnection"
         method = "POST"
@@ -12602,7 +12602,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/remove_data_selector_patterns.py.html>`__ to see an example of how to use remove_data_selector_patterns API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/remove_data_selector_patterns.py.html>`__ to see an example of how to use remove_data_selector_patterns API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/removeDataSelectorPatterns"
         method = "POST"
@@ -12671,7 +12671,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param SearchCriteria search_criteria_details: (optional)
+        :param oci.data_catalog.models.SearchCriteria search_criteria_details: (optional)
             The information used to create an extended search results.
 
         :param str display_name: (optional)
@@ -12721,7 +12721,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/search_criteria.py.html>`__ to see an example of how to use search_criteria API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/search_criteria.py.html>`__ to see an example of how to use search_criteria API.
         """
         resource_path = "/catalogs/{catalogId}/search"
         method = "POST"
@@ -12855,7 +12855,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/test_connection.py.html>`__ to see an example of how to use test_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/test_connection.py.html>`__ to see an example of how to use test_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}/actions/test"
         method = "POST"
@@ -12955,7 +12955,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_attribute.py.html>`__ to see an example of how to use update_attribute API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_attribute.py.html>`__ to see an example of how to use update_attribute API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "PUT"
@@ -13047,7 +13047,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_catalog.py.html>`__ to see an example of how to use update_catalog API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_catalog.py.html>`__ to see an example of how to use update_catalog API.
         """
         resource_path = "/catalogs/{catalogId}"
         method = "PUT"
@@ -13136,7 +13136,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_catalog_private_endpoint.py.html>`__ to see an example of how to use update_catalog_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_catalog_private_endpoint.py.html>`__ to see an example of how to use update_catalog_private_endpoint API.
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "PUT"
@@ -13229,7 +13229,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_connection.py.html>`__ to see an example of how to use update_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "PUT"
@@ -13326,7 +13326,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_custom_property.py.html>`__ to see an example of how to use update_custom_property API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_custom_property.py.html>`__ to see an example of how to use update_custom_property API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "PUT"
@@ -13420,7 +13420,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "PUT"
@@ -13516,7 +13516,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_entity.py.html>`__ to see an example of how to use update_entity API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_entity.py.html>`__ to see an example of how to use update_entity API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "PUT"
@@ -13613,7 +13613,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_folder.py.html>`__ to see an example of how to use update_folder API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_folder.py.html>`__ to see an example of how to use update_folder API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "PUT"
@@ -13707,7 +13707,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_glossary.py.html>`__ to see an example of how to use update_glossary API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_glossary.py.html>`__ to see an example of how to use update_glossary API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "PUT"
@@ -13800,7 +13800,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_job.py.html>`__ to see an example of how to use update_job API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_job.py.html>`__ to see an example of how to use update_job API.
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "PUT"
@@ -13893,7 +13893,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_job_definition.py.html>`__ to see an example of how to use update_job_definition API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_job_definition.py.html>`__ to see an example of how to use update_job_definition API.
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "PUT"
@@ -13986,7 +13986,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_namespace.py.html>`__ to see an example of how to use update_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_namespace.py.html>`__ to see an example of how to use update_namespace API.
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "PUT"
@@ -14079,7 +14079,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_pattern.py.html>`__ to see an example of how to use update_pattern API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_pattern.py.html>`__ to see an example of how to use update_pattern API.
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "PUT"
@@ -14175,7 +14175,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_term.py.html>`__ to see an example of how to use update_term API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_term.py.html>`__ to see an example of how to use update_term API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "PUT"
@@ -14275,7 +14275,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/update_term_relationship.py.html>`__ to see an example of how to use update_term_relationship API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_term_relationship.py.html>`__ to see an example of how to use update_term_relationship API.
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "PUT"
@@ -14380,7 +14380,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/upload_credentials.py.html>`__ to see an example of how to use upload_credentials API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/upload_credentials.py.html>`__ to see an example of how to use upload_credentials API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}/actions/uploadCredentials"
         method = "POST"
@@ -14481,7 +14481,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/users.py.html>`__ to see an example of how to use users API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/users.py.html>`__ to see an example of how to use users API.
         """
         resource_path = "/catalogs/{catalogId}/actions/users"
         method = "POST"
@@ -14597,7 +14597,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/validate_connection.py.html>`__ to see an example of how to use validate_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/validate_connection.py.html>`__ to see an example of how to use validate_connection API.
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/validateConnection"
         method = "POST"
@@ -14692,7 +14692,7 @@ class DataCatalogClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datacatalog/validate_pattern.py.html>`__ to see an example of how to use validate_pattern API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/validate_pattern.py.html>`__ to see an example of how to use validate_pattern API.
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/validate"
         method = "POST"

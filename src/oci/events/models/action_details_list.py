@@ -20,7 +20,7 @@ class ActionDetailsList(object):
 
         :param actions:
             The value to assign to the actions property of this ActionDetailsList.
-        :type actions: list[ActionDetails]
+        :type actions: list[oci.events.models.ActionDetails]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ActionDetailsList(object):
 
 
         :return: The actions of this ActionDetailsList.
-        :rtype: list[ActionDetails]
+        :rtype: list[oci.events.models.ActionDetails]
         """
         return self._actions
 
@@ -53,7 +53,7 @@ class ActionDetailsList(object):
 
 
         :param actions: The actions of this ActionDetailsList.
-        :type: list[ActionDetails]
+        :type: list[oci.events.models.ActionDetails]
         """
         self._actions = actions
 

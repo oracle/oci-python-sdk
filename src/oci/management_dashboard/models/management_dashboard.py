@@ -36,7 +36,7 @@ class ManagementDashboard(object):
 
         :param tiles:
             The value to assign to the tiles property of this ManagementDashboard.
-        :type tiles: list[ManagementDashboardTileDetails]
+        :type tiles: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
 
         :param display_name:
             The value to assign to the display_name property of this ManagementDashboard.
@@ -108,7 +108,7 @@ class ManagementDashboard(object):
 
         :param saved_searches:
             The value to assign to the saved_searches property of this ManagementDashboard.
-        :type saved_searches: list[ManagementSavedSearch]
+        :type saved_searches: list[oci.management_dashboard.models.ManagementSavedSearch]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboard.
@@ -305,7 +305,7 @@ class ManagementDashboard(object):
 
 
         :return: The tiles of this ManagementDashboard.
-        :rtype: list[ManagementDashboardTileDetails]
+        :rtype: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
         """
         return self._tiles
 
@@ -317,7 +317,7 @@ class ManagementDashboard(object):
 
 
         :param tiles: The tiles of this ManagementDashboard.
-        :type: list[ManagementDashboardTileDetails]
+        :type: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
         """
         self._tiles = tiles
 
@@ -737,7 +737,7 @@ class ManagementDashboard(object):
 
 
         :return: The saved_searches of this ManagementDashboard.
-        :rtype: list[ManagementSavedSearch]
+        :rtype: list[oci.management_dashboard.models.ManagementSavedSearch]
         """
         return self._saved_searches
 
@@ -749,7 +749,7 @@ class ManagementDashboard(object):
 
 
         :param saved_searches: The saved_searches of this ManagementDashboard.
-        :type: list[ManagementSavedSearch]
+        :type: list[oci.management_dashboard.models.ManagementSavedSearch]
         """
         self._saved_searches = saved_searches
 

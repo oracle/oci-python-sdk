@@ -51,7 +51,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
 
         :param verify_claims:
             The value to assign to the verify_claims property of this JwtAuthenticationPolicy.
-        :type verify_claims: list[JsonWebTokenClaim]
+        :type verify_claims: list[oci.apigateway.models.JsonWebTokenClaim]
 
         :param max_clock_skew_in_seconds:
             The value to assign to the max_clock_skew_in_seconds property of this JwtAuthenticationPolicy.
@@ -59,7 +59,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
 
         :param public_keys:
             The value to assign to the public_keys property of this JwtAuthenticationPolicy.
-        :type public_keys: PublicKeySet
+        :type public_keys: oci.apigateway.models.PublicKeySet
 
         """
         self.swagger_types = {
@@ -230,7 +230,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
 
 
         :return: The verify_claims of this JwtAuthenticationPolicy.
-        :rtype: list[JsonWebTokenClaim]
+        :rtype: list[oci.apigateway.models.JsonWebTokenClaim]
         """
         return self._verify_claims
 
@@ -242,7 +242,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
 
 
         :param verify_claims: The verify_claims of this JwtAuthenticationPolicy.
-        :type: list[JsonWebTokenClaim]
+        :type: list[oci.apigateway.models.JsonWebTokenClaim]
         """
         self._verify_claims = verify_claims
 
@@ -278,7 +278,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
         **[Required]** Gets the public_keys of this JwtAuthenticationPolicy.
 
         :return: The public_keys of this JwtAuthenticationPolicy.
-        :rtype: PublicKeySet
+        :rtype: oci.apigateway.models.PublicKeySet
         """
         return self._public_keys
 
@@ -288,7 +288,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
         Sets the public_keys of this JwtAuthenticationPolicy.
 
         :param public_keys: The public_keys of this JwtAuthenticationPolicy.
-        :type: PublicKeySet
+        :type: oci.apigateway.models.PublicKeySet
         """
         self._public_keys = public_keys
 

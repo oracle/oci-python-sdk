@@ -55,7 +55,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         :param create_vnic_details:
             The value to assign to the create_vnic_details property of this InstanceConfigurationLaunchInstanceDetails.
-        :type create_vnic_details: InstanceConfigurationCreateVnicDetails
+        :type create_vnic_details: oci.core.models.InstanceConfigurationCreateVnicDetails
 
         :param defined_tags:
             The value to assign to the defined_tags property of this InstanceConfigurationLaunchInstanceDetails.
@@ -87,11 +87,11 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         :param shape_config:
             The value to assign to the shape_config property of this InstanceConfigurationLaunchInstanceDetails.
-        :type shape_config: InstanceConfigurationLaunchInstanceShapeConfigDetails
+        :type shape_config: oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
 
         :param source_details:
             The value to assign to the source_details property of this InstanceConfigurationLaunchInstanceDetails.
-        :type source_details: InstanceConfigurationInstanceSourceDetails
+        :type source_details: oci.core.models.InstanceConfigurationInstanceSourceDetails
 
         :param fault_domain:
             The value to assign to the fault_domain property of this InstanceConfigurationLaunchInstanceDetails.
@@ -109,11 +109,11 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         :param launch_options:
             The value to assign to the launch_options property of this InstanceConfigurationLaunchInstanceDetails.
-        :type launch_options: InstanceConfigurationLaunchOptions
+        :type launch_options: oci.core.models.InstanceConfigurationLaunchOptions
 
         :param agent_config:
             The value to assign to the agent_config property of this InstanceConfigurationLaunchInstanceDetails.
-        :type agent_config: InstanceConfigurationLaunchInstanceAgentConfigDetails
+        :type agent_config: oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
 
         :param is_pv_encryption_in_transit_enabled:
             The value to assign to the is_pv_encryption_in_transit_enabled property of this InstanceConfigurationLaunchInstanceDetails.
@@ -127,11 +127,11 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         :param instance_options:
             The value to assign to the instance_options property of this InstanceConfigurationLaunchInstanceDetails.
-        :type instance_options: InstanceConfigurationInstanceOptions
+        :type instance_options: oci.core.models.InstanceConfigurationInstanceOptions
 
         :param availability_config:
             The value to assign to the availability_config property of this InstanceConfigurationLaunchInstanceDetails.
-        :type availability_config: InstanceConfigurationAvailabilityConfig
+        :type availability_config: oci.core.models.InstanceConfigurationAvailabilityConfig
 
         """
         self.swagger_types = {
@@ -265,7 +265,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :return: The create_vnic_details of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationCreateVnicDetails
+        :rtype: oci.core.models.InstanceConfigurationCreateVnicDetails
         """
         return self._create_vnic_details
 
@@ -278,7 +278,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :param create_vnic_details: The create_vnic_details of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationCreateVnicDetails
+        :type: oci.core.models.InstanceConfigurationCreateVnicDetails
         """
         self._create_vnic_details = create_vnic_details
 
@@ -652,7 +652,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Gets the shape_config of this InstanceConfigurationLaunchInstanceDetails.
 
         :return: The shape_config of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationLaunchInstanceShapeConfigDetails
+        :rtype: oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
         """
         return self._shape_config
 
@@ -662,7 +662,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Sets the shape_config of this InstanceConfigurationLaunchInstanceDetails.
 
         :param shape_config: The shape_config of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationLaunchInstanceShapeConfigDetails
+        :type: oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
 
@@ -675,7 +675,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :return: The source_details of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationInstanceSourceDetails
+        :rtype: oci.core.models.InstanceConfigurationInstanceSourceDetails
         """
         return self._source_details
 
@@ -688,7 +688,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :param source_details: The source_details of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationInstanceSourceDetails
+        :type: oci.core.models.InstanceConfigurationInstanceSourceDetails
         """
         self._source_details = source_details
 
@@ -818,7 +818,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :return: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationLaunchOptions
+        :rtype: oci.core.models.InstanceConfigurationLaunchOptions
         """
         return self._launch_options
 
@@ -830,7 +830,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :param launch_options: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationLaunchOptions
+        :type: oci.core.models.InstanceConfigurationLaunchOptions
         """
         self._launch_options = launch_options
 
@@ -840,7 +840,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Gets the agent_config of this InstanceConfigurationLaunchInstanceDetails.
 
         :return: The agent_config of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationLaunchInstanceAgentConfigDetails
+        :rtype: oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
         """
         return self._agent_config
 
@@ -850,7 +850,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Sets the agent_config of this InstanceConfigurationLaunchInstanceDetails.
 
         :param agent_config: The agent_config of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationLaunchInstanceAgentConfigDetails
+        :type: oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
         """
         self._agent_config = agent_config
 
@@ -918,7 +918,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Gets the instance_options of this InstanceConfigurationLaunchInstanceDetails.
 
         :return: The instance_options of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationInstanceOptions
+        :rtype: oci.core.models.InstanceConfigurationInstanceOptions
         """
         return self._instance_options
 
@@ -928,7 +928,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Sets the instance_options of this InstanceConfigurationLaunchInstanceDetails.
 
         :param instance_options: The instance_options of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationInstanceOptions
+        :type: oci.core.models.InstanceConfigurationInstanceOptions
         """
         self._instance_options = instance_options
 
@@ -940,7 +940,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :return: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
-        :rtype: InstanceConfigurationAvailabilityConfig
+        :rtype: oci.core.models.InstanceConfigurationAvailabilityConfig
         """
         return self._availability_config
 
@@ -952,7 +952,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
 
         :param availability_config: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
-        :type: InstanceConfigurationAvailabilityConfig
+        :type: oci.core.models.InstanceConfigurationAvailabilityConfig
         """
         self._availability_config = availability_config
 

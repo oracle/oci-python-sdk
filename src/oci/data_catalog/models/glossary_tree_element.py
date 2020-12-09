@@ -68,7 +68,7 @@ class GlossaryTreeElement(object):
 
         :param child_terms:
             The value to assign to the child_terms property of this GlossaryTreeElement.
-        :type child_terms: list[GlossaryTreeElement]
+        :type child_terms: list[oci.data_catalog.models.GlossaryTreeElement]
 
         :param key:
             The value to assign to the key property of this GlossaryTreeElement.
@@ -177,7 +177,7 @@ class GlossaryTreeElement(object):
 
 
         :return: The child_terms of this GlossaryTreeElement.
-        :rtype: list[GlossaryTreeElement]
+        :rtype: list[oci.data_catalog.models.GlossaryTreeElement]
         """
         return self._child_terms
 
@@ -189,7 +189,7 @@ class GlossaryTreeElement(object):
 
 
         :param child_terms: The child_terms of this GlossaryTreeElement.
-        :type: list[GlossaryTreeElement]
+        :type: list[oci.data_catalog.models.GlossaryTreeElement]
         """
         self._child_terms = child_terms
 

@@ -51,11 +51,11 @@ class AutoScalingConfiguration(object):
 
         :param resource:
             The value to assign to the resource property of this AutoScalingConfiguration.
-        :type resource: Resource
+        :type resource: oci.autoscaling.models.Resource
 
         :param policies:
             The value to assign to the policies property of this AutoScalingConfiguration.
-        :type policies: list[AutoScalingPolicy]
+        :type policies: list[oci.autoscaling.models.AutoScalingPolicy]
 
         :param time_created:
             The value to assign to the time_created property of this AutoScalingConfiguration.
@@ -317,7 +317,7 @@ class AutoScalingConfiguration(object):
         **[Required]** Gets the resource of this AutoScalingConfiguration.
 
         :return: The resource of this AutoScalingConfiguration.
-        :rtype: Resource
+        :rtype: oci.autoscaling.models.Resource
         """
         return self._resource
 
@@ -327,7 +327,7 @@ class AutoScalingConfiguration(object):
         Sets the resource of this AutoScalingConfiguration.
 
         :param resource: The resource of this AutoScalingConfiguration.
-        :type: Resource
+        :type: oci.autoscaling.models.Resource
         """
         self._resource = resource
 
@@ -342,7 +342,7 @@ class AutoScalingConfiguration(object):
 
 
         :return: The policies of this AutoScalingConfiguration.
-        :rtype: list[AutoScalingPolicy]
+        :rtype: list[oci.autoscaling.models.AutoScalingPolicy]
         """
         return self._policies
 
@@ -357,7 +357,7 @@ class AutoScalingConfiguration(object):
 
 
         :param policies: The policies of this AutoScalingConfiguration.
-        :type: list[AutoScalingPolicy]
+        :type: list[oci.autoscaling.models.AutoScalingPolicy]
         """
         self._policies = policies
 

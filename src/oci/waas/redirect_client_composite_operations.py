@@ -28,7 +28,7 @@ class RedirectClientCompositeOperations(object):
         Calls :py:func:`~oci.waas.RedirectClient.create_http_redirect` and waits for the :py:class:`~oci.waas.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateHttpRedirectDetails create_http_redirect_details: (required)
+        :param oci.waas.models.CreateHttpRedirectDetails create_http_redirect_details: (required)
             The details of the HTTP Redirect.
 
         :param list[str] wait_for_states:
@@ -119,7 +119,7 @@ class RedirectClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateHttpRedirectDetails update_http_redirect_details: (required)
+        :param oci.waas.models.UpdateHttpRedirectDetails update_http_redirect_details: (required)
             The details of the HTTP Redirect to update.
 
         :param list[str] wait_for_states:

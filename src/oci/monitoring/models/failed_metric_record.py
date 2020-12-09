@@ -24,7 +24,7 @@ class FailedMetricRecord(object):
 
         :param metric_data:
             The value to assign to the metric_data property of this FailedMetricRecord.
-        :type metric_data: MetricDataDetails
+        :type metric_data: oci.monitoring.models.MetricDataDetails
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class FailedMetricRecord(object):
 
 
         :return: The metric_data of this FailedMetricRecord.
-        :rtype: MetricDataDetails
+        :rtype: oci.monitoring.models.MetricDataDetails
         """
         return self._metric_data
 
@@ -84,7 +84,7 @@ class FailedMetricRecord(object):
 
 
         :param metric_data: The metric_data of this FailedMetricRecord.
-        :type: MetricDataDetails
+        :type: oci.monitoring.models.MetricDataDetails
         """
         self._metric_data = metric_data
 

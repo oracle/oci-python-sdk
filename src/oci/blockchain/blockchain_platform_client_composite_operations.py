@@ -31,7 +31,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param ChangeBlockchainPlatformCompartmentDetails change_blockchain_platform_compartment_details: (required)
+        :param oci.blockchain.models.ChangeBlockchainPlatformCompartmentDetails change_blockchain_platform_compartment_details: (required)
             Input payload to move the resource to a different compartment.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         Calls :py:func:`~oci.blockchain.BlockchainPlatformClient.create_blockchain_platform` and waits for the :py:class:`~oci.blockchain.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateBlockchainPlatformDetails create_blockchain_platform_details: (required)
+        :param oci.blockchain.models.CreateBlockchainPlatformDetails create_blockchain_platform_details: (required)
             Details for the new service.
 
         :param list[str] wait_for_states:
@@ -110,7 +110,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param CreateOsnDetails create_osn_details: (required)
+        :param oci.blockchain.models.CreateOsnDetails create_osn_details: (required)
             Input payload to create blockchain platform OSN. The payload cannot be empty.
 
         :param list[str] wait_for_states:
@@ -151,7 +151,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param CreatePeerDetails create_peer_details: (required)
+        :param oci.blockchain.models.CreatePeerDetails create_peer_details: (required)
             Input payload to create a blockchain platform peer. The payload cannot be empty.
 
         :param list[str] wait_for_states:
@@ -382,7 +382,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         :param str blockchain_platform_id: (required)
             Unique service identifier.
 
-        :param ScaleBlockchainPlatformDetails scale_blockchain_platform_details: (required)
+        :param oci.blockchain.models.ScaleBlockchainPlatformDetails scale_blockchain_platform_details: (required)
             Input payload to scaleout blockchain platform. The payload cannot be empty.
 
         :param list[str] wait_for_states:
@@ -496,7 +496,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         Calls :py:func:`~oci.blockchain.BlockchainPlatformClient.update_blockchain_platform` and waits for the :py:class:`~oci.blockchain.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateBlockchainPlatformDetails update_blockchain_platform_details: (required)
+        :param oci.blockchain.models.UpdateBlockchainPlatformDetails update_blockchain_platform_details: (required)
             The Blockchain Platform fields to update. Fields that are not provided will not be updated.
 
         :param str blockchain_platform_id: (required)
@@ -543,7 +543,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         :param str osn_id: (required)
             OSN identifier.
 
-        :param UpdateOsnDetails update_osn_details: (required)
+        :param oci.blockchain.models.UpdateOsnDetails update_osn_details: (required)
             Input payload to update a blockchain platform OSN. The payload cannot be empty.
 
         :param list[str] wait_for_states:
@@ -587,7 +587,7 @@ class BlockchainPlatformClientCompositeOperations(object):
         :param str peer_id: (required)
             Peer identifier.
 
-        :param UpdatePeerDetails update_peer_details: (required)
+        :param oci.blockchain.models.UpdatePeerDetails update_peer_details: (required)
             Input payload to update a blockchain platform peer. The payload cannot be empty.
 
         :param list[str] wait_for_states:

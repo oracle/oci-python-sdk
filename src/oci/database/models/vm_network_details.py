@@ -50,7 +50,7 @@ class VmNetworkDetails(object):
 
         :param nodes:
             The value to assign to the nodes property of this VmNetworkDetails.
-        :type nodes: list[NodeDetails]
+        :type nodes: list[oci.database.models.NodeDetails]
 
         """
         self.swagger_types = {
@@ -212,7 +212,7 @@ class VmNetworkDetails(object):
 
 
         :return: The nodes of this VmNetworkDetails.
-        :rtype: list[NodeDetails]
+        :rtype: list[oci.database.models.NodeDetails]
         """
         return self._nodes
 
@@ -224,7 +224,7 @@ class VmNetworkDetails(object):
 
 
         :param nodes: The nodes of this VmNetworkDetails.
-        :type: list[NodeDetails]
+        :type: list[oci.database.models.NodeDetails]
         """
         self._nodes = nodes
 

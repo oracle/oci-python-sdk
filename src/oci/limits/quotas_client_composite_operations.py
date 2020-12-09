@@ -28,7 +28,7 @@ class QuotasClientCompositeOperations(object):
         Calls :py:func:`~oci.limits.QuotasClient.create_quota` and waits for the :py:class:`~oci.limits.models.Quota` acted upon
         to enter the given state(s).
 
-        :param CreateQuotaDetails create_quota_details: (required)
+        :param oci.limits.models.CreateQuotaDetails create_quota_details: (required)
             Request object for creating a new quota.
 
         :param list[str] wait_for_states:
@@ -116,7 +116,7 @@ class QuotasClientCompositeOperations(object):
         :param str quota_id: (required)
             The OCID of the quota.
 
-        :param UpdateQuotaDetails update_quota_details: (required)
+        :param oci.limits.models.UpdateQuotaDetails update_quota_details: (required)
             Request object for updating a quota.
 
         :param list[str] wait_for_states:

@@ -20,7 +20,7 @@ class UpdateRRSetDetails(object):
 
         :param items:
             The value to assign to the items property of this UpdateRRSetDetails.
-        :type items: list[RecordDetails]
+        :type items: list[oci.dns.models.RecordDetails]
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class UpdateRRSetDetails(object):
         Gets the items of this UpdateRRSetDetails.
 
         :return: The items of this UpdateRRSetDetails.
-        :rtype: list[RecordDetails]
+        :rtype: list[oci.dns.models.RecordDetails]
         """
         return self._items
 
@@ -49,7 +49,7 @@ class UpdateRRSetDetails(object):
         Sets the items of this UpdateRRSetDetails.
 
         :param items: The items of this UpdateRRSetDetails.
-        :type: list[RecordDetails]
+        :type: list[oci.dns.models.RecordDetails]
         """
         self._items = items
 

@@ -40,7 +40,7 @@ class CreateTaskRunDetails(object):
 
         :param config_provider:
             The value to assign to the config_provider property of this CreateTaskRunDetails.
-        :type config_provider: CreateConfigProvider
+        :type config_provider: oci.data_integration.models.CreateConfigProvider
 
         :param identifier:
             The value to assign to the identifier property of this CreateTaskRunDetails.
@@ -48,7 +48,7 @@ class CreateTaskRunDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskRunDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -208,7 +208,7 @@ class CreateTaskRunDetails(object):
         Gets the config_provider of this CreateTaskRunDetails.
 
         :return: The config_provider of this CreateTaskRunDetails.
-        :rtype: CreateConfigProvider
+        :rtype: oci.data_integration.models.CreateConfigProvider
         """
         return self._config_provider
 
@@ -218,7 +218,7 @@ class CreateTaskRunDetails(object):
         Sets the config_provider of this CreateTaskRunDetails.
 
         :param config_provider: The config_provider of this CreateTaskRunDetails.
-        :type: CreateConfigProvider
+        :type: oci.data_integration.models.CreateConfigProvider
         """
         self._config_provider = config_provider
 
@@ -252,7 +252,7 @@ class CreateTaskRunDetails(object):
         Gets the registry_metadata of this CreateTaskRunDetails.
 
         :return: The registry_metadata of this CreateTaskRunDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -262,7 +262,7 @@ class CreateTaskRunDetails(object):
         Sets the registry_metadata of this CreateTaskRunDetails.
 
         :param registry_metadata: The registry_metadata of this CreateTaskRunDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

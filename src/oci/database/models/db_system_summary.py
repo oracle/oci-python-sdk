@@ -150,7 +150,7 @@ class DbSystemSummary(object):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this DbSystemSummary.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this DbSystemSummary.
@@ -254,7 +254,7 @@ class DbSystemSummary(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this DbSystemSummary.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this DbSystemSummary.
@@ -713,7 +713,7 @@ class DbSystemSummary(object):
         Gets the db_system_options of this DbSystemSummary.
 
         :return: The db_system_options of this DbSystemSummary.
-        :rtype: DbSystemOptions
+        :rtype: oci.database.models.DbSystemOptions
         """
         return self._db_system_options
 
@@ -723,7 +723,7 @@ class DbSystemSummary(object):
         Sets the db_system_options of this DbSystemSummary.
 
         :param db_system_options: The db_system_options of this DbSystemSummary.
-        :type: DbSystemOptions
+        :type: oci.database.models.DbSystemOptions
         """
         self._db_system_options = db_system_options
 
@@ -1351,7 +1351,7 @@ class DbSystemSummary(object):
         Gets the maintenance_window of this DbSystemSummary.
 
         :return: The maintenance_window of this DbSystemSummary.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -1361,7 +1361,7 @@ class DbSystemSummary(object):
         Sets the maintenance_window of this DbSystemSummary.
 
         :param maintenance_window: The maintenance_window of this DbSystemSummary.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

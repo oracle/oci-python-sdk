@@ -20,7 +20,7 @@ class LogAnalyticsAssociationParameterCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsAssociationParameterCollection.
-        :type items: list[LogAnalyticsAssociationParameter]
+        :type items: list[oci.log_analytics.models.LogAnalyticsAssociationParameter]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsAssociationParameterCollection(object):
 
 
         :return: The items of this LogAnalyticsAssociationParameterCollection.
-        :rtype: list[LogAnalyticsAssociationParameter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsAssociationParameter]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsAssociationParameterCollection(object):
 
 
         :param items: The items of this LogAnalyticsAssociationParameterCollection.
-        :type: list[LogAnalyticsAssociationParameter]
+        :type: list[oci.log_analytics.models.LogAnalyticsAssociationParameter]
         """
         self._items = items
 

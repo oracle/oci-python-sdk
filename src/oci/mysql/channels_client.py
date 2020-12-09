@@ -118,7 +118,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/create_channel.py.html>`__ to see an example of how to use create_channel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/create_channel.py.html>`__ to see an example of how to use create_channel API.
         """
         resource_path = "/channels"
         method = "POST"
@@ -198,7 +198,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/delete_channel.py.html>`__ to see an example of how to use delete_channel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_channel.py.html>`__ to see an example of how to use delete_channel API.
         """
         resource_path = "/channels/{channelId}"
         method = "DELETE"
@@ -286,7 +286,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/get_channel.py.html>`__ to see an example of how to use get_channel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_channel.py.html>`__ to see an example of how to use get_channel API.
         """
         resource_path = "/channels/{channelId}"
         method = "GET"
@@ -410,7 +410,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/list_channels.py.html>`__ to see an example of how to use list_channels API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/list_channels.py.html>`__ to see an example of how to use list_channels API.
         """
         resource_path = "/channels"
         method = "GET"
@@ -539,7 +539,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/reset_channel.py.html>`__ to see an example of how to use reset_channel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/reset_channel.py.html>`__ to see an example of how to use reset_channel API.
         """
         resource_path = "/channels/{channelId}/actions/reset"
         method = "POST"
@@ -639,7 +639,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/resume_channel.py.html>`__ to see an example of how to use resume_channel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/resume_channel.py.html>`__ to see an example of how to use resume_channel API.
         """
         resource_path = "/channels/{channelId}/actions/resume"
         method = "POST"
@@ -743,7 +743,7 @@ class ChannelsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/update_channel.py.html>`__ to see an example of how to use update_channel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_channel.py.html>`__ to see an example of how to use update_channel API.
         """
         resource_path = "/channels/{channelId}"
         method = "PUT"

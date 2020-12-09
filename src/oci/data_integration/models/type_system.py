@@ -32,7 +32,7 @@ class TypeSystem(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TypeSystem.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TypeSystem.
@@ -64,7 +64,7 @@ class TypeSystem(object):
 
         :param types:
             The value to assign to the types property of this TypeSystem.
-        :type types: list[DataType]
+        :type types: list[oci.data_integration.models.DataType]
 
         """
         self.swagger_types = {
@@ -188,7 +188,7 @@ class TypeSystem(object):
         Gets the parent_ref of this TypeSystem.
 
         :return: The parent_ref of this TypeSystem.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -198,7 +198,7 @@ class TypeSystem(object):
         Sets the parent_ref of this TypeSystem.
 
         :param parent_ref: The parent_ref of this TypeSystem.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -378,7 +378,7 @@ class TypeSystem(object):
 
 
         :return: The types of this TypeSystem.
-        :rtype: list[DataType]
+        :rtype: list[oci.data_integration.models.DataType]
         """
         return self._types
 
@@ -390,7 +390,7 @@ class TypeSystem(object):
 
 
         :param types: The types of this TypeSystem.
-        :type: list[DataType]
+        :type: list[oci.data_integration.models.DataType]
         """
         self._types = types
 

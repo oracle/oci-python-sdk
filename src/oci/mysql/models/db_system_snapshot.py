@@ -60,7 +60,7 @@ class DbSystemSnapshot(object):
 
         :param backup_policy:
             The value to assign to the backup_policy property of this DbSystemSnapshot.
-        :type backup_policy: BackupPolicy
+        :type backup_policy: oci.mysql.models.BackupPolicy
 
         :param configuration_id:
             The value to assign to the configuration_id property of this DbSystemSnapshot.
@@ -88,11 +88,11 @@ class DbSystemSnapshot(object):
 
         :param endpoints:
             The value to assign to the endpoints property of this DbSystemSnapshot.
-        :type endpoints: list[DbSystemEndpoint]
+        :type endpoints: list[oci.mysql.models.DbSystemEndpoint]
 
         :param maintenance:
             The value to assign to the maintenance property of this DbSystemSnapshot.
-        :type maintenance: MaintenanceDetails
+        :type maintenance: oci.mysql.models.MaintenanceDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbSystemSnapshot.
@@ -427,7 +427,7 @@ class DbSystemSnapshot(object):
         Gets the backup_policy of this DbSystemSnapshot.
 
         :return: The backup_policy of this DbSystemSnapshot.
-        :rtype: BackupPolicy
+        :rtype: oci.mysql.models.BackupPolicy
         """
         return self._backup_policy
 
@@ -437,7 +437,7 @@ class DbSystemSnapshot(object):
         Sets the backup_policy of this DbSystemSnapshot.
 
         :param backup_policy: The backup_policy of this DbSystemSnapshot.
-        :type: BackupPolicy
+        :type: oci.mysql.models.BackupPolicy
         """
         self._backup_policy = backup_policy
 
@@ -605,7 +605,7 @@ class DbSystemSnapshot(object):
 
 
         :return: The endpoints of this DbSystemSnapshot.
-        :rtype: list[DbSystemEndpoint]
+        :rtype: list[oci.mysql.models.DbSystemEndpoint]
         """
         return self._endpoints
 
@@ -617,7 +617,7 @@ class DbSystemSnapshot(object):
 
 
         :param endpoints: The endpoints of this DbSystemSnapshot.
-        :type: list[DbSystemEndpoint]
+        :type: list[oci.mysql.models.DbSystemEndpoint]
         """
         self._endpoints = endpoints
 
@@ -627,7 +627,7 @@ class DbSystemSnapshot(object):
         **[Required]** Gets the maintenance of this DbSystemSnapshot.
 
         :return: The maintenance of this DbSystemSnapshot.
-        :rtype: MaintenanceDetails
+        :rtype: oci.mysql.models.MaintenanceDetails
         """
         return self._maintenance
 
@@ -637,7 +637,7 @@ class DbSystemSnapshot(object):
         Sets the maintenance of this DbSystemSnapshot.
 
         :param maintenance: The maintenance of this DbSystemSnapshot.
-        :type: MaintenanceDetails
+        :type: oci.mysql.models.MaintenanceDetails
         """
         self._maintenance = maintenance
 

@@ -56,7 +56,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
 
         :param source_details:
             The value to assign to the source_details property of this InstanceConfigurationCreateVolumeDetails.
-        :type source_details: InstanceConfigurationVolumeSourceDetails
+        :type source_details: oci.core.models.InstanceConfigurationVolumeSourceDetails
 
         """
         self.swagger_types = {
@@ -376,7 +376,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
 
 
         :return: The source_details of this InstanceConfigurationCreateVolumeDetails.
-        :rtype: InstanceConfigurationVolumeSourceDetails
+        :rtype: oci.core.models.InstanceConfigurationVolumeSourceDetails
         """
         return self._source_details
 
@@ -390,7 +390,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
 
 
         :param source_details: The source_details of this InstanceConfigurationCreateVolumeDetails.
-        :type: InstanceConfigurationVolumeSourceDetails
+        :type: oci.core.models.InstanceConfigurationVolumeSourceDetails
         """
         self._source_details = source_details
 

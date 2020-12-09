@@ -20,7 +20,7 @@ class UploadWarningCollection(object):
 
         :param items:
             The value to assign to the items property of this UploadWarningCollection.
-        :type items: list[UploadWarningSummary]
+        :type items: list[oci.log_analytics.models.UploadWarningSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UploadWarningCollection(object):
 
 
         :return: The items of this UploadWarningCollection.
-        :rtype: list[UploadWarningSummary]
+        :rtype: list[oci.log_analytics.models.UploadWarningSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class UploadWarningCollection(object):
 
 
         :param items: The items of this UploadWarningCollection.
-        :type: list[UploadWarningSummary]
+        :type: list[oci.log_analytics.models.UploadWarningSummary]
         """
         self._items = items
 

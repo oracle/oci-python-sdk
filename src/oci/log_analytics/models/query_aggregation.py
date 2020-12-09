@@ -36,11 +36,11 @@ class QueryAggregation(object):
 
         :param columns:
             The value to assign to the columns property of this QueryAggregation.
-        :type columns: list[AbstractColumn]
+        :type columns: list[oci.log_analytics.models.AbstractColumn]
 
         :param fields:
             The value to assign to the fields property of this QueryAggregation.
-        :type fields: list[AbstractColumn]
+        :type fields: list[oci.log_analytics.models.AbstractColumn]
 
         :param items:
             The value to assign to the items property of this QueryAggregation.
@@ -193,7 +193,7 @@ class QueryAggregation(object):
 
 
         :return: The columns of this QueryAggregation.
-        :rtype: list[AbstractColumn]
+        :rtype: list[oci.log_analytics.models.AbstractColumn]
         """
         return self._columns
 
@@ -205,7 +205,7 @@ class QueryAggregation(object):
 
 
         :param columns: The columns of this QueryAggregation.
-        :type: list[AbstractColumn]
+        :type: list[oci.log_analytics.models.AbstractColumn]
         """
         self._columns = columns
 
@@ -217,7 +217,7 @@ class QueryAggregation(object):
 
 
         :return: The fields of this QueryAggregation.
-        :rtype: list[AbstractColumn]
+        :rtype: list[oci.log_analytics.models.AbstractColumn]
         """
         return self._fields
 
@@ -229,7 +229,7 @@ class QueryAggregation(object):
 
 
         :param fields: The fields of this QueryAggregation.
-        :type: list[AbstractColumn]
+        :type: list[oci.log_analytics.models.AbstractColumn]
         """
         self._fields = fields
 

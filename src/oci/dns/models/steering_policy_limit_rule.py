@@ -30,7 +30,7 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
 
         :param cases:
             The value to assign to the cases property of this SteeringPolicyLimitRule.
-        :type cases: list[SteeringPolicyLimitRuleCase]
+        :type cases: list[oci.dns.models.SteeringPolicyLimitRuleCase]
 
         :param default_count:
             The value to assign to the default_count property of this SteeringPolicyLimitRule.
@@ -72,7 +72,7 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
 
 
         :return: The cases of this SteeringPolicyLimitRule.
-        :rtype: list[SteeringPolicyLimitRuleCase]
+        :rtype: list[oci.dns.models.SteeringPolicyLimitRuleCase]
         """
         return self._cases
 
@@ -91,7 +91,7 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
 
 
         :param cases: The cases of this SteeringPolicyLimitRule.
-        :type: list[SteeringPolicyLimitRuleCase]
+        :type: list[oci.dns.models.SteeringPolicyLimitRuleCase]
         """
         self._cases = cases
 

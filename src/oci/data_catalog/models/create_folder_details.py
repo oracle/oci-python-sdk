@@ -44,7 +44,7 @@ class CreateFolderDetails(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this CreateFolderDetails.
-        :type custom_property_members: list[CustomPropertySetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertySetUsage]
 
         :param properties:
             The value to assign to the properties property of this CreateFolderDetails.
@@ -157,7 +157,7 @@ class CreateFolderDetails(object):
 
 
         :return: The custom_property_members of this CreateFolderDetails.
-        :rtype: list[CustomPropertySetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         return self._custom_property_members
 
@@ -169,7 +169,7 @@ class CreateFolderDetails(object):
 
 
         :param custom_property_members: The custom_property_members of this CreateFolderDetails.
-        :type: list[CustomPropertySetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         self._custom_property_members = custom_property_members
 

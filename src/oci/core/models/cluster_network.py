@@ -76,11 +76,11 @@ class ClusterNetwork(object):
 
         :param instance_pools:
             The value to assign to the instance_pools property of this ClusterNetwork.
-        :type instance_pools: list[InstancePool]
+        :type instance_pools: list[oci.core.models.InstancePool]
 
         :param placement_configuration:
             The value to assign to the placement_configuration property of this ClusterNetwork.
-        :type placement_configuration: ClusterNetworkPlacementConfigurationDetails
+        :type placement_configuration: oci.core.models.ClusterNetworkPlacementConfigurationDetails
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ClusterNetwork.
@@ -292,7 +292,7 @@ class ClusterNetwork(object):
 
 
         :return: The instance_pools of this ClusterNetwork.
-        :rtype: list[InstancePool]
+        :rtype: list[oci.core.models.InstancePool]
         """
         return self._instance_pools
 
@@ -306,7 +306,7 @@ class ClusterNetwork(object):
 
 
         :param instance_pools: The instance_pools of this ClusterNetwork.
-        :type: list[InstancePool]
+        :type: list[oci.core.models.InstancePool]
         """
         self._instance_pools = instance_pools
 
@@ -318,7 +318,7 @@ class ClusterNetwork(object):
 
 
         :return: The placement_configuration of this ClusterNetwork.
-        :rtype: ClusterNetworkPlacementConfigurationDetails
+        :rtype: oci.core.models.ClusterNetworkPlacementConfigurationDetails
         """
         return self._placement_configuration
 
@@ -330,7 +330,7 @@ class ClusterNetwork(object):
 
 
         :param placement_configuration: The placement_configuration of this ClusterNetwork.
-        :type: ClusterNetworkPlacementConfigurationDetails
+        :type: oci.core.models.ClusterNetworkPlacementConfigurationDetails
         """
         self._placement_configuration = placement_configuration
 

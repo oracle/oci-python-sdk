@@ -66,7 +66,7 @@ class QueryableFieldDescription(object):
 
         :param object_properties:
             The value to assign to the object_properties property of this QueryableFieldDescription.
-        :type object_properties: list[QueryableFieldDescription]
+        :type object_properties: list[oci.resource_search.models.QueryableFieldDescription]
 
         """
         self.swagger_types = {
@@ -175,7 +175,7 @@ class QueryableFieldDescription(object):
 
 
         :return: The object_properties of this QueryableFieldDescription.
-        :rtype: list[QueryableFieldDescription]
+        :rtype: list[oci.resource_search.models.QueryableFieldDescription]
         """
         return self._object_properties
 
@@ -188,7 +188,7 @@ class QueryableFieldDescription(object):
 
 
         :param object_properties: The object_properties of this QueryableFieldDescription.
-        :type: list[QueryableFieldDescription]
+        :type: list[oci.resource_search.models.QueryableFieldDescription]
         """
         self._object_properties = object_properties
 

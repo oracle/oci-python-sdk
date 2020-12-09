@@ -40,11 +40,11 @@ class JobSummary(object):
 
         :param job_operation_details:
             The value to assign to the job_operation_details property of this JobSummary.
-        :type job_operation_details: JobOperationDetailsSummary
+        :type job_operation_details: oci.resource_manager.models.JobOperationDetailsSummary
 
         :param apply_job_plan_resolution:
             The value to assign to the apply_job_plan_resolution property of this JobSummary.
-        :type apply_job_plan_resolution: ApplyJobPlanResolution
+        :type apply_job_plan_resolution: oci.resource_manager.models.ApplyJobPlanResolution
 
         :param resolved_plan_job_id:
             The value to assign to the resolved_plan_job_id property of this JobSummary.
@@ -255,7 +255,7 @@ class JobSummary(object):
         Gets the job_operation_details of this JobSummary.
 
         :return: The job_operation_details of this JobSummary.
-        :rtype: JobOperationDetailsSummary
+        :rtype: oci.resource_manager.models.JobOperationDetailsSummary
         """
         return self._job_operation_details
 
@@ -265,7 +265,7 @@ class JobSummary(object):
         Sets the job_operation_details of this JobSummary.
 
         :param job_operation_details: The job_operation_details of this JobSummary.
-        :type: JobOperationDetailsSummary
+        :type: oci.resource_manager.models.JobOperationDetailsSummary
         """
         self._job_operation_details = job_operation_details
 
@@ -275,7 +275,7 @@ class JobSummary(object):
         Gets the apply_job_plan_resolution of this JobSummary.
 
         :return: The apply_job_plan_resolution of this JobSummary.
-        :rtype: ApplyJobPlanResolution
+        :rtype: oci.resource_manager.models.ApplyJobPlanResolution
         """
         return self._apply_job_plan_resolution
 
@@ -285,7 +285,7 @@ class JobSummary(object):
         Sets the apply_job_plan_resolution of this JobSummary.
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this JobSummary.
-        :type: ApplyJobPlanResolution
+        :type: oci.resource_manager.models.ApplyJobPlanResolution
         """
         self._apply_job_plan_resolution = apply_job_plan_resolution
 

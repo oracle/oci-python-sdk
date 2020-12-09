@@ -24,7 +24,7 @@ class CommitMultipartUploadDetails(object):
 
         :param parts_to_commit:
             The value to assign to the parts_to_commit property of this CommitMultipartUploadDetails.
-        :type parts_to_commit: list[CommitMultipartUploadPartDetails]
+        :type parts_to_commit: list[oci.object_storage.models.CommitMultipartUploadPartDetails]
 
         :param parts_to_exclude:
             The value to assign to the parts_to_exclude property of this CommitMultipartUploadDetails.
@@ -52,7 +52,7 @@ class CommitMultipartUploadDetails(object):
 
 
         :return: The parts_to_commit of this CommitMultipartUploadDetails.
-        :rtype: list[CommitMultipartUploadPartDetails]
+        :rtype: list[oci.object_storage.models.CommitMultipartUploadPartDetails]
         """
         return self._parts_to_commit
 
@@ -64,7 +64,7 @@ class CommitMultipartUploadDetails(object):
 
 
         :param parts_to_commit: The parts_to_commit of this CommitMultipartUploadDetails.
-        :type: list[CommitMultipartUploadPartDetails]
+        :type: list[oci.object_storage.models.CommitMultipartUploadPartDetails]
         """
         self._parts_to_commit = parts_to_commit
 

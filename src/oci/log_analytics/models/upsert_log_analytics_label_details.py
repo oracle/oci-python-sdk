@@ -44,7 +44,7 @@ class UpsertLogAnalyticsLabelDetails(object):
 
         :param aliases:
             The value to assign to the aliases property of this UpsertLogAnalyticsLabelDetails.
-        :type aliases: list[LogAnalyticsLabelAlias]
+        :type aliases: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
 
         :param suggest_type:
             The value to assign to the suggest_type property of this UpsertLogAnalyticsLabelDetails.
@@ -137,7 +137,7 @@ class UpsertLogAnalyticsLabelDetails(object):
 
 
         :return: The aliases of this UpsertLogAnalyticsLabelDetails.
-        :rtype: list[LogAnalyticsLabelAlias]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
         """
         return self._aliases
 
@@ -149,7 +149,7 @@ class UpsertLogAnalyticsLabelDetails(object):
 
 
         :param aliases: The aliases of this UpsertLogAnalyticsLabelDetails.
-        :type: list[LogAnalyticsLabelAlias]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
         """
         self._aliases = aliases
 

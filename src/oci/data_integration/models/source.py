@@ -35,7 +35,7 @@ class Source(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Source.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Source.
@@ -51,11 +51,11 @@ class Source(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this Source.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Source.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Source.
@@ -67,15 +67,15 @@ class Source(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this Source.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Source.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param entity:
             The value to assign to the entity property of this Source.
-        :type entity: DataEntity
+        :type entity: oci.data_integration.models.DataEntity
 
         :param is_read_access:
             The value to assign to the is_read_access property of this Source.
@@ -91,7 +91,7 @@ class Source(Operator):
 
         :param read_operation_config:
             The value to assign to the read_operation_config property of this Source.
-        :type read_operation_config: ReadOperationConfig
+        :type read_operation_config: oci.data_integration.models.ReadOperationConfig
 
         """
         self.swagger_types = {
@@ -162,7 +162,7 @@ class Source(Operator):
         Gets the entity of this Source.
 
         :return: The entity of this Source.
-        :rtype: DataEntity
+        :rtype: oci.data_integration.models.DataEntity
         """
         return self._entity
 
@@ -172,7 +172,7 @@ class Source(Operator):
         Sets the entity of this Source.
 
         :param entity: The entity of this Source.
-        :type: DataEntity
+        :type: oci.data_integration.models.DataEntity
         """
         self._entity = entity
 
@@ -254,7 +254,7 @@ class Source(Operator):
         Gets the read_operation_config of this Source.
 
         :return: The read_operation_config of this Source.
-        :rtype: ReadOperationConfig
+        :rtype: oci.data_integration.models.ReadOperationConfig
         """
         return self._read_operation_config
 
@@ -264,7 +264,7 @@ class Source(Operator):
         Sets the read_operation_config of this Source.
 
         :param read_operation_config: The read_operation_config of this Source.
-        :type: ReadOperationConfig
+        :type: oci.data_integration.models.ReadOperationConfig
         """
         self._read_operation_config = read_operation_config
 

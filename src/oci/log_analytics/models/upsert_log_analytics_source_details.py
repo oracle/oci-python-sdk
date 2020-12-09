@@ -20,11 +20,11 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param label_conditions:
             The value to assign to the label_conditions property of this UpsertLogAnalyticsSourceDetails.
-        :type label_conditions: list[LogAnalyticsSourceLabelCondition]
+        :type label_conditions: list[oci.log_analytics.models.LogAnalyticsSourceLabelCondition]
 
         :param data_filter_definitions:
             The value to assign to the data_filter_definitions property of this UpsertLogAnalyticsSourceDetails.
-        :type data_filter_definitions: list[LogAnalyticsSourceDataFilter]
+        :type data_filter_definitions: list[oci.log_analytics.models.LogAnalyticsSourceDataFilter]
 
         :param database_credential:
             The value to assign to the database_credential property of this UpsertLogAnalyticsSourceDetails.
@@ -32,7 +32,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param extended_field_definitions:
             The value to assign to the extended_field_definitions property of this UpsertLogAnalyticsSourceDetails.
-        :type extended_field_definitions: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :type extended_field_definitions: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
 
         :param is_for_cloud:
             The value to assign to the is_for_cloud property of this UpsertLogAnalyticsSourceDetails.
@@ -40,27 +40,27 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param labels:
             The value to assign to the labels property of this UpsertLogAnalyticsSourceDetails.
-        :type labels: list[LogAnalyticsLabelView]
+        :type labels: list[oci.log_analytics.models.LogAnalyticsLabelView]
 
         :param metric_definitions:
             The value to assign to the metric_definitions property of this UpsertLogAnalyticsSourceDetails.
-        :type metric_definitions: list[LogAnalyticsMetric]
+        :type metric_definitions: list[oci.log_analytics.models.LogAnalyticsMetric]
 
         :param metrics:
             The value to assign to the metrics property of this UpsertLogAnalyticsSourceDetails.
-        :type metrics: list[LogAnalyticsSourceMetric]
+        :type metrics: list[oci.log_analytics.models.LogAnalyticsSourceMetric]
 
         :param oob_parsers:
             The value to assign to the oob_parsers property of this UpsertLogAnalyticsSourceDetails.
-        :type oob_parsers: list[LogAnalyticsParser]
+        :type oob_parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         :param parameters:
             The value to assign to the parameters property of this UpsertLogAnalyticsSourceDetails.
-        :type parameters: list[LogAnalyticsParameter]
+        :type parameters: list[oci.log_analytics.models.LogAnalyticsParameter]
 
         :param patterns:
             The value to assign to the patterns property of this UpsertLogAnalyticsSourceDetails.
-        :type patterns: list[LogAnalyticsSourcePattern]
+        :type patterns: list[oci.log_analytics.models.LogAnalyticsSourcePattern]
 
         :param description:
             The value to assign to the description property of this UpsertLogAnalyticsSourceDetails.
@@ -76,7 +76,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param functions:
             The value to assign to the functions property of this UpsertLogAnalyticsSourceDetails.
-        :type functions: list[LogAnalyticsSourceFunction]
+        :type functions: list[oci.log_analytics.models.LogAnalyticsSourceFunction]
 
         :param source_id:
             The value to assign to the source_id property of this UpsertLogAnalyticsSourceDetails.
@@ -96,7 +96,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param parsers:
             The value to assign to the parsers property of this UpsertLogAnalyticsSourceDetails.
-        :type parsers: list[LogAnalyticsParser]
+        :type parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         :param rule_id:
             The value to assign to the rule_id property of this UpsertLogAnalyticsSourceDetails.
@@ -112,15 +112,15 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param metadata_fields:
             The value to assign to the metadata_fields property of this UpsertLogAnalyticsSourceDetails.
-        :type metadata_fields: list[LogAnalyticsSourceMetadataField]
+        :type metadata_fields: list[oci.log_analytics.models.LogAnalyticsSourceMetadataField]
 
         :param label_definitions:
             The value to assign to the label_definitions property of this UpsertLogAnalyticsSourceDetails.
-        :type label_definitions: list[LogAnalyticsLabelDefinition]
+        :type label_definitions: list[oci.log_analytics.models.LogAnalyticsLabelDefinition]
 
         :param entity_types:
             The value to assign to the entity_types property of this UpsertLogAnalyticsSourceDetails.
-        :type entity_types: list[LogAnalyticsSourceEntityType]
+        :type entity_types: list[oci.log_analytics.models.LogAnalyticsSourceEntityType]
 
         :param is_timezone_override:
             The value to assign to the is_timezone_override property of this UpsertLogAnalyticsSourceDetails.
@@ -128,7 +128,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
         :param user_parsers:
             The value to assign to the user_parsers property of this UpsertLogAnalyticsSourceDetails.
-        :type user_parsers: list[LogAnalyticsParser]
+        :type user_parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         """
         self.swagger_types = {
@@ -230,7 +230,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The label_conditions of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceLabelCondition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceLabelCondition]
         """
         return self._label_conditions
 
@@ -242,7 +242,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param label_conditions: The label_conditions of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceLabelCondition]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceLabelCondition]
         """
         self._label_conditions = label_conditions
 
@@ -254,7 +254,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The data_filter_definitions of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceDataFilter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceDataFilter]
         """
         return self._data_filter_definitions
 
@@ -266,7 +266,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param data_filter_definitions: The data_filter_definitions of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceDataFilter]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceDataFilter]
         """
         self._data_filter_definitions = data_filter_definitions
 
@@ -302,7 +302,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The extended_field_definitions of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
         """
         return self._extended_field_definitions
 
@@ -314,7 +314,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param extended_field_definitions: The extended_field_definitions of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
         """
         self._extended_field_definitions = extended_field_definitions
 
@@ -350,7 +350,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The labels of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsLabelView]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelView]
         """
         return self._labels
 
@@ -362,7 +362,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param labels: The labels of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsLabelView]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelView]
         """
         self._labels = labels
 
@@ -374,7 +374,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The metric_definitions of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsMetric]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsMetric]
         """
         return self._metric_definitions
 
@@ -386,7 +386,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param metric_definitions: The metric_definitions of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsMetric]
+        :type: list[oci.log_analytics.models.LogAnalyticsMetric]
         """
         self._metric_definitions = metric_definitions
 
@@ -398,7 +398,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The metrics of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceMetric]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceMetric]
         """
         return self._metrics
 
@@ -410,7 +410,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param metrics: The metrics of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceMetric]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceMetric]
         """
         self._metrics = metrics
 
@@ -422,7 +422,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The oob_parsers of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._oob_parsers
 
@@ -434,7 +434,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param oob_parsers: The oob_parsers of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._oob_parsers = oob_parsers
 
@@ -446,7 +446,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The parameters of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsParameter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParameter]
         """
         return self._parameters
 
@@ -458,7 +458,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param parameters: The parameters of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsParameter]
+        :type: list[oci.log_analytics.models.LogAnalyticsParameter]
         """
         self._parameters = parameters
 
@@ -470,7 +470,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The patterns of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourcePattern]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourcePattern]
         """
         return self._patterns
 
@@ -482,7 +482,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param patterns: The patterns of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourcePattern]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourcePattern]
         """
         self._patterns = patterns
 
@@ -566,7 +566,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The functions of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceFunction]
         """
         return self._functions
 
@@ -578,7 +578,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param functions: The functions of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceFunction]
         """
         self._functions = functions
 
@@ -686,7 +686,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The parsers of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._parsers
 
@@ -698,7 +698,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param parsers: The parsers of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._parsers = parsers
 
@@ -782,7 +782,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The metadata_fields of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceMetadataField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceMetadataField]
         """
         return self._metadata_fields
 
@@ -794,7 +794,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param metadata_fields: The metadata_fields of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceMetadataField]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceMetadataField]
         """
         self._metadata_fields = metadata_fields
 
@@ -806,7 +806,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The label_definitions of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsLabelDefinition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelDefinition]
         """
         return self._label_definitions
 
@@ -818,7 +818,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param label_definitions: The label_definitions of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsLabelDefinition]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelDefinition]
         """
         self._label_definitions = label_definitions
 
@@ -830,7 +830,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The entity_types of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsSourceEntityType]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceEntityType]
         """
         return self._entity_types
 
@@ -842,7 +842,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param entity_types: The entity_types of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsSourceEntityType]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceEntityType]
         """
         self._entity_types = entity_types
 
@@ -878,7 +878,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :return: The user_parsers of this UpsertLogAnalyticsSourceDetails.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._user_parsers
 
@@ -890,7 +890,7 @@ class UpsertLogAnalyticsSourceDetails(object):
 
 
         :param user_parsers: The user_parsers of this UpsertLogAnalyticsSourceDetails.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._user_parsers = user_parsers
 

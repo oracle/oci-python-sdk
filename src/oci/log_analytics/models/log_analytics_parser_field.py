@@ -20,7 +20,7 @@ class LogAnalyticsParserField(object):
 
         :param field:
             The value to assign to the field property of this LogAnalyticsParserField.
-        :type field: LogAnalyticsField
+        :type field: oci.log_analytics.models.LogAnalyticsField
 
         :param parser_field_id:
             The value to assign to the parser_field_id property of this LogAnalyticsParserField.
@@ -52,7 +52,7 @@ class LogAnalyticsParserField(object):
 
         :param parser:
             The value to assign to the parser property of this LogAnalyticsParserField.
-        :type parser: LogAnalyticsParser
+        :type parser: oci.log_analytics.models.LogAnalyticsParser
 
         :param structured_column_info:
             The value to assign to the structured_column_info property of this LogAnalyticsParserField.
@@ -102,7 +102,7 @@ class LogAnalyticsParserField(object):
         Gets the field of this LogAnalyticsParserField.
 
         :return: The field of this LogAnalyticsParserField.
-        :rtype: LogAnalyticsField
+        :rtype: oci.log_analytics.models.LogAnalyticsField
         """
         return self._field
 
@@ -112,7 +112,7 @@ class LogAnalyticsParserField(object):
         Sets the field of this LogAnalyticsParserField.
 
         :param field: The field of this LogAnalyticsParserField.
-        :type: LogAnalyticsField
+        :type: oci.log_analytics.models.LogAnalyticsField
         """
         self._field = field
 
@@ -290,7 +290,7 @@ class LogAnalyticsParserField(object):
         Gets the parser of this LogAnalyticsParserField.
 
         :return: The parser of this LogAnalyticsParserField.
-        :rtype: LogAnalyticsParser
+        :rtype: oci.log_analytics.models.LogAnalyticsParser
         """
         return self._parser
 
@@ -300,7 +300,7 @@ class LogAnalyticsParserField(object):
         Sets the parser of this LogAnalyticsParserField.
 
         :param parser: The parser of this LogAnalyticsParserField.
-        :type: LogAnalyticsParser
+        :type: oci.log_analytics.models.LogAnalyticsParser
         """
         self._parser = parser
 

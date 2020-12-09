@@ -20,15 +20,15 @@ class CreateConnectionValidationDetails(object):
 
         :param data_asset:
             The value to assign to the data_asset property of this CreateConnectionValidationDetails.
-        :type data_asset: CreateDataAssetDetails
+        :type data_asset: oci.data_integration.models.CreateDataAssetDetails
 
         :param connection:
             The value to assign to the connection property of this CreateConnectionValidationDetails.
-        :type connection: CreateConnectionDetails
+        :type connection: oci.data_integration.models.CreateConnectionDetails
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateConnectionValidationDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -53,7 +53,7 @@ class CreateConnectionValidationDetails(object):
         Gets the data_asset of this CreateConnectionValidationDetails.
 
         :return: The data_asset of this CreateConnectionValidationDetails.
-        :rtype: CreateDataAssetDetails
+        :rtype: oci.data_integration.models.CreateDataAssetDetails
         """
         return self._data_asset
 
@@ -63,7 +63,7 @@ class CreateConnectionValidationDetails(object):
         Sets the data_asset of this CreateConnectionValidationDetails.
 
         :param data_asset: The data_asset of this CreateConnectionValidationDetails.
-        :type: CreateDataAssetDetails
+        :type: oci.data_integration.models.CreateDataAssetDetails
         """
         self._data_asset = data_asset
 
@@ -73,7 +73,7 @@ class CreateConnectionValidationDetails(object):
         Gets the connection of this CreateConnectionValidationDetails.
 
         :return: The connection of this CreateConnectionValidationDetails.
-        :rtype: CreateConnectionDetails
+        :rtype: oci.data_integration.models.CreateConnectionDetails
         """
         return self._connection
 
@@ -83,7 +83,7 @@ class CreateConnectionValidationDetails(object):
         Sets the connection of this CreateConnectionValidationDetails.
 
         :param connection: The connection of this CreateConnectionValidationDetails.
-        :type: CreateConnectionDetails
+        :type: oci.data_integration.models.CreateConnectionDetails
         """
         self._connection = connection
 
@@ -93,7 +93,7 @@ class CreateConnectionValidationDetails(object):
         Gets the registry_metadata of this CreateConnectionValidationDetails.
 
         :return: The registry_metadata of this CreateConnectionValidationDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -103,7 +103,7 @@ class CreateConnectionValidationDetails(object):
         Sets the registry_metadata of this CreateConnectionValidationDetails.
 
         :param registry_metadata: The registry_metadata of this CreateConnectionValidationDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

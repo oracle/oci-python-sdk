@@ -28,7 +28,7 @@ class EmailClientCompositeOperations(object):
         Calls :py:func:`~oci.email.EmailClient.create_sender` and waits for the :py:class:`~oci.email.models.Sender` acted upon
         to enter the given state(s).
 
-        :param CreateSenderDetails create_sender_details: (required)
+        :param oci.email.models.CreateSenderDetails create_sender_details: (required)
             Create a sender.
 
         :param list[str] wait_for_states:
@@ -116,7 +116,7 @@ class EmailClientCompositeOperations(object):
         :param str sender_id: (required)
             The unique OCID of the sender.
 
-        :param UpdateSenderDetails update_sender_details: (required)
+        :param oci.email.models.UpdateSenderDetails update_sender_details: (required)
             update details for sender.
 
         :param list[str] wait_for_states:

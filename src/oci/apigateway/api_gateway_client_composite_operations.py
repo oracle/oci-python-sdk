@@ -31,7 +31,7 @@ class ApiGatewayClientCompositeOperations(object):
         :param str api_id: (required)
             The ocid of the API.
 
-        :param ChangeApiCompartmentDetails change_api_compartment_details: (required)
+        :param oci.apigateway.models.ChangeApiCompartmentDetails change_api_compartment_details: (required)
             Details of the target compartment.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class ApiGatewayClientCompositeOperations(object):
         Calls :py:func:`~oci.apigateway.ApiGatewayClient.create_api` and waits for the :py:class:`~oci.apigateway.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateApiDetails create_api_details: (required)
+        :param oci.apigateway.models.CreateApiDetails create_api_details: (required)
             Details for the new API.
 
         :param list[str] wait_for_states:
@@ -107,7 +107,7 @@ class ApiGatewayClientCompositeOperations(object):
         Calls :py:func:`~oci.apigateway.ApiGatewayClient.create_certificate` and waits for the :py:class:`~oci.apigateway.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateCertificateDetails create_certificate_details: (required)
+        :param oci.apigateway.models.CreateCertificateDetails create_certificate_details: (required)
             Details for the new certificate
 
         :param list[str] wait_for_states:
@@ -240,7 +240,7 @@ class ApiGatewayClientCompositeOperations(object):
         :param str api_id: (required)
             The ocid of the API.
 
-        :param UpdateApiDetails update_api_details: (required)
+        :param oci.apigateway.models.UpdateApiDetails update_api_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:
@@ -281,7 +281,7 @@ class ApiGatewayClientCompositeOperations(object):
         :param str certificate_id: (required)
             The ocid of the certificate.
 
-        :param UpdateCertificateDetails update_certificate_details: (required)
+        :param oci.apigateway.models.UpdateCertificateDetails update_certificate_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

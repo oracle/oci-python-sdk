@@ -20,7 +20,7 @@ class BulkDeleteResourcesDetails(object):
 
         :param resources:
             The value to assign to the resources property of this BulkDeleteResourcesDetails.
-        :type resources: list[BulkActionResource]
+        :type resources: list[oci.identity.models.BulkActionResource]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class BulkDeleteResourcesDetails(object):
 
 
         :return: The resources of this BulkDeleteResourcesDetails.
-        :rtype: list[BulkActionResource]
+        :rtype: list[oci.identity.models.BulkActionResource]
         """
         return self._resources
 
@@ -53,7 +53,7 @@ class BulkDeleteResourcesDetails(object):
 
 
         :param resources: The resources of this BulkDeleteResourcesDetails.
-        :type: list[BulkActionResource]
+        :type: list[oci.identity.models.BulkActionResource]
         """
         self._resources = resources
 

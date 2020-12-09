@@ -24,7 +24,7 @@ class ResourceType(object):
 
         :param fields:
             The value to assign to the fields property of this ResourceType.
-        :type fields: list[QueryableFieldDescription]
+        :type fields: list[oci.resource_search.models.QueryableFieldDescription]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class ResourceType(object):
 
 
         :return: The fields of this ResourceType.
-        :rtype: list[QueryableFieldDescription]
+        :rtype: list[oci.resource_search.models.QueryableFieldDescription]
         """
         return self._fields
 
@@ -84,7 +84,7 @@ class ResourceType(object):
 
 
         :param fields: The fields of this ResourceType.
-        :type: list[QueryableFieldDescription]
+        :type: list[oci.resource_search.models.QueryableFieldDescription]
         """
         self._fields = fields
 

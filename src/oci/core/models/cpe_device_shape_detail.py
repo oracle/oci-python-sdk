@@ -25,11 +25,11 @@ class CpeDeviceShapeDetail(object):
 
         :param cpe_device_info:
             The value to assign to the cpe_device_info property of this CpeDeviceShapeDetail.
-        :type cpe_device_info: CpeDeviceInfo
+        :type cpe_device_info: oci.core.models.CpeDeviceInfo
 
         :param parameters:
             The value to assign to the parameters property of this CpeDeviceShapeDetail.
-        :type parameters: list[CpeDeviceConfigQuestion]
+        :type parameters: list[oci.core.models.CpeDeviceConfigQuestion]
 
         :param template:
             The value to assign to the template property of this CpeDeviceShapeDetail.
@@ -93,7 +93,7 @@ class CpeDeviceShapeDetail(object):
 
 
         :return: The cpe_device_info of this CpeDeviceShapeDetail.
-        :rtype: CpeDeviceInfo
+        :rtype: oci.core.models.CpeDeviceInfo
         """
         return self._cpe_device_info
 
@@ -105,7 +105,7 @@ class CpeDeviceShapeDetail(object):
 
 
         :param cpe_device_info: The cpe_device_info of this CpeDeviceShapeDetail.
-        :type: CpeDeviceInfo
+        :type: oci.core.models.CpeDeviceInfo
         """
         self._cpe_device_info = cpe_device_info
 
@@ -122,7 +122,7 @@ class CpeDeviceShapeDetail(object):
 
 
         :return: The parameters of this CpeDeviceShapeDetail.
-        :rtype: list[CpeDeviceConfigQuestion]
+        :rtype: list[oci.core.models.CpeDeviceConfigQuestion]
         """
         return self._parameters
 
@@ -139,7 +139,7 @@ class CpeDeviceShapeDetail(object):
 
 
         :param parameters: The parameters of this CpeDeviceShapeDetail.
-        :type: list[CpeDeviceConfigQuestion]
+        :type: list[oci.core.models.CpeDeviceConfigQuestion]
         """
         self._parameters = parameters
 

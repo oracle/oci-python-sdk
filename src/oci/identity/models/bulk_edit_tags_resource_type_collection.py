@@ -20,7 +20,7 @@ class BulkEditTagsResourceTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this BulkEditTagsResourceTypeCollection.
-        :type items: list[BulkEditTagsResourceType]
+        :type items: list[oci.identity.models.BulkEditTagsResourceType]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class BulkEditTagsResourceTypeCollection(object):
 
 
         :return: The items of this BulkEditTagsResourceTypeCollection.
-        :rtype: list[BulkEditTagsResourceType]
+        :rtype: list[oci.identity.models.BulkEditTagsResourceType]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class BulkEditTagsResourceTypeCollection(object):
 
 
         :param items: The items of this BulkEditTagsResourceTypeCollection.
-        :type: list[BulkEditTagsResourceType]
+        :type: list[oci.identity.models.BulkEditTagsResourceType]
         """
         self._items = items
 

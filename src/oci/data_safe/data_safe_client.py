@@ -118,7 +118,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/change_data_safe_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_safe_private_endpoint_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_data_safe_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_safe_private_endpoint_compartment API.
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}/actions/changeCompartment"
         method = "POST"
@@ -211,7 +211,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/change_on_prem_connector_compartment.py.html>`__ to see an example of how to use change_on_prem_connector_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_on_prem_connector_compartment.py.html>`__ to see an example of how to use change_on_prem_connector_compartment API.
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}/actions/changeCompartment"
         method = "POST"
@@ -298,7 +298,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/create_data_safe_private_endpoint.py.html>`__ to see an example of how to use create_data_safe_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_data_safe_private_endpoint.py.html>`__ to see an example of how to use create_data_safe_private_endpoint API.
         """
         resource_path = "/dataSafePrivateEndpoints"
         method = "POST"
@@ -373,7 +373,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/create_on_prem_connector.py.html>`__ to see an example of how to use create_on_prem_connector API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_on_prem_connector.py.html>`__ to see an example of how to use create_on_prem_connector API.
         """
         resource_path = "/onPremConnectors"
         method = "POST"
@@ -449,7 +449,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/delete_data_safe_private_endpoint.py.html>`__ to see an example of how to use delete_data_safe_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_data_safe_private_endpoint.py.html>`__ to see an example of how to use delete_data_safe_private_endpoint API.
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "DELETE"
@@ -531,7 +531,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/delete_on_prem_connector.py.html>`__ to see an example of how to use delete_on_prem_connector API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_on_prem_connector.py.html>`__ to see an example of how to use delete_on_prem_connector API.
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "DELETE"
@@ -616,7 +616,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/enable_data_safe_configuration.py.html>`__ to see an example of how to use enable_data_safe_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/enable_data_safe_configuration.py.html>`__ to see an example of how to use enable_data_safe_configuration API.
         """
         resource_path = "/configuration"
         method = "PUT"
@@ -705,7 +705,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/generate_on_prem_connector_configuration.py.html>`__ to see an example of how to use generate_on_prem_connector_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_on_prem_connector_configuration.py.html>`__ to see an example of how to use generate_on_prem_connector_configuration API.
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}/actions/generateConfiguration"
         method = "POST"
@@ -788,7 +788,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/get_data_safe_configuration.py.html>`__ to see an example of how to use get_data_safe_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_configuration.py.html>`__ to see an example of how to use get_data_safe_configuration API.
         """
         resource_path = "/configuration"
         method = "GET"
@@ -859,7 +859,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/get_data_safe_private_endpoint.py.html>`__ to see an example of how to use get_data_safe_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_private_endpoint.py.html>`__ to see an example of how to use get_data_safe_private_endpoint API.
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "GET"
@@ -934,7 +934,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/get_on_prem_connector.py.html>`__ to see an example of how to use get_on_prem_connector API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_on_prem_connector.py.html>`__ to see an example of how to use get_on_prem_connector API.
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "GET"
@@ -1009,7 +1009,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -1115,7 +1115,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/list_data_safe_private_endpoints.py.html>`__ to see an example of how to use list_data_safe_private_endpoints API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_data_safe_private_endpoints.py.html>`__ to see an example of how to use list_data_safe_private_endpoints API.
         """
         resource_path = "/dataSafePrivateEndpoints"
         method = "GET"
@@ -1251,7 +1251,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/list_on_prem_connectors.py.html>`__ to see an example of how to use list_on_prem_connectors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_on_prem_connectors.py.html>`__ to see an example of how to use list_on_prem_connectors API.
         """
         resource_path = "/onPremConnectors"
         method = "GET"
@@ -1366,7 +1366,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -1461,7 +1461,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1559,7 +1559,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1645,7 +1645,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/update_data_safe_private_endpoint.py.html>`__ to see an example of how to use update_data_safe_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_data_safe_private_endpoint.py.html>`__ to see an example of how to use update_data_safe_private_endpoint API.
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "PUT"
@@ -1732,7 +1732,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/update_on_prem_connector.py.html>`__ to see an example of how to use update_on_prem_connector API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector.py.html>`__ to see an example of how to use update_on_prem_connector API.
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "PUT"
@@ -1825,7 +1825,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/datasafe/update_on_prem_connector_wallet.py.html>`__ to see an example of how to use update_on_prem_connector_wallet API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector_wallet.py.html>`__ to see an example of how to use update_on_prem_connector_wallet API.
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}/wallet"
         method = "PUT"

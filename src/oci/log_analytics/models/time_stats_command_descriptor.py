@@ -38,15 +38,15 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this TimeStatsCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this TimeStatsCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param time:
             The value to assign to the time property of this TimeStatsCommandDescriptor.
-        :type time: AbstractField
+        :type time: oci.log_analytics.models.AbstractField
 
         :param span:
             The value to assign to the span property of this TimeStatsCommandDescriptor.
@@ -54,11 +54,11 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
         :param group_by_fields:
             The value to assign to the group_by_fields property of this TimeStatsCommandDescriptor.
-        :type group_by_fields: list[AbstractField]
+        :type group_by_fields: list[oci.log_analytics.models.AbstractField]
 
         :param functions:
             The value to assign to the functions property of this TimeStatsCommandDescriptor.
-        :type functions: list[FunctionField]
+        :type functions: list[oci.log_analytics.models.FunctionField]
 
         """
         self.swagger_types = {
@@ -107,7 +107,7 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The time of this TimeStatsCommandDescriptor.
-        :rtype: AbstractField
+        :rtype: oci.log_analytics.models.AbstractField
         """
         return self._time
 
@@ -119,7 +119,7 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param time: The time of this TimeStatsCommandDescriptor.
-        :type: AbstractField
+        :type: oci.log_analytics.models.AbstractField
         """
         self._time = time
 
@@ -155,7 +155,7 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The group_by_fields of this TimeStatsCommandDescriptor.
-        :rtype: list[AbstractField]
+        :rtype: list[oci.log_analytics.models.AbstractField]
         """
         return self._group_by_fields
 
@@ -167,7 +167,7 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param group_by_fields: The group_by_fields of this TimeStatsCommandDescriptor.
-        :type: list[AbstractField]
+        :type: list[oci.log_analytics.models.AbstractField]
         """
         self._group_by_fields = group_by_fields
 
@@ -179,7 +179,7 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The functions of this TimeStatsCommandDescriptor.
-        :rtype: list[FunctionField]
+        :rtype: list[oci.log_analytics.models.FunctionField]
         """
         return self._functions
 
@@ -191,7 +191,7 @@ class TimeStatsCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param functions: The functions of this TimeStatsCommandDescriptor.
-        :type: list[FunctionField]
+        :type: list[oci.log_analytics.models.FunctionField]
         """
         self._functions = functions
 

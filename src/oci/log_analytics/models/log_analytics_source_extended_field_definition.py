@@ -20,7 +20,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
 
         :param field:
             The value to assign to the field property of this LogAnalyticsSourceExtendedFieldDefinition.
-        :type field: LogAnalyticsField
+        :type field: oci.log_analytics.models.LogAnalyticsField
 
         :param display_regular_expression:
             The value to assign to the display_regular_expression property of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -28,7 +28,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
 
         :param extended_fields:
             The value to assign to the extended_fields property of this LogAnalyticsSourceExtendedFieldDefinition.
-        :type extended_fields: list[LogAnalyticsExtendedField]
+        :type extended_fields: list[oci.log_analytics.models.LogAnalyticsExtendedField]
 
         :param base_field_name:
             The value to assign to the base_field_name property of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -144,7 +144,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
         Gets the field of this LogAnalyticsSourceExtendedFieldDefinition.
 
         :return: The field of this LogAnalyticsSourceExtendedFieldDefinition.
-        :rtype: LogAnalyticsField
+        :rtype: oci.log_analytics.models.LogAnalyticsField
         """
         return self._field
 
@@ -154,7 +154,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
         Sets the field of this LogAnalyticsSourceExtendedFieldDefinition.
 
         :param field: The field of this LogAnalyticsSourceExtendedFieldDefinition.
-        :type: LogAnalyticsField
+        :type: oci.log_analytics.models.LogAnalyticsField
         """
         self._field = field
 
@@ -190,7 +190,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
 
 
         :return: The extended_fields of this LogAnalyticsSourceExtendedFieldDefinition.
-        :rtype: list[LogAnalyticsExtendedField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsExtendedField]
         """
         return self._extended_fields
 
@@ -202,7 +202,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
 
 
         :param extended_fields: The extended_fields of this LogAnalyticsSourceExtendedFieldDefinition.
-        :type: list[LogAnalyticsExtendedField]
+        :type: list[oci.log_analytics.models.LogAnalyticsExtendedField]
         """
         self._extended_fields = extended_fields
 

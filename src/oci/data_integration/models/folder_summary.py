@@ -52,7 +52,7 @@ class FolderSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this FolderSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_version:
             The value to assign to the object_version property of this FolderSummary.
@@ -60,7 +60,7 @@ class FolderSummary(object):
 
         :param metadata:
             The value to assign to the metadata property of this FolderSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this FolderSummary.
@@ -308,7 +308,7 @@ class FolderSummary(object):
         Gets the parent_ref of this FolderSummary.
 
         :return: The parent_ref of this FolderSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -318,7 +318,7 @@ class FolderSummary(object):
         Sets the parent_ref of this FolderSummary.
 
         :param parent_ref: The parent_ref of this FolderSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -352,7 +352,7 @@ class FolderSummary(object):
         Gets the metadata of this FolderSummary.
 
         :return: The metadata of this FolderSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -362,7 +362,7 @@ class FolderSummary(object):
         Sets the metadata of this FolderSummary.
 
         :param metadata: The metadata of this FolderSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

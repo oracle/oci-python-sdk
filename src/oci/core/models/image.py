@@ -105,7 +105,7 @@ class Image(object):
 
         :param launch_options:
             The value to assign to the launch_options property of this Image.
-        :type launch_options: LaunchOptions
+        :type launch_options: oci.core.models.LaunchOptions
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Image.
@@ -123,7 +123,7 @@ class Image(object):
 
         :param agent_features:
             The value to assign to the agent_features property of this Image.
-        :type agent_features: InstanceAgentFeatures
+        :type agent_features: oci.core.models.InstanceAgentFeatures
 
         :param size_in_mbs:
             The value to assign to the size_in_mbs property of this Image.
@@ -434,7 +434,7 @@ class Image(object):
         Gets the launch_options of this Image.
 
         :return: The launch_options of this Image.
-        :rtype: LaunchOptions
+        :rtype: oci.core.models.LaunchOptions
         """
         return self._launch_options
 
@@ -444,7 +444,7 @@ class Image(object):
         Sets the launch_options of this Image.
 
         :param launch_options: The launch_options of this Image.
-        :type: LaunchOptions
+        :type: oci.core.models.LaunchOptions
         """
         self._launch_options = launch_options
 
@@ -536,7 +536,7 @@ class Image(object):
         Gets the agent_features of this Image.
 
         :return: The agent_features of this Image.
-        :rtype: InstanceAgentFeatures
+        :rtype: oci.core.models.InstanceAgentFeatures
         """
         return self._agent_features
 
@@ -546,7 +546,7 @@ class Image(object):
         Sets the agent_features of this Image.
 
         :param agent_features: The agent_features of this Image.
-        :type: InstanceAgentFeatures
+        :type: oci.core.models.InstanceAgentFeatures
         """
         self._agent_features = agent_features
 

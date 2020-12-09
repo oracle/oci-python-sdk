@@ -46,11 +46,11 @@ class CreateListenerDetails(object):
 
         :param ssl_configuration:
             The value to assign to the ssl_configuration property of this CreateListenerDetails.
-        :type ssl_configuration: SSLConfigurationDetails
+        :type ssl_configuration: oci.load_balancer.models.SSLConfigurationDetails
 
         :param connection_configuration:
             The value to assign to the connection_configuration property of this CreateListenerDetails.
-        :type connection_configuration: ConnectionConfiguration
+        :type connection_configuration: oci.load_balancer.models.ConnectionConfiguration
 
         :param name:
             The value to assign to the name property of this CreateListenerDetails.
@@ -243,7 +243,7 @@ class CreateListenerDetails(object):
         Gets the ssl_configuration of this CreateListenerDetails.
 
         :return: The ssl_configuration of this CreateListenerDetails.
-        :rtype: SSLConfigurationDetails
+        :rtype: oci.load_balancer.models.SSLConfigurationDetails
         """
         return self._ssl_configuration
 
@@ -253,7 +253,7 @@ class CreateListenerDetails(object):
         Sets the ssl_configuration of this CreateListenerDetails.
 
         :param ssl_configuration: The ssl_configuration of this CreateListenerDetails.
-        :type: SSLConfigurationDetails
+        :type: oci.load_balancer.models.SSLConfigurationDetails
         """
         self._ssl_configuration = ssl_configuration
 
@@ -263,7 +263,7 @@ class CreateListenerDetails(object):
         Gets the connection_configuration of this CreateListenerDetails.
 
         :return: The connection_configuration of this CreateListenerDetails.
-        :rtype: ConnectionConfiguration
+        :rtype: oci.load_balancer.models.ConnectionConfiguration
         """
         return self._connection_configuration
 
@@ -273,7 +273,7 @@ class CreateListenerDetails(object):
         Sets the connection_configuration of this CreateListenerDetails.
 
         :param connection_configuration: The connection_configuration of this CreateListenerDetails.
-        :type: ConnectionConfiguration
+        :type: oci.load_balancer.models.ConnectionConfiguration
         """
         self._connection_configuration = connection_configuration
 

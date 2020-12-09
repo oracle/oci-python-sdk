@@ -86,7 +86,7 @@ class InstancePool(object):
 
         :param placement_configurations:
             The value to assign to the placement_configurations property of this InstancePool.
-        :type placement_configurations: list[InstancePoolPlacementConfiguration]
+        :type placement_configurations: list[oci.core.models.InstancePoolPlacementConfiguration]
 
         :param size:
             The value to assign to the size property of this InstancePool.
@@ -98,7 +98,7 @@ class InstancePool(object):
 
         :param load_balancers:
             The value to assign to the load_balancers property of this InstancePool.
-        :type load_balancers: list[InstancePoolLoadBalancerAttachment]
+        :type load_balancers: list[oci.core.models.InstancePoolLoadBalancerAttachment]
 
         """
         self.swagger_types = {
@@ -359,7 +359,7 @@ class InstancePool(object):
 
 
         :return: The placement_configurations of this InstancePool.
-        :rtype: list[InstancePoolPlacementConfiguration]
+        :rtype: list[oci.core.models.InstancePoolPlacementConfiguration]
         """
         return self._placement_configurations
 
@@ -371,7 +371,7 @@ class InstancePool(object):
 
 
         :param placement_configurations: The placement_configurations of this InstancePool.
-        :type: list[InstancePoolPlacementConfiguration]
+        :type: list[oci.core.models.InstancePoolPlacementConfiguration]
         """
         self._placement_configurations = placement_configurations
 
@@ -437,7 +437,7 @@ class InstancePool(object):
 
 
         :return: The load_balancers of this InstancePool.
-        :rtype: list[InstancePoolLoadBalancerAttachment]
+        :rtype: list[oci.core.models.InstancePoolLoadBalancerAttachment]
         """
         return self._load_balancers
 
@@ -449,7 +449,7 @@ class InstancePool(object):
 
 
         :param load_balancers: The load_balancers of this InstancePool.
-        :type: list[InstancePoolLoadBalancerAttachment]
+        :type: list[oci.core.models.InstancePoolLoadBalancerAttachment]
         """
         self._load_balancers = load_balancers
 

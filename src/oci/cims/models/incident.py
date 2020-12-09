@@ -44,19 +44,19 @@ class Incident(object):
 
         :param contact_list:
             The value to assign to the contact_list property of this Incident.
-        :type contact_list: ContactList
+        :type contact_list: oci.cims.models.ContactList
 
         :param tenancy_information:
             The value to assign to the tenancy_information property of this Incident.
-        :type tenancy_information: TenancyInformation
+        :type tenancy_information: oci.cims.models.TenancyInformation
 
         :param ticket:
             The value to assign to the ticket property of this Incident.
-        :type ticket: Ticket
+        :type ticket: oci.cims.models.Ticket
 
         :param incident_type:
             The value to assign to the incident_type property of this Incident.
-        :type incident_type: IncidentType
+        :type incident_type: oci.cims.models.IncidentType
 
         :param problem_type:
             The value to assign to the problem_type property of this Incident.
@@ -154,7 +154,7 @@ class Incident(object):
         Gets the contact_list of this Incident.
 
         :return: The contact_list of this Incident.
-        :rtype: ContactList
+        :rtype: oci.cims.models.ContactList
         """
         return self._contact_list
 
@@ -164,7 +164,7 @@ class Incident(object):
         Sets the contact_list of this Incident.
 
         :param contact_list: The contact_list of this Incident.
-        :type: ContactList
+        :type: oci.cims.models.ContactList
         """
         self._contact_list = contact_list
 
@@ -174,7 +174,7 @@ class Incident(object):
         Gets the tenancy_information of this Incident.
 
         :return: The tenancy_information of this Incident.
-        :rtype: TenancyInformation
+        :rtype: oci.cims.models.TenancyInformation
         """
         return self._tenancy_information
 
@@ -184,7 +184,7 @@ class Incident(object):
         Sets the tenancy_information of this Incident.
 
         :param tenancy_information: The tenancy_information of this Incident.
-        :type: TenancyInformation
+        :type: oci.cims.models.TenancyInformation
         """
         self._tenancy_information = tenancy_information
 
@@ -194,7 +194,7 @@ class Incident(object):
         Gets the ticket of this Incident.
 
         :return: The ticket of this Incident.
-        :rtype: Ticket
+        :rtype: oci.cims.models.Ticket
         """
         return self._ticket
 
@@ -204,7 +204,7 @@ class Incident(object):
         Sets the ticket of this Incident.
 
         :param ticket: The ticket of this Incident.
-        :type: Ticket
+        :type: oci.cims.models.Ticket
         """
         self._ticket = ticket
 
@@ -214,7 +214,7 @@ class Incident(object):
         Gets the incident_type of this Incident.
 
         :return: The incident_type of this Incident.
-        :rtype: IncidentType
+        :rtype: oci.cims.models.IncidentType
         """
         return self._incident_type
 
@@ -224,7 +224,7 @@ class Incident(object):
         Sets the incident_type of this Incident.
 
         :param incident_type: The incident_type of this Incident.
-        :type: IncidentType
+        :type: oci.cims.models.IncidentType
         """
         self._incident_type = incident_type
 

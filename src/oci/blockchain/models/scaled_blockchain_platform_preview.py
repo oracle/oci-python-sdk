@@ -48,27 +48,27 @@ class ScaledBlockchainPlatformPreview(object):
 
         :param component_details:
             The value to assign to the component_details property of this ScaledBlockchainPlatformPreview.
-        :type component_details: BlockchainPlatformComponentDetails
+        :type component_details: oci.blockchain.models.BlockchainPlatformComponentDetails
 
         :param replicas:
             The value to assign to the replicas property of this ScaledBlockchainPlatformPreview.
-        :type replicas: ReplicaDetails
+        :type replicas: oci.blockchain.models.ReplicaDetails
 
         :param component_details_post_scaling:
             The value to assign to the component_details_post_scaling property of this ScaledBlockchainPlatformPreview.
-        :type component_details_post_scaling: BlockchainPlatformComponentDetails
+        :type component_details_post_scaling: oci.blockchain.models.BlockchainPlatformComponentDetails
 
         :param replicas_post_scaling:
             The value to assign to the replicas_post_scaling property of this ScaledBlockchainPlatformPreview.
-        :type replicas_post_scaling: ReplicaDetails
+        :type replicas_post_scaling: oci.blockchain.models.ReplicaDetails
 
         :param host_ocpu_utilization_info:
             The value to assign to the host_ocpu_utilization_info property of this ScaledBlockchainPlatformPreview.
-        :type host_ocpu_utilization_info: list[OcpuUtilizationInfo]
+        :type host_ocpu_utilization_info: list[oci.blockchain.models.OcpuUtilizationInfo]
 
         :param host_ocpu_utilization_info_post_scaling:
             The value to assign to the host_ocpu_utilization_info_post_scaling property of this ScaledBlockchainPlatformPreview.
-        :type host_ocpu_utilization_info_post_scaling: list[OcpuUtilizationInfo]
+        :type host_ocpu_utilization_info_post_scaling: list[oci.blockchain.models.OcpuUtilizationInfo]
 
         :param new_vm_count:
             The value to assign to the new_vm_count property of this ScaledBlockchainPlatformPreview.
@@ -76,11 +76,11 @@ class ScaledBlockchainPlatformPreview(object):
 
         :param metering_preview:
             The value to assign to the metering_preview property of this ScaledBlockchainPlatformPreview.
-        :type metering_preview: ScaledPlatformMeteringPreview
+        :type metering_preview: oci.blockchain.models.ScaledPlatformMeteringPreview
 
         :param scale_payload:
             The value to assign to the scale_payload property of this ScaledBlockchainPlatformPreview.
-        :type scale_payload: ScaleBlockchainPlatformDetails
+        :type scale_payload: oci.blockchain.models.ScaleBlockchainPlatformDetails
 
         """
         self.swagger_types = {
@@ -312,7 +312,7 @@ class ScaledBlockchainPlatformPreview(object):
         Gets the component_details of this ScaledBlockchainPlatformPreview.
 
         :return: The component_details of this ScaledBlockchainPlatformPreview.
-        :rtype: BlockchainPlatformComponentDetails
+        :rtype: oci.blockchain.models.BlockchainPlatformComponentDetails
         """
         return self._component_details
 
@@ -322,7 +322,7 @@ class ScaledBlockchainPlatformPreview(object):
         Sets the component_details of this ScaledBlockchainPlatformPreview.
 
         :param component_details: The component_details of this ScaledBlockchainPlatformPreview.
-        :type: BlockchainPlatformComponentDetails
+        :type: oci.blockchain.models.BlockchainPlatformComponentDetails
         """
         self._component_details = component_details
 
@@ -332,7 +332,7 @@ class ScaledBlockchainPlatformPreview(object):
         Gets the replicas of this ScaledBlockchainPlatformPreview.
 
         :return: The replicas of this ScaledBlockchainPlatformPreview.
-        :rtype: ReplicaDetails
+        :rtype: oci.blockchain.models.ReplicaDetails
         """
         return self._replicas
 
@@ -342,7 +342,7 @@ class ScaledBlockchainPlatformPreview(object):
         Sets the replicas of this ScaledBlockchainPlatformPreview.
 
         :param replicas: The replicas of this ScaledBlockchainPlatformPreview.
-        :type: ReplicaDetails
+        :type: oci.blockchain.models.ReplicaDetails
         """
         self._replicas = replicas
 
@@ -352,7 +352,7 @@ class ScaledBlockchainPlatformPreview(object):
         Gets the component_details_post_scaling of this ScaledBlockchainPlatformPreview.
 
         :return: The component_details_post_scaling of this ScaledBlockchainPlatformPreview.
-        :rtype: BlockchainPlatformComponentDetails
+        :rtype: oci.blockchain.models.BlockchainPlatformComponentDetails
         """
         return self._component_details_post_scaling
 
@@ -362,7 +362,7 @@ class ScaledBlockchainPlatformPreview(object):
         Sets the component_details_post_scaling of this ScaledBlockchainPlatformPreview.
 
         :param component_details_post_scaling: The component_details_post_scaling of this ScaledBlockchainPlatformPreview.
-        :type: BlockchainPlatformComponentDetails
+        :type: oci.blockchain.models.BlockchainPlatformComponentDetails
         """
         self._component_details_post_scaling = component_details_post_scaling
 
@@ -372,7 +372,7 @@ class ScaledBlockchainPlatformPreview(object):
         Gets the replicas_post_scaling of this ScaledBlockchainPlatformPreview.
 
         :return: The replicas_post_scaling of this ScaledBlockchainPlatformPreview.
-        :rtype: ReplicaDetails
+        :rtype: oci.blockchain.models.ReplicaDetails
         """
         return self._replicas_post_scaling
 
@@ -382,7 +382,7 @@ class ScaledBlockchainPlatformPreview(object):
         Sets the replicas_post_scaling of this ScaledBlockchainPlatformPreview.
 
         :param replicas_post_scaling: The replicas_post_scaling of this ScaledBlockchainPlatformPreview.
-        :type: ReplicaDetails
+        :type: oci.blockchain.models.ReplicaDetails
         """
         self._replicas_post_scaling = replicas_post_scaling
 
@@ -394,7 +394,7 @@ class ScaledBlockchainPlatformPreview(object):
 
 
         :return: The host_ocpu_utilization_info of this ScaledBlockchainPlatformPreview.
-        :rtype: list[OcpuUtilizationInfo]
+        :rtype: list[oci.blockchain.models.OcpuUtilizationInfo]
         """
         return self._host_ocpu_utilization_info
 
@@ -406,7 +406,7 @@ class ScaledBlockchainPlatformPreview(object):
 
 
         :param host_ocpu_utilization_info: The host_ocpu_utilization_info of this ScaledBlockchainPlatformPreview.
-        :type: list[OcpuUtilizationInfo]
+        :type: list[oci.blockchain.models.OcpuUtilizationInfo]
         """
         self._host_ocpu_utilization_info = host_ocpu_utilization_info
 
@@ -418,7 +418,7 @@ class ScaledBlockchainPlatformPreview(object):
 
 
         :return: The host_ocpu_utilization_info_post_scaling of this ScaledBlockchainPlatformPreview.
-        :rtype: list[OcpuUtilizationInfo]
+        :rtype: list[oci.blockchain.models.OcpuUtilizationInfo]
         """
         return self._host_ocpu_utilization_info_post_scaling
 
@@ -430,7 +430,7 @@ class ScaledBlockchainPlatformPreview(object):
 
 
         :param host_ocpu_utilization_info_post_scaling: The host_ocpu_utilization_info_post_scaling of this ScaledBlockchainPlatformPreview.
-        :type: list[OcpuUtilizationInfo]
+        :type: list[oci.blockchain.models.OcpuUtilizationInfo]
         """
         self._host_ocpu_utilization_info_post_scaling = host_ocpu_utilization_info_post_scaling
 
@@ -464,7 +464,7 @@ class ScaledBlockchainPlatformPreview(object):
         Gets the metering_preview of this ScaledBlockchainPlatformPreview.
 
         :return: The metering_preview of this ScaledBlockchainPlatformPreview.
-        :rtype: ScaledPlatformMeteringPreview
+        :rtype: oci.blockchain.models.ScaledPlatformMeteringPreview
         """
         return self._metering_preview
 
@@ -474,7 +474,7 @@ class ScaledBlockchainPlatformPreview(object):
         Sets the metering_preview of this ScaledBlockchainPlatformPreview.
 
         :param metering_preview: The metering_preview of this ScaledBlockchainPlatformPreview.
-        :type: ScaledPlatformMeteringPreview
+        :type: oci.blockchain.models.ScaledPlatformMeteringPreview
         """
         self._metering_preview = metering_preview
 
@@ -484,7 +484,7 @@ class ScaledBlockchainPlatformPreview(object):
         Gets the scale_payload of this ScaledBlockchainPlatformPreview.
 
         :return: The scale_payload of this ScaledBlockchainPlatformPreview.
-        :rtype: ScaleBlockchainPlatformDetails
+        :rtype: oci.blockchain.models.ScaleBlockchainPlatformDetails
         """
         return self._scale_payload
 
@@ -494,7 +494,7 @@ class ScaledBlockchainPlatformPreview(object):
         Sets the scale_payload of this ScaledBlockchainPlatformPreview.
 
         :param scale_payload: The scale_payload of this ScaledBlockchainPlatformPreview.
-        :type: ScaleBlockchainPlatformDetails
+        :type: oci.blockchain.models.ScaleBlockchainPlatformDetails
         """
         self._scale_payload = scale_payload
 

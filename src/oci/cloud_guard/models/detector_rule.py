@@ -130,7 +130,7 @@ class DetectorRule(object):
 
         :param detector_details:
             The value to assign to the detector_details property of this DetectorRule.
-        :type detector_details: DetectorDetails
+        :type detector_details: oci.cloud_guard.models.DetectorDetails
 
         :param managed_list_types:
             The value to assign to the managed_list_types property of this DetectorRule.
@@ -140,7 +140,7 @@ class DetectorRule(object):
 
         :param candidate_responder_rules:
             The value to assign to the candidate_responder_rules property of this DetectorRule.
-        :type candidate_responder_rules: list[CandidateResponderRule]
+        :type candidate_responder_rules: list[oci.cloud_guard.models.CandidateResponderRule]
 
         :param time_created:
             The value to assign to the time_created property of this DetectorRule.
@@ -390,7 +390,7 @@ class DetectorRule(object):
         Gets the detector_details of this DetectorRule.
 
         :return: The detector_details of this DetectorRule.
-        :rtype: DetectorDetails
+        :rtype: oci.cloud_guard.models.DetectorDetails
         """
         return self._detector_details
 
@@ -400,7 +400,7 @@ class DetectorRule(object):
         Sets the detector_details of this DetectorRule.
 
         :param detector_details: The detector_details of this DetectorRule.
-        :type: DetectorDetails
+        :type: oci.cloud_guard.models.DetectorDetails
         """
         self._detector_details = detector_details
 
@@ -442,7 +442,7 @@ class DetectorRule(object):
 
 
         :return: The candidate_responder_rules of this DetectorRule.
-        :rtype: list[CandidateResponderRule]
+        :rtype: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         return self._candidate_responder_rules
 
@@ -454,7 +454,7 @@ class DetectorRule(object):
 
 
         :param candidate_responder_rules: The candidate_responder_rules of this DetectorRule.
-        :type: list[CandidateResponderRule]
+        :type: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         self._candidate_responder_rules = candidate_responder_rules
 

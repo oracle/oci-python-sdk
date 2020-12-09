@@ -31,7 +31,7 @@ class AuditClientCompositeOperations(object):
         :param str compartment_id: (required)
             ID of the root compartment (tenancy)
 
-        :param UpdateConfigurationDetails update_configuration_details: (required)
+        :param oci.audit.models.UpdateConfigurationDetails update_configuration_details: (required)
             The configuration properties
 
         :param list[str] wait_for_states:

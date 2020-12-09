@@ -72,7 +72,7 @@ class Deployment(object):
 
         :param specification:
             The value to assign to the specification property of this Deployment.
-        :type specification: ApiSpecification
+        :type specification: oci.apigateway.models.ApiSpecification
 
         :param time_created:
             The value to assign to the time_created property of this Deployment.
@@ -327,7 +327,7 @@ class Deployment(object):
         **[Required]** Gets the specification of this Deployment.
 
         :return: The specification of this Deployment.
-        :rtype: ApiSpecification
+        :rtype: oci.apigateway.models.ApiSpecification
         """
         return self._specification
 
@@ -337,7 +337,7 @@ class Deployment(object):
         Sets the specification of this Deployment.
 
         :param specification: The specification of this Deployment.
-        :type: ApiSpecification
+        :type: oci.apigateway.models.ApiSpecification
         """
         self._specification = specification
 

@@ -98,11 +98,11 @@ class TypedObject(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TypedObject.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this TypedObject.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this TypedObject.
@@ -286,7 +286,7 @@ class TypedObject(object):
         Gets the parent_ref of this TypedObject.
 
         :return: The parent_ref of this TypedObject.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -296,7 +296,7 @@ class TypedObject(object):
         Sets the parent_ref of this TypedObject.
 
         :param parent_ref: The parent_ref of this TypedObject.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -306,7 +306,7 @@ class TypedObject(object):
         Gets the config_values of this TypedObject.
 
         :return: The config_values of this TypedObject.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -316,7 +316,7 @@ class TypedObject(object):
         Sets the config_values of this TypedObject.
 
         :param config_values: The config_values of this TypedObject.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 

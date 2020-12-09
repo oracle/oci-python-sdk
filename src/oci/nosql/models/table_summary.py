@@ -40,7 +40,7 @@ class TableSummary(object):
 
         :param table_limits:
             The value to assign to the table_limits property of this TableSummary.
-        :type table_limits: TableLimits
+        :type table_limits: oci.nosql.models.TableLimits
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TableSummary.
@@ -247,7 +247,7 @@ class TableSummary(object):
         Gets the table_limits of this TableSummary.
 
         :return: The table_limits of this TableSummary.
-        :rtype: TableLimits
+        :rtype: oci.nosql.models.TableLimits
         """
         return self._table_limits
 
@@ -257,7 +257,7 @@ class TableSummary(object):
         Sets the table_limits of this TableSummary.
 
         :param table_limits: The table_limits of this TableSummary.
-        :type: TableLimits
+        :type: oci.nosql.models.TableLimits
         """
         self._table_limits = table_limits
 

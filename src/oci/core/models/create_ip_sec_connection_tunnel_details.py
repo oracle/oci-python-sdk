@@ -54,7 +54,7 @@ class CreateIPSecConnectionTunnelDetails(object):
 
         :param bgp_session_config:
             The value to assign to the bgp_session_config property of this CreateIPSecConnectionTunnelDetails.
-        :type bgp_session_config: CreateIPSecTunnelBgpSessionDetails
+        :type bgp_session_config: oci.core.models.CreateIPSecTunnelBgpSessionDetails
 
         """
         self.swagger_types = {
@@ -212,7 +212,7 @@ class CreateIPSecConnectionTunnelDetails(object):
 
 
         :return: The bgp_session_config of this CreateIPSecConnectionTunnelDetails.
-        :rtype: CreateIPSecTunnelBgpSessionDetails
+        :rtype: oci.core.models.CreateIPSecTunnelBgpSessionDetails
         """
         return self._bgp_session_config
 
@@ -229,7 +229,7 @@ class CreateIPSecConnectionTunnelDetails(object):
 
 
         :param bgp_session_config: The bgp_session_config of this CreateIPSecConnectionTunnelDetails.
-        :type: CreateIPSecTunnelBgpSessionDetails
+        :type: oci.core.models.CreateIPSecTunnelBgpSessionDetails
         """
         self._bgp_session_config = bgp_session_config
 

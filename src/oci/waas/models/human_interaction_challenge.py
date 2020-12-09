@@ -58,11 +58,11 @@ class HumanInteractionChallenge(object):
 
         :param set_http_header:
             The value to assign to the set_http_header property of this HumanInteractionChallenge.
-        :type set_http_header: Header
+        :type set_http_header: oci.waas.models.Header
 
         :param challenge_settings:
             The value to assign to the challenge_settings property of this HumanInteractionChallenge.
-        :type challenge_settings: BlockChallengeSettings
+        :type challenge_settings: oci.waas.models.BlockChallengeSettings
 
         :param is_nat_enabled:
             The value to assign to the is_nat_enabled property of this HumanInteractionChallenge.
@@ -288,7 +288,7 @@ class HumanInteractionChallenge(object):
 
 
         :return: The set_http_header of this HumanInteractionChallenge.
-        :rtype: Header
+        :rtype: oci.waas.models.Header
         """
         return self._set_http_header
 
@@ -300,7 +300,7 @@ class HumanInteractionChallenge(object):
 
 
         :param set_http_header: The set_http_header of this HumanInteractionChallenge.
-        :type: Header
+        :type: oci.waas.models.Header
         """
         self._set_http_header = set_http_header
 
@@ -310,7 +310,7 @@ class HumanInteractionChallenge(object):
         Gets the challenge_settings of this HumanInteractionChallenge.
 
         :return: The challenge_settings of this HumanInteractionChallenge.
-        :rtype: BlockChallengeSettings
+        :rtype: oci.waas.models.BlockChallengeSettings
         """
         return self._challenge_settings
 
@@ -320,7 +320,7 @@ class HumanInteractionChallenge(object):
         Sets the challenge_settings of this HumanInteractionChallenge.
 
         :param challenge_settings: The challenge_settings of this HumanInteractionChallenge.
-        :type: BlockChallengeSettings
+        :type: oci.waas.models.BlockChallengeSettings
         """
         self._challenge_settings = challenge_settings
 

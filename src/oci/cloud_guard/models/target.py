@@ -90,11 +90,11 @@ class Target(object):
 
         :param target_detector_recipes:
             The value to assign to the target_detector_recipes property of this Target.
-        :type target_detector_recipes: list[TargetDetectorRecipe]
+        :type target_detector_recipes: list[oci.cloud_guard.models.TargetDetectorRecipe]
 
         :param target_responder_recipes:
             The value to assign to the target_responder_recipes property of this Target.
-        :type target_responder_recipes: list[TargetResponderRecipe]
+        :type target_responder_recipes: list[oci.cloud_guard.models.TargetResponderRecipe]
 
         :param inherited_by_compartments:
             The value to assign to the inherited_by_compartments property of this Target.
@@ -371,7 +371,7 @@ class Target(object):
 
 
         :return: The target_detector_recipes of this Target.
-        :rtype: list[TargetDetectorRecipe]
+        :rtype: list[oci.cloud_guard.models.TargetDetectorRecipe]
         """
         return self._target_detector_recipes
 
@@ -383,7 +383,7 @@ class Target(object):
 
 
         :param target_detector_recipes: The target_detector_recipes of this Target.
-        :type: list[TargetDetectorRecipe]
+        :type: list[oci.cloud_guard.models.TargetDetectorRecipe]
         """
         self._target_detector_recipes = target_detector_recipes
 
@@ -395,7 +395,7 @@ class Target(object):
 
 
         :return: The target_responder_recipes of this Target.
-        :rtype: list[TargetResponderRecipe]
+        :rtype: list[oci.cloud_guard.models.TargetResponderRecipe]
         """
         return self._target_responder_recipes
 
@@ -407,7 +407,7 @@ class Target(object):
 
 
         :param target_responder_recipes: The target_responder_recipes of this Target.
-        :type: list[TargetResponderRecipe]
+        :type: list[oci.cloud_guard.models.TargetResponderRecipe]
         """
         self._target_responder_recipes = target_responder_recipes
 

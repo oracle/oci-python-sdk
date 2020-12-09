@@ -20,7 +20,7 @@ class SecurityScoreAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this SecurityScoreAggregationCollection.
-        :type items: list[SecurityScoreAggregation]
+        :type items: list[oci.cloud_guard.models.SecurityScoreAggregation]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SecurityScoreAggregationCollection(object):
 
 
         :return: The items of this SecurityScoreAggregationCollection.
-        :rtype: list[SecurityScoreAggregation]
+        :rtype: list[oci.cloud_guard.models.SecurityScoreAggregation]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SecurityScoreAggregationCollection(object):
 
 
         :param items: The items of this SecurityScoreAggregationCollection.
-        :type: list[SecurityScoreAggregation]
+        :type: list[oci.cloud_guard.models.SecurityScoreAggregation]
         """
         self._items = items
 

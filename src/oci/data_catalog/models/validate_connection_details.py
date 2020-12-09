@@ -20,7 +20,7 @@ class ValidateConnectionDetails(object):
 
         :param connection_detail:
             The value to assign to the connection_detail property of this ValidateConnectionDetails.
-        :type connection_detail: CreateConnectionDetails
+        :type connection_detail: oci.data_catalog.models.CreateConnectionDetails
 
         :param connection_payload:
             The value to assign to the connection_payload property of this ValidateConnectionDetails.
@@ -46,7 +46,7 @@ class ValidateConnectionDetails(object):
         Gets the connection_detail of this ValidateConnectionDetails.
 
         :return: The connection_detail of this ValidateConnectionDetails.
-        :rtype: CreateConnectionDetails
+        :rtype: oci.data_catalog.models.CreateConnectionDetails
         """
         return self._connection_detail
 
@@ -56,7 +56,7 @@ class ValidateConnectionDetails(object):
         Sets the connection_detail of this ValidateConnectionDetails.
 
         :param connection_detail: The connection_detail of this ValidateConnectionDetails.
-        :type: CreateConnectionDetails
+        :type: oci.data_catalog.models.CreateConnectionDetails
         """
         self._connection_detail = connection_detail
 

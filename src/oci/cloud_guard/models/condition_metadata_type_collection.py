@@ -20,7 +20,7 @@ class ConditionMetadataTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this ConditionMetadataTypeCollection.
-        :type items: list[ConditionMetadataTypeSummary]
+        :type items: list[oci.cloud_guard.models.ConditionMetadataTypeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ConditionMetadataTypeCollection(object):
 
 
         :return: The items of this ConditionMetadataTypeCollection.
-        :rtype: list[ConditionMetadataTypeSummary]
+        :rtype: list[oci.cloud_guard.models.ConditionMetadataTypeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ConditionMetadataTypeCollection(object):
 
 
         :param items: The items of this ConditionMetadataTypeCollection.
-        :type: list[ConditionMetadataTypeSummary]
+        :type: list[oci.cloud_guard.models.ConditionMetadataTypeSummary]
         """
         self._items = items
 

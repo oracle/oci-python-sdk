@@ -51,23 +51,23 @@ class WriteOperationConfig(AbstractDataOperationConfig):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this WriteOperationConfig.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param operations:
             The value to assign to the operations property of this WriteOperationConfig.
-        :type operations: list[PushDownOperation]
+        :type operations: list[oci.data_integration.models.PushDownOperation]
 
         :param data_format:
             The value to assign to the data_format property of this WriteOperationConfig.
-        :type data_format: DataFormat
+        :type data_format: oci.data_integration.models.DataFormat
 
         :param partition_config:
             The value to assign to the partition_config property of this WriteOperationConfig.
-        :type partition_config: PartitionConfig
+        :type partition_config: oci.data_integration.models.PartitionConfig
 
         :param write_attribute:
             The value to assign to the write_attribute property of this WriteOperationConfig.
-        :type write_attribute: AbstractWriteAttribute
+        :type write_attribute: oci.data_integration.models.AbstractWriteAttribute
 
         :param write_mode:
             The value to assign to the write_mode property of this WriteOperationConfig.
@@ -77,7 +77,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
 
         :param merge_key:
             The value to assign to the merge_key property of this WriteOperationConfig.
-        :type merge_key: UniqueKey
+        :type merge_key: oci.data_integration.models.UniqueKey
 
         :param object_status:
             The value to assign to the object_status property of this WriteOperationConfig.
@@ -179,7 +179,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Gets the parent_ref of this WriteOperationConfig.
 
         :return: The parent_ref of this WriteOperationConfig.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -189,7 +189,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Sets the parent_ref of this WriteOperationConfig.
 
         :param parent_ref: The parent_ref of this WriteOperationConfig.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -201,7 +201,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
 
 
         :return: The operations of this WriteOperationConfig.
-        :rtype: list[PushDownOperation]
+        :rtype: list[oci.data_integration.models.PushDownOperation]
         """
         return self._operations
 
@@ -213,7 +213,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
 
 
         :param operations: The operations of this WriteOperationConfig.
-        :type: list[PushDownOperation]
+        :type: list[oci.data_integration.models.PushDownOperation]
         """
         self._operations = operations
 
@@ -223,7 +223,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Gets the data_format of this WriteOperationConfig.
 
         :return: The data_format of this WriteOperationConfig.
-        :rtype: DataFormat
+        :rtype: oci.data_integration.models.DataFormat
         """
         return self._data_format
 
@@ -233,7 +233,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Sets the data_format of this WriteOperationConfig.
 
         :param data_format: The data_format of this WriteOperationConfig.
-        :type: DataFormat
+        :type: oci.data_integration.models.DataFormat
         """
         self._data_format = data_format
 
@@ -243,7 +243,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Gets the partition_config of this WriteOperationConfig.
 
         :return: The partition_config of this WriteOperationConfig.
-        :rtype: PartitionConfig
+        :rtype: oci.data_integration.models.PartitionConfig
         """
         return self._partition_config
 
@@ -253,7 +253,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Sets the partition_config of this WriteOperationConfig.
 
         :param partition_config: The partition_config of this WriteOperationConfig.
-        :type: PartitionConfig
+        :type: oci.data_integration.models.PartitionConfig
         """
         self._partition_config = partition_config
 
@@ -263,7 +263,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Gets the write_attribute of this WriteOperationConfig.
 
         :return: The write_attribute of this WriteOperationConfig.
-        :rtype: AbstractWriteAttribute
+        :rtype: oci.data_integration.models.AbstractWriteAttribute
         """
         return self._write_attribute
 
@@ -273,7 +273,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Sets the write_attribute of this WriteOperationConfig.
 
         :param write_attribute: The write_attribute of this WriteOperationConfig.
-        :type: AbstractWriteAttribute
+        :type: oci.data_integration.models.AbstractWriteAttribute
         """
         self._write_attribute = write_attribute
 
@@ -313,7 +313,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Gets the merge_key of this WriteOperationConfig.
 
         :return: The merge_key of this WriteOperationConfig.
-        :rtype: UniqueKey
+        :rtype: oci.data_integration.models.UniqueKey
         """
         return self._merge_key
 
@@ -323,7 +323,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         Sets the merge_key of this WriteOperationConfig.
 
         :param merge_key: The merge_key of this WriteOperationConfig.
-        :type: UniqueKey
+        :type: oci.data_integration.models.UniqueKey
         """
         self._merge_key = merge_key
 

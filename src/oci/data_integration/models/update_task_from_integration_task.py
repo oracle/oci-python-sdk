@@ -34,7 +34,7 @@ class UpdateTaskFromIntegrationTask(UpdateTaskDetails):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UpdateTaskFromIntegrationTask.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this UpdateTaskFromIntegrationTask.
@@ -58,31 +58,31 @@ class UpdateTaskFromIntegrationTask(UpdateTaskDetails):
 
         :param input_ports:
             The value to assign to the input_ports property of this UpdateTaskFromIntegrationTask.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this UpdateTaskFromIntegrationTask.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this UpdateTaskFromIntegrationTask.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this UpdateTaskFromIntegrationTask.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this UpdateTaskFromIntegrationTask.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateTaskFromIntegrationTask.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param data_flow:
             The value to assign to the data_flow property of this UpdateTaskFromIntegrationTask.
-        :type data_flow: DataFlow
+        :type data_flow: oci.data_integration.models.DataFlow
 
         """
         self.swagger_types = {
@@ -147,7 +147,7 @@ class UpdateTaskFromIntegrationTask(UpdateTaskDetails):
         Gets the data_flow of this UpdateTaskFromIntegrationTask.
 
         :return: The data_flow of this UpdateTaskFromIntegrationTask.
-        :rtype: DataFlow
+        :rtype: oci.data_integration.models.DataFlow
         """
         return self._data_flow
 
@@ -157,7 +157,7 @@ class UpdateTaskFromIntegrationTask(UpdateTaskDetails):
         Sets the data_flow of this UpdateTaskFromIntegrationTask.
 
         :param data_flow: The data_flow of this UpdateTaskFromIntegrationTask.
-        :type: DataFlow
+        :type: oci.data_integration.models.DataFlow
         """
         self._data_flow = data_flow
 

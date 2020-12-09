@@ -23,7 +23,7 @@ class CreateScheduledPolicyDetails(CreateAutoScalingPolicyDetails):
 
         :param capacity:
             The value to assign to the capacity property of this CreateScheduledPolicyDetails.
-        :type capacity: Capacity
+        :type capacity: oci.autoscaling.models.Capacity
 
         :param display_name:
             The value to assign to the display_name property of this CreateScheduledPolicyDetails.
@@ -39,7 +39,7 @@ class CreateScheduledPolicyDetails(CreateAutoScalingPolicyDetails):
 
         :param execution_schedule:
             The value to assign to the execution_schedule property of this CreateScheduledPolicyDetails.
-        :type execution_schedule: ExecutionSchedule
+        :type execution_schedule: oci.autoscaling.models.ExecutionSchedule
 
         """
         self.swagger_types = {
@@ -71,7 +71,7 @@ class CreateScheduledPolicyDetails(CreateAutoScalingPolicyDetails):
         **[Required]** Gets the execution_schedule of this CreateScheduledPolicyDetails.
 
         :return: The execution_schedule of this CreateScheduledPolicyDetails.
-        :rtype: ExecutionSchedule
+        :rtype: oci.autoscaling.models.ExecutionSchedule
         """
         return self._execution_schedule
 
@@ -81,7 +81,7 @@ class CreateScheduledPolicyDetails(CreateAutoScalingPolicyDetails):
         Sets the execution_schedule of this CreateScheduledPolicyDetails.
 
         :param execution_schedule: The execution_schedule of this CreateScheduledPolicyDetails.
-        :type: ExecutionSchedule
+        :type: oci.autoscaling.models.ExecutionSchedule
         """
         self._execution_schedule = execution_schedule
 

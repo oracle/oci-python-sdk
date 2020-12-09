@@ -20,7 +20,7 @@ class DataEntitySummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this DataEntitySummaryCollection.
-        :type items: list[DataEntitySummary]
+        :type items: list[oci.data_integration.models.DataEntitySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DataEntitySummaryCollection(object):
 
 
         :return: The items of this DataEntitySummaryCollection.
-        :rtype: list[DataEntitySummary]
+        :rtype: list[oci.data_integration.models.DataEntitySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DataEntitySummaryCollection(object):
 
 
         :param items: The items of this DataEntitySummaryCollection.
-        :type: list[DataEntitySummary]
+        :type: list[oci.data_integration.models.DataEntitySummary]
         """
         self._items = items
 

@@ -52,7 +52,7 @@ class UpdateApplicationDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UpdateApplicationDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_version:
             The value to assign to the object_version property of this UpdateApplicationDetails.
@@ -60,7 +60,7 @@ class UpdateApplicationDetails(object):
 
         :param metadata:
             The value to assign to the metadata property of this UpdateApplicationDetails.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -301,7 +301,7 @@ class UpdateApplicationDetails(object):
         Gets the parent_ref of this UpdateApplicationDetails.
 
         :return: The parent_ref of this UpdateApplicationDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -311,7 +311,7 @@ class UpdateApplicationDetails(object):
         Sets the parent_ref of this UpdateApplicationDetails.
 
         :param parent_ref: The parent_ref of this UpdateApplicationDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -345,7 +345,7 @@ class UpdateApplicationDetails(object):
         Gets the metadata of this UpdateApplicationDetails.
 
         :return: The metadata of this UpdateApplicationDetails.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -355,7 +355,7 @@ class UpdateApplicationDetails(object):
         Sets the metadata of this UpdateApplicationDetails.
 
         :param metadata: The metadata of this UpdateApplicationDetails.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

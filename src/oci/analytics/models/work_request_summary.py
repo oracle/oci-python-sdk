@@ -92,7 +92,7 @@ class WorkRequestSummary(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequestSummary.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.analytics.models.WorkRequestResource]
 
         :param time_accepted:
             The value to assign to the time_accepted property of this WorkRequestSummary.
@@ -254,7 +254,7 @@ class WorkRequestSummary(object):
 
 
         :return: The resources of this WorkRequestSummary.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.analytics.models.WorkRequestResource]
         """
         return self._resources
 
@@ -266,7 +266,7 @@ class WorkRequestSummary(object):
 
 
         :param resources: The resources of this WorkRequestSummary.
-        :type: list[WorkRequestResource]
+        :type: list[oci.analytics.models.WorkRequestResource]
         """
         self._resources = resources
 

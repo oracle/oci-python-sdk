@@ -123,7 +123,7 @@ class LimitsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/get_resource_availability.py.html>`__ to see an example of how to use get_resource_availability API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/get_resource_availability.py.html>`__ to see an example of how to use get_resource_availability API.
         """
         resource_path = "/20190729/services/{serviceName}/limits/{limitName}/resourceAvailability"
         method = "GET"
@@ -233,7 +233,7 @@ class LimitsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/list_limit_definitions.py.html>`__ to see an example of how to use list_limit_definitions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/list_limit_definitions.py.html>`__ to see an example of how to use list_limit_definitions API.
         """
         resource_path = "/20190729/limitDefinitions"
         method = "GET"
@@ -360,7 +360,7 @@ class LimitsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/list_limit_values.py.html>`__ to see an example of how to use list_limit_values API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/list_limit_values.py.html>`__ to see an example of how to use list_limit_values API.
         """
         resource_path = "/20190729/limitValues"
         method = "GET"
@@ -484,7 +484,7 @@ class LimitsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/list_services.py.html>`__ to see an example of how to use list_services API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/list_services.py.html>`__ to see an example of how to use list_services API.
         """
         resource_path = "/20190729/services"
         method = "GET"

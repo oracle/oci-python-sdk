@@ -58,7 +58,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataAssetFromOracle.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param host:
             The value to assign to the host property of this CreateDataAssetFromOracle.
@@ -86,7 +86,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this CreateDataAssetFromOracle.
-        :type default_connection: CreateConnectionFromOracle
+        :type default_connection: oci.data_integration.models.CreateConnectionFromOracle
 
         """
         self.swagger_types = {
@@ -298,7 +298,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
         Gets the default_connection of this CreateDataAssetFromOracle.
 
         :return: The default_connection of this CreateDataAssetFromOracle.
-        :rtype: CreateConnectionFromOracle
+        :rtype: oci.data_integration.models.CreateConnectionFromOracle
         """
         return self._default_connection
 
@@ -308,7 +308,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
         Sets the default_connection of this CreateDataAssetFromOracle.
 
         :param default_connection: The default_connection of this CreateDataAssetFromOracle.
-        :type: CreateConnectionFromOracle
+        :type: oci.data_integration.models.CreateConnectionFromOracle
         """
         self._default_connection = default_connection
 

@@ -61,11 +61,11 @@ class UpdateIntegrationInstanceDetails(object):
 
         :param custom_endpoint:
             The value to assign to the custom_endpoint property of this UpdateIntegrationInstanceDetails.
-        :type custom_endpoint: UpdateCustomEndpointDetails
+        :type custom_endpoint: oci.integration.models.UpdateCustomEndpointDetails
 
         :param alternate_custom_endpoints:
             The value to assign to the alternate_custom_endpoints property of this UpdateIntegrationInstanceDetails.
-        :type alternate_custom_endpoints: list[UpdateCustomEndpointDetails]
+        :type alternate_custom_endpoints: list[oci.integration.models.UpdateCustomEndpointDetails]
 
         """
         self.swagger_types = {
@@ -319,7 +319,7 @@ class UpdateIntegrationInstanceDetails(object):
         Gets the custom_endpoint of this UpdateIntegrationInstanceDetails.
 
         :return: The custom_endpoint of this UpdateIntegrationInstanceDetails.
-        :rtype: UpdateCustomEndpointDetails
+        :rtype: oci.integration.models.UpdateCustomEndpointDetails
         """
         return self._custom_endpoint
 
@@ -329,7 +329,7 @@ class UpdateIntegrationInstanceDetails(object):
         Sets the custom_endpoint of this UpdateIntegrationInstanceDetails.
 
         :param custom_endpoint: The custom_endpoint of this UpdateIntegrationInstanceDetails.
-        :type: UpdateCustomEndpointDetails
+        :type: oci.integration.models.UpdateCustomEndpointDetails
         """
         self._custom_endpoint = custom_endpoint
 
@@ -342,7 +342,7 @@ class UpdateIntegrationInstanceDetails(object):
 
 
         :return: The alternate_custom_endpoints of this UpdateIntegrationInstanceDetails.
-        :rtype: list[UpdateCustomEndpointDetails]
+        :rtype: list[oci.integration.models.UpdateCustomEndpointDetails]
         """
         return self._alternate_custom_endpoints
 
@@ -355,7 +355,7 @@ class UpdateIntegrationInstanceDetails(object):
 
 
         :param alternate_custom_endpoints: The alternate_custom_endpoints of this UpdateIntegrationInstanceDetails.
-        :type: list[UpdateCustomEndpointDetails]
+        :type: list[oci.integration.models.UpdateCustomEndpointDetails]
         """
         self._alternate_custom_endpoints = alternate_custom_endpoints
 

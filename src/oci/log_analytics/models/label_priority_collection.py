@@ -20,7 +20,7 @@ class LabelPriorityCollection(object):
 
         :param items:
             The value to assign to the items property of this LabelPriorityCollection.
-        :type items: list[LabelPriority]
+        :type items: list[oci.log_analytics.models.LabelPriority]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LabelPriorityCollection(object):
 
 
         :return: The items of this LabelPriorityCollection.
-        :rtype: list[LabelPriority]
+        :rtype: list[oci.log_analytics.models.LabelPriority]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LabelPriorityCollection(object):
 
 
         :param items: The items of this LabelPriorityCollection.
-        :type: list[LabelPriority]
+        :type: list[oci.log_analytics.models.LabelPriority]
         """
         self._items = items
 

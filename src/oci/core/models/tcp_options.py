@@ -21,11 +21,11 @@ class TcpOptions(object):
 
         :param destination_port_range:
             The value to assign to the destination_port_range property of this TcpOptions.
-        :type destination_port_range: PortRange
+        :type destination_port_range: oci.core.models.PortRange
 
         :param source_port_range:
             The value to assign to the source_port_range property of this TcpOptions.
-        :type source_port_range: PortRange
+        :type source_port_range: oci.core.models.PortRange
 
         """
         self.swagger_types = {
@@ -50,7 +50,7 @@ class TcpOptions(object):
 
 
         :return: The destination_port_range of this TcpOptions.
-        :rtype: PortRange
+        :rtype: oci.core.models.PortRange
         """
         return self._destination_port_range
 
@@ -63,7 +63,7 @@ class TcpOptions(object):
 
 
         :param destination_port_range: The destination_port_range of this TcpOptions.
-        :type: PortRange
+        :type: oci.core.models.PortRange
         """
         self._destination_port_range = destination_port_range
 
@@ -76,7 +76,7 @@ class TcpOptions(object):
 
 
         :return: The source_port_range of this TcpOptions.
-        :rtype: PortRange
+        :rtype: oci.core.models.PortRange
         """
         return self._source_port_range
 
@@ -89,7 +89,7 @@ class TcpOptions(object):
 
 
         :param source_port_range: The source_port_range of this TcpOptions.
-        :type: PortRange
+        :type: oci.core.models.PortRange
         """
         self._source_port_range = source_port_range
 

@@ -20,11 +20,11 @@ class LogAnalyticsExtendedField(object):
 
         :param field:
             The value to assign to the field property of this LogAnalyticsExtendedField.
-        :type field: LogAnalyticsField
+        :type field: oci.log_analytics.models.LogAnalyticsField
 
         :param extended_field_definition:
             The value to assign to the extended_field_definition property of this LogAnalyticsExtendedField.
-        :type extended_field_definition: LogAnalyticsSourceExtendedFieldDefinition
+        :type extended_field_definition: oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition
 
         :param extended_field_definition_id:
             The value to assign to the extended_field_definition_id property of this LogAnalyticsExtendedField.
@@ -81,7 +81,7 @@ class LogAnalyticsExtendedField(object):
         Gets the field of this LogAnalyticsExtendedField.
 
         :return: The field of this LogAnalyticsExtendedField.
-        :rtype: LogAnalyticsField
+        :rtype: oci.log_analytics.models.LogAnalyticsField
         """
         return self._field
 
@@ -91,7 +91,7 @@ class LogAnalyticsExtendedField(object):
         Sets the field of this LogAnalyticsExtendedField.
 
         :param field: The field of this LogAnalyticsExtendedField.
-        :type: LogAnalyticsField
+        :type: oci.log_analytics.models.LogAnalyticsField
         """
         self._field = field
 
@@ -101,7 +101,7 @@ class LogAnalyticsExtendedField(object):
         Gets the extended_field_definition of this LogAnalyticsExtendedField.
 
         :return: The extended_field_definition of this LogAnalyticsExtendedField.
-        :rtype: LogAnalyticsSourceExtendedFieldDefinition
+        :rtype: oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition
         """
         return self._extended_field_definition
 
@@ -111,7 +111,7 @@ class LogAnalyticsExtendedField(object):
         Sets the extended_field_definition of this LogAnalyticsExtendedField.
 
         :param extended_field_definition: The extended_field_definition of this LogAnalyticsExtendedField.
-        :type: LogAnalyticsSourceExtendedFieldDefinition
+        :type: oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition
         """
         self._extended_field_definition = extended_field_definition
 

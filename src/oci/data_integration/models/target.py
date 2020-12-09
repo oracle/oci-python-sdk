@@ -59,7 +59,7 @@ class Target(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Target.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Target.
@@ -75,11 +75,11 @@ class Target(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this Target.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Target.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Target.
@@ -91,15 +91,15 @@ class Target(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this Target.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Target.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param entity:
             The value to assign to the entity property of this Target.
-        :type entity: DataEntity
+        :type entity: oci.data_integration.models.DataEntity
 
         :param is_read_access:
             The value to assign to the is_read_access property of this Target.
@@ -121,7 +121,7 @@ class Target(Operator):
 
         :param write_operation_config:
             The value to assign to the write_operation_config property of this Target.
-        :type write_operation_config: WriteOperationConfig
+        :type write_operation_config: oci.data_integration.models.WriteOperationConfig
 
         """
         self.swagger_types = {
@@ -195,7 +195,7 @@ class Target(Operator):
         Gets the entity of this Target.
 
         :return: The entity of this Target.
-        :rtype: DataEntity
+        :rtype: oci.data_integration.models.DataEntity
         """
         return self._entity
 
@@ -205,7 +205,7 @@ class Target(Operator):
         Sets the entity of this Target.
 
         :param entity: The entity of this Target.
-        :type: DataEntity
+        :type: oci.data_integration.models.DataEntity
         """
         self._entity = entity
 
@@ -317,7 +317,7 @@ class Target(Operator):
         Gets the write_operation_config of this Target.
 
         :return: The write_operation_config of this Target.
-        :rtype: WriteOperationConfig
+        :rtype: oci.data_integration.models.WriteOperationConfig
         """
         return self._write_operation_config
 
@@ -327,7 +327,7 @@ class Target(Operator):
         Sets the write_operation_config of this Target.
 
         :param write_operation_config: The write_operation_config of this Target.
-        :type: WriteOperationConfig
+        :type: oci.data_integration.models.WriteOperationConfig
         """
         self._write_operation_config = write_operation_config
 

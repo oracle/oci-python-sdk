@@ -20,11 +20,11 @@ class ResponderRuleExecutionDetails(object):
 
         :param condition:
             The value to assign to the condition property of this ResponderRuleExecutionDetails.
-        :type condition: Condition
+        :type condition: oci.cloud_guard.models.Condition
 
         :param configurations:
             The value to assign to the configurations property of this ResponderRuleExecutionDetails.
-        :type configurations: list[ResponderConfiguration]
+        :type configurations: list[oci.cloud_guard.models.ResponderConfiguration]
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class ResponderRuleExecutionDetails(object):
         Gets the condition of this ResponderRuleExecutionDetails.
 
         :return: The condition of this ResponderRuleExecutionDetails.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._condition
 
@@ -56,7 +56,7 @@ class ResponderRuleExecutionDetails(object):
         Sets the condition of this ResponderRuleExecutionDetails.
 
         :param condition: The condition of this ResponderRuleExecutionDetails.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._condition = condition
 
@@ -68,7 +68,7 @@ class ResponderRuleExecutionDetails(object):
 
 
         :return: The configurations of this ResponderRuleExecutionDetails.
-        :rtype: list[ResponderConfiguration]
+        :rtype: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         return self._configurations
 
@@ -80,7 +80,7 @@ class ResponderRuleExecutionDetails(object):
 
 
         :param configurations: The configurations of this ResponderRuleExecutionDetails.
-        :type: list[ResponderConfiguration]
+        :type: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         self._configurations = configurations
 
