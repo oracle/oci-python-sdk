@@ -31,7 +31,7 @@ class NosqlClientCompositeOperations(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param ChangeTableCompartmentDetails change_table_compartment_details: (required)
+        :param oci.nosql.models.ChangeTableCompartmentDetails change_table_compartment_details: (required)
             Specifications of the source and target compartments.
 
         :param list[str] wait_for_states:
@@ -72,7 +72,7 @@ class NosqlClientCompositeOperations(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param CreateIndexDetails create_index_details: (required)
+        :param oci.nosql.models.CreateIndexDetails create_index_details: (required)
             Specifications for the new index.
 
         :param list[str] wait_for_states:
@@ -110,7 +110,7 @@ class NosqlClientCompositeOperations(object):
         Calls :py:func:`~oci.nosql.NosqlClient.create_table` and waits for the :py:class:`~oci.nosql.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateTableDetails create_table_details: (required)
+        :param oci.nosql.models.CreateTableDetails create_table_details: (required)
             Specifications for the new table.
 
         :param list[str] wait_for_states:
@@ -292,7 +292,7 @@ class NosqlClientCompositeOperations(object):
         :param str table_name_or_id: (required)
             A table name within the compartment, or a table OCID.
 
-        :param UpdateTableDetails update_table_details: (required)
+        :param oci.nosql.models.UpdateTableDetails update_table_details: (required)
             Specifications for the alteration.
 
         :param list[str] wait_for_states:

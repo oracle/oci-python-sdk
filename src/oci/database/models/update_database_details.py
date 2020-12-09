@@ -22,7 +22,7 @@ class UpdateDatabaseDetails(object):
 
         :param db_backup_config:
             The value to assign to the db_backup_config property of this UpdateDatabaseDetails.
-        :type db_backup_config: DbBackupConfig
+        :type db_backup_config: oci.database.models.DbBackupConfig
 
         :param db_home_id:
             The value to assign to the db_home_id property of this UpdateDatabaseDetails.
@@ -83,7 +83,7 @@ class UpdateDatabaseDetails(object):
         Gets the db_backup_config of this UpdateDatabaseDetails.
 
         :return: The db_backup_config of this UpdateDatabaseDetails.
-        :rtype: DbBackupConfig
+        :rtype: oci.database.models.DbBackupConfig
         """
         return self._db_backup_config
 
@@ -93,7 +93,7 @@ class UpdateDatabaseDetails(object):
         Sets the db_backup_config of this UpdateDatabaseDetails.
 
         :param db_backup_config: The db_backup_config of this UpdateDatabaseDetails.
-        :type: DbBackupConfig
+        :type: oci.database.models.DbBackupConfig
         """
         self._db_backup_config = db_backup_config
 

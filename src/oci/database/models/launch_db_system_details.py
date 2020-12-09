@@ -93,7 +93,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemDetails.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemDetails.
@@ -150,7 +150,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemDetails.
-        :type db_home: CreateDbHomeDetails
+        :type db_home: oci.database.models.CreateDbHomeDetails
 
         :param database_edition:
             The value to assign to the database_edition property of this LaunchDbSystemDetails.
@@ -169,7 +169,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this LaunchDbSystemDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         """
         self.swagger_types = {
@@ -273,7 +273,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         **[Required]** Gets the db_home of this LaunchDbSystemDetails.
 
         :return: The db_home of this LaunchDbSystemDetails.
-        :rtype: CreateDbHomeDetails
+        :rtype: oci.database.models.CreateDbHomeDetails
         """
         return self._db_home
 
@@ -283,7 +283,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         Sets the db_home of this LaunchDbSystemDetails.
 
         :param db_home: The db_home of this LaunchDbSystemDetails.
-        :type: CreateDbHomeDetails
+        :type: oci.database.models.CreateDbHomeDetails
         """
         self._db_home = db_home
 
@@ -395,7 +395,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         Gets the maintenance_window_details of this LaunchDbSystemDetails.
 
         :return: The maintenance_window_details of this LaunchDbSystemDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -405,7 +405,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         Sets the maintenance_window_details of this LaunchDbSystemDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this LaunchDbSystemDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 

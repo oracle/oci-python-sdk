@@ -68,11 +68,11 @@ class Cluster(object):
 
         :param options:
             The value to assign to the options property of this Cluster.
-        :type options: ClusterCreateOptions
+        :type options: oci.container_engine.models.ClusterCreateOptions
 
         :param metadata:
             The value to assign to the metadata property of this Cluster.
-        :type metadata: ClusterMetadata
+        :type metadata: oci.container_engine.models.ClusterMetadata
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Cluster.
@@ -86,7 +86,7 @@ class Cluster(object):
 
         :param endpoints:
             The value to assign to the endpoints property of this Cluster.
-        :type endpoints: ClusterEndpoints
+        :type endpoints: oci.container_engine.models.ClusterEndpoints
 
         :param available_kubernetes_upgrades:
             The value to assign to the available_kubernetes_upgrades property of this Cluster.
@@ -288,7 +288,7 @@ class Cluster(object):
 
 
         :return: The options of this Cluster.
-        :rtype: ClusterCreateOptions
+        :rtype: oci.container_engine.models.ClusterCreateOptions
         """
         return self._options
 
@@ -300,7 +300,7 @@ class Cluster(object):
 
 
         :param options: The options of this Cluster.
-        :type: ClusterCreateOptions
+        :type: oci.container_engine.models.ClusterCreateOptions
         """
         self._options = options
 
@@ -312,7 +312,7 @@ class Cluster(object):
 
 
         :return: The metadata of this Cluster.
-        :rtype: ClusterMetadata
+        :rtype: oci.container_engine.models.ClusterMetadata
         """
         return self._metadata
 
@@ -324,7 +324,7 @@ class Cluster(object):
 
 
         :param metadata: The metadata of this Cluster.
-        :type: ClusterMetadata
+        :type: oci.container_engine.models.ClusterMetadata
         """
         self._metadata = metadata
 
@@ -390,7 +390,7 @@ class Cluster(object):
 
 
         :return: The endpoints of this Cluster.
-        :rtype: ClusterEndpoints
+        :rtype: oci.container_engine.models.ClusterEndpoints
         """
         return self._endpoints
 
@@ -402,7 +402,7 @@ class Cluster(object):
 
 
         :param endpoints: The endpoints of this Cluster.
-        :type: ClusterEndpoints
+        :type: oci.container_engine.models.ClusterEndpoints
         """
         self._endpoints = endpoints
 

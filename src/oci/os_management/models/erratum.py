@@ -82,7 +82,7 @@ class Erratum(object):
 
         :param affected_instances:
             The value to assign to the affected_instances property of this Erratum.
-        :type affected_instances: list[Id]
+        :type affected_instances: list[oci.os_management.models.Id]
 
         :param related_cves:
             The value to assign to the related_cves property of this Erratum.
@@ -90,11 +90,11 @@ class Erratum(object):
 
         :param software_sources:
             The value to assign to the software_sources property of this Erratum.
-        :type software_sources: list[Id]
+        :type software_sources: list[oci.os_management.models.Id]
 
         :param packages:
             The value to assign to the packages property of this Erratum.
-        :type packages: list[SoftwarePackageSummary]
+        :type packages: list[oci.os_management.models.SoftwarePackageSummary]
 
         """
         self.swagger_types = {
@@ -427,7 +427,7 @@ class Erratum(object):
 
 
         :return: The affected_instances of this Erratum.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._affected_instances
 
@@ -439,7 +439,7 @@ class Erratum(object):
 
 
         :param affected_instances: The affected_instances of this Erratum.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._affected_instances = affected_instances
 
@@ -475,7 +475,7 @@ class Erratum(object):
 
 
         :return: The software_sources of this Erratum.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._software_sources
 
@@ -487,7 +487,7 @@ class Erratum(object):
 
 
         :param software_sources: The software_sources of this Erratum.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._software_sources = software_sources
 
@@ -499,7 +499,7 @@ class Erratum(object):
 
 
         :return: The packages of this Erratum.
-        :rtype: list[SoftwarePackageSummary]
+        :rtype: list[oci.os_management.models.SoftwarePackageSummary]
         """
         return self._packages
 
@@ -511,7 +511,7 @@ class Erratum(object):
 
 
         :param packages: The packages of this Erratum.
-        :type: list[SoftwarePackageSummary]
+        :type: list[oci.os_management.models.SoftwarePackageSummary]
         """
         self._packages = packages
 

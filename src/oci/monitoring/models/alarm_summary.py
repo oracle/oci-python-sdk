@@ -84,7 +84,7 @@ class AlarmSummary(object):
 
         :param suppression:
             The value to assign to the suppression property of this AlarmSummary.
-        :type suppression: Suppression
+        :type suppression: oci.monitoring.models.Suppression
 
         :param is_enabled:
             The value to assign to the is_enabled property of this AlarmSummary.
@@ -451,7 +451,7 @@ class AlarmSummary(object):
 
 
         :return: The suppression of this AlarmSummary.
-        :rtype: Suppression
+        :rtype: oci.monitoring.models.Suppression
         """
         return self._suppression
 
@@ -463,7 +463,7 @@ class AlarmSummary(object):
 
 
         :param suppression: The suppression of this AlarmSummary.
-        :type: Suppression
+        :type: oci.monitoring.models.Suppression
         """
         self._suppression = suppression
 

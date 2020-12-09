@@ -28,7 +28,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.add_user_to_group` and waits for the :py:class:`~oci.identity.models.UserGroupMembership` acted upon
         to enter the given state(s).
 
-        :param AddUserToGroupDetails add_user_to_group_details: (required)
+        :param oci.identity.models.AddUserToGroupDetails add_user_to_group_details: (required)
             Request object for adding a user to a group.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class IdentityClientCompositeOperations(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param BulkDeleteResourcesDetails bulk_delete_resources_details: (required)
+        :param oci.identity.models.BulkDeleteResourcesDetails bulk_delete_resources_details: (required)
             Request object for bulk delete resources in a compartment.
 
         :param list[str] wait_for_states:
@@ -107,7 +107,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.bulk_delete_tags` and waits for the :py:class:`~oci.identity.models.WorkRequest`
         to enter the given state(s).
 
-        :param BulkDeleteTagsDetails bulk_delete_tags_details: (required)
+        :param oci.identity.models.BulkDeleteTagsDetails bulk_delete_tags_details: (required)
             Request object for deleting tags in bulk.
 
         :param list[str] wait_for_states:
@@ -183,7 +183,7 @@ class IdentityClientCompositeOperations(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param BulkMoveResourcesDetails bulk_move_resources_details: (required)
+        :param oci.identity.models.BulkMoveResourcesDetails bulk_move_resources_details: (required)
             Request object for bulk move resources in the compartment.
 
         :param list[str] wait_for_states:
@@ -259,7 +259,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_compartment` and waits for the :py:class:`~oci.identity.models.Compartment` acted upon
         to enter the given state(s).
 
-        :param CreateCompartmentDetails create_compartment_details: (required)
+        :param oci.identity.models.CreateCompartmentDetails create_compartment_details: (required)
             Request object for creating a new compartment.
 
         :param list[str] wait_for_states:
@@ -297,7 +297,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_dynamic_group` and waits for the :py:class:`~oci.identity.models.DynamicGroup` acted upon
         to enter the given state(s).
 
-        :param CreateDynamicGroupDetails create_dynamic_group_details: (required)
+        :param oci.identity.models.CreateDynamicGroupDetails create_dynamic_group_details: (required)
             Request object for creating a new dynamic group.
 
         :param list[str] wait_for_states:
@@ -335,7 +335,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_group` and waits for the :py:class:`~oci.identity.models.Group` acted upon
         to enter the given state(s).
 
-        :param CreateGroupDetails create_group_details: (required)
+        :param oci.identity.models.CreateGroupDetails create_group_details: (required)
             Request object for creating a new group.
 
         :param list[str] wait_for_states:
@@ -373,7 +373,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_identity_provider` and waits for the :py:class:`~oci.identity.models.IdentityProvider` acted upon
         to enter the given state(s).
 
-        :param CreateIdentityProviderDetails create_identity_provider_details: (required)
+        :param oci.identity.models.CreateIdentityProviderDetails create_identity_provider_details: (required)
             Request object for creating a new SAML2 identity provider.
 
         :param list[str] wait_for_states:
@@ -411,7 +411,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_idp_group_mapping` and waits for the :py:class:`~oci.identity.models.IdpGroupMapping` acted upon
         to enter the given state(s).
 
-        :param CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
+        :param oci.identity.models.CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
             Add a mapping from an SAML2.0 identity provider group to a BMC group.
 
         :param str identity_provider_id: (required)
@@ -490,7 +490,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_policy` and waits for the :py:class:`~oci.identity.models.Policy` acted upon
         to enter the given state(s).
 
-        :param CreatePolicyDetails create_policy_details: (required)
+        :param oci.identity.models.CreatePolicyDetails create_policy_details: (required)
             Request object for creating a new policy.
 
         :param list[str] wait_for_states:
@@ -531,7 +531,7 @@ class IdentityClientCompositeOperations(object):
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
 
-        :param CreateTagDetails create_tag_details: (required)
+        :param oci.identity.models.CreateTagDetails create_tag_details: (required)
             Request object for creating a new tag in the specified tag namespace.
 
         :param list[str] wait_for_states:
@@ -569,7 +569,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_tag_default` and waits for the :py:class:`~oci.identity.models.TagDefault` acted upon
         to enter the given state(s).
 
-        :param CreateTagDefaultDetails create_tag_default_details: (required)
+        :param oci.identity.models.CreateTagDefaultDetails create_tag_default_details: (required)
             Request object for creating a new tag default.
 
         :param list[str] wait_for_states:
@@ -607,7 +607,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_tag_namespace` and waits for the :py:class:`~oci.identity.models.TagNamespace` acted upon
         to enter the given state(s).
 
-        :param CreateTagNamespaceDetails create_tag_namespace_details: (required)
+        :param oci.identity.models.CreateTagNamespaceDetails create_tag_namespace_details: (required)
             Request object for creating a new tag namespace.
 
         :param list[str] wait_for_states:
@@ -645,7 +645,7 @@ class IdentityClientCompositeOperations(object):
         Calls :py:func:`~oci.identity.IdentityClient.create_user` and waits for the :py:class:`~oci.identity.models.User` acted upon
         to enter the given state(s).
 
-        :param CreateUserDetails create_user_details: (required)
+        :param oci.identity.models.CreateUserDetails create_user_details: (required)
             Request object for creating a new user.
 
         :param list[str] wait_for_states:
@@ -1151,7 +1151,7 @@ class IdentityClientCompositeOperations(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param MoveCompartmentDetails move_compartment_details: (required)
+        :param oci.identity.models.MoveCompartmentDetails move_compartment_details: (required)
             Request object for moving a compartment.
 
         :param list[str] wait_for_states:
@@ -1230,7 +1230,7 @@ class IdentityClientCompositeOperations(object):
         :param str compartment_id: (required)
             The OCID of the compartment.
 
-        :param UpdateCompartmentDetails update_compartment_details: (required)
+        :param oci.identity.models.UpdateCompartmentDetails update_compartment_details: (required)
             Request object for updating a compartment.
 
         :param list[str] wait_for_states:
@@ -1271,7 +1271,7 @@ class IdentityClientCompositeOperations(object):
         :param str dynamic_group_id: (required)
             The OCID of the dynamic group.
 
-        :param UpdateDynamicGroupDetails update_dynamic_group_details: (required)
+        :param oci.identity.models.UpdateDynamicGroupDetails update_dynamic_group_details: (required)
             Request object for updating an dynamic group.
 
         :param list[str] wait_for_states:
@@ -1312,7 +1312,7 @@ class IdentityClientCompositeOperations(object):
         :param str group_id: (required)
             The OCID of the group.
 
-        :param UpdateGroupDetails update_group_details: (required)
+        :param oci.identity.models.UpdateGroupDetails update_group_details: (required)
             Request object for updating a group.
 
         :param list[str] wait_for_states:
@@ -1353,7 +1353,7 @@ class IdentityClientCompositeOperations(object):
         :param str identity_provider_id: (required)
             The OCID of the identity provider.
 
-        :param UpdateIdentityProviderDetails update_identity_provider_details: (required)
+        :param oci.identity.models.UpdateIdentityProviderDetails update_identity_provider_details: (required)
             Request object for updating a identity provider.
 
         :param list[str] wait_for_states:
@@ -1397,7 +1397,7 @@ class IdentityClientCompositeOperations(object):
         :param str mapping_id: (required)
             The OCID of the group mapping.
 
-        :param UpdateIdpGroupMappingDetails update_idp_group_mapping_details: (required)
+        :param oci.identity.models.UpdateIdpGroupMappingDetails update_idp_group_mapping_details: (required)
             Request object for updating an identity provider group mapping
 
         :param list[str] wait_for_states:
@@ -1438,7 +1438,7 @@ class IdentityClientCompositeOperations(object):
         :param str policy_id: (required)
             The OCID of the policy.
 
-        :param UpdatePolicyDetails update_policy_details: (required)
+        :param oci.identity.models.UpdatePolicyDetails update_policy_details: (required)
             Request object for updating a policy.
 
         :param list[str] wait_for_states:
@@ -1482,7 +1482,7 @@ class IdentityClientCompositeOperations(object):
         :param str tag_name: (required)
             The name of the tag.
 
-        :param UpdateTagDetails update_tag_details: (required)
+        :param oci.identity.models.UpdateTagDetails update_tag_details: (required)
             Request object for updating a tag.
 
         :param list[str] wait_for_states:
@@ -1523,7 +1523,7 @@ class IdentityClientCompositeOperations(object):
         :param str tag_default_id: (required)
             The OCID of the tag default.
 
-        :param UpdateTagDefaultDetails update_tag_default_details: (required)
+        :param oci.identity.models.UpdateTagDefaultDetails update_tag_default_details: (required)
             Request object for updating a tag default.
 
         :param list[str] wait_for_states:
@@ -1564,7 +1564,7 @@ class IdentityClientCompositeOperations(object):
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
 
-        :param UpdateTagNamespaceDetails update_tag_namespace_details: (required)
+        :param oci.identity.models.UpdateTagNamespaceDetails update_tag_namespace_details: (required)
             Request object for updating a namespace.
 
         :param list[str] wait_for_states:
@@ -1605,7 +1605,7 @@ class IdentityClientCompositeOperations(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param UpdateUserDetails update_user_details: (required)
+        :param oci.identity.models.UpdateUserDetails update_user_details: (required)
             Request object for updating a user.
 
         :param list[str] wait_for_states:
@@ -1646,7 +1646,7 @@ class IdentityClientCompositeOperations(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param UpdateUserCapabilitiesDetails update_user_capabilities_details: (required)
+        :param oci.identity.models.UpdateUserCapabilitiesDetails update_user_capabilities_details: (required)
             Request object for updating user capabilities.
 
         :param list[str] wait_for_states:
@@ -1687,7 +1687,7 @@ class IdentityClientCompositeOperations(object):
         :param str user_id: (required)
             The OCID of the user.
 
-        :param UpdateStateDetails update_state_details: (required)
+        :param oci.identity.models.UpdateStateDetails update_state_details: (required)
             Request object for updating a user state.
 
         :param list[str] wait_for_states:

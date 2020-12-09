@@ -58,7 +58,7 @@ class DataAssetSummaryFromMySQL(DataAssetSummary):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummaryFromMySQL.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummaryFromMySQL.
@@ -66,11 +66,11 @@ class DataAssetSummaryFromMySQL(DataAssetSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummaryFromMySQL.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummaryFromMySQL.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param host:
             The value to assign to the host property of this DataAssetSummaryFromMySQL.
@@ -86,7 +86,7 @@ class DataAssetSummaryFromMySQL(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromMySQL.
-        :type default_connection: ConnectionSummaryFromMySQL
+        :type default_connection: oci.data_integration.models.ConnectionSummaryFromMySQL
 
         """
         self.swagger_types = {
@@ -226,7 +226,7 @@ class DataAssetSummaryFromMySQL(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromMySQL.
 
         :return: The default_connection of this DataAssetSummaryFromMySQL.
-        :rtype: ConnectionSummaryFromMySQL
+        :rtype: oci.data_integration.models.ConnectionSummaryFromMySQL
         """
         return self._default_connection
 
@@ -236,7 +236,7 @@ class DataAssetSummaryFromMySQL(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromMySQL.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromMySQL.
-        :type: ConnectionSummaryFromMySQL
+        :type: oci.data_integration.models.ConnectionSummaryFromMySQL
         """
         self._default_connection = default_connection
 

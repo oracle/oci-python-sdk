@@ -28,7 +28,7 @@ class RetentionRule(object):
 
         :param duration:
             The value to assign to the duration property of this RetentionRule.
-        :type duration: Duration
+        :type duration: oci.object_storage.models.Duration
 
         :param etag:
             The value to assign to the etag property of this RetentionRule.
@@ -129,7 +129,7 @@ class RetentionRule(object):
         Gets the duration of this RetentionRule.
 
         :return: The duration of this RetentionRule.
-        :rtype: Duration
+        :rtype: oci.object_storage.models.Duration
         """
         return self._duration
 
@@ -139,7 +139,7 @@ class RetentionRule(object):
         Sets the duration of this RetentionRule.
 
         :param duration: The duration of this RetentionRule.
-        :type: Duration
+        :type: oci.object_storage.models.Duration
         """
         self._duration = duration
 

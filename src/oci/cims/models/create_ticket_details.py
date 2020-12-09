@@ -39,7 +39,7 @@ class CreateTicketDetails(object):
 
         :param resource_list:
             The value to assign to the resource_list property of this CreateTicketDetails.
-        :type resource_list: list[CreateResourceDetails]
+        :type resource_list: list[oci.cims.models.CreateResourceDetails]
 
         :param title:
             The value to assign to the title property of this CreateTicketDetails.
@@ -51,7 +51,7 @@ class CreateTicketDetails(object):
 
         :param contextual_data:
             The value to assign to the contextual_data property of this CreateTicketDetails.
-        :type contextual_data: ContextualData
+        :type contextual_data: oci.cims.models.ContextualData
 
         """
         self.swagger_types = {
@@ -116,7 +116,7 @@ class CreateTicketDetails(object):
 
 
         :return: The resource_list of this CreateTicketDetails.
-        :rtype: list[CreateResourceDetails]
+        :rtype: list[oci.cims.models.CreateResourceDetails]
         """
         return self._resource_list
 
@@ -128,7 +128,7 @@ class CreateTicketDetails(object):
 
 
         :param resource_list: The resource_list of this CreateTicketDetails.
-        :type: list[CreateResourceDetails]
+        :type: list[oci.cims.models.CreateResourceDetails]
         """
         self._resource_list = resource_list
 
@@ -188,7 +188,7 @@ class CreateTicketDetails(object):
 
 
         :return: The contextual_data of this CreateTicketDetails.
-        :rtype: ContextualData
+        :rtype: oci.cims.models.ContextualData
         """
         return self._contextual_data
 
@@ -200,7 +200,7 @@ class CreateTicketDetails(object):
 
 
         :param contextual_data: The contextual_data of this CreateTicketDetails.
-        :type: ContextualData
+        :type: oci.cims.models.ContextualData
         """
         self._contextual_data = contextual_data
 

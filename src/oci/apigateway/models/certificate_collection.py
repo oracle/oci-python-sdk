@@ -20,7 +20,7 @@ class CertificateCollection(object):
 
         :param items:
             The value to assign to the items property of this CertificateCollection.
-        :type items: list[CertificateSummary]
+        :type items: list[oci.apigateway.models.CertificateSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class CertificateCollection(object):
 
 
         :return: The items of this CertificateCollection.
-        :rtype: list[CertificateSummary]
+        :rtype: list[oci.apigateway.models.CertificateSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class CertificateCollection(object):
 
 
         :param items: The items of this CertificateCollection.
-        :type: list[CertificateSummary]
+        :type: list[oci.apigateway.models.CertificateSummary]
         """
         self._items = items
 

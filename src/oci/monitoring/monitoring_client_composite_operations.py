@@ -28,7 +28,7 @@ class MonitoringClientCompositeOperations(object):
         Calls :py:func:`~oci.monitoring.MonitoringClient.create_alarm` and waits for the :py:class:`~oci.monitoring.models.Alarm` acted upon
         to enter the given state(s).
 
-        :param CreateAlarmDetails create_alarm_details: (required)
+        :param oci.monitoring.models.CreateAlarmDetails create_alarm_details: (required)
             Document for creating an alarm.
 
         :param list[str] wait_for_states:
@@ -120,7 +120,7 @@ class MonitoringClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAlarmDetails update_alarm_details: (required)
+        :param oci.monitoring.models.UpdateAlarmDetails update_alarm_details: (required)
             Document for updating an alarm.
 
         :param list[str] wait_for_states:

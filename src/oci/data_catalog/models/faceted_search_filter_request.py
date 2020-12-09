@@ -20,11 +20,11 @@ class FacetedSearchFilterRequest(object):
 
         :param search_date_filters:
             The value to assign to the search_date_filters property of this FacetedSearchFilterRequest.
-        :type search_date_filters: list[FacetedSearchDateFilterRequest]
+        :type search_date_filters: list[oci.data_catalog.models.FacetedSearchDateFilterRequest]
 
         :param search_string_filters:
             The value to assign to the search_string_filters property of this FacetedSearchFilterRequest.
-        :type search_string_filters: list[FacetedSearchStringFilterRequest]
+        :type search_string_filters: list[oci.data_catalog.models.FacetedSearchStringFilterRequest]
 
         """
         self.swagger_types = {
@@ -48,7 +48,7 @@ class FacetedSearchFilterRequest(object):
 
 
         :return: The search_date_filters of this FacetedSearchFilterRequest.
-        :rtype: list[FacetedSearchDateFilterRequest]
+        :rtype: list[oci.data_catalog.models.FacetedSearchDateFilterRequest]
         """
         return self._search_date_filters
 
@@ -60,7 +60,7 @@ class FacetedSearchFilterRequest(object):
 
 
         :param search_date_filters: The search_date_filters of this FacetedSearchFilterRequest.
-        :type: list[FacetedSearchDateFilterRequest]
+        :type: list[oci.data_catalog.models.FacetedSearchDateFilterRequest]
         """
         self._search_date_filters = search_date_filters
 
@@ -72,7 +72,7 @@ class FacetedSearchFilterRequest(object):
 
 
         :return: The search_string_filters of this FacetedSearchFilterRequest.
-        :rtype: list[FacetedSearchStringFilterRequest]
+        :rtype: list[oci.data_catalog.models.FacetedSearchStringFilterRequest]
         """
         return self._search_string_filters
 
@@ -84,7 +84,7 @@ class FacetedSearchFilterRequest(object):
 
 
         :param search_string_filters: The search_string_filters of this FacetedSearchFilterRequest.
-        :type: list[FacetedSearchStringFilterRequest]
+        :type: list[oci.data_catalog.models.FacetedSearchStringFilterRequest]
         """
         self._search_string_filters = search_string_filters
 

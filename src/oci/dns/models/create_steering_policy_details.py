@@ -75,11 +75,11 @@ class CreateSteeringPolicyDetails(object):
 
         :param answers:
             The value to assign to the answers property of this CreateSteeringPolicyDetails.
-        :type answers: list[SteeringPolicyAnswer]
+        :type answers: list[oci.dns.models.SteeringPolicyAnswer]
 
         :param rules:
             The value to assign to the rules property of this CreateSteeringPolicyDetails.
-        :type rules: list[SteeringPolicyRule]
+        :type rules: list[oci.dns.models.SteeringPolicyRule]
 
         """
         self.swagger_types = {
@@ -434,7 +434,7 @@ class CreateSteeringPolicyDetails(object):
 
 
         :return: The answers of this CreateSteeringPolicyDetails.
-        :rtype: list[SteeringPolicyAnswer]
+        :rtype: list[oci.dns.models.SteeringPolicyAnswer]
         """
         return self._answers
 
@@ -446,7 +446,7 @@ class CreateSteeringPolicyDetails(object):
 
 
         :param answers: The answers of this CreateSteeringPolicyDetails.
-        :type: list[SteeringPolicyAnswer]
+        :type: list[oci.dns.models.SteeringPolicyAnswer]
         """
         self._answers = answers
 
@@ -464,7 +464,7 @@ class CreateSteeringPolicyDetails(object):
 
 
         :return: The rules of this CreateSteeringPolicyDetails.
-        :rtype: list[SteeringPolicyRule]
+        :rtype: list[oci.dns.models.SteeringPolicyRule]
         """
         return self._rules
 
@@ -482,7 +482,7 @@ class CreateSteeringPolicyDetails(object):
 
 
         :param rules: The rules of this CreateSteeringPolicyDetails.
-        :type: list[SteeringPolicyRule]
+        :type: list[oci.dns.models.SteeringPolicyRule]
         """
         self._rules = rules
 

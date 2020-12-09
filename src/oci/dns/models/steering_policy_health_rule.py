@@ -30,7 +30,7 @@ class SteeringPolicyHealthRule(SteeringPolicyRule):
 
         :param cases:
             The value to assign to the cases property of this SteeringPolicyHealthRule.
-        :type cases: list[SteeringPolicyHealthRuleCase]
+        :type cases: list[oci.dns.models.SteeringPolicyHealthRuleCase]
 
         """
         self.swagger_types = {
@@ -65,7 +65,7 @@ class SteeringPolicyHealthRule(SteeringPolicyRule):
 
 
         :return: The cases of this SteeringPolicyHealthRule.
-        :rtype: list[SteeringPolicyHealthRuleCase]
+        :rtype: list[oci.dns.models.SteeringPolicyHealthRuleCase]
         """
         return self._cases
 
@@ -84,7 +84,7 @@ class SteeringPolicyHealthRule(SteeringPolicyRule):
 
 
         :param cases: The cases of this SteeringPolicyHealthRule.
-        :type: list[SteeringPolicyHealthRuleCase]
+        :type: list[oci.dns.models.SteeringPolicyHealthRuleCase]
         """
         self._cases = cases
 

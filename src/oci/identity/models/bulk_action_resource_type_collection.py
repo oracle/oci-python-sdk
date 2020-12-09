@@ -20,7 +20,7 @@ class BulkActionResourceTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this BulkActionResourceTypeCollection.
-        :type items: list[BulkActionResourceType]
+        :type items: list[oci.identity.models.BulkActionResourceType]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class BulkActionResourceTypeCollection(object):
 
 
         :return: The items of this BulkActionResourceTypeCollection.
-        :rtype: list[BulkActionResourceType]
+        :rtype: list[oci.identity.models.BulkActionResourceType]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class BulkActionResourceTypeCollection(object):
 
 
         :param items: The items of this BulkActionResourceTypeCollection.
-        :type: list[BulkActionResourceType]
+        :type: list[oci.identity.models.BulkActionResourceType]
         """
         self._items = items
 

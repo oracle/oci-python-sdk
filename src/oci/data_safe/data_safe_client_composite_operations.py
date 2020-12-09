@@ -31,7 +31,7 @@ class DataSafeClientCompositeOperations(object):
         :param str data_safe_private_endpoint_id: (required)
             The OCID of the private endpoint.
 
-        :param ChangeDataSafePrivateEndpointCompartmentDetails change_data_safe_private_endpoint_compartment_details: (required)
+        :param oci.data_safe.models.ChangeDataSafePrivateEndpointCompartmentDetails change_data_safe_private_endpoint_compartment_details: (required)
             The details used to change the compartment of a Data Safe private endpoint.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class DataSafeClientCompositeOperations(object):
         Calls :py:func:`~oci.data_safe.DataSafeClient.create_data_safe_private_endpoint` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateDataSafePrivateEndpointDetails create_data_safe_private_endpoint_details: (required)
+        :param oci.data_safe.models.CreateDataSafePrivateEndpointDetails create_data_safe_private_endpoint_details: (required)
             Details to create a new private endpoint.
 
         :param list[str] wait_for_states:
@@ -107,7 +107,7 @@ class DataSafeClientCompositeOperations(object):
         Calls :py:func:`~oci.data_safe.DataSafeClient.create_on_prem_connector` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateOnPremConnectorDetails create_on_prem_connector_details: (required)
+        :param oci.data_safe.models.CreateOnPremConnectorDetails create_on_prem_connector_details: (required)
             The details used to create a new on-premises connector.
 
         :param list[str] wait_for_states:
@@ -237,7 +237,7 @@ class DataSafeClientCompositeOperations(object):
         Calls :py:func:`~oci.data_safe.DataSafeClient.enable_data_safe_configuration` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
         to enter the given state(s).
 
-        :param EnableDataSafeConfigurationDetails enable_data_safe_configuration_details: (required)
+        :param oci.data_safe.models.EnableDataSafeConfigurationDetails enable_data_safe_configuration_details: (required)
             The details used to enable Data Safe.
 
         :param list[str] wait_for_states:
@@ -278,7 +278,7 @@ class DataSafeClientCompositeOperations(object):
         :param str data_safe_private_endpoint_id: (required)
             The OCID of the private endpoint.
 
-        :param UpdateDataSafePrivateEndpointDetails update_data_safe_private_endpoint_details: (required)
+        :param oci.data_safe.models.UpdateDataSafePrivateEndpointDetails update_data_safe_private_endpoint_details: (required)
             The details used to update a Data Safe private endpoint.
 
         :param list[str] wait_for_states:
@@ -319,7 +319,7 @@ class DataSafeClientCompositeOperations(object):
         :param str on_prem_connector_id: (required)
             The OCID of the on-premises connector.
 
-        :param UpdateOnPremConnectorDetails update_on_prem_connector_details: (required)
+        :param oci.data_safe.models.UpdateOnPremConnectorDetails update_on_prem_connector_details: (required)
             The details used to update a on-premises connector.
 
         :param list[str] wait_for_states:
@@ -357,7 +357,7 @@ class DataSafeClientCompositeOperations(object):
         Calls :py:func:`~oci.data_safe.DataSafeClient.update_on_prem_connector_wallet` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateOnPremConnectorWalletDetails update_on_prem_connector_wallet_details: (required)
+        :param oci.data_safe.models.UpdateOnPremConnectorWalletDetails update_on_prem_connector_wallet_details: (required)
             The details used to update an on-premises connector's wallet.
 
         :param str on_prem_connector_id: (required)

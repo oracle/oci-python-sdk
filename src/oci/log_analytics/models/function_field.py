@@ -67,7 +67,7 @@ class FunctionField(AbstractField):
 
         :param arguments:
             The value to assign to the arguments property of this FunctionField.
-        :type arguments: list[Argument]
+        :type arguments: list[oci.log_analytics.models.Argument]
 
         """
         self.swagger_types = {
@@ -146,7 +146,7 @@ class FunctionField(AbstractField):
 
 
         :return: The arguments of this FunctionField.
-        :rtype: list[Argument]
+        :rtype: list[oci.log_analytics.models.Argument]
         """
         return self._arguments
 
@@ -158,7 +158,7 @@ class FunctionField(AbstractField):
 
 
         :param arguments: The arguments of this FunctionField.
-        :type: list[Argument]
+        :type: list[oci.log_analytics.models.Argument]
         """
         self._arguments = arguments
 

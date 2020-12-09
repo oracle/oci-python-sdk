@@ -20,7 +20,7 @@ class RecipientInvitationCollection(object):
 
         :param items:
             The value to assign to the items property of this RecipientInvitationCollection.
-        :type items: list[RecipientInvitationSummary]
+        :type items: list[oci.tenant_manager_control_plane.models.RecipientInvitationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RecipientInvitationCollection(object):
 
 
         :return: The items of this RecipientInvitationCollection.
-        :rtype: list[RecipientInvitationSummary]
+        :rtype: list[oci.tenant_manager_control_plane.models.RecipientInvitationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RecipientInvitationCollection(object):
 
 
         :param items: The items of this RecipientInvitationCollection.
-        :type: list[RecipientInvitationSummary]
+        :type: list[oci.tenant_manager_control_plane.models.RecipientInvitationSummary]
         """
         self._items = items
 

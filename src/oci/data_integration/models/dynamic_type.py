@@ -34,7 +34,7 @@ class DynamicType(BaseType):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DynamicType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this DynamicType.
@@ -50,11 +50,11 @@ class DynamicType(BaseType):
 
         :param type_handler:
             The value to assign to the type_handler property of this DynamicType.
-        :type type_handler: DynamicTypeHandler
+        :type type_handler: oci.data_integration.models.DynamicTypeHandler
 
         :param config_definition:
             The value to assign to the config_definition property of this DynamicType.
-        :type config_definition: ConfigDefinition
+        :type config_definition: oci.data_integration.models.ConfigDefinition
 
         """
         self.swagger_types = {
@@ -98,7 +98,7 @@ class DynamicType(BaseType):
         Gets the type_handler of this DynamicType.
 
         :return: The type_handler of this DynamicType.
-        :rtype: DynamicTypeHandler
+        :rtype: oci.data_integration.models.DynamicTypeHandler
         """
         return self._type_handler
 
@@ -108,7 +108,7 @@ class DynamicType(BaseType):
         Sets the type_handler of this DynamicType.
 
         :param type_handler: The type_handler of this DynamicType.
-        :type: DynamicTypeHandler
+        :type: oci.data_integration.models.DynamicTypeHandler
         """
         self._type_handler = type_handler
 
@@ -118,7 +118,7 @@ class DynamicType(BaseType):
         Gets the config_definition of this DynamicType.
 
         :return: The config_definition of this DynamicType.
-        :rtype: ConfigDefinition
+        :rtype: oci.data_integration.models.ConfigDefinition
         """
         return self._config_definition
 
@@ -128,7 +128,7 @@ class DynamicType(BaseType):
         Sets the config_definition of this DynamicType.
 
         :param config_definition: The config_definition of this DynamicType.
-        :type: ConfigDefinition
+        :type: oci.data_integration.models.ConfigDefinition
         """
         self._config_definition = config_definition
 

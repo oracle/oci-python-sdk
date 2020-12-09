@@ -32,7 +32,7 @@ class GenerateKeyDetails(object):
 
         :param key_shape:
             The value to assign to the key_shape property of this GenerateKeyDetails.
-        :type key_shape: KeyShape
+        :type key_shape: oci.key_management.models.KeyShape
 
         :param logging_context:
             The value to assign to the logging_context property of this GenerateKeyDetails.
@@ -143,7 +143,7 @@ class GenerateKeyDetails(object):
         **[Required]** Gets the key_shape of this GenerateKeyDetails.
 
         :return: The key_shape of this GenerateKeyDetails.
-        :rtype: KeyShape
+        :rtype: oci.key_management.models.KeyShape
         """
         return self._key_shape
 
@@ -153,7 +153,7 @@ class GenerateKeyDetails(object):
         Sets the key_shape of this GenerateKeyDetails.
 
         :param key_shape: The key_shape of this GenerateKeyDetails.
-        :type: KeyShape
+        :type: oci.key_management.models.KeyShape
         """
         self._key_shape = key_shape
 

@@ -53,11 +53,11 @@ class CreateApplicationDetails(object):
 
         :param source_application_info:
             The value to assign to the source_application_info property of this CreateApplicationDetails.
-        :type source_application_info: CreateSourceApplicationInfo
+        :type source_application_info: oci.data_integration.models.CreateSourceApplicationInfo
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateApplicationDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -276,7 +276,7 @@ class CreateApplicationDetails(object):
         Gets the source_application_info of this CreateApplicationDetails.
 
         :return: The source_application_info of this CreateApplicationDetails.
-        :rtype: CreateSourceApplicationInfo
+        :rtype: oci.data_integration.models.CreateSourceApplicationInfo
         """
         return self._source_application_info
 
@@ -286,7 +286,7 @@ class CreateApplicationDetails(object):
         Sets the source_application_info of this CreateApplicationDetails.
 
         :param source_application_info: The source_application_info of this CreateApplicationDetails.
-        :type: CreateSourceApplicationInfo
+        :type: oci.data_integration.models.CreateSourceApplicationInfo
         """
         self._source_application_info = source_application_info
 
@@ -296,7 +296,7 @@ class CreateApplicationDetails(object):
         Gets the registry_metadata of this CreateApplicationDetails.
 
         :return: The registry_metadata of this CreateApplicationDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -306,7 +306,7 @@ class CreateApplicationDetails(object):
         Sets the registry_metadata of this CreateApplicationDetails.
 
         :param registry_metadata: The registry_metadata of this CreateApplicationDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

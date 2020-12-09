@@ -35,11 +35,11 @@ class Shape(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Shape.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this Shape.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this Shape.
@@ -55,7 +55,7 @@ class Shape(TypedObject):
 
         :param type:
             The value to assign to the type property of this Shape.
-        :type type: BaseType
+        :type type: oci.data_integration.models.BaseType
 
         """
         self.swagger_types = {
@@ -99,7 +99,7 @@ class Shape(TypedObject):
         Gets the type of this Shape.
 
         :return: The type of this Shape.
-        :rtype: BaseType
+        :rtype: oci.data_integration.models.BaseType
         """
         return self._type
 
@@ -109,7 +109,7 @@ class Shape(TypedObject):
         Sets the type of this Shape.
 
         :param type: The type of this Shape.
-        :type: BaseType
+        :type: oci.data_integration.models.BaseType
         """
         self._type = type
 

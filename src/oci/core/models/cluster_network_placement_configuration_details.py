@@ -28,7 +28,7 @@ class ClusterNetworkPlacementConfigurationDetails(object):
 
         :param secondary_vnic_subnets:
             The value to assign to the secondary_vnic_subnets property of this ClusterNetworkPlacementConfigurationDetails.
-        :type secondary_vnic_subnets: list[InstancePoolPlacementSecondaryVnicSubnet]
+        :type secondary_vnic_subnets: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
 
         """
         self.swagger_types = {
@@ -113,7 +113,7 @@ class ClusterNetworkPlacementConfigurationDetails(object):
 
 
         :return: The secondary_vnic_subnets of this ClusterNetworkPlacementConfigurationDetails.
-        :rtype: list[InstancePoolPlacementSecondaryVnicSubnet]
+        :rtype: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
         """
         return self._secondary_vnic_subnets
 
@@ -125,7 +125,7 @@ class ClusterNetworkPlacementConfigurationDetails(object):
 
 
         :param secondary_vnic_subnets: The secondary_vnic_subnets of this ClusterNetworkPlacementConfigurationDetails.
-        :type: list[InstancePoolPlacementSecondaryVnicSubnet]
+        :type: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
         """
         self._secondary_vnic_subnets = secondary_vnic_subnets
 

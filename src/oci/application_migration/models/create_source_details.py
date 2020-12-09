@@ -38,11 +38,11 @@ class CreateSourceDetails(object):
 
         :param source_details:
             The value to assign to the source_details property of this CreateSourceDetails.
-        :type source_details: SourceDetails
+        :type source_details: oci.application_migration.models.SourceDetails
 
         :param authorization_details:
             The value to assign to the authorization_details property of this CreateSourceDetails.
-        :type authorization_details: AuthorizationDetails
+        :type authorization_details: oci.application_migration.models.AuthorizationDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSourceDetails.
@@ -163,7 +163,7 @@ class CreateSourceDetails(object):
         **[Required]** Gets the source_details of this CreateSourceDetails.
 
         :return: The source_details of this CreateSourceDetails.
-        :rtype: SourceDetails
+        :rtype: oci.application_migration.models.SourceDetails
         """
         return self._source_details
 
@@ -173,7 +173,7 @@ class CreateSourceDetails(object):
         Sets the source_details of this CreateSourceDetails.
 
         :param source_details: The source_details of this CreateSourceDetails.
-        :type: SourceDetails
+        :type: oci.application_migration.models.SourceDetails
         """
         self._source_details = source_details
 
@@ -183,7 +183,7 @@ class CreateSourceDetails(object):
         Gets the authorization_details of this CreateSourceDetails.
 
         :return: The authorization_details of this CreateSourceDetails.
-        :rtype: AuthorizationDetails
+        :rtype: oci.application_migration.models.AuthorizationDetails
         """
         return self._authorization_details
 
@@ -193,7 +193,7 @@ class CreateSourceDetails(object):
         Sets the authorization_details of this CreateSourceDetails.
 
         :param authorization_details: The authorization_details of this CreateSourceDetails.
-        :type: AuthorizationDetails
+        :type: oci.application_migration.models.AuthorizationDetails
         """
         self._authorization_details = authorization_details
 

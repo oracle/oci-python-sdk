@@ -20,7 +20,7 @@ class DatabaseInsightsCollection(object):
 
         :param items:
             The value to assign to the items property of this DatabaseInsightsCollection.
-        :type items: list[DatabaseInsightSummary]
+        :type items: list[oci.opsi.models.DatabaseInsightSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DatabaseInsightsCollection(object):
 
 
         :return: The items of this DatabaseInsightsCollection.
-        :rtype: list[DatabaseInsightSummary]
+        :rtype: list[oci.opsi.models.DatabaseInsightSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DatabaseInsightsCollection(object):
 
 
         :param items: The items of this DatabaseInsightsCollection.
-        :type: list[DatabaseInsightSummary]
+        :type: list[oci.opsi.models.DatabaseInsightSummary]
         """
         self._items = items
 

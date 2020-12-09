@@ -20,7 +20,7 @@ class LogAnalyticsLabelOperatorCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsLabelOperatorCollection.
-        :type items: list[LogAnalyticsLabelOperator]
+        :type items: list[oci.log_analytics.models.LogAnalyticsLabelOperator]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsLabelOperatorCollection(object):
 
 
         :return: The items of this LogAnalyticsLabelOperatorCollection.
-        :rtype: list[LogAnalyticsLabelOperator]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelOperator]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsLabelOperatorCollection(object):
 
 
         :param items: The items of this LogAnalyticsLabelOperatorCollection.
-        :type: list[LogAnalyticsLabelOperator]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelOperator]
         """
         self._items = items
 

@@ -20,7 +20,7 @@ class PutMessagesDetails(object):
 
         :param messages:
             The value to assign to the messages property of this PutMessagesDetails.
-        :type messages: list[PutMessagesDetailsEntry]
+        :type messages: list[oci.streaming.models.PutMessagesDetailsEntry]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PutMessagesDetails(object):
 
 
         :return: The messages of this PutMessagesDetails.
-        :rtype: list[PutMessagesDetailsEntry]
+        :rtype: list[oci.streaming.models.PutMessagesDetailsEntry]
         """
         return self._messages
 
@@ -53,7 +53,7 @@ class PutMessagesDetails(object):
 
 
         :param messages: The messages of this PutMessagesDetails.
-        :type: list[PutMessagesDetailsEntry]
+        :type: list[oci.streaming.models.PutMessagesDetailsEntry]
         """
         self._messages = messages
 

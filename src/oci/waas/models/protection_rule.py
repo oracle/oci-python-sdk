@@ -58,7 +58,7 @@ class ProtectionRule(object):
 
         :param exclusions:
             The value to assign to the exclusions property of this ProtectionRule.
-        :type exclusions: list[ProtectionRuleExclusion]
+        :type exclusions: list[oci.waas.models.ProtectionRuleExclusion]
 
         """
         self.swagger_types = {
@@ -253,7 +253,7 @@ class ProtectionRule(object):
         Gets the exclusions of this ProtectionRule.
 
         :return: The exclusions of this ProtectionRule.
-        :rtype: list[ProtectionRuleExclusion]
+        :rtype: list[oci.waas.models.ProtectionRuleExclusion]
         """
         return self._exclusions
 
@@ -263,7 +263,7 @@ class ProtectionRule(object):
         Sets the exclusions of this ProtectionRule.
 
         :param exclusions: The exclusions of this ProtectionRule.
-        :type: list[ProtectionRuleExclusion]
+        :type: list[oci.waas.models.ProtectionRuleExclusion]
         """
         self._exclusions = exclusions
 

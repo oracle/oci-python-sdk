@@ -36,7 +36,7 @@ class IncidentResourceType(object):
 
         :param service_category_list:
             The value to assign to the service_category_list property of this IncidentResourceType.
-        :type service_category_list: list[ServiceCategory]
+        :type service_category_list: list[oci.cims.models.ServiceCategory]
 
         """
         self.swagger_types = {
@@ -165,7 +165,7 @@ class IncidentResourceType(object):
 
 
         :return: The service_category_list of this IncidentResourceType.
-        :rtype: list[ServiceCategory]
+        :rtype: list[oci.cims.models.ServiceCategory]
         """
         return self._service_category_list
 
@@ -177,7 +177,7 @@ class IncidentResourceType(object):
 
 
         :param service_category_list: The service_category_list of this IncidentResourceType.
-        :type: list[ServiceCategory]
+        :type: list[oci.cims.models.ServiceCategory]
         """
         self._service_category_list = service_category_list
 

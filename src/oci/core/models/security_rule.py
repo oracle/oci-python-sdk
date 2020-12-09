@@ -74,7 +74,7 @@ class SecurityRule(object):
 
         :param icmp_options:
             The value to assign to the icmp_options property of this SecurityRule.
-        :type icmp_options: IcmpOptions
+        :type icmp_options: oci.core.models.IcmpOptions
 
         :param id:
             The value to assign to the id property of this SecurityRule.
@@ -104,7 +104,7 @@ class SecurityRule(object):
 
         :param tcp_options:
             The value to assign to the tcp_options property of this SecurityRule.
-        :type tcp_options: TcpOptions
+        :type tcp_options: oci.core.models.TcpOptions
 
         :param time_created:
             The value to assign to the time_created property of this SecurityRule.
@@ -112,7 +112,7 @@ class SecurityRule(object):
 
         :param udp_options:
             The value to assign to the udp_options property of this SecurityRule.
-        :type udp_options: UdpOptions
+        :type udp_options: oci.core.models.UdpOptions
 
         """
         self.swagger_types = {
@@ -348,7 +348,7 @@ class SecurityRule(object):
 
 
         :return: The icmp_options of this SecurityRule.
-        :rtype: IcmpOptions
+        :rtype: oci.core.models.IcmpOptions
         """
         return self._icmp_options
 
@@ -372,7 +372,7 @@ class SecurityRule(object):
 
 
         :param icmp_options: The icmp_options of this SecurityRule.
-        :type: IcmpOptions
+        :type: oci.core.models.IcmpOptions
         """
         self._icmp_options = icmp_options
 
@@ -615,7 +615,7 @@ class SecurityRule(object):
 
 
         :return: The tcp_options of this SecurityRule.
-        :rtype: TcpOptions
+        :rtype: oci.core.models.TcpOptions
         """
         return self._tcp_options
 
@@ -628,7 +628,7 @@ class SecurityRule(object):
 
 
         :param tcp_options: The tcp_options of this SecurityRule.
-        :type: TcpOptions
+        :type: oci.core.models.TcpOptions
         """
         self._tcp_options = tcp_options
 
@@ -669,7 +669,7 @@ class SecurityRule(object):
 
 
         :return: The udp_options of this SecurityRule.
-        :rtype: UdpOptions
+        :rtype: oci.core.models.UdpOptions
         """
         return self._udp_options
 
@@ -682,7 +682,7 @@ class SecurityRule(object):
 
 
         :param udp_options: The udp_options of this SecurityRule.
-        :type: UdpOptions
+        :type: oci.core.models.UdpOptions
         """
         self._udp_options = udp_options
 

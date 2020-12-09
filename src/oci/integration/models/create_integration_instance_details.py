@@ -77,11 +77,11 @@ class CreateIntegrationInstanceDetails(object):
 
         :param custom_endpoint:
             The value to assign to the custom_endpoint property of this CreateIntegrationInstanceDetails.
-        :type custom_endpoint: CreateCustomEndpointDetails
+        :type custom_endpoint: oci.integration.models.CreateCustomEndpointDetails
 
         :param alternate_custom_endpoints:
             The value to assign to the alternate_custom_endpoints property of this CreateIntegrationInstanceDetails.
-        :type alternate_custom_endpoints: list[CreateCustomEndpointDetails]
+        :type alternate_custom_endpoints: list[oci.integration.models.CreateCustomEndpointDetails]
 
         :param consumption_model:
             The value to assign to the consumption_model property of this CreateIntegrationInstanceDetails.
@@ -377,7 +377,7 @@ class CreateIntegrationInstanceDetails(object):
         Gets the custom_endpoint of this CreateIntegrationInstanceDetails.
 
         :return: The custom_endpoint of this CreateIntegrationInstanceDetails.
-        :rtype: CreateCustomEndpointDetails
+        :rtype: oci.integration.models.CreateCustomEndpointDetails
         """
         return self._custom_endpoint
 
@@ -387,7 +387,7 @@ class CreateIntegrationInstanceDetails(object):
         Sets the custom_endpoint of this CreateIntegrationInstanceDetails.
 
         :param custom_endpoint: The custom_endpoint of this CreateIntegrationInstanceDetails.
-        :type: CreateCustomEndpointDetails
+        :type: oci.integration.models.CreateCustomEndpointDetails
         """
         self._custom_endpoint = custom_endpoint
 
@@ -400,7 +400,7 @@ class CreateIntegrationInstanceDetails(object):
 
 
         :return: The alternate_custom_endpoints of this CreateIntegrationInstanceDetails.
-        :rtype: list[CreateCustomEndpointDetails]
+        :rtype: list[oci.integration.models.CreateCustomEndpointDetails]
         """
         return self._alternate_custom_endpoints
 
@@ -413,7 +413,7 @@ class CreateIntegrationInstanceDetails(object):
 
 
         :param alternate_custom_endpoints: The alternate_custom_endpoints of this CreateIntegrationInstanceDetails.
-        :type: list[CreateCustomEndpointDetails]
+        :type: list[oci.integration.models.CreateCustomEndpointDetails]
         """
         self._alternate_custom_endpoints = alternate_custom_endpoints
 

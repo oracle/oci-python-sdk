@@ -51,7 +51,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
         :param metadata:
             The value to assign to the metadata property of this DataEntitySummaryFromTable.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key:
             The value to assign to the key property of this DataEntitySummaryFromTable.
@@ -63,7 +63,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataEntitySummaryFromTable.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this DataEntitySummaryFromTable.
@@ -83,7 +83,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
         :param shape:
             The value to assign to the shape property of this DataEntitySummaryFromTable.
-        :type shape: Shape
+        :type shape: oci.data_integration.models.Shape
 
         :param shape_id:
             The value to assign to the shape_id property of this DataEntitySummaryFromTable.
@@ -91,7 +91,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
         :param types:
             The value to assign to the types property of this DataEntitySummaryFromTable.
-        :type types: TypeLibrary
+        :type types: oci.data_integration.models.TypeLibrary
 
         :param entity_type:
             The value to assign to the entity_type property of this DataEntitySummaryFromTable.
@@ -105,11 +105,11 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
         :param unique_keys:
             The value to assign to the unique_keys property of this DataEntitySummaryFromTable.
-        :type unique_keys: list[UniqueKey]
+        :type unique_keys: list[oci.data_integration.models.UniqueKey]
 
         :param foreign_keys:
             The value to assign to the foreign_keys property of this DataEntitySummaryFromTable.
-        :type foreign_keys: list[ForeignKey]
+        :type foreign_keys: list[oci.data_integration.models.ForeignKey]
 
         :param resource_name:
             The value to assign to the resource_name property of this DataEntitySummaryFromTable.
@@ -243,7 +243,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
         Gets the parent_ref of this DataEntitySummaryFromTable.
 
         :return: The parent_ref of this DataEntitySummaryFromTable.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -253,7 +253,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
         Sets the parent_ref of this DataEntitySummaryFromTable.
 
         :param parent_ref: The parent_ref of this DataEntitySummaryFromTable.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -359,7 +359,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
         Gets the shape of this DataEntitySummaryFromTable.
 
         :return: The shape of this DataEntitySummaryFromTable.
-        :rtype: Shape
+        :rtype: oci.data_integration.models.Shape
         """
         return self._shape
 
@@ -369,7 +369,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
         Sets the shape of this DataEntitySummaryFromTable.
 
         :param shape: The shape of this DataEntitySummaryFromTable.
-        :type: Shape
+        :type: oci.data_integration.models.Shape
         """
         self._shape = shape
 
@@ -403,7 +403,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
         Gets the types of this DataEntitySummaryFromTable.
 
         :return: The types of this DataEntitySummaryFromTable.
-        :rtype: TypeLibrary
+        :rtype: oci.data_integration.models.TypeLibrary
         """
         return self._types
 
@@ -413,7 +413,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
         Sets the types of this DataEntitySummaryFromTable.
 
         :param types: The types of this DataEntitySummaryFromTable.
-        :type: TypeLibrary
+        :type: oci.data_integration.models.TypeLibrary
         """
         self._types = types
 
@@ -479,7 +479,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
 
         :return: The unique_keys of this DataEntitySummaryFromTable.
-        :rtype: list[UniqueKey]
+        :rtype: list[oci.data_integration.models.UniqueKey]
         """
         return self._unique_keys
 
@@ -491,7 +491,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
 
         :param unique_keys: The unique_keys of this DataEntitySummaryFromTable.
-        :type: list[UniqueKey]
+        :type: list[oci.data_integration.models.UniqueKey]
         """
         self._unique_keys = unique_keys
 
@@ -503,7 +503,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
 
         :return: The foreign_keys of this DataEntitySummaryFromTable.
-        :rtype: list[ForeignKey]
+        :rtype: list[oci.data_integration.models.ForeignKey]
         """
         return self._foreign_keys
 
@@ -515,7 +515,7 @@ class DataEntitySummaryFromTable(DataEntitySummary):
 
 
         :param foreign_keys: The foreign_keys of this DataEntitySummaryFromTable.
-        :type: list[ForeignKey]
+        :type: list[oci.data_integration.models.ForeignKey]
         """
         self._foreign_keys = foreign_keys
 

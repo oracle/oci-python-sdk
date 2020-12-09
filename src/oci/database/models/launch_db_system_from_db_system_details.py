@@ -69,7 +69,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemFromDbSystemDetails.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromDbSystemDetails.
@@ -130,7 +130,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
 
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemFromDbSystemDetails.
-        :type db_home: CreateDbHomeFromDbSystemDetails
+        :type db_home: oci.database.models.CreateDbHomeFromDbSystemDetails
 
         :param license_model:
             The value to assign to the license_model property of this LaunchDbSystemFromDbSystemDetails.
@@ -261,7 +261,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         **[Required]** Gets the db_home of this LaunchDbSystemFromDbSystemDetails.
 
         :return: The db_home of this LaunchDbSystemFromDbSystemDetails.
-        :rtype: CreateDbHomeFromDbSystemDetails
+        :rtype: oci.database.models.CreateDbHomeFromDbSystemDetails
         """
         return self._db_home
 
@@ -271,7 +271,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         Sets the db_home of this LaunchDbSystemFromDbSystemDetails.
 
         :param db_home: The db_home of this LaunchDbSystemFromDbSystemDetails.
-        :type: CreateDbHomeFromDbSystemDetails
+        :type: oci.database.models.CreateDbHomeFromDbSystemDetails
         """
         self._db_home = db_home
 

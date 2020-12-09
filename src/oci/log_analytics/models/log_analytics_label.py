@@ -44,7 +44,7 @@ class LogAnalyticsLabel(object):
 
         :param aliases:
             The value to assign to the aliases property of this LogAnalyticsLabel.
-        :type aliases: list[LogAnalyticsLabelAlias]
+        :type aliases: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
 
         :param count_usage_in_source:
             The value to assign to the count_usage_in_source property of this LogAnalyticsLabel.
@@ -153,7 +153,7 @@ class LogAnalyticsLabel(object):
 
 
         :return: The aliases of this LogAnalyticsLabel.
-        :rtype: list[LogAnalyticsLabelAlias]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
         """
         return self._aliases
 
@@ -165,7 +165,7 @@ class LogAnalyticsLabel(object):
 
 
         :param aliases: The aliases of this LogAnalyticsLabel.
-        :type: list[LogAnalyticsLabelAlias]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
         """
         self._aliases = aliases
 

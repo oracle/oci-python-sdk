@@ -20,7 +20,7 @@ class LogAnalyticsFieldCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsFieldCollection.
-        :type items: list[LogAnalyticsFieldSummary]
+        :type items: list[oci.log_analytics.models.LogAnalyticsFieldSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsFieldCollection(object):
 
 
         :return: The items of this LogAnalyticsFieldCollection.
-        :rtype: list[LogAnalyticsFieldSummary]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsFieldSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsFieldCollection(object):
 
 
         :param items: The items of this LogAnalyticsFieldCollection.
-        :type: list[LogAnalyticsFieldSummary]
+        :type: list[oci.log_analytics.models.LogAnalyticsFieldSummary]
         """
         self._items = items
 

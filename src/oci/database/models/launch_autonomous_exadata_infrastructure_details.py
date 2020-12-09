@@ -61,7 +61,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this LaunchAutonomousExadataInfrastructureDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LaunchAutonomousExadataInfrastructureDetails.
@@ -354,7 +354,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Gets the maintenance_window_details of this LaunchAutonomousExadataInfrastructureDetails.
 
         :return: The maintenance_window_details of this LaunchAutonomousExadataInfrastructureDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -364,7 +364,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Sets the maintenance_window_details of this LaunchAutonomousExadataInfrastructureDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this LaunchAutonomousExadataInfrastructureDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 

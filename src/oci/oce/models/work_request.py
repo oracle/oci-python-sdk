@@ -76,11 +76,11 @@ class WorkRequest(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequest.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.oce.models.WorkRequestResource]
 
         :param workflow_monitor:
             The value to assign to the workflow_monitor property of this WorkRequest.
-        :type workflow_monitor: WorkflowMonitor
+        :type workflow_monitor: oci.oce.models.WorkflowMonitor
 
         :param percent_complete:
             The value to assign to the percent_complete property of this WorkRequest.
@@ -258,7 +258,7 @@ class WorkRequest(object):
 
 
         :return: The resources of this WorkRequest.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.oce.models.WorkRequestResource]
         """
         return self._resources
 
@@ -270,7 +270,7 @@ class WorkRequest(object):
 
 
         :param resources: The resources of this WorkRequest.
-        :type: list[WorkRequestResource]
+        :type: list[oci.oce.models.WorkRequestResource]
         """
         self._resources = resources
 
@@ -280,7 +280,7 @@ class WorkRequest(object):
         Gets the workflow_monitor of this WorkRequest.
 
         :return: The workflow_monitor of this WorkRequest.
-        :rtype: WorkflowMonitor
+        :rtype: oci.oce.models.WorkflowMonitor
         """
         return self._workflow_monitor
 
@@ -290,7 +290,7 @@ class WorkRequest(object):
         Sets the workflow_monitor of this WorkRequest.
 
         :param workflow_monitor: The workflow_monitor of this WorkRequest.
-        :type: WorkflowMonitor
+        :type: oci.oce.models.WorkflowMonitor
         """
         self._workflow_monitor = workflow_monitor
 

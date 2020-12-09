@@ -72,7 +72,7 @@ class TransferApplianceClientCompositeOperations(object):
         :param str transfer_appliance_label: (required)
             Label of the Transfer Appliance
 
-        :param UpdateTransferApplianceDetails update_transfer_appliance_details: (required)
+        :param oci.dts.models.UpdateTransferApplianceDetails update_transfer_appliance_details: (required)
             fields to update
 
         :param list[str] wait_for_states:

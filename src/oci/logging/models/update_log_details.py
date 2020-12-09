@@ -40,7 +40,7 @@ class UpdateLogDetails(object):
 
         :param configuration:
             The value to assign to the configuration property of this UpdateLogDetails.
-        :type configuration: UpdateConfigurationDetails
+        :type configuration: oci.logging.models.UpdateConfigurationDetails
 
         """
         self.swagger_types = {
@@ -214,7 +214,7 @@ class UpdateLogDetails(object):
         Gets the configuration of this UpdateLogDetails.
 
         :return: The configuration of this UpdateLogDetails.
-        :rtype: UpdateConfigurationDetails
+        :rtype: oci.logging.models.UpdateConfigurationDetails
         """
         return self._configuration
 
@@ -224,7 +224,7 @@ class UpdateLogDetails(object):
         Sets the configuration of this UpdateLogDetails.
 
         :param configuration: The configuration of this UpdateLogDetails.
-        :type: UpdateConfigurationDetails
+        :type: oci.logging.models.UpdateConfigurationDetails
         """
         self._configuration = configuration
 

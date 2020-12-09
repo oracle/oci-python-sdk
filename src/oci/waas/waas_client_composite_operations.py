@@ -70,7 +70,7 @@ class WaasClientCompositeOperations(object):
         Calls :py:func:`~oci.waas.WaasClient.create_address_list` and waits for the :py:class:`~oci.waas.models.AddressList` acted upon
         to enter the given state(s).
 
-        :param CreateAddressListDetails create_address_list_details: (required)
+        :param oci.waas.models.CreateAddressListDetails create_address_list_details: (required)
             The details of the address list resource to create.
 
         :param list[str] wait_for_states:
@@ -108,7 +108,7 @@ class WaasClientCompositeOperations(object):
         Calls :py:func:`~oci.waas.WaasClient.create_certificate` and waits for the :py:class:`~oci.waas.models.Certificate` acted upon
         to enter the given state(s).
 
-        :param CreateCertificateDetails create_certificate_details: (required)
+        :param oci.waas.models.CreateCertificateDetails create_certificate_details: (required)
             The details of the SSL certificate resource to create.
 
         :param list[str] wait_for_states:
@@ -146,7 +146,7 @@ class WaasClientCompositeOperations(object):
         Calls :py:func:`~oci.waas.WaasClient.create_custom_protection_rule` and waits for the :py:class:`~oci.waas.models.CustomProtectionRule` acted upon
         to enter the given state(s).
 
-        :param CreateCustomProtectionRuleDetails create_custom_protection_rule_details: (required)
+        :param oci.waas.models.CreateCustomProtectionRuleDetails create_custom_protection_rule_details: (required)
             The details of the custom protection rule.
 
         :param list[str] wait_for_states:
@@ -184,7 +184,7 @@ class WaasClientCompositeOperations(object):
         Calls :py:func:`~oci.waas.WaasClient.create_waas_policy` and waits for the :py:class:`~oci.waas.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateWaasPolicyDetails create_waas_policy_details: (required)
+        :param oci.waas.models.CreateWaasPolicyDetails create_waas_policy_details: (required)
             The details of the WAAS policy.
 
         :param list[str] wait_for_states:
@@ -669,7 +669,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateCustomProtectionRuleDetails update_custom_protection_rule_details: (required)
+        :param oci.waas.models.UpdateCustomProtectionRuleDetails update_custom_protection_rule_details: (required)
             The details of the custom protection rule to update.
 
         :param list[str] wait_for_states:
@@ -712,7 +712,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param DeviceFingerprintChallenge update_device_fingerprint_challenge_details: (required)
+        :param oci.waas.models.DeviceFingerprintChallenge update_device_fingerprint_challenge_details: (required)
             The device fingerprint challenge settings to be updated.
 
         :param list[str] wait_for_states:
@@ -797,7 +797,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param HumanInteractionChallenge update_human_interaction_challenge_details: (required)
+        :param oci.waas.models.HumanInteractionChallenge update_human_interaction_challenge_details: (required)
             The human interaction challenge settings.
 
         :param list[str] wait_for_states:
@@ -840,7 +840,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param JsChallenge update_js_challenge_details: (required)
+        :param oci.waas.models.JsChallenge update_js_challenge_details: (required)
             The JavaScript challenge settings to be updated.
 
         :param list[str] wait_for_states:
@@ -883,7 +883,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param PolicyConfig update_policy_config_details: (required)
+        :param oci.waas.models.PolicyConfig update_policy_config_details: (required)
             The new configuration to apply to a WAAS policy.
 
         :param list[str] wait_for_states:
@@ -968,7 +968,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ProtectionSettings update_protection_settings_details: (required)
+        :param oci.waas.models.ProtectionSettings update_protection_settings_details: (required)
             The details of the protection settings to be updated.
 
         :param list[str] wait_for_states:
@@ -1054,7 +1054,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateWaasPolicyDetails update_waas_policy_details: (required)
+        :param oci.waas.models.UpdateWaasPolicyDetails update_waas_policy_details: (required)
             The details of the WAAS policy to update.
 
         :param list[str] wait_for_states:
@@ -1139,7 +1139,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddressRateLimiting update_waf_address_rate_limiting_details: (required)
+        :param oci.waas.models.AddressRateLimiting update_waf_address_rate_limiting_details: (required)
             The address rate limiting settings.
 
         :param list[str] wait_for_states:
@@ -1182,7 +1182,7 @@ class WaasClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param WafConfig update_waf_config_details: (required)
+        :param oci.waas.models.WafConfig update_waf_config_details: (required)
             The new Web Application Firewall configuration to apply to a WAAS policy.
 
         :param list[str] wait_for_states:

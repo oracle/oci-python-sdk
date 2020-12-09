@@ -50,11 +50,11 @@ class TargetDetectorDetails(object):
 
         :param configurations:
             The value to assign to the configurations property of this TargetDetectorDetails.
-        :type configurations: list[DetectorConfiguration]
+        :type configurations: list[oci.cloud_guard.models.DetectorConfiguration]
 
         :param condition_groups:
             The value to assign to the condition_groups property of this TargetDetectorDetails.
-        :type condition_groups: list[ConditionGroup]
+        :type condition_groups: list[oci.cloud_guard.models.ConditionGroup]
 
         :param labels:
             The value to assign to the labels property of this TargetDetectorDetails.
@@ -152,7 +152,7 @@ class TargetDetectorDetails(object):
 
 
         :return: The configurations of this TargetDetectorDetails.
-        :rtype: list[DetectorConfiguration]
+        :rtype: list[oci.cloud_guard.models.DetectorConfiguration]
         """
         return self._configurations
 
@@ -164,7 +164,7 @@ class TargetDetectorDetails(object):
 
 
         :param configurations: The configurations of this TargetDetectorDetails.
-        :type: list[DetectorConfiguration]
+        :type: list[oci.cloud_guard.models.DetectorConfiguration]
         """
         self._configurations = configurations
 
@@ -176,7 +176,7 @@ class TargetDetectorDetails(object):
 
 
         :return: The condition_groups of this TargetDetectorDetails.
-        :rtype: list[ConditionGroup]
+        :rtype: list[oci.cloud_guard.models.ConditionGroup]
         """
         return self._condition_groups
 
@@ -188,7 +188,7 @@ class TargetDetectorDetails(object):
 
 
         :param condition_groups: The condition_groups of this TargetDetectorDetails.
-        :type: list[ConditionGroup]
+        :type: list[oci.cloud_guard.models.ConditionGroup]
         """
         self._condition_groups = condition_groups
 

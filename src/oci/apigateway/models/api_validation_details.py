@@ -36,7 +36,7 @@ class ApiValidationDetails(object):
 
         :param details:
             The value to assign to the details property of this ApiValidationDetails.
-        :type details: list[ApiValidationDetail]
+        :type details: list[oci.apigateway.models.ApiValidationDetail]
 
         :param name:
             The value to assign to the name property of this ApiValidationDetails.
@@ -73,7 +73,7 @@ class ApiValidationDetails(object):
 
 
         :return: The details of this ApiValidationDetails.
-        :rtype: list[ApiValidationDetail]
+        :rtype: list[oci.apigateway.models.ApiValidationDetail]
         """
         return self._details
 
@@ -85,7 +85,7 @@ class ApiValidationDetails(object):
 
 
         :param details: The details of this ApiValidationDetails.
-        :type: list[ApiValidationDetail]
+        :type: list[oci.apigateway.models.ApiValidationDetail]
         """
         self._details = details
 

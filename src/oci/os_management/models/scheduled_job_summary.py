@@ -106,11 +106,11 @@ class ScheduledJobSummary(object):
 
         :param managed_instances:
             The value to assign to the managed_instances property of this ScheduledJobSummary.
-        :type managed_instances: list[Id]
+        :type managed_instances: list[oci.os_management.models.Id]
 
         :param managed_instance_groups:
             The value to assign to the managed_instance_groups property of this ScheduledJobSummary.
-        :type managed_instance_groups: list[Id]
+        :type managed_instance_groups: list[oci.os_management.models.Id]
 
         :param operation_type:
             The value to assign to the operation_type property of this ScheduledJobSummary.
@@ -343,7 +343,7 @@ class ScheduledJobSummary(object):
 
 
         :return: The managed_instances of this ScheduledJobSummary.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instances
 
@@ -355,7 +355,7 @@ class ScheduledJobSummary(object):
 
 
         :param managed_instances: The managed_instances of this ScheduledJobSummary.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instances = managed_instances
 
@@ -367,7 +367,7 @@ class ScheduledJobSummary(object):
 
 
         :return: The managed_instance_groups of this ScheduledJobSummary.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instance_groups
 
@@ -379,7 +379,7 @@ class ScheduledJobSummary(object):
 
 
         :param managed_instance_groups: The managed_instance_groups of this ScheduledJobSummary.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instance_groups = managed_instance_groups
 

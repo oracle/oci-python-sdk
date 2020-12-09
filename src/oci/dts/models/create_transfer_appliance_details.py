@@ -20,7 +20,7 @@ class CreateTransferApplianceDetails(object):
 
         :param customer_shipping_address:
             The value to assign to the customer_shipping_address property of this CreateTransferApplianceDetails.
-        :type customer_shipping_address: ShippingAddress
+        :type customer_shipping_address: oci.dts.models.ShippingAddress
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class CreateTransferApplianceDetails(object):
         Gets the customer_shipping_address of this CreateTransferApplianceDetails.
 
         :return: The customer_shipping_address of this CreateTransferApplianceDetails.
-        :rtype: ShippingAddress
+        :rtype: oci.dts.models.ShippingAddress
         """
         return self._customer_shipping_address
 
@@ -49,7 +49,7 @@ class CreateTransferApplianceDetails(object):
         Sets the customer_shipping_address of this CreateTransferApplianceDetails.
 
         :param customer_shipping_address: The customer_shipping_address of this CreateTransferApplianceDetails.
-        :type: ShippingAddress
+        :type: oci.dts.models.ShippingAddress
         """
         self._customer_shipping_address = customer_shipping_address
 

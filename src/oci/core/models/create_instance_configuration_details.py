@@ -42,7 +42,7 @@ class CreateInstanceConfigurationDetails(CreateInstanceConfigurationBase):
 
         :param instance_details:
             The value to assign to the instance_details property of this CreateInstanceConfigurationDetails.
-        :type instance_details: InstanceConfigurationInstanceDetails
+        :type instance_details: oci.core.models.InstanceConfigurationInstanceDetails
 
         """
         self.swagger_types = {
@@ -77,7 +77,7 @@ class CreateInstanceConfigurationDetails(CreateInstanceConfigurationBase):
         **[Required]** Gets the instance_details of this CreateInstanceConfigurationDetails.
 
         :return: The instance_details of this CreateInstanceConfigurationDetails.
-        :rtype: InstanceConfigurationInstanceDetails
+        :rtype: oci.core.models.InstanceConfigurationInstanceDetails
         """
         return self._instance_details
 
@@ -87,7 +87,7 @@ class CreateInstanceConfigurationDetails(CreateInstanceConfigurationBase):
         Sets the instance_details of this CreateInstanceConfigurationDetails.
 
         :param instance_details: The instance_details of this CreateInstanceConfigurationDetails.
-        :type: InstanceConfigurationInstanceDetails
+        :type: oci.core.models.InstanceConfigurationInstanceDetails
         """
         self._instance_details = instance_details
 

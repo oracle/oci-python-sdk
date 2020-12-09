@@ -20,15 +20,15 @@ class SearchResponse(object):
 
         :param results:
             The value to assign to the results property of this SearchResponse.
-        :type results: list[SearchResult]
+        :type results: list[oci.loggingsearch.models.SearchResult]
 
         :param fields:
             The value to assign to the fields property of this SearchResponse.
-        :type fields: list[FieldInfo]
+        :type fields: list[oci.loggingsearch.models.FieldInfo]
 
         :param summary:
             The value to assign to the summary property of this SearchResponse.
-        :type summary: SearchResultSummary
+        :type summary: oci.loggingsearch.models.SearchResultSummary
 
         """
         self.swagger_types = {
@@ -55,7 +55,7 @@ class SearchResponse(object):
 
 
         :return: The results of this SearchResponse.
-        :rtype: list[SearchResult]
+        :rtype: list[oci.loggingsearch.models.SearchResult]
         """
         return self._results
 
@@ -67,7 +67,7 @@ class SearchResponse(object):
 
 
         :param results: The results of this SearchResponse.
-        :type: list[SearchResult]
+        :type: list[oci.loggingsearch.models.SearchResult]
         """
         self._results = results
 
@@ -79,7 +79,7 @@ class SearchResponse(object):
 
 
         :return: The fields of this SearchResponse.
-        :rtype: list[FieldInfo]
+        :rtype: list[oci.loggingsearch.models.FieldInfo]
         """
         return self._fields
 
@@ -91,7 +91,7 @@ class SearchResponse(object):
 
 
         :param fields: The fields of this SearchResponse.
-        :type: list[FieldInfo]
+        :type: list[oci.loggingsearch.models.FieldInfo]
         """
         self._fields = fields
 
@@ -101,7 +101,7 @@ class SearchResponse(object):
         **[Required]** Gets the summary of this SearchResponse.
 
         :return: The summary of this SearchResponse.
-        :rtype: SearchResultSummary
+        :rtype: oci.loggingsearch.models.SearchResultSummary
         """
         return self._summary
 
@@ -111,7 +111,7 @@ class SearchResponse(object):
         Sets the summary of this SearchResponse.
 
         :param summary: The summary of this SearchResponse.
-        :type: SearchResultSummary
+        :type: oci.loggingsearch.models.SearchResultSummary
         """
         self._summary = summary
 

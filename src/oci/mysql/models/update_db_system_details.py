@@ -80,11 +80,11 @@ class UpdateDbSystemDetails(object):
 
         :param backup_policy:
             The value to assign to the backup_policy property of this UpdateDbSystemDetails.
-        :type backup_policy: UpdateBackupPolicyDetails
+        :type backup_policy: oci.mysql.models.UpdateBackupPolicyDetails
 
         :param maintenance:
             The value to assign to the maintenance property of this UpdateDbSystemDetails.
-        :type maintenance: UpdateMaintenanceDetails
+        :type maintenance: oci.mysql.models.UpdateMaintenanceDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDbSystemDetails.
@@ -567,7 +567,7 @@ class UpdateDbSystemDetails(object):
         Gets the backup_policy of this UpdateDbSystemDetails.
 
         :return: The backup_policy of this UpdateDbSystemDetails.
-        :rtype: UpdateBackupPolicyDetails
+        :rtype: oci.mysql.models.UpdateBackupPolicyDetails
         """
         return self._backup_policy
 
@@ -577,7 +577,7 @@ class UpdateDbSystemDetails(object):
         Sets the backup_policy of this UpdateDbSystemDetails.
 
         :param backup_policy: The backup_policy of this UpdateDbSystemDetails.
-        :type: UpdateBackupPolicyDetails
+        :type: oci.mysql.models.UpdateBackupPolicyDetails
         """
         self._backup_policy = backup_policy
 
@@ -587,7 +587,7 @@ class UpdateDbSystemDetails(object):
         Gets the maintenance of this UpdateDbSystemDetails.
 
         :return: The maintenance of this UpdateDbSystemDetails.
-        :rtype: UpdateMaintenanceDetails
+        :rtype: oci.mysql.models.UpdateMaintenanceDetails
         """
         return self._maintenance
 
@@ -597,7 +597,7 @@ class UpdateDbSystemDetails(object):
         Sets the maintenance of this UpdateDbSystemDetails.
 
         :param maintenance: The maintenance of this UpdateDbSystemDetails.
-        :type: UpdateMaintenanceDetails
+        :type: oci.mysql.models.UpdateMaintenanceDetails
         """
         self._maintenance = maintenance
 

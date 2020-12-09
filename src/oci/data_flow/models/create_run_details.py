@@ -79,7 +79,7 @@ class CreateRunDetails(object):
 
         :param parameters:
             The value to assign to the parameters property of this CreateRunDetails.
-        :type parameters: list[ApplicationParameter]
+        :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this CreateRunDetails.
@@ -445,7 +445,7 @@ class CreateRunDetails(object):
 
 
         :return: The parameters of this CreateRunDetails.
-        :rtype: list[ApplicationParameter]
+        :rtype: list[oci.data_flow.models.ApplicationParameter]
         """
         return self._parameters
 
@@ -460,7 +460,7 @@ class CreateRunDetails(object):
 
 
         :param parameters: The parameters of this CreateRunDetails.
-        :type: list[ApplicationParameter]
+        :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
 

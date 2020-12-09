@@ -24,7 +24,7 @@ class ParserTestResult(object):
 
         :param entries:
             The value to assign to the entries property of this ParserTestResult.
-        :type entries: list[AbstractParserTestResultLogEntry]
+        :type entries: list[oci.log_analytics.models.AbstractParserTestResultLogEntry]
 
         :param example_content:
             The value to assign to the example_content property of this ParserTestResult.
@@ -32,7 +32,7 @@ class ParserTestResult(object):
 
         :param lines:
             The value to assign to the lines property of this ParserTestResult.
-        :type lines: list[AbstractParserTestResultLogLine]
+        :type lines: list[oci.log_analytics.models.AbstractParserTestResultLogLine]
 
         :param named_capture_groups:
             The value to assign to the named_capture_groups property of this ParserTestResult.
@@ -93,7 +93,7 @@ class ParserTestResult(object):
 
 
         :return: The entries of this ParserTestResult.
-        :rtype: list[AbstractParserTestResultLogEntry]
+        :rtype: list[oci.log_analytics.models.AbstractParserTestResultLogEntry]
         """
         return self._entries
 
@@ -105,7 +105,7 @@ class ParserTestResult(object):
 
 
         :param entries: The entries of this ParserTestResult.
-        :type: list[AbstractParserTestResultLogEntry]
+        :type: list[oci.log_analytics.models.AbstractParserTestResultLogEntry]
         """
         self._entries = entries
 
@@ -141,7 +141,7 @@ class ParserTestResult(object):
 
 
         :return: The lines of this ParserTestResult.
-        :rtype: list[AbstractParserTestResultLogLine]
+        :rtype: list[oci.log_analytics.models.AbstractParserTestResultLogLine]
         """
         return self._lines
 
@@ -153,7 +153,7 @@ class ParserTestResult(object):
 
 
         :param lines: The lines of this ParserTestResult.
-        :type: list[AbstractParserTestResultLogLine]
+        :type: list[oci.log_analytics.models.AbstractParserTestResultLogLine]
         """
         self._lines = lines
 

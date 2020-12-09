@@ -120,7 +120,7 @@ class Alarm(object):
 
         :param suppression:
             The value to assign to the suppression property of this Alarm.
-        :type suppression: Suppression
+        :type suppression: oci.monitoring.models.Suppression
 
         :param is_enabled:
             The value to assign to the is_enabled property of this Alarm.
@@ -733,7 +733,7 @@ class Alarm(object):
 
 
         :return: The suppression of this Alarm.
-        :rtype: Suppression
+        :rtype: oci.monitoring.models.Suppression
         """
         return self._suppression
 
@@ -745,7 +745,7 @@ class Alarm(object):
 
 
         :param suppression: The suppression of this Alarm.
-        :type: Suppression
+        :type: oci.monitoring.models.Suppression
         """
         self._suppression = suppression
 

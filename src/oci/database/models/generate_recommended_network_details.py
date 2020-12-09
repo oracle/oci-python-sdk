@@ -28,7 +28,7 @@ class GenerateRecommendedNetworkDetails(object):
 
         :param networks:
             The value to assign to the networks property of this GenerateRecommendedNetworkDetails.
-        :type networks: list[InfoForNetworkGenDetails]
+        :type networks: list[oci.database.models.InfoForNetworkGenDetails]
 
         :param dns:
             The value to assign to the dns property of this GenerateRecommendedNetworkDetails.
@@ -135,7 +135,7 @@ class GenerateRecommendedNetworkDetails(object):
 
 
         :return: The networks of this GenerateRecommendedNetworkDetails.
-        :rtype: list[InfoForNetworkGenDetails]
+        :rtype: list[oci.database.models.InfoForNetworkGenDetails]
         """
         return self._networks
 
@@ -147,7 +147,7 @@ class GenerateRecommendedNetworkDetails(object):
 
 
         :param networks: The networks of this GenerateRecommendedNetworkDetails.
-        :type: list[InfoForNetworkGenDetails]
+        :type: list[oci.database.models.InfoForNetworkGenDetails]
         """
         self._networks = networks
 

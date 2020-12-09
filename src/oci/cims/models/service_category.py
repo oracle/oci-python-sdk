@@ -64,7 +64,7 @@ class ServiceCategory(object):
 
         :param issue_type_list:
             The value to assign to the issue_type_list property of this ServiceCategory.
-        :type issue_type_list: list[IssueType]
+        :type issue_type_list: list[oci.cims.models.IssueType]
 
         :param scope:
             The value to assign to the scope property of this ServiceCategory.
@@ -218,7 +218,7 @@ class ServiceCategory(object):
 
 
         :return: The issue_type_list of this ServiceCategory.
-        :rtype: list[IssueType]
+        :rtype: list[oci.cims.models.IssueType]
         """
         return self._issue_type_list
 
@@ -230,7 +230,7 @@ class ServiceCategory(object):
 
 
         :param issue_type_list: The issue_type_list of this ServiceCategory.
-        :type: list[IssueType]
+        :type: list[oci.cims.models.IssueType]
         """
         self._issue_type_list = issue_type_list
 

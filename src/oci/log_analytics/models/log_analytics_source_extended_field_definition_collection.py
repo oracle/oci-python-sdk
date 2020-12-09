@@ -20,7 +20,7 @@ class LogAnalyticsSourceExtendedFieldDefinitionCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsSourceExtendedFieldDefinitionCollection.
-        :type items: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :type items: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsSourceExtendedFieldDefinitionCollection(object):
 
 
         :return: The items of this LogAnalyticsSourceExtendedFieldDefinitionCollection.
-        :rtype: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsSourceExtendedFieldDefinitionCollection(object):
 
 
         :param items: The items of this LogAnalyticsSourceExtendedFieldDefinitionCollection.
-        :type: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
         """
         self._items = items
 

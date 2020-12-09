@@ -104,7 +104,7 @@ class ComputeClient(object):
         :param str shape_name: (required)
             Shape name.
 
-        :param AddImageShapeCompatibilityEntryDetails add_image_shape_compatibility_entry_details: (optional)
+        :param oci.core.models.AddImageShapeCompatibilityEntryDetails add_image_shape_compatibility_entry_details: (optional)
             Image shape compatibility details
 
         :param obj retry_strategy: (optional)

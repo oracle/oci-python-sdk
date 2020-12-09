@@ -20,7 +20,7 @@ class ConnectionValidation(object):
 
         :param validation_message:
             The value to assign to the validation_message property of this ConnectionValidation.
-        :type validation_message: Message
+        :type validation_message: oci.data_integration.models.Message
 
         :param key:
             The value to assign to the key property of this ConnectionValidation.
@@ -36,7 +36,7 @@ class ConnectionValidation(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConnectionValidation.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ConnectionValidation.
@@ -60,7 +60,7 @@ class ConnectionValidation(object):
 
         :param metadata:
             The value to assign to the metadata property of this ConnectionValidation.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -109,7 +109,7 @@ class ConnectionValidation(object):
         Gets the validation_message of this ConnectionValidation.
 
         :return: The validation_message of this ConnectionValidation.
-        :rtype: Message
+        :rtype: oci.data_integration.models.Message
         """
         return self._validation_message
 
@@ -119,7 +119,7 @@ class ConnectionValidation(object):
         Sets the validation_message of this ConnectionValidation.
 
         :param validation_message: The validation_message of this ConnectionValidation.
-        :type: Message
+        :type: oci.data_integration.models.Message
         """
         self._validation_message = validation_message
 
@@ -201,7 +201,7 @@ class ConnectionValidation(object):
         Gets the parent_ref of this ConnectionValidation.
 
         :return: The parent_ref of this ConnectionValidation.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -211,7 +211,7 @@ class ConnectionValidation(object):
         Sets the parent_ref of this ConnectionValidation.
 
         :param parent_ref: The parent_ref of this ConnectionValidation.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -341,7 +341,7 @@ class ConnectionValidation(object):
         Gets the metadata of this ConnectionValidation.
 
         :return: The metadata of this ConnectionValidation.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -351,7 +351,7 @@ class ConnectionValidation(object):
         Sets the metadata of this ConnectionValidation.
 
         :param metadata: The metadata of this ConnectionValidation.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

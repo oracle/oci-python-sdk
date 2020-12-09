@@ -40,7 +40,7 @@ class CreateInstancePoolDetails(object):
 
         :param placement_configurations:
             The value to assign to the placement_configurations property of this CreateInstancePoolDetails.
-        :type placement_configurations: list[CreateInstancePoolPlacementConfigurationDetails]
+        :type placement_configurations: list[oci.core.models.CreateInstancePoolPlacementConfigurationDetails]
 
         :param size:
             The value to assign to the size property of this CreateInstancePoolDetails.
@@ -48,7 +48,7 @@ class CreateInstancePoolDetails(object):
 
         :param load_balancers:
             The value to assign to the load_balancers property of this CreateInstancePoolDetails.
-        :type load_balancers: list[AttachLoadBalancerDetails]
+        :type load_balancers: list[oci.core.models.AttachLoadBalancerDetails]
 
         """
         self.swagger_types = {
@@ -247,7 +247,7 @@ class CreateInstancePoolDetails(object):
 
 
         :return: The placement_configurations of this CreateInstancePoolDetails.
-        :rtype: list[CreateInstancePoolPlacementConfigurationDetails]
+        :rtype: list[oci.core.models.CreateInstancePoolPlacementConfigurationDetails]
         """
         return self._placement_configurations
 
@@ -264,7 +264,7 @@ class CreateInstancePoolDetails(object):
 
 
         :param placement_configurations: The placement_configurations of this CreateInstancePoolDetails.
-        :type: list[CreateInstancePoolPlacementConfigurationDetails]
+        :type: list[oci.core.models.CreateInstancePoolPlacementConfigurationDetails]
         """
         self._placement_configurations = placement_configurations
 
@@ -300,7 +300,7 @@ class CreateInstancePoolDetails(object):
 
 
         :return: The load_balancers of this CreateInstancePoolDetails.
-        :rtype: list[AttachLoadBalancerDetails]
+        :rtype: list[oci.core.models.AttachLoadBalancerDetails]
         """
         return self._load_balancers
 
@@ -312,7 +312,7 @@ class CreateInstancePoolDetails(object):
 
 
         :param load_balancers: The load_balancers of this CreateInstancePoolDetails.
-        :type: list[AttachLoadBalancerDetails]
+        :type: list[oci.core.models.AttachLoadBalancerDetails]
         """
         self._load_balancers = load_balancers
 

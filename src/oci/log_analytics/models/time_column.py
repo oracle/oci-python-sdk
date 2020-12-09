@@ -35,7 +35,7 @@ class TimeColumn(AbstractColumn):
 
         :param values:
             The value to assign to the values property of this TimeColumn.
-        :type values: list[FieldValue]
+        :type values: list[oci.log_analytics.models.FieldValue]
 
         :param is_list_of_values:
             The value to assign to the is_list_of_values property of this TimeColumn.

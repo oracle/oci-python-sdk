@@ -44,7 +44,7 @@ class ServiceSummary(object):
 
         :param resource_types:
             The value to assign to the resource_types property of this ServiceSummary.
-        :type resource_types: list[ResourceType]
+        :type resource_types: list[oci.logging.models.ResourceType]
 
         """
         self.swagger_types = {
@@ -227,7 +227,7 @@ class ServiceSummary(object):
 
 
         :return: The resource_types of this ServiceSummary.
-        :rtype: list[ResourceType]
+        :rtype: list[oci.logging.models.ResourceType]
         """
         return self._resource_types
 
@@ -239,7 +239,7 @@ class ServiceSummary(object):
 
 
         :param resource_types: The resource_types of this ServiceSummary.
-        :type: list[ResourceType]
+        :type: list[oci.logging.models.ResourceType]
         """
         self._resource_types = resource_types
 

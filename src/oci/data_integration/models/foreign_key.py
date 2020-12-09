@@ -34,7 +34,7 @@ class ForeignKey(Key):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ForeignKey.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ForeignKey.
@@ -42,7 +42,7 @@ class ForeignKey(Key):
 
         :param attribute_refs:
             The value to assign to the attribute_refs property of this ForeignKey.
-        :type attribute_refs: list[KeyAttribute]
+        :type attribute_refs: list[oci.data_integration.models.KeyAttribute]
 
         :param update_rule:
             The value to assign to the update_rule property of this ForeignKey.
@@ -54,7 +54,7 @@ class ForeignKey(Key):
 
         :param reference_unique_key:
             The value to assign to the reference_unique_key property of this ForeignKey.
-        :type reference_unique_key: UniqueKey
+        :type reference_unique_key: oci.data_integration.models.UniqueKey
 
         :param object_status:
             The value to assign to the object_status property of this ForeignKey.
@@ -153,7 +153,7 @@ class ForeignKey(Key):
         Gets the parent_ref of this ForeignKey.
 
         :return: The parent_ref of this ForeignKey.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -163,7 +163,7 @@ class ForeignKey(Key):
         Sets the parent_ref of this ForeignKey.
 
         :param parent_ref: The parent_ref of this ForeignKey.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -199,7 +199,7 @@ class ForeignKey(Key):
 
 
         :return: The attribute_refs of this ForeignKey.
-        :rtype: list[KeyAttribute]
+        :rtype: list[oci.data_integration.models.KeyAttribute]
         """
         return self._attribute_refs
 
@@ -211,7 +211,7 @@ class ForeignKey(Key):
 
 
         :param attribute_refs: The attribute_refs of this ForeignKey.
-        :type: list[KeyAttribute]
+        :type: list[oci.data_integration.models.KeyAttribute]
         """
         self._attribute_refs = attribute_refs
 
@@ -269,7 +269,7 @@ class ForeignKey(Key):
         Gets the reference_unique_key of this ForeignKey.
 
         :return: The reference_unique_key of this ForeignKey.
-        :rtype: UniqueKey
+        :rtype: oci.data_integration.models.UniqueKey
         """
         return self._reference_unique_key
 
@@ -279,7 +279,7 @@ class ForeignKey(Key):
         Sets the reference_unique_key of this ForeignKey.
 
         :param reference_unique_key: The reference_unique_key of this ForeignKey.
-        :type: UniqueKey
+        :type: oci.data_integration.models.UniqueKey
         """
         self._reference_unique_key = reference_unique_key
 

@@ -48,11 +48,11 @@ class Listener(object):
 
         :param ssl_configuration:
             The value to assign to the ssl_configuration property of this Listener.
-        :type ssl_configuration: SSLConfiguration
+        :type ssl_configuration: oci.load_balancer.models.SSLConfiguration
 
         :param connection_configuration:
             The value to assign to the connection_configuration property of this Listener.
-        :type connection_configuration: ConnectionConfiguration
+        :type connection_configuration: oci.load_balancer.models.ConnectionConfiguration
 
         :param rule_set_names:
             The value to assign to the rule_set_names property of this Listener.
@@ -269,7 +269,7 @@ class Listener(object):
         Gets the ssl_configuration of this Listener.
 
         :return: The ssl_configuration of this Listener.
-        :rtype: SSLConfiguration
+        :rtype: oci.load_balancer.models.SSLConfiguration
         """
         return self._ssl_configuration
 
@@ -279,7 +279,7 @@ class Listener(object):
         Sets the ssl_configuration of this Listener.
 
         :param ssl_configuration: The ssl_configuration of this Listener.
-        :type: SSLConfiguration
+        :type: oci.load_balancer.models.SSLConfiguration
         """
         self._ssl_configuration = ssl_configuration
 
@@ -289,7 +289,7 @@ class Listener(object):
         Gets the connection_configuration of this Listener.
 
         :return: The connection_configuration of this Listener.
-        :rtype: ConnectionConfiguration
+        :rtype: oci.load_balancer.models.ConnectionConfiguration
         """
         return self._connection_configuration
 
@@ -299,7 +299,7 @@ class Listener(object):
         Sets the connection_configuration of this Listener.
 
         :param connection_configuration: The connection_configuration of this Listener.
-        :type: ConnectionConfiguration
+        :type: oci.load_balancer.models.ConnectionConfiguration
         """
         self._connection_configuration = connection_configuration
 

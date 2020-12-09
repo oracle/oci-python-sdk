@@ -44,7 +44,7 @@ class CreateSecretDetails(object):
 
         :param secret_content:
             The value to assign to the secret_content property of this CreateSecretDetails.
-        :type secret_content: SecretContentDetails
+        :type secret_content: oci.vault.models.SecretContentDetails
 
         :param secret_name:
             The value to assign to the secret_name property of this CreateSecretDetails.
@@ -52,7 +52,7 @@ class CreateSecretDetails(object):
 
         :param secret_rules:
             The value to assign to the secret_rules property of this CreateSecretDetails.
-        :type secret_rules: list[SecretRule]
+        :type secret_rules: list[oci.vault.models.SecretRule]
 
         :param vault_id:
             The value to assign to the vault_id property of this CreateSecretDetails.
@@ -266,7 +266,7 @@ class CreateSecretDetails(object):
         **[Required]** Gets the secret_content of this CreateSecretDetails.
 
         :return: The secret_content of this CreateSecretDetails.
-        :rtype: SecretContentDetails
+        :rtype: oci.vault.models.SecretContentDetails
         """
         return self._secret_content
 
@@ -276,7 +276,7 @@ class CreateSecretDetails(object):
         Sets the secret_content of this CreateSecretDetails.
 
         :param secret_content: The secret_content of this CreateSecretDetails.
-        :type: SecretContentDetails
+        :type: oci.vault.models.SecretContentDetails
         """
         self._secret_content = secret_content
 
@@ -312,7 +312,7 @@ class CreateSecretDetails(object):
 
 
         :return: The secret_rules of this CreateSecretDetails.
-        :rtype: list[SecretRule]
+        :rtype: list[oci.vault.models.SecretRule]
         """
         return self._secret_rules
 
@@ -324,7 +324,7 @@ class CreateSecretDetails(object):
 
 
         :param secret_rules: The secret_rules of this CreateSecretDetails.
-        :type: list[SecretRule]
+        :type: list[oci.vault.models.SecretRule]
         """
         self._secret_rules = secret_rules
 

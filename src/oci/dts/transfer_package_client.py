@@ -168,7 +168,7 @@ class TransferPackageClient(object):
 
         :param str opc_retry_token: (optional)
 
-        :param CreateTransferPackageDetails create_transfer_package_details: (optional)
+        :param oci.dts.models.CreateTransferPackageDetails create_transfer_package_details: (optional)
             Creates a New Transfer Package
 
         :param obj retry_strategy: (optional)

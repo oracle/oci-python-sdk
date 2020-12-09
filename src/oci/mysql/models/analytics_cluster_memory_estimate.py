@@ -64,7 +64,7 @@ class AnalyticsClusterMemoryEstimate(object):
 
         :param table_schemas:
             The value to assign to the table_schemas property of this AnalyticsClusterMemoryEstimate.
-        :type table_schemas: list[AnalyticsClusterSchemaMemoryEstimate]
+        :type table_schemas: list[oci.mysql.models.AnalyticsClusterSchemaMemoryEstimate]
 
         """
         self.swagger_types = {
@@ -208,7 +208,7 @@ class AnalyticsClusterMemoryEstimate(object):
 
 
         :return: The table_schemas of this AnalyticsClusterMemoryEstimate.
-        :rtype: list[AnalyticsClusterSchemaMemoryEstimate]
+        :rtype: list[oci.mysql.models.AnalyticsClusterSchemaMemoryEstimate]
         """
         return self._table_schemas
 
@@ -221,7 +221,7 @@ class AnalyticsClusterMemoryEstimate(object):
 
 
         :param table_schemas: The table_schemas of this AnalyticsClusterMemoryEstimate.
-        :type: list[AnalyticsClusterSchemaMemoryEstimate]
+        :type: list[oci.mysql.models.AnalyticsClusterSchemaMemoryEstimate]
         """
         self._table_schemas = table_schemas
 

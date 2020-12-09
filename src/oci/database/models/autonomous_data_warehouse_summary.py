@@ -124,7 +124,7 @@ class AutonomousDataWarehouseSummary(object):
 
         :param connection_strings:
             The value to assign to the connection_strings property of this AutonomousDataWarehouseSummary.
-        :type connection_strings: AutonomousDataWarehouseConnectionStrings
+        :type connection_strings: oci.database.models.AutonomousDataWarehouseConnectionStrings
 
         :param license_model:
             The value to assign to the license_model property of this AutonomousDataWarehouseSummary.
@@ -459,7 +459,7 @@ class AutonomousDataWarehouseSummary(object):
 
 
         :return: The connection_strings of this AutonomousDataWarehouseSummary.
-        :rtype: AutonomousDataWarehouseConnectionStrings
+        :rtype: oci.database.models.AutonomousDataWarehouseConnectionStrings
         """
         return self._connection_strings
 
@@ -471,7 +471,7 @@ class AutonomousDataWarehouseSummary(object):
 
 
         :param connection_strings: The connection_strings of this AutonomousDataWarehouseSummary.
-        :type: AutonomousDataWarehouseConnectionStrings
+        :type: oci.database.models.AutonomousDataWarehouseConnectionStrings
         """
         self._connection_strings = connection_strings
 

@@ -26,7 +26,7 @@ class PathRoute(object):
 
         :param path_match_type:
             The value to assign to the path_match_type property of this PathRoute.
-        :type path_match_type: PathMatchType
+        :type path_match_type: oci.load_balancer.models.PathMatchType
 
         :param backend_set_name:
             The value to assign to the backend_set_name property of this PathRoute.
@@ -97,7 +97,7 @@ class PathRoute(object):
 
 
         :return: The path_match_type of this PathRoute.
-        :rtype: PathMatchType
+        :rtype: oci.load_balancer.models.PathMatchType
         """
         return self._path_match_type
 
@@ -109,7 +109,7 @@ class PathRoute(object):
 
 
         :param path_match_type: The path_match_type of this PathRoute.
-        :type: PathMatchType
+        :type: oci.load_balancer.models.PathMatchType
         """
         self._path_match_type = path_match_type
 

@@ -86,7 +86,7 @@ class ProfileSummary(object):
 
         :param levels_configuration:
             The value to assign to the levels_configuration property of this ProfileSummary.
-        :type levels_configuration: LevelsConfiguration
+        :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
         :param time_created:
             The value to assign to the time_created property of this ProfileSummary.
@@ -334,7 +334,7 @@ class ProfileSummary(object):
         Gets the levels_configuration of this ProfileSummary.
 
         :return: The levels_configuration of this ProfileSummary.
-        :rtype: LevelsConfiguration
+        :rtype: oci.optimizer.models.LevelsConfiguration
         """
         return self._levels_configuration
 
@@ -344,7 +344,7 @@ class ProfileSummary(object):
         Sets the levels_configuration of this ProfileSummary.
 
         :param levels_configuration: The levels_configuration of this ProfileSummary.
-        :type: LevelsConfiguration
+        :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
 

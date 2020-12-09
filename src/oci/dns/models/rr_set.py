@@ -23,7 +23,7 @@ class RRSet(object):
 
         :param items:
             The value to assign to the items property of this RRSet.
-        :type items: list[Record]
+        :type items: list[oci.dns.models.Record]
 
         """
         self.swagger_types = {
@@ -42,7 +42,7 @@ class RRSet(object):
         **[Required]** Gets the items of this RRSet.
 
         :return: The items of this RRSet.
-        :rtype: list[Record]
+        :rtype: list[oci.dns.models.Record]
         """
         return self._items
 
@@ -52,7 +52,7 @@ class RRSet(object):
         Sets the items of this RRSet.
 
         :param items: The items of this RRSet.
-        :type: list[Record]
+        :type: list[oci.dns.models.Record]
         """
         self._items = items
 

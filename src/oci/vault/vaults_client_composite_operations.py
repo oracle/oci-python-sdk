@@ -28,7 +28,7 @@ class VaultsClientCompositeOperations(object):
         Calls :py:func:`~oci.vault.VaultsClient.create_secret` and waits for the :py:class:`~oci.vault.models.Secret` acted upon
         to enter the given state(s).
 
-        :param CreateSecretDetails create_secret_details: (required)
+        :param oci.vault.models.CreateSecretDetails create_secret_details: (required)
             Request to create a new secret.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class VaultsClientCompositeOperations(object):
         :param str secret_id: (required)
             The OCID of the secret.
 
-        :param UpdateSecretDetails update_secret_details: (required)
+        :param oci.vault.models.UpdateSecretDetails update_secret_details: (required)
             Request to update a secret.
 
         :param list[str] wait_for_states:

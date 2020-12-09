@@ -159,7 +159,7 @@ class Attribute(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this Attribute.
-        :type custom_property_members: list[CustomPropertyGetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
 
         :param properties:
             The value to assign to the properties property of this Attribute.
@@ -917,7 +917,7 @@ class Attribute(object):
 
 
         :return: The custom_property_members of this Attribute.
-        :rtype: list[CustomPropertyGetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         return self._custom_property_members
 
@@ -929,7 +929,7 @@ class Attribute(object):
 
 
         :param custom_property_members: The custom_property_members of this Attribute.
-        :type: list[CustomPropertyGetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         self._custom_property_members = custom_property_members
 

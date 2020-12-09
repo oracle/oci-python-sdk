@@ -100,11 +100,11 @@ class WorkRequest(object):
 
         :param managed_instance_id:
             The value to assign to the managed_instance_id property of this WorkRequest.
-        :type managed_instance_id: Id
+        :type managed_instance_id: oci.os_management.models.Id
 
         :param resources:
             The value to assign to the resources property of this WorkRequest.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.os_management.models.WorkRequestResource]
 
         :param percent_complete:
             The value to assign to the percent_complete property of this WorkRequest.
@@ -343,7 +343,7 @@ class WorkRequest(object):
         Gets the managed_instance_id of this WorkRequest.
 
         :return: The managed_instance_id of this WorkRequest.
-        :rtype: Id
+        :rtype: oci.os_management.models.Id
         """
         return self._managed_instance_id
 
@@ -353,7 +353,7 @@ class WorkRequest(object):
         Sets the managed_instance_id of this WorkRequest.
 
         :param managed_instance_id: The managed_instance_id of this WorkRequest.
-        :type: Id
+        :type: oci.os_management.models.Id
         """
         self._managed_instance_id = managed_instance_id
 
@@ -365,7 +365,7 @@ class WorkRequest(object):
 
 
         :return: The resources of this WorkRequest.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.os_management.models.WorkRequestResource]
         """
         return self._resources
 
@@ -377,7 +377,7 @@ class WorkRequest(object):
 
 
         :param resources: The resources of this WorkRequest.
-        :type: list[WorkRequestResource]
+        :type: list[oci.os_management.models.WorkRequestResource]
         """
         self._resources = resources
 

@@ -44,7 +44,7 @@ class DataFormat(object):
 
         :param format_attribute:
             The value to assign to the format_attribute property of this DataFormat.
-        :type format_attribute: AbstractFormatAttribute
+        :type format_attribute: oci.data_integration.models.AbstractFormatAttribute
 
         :param type:
             The value to assign to the type property of this DataFormat.
@@ -72,7 +72,7 @@ class DataFormat(object):
         Gets the format_attribute of this DataFormat.
 
         :return: The format_attribute of this DataFormat.
-        :rtype: AbstractFormatAttribute
+        :rtype: oci.data_integration.models.AbstractFormatAttribute
         """
         return self._format_attribute
 
@@ -82,7 +82,7 @@ class DataFormat(object):
         Sets the format_attribute of this DataFormat.
 
         :param format_attribute: The format_attribute of this DataFormat.
-        :type: AbstractFormatAttribute
+        :type: oci.data_integration.models.AbstractFormatAttribute
         """
         self._format_attribute = format_attribute
 

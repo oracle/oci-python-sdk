@@ -34,7 +34,7 @@ class SortOper(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this SortOper.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this SortOper.
@@ -50,11 +50,11 @@ class SortOper(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this SortOper.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this SortOper.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this SortOper.
@@ -66,15 +66,15 @@ class SortOper(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this SortOper.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this SortOper.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param sort_key:
             The value to assign to the sort_key property of this SortOper.
-        :type sort_key: SortKey
+        :type sort_key: oci.data_integration.models.SortKey
 
         """
         self.swagger_types = {
@@ -133,7 +133,7 @@ class SortOper(Operator):
         Gets the sort_key of this SortOper.
 
         :return: The sort_key of this SortOper.
-        :rtype: SortKey
+        :rtype: oci.data_integration.models.SortKey
         """
         return self._sort_key
 
@@ -143,7 +143,7 @@ class SortOper(Operator):
         Sets the sort_key of this SortOper.
 
         :param sort_key: The sort_key of this SortOper.
-        :type: SortKey
+        :type: oci.data_integration.models.SortKey
         """
         self._sort_key = sort_key
 

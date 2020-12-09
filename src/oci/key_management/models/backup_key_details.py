@@ -20,7 +20,7 @@ class BackupKeyDetails(object):
 
         :param backup_location:
             The value to assign to the backup_location property of this BackupKeyDetails.
-        :type backup_location: BackupLocation
+        :type backup_location: oci.key_management.models.BackupLocation
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class BackupKeyDetails(object):
         Gets the backup_location of this BackupKeyDetails.
 
         :return: The backup_location of this BackupKeyDetails.
-        :rtype: BackupLocation
+        :rtype: oci.key_management.models.BackupLocation
         """
         return self._backup_location
 
@@ -49,7 +49,7 @@ class BackupKeyDetails(object):
         Sets the backup_location of this BackupKeyDetails.
 
         :param backup_location: The backup_location of this BackupKeyDetails.
-        :type: BackupLocation
+        :type: oci.key_management.models.BackupLocation
         """
         self._backup_location = backup_location
 

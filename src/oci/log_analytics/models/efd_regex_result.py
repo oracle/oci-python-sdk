@@ -28,7 +28,7 @@ class EfdRegexResult(object):
 
         :param match_result:
             The value to assign to the match_result property of this EfdRegexResult.
-        :type match_result: RegexMatchResult
+        :type match_result: oci.log_analytics.models.RegexMatchResult
 
         :param parsed_field_count:
             The value to assign to the parsed_field_count property of this EfdRegexResult.
@@ -56,7 +56,7 @@ class EfdRegexResult(object):
 
         :param violations:
             The value to assign to the violations property of this EfdRegexResult.
-        :type violations: list[Violation]
+        :type violations: list[oci.log_analytics.models.Violation]
 
         """
         self.swagger_types = {
@@ -150,7 +150,7 @@ class EfdRegexResult(object):
         Gets the match_result of this EfdRegexResult.
 
         :return: The match_result of this EfdRegexResult.
-        :rtype: RegexMatchResult
+        :rtype: oci.log_analytics.models.RegexMatchResult
         """
         return self._match_result
 
@@ -160,7 +160,7 @@ class EfdRegexResult(object):
         Sets the match_result of this EfdRegexResult.
 
         :param match_result: The match_result of this EfdRegexResult.
-        :type: RegexMatchResult
+        :type: oci.log_analytics.models.RegexMatchResult
         """
         self._match_result = match_result
 
@@ -316,7 +316,7 @@ class EfdRegexResult(object):
 
 
         :return: The violations of this EfdRegexResult.
-        :rtype: list[Violation]
+        :rtype: list[oci.log_analytics.models.Violation]
         """
         return self._violations
 
@@ -328,7 +328,7 @@ class EfdRegexResult(object):
 
 
         :param violations: The violations of this EfdRegexResult.
-        :type: list[Violation]
+        :type: list[oci.log_analytics.models.Violation]
         """
         self._violations = violations
 

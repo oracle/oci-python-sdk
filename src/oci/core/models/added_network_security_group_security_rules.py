@@ -20,7 +20,7 @@ class AddedNetworkSecurityGroupSecurityRules(object):
 
         :param security_rules:
             The value to assign to the security_rules property of this AddedNetworkSecurityGroupSecurityRules.
-        :type security_rules: list[SecurityRule]
+        :type security_rules: list[oci.core.models.SecurityRule]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class AddedNetworkSecurityGroupSecurityRules(object):
 
 
         :return: The security_rules of this AddedNetworkSecurityGroupSecurityRules.
-        :rtype: list[SecurityRule]
+        :rtype: list[oci.core.models.SecurityRule]
         """
         return self._security_rules
 
@@ -53,7 +53,7 @@ class AddedNetworkSecurityGroupSecurityRules(object):
 
 
         :param security_rules: The security_rules of this AddedNetworkSecurityGroupSecurityRules.
-        :type: list[SecurityRule]
+        :type: list[oci.core.models.SecurityRule]
         """
         self._security_rules = security_rules
 

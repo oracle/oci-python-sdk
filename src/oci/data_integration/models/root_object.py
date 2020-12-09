@@ -32,7 +32,7 @@ class RootObject(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this RootObject.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_status:
             The value to assign to the object_status property of this RootObject.
@@ -139,7 +139,7 @@ class RootObject(object):
         Gets the parent_ref of this RootObject.
 
         :return: The parent_ref of this RootObject.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -149,7 +149,7 @@ class RootObject(object):
         Sets the parent_ref of this RootObject.
 
         :param parent_ref: The parent_ref of this RootObject.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 

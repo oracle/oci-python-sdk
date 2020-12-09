@@ -20,11 +20,11 @@ class InstanceConfigurationBlockVolumeDetails(object):
 
         :param attach_details:
             The value to assign to the attach_details property of this InstanceConfigurationBlockVolumeDetails.
-        :type attach_details: InstanceConfigurationAttachVolumeDetails
+        :type attach_details: oci.core.models.InstanceConfigurationAttachVolumeDetails
 
         :param create_details:
             The value to assign to the create_details property of this InstanceConfigurationBlockVolumeDetails.
-        :type create_details: InstanceConfigurationCreateVolumeDetails
+        :type create_details: oci.core.models.InstanceConfigurationCreateVolumeDetails
 
         :param volume_id:
             The value to assign to the volume_id property of this InstanceConfigurationBlockVolumeDetails.
@@ -53,7 +53,7 @@ class InstanceConfigurationBlockVolumeDetails(object):
         Gets the attach_details of this InstanceConfigurationBlockVolumeDetails.
 
         :return: The attach_details of this InstanceConfigurationBlockVolumeDetails.
-        :rtype: InstanceConfigurationAttachVolumeDetails
+        :rtype: oci.core.models.InstanceConfigurationAttachVolumeDetails
         """
         return self._attach_details
 
@@ -63,7 +63,7 @@ class InstanceConfigurationBlockVolumeDetails(object):
         Sets the attach_details of this InstanceConfigurationBlockVolumeDetails.
 
         :param attach_details: The attach_details of this InstanceConfigurationBlockVolumeDetails.
-        :type: InstanceConfigurationAttachVolumeDetails
+        :type: oci.core.models.InstanceConfigurationAttachVolumeDetails
         """
         self._attach_details = attach_details
 
@@ -73,7 +73,7 @@ class InstanceConfigurationBlockVolumeDetails(object):
         Gets the create_details of this InstanceConfigurationBlockVolumeDetails.
 
         :return: The create_details of this InstanceConfigurationBlockVolumeDetails.
-        :rtype: InstanceConfigurationCreateVolumeDetails
+        :rtype: oci.core.models.InstanceConfigurationCreateVolumeDetails
         """
         return self._create_details
 
@@ -83,7 +83,7 @@ class InstanceConfigurationBlockVolumeDetails(object):
         Sets the create_details of this InstanceConfigurationBlockVolumeDetails.
 
         :param create_details: The create_details of this InstanceConfigurationBlockVolumeDetails.
-        :type: InstanceConfigurationCreateVolumeDetails
+        :type: oci.core.models.InstanceConfigurationCreateVolumeDetails
         """
         self._create_details = create_details
 

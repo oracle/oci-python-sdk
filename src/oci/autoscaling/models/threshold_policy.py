@@ -21,7 +21,7 @@ class ThresholdPolicy(AutoScalingPolicy):
 
         :param capacity:
             The value to assign to the capacity property of this ThresholdPolicy.
-        :type capacity: Capacity
+        :type capacity: oci.autoscaling.models.Capacity
 
         :param id:
             The value to assign to the id property of this ThresholdPolicy.
@@ -45,7 +45,7 @@ class ThresholdPolicy(AutoScalingPolicy):
 
         :param rules:
             The value to assign to the rules property of this ThresholdPolicy.
-        :type rules: list[Condition]
+        :type rules: list[oci.autoscaling.models.Condition]
 
         """
         self.swagger_types = {
@@ -83,7 +83,7 @@ class ThresholdPolicy(AutoScalingPolicy):
         **[Required]** Gets the rules of this ThresholdPolicy.
 
         :return: The rules of this ThresholdPolicy.
-        :rtype: list[Condition]
+        :rtype: list[oci.autoscaling.models.Condition]
         """
         return self._rules
 
@@ -93,7 +93,7 @@ class ThresholdPolicy(AutoScalingPolicy):
         Sets the rules of this ThresholdPolicy.
 
         :param rules: The rules of this ThresholdPolicy.
-        :type: list[Condition]
+        :type: list[oci.autoscaling.models.Condition]
         """
         self._rules = rules
 

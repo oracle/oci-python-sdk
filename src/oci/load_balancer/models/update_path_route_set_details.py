@@ -20,7 +20,7 @@ class UpdatePathRouteSetDetails(object):
 
         :param path_routes:
             The value to assign to the path_routes property of this UpdatePathRouteSetDetails.
-        :type path_routes: list[PathRoute]
+        :type path_routes: list[oci.load_balancer.models.PathRoute]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UpdatePathRouteSetDetails(object):
 
 
         :return: The path_routes of this UpdatePathRouteSetDetails.
-        :rtype: list[PathRoute]
+        :rtype: list[oci.load_balancer.models.PathRoute]
         """
         return self._path_routes
 
@@ -53,7 +53,7 @@ class UpdatePathRouteSetDetails(object):
 
 
         :param path_routes: The path_routes of this UpdatePathRouteSetDetails.
-        :type: list[PathRoute]
+        :type: list[oci.load_balancer.models.PathRoute]
         """
         self._path_routes = path_routes
 

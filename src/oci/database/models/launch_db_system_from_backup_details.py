@@ -93,7 +93,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemFromBackupDetails.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromBackupDetails.
@@ -150,7 +150,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
 
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemFromBackupDetails.
-        :type db_home: CreateDbHomeFromBackupDetails
+        :type db_home: oci.database.models.CreateDbHomeFromBackupDetails
 
         :param database_edition:
             The value to assign to the database_edition property of this LaunchDbSystemFromBackupDetails.
@@ -266,7 +266,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         **[Required]** Gets the db_home of this LaunchDbSystemFromBackupDetails.
 
         :return: The db_home of this LaunchDbSystemFromBackupDetails.
-        :rtype: CreateDbHomeFromBackupDetails
+        :rtype: oci.database.models.CreateDbHomeFromBackupDetails
         """
         return self._db_home
 
@@ -276,7 +276,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         Sets the db_home of this LaunchDbSystemFromBackupDetails.
 
         :param db_home: The db_home of this LaunchDbSystemFromBackupDetails.
-        :type: CreateDbHomeFromBackupDetails
+        :type: oci.database.models.CreateDbHomeFromBackupDetails
         """
         self._db_home = db_home
 

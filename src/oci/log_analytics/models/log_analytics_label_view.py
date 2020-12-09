@@ -36,7 +36,7 @@ class LogAnalyticsLabelView(object):
 
         :param aliases:
             The value to assign to the aliases property of this LogAnalyticsLabelView.
-        :type aliases: list[LogAnalyticsLabelAlias]
+        :type aliases: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
 
         :param count_usage_in_alert_rule:
             The value to assign to the count_usage_in_alert_rule property of this LogAnalyticsLabelView.
@@ -157,7 +157,7 @@ class LogAnalyticsLabelView(object):
 
 
         :return: The aliases of this LogAnalyticsLabelView.
-        :rtype: list[LogAnalyticsLabelAlias]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
         """
         return self._aliases
 
@@ -169,7 +169,7 @@ class LogAnalyticsLabelView(object):
 
 
         :param aliases: The aliases of this LogAnalyticsLabelView.
-        :type: list[LogAnalyticsLabelAlias]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelAlias]
         """
         self._aliases = aliases
 

@@ -20,7 +20,7 @@ class UpdateTargetResponderRecipeResponderRuleDetails(object):
 
         :param details:
             The value to assign to the details property of this UpdateTargetResponderRecipeResponderRuleDetails.
-        :type details: UpdateTargetResponderRuleDetails
+        :type details: oci.cloud_guard.models.UpdateTargetResponderRuleDetails
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class UpdateTargetResponderRecipeResponderRuleDetails(object):
         **[Required]** Gets the details of this UpdateTargetResponderRecipeResponderRuleDetails.
 
         :return: The details of this UpdateTargetResponderRecipeResponderRuleDetails.
-        :rtype: UpdateTargetResponderRuleDetails
+        :rtype: oci.cloud_guard.models.UpdateTargetResponderRuleDetails
         """
         return self._details
 
@@ -49,7 +49,7 @@ class UpdateTargetResponderRecipeResponderRuleDetails(object):
         Sets the details of this UpdateTargetResponderRecipeResponderRuleDetails.
 
         :param details: The details of this UpdateTargetResponderRecipeResponderRuleDetails.
-        :type: UpdateTargetResponderRuleDetails
+        :type: oci.cloud_guard.models.UpdateTargetResponderRuleDetails
         """
         self._details = details
 

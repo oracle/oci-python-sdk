@@ -58,7 +58,7 @@ class WorkRequestResource(object):
 
         :param sub_type_details:
             The value to assign to the sub_type_details property of this WorkRequestResource.
-        :type sub_type_details: list[WorkRequestResourceSubTypeDetail]
+        :type sub_type_details: list[oci.blockchain.models.WorkRequestResourceSubTypeDetail]
 
         """
         self.swagger_types = {
@@ -199,7 +199,7 @@ class WorkRequestResource(object):
 
 
         :return: The sub_type_details of this WorkRequestResource.
-        :rtype: list[WorkRequestResourceSubTypeDetail]
+        :rtype: list[oci.blockchain.models.WorkRequestResourceSubTypeDetail]
         """
         return self._sub_type_details
 
@@ -211,7 +211,7 @@ class WorkRequestResource(object):
 
 
         :param sub_type_details: The sub_type_details of this WorkRequestResource.
-        :type: list[WorkRequestResourceSubTypeDetail]
+        :type: list[oci.blockchain.models.WorkRequestResourceSubTypeDetail]
         """
         self._sub_type_details = sub_type_details
 

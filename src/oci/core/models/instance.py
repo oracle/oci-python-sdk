@@ -135,15 +135,15 @@ class Instance(object):
 
         :param launch_options:
             The value to assign to the launch_options property of this Instance.
-        :type launch_options: LaunchOptions
+        :type launch_options: oci.core.models.LaunchOptions
 
         :param instance_options:
             The value to assign to the instance_options property of this Instance.
-        :type instance_options: InstanceOptions
+        :type instance_options: oci.core.models.InstanceOptions
 
         :param availability_config:
             The value to assign to the availability_config property of this Instance.
-        :type availability_config: InstanceAvailabilityConfig
+        :type availability_config: oci.core.models.InstanceAvailabilityConfig
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Instance.
@@ -165,11 +165,11 @@ class Instance(object):
 
         :param shape_config:
             The value to assign to the shape_config property of this Instance.
-        :type shape_config: InstanceShapeConfig
+        :type shape_config: oci.core.models.InstanceShapeConfig
 
         :param source_details:
             The value to assign to the source_details property of this Instance.
-        :type source_details: InstanceSourceDetails
+        :type source_details: oci.core.models.InstanceSourceDetails
 
         :param system_tags:
             The value to assign to the system_tags property of this Instance.
@@ -181,7 +181,7 @@ class Instance(object):
 
         :param agent_config:
             The value to assign to the agent_config property of this Instance.
-        :type agent_config: InstanceAgentConfig
+        :type agent_config: oci.core.models.InstanceAgentConfig
 
         :param time_maintenance_reboot_due:
             The value to assign to the time_maintenance_reboot_due property of this Instance.
@@ -684,7 +684,7 @@ class Instance(object):
 
 
         :return: The launch_options of this Instance.
-        :rtype: LaunchOptions
+        :rtype: oci.core.models.LaunchOptions
         """
         return self._launch_options
 
@@ -696,7 +696,7 @@ class Instance(object):
 
 
         :param launch_options: The launch_options of this Instance.
-        :type: LaunchOptions
+        :type: oci.core.models.LaunchOptions
         """
         self._launch_options = launch_options
 
@@ -706,7 +706,7 @@ class Instance(object):
         Gets the instance_options of this Instance.
 
         :return: The instance_options of this Instance.
-        :rtype: InstanceOptions
+        :rtype: oci.core.models.InstanceOptions
         """
         return self._instance_options
 
@@ -716,7 +716,7 @@ class Instance(object):
         Sets the instance_options of this Instance.
 
         :param instance_options: The instance_options of this Instance.
-        :type: InstanceOptions
+        :type: oci.core.models.InstanceOptions
         """
         self._instance_options = instance_options
 
@@ -728,7 +728,7 @@ class Instance(object):
 
 
         :return: The availability_config of this Instance.
-        :rtype: InstanceAvailabilityConfig
+        :rtype: oci.core.models.InstanceAvailabilityConfig
         """
         return self._availability_config
 
@@ -740,7 +740,7 @@ class Instance(object):
 
 
         :param availability_config: The availability_config of this Instance.
-        :type: InstanceAvailabilityConfig
+        :type: oci.core.models.InstanceAvailabilityConfig
         """
         self._availability_config = availability_config
 
@@ -866,7 +866,7 @@ class Instance(object):
         Gets the shape_config of this Instance.
 
         :return: The shape_config of this Instance.
-        :rtype: InstanceShapeConfig
+        :rtype: oci.core.models.InstanceShapeConfig
         """
         return self._shape_config
 
@@ -876,7 +876,7 @@ class Instance(object):
         Sets the shape_config of this Instance.
 
         :param shape_config: The shape_config of this Instance.
-        :type: InstanceShapeConfig
+        :type: oci.core.models.InstanceShapeConfig
         """
         self._shape_config = shape_config
 
@@ -888,7 +888,7 @@ class Instance(object):
 
 
         :return: The source_details of this Instance.
-        :rtype: InstanceSourceDetails
+        :rtype: oci.core.models.InstanceSourceDetails
         """
         return self._source_details
 
@@ -900,7 +900,7 @@ class Instance(object):
 
 
         :param source_details: The source_details of this Instance.
-        :type: InstanceSourceDetails
+        :type: oci.core.models.InstanceSourceDetails
         """
         self._source_details = source_details
 
@@ -968,7 +968,7 @@ class Instance(object):
         Gets the agent_config of this Instance.
 
         :return: The agent_config of this Instance.
-        :rtype: InstanceAgentConfig
+        :rtype: oci.core.models.InstanceAgentConfig
         """
         return self._agent_config
 
@@ -978,7 +978,7 @@ class Instance(object):
         Sets the agent_config of this Instance.
 
         :param agent_config: The agent_config of this Instance.
-        :type: InstanceAgentConfig
+        :type: oci.core.models.InstanceAgentConfig
         """
         self._agent_config = agent_config
 

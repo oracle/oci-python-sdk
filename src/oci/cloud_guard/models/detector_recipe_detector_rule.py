@@ -130,7 +130,7 @@ class DetectorRecipeDetectorRule(object):
 
         :param details:
             The value to assign to the details property of this DetectorRecipeDetectorRule.
-        :type details: DetectorDetails
+        :type details: oci.cloud_guard.models.DetectorDetails
 
         :param managed_list_types:
             The value to assign to the managed_list_types property of this DetectorRecipeDetectorRule.
@@ -140,7 +140,7 @@ class DetectorRecipeDetectorRule(object):
 
         :param candidate_responder_rules:
             The value to assign to the candidate_responder_rules property of this DetectorRecipeDetectorRule.
-        :type candidate_responder_rules: list[CandidateResponderRule]
+        :type candidate_responder_rules: list[oci.cloud_guard.models.CandidateResponderRule]
 
         :param time_created:
             The value to assign to the time_created property of this DetectorRecipeDetectorRule.
@@ -390,7 +390,7 @@ class DetectorRecipeDetectorRule(object):
         Gets the details of this DetectorRecipeDetectorRule.
 
         :return: The details of this DetectorRecipeDetectorRule.
-        :rtype: DetectorDetails
+        :rtype: oci.cloud_guard.models.DetectorDetails
         """
         return self._details
 
@@ -400,7 +400,7 @@ class DetectorRecipeDetectorRule(object):
         Sets the details of this DetectorRecipeDetectorRule.
 
         :param details: The details of this DetectorRecipeDetectorRule.
-        :type: DetectorDetails
+        :type: oci.cloud_guard.models.DetectorDetails
         """
         self._details = details
 
@@ -442,7 +442,7 @@ class DetectorRecipeDetectorRule(object):
 
 
         :return: The candidate_responder_rules of this DetectorRecipeDetectorRule.
-        :rtype: list[CandidateResponderRule]
+        :rtype: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         return self._candidate_responder_rules
 
@@ -454,7 +454,7 @@ class DetectorRecipeDetectorRule(object):
 
 
         :param candidate_responder_rules: The candidate_responder_rules of this DetectorRecipeDetectorRule.
-        :type: list[CandidateResponderRule]
+        :type: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         self._candidate_responder_rules = candidate_responder_rules
 

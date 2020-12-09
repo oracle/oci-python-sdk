@@ -24,11 +24,11 @@ class UpdateStreamPoolDetails(object):
 
         :param kafka_settings:
             The value to assign to the kafka_settings property of this UpdateStreamPoolDetails.
-        :type kafka_settings: KafkaSettings
+        :type kafka_settings: oci.streaming.models.KafkaSettings
 
         :param custom_encryption_key_details:
             The value to assign to the custom_encryption_key_details property of this UpdateStreamPoolDetails.
-        :type custom_encryption_key_details: CustomEncryptionKeyDetails
+        :type custom_encryption_key_details: oci.streaming.models.CustomEncryptionKeyDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateStreamPoolDetails.
@@ -87,7 +87,7 @@ class UpdateStreamPoolDetails(object):
         Gets the kafka_settings of this UpdateStreamPoolDetails.
 
         :return: The kafka_settings of this UpdateStreamPoolDetails.
-        :rtype: KafkaSettings
+        :rtype: oci.streaming.models.KafkaSettings
         """
         return self._kafka_settings
 
@@ -97,7 +97,7 @@ class UpdateStreamPoolDetails(object):
         Sets the kafka_settings of this UpdateStreamPoolDetails.
 
         :param kafka_settings: The kafka_settings of this UpdateStreamPoolDetails.
-        :type: KafkaSettings
+        :type: oci.streaming.models.KafkaSettings
         """
         self._kafka_settings = kafka_settings
 
@@ -107,7 +107,7 @@ class UpdateStreamPoolDetails(object):
         Gets the custom_encryption_key_details of this UpdateStreamPoolDetails.
 
         :return: The custom_encryption_key_details of this UpdateStreamPoolDetails.
-        :rtype: CustomEncryptionKeyDetails
+        :rtype: oci.streaming.models.CustomEncryptionKeyDetails
         """
         return self._custom_encryption_key_details
 
@@ -117,7 +117,7 @@ class UpdateStreamPoolDetails(object):
         Sets the custom_encryption_key_details of this UpdateStreamPoolDetails.
 
         :param custom_encryption_key_details: The custom_encryption_key_details of this UpdateStreamPoolDetails.
-        :type: CustomEncryptionKeyDetails
+        :type: oci.streaming.models.CustomEncryptionKeyDetails
         """
         self._custom_encryption_key_details = custom_encryption_key_details
 

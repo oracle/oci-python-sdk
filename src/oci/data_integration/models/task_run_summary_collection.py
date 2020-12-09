@@ -20,7 +20,7 @@ class TaskRunSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this TaskRunSummaryCollection.
-        :type items: list[TaskRunSummary]
+        :type items: list[oci.data_integration.models.TaskRunSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TaskRunSummaryCollection(object):
 
 
         :return: The items of this TaskRunSummaryCollection.
-        :rtype: list[TaskRunSummary]
+        :rtype: list[oci.data_integration.models.TaskRunSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TaskRunSummaryCollection(object):
 
 
         :param items: The items of this TaskRunSummaryCollection.
-        :type: list[TaskRunSummary]
+        :type: list[oci.data_integration.models.TaskRunSummary]
         """
         self._items = items
 

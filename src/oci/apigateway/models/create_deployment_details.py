@@ -36,7 +36,7 @@ class CreateDeploymentDetails(object):
 
         :param specification:
             The value to assign to the specification property of this CreateDeploymentDetails.
-        :type specification: ApiSpecification
+        :type specification: oci.apigateway.models.ApiSpecification
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDeploymentDetails.
@@ -203,7 +203,7 @@ class CreateDeploymentDetails(object):
         **[Required]** Gets the specification of this CreateDeploymentDetails.
 
         :return: The specification of this CreateDeploymentDetails.
-        :rtype: ApiSpecification
+        :rtype: oci.apigateway.models.ApiSpecification
         """
         return self._specification
 
@@ -213,7 +213,7 @@ class CreateDeploymentDetails(object):
         Sets the specification of this CreateDeploymentDetails.
 
         :param specification: The specification of this CreateDeploymentDetails.
-        :type: ApiSpecification
+        :type: oci.apigateway.models.ApiSpecification
         """
         self._specification = specification
 

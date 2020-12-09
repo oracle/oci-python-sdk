@@ -34,7 +34,7 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
 
         :param parser:
             The value to assign to the parser property of this UnifiedAgentTailLogSource.
-        :type parser: UnifiedAgentParser
+        :type parser: oci.logging.models.UnifiedAgentParser
 
         """
         self.swagger_types = {
@@ -83,7 +83,7 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
         Gets the parser of this UnifiedAgentTailLogSource.
 
         :return: The parser of this UnifiedAgentTailLogSource.
-        :rtype: UnifiedAgentParser
+        :rtype: oci.logging.models.UnifiedAgentParser
         """
         return self._parser
 
@@ -93,7 +93,7 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
         Sets the parser of this UnifiedAgentTailLogSource.
 
         :param parser: The parser of this UnifiedAgentTailLogSource.
-        :type: UnifiedAgentParser
+        :type: oci.logging.models.UnifiedAgentParser
         """
         self._parser = parser
 

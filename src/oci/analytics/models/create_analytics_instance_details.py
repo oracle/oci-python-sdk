@@ -53,7 +53,7 @@ class CreateAnalyticsInstanceDetails(object):
 
         :param capacity:
             The value to assign to the capacity property of this CreateAnalyticsInstanceDetails.
-        :type capacity: Capacity
+        :type capacity: oci.analytics.models.Capacity
 
         :param license_type:
             The value to assign to the license_type property of this CreateAnalyticsInstanceDetails.
@@ -66,7 +66,7 @@ class CreateAnalyticsInstanceDetails(object):
 
         :param network_endpoint_details:
             The value to assign to the network_endpoint_details property of this CreateAnalyticsInstanceDetails.
-        :type network_endpoint_details: NetworkEndpointDetails
+        :type network_endpoint_details: oci.analytics.models.NetworkEndpointDetails
 
         :param idcs_access_token:
             The value to assign to the idcs_access_token property of this CreateAnalyticsInstanceDetails.
@@ -231,7 +231,7 @@ class CreateAnalyticsInstanceDetails(object):
         **[Required]** Gets the capacity of this CreateAnalyticsInstanceDetails.
 
         :return: The capacity of this CreateAnalyticsInstanceDetails.
-        :rtype: Capacity
+        :rtype: oci.analytics.models.Capacity
         """
         return self._capacity
 
@@ -241,7 +241,7 @@ class CreateAnalyticsInstanceDetails(object):
         Sets the capacity of this CreateAnalyticsInstanceDetails.
 
         :param capacity: The capacity of this CreateAnalyticsInstanceDetails.
-        :type: Capacity
+        :type: oci.analytics.models.Capacity
         """
         self._capacity = capacity
 
@@ -307,7 +307,7 @@ class CreateAnalyticsInstanceDetails(object):
         Gets the network_endpoint_details of this CreateAnalyticsInstanceDetails.
 
         :return: The network_endpoint_details of this CreateAnalyticsInstanceDetails.
-        :rtype: NetworkEndpointDetails
+        :rtype: oci.analytics.models.NetworkEndpointDetails
         """
         return self._network_endpoint_details
 
@@ -317,7 +317,7 @@ class CreateAnalyticsInstanceDetails(object):
         Sets the network_endpoint_details of this CreateAnalyticsInstanceDetails.
 
         :param network_endpoint_details: The network_endpoint_details of this CreateAnalyticsInstanceDetails.
-        :type: NetworkEndpointDetails
+        :type: oci.analytics.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
 

@@ -74,11 +74,11 @@ class CategorySummary(object):
 
         :param recommendation_counts:
             The value to assign to the recommendation_counts property of this CategorySummary.
-        :type recommendation_counts: list[RecommendationCount]
+        :type recommendation_counts: list[oci.optimizer.models.RecommendationCount]
 
         :param resource_counts:
             The value to assign to the resource_counts property of this CategorySummary.
-        :type resource_counts: list[ResourceCount]
+        :type resource_counts: list[oci.optimizer.models.ResourceCount]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CategorySummary.
@@ -240,7 +240,7 @@ class CategorySummary(object):
 
 
         :return: The recommendation_counts of this CategorySummary.
-        :rtype: list[RecommendationCount]
+        :rtype: list[oci.optimizer.models.RecommendationCount]
         """
         return self._recommendation_counts
 
@@ -252,7 +252,7 @@ class CategorySummary(object):
 
 
         :param recommendation_counts: The recommendation_counts of this CategorySummary.
-        :type: list[RecommendationCount]
+        :type: list[oci.optimizer.models.RecommendationCount]
         """
         self._recommendation_counts = recommendation_counts
 
@@ -264,7 +264,7 @@ class CategorySummary(object):
 
 
         :return: The resource_counts of this CategorySummary.
-        :rtype: list[ResourceCount]
+        :rtype: list[oci.optimizer.models.ResourceCount]
         """
         return self._resource_counts
 
@@ -276,7 +276,7 @@ class CategorySummary(object):
 
 
         :param resource_counts: The resource_counts of this CategorySummary.
-        :type: list[ResourceCount]
+        :type: list[oci.optimizer.models.ResourceCount]
         """
         self._resource_counts = resource_counts
 

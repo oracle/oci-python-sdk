@@ -20,11 +20,11 @@ class SqlStatisticsTimeSeriesAggregation(object):
 
         :param database_details:
             The value to assign to the database_details property of this SqlStatisticsTimeSeriesAggregation.
-        :type database_details: DatabaseDetails
+        :type database_details: oci.opsi.models.DatabaseDetails
 
         :param statistics:
             The value to assign to the statistics property of this SqlStatisticsTimeSeriesAggregation.
-        :type statistics: list[SqlStatisticsTimeSeries]
+        :type statistics: list[oci.opsi.models.SqlStatisticsTimeSeries]
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class SqlStatisticsTimeSeriesAggregation(object):
         **[Required]** Gets the database_details of this SqlStatisticsTimeSeriesAggregation.
 
         :return: The database_details of this SqlStatisticsTimeSeriesAggregation.
-        :rtype: DatabaseDetails
+        :rtype: oci.opsi.models.DatabaseDetails
         """
         return self._database_details
 
@@ -56,7 +56,7 @@ class SqlStatisticsTimeSeriesAggregation(object):
         Sets the database_details of this SqlStatisticsTimeSeriesAggregation.
 
         :param database_details: The database_details of this SqlStatisticsTimeSeriesAggregation.
-        :type: DatabaseDetails
+        :type: oci.opsi.models.DatabaseDetails
         """
         self._database_details = database_details
 
@@ -68,7 +68,7 @@ class SqlStatisticsTimeSeriesAggregation(object):
 
 
         :return: The statistics of this SqlStatisticsTimeSeriesAggregation.
-        :rtype: list[SqlStatisticsTimeSeries]
+        :rtype: list[oci.opsi.models.SqlStatisticsTimeSeries]
         """
         return self._statistics
 
@@ -80,7 +80,7 @@ class SqlStatisticsTimeSeriesAggregation(object):
 
 
         :param statistics: The statistics of this SqlStatisticsTimeSeriesAggregation.
-        :type: list[SqlStatisticsTimeSeries]
+        :type: list[oci.opsi.models.SqlStatisticsTimeSeries]
         """
         self._statistics = statistics
 

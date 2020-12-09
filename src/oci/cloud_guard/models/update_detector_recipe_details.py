@@ -28,7 +28,7 @@ class UpdateDetectorRecipeDetails(object):
 
         :param detector_rules:
             The value to assign to the detector_rules property of this UpdateDetectorRecipeDetails.
-        :type detector_rules: list[UpdateDetectorRecipeDetectorRule]
+        :type detector_rules: list[oci.cloud_guard.models.UpdateDetectorRecipeDetectorRule]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDetectorRecipeDetails.
@@ -117,7 +117,7 @@ class UpdateDetectorRecipeDetails(object):
 
 
         :return: The detector_rules of this UpdateDetectorRecipeDetails.
-        :rtype: list[UpdateDetectorRecipeDetectorRule]
+        :rtype: list[oci.cloud_guard.models.UpdateDetectorRecipeDetectorRule]
         """
         return self._detector_rules
 
@@ -129,7 +129,7 @@ class UpdateDetectorRecipeDetails(object):
 
 
         :param detector_rules: The detector_rules of this UpdateDetectorRecipeDetails.
-        :type: list[UpdateDetectorRecipeDetectorRule]
+        :type: list[oci.cloud_guard.models.UpdateDetectorRecipeDetectorRule]
         """
         self._detector_rules = detector_rules
 

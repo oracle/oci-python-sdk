@@ -20,7 +20,7 @@ class UpdateRuleSetDetails(object):
 
         :param items:
             The value to assign to the items property of this UpdateRuleSetDetails.
-        :type items: list[Rule]
+        :type items: list[oci.load_balancer.models.Rule]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UpdateRuleSetDetails(object):
 
 
         :return: The items of this UpdateRuleSetDetails.
-        :rtype: list[Rule]
+        :rtype: list[oci.load_balancer.models.Rule]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class UpdateRuleSetDetails(object):
 
 
         :param items: The items of this UpdateRuleSetDetails.
-        :type: list[Rule]
+        :type: list[oci.load_balancer.models.Rule]
         """
         self._items = items
 

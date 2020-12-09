@@ -28,7 +28,7 @@ class EsxiHostClientCompositeOperations(object):
         Calls :py:func:`~oci.ocvp.EsxiHostClient.create_esxi_host` and waits for the :py:class:`~oci.ocvp.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateEsxiHostDetails create_esxi_host_details: (required)
+        :param oci.ocvp.models.CreateEsxiHostDetails create_esxi_host_details: (required)
             Details for the ESXi host.
 
         :param list[str] wait_for_states:
@@ -119,7 +119,7 @@ class EsxiHostClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateEsxiHostDetails update_esxi_host_details: (required)
+        :param oci.ocvp.models.UpdateEsxiHostDetails update_esxi_host_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

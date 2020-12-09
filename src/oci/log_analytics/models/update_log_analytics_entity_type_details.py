@@ -24,7 +24,7 @@ class UpdateLogAnalyticsEntityTypeDetails(object):
 
         :param properties:
             The value to assign to the properties property of this UpdateLogAnalyticsEntityTypeDetails.
-        :type properties: list[EntityTypeProperty]
+        :type properties: list[oci.log_analytics.models.EntityTypeProperty]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class UpdateLogAnalyticsEntityTypeDetails(object):
 
 
         :return: The properties of this UpdateLogAnalyticsEntityTypeDetails.
-        :rtype: list[EntityTypeProperty]
+        :rtype: list[oci.log_analytics.models.EntityTypeProperty]
         """
         return self._properties
 
@@ -84,7 +84,7 @@ class UpdateLogAnalyticsEntityTypeDetails(object):
 
 
         :param properties: The properties of this UpdateLogAnalyticsEntityTypeDetails.
-        :type: list[EntityTypeProperty]
+        :type: list[oci.log_analytics.models.EntityTypeProperty]
         """
         self._properties = properties
 

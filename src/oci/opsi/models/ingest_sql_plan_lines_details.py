@@ -20,7 +20,7 @@ class IngestSqlPlanLinesDetails(object):
 
         :param items:
             The value to assign to the items property of this IngestSqlPlanLinesDetails.
-        :type items: list[SqlPlanLine]
+        :type items: list[oci.opsi.models.SqlPlanLine]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class IngestSqlPlanLinesDetails(object):
 
 
         :return: The items of this IngestSqlPlanLinesDetails.
-        :rtype: list[SqlPlanLine]
+        :rtype: list[oci.opsi.models.SqlPlanLine]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class IngestSqlPlanLinesDetails(object):
 
 
         :param items: The items of this IngestSqlPlanLinesDetails.
-        :type: list[SqlPlanLine]
+        :type: list[oci.opsi.models.SqlPlanLine]
         """
         self._items = items
 

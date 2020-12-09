@@ -56,7 +56,7 @@ class SecretBundle(object):
 
         :param secret_bundle_content:
             The value to assign to the secret_bundle_content property of this SecretBundle.
-        :type secret_bundle_content: SecretBundleContentDetails
+        :type secret_bundle_content: oci.secrets.models.SecretBundleContentDetails
 
         :param time_of_deletion:
             The value to assign to the time_of_deletion property of this SecretBundle.
@@ -213,7 +213,7 @@ class SecretBundle(object):
         Gets the secret_bundle_content of this SecretBundle.
 
         :return: The secret_bundle_content of this SecretBundle.
-        :rtype: SecretBundleContentDetails
+        :rtype: oci.secrets.models.SecretBundleContentDetails
         """
         return self._secret_bundle_content
 
@@ -223,7 +223,7 @@ class SecretBundle(object):
         Sets the secret_bundle_content of this SecretBundle.
 
         :param secret_bundle_content: The secret_bundle_content of this SecretBundle.
-        :type: SecretBundleContentDetails
+        :type: oci.secrets.models.SecretBundleContentDetails
         """
         self._secret_bundle_content = secret_bundle_content
 

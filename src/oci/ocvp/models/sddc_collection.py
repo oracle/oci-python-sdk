@@ -20,7 +20,7 @@ class SddcCollection(object):
 
         :param items:
             The value to assign to the items property of this SddcCollection.
-        :type items: list[SddcSummary]
+        :type items: list[oci.ocvp.models.SddcSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SddcCollection(object):
 
 
         :return: The items of this SddcCollection.
-        :rtype: list[SddcSummary]
+        :rtype: list[oci.ocvp.models.SddcSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SddcCollection(object):
 
 
         :param items: The items of this SddcCollection.
-        :type: list[SddcSummary]
+        :type: list[oci.ocvp.models.SddcSummary]
         """
         self._items = items
 

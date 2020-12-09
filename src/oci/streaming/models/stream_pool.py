@@ -70,11 +70,11 @@ class StreamPool(object):
 
         :param kafka_settings:
             The value to assign to the kafka_settings property of this StreamPool.
-        :type kafka_settings: KafkaSettings
+        :type kafka_settings: oci.streaming.models.KafkaSettings
 
         :param custom_encryption_key:
             The value to assign to the custom_encryption_key property of this StreamPool.
-        :type custom_encryption_key: CustomEncryptionKey
+        :type custom_encryption_key: oci.streaming.models.CustomEncryptionKey
 
         :param is_private:
             The value to assign to the is_private property of this StreamPool.
@@ -86,7 +86,7 @@ class StreamPool(object):
 
         :param private_endpoint_settings:
             The value to assign to the private_endpoint_settings property of this StreamPool.
-        :type private_endpoint_settings: PrivateEndpointSettings
+        :type private_endpoint_settings: oci.streaming.models.PrivateEndpointSettings
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this StreamPool.
@@ -307,7 +307,7 @@ class StreamPool(object):
         **[Required]** Gets the kafka_settings of this StreamPool.
 
         :return: The kafka_settings of this StreamPool.
-        :rtype: KafkaSettings
+        :rtype: oci.streaming.models.KafkaSettings
         """
         return self._kafka_settings
 
@@ -317,7 +317,7 @@ class StreamPool(object):
         Sets the kafka_settings of this StreamPool.
 
         :param kafka_settings: The kafka_settings of this StreamPool.
-        :type: KafkaSettings
+        :type: oci.streaming.models.KafkaSettings
         """
         self._kafka_settings = kafka_settings
 
@@ -327,7 +327,7 @@ class StreamPool(object):
         **[Required]** Gets the custom_encryption_key of this StreamPool.
 
         :return: The custom_encryption_key of this StreamPool.
-        :rtype: CustomEncryptionKey
+        :rtype: oci.streaming.models.CustomEncryptionKey
         """
         return self._custom_encryption_key
 
@@ -337,7 +337,7 @@ class StreamPool(object):
         Sets the custom_encryption_key of this StreamPool.
 
         :param custom_encryption_key: The custom_encryption_key of this StreamPool.
-        :type: CustomEncryptionKey
+        :type: oci.streaming.models.CustomEncryptionKey
         """
         self._custom_encryption_key = custom_encryption_key
 
@@ -401,7 +401,7 @@ class StreamPool(object):
         Gets the private_endpoint_settings of this StreamPool.
 
         :return: The private_endpoint_settings of this StreamPool.
-        :rtype: PrivateEndpointSettings
+        :rtype: oci.streaming.models.PrivateEndpointSettings
         """
         return self._private_endpoint_settings
 
@@ -411,7 +411,7 @@ class StreamPool(object):
         Sets the private_endpoint_settings of this StreamPool.
 
         :param private_endpoint_settings: The private_endpoint_settings of this StreamPool.
-        :type: PrivateEndpointSettings
+        :type: oci.streaming.models.PrivateEndpointSettings
         """
         self._private_endpoint_settings = private_endpoint_settings
 

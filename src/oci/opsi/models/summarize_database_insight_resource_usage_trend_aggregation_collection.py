@@ -68,7 +68,7 @@ class SummarizeDatabaseInsightResourceUsageTrendAggregationCollection(object):
 
         :param usage_data:
             The value to assign to the usage_data property of this SummarizeDatabaseInsightResourceUsageTrendAggregationCollection.
-        :type usage_data: list[ResourceUsageTrendAggregation]
+        :type usage_data: list[oci.opsi.models.ResourceUsageTrendAggregation]
 
         """
         self.swagger_types = {
@@ -236,7 +236,7 @@ class SummarizeDatabaseInsightResourceUsageTrendAggregationCollection(object):
 
 
         :return: The usage_data of this SummarizeDatabaseInsightResourceUsageTrendAggregationCollection.
-        :rtype: list[ResourceUsageTrendAggregation]
+        :rtype: list[oci.opsi.models.ResourceUsageTrendAggregation]
         """
         return self._usage_data
 
@@ -248,7 +248,7 @@ class SummarizeDatabaseInsightResourceUsageTrendAggregationCollection(object):
 
 
         :param usage_data: The usage_data of this SummarizeDatabaseInsightResourceUsageTrendAggregationCollection.
-        :type: list[ResourceUsageTrendAggregation]
+        :type: list[oci.opsi.models.ResourceUsageTrendAggregation]
         """
         self._usage_data = usage_data
 

@@ -20,7 +20,7 @@ class ResponderRuleCollection(object):
 
         :param items:
             The value to assign to the items property of this ResponderRuleCollection.
-        :type items: list[ResponderRuleSummary]
+        :type items: list[oci.cloud_guard.models.ResponderRuleSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ResponderRuleCollection(object):
 
 
         :return: The items of this ResponderRuleCollection.
-        :rtype: list[ResponderRuleSummary]
+        :rtype: list[oci.cloud_guard.models.ResponderRuleSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ResponderRuleCollection(object):
 
 
         :param items: The items of this ResponderRuleCollection.
-        :type: list[ResponderRuleSummary]
+        :type: list[oci.cloud_guard.models.ResponderRuleSummary]
         """
         self._items = items
 

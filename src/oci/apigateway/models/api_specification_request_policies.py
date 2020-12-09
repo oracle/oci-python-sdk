@@ -20,15 +20,15 @@ class ApiSpecificationRequestPolicies(object):
 
         :param authentication:
             The value to assign to the authentication property of this ApiSpecificationRequestPolicies.
-        :type authentication: AuthenticationPolicy
+        :type authentication: oci.apigateway.models.AuthenticationPolicy
 
         :param rate_limiting:
             The value to assign to the rate_limiting property of this ApiSpecificationRequestPolicies.
-        :type rate_limiting: RateLimitingPolicy
+        :type rate_limiting: oci.apigateway.models.RateLimitingPolicy
 
         :param cors:
             The value to assign to the cors property of this ApiSpecificationRequestPolicies.
-        :type cors: CorsPolicy
+        :type cors: oci.apigateway.models.CorsPolicy
 
         """
         self.swagger_types = {
@@ -53,7 +53,7 @@ class ApiSpecificationRequestPolicies(object):
         Gets the authentication of this ApiSpecificationRequestPolicies.
 
         :return: The authentication of this ApiSpecificationRequestPolicies.
-        :rtype: AuthenticationPolicy
+        :rtype: oci.apigateway.models.AuthenticationPolicy
         """
         return self._authentication
 
@@ -63,7 +63,7 @@ class ApiSpecificationRequestPolicies(object):
         Sets the authentication of this ApiSpecificationRequestPolicies.
 
         :param authentication: The authentication of this ApiSpecificationRequestPolicies.
-        :type: AuthenticationPolicy
+        :type: oci.apigateway.models.AuthenticationPolicy
         """
         self._authentication = authentication
 
@@ -73,7 +73,7 @@ class ApiSpecificationRequestPolicies(object):
         Gets the rate_limiting of this ApiSpecificationRequestPolicies.
 
         :return: The rate_limiting of this ApiSpecificationRequestPolicies.
-        :rtype: RateLimitingPolicy
+        :rtype: oci.apigateway.models.RateLimitingPolicy
         """
         return self._rate_limiting
 
@@ -83,7 +83,7 @@ class ApiSpecificationRequestPolicies(object):
         Sets the rate_limiting of this ApiSpecificationRequestPolicies.
 
         :param rate_limiting: The rate_limiting of this ApiSpecificationRequestPolicies.
-        :type: RateLimitingPolicy
+        :type: oci.apigateway.models.RateLimitingPolicy
         """
         self._rate_limiting = rate_limiting
 
@@ -93,7 +93,7 @@ class ApiSpecificationRequestPolicies(object):
         Gets the cors of this ApiSpecificationRequestPolicies.
 
         :return: The cors of this ApiSpecificationRequestPolicies.
-        :rtype: CorsPolicy
+        :rtype: oci.apigateway.models.CorsPolicy
         """
         return self._cors
 
@@ -103,7 +103,7 @@ class ApiSpecificationRequestPolicies(object):
         Sets the cors of this ApiSpecificationRequestPolicies.
 
         :param cors: The cors of this ApiSpecificationRequestPolicies.
-        :type: CorsPolicy
+        :type: oci.apigateway.models.CorsPolicy
         """
         self._cors = cors
 

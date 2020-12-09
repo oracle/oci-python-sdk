@@ -110,7 +110,7 @@ class Volume(object):
 
         :param source_details:
             The value to assign to the source_details property of this Volume.
-        :type source_details: VolumeSourceDetails
+        :type source_details: oci.core.models.VolumeSourceDetails
 
         :param time_created:
             The value to assign to the time_created property of this Volume.
@@ -569,7 +569,7 @@ class Volume(object):
 
 
         :return: The source_details of this Volume.
-        :rtype: VolumeSourceDetails
+        :rtype: oci.core.models.VolumeSourceDetails
         """
         return self._source_details
 
@@ -582,7 +582,7 @@ class Volume(object):
 
 
         :param source_details: The source_details of this Volume.
-        :type: VolumeSourceDetails
+        :type: oci.core.models.VolumeSourceDetails
         """
         self._source_details = source_details
 

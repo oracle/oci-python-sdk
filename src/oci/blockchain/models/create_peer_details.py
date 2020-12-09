@@ -28,7 +28,7 @@ class CreatePeerDetails(object):
 
         :param ocpu_allocation_param:
             The value to assign to the ocpu_allocation_param property of this CreatePeerDetails.
-        :type ocpu_allocation_param: OcpuAllocationNumberParam
+        :type ocpu_allocation_param: oci.blockchain.models.OcpuAllocationNumberParam
 
         :param ad:
             The value to assign to the ad property of this CreatePeerDetails.
@@ -108,7 +108,7 @@ class CreatePeerDetails(object):
         **[Required]** Gets the ocpu_allocation_param of this CreatePeerDetails.
 
         :return: The ocpu_allocation_param of this CreatePeerDetails.
-        :rtype: OcpuAllocationNumberParam
+        :rtype: oci.blockchain.models.OcpuAllocationNumberParam
         """
         return self._ocpu_allocation_param
 
@@ -118,7 +118,7 @@ class CreatePeerDetails(object):
         Sets the ocpu_allocation_param of this CreatePeerDetails.
 
         :param ocpu_allocation_param: The ocpu_allocation_param of this CreatePeerDetails.
-        :type: OcpuAllocationNumberParam
+        :type: oci.blockchain.models.OcpuAllocationNumberParam
         """
         self._ocpu_allocation_param = ocpu_allocation_param
 

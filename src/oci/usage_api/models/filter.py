@@ -37,15 +37,15 @@ class Filter(object):
 
         :param dimensions:
             The value to assign to the dimensions property of this Filter.
-        :type dimensions: list[Dimension]
+        :type dimensions: list[oci.usage_api.models.Dimension]
 
         :param tags:
             The value to assign to the tags property of this Filter.
-        :type tags: list[Tag]
+        :type tags: list[oci.usage_api.models.Tag]
 
         :param filters:
             The value to assign to the filters property of this Filter.
-        :type filters: list[Filter]
+        :type filters: list[oci.usage_api.models.Filter]
 
         """
         self.swagger_types = {
@@ -107,7 +107,7 @@ class Filter(object):
 
 
         :return: The dimensions of this Filter.
-        :rtype: list[Dimension]
+        :rtype: list[oci.usage_api.models.Dimension]
         """
         return self._dimensions
 
@@ -119,7 +119,7 @@ class Filter(object):
 
 
         :param dimensions: The dimensions of this Filter.
-        :type: list[Dimension]
+        :type: list[oci.usage_api.models.Dimension]
         """
         self._dimensions = dimensions
 
@@ -131,7 +131,7 @@ class Filter(object):
 
 
         :return: The tags of this Filter.
-        :rtype: list[Tag]
+        :rtype: list[oci.usage_api.models.Tag]
         """
         return self._tags
 
@@ -143,7 +143,7 @@ class Filter(object):
 
 
         :param tags: The tags of this Filter.
-        :type: list[Tag]
+        :type: list[oci.usage_api.models.Tag]
         """
         self._tags = tags
 
@@ -155,7 +155,7 @@ class Filter(object):
 
 
         :return: The filters of this Filter.
-        :rtype: list[Filter]
+        :rtype: list[oci.usage_api.models.Filter]
         """
         return self._filters
 
@@ -167,7 +167,7 @@ class Filter(object):
 
 
         :param filters: The filters of this Filter.
-        :type: list[Filter]
+        :type: list[oci.usage_api.models.Filter]
         """
         self._filters = filters
 

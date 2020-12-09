@@ -70,7 +70,7 @@ class UpdateSecurityRuleDetails(object):
 
         :param icmp_options:
             The value to assign to the icmp_options property of this UpdateSecurityRuleDetails.
-        :type icmp_options: IcmpOptions
+        :type icmp_options: oci.core.models.IcmpOptions
 
         :param id:
             The value to assign to the id property of this UpdateSecurityRuleDetails.
@@ -95,11 +95,11 @@ class UpdateSecurityRuleDetails(object):
 
         :param tcp_options:
             The value to assign to the tcp_options property of this UpdateSecurityRuleDetails.
-        :type tcp_options: TcpOptions
+        :type tcp_options: oci.core.models.TcpOptions
 
         :param udp_options:
             The value to assign to the udp_options property of this UpdateSecurityRuleDetails.
-        :type udp_options: UdpOptions
+        :type udp_options: oci.core.models.UdpOptions
 
         """
         self.swagger_types = {
@@ -335,7 +335,7 @@ class UpdateSecurityRuleDetails(object):
 
 
         :return: The icmp_options of this UpdateSecurityRuleDetails.
-        :rtype: IcmpOptions
+        :rtype: oci.core.models.IcmpOptions
         """
         return self._icmp_options
 
@@ -359,7 +359,7 @@ class UpdateSecurityRuleDetails(object):
 
 
         :param icmp_options: The icmp_options of this UpdateSecurityRuleDetails.
-        :type: IcmpOptions
+        :type: oci.core.models.IcmpOptions
         """
         self._icmp_options = icmp_options
 
@@ -574,7 +574,7 @@ class UpdateSecurityRuleDetails(object):
 
 
         :return: The tcp_options of this UpdateSecurityRuleDetails.
-        :rtype: TcpOptions
+        :rtype: oci.core.models.TcpOptions
         """
         return self._tcp_options
 
@@ -587,7 +587,7 @@ class UpdateSecurityRuleDetails(object):
 
 
         :param tcp_options: The tcp_options of this UpdateSecurityRuleDetails.
-        :type: TcpOptions
+        :type: oci.core.models.TcpOptions
         """
         self._tcp_options = tcp_options
 
@@ -600,7 +600,7 @@ class UpdateSecurityRuleDetails(object):
 
 
         :return: The udp_options of this UpdateSecurityRuleDetails.
-        :rtype: UdpOptions
+        :rtype: oci.core.models.UdpOptions
         """
         return self._udp_options
 
@@ -613,7 +613,7 @@ class UpdateSecurityRuleDetails(object):
 
 
         :param udp_options: The udp_options of this UpdateSecurityRuleDetails.
-        :type: UdpOptions
+        :type: oci.core.models.UdpOptions
         """
         self._udp_options = udp_options
 

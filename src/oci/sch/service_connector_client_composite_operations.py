@@ -73,7 +73,7 @@ class ServiceConnectorClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
+        :param oci.sch.models.ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
             The configuration details for moving a service connector to a different compartment.
 
         :param list[str] wait_for_states:
@@ -111,7 +111,7 @@ class ServiceConnectorClientCompositeOperations(object):
         Calls :py:func:`~oci.sch.ServiceConnectorClient.create_service_connector` and waits for the :py:class:`~oci.sch.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateServiceConnectorDetails create_service_connector_details: (required)
+        :param oci.sch.models.CreateServiceConnectorDetails create_service_connector_details: (required)
             Configuration details for the new service connector.
 
         :param list[str] wait_for_states:
@@ -242,7 +242,7 @@ class ServiceConnectorClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateServiceConnectorDetails update_service_connector_details: (required)
+        :param oci.sch.models.UpdateServiceConnectorDetails update_service_connector_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

@@ -31,15 +31,15 @@ class CreateItemDetails(object):
 
         :param category:
             The value to assign to the category property of this CreateItemDetails.
-        :type category: CreateCategoryDetails
+        :type category: oci.cims.models.CreateCategoryDetails
 
         :param sub_category:
             The value to assign to the sub_category property of this CreateItemDetails.
-        :type sub_category: CreateSubCategoryDetails
+        :type sub_category: oci.cims.models.CreateSubCategoryDetails
 
         :param issue_type:
             The value to assign to the issue_type property of this CreateItemDetails.
-        :type issue_type: CreateIssueTypeDetails
+        :type issue_type: oci.cims.models.CreateIssueTypeDetails
 
         :param name:
             The value to assign to the name property of this CreateItemDetails.
@@ -114,7 +114,7 @@ class CreateItemDetails(object):
         Gets the category of this CreateItemDetails.
 
         :return: The category of this CreateItemDetails.
-        :rtype: CreateCategoryDetails
+        :rtype: oci.cims.models.CreateCategoryDetails
         """
         return self._category
 
@@ -124,7 +124,7 @@ class CreateItemDetails(object):
         Sets the category of this CreateItemDetails.
 
         :param category: The category of this CreateItemDetails.
-        :type: CreateCategoryDetails
+        :type: oci.cims.models.CreateCategoryDetails
         """
         self._category = category
 
@@ -134,7 +134,7 @@ class CreateItemDetails(object):
         Gets the sub_category of this CreateItemDetails.
 
         :return: The sub_category of this CreateItemDetails.
-        :rtype: CreateSubCategoryDetails
+        :rtype: oci.cims.models.CreateSubCategoryDetails
         """
         return self._sub_category
 
@@ -144,7 +144,7 @@ class CreateItemDetails(object):
         Sets the sub_category of this CreateItemDetails.
 
         :param sub_category: The sub_category of this CreateItemDetails.
-        :type: CreateSubCategoryDetails
+        :type: oci.cims.models.CreateSubCategoryDetails
         """
         self._sub_category = sub_category
 
@@ -154,7 +154,7 @@ class CreateItemDetails(object):
         Gets the issue_type of this CreateItemDetails.
 
         :return: The issue_type of this CreateItemDetails.
-        :rtype: CreateIssueTypeDetails
+        :rtype: oci.cims.models.CreateIssueTypeDetails
         """
         return self._issue_type
 
@@ -164,7 +164,7 @@ class CreateItemDetails(object):
         Sets the issue_type of this CreateItemDetails.
 
         :param issue_type: The issue_type of this CreateItemDetails.
-        :type: CreateIssueTypeDetails
+        :type: oci.cims.models.CreateIssueTypeDetails
         """
         self._issue_type = issue_type
 

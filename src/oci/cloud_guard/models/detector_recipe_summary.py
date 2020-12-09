@@ -96,7 +96,7 @@ class DetectorRecipeSummary(object):
 
         :param detector_rules:
             The value to assign to the detector_rules property of this DetectorRecipeSummary.
-        :type detector_rules: list[DetectorRecipeDetectorRule]
+        :type detector_rules: list[oci.cloud_guard.models.DetectorRecipeDetectorRule]
 
         :param time_created:
             The value to assign to the time_created property of this DetectorRecipeSummary.
@@ -362,7 +362,7 @@ class DetectorRecipeSummary(object):
 
 
         :return: The detector_rules of this DetectorRecipeSummary.
-        :rtype: list[DetectorRecipeDetectorRule]
+        :rtype: list[oci.cloud_guard.models.DetectorRecipeDetectorRule]
         """
         return self._detector_rules
 
@@ -374,7 +374,7 @@ class DetectorRecipeSummary(object):
 
 
         :param detector_rules: The detector_rules of this DetectorRecipeSummary.
-        :type: list[DetectorRecipeDetectorRule]
+        :type: list[oci.cloud_guard.models.DetectorRecipeDetectorRule]
         """
         self._detector_rules = detector_rules
 

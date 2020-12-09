@@ -85,7 +85,7 @@ class TaggingWorkRequest(object):
 
         :param resources:
             The value to assign to the resources property of this TaggingWorkRequest.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.identity.models.WorkRequestResource]
 
         :param time_accepted:
             The value to assign to the time_accepted property of this TaggingWorkRequest.
@@ -254,7 +254,7 @@ class TaggingWorkRequest(object):
 
 
         :return: The resources of this TaggingWorkRequest.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.identity.models.WorkRequestResource]
         """
         return self._resources
 
@@ -266,7 +266,7 @@ class TaggingWorkRequest(object):
 
 
         :param resources: The resources of this TaggingWorkRequest.
-        :type: list[WorkRequestResource]
+        :type: list[oci.identity.models.WorkRequestResource]
         """
         self._resources = resources
 

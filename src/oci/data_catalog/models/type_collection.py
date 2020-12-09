@@ -24,7 +24,7 @@ class TypeCollection(object):
 
         :param items:
             The value to assign to the items property of this TypeCollection.
-        :type items: list[TypeSummary]
+        :type items: list[oci.data_catalog.models.TypeSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class TypeCollection(object):
 
 
         :return: The items of this TypeCollection.
-        :rtype: list[TypeSummary]
+        :rtype: list[oci.data_catalog.models.TypeSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class TypeCollection(object):
 
 
         :param items: The items of this TypeCollection.
-        :type: list[TypeSummary]
+        :type: list[oci.data_catalog.models.TypeSummary]
         """
         self._items = items
 

@@ -163,19 +163,19 @@ class Data(object):
 
         :param identity:
             The value to assign to the identity property of this Data.
-        :type identity: Identity
+        :type identity: oci.audit.models.Identity
 
         :param request:
             The value to assign to the request property of this Data.
-        :type request: Request
+        :type request: oci.audit.models.Request
 
         :param response:
             The value to assign to the response property of this Data.
-        :type response: Response
+        :type response: oci.audit.models.Response
 
         :param state_change:
             The value to assign to the state_change property of this Data.
-        :type state_change: StateChange
+        :type state_change: oci.audit.models.StateChange
 
         :param additional_details:
             The value to assign to the additional_details property of this Data.
@@ -503,7 +503,7 @@ class Data(object):
         Gets the identity of this Data.
 
         :return: The identity of this Data.
-        :rtype: Identity
+        :rtype: oci.audit.models.Identity
         """
         return self._identity
 
@@ -513,7 +513,7 @@ class Data(object):
         Sets the identity of this Data.
 
         :param identity: The identity of this Data.
-        :type: Identity
+        :type: oci.audit.models.Identity
         """
         self._identity = identity
 
@@ -523,7 +523,7 @@ class Data(object):
         Gets the request of this Data.
 
         :return: The request of this Data.
-        :rtype: Request
+        :rtype: oci.audit.models.Request
         """
         return self._request
 
@@ -533,7 +533,7 @@ class Data(object):
         Sets the request of this Data.
 
         :param request: The request of this Data.
-        :type: Request
+        :type: oci.audit.models.Request
         """
         self._request = request
 
@@ -543,7 +543,7 @@ class Data(object):
         Gets the response of this Data.
 
         :return: The response of this Data.
-        :rtype: Response
+        :rtype: oci.audit.models.Response
         """
         return self._response
 
@@ -553,7 +553,7 @@ class Data(object):
         Sets the response of this Data.
 
         :param response: The response of this Data.
-        :type: Response
+        :type: oci.audit.models.Response
         """
         self._response = response
 
@@ -563,7 +563,7 @@ class Data(object):
         Gets the state_change of this Data.
 
         :return: The state_change of this Data.
-        :rtype: StateChange
+        :rtype: oci.audit.models.StateChange
         """
         return self._state_change
 
@@ -573,7 +573,7 @@ class Data(object):
         Sets the state_change of this Data.
 
         :param state_change: The state_change of this Data.
-        :type: StateChange
+        :type: oci.audit.models.StateChange
         """
         self._state_change = state_change
 

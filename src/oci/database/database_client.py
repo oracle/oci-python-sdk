@@ -4527,7 +4527,7 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
-        :param DeregisterAutonomousDatabaseDataSafeDetails deregister_autonomous_database_data_safe_details: (optional)
+        :param oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails deregister_autonomous_database_data_safe_details: (optional)
             Details for deregistering an Autonomous Database with Data Safe.
 
         :param obj retry_strategy: (optional)
@@ -13645,7 +13645,7 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
-        :param RegisterAutonomousDatabaseDataSafeDetails register_autonomous_database_data_safe_details: (optional)
+        :param oci.database.models.RegisterAutonomousDatabaseDataSafeDetails register_autonomous_database_data_safe_details: (optional)
             Request to register an Autonomous Database with Data Safe.
 
         :param obj retry_strategy: (optional)

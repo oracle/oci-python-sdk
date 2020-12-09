@@ -28,7 +28,7 @@ class IpAddress(object):
 
         :param reserved_ip:
             The value to assign to the reserved_ip property of this IpAddress.
-        :type reserved_ip: ReservedIP
+        :type reserved_ip: oci.load_balancer.models.ReservedIP
 
         """
         self.swagger_types = {
@@ -113,7 +113,7 @@ class IpAddress(object):
         Gets the reserved_ip of this IpAddress.
 
         :return: The reserved_ip of this IpAddress.
-        :rtype: ReservedIP
+        :rtype: oci.load_balancer.models.ReservedIP
         """
         return self._reserved_ip
 
@@ -123,7 +123,7 @@ class IpAddress(object):
         Sets the reserved_ip of this IpAddress.
 
         :param reserved_ip: The reserved_ip of this IpAddress.
-        :type: ReservedIP
+        :type: oci.load_balancer.models.ReservedIP
         """
         self._reserved_ip = reserved_ip
 

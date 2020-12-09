@@ -24,11 +24,11 @@ class BulkEditTagsDetails(object):
 
         :param resources:
             The value to assign to the resources property of this BulkEditTagsDetails.
-        :type resources: list[BulkEditResource]
+        :type resources: list[oci.identity.models.BulkEditResource]
 
         :param bulk_edit_operations:
             The value to assign to the bulk_edit_operations property of this BulkEditTagsDetails.
-        :type bulk_edit_operations: list[BulkEditOperationDetails]
+        :type bulk_edit_operations: list[oci.identity.models.BulkEditOperationDetails]
 
         """
         self.swagger_types = {
@@ -79,7 +79,7 @@ class BulkEditTagsDetails(object):
 
 
         :return: The resources of this BulkEditTagsDetails.
-        :rtype: list[BulkEditResource]
+        :rtype: list[oci.identity.models.BulkEditResource]
         """
         return self._resources
 
@@ -91,7 +91,7 @@ class BulkEditTagsDetails(object):
 
 
         :param resources: The resources of this BulkEditTagsDetails.
-        :type: list[BulkEditResource]
+        :type: list[oci.identity.models.BulkEditResource]
         """
         self._resources = resources
 
@@ -103,7 +103,7 @@ class BulkEditTagsDetails(object):
 
 
         :return: The bulk_edit_operations of this BulkEditTagsDetails.
-        :rtype: list[BulkEditOperationDetails]
+        :rtype: list[oci.identity.models.BulkEditOperationDetails]
         """
         return self._bulk_edit_operations
 
@@ -115,7 +115,7 @@ class BulkEditTagsDetails(object):
 
 
         :param bulk_edit_operations: The bulk_edit_operations of this BulkEditTagsDetails.
-        :type: list[BulkEditOperationDetails]
+        :type: list[oci.identity.models.BulkEditOperationDetails]
         """
         self._bulk_edit_operations = bulk_edit_operations
 

@@ -12671,7 +12671,7 @@ class DataCatalogClient(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param SearchCriteria search_criteria_details: (optional)
+        :param oci.data_catalog.models.SearchCriteria search_criteria_details: (optional)
             The information used to create an extended search results.
 
         :param str display_name: (optional)

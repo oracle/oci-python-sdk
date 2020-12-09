@@ -20,7 +20,7 @@ class MultipleTransferDevices(object):
 
         :param transfer_device_objects:
             The value to assign to the transfer_device_objects property of this MultipleTransferDevices.
-        :type transfer_device_objects: list[TransferDeviceSummary]
+        :type transfer_device_objects: list[oci.dts.models.TransferDeviceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class MultipleTransferDevices(object):
 
 
         :return: The transfer_device_objects of this MultipleTransferDevices.
-        :rtype: list[TransferDeviceSummary]
+        :rtype: list[oci.dts.models.TransferDeviceSummary]
         """
         return self._transfer_device_objects
 
@@ -53,7 +53,7 @@ class MultipleTransferDevices(object):
 
 
         :param transfer_device_objects: The transfer_device_objects of this MultipleTransferDevices.
-        :type: list[TransferDeviceSummary]
+        :type: list[oci.dts.models.TransferDeviceSummary]
         """
         self._transfer_device_objects = transfer_device_objects
 

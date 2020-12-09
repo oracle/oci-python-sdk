@@ -145,7 +145,7 @@ class KmsManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.key_management.KmsManagementClient.create_key` and waits for the :py:class:`~oci.key_management.models.Key` acted upon
         to enter the given state(s).
 
-        :param CreateKeyDetails create_key_details: (required)
+        :param oci.key_management.models.CreateKeyDetails create_key_details: (required)
             CreateKeyDetails
 
         :param list[str] wait_for_states:
@@ -300,7 +300,7 @@ class KmsManagementClientCompositeOperations(object):
         :param str key_id: (required)
             The OCID of the key.
 
-        :param ScheduleKeyDeletionDetails schedule_key_deletion_details: (required)
+        :param oci.key_management.models.ScheduleKeyDeletionDetails schedule_key_deletion_details: (required)
             ScheduleKeyDeletionDetails
 
         :param list[str] wait_for_states:
@@ -344,7 +344,7 @@ class KmsManagementClientCompositeOperations(object):
         :param str key_version_id: (required)
             The OCID of the key version.
 
-        :param ScheduleKeyVersionDeletionDetails schedule_key_version_deletion_details: (required)
+        :param oci.key_management.models.ScheduleKeyVersionDeletionDetails schedule_key_version_deletion_details: (required)
             ScheduleKeyVersionDeletionDetails
 
         :param list[str] wait_for_states:
@@ -385,7 +385,7 @@ class KmsManagementClientCompositeOperations(object):
         :param str key_id: (required)
             The OCID of the key.
 
-        :param UpdateKeyDetails update_key_details: (required)
+        :param oci.key_management.models.UpdateKeyDetails update_key_details: (required)
             UpdateKeyDetails
 
         :param list[str] wait_for_states:

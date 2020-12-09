@@ -20,7 +20,7 @@ class NamespaceCollection(object):
 
         :param items:
             The value to assign to the items property of this NamespaceCollection.
-        :type items: list[NamespaceSummary]
+        :type items: list[oci.log_analytics.models.NamespaceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class NamespaceCollection(object):
 
 
         :return: The items of this NamespaceCollection.
-        :rtype: list[NamespaceSummary]
+        :rtype: list[oci.log_analytics.models.NamespaceSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class NamespaceCollection(object):
 
 
         :param items: The items of this NamespaceCollection.
-        :type: list[NamespaceSummary]
+        :type: list[oci.log_analytics.models.NamespaceSummary]
         """
         self._items = items
 

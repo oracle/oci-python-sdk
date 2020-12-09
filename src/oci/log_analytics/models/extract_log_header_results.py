@@ -20,7 +20,7 @@ class ExtractLogHeaderResults(object):
 
         :param json_paths:
             The value to assign to the json_paths property of this ExtractLogHeaderResults.
-        :type json_paths: list[ExtractLogHeaderDetails]
+        :type json_paths: list[oci.log_analytics.models.ExtractLogHeaderDetails]
 
         :param xml_paths:
             The value to assign to the xml_paths property of this ExtractLogHeaderResults.
@@ -48,7 +48,7 @@ class ExtractLogHeaderResults(object):
 
 
         :return: The json_paths of this ExtractLogHeaderResults.
-        :rtype: list[ExtractLogHeaderDetails]
+        :rtype: list[oci.log_analytics.models.ExtractLogHeaderDetails]
         """
         return self._json_paths
 
@@ -60,7 +60,7 @@ class ExtractLogHeaderResults(object):
 
 
         :param json_paths: The json_paths of this ExtractLogHeaderResults.
-        :type: list[ExtractLogHeaderDetails]
+        :type: list[oci.log_analytics.models.ExtractLogHeaderDetails]
         """
         self._json_paths = json_paths
 

@@ -28,7 +28,7 @@ class CreateOAuth2ClientCredentialDetails(object):
 
         :param scopes:
             The value to assign to the scopes property of this CreateOAuth2ClientCredentialDetails.
-        :type scopes: list[FullyQualifiedScope]
+        :type scopes: list[oci.identity.models.FullyQualifiedScope]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class CreateOAuth2ClientCredentialDetails(object):
 
 
         :return: The scopes of this CreateOAuth2ClientCredentialDetails.
-        :rtype: list[FullyQualifiedScope]
+        :rtype: list[oci.identity.models.FullyQualifiedScope]
         """
         return self._scopes
 
@@ -115,7 +115,7 @@ class CreateOAuth2ClientCredentialDetails(object):
 
 
         :param scopes: The scopes of this CreateOAuth2ClientCredentialDetails.
-        :type: list[FullyQualifiedScope]
+        :type: list[oci.identity.models.FullyQualifiedScope]
         """
         self._scopes = scopes
 

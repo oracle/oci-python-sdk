@@ -20,7 +20,7 @@ class SortKey(object):
 
         :param sort_rules:
             The value to assign to the sort_rules property of this SortKey.
-        :type sort_rules: list[SortKeyRule]
+        :type sort_rules: list[oci.data_integration.models.SortKeyRule]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SortKey(object):
 
 
         :return: The sort_rules of this SortKey.
-        :rtype: list[SortKeyRule]
+        :rtype: list[oci.data_integration.models.SortKeyRule]
         """
         return self._sort_rules
 
@@ -53,7 +53,7 @@ class SortKey(object):
 
 
         :param sort_rules: The sort_rules of this SortKey.
-        :type: list[SortKeyRule]
+        :type: list[oci.data_integration.models.SortKeyRule]
         """
         self._sort_rules = sort_rules
 

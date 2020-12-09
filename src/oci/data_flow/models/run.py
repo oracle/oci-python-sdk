@@ -156,7 +156,7 @@ class Run(object):
 
         :param parameters:
             The value to assign to the parameters property of this Run.
-        :type parameters: list[ApplicationParameter]
+        :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
         :param private_endpoint_dns_zones:
             The value to assign to the private_endpoint_dns_zones property of this Run.
@@ -936,7 +936,7 @@ class Run(object):
 
 
         :return: The parameters of this Run.
-        :rtype: list[ApplicationParameter]
+        :rtype: list[oci.data_flow.models.ApplicationParameter]
         """
         return self._parameters
 
@@ -951,7 +951,7 @@ class Run(object):
 
 
         :param parameters: The parameters of this Run.
-        :type: list[ApplicationParameter]
+        :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
 

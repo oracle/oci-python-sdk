@@ -51,7 +51,7 @@ class CreateLoadBalancerDetails(object):
 
         :param reserved_ips:
             The value to assign to the reserved_ips property of this CreateLoadBalancerDetails.
-        :type reserved_ips: list[ReservedIP]
+        :type reserved_ips: list[oci.load_balancer.models.ReservedIP]
 
         :param listeners:
             The value to assign to the listeners property of this CreateLoadBalancerDetails.
@@ -348,7 +348,7 @@ class CreateLoadBalancerDetails(object):
 
 
         :return: The reserved_ips of this CreateLoadBalancerDetails.
-        :rtype: list[ReservedIP]
+        :rtype: list[oci.load_balancer.models.ReservedIP]
         """
         return self._reserved_ips
 
@@ -360,7 +360,7 @@ class CreateLoadBalancerDetails(object):
 
 
         :param reserved_ips: The reserved_ips of this CreateLoadBalancerDetails.
-        :type: list[ReservedIP]
+        :type: list[oci.load_balancer.models.ReservedIP]
         """
         self._reserved_ips = reserved_ips
 

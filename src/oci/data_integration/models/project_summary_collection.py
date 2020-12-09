@@ -20,7 +20,7 @@ class ProjectSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this ProjectSummaryCollection.
-        :type items: list[ProjectSummary]
+        :type items: list[oci.data_integration.models.ProjectSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ProjectSummaryCollection(object):
 
 
         :return: The items of this ProjectSummaryCollection.
-        :rtype: list[ProjectSummary]
+        :rtype: list[oci.data_integration.models.ProjectSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ProjectSummaryCollection(object):
 
 
         :param items: The items of this ProjectSummaryCollection.
-        :type: list[ProjectSummary]
+        :type: list[oci.data_integration.models.ProjectSummary]
         """
         self._items = items
 

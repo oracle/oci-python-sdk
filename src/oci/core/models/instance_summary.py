@@ -60,7 +60,7 @@ class InstanceSummary(object):
 
         :param load_balancer_backends:
             The value to assign to the load_balancer_backends property of this InstanceSummary.
-        :type load_balancer_backends: list[InstancePoolInstanceLoadBalancerBackend]
+        :type load_balancer_backends: list[oci.core.models.InstancePoolInstanceLoadBalancerBackend]
 
         """
         self.swagger_types = {
@@ -363,7 +363,7 @@ class InstanceSummary(object):
 
 
         :return: The load_balancer_backends of this InstanceSummary.
-        :rtype: list[InstancePoolInstanceLoadBalancerBackend]
+        :rtype: list[oci.core.models.InstancePoolInstanceLoadBalancerBackend]
         """
         return self._load_balancer_backends
 
@@ -375,7 +375,7 @@ class InstanceSummary(object):
 
 
         :param load_balancer_backends: The load_balancer_backends of this InstanceSummary.
-        :type: list[InstancePoolInstanceLoadBalancerBackend]
+        :type: list[oci.core.models.InstancePoolInstanceLoadBalancerBackend]
         """
         self._load_balancer_backends = load_balancer_backends
 

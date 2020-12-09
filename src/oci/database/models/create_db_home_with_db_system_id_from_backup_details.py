@@ -46,7 +46,7 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeBase):
 
         :param database:
             The value to assign to the database property of this CreateDbHomeWithDbSystemIdFromBackupDetails.
-        :type database: CreateDatabaseFromBackupDetails
+        :type database: oci.database.models.CreateDatabaseFromBackupDetails
 
         """
         self.swagger_types = {
@@ -112,7 +112,7 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeBase):
         **[Required]** Gets the database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
 
         :return: The database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
-        :rtype: CreateDatabaseFromBackupDetails
+        :rtype: oci.database.models.CreateDatabaseFromBackupDetails
         """
         return self._database
 
@@ -122,7 +122,7 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeBase):
         Sets the database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
 
         :param database: The database of this CreateDbHomeWithDbSystemIdFromBackupDetails.
-        :type: CreateDatabaseFromBackupDetails
+        :type: oci.database.models.CreateDatabaseFromBackupDetails
         """
         self._database = database
 

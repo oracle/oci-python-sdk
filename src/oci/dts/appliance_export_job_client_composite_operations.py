@@ -28,7 +28,7 @@ class ApplianceExportJobClientCompositeOperations(object):
         Calls :py:func:`~oci.dts.ApplianceExportJobClient.create_appliance_export_job` and waits for the :py:class:`~oci.dts.models.ApplianceExportJob` acted upon
         to enter the given state(s).
 
-        :param CreateApplianceExportJobDetails create_appliance_export_job_details: (required)
+        :param oci.dts.models.CreateApplianceExportJobDetails create_appliance_export_job_details: (required)
             Creates a new Appliance Export Job
 
         :param list[str] wait_for_states:
@@ -116,7 +116,7 @@ class ApplianceExportJobClientCompositeOperations(object):
         :param str appliance_export_job_id: (required)
             ID of the Appliance Export Job
 
-        :param UpdateApplianceExportJobDetails update_appliance_export_job_details: (required)
+        :param oci.dts.models.UpdateApplianceExportJobDetails update_appliance_export_job_details: (required)
             fields to update
 
         :param list[str] wait_for_states:

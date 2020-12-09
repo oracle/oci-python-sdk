@@ -20,7 +20,7 @@ class ByoipRangeCollection(object):
 
         :param items:
             The value to assign to the items property of this ByoipRangeCollection.
-        :type items: list[ByoipRangeSummary]
+        :type items: list[oci.core.models.ByoipRangeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ByoipRangeCollection(object):
 
 
         :return: The items of this ByoipRangeCollection.
-        :rtype: list[ByoipRangeSummary]
+        :rtype: list[oci.core.models.ByoipRangeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ByoipRangeCollection(object):
 
 
         :param items: The items of this ByoipRangeCollection.
-        :type: list[ByoipRangeSummary]
+        :type: list[oci.core.models.ByoipRangeSummary]
         """
         self._items = items
 

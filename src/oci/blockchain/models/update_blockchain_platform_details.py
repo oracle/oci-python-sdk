@@ -28,7 +28,7 @@ class UpdateBlockchainPlatformDetails(object):
 
         :param replicas:
             The value to assign to the replicas property of this UpdateBlockchainPlatformDetails.
-        :type replicas: ReplicaDetails
+        :type replicas: oci.blockchain.models.ReplicaDetails
 
         :param total_ocpu_capacity:
             The value to assign to the total_ocpu_capacity property of this UpdateBlockchainPlatformDetails.
@@ -122,7 +122,7 @@ class UpdateBlockchainPlatformDetails(object):
         Gets the replicas of this UpdateBlockchainPlatformDetails.
 
         :return: The replicas of this UpdateBlockchainPlatformDetails.
-        :rtype: ReplicaDetails
+        :rtype: oci.blockchain.models.ReplicaDetails
         """
         return self._replicas
 
@@ -132,7 +132,7 @@ class UpdateBlockchainPlatformDetails(object):
         Sets the replicas of this UpdateBlockchainPlatformDetails.
 
         :param replicas: The replicas of this UpdateBlockchainPlatformDetails.
-        :type: ReplicaDetails
+        :type: oci.blockchain.models.ReplicaDetails
         """
         self._replicas = replicas
 

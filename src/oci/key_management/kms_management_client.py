@@ -113,7 +113,7 @@ class KmsManagementClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param BackupKeyDetails backup_key_details: (optional)
+        :param oci.key_management.models.BackupKeyDetails backup_key_details: (optional)
             BackupKeyDetails
 
         :param obj retry_strategy: (optional)
@@ -1730,7 +1730,7 @@ class KmsManagementClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param RestoreKeyFromObjectStoreDetails restore_key_from_object_store_details: (optional)
+        :param oci.key_management.models.RestoreKeyFromObjectStoreDetails restore_key_from_object_store_details: (optional)
             Location to restore the backup from
 
         :param obj retry_strategy: (optional)

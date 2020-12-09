@@ -67,7 +67,7 @@ class ConnectionSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConnectionSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ConnectionSummary.
@@ -91,11 +91,11 @@ class ConnectionSummary(object):
 
         :param primary_schema:
             The value to assign to the primary_schema property of this ConnectionSummary.
-        :type primary_schema: Schema
+        :type primary_schema: oci.data_integration.models.Schema
 
         :param connection_properties:
             The value to assign to the connection_properties property of this ConnectionSummary.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param is_default:
             The value to assign to the is_default property of this ConnectionSummary.
@@ -103,7 +103,7 @@ class ConnectionSummary(object):
 
         :param metadata:
             The value to assign to the metadata property of this ConnectionSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this ConnectionSummary.
@@ -271,7 +271,7 @@ class ConnectionSummary(object):
         Gets the parent_ref of this ConnectionSummary.
 
         :return: The parent_ref of this ConnectionSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -281,7 +281,7 @@ class ConnectionSummary(object):
         Sets the parent_ref of this ConnectionSummary.
 
         :param parent_ref: The parent_ref of this ConnectionSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -411,7 +411,7 @@ class ConnectionSummary(object):
         Gets the primary_schema of this ConnectionSummary.
 
         :return: The primary_schema of this ConnectionSummary.
-        :rtype: Schema
+        :rtype: oci.data_integration.models.Schema
         """
         return self._primary_schema
 
@@ -421,7 +421,7 @@ class ConnectionSummary(object):
         Sets the primary_schema of this ConnectionSummary.
 
         :param primary_schema: The primary_schema of this ConnectionSummary.
-        :type: Schema
+        :type: oci.data_integration.models.Schema
         """
         self._primary_schema = primary_schema
 
@@ -433,7 +433,7 @@ class ConnectionSummary(object):
 
 
         :return: The connection_properties of this ConnectionSummary.
-        :rtype: list[ConnectionProperty]
+        :rtype: list[oci.data_integration.models.ConnectionProperty]
         """
         return self._connection_properties
 
@@ -445,7 +445,7 @@ class ConnectionSummary(object):
 
 
         :param connection_properties: The connection_properties of this ConnectionSummary.
-        :type: list[ConnectionProperty]
+        :type: list[oci.data_integration.models.ConnectionProperty]
         """
         self._connection_properties = connection_properties
 
@@ -479,7 +479,7 @@ class ConnectionSummary(object):
         Gets the metadata of this ConnectionSummary.
 
         :return: The metadata of this ConnectionSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -489,7 +489,7 @@ class ConnectionSummary(object):
         Sets the metadata of this ConnectionSummary.
 
         :param metadata: The metadata of this ConnectionSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

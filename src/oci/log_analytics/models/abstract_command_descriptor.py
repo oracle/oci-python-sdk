@@ -226,11 +226,11 @@ class AbstractCommandDescriptor(object):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this AbstractCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this AbstractCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         """
         self.swagger_types = {
@@ -489,7 +489,7 @@ class AbstractCommandDescriptor(object):
 
 
         :return: The referenced_fields of this AbstractCommandDescriptor.
-        :rtype: list[AbstractField]
+        :rtype: list[oci.log_analytics.models.AbstractField]
         """
         return self._referenced_fields
 
@@ -501,7 +501,7 @@ class AbstractCommandDescriptor(object):
 
 
         :param referenced_fields: The referenced_fields of this AbstractCommandDescriptor.
-        :type: list[AbstractField]
+        :type: list[oci.log_analytics.models.AbstractField]
         """
         self._referenced_fields = referenced_fields
 
@@ -513,7 +513,7 @@ class AbstractCommandDescriptor(object):
 
 
         :return: The declared_fields of this AbstractCommandDescriptor.
-        :rtype: list[AbstractField]
+        :rtype: list[oci.log_analytics.models.AbstractField]
         """
         return self._declared_fields
 
@@ -525,7 +525,7 @@ class AbstractCommandDescriptor(object):
 
 
         :param declared_fields: The declared_fields of this AbstractCommandDescriptor.
-        :type: list[AbstractField]
+        :type: list[oci.log_analytics.models.AbstractField]
         """
         self._declared_fields = declared_fields
 

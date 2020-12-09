@@ -64,7 +64,7 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
-        :type items: list[ResourceStatisticsAggregation]
+        :type items: list[oci.opsi.models.ResourceStatisticsAggregation]
 
         """
         self.swagger_types = {
@@ -205,7 +205,7 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
 
 
         :return: The items of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
-        :rtype: list[ResourceStatisticsAggregation]
+        :rtype: list[oci.opsi.models.ResourceStatisticsAggregation]
         """
         return self._items
 
@@ -217,7 +217,7 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
 
 
         :param items: The items of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
-        :type: list[ResourceStatisticsAggregation]
+        :type: list[oci.opsi.models.ResourceStatisticsAggregation]
         """
         self._items = items
 

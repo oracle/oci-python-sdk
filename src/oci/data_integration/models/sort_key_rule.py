@@ -20,7 +20,7 @@ class SortKeyRule(object):
 
         :param wrapped_rule:
             The value to assign to the wrapped_rule property of this SortKeyRule.
-        :type wrapped_rule: ProjectionRule
+        :type wrapped_rule: oci.data_integration.models.ProjectionRule
 
         :param is_ascending:
             The value to assign to the is_ascending property of this SortKeyRule.
@@ -46,7 +46,7 @@ class SortKeyRule(object):
         Gets the wrapped_rule of this SortKeyRule.
 
         :return: The wrapped_rule of this SortKeyRule.
-        :rtype: ProjectionRule
+        :rtype: oci.data_integration.models.ProjectionRule
         """
         return self._wrapped_rule
 
@@ -56,7 +56,7 @@ class SortKeyRule(object):
         Sets the wrapped_rule of this SortKeyRule.
 
         :param wrapped_rule: The wrapped_rule of this SortKeyRule.
-        :type: ProjectionRule
+        :type: oci.data_integration.models.ProjectionRule
         """
         self._wrapped_rule = wrapped_rule
 

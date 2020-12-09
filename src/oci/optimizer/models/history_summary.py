@@ -106,7 +106,7 @@ class HistorySummary(object):
 
         :param action:
             The value to assign to the action property of this HistorySummary.
-        :type action: Action
+        :type action: oci.optimizer.models.Action
 
         :param compartment_id:
             The value to assign to the compartment_id property of this HistorySummary.
@@ -401,7 +401,7 @@ class HistorySummary(object):
         **[Required]** Gets the action of this HistorySummary.
 
         :return: The action of this HistorySummary.
-        :rtype: Action
+        :rtype: oci.optimizer.models.Action
         """
         return self._action
 
@@ -411,7 +411,7 @@ class HistorySummary(object):
         Sets the action of this HistorySummary.
 
         :param action: The action of this HistorySummary.
-        :type: Action
+        :type: oci.optimizer.models.Action
         """
         self._action = action
 

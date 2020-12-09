@@ -38,7 +38,7 @@ class ImageListingPackage(ListingPackage):
 
         :param pricing:
             The value to assign to the pricing property of this ImageListingPackage.
-        :type pricing: PricingModel
+        :type pricing: oci.marketplace.models.PricingModel
 
         :param resource_id:
             The value to assign to the resource_id property of this ImageListingPackage.
@@ -62,7 +62,7 @@ class ImageListingPackage(ListingPackage):
 
         :param regions:
             The value to assign to the regions property of this ImageListingPackage.
-        :type regions: list[Region]
+        :type regions: list[oci.marketplace.models.Region]
 
         """
         self.swagger_types = {
@@ -190,7 +190,7 @@ class ImageListingPackage(ListingPackage):
 
 
         :return: The regions of this ImageListingPackage.
-        :rtype: list[Region]
+        :rtype: list[oci.marketplace.models.Region]
         """
         return self._regions
 
@@ -202,7 +202,7 @@ class ImageListingPackage(ListingPackage):
 
 
         :param regions: The regions of this ImageListingPackage.
-        :type: list[Region]
+        :type: list[oci.marketplace.models.Region]
         """
         self._regions = regions
 

@@ -22,7 +22,7 @@ class ResourceDiscoveryServiceCollection(object):
 
         :param items:
             The value to assign to the items property of this ResourceDiscoveryServiceCollection.
-        :type items: list[ResourceDiscoveryServiceSummary]
+        :type items: list[oci.resource_manager.models.ResourceDiscoveryServiceSummary]
 
         """
         self.swagger_types = {
@@ -43,7 +43,7 @@ class ResourceDiscoveryServiceCollection(object):
 
 
         :return: The items of this ResourceDiscoveryServiceCollection.
-        :rtype: list[ResourceDiscoveryServiceSummary]
+        :rtype: list[oci.resource_manager.models.ResourceDiscoveryServiceSummary]
         """
         return self._items
 
@@ -55,7 +55,7 @@ class ResourceDiscoveryServiceCollection(object):
 
 
         :param items: The items of this ResourceDiscoveryServiceCollection.
-        :type: list[ResourceDiscoveryServiceSummary]
+        :type: list[oci.resource_manager.models.ResourceDiscoveryServiceSummary]
         """
         self._items = items
 

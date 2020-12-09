@@ -80,7 +80,7 @@ class AccessRule(object):
 
         :param criteria:
             The value to assign to the criteria property of this AccessRule.
-        :type criteria: list[AccessRuleCriteria]
+        :type criteria: list[oci.waas.models.AccessRuleCriteria]
 
         :param action:
             The value to assign to the action property of this AccessRule.
@@ -144,7 +144,7 @@ class AccessRule(object):
 
         :param response_header_manipulation:
             The value to assign to the response_header_manipulation property of this AccessRule.
-        :type response_header_manipulation: list[HeaderManipulationAction]
+        :type response_header_manipulation: list[oci.waas.models.HeaderManipulationAction]
 
         """
         self.swagger_types = {
@@ -234,7 +234,7 @@ class AccessRule(object):
 
 
         :return: The criteria of this AccessRule.
-        :rtype: list[AccessRuleCriteria]
+        :rtype: list[oci.waas.models.AccessRuleCriteria]
         """
         return self._criteria
 
@@ -246,7 +246,7 @@ class AccessRule(object):
 
 
         :param criteria: The criteria of this AccessRule.
-        :type: list[AccessRuleCriteria]
+        :type: list[oci.waas.models.AccessRuleCriteria]
         """
         self._criteria = criteria
 
@@ -646,7 +646,7 @@ class AccessRule(object):
 
 
         :return: The response_header_manipulation of this AccessRule.
-        :rtype: list[HeaderManipulationAction]
+        :rtype: list[oci.waas.models.HeaderManipulationAction]
         """
         return self._response_header_manipulation
 
@@ -658,7 +658,7 @@ class AccessRule(object):
 
 
         :param response_header_manipulation: The response_header_manipulation of this AccessRule.
-        :type: list[HeaderManipulationAction]
+        :type: list[oci.waas.models.HeaderManipulationAction]
         """
         self._response_header_manipulation = response_header_manipulation
 

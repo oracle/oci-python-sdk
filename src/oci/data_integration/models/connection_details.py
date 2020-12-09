@@ -66,7 +66,7 @@ class ConnectionDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConnectionDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ConnectionDetails.
@@ -90,11 +90,11 @@ class ConnectionDetails(object):
 
         :param primary_schema:
             The value to assign to the primary_schema property of this ConnectionDetails.
-        :type primary_schema: Schema
+        :type primary_schema: oci.data_integration.models.Schema
 
         :param connection_properties:
             The value to assign to the connection_properties property of this ConnectionDetails.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param is_default:
             The value to assign to the is_default property of this ConnectionDetails.
@@ -102,7 +102,7 @@ class ConnectionDetails(object):
 
         :param metadata:
             The value to assign to the metadata property of this ConnectionDetails.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -265,7 +265,7 @@ class ConnectionDetails(object):
         Gets the parent_ref of this ConnectionDetails.
 
         :return: The parent_ref of this ConnectionDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -275,7 +275,7 @@ class ConnectionDetails(object):
         Sets the parent_ref of this ConnectionDetails.
 
         :param parent_ref: The parent_ref of this ConnectionDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -405,7 +405,7 @@ class ConnectionDetails(object):
         Gets the primary_schema of this ConnectionDetails.
 
         :return: The primary_schema of this ConnectionDetails.
-        :rtype: Schema
+        :rtype: oci.data_integration.models.Schema
         """
         return self._primary_schema
 
@@ -415,7 +415,7 @@ class ConnectionDetails(object):
         Sets the primary_schema of this ConnectionDetails.
 
         :param primary_schema: The primary_schema of this ConnectionDetails.
-        :type: Schema
+        :type: oci.data_integration.models.Schema
         """
         self._primary_schema = primary_schema
 
@@ -427,7 +427,7 @@ class ConnectionDetails(object):
 
 
         :return: The connection_properties of this ConnectionDetails.
-        :rtype: list[ConnectionProperty]
+        :rtype: list[oci.data_integration.models.ConnectionProperty]
         """
         return self._connection_properties
 
@@ -439,7 +439,7 @@ class ConnectionDetails(object):
 
 
         :param connection_properties: The connection_properties of this ConnectionDetails.
-        :type: list[ConnectionProperty]
+        :type: list[oci.data_integration.models.ConnectionProperty]
         """
         self._connection_properties = connection_properties
 
@@ -473,7 +473,7 @@ class ConnectionDetails(object):
         Gets the metadata of this ConnectionDetails.
 
         :return: The metadata of this ConnectionDetails.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -483,7 +483,7 @@ class ConnectionDetails(object):
         Sets the metadata of this ConnectionDetails.
 
         :param metadata: The metadata of this ConnectionDetails.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

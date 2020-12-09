@@ -28,7 +28,7 @@ class FunctionsManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.functions.FunctionsManagementClient.create_application` and waits for the :py:class:`~oci.functions.models.Application` acted upon
         to enter the given state(s).
 
-        :param CreateApplicationDetails create_application_details: (required)
+        :param oci.functions.models.CreateApplicationDetails create_application_details: (required)
             Specification of the application to create
 
         :param list[str] wait_for_states:
@@ -66,7 +66,7 @@ class FunctionsManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.functions.FunctionsManagementClient.create_function` and waits for the :py:class:`~oci.functions.models.Function` acted upon
         to enter the given state(s).
 
-        :param CreateFunctionDetails create_function_details: (required)
+        :param oci.functions.models.CreateFunctionDetails create_function_details: (required)
             Specification of the function to create
 
         :param list[str] wait_for_states:
@@ -207,7 +207,7 @@ class FunctionsManagementClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateApplicationDetails update_application_details: (required)
+        :param oci.functions.models.UpdateApplicationDetails update_application_details: (required)
             The new application spec to apply
 
         :param list[str] wait_for_states:
@@ -250,7 +250,7 @@ class FunctionsManagementClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateFunctionDetails update_function_details: (required)
+        :param oci.functions.models.UpdateFunctionDetails update_function_details: (required)
             The new function spec to apply
 
         :param list[str] wait_for_states:

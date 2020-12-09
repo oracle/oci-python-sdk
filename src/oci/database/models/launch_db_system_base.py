@@ -85,7 +85,7 @@ class LaunchDbSystemBase(object):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemBase.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
@@ -580,7 +580,7 @@ class LaunchDbSystemBase(object):
         Gets the db_system_options of this LaunchDbSystemBase.
 
         :return: The db_system_options of this LaunchDbSystemBase.
-        :rtype: DbSystemOptions
+        :rtype: oci.database.models.DbSystemOptions
         """
         return self._db_system_options
 
@@ -590,7 +590,7 @@ class LaunchDbSystemBase(object):
         Sets the db_system_options of this LaunchDbSystemBase.
 
         :param db_system_options: The db_system_options of this LaunchDbSystemBase.
-        :type: DbSystemOptions
+        :type: oci.database.models.DbSystemOptions
         """
         self._db_system_options = db_system_options
 

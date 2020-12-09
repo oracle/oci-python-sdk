@@ -58,7 +58,7 @@ class DataAssetFromOracleDetails(DataAsset):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetFromOracleDetails.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetFromOracleDetails.
@@ -66,11 +66,11 @@ class DataAssetFromOracleDetails(DataAsset):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetFromOracleDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetFromOracleDetails.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this DataAssetFromOracleDetails.
@@ -102,7 +102,7 @@ class DataAssetFromOracleDetails(DataAsset):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetFromOracleDetails.
-        :type default_connection: ConnectionFromOracleDetails
+        :type default_connection: oci.data_integration.models.ConnectionFromOracleDetails
 
         """
         self.swagger_types = {
@@ -326,7 +326,7 @@ class DataAssetFromOracleDetails(DataAsset):
         Gets the default_connection of this DataAssetFromOracleDetails.
 
         :return: The default_connection of this DataAssetFromOracleDetails.
-        :rtype: ConnectionFromOracleDetails
+        :rtype: oci.data_integration.models.ConnectionFromOracleDetails
         """
         return self._default_connection
 
@@ -336,7 +336,7 @@ class DataAssetFromOracleDetails(DataAsset):
         Sets the default_connection of this DataAssetFromOracleDetails.
 
         :param default_connection: The default_connection of this DataAssetFromOracleDetails.
-        :type: ConnectionFromOracleDetails
+        :type: oci.data_integration.models.ConnectionFromOracleDetails
         """
         self._default_connection = default_connection
 

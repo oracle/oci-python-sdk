@@ -28,15 +28,15 @@ class UpdateServiceConnectorDetails(object):
 
         :param source:
             The value to assign to the source property of this UpdateServiceConnectorDetails.
-        :type source: SourceDetails
+        :type source: oci.sch.models.SourceDetails
 
         :param tasks:
             The value to assign to the tasks property of this UpdateServiceConnectorDetails.
-        :type tasks: list[TaskDetails]
+        :type tasks: list[oci.sch.models.TaskDetails]
 
         :param target:
             The value to assign to the target property of this UpdateServiceConnectorDetails.
-        :type target: TargetDetails
+        :type target: oci.sch.models.TargetDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateServiceConnectorDetails.
@@ -131,7 +131,7 @@ class UpdateServiceConnectorDetails(object):
         Gets the source of this UpdateServiceConnectorDetails.
 
         :return: The source of this UpdateServiceConnectorDetails.
-        :rtype: SourceDetails
+        :rtype: oci.sch.models.SourceDetails
         """
         return self._source
 
@@ -141,7 +141,7 @@ class UpdateServiceConnectorDetails(object):
         Sets the source of this UpdateServiceConnectorDetails.
 
         :param source: The source of this UpdateServiceConnectorDetails.
-        :type: SourceDetails
+        :type: oci.sch.models.SourceDetails
         """
         self._source = source
 
@@ -153,7 +153,7 @@ class UpdateServiceConnectorDetails(object):
 
 
         :return: The tasks of this UpdateServiceConnectorDetails.
-        :rtype: list[TaskDetails]
+        :rtype: list[oci.sch.models.TaskDetails]
         """
         return self._tasks
 
@@ -165,7 +165,7 @@ class UpdateServiceConnectorDetails(object):
 
 
         :param tasks: The tasks of this UpdateServiceConnectorDetails.
-        :type: list[TaskDetails]
+        :type: list[oci.sch.models.TaskDetails]
         """
         self._tasks = tasks
 
@@ -175,7 +175,7 @@ class UpdateServiceConnectorDetails(object):
         Gets the target of this UpdateServiceConnectorDetails.
 
         :return: The target of this UpdateServiceConnectorDetails.
-        :rtype: TargetDetails
+        :rtype: oci.sch.models.TargetDetails
         """
         return self._target
 
@@ -185,7 +185,7 @@ class UpdateServiceConnectorDetails(object):
         Sets the target of this UpdateServiceConnectorDetails.
 
         :param target: The target of this UpdateServiceConnectorDetails.
-        :type: TargetDetails
+        :type: oci.sch.models.TargetDetails
         """
         self._target = target
 

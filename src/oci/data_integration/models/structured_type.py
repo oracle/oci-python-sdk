@@ -28,7 +28,7 @@ class StructuredType(object):
 
         :param schema:
             The value to assign to the schema property of this StructuredType.
-        :type schema: BaseType
+        :type schema: oci.data_integration.models.BaseType
 
         :param dt_type:
             The value to assign to the dt_type property of this StructuredType.
@@ -41,7 +41,7 @@ class StructuredType(object):
 
         :param config_definition:
             The value to assign to the config_definition property of this StructuredType.
-        :type config_definition: ConfigDefinition
+        :type config_definition: oci.data_integration.models.ConfigDefinition
 
         """
         self.swagger_types = {
@@ -69,7 +69,7 @@ class StructuredType(object):
         Gets the schema of this StructuredType.
 
         :return: The schema of this StructuredType.
-        :rtype: BaseType
+        :rtype: oci.data_integration.models.BaseType
         """
         return self._schema
 
@@ -79,7 +79,7 @@ class StructuredType(object):
         Sets the schema of this StructuredType.
 
         :param schema: The schema of this StructuredType.
-        :type: BaseType
+        :type: oci.data_integration.models.BaseType
         """
         self._schema = schema
 
@@ -145,7 +145,7 @@ class StructuredType(object):
         Gets the config_definition of this StructuredType.
 
         :return: The config_definition of this StructuredType.
-        :rtype: ConfigDefinition
+        :rtype: oci.data_integration.models.ConfigDefinition
         """
         return self._config_definition
 
@@ -155,7 +155,7 @@ class StructuredType(object):
         Sets the config_definition of this StructuredType.
 
         :param config_definition: The config_definition of this StructuredType.
-        :type: ConfigDefinition
+        :type: oci.data_integration.models.ConfigDefinition
         """
         self._config_definition = config_definition
 

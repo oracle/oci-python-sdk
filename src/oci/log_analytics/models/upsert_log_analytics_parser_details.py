@@ -60,7 +60,7 @@ class UpsertLogAnalyticsParserDetails(object):
 
         :param field_maps:
             The value to assign to the field_maps property of this UpsertLogAnalyticsParserDetails.
-        :type field_maps: list[LogAnalyticsParserField]
+        :type field_maps: list[oci.log_analytics.models.LogAnalyticsParserField]
 
         :param footer_content:
             The value to assign to the footer_content property of this UpsertLogAnalyticsParserDetails.
@@ -112,7 +112,7 @@ class UpsertLogAnalyticsParserDetails(object):
 
         :param parser_functions:
             The value to assign to the parser_functions property of this UpsertLogAnalyticsParserDetails.
-        :type parser_functions: list[LogAnalyticsParserFunction]
+        :type parser_functions: list[oci.log_analytics.models.LogAnalyticsParserFunction]
 
         :param should_tokenize_original_text:
             The value to assign to the should_tokenize_original_text property of this UpsertLogAnalyticsParserDetails.
@@ -349,7 +349,7 @@ class UpsertLogAnalyticsParserDetails(object):
 
 
         :return: The field_maps of this UpsertLogAnalyticsParserDetails.
-        :rtype: list[LogAnalyticsParserField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         return self._field_maps
 
@@ -361,7 +361,7 @@ class UpsertLogAnalyticsParserDetails(object):
 
 
         :param field_maps: The field_maps of this UpsertLogAnalyticsParserDetails.
-        :type: list[LogAnalyticsParserField]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         self._field_maps = field_maps
 
@@ -661,7 +661,7 @@ class UpsertLogAnalyticsParserDetails(object):
 
 
         :return: The parser_functions of this UpsertLogAnalyticsParserDetails.
-        :rtype: list[LogAnalyticsParserFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         return self._parser_functions
 
@@ -673,7 +673,7 @@ class UpsertLogAnalyticsParserDetails(object):
 
 
         :param parser_functions: The parser_functions of this UpsertLogAnalyticsParserDetails.
-        :type: list[LogAnalyticsParserFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         self._parser_functions = parser_functions
 

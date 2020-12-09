@@ -51,11 +51,11 @@ class RuleBasedFieldMap(FieldMap):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this RuleBasedFieldMap.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this RuleBasedFieldMap.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param map_type:
             The value to assign to the map_type property of this RuleBasedFieldMap.
@@ -81,11 +81,11 @@ class RuleBasedFieldMap(FieldMap):
 
         :param from_rule_config:
             The value to assign to the from_rule_config property of this RuleBasedFieldMap.
-        :type from_rule_config: RuleTypeConfig
+        :type from_rule_config: oci.data_integration.models.RuleTypeConfig
 
         :param to_rule_config:
             The value to assign to the to_rule_config property of this RuleBasedFieldMap.
-        :type to_rule_config: RuleTypeConfig
+        :type to_rule_config: oci.data_integration.models.RuleTypeConfig
 
         """
         self.swagger_types = {
@@ -189,7 +189,7 @@ class RuleBasedFieldMap(FieldMap):
         Gets the parent_ref of this RuleBasedFieldMap.
 
         :return: The parent_ref of this RuleBasedFieldMap.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -199,7 +199,7 @@ class RuleBasedFieldMap(FieldMap):
         Sets the parent_ref of this RuleBasedFieldMap.
 
         :param parent_ref: The parent_ref of this RuleBasedFieldMap.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -209,7 +209,7 @@ class RuleBasedFieldMap(FieldMap):
         Gets the config_values of this RuleBasedFieldMap.
 
         :return: The config_values of this RuleBasedFieldMap.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -219,7 +219,7 @@ class RuleBasedFieldMap(FieldMap):
         Sets the config_values of this RuleBasedFieldMap.
 
         :param config_values: The config_values of this RuleBasedFieldMap.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 
@@ -355,7 +355,7 @@ class RuleBasedFieldMap(FieldMap):
         Gets the from_rule_config of this RuleBasedFieldMap.
 
         :return: The from_rule_config of this RuleBasedFieldMap.
-        :rtype: RuleTypeConfig
+        :rtype: oci.data_integration.models.RuleTypeConfig
         """
         return self._from_rule_config
 
@@ -365,7 +365,7 @@ class RuleBasedFieldMap(FieldMap):
         Sets the from_rule_config of this RuleBasedFieldMap.
 
         :param from_rule_config: The from_rule_config of this RuleBasedFieldMap.
-        :type: RuleTypeConfig
+        :type: oci.data_integration.models.RuleTypeConfig
         """
         self._from_rule_config = from_rule_config
 
@@ -375,7 +375,7 @@ class RuleBasedFieldMap(FieldMap):
         Gets the to_rule_config of this RuleBasedFieldMap.
 
         :return: The to_rule_config of this RuleBasedFieldMap.
-        :rtype: RuleTypeConfig
+        :rtype: oci.data_integration.models.RuleTypeConfig
         """
         return self._to_rule_config
 
@@ -385,7 +385,7 @@ class RuleBasedFieldMap(FieldMap):
         Sets the to_rule_config of this RuleBasedFieldMap.
 
         :param to_rule_config: The to_rule_config of this RuleBasedFieldMap.
-        :type: RuleTypeConfig
+        :type: oci.data_integration.models.RuleTypeConfig
         """
         self._to_rule_config = to_rule_config
 

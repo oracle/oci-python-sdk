@@ -152,11 +152,11 @@ class ScheduledJob(object):
 
         :param managed_instances:
             The value to assign to the managed_instances property of this ScheduledJob.
-        :type managed_instances: list[Id]
+        :type managed_instances: list[oci.os_management.models.Id]
 
         :param managed_instance_groups:
             The value to assign to the managed_instance_groups property of this ScheduledJob.
-        :type managed_instance_groups: list[Id]
+        :type managed_instance_groups: list[oci.os_management.models.Id]
 
         :param operation_type:
             The value to assign to the operation_type property of this ScheduledJob.
@@ -172,11 +172,11 @@ class ScheduledJob(object):
 
         :param package_names:
             The value to assign to the package_names property of this ScheduledJob.
-        :type package_names: list[PackageName]
+        :type package_names: list[oci.os_management.models.PackageName]
 
         :param work_requests:
             The value to assign to the work_requests property of this ScheduledJob.
-        :type work_requests: list[Id]
+        :type work_requests: list[oci.os_management.models.Id]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ScheduledJob.
@@ -506,7 +506,7 @@ class ScheduledJob(object):
 
 
         :return: The managed_instances of this ScheduledJob.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instances
 
@@ -518,7 +518,7 @@ class ScheduledJob(object):
 
 
         :param managed_instances: The managed_instances of this ScheduledJob.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instances = managed_instances
 
@@ -530,7 +530,7 @@ class ScheduledJob(object):
 
 
         :return: The managed_instance_groups of this ScheduledJob.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instance_groups
 
@@ -542,7 +542,7 @@ class ScheduledJob(object):
 
 
         :param managed_instance_groups: The managed_instance_groups of this ScheduledJob.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instance_groups = managed_instance_groups
 
@@ -614,7 +614,7 @@ class ScheduledJob(object):
 
 
         :return: The package_names of this ScheduledJob.
-        :rtype: list[PackageName]
+        :rtype: list[oci.os_management.models.PackageName]
         """
         return self._package_names
 
@@ -626,7 +626,7 @@ class ScheduledJob(object):
 
 
         :param package_names: The package_names of this ScheduledJob.
-        :type: list[PackageName]
+        :type: list[oci.os_management.models.PackageName]
         """
         self._package_names = package_names
 
@@ -638,7 +638,7 @@ class ScheduledJob(object):
 
 
         :return: The work_requests of this ScheduledJob.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._work_requests
 
@@ -650,7 +650,7 @@ class ScheduledJob(object):
 
 
         :param work_requests: The work_requests of this ScheduledJob.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._work_requests = work_requests
 

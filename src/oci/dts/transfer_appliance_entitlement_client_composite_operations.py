@@ -28,7 +28,7 @@ class TransferApplianceEntitlementClientCompositeOperations(object):
         Calls :py:func:`~oci.dts.TransferApplianceEntitlementClient.create_transfer_appliance_entitlement` and waits for the :py:class:`~oci.dts.models.TransferApplianceEntitlement` acted upon
         to enter the given state(s).
 
-        :param CreateTransferApplianceEntitlementDetails create_transfer_appliance_entitlement_details: (required)
+        :param oci.dts.models.CreateTransferApplianceEntitlementDetails create_transfer_appliance_entitlement_details: (required)
             Creates a Transfer Appliance Entitlement
 
         :param list[str] wait_for_states:

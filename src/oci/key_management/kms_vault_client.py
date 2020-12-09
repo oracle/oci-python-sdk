@@ -116,7 +116,7 @@ class KmsVaultClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param BackupVaultDetails backup_vault_details: (optional)
+        :param oci.key_management.models.BackupVaultDetails backup_vault_details: (optional)
             BackupVaultDetails
 
         :param obj retry_strategy: (optional)
@@ -935,7 +935,7 @@ class KmsVaultClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param RestoreVaultFromObjectStoreDetails restore_vault_from_object_store_details: (optional)
+        :param oci.key_management.models.RestoreVaultFromObjectStoreDetails restore_vault_from_object_store_details: (optional)
             RestoreVaultFromObjectStoreDetails
 
         :param obj retry_strategy: (optional)

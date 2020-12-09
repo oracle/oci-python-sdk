@@ -40,7 +40,7 @@ class OAuth2ClientCredential(object):
 
         :param scopes:
             The value to assign to the scopes property of this OAuth2ClientCredential.
-        :type scopes: list[FullyQualifiedScope]
+        :type scopes: list[oci.identity.models.FullyQualifiedScope]
 
         :param password:
             The value to assign to the password property of this OAuth2ClientCredential.
@@ -126,7 +126,7 @@ class OAuth2ClientCredential(object):
 
 
         :return: The scopes of this OAuth2ClientCredential.
-        :rtype: list[FullyQualifiedScope]
+        :rtype: list[oci.identity.models.FullyQualifiedScope]
         """
         return self._scopes
 
@@ -138,7 +138,7 @@ class OAuth2ClientCredential(object):
 
 
         :param scopes: The scopes of this OAuth2ClientCredential.
-        :type: list[FullyQualifiedScope]
+        :type: list[oci.identity.models.FullyQualifiedScope]
         """
         self._scopes = scopes
 

@@ -58,7 +58,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummaryFromObjectStorage.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummaryFromObjectStorage.
@@ -66,11 +66,11 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummaryFromObjectStorage.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummaryFromObjectStorage.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param url:
             The value to assign to the url property of this DataAssetSummaryFromObjectStorage.
@@ -86,7 +86,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromObjectStorage.
-        :type default_connection: ConnectionSummaryFromObjectStorage
+        :type default_connection: oci.data_integration.models.ConnectionSummaryFromObjectStorage
 
         """
         self.swagger_types = {
@@ -226,7 +226,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromObjectStorage.
 
         :return: The default_connection of this DataAssetSummaryFromObjectStorage.
-        :rtype: ConnectionSummaryFromObjectStorage
+        :rtype: oci.data_integration.models.ConnectionSummaryFromObjectStorage
         """
         return self._default_connection
 
@@ -236,7 +236,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromObjectStorage.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromObjectStorage.
-        :type: ConnectionSummaryFromObjectStorage
+        :type: oci.data_integration.models.ConnectionSummaryFromObjectStorage
         """
         self._default_connection = default_connection
 

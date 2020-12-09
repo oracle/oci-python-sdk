@@ -171,7 +171,7 @@ class ContainerEngineClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
 
-        :param CreateClusterKubeconfigContentDetails create_cluster_kubeconfig_content_details: (optional)
+        :param oci.container_engine.models.CreateClusterKubeconfigContentDetails create_cluster_kubeconfig_content_details: (optional)
             The details of the cluster kubeconfig to create.
 
         :param obj retry_strategy: (optional)

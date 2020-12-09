@@ -20,7 +20,7 @@ class ProblemCollection(object):
 
         :param items:
             The value to assign to the items property of this ProblemCollection.
-        :type items: list[ProblemSummary]
+        :type items: list[oci.cloud_guard.models.ProblemSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ProblemCollection(object):
 
 
         :return: The items of this ProblemCollection.
-        :rtype: list[ProblemSummary]
+        :rtype: list[oci.cloud_guard.models.ProblemSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ProblemCollection(object):
 
 
         :param items: The items of this ProblemCollection.
-        :type: list[ProblemSummary]
+        :type: list[oci.cloud_guard.models.ProblemSummary]
         """
         self._items = items
 

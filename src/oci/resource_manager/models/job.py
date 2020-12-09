@@ -90,11 +90,11 @@ class Job(object):
 
         :param job_operation_details:
             The value to assign to the job_operation_details property of this Job.
-        :type job_operation_details: JobOperationDetails
+        :type job_operation_details: oci.resource_manager.models.JobOperationDetails
 
         :param apply_job_plan_resolution:
             The value to assign to the apply_job_plan_resolution property of this Job.
-        :type apply_job_plan_resolution: ApplyJobPlanResolution
+        :type apply_job_plan_resolution: oci.resource_manager.models.ApplyJobPlanResolution
 
         :param resolved_plan_job_id:
             The value to assign to the resolved_plan_job_id property of this Job.
@@ -116,7 +116,7 @@ class Job(object):
 
         :param failure_details:
             The value to assign to the failure_details property of this Job.
-        :type failure_details: FailureDetails
+        :type failure_details: oci.resource_manager.models.FailureDetails
 
         :param working_directory:
             The value to assign to the working_directory property of this Job.
@@ -128,7 +128,7 @@ class Job(object):
 
         :param config_source:
             The value to assign to the config_source property of this Job.
-        :type config_source: ConfigSourceRecord
+        :type config_source: oci.resource_manager.models.ConfigSourceRecord
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Job.
@@ -341,7 +341,7 @@ class Job(object):
         Gets the job_operation_details of this Job.
 
         :return: The job_operation_details of this Job.
-        :rtype: JobOperationDetails
+        :rtype: oci.resource_manager.models.JobOperationDetails
         """
         return self._job_operation_details
 
@@ -351,7 +351,7 @@ class Job(object):
         Sets the job_operation_details of this Job.
 
         :param job_operation_details: The job_operation_details of this Job.
-        :type: JobOperationDetails
+        :type: oci.resource_manager.models.JobOperationDetails
         """
         self._job_operation_details = job_operation_details
 
@@ -361,7 +361,7 @@ class Job(object):
         Gets the apply_job_plan_resolution of this Job.
 
         :return: The apply_job_plan_resolution of this Job.
-        :rtype: ApplyJobPlanResolution
+        :rtype: oci.resource_manager.models.ApplyJobPlanResolution
         """
         return self._apply_job_plan_resolution
 
@@ -371,7 +371,7 @@ class Job(object):
         Sets the apply_job_plan_resolution of this Job.
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this Job.
-        :type: ApplyJobPlanResolution
+        :type: oci.resource_manager.models.ApplyJobPlanResolution
         """
         self._apply_job_plan_resolution = apply_job_plan_resolution
 
@@ -505,7 +505,7 @@ class Job(object):
         Gets the failure_details of this Job.
 
         :return: The failure_details of this Job.
-        :rtype: FailureDetails
+        :rtype: oci.resource_manager.models.FailureDetails
         """
         return self._failure_details
 
@@ -515,7 +515,7 @@ class Job(object):
         Sets the failure_details of this Job.
 
         :param failure_details: The failure_details of this Job.
-        :type: FailureDetails
+        :type: oci.resource_manager.models.FailureDetails
         """
         self._failure_details = failure_details
 
@@ -583,7 +583,7 @@ class Job(object):
         Gets the config_source of this Job.
 
         :return: The config_source of this Job.
-        :rtype: ConfigSourceRecord
+        :rtype: oci.resource_manager.models.ConfigSourceRecord
         """
         return self._config_source
 
@@ -593,7 +593,7 @@ class Job(object):
         Sets the config_source of this Job.
 
         :param config_source: The config_source of this Job.
-        :type: ConfigSourceRecord
+        :type: oci.resource_manager.models.ConfigSourceRecord
         """
         self._config_source = config_source
 

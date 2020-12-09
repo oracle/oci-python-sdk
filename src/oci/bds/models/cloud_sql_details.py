@@ -36,7 +36,7 @@ class CloudSqlDetails(object):
 
         :param kerberos_details:
             The value to assign to the kerberos_details property of this CloudSqlDetails.
-        :type kerberos_details: list[KerberosDetails]
+        :type kerberos_details: list[oci.bds.models.KerberosDetails]
 
         """
         self.swagger_types = {
@@ -169,7 +169,7 @@ class CloudSqlDetails(object):
 
 
         :return: The kerberos_details of this CloudSqlDetails.
-        :rtype: list[KerberosDetails]
+        :rtype: list[oci.bds.models.KerberosDetails]
         """
         return self._kerberos_details
 
@@ -181,7 +181,7 @@ class CloudSqlDetails(object):
 
 
         :param kerberos_details: The kerberos_details of this CloudSqlDetails.
-        :type: list[KerberosDetails]
+        :type: list[oci.bds.models.KerberosDetails]
         """
         self._kerberos_details = kerberos_details
 

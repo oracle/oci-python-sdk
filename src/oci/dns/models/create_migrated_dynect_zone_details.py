@@ -44,7 +44,7 @@ class CreateMigratedDynectZoneDetails(CreateZoneBaseDetails):
 
         :param dynect_migration_details:
             The value to assign to the dynect_migration_details property of this CreateMigratedDynectZoneDetails.
-        :type dynect_migration_details: DynectMigrationDetails
+        :type dynect_migration_details: oci.dns.models.DynectMigrationDetails
 
         """
         self.swagger_types = {
@@ -79,7 +79,7 @@ class CreateMigratedDynectZoneDetails(CreateZoneBaseDetails):
         Gets the dynect_migration_details of this CreateMigratedDynectZoneDetails.
 
         :return: The dynect_migration_details of this CreateMigratedDynectZoneDetails.
-        :rtype: DynectMigrationDetails
+        :rtype: oci.dns.models.DynectMigrationDetails
         """
         return self._dynect_migration_details
 
@@ -89,7 +89,7 @@ class CreateMigratedDynectZoneDetails(CreateZoneBaseDetails):
         Sets the dynect_migration_details of this CreateMigratedDynectZoneDetails.
 
         :param dynect_migration_details: The dynect_migration_details of this CreateMigratedDynectZoneDetails.
-        :type: DynectMigrationDetails
+        :type: oci.dns.models.DynectMigrationDetails
         """
         self._dynect_migration_details = dynect_migration_details
 

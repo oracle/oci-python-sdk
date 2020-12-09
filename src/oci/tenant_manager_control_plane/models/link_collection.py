@@ -20,7 +20,7 @@ class LinkCollection(object):
 
         :param items:
             The value to assign to the items property of this LinkCollection.
-        :type items: list[LinkSummary]
+        :type items: list[oci.tenant_manager_control_plane.models.LinkSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LinkCollection(object):
 
 
         :return: The items of this LinkCollection.
-        :rtype: list[LinkSummary]
+        :rtype: list[oci.tenant_manager_control_plane.models.LinkSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LinkCollection(object):
 
 
         :param items: The items of this LinkCollection.
-        :type: list[LinkSummary]
+        :type: list[oci.tenant_manager_control_plane.models.LinkSummary]
         """
         self._items = items
 

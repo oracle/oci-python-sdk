@@ -65,7 +65,7 @@ class CreateIPSecConnectionDetails(object):
 
         :param tunnel_configuration:
             The value to assign to the tunnel_configuration property of this CreateIPSecConnectionDetails.
-        :type tunnel_configuration: list[CreateIPSecConnectionTunnelDetails]
+        :type tunnel_configuration: list[oci.core.models.CreateIPSecConnectionTunnelDetails]
 
         """
         self.swagger_types = {
@@ -421,7 +421,7 @@ class CreateIPSecConnectionDetails(object):
 
 
         :return: The tunnel_configuration of this CreateIPSecConnectionDetails.
-        :rtype: list[CreateIPSecConnectionTunnelDetails]
+        :rtype: list[oci.core.models.CreateIPSecConnectionTunnelDetails]
         """
         return self._tunnel_configuration
 
@@ -435,7 +435,7 @@ class CreateIPSecConnectionDetails(object):
 
 
         :param tunnel_configuration: The tunnel_configuration of this CreateIPSecConnectionDetails.
-        :type: list[CreateIPSecConnectionTunnelDetails]
+        :type: list[oci.core.models.CreateIPSecConnectionTunnelDetails]
         """
         self._tunnel_configuration = tunnel_configuration
 

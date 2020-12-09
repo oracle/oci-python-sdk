@@ -58,11 +58,11 @@ class QueryDetails(object):
 
         :param time_filter:
             The value to assign to the time_filter property of this QueryDetails.
-        :type time_filter: TimeRange
+        :type time_filter: oci.log_analytics.models.TimeRange
 
         :param scope_filters:
             The value to assign to the scope_filters property of this QueryDetails.
-        :type scope_filters: list[ScopeFilter]
+        :type scope_filters: list[oci.log_analytics.models.ScopeFilter]
 
         :param query_timeout_in_seconds:
             The value to assign to the query_timeout_in_seconds property of this QueryDetails.
@@ -308,7 +308,7 @@ class QueryDetails(object):
         Gets the time_filter of this QueryDetails.
 
         :return: The time_filter of this QueryDetails.
-        :rtype: TimeRange
+        :rtype: oci.log_analytics.models.TimeRange
         """
         return self._time_filter
 
@@ -318,7 +318,7 @@ class QueryDetails(object):
         Sets the time_filter of this QueryDetails.
 
         :param time_filter: The time_filter of this QueryDetails.
-        :type: TimeRange
+        :type: oci.log_analytics.models.TimeRange
         """
         self._time_filter = time_filter
 
@@ -330,7 +330,7 @@ class QueryDetails(object):
 
 
         :return: The scope_filters of this QueryDetails.
-        :rtype: list[ScopeFilter]
+        :rtype: list[oci.log_analytics.models.ScopeFilter]
         """
         return self._scope_filters
 
@@ -342,7 +342,7 @@ class QueryDetails(object):
 
 
         :param scope_filters: The scope_filters of this QueryDetails.
-        :type: list[ScopeFilter]
+        :type: list[oci.log_analytics.models.ScopeFilter]
         """
         self._scope_filters = scope_filters
 

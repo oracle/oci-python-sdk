@@ -36,7 +36,7 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
 
         :param database:
             The value to assign to the database property of this CreateDatabaseFromBackup.
-        :type database: CreateDatabaseFromBackupDetails
+        :type database: oci.database.models.CreateDatabaseFromBackupDetails
 
         """
         self.swagger_types = {
@@ -65,7 +65,7 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
         **[Required]** Gets the database of this CreateDatabaseFromBackup.
 
         :return: The database of this CreateDatabaseFromBackup.
-        :rtype: CreateDatabaseFromBackupDetails
+        :rtype: oci.database.models.CreateDatabaseFromBackupDetails
         """
         return self._database
 
@@ -75,7 +75,7 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
         Sets the database of this CreateDatabaseFromBackup.
 
         :param database: The database of this CreateDatabaseFromBackup.
-        :type: CreateDatabaseFromBackupDetails
+        :type: oci.database.models.CreateDatabaseFromBackupDetails
         """
         self._database = database
 

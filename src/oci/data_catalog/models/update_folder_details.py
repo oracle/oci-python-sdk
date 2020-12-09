@@ -48,7 +48,7 @@ class UpdateFolderDetails(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this UpdateFolderDetails.
-        :type custom_property_members: list[CustomPropertySetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertySetUsage]
 
         :param properties:
             The value to assign to the properties property of this UpdateFolderDetails.
@@ -181,7 +181,7 @@ class UpdateFolderDetails(object):
 
 
         :return: The custom_property_members of this UpdateFolderDetails.
-        :rtype: list[CustomPropertySetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         return self._custom_property_members
 
@@ -193,7 +193,7 @@ class UpdateFolderDetails(object):
 
 
         :param custom_property_members: The custom_property_members of this UpdateFolderDetails.
-        :type: list[CustomPropertySetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         self._custom_property_members = custom_property_members
 

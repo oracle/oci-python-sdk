@@ -88,7 +88,7 @@ class DbSystem(object):
 
         :param iorm_config_cache:
             The value to assign to the iorm_config_cache property of this DbSystem.
-        :type iorm_config_cache: ExadataIormConfig
+        :type iorm_config_cache: oci.database.models.ExadataIormConfig
 
         :param id:
             The value to assign to the id property of this DbSystem.
@@ -132,7 +132,7 @@ class DbSystem(object):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this DbSystem.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this DbSystem.
@@ -236,7 +236,7 @@ class DbSystem(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this DbSystem.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this DbSystem.
@@ -402,7 +402,7 @@ class DbSystem(object):
         Gets the iorm_config_cache of this DbSystem.
 
         :return: The iorm_config_cache of this DbSystem.
-        :rtype: ExadataIormConfig
+        :rtype: oci.database.models.ExadataIormConfig
         """
         return self._iorm_config_cache
 
@@ -412,7 +412,7 @@ class DbSystem(object):
         Sets the iorm_config_cache of this DbSystem.
 
         :param iorm_config_cache: The iorm_config_cache of this DbSystem.
-        :type: ExadataIormConfig
+        :type: oci.database.models.ExadataIormConfig
         """
         self._iorm_config_cache = iorm_config_cache
 
@@ -718,7 +718,7 @@ class DbSystem(object):
         Gets the db_system_options of this DbSystem.
 
         :return: The db_system_options of this DbSystem.
-        :rtype: DbSystemOptions
+        :rtype: oci.database.models.DbSystemOptions
         """
         return self._db_system_options
 
@@ -728,7 +728,7 @@ class DbSystem(object):
         Sets the db_system_options of this DbSystem.
 
         :param db_system_options: The db_system_options of this DbSystem.
-        :type: DbSystemOptions
+        :type: oci.database.models.DbSystemOptions
         """
         self._db_system_options = db_system_options
 
@@ -1356,7 +1356,7 @@ class DbSystem(object):
         Gets the maintenance_window of this DbSystem.
 
         :return: The maintenance_window of this DbSystem.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -1366,7 +1366,7 @@ class DbSystem(object):
         Sets the maintenance_window of this DbSystem.
 
         :param maintenance_window: The maintenance_window of this DbSystem.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

@@ -556,7 +556,7 @@ class IdentityClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
-        :param BulkEditTagsDetails bulk_edit_tags_details: (optional)
+        :param oci.identity.models.BulkEditTagsDetails bulk_edit_tags_details: (optional)
             The request object for bulk editing tags on resources in the compartment.
 
         :param obj retry_strategy: (optional)

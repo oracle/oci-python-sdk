@@ -52,11 +52,11 @@ class UpdateProjectDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UpdateProjectDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateProjectDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -294,7 +294,7 @@ class UpdateProjectDetails(object):
         Gets the parent_ref of this UpdateProjectDetails.
 
         :return: The parent_ref of this UpdateProjectDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -304,7 +304,7 @@ class UpdateProjectDetails(object):
         Sets the parent_ref of this UpdateProjectDetails.
 
         :param parent_ref: The parent_ref of this UpdateProjectDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -314,7 +314,7 @@ class UpdateProjectDetails(object):
         Gets the registry_metadata of this UpdateProjectDetails.
 
         :return: The registry_metadata of this UpdateProjectDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -324,7 +324,7 @@ class UpdateProjectDetails(object):
         Sets the registry_metadata of this UpdateProjectDetails.
 
         :param registry_metadata: The registry_metadata of this UpdateProjectDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

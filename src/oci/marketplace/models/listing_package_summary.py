@@ -42,7 +42,7 @@ class ListingPackageSummary(object):
 
         :param regions:
             The value to assign to the regions property of this ListingPackageSummary.
-        :type regions: list[Region]
+        :type regions: list[oci.marketplace.models.Region]
 
         :param resource_id:
             The value to assign to the resource_id property of this ListingPackageSummary.
@@ -164,7 +164,7 @@ class ListingPackageSummary(object):
 
 
         :return: The regions of this ListingPackageSummary.
-        :rtype: list[Region]
+        :rtype: list[oci.marketplace.models.Region]
         """
         return self._regions
 
@@ -176,7 +176,7 @@ class ListingPackageSummary(object):
 
 
         :param regions: The regions of this ListingPackageSummary.
-        :type: list[Region]
+        :type: list[oci.marketplace.models.Region]
         """
         self._regions = regions
 

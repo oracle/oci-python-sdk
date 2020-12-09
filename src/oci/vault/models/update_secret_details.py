@@ -40,11 +40,11 @@ class UpdateSecretDetails(object):
 
         :param secret_content:
             The value to assign to the secret_content property of this UpdateSecretDetails.
-        :type secret_content: SecretContentDetails
+        :type secret_content: oci.vault.models.SecretContentDetails
 
         :param secret_rules:
             The value to assign to the secret_rules property of this UpdateSecretDetails.
-        :type secret_rules: list[SecretRule]
+        :type secret_rules: list[oci.vault.models.SecretRule]
 
         """
         self.swagger_types = {
@@ -225,7 +225,7 @@ class UpdateSecretDetails(object):
         Gets the secret_content of this UpdateSecretDetails.
 
         :return: The secret_content of this UpdateSecretDetails.
-        :rtype: SecretContentDetails
+        :rtype: oci.vault.models.SecretContentDetails
         """
         return self._secret_content
 
@@ -235,7 +235,7 @@ class UpdateSecretDetails(object):
         Sets the secret_content of this UpdateSecretDetails.
 
         :param secret_content: The secret_content of this UpdateSecretDetails.
-        :type: SecretContentDetails
+        :type: oci.vault.models.SecretContentDetails
         """
         self._secret_content = secret_content
 
@@ -247,7 +247,7 @@ class UpdateSecretDetails(object):
 
 
         :return: The secret_rules of this UpdateSecretDetails.
-        :rtype: list[SecretRule]
+        :rtype: list[oci.vault.models.SecretRule]
         """
         return self._secret_rules
 
@@ -259,7 +259,7 @@ class UpdateSecretDetails(object):
 
 
         :param secret_rules: The secret_rules of this UpdateSecretDetails.
-        :type: list[SecretRule]
+        :type: list[oci.vault.models.SecretRule]
         """
         self._secret_rules = secret_rules
 

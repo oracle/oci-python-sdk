@@ -80,7 +80,7 @@ class Api(object):
 
         :param validation_results:
             The value to assign to the validation_results property of this Api.
-        :type validation_results: list[ApiValidationResult]
+        :type validation_results: list[oci.apigateway.models.ApiValidationResult]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Api.
@@ -373,7 +373,7 @@ class Api(object):
 
 
         :return: The validation_results of this Api.
-        :rtype: list[ApiValidationResult]
+        :rtype: list[oci.apigateway.models.ApiValidationResult]
         """
         return self._validation_results
 
@@ -385,7 +385,7 @@ class Api(object):
 
 
         :param validation_results: The validation_results of this Api.
-        :type: list[ApiValidationResult]
+        :type: list[oci.apigateway.models.ApiValidationResult]
         """
         self._validation_results = validation_results
 

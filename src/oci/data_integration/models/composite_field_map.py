@@ -38,11 +38,11 @@ class CompositeFieldMap(FieldMap):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CompositeFieldMap.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this CompositeFieldMap.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this CompositeFieldMap.
@@ -50,7 +50,7 @@ class CompositeFieldMap(FieldMap):
 
         :param field_maps:
             The value to assign to the field_maps property of this CompositeFieldMap.
-        :type field_maps: list[FieldMap]
+        :type field_maps: list[oci.data_integration.models.FieldMap]
 
         """
         self.swagger_types = {
@@ -139,7 +139,7 @@ class CompositeFieldMap(FieldMap):
         Gets the parent_ref of this CompositeFieldMap.
 
         :return: The parent_ref of this CompositeFieldMap.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -149,7 +149,7 @@ class CompositeFieldMap(FieldMap):
         Sets the parent_ref of this CompositeFieldMap.
 
         :param parent_ref: The parent_ref of this CompositeFieldMap.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -159,7 +159,7 @@ class CompositeFieldMap(FieldMap):
         Gets the config_values of this CompositeFieldMap.
 
         :return: The config_values of this CompositeFieldMap.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -169,7 +169,7 @@ class CompositeFieldMap(FieldMap):
         Sets the config_values of this CompositeFieldMap.
 
         :param config_values: The config_values of this CompositeFieldMap.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 
@@ -205,7 +205,7 @@ class CompositeFieldMap(FieldMap):
 
 
         :return: The field_maps of this CompositeFieldMap.
-        :rtype: list[FieldMap]
+        :rtype: list[oci.data_integration.models.FieldMap]
         """
         return self._field_maps
 
@@ -217,7 +217,7 @@ class CompositeFieldMap(FieldMap):
 
 
         :param field_maps: The field_maps of this CompositeFieldMap.
-        :type: list[FieldMap]
+        :type: list[oci.data_integration.models.FieldMap]
         """
         self._field_maps = field_maps
 

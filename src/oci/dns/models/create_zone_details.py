@@ -74,7 +74,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
 
         :param external_masters:
             The value to assign to the external_masters property of this CreateZoneDetails.
-        :type external_masters: list[ExternalMaster]
+        :type external_masters: list[oci.dns.models.ExternalMaster]
 
         """
         self.swagger_types = {
@@ -211,7 +211,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
 
 
         :return: The external_masters of this CreateZoneDetails.
-        :rtype: list[ExternalMaster]
+        :rtype: list[oci.dns.models.ExternalMaster]
         """
         return self._external_masters
 
@@ -224,7 +224,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
 
 
         :param external_masters: The external_masters of this CreateZoneDetails.
-        :type: list[ExternalMaster]
+        :type: list[oci.dns.models.ExternalMaster]
         """
         self._external_masters = external_masters
 

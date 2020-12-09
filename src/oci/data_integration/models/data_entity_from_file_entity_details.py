@@ -58,7 +58,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataEntityFromFileEntityDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this DataEntityFromFileEntityDetails.
@@ -78,7 +78,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
         :param shape:
             The value to assign to the shape property of this DataEntityFromFileEntityDetails.
-        :type shape: Shape
+        :type shape: oci.data_integration.models.Shape
 
         :param shape_id:
             The value to assign to the shape_id property of this DataEntityFromFileEntityDetails.
@@ -86,7 +86,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
         :param types:
             The value to assign to the types property of this DataEntityFromFileEntityDetails.
-        :type types: TypeLibrary
+        :type types: oci.data_integration.models.TypeLibrary
 
         :param entity_type:
             The value to assign to the entity_type property of this DataEntityFromFileEntityDetails.
@@ -99,11 +99,11 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
         :param unique_keys:
             The value to assign to the unique_keys property of this DataEntityFromFileEntityDetails.
-        :type unique_keys: list[UniqueKey]
+        :type unique_keys: list[oci.data_integration.models.UniqueKey]
 
         :param foreign_keys:
             The value to assign to the foreign_keys property of this DataEntityFromFileEntityDetails.
-        :type foreign_keys: list[ForeignKey]
+        :type foreign_keys: list[oci.data_integration.models.ForeignKey]
 
         :param resource_name:
             The value to assign to the resource_name property of this DataEntityFromFileEntityDetails.
@@ -111,7 +111,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
         :param data_format:
             The value to assign to the data_format property of this DataEntityFromFileEntityDetails.
-        :type data_format: DataFormat
+        :type data_format: oci.data_integration.models.DataFormat
 
         :param object_status:
             The value to assign to the object_status property of this DataEntityFromFileEntityDetails.
@@ -241,7 +241,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Gets the parent_ref of this DataEntityFromFileEntityDetails.
 
         :return: The parent_ref of this DataEntityFromFileEntityDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -251,7 +251,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Sets the parent_ref of this DataEntityFromFileEntityDetails.
 
         :param parent_ref: The parent_ref of this DataEntityFromFileEntityDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -357,7 +357,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Gets the shape of this DataEntityFromFileEntityDetails.
 
         :return: The shape of this DataEntityFromFileEntityDetails.
-        :rtype: Shape
+        :rtype: oci.data_integration.models.Shape
         """
         return self._shape
 
@@ -367,7 +367,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Sets the shape of this DataEntityFromFileEntityDetails.
 
         :param shape: The shape of this DataEntityFromFileEntityDetails.
-        :type: Shape
+        :type: oci.data_integration.models.Shape
         """
         self._shape = shape
 
@@ -401,7 +401,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Gets the types of this DataEntityFromFileEntityDetails.
 
         :return: The types of this DataEntityFromFileEntityDetails.
-        :rtype: TypeLibrary
+        :rtype: oci.data_integration.models.TypeLibrary
         """
         return self._types
 
@@ -411,7 +411,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Sets the types of this DataEntityFromFileEntityDetails.
 
         :param types: The types of this DataEntityFromFileEntityDetails.
-        :type: TypeLibrary
+        :type: oci.data_integration.models.TypeLibrary
         """
         self._types = types
 
@@ -479,7 +479,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
 
         :return: The unique_keys of this DataEntityFromFileEntityDetails.
-        :rtype: list[UniqueKey]
+        :rtype: list[oci.data_integration.models.UniqueKey]
         """
         return self._unique_keys
 
@@ -491,7 +491,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
 
         :param unique_keys: The unique_keys of this DataEntityFromFileEntityDetails.
-        :type: list[UniqueKey]
+        :type: list[oci.data_integration.models.UniqueKey]
         """
         self._unique_keys = unique_keys
 
@@ -503,7 +503,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
 
         :return: The foreign_keys of this DataEntityFromFileEntityDetails.
-        :rtype: list[ForeignKey]
+        :rtype: list[oci.data_integration.models.ForeignKey]
         """
         return self._foreign_keys
 
@@ -515,7 +515,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
 
 
         :param foreign_keys: The foreign_keys of this DataEntityFromFileEntityDetails.
-        :type: list[ForeignKey]
+        :type: list[oci.data_integration.models.ForeignKey]
         """
         self._foreign_keys = foreign_keys
 
@@ -549,7 +549,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Gets the data_format of this DataEntityFromFileEntityDetails.
 
         :return: The data_format of this DataEntityFromFileEntityDetails.
-        :rtype: DataFormat
+        :rtype: oci.data_integration.models.DataFormat
         """
         return self._data_format
 
@@ -559,7 +559,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
         Sets the data_format of this DataEntityFromFileEntityDetails.
 
         :param data_format: The data_format of this DataEntityFromFileEntityDetails.
-        :type: DataFormat
+        :type: oci.data_integration.models.DataFormat
         """
         self._data_format = data_format
 

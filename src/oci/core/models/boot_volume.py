@@ -109,7 +109,7 @@ class BootVolume(object):
 
         :param source_details:
             The value to assign to the source_details property of this BootVolume.
-        :type source_details: BootVolumeSourceDetails
+        :type source_details: oci.core.models.BootVolumeSourceDetails
 
         :param time_created:
             The value to assign to the time_created property of this BootVolume.
@@ -573,7 +573,7 @@ class BootVolume(object):
 
 
         :return: The source_details of this BootVolume.
-        :rtype: BootVolumeSourceDetails
+        :rtype: oci.core.models.BootVolumeSourceDetails
         """
         return self._source_details
 
@@ -586,7 +586,7 @@ class BootVolume(object):
 
 
         :param source_details: The source_details of this BootVolume.
-        :type: BootVolumeSourceDetails
+        :type: oci.core.models.BootVolumeSourceDetails
         """
         self._source_details = source_details
 

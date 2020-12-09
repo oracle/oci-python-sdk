@@ -28,7 +28,7 @@ class FieldSummaryReport(object):
 
         :param usage_details:
             The value to assign to the usage_details property of this FieldSummaryReport.
-        :type usage_details: list[UsageStatusItem]
+        :type usage_details: list[oci.log_analytics.models.UsageStatusItem]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class FieldSummaryReport(object):
 
 
         :return: The usage_details of this FieldSummaryReport.
-        :rtype: list[UsageStatusItem]
+        :rtype: list[oci.log_analytics.models.UsageStatusItem]
         """
         return self._usage_details
 
@@ -115,7 +115,7 @@ class FieldSummaryReport(object):
 
 
         :param usage_details: The usage_details of this FieldSummaryReport.
-        :type: list[UsageStatusItem]
+        :type: list[oci.log_analytics.models.UsageStatusItem]
         """
         self._usage_details = usage_details
 

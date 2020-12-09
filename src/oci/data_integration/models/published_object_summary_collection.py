@@ -20,7 +20,7 @@ class PublishedObjectSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this PublishedObjectSummaryCollection.
-        :type items: list[PublishedObjectSummary]
+        :type items: list[oci.data_integration.models.PublishedObjectSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PublishedObjectSummaryCollection(object):
 
 
         :return: The items of this PublishedObjectSummaryCollection.
-        :rtype: list[PublishedObjectSummary]
+        :rtype: list[oci.data_integration.models.PublishedObjectSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class PublishedObjectSummaryCollection(object):
 
 
         :param items: The items of this PublishedObjectSummaryCollection.
-        :type: list[PublishedObjectSummary]
+        :type: list[oci.data_integration.models.PublishedObjectSummary]
         """
         self._items = items
 

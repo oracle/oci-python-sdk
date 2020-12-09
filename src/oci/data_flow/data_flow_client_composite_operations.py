@@ -31,7 +31,7 @@ class DataFlowClientCompositeOperations(object):
         :param str private_endpoint_id: (required)
             The unique ID for a private endpoint.
 
-        :param ChangePrivateEndpointCompartmentDetails change_private_endpoint_compartment_details: (required)
+        :param oci.data_flow.models.ChangePrivateEndpointCompartmentDetails change_private_endpoint_compartment_details: (required)
             Details for changing a private endpoint's compartment.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class DataFlowClientCompositeOperations(object):
         Calls :py:func:`~oci.data_flow.DataFlowClient.create_application` and waits for the :py:class:`~oci.data_flow.models.Application` acted upon
         to enter the given state(s).
 
-        :param CreateApplicationDetails create_application_details: (required)
+        :param oci.data_flow.models.CreateApplicationDetails create_application_details: (required)
             Details to create an application.
 
         :param list[str] wait_for_states:
@@ -107,7 +107,7 @@ class DataFlowClientCompositeOperations(object):
         Calls :py:func:`~oci.data_flow.DataFlowClient.create_private_endpoint` and waits for the :py:class:`~oci.data_flow.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreatePrivateEndpointDetails create_private_endpoint_details: (required)
+        :param oci.data_flow.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
             Details to create a private endpoint.
 
         :param list[str] wait_for_states:
@@ -145,7 +145,7 @@ class DataFlowClientCompositeOperations(object):
         Calls :py:func:`~oci.data_flow.DataFlowClient.create_run` and waits for the :py:class:`~oci.data_flow.models.Run` acted upon
         to enter the given state(s).
 
-        :param CreateRunDetails create_run_details: (required)
+        :param oci.data_flow.models.CreateRunDetails create_run_details: (required)
             Details for creating a run of an application.
 
         :param list[str] wait_for_states:
@@ -323,7 +323,7 @@ class DataFlowClientCompositeOperations(object):
         Calls :py:func:`~oci.data_flow.DataFlowClient.update_application` and waits for the :py:class:`~oci.data_flow.models.Application` acted upon
         to enter the given state(s).
 
-        :param UpdateApplicationDetails update_application_details: (required)
+        :param oci.data_flow.models.UpdateApplicationDetails update_application_details: (required)
             Details for updating an application.
 
         :param str application_id: (required)
@@ -364,7 +364,7 @@ class DataFlowClientCompositeOperations(object):
         Calls :py:func:`~oci.data_flow.DataFlowClient.update_private_endpoint` and waits for the :py:class:`~oci.data_flow.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
+        :param oci.data_flow.models.UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
             Details for updating a private endpoint.
 
         :param str private_endpoint_id: (required)
@@ -405,7 +405,7 @@ class DataFlowClientCompositeOperations(object):
         Calls :py:func:`~oci.data_flow.DataFlowClient.update_run` and waits for the :py:class:`~oci.data_flow.models.Run` acted upon
         to enter the given state(s).
 
-        :param UpdateRunDetails update_run_details: (required)
+        :param oci.data_flow.models.UpdateRunDetails update_run_details: (required)
             Details for updating a run.
 
         :param str run_id: (required)

@@ -35,7 +35,7 @@ class UniqueKey(Key):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UniqueKey.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this UniqueKey.
@@ -43,7 +43,7 @@ class UniqueKey(Key):
 
         :param attribute_refs:
             The value to assign to the attribute_refs property of this UniqueKey.
-        :type attribute_refs: list[KeyAttribute]
+        :type attribute_refs: list[oci.data_integration.models.KeyAttribute]
 
         :param object_status:
             The value to assign to the object_status property of this UniqueKey.
@@ -133,7 +133,7 @@ class UniqueKey(Key):
         Gets the parent_ref of this UniqueKey.
 
         :return: The parent_ref of this UniqueKey.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -143,7 +143,7 @@ class UniqueKey(Key):
         Sets the parent_ref of this UniqueKey.
 
         :param parent_ref: The parent_ref of this UniqueKey.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -179,7 +179,7 @@ class UniqueKey(Key):
 
 
         :return: The attribute_refs of this UniqueKey.
-        :rtype: list[KeyAttribute]
+        :rtype: list[oci.data_integration.models.KeyAttribute]
         """
         return self._attribute_refs
 
@@ -191,7 +191,7 @@ class UniqueKey(Key):
 
 
         :param attribute_refs: The attribute_refs of this UniqueKey.
-        :type: list[KeyAttribute]
+        :type: list[oci.data_integration.models.KeyAttribute]
         """
         self._attribute_refs = attribute_refs
 

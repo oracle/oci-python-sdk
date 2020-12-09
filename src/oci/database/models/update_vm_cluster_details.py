@@ -54,7 +54,7 @@ class UpdateVmClusterDetails(object):
 
         :param version:
             The value to assign to the version property of this UpdateVmClusterDetails.
-        :type version: PatchDetails
+        :type version: oci.database.models.PatchDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateVmClusterDetails.
@@ -257,7 +257,7 @@ class UpdateVmClusterDetails(object):
         Gets the version of this UpdateVmClusterDetails.
 
         :return: The version of this UpdateVmClusterDetails.
-        :rtype: PatchDetails
+        :rtype: oci.database.models.PatchDetails
         """
         return self._version
 
@@ -267,7 +267,7 @@ class UpdateVmClusterDetails(object):
         Sets the version of this UpdateVmClusterDetails.
 
         :param version: The version of this UpdateVmClusterDetails.
-        :type: PatchDetails
+        :type: oci.database.models.PatchDetails
         """
         self._version = version
 

@@ -20,7 +20,7 @@ class ExecuteResponderExecutionDetails(object):
 
         :param configurations:
             The value to assign to the configurations property of this ExecuteResponderExecutionDetails.
-        :type configurations: list[ResponderConfiguration]
+        :type configurations: list[oci.cloud_guard.models.ResponderConfiguration]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ExecuteResponderExecutionDetails(object):
 
 
         :return: The configurations of this ExecuteResponderExecutionDetails.
-        :rtype: list[ResponderConfiguration]
+        :rtype: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         return self._configurations
 
@@ -53,7 +53,7 @@ class ExecuteResponderExecutionDetails(object):
 
 
         :param configurations: The configurations of this ExecuteResponderExecutionDetails.
-        :type: list[ResponderConfiguration]
+        :type: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         self._configurations = configurations
 

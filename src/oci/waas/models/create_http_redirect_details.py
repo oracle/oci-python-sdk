@@ -33,7 +33,7 @@ class CreateHttpRedirectDetails(object):
 
         :param target:
             The value to assign to the target property of this CreateHttpRedirectDetails.
-        :type target: HttpRedirectTarget
+        :type target: oci.waas.models.HttpRedirectTarget
 
         :param response_code:
             The value to assign to the response_code property of this CreateHttpRedirectDetails.
@@ -160,7 +160,7 @@ class CreateHttpRedirectDetails(object):
 
 
         :return: The target of this CreateHttpRedirectDetails.
-        :rtype: HttpRedirectTarget
+        :rtype: oci.waas.models.HttpRedirectTarget
         """
         return self._target
 
@@ -172,7 +172,7 @@ class CreateHttpRedirectDetails(object):
 
 
         :param target: The target of this CreateHttpRedirectDetails.
-        :type: HttpRedirectTarget
+        :type: oci.waas.models.HttpRedirectTarget
         """
         self._target = target
 

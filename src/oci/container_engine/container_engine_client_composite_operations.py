@@ -28,7 +28,7 @@ class ContainerEngineClientCompositeOperations(object):
         Calls :py:func:`~oci.container_engine.ContainerEngineClient.create_cluster` and waits for the :py:class:`~oci.container_engine.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateClusterDetails create_cluster_details: (required)
+        :param oci.container_engine.models.CreateClusterDetails create_cluster_details: (required)
             The details of the cluster to create.
 
         :param list[str] wait_for_states:
@@ -66,7 +66,7 @@ class ContainerEngineClientCompositeOperations(object):
         Calls :py:func:`~oci.container_engine.ContainerEngineClient.create_node_pool` and waits for the :py:class:`~oci.container_engine.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateNodePoolDetails create_node_pool_details: (required)
+        :param oci.container_engine.models.CreateNodePoolDetails create_node_pool_details: (required)
             The details of the node pool to create.
 
         :param list[str] wait_for_states:
@@ -199,7 +199,7 @@ class ContainerEngineClientCompositeOperations(object):
         :param str cluster_id: (required)
             The OCID of the cluster.
 
-        :param UpdateClusterDetails update_cluster_details: (required)
+        :param oci.container_engine.models.UpdateClusterDetails update_cluster_details: (required)
             The details of the cluster to update.
 
         :param list[str] wait_for_states:
@@ -240,7 +240,7 @@ class ContainerEngineClientCompositeOperations(object):
         :param str node_pool_id: (required)
             The OCID of the node pool.
 
-        :param UpdateNodePoolDetails update_node_pool_details: (required)
+        :param oci.container_engine.models.UpdateNodePoolDetails update_node_pool_details: (required)
             The fields to update in a node pool.
 
         :param list[str] wait_for_states:

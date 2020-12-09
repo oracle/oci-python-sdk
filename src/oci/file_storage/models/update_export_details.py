@@ -20,7 +20,7 @@ class UpdateExportDetails(object):
 
         :param export_options:
             The value to assign to the export_options property of this UpdateExportDetails.
-        :type export_options: list[ClientOptions]
+        :type export_options: list[oci.file_storage.models.ClientOptions]
 
         """
         self.swagger_types = {
@@ -45,7 +45,7 @@ class UpdateExportDetails(object):
 
 
         :return: The export_options of this UpdateExportDetails.
-        :rtype: list[ClientOptions]
+        :rtype: list[oci.file_storage.models.ClientOptions]
         """
         return self._export_options
 
@@ -61,7 +61,7 @@ class UpdateExportDetails(object):
 
 
         :param export_options: The export_options of this UpdateExportDetails.
-        :type: list[ClientOptions]
+        :type: list[oci.file_storage.models.ClientOptions]
         """
         self._export_options = export_options
 

@@ -171,11 +171,11 @@ class ExadataInfrastructureSummary(object):
 
         :param contacts:
             The value to assign to the contacts property of this ExadataInfrastructureSummary.
-        :type contacts: list[ExadataInfrastructureContact]
+        :type contacts: list[oci.database.models.ExadataInfrastructureContact]
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this ExadataInfrastructureSummary.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructureSummary.
@@ -933,7 +933,7 @@ class ExadataInfrastructureSummary(object):
 
 
         :return: The contacts of this ExadataInfrastructureSummary.
-        :rtype: list[ExadataInfrastructureContact]
+        :rtype: list[oci.database.models.ExadataInfrastructureContact]
         """
         return self._contacts
 
@@ -945,7 +945,7 @@ class ExadataInfrastructureSummary(object):
 
 
         :param contacts: The contacts of this ExadataInfrastructureSummary.
-        :type: list[ExadataInfrastructureContact]
+        :type: list[oci.database.models.ExadataInfrastructureContact]
         """
         self._contacts = contacts
 
@@ -955,7 +955,7 @@ class ExadataInfrastructureSummary(object):
         Gets the maintenance_window of this ExadataInfrastructureSummary.
 
         :return: The maintenance_window of this ExadataInfrastructureSummary.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -965,7 +965,7 @@ class ExadataInfrastructureSummary(object):
         Sets the maintenance_window of this ExadataInfrastructureSummary.
 
         :param maintenance_window: The maintenance_window of this ExadataInfrastructureSummary.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

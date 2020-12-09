@@ -47,11 +47,11 @@ class OutputPort(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this OutputPort.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this OutputPort.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this OutputPort.
@@ -73,7 +73,7 @@ class OutputPort(TypedObject):
 
         :param fields:
             The value to assign to the fields property of this OutputPort.
-        :type fields: list[TypedObject]
+        :type fields: list[oci.data_integration.models.TypedObject]
 
         """
         self.swagger_types = {
@@ -152,7 +152,7 @@ class OutputPort(TypedObject):
 
 
         :return: The fields of this OutputPort.
-        :rtype: list[TypedObject]
+        :rtype: list[oci.data_integration.models.TypedObject]
         """
         return self._fields
 
@@ -164,7 +164,7 @@ class OutputPort(TypedObject):
 
 
         :param fields: The fields of this OutputPort.
-        :type: list[TypedObject]
+        :type: list[oci.data_integration.models.TypedObject]
         """
         self._fields = fields
 

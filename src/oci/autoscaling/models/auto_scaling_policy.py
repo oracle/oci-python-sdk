@@ -30,7 +30,7 @@ class AutoScalingPolicy(object):
 
         :param capacity:
             The value to assign to the capacity property of this AutoScalingPolicy.
-        :type capacity: Capacity
+        :type capacity: oci.autoscaling.models.Capacity
 
         :param id:
             The value to assign to the id property of this AutoScalingPolicy.
@@ -102,7 +102,7 @@ class AutoScalingPolicy(object):
 
 
         :return: The capacity of this AutoScalingPolicy.
-        :rtype: Capacity
+        :rtype: oci.autoscaling.models.Capacity
         """
         return self._capacity
 
@@ -114,7 +114,7 @@ class AutoScalingPolicy(object):
 
 
         :param capacity: The capacity of this AutoScalingPolicy.
-        :type: Capacity
+        :type: oci.autoscaling.models.Capacity
         """
         self._capacity = capacity
 

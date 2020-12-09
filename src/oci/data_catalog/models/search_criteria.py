@@ -32,11 +32,11 @@ class SearchCriteria(object):
 
         :param sort:
             The value to assign to the sort property of this SearchCriteria.
-        :type sort: list[FacetedSearchSortRequest]
+        :type sort: list[oci.data_catalog.models.FacetedSearchSortRequest]
 
         :param filters:
             The value to assign to the filters property of this SearchCriteria.
-        :type filters: FacetedSearchFilterRequest
+        :type filters: oci.data_catalog.models.FacetedSearchFilterRequest
 
         """
         self.swagger_types = {
@@ -141,7 +141,7 @@ class SearchCriteria(object):
 
 
         :return: The sort of this SearchCriteria.
-        :rtype: list[FacetedSearchSortRequest]
+        :rtype: list[oci.data_catalog.models.FacetedSearchSortRequest]
         """
         return self._sort
 
@@ -153,7 +153,7 @@ class SearchCriteria(object):
 
 
         :param sort: The sort of this SearchCriteria.
-        :type: list[FacetedSearchSortRequest]
+        :type: list[oci.data_catalog.models.FacetedSearchSortRequest]
         """
         self._sort = sort
 
@@ -163,7 +163,7 @@ class SearchCriteria(object):
         Gets the filters of this SearchCriteria.
 
         :return: The filters of this SearchCriteria.
-        :rtype: FacetedSearchFilterRequest
+        :rtype: oci.data_catalog.models.FacetedSearchFilterRequest
         """
         return self._filters
 
@@ -173,7 +173,7 @@ class SearchCriteria(object):
         Sets the filters of this SearchCriteria.
 
         :param filters: The filters of this SearchCriteria.
-        :type: FacetedSearchFilterRequest
+        :type: oci.data_catalog.models.FacetedSearchFilterRequest
         """
         self._filters = filters
 

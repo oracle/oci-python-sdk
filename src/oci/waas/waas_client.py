@@ -4589,7 +4589,7 @@ class WaasClient(object):
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
 
-        :param PurgeCache purge_cache: (optional)
+        :param oci.waas.models.PurgeCache purge_cache: (optional)
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4774,7 +4774,7 @@ class WaasClient(object):
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
 
-        :param UpdateAddressListDetails update_address_list_details: (optional)
+        :param oci.waas.models.UpdateAddressListDetails update_address_list_details: (optional)
             The details of the address list to update.
 
         :param obj retry_strategy: (optional)
@@ -5063,7 +5063,7 @@ class WaasClient(object):
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
 
-        :param UpdateCertificateDetails update_certificate_details: (optional)
+        :param oci.waas.models.UpdateCertificateDetails update_certificate_details: (optional)
             The new display name, freeform tags, and defined tags to apply to a certificate.
 
         :param obj retry_strategy: (optional)

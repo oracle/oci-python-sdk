@@ -106,7 +106,7 @@ class WorkRequest(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequest.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.waas.models.WorkRequestResource]
 
         :param percent_complete:
             The value to assign to the percent_complete property of this WorkRequest.
@@ -114,11 +114,11 @@ class WorkRequest(object):
 
         :param logs:
             The value to assign to the logs property of this WorkRequest.
-        :type logs: list[WorkRequestLogEntry]
+        :type logs: list[oci.waas.models.WorkRequestLogEntry]
 
         :param errors:
             The value to assign to the errors property of this WorkRequest.
-        :type errors: list[WorkRequestError]
+        :type errors: list[oci.waas.models.WorkRequestError]
 
         :param time_accepted:
             The value to assign to the time_accepted property of this WorkRequest.
@@ -297,7 +297,7 @@ class WorkRequest(object):
 
 
         :return: The resources of this WorkRequest.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.waas.models.WorkRequestResource]
         """
         return self._resources
 
@@ -309,7 +309,7 @@ class WorkRequest(object):
 
 
         :param resources: The resources of this WorkRequest.
-        :type: list[WorkRequestResource]
+        :type: list[oci.waas.models.WorkRequestResource]
         """
         self._resources = resources
 
@@ -345,7 +345,7 @@ class WorkRequest(object):
 
 
         :return: The logs of this WorkRequest.
-        :rtype: list[WorkRequestLogEntry]
+        :rtype: list[oci.waas.models.WorkRequestLogEntry]
         """
         return self._logs
 
@@ -357,7 +357,7 @@ class WorkRequest(object):
 
 
         :param logs: The logs of this WorkRequest.
-        :type: list[WorkRequestLogEntry]
+        :type: list[oci.waas.models.WorkRequestLogEntry]
         """
         self._logs = logs
 
@@ -369,7 +369,7 @@ class WorkRequest(object):
 
 
         :return: The errors of this WorkRequest.
-        :rtype: list[WorkRequestError]
+        :rtype: list[oci.waas.models.WorkRequestError]
         """
         return self._errors
 
@@ -381,7 +381,7 @@ class WorkRequest(object):
 
 
         :param errors: The errors of this WorkRequest.
-        :type: list[WorkRequestError]
+        :type: list[oci.waas.models.WorkRequestError]
         """
         self._errors = errors
 

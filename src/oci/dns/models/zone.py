@@ -90,7 +90,7 @@ class Zone(object):
 
         :param external_masters:
             The value to assign to the external_masters property of this Zone.
-        :type external_masters: list[ExternalMaster]
+        :type external_masters: list[oci.dns.models.ExternalMaster]
 
         :param self_uri:
             The value to assign to the self_uri property of this Zone.
@@ -124,7 +124,7 @@ class Zone(object):
 
         :param nameservers:
             The value to assign to the nameservers property of this Zone.
-        :type nameservers: list[Nameserver]
+        :type nameservers: list[oci.dns.models.Nameserver]
 
         """
         self.swagger_types = {
@@ -399,7 +399,7 @@ class Zone(object):
 
 
         :return: The external_masters of this Zone.
-        :rtype: list[ExternalMaster]
+        :rtype: list[oci.dns.models.ExternalMaster]
         """
         return self._external_masters
 
@@ -412,7 +412,7 @@ class Zone(object):
 
 
         :param external_masters: The external_masters of this Zone.
-        :type: list[ExternalMaster]
+        :type: list[oci.dns.models.ExternalMaster]
         """
         self._external_masters = external_masters
 
@@ -608,7 +608,7 @@ class Zone(object):
 
 
         :return: The nameservers of this Zone.
-        :rtype: list[Nameserver]
+        :rtype: list[oci.dns.models.Nameserver]
         """
         return self._nameservers
 
@@ -620,7 +620,7 @@ class Zone(object):
 
 
         :param nameservers: The nameservers of this Zone.
-        :type: list[Nameserver]
+        :type: list[oci.dns.models.Nameserver]
         """
         self._nameservers = nameservers
 

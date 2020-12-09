@@ -32,7 +32,7 @@ class UpdateInstanceDetails(object):
 
         :param agent_config:
             The value to assign to the agent_config property of this UpdateInstanceDetails.
-        :type agent_config: UpdateInstanceAgentConfigDetails
+        :type agent_config: oci.core.models.UpdateInstanceAgentConfigDetails
 
         :param metadata:
             The value to assign to the metadata property of this UpdateInstanceDetails.
@@ -48,11 +48,11 @@ class UpdateInstanceDetails(object):
 
         :param shape_config:
             The value to assign to the shape_config property of this UpdateInstanceDetails.
-        :type shape_config: UpdateInstanceShapeConfigDetails
+        :type shape_config: oci.core.models.UpdateInstanceShapeConfigDetails
 
         :param instance_options:
             The value to assign to the instance_options property of this UpdateInstanceDetails.
-        :type instance_options: InstanceOptions
+        :type instance_options: oci.core.models.InstanceOptions
 
         :param fault_domain:
             The value to assign to the fault_domain property of this UpdateInstanceDetails.
@@ -60,11 +60,11 @@ class UpdateInstanceDetails(object):
 
         :param launch_options:
             The value to assign to the launch_options property of this UpdateInstanceDetails.
-        :type launch_options: UpdateLaunchOptions
+        :type launch_options: oci.core.models.UpdateLaunchOptions
 
         :param availability_config:
             The value to assign to the availability_config property of this UpdateInstanceDetails.
-        :type availability_config: UpdateInstanceAvailabilityConfigDetails
+        :type availability_config: oci.core.models.UpdateInstanceAvailabilityConfigDetails
 
         """
         self.swagger_types = {
@@ -216,7 +216,7 @@ class UpdateInstanceDetails(object):
 
 
         :return: The agent_config of this UpdateInstanceDetails.
-        :rtype: UpdateInstanceAgentConfigDetails
+        :rtype: oci.core.models.UpdateInstanceAgentConfigDetails
         """
         return self._agent_config
 
@@ -228,7 +228,7 @@ class UpdateInstanceDetails(object):
 
 
         :param agent_config: The agent_config of this UpdateInstanceDetails.
-        :type: UpdateInstanceAgentConfigDetails
+        :type: oci.core.models.UpdateInstanceAgentConfigDetails
         """
         self._agent_config = agent_config
 
@@ -388,7 +388,7 @@ class UpdateInstanceDetails(object):
         Gets the shape_config of this UpdateInstanceDetails.
 
         :return: The shape_config of this UpdateInstanceDetails.
-        :rtype: UpdateInstanceShapeConfigDetails
+        :rtype: oci.core.models.UpdateInstanceShapeConfigDetails
         """
         return self._shape_config
 
@@ -398,7 +398,7 @@ class UpdateInstanceDetails(object):
         Sets the shape_config of this UpdateInstanceDetails.
 
         :param shape_config: The shape_config of this UpdateInstanceDetails.
-        :type: UpdateInstanceShapeConfigDetails
+        :type: oci.core.models.UpdateInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
 
@@ -408,7 +408,7 @@ class UpdateInstanceDetails(object):
         Gets the instance_options of this UpdateInstanceDetails.
 
         :return: The instance_options of this UpdateInstanceDetails.
-        :rtype: InstanceOptions
+        :rtype: oci.core.models.InstanceOptions
         """
         return self._instance_options
 
@@ -418,7 +418,7 @@ class UpdateInstanceDetails(object):
         Sets the instance_options of this UpdateInstanceDetails.
 
         :param instance_options: The instance_options of this UpdateInstanceDetails.
-        :type: InstanceOptions
+        :type: oci.core.models.InstanceOptions
         """
         self._instance_options = instance_options
 
@@ -474,7 +474,7 @@ class UpdateInstanceDetails(object):
 
 
         :return: The launch_options of this UpdateInstanceDetails.
-        :rtype: UpdateLaunchOptions
+        :rtype: oci.core.models.UpdateLaunchOptions
         """
         return self._launch_options
 
@@ -486,7 +486,7 @@ class UpdateInstanceDetails(object):
 
 
         :param launch_options: The launch_options of this UpdateInstanceDetails.
-        :type: UpdateLaunchOptions
+        :type: oci.core.models.UpdateLaunchOptions
         """
         self._launch_options = launch_options
 
@@ -498,7 +498,7 @@ class UpdateInstanceDetails(object):
 
 
         :return: The availability_config of this UpdateInstanceDetails.
-        :rtype: UpdateInstanceAvailabilityConfigDetails
+        :rtype: oci.core.models.UpdateInstanceAvailabilityConfigDetails
         """
         return self._availability_config
 
@@ -510,7 +510,7 @@ class UpdateInstanceDetails(object):
 
 
         :param availability_config: The availability_config of this UpdateInstanceDetails.
-        :type: UpdateInstanceAvailabilityConfigDetails
+        :type: oci.core.models.UpdateInstanceAvailabilityConfigDetails
         """
         self._availability_config = availability_config
 

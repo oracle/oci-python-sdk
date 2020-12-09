@@ -56,7 +56,7 @@ class ListingSummary(object):
 
         :param icon:
             The value to assign to the icon property of this ListingSummary.
-        :type icon: UploadData
+        :type icon: oci.marketplace.models.UploadData
 
         :param package_type:
             The value to assign to the package_type property of this ListingSummary.
@@ -72,7 +72,7 @@ class ListingSummary(object):
 
         :param regions:
             The value to assign to the regions property of this ListingSummary.
-        :type regions: list[Region]
+        :type regions: list[oci.marketplace.models.Region]
 
         :param is_featured:
             The value to assign to the is_featured property of this ListingSummary.
@@ -84,7 +84,7 @@ class ListingSummary(object):
 
         :param publisher:
             The value to assign to the publisher property of this ListingSummary.
-        :type publisher: PublisherSummary
+        :type publisher: oci.marketplace.models.PublisherSummary
 
         """
         self.swagger_types = {
@@ -229,7 +229,7 @@ class ListingSummary(object):
         Gets the icon of this ListingSummary.
 
         :return: The icon of this ListingSummary.
-        :rtype: UploadData
+        :rtype: oci.marketplace.models.UploadData
         """
         return self._icon
 
@@ -239,7 +239,7 @@ class ListingSummary(object):
         Sets the icon of this ListingSummary.
 
         :param icon: The icon of this ListingSummary.
-        :type: UploadData
+        :type: oci.marketplace.models.UploadData
         """
         self._icon = icon
 
@@ -311,7 +311,7 @@ class ListingSummary(object):
 
 
         :return: The regions of this ListingSummary.
-        :rtype: list[Region]
+        :rtype: list[oci.marketplace.models.Region]
         """
         return self._regions
 
@@ -323,7 +323,7 @@ class ListingSummary(object):
 
 
         :param regions: The regions of this ListingSummary.
-        :type: list[Region]
+        :type: list[oci.marketplace.models.Region]
         """
         self._regions = regions
 
@@ -381,7 +381,7 @@ class ListingSummary(object):
         Gets the publisher of this ListingSummary.
 
         :return: The publisher of this ListingSummary.
-        :rtype: PublisherSummary
+        :rtype: oci.marketplace.models.PublisherSummary
         """
         return self._publisher
 
@@ -391,7 +391,7 @@ class ListingSummary(object):
         Sets the publisher of this ListingSummary.
 
         :param publisher: The publisher of this ListingSummary.
-        :type: PublisherSummary
+        :type: oci.marketplace.models.PublisherSummary
         """
         self._publisher = publisher
 

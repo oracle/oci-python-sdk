@@ -49,7 +49,7 @@ class ExportDetails(object):
 
         :param scope_filters:
             The value to assign to the scope_filters property of this ExportDetails.
-        :type scope_filters: list[ScopeFilter]
+        :type scope_filters: list[oci.log_analytics.models.ScopeFilter]
 
         :param max_total_count:
             The value to assign to the max_total_count property of this ExportDetails.
@@ -57,7 +57,7 @@ class ExportDetails(object):
 
         :param time_filter:
             The value to assign to the time_filter property of this ExportDetails.
-        :type time_filter: TimeRange
+        :type time_filter: oci.log_analytics.models.TimeRange
 
         :param query_timeout_in_seconds:
             The value to assign to the query_timeout_in_seconds property of this ExportDetails.
@@ -240,7 +240,7 @@ class ExportDetails(object):
 
 
         :return: The scope_filters of this ExportDetails.
-        :rtype: list[ScopeFilter]
+        :rtype: list[oci.log_analytics.models.ScopeFilter]
         """
         return self._scope_filters
 
@@ -252,7 +252,7 @@ class ExportDetails(object):
 
 
         :param scope_filters: The scope_filters of this ExportDetails.
-        :type: list[ScopeFilter]
+        :type: list[oci.log_analytics.models.ScopeFilter]
         """
         self._scope_filters = scope_filters
 
@@ -302,7 +302,7 @@ class ExportDetails(object):
         Gets the time_filter of this ExportDetails.
 
         :return: The time_filter of this ExportDetails.
-        :rtype: TimeRange
+        :rtype: oci.log_analytics.models.TimeRange
         """
         return self._time_filter
 
@@ -312,7 +312,7 @@ class ExportDetails(object):
         Sets the time_filter of this ExportDetails.
 
         :param time_filter: The time_filter of this ExportDetails.
-        :type: TimeRange
+        :type: oci.log_analytics.models.TimeRange
         """
         self._time_filter = time_filter
 

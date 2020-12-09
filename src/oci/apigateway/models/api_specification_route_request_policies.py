@@ -20,19 +20,19 @@ class ApiSpecificationRouteRequestPolicies(object):
 
         :param authorization:
             The value to assign to the authorization property of this ApiSpecificationRouteRequestPolicies.
-        :type authorization: RouteAuthorizationPolicy
+        :type authorization: oci.apigateway.models.RouteAuthorizationPolicy
 
         :param cors:
             The value to assign to the cors property of this ApiSpecificationRouteRequestPolicies.
-        :type cors: CorsPolicy
+        :type cors: oci.apigateway.models.CorsPolicy
 
         :param header_transformations:
             The value to assign to the header_transformations property of this ApiSpecificationRouteRequestPolicies.
-        :type header_transformations: HeaderTransformationPolicy
+        :type header_transformations: oci.apigateway.models.HeaderTransformationPolicy
 
         :param query_parameter_transformations:
             The value to assign to the query_parameter_transformations property of this ApiSpecificationRouteRequestPolicies.
-        :type query_parameter_transformations: QueryParameterTransformationPolicy
+        :type query_parameter_transformations: oci.apigateway.models.QueryParameterTransformationPolicy
 
         """
         self.swagger_types = {
@@ -60,7 +60,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Gets the authorization of this ApiSpecificationRouteRequestPolicies.
 
         :return: The authorization of this ApiSpecificationRouteRequestPolicies.
-        :rtype: RouteAuthorizationPolicy
+        :rtype: oci.apigateway.models.RouteAuthorizationPolicy
         """
         return self._authorization
 
@@ -70,7 +70,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Sets the authorization of this ApiSpecificationRouteRequestPolicies.
 
         :param authorization: The authorization of this ApiSpecificationRouteRequestPolicies.
-        :type: RouteAuthorizationPolicy
+        :type: oci.apigateway.models.RouteAuthorizationPolicy
         """
         self._authorization = authorization
 
@@ -80,7 +80,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Gets the cors of this ApiSpecificationRouteRequestPolicies.
 
         :return: The cors of this ApiSpecificationRouteRequestPolicies.
-        :rtype: CorsPolicy
+        :rtype: oci.apigateway.models.CorsPolicy
         """
         return self._cors
 
@@ -90,7 +90,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Sets the cors of this ApiSpecificationRouteRequestPolicies.
 
         :param cors: The cors of this ApiSpecificationRouteRequestPolicies.
-        :type: CorsPolicy
+        :type: oci.apigateway.models.CorsPolicy
         """
         self._cors = cors
 
@@ -100,7 +100,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Gets the header_transformations of this ApiSpecificationRouteRequestPolicies.
 
         :return: The header_transformations of this ApiSpecificationRouteRequestPolicies.
-        :rtype: HeaderTransformationPolicy
+        :rtype: oci.apigateway.models.HeaderTransformationPolicy
         """
         return self._header_transformations
 
@@ -110,7 +110,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Sets the header_transformations of this ApiSpecificationRouteRequestPolicies.
 
         :param header_transformations: The header_transformations of this ApiSpecificationRouteRequestPolicies.
-        :type: HeaderTransformationPolicy
+        :type: oci.apigateway.models.HeaderTransformationPolicy
         """
         self._header_transformations = header_transformations
 
@@ -120,7 +120,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Gets the query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
 
         :return: The query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
-        :rtype: QueryParameterTransformationPolicy
+        :rtype: oci.apigateway.models.QueryParameterTransformationPolicy
         """
         return self._query_parameter_transformations
 
@@ -130,7 +130,7 @@ class ApiSpecificationRouteRequestPolicies(object):
         Sets the query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
 
         :param query_parameter_transformations: The query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
-        :type: QueryParameterTransformationPolicy
+        :type: oci.apigateway.models.QueryParameterTransformationPolicy
         """
         self._query_parameter_transformations = query_parameter_transformations
 

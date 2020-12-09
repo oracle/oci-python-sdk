@@ -20,11 +20,11 @@ class EnrichedEntity(object):
 
         :param entity:
             The value to assign to the entity property of this EnrichedEntity.
-        :type entity: DataEntity
+        :type entity: oci.data_integration.models.DataEntity
 
         :param data_format:
             The value to assign to the data_format property of this EnrichedEntity.
-        :type data_format: DataFormat
+        :type data_format: oci.data_integration.models.DataFormat
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class EnrichedEntity(object):
         Gets the entity of this EnrichedEntity.
 
         :return: The entity of this EnrichedEntity.
-        :rtype: DataEntity
+        :rtype: oci.data_integration.models.DataEntity
         """
         return self._entity
 
@@ -56,7 +56,7 @@ class EnrichedEntity(object):
         Sets the entity of this EnrichedEntity.
 
         :param entity: The entity of this EnrichedEntity.
-        :type: DataEntity
+        :type: oci.data_integration.models.DataEntity
         """
         self._entity = entity
 
@@ -66,7 +66,7 @@ class EnrichedEntity(object):
         Gets the data_format of this EnrichedEntity.
 
         :return: The data_format of this EnrichedEntity.
-        :rtype: DataFormat
+        :rtype: oci.data_integration.models.DataFormat
         """
         return self._data_format
 
@@ -76,7 +76,7 @@ class EnrichedEntity(object):
         Sets the data_format of this EnrichedEntity.
 
         :param data_format: The data_format of this EnrichedEntity.
-        :type: DataFormat
+        :type: oci.data_integration.models.DataFormat
         """
         self._data_format = data_format
 

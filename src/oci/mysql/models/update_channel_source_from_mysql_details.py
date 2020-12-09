@@ -46,7 +46,7 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
 
         :param ssl_ca_certificate:
             The value to assign to the ssl_ca_certificate property of this UpdateChannelSourceFromMysqlDetails.
-        :type ssl_ca_certificate: CaCertificate
+        :type ssl_ca_certificate: oci.mysql.models.CaCertificate
 
         """
         self.swagger_types = {
@@ -218,7 +218,7 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
         Gets the ssl_ca_certificate of this UpdateChannelSourceFromMysqlDetails.
 
         :return: The ssl_ca_certificate of this UpdateChannelSourceFromMysqlDetails.
-        :rtype: CaCertificate
+        :rtype: oci.mysql.models.CaCertificate
         """
         return self._ssl_ca_certificate
 
@@ -228,7 +228,7 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
         Sets the ssl_ca_certificate of this UpdateChannelSourceFromMysqlDetails.
 
         :param ssl_ca_certificate: The ssl_ca_certificate of this UpdateChannelSourceFromMysqlDetails.
-        :type: CaCertificate
+        :type: oci.mysql.models.CaCertificate
         """
         self._ssl_ca_certificate = ssl_ca_certificate
 

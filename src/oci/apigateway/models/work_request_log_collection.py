@@ -20,7 +20,7 @@ class WorkRequestLogCollection(object):
 
         :param items:
             The value to assign to the items property of this WorkRequestLogCollection.
-        :type items: list[WorkRequestLog]
+        :type items: list[oci.apigateway.models.WorkRequestLog]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class WorkRequestLogCollection(object):
 
 
         :return: The items of this WorkRequestLogCollection.
-        :rtype: list[WorkRequestLog]
+        :rtype: list[oci.apigateway.models.WorkRequestLog]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class WorkRequestLogCollection(object):
 
 
         :param items: The items of this WorkRequestLogCollection.
-        :type: list[WorkRequestLog]
+        :type: list[oci.apigateway.models.WorkRequestLog]
         """
         self._items = items
 

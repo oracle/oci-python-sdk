@@ -82,7 +82,7 @@ class ResourceManagerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeStackCompartmentDetails change_stack_compartment_details: (required)
+        :param oci.resource_manager.models.ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             Defines the properties of changeStackCompartment operation.
 
         :param list[str] wait_for_states:
@@ -120,7 +120,7 @@ class ResourceManagerClientCompositeOperations(object):
         Calls :py:func:`~oci.resource_manager.ResourceManagerClient.create_configuration_source_provider` and waits for the :py:class:`~oci.resource_manager.models.ConfigurationSourceProvider` acted upon
         to enter the given state(s).
 
-        :param CreateConfigurationSourceProviderDetails create_configuration_source_provider_details: (required)
+        :param oci.resource_manager.models.CreateConfigurationSourceProviderDetails create_configuration_source_provider_details: (required)
             The properties for creating a ConfigurationSourceProvider.
 
         :param list[str] wait_for_states:
@@ -158,7 +158,7 @@ class ResourceManagerClientCompositeOperations(object):
         Calls :py:func:`~oci.resource_manager.ResourceManagerClient.create_job` and waits for the :py:class:`~oci.resource_manager.models.Job` acted upon
         to enter the given state(s).
 
-        :param CreateJobDetails create_job_details: (required)
+        :param oci.resource_manager.models.CreateJobDetails create_job_details: (required)
             The properties for a request to create a job.
 
         :param list[str] wait_for_states:
@@ -196,7 +196,7 @@ class ResourceManagerClientCompositeOperations(object):
         Calls :py:func:`~oci.resource_manager.ResourceManagerClient.create_stack` and waits for the :py:class:`~oci.resource_manager.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateStackDetails create_stack_details: (required)
+        :param oci.resource_manager.models.CreateStackDetails create_stack_details: (required)
             The properties for creating a stack.
 
         :param list[str] wait_for_states:
@@ -377,7 +377,7 @@ class ResourceManagerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateConfigurationSourceProviderDetails update_configuration_source_provider_details: (required)
+        :param oci.resource_manager.models.UpdateConfigurationSourceProviderDetails update_configuration_source_provider_details: (required)
             Updated information provided for the ConfigurationSourceProvider.
 
         :param list[str] wait_for_states:
@@ -420,7 +420,7 @@ class ResourceManagerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateJobDetails update_job_details: (required)
+        :param oci.resource_manager.models.UpdateJobDetails update_job_details: (required)
             Updates properties for the specified job.
 
         :param list[str] wait_for_states:
@@ -463,7 +463,7 @@ class ResourceManagerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateStackDetails update_stack_details: (required)
+        :param oci.resource_manager.models.UpdateStackDetails update_stack_details: (required)
             Updated information provided for the stack.
 
         :param list[str] wait_for_states:

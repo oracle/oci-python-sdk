@@ -32,7 +32,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
 
         :param secondary_vnic_subnets:
             The value to assign to the secondary_vnic_subnets property of this UpdateInstancePoolPlacementConfigurationDetails.
-        :type secondary_vnic_subnets: list[InstancePoolPlacementSecondaryVnicSubnet]
+        :type secondary_vnic_subnets: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
 
         """
         self.swagger_types = {
@@ -164,7 +164,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
 
 
         :return: The secondary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
-        :rtype: list[InstancePoolPlacementSecondaryVnicSubnet]
+        :rtype: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
         """
         return self._secondary_vnic_subnets
 
@@ -176,7 +176,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
 
 
         :param secondary_vnic_subnets: The secondary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
-        :type: list[InstancePoolPlacementSecondaryVnicSubnet]
+        :type: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
         """
         self._secondary_vnic_subnets = secondary_vnic_subnets
 

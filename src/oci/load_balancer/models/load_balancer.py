@@ -76,7 +76,7 @@ class LoadBalancer(object):
 
         :param ip_addresses:
             The value to assign to the ip_addresses property of this LoadBalancer.
-        :type ip_addresses: list[IpAddress]
+        :type ip_addresses: list[oci.load_balancer.models.IpAddress]
 
         :param shape_name:
             The value to assign to the shape_name property of this LoadBalancer.
@@ -352,7 +352,7 @@ class LoadBalancer(object):
 
 
         :return: The ip_addresses of this LoadBalancer.
-        :rtype: list[IpAddress]
+        :rtype: list[oci.load_balancer.models.IpAddress]
         """
         return self._ip_addresses
 
@@ -364,7 +364,7 @@ class LoadBalancer(object):
 
 
         :param ip_addresses: The ip_addresses of this LoadBalancer.
-        :type: list[IpAddress]
+        :type: list[oci.load_balancer.models.IpAddress]
         """
         self._ip_addresses = ip_addresses
 

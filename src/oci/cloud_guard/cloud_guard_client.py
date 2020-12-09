@@ -1415,7 +1415,7 @@ class CloudGuardClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
-        :param ExecuteResponderExecutionDetails execute_responder_execution_details: (optional)
+        :param oci.cloud_guard.models.ExecuteResponderExecutionDetails execute_responder_execution_details: (optional)
             Details for Responder Configuration
 
         :param obj retry_strategy: (optional)

@@ -24,7 +24,7 @@ class SqlStatisticAggregation(object):
 
         :param database_details:
             The value to assign to the database_details property of this SqlStatisticAggregation.
-        :type database_details: DatabaseDetails
+        :type database_details: oci.opsi.models.DatabaseDetails
 
         :param category:
             The value to assign to the category property of this SqlStatisticAggregation.
@@ -32,7 +32,7 @@ class SqlStatisticAggregation(object):
 
         :param statistics:
             The value to assign to the statistics property of this SqlStatisticAggregation.
-        :type statistics: SqlStatistics
+        :type statistics: oci.opsi.models.SqlStatistics
 
         """
         self.swagger_types = {
@@ -84,7 +84,7 @@ class SqlStatisticAggregation(object):
         **[Required]** Gets the database_details of this SqlStatisticAggregation.
 
         :return: The database_details of this SqlStatisticAggregation.
-        :rtype: DatabaseDetails
+        :rtype: oci.opsi.models.DatabaseDetails
         """
         return self._database_details
 
@@ -94,7 +94,7 @@ class SqlStatisticAggregation(object):
         Sets the database_details of this SqlStatisticAggregation.
 
         :param database_details: The database_details of this SqlStatisticAggregation.
-        :type: DatabaseDetails
+        :type: oci.opsi.models.DatabaseDetails
         """
         self._database_details = database_details
 
@@ -128,7 +128,7 @@ class SqlStatisticAggregation(object):
         Gets the statistics of this SqlStatisticAggregation.
 
         :return: The statistics of this SqlStatisticAggregation.
-        :rtype: SqlStatistics
+        :rtype: oci.opsi.models.SqlStatistics
         """
         return self._statistics
 
@@ -138,7 +138,7 @@ class SqlStatisticAggregation(object):
         Sets the statistics of this SqlStatisticAggregation.
 
         :param statistics: The statistics of this SqlStatisticAggregation.
-        :type: SqlStatistics
+        :type: oci.opsi.models.SqlStatistics
         """
         self._statistics = statistics
 

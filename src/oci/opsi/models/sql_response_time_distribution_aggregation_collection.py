@@ -36,7 +36,7 @@ class SqlResponseTimeDistributionAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this SqlResponseTimeDistributionAggregationCollection.
-        :type items: list[SqlResponseTimeDistributionAggregation]
+        :type items: list[oci.opsi.models.SqlResponseTimeDistributionAggregation]
 
         """
         self.swagger_types = {
@@ -169,7 +169,7 @@ class SqlResponseTimeDistributionAggregationCollection(object):
 
 
         :return: The items of this SqlResponseTimeDistributionAggregationCollection.
-        :rtype: list[SqlResponseTimeDistributionAggregation]
+        :rtype: list[oci.opsi.models.SqlResponseTimeDistributionAggregation]
         """
         return self._items
 
@@ -181,7 +181,7 @@ class SqlResponseTimeDistributionAggregationCollection(object):
 
 
         :param items: The items of this SqlResponseTimeDistributionAggregationCollection.
-        :type: list[SqlResponseTimeDistributionAggregation]
+        :type: list[oci.opsi.models.SqlResponseTimeDistributionAggregation]
         """
         self._items = items
 

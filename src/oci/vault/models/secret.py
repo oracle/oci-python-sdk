@@ -102,7 +102,7 @@ class Secret(object):
 
         :param secret_rules:
             The value to assign to the secret_rules property of this Secret.
-        :type secret_rules: list[SecretRule]
+        :type secret_rules: list[oci.vault.models.SecretRule]
 
         :param time_created:
             The value to assign to the time_created property of this Secret.
@@ -474,7 +474,7 @@ class Secret(object):
 
 
         :return: The secret_rules of this Secret.
-        :rtype: list[SecretRule]
+        :rtype: list[oci.vault.models.SecretRule]
         """
         return self._secret_rules
 
@@ -486,7 +486,7 @@ class Secret(object):
 
 
         :param secret_rules: The secret_rules of this Secret.
-        :type: list[SecretRule]
+        :type: list[oci.vault.models.SecretRule]
         """
         self._secret_rules = secret_rules
 

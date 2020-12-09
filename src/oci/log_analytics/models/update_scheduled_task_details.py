@@ -32,7 +32,7 @@ class UpdateScheduledTaskDetails(object):
 
         :param schedules:
             The value to assign to the schedules property of this UpdateScheduledTaskDetails.
-        :type schedules: list[Schedule]
+        :type schedules: list[oci.log_analytics.models.Schedule]
 
         """
         self.swagger_types = {
@@ -144,7 +144,7 @@ class UpdateScheduledTaskDetails(object):
 
 
         :return: The schedules of this UpdateScheduledTaskDetails.
-        :rtype: list[Schedule]
+        :rtype: list[oci.log_analytics.models.Schedule]
         """
         return self._schedules
 
@@ -156,7 +156,7 @@ class UpdateScheduledTaskDetails(object):
 
 
         :param schedules: The schedules of this UpdateScheduledTaskDetails.
-        :type: list[Schedule]
+        :type: list[oci.log_analytics.models.Schedule]
         """
         self._schedules = schedules
 

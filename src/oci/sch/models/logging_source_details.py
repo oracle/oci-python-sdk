@@ -26,7 +26,7 @@ class LoggingSourceDetails(SourceDetails):
 
         :param log_sources:
             The value to assign to the log_sources property of this LoggingSourceDetails.
-        :type log_sources: list[LogSource]
+        :type log_sources: list[oci.sch.models.LogSource]
 
         """
         self.swagger_types = {
@@ -51,7 +51,7 @@ class LoggingSourceDetails(SourceDetails):
 
 
         :return: The log_sources of this LoggingSourceDetails.
-        :rtype: list[LogSource]
+        :rtype: list[oci.sch.models.LogSource]
         """
         return self._log_sources
 
@@ -63,7 +63,7 @@ class LoggingSourceDetails(SourceDetails):
 
 
         :param log_sources: The log_sources of this LoggingSourceDetails.
-        :type: list[LogSource]
+        :type: list[oci.sch.models.LogSource]
         """
         self._log_sources = log_sources
 

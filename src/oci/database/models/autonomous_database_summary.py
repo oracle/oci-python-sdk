@@ -252,7 +252,7 @@ class AutonomousDatabaseSummary(object):
 
         :param backup_config:
             The value to assign to the backup_config property of this AutonomousDatabaseSummary.
-        :type backup_config: AutonomousDatabaseBackupConfig
+        :type backup_config: oci.database.models.AutonomousDatabaseBackupConfig
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this AutonomousDatabaseSummary.
@@ -290,11 +290,11 @@ class AutonomousDatabaseSummary(object):
 
         :param connection_strings:
             The value to assign to the connection_strings property of this AutonomousDatabaseSummary.
-        :type connection_strings: AutonomousDatabaseConnectionStrings
+        :type connection_strings: oci.database.models.AutonomousDatabaseConnectionStrings
 
         :param connection_urls:
             The value to assign to the connection_urls property of this AutonomousDatabaseSummary.
-        :type connection_urls: AutonomousDatabaseConnectionUrls
+        :type connection_urls: oci.database.models.AutonomousDatabaseConnectionUrls
 
         :param license_model:
             The value to assign to the license_model property of this AutonomousDatabaseSummary.
@@ -442,7 +442,7 @@ class AutonomousDatabaseSummary(object):
 
         :param standby_db:
             The value to assign to the standby_db property of this AutonomousDatabaseSummary.
-        :type standby_db: AutonomousDatabaseStandbySummary
+        :type standby_db: oci.database.models.AutonomousDatabaseStandbySummary
 
         :param role:
             The value to assign to the role property of this AutonomousDatabaseSummary.
@@ -883,7 +883,7 @@ class AutonomousDatabaseSummary(object):
         Gets the backup_config of this AutonomousDatabaseSummary.
 
         :return: The backup_config of this AutonomousDatabaseSummary.
-        :rtype: AutonomousDatabaseBackupConfig
+        :rtype: oci.database.models.AutonomousDatabaseBackupConfig
         """
         return self._backup_config
 
@@ -893,7 +893,7 @@ class AutonomousDatabaseSummary(object):
         Sets the backup_config of this AutonomousDatabaseSummary.
 
         :param backup_config: The backup_config of this AutonomousDatabaseSummary.
-        :type: AutonomousDatabaseBackupConfig
+        :type: oci.database.models.AutonomousDatabaseBackupConfig
         """
         self._backup_config = backup_config
 
@@ -1111,7 +1111,7 @@ class AutonomousDatabaseSummary(object):
 
 
         :return: The connection_strings of this AutonomousDatabaseSummary.
-        :rtype: AutonomousDatabaseConnectionStrings
+        :rtype: oci.database.models.AutonomousDatabaseConnectionStrings
         """
         return self._connection_strings
 
@@ -1123,7 +1123,7 @@ class AutonomousDatabaseSummary(object):
 
 
         :param connection_strings: The connection_strings of this AutonomousDatabaseSummary.
-        :type: AutonomousDatabaseConnectionStrings
+        :type: oci.database.models.AutonomousDatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
 
@@ -1133,7 +1133,7 @@ class AutonomousDatabaseSummary(object):
         Gets the connection_urls of this AutonomousDatabaseSummary.
 
         :return: The connection_urls of this AutonomousDatabaseSummary.
-        :rtype: AutonomousDatabaseConnectionUrls
+        :rtype: oci.database.models.AutonomousDatabaseConnectionUrls
         """
         return self._connection_urls
 
@@ -1143,7 +1143,7 @@ class AutonomousDatabaseSummary(object):
         Sets the connection_urls of this AutonomousDatabaseSummary.
 
         :param connection_urls: The connection_urls of this AutonomousDatabaseSummary.
-        :type: AutonomousDatabaseConnectionUrls
+        :type: oci.database.models.AutonomousDatabaseConnectionUrls
         """
         self._connection_urls = connection_urls
 
@@ -2071,7 +2071,7 @@ class AutonomousDatabaseSummary(object):
         Gets the standby_db of this AutonomousDatabaseSummary.
 
         :return: The standby_db of this AutonomousDatabaseSummary.
-        :rtype: AutonomousDatabaseStandbySummary
+        :rtype: oci.database.models.AutonomousDatabaseStandbySummary
         """
         return self._standby_db
 
@@ -2081,7 +2081,7 @@ class AutonomousDatabaseSummary(object):
         Sets the standby_db of this AutonomousDatabaseSummary.
 
         :param standby_db: The standby_db of this AutonomousDatabaseSummary.
-        :type: AutonomousDatabaseStandbySummary
+        :type: oci.database.models.AutonomousDatabaseStandbySummary
         """
         self._standby_db = standby_db
 

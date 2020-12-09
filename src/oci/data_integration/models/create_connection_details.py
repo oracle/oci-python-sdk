@@ -66,7 +66,7 @@ class CreateConnectionDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateConnectionDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateConnectionDetails.
@@ -86,11 +86,11 @@ class CreateConnectionDetails(object):
 
         :param connection_properties:
             The value to assign to the connection_properties property of this CreateConnectionDetails.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateConnectionDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -244,7 +244,7 @@ class CreateConnectionDetails(object):
         Gets the parent_ref of this CreateConnectionDetails.
 
         :return: The parent_ref of this CreateConnectionDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -254,7 +254,7 @@ class CreateConnectionDetails(object):
         Sets the parent_ref of this CreateConnectionDetails.
 
         :param parent_ref: The parent_ref of this CreateConnectionDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -362,7 +362,7 @@ class CreateConnectionDetails(object):
 
 
         :return: The connection_properties of this CreateConnectionDetails.
-        :rtype: list[ConnectionProperty]
+        :rtype: list[oci.data_integration.models.ConnectionProperty]
         """
         return self._connection_properties
 
@@ -374,7 +374,7 @@ class CreateConnectionDetails(object):
 
 
         :param connection_properties: The connection_properties of this CreateConnectionDetails.
-        :type: list[ConnectionProperty]
+        :type: list[oci.data_integration.models.ConnectionProperty]
         """
         self._connection_properties = connection_properties
 
@@ -384,7 +384,7 @@ class CreateConnectionDetails(object):
         Gets the registry_metadata of this CreateConnectionDetails.
 
         :return: The registry_metadata of this CreateConnectionDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -394,7 +394,7 @@ class CreateConnectionDetails(object):
         Sets the registry_metadata of this CreateConnectionDetails.
 
         :param registry_metadata: The registry_metadata of this CreateConnectionDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

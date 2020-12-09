@@ -45,7 +45,7 @@ class UpdateCloudVmClusterDetails(object):
 
         :param update_details:
             The value to assign to the update_details property of this UpdateCloudVmClusterDetails.
-        :type update_details: UpdateDetails
+        :type update_details: oci.database.models.UpdateDetails
 
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateCloudVmClusterDetails.
@@ -222,7 +222,7 @@ class UpdateCloudVmClusterDetails(object):
         Gets the update_details of this UpdateCloudVmClusterDetails.
 
         :return: The update_details of this UpdateCloudVmClusterDetails.
-        :rtype: UpdateDetails
+        :rtype: oci.database.models.UpdateDetails
         """
         return self._update_details
 
@@ -232,7 +232,7 @@ class UpdateCloudVmClusterDetails(object):
         Sets the update_details of this UpdateCloudVmClusterDetails.
 
         :param update_details: The update_details of this UpdateCloudVmClusterDetails.
-        :type: UpdateDetails
+        :type: oci.database.models.UpdateDetails
         """
         self._update_details = update_details
 

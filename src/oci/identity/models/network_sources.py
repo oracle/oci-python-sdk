@@ -64,7 +64,7 @@ class NetworkSources(object):
 
         :param virtual_source_list:
             The value to assign to the virtual_source_list property of this NetworkSources.
-        :type virtual_source_list: list[NetworkSourcesVirtualSourceList]
+        :type virtual_source_list: list[oci.identity.models.NetworkSourcesVirtualSourceList]
 
         :param services:
             The value to assign to the services property of this NetworkSources.
@@ -267,7 +267,7 @@ class NetworkSources(object):
 
 
         :return: The virtual_source_list of this NetworkSources.
-        :rtype: list[NetworkSourcesVirtualSourceList]
+        :rtype: list[oci.identity.models.NetworkSourcesVirtualSourceList]
         """
         return self._virtual_source_list
 
@@ -280,7 +280,7 @@ class NetworkSources(object):
 
 
         :param virtual_source_list: The virtual_source_list of this NetworkSources.
-        :type: list[NetworkSourcesVirtualSourceList]
+        :type: list[oci.identity.models.NetworkSourcesVirtualSourceList]
         """
         self._virtual_source_list = virtual_source_list
 

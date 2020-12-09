@@ -123,7 +123,7 @@ class Backup(object):
 
         :param db_system_snapshot:
             The value to assign to the db_system_snapshot property of this Backup.
-        :type db_system_snapshot: DbSystemSnapshot
+        :type db_system_snapshot: oci.mysql.models.DbSystemSnapshot
 
         :param backup_size_in_gbs:
             The value to assign to the backup_size_in_gbs property of this Backup.
@@ -506,7 +506,7 @@ class Backup(object):
         Gets the db_system_snapshot of this Backup.
 
         :return: The db_system_snapshot of this Backup.
-        :rtype: DbSystemSnapshot
+        :rtype: oci.mysql.models.DbSystemSnapshot
         """
         return self._db_system_snapshot
 
@@ -516,7 +516,7 @@ class Backup(object):
         Sets the db_system_snapshot of this Backup.
 
         :param db_system_snapshot: The db_system_snapshot of this Backup.
-        :type: DbSystemSnapshot
+        :type: oci.mysql.models.DbSystemSnapshot
         """
         self._db_system_snapshot = db_system_snapshot
 

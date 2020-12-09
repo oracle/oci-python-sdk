@@ -36,7 +36,7 @@ class SqlSearchCollection(object):
 
         :param items:
             The value to assign to the items property of this SqlSearchCollection.
-        :type items: list[SqlSearchSummary]
+        :type items: list[oci.opsi.models.SqlSearchSummary]
 
         """
         self.swagger_types = {
@@ -165,7 +165,7 @@ class SqlSearchCollection(object):
 
 
         :return: The items of this SqlSearchCollection.
-        :rtype: list[SqlSearchSummary]
+        :rtype: list[oci.opsi.models.SqlSearchSummary]
         """
         return self._items
 
@@ -177,7 +177,7 @@ class SqlSearchCollection(object):
 
 
         :param items: The items of this SqlSearchCollection.
-        :type: list[SqlSearchSummary]
+        :type: list[oci.opsi.models.SqlSearchSummary]
         """
         self._items = items
 

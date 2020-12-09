@@ -20,7 +20,7 @@ class ImpactedResourceCollection(object):
 
         :param items:
             The value to assign to the items property of this ImpactedResourceCollection.
-        :type items: list[ImpactedResourceSummary]
+        :type items: list[oci.cloud_guard.models.ImpactedResourceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ImpactedResourceCollection(object):
 
 
         :return: The items of this ImpactedResourceCollection.
-        :rtype: list[ImpactedResourceSummary]
+        :rtype: list[oci.cloud_guard.models.ImpactedResourceSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ImpactedResourceCollection(object):
 
 
         :param items: The items of this ImpactedResourceCollection.
-        :type: list[ImpactedResourceSummary]
+        :type: list[oci.cloud_guard.models.ImpactedResourceSummary]
         """
         self._items = items
 

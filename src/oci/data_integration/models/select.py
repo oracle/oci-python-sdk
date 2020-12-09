@@ -30,7 +30,7 @@ class Select(PushDownOperation):
 
         :param select_columns:
             The value to assign to the select_columns property of this Select.
-        :type select_columns: list[ShapeField]
+        :type select_columns: list[oci.data_integration.models.ShapeField]
 
         """
         self.swagger_types = {
@@ -82,7 +82,7 @@ class Select(PushDownOperation):
 
 
         :return: The select_columns of this Select.
-        :rtype: list[ShapeField]
+        :rtype: list[oci.data_integration.models.ShapeField]
         """
         return self._select_columns
 
@@ -94,7 +94,7 @@ class Select(PushDownOperation):
 
 
         :param select_columns: The select_columns of this Select.
-        :type: list[ShapeField]
+        :type: list[oci.data_integration.models.ShapeField]
         """
         self._select_columns = select_columns
 

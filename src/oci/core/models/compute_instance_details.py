@@ -25,15 +25,15 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
 
         :param block_volumes:
             The value to assign to the block_volumes property of this ComputeInstanceDetails.
-        :type block_volumes: list[InstanceConfigurationBlockVolumeDetails]
+        :type block_volumes: list[oci.core.models.InstanceConfigurationBlockVolumeDetails]
 
         :param launch_details:
             The value to assign to the launch_details property of this ComputeInstanceDetails.
-        :type launch_details: InstanceConfigurationLaunchInstanceDetails
+        :type launch_details: oci.core.models.InstanceConfigurationLaunchInstanceDetails
 
         :param secondary_vnics:
             The value to assign to the secondary_vnics property of this ComputeInstanceDetails.
-        :type secondary_vnics: list[InstanceConfigurationAttachVnicDetails]
+        :type secondary_vnics: list[oci.core.models.InstanceConfigurationAttachVnicDetails]
 
         """
         self.swagger_types = {
@@ -62,7 +62,7 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
         Gets the block_volumes of this ComputeInstanceDetails.
 
         :return: The block_volumes of this ComputeInstanceDetails.
-        :rtype: list[InstanceConfigurationBlockVolumeDetails]
+        :rtype: list[oci.core.models.InstanceConfigurationBlockVolumeDetails]
         """
         return self._block_volumes
 
@@ -72,7 +72,7 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
         Sets the block_volumes of this ComputeInstanceDetails.
 
         :param block_volumes: The block_volumes of this ComputeInstanceDetails.
-        :type: list[InstanceConfigurationBlockVolumeDetails]
+        :type: list[oci.core.models.InstanceConfigurationBlockVolumeDetails]
         """
         self._block_volumes = block_volumes
 
@@ -82,7 +82,7 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
         Gets the launch_details of this ComputeInstanceDetails.
 
         :return: The launch_details of this ComputeInstanceDetails.
-        :rtype: InstanceConfigurationLaunchInstanceDetails
+        :rtype: oci.core.models.InstanceConfigurationLaunchInstanceDetails
         """
         return self._launch_details
 
@@ -92,7 +92,7 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
         Sets the launch_details of this ComputeInstanceDetails.
 
         :param launch_details: The launch_details of this ComputeInstanceDetails.
-        :type: InstanceConfigurationLaunchInstanceDetails
+        :type: oci.core.models.InstanceConfigurationLaunchInstanceDetails
         """
         self._launch_details = launch_details
 
@@ -102,7 +102,7 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
         Gets the secondary_vnics of this ComputeInstanceDetails.
 
         :return: The secondary_vnics of this ComputeInstanceDetails.
-        :rtype: list[InstanceConfigurationAttachVnicDetails]
+        :rtype: list[oci.core.models.InstanceConfigurationAttachVnicDetails]
         """
         return self._secondary_vnics
 
@@ -112,7 +112,7 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
         Sets the secondary_vnics of this ComputeInstanceDetails.
 
         :param secondary_vnics: The secondary_vnics of this ComputeInstanceDetails.
-        :type: list[InstanceConfigurationAttachVnicDetails]
+        :type: list[oci.core.models.InstanceConfigurationAttachVnicDetails]
         """
         self._secondary_vnics = secondary_vnics
 

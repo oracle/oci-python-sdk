@@ -118,7 +118,7 @@ class Database(object):
 
         :param db_backup_config:
             The value to assign to the db_backup_config property of this Database.
-        :type db_backup_config: DbBackupConfig
+        :type db_backup_config: oci.database.models.DbBackupConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Database.
@@ -130,7 +130,7 @@ class Database(object):
 
         :param connection_strings:
             The value to assign to the connection_strings property of this Database.
-        :type connection_strings: DatabaseConnectionStrings
+        :type connection_strings: oci.database.models.DatabaseConnectionStrings
 
         :param source_database_point_in_time_recovery_timestamp:
             The value to assign to the source_database_point_in_time_recovery_timestamp property of this Database.
@@ -603,7 +603,7 @@ class Database(object):
         Gets the db_backup_config of this Database.
 
         :return: The db_backup_config of this Database.
-        :rtype: DbBackupConfig
+        :rtype: oci.database.models.DbBackupConfig
         """
         return self._db_backup_config
 
@@ -613,7 +613,7 @@ class Database(object):
         Sets the db_backup_config of this Database.
 
         :param db_backup_config: The db_backup_config of this Database.
-        :type: DbBackupConfig
+        :type: oci.database.models.DbBackupConfig
         """
         self._db_backup_config = db_backup_config
 
@@ -689,7 +689,7 @@ class Database(object):
 
 
         :return: The connection_strings of this Database.
-        :rtype: DatabaseConnectionStrings
+        :rtype: oci.database.models.DatabaseConnectionStrings
         """
         return self._connection_strings
 
@@ -701,7 +701,7 @@ class Database(object):
 
 
         :param connection_strings: The connection_strings of this Database.
-        :type: DatabaseConnectionStrings
+        :type: oci.database.models.DatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
 

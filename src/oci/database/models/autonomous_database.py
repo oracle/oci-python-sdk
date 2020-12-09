@@ -250,7 +250,7 @@ class AutonomousDatabase(object):
 
         :param backup_config:
             The value to assign to the backup_config property of this AutonomousDatabase.
-        :type backup_config: AutonomousDatabaseBackupConfig
+        :type backup_config: oci.database.models.AutonomousDatabaseBackupConfig
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this AutonomousDatabase.
@@ -288,11 +288,11 @@ class AutonomousDatabase(object):
 
         :param connection_strings:
             The value to assign to the connection_strings property of this AutonomousDatabase.
-        :type connection_strings: AutonomousDatabaseConnectionStrings
+        :type connection_strings: oci.database.models.AutonomousDatabaseConnectionStrings
 
         :param connection_urls:
             The value to assign to the connection_urls property of this AutonomousDatabase.
-        :type connection_urls: AutonomousDatabaseConnectionUrls
+        :type connection_urls: oci.database.models.AutonomousDatabaseConnectionUrls
 
         :param license_model:
             The value to assign to the license_model property of this AutonomousDatabase.
@@ -440,7 +440,7 @@ class AutonomousDatabase(object):
 
         :param standby_db:
             The value to assign to the standby_db property of this AutonomousDatabase.
-        :type standby_db: AutonomousDatabaseStandbySummary
+        :type standby_db: oci.database.models.AutonomousDatabaseStandbySummary
 
         :param role:
             The value to assign to the role property of this AutonomousDatabase.
@@ -881,7 +881,7 @@ class AutonomousDatabase(object):
         Gets the backup_config of this AutonomousDatabase.
 
         :return: The backup_config of this AutonomousDatabase.
-        :rtype: AutonomousDatabaseBackupConfig
+        :rtype: oci.database.models.AutonomousDatabaseBackupConfig
         """
         return self._backup_config
 
@@ -891,7 +891,7 @@ class AutonomousDatabase(object):
         Sets the backup_config of this AutonomousDatabase.
 
         :param backup_config: The backup_config of this AutonomousDatabase.
-        :type: AutonomousDatabaseBackupConfig
+        :type: oci.database.models.AutonomousDatabaseBackupConfig
         """
         self._backup_config = backup_config
 
@@ -1109,7 +1109,7 @@ class AutonomousDatabase(object):
 
 
         :return: The connection_strings of this AutonomousDatabase.
-        :rtype: AutonomousDatabaseConnectionStrings
+        :rtype: oci.database.models.AutonomousDatabaseConnectionStrings
         """
         return self._connection_strings
 
@@ -1121,7 +1121,7 @@ class AutonomousDatabase(object):
 
 
         :param connection_strings: The connection_strings of this AutonomousDatabase.
-        :type: AutonomousDatabaseConnectionStrings
+        :type: oci.database.models.AutonomousDatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
 
@@ -1131,7 +1131,7 @@ class AutonomousDatabase(object):
         Gets the connection_urls of this AutonomousDatabase.
 
         :return: The connection_urls of this AutonomousDatabase.
-        :rtype: AutonomousDatabaseConnectionUrls
+        :rtype: oci.database.models.AutonomousDatabaseConnectionUrls
         """
         return self._connection_urls
 
@@ -1141,7 +1141,7 @@ class AutonomousDatabase(object):
         Sets the connection_urls of this AutonomousDatabase.
 
         :param connection_urls: The connection_urls of this AutonomousDatabase.
-        :type: AutonomousDatabaseConnectionUrls
+        :type: oci.database.models.AutonomousDatabaseConnectionUrls
         """
         self._connection_urls = connection_urls
 
@@ -2069,7 +2069,7 @@ class AutonomousDatabase(object):
         Gets the standby_db of this AutonomousDatabase.
 
         :return: The standby_db of this AutonomousDatabase.
-        :rtype: AutonomousDatabaseStandbySummary
+        :rtype: oci.database.models.AutonomousDatabaseStandbySummary
         """
         return self._standby_db
 
@@ -2079,7 +2079,7 @@ class AutonomousDatabase(object):
         Sets the standby_db of this AutonomousDatabase.
 
         :param standby_db: The standby_db of this AutonomousDatabase.
-        :type: AutonomousDatabaseStandbySummary
+        :type: oci.database.models.AutonomousDatabaseStandbySummary
         """
         self._standby_db = standby_db
 

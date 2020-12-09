@@ -34,7 +34,7 @@ class JavaType(BaseType):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this JavaType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this JavaType.
@@ -54,7 +54,7 @@ class JavaType(BaseType):
 
         :param config_definition:
             The value to assign to the config_definition property of this JavaType.
-        :type config_definition: ConfigDefinition
+        :type config_definition: oci.data_integration.models.ConfigDefinition
 
         """
         self.swagger_types = {
@@ -122,7 +122,7 @@ class JavaType(BaseType):
         Gets the config_definition of this JavaType.
 
         :return: The config_definition of this JavaType.
-        :rtype: ConfigDefinition
+        :rtype: oci.data_integration.models.ConfigDefinition
         """
         return self._config_definition
 
@@ -132,7 +132,7 @@ class JavaType(BaseType):
         Sets the config_definition of this JavaType.
 
         :param config_definition: The config_definition of this JavaType.
-        :type: ConfigDefinition
+        :type: oci.data_integration.models.ConfigDefinition
         """
         self._config_definition = config_definition
 

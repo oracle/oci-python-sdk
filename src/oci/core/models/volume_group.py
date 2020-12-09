@@ -84,7 +84,7 @@ class VolumeGroup(object):
 
         :param source_details:
             The value to assign to the source_details property of this VolumeGroup.
-        :type source_details: VolumeGroupSourceDetails
+        :type source_details: oci.core.models.VolumeGroupSourceDetails
 
         :param time_created:
             The value to assign to the time_created property of this VolumeGroup.
@@ -396,7 +396,7 @@ class VolumeGroup(object):
 
 
         :return: The source_details of this VolumeGroup.
-        :rtype: VolumeGroupSourceDetails
+        :rtype: oci.core.models.VolumeGroupSourceDetails
         """
         return self._source_details
 
@@ -409,7 +409,7 @@ class VolumeGroup(object):
 
 
         :param source_details: The source_details of this VolumeGroup.
-        :type: VolumeGroupSourceDetails
+        :type: oci.core.models.VolumeGroupSourceDetails
         """
         self._source_details = source_details
 

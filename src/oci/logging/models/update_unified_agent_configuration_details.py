@@ -40,11 +40,11 @@ class UpdateUnifiedAgentConfigurationDetails(object):
 
         :param service_configuration:
             The value to assign to the service_configuration property of this UpdateUnifiedAgentConfigurationDetails.
-        :type service_configuration: UnifiedAgentServiceConfigurationDetails
+        :type service_configuration: oci.logging.models.UnifiedAgentServiceConfigurationDetails
 
         :param group_association:
             The value to assign to the group_association property of this UpdateUnifiedAgentConfigurationDetails.
-        :type group_association: GroupAssociationDetails
+        :type group_association: oci.logging.models.GroupAssociationDetails
 
         """
         self.swagger_types = {
@@ -221,7 +221,7 @@ class UpdateUnifiedAgentConfigurationDetails(object):
         **[Required]** Gets the service_configuration of this UpdateUnifiedAgentConfigurationDetails.
 
         :return: The service_configuration of this UpdateUnifiedAgentConfigurationDetails.
-        :rtype: UnifiedAgentServiceConfigurationDetails
+        :rtype: oci.logging.models.UnifiedAgentServiceConfigurationDetails
         """
         return self._service_configuration
 
@@ -231,7 +231,7 @@ class UpdateUnifiedAgentConfigurationDetails(object):
         Sets the service_configuration of this UpdateUnifiedAgentConfigurationDetails.
 
         :param service_configuration: The service_configuration of this UpdateUnifiedAgentConfigurationDetails.
-        :type: UnifiedAgentServiceConfigurationDetails
+        :type: oci.logging.models.UnifiedAgentServiceConfigurationDetails
         """
         self._service_configuration = service_configuration
 
@@ -241,7 +241,7 @@ class UpdateUnifiedAgentConfigurationDetails(object):
         Gets the group_association of this UpdateUnifiedAgentConfigurationDetails.
 
         :return: The group_association of this UpdateUnifiedAgentConfigurationDetails.
-        :rtype: GroupAssociationDetails
+        :rtype: oci.logging.models.GroupAssociationDetails
         """
         return self._group_association
 
@@ -251,7 +251,7 @@ class UpdateUnifiedAgentConfigurationDetails(object):
         Sets the group_association of this UpdateUnifiedAgentConfigurationDetails.
 
         :param group_association: The group_association of this UpdateUnifiedAgentConfigurationDetails.
-        :type: GroupAssociationDetails
+        :type: oci.logging.models.GroupAssociationDetails
         """
         self._group_association = group_association
 

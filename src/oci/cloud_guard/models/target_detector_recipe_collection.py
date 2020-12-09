@@ -20,7 +20,7 @@ class TargetDetectorRecipeCollection(object):
 
         :param items:
             The value to assign to the items property of this TargetDetectorRecipeCollection.
-        :type items: list[TargetDetectorRecipeSummary]
+        :type items: list[oci.cloud_guard.models.TargetDetectorRecipeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TargetDetectorRecipeCollection(object):
 
 
         :return: The items of this TargetDetectorRecipeCollection.
-        :rtype: list[TargetDetectorRecipeSummary]
+        :rtype: list[oci.cloud_guard.models.TargetDetectorRecipeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TargetDetectorRecipeCollection(object):
 
 
         :param items: The items of this TargetDetectorRecipeCollection.
-        :type: list[TargetDetectorRecipeSummary]
+        :type: list[oci.cloud_guard.models.TargetDetectorRecipeSummary]
         """
         self._items = items
 

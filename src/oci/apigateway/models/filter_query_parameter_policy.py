@@ -35,7 +35,7 @@ class FilterQueryParameterPolicy(object):
 
         :param items:
             The value to assign to the items property of this FilterQueryParameterPolicy.
-        :type items: list[FilterQueryParameterPolicyItem]
+        :type items: list[oci.apigateway.models.FilterQueryParameterPolicyItem]
 
         """
         self.swagger_types = {
@@ -91,7 +91,7 @@ class FilterQueryParameterPolicy(object):
 
 
         :return: The items of this FilterQueryParameterPolicy.
-        :rtype: list[FilterQueryParameterPolicyItem]
+        :rtype: list[oci.apigateway.models.FilterQueryParameterPolicyItem]
         """
         return self._items
 
@@ -103,7 +103,7 @@ class FilterQueryParameterPolicy(object):
 
 
         :param items: The items of this FilterQueryParameterPolicy.
-        :type: list[FilterQueryParameterPolicyItem]
+        :type: list[oci.apigateway.models.FilterQueryParameterPolicyItem]
         """
         self._items = items
 

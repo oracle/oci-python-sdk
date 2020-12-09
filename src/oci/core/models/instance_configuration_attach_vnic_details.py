@@ -20,7 +20,7 @@ class InstanceConfigurationAttachVnicDetails(object):
 
         :param create_vnic_details:
             The value to assign to the create_vnic_details property of this InstanceConfigurationAttachVnicDetails.
-        :type create_vnic_details: InstanceConfigurationCreateVnicDetails
+        :type create_vnic_details: oci.core.models.InstanceConfigurationCreateVnicDetails
 
         :param display_name:
             The value to assign to the display_name property of this InstanceConfigurationAttachVnicDetails.
@@ -55,7 +55,7 @@ class InstanceConfigurationAttachVnicDetails(object):
 
 
         :return: The create_vnic_details of this InstanceConfigurationAttachVnicDetails.
-        :rtype: InstanceConfigurationCreateVnicDetails
+        :rtype: oci.core.models.InstanceConfigurationCreateVnicDetails
         """
         return self._create_vnic_details
 
@@ -67,7 +67,7 @@ class InstanceConfigurationAttachVnicDetails(object):
 
 
         :param create_vnic_details: The create_vnic_details of this InstanceConfigurationAttachVnicDetails.
-        :type: InstanceConfigurationCreateVnicDetails
+        :type: oci.core.models.InstanceConfigurationCreateVnicDetails
         """
         self._create_vnic_details = create_vnic_details
 

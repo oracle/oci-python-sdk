@@ -52,7 +52,7 @@ class DependentObject(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DependentObject.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_version:
             The value to assign to the object_version property of this DependentObject.
@@ -60,7 +60,7 @@ class DependentObject(object):
 
         :param dependent_object_metadata:
             The value to assign to the dependent_object_metadata property of this DependentObject.
-        :type dependent_object_metadata: list[PatchObjectMetadata]
+        :type dependent_object_metadata: list[oci.data_integration.models.PatchObjectMetadata]
 
         :param published_object_metadata:
             The value to assign to the published_object_metadata property of this DependentObject.
@@ -68,7 +68,7 @@ class DependentObject(object):
 
         :param source_application_info:
             The value to assign to the source_application_info property of this DependentObject.
-        :type source_application_info: SourceApplicationInfo
+        :type source_application_info: oci.data_integration.models.SourceApplicationInfo
 
         :param time_patched:
             The value to assign to the time_patched property of this DependentObject.
@@ -76,7 +76,7 @@ class DependentObject(object):
 
         :param metadata:
             The value to assign to the metadata property of this DependentObject.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this DependentObject.
@@ -336,7 +336,7 @@ class DependentObject(object):
         Gets the parent_ref of this DependentObject.
 
         :return: The parent_ref of this DependentObject.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -346,7 +346,7 @@ class DependentObject(object):
         Sets the parent_ref of this DependentObject.
 
         :param parent_ref: The parent_ref of this DependentObject.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -382,7 +382,7 @@ class DependentObject(object):
 
 
         :return: The dependent_object_metadata of this DependentObject.
-        :rtype: list[PatchObjectMetadata]
+        :rtype: list[oci.data_integration.models.PatchObjectMetadata]
         """
         return self._dependent_object_metadata
 
@@ -394,7 +394,7 @@ class DependentObject(object):
 
 
         :param dependent_object_metadata: The dependent_object_metadata of this DependentObject.
-        :type: list[PatchObjectMetadata]
+        :type: list[oci.data_integration.models.PatchObjectMetadata]
         """
         self._dependent_object_metadata = dependent_object_metadata
 
@@ -428,7 +428,7 @@ class DependentObject(object):
         Gets the source_application_info of this DependentObject.
 
         :return: The source_application_info of this DependentObject.
-        :rtype: SourceApplicationInfo
+        :rtype: oci.data_integration.models.SourceApplicationInfo
         """
         return self._source_application_info
 
@@ -438,7 +438,7 @@ class DependentObject(object):
         Sets the source_application_info of this DependentObject.
 
         :param source_application_info: The source_application_info of this DependentObject.
-        :type: SourceApplicationInfo
+        :type: oci.data_integration.models.SourceApplicationInfo
         """
         self._source_application_info = source_application_info
 
@@ -472,7 +472,7 @@ class DependentObject(object):
         Gets the metadata of this DependentObject.
 
         :return: The metadata of this DependentObject.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -482,7 +482,7 @@ class DependentObject(object):
         Sets the metadata of this DependentObject.
 
         :param metadata: The metadata of this DependentObject.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

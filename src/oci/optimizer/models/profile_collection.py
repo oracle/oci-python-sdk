@@ -20,7 +20,7 @@ class ProfileCollection(object):
 
         :param items:
             The value to assign to the items property of this ProfileCollection.
-        :type items: list[ProfileSummary]
+        :type items: list[oci.optimizer.models.ProfileSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ProfileCollection(object):
 
 
         :return: The items of this ProfileCollection.
-        :rtype: list[ProfileSummary]
+        :rtype: list[oci.optimizer.models.ProfileSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ProfileCollection(object):
 
 
         :param items: The items of this ProfileCollection.
-        :type: list[ProfileSummary]
+        :type: list[oci.optimizer.models.ProfileSummary]
         """
         self._items = items
 

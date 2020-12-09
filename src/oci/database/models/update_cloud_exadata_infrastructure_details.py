@@ -24,7 +24,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this UpdateCloudExadataInfrastructureDetails.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param compute_count:
             The value to assign to the compute_count property of this UpdateCloudExadataInfrastructureDetails.
@@ -98,7 +98,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
         Gets the maintenance_window of this UpdateCloudExadataInfrastructureDetails.
 
         :return: The maintenance_window of this UpdateCloudExadataInfrastructureDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -108,7 +108,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
         Sets the maintenance_window of this UpdateCloudExadataInfrastructureDetails.
 
         :param maintenance_window: The maintenance_window of this UpdateCloudExadataInfrastructureDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

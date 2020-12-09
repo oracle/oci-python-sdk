@@ -20,7 +20,7 @@ class LabelSourceCollection(object):
 
         :param items:
             The value to assign to the items property of this LabelSourceCollection.
-        :type items: list[LabelSourceSummary]
+        :type items: list[oci.log_analytics.models.LabelSourceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LabelSourceCollection(object):
 
 
         :return: The items of this LabelSourceCollection.
-        :rtype: list[LabelSourceSummary]
+        :rtype: list[oci.log_analytics.models.LabelSourceSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LabelSourceCollection(object):
 
 
         :param items: The items of this LabelSourceCollection.
-        :type: list[LabelSourceSummary]
+        :type: list[oci.log_analytics.models.LabelSourceSummary]
         """
         self._items = items
 

@@ -27,15 +27,15 @@ class CreateTechSupportItemDetails(CreateItemDetails):
 
         :param category:
             The value to assign to the category property of this CreateTechSupportItemDetails.
-        :type category: CreateCategoryDetails
+        :type category: oci.cims.models.CreateCategoryDetails
 
         :param sub_category:
             The value to assign to the sub_category property of this CreateTechSupportItemDetails.
-        :type sub_category: CreateSubCategoryDetails
+        :type sub_category: oci.cims.models.CreateSubCategoryDetails
 
         :param issue_type:
             The value to assign to the issue_type property of this CreateTechSupportItemDetails.
-        :type issue_type: CreateIssueTypeDetails
+        :type issue_type: oci.cims.models.CreateIssueTypeDetails
 
         :param name:
             The value to assign to the name property of this CreateTechSupportItemDetails.

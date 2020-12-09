@@ -28,7 +28,7 @@ class FileStorageClientCompositeOperations(object):
         Calls :py:func:`~oci.file_storage.FileStorageClient.create_export` and waits for the :py:class:`~oci.file_storage.models.Export` acted upon
         to enter the given state(s).
 
-        :param CreateExportDetails create_export_details: (required)
+        :param oci.file_storage.models.CreateExportDetails create_export_details: (required)
             Details for creating a new export.
 
         :param list[str] wait_for_states:
@@ -66,7 +66,7 @@ class FileStorageClientCompositeOperations(object):
         Calls :py:func:`~oci.file_storage.FileStorageClient.create_file_system` and waits for the :py:class:`~oci.file_storage.models.FileSystem` acted upon
         to enter the given state(s).
 
-        :param CreateFileSystemDetails create_file_system_details: (required)
+        :param oci.file_storage.models.CreateFileSystemDetails create_file_system_details: (required)
             Details for creating a new file system.
 
         :param list[str] wait_for_states:
@@ -104,7 +104,7 @@ class FileStorageClientCompositeOperations(object):
         Calls :py:func:`~oci.file_storage.FileStorageClient.create_mount_target` and waits for the :py:class:`~oci.file_storage.models.MountTarget` acted upon
         to enter the given state(s).
 
-        :param CreateMountTargetDetails create_mount_target_details: (required)
+        :param oci.file_storage.models.CreateMountTargetDetails create_mount_target_details: (required)
             Details for creating a new mount target.
 
         :param list[str] wait_for_states:
@@ -142,7 +142,7 @@ class FileStorageClientCompositeOperations(object):
         Calls :py:func:`~oci.file_storage.FileStorageClient.create_snapshot` and waits for the :py:class:`~oci.file_storage.models.Snapshot` acted upon
         to enter the given state(s).
 
-        :param CreateSnapshotDetails create_snapshot_details: (required)
+        :param oci.file_storage.models.CreateSnapshotDetails create_snapshot_details: (required)
             Details for creating a new snapshot.
 
         :param list[str] wait_for_states:
@@ -371,7 +371,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_id: (required)
             The OCID of the export.
 
-        :param UpdateExportDetails update_export_details: (required)
+        :param oci.file_storage.models.UpdateExportDetails update_export_details: (required)
             Details object for updating an export.
 
         :param list[str] wait_for_states:
@@ -412,7 +412,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_set_id: (required)
             The OCID of the export set.
 
-        :param UpdateExportSetDetails update_export_set_details: (required)
+        :param oci.file_storage.models.UpdateExportSetDetails update_export_set_details: (required)
             Details object for updating an export set.
 
         :param list[str] wait_for_states:
@@ -453,7 +453,7 @@ class FileStorageClientCompositeOperations(object):
         :param str file_system_id: (required)
             The OCID of the file system.
 
-        :param UpdateFileSystemDetails update_file_system_details: (required)
+        :param oci.file_storage.models.UpdateFileSystemDetails update_file_system_details: (required)
             Details object for updating a file system.
 
         :param list[str] wait_for_states:
@@ -494,7 +494,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The OCID of the mount target.
 
-        :param UpdateMountTargetDetails update_mount_target_details: (required)
+        :param oci.file_storage.models.UpdateMountTargetDetails update_mount_target_details: (required)
             Details object for updating a mount target.
 
         :param list[str] wait_for_states:
@@ -535,7 +535,7 @@ class FileStorageClientCompositeOperations(object):
         :param str snapshot_id: (required)
             The OCID of the snapshot.
 
-        :param UpdateSnapshotDetails update_snapshot_details: (required)
+        :param oci.file_storage.models.UpdateSnapshotDetails update_snapshot_details: (required)
             Details object for updating a snapshot.
 
         :param list[str] wait_for_states:

@@ -20,7 +20,7 @@ class BlockchainPlatformCollection(object):
 
         :param items:
             The value to assign to the items property of this BlockchainPlatformCollection.
-        :type items: list[BlockchainPlatformSummary]
+        :type items: list[oci.blockchain.models.BlockchainPlatformSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class BlockchainPlatformCollection(object):
 
 
         :return: The items of this BlockchainPlatformCollection.
-        :rtype: list[BlockchainPlatformSummary]
+        :rtype: list[oci.blockchain.models.BlockchainPlatformSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class BlockchainPlatformCollection(object):
 
 
         :param items: The items of this BlockchainPlatformCollection.
-        :type: list[BlockchainPlatformSummary]
+        :type: list[oci.blockchain.models.BlockchainPlatformSummary]
         """
         self._items = items
 

@@ -34,7 +34,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this PublishedObjectSummaryFromDataLoaderTask.
@@ -58,31 +58,31 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
         :param metadata:
             The value to assign to the metadata property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param input_ports:
             The value to assign to the input_ports property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param data_flow:
             The value to assign to the data_flow property of this PublishedObjectSummaryFromDataLoaderTask.
-        :type data_flow: DataFlow
+        :type data_flow: oci.data_integration.models.DataFlow
 
         """
         self.swagger_types = {
@@ -149,7 +149,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
 
         :return: The input_ports of this PublishedObjectSummaryFromDataLoaderTask.
-        :rtype: list[InputPort]
+        :rtype: list[oci.data_integration.models.InputPort]
         """
         return self._input_ports
 
@@ -161,7 +161,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
 
         :param input_ports: The input_ports of this PublishedObjectSummaryFromDataLoaderTask.
-        :type: list[InputPort]
+        :type: list[oci.data_integration.models.InputPort]
         """
         self._input_ports = input_ports
 
@@ -173,7 +173,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
 
         :return: The output_ports of this PublishedObjectSummaryFromDataLoaderTask.
-        :rtype: list[OutputPort]
+        :rtype: list[oci.data_integration.models.OutputPort]
         """
         return self._output_ports
 
@@ -185,7 +185,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
 
         :param output_ports: The output_ports of this PublishedObjectSummaryFromDataLoaderTask.
-        :type: list[OutputPort]
+        :type: list[oci.data_integration.models.OutputPort]
         """
         self._output_ports = output_ports
 
@@ -197,7 +197,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
 
         :return: The parameters of this PublishedObjectSummaryFromDataLoaderTask.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -209,7 +209,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
 
 
         :param parameters: The parameters of this PublishedObjectSummaryFromDataLoaderTask.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -219,7 +219,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
         Gets the op_config_values of this PublishedObjectSummaryFromDataLoaderTask.
 
         :return: The op_config_values of this PublishedObjectSummaryFromDataLoaderTask.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._op_config_values
 
@@ -229,7 +229,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
         Sets the op_config_values of this PublishedObjectSummaryFromDataLoaderTask.
 
         :param op_config_values: The op_config_values of this PublishedObjectSummaryFromDataLoaderTask.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._op_config_values = op_config_values
 
@@ -239,7 +239,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
         Gets the config_provider_delegate of this PublishedObjectSummaryFromDataLoaderTask.
 
         :return: The config_provider_delegate of this PublishedObjectSummaryFromDataLoaderTask.
-        :rtype: ConfigProvider
+        :rtype: oci.data_integration.models.ConfigProvider
         """
         return self._config_provider_delegate
 
@@ -249,7 +249,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
         Sets the config_provider_delegate of this PublishedObjectSummaryFromDataLoaderTask.
 
         :param config_provider_delegate: The config_provider_delegate of this PublishedObjectSummaryFromDataLoaderTask.
-        :type: ConfigProvider
+        :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
 
@@ -259,7 +259,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
         Gets the data_flow of this PublishedObjectSummaryFromDataLoaderTask.
 
         :return: The data_flow of this PublishedObjectSummaryFromDataLoaderTask.
-        :rtype: DataFlow
+        :rtype: oci.data_integration.models.DataFlow
         """
         return self._data_flow
 
@@ -269,7 +269,7 @@ class PublishedObjectSummaryFromDataLoaderTask(PublishedObjectSummary):
         Sets the data_flow of this PublishedObjectSummaryFromDataLoaderTask.
 
         :param data_flow: The data_flow of this PublishedObjectSummaryFromDataLoaderTask.
-        :type: DataFlow
+        :type: oci.data_integration.models.DataFlow
         """
         self._data_flow = data_flow
 

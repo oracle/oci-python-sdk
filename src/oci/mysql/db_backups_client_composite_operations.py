@@ -28,7 +28,7 @@ class DbBackupsClientCompositeOperations(object):
         Calls :py:func:`~oci.mysql.DbBackupsClient.create_backup` and waits for the :py:class:`~oci.mysql.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateBackupDetails create_backup_details: (required)
+        :param oci.mysql.models.CreateBackupDetails create_backup_details: (required)
             Create a Backup of a DB System.
 
         :param list[str] wait_for_states:

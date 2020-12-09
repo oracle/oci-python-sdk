@@ -36,7 +36,7 @@ class CreateDhcpDetails(object):
 
         :param options:
             The value to assign to the options property of this CreateDhcpDetails.
-        :type options: list[DhcpOption]
+        :type options: list[oci.core.models.DhcpOption]
 
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateDhcpDetails.
@@ -192,7 +192,7 @@ class CreateDhcpDetails(object):
 
 
         :return: The options of this CreateDhcpDetails.
-        :rtype: list[DhcpOption]
+        :rtype: list[oci.core.models.DhcpOption]
         """
         return self._options
 
@@ -204,7 +204,7 @@ class CreateDhcpDetails(object):
 
 
         :param options: The options of this CreateDhcpDetails.
-        :type: list[DhcpOption]
+        :type: list[oci.core.models.DhcpOption]
         """
         self._options = options
 

@@ -20,7 +20,7 @@ class ConnectionValidationSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this ConnectionValidationSummaryCollection.
-        :type items: list[ConnectionValidationSummary]
+        :type items: list[oci.data_integration.models.ConnectionValidationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ConnectionValidationSummaryCollection(object):
 
 
         :return: The items of this ConnectionValidationSummaryCollection.
-        :rtype: list[ConnectionValidationSummary]
+        :rtype: list[oci.data_integration.models.ConnectionValidationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ConnectionValidationSummaryCollection(object):
 
 
         :param items: The items of this ConnectionValidationSummaryCollection.
-        :type: list[ConnectionValidationSummary]
+        :type: list[oci.data_integration.models.ConnectionValidationSummary]
         """
         self._items = items
 

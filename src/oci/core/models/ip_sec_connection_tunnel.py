@@ -104,7 +104,7 @@ class IPSecConnectionTunnel(object):
 
         :param bgp_session_info:
             The value to assign to the bgp_session_info property of this IPSecConnectionTunnel.
-        :type bgp_session_info: BgpSessionInfo
+        :type bgp_session_info: oci.core.models.BgpSessionInfo
 
         :param routing:
             The value to assign to the routing property of this IPSecConnectionTunnel.
@@ -400,7 +400,7 @@ class IPSecConnectionTunnel(object):
 
 
         :return: The bgp_session_info of this IPSecConnectionTunnel.
-        :rtype: BgpSessionInfo
+        :rtype: oci.core.models.BgpSessionInfo
         """
         return self._bgp_session_info
 
@@ -412,7 +412,7 @@ class IPSecConnectionTunnel(object):
 
 
         :param bgp_session_info: The bgp_session_info of this IPSecConnectionTunnel.
-        :type: BgpSessionInfo
+        :type: oci.core.models.BgpSessionInfo
         """
         self._bgp_session_info = bgp_session_info
 

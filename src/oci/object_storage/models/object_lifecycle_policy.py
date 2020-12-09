@@ -24,7 +24,7 @@ class ObjectLifecyclePolicy(object):
 
         :param items:
             The value to assign to the items property of this ObjectLifecyclePolicy.
-        :type items: list[ObjectLifecycleRule]
+        :type items: list[oci.object_storage.models.ObjectLifecycleRule]
 
         """
         self.swagger_types = {
@@ -83,7 +83,7 @@ class ObjectLifecyclePolicy(object):
 
 
         :return: The items of this ObjectLifecyclePolicy.
-        :rtype: list[ObjectLifecycleRule]
+        :rtype: list[oci.object_storage.models.ObjectLifecycleRule]
         """
         return self._items
 
@@ -100,7 +100,7 @@ class ObjectLifecyclePolicy(object):
 
 
         :param items: The items of this ObjectLifecyclePolicy.
-        :type: list[ObjectLifecycleRule]
+        :type: list[oci.object_storage.models.ObjectLifecycleRule]
         """
         self._items = items
 

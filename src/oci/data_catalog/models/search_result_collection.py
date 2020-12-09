@@ -25,7 +25,7 @@ class SearchResultCollection(object):
 
         :param items:
             The value to assign to the items property of this SearchResultCollection.
-        :type items: list[SearchResult]
+        :type items: list[oci.data_catalog.models.SearchResult]
 
         :param query:
             The value to assign to the query property of this SearchResultCollection.
@@ -33,7 +33,7 @@ class SearchResultCollection(object):
 
         :param faceted_search_aggregation:
             The value to assign to the faceted_search_aggregation property of this SearchResultCollection.
-        :type faceted_search_aggregation: list[FacetedSearchAggregation]
+        :type faceted_search_aggregation: list[oci.data_catalog.models.FacetedSearchAggregation]
 
         """
         self.swagger_types = {
@@ -87,7 +87,7 @@ class SearchResultCollection(object):
 
 
         :return: The items of this SearchResultCollection.
-        :rtype: list[SearchResult]
+        :rtype: list[oci.data_catalog.models.SearchResult]
         """
         return self._items
 
@@ -99,7 +99,7 @@ class SearchResultCollection(object):
 
 
         :param items: The items of this SearchResultCollection.
-        :type: list[SearchResult]
+        :type: list[oci.data_catalog.models.SearchResult]
         """
         self._items = items
 
@@ -135,7 +135,7 @@ class SearchResultCollection(object):
 
 
         :return: The faceted_search_aggregation of this SearchResultCollection.
-        :rtype: list[FacetedSearchAggregation]
+        :rtype: list[oci.data_catalog.models.FacetedSearchAggregation]
         """
         return self._faceted_search_aggregation
 
@@ -147,7 +147,7 @@ class SearchResultCollection(object):
 
 
         :param faceted_search_aggregation: The faceted_search_aggregation of this SearchResultCollection.
-        :type: list[FacetedSearchAggregation]
+        :type: list[oci.data_catalog.models.FacetedSearchAggregation]
         """
         self._faceted_search_aggregation = faceted_search_aggregation
 

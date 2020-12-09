@@ -46,7 +46,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
 
         :param database:
             The value to assign to the database property of this CreateDbHomeWithVmClusterIdFromBackupDetails.
-        :type database: CreateDatabaseFromBackupDetails
+        :type database: oci.database.models.CreateDatabaseFromBackupDetails
 
         """
         self.swagger_types = {
@@ -112,7 +112,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
         **[Required]** Gets the database of this CreateDbHomeWithVmClusterIdFromBackupDetails.
 
         :return: The database of this CreateDbHomeWithVmClusterIdFromBackupDetails.
-        :rtype: CreateDatabaseFromBackupDetails
+        :rtype: oci.database.models.CreateDatabaseFromBackupDetails
         """
         return self._database
 
@@ -122,7 +122,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
         Sets the database of this CreateDbHomeWithVmClusterIdFromBackupDetails.
 
         :param database: The database of this CreateDbHomeWithVmClusterIdFromBackupDetails.
-        :type: CreateDatabaseFromBackupDetails
+        :type: oci.database.models.CreateDatabaseFromBackupDetails
         """
         self._database = database
 

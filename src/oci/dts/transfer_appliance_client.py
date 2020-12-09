@@ -95,7 +95,7 @@ class TransferApplianceClient(object):
 
         :param str opc_retry_token: (optional)
 
-        :param CreateTransferApplianceDetails create_transfer_appliance_details: (optional)
+        :param oci.dts.models.CreateTransferApplianceDetails create_transfer_appliance_details: (optional)
             Creates a New Transfer Appliance
 
         :param obj retry_strategy: (optional)

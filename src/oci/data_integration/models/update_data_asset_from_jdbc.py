@@ -62,7 +62,7 @@ class UpdateDataAssetFromJdbc(UpdateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateDataAssetFromJdbc.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param host:
             The value to assign to the host property of this UpdateDataAssetFromJdbc.
@@ -78,7 +78,7 @@ class UpdateDataAssetFromJdbc(UpdateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this UpdateDataAssetFromJdbc.
-        :type default_connection: UpdateConnectionFromJdbc
+        :type default_connection: oci.data_integration.models.UpdateConnectionFromJdbc
 
         """
         self.swagger_types = {
@@ -212,7 +212,7 @@ class UpdateDataAssetFromJdbc(UpdateDataAssetDetails):
         Gets the default_connection of this UpdateDataAssetFromJdbc.
 
         :return: The default_connection of this UpdateDataAssetFromJdbc.
-        :rtype: UpdateConnectionFromJdbc
+        :rtype: oci.data_integration.models.UpdateConnectionFromJdbc
         """
         return self._default_connection
 
@@ -222,7 +222,7 @@ class UpdateDataAssetFromJdbc(UpdateDataAssetDetails):
         Sets the default_connection of this UpdateDataAssetFromJdbc.
 
         :param default_connection: The default_connection of this UpdateDataAssetFromJdbc.
-        :type: UpdateConnectionFromJdbc
+        :type: oci.data_integration.models.UpdateConnectionFromJdbc
         """
         self._default_connection = default_connection
 

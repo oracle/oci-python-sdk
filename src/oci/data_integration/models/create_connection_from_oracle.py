@@ -34,7 +34,7 @@ class CreateConnectionFromOracle(CreateConnectionDetails):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateConnectionFromOracle.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateConnectionFromOracle.
@@ -54,11 +54,11 @@ class CreateConnectionFromOracle(CreateConnectionDetails):
 
         :param connection_properties:
             The value to assign to the connection_properties property of this CreateConnectionFromOracle.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateConnectionFromOracle.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param username:
             The value to assign to the username property of this CreateConnectionFromOracle.

@@ -24,7 +24,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
 
         :param items:
             The value to assign to the items property of this UpsertLogAnalyticsAssociationDetails.
-        :type items: list[UpsertLogAnalyticsAssociation]
+        :type items: list[oci.log_analytics.models.UpsertLogAnalyticsAssociation]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
 
 
         :return: The items of this UpsertLogAnalyticsAssociationDetails.
-        :rtype: list[UpsertLogAnalyticsAssociation]
+        :rtype: list[oci.log_analytics.models.UpsertLogAnalyticsAssociation]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
 
 
         :param items: The items of this UpsertLogAnalyticsAssociationDetails.
-        :type: list[UpsertLogAnalyticsAssociation]
+        :type: list[oci.log_analytics.models.UpsertLogAnalyticsAssociation]
         """
         self._items = items
 

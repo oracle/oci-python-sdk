@@ -77,7 +77,7 @@ class Operator(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Operator.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Operator.
@@ -93,11 +93,11 @@ class Operator(object):
 
         :param input_ports:
             The value to assign to the input_ports property of this Operator.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Operator.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Operator.
@@ -109,11 +109,11 @@ class Operator(object):
 
         :param parameters:
             The value to assign to the parameters property of this Operator.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Operator.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         """
         self.swagger_types = {
@@ -280,7 +280,7 @@ class Operator(object):
         Gets the parent_ref of this Operator.
 
         :return: The parent_ref of this Operator.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -290,7 +290,7 @@ class Operator(object):
         Sets the parent_ref of this Operator.
 
         :param parent_ref: The parent_ref of this Operator.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -374,7 +374,7 @@ class Operator(object):
 
 
         :return: The input_ports of this Operator.
-        :rtype: list[InputPort]
+        :rtype: list[oci.data_integration.models.InputPort]
         """
         return self._input_ports
 
@@ -386,7 +386,7 @@ class Operator(object):
 
 
         :param input_ports: The input_ports of this Operator.
-        :type: list[InputPort]
+        :type: list[oci.data_integration.models.InputPort]
         """
         self._input_ports = input_ports
 
@@ -398,7 +398,7 @@ class Operator(object):
 
 
         :return: The output_ports of this Operator.
-        :rtype: list[OutputPort]
+        :rtype: list[oci.data_integration.models.OutputPort]
         """
         return self._output_ports
 
@@ -410,7 +410,7 @@ class Operator(object):
 
 
         :param output_ports: The output_ports of this Operator.
-        :type: list[OutputPort]
+        :type: list[oci.data_integration.models.OutputPort]
         """
         self._output_ports = output_ports
 
@@ -470,7 +470,7 @@ class Operator(object):
 
 
         :return: The parameters of this Operator.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -482,7 +482,7 @@ class Operator(object):
 
 
         :param parameters: The parameters of this Operator.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -492,7 +492,7 @@ class Operator(object):
         Gets the op_config_values of this Operator.
 
         :return: The op_config_values of this Operator.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._op_config_values
 
@@ -502,7 +502,7 @@ class Operator(object):
         Sets the op_config_values of this Operator.
 
         :param op_config_values: The op_config_values of this Operator.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._op_config_values = op_config_values
 

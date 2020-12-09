@@ -20,7 +20,7 @@ class MultipleTransferAppliances(object):
 
         :param transfer_appliance_objects:
             The value to assign to the transfer_appliance_objects property of this MultipleTransferAppliances.
-        :type transfer_appliance_objects: list[TransferApplianceSummary]
+        :type transfer_appliance_objects: list[oci.dts.models.TransferApplianceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class MultipleTransferAppliances(object):
 
 
         :return: The transfer_appliance_objects of this MultipleTransferAppliances.
-        :rtype: list[TransferApplianceSummary]
+        :rtype: list[oci.dts.models.TransferApplianceSummary]
         """
         return self._transfer_appliance_objects
 
@@ -53,7 +53,7 @@ class MultipleTransferAppliances(object):
 
 
         :param transfer_appliance_objects: The transfer_appliance_objects of this MultipleTransferAppliances.
-        :type: list[TransferApplianceSummary]
+        :type: list[oci.dts.models.TransferApplianceSummary]
         """
         self._transfer_appliance_objects = transfer_appliance_objects
 

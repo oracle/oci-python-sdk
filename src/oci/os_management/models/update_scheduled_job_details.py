@@ -112,7 +112,7 @@ class UpdateScheduledJobDetails(object):
 
         :param package_names:
             The value to assign to the package_names property of this UpdateScheduledJobDetails.
-        :type package_names: list[PackageName]
+        :type package_names: list[oci.os_management.models.PackageName]
 
         :param update_names:
             The value to assign to the update_names property of this UpdateScheduledJobDetails.
@@ -402,7 +402,7 @@ class UpdateScheduledJobDetails(object):
 
 
         :return: The package_names of this UpdateScheduledJobDetails.
-        :rtype: list[PackageName]
+        :rtype: list[oci.os_management.models.PackageName]
         """
         return self._package_names
 
@@ -414,7 +414,7 @@ class UpdateScheduledJobDetails(object):
 
 
         :param package_names: The package_names of this UpdateScheduledJobDetails.
-        :type: list[PackageName]
+        :type: list[oci.os_management.models.PackageName]
         """
         self._package_names = package_names
 

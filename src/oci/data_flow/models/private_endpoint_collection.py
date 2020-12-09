@@ -20,7 +20,7 @@ class PrivateEndpointCollection(object):
 
         :param items:
             The value to assign to the items property of this PrivateEndpointCollection.
-        :type items: list[PrivateEndpointSummary]
+        :type items: list[oci.data_flow.models.PrivateEndpointSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PrivateEndpointCollection(object):
 
 
         :return: The items of this PrivateEndpointCollection.
-        :rtype: list[PrivateEndpointSummary]
+        :rtype: list[oci.data_flow.models.PrivateEndpointSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class PrivateEndpointCollection(object):
 
 
         :param items: The items of this PrivateEndpointCollection.
-        :type: list[PrivateEndpointSummary]
+        :type: list[oci.data_flow.models.PrivateEndpointSummary]
         """
         self._items = items
 

@@ -42,7 +42,7 @@ class BackendHealth(object):
 
         :param health_check_results:
             The value to assign to the health_check_results property of this BackendHealth.
-        :type health_check_results: list[HealthCheckResult]
+        :type health_check_results: list[oci.load_balancer.models.HealthCheckResult]
 
         """
         self.swagger_types = {
@@ -112,7 +112,7 @@ class BackendHealth(object):
 
 
         :return: The health_check_results of this BackendHealth.
-        :rtype: list[HealthCheckResult]
+        :rtype: list[oci.load_balancer.models.HealthCheckResult]
         """
         return self._health_check_results
 
@@ -124,7 +124,7 @@ class BackendHealth(object):
 
 
         :param health_check_results: The health_check_results of this BackendHealth.
-        :type: list[HealthCheckResult]
+        :type: list[oci.load_balancer.models.HealthCheckResult]
         """
         self._health_check_results = health_check_results
 

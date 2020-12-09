@@ -32,7 +32,7 @@ class Schema(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Schema.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Schema.
@@ -72,7 +72,7 @@ class Schema(object):
 
         :param metadata:
             The value to assign to the metadata property of this Schema.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -202,7 +202,7 @@ class Schema(object):
         Gets the parent_ref of this Schema.
 
         :return: The parent_ref of this Schema.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -212,7 +212,7 @@ class Schema(object):
         Sets the parent_ref of this Schema.
 
         :param parent_ref: The parent_ref of this Schema.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -438,7 +438,7 @@ class Schema(object):
         Gets the metadata of this Schema.
 
         :return: The metadata of this Schema.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -448,7 +448,7 @@ class Schema(object):
         Sets the metadata of this Schema.
 
         :param metadata: The metadata of this Schema.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

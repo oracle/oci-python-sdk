@@ -24,7 +24,7 @@ class PostMetricDataResponseDetails(object):
 
         :param failed_metrics:
             The value to assign to the failed_metrics property of this PostMetricDataResponseDetails.
-        :type failed_metrics: list[FailedMetricRecord]
+        :type failed_metrics: list[oci.monitoring.models.FailedMetricRecord]
 
         """
         self.swagger_types = {
@@ -73,7 +73,7 @@ class PostMetricDataResponseDetails(object):
 
 
         :return: The failed_metrics of this PostMetricDataResponseDetails.
-        :rtype: list[FailedMetricRecord]
+        :rtype: list[oci.monitoring.models.FailedMetricRecord]
         """
         return self._failed_metrics
 
@@ -86,7 +86,7 @@ class PostMetricDataResponseDetails(object):
 
 
         :param failed_metrics: The failed_metrics of this PostMetricDataResponseDetails.
-        :type: list[FailedMetricRecord]
+        :type: list[oci.monitoring.models.FailedMetricRecord]
         """
         self._failed_metrics = failed_metrics
 

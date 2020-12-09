@@ -25,7 +25,7 @@ class PatternCollection(object):
 
         :param items:
             The value to assign to the items property of this PatternCollection.
-        :type items: list[PatternSummary]
+        :type items: list[oci.data_catalog.models.PatternSummary]
 
         """
         self.swagger_types = {
@@ -73,7 +73,7 @@ class PatternCollection(object):
 
 
         :return: The items of this PatternCollection.
-        :rtype: list[PatternSummary]
+        :rtype: list[oci.data_catalog.models.PatternSummary]
         """
         return self._items
 
@@ -85,7 +85,7 @@ class PatternCollection(object):
 
 
         :param items: The items of this PatternCollection.
-        :type: list[PatternSummary]
+        :type: list[oci.data_catalog.models.PatternSummary]
         """
         self._items = items
 

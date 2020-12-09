@@ -28,7 +28,7 @@ class RuleSummary(object):
 
         :param parameters:
             The value to assign to the parameters property of this RuleSummary.
-        :type parameters: list[OperatorSummary]
+        :type parameters: list[oci.cloud_guard.models.OperatorSummary]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class RuleSummary(object):
 
 
         :return: The parameters of this RuleSummary.
-        :rtype: list[OperatorSummary]
+        :rtype: list[oci.cloud_guard.models.OperatorSummary]
         """
         return self._parameters
 
@@ -115,7 +115,7 @@ class RuleSummary(object):
 
 
         :param parameters: The parameters of this RuleSummary.
-        :type: list[OperatorSummary]
+        :type: list[oci.cloud_guard.models.OperatorSummary]
         """
         self._parameters = parameters
 

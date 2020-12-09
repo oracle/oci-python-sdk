@@ -20,7 +20,7 @@ class ConfigParameterDefinition(object):
 
         :param parameter_type:
             The value to assign to the parameter_type property of this ConfigParameterDefinition.
-        :type parameter_type: BaseType
+        :type parameter_type: oci.data_integration.models.BaseType
 
         :param parameter_name:
             The value to assign to the parameter_name property of this ConfigParameterDefinition.
@@ -81,7 +81,7 @@ class ConfigParameterDefinition(object):
         Gets the parameter_type of this ConfigParameterDefinition.
 
         :return: The parameter_type of this ConfigParameterDefinition.
-        :rtype: BaseType
+        :rtype: oci.data_integration.models.BaseType
         """
         return self._parameter_type
 
@@ -91,7 +91,7 @@ class ConfigParameterDefinition(object):
         Sets the parameter_type of this ConfigParameterDefinition.
 
         :param parameter_type: The parameter_type of this ConfigParameterDefinition.
-        :type: BaseType
+        :type: oci.data_integration.models.BaseType
         """
         self._parameter_type = parameter_type
 
