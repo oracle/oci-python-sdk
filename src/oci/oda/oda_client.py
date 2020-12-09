@@ -126,6 +126,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/change_oda_instance_compartment.py.html>`__ to see an example of how to use change_oda_instance_compartment API.
         """
         resource_path = "/odaInstances/{odaInstanceId}/actions/changeCompartment"
         method = "POST"
@@ -215,6 +218,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oda.models.OdaInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/create_oda_instance.py.html>`__ to see an example of how to use create_oda_instance API.
         """
         resource_path = "/odaInstances"
         method = "POST"
@@ -290,6 +296,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/delete_oda_instance.py.html>`__ to see an example of how to use delete_oda_instance API.
         """
         resource_path = "/odaInstances/{odaInstanceId}"
         method = "DELETE"
@@ -362,6 +371,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oda.models.OdaInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/get_oda_instance.py.html>`__ to see an example of how to use get_oda_instance API.
         """
         resource_path = "/odaInstances/{odaInstanceId}"
         method = "GET"
@@ -437,6 +449,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oda.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -547,6 +562,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oda.models.OdaInstanceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/list_oda_instances.py.html>`__ to see an example of how to use list_oda_instances API.
         """
         resource_path = "/odaInstances"
         method = "GET"
@@ -674,6 +692,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oda.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -801,6 +822,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oda.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -931,6 +955,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oda.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1039,6 +1066,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/start_oda_instance.py.html>`__ to see an example of how to use start_oda_instance API.
         """
         resource_path = "/odaInstances/{odaInstanceId}/actions/start"
         method = "POST"
@@ -1133,6 +1163,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/stop_oda_instance.py.html>`__ to see an example of how to use stop_oda_instance API.
         """
         resource_path = "/odaInstances/{odaInstanceId}/actions/stop"
         method = "POST"
@@ -1220,6 +1253,9 @@ class OdaClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oda.models.OdaInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/oda/update_oda_instance.py.html>`__ to see an example of how to use update_oda_instance API.
         """
         resource_path = "/odaInstances/{odaInstanceId}"
         method = "PUT"

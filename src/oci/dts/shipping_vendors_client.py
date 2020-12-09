@@ -100,6 +100,9 @@ class ShippingVendorsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.ShippingVendors`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/list_shipping_vendors.py.html>`__ to see an example of how to use list_shipping_vendors API.
         """
         resource_path = "/shippingVendors"
         method = "GET"

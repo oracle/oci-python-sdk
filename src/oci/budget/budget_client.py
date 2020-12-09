@@ -116,6 +116,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.budget.models.AlertRule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/create_alert_rule.py.html>`__ to see an example of how to use create_alert_rule API.
         """
         resource_path = "/budgets/{budgetId}/alertRules"
         method = "POST"
@@ -201,6 +204,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.budget.models.Budget`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/create_budget.py.html>`__ to see an example of how to use create_budget API.
         """
         resource_path = "/budgets"
         method = "POST"
@@ -277,6 +283,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/delete_alert_rule.py.html>`__ to see an example of how to use delete_alert_rule API.
         """
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "DELETE"
@@ -357,6 +366,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/delete_budget.py.html>`__ to see an example of how to use delete_budget API.
         """
         resource_path = "/budgets/{budgetId}"
         method = "DELETE"
@@ -432,6 +444,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.budget.models.AlertRule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/get_alert_rule.py.html>`__ to see an example of how to use get_alert_rule API.
         """
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "GET"
@@ -505,6 +520,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.budget.models.Budget`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/get_budget.py.html>`__ to see an example of how to use get_budget API.
         """
         resource_path = "/budgets/{budgetId}"
         method = "GET"
@@ -605,6 +623,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.budget.models.AlertRuleSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/list_alert_rules.py.html>`__ to see an example of how to use list_alert_rules API.
         """
         resource_path = "/budgets/{budgetId}/alertRules"
         method = "GET"
@@ -761,6 +782,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.budget.models.BudgetSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/list_budgets.py.html>`__ to see an example of how to use list_budgets API.
         """
         resource_path = "/budgets"
         method = "GET"
@@ -883,6 +907,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.budget.models.AlertRule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/update_alert_rule.py.html>`__ to see an example of how to use update_alert_rule API.
         """
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "PUT"
@@ -970,6 +997,9 @@ class BudgetClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.budget.models.Budget`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/budget/update_budget.py.html>`__ to see an example of how to use update_budget API.
         """
         resource_path = "/budgets/{budgetId}"
         method = "PUT"

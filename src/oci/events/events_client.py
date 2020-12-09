@@ -127,6 +127,9 @@ class EventsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/events/change_rule_compartment.py.html>`__ to see an example of how to use change_rule_compartment API.
         """
         resource_path = "/rules/{ruleId}/actions/changeCompartment"
         method = "POST"
@@ -213,6 +216,9 @@ class EventsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.events.models.Rule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/events/create_rule.py.html>`__ to see an example of how to use create_rule API.
         """
         resource_path = "/rules"
         method = "POST"
@@ -287,6 +293,9 @@ class EventsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/events/delete_rule.py.html>`__ to see an example of how to use delete_rule API.
         """
         resource_path = "/rules/{ruleId}"
         method = "DELETE"
@@ -362,6 +371,9 @@ class EventsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.events.models.Rule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/events/get_rule.py.html>`__ to see an example of how to use get_rule API.
         """
         resource_path = "/rules/{ruleId}"
         method = "GET"
@@ -480,6 +492,9 @@ class EventsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.events.models.RuleSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/events/list_rules.py.html>`__ to see an example of how to use list_rules API.
         """
         resource_path = "/rules"
         method = "GET"
@@ -591,6 +606,9 @@ class EventsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.events.models.Rule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/events/update_rule.py.html>`__ to see an example of how to use update_rule API.
         """
         resource_path = "/rules/{ruleId}"
         method = "PUT"

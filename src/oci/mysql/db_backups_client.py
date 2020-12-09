@@ -116,6 +116,9 @@ class DbBackupsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.mysql.models.Backup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/create_backup.py.html>`__ to see an example of how to use create_backup API.
         """
         resource_path = "/backups"
         method = "POST"
@@ -191,6 +194,9 @@ class DbBackupsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/delete_backup.py.html>`__ to see an example of how to use delete_backup API.
         """
         resource_path = "/backups/{backupId}"
         method = "DELETE"
@@ -272,6 +278,9 @@ class DbBackupsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.mysql.models.Backup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/get_backup.py.html>`__ to see an example of how to use get_backup API.
         """
         resource_path = "/backups/{backupId}"
         method = "GET"
@@ -394,6 +403,9 @@ class DbBackupsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.mysql.models.BackupSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/list_backups.py.html>`__ to see an example of how to use list_backups API.
         """
         resource_path = "/backups"
         method = "GET"
@@ -519,6 +531,9 @@ class DbBackupsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/update_backup.py.html>`__ to see an example of how to use update_backup API.
         """
         resource_path = "/backups/{backupId}"
         method = "PUT"

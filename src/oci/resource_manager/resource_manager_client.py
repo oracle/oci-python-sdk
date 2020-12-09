@@ -119,6 +119,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/cancel_job.py.html>`__ to see an example of how to use cancel_job API.
         """
         resource_path = "/jobs/{jobId}"
         method = "DELETE"
@@ -213,6 +216,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/change_configuration_source_provider_compartment.py.html>`__ to see an example of how to use change_configuration_source_provider_compartment API.
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}/actions/changeCompartment"
         method = "POST"
@@ -309,6 +315,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/change_stack_compartment.py.html>`__ to see an example of how to use change_stack_compartment API.
         """
         resource_path = "/stacks/{stackId}/actions/changeCompartment"
         method = "POST"
@@ -399,6 +408,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProvider`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/create_configuration_source_provider.py.html>`__ to see an example of how to use create_configuration_source_provider API.
         """
         resource_path = "/configurationSourceProviders"
         method = "POST"
@@ -473,6 +485,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Job`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/create_job.py.html>`__ to see an example of how to use create_job API.
         """
         resource_path = "/jobs"
         method = "POST"
@@ -554,6 +569,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Stack`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/create_stack.py.html>`__ to see an example of how to use create_stack API.
         """
         resource_path = "/stacks"
         method = "POST"
@@ -628,6 +646,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/delete_configuration_source_provider.py.html>`__ to see an example of how to use delete_configuration_source_provider API.
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "DELETE"
@@ -708,6 +729,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/delete_stack.py.html>`__ to see an example of how to use delete_stack API.
         """
         resource_path = "/stacks/{stackId}"
         method = "DELETE"
@@ -795,6 +819,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/detect_stack_drift.py.html>`__ to see an example of how to use detect_stack_drift API.
         """
         resource_path = "/stacks/{stackId}/actions/detectDrift"
         method = "POST"
@@ -874,6 +901,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProvider`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_configuration_source_provider.py.html>`__ to see an example of how to use get_configuration_source_provider API.
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "GET"
@@ -949,6 +979,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Job`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_job.py.html>`__ to see an example of how to use get_job API.
         """
         resource_path = "/jobs/{jobId}"
         method = "GET"
@@ -1059,6 +1092,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.LogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_job_logs.py.html>`__ to see an example of how to use get_job_logs API.
         """
         resource_path = "/jobs/{jobId}/logs"
         method = "GET"
@@ -1169,6 +1205,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_job_logs_content.py.html>`__ to see an example of how to use get_job_logs_content API.
         """
         resource_path = "/jobs/{jobId}/logs/content"
         method = "GET"
@@ -1245,6 +1284,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_job_tf_config.py.html>`__ to see an example of how to use get_job_tf_config API.
         """
         resource_path = "/jobs/{jobId}/tfConfig"
         method = "GET"
@@ -1320,6 +1362,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_job_tf_state.py.html>`__ to see an example of how to use get_job_tf_state API.
         """
         resource_path = "/jobs/{jobId}/tfState"
         method = "GET"
@@ -1395,6 +1440,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Stack`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_stack.py.html>`__ to see an example of how to use get_stack API.
         """
         resource_path = "/stacks/{stackId}"
         method = "GET"
@@ -1471,6 +1519,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_stack_tf_config.py.html>`__ to see an example of how to use get_stack_tf_config API.
         """
         resource_path = "/stacks/{stackId}/tfConfig"
         method = "GET"
@@ -1546,6 +1597,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_stack_tf_state.py.html>`__ to see an example of how to use get_stack_tf_state API.
         """
         resource_path = "/stacks/{stackId}/tfState"
         method = "GET"
@@ -1621,6 +1675,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -1730,6 +1787,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProviderCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_configuration_source_providers.py.html>`__ to see an example of how to use list_configuration_source_providers API.
         """
         resource_path = "/configurationSourceProviders"
         method = "GET"
@@ -1886,6 +1946,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.JobSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
         """
         resource_path = "/jobs"
         method = "GET"
@@ -1996,6 +2059,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ResourceDiscoveryServiceCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_resource_discovery_services.py.html>`__ to see an example of how to use list_resource_discovery_services API.
         """
         resource_path = "/resourceDiscoveryServices"
         method = "GET"
@@ -2089,6 +2155,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.StackResourceDriftCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_stack_resource_drift_details.py.html>`__ to see an example of how to use list_stack_resource_drift_details API.
         """
         resource_path = "/stacks/{stackId}/actions/listResourceDriftDetails"
         method = "POST"
@@ -2227,6 +2296,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.StackSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_stacks.py.html>`__ to see an example of how to use list_stacks API.
         """
         resource_path = "/stacks"
         method = "GET"
@@ -2333,6 +2405,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.TerraformVersionCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_terraform_versions.py.html>`__ to see an example of how to use list_terraform_versions API.
         """
         resource_path = "/terraformVersions"
         method = "GET"
@@ -2426,6 +2501,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -2544,6 +2622,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -2657,6 +2738,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -2745,6 +2829,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProvider`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/update_configuration_source_provider.py.html>`__ to see an example of how to use update_configuration_source_provider API.
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "PUT"
@@ -2832,6 +2919,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Job`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/update_job.py.html>`__ to see an example of how to use update_job API.
         """
         resource_path = "/jobs/{jobId}"
         method = "PUT"
@@ -2927,6 +3017,9 @@ class ResourceManagerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Stack`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/resourcemanager/update_stack.py.html>`__ to see an example of how to use update_stack API.
         """
         resource_path = "/stacks/{stackId}"
         method = "PUT"

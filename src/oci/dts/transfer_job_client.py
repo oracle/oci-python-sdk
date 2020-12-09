@@ -121,6 +121,9 @@ class TransferJobClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/change_transfer_job_compartment.py.html>`__ to see an example of how to use change_transfer_job_compartment API.
         """
         resource_path = "/transferJobs/{transferJobId}/actions/changeCompartment"
         method = "POST"
@@ -202,6 +205,9 @@ class TransferJobClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferJob`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/create_transfer_job.py.html>`__ to see an example of how to use create_transfer_job API.
         """
         resource_path = "/transferJobs"
         method = "POST"
@@ -269,6 +275,9 @@ class TransferJobClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/delete_transfer_job.py.html>`__ to see an example of how to use delete_transfer_job API.
         """
         resource_path = "/transferJobs/{id}"
         method = "DELETE"
@@ -340,6 +349,9 @@ class TransferJobClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferJob`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/get_transfer_job.py.html>`__ to see an example of how to use get_transfer_job API.
         """
         resource_path = "/transferJobs/{id}"
         method = "GET"
@@ -437,6 +449,9 @@ class TransferJobClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dts.models.TransferJobSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/list_transfer_jobs.py.html>`__ to see an example of how to use list_transfer_jobs API.
         """
         resource_path = "/transferJobs"
         method = "GET"
@@ -527,6 +542,9 @@ class TransferJobClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferJob`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/update_transfer_job.py.html>`__ to see an example of how to use update_transfer_job API.
         """
         resource_path = "/transferJobs/{id}"
         method = "PUT"

@@ -130,6 +130,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/change_load_balancer_compartment.py.html>`__ to see an example of how to use change_load_balancer_compartment API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/changeCompartment"
         method = "POST"
@@ -226,6 +229,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_backend.py.html>`__ to see an example of how to use create_backend API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "POST"
@@ -316,6 +322,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_backend_set.py.html>`__ to see an example of how to use create_backend_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "POST"
@@ -405,6 +414,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "POST"
@@ -497,6 +509,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_hostname.py.html>`__ to see an example of how to use create_hostname API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames"
         method = "POST"
@@ -586,6 +601,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_listener.py.html>`__ to see an example of how to use create_listener API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners"
         method = "POST"
@@ -701,6 +719,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_load_balancer.py.html>`__ to see an example of how to use create_load_balancer API.
         """
         resource_path = "/loadBalancers"
         method = "POST"
@@ -781,6 +802,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_path_route_set.py.html>`__ to see an example of how to use create_path_route_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
         method = "POST"
@@ -866,6 +890,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_rule_set.py.html>`__ to see an example of how to use create_rule_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets"
         method = "POST"
@@ -951,6 +978,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/create_ssl_cipher_suite.py.html>`__ to see an example of how to use create_ssl_cipher_suite API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites"
         method = "POST"
@@ -1040,6 +1070,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_backend.py.html>`__ to see an example of how to use delete_backend API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "DELETE"
@@ -1122,6 +1155,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_backend_set.py.html>`__ to see an example of how to use delete_backend_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "DELETE"
@@ -1202,6 +1238,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         method = "DELETE"
@@ -1281,6 +1320,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_hostname.py.html>`__ to see an example of how to use delete_hostname API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "DELETE"
@@ -1360,6 +1402,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_listener.py.html>`__ to see an example of how to use delete_listener API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "DELETE"
@@ -1434,6 +1479,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_load_balancer.py.html>`__ to see an example of how to use delete_load_balancer API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "DELETE"
@@ -1515,6 +1563,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_path_route_set.py.html>`__ to see an example of how to use delete_path_route_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "DELETE"
@@ -1597,6 +1648,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_rule_set.py.html>`__ to see an example of how to use delete_rule_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "DELETE"
@@ -1676,6 +1730,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/delete_ssl_cipher_suite.py.html>`__ to see an example of how to use delete_ssl_cipher_suite API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "DELETE"
@@ -1760,6 +1817,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.Backend`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_backend.py.html>`__ to see an example of how to use get_backend API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "GET"
@@ -1847,6 +1907,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.BackendHealth`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_backend_health.py.html>`__ to see an example of how to use get_backend_health API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}/health"
         method = "GET"
@@ -1929,6 +1992,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.BackendSet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_backend_set.py.html>`__ to see an example of how to use get_backend_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "GET"
@@ -2010,6 +2076,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.BackendSetHealth`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_backend_set_health.py.html>`__ to see an example of how to use get_backend_set_health API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/health"
         method = "GET"
@@ -2091,6 +2160,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.HealthChecker`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_health_checker.py.html>`__ to see an example of how to use get_health_checker API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "GET"
@@ -2172,6 +2244,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.Hostname`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_hostname.py.html>`__ to see an example of how to use get_hostname API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "GET"
@@ -2248,6 +2323,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.LoadBalancer`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_load_balancer.py.html>`__ to see an example of how to use get_load_balancer API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "GET"
@@ -2323,6 +2401,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.LoadBalancerHealth`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_load_balancer_health.py.html>`__ to see an example of how to use get_load_balancer_health API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/health"
         method = "GET"
@@ -2403,6 +2484,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.PathRouteSet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_path_route_set.py.html>`__ to see an example of how to use get_path_route_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "GET"
@@ -2484,6 +2568,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.RuleSet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_rule_set.py.html>`__ to see an example of how to use get_rule_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "GET"
@@ -2565,6 +2652,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.SSLCipherSuite`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_ssl_cipher_suite.py.html>`__ to see an example of how to use get_ssl_cipher_suite API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "GET"
@@ -2641,6 +2731,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.load_balancer.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/loadBalancerWorkRequests/{workRequestId}"
         method = "GET"
@@ -2716,6 +2809,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.BackendSet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_backend_sets.py.html>`__ to see an example of how to use list_backend_sets API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "GET"
@@ -2796,6 +2892,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.Backend`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_backends.py.html>`__ to see an example of how to use list_backends API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "GET"
@@ -2873,6 +2972,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.Certificate`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "GET"
@@ -2949,6 +3051,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.Hostname`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_hostnames.py.html>`__ to see an example of how to use list_hostnames API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames"
         method = "GET"
@@ -3033,6 +3138,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.ListenerRuleSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_listener_rules.py.html>`__ to see an example of how to use list_listener_rules API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}/rules"
         method = "GET"
@@ -3125,6 +3233,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.LoadBalancerHealthSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_load_balancer_healths.py.html>`__ to see an example of how to use list_load_balancer_healths API.
         """
         resource_path = "/loadBalancerHealths"
         method = "GET"
@@ -3243,6 +3354,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.LoadBalancer`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_load_balancers.py.html>`__ to see an example of how to use list_load_balancers API.
         """
         resource_path = "/loadBalancers"
         method = "GET"
@@ -3349,6 +3463,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.PathRouteSet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_path_route_sets.py.html>`__ to see an example of how to use list_path_route_sets API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
         method = "GET"
@@ -3440,6 +3557,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.LoadBalancerPolicy`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
         resource_path = "/loadBalancerPolicies"
         method = "GET"
@@ -3530,6 +3650,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.LoadBalancerProtocol`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_protocols.py.html>`__ to see an example of how to use list_protocols API.
         """
         resource_path = "/loadBalancerProtocols"
         method = "GET"
@@ -3604,6 +3727,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.RuleSet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_rule_sets.py.html>`__ to see an example of how to use list_rule_sets API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets"
         method = "GET"
@@ -3695,6 +3821,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.LoadBalancerShape`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_shapes.py.html>`__ to see an example of how to use list_shapes API.
         """
         resource_path = "/loadBalancerShapes"
         method = "GET"
@@ -3769,6 +3898,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.SSLCipherSuite`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_ssl_cipher_suites.py.html>`__ to see an example of how to use list_ssl_cipher_suites API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites"
         method = "GET"
@@ -3860,6 +3992,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.load_balancer.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/workRequests"
         method = "GET"
@@ -3965,6 +4100,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_backend.py.html>`__ to see an example of how to use update_backend API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "PUT"
@@ -4061,6 +4199,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_backend_set.py.html>`__ to see an example of how to use update_backend_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "PUT"
@@ -4156,6 +4297,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_health_checker.py.html>`__ to see an example of how to use update_health_checker API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "PUT"
@@ -4246,6 +4390,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_hostname.py.html>`__ to see an example of how to use update_hostname API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "PUT"
@@ -4337,6 +4484,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_listener.py.html>`__ to see an example of how to use update_listener API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "PUT"
@@ -4427,6 +4577,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_load_balancer.py.html>`__ to see an example of how to use update_load_balancer API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "PUT"
@@ -4521,6 +4674,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_load_balancer_shape.py.html>`__ to see an example of how to use update_load_balancer_shape API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/updateShape"
         method = "PUT"
@@ -4610,6 +4766,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_network_security_groups.py.html>`__ to see an example of how to use update_network_security_groups API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/networkSecurityGroups"
         method = "PUT"
@@ -4709,6 +4868,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_path_route_set.py.html>`__ to see an example of how to use update_path_route_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "PUT"
@@ -4800,6 +4962,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_rule_set.py.html>`__ to see an example of how to use update_rule_set API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "PUT"
@@ -4891,6 +5056,9 @@ class LoadBalancerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loadbalancer/update_ssl_cipher_suite.py.html>`__ to see an example of how to use update_ssl_cipher_suite API.
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "PUT"

@@ -120,6 +120,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
@@ -213,6 +216,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/change_migration_compartment.py.html>`__ to see an example of how to use change_migration_compartment API.
         """
         resource_path = "/migrations/{migrationId}/actions/changeCompartment"
         method = "POST"
@@ -312,6 +318,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/change_source_compartment.py.html>`__ to see an example of how to use change_source_compartment API.
         """
         resource_path = "/sources/{sourceId}/actions/changeCompartment"
         method = "POST"
@@ -420,6 +429,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.application_migration.models.Migration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/create_migration.py.html>`__ to see an example of how to use create_migration API.
         """
         resource_path = "/migrations"
         method = "POST"
@@ -512,6 +524,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.application_migration.models.Source`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/create_source.py.html>`__ to see an example of how to use create_source API.
         """
         resource_path = "/sources"
         method = "POST"
@@ -590,6 +605,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/delete_migration.py.html>`__ to see an example of how to use delete_migration API.
         """
         resource_path = "/migrations/{migrationId}"
         method = "DELETE"
@@ -674,6 +692,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/delete_source.py.html>`__ to see an example of how to use delete_source API.
         """
         resource_path = "/sources/{sourceId}"
         method = "DELETE"
@@ -749,6 +770,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.application_migration.models.Migration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/get_migration.py.html>`__ to see an example of how to use get_migration API.
         """
         resource_path = "/migrations/{migrationId}"
         method = "GET"
@@ -824,6 +848,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.application_migration.models.Source`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/get_source.py.html>`__ to see an example of how to use get_source API.
         """
         resource_path = "/sources/{sourceId}"
         method = "GET"
@@ -899,6 +926,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.application_migration.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -1011,6 +1041,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.application_migration.models.MigrationSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/list_migrations.py.html>`__ to see an example of how to use list_migrations API.
         """
         resource_path = "/migrations"
         method = "GET"
@@ -1150,6 +1183,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.application_migration.models.SourceApplicationSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/list_source_applications.py.html>`__ to see an example of how to use list_source_applications API.
         """
         resource_path = "/sources/{sourceId}/applications"
         method = "GET"
@@ -1296,6 +1332,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.application_migration.models.SourceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/list_sources.py.html>`__ to see an example of how to use list_sources API.
         """
         resource_path = "/sources"
         method = "GET"
@@ -1418,6 +1457,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.application_migration.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -1529,6 +1571,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.application_migration.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1640,6 +1685,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.application_migration.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1738,6 +1786,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/migrate_application.py.html>`__ to see an example of how to use migrate_application API.
         """
         resource_path = "/migrations/{migrationId}/actions/migrate"
         method = "POST"
@@ -1862,6 +1913,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/update_migration.py.html>`__ to see an example of how to use update_migration API.
         """
         resource_path = "/migrations/{migrationId}"
         method = "PUT"
@@ -1954,6 +2008,9 @@ class ApplicationMigrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/applicationmigration/update_source.py.html>`__ to see an example of how to use update_source API.
         """
         resource_path = "/sources/{sourceId}"
         method = "PUT"

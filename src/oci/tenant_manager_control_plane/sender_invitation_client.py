@@ -120,6 +120,9 @@ class SenderInvitationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/cancel_sender_invitation.py.html>`__ to see an example of how to use cancel_sender_invitation API.
         """
         resource_path = "/senderInvitations/{senderInvitationId}/actions/cancel"
         method = "POST"
@@ -203,6 +206,9 @@ class SenderInvitationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.tenant_manager_control_plane.models.SenderInvitation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/create_sender_invitation.py.html>`__ to see an example of how to use create_sender_invitation API.
         """
         resource_path = "/senderInvitations"
         method = "POST"
@@ -269,6 +275,9 @@ class SenderInvitationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.tenant_manager_control_plane.models.SenderInvitation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/get_sender_invitation.py.html>`__ to see an example of how to use get_sender_invitation API.
         """
         resource_path = "/senderInvitations/{senderInvitationId}"
         method = "GET"
@@ -373,6 +382,9 @@ class SenderInvitationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.tenant_manager_control_plane.models.SenderInvitationCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/list_sender_invitations.py.html>`__ to see an example of how to use list_sender_invitations API.
         """
         resource_path = "/senderInvitations"
         method = "GET"
@@ -494,6 +506,9 @@ class SenderInvitationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.tenant_manager_control_plane.models.SenderInvitation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/update_sender_invitation.py.html>`__ to see an example of how to use update_sender_invitation API.
         """
         resource_path = "/senderInvitations/{senderInvitationId}"
         method = "PUT"

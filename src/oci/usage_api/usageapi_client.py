@@ -107,6 +107,9 @@ class UsageapiClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.usage_api.models.ConfigurationAggregation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/usageapi/request_summarized_configurations.py.html>`__ to see an example of how to use request_summarized_configurations API.
         """
         resource_path = "/configuration"
         method = "GET"
@@ -182,6 +185,9 @@ class UsageapiClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.usage_api.models.UsageAggregation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/usageapi/request_summarized_usages.py.html>`__ to see an example of how to use request_summarized_usages API.
         """
         resource_path = "/usage"
         method = "POST"

@@ -116,6 +116,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.mysql.models.Configuration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/create_configuration.py.html>`__ to see an example of how to use create_configuration API.
         """
         resource_path = "/configurations"
         method = "POST"
@@ -192,6 +195,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/delete_configuration.py.html>`__ to see an example of how to use delete_configuration API.
         """
         resource_path = "/configurations/{configurationId}"
         method = "DELETE"
@@ -273,6 +279,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.mysql.models.Configuration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
         resource_path = "/configurations/{configurationId}"
         method = "GET"
@@ -400,6 +409,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.mysql.models.ConfigurationSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/list_configurations.py.html>`__ to see an example of how to use list_configurations API.
         """
         resource_path = "/configurations"
         method = "GET"
@@ -532,6 +544,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.mysql.models.ShapeSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/list_shapes.py.html>`__ to see an example of how to use list_shapes API.
         """
         resource_path = "/shapes"
         method = "GET"
@@ -619,6 +634,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.mysql.models.VersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/list_versions.py.html>`__ to see an example of how to use list_versions API.
         """
         resource_path = "/versions"
         method = "GET"
@@ -698,6 +716,9 @@ class MysqlaasClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.mysql.models.Configuration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
         resource_path = "/configurations/{configurationId}"
         method = "PUT"

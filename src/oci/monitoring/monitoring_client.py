@@ -130,6 +130,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/change_alarm_compartment.py.html>`__ to see an example of how to use change_alarm_compartment API.
         """
         resource_path = "/alarms/{alarmId}/actions/changeCompartment"
         method = "POST"
@@ -223,6 +226,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.monitoring.models.Alarm`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/create_alarm.py.html>`__ to see an example of how to use create_alarm API.
         """
         resource_path = "/alarms"
         method = "POST"
@@ -304,6 +310,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/delete_alarm.py.html>`__ to see an example of how to use delete_alarm API.
         """
         resource_path = "/alarms/{alarmId}"
         method = "DELETE"
@@ -386,6 +395,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.monitoring.models.Alarm`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/get_alarm.py.html>`__ to see an example of how to use get_alarm API.
         """
         resource_path = "/alarms/{alarmId}"
         method = "GET"
@@ -502,6 +514,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.monitoring.models.AlarmHistoryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/get_alarm_history.py.html>`__ to see an example of how to use get_alarm_history API.
         """
         resource_path = "/alarms/{alarmId}/history"
         method = "GET"
@@ -657,6 +672,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.monitoring.models.AlarmSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/list_alarms.py.html>`__ to see an example of how to use list_alarms API.
         """
         resource_path = "/alarms"
         method = "GET"
@@ -814,6 +832,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.monitoring.models.AlarmStatusSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/list_alarms_status.py.html>`__ to see an example of how to use list_alarms_status API.
         """
         resource_path = "/alarms/status"
         method = "GET"
@@ -947,6 +968,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.monitoring.models.Metric`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/list_metrics.py.html>`__ to see an example of how to use list_metrics API.
         """
         resource_path = "/metrics/actions/listMetrics"
         method = "POST"
@@ -1044,6 +1068,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.monitoring.models.PostMetricDataResponseDetails`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/post_metric_data.py.html>`__ to see an example of how to use post_metric_data API.
         """
         resource_path = "/metrics"
         method = "POST"
@@ -1121,6 +1148,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/remove_alarm_suppression.py.html>`__ to see an example of how to use remove_alarm_suppression API.
         """
         resource_path = "/alarms/{alarmId}/actions/removeSuppression"
         method = "POST"
@@ -1217,6 +1247,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.monitoring.models.MetricData`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/summarize_metrics_data.py.html>`__ to see an example of how to use summarize_metrics_data API.
         """
         resource_path = "/metrics/actions/summarizeMetricsData"
         method = "POST"
@@ -1306,6 +1339,9 @@ class MonitoringClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.monitoring.models.Alarm`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/monitoring/update_alarm.py.html>`__ to see an example of how to use update_alarm API.
         """
         resource_path = "/alarms/{alarmId}"
         method = "PUT"

@@ -126,6 +126,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/add_entity_association.py.html>`__ to see an example of how to use add_entity_association API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/actions/addEntityAssociations"
         method = "POST"
@@ -227,6 +230,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabelCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/batch_get_basic_info.py.html>`__ to see an example of how to use batch_get_basic_info API.
         """
         resource_path = "/namespaces/{namespaceName}/labels/actions/basicInfo"
         method = "POST"
@@ -342,6 +348,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/cancel_query_work_request.py.html>`__ to see an example of how to use cancel_query_work_request API.
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests/{workRequestId}"
         method = "DELETE"
@@ -435,6 +444,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/change_log_analytics_entity_compartment.py.html>`__ to see an example of how to use change_log_analytics_entity_compartment API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/actions/changeCompartment"
         method = "POST"
@@ -534,6 +546,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/change_log_analytics_log_group_compartment.py.html>`__ to see an example of how to use change_log_analytics_log_group_compartment API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}/actions/changeCompartment"
         method = "POST"
@@ -628,6 +643,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/change_log_analytics_object_collection_rule_compartment.py.html>`__ to see an example of how to use change_log_analytics_object_collection_rule_compartment API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}/actions/changeCompartment"
         method = "POST"
@@ -724,6 +742,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/change_scheduled_task_compartment.py.html>`__ to see an example of how to use change_scheduled_task_compartment API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/changeCompartment"
         method = "POST"
@@ -823,6 +844,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/clean.py.html>`__ to see an example of how to use clean API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/clean"
         method = "POST"
@@ -918,6 +942,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntity`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/create_log_analytics_entity.py.html>`__ to see an example of how to use create_log_analytics_entity API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities"
         method = "POST"
@@ -1006,6 +1033,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/create_log_analytics_entity_type.py.html>`__ to see an example of how to use create_log_analytics_entity_type API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes"
         method = "POST"
@@ -1092,6 +1122,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/create_log_analytics_log_group.py.html>`__ to see an example of how to use create_log_analytics_log_group API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups"
         method = "POST"
@@ -1173,6 +1206,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/create_log_analytics_object_collection_rule.py.html>`__ to see an example of how to use create_log_analytics_object_collection_rule API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules"
         method = "POST"
@@ -1257,6 +1293,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/create_scheduled_task.py.html>`__ to see an example of how to use create_scheduled_task API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks"
         method = "POST"
@@ -1345,6 +1384,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_associations.py.html>`__ to see an example of how to use delete_associations API.
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/delete"
         method = "POST"
@@ -1438,6 +1480,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_field.py.html>`__ to see an example of how to use delete_field API.
         """
         resource_path = "/namespaces/{namespaceName}/fields/{fieldName}"
         method = "DELETE"
@@ -1532,6 +1577,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_label.py.html>`__ to see an example of how to use delete_label API.
         """
         resource_path = "/namespaces/{namespaceName}/labels/{labelName}"
         method = "DELETE"
@@ -1619,6 +1667,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_log_analytics_entity.py.html>`__ to see an example of how to use delete_log_analytics_entity API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         method = "DELETE"
@@ -1702,6 +1753,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_log_analytics_entity_type.py.html>`__ to see an example of how to use delete_log_analytics_entity_type API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes/{entityTypeName}"
         method = "DELETE"
@@ -1785,6 +1839,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_log_analytics_log_group.py.html>`__ to see an example of how to use delete_log_analytics_log_group API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         method = "DELETE"
@@ -1871,6 +1928,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_log_analytics_object_collection_rule.py.html>`__ to see an example of how to use delete_log_analytics_object_collection_rule API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         method = "DELETE"
@@ -1961,6 +2021,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_parser.py.html>`__ to see an example of how to use delete_parser API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers/{parserName}"
         method = "DELETE"
@@ -2049,6 +2112,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_scheduled_task.py.html>`__ to see an example of how to use delete_scheduled_task API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         method = "DELETE"
@@ -2139,6 +2205,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_source.py.html>`__ to see an example of how to use delete_source API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}"
         method = "DELETE"
@@ -2227,6 +2296,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_upload.py.html>`__ to see an example of how to use delete_upload API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}"
         method = "DELETE"
@@ -2307,6 +2379,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_upload_file.py.html>`__ to see an example of how to use delete_upload_file API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/files/{fileReference}"
         method = "DELETE"
@@ -2385,6 +2460,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/delete_upload_warning.py.html>`__ to see an example of how to use delete_upload_warning API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/warnings/{warningReference}"
         method = "DELETE"
@@ -2464,6 +2542,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Success`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/disable_archiving.py.html>`__ to see an example of how to use disable_archiving API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/disableArchiving"
         method = "POST"
@@ -2545,6 +2626,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Success`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/enable_archiving.py.html>`__ to see an example of how to use enable_archiving API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/enableArchiving"
         method = "POST"
@@ -2636,6 +2720,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EstimatePurgeDataSizeResult`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/estimate_purge_data_size.py.html>`__ to see an example of how to use estimate_purge_data_size API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/estimatePurgeDataSize"
         method = "POST"
@@ -2726,6 +2813,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/export_custom_content.py.html>`__ to see an example of how to use export_custom_content API.
         """
         resource_path = "/namespaces/{namespaceName}/contents/actions/exportCustomContent"
         method = "POST"
@@ -2807,6 +2897,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/export_query_result.py.html>`__ to see an example of how to use export_query_result API.
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/export"
         method = "POST"
@@ -2896,6 +2989,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ExtractLogFieldResults`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/extract_structured_log_field_paths.py.html>`__ to see an example of how to use extract_structured_log_field_paths API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/extractLogFieldPaths"
         method = "POST"
@@ -3004,6 +3100,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ExtractLogHeaderResults`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/extract_structured_log_header_paths.py.html>`__ to see an example of how to use extract_structured_log_header_paths API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/extractLogHeaderPaths"
         method = "POST"
@@ -3100,6 +3199,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.FilterOutput`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/filter.py.html>`__ to see an example of how to use filter API.
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/filter"
         method = "POST"
@@ -3177,6 +3279,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.AssociationSummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_association_summary.py.html>`__ to see an example of how to use get_association_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/associationSummary"
         method = "GET"
@@ -3266,6 +3371,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ColumnNameCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_column_names.py.html>`__ to see an example of how to use get_column_names API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/sqlColumnNames"
         method = "GET"
@@ -3354,6 +3462,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_config_work_request.py.html>`__ to see an example of how to use get_config_work_request API.
         """
         resource_path = "/namespaces/{namespaceName}/configWorkRequests/{workRequestId}"
         method = "GET"
@@ -3430,6 +3541,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsField`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_field.py.html>`__ to see an example of how to use get_field API.
         """
         resource_path = "/namespaces/{namespaceName}/fields/{fieldName}"
         method = "GET"
@@ -3506,6 +3620,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.FieldSummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_fields_summary.py.html>`__ to see an example of how to use get_fields_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/fieldSummary"
         method = "GET"
@@ -3589,6 +3706,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabel`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_label.py.html>`__ to see an example of how to use get_label API.
         """
         resource_path = "/namespaces/{namespaceName}/labels/{labelName}"
         method = "GET"
@@ -3662,6 +3782,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LabelSummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_label_summary.py.html>`__ to see an example of how to use get_label_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/labelSummary"
         method = "GET"
@@ -3737,6 +3860,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntitySummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_log_analytics_entities_summary.py.html>`__ to see an example of how to use get_log_analytics_entities_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/entitySummary"
         method = "GET"
@@ -3819,6 +3945,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntity`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_log_analytics_entity.py.html>`__ to see an example of how to use get_log_analytics_entity API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         method = "GET"
@@ -3895,6 +4024,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityType`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_log_analytics_entity_type.py.html>`__ to see an example of how to use get_log_analytics_entity_type API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes/{entityTypeName}"
         method = "GET"
@@ -3971,6 +4103,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_log_analytics_log_group.py.html>`__ to see an example of how to use get_log_analytics_log_group API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         method = "GET"
@@ -4047,6 +4182,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogGroupSummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_log_analytics_log_groups_summary.py.html>`__ to see an example of how to use get_log_analytics_log_groups_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroupsSummary"
         method = "GET"
@@ -4131,6 +4269,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_log_analytics_object_collection_rule.py.html>`__ to see an example of how to use get_log_analytics_object_collection_rule API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         method = "GET"
@@ -4204,6 +4345,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Namespace`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_namespace.py.html>`__ to see an example of how to use get_namespace API.
         """
         resource_path = "/namespaces/{namespaceName}"
         method = "GET"
@@ -4279,6 +4423,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParser`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_parser.py.html>`__ to see an example of how to use get_parser API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers/{parserName}"
         method = "GET"
@@ -4352,6 +4499,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ParserSummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_parser_summary.py.html>`__ to see an example of how to use get_parser_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/parsersSummary"
         method = "GET"
@@ -4447,6 +4597,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryAggregation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_query_result.py.html>`__ to see an example of how to use get_query_result API.
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/query"
         method = "GET"
@@ -4548,6 +4701,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryWorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_query_work_request.py.html>`__ to see an example of how to use get_query_work_request API.
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests/{workRequestId}"
         method = "GET"
@@ -4625,6 +4781,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_scheduled_task.py.html>`__ to see an example of how to use get_scheduled_task API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         method = "GET"
@@ -4704,6 +4863,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSource`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_source.py.html>`__ to see an example of how to use get_source API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}"
         method = "GET"
@@ -4784,6 +4946,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SourceSummaryReport`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_source_summary.py.html>`__ to see an example of how to use get_source_summary API.
         """
         resource_path = "/namespaces/{namespaceName}/sourceSummary"
         method = "GET"
@@ -4856,6 +5021,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Storage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_storage.py.html>`__ to see an example of how to use get_storage API.
         """
         resource_path = "/namespaces/{namespaceName}/storage"
         method = "GET"
@@ -4929,6 +5097,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.StorageUsage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_storage_usage.py.html>`__ to see an example of how to use get_storage_usage API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/usage"
         method = "GET"
@@ -5007,6 +5178,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.StorageWorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_storage_work_request.py.html>`__ to see an example of how to use get_storage_work_request API.
         """
         resource_path = "/namespaces/{namespaceName}/storageWorkRequests/{workRequestId}"
         method = "GET"
@@ -5083,6 +5257,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Upload`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_upload.py.html>`__ to see an example of how to use get_upload API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}"
         method = "GET"
@@ -5161,6 +5338,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/namespaces/{namespaceName}/workRequests/{workRequestId}"
         method = "GET"
@@ -5247,6 +5427,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsImportCustomContent`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/import_custom_content.py.html>`__ to see an example of how to use import_custom_content API.
         """
         resource_path = "/namespaces/{namespaceName}/contents/actions/importCustomContent"
         method = "POST"
@@ -5378,6 +5561,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociatedEntityCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_associated_entities.py.html>`__ to see an example of how to use list_associated_entities API.
         """
         resource_path = "/namespaces/{namespaceName}/associatedEntities"
         method = "GET"
@@ -5501,6 +5687,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_config_work_requests.py.html>`__ to see an example of how to use list_config_work_requests API.
         """
         resource_path = "/namespaces/{namespaceName}/configWorkRequests"
         method = "GET"
@@ -5624,6 +5813,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_entity_associations.py.html>`__ to see an example of how to use list_entity_associations API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/entityAssociations"
         method = "GET"
@@ -5770,6 +5962,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociationCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_entity_source_associations.py.html>`__ to see an example of how to use list_entity_source_associations API.
         """
         resource_path = "/namespaces/{namespaceName}/entityAssociations"
         method = "GET"
@@ -5930,6 +6125,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsFieldCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_fields.py.html>`__ to see an example of how to use list_fields API.
         """
         resource_path = "/namespaces/{namespaceName}/fields"
         method = "GET"
@@ -6059,6 +6257,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LabelPriorityCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_label_priorities.py.html>`__ to see an example of how to use list_label_priorities API.
         """
         resource_path = "/namespaces/{namespaceName}/labelPriorities"
         method = "GET"
@@ -6160,6 +6361,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LabelSourceCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_label_source_details.py.html>`__ to see an example of how to use list_label_source_details API.
         """
         resource_path = "/namespaces/{namespaceName}/labelSourceDetails"
         method = "GET"
@@ -6300,6 +6504,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabelCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_labels.py.html>`__ to see an example of how to use list_labels API.
         """
         resource_path = "/namespaces/{namespaceName}/labels"
         method = "GET"
@@ -6485,6 +6692,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_log_analytics_entities.py.html>`__ to see an example of how to use list_log_analytics_entities API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities"
         method = "GET"
@@ -6656,6 +6866,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityTypeCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_log_analytics_entity_types.py.html>`__ to see an example of how to use list_log_analytics_entity_types API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes"
         method = "GET"
@@ -6801,6 +7014,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroupSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_log_analytics_log_groups.py.html>`__ to see an example of how to use list_log_analytics_log_groups API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups"
         method = "GET"
@@ -6932,6 +7148,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRuleCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_log_analytics_object_collection_rules.py.html>`__ to see an example of how to use list_log_analytics_object_collection_rules API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules"
         method = "GET"
@@ -7058,6 +7277,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsMetaSourceTypeCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_meta_source_types.py.html>`__ to see an example of how to use list_meta_source_types API.
         """
         resource_path = "/namespaces/{namespaceName}/sourceMetaTypes"
         method = "GET"
@@ -7152,6 +7374,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.NamespaceCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_namespaces.py.html>`__ to see an example of how to use list_namespaces API.
         """
         resource_path = "/namespaces"
         method = "GET"
@@ -7236,6 +7461,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParserFunctionCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_parser_functions.py.html>`__ to see an example of how to use list_parser_functions API.
         """
         resource_path = "/namespaces/{namespaceName}/parserFunctions"
         method = "GET"
@@ -7345,6 +7573,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParserMetaPluginCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_parser_meta_plugins.py.html>`__ to see an example of how to use list_parser_meta_plugins API.
         """
         resource_path = "/namespaces/{namespaceName}/parserMetaPlugins"
         method = "GET"
@@ -7478,6 +7709,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParserCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_parsers.py.html>`__ to see an example of how to use list_parsers API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers"
         method = "GET"
@@ -7635,6 +7869,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryWorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_query_work_requests.py.html>`__ to see an example of how to use list_query_work_requests API.
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests"
         method = "GET"
@@ -7772,6 +8009,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTaskCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_scheduled_tasks.py.html>`__ to see an example of how to use list_scheduled_tasks API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks"
         method = "GET"
@@ -7915,6 +8155,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociationCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_source_associations.py.html>`__ to see an example of how to use list_source_associations API.
         """
         resource_path = "/namespaces/{namespaceName}/sourceAssociations"
         method = "GET"
@@ -8049,6 +8292,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinitionCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_source_extended_field_definitions.py.html>`__ to see an example of how to use list_source_extended_field_definitions API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/extendedFieldDefinitions"
         method = "GET"
@@ -8164,6 +8410,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabelOperatorCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_source_label_operators.py.html>`__ to see an example of how to use list_source_label_operators API.
         """
         resource_path = "/namespaces/{namespaceName}/sourceLabelOperators"
         method = "GET"
@@ -8271,6 +8520,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsMetaFunctionCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_source_meta_functions.py.html>`__ to see an example of how to use list_source_meta_functions API.
         """
         resource_path = "/namespaces/{namespaceName}/sourceMetaFunctions"
         method = "GET"
@@ -8386,6 +8638,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSourcePatternCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_source_patterns.py.html>`__ to see an example of how to use list_source_patterns API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/patterns"
         method = "GET"
@@ -8529,6 +8784,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSourceCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_sources.py.html>`__ to see an example of how to use list_sources API.
         """
         resource_path = "/namespaces/{namespaceName}/sources"
         method = "GET"
@@ -8673,6 +8931,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_storage_work_request_errors.py.html>`__ to see an example of how to use list_storage_work_request_errors API.
         """
         resource_path = "/namespaces/{namespaceName}/storageWorkRequests/{workRequestId}/errors"
         method = "GET"
@@ -8817,6 +9078,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.StorageWorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_storage_work_requests.py.html>`__ to see an example of how to use list_storage_work_requests API.
         """
         resource_path = "/namespaces/{namespaceName}/storageWorkRequests"
         method = "GET"
@@ -8950,6 +9214,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.CharEncodingCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_supported_char_encodings.py.html>`__ to see an example of how to use list_supported_char_encodings API.
         """
         resource_path = "/namespaces/{namespaceName}/supportedCharEncodings"
         method = "GET"
@@ -9038,6 +9305,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.TimezoneCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_supported_timezones.py.html>`__ to see an example of how to use list_supported_timezones API.
         """
         resource_path = "/namespaces/{namespaceName}/supportedTimezones"
         method = "GET"
@@ -9147,6 +9417,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UploadFileCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_upload_files.py.html>`__ to see an example of how to use list_upload_files API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/files"
         method = "GET"
@@ -9269,6 +9542,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UploadWarningCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_upload_warnings.py.html>`__ to see an example of how to use list_upload_warnings API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/warnings"
         method = "GET"
@@ -9376,6 +9652,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UploadCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_uploads.py.html>`__ to see an example of how to use list_uploads API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads"
         method = "GET"
@@ -9491,6 +9770,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/namespaces/{namespaceName}/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -9585,6 +9867,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestLogCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/namespaces/{namespaceName}/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -9677,6 +9962,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/namespaces/{namespaceName}/workRequests"
         method = "GET"
@@ -9767,6 +10055,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/offboard_namespace.py.html>`__ to see an example of how to use offboard_namespace API.
         """
         resource_path = "/namespaces/{namespaceName}/actions/offboard"
         method = "POST"
@@ -9848,6 +10139,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/onboard_namespace.py.html>`__ to see an example of how to use onboard_namespace API.
         """
         resource_path = "/namespaces/{namespaceName}/actions/onboard"
         method = "POST"
@@ -9925,6 +10219,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ParseQueryOutput`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/parse_query.py.html>`__ to see an example of how to use parse_query API.
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/parse"
         method = "POST"
@@ -10017,6 +10314,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/purge_storage_data.py.html>`__ to see an example of how to use purge_storage_data API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/purgeData"
         method = "POST"
@@ -10107,6 +10407,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryWorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/put_query_work_request_background.py.html>`__ to see an example of how to use put_query_work_request_background API.
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests/{workRequestId}/actions/background"
         method = "PUT"
@@ -10191,6 +10494,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryAggregation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/query.py.html>`__ to see an example of how to use query API.
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/query"
         method = "POST"
@@ -10292,6 +10598,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/recall_archived_data.py.html>`__ to see an example of how to use recall_archived_data API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/recallArchivedData"
         method = "POST"
@@ -10398,6 +10707,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/register_lookup.py.html>`__ to see an example of how to use register_lookup API.
         """
         resource_path = "/namespaces/{namespaceName}/lookups/actions/register"
         method = "POST"
@@ -10531,6 +10843,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/release_recalled_data.py.html>`__ to see an example of how to use release_recalled_data API.
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/releaseRecalledData"
         method = "POST"
@@ -10629,6 +10944,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/remove_entity_associations.py.html>`__ to see an example of how to use remove_entity_associations API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/actions/removeEntityAssociations"
         method = "POST"
@@ -10729,6 +11047,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/run.py.html>`__ to see an example of how to use run API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/run"
         method = "POST"
@@ -10817,6 +11138,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SuggestOutput`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/suggest.py.html>`__ to see an example of how to use suggest API.
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/suggest"
         method = "POST"
@@ -10909,6 +11233,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ParserTestResult`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/test_parser.py.html>`__ to see an example of how to use test_parser API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/test"
         method = "POST"
@@ -11017,6 +11344,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntity`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/update_log_analytics_entity.py.html>`__ to see an example of how to use update_log_analytics_entity API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         method = "PUT"
@@ -11107,6 +11437,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/update_log_analytics_entity_type.py.html>`__ to see an example of how to use update_log_analytics_entity_type API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes/{entityTypeName}"
         method = "PUT"
@@ -11195,6 +11528,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/update_log_analytics_log_group.py.html>`__ to see an example of how to use update_log_analytics_log_group API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         method = "PUT"
@@ -11287,6 +11623,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRule`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/update_log_analytics_object_collection_rule.py.html>`__ to see an example of how to use update_log_analytics_object_collection_rule API.
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         method = "PUT"
@@ -11379,6 +11718,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/update_scheduled_task.py.html>`__ to see an example of how to use update_scheduled_task API.
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         method = "PUT"
@@ -11466,6 +11808,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Storage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/update_storage.py.html>`__ to see an example of how to use update_storage API.
         """
         resource_path = "/namespaces/{namespaceName}/storage"
         method = "PUT"
@@ -11592,6 +11937,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Upload`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/upload_log_file.py.html>`__ to see an example of how to use upload_log_file API.
         """
         resource_path = "/namespaces/{namespaceName}/actions/uploadLogFile"
         method = "POST"
@@ -11728,6 +12076,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/upsert_associations.py.html>`__ to see an example of how to use upsert_associations API.
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/upsert"
         method = "POST"
@@ -11829,6 +12180,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsField`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/upsert_field.py.html>`__ to see an example of how to use upsert_field API.
         """
         resource_path = "/namespaces/{namespaceName}/fields/actions/upsert"
         method = "POST"
@@ -11926,6 +12280,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabel`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/upsert_label.py.html>`__ to see an example of how to use upsert_label API.
         """
         resource_path = "/namespaces/{namespaceName}/labels/actions/upsert"
         method = "POST"
@@ -12023,6 +12380,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParser`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/upsert_parser.py.html>`__ to see an example of how to use upsert_parser API.
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/upsert"
         method = "POST"
@@ -12129,6 +12489,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSource`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/upsert_source.py.html>`__ to see an example of how to use upsert_source API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/actions/upsert"
         method = "POST"
@@ -12247,6 +12610,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociationParameterCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/validate_association_parameters.py.html>`__ to see an example of how to use validate_association_parameters API.
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/validateParameters"
         method = "POST"
@@ -12359,6 +12725,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.FileValidationResponse`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/validate_file.py.html>`__ to see an example of how to use validate_file API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/actions/validateFile"
         method = "POST"
@@ -12458,6 +12827,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SourceValidateResults`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/validate_source.py.html>`__ to see an example of how to use validate_source API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/actions/validate"
         method = "POST"
@@ -12558,6 +12930,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ExtendedFieldsValidationResult`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/validate_source_extended_field_details.py.html>`__ to see an example of how to use validate_source_extended_field_details API.
         """
         resource_path = "/namespaces/{namespaceName}/sources/actions/validateExtendedFields"
         method = "POST"
@@ -12645,6 +13020,9 @@ class LogAnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SourceMappingResponse`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loganalytics/validate_source_mapping.py.html>`__ to see an example of how to use validate_source_mapping API.
         """
         resource_path = "/namespaces/{namespaceName}/uploads/actions/validateSourceMapping"
         method = "POST"

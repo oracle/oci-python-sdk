@@ -106,6 +106,9 @@ class AuditClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.audit.models.Configuration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/audit/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
         resource_path = "/configuration"
         method = "GET"
@@ -200,6 +203,9 @@ class AuditClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.audit.models.AuditEvent`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/audit/list_events.py.html>`__ to see an example of how to use list_events API.
         """
         resource_path = "/auditEvents"
         method = "GET"
@@ -271,6 +277,9 @@ class AuditClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/audit/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
         resource_path = "/configuration"
         method = "PUT"

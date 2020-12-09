@@ -126,6 +126,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/attach_load_balancer.py.html>`__ to see an example of how to use attach_load_balancer API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/attachLoadBalancer"
         method = "POST"
@@ -229,6 +232,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_cluster_network_compartment.py.html>`__ to see an example of how to use change_cluster_network_compartment API.
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}/actions/changeCompartment"
         method = "POST"
@@ -338,6 +344,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_instance_configuration_compartment.py.html>`__ to see an example of how to use change_instance_configuration_compartment API.
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}/actions/changeCompartment"
         method = "POST"
@@ -441,6 +450,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_instance_pool_compartment.py.html>`__ to see an example of how to use change_instance_pool_compartment API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/changeCompartment"
         method = "POST"
@@ -526,6 +538,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_cluster_network.py.html>`__ to see an example of how to use create_cluster_network API.
         """
         resource_path = "/clusterNetworks"
         method = "POST"
@@ -595,6 +610,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstanceConfiguration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_instance_configuration.py.html>`__ to see an example of how to use create_instance_configuration API.
         """
         resource_path = "/instanceConfigurations"
         method = "POST"
@@ -663,6 +681,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_instance_pool.py.html>`__ to see an example of how to use create_instance_pool API.
         """
         resource_path = "/instancePools"
         method = "POST"
@@ -729,6 +750,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_instance_configuration.py.html>`__ to see an example of how to use delete_instance_configuration API.
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "DELETE"
@@ -813,6 +837,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/detach_load_balancer.py.html>`__ to see an example of how to use detach_load_balancer API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/detachLoadBalancer"
         method = "POST"
@@ -890,6 +917,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cluster_network.py.html>`__ to see an example of how to use get_cluster_network API.
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "GET"
@@ -953,6 +983,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstanceConfiguration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_instance_configuration.py.html>`__ to see an example of how to use get_instance_configuration API.
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "GET"
@@ -1018,6 +1051,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_instance_pool.py.html>`__ to see an example of how to use get_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}"
         method = "GET"
@@ -1086,6 +1122,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePoolLoadBalancerAttachment`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_instance_pool_load_balancer_attachment.py.html>`__ to see an example of how to use get_instance_pool_load_balancer_attachment API.
         """
         resource_path = "/instancePools/{instancePoolId}/loadBalancerAttachments/{instancePoolLoadBalancerAttachmentId}"
         method = "GET"
@@ -1166,6 +1205,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Instance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/launch_instance_configuration.py.html>`__ to see an example of how to use launch_instance_configuration API.
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}/actions/launch"
         method = "POST"
@@ -1283,6 +1325,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InstanceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cluster_network_instances.py.html>`__ to see an example of how to use list_cluster_network_instances API.
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}/instances"
         method = "GET"
@@ -1425,6 +1470,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ClusterNetworkSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cluster_networks.py.html>`__ to see an example of how to use list_cluster_networks API.
         """
         resource_path = "/clusterNetworks"
         method = "GET"
@@ -1555,6 +1603,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InstanceConfigurationSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_instance_configurations.py.html>`__ to see an example of how to use list_instance_configurations API.
         """
         resource_path = "/instanceConfigurations"
         method = "GET"
@@ -1682,6 +1733,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InstanceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_instance_pool_instances.py.html>`__ to see an example of how to use list_instance_pool_instances API.
         """
         resource_path = "/instancePools/{instancePoolId}/instances"
         method = "GET"
@@ -1823,6 +1877,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InstancePoolSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_instance_pools.py.html>`__ to see an example of how to use list_instance_pools API.
         """
         resource_path = "/instancePools"
         method = "GET"
@@ -1932,6 +1989,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/reset_instance_pool.py.html>`__ to see an example of how to use reset_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/reset"
         method = "POST"
@@ -2020,6 +2080,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/softreset_instance_pool.py.html>`__ to see an example of how to use softreset_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/softreset"
         method = "POST"
@@ -2108,6 +2171,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/start_instance_pool.py.html>`__ to see an example of how to use start_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/start"
         method = "POST"
@@ -2196,6 +2262,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/stop_instance_pool.py.html>`__ to see an example of how to use stop_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}/actions/stop"
         method = "POST"
@@ -2279,6 +2348,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/terminate_cluster_network.py.html>`__ to see an example of how to use terminate_cluster_network API.
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "DELETE"
@@ -2360,6 +2432,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/terminate_instance_pool.py.html>`__ to see an example of how to use terminate_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}"
         method = "DELETE"
@@ -2444,6 +2519,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_cluster_network.py.html>`__ to see an example of how to use update_cluster_network API.
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "PUT"
@@ -2534,6 +2612,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstanceConfiguration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_instance_configuration.py.html>`__ to see an example of how to use update_instance_configuration API.
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "PUT"
@@ -2628,6 +2709,9 @@ class ComputeManagementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InstancePool`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_instance_pool.py.html>`__ to see an example of how to use update_instance_pool API.
         """
         resource_path = "/instancePools/{instancePoolId}"
         method = "PUT"
