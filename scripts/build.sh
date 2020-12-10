@@ -35,6 +35,7 @@ echo SDK Version Number $SDK_VERSION
 
 echo Building Docs
 pip install -r docs/requirements.txt
+find . -name \*.py |xargs sed -i "s#https://docs\.cloud\.oracle\.com/en-us/iaas/tools/python-sdk-examples/latest/#https://docs\.cloud\.oracle\.com/en-us/iaas/tools/python-sdk-examples/$SDK_VERSION/#g"
 
 # Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
 make docs >> doc_build_output.txt 2>&1
