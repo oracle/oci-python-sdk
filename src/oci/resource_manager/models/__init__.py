@@ -21,6 +21,7 @@ from .create_config_source_details import CreateConfigSourceDetails
 from .create_configuration_source_provider_details import CreateConfigurationSourceProviderDetails
 from .create_destroy_job_operation_details import CreateDestroyJobOperationDetails
 from .create_git_config_source_details import CreateGitConfigSourceDetails
+from .create_github_access_token_configuration_source_provider_details import CreateGithubAccessTokenConfigurationSourceProviderDetails
 from .create_gitlab_access_token_configuration_source_provider_details import CreateGitlabAccessTokenConfigurationSourceProviderDetails
 from .create_import_tf_state_job_operation_details import CreateImportTfStateJobOperationDetails
 from .create_job_details import CreateJobDetails
@@ -33,6 +34,8 @@ from .destroy_job_operation_details_summary import DestroyJobOperationDetailsSum
 from .failure_details import FailureDetails
 from .git_config_source import GitConfigSource
 from .git_config_source_record import GitConfigSourceRecord
+from .github_access_token_configuration_source_provider import GithubAccessTokenConfigurationSourceProvider
+from .github_access_token_configuration_source_provider_summary import GithubAccessTokenConfigurationSourceProviderSummary
 from .gitlab_access_token_configuration_source_provider import GitlabAccessTokenConfigurationSourceProvider
 from .gitlab_access_token_configuration_source_provider_summary import GitlabAccessTokenConfigurationSourceProviderSummary
 from .import_tf_state_job_operation_details import ImportTfStateJobOperationDetails
@@ -55,6 +58,7 @@ from .terraform_version_summary import TerraformVersionSummary
 from .update_config_source_details import UpdateConfigSourceDetails
 from .update_configuration_source_provider_details import UpdateConfigurationSourceProviderDetails
 from .update_git_config_source_details import UpdateGitConfigSourceDetails
+from .update_github_access_token_configuration_source_provider_details import UpdateGithubAccessTokenConfigurationSourceProviderDetails
 from .update_gitlab_access_token_configuration_source_provider_details import UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 from .update_job_details import UpdateJobDetails
 from .update_stack_details import UpdateStackDetails
@@ -86,6 +90,7 @@ resource_manager_type_mapping = {
     "CreateConfigurationSourceProviderDetails": CreateConfigurationSourceProviderDetails,
     "CreateDestroyJobOperationDetails": CreateDestroyJobOperationDetails,
     "CreateGitConfigSourceDetails": CreateGitConfigSourceDetails,
+    "CreateGithubAccessTokenConfigurationSourceProviderDetails": CreateGithubAccessTokenConfigurationSourceProviderDetails,
     "CreateGitlabAccessTokenConfigurationSourceProviderDetails": CreateGitlabAccessTokenConfigurationSourceProviderDetails,
     "CreateImportTfStateJobOperationDetails": CreateImportTfStateJobOperationDetails,
     "CreateJobDetails": CreateJobDetails,
@@ -98,6 +103,8 @@ resource_manager_type_mapping = {
     "FailureDetails": FailureDetails,
     "GitConfigSource": GitConfigSource,
     "GitConfigSourceRecord": GitConfigSourceRecord,
+    "GithubAccessTokenConfigurationSourceProvider": GithubAccessTokenConfigurationSourceProvider,
+    "GithubAccessTokenConfigurationSourceProviderSummary": GithubAccessTokenConfigurationSourceProviderSummary,
     "GitlabAccessTokenConfigurationSourceProvider": GitlabAccessTokenConfigurationSourceProvider,
     "GitlabAccessTokenConfigurationSourceProviderSummary": GitlabAccessTokenConfigurationSourceProviderSummary,
     "ImportTfStateJobOperationDetails": ImportTfStateJobOperationDetails,
@@ -120,6 +127,7 @@ resource_manager_type_mapping = {
     "UpdateConfigSourceDetails": UpdateConfigSourceDetails,
     "UpdateConfigurationSourceProviderDetails": UpdateConfigurationSourceProviderDetails,
     "UpdateGitConfigSourceDetails": UpdateGitConfigSourceDetails,
+    "UpdateGithubAccessTokenConfigurationSourceProviderDetails": UpdateGithubAccessTokenConfigurationSourceProviderDetails,
     "UpdateGitlabAccessTokenConfigurationSourceProviderDetails": UpdateGitlabAccessTokenConfigurationSourceProviderDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateStackDetails": UpdateStackDetails,

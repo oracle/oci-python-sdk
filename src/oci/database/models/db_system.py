@@ -150,6 +150,10 @@ class DbSystem(object):
             The value to assign to the domain property of this DbSystem.
         :type domain: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this DbSystem.
+        :type kms_key_id: str
+
         :param version:
             The value to assign to the version property of this DbSystem.
         :type version: str
@@ -280,6 +284,7 @@ class DbSystem(object):
             'time_zone': 'str',
             'hostname': 'str',
             'domain': 'str',
+            'kms_key_id': 'str',
             'version': 'str',
             'cpu_core_count': 'int',
             'cluster_name': 'str',
@@ -325,6 +330,7 @@ class DbSystem(object):
             'time_zone': 'timeZone',
             'hostname': 'hostname',
             'domain': 'domain',
+            'kms_key_id': 'kmsKeyId',
             'version': 'version',
             'cpu_core_count': 'cpuCoreCount',
             'cluster_name': 'clusterName',
@@ -369,6 +375,7 @@ class DbSystem(object):
         self._time_zone = None
         self._hostname = None
         self._domain = None
+        self._kms_key_id = None
         self._version = None
         self._cpu_core_count = None
         self._cluster_name = None
@@ -833,6 +840,30 @@ class DbSystem(object):
         self._domain = domain
 
     @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this DbSystem.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this DbSystem.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this DbSystem.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this DbSystem.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
     def version(self):
         """
         Gets the version of this DbSystem.
@@ -1070,7 +1101,7 @@ class DbSystem(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DbSystem.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this DbSystem.
@@ -1082,7 +1113,7 @@ class DbSystem(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DbSystem.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this DbSystem.

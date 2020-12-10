@@ -87,7 +87,7 @@ class AuditEvent(object):
     @property
     def event_type(self):
         """
-        Gets the event_type of this AuditEvent.
+        **[Required]** Gets the event_type of this AuditEvent.
         The type of event that happened.
 
         The service that produces the event can also add, remove, or change the meaning of a field.
@@ -123,7 +123,7 @@ class AuditEvent(object):
     @property
     def cloud_events_version(self):
         """
-        Gets the cloud_events_version of this AuditEvent.
+        **[Required]** Gets the cloud_events_version of this AuditEvent.
         The version of the CloudEvents specification. The structure of the envelope follows the
         `CloudEvents`__ industry standard format hosted by the
         `Cloud Native Computing Foundation ( CNCF)`__.
@@ -165,7 +165,7 @@ class AuditEvent(object):
     @property
     def event_type_version(self):
         """
-        Gets the event_type_version of this AuditEvent.
+        **[Required]** Gets the event_type_version of this AuditEvent.
         The version of the event type. This version applies to the payload of the event, not the envelope.
         Use `cloudEventsVersion` to determine the version of the envelope.
 
@@ -195,7 +195,7 @@ class AuditEvent(object):
     @property
     def source(self):
         """
-        Gets the source of this AuditEvent.
+        **[Required]** Gets the source of this AuditEvent.
         The source of the event.
 
         Example: `ComputeApi`
@@ -223,7 +223,7 @@ class AuditEvent(object):
     @property
     def event_id(self):
         """
-        Gets the event_id of this AuditEvent.
+        **[Required]** Gets the event_id of this AuditEvent.
         The GUID of the event.
 
 
@@ -247,7 +247,7 @@ class AuditEvent(object):
     @property
     def event_time(self):
         """
-        Gets the event_time of this AuditEvent.
+        **[Required]** Gets the event_time of this AuditEvent.
         The time the event occurred, expressed in `RFC 3339`__ timestamp format.
 
         Example: `2019-09-18T00:10:59.252Z`
@@ -279,7 +279,7 @@ class AuditEvent(object):
     @property
     def content_type(self):
         """
-        Gets the content_type of this AuditEvent.
+        **[Required]** Gets the content_type of this AuditEvent.
         The content type of the data contained in `data`.
 
         Example: `application/json`
@@ -307,7 +307,7 @@ class AuditEvent(object):
     @property
     def data(self):
         """
-        Gets the data of this AuditEvent.
+        **[Required]** Gets the data of this AuditEvent.
 
         :return: The data of this AuditEvent.
         :rtype: oci.audit.models.Data

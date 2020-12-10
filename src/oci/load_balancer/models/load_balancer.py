@@ -82,6 +82,10 @@ class LoadBalancer(object):
             The value to assign to the shape_name property of this LoadBalancer.
         :type shape_name: str
 
+        :param shape_details:
+            The value to assign to the shape_details property of this LoadBalancer.
+        :type shape_details: oci.load_balancer.models.ShapeDetails
+
         :param is_private:
             The value to assign to the is_private property of this LoadBalancer.
         :type is_private: bool
@@ -143,6 +147,7 @@ class LoadBalancer(object):
             'time_created': 'datetime',
             'ip_addresses': 'list[IpAddress]',
             'shape_name': 'str',
+            'shape_details': 'ShapeDetails',
             'is_private': 'bool',
             'subnet_ids': 'list[str]',
             'network_security_group_ids': 'list[str]',
@@ -166,6 +171,7 @@ class LoadBalancer(object):
             'time_created': 'timeCreated',
             'ip_addresses': 'ipAddresses',
             'shape_name': 'shapeName',
+            'shape_details': 'shapeDetails',
             'is_private': 'isPrivate',
             'subnet_ids': 'subnetIds',
             'network_security_group_ids': 'networkSecurityGroupIds',
@@ -188,6 +194,7 @@ class LoadBalancer(object):
         self._time_created = None
         self._ip_addresses = None
         self._shape_name = None
+        self._shape_details = None
         self._is_private = None
         self._subnet_ids = None
         self._network_security_group_ids = None
@@ -399,6 +406,26 @@ class LoadBalancer(object):
         :type: str
         """
         self._shape_name = shape_name
+
+    @property
+    def shape_details(self):
+        """
+        Gets the shape_details of this LoadBalancer.
+
+        :return: The shape_details of this LoadBalancer.
+        :rtype: oci.load_balancer.models.ShapeDetails
+        """
+        return self._shape_details
+
+    @shape_details.setter
+    def shape_details(self, shape_details):
+        """
+        Sets the shape_details of this LoadBalancer.
+
+        :param shape_details: The shape_details of this LoadBalancer.
+        :type: oci.load_balancer.models.ShapeDetails
+        """
+        self._shape_details = shape_details
 
     @property
     def is_private(self):

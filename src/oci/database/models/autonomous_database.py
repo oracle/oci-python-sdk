@@ -117,6 +117,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "AJD"
     DB_WORKLOAD_AJD = "AJD"
 
+    #: A constant which can be used with the db_workload property of a AutonomousDatabase.
+    #: This constant has a value of "APEX"
+    DB_WORKLOAD_APEX = "APEX"
+
     #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
     #: This constant has a value of "REGISTERING"
     DATA_SAFE_STATUS_REGISTERING = "REGISTERING"
@@ -260,6 +264,10 @@ class AutonomousDatabase(object):
             The value to assign to the data_storage_size_in_tbs property of this AutonomousDatabase.
         :type data_storage_size_in_tbs: int
 
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this AutonomousDatabase.
+        :type data_storage_size_in_gbs: int
+
         :param infrastructure_type:
             The value to assign to the infrastructure_type property of this AutonomousDatabase.
             Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
@@ -342,7 +350,7 @@ class AutonomousDatabase(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDatabase.
-            Allowed values for this property are: "OLTP", "DW", "AJD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
@@ -353,6 +361,10 @@ class AutonomousDatabase(object):
         :param whitelisted_ips:
             The value to assign to the whitelisted_ips property of this AutonomousDatabase.
         :type whitelisted_ips: list[str]
+
+        :param apex_details:
+            The value to assign to the apex_details property of this AutonomousDatabase.
+        :type apex_details: oci.database.models.AutonomousDatabaseApex
 
         :param is_auto_scaling_enabled:
             The value to assign to the is_auto_scaling_enabled property of this AutonomousDatabase.
@@ -474,6 +486,7 @@ class AutonomousDatabase(object):
             'backup_config': 'AutonomousDatabaseBackupConfig',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
+            'data_storage_size_in_gbs': 'int',
             'infrastructure_type': 'str',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
@@ -496,6 +509,7 @@ class AutonomousDatabase(object):
             'db_workload': 'str',
             'is_access_control_enabled': 'bool',
             'whitelisted_ips': 'list[str]',
+            'apex_details': 'AutonomousDatabaseApex',
             'is_auto_scaling_enabled': 'bool',
             'data_safe_status': 'str',
             'operations_insights_status': 'str',
@@ -534,6 +548,7 @@ class AutonomousDatabase(object):
             'backup_config': 'backupConfig',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'infrastructure_type': 'infrastructureType',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
@@ -556,6 +571,7 @@ class AutonomousDatabase(object):
             'db_workload': 'dbWorkload',
             'is_access_control_enabled': 'isAccessControlEnabled',
             'whitelisted_ips': 'whitelistedIps',
+            'apex_details': 'apexDetails',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'data_safe_status': 'dataSafeStatus',
             'operations_insights_status': 'operationsInsightsStatus',
@@ -593,6 +609,7 @@ class AutonomousDatabase(object):
         self._backup_config = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._infrastructure_type = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
@@ -615,6 +632,7 @@ class AutonomousDatabase(object):
         self._db_workload = None
         self._is_access_control_enabled = None
         self._whitelisted_ips = None
+        self._apex_details = None
         self._is_auto_scaling_enabled = None
         self._data_safe_status = None
         self._operations_insights_status = None
@@ -944,6 +962,30 @@ class AutonomousDatabase(object):
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
 
     @property
+    def data_storage_size_in_gbs(self):
+        """
+        Gets the data_storage_size_in_gbs of this AutonomousDatabase.
+        The quantity of data in the database, in gigabytes.
+
+
+        :return: The data_storage_size_in_gbs of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._data_storage_size_in_gbs
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+        """
+        Sets the data_storage_size_in_gbs of this AutonomousDatabase.
+        The quantity of data in the database, in gigabytes.
+
+
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this AutonomousDatabase.
+        :type: int
+        """
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
+
+    @property
     def infrastructure_type(self):
         """
         Gets the infrastructure_type of this AutonomousDatabase.
@@ -1149,7 +1191,9 @@ class AutonomousDatabase(object):
     def license_model(self):
         """
         Gets the license_model of this AutonomousDatabase.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
+        License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
+        Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
@@ -1168,7 +1212,9 @@ class AutonomousDatabase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this AutonomousDatabase.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
+        License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
+        Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
@@ -1480,8 +1526,9 @@ class AutonomousDatabase(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
+        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1499,12 +1546,13 @@ class AutonomousDatabase(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
+        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
 
 
         :param db_workload: The db_workload of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload
@@ -1590,6 +1638,30 @@ class AutonomousDatabase(object):
         :type: list[str]
         """
         self._whitelisted_ips = whitelisted_ips
+
+    @property
+    def apex_details(self):
+        """
+        Gets the apex_details of this AutonomousDatabase.
+        Information about Autonomous Application Express.
+
+
+        :return: The apex_details of this AutonomousDatabase.
+        :rtype: oci.database.models.AutonomousDatabaseApex
+        """
+        return self._apex_details
+
+    @apex_details.setter
+    def apex_details(self, apex_details):
+        """
+        Sets the apex_details of this AutonomousDatabase.
+        Information about Autonomous Application Express.
+
+
+        :param apex_details: The apex_details of this AutonomousDatabase.
+        :type: oci.database.models.AutonomousDatabaseApex
+        """
+        self._apex_details = apex_details
 
     @property
     def is_auto_scaling_enabled(self):

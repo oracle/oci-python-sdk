@@ -1490,6 +1490,14 @@ class KmsManagementClient(object):
 
             Allowed values are: "HSM", "SOFTWARE"
 
+        :param str algorithm: (optional)
+            The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.
+
+            Allowed values are: "AES"
+
+        :param int length: (optional)
+            The length of the key in bytes, expressed as an integer. Values of 16, 24, or 32 are supported.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1515,7 +1523,9 @@ class KmsManagementClient(object):
             "opc_request_id",
             "sort_by",
             "sort_order",
-            "protection_mode"
+            "protection_mode",
+            "algorithm",
+            "length"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1543,13 +1553,22 @@ class KmsManagementClient(object):
                     "Invalid value for `protection_mode`, must be one of {0}".format(protection_mode_allowed_values)
                 )
 
+        if 'algorithm' in kwargs:
+            algorithm_allowed_values = ["AES"]
+            if kwargs['algorithm'] not in algorithm_allowed_values:
+                raise ValueError(
+                    "Invalid value for `algorithm`, must be one of {0}".format(algorithm_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "protectionMode": kwargs.get("protection_mode", missing)
+            "protectionMode": kwargs.get("protection_mode", missing),
+            "algorithm": kwargs.get("algorithm", missing),
+            "length": kwargs.get("length", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

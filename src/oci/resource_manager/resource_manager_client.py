@@ -536,8 +536,8 @@ class ResourceManagerClient(object):
     def create_stack(self, create_stack_details, **kwargs):
         """
         Creates a stack in the specified compartment.
-        You can create a stack from a Terraform configuration file.
-        The Terraform configuration file can be directly uploaded or referenced from a source code control system.
+        You can create a stack from a Terraform configuration.
+        The Terraform configuration can be directly uploaded or referenced from a source code control system.
         You can also create a stack from an existing compartment.
         For more information, see
         `To create a stack`__.
@@ -1777,6 +1777,9 @@ class ResourceManagerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str config_source_provider_type: (optional)
+            A filter to return only configuration source providers of the specified type (GitHub or GitLab).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1804,7 +1807,8 @@ class ResourceManagerClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "config_source_provider_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1832,7 +1836,8 @@ class ResourceManagerClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "configSourceProviderType": kwargs.get("config_source_provider_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

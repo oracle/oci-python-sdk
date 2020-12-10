@@ -132,6 +132,10 @@ class Database(object):
             The value to assign to the connection_strings property of this Database.
         :type connection_strings: oci.database.models.DatabaseConnectionStrings
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this Database.
+        :type kms_key_id: str
+
         :param source_database_point_in_time_recovery_timestamp:
             The value to assign to the source_database_point_in_time_recovery_timestamp property of this Database.
         :type source_database_point_in_time_recovery_timestamp: datetime
@@ -161,6 +165,7 @@ class Database(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'connection_strings': 'DatabaseConnectionStrings',
+            'kms_key_id': 'str',
             'source_database_point_in_time_recovery_timestamp': 'datetime',
             'database_software_image_id': 'str'
         }
@@ -185,6 +190,7 @@ class Database(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'connection_strings': 'connectionStrings',
+            'kms_key_id': 'kmsKeyId',
             'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp',
             'database_software_image_id': 'databaseSoftwareImageId'
         }
@@ -208,6 +214,7 @@ class Database(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._connection_strings = None
+        self._kms_key_id = None
         self._source_database_point_in_time_recovery_timestamp = None
         self._database_software_image_id = None
 
@@ -499,7 +506,7 @@ class Database(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Database.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this Database.
@@ -511,7 +518,7 @@ class Database(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Database.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this Database.
@@ -704,6 +711,30 @@ class Database(object):
         :type: oci.database.models.DatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this Database.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this Database.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this Database.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this Database.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def source_database_point_in_time_recovery_timestamp(self):

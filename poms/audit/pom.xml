@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.pic.sherlock</groupId>
         <artifactId>hemlock-spec</artifactId>
-        <version>0.8.2</version>
+        <version>1.0.4</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

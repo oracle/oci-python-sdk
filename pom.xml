@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/rover/pom.xml</module>
     <module>poms/tenant_manager_control_plane/pom.xml</module>
     <module>poms/optimizer/pom.xml</module>
     <module>poms/compute_instance_agent/pom.xml</module>

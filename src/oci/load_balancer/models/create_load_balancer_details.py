@@ -40,6 +40,10 @@ class CreateLoadBalancerDetails(object):
             The value to assign to the shape_name property of this CreateLoadBalancerDetails.
         :type shape_name: str
 
+        :param shape_details:
+            The value to assign to the shape_details property of this CreateLoadBalancerDetails.
+        :type shape_details: oci.load_balancer.models.ShapeDetails
+
         :param is_private:
             The value to assign to the is_private property of this CreateLoadBalancerDetails.
         :type is_private: bool
@@ -102,6 +106,7 @@ class CreateLoadBalancerDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'shape_name': 'str',
+            'shape_details': 'ShapeDetails',
             'is_private': 'bool',
             'ip_mode': 'str',
             'reserved_ips': 'list[ReservedIP]',
@@ -122,6 +127,7 @@ class CreateLoadBalancerDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'shape_name': 'shapeName',
+            'shape_details': 'shapeDetails',
             'is_private': 'isPrivate',
             'ip_mode': 'ipMode',
             'reserved_ips': 'reservedIps',
@@ -141,6 +147,7 @@ class CreateLoadBalancerDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._shape_name = None
+        self._shape_details = None
         self._is_private = None
         self._ip_mode = None
         self._reserved_ips = None
@@ -245,6 +252,30 @@ class CreateLoadBalancerDetails(object):
         :type: str
         """
         self._shape_name = shape_name
+
+    @property
+    def shape_details(self):
+        """
+        Gets the shape_details of this CreateLoadBalancerDetails.
+        The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
+
+
+        :return: The shape_details of this CreateLoadBalancerDetails.
+        :rtype: oci.load_balancer.models.ShapeDetails
+        """
+        return self._shape_details
+
+    @shape_details.setter
+    def shape_details(self, shape_details):
+        """
+        Sets the shape_details of this CreateLoadBalancerDetails.
+        The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
+
+
+        :param shape_details: The shape_details of this CreateLoadBalancerDetails.
+        :type: oci.load_balancer.models.ShapeDetails
+        """
+        self._shape_details = shape_details
 
     @property
     def is_private(self):

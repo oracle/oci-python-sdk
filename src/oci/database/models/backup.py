@@ -132,6 +132,10 @@ class Backup(object):
             The value to assign to the version property of this Backup.
         :type version: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this Backup.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -147,7 +151,8 @@ class Backup(object):
             'database_edition': 'str',
             'database_size_in_gbs': 'float',
             'shape': 'str',
-            'version': 'str'
+            'version': 'str',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -164,7 +169,8 @@ class Backup(object):
             'database_edition': 'databaseEdition',
             'database_size_in_gbs': 'databaseSizeInGBs',
             'shape': 'shape',
-            'version': 'version'
+            'version': 'version',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._id = None
@@ -181,6 +187,7 @@ class Backup(object):
         self._database_size_in_gbs = None
         self._shape = None
         self._version = None
+        self._kms_key_id = None
 
     @property
     def id(self):
@@ -372,7 +379,7 @@ class Backup(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Backup.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this Backup.
@@ -384,7 +391,7 @@ class Backup(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Backup.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this Backup.
@@ -547,6 +554,30 @@ class Backup(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this Backup.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this Backup.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this Backup.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this Backup.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -153,7 +153,7 @@ class UpdateDatabaseDetails(object):
     def old_tde_wallet_password(self):
         """
         Gets the old_tde_wallet_password of this UpdateDatabaseDetails.
-        The existing password to open the TDE wallet. It is required to set a new tde password.
+        The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
 
 
         :return: The old_tde_wallet_password of this UpdateDatabaseDetails.
@@ -165,7 +165,7 @@ class UpdateDatabaseDetails(object):
     def old_tde_wallet_password(self, old_tde_wallet_password):
         """
         Sets the old_tde_wallet_password of this UpdateDatabaseDetails.
-        The existing password to open the TDE wallet. It is required to set a new tde password.
+        The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
 
 
         :param old_tde_wallet_password: The old_tde_wallet_password of this UpdateDatabaseDetails.

@@ -35,25 +35,32 @@ class SearchResultCollection(object):
             The value to assign to the faceted_search_aggregation property of this SearchResultCollection.
         :type faceted_search_aggregation: list[oci.data_catalog.models.FacetedSearchAggregation]
 
+        :param sortable_fields:
+            The value to assign to the sortable_fields property of this SearchResultCollection.
+        :type sortable_fields: list[str]
+
         """
         self.swagger_types = {
             'count': 'int',
             'items': 'list[SearchResult]',
             'query': 'str',
-            'faceted_search_aggregation': 'list[FacetedSearchAggregation]'
+            'faceted_search_aggregation': 'list[FacetedSearchAggregation]',
+            'sortable_fields': 'list[str]'
         }
 
         self.attribute_map = {
             'count': 'count',
             'items': 'items',
             'query': 'query',
-            'faceted_search_aggregation': 'facetedSearchAggregation'
+            'faceted_search_aggregation': 'facetedSearchAggregation',
+            'sortable_fields': 'sortableFields'
         }
 
         self._count = None
         self._items = None
         self._query = None
         self._faceted_search_aggregation = None
+        self._sortable_fields = None
 
     @property
     def count(self):
@@ -150,6 +157,30 @@ class SearchResultCollection(object):
         :type: list[oci.data_catalog.models.FacetedSearchAggregation]
         """
         self._faceted_search_aggregation = faceted_search_aggregation
+
+    @property
+    def sortable_fields(self):
+        """
+        Gets the sortable_fields of this SearchResultCollection.
+        A list of fields or properties used in the sorting of a search result.
+
+
+        :return: The sortable_fields of this SearchResultCollection.
+        :rtype: list[str]
+        """
+        return self._sortable_fields
+
+    @sortable_fields.setter
+    def sortable_fields(self, sortable_fields):
+        """
+        Sets the sortable_fields of this SearchResultCollection.
+        A list of fields or properties used in the sorting of a search result.
+
+
+        :param sortable_fields: The sortable_fields of this SearchResultCollection.
+        :type: list[str]
+        """
+        self._sortable_fields = sortable_fields
 
     def __repr__(self):
         return formatted_flat_dict(self)

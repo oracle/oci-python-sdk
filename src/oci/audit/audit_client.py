@@ -82,7 +82,7 @@ class AuditClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20190901',
-            'service_endpoint_template': 'https://audit.{region}.oraclecloud.com',
+            'service_endpoint_template': 'https://audit.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("audit", config, signer, audit_type_mapping, **base_client_init_kwargs)

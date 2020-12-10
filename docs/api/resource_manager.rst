@@ -35,6 +35,7 @@ Resource Manager
     oci.resource_manager.models.CreateConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateDestroyJobOperationDetails
     oci.resource_manager.models.CreateGitConfigSourceDetails
+    oci.resource_manager.models.CreateGithubAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateImportTfStateJobOperationDetails
     oci.resource_manager.models.CreateJobDetails
@@ -47,6 +48,8 @@ Resource Manager
     oci.resource_manager.models.FailureDetails
     oci.resource_manager.models.GitConfigSource
     oci.resource_manager.models.GitConfigSourceRecord
+    oci.resource_manager.models.GithubAccessTokenConfigurationSourceProvider
+    oci.resource_manager.models.GithubAccessTokenConfigurationSourceProviderSummary
     oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProvider
     oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProviderSummary
     oci.resource_manager.models.ImportTfStateJobOperationDetails
@@ -69,6 +72,7 @@ Resource Manager
     oci.resource_manager.models.UpdateConfigSourceDetails
     oci.resource_manager.models.UpdateConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateGitConfigSourceDetails
+    oci.resource_manager.models.UpdateGithubAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateJobDetails
     oci.resource_manager.models.UpdateStackDetails

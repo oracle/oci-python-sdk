@@ -127,6 +127,14 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemFromBackupDetails.
         :type initial_data_storage_size_in_gb: int
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this LaunchDbSystemFromBackupDetails.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this LaunchDbSystemFromBackupDetails.
+        :type kms_key_version_id: str
+
         :param node_count:
             The value to assign to the node_count property of this LaunchDbSystemFromBackupDetails.
         :type node_count: int
@@ -188,6 +196,8 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
             'initial_data_storage_size_in_gb': 'int',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -219,6 +229,8 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
             'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -249,6 +261,8 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._cluster_name = None
         self._data_storage_percentage = None
         self._initial_data_storage_size_in_gb = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._node_count = None
         self._freeform_tags = None
         self._defined_tags = None

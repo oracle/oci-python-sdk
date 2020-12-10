@@ -79,6 +79,9 @@ API Reference
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
+* :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
+* :doc:`Rover Entitlement <rover/client/oci.rover.RoverEntitlementClient>`
+* :doc:`Rover Node <rover/client/oci.rover.RoverNodeClient>`
 * :doc:`Service Connector <sch/client/oci.sch.ServiceConnectorClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
@@ -162,6 +165,7 @@ API Reference
     os_management
     resource_manager
     resource_search
+    rover
     sch
     secrets
     streaming

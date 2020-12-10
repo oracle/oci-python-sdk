@@ -688,86 +688,6 @@ def test_create_autonomous_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_create_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDataWarehouse'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousDataWarehouse')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousDataWarehouse')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.create_autonomous_data_warehouse(
-                create_autonomous_data_warehouse_details=request.pop(util.camelize('CreateAutonomousDataWarehouseDetails')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'CreateAutonomousDataWarehouse',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouse',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_create_autonomous_data_warehouse_backup(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDataWarehouseBackup'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousDataWarehouseBackup')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousDataWarehouseBackup')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.create_autonomous_data_warehouse_backup(
-                create_autonomous_data_warehouse_backup_details=request.pop(util.camelize('CreateAutonomousDataWarehouseBackupDetails')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'CreateAutonomousDataWarehouseBackup',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouseBackup',
-            False,
-            False
-        )
-
-
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabase'):
@@ -1488,46 +1408,6 @@ def test_db_node_action(testing_service_client):
             service_error,
             'dbNode',
             False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_delete_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousDataWarehouse'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteAutonomousDataWarehouse')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteAutonomousDataWarehouse')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.delete_autonomous_data_warehouse(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'DeleteAutonomousDataWarehouse',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'delete_autonomous_data_warehouse',
-            True,
             False
         )
 
@@ -2418,47 +2298,6 @@ def test_failover_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_generate_autonomous_data_warehouse_wallet(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'GenerateAutonomousDataWarehouseWallet'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'GenerateAutonomousDataWarehouseWallet')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='GenerateAutonomousDataWarehouseWallet')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.generate_autonomous_data_warehouse_wallet(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
-                generate_autonomous_data_warehouse_wallet_details=request.pop(util.camelize('GenerateAutonomousDataWarehouseWalletDetails')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'GenerateAutonomousDataWarehouseWallet',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'stream',
-            False,
-            False
-        )
-
-
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_generate_autonomous_database_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GenerateAutonomousDatabaseWallet'):
@@ -2617,86 +2456,6 @@ def test_get_autonomous_container_database_dataguard_association(testing_service
             result,
             service_error,
             'autonomousContainerDatabaseDataguardAssociation',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_get_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'GetAutonomousDataWarehouse'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDataWarehouse')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDataWarehouse')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.get_autonomous_data_warehouse(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'GetAutonomousDataWarehouse',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouse',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_get_autonomous_data_warehouse_backup(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'GetAutonomousDataWarehouseBackup'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDataWarehouseBackup')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDataWarehouseBackup')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.get_autonomous_data_warehouse_backup(
-                autonomous_data_warehouse_backup_id=request.pop(util.camelize('autonomousDataWarehouseBackupId')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'GetAutonomousDataWarehouseBackup',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouseBackup',
             False,
             False
         )
@@ -4389,123 +4148,6 @@ def test_list_autonomous_container_databases(testing_service_client):
             result,
             service_error,
             'autonomousContainerDatabaseSummary',
-            False,
-            True
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_list_autonomous_data_warehouse_backups(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'ListAutonomousDataWarehouseBackups'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDataWarehouseBackups')
-    )
-    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDataWarehouseBackups')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.list_autonomous_data_warehouse_backups(
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-            if not mock_mode and response.has_next_page:
-                next_page = response.headers['opc-next-page']
-                request = request_containers[i]['request'].copy()
-                next_response = client.list_autonomous_data_warehouse_backups(
-                    page=next_page,
-                    **(util.camel_to_snake_keys(request))
-                )
-                result.append(next_response)
-
-                prev_page = 'opc-prev-page'
-                if prev_page in next_response.headers:
-                    request = request_containers[i]['request'].copy()
-                    prev_response = client.list_autonomous_data_warehouse_backups(
-                        page=next_response.headers[prev_page],
-                        **(util.camel_to_snake_keys(request))
-                    )
-                    result.append(prev_response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'ListAutonomousDataWarehouseBackups',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouseBackupSummary',
-            False,
-            True
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_list_autonomous_data_warehouses(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'ListAutonomousDataWarehouses'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDataWarehouses')
-    )
-    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDataWarehouses')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.list_autonomous_data_warehouses(
-                compartment_id=request.pop(util.camelize('compartmentId')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-            if not mock_mode and response.has_next_page:
-                next_page = response.headers['opc-next-page']
-                request = request_containers[i]['request'].copy()
-                next_response = client.list_autonomous_data_warehouses(
-                    compartment_id=request.pop(util.camelize('compartmentId')),
-                    page=next_page,
-                    **(util.camel_to_snake_keys(request))
-                )
-                result.append(next_response)
-
-                prev_page = 'opc-prev-page'
-                if prev_page in next_response.headers:
-                    request = request_containers[i]['request'].copy()
-                    prev_response = client.list_autonomous_data_warehouses(
-                        compartment_id=request.pop(util.camelize('compartmentId')),
-                        page=next_response.headers[prev_page],
-                        **(util.camel_to_snake_keys(request))
-                    )
-                    result.append(prev_response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'ListAutonomousDataWarehouses',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouseSummary',
             False,
             True
         )
@@ -6355,6 +5997,66 @@ def test_list_exadata_infrastructures(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_flex_components(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListFlexComponents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListFlexComponents')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListFlexComponents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_flex_components(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_flex_components(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_flex_components(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListFlexComponents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'flexComponentCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_gi_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListGiVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6817,6 +6519,47 @@ def test_migrate_exadata_db_system_resource_model(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_migrate_vault_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'MigrateVaultKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'MigrateVaultKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='MigrateVaultKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.migrate_vault_key(
+                database_id=request.pop(util.camelize('databaseId')),
+                migrate_vault_key_details=request.pop(util.camelize('MigrateVaultKeyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'MigrateVaultKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'database',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_register_autonomous_database_data_safe(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RegisterAutonomousDatabaseDataSafe'):
@@ -7015,47 +6758,6 @@ def test_restart_autonomous_database(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_restore_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'RestoreAutonomousDataWarehouse'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'RestoreAutonomousDataWarehouse')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='RestoreAutonomousDataWarehouse')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.restore_autonomous_data_warehouse(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
-                restore_autonomous_data_warehouse_details=request.pop(util.camelize('RestoreAutonomousDataWarehouseDetails')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'RestoreAutonomousDataWarehouse',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouse',
             False,
             False
         )
@@ -7304,15 +7006,15 @@ def test_rotate_ssl_certs(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_start_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'StartAutonomousDataWarehouse'):
+def test_rotate_vault_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateVaultKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
 
     config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'StartAutonomousDataWarehouse')
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateVaultKey')
     )
 
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='StartAutonomousDataWarehouse')
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateVaultKey')
 
     for i in range(len(request_containers)):
         request = request_containers[i]['request'].copy()
@@ -7322,8 +7024,8 @@ def test_start_autonomous_data_warehouse(testing_service_client):
         try:
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.start_autonomous_data_warehouse(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
+            response = client.rotate_vault_key(
+                database_id=request.pop(util.camelize('databaseId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7332,12 +7034,12 @@ def test_start_autonomous_data_warehouse(testing_service_client):
 
         testing_service_client.validate_result(
             'database',
-            'StartAutonomousDataWarehouse',
+            'RotateVaultKey',
             request_containers[i]['containerId'],
             request_containers[i]['request'],
             result,
             service_error,
-            'autonomousDataWarehouse',
+            'database',
             False,
             False
         )
@@ -7378,46 +7080,6 @@ def test_start_autonomous_database(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_stop_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'StopAutonomousDataWarehouse'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'StopAutonomousDataWarehouse')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='StopAutonomousDataWarehouse')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.stop_autonomous_data_warehouse(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'StopAutonomousDataWarehouse',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouse',
             False,
             False
         )
@@ -7742,47 +7404,6 @@ def test_update_autonomous_container_database(testing_service_client):
             result,
             service_error,
             'autonomousContainerDatabase',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
-def test_update_autonomous_data_warehouse(testing_service_client):
-    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDataWarehouse'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousDataWarehouse')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousDataWarehouse')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
-            response = client.update_autonomous_data_warehouse(
-                autonomous_data_warehouse_id=request.pop(util.camelize('autonomousDataWarehouseId')),
-                update_autonomous_data_warehouse_details=request.pop(util.camelize('UpdateAutonomousDataWarehouseDetails')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'database',
-            'UpdateAutonomousDataWarehouse',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'autonomousDataWarehouse',
             False,
             False
         )

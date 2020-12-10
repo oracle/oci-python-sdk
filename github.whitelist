@@ -102,3 +102,4 @@
 ^src/oci/compute_instance_agent/.*\.py$
 ^src/oci/optimizer/.*\.py$
 ^src/oci/tenant_manager_control_plane/.*\.py$
+^src/oci/rover/.*\.py$

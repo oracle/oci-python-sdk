@@ -26,12 +26,10 @@ Database
     oci.database.models.AutonomousContainerDatabaseDataguardAssociation
     oci.database.models.AutonomousContainerDatabaseSummary
     oci.database.models.AutonomousDataWarehouse
-    oci.database.models.AutonomousDataWarehouseBackup
-    oci.database.models.AutonomousDataWarehouseBackupSummary
     oci.database.models.AutonomousDataWarehouseConnectionStrings
-    oci.database.models.AutonomousDataWarehouseConsoleTokenDetails
     oci.database.models.AutonomousDataWarehouseSummary
     oci.database.models.AutonomousDatabase
+    oci.database.models.AutonomousDatabaseApex
     oci.database.models.AutonomousDatabaseBackup
     oci.database.models.AutonomousDatabaseBackupConfig
     oci.database.models.AutonomousDatabaseBackupSummary
@@ -72,8 +70,6 @@ Database
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
     oci.database.models.CreateAutonomousContainerDatabaseDetails
-    oci.database.models.CreateAutonomousDataWarehouseBackupDetails
-    oci.database.models.CreateAutonomousDataWarehouseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
     oci.database.models.CreateAutonomousDatabaseBase
     oci.database.models.CreateAutonomousDatabaseCloneDetails
@@ -151,7 +147,8 @@ Database
     oci.database.models.ExadataIormConfigUpdateDetails
     oci.database.models.ExternalBackupJob
     oci.database.models.FailoverDataGuardAssociationDetails
-    oci.database.models.GenerateAutonomousDataWarehouseWalletDetails
+    oci.database.models.FlexComponentCollection
+    oci.database.models.FlexComponentSummary
     oci.database.models.GenerateAutonomousDatabaseWalletDetails
     oci.database.models.GenerateRecommendedNetworkDetails
     oci.database.models.GiVersionSummary
@@ -170,6 +167,7 @@ Database
     oci.database.models.MaintenanceRun
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow
+    oci.database.models.MigrateVaultKeyDetails
     oci.database.models.Month
     oci.database.models.MountTypeDetails
     oci.database.models.NodeDetails
@@ -182,7 +180,6 @@ Database
     oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
-    oci.database.models.RestoreAutonomousDataWarehouseDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.ScanDetails
@@ -190,7 +187,6 @@ Database
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
-    oci.database.models.UpdateAutonomousDataWarehouseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
     oci.database.models.UpdateAutonomousDatabaseWalletDetails
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails

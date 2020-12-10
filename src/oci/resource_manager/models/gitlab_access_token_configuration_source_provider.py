@@ -47,7 +47,7 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
 
         :param config_source_provider_type:
             The value to assign to the config_source_provider_type property of this GitlabAccessTokenConfigurationSourceProvider.
-            Allowed values for this property are: "GITLAB_ACCESS_TOKEN"
+            Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"
         :type config_source_provider_type: str
 
         :param freeform_tags:
@@ -105,8 +105,8 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
     def api_endpoint(self):
         """
         Gets the api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
-        The Git service API endpoint.
-        Example: `https://gitlab.com/api/v4/`
+        The Git service endpoint.
+        Example: `https://gitlab.com`
 
 
         :return: The api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
@@ -118,8 +118,8 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
     def api_endpoint(self, api_endpoint):
         """
         Sets the api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
-        The Git service API endpoint.
-        Example: `https://gitlab.com/api/v4/`
+        The Git service endpoint.
+        Example: `https://gitlab.com`
 
 
         :param api_endpoint: The api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.

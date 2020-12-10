@@ -100,6 +100,10 @@ class DbHomeSummary(object):
             The value to assign to the time_created property of this DbHomeSummary.
         :type time_created: datetime
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this DbHomeSummary.
+        :type kms_key_id: str
+
         :param one_off_patches:
             The value to assign to the one_off_patches property of this DbHomeSummary.
         :type one_off_patches: list[str]
@@ -129,6 +133,7 @@ class DbHomeSummary(object):
             'db_home_location': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
+            'kms_key_id': 'str',
             'one_off_patches': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -147,6 +152,7 @@ class DbHomeSummary(object):
             'db_home_location': 'dbHomeLocation',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
+            'kms_key_id': 'kmsKeyId',
             'one_off_patches': 'oneOffPatches',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -164,6 +170,7 @@ class DbHomeSummary(object):
         self._db_home_location = None
         self._lifecycle_details = None
         self._time_created = None
+        self._kms_key_id = None
         self._one_off_patches = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -415,7 +422,7 @@ class DbHomeSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DbHomeSummary.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this DbHomeSummary.
@@ -427,7 +434,7 @@ class DbHomeSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DbHomeSummary.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this DbHomeSummary.
@@ -458,6 +465,30 @@ class DbHomeSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this DbHomeSummary.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this DbHomeSummary.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this DbHomeSummary.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def one_off_patches(self):

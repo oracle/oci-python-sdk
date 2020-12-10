@@ -82,8 +82,8 @@ class UpdateGitlabAccessTokenConfigurationSourceProviderDetails(UpdateConfigurat
     def api_endpoint(self):
         """
         Gets the api_endpoint of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The Git service API endpoint.
-        Example: `https://gitlab.com/api/v4/`
+        The Git service endpoint.
+        Example: `https://gitlab.com`
 
 
         :return: The api_endpoint of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -95,8 +95,8 @@ class UpdateGitlabAccessTokenConfigurationSourceProviderDetails(UpdateConfigurat
     def api_endpoint(self, api_endpoint):
         """
         Sets the api_endpoint of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The Git service API endpoint.
-        Example: `https://gitlab.com/api/v4/`
+        The Git service endpoint.
+        Example: `https://gitlab.com`
 
 
         :param api_endpoint: The api_endpoint of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -108,7 +108,7 @@ class UpdateGitlabAccessTokenConfigurationSourceProviderDetails(UpdateConfigurat
     def access_token(self):
         """
         Gets the access_token of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The personal access token to be configured on the Git repository.
+        The personal access token to be configured on the GitLab repository.
 
 
         :return: The access_token of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -120,7 +120,7 @@ class UpdateGitlabAccessTokenConfigurationSourceProviderDetails(UpdateConfigurat
     def access_token(self, access_token):
         """
         Sets the access_token of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The personal access token to be configured on the Git repository.
+        The personal access token to be configured on the GitLab repository.
 
 
         :param access_token: The access_token of this UpdateGitlabAccessTokenConfigurationSourceProviderDetails.

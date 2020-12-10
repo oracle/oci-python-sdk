@@ -341,7 +341,7 @@ class MaintenanceRun(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this MaintenanceRun.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this MaintenanceRun.
@@ -353,7 +353,7 @@ class MaintenanceRun(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this MaintenanceRun.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this MaintenanceRun.

@@ -3130,6 +3130,7 @@ def test_list_aggregated_physical_entities(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListAggregatedPhysicalEntities')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListAggregatedPhysicalEntities')
 
@@ -3148,6 +3149,29 @@ def test_list_aggregated_physical_entities(testing_service_client):
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_aggregated_physical_entities(
+                    catalog_id=request.pop(util.camelize('catalogId')),
+                    data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                    entity_key=request.pop(util.camelize('entityKey')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_aggregated_physical_entities(
+                        catalog_id=request.pop(util.camelize('catalogId')),
+                        data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                        entity_key=request.pop(util.camelize('entityKey')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
         except oci_exception.ServiceError as service_exception:
             service_error = service_exception
 
@@ -3160,7 +3184,7 @@ def test_list_aggregated_physical_entities(testing_service_client):
             service_error,
             'entityCollection',
             False,
-            False
+            True
         )
 
 
@@ -3676,6 +3700,7 @@ def test_list_derived_logical_entities(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListDerivedLogicalEntities')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListDerivedLogicalEntities')
 
@@ -3693,6 +3718,27 @@ def test_list_derived_logical_entities(testing_service_client):
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_derived_logical_entities(
+                    catalog_id=request.pop(util.camelize('catalogId')),
+                    pattern_key=request.pop(util.camelize('patternKey')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_derived_logical_entities(
+                        catalog_id=request.pop(util.camelize('catalogId')),
+                        pattern_key=request.pop(util.camelize('patternKey')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
         except oci_exception.ServiceError as service_exception:
             service_error = service_exception
 
@@ -3705,7 +3751,7 @@ def test_list_derived_logical_entities(testing_service_client):
             service_error,
             'entityCollection',
             False,
-            False
+            True
         )
 
 
@@ -4457,6 +4503,72 @@ def test_list_patterns(testing_service_client):
             result,
             service_error,
             'patternCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_rules(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                entity_key=request.pop(util.camelize('entityKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_rules(
+                    catalog_id=request.pop(util.camelize('catalogId')),
+                    data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                    entity_key=request.pop(util.camelize('entityKey')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_rules(
+                        catalog_id=request.pop(util.camelize('catalogId')),
+                        data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                        entity_key=request.pop(util.camelize('entityKey')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ruleCollection',
             False,
             True
         )
