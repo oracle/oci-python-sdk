@@ -590,6 +590,61 @@ class ShowOCIData(object):
             pass
 
     ##########################################################################
+    # __get_core_network_vcn_vlans
+    ##########################################################################
+
+    def __get_core_network_vcn_vlans(self, vcn_id):
+        data = []
+        try:
+            vlans = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_VLAN, 'vcn_id', vcn_id)
+            if not vlans:
+                return data
+
+            for vlan in vlans:
+
+                # get the list of NSGs
+                nsgs = []
+                if 'nsg_ids' in vlan:
+                    for nsg in vlan['nsg_ids']:
+                        nsg_obj = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', nsg)
+                        if nsg_obj:
+                            nsgs.append(nsg_obj['name'])
+
+                # Get the route and dhcp options
+                route_name = ""
+                if 'route_table_id' in vlan:
+                    route_name_arr = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_ROUTE, 'id', vlan['route_table_id'])
+                    if route_name_arr:
+                        route_name = route_name_arr['name']
+
+                val = ({
+                    'id': vlan['id'],
+                    'vlan': vlan['vlan'],
+                    'availability_domain': vlan['availability_domain'],
+                    'cidr_block': vlan['cidr_block'],
+                    'vlan_tag': vlan['vlan_tag'],
+                    'display_name': vlan['display_name'],
+                    'time_created': vlan['time_created'],
+                    'lifecycle_state': vlan['lifecycle_state'],
+                    'compartment_name': vlan['compartment_name'],
+                    'compartment_id': vlan['compartment_id'],
+                    'nsg': nsgs,
+                    'nsg_ids': vlan['nsg_ids'],
+                    'route': route_name,
+                    'route_table_id': vlan['route_table_id'],
+                    'defined_tags': vlan['defined_tags'],
+                    'freeform_tags': vlan['freeform_tags'],
+                    'region_name': vlan['region_name']
+                })
+                data.append(val)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_core_network_vcn_vlans", e)
+            return data
+            pass
+
+    ##########################################################################
     # Print Network vcn security list
     ##########################################################################
 
@@ -829,6 +884,7 @@ class ShowOCIData(object):
                        'drg_attached': self.__get_core_network_vcn_drg_attached(vcn['id']),
                        'local_peering': self.__get_core_network_vcn_local_peering(vcn['id']),
                        'subnets': self.__get_core_network_vcn_subnets(vcn['id']),
+                       'vlans': self.__get_core_network_vcn_vlans(vcn['id']),
                        'security_lists': self.__get_core_network_vcn_security_lists(vcn['id']),
                        'security_groups': self.__get_core_network_vcn_security_groups(vcn['id']),
                        'route_tables': self.__get_core_network_vcn_route_tables(vcn['id']),
@@ -2846,6 +2902,11 @@ class ShowOCIData(object):
             oce = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCE, 'region_name', region_name, 'compartment_id', compartment['id'])
             if oce:
                 paas_services['oce'] = oce
+
+            # ocvs
+            ocvs = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCVS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if ocvs:
+                paas_services['ocvs'] = ocvs
 
             return paas_services
 

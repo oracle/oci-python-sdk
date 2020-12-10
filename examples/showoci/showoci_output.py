@@ -172,7 +172,9 @@ class ShowOCIOutput(object):
             self.print_header("Users", 2)
 
             for user in users:
-                print(self.taba + user['name'])
+                last_login = "" if user['last_successful_login_time'] == "None" else ", Last Login = " + user['last_successful_login_time'][0:10]
+                mfa_enabled = "" if user['is_mfa_activated'] == "False" else ", MFA Enabled"
+                print(self.taba + user['name'] + mfa_enabled + last_login)
                 print(self.tabs + "Groups     : " + user['groups'])
 
                 if 'api_keys' in user:
@@ -213,7 +215,6 @@ class ShowOCIOutput(object):
     ##########################################################################
     # Print Identity Policies
     ##########################################################################
-
     def __print_identity_policies(self, policies_data):
         try:
             if not policies_data:
@@ -234,6 +235,29 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_identity_policies", e)
+
+    ##########################################################################
+    # Print Tag Namespace
+    ##########################################################################
+    def __print_identity_tag_namespace(self, tag_data):
+        try:
+            if not tag_data:
+                return
+
+            self.print_header("Tag Namespace", 2)
+
+            for c in tag_data:
+                tags = c['tags']
+                if not tags:
+                    continue
+
+                print("\nCompartment " + c['compartment_path'] + ":")
+                for tag in tags:
+                    retired = "" if tag['is_retired'] == "False" else " Retired "
+                    print(self.taba + tag['name'] + retired + " (" + tag['lifecycle_state'] + "), " + tag['description'])
+
+        except Exception as e:
+            self.__print_error("__print_identity_tag_namespace", e)
 
     ##########################################################################
     # Print Identity Providers
@@ -343,6 +367,8 @@ class ShowOCIOutput(object):
                 self.__print_identity_providers(data['providers'])
             if 'cost_tracking_tags' in data:
                 self.__print_identity_cost_tracking_tags(data['cost_tracking_tags'])
+            if 'tag_namespace' in data:
+                self.__print_identity_tag_namespace(data['tag_namespace'])
 
         except Exception as e:
             self.__print_error("__print_identity_data", e)
@@ -375,6 +401,24 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_core_network_vcn_subnet", e)
+
+    ##########################################################################
+    # Print Network VCN VLAN
+    ##########################################################################
+
+    def __print_core_network_vcn_vlan(self, vlans, vcn_compartment):
+        try:
+            for vlan in vlans:
+                print("")
+                print(self.tabs + "VLAN " + vlan['vlan'] + self.__print_core_network_vcn_compartment(vcn_compartment,
+                                                                                                     vlan[
+                                                                                                         'compartment_name']))
+                print(self.tabs + self.tabs + "Route   : " + vlan['route'])
+                for s in vlan['nsg']:
+                    print(self.tabs + self.tabs + "NSG     : " + s)
+
+        except Exception as e:
+            self.__print_error("__print_core_network_vcn_vlan", e)
 
     ##########################################################################
     # get DHCP options for DHCP_ID
@@ -493,6 +537,9 @@ class ShowOCIOutput(object):
 
                 if 'subnets' in vcn['data']:
                     self.__print_core_network_vcn_subnet(vcn['data']['subnets'], vcn_compartment)
+
+                if 'vlans' in vcn['data']:
+                    self.__print_core_network_vcn_vlan(vcn['data']['vlans'], vcn_compartment)
 
                 if 'security_lists' in vcn['data']:
                     self.__print_core_network_vcn_security_lists(vcn['data']['security_lists'], vcn_compartment)
@@ -843,8 +890,7 @@ class ShowOCIOutput(object):
 
                 if 'storage_count' in dbs:
                     if dbs['storage_count'] != "None" and dbs['total_storage_size_in_gbs'] != "None":
-                        print(self.tabs + "Storage : Hosts = " + str(dbs['storage_count']) + ", Total = " + str(
-                            dbs['total_storage_size_in_gbs']) + "GB, Available = " + str(dbs['available_storage_size_in_gbs']) + "GB")
+                        print(self.tabs + "Storage : Hosts = " + str(dbs['storage_count']) + ", Total = " + str(dbs['total_storage_size_in_gbs']) + "GB")
 
                 if 'maintenance_window' in dbs:
                     if dbs['maintenance_window']:
@@ -862,8 +908,17 @@ class ShowOCIOutput(object):
                         if dbs['next_maintenance_run']['maintenance_alert']:
                             print(self.tabs + "          Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
 
+                print("")
+
                 # clusters
                 for vm in dbs['vm_clusters']:
+
+                    if 'display_name' in vm:
+                        print(self.tabs + "VMCLSTR : " + str(vm['display_name']))
+
+                    if 'cluster_name' in vm:
+                        if vm['cluster_name']:
+                            print(self.tabs + "Cluster : " + vm['cluster_name'])
 
                     if 'cpu_core_count' in vm:
                         print(self.tabs + "Cores   : " + str(vm['cpu_core_count']))
@@ -875,10 +930,6 @@ class ShowOCIOutput(object):
                     if 'domain' in vm:
                         if vm['domain']:
                             print(self.tabs + "Domain  : " + vm['domain'])
-
-                    if 'cluster_name' in vm:
-                        if vm['cluster_name']:
-                            print(self.tabs + "Cluster : " + vm['cluster_name'])
 
                     if 'data_subnet' in vm:
                         if vm['data_subnet']:
@@ -902,6 +953,12 @@ class ShowOCIOutput(object):
 
                     if 'listener_port' in vm:
                         print(self.tabs + "Port    : " + vm['listener_port'])
+
+                    if 'gi_version' in vm:
+                        print(self.tabs + "GI      : " + vm['gi_version'])
+
+                    if 'data_storage_percentage' in vm:
+                        print(self.tabs + "Data    : " + vm['data_storage_percentage'] + "%, Sparse: " + vm['is_sparse_diskgroup_enabled'] + ", Local Backup: " + vm['is_local_backup_enabled'])
 
                     if 'patches' in vm:
                         for p in vm['patches']:
@@ -1526,6 +1583,31 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Pod: " + str(pod['name']) + " (" + str(pod['version']) + ") ")
                     print("")
 
+            # OCVS
+            if 'ocvs' in paas_services:
+                self.print_header("OCVS VMWare", 2)
+                for val in paas_services['ocvs']:
+                    print(self.taba + val['display_name'] + ", (" + val['compute_availability_domain'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(self.tabs + "Version  : " + val['vmware_software_version'] + ", esxi hosts: " + val['esxi_hosts_count'])
+                    print(self.tabs + "HCX      : " + val['is_hcx_enabled'] + ", URL: " + val['hcx_fqdn'] + ", OnPremKey: " + val['hcx_on_prem_key'] + ", TempPass: " + val['hcx_initial_password'])
+                    print(self.tabs + "VCENTER  : " + val['vcenter_fqdn'] + " - " + val['vcenter_private_ip'] + ", User: " + val['vcenter_username'] + ", TempPass: " + val['vcenter_initial_password'])
+                    print(self.tabs + "NSX      : " + val['nsx_manager_fqdn'] + " - " + val['nsx_manager_private_ip'] + ", User: " + val['nsx_manager_username'] + ", TempPass: " + val['nsx_manager_initial_password'])
+                    print(self.tabs + "NSX GW   : " + val['nsx_edge_uplink_ip'])
+                    print(self.tabs + "Subnet   : " + val['provisioning_subnet'])
+                    print(self.tabs + "Vlans    : " + val['vsphere_vlan'])
+                    print(self.tabs + "         : " + val['vmotion_vlan'])
+                    print(self.tabs + "         : " + val['vsan_vlan'])
+                    print(self.tabs + "         : " + val['nsx_v_tep_vlan'])
+                    print(self.tabs + "         : " + val['nsx_edge_v_tep_vlan'])
+                    print(self.tabs + "         : " + val['nsx_edge_uplink1_vlan'])
+                    print(self.tabs + "         : " + val['nsx_edge_uplink2_vlan'])
+                    num = 0
+                    for esx in val['esxihosts']:
+                        num += 1
+                        print(self.tabs + "ESXi " + str(num) + "   : " + esx['display_name'] + ", Created: " + esx['time_created'][0:16] + " (" + esx['lifecycle_state'] + ")")
+
+                    print("")
+
         except Exception as e:
             self.__print_error("__print_paas_services_main", e)
 
@@ -2118,6 +2200,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(paas_services['oac'])
             if 'oce' in paas_services:
                 self.__summary_core_size(paas_services['oce'])
+            if 'ocvs' in paas_services:
+                self.__summary_core_size(paas_services['ocvs'])
 
         except Exception as e:
             self.__print_error("__summary_paas_services_main", e)

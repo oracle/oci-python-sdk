@@ -66,6 +66,7 @@
 # - oci.mysql.DbSystemClient
 # - oci.cloud_guard.CloudGuardClient
 # - oci.logging.LoggingManagementClient
+# - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
@@ -74,11 +75,12 @@
 # - oci.blockchain.BlockchainPlatformClient
 # - oci.data_integration.DataIntegrationClient
 # - oci.data_safe.DataSafeClient
-# - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
 # - oci.usage_api.UsageapiClient
 # - oci.sch.ServiceConnectorClient
 # - oci.os_management.OsManagementClient
 # - oci.log_analytics.LogAnalyticsClient
+# - oci.tenant_manager_control_plane.LinkClient
+# - oci.cims.IncidentClient
 
 ##########################################################################
 from __future__ import print_function
@@ -91,7 +93,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.12.08"
+version = "20.12.15"
 
 ##########################################################################
 # check OCI version
@@ -281,7 +283,7 @@ def set_parser_arguments():
     parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring, Notifications and Events')
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
-    parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE')
+    parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE OCVS')
     parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print - D.Science, D.Catalog, D.Flow, ODA and BDS')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')

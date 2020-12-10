@@ -126,14 +126,15 @@ class ShowOCIFlags(object):
                 self.read_load_balancer or
                 self.read_containers or
                 self.read_function or
-                self.read_api)
+                self.read_api or
+                self.read_paas_native)
 
 
 ##########################################################################
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.23.5"
+    oci_compatible_version = "2.25.1"
 
     ##########################################################################
     # Global Constants
@@ -147,6 +148,7 @@ class ShowOCIService(object):
     C_NETWORK_IPS = 'ipsec'
     C_NETWORK_VCN = 'vcn'
     C_NETWORK_SGW = 'sgw'
+    C_NETWORK_VLAN = 'vlan'
     C_NETWORK_NAT = 'nat'
     C_NETWORK_DRG = 'drg'
     C_NETWORK_DRG_AT = 'drg_attached'
@@ -169,6 +171,7 @@ class ShowOCIService(object):
     C_IDENTITY_USERS = 'users'
     C_IDENTITY_GROUPS = 'groups'
     C_IDENTITY_POLICIES = 'policies'
+    C_IDENTITY_TAG_NAMESPACE = 'tag_namespace'
     C_IDENTITY_TENANCY = 'tenancy'
     C_IDENTITY_COMPARTMENTS = 'compartments'
     C_IDENTITY_REGIONS = 'regions'
@@ -274,6 +277,7 @@ class ShowOCIService(object):
     C_PAAS_NATIVE_OIC = "oic"
     C_PAAS_NATIVE_OAC = "oac"
     C_PAAS_NATIVE_OCE = "oce"
+    C_PAAS_NATIVE_OCVS = "ocvs"
 
     # function
     C_FUNCTION = "functions"
@@ -604,7 +608,7 @@ class ShowOCIService(object):
     # find shape info
     # returns CPUs, Memory and Local Storage SSD
     ##########################################################################
-    def get_shape_details(self, shape_name):
+    def shape_details(self, shape_name):
         for array in self.shapes_array:
             if array['shape'] == shape_name:
                 return array
@@ -960,6 +964,7 @@ class ShowOCIService(object):
                 self.__load_identity_policies(identity)
                 self.__load_identity_providers(identity, tenancy_id)
                 self.__load_identity_cost_tracking_tags(identity, tenancy_id)
+                self.__load_identity_tag_namespace(identity)
 
             print("")
         except oci.exceptions.RequestException:
@@ -1283,11 +1288,28 @@ class ShowOCIService(object):
                     'description': str(user.description),
                     'is_mfa_activated': str(user.is_mfa_activated),
                     'lifecycle_state': str(user.lifecycle_state),
+                    'inactive_status': str(user.inactive_status),
                     'time_created': str(user.time_created),
                     'identity_provider_id': str(user.identity_provider_id),
                     'identity_provider_name': str(identity_provider_name),
-                    'groups': ', '.join(x for x in group_users)
+                    'email': str(user.email),
+                    'email_verified': str(user.email_verified),
+                    'external_identifier': str(user.external_identifier),
+                    'last_successful_login_time': str(user.last_successful_login_time),
+                    'previous_successful_login_time': str(user.previous_successful_login_time),
+                    'groups': ', '.join(x for x in group_users),
+                    'capabilities': {}
                 }
+
+                if user.capabilities:
+                    user_data['capabilities'] = {
+                        'can_use_console_password': user.capabilities.can_use_console_password,
+                        'can_use_api_keys': user.capabilities.can_use_api_keys,
+                        'can_use_auth_tokens': user.capabilities.can_use_auth_tokens,
+                        'can_use_smtp_credentials': user.capabilities.can_use_smtp_credentials,
+                        'can_use_customer_secret_keys': user.capabilities.can_use_customer_secret_keys,
+                        'can_use_o_auth2_client_credentials': user.capabilities.can_use_o_auth2_client_credentials
+                    }
 
                 # get the credential for the user
                 if not self.flags.skip_identity_user_credential:
@@ -1461,10 +1483,13 @@ class ShowOCIService(object):
                         datapol = []
                         for policy in policies:
                             datapol.append({'name': policy.name, 'statements': [str(e) for e in policy.statements]})
-                        dataval = {'compartment_id': str(c['id']),
-                                   'compartment_name': c['name'],
-                                   'compartment_path': c['path'],
-                                   'policies': datapol}
+
+                        dataval = {
+                            'compartment_id': str(c['id']),
+                            'compartment_name': c['name'],
+                            'compartment_path': c['path'],
+                            'policies': datapol
+                        }
                         data.append(dataval)
 
                 except oci.exceptions.ServiceError as e:
@@ -1670,6 +1695,70 @@ class ShowOCIService(object):
             self.__print_error("__load_identity_cost_tracking_tags", e)
 
     ##########################################################################
+    # Load Tag Namespace
+    ##########################################################################
+    def __load_identity_tag_namespace(self, identity):
+        data = []
+        self.__load_print_status("Tag Namespace")
+        start_time = time.time()
+
+        try:
+            compartments = self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS]
+
+            for c in compartments:
+                print(".", end="")
+                if self.__if_managed_paas_compartment(c['name']) and not self.flags.read_ManagedCompartmentForPaaS:
+                    continue
+
+                try:
+                    tags = oci.pagination.list_call_get_all_results(
+                        identity.list_tag_namespaces, c['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    if tags:
+
+                        # prepare compartment
+                        dataval = {
+                            'compartment_id': str(c['id']),
+                            'compartment_name': c['name'],
+                            'compartment_path': c['path'],
+                            'tags': []
+                        }
+
+                        # Add tags
+                        for tag in tags:
+                            val = {
+                                'id': tag.id,
+                                'name': str(tag.name),
+                                'description': str(tag.description),
+                                'is_retired': str(tag.is_retired),
+                                'lifecycle_state': str(tag.lifecycle_state),
+                                'time_created': str(tag.time_created),
+                                'defined_tags': [] if tag.defined_tags is None else tag.defined_tags,
+                                'freeform_tags': [] if tag.freeform_tags is None else tag.freeform_tags
+                            }
+                            dataval['tags'].append(val)
+
+                        if dataval['tags']:
+                            data.append(dataval)
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+            # add to data
+            self.data[self.C_IDENTITY][self.C_IDENTITY_TAG_NAMESPACE] = data
+            self.__load_print_cnt(len(data), start_time)
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_tag_namespace", e)
+
+    ##########################################################################
     # Load Identity Availability Domains
     ##########################################################################
     def __load_identity_availability_domain(self, region_name):
@@ -1754,6 +1843,7 @@ class ShowOCIService(object):
             # if to load all network resources initialize the keys
             if self.flags.read_network:
                 # add the key to the network if not exists
+                self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_VLAN)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SGW)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_NAT)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DRG)
@@ -1791,6 +1881,7 @@ class ShowOCIService(object):
                 if self.flags.read_network:
 
                     # append the data
+                    network[self.C_NETWORK_VLAN] += self.__load_core_network_vlan(virtual_network, compartments, vcns)
                     network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments)
                     network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
                     network[self.C_NETWORK_NAT] += self.__load_core_network_nat(virtual_network, compartments)
@@ -1882,12 +1973,77 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_core_network_vlan
+    ##########################################################################
+    def __load_core_network_vlan(self, virtual_network, compartments, vcns):
+
+        cnt = 0
+        data = []
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("VLANs")
+
+            for compartment in compartments:
+                print(".", end="")
+
+                for vcn in vcns:
+
+                    vlans = []
+                    try:
+                        vlans = oci.pagination.list_call_get_all_results(
+                            virtual_network.list_vlans,
+                            compartment['id'],
+                            vcn_id=vcn['id'],
+                            lifecycle_state=oci.core.models.Vlan.LIFECYCLE_STATE_AVAILABLE,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
+                    except oci.exceptions.ServiceError as e:
+                        if 'not whitelisted' in str(e.message).lower():
+                            print(" tenant not enabled for this region, skipped.")
+                            return data
+                        if 'NotAuthorizedOrNotFound' in str(e.message):
+                            continue
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                        raise
+
+                    for vlan in vlans:
+                        val = {'id': str(vlan.id),
+                               'vlan': str(vlan.vlan_tag) + " - " + str(vlan.cidr_block) + " - " + str(
+                                   vlan.display_name),
+                               'availability_domain': str(vlan.availability_domain),
+                               'cidr_block': str(vlan.cidr_block),
+                               'vlan_tag': str(vlan.vlan_tag),
+                               'display_name': str(vlan.display_name),
+                               'time_created': str(vlan.time_created),
+                               'lifecycle_state': str(vlan.lifecycle_state),
+                               'nsg_ids': vlan.nsg_ids,
+                               'route_table_id': str(vlan.route_table_id),
+                               'vcn_id': str(vlan.vcn_id),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if vlan.defined_tags is None else vlan.defined_tags,
+                               'freeform_tags': [] if vlan.freeform_tags is None else vlan.freeform_tags,
+                               'region_name': str(self.config['region'])
+                               }
+
+                        data.append(val)
+                        cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_vlan", e)
+            return data
+
+    ##########################################################################
     # data network read igw
-    # igw requires vcn_id and compartment_id as parameters
-    # therefore, need to loop on both which is performance issue
-    # for Performance improvements, I check if the igw exist in the VCN compartment
-    # first, if igw found, return it - only one igw can be assigned to vcn
-    # if not, scan all compartments
     ##########################################################################
     def __load_core_network_igw(self, virtual_network, compartments):
 
@@ -1904,7 +2060,8 @@ class ShowOCIService(object):
 
                 igws = []
                 try:
-                    igws = virtual_network.list_internet_gateways(
+                    igws = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_internet_gateways,
                         compartment['id'],
                         lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE,
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
@@ -3100,13 +3257,22 @@ class ShowOCIService(object):
     ##########################################################################
     # query private ip
     ##########################################################################
-    def __load_core_network_single_privateip(self, virtual_network, ip_id):
+    def __load_core_network_single_privateip(self, virtual_network, ip_id, return_name=True):
 
         try:
-            arr = virtual_network.get_private_ip(ip_id).data
+            if 'privateip' not in ip_id:
+                return ""
+
+            arr = virtual_network.get_private_ip(
+                ip_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
 
             if arr:
-                return str(arr.ip_address) + " - " + str(arr.display_name)
+                if return_name:
+                    return str(arr.ip_address) + " - " + str(arr.display_name)
+                else:
+                    return str(arr.ip_address)
             return ""
 
         except oci.exceptions.ServiceError as e:
@@ -3115,6 +3281,32 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__get_core_network_privateip", e)
+            return ""
+
+    ##########################################################################
+    # query vlan ip
+    ##########################################################################
+    def __load_core_network_single_vlan(self, virtual_network, vlan_id):
+
+        try:
+            if 'vlan' not in vlan_id:
+                return ""
+
+            arr = virtual_network.get_vlan(
+                vlan_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            if arr:
+                return "VLAN " + str(arr.vlan_tag) + " - " + str(arr.cidr_block).ljust(20) + " - " + str(arr.display_name)
+            return ""
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                pass
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_single_vlan", e)
             return ""
 
     ##########################################################################
@@ -3139,8 +3331,13 @@ class ShowOCIService(object):
                     # get the list
                     arr = None
                     try:
-                        arr = virtual_network.get_private_ip(rl['network_entity_id']).data
+                        arr = virtual_network.get_private_ip(
+                            rl['network_entity_id'],
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
                     except oci.exceptions.ServiceError as e:
+                        if str(e.code) == 'NotAuthorizedOrNotFound':
+                            continue
                         if self.__check_service_error(e.code):
                             self.__load_print_auth_warning()
                             continue
@@ -8803,13 +9000,19 @@ class ShowOCIService(object):
 
             # clients
             oic_client = oci.integration.IntegrationInstanceClient(self.config, signer=self.signer, timeout=1)
-            oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=0.1)
-            oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=1)
+            oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=(1, 1))
+            oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=(1, 1))
+            ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(1, 1))
+            esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(1, 1))
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
 
             if self.flags.proxy:
                 oic_client.base_client.session.proxies = {'https': self.flags.proxy}
                 oac_client.base_client.session.proxies = {'https': self.flags.proxy}
                 oce_client.base_client.session.proxies = {'https': self.flags.proxy}
+                ocvs_client.base_client.session.proxies = {'https': self.flags.proxy}
+                esxi_client.base_client.session.proxies = {'https': self.flags.proxy}
+                virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
             compartments = self.get_compartment()
@@ -8818,16 +9021,16 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OAC)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OIC)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCE)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCVS)
 
             # reference to paas
             paas = self.data[self.C_PAAS_NATIVE]
 
             # append the data
+            paas[self.C_PAAS_NATIVE_OCVS] += self.__load_paas_ocvs(ocvs_client, esxi_client, virtual_network, compartments)
             paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
             paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
-
-            # TBD: oac native not yet enabled in all regions, disabling for now
-            # paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
+            paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -8893,6 +9096,8 @@ class ShowOCIService(object):
                                'is_byol': oic.is_byol,
                                'sum_info': "PaaS OIC Native " + ("BYOL" if oic.is_byol else "INCL") + " - Msg Pack",
                                'sum_size_gb': str(oic.message_packs),
+                               'is_file_server_enabled': str(oic.is_file_server_enabled),
+                               'consumption_model': str(oic.consumption_model),
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
@@ -8910,6 +9115,155 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_paas_oic", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_osvc - vmware
+    ##########################################################################
+    def __load_paas_ocvs(self, ocvs_client, esxi_client, virtual_network, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("OCVS Native - VMWare")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                ocvs = []
+                try:
+                    ocvs = oci.pagination.list_call_get_all_results(
+                        ocvs_client.list_sddcs,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # vmware_summary = oci.ocvp.models.SddcSummary
+                for vmware_summary in ocvs:
+                    if (vmware_summary.lifecycle_state == 'ACTIVE' or vmware_summary.lifecycle_state == 'UPDATING' or vmware_summary.lifecycle_state == 'CREATING'):
+
+                        # get vmware object with more details
+                        # vmware = oci.ocvp.models.Sddc
+                        vmware = ocvs_client.get_sddc(vmware_summary.id).data
+
+                        val = {'id': str(vmware.id),
+                               'display_name': str(vmware.display_name),
+                               'compute_availability_domain': str(vmware.compute_availability_domain),
+                               'instance_display_name_prefix': str(vmware.instance_display_name_prefix),
+                               'vmware_software_version': str(vmware.vmware_software_version),
+                               'esxi_hosts_count': str(vmware.esxi_hosts_count),
+                               'nsx_manager_fqdn': str(vmware.nsx_manager_fqdn),
+                               'nsx_manager_private_ip_id': str(vmware.nsx_manager_private_ip_id),
+                               'nsx_manager_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_manager_private_ip_id, False),
+                               'nsx_manager_username': str(vmware.nsx_manager_username),
+                               'nsx_manager_initial_password': str(vmware.nsx_manager_initial_password),
+                               'vcenter_fqdn': str(vmware.vcenter_fqdn),
+                               'vcenter_username': str(vmware.vcenter_username),
+                               'vcenter_private_ip_id': str(vmware.vcenter_private_ip_id),
+                               'vcenter_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.vcenter_private_ip_id, False),
+                               'vcenter_initial_password': str(vmware.vcenter_initial_password),
+                               'workload_network_cidr': str(vmware.workload_network_cidr),
+                               'nsx_overlay_segment_name': str(vmware.nsx_overlay_segment_name),
+                               'nsx_edge_uplink_ip_id': str(vmware.nsx_edge_uplink_ip_id),
+                               'nsx_edge_uplink_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_edge_uplink_ip_id, True),
+                               'provisioning_subnet_id': str(vmware.provisioning_subnet_id),
+                               'provisioning_subnet': self.get_network_subnet(vmware.provisioning_subnet_id, True),
+                               'vsphere_vlan_id': str(vmware.vsphere_vlan_id),
+                               'vsphere_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsphere_vlan_id),
+                               'vmotion_vlan_id': str(vmware.vmotion_vlan_id),
+                               'vmotion_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vmotion_vlan_id),
+                               'vsan_vlan_id': str(vmware.vsan_vlan_id),
+                               'vsan_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsan_vlan_id),
+                               'nsx_v_tep_vlan_id': str(vmware.nsx_v_tep_vlan_id),
+                               'nsx_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_v_tep_vlan_id),
+                               'nsx_edge_v_tep_vlan_id': str(vmware.nsx_edge_v_tep_vlan_id),
+                               'nsx_edge_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_v_tep_vlan_id),
+                               'nsx_edge_uplink1_vlan_id': str(vmware.nsx_edge_uplink1_vlan_id),
+                               'nsx_edge_uplink1_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink1_vlan_id),
+                               'nsx_edge_uplink2_vlan_id': str(vmware.nsx_edge_uplink2_vlan_id),
+                               'nsx_edge_uplink2_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink2_vlan_id),
+                               'hcx_private_ip_id': str(vmware.hcx_private_ip_id),
+                               'hcx_fqdn': str(vmware.hcx_fqdn),
+                               'hcx_initial_password': str(vmware.hcx_initial_password),
+                               'hcx_vlan_id': str(vmware.hcx_vlan_id),
+                               'hcx_on_prem_key': str(vmware.hcx_on_prem_key),
+                               'is_hcx_enabled': str(vmware.is_hcx_enabled),
+                               'time_created': str(vmware.time_created),
+                               'time_updated': str(vmware.time_updated),
+                               'lifecycle_state': str(vmware.lifecycle_state),
+                               'sum_info': "PaaS OCVS VMWare ESXi Servers",
+                               'sum_size_gb': str(vmware.esxi_hosts_count),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if vmware.defined_tags is None else vmware.defined_tags,
+                               'freeform_tags': [] if vmware.freeform_tags is None else vmware.freeform_tags,
+                               'esxihosts': [],
+                               'region_name': str(self.config['region'])}
+
+                        #######################
+                        # get the esxi hosts
+                        #######################
+                        esxis = []
+                        try:
+                            esxis = esxi_client.list_esxi_hosts(
+                                sddc_id=vmware.id,
+                                sort_by="displayName",
+                                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                            ).data
+
+                        except oci.exceptions.ServiceError:
+                            pass
+                        except oci.exceptions.ConnectTimeout:
+                            pass
+
+                        # esxi = classoci.ocvp.models.EsxiHostSummary
+                        if esxis:
+                            for esxi in esxis.items:
+                                val['esxihosts'].append(
+                                    {
+                                        'id': str(esxi.id),
+                                        'display_name': str(esxi.display_name),
+                                        'compute_instance_id': str(esxi.compute_instance_id),
+                                        'time_created': str(esxi.time_created),
+                                        'time_updated': str(esxi.time_updated),
+                                        'lifecycle_state': str(esxi.lifecycle_state),
+                                        'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
+                                        'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
+                                    }
+                                )
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_ocvs", e)
             return data
 
     ##########################################################################
@@ -8948,7 +9302,8 @@ class ShowOCIService(object):
                     raise
                 except oci.exceptions.ConnectTimeout:
                     self.__load_print_auth_warning()
-                    continue
+                    # for OAC skip this region
+                    break
 
                 print(".", end="")
 
@@ -8968,7 +9323,7 @@ class ShowOCIService(object):
                                'capacity_value': str(oac.capacity.capacity_value),
                                'email_notification': str(oac.email_notification),
                                'service_url': str(oac.service_url),
-                               'sum_info': "PaaS OAC Native",
+                               'sum_info': "PaaS OAC Native " + ("BYOL" if 'BRING' in oac.license_type else "INCL"),
                                'sum_size_gb': str(oac.capacity.capacity_value),
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
