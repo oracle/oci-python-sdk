@@ -130,7 +130,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/add_analytics_cluster.py.html>`__ to see an example of how to use add_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/add_analytics_cluster.py.html>`__ to see an example of how to use add_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/add"
         method = "POST"
@@ -223,7 +223,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/create_db_system.py.html>`__ to see an example of how to use create_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/create_db_system.py.html>`__ to see an example of how to use create_db_system API.
         """
         resource_path = "/dbSystems"
         method = "POST"
@@ -304,7 +304,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/delete_analytics_cluster.py.html>`__ to see an example of how to use delete_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_analytics_cluster.py.html>`__ to see an example of how to use delete_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "DELETE"
@@ -391,7 +391,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/delete_db_system.py.html>`__ to see an example of how to use delete_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_db_system.py.html>`__ to see an example of how to use delete_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
@@ -478,7 +478,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/generate_analytics_cluster_memory_estimate.py.html>`__ to see an example of how to use generate_analytics_cluster_memory_estimate API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/generate_analytics_cluster_memory_estimate.py.html>`__ to see an example of how to use generate_analytics_cluster_memory_estimate API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsClusterMemoryEstimate/actions/generate"
         method = "POST"
@@ -568,7 +568,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/get_analytics_cluster.py.html>`__ to see an example of how to use get_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_analytics_cluster.py.html>`__ to see an example of how to use get_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "GET"
@@ -650,7 +650,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/get_analytics_cluster_memory_estimate.py.html>`__ to see an example of how to use get_analytics_cluster_memory_estimate API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_analytics_cluster_memory_estimate.py.html>`__ to see an example of how to use get_analytics_cluster_memory_estimate API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsClusterMemoryEstimate"
         method = "GET"
@@ -736,7 +736,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/get_db_system.py.html>`__ to see an example of how to use get_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_db_system.py.html>`__ to see an example of how to use get_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
@@ -866,7 +866,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/list_db_systems.py.html>`__ to see an example of how to use list_db_systems API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/list_db_systems.py.html>`__ to see an example of how to use list_db_systems API.
         """
         resource_path = "/dbSystems"
         method = "GET"
@@ -996,7 +996,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/restart_analytics_cluster.py.html>`__ to see an example of how to use restart_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/restart_analytics_cluster.py.html>`__ to see an example of how to use restart_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/restart"
         method = "POST"
@@ -1097,7 +1097,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/restart_db_system.py.html>`__ to see an example of how to use restart_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/restart_db_system.py.html>`__ to see an example of how to use restart_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/restart"
         method = "POST"
@@ -1197,7 +1197,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/start_analytics_cluster.py.html>`__ to see an example of how to use start_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/start_analytics_cluster.py.html>`__ to see an example of how to use start_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/start"
         method = "POST"
@@ -1295,7 +1295,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/start_db_system.py.html>`__ to see an example of how to use start_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/start_db_system.py.html>`__ to see an example of how to use start_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/start"
         method = "POST"
@@ -1393,7 +1393,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/stop_analytics_cluster.py.html>`__ to see an example of how to use stop_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/stop_analytics_cluster.py.html>`__ to see an example of how to use stop_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/stop"
         method = "POST"
@@ -1496,7 +1496,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/stop_db_system.py.html>`__ to see an example of how to use stop_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/stop_db_system.py.html>`__ to see an example of how to use stop_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/stop"
         method = "POST"
@@ -1591,7 +1591,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/update_analytics_cluster.py.html>`__ to see an example of how to use update_analytics_cluster API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_analytics_cluster.py.html>`__ to see an example of how to use update_analytics_cluster API.
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "PUT"
@@ -1689,7 +1689,7 @@ class DbSystemClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/mysql/update_db_system.py.html>`__ to see an example of how to use update_db_system API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_db_system.py.html>`__ to see an example of how to use update_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"

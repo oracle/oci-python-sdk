@@ -124,7 +124,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/change_application_compartment.py.html>`__ to see an example of how to use change_application_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/change_application_compartment.py.html>`__ to see an example of how to use change_application_compartment API.
         """
         resource_path = "/applications/{applicationId}/actions/changeCompartment"
         method = "POST"
@@ -214,7 +214,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/change_private_endpoint_compartment.py.html>`__ to see an example of how to use change_private_endpoint_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/change_private_endpoint_compartment.py.html>`__ to see an example of how to use change_private_endpoint_compartment API.
         """
         resource_path = "/privateEndpoints/{privateEndpointId}/actions/changeCompartment"
         method = "POST"
@@ -309,7 +309,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/change_run_compartment.py.html>`__ to see an example of how to use change_run_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/change_run_compartment.py.html>`__ to see an example of how to use change_run_compartment API.
         """
         resource_path = "/runs/{runId}/actions/changeCompartment"
         method = "POST"
@@ -397,7 +397,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/create_application.py.html>`__ to see an example of how to use create_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_application.py.html>`__ to see an example of how to use create_application API.
         """
         resource_path = "/applications"
         method = "POST"
@@ -473,7 +473,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/create_private_endpoint.py.html>`__ to see an example of how to use create_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_private_endpoint.py.html>`__ to see an example of how to use create_private_endpoint API.
         """
         resource_path = "/privateEndpoints"
         method = "POST"
@@ -549,7 +549,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/create_run.py.html>`__ to see an example of how to use create_run API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_run.py.html>`__ to see an example of how to use create_run API.
         """
         resource_path = "/runs"
         method = "POST"
@@ -624,7 +624,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/delete_application.py.html>`__ to see an example of how to use delete_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_application.py.html>`__ to see an example of how to use delete_application API.
         """
         resource_path = "/applications/{applicationId}"
         method = "DELETE"
@@ -705,7 +705,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/delete_private_endpoint.py.html>`__ to see an example of how to use delete_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_private_endpoint.py.html>`__ to see an example of how to use delete_private_endpoint API.
         """
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "DELETE"
@@ -787,7 +787,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/delete_run.py.html>`__ to see an example of how to use delete_run API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_run.py.html>`__ to see an example of how to use delete_run API.
         """
         resource_path = "/runs/{runId}"
         method = "DELETE"
@@ -863,7 +863,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/get_application.py.html>`__ to see an example of how to use get_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_application.py.html>`__ to see an example of how to use get_application API.
         """
         resource_path = "/applications/{applicationId}"
         method = "GET"
@@ -939,7 +939,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/get_private_endpoint.py.html>`__ to see an example of how to use get_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_private_endpoint.py.html>`__ to see an example of how to use get_private_endpoint API.
         """
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "GET"
@@ -1015,7 +1015,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/get_run.py.html>`__ to see an example of how to use get_run API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_run.py.html>`__ to see an example of how to use get_run API.
         """
         resource_path = "/runs/{runId}"
         method = "GET"
@@ -1094,7 +1094,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/get_run_log.py.html>`__ to see an example of how to use get_run_log API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_run_log.py.html>`__ to see an example of how to use get_run_log API.
         """
         resource_path = "/runs/{runId}/logs/{name}"
         method = "GET"
@@ -1171,7 +1171,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -1273,7 +1273,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_applications.py.html>`__ to see an example of how to use list_applications API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_applications.py.html>`__ to see an example of how to use list_applications API.
         """
         resource_path = "/applications"
         method = "GET"
@@ -1403,7 +1403,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_private_endpoints.py.html>`__ to see an example of how to use list_private_endpoints API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_private_endpoints.py.html>`__ to see an example of how to use list_private_endpoints API.
         """
         resource_path = "/privateEndpoints"
         method = "GET"
@@ -1518,7 +1518,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_run_logs.py.html>`__ to see an example of how to use list_run_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_run_logs.py.html>`__ to see an example of how to use list_run_logs API.
         """
         resource_path = "/runs/{runId}/logs"
         method = "GET"
@@ -1641,7 +1641,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_runs.py.html>`__ to see an example of how to use list_runs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_runs.py.html>`__ to see an example of how to use list_runs API.
         """
         resource_path = "/runs"
         method = "GET"
@@ -1760,7 +1760,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -1853,7 +1853,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1946,7 +1946,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -2029,7 +2029,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/update_application.py.html>`__ to see an example of how to use update_application API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/update_application.py.html>`__ to see an example of how to use update_application API.
         """
         resource_path = "/applications/{applicationId}"
         method = "PUT"
@@ -2119,7 +2119,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/update_private_endpoint.py.html>`__ to see an example of how to use update_private_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/update_private_endpoint.py.html>`__ to see an example of how to use update_private_endpoint API.
         """
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "PUT"
@@ -2205,7 +2205,7 @@ class DataFlowClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dataflow/update_run.py.html>`__ to see an example of how to use update_run API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/update_run.py.html>`__ to see an example of how to use update_run API.
         """
         resource_path = "/runs/{runId}"
         method = "PUT"

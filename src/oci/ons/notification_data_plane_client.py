@@ -133,7 +133,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/change_subscription_compartment.py.html>`__ to see an example of how to use change_subscription_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/change_subscription_compartment.py.html>`__ to see an example of how to use change_subscription_compartment API.
         """
         resource_path = "/subscriptions/{subscriptionId}/actions/changeCompartment"
         method = "POST"
@@ -228,7 +228,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/create_subscription.py.html>`__ to see an example of how to use create_subscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/create_subscription.py.html>`__ to see an example of how to use create_subscription API.
         """
         resource_path = "/subscriptions"
         method = "POST"
@@ -307,7 +307,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/delete_subscription.py.html>`__ to see an example of how to use delete_subscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/delete_subscription.py.html>`__ to see an example of how to use delete_subscription API.
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "DELETE"
@@ -406,7 +406,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/get_confirm_subscription.py.html>`__ to see an example of how to use get_confirm_subscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_confirm_subscription.py.html>`__ to see an example of how to use get_confirm_subscription API.
         """
         resource_path = "/subscriptions/{id}/confirmation"
         method = "GET"
@@ -494,7 +494,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/get_subscription.py.html>`__ to see an example of how to use get_subscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_subscription.py.html>`__ to see an example of how to use get_subscription API.
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
@@ -593,7 +593,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/get_unsubscription.py.html>`__ to see an example of how to use get_unsubscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_unsubscription.py.html>`__ to see an example of how to use get_unsubscription API.
         """
         resource_path = "/subscriptions/{id}/unsubscription"
         method = "GET"
@@ -696,7 +696,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/list_subscriptions.py.html>`__ to see an example of how to use list_subscriptions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/list_subscriptions.py.html>`__ to see an example of how to use list_subscriptions API.
         """
         resource_path = "/subscriptions"
         method = "GET"
@@ -802,7 +802,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/publish_message.py.html>`__ to see an example of how to use publish_message API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/publish_message.py.html>`__ to see an example of how to use publish_message API.
         """
         resource_path = "/topics/{topicId}/messages"
         method = "POST"
@@ -886,7 +886,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/resend_subscription_confirmation.py.html>`__ to see an example of how to use resend_subscription_confirmation API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/resend_subscription_confirmation.py.html>`__ to see an example of how to use resend_subscription_confirmation API.
         """
         resource_path = "/subscriptions/{id}/resendConfirmation"
         method = "POST"
@@ -974,7 +974,7 @@ class NotificationDataPlaneClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/ons/update_subscription.py.html>`__ to see an example of how to use update_subscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/update_subscription.py.html>`__ to see an example of how to use update_subscription API.
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "PUT"

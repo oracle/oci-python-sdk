@@ -136,7 +136,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/change_auto_scaling_configuration_compartment.py.html>`__ to see an example of how to use change_auto_scaling_configuration_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/change_auto_scaling_configuration_compartment.py.html>`__ to see an example of how to use change_auto_scaling_configuration_compartment API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/actions/changeCompartment"
         method = "POST"
@@ -223,7 +223,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/create_auto_scaling_configuration.py.html>`__ to see an example of how to use create_auto_scaling_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/create_auto_scaling_configuration.py.html>`__ to see an example of how to use create_auto_scaling_configuration API.
         """
         resource_path = "/autoScalingConfigurations"
         method = "POST"
@@ -303,7 +303,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/create_auto_scaling_policy.py.html>`__ to see an example of how to use create_auto_scaling_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/create_auto_scaling_policy.py.html>`__ to see an example of how to use create_auto_scaling_policy API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies"
         method = "POST"
@@ -390,7 +390,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/delete_auto_scaling_configuration.py.html>`__ to see an example of how to use delete_auto_scaling_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/delete_auto_scaling_configuration.py.html>`__ to see an example of how to use delete_auto_scaling_configuration API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "DELETE"
@@ -474,7 +474,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/delete_auto_scaling_policy.py.html>`__ to see an example of how to use delete_auto_scaling_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/delete_auto_scaling_policy.py.html>`__ to see an example of how to use delete_auto_scaling_policy API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "DELETE"
@@ -551,7 +551,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/get_auto_scaling_configuration.py.html>`__ to see an example of how to use get_auto_scaling_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/get_auto_scaling_configuration.py.html>`__ to see an example of how to use get_auto_scaling_configuration API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "GET"
@@ -630,7 +630,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/get_auto_scaling_policy.py.html>`__ to see an example of how to use get_auto_scaling_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/get_auto_scaling_policy.py.html>`__ to see an example of how to use get_auto_scaling_policy API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "GET"
@@ -737,7 +737,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/list_auto_scaling_configurations.py.html>`__ to see an example of how to use list_auto_scaling_configurations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/list_auto_scaling_configurations.py.html>`__ to see an example of how to use list_auto_scaling_configurations API.
         """
         resource_path = "/autoScalingConfigurations"
         method = "GET"
@@ -860,7 +860,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/list_auto_scaling_policies.py.html>`__ to see an example of how to use list_auto_scaling_policies API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/list_auto_scaling_policies.py.html>`__ to see an example of how to use list_auto_scaling_policies API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies"
         method = "GET"
@@ -982,7 +982,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/update_auto_scaling_configuration.py.html>`__ to see an example of how to use update_auto_scaling_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/update_auto_scaling_configuration.py.html>`__ to see an example of how to use update_auto_scaling_configuration API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "PUT"
@@ -1084,7 +1084,7 @@ class AutoScalingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/autoscaling/update_auto_scaling_policy.py.html>`__ to see an example of how to use update_auto_scaling_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/update_auto_scaling_policy.py.html>`__ to see an example of how to use update_auto_scaling_policy API.
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "PUT"

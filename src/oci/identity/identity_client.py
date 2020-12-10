@@ -122,7 +122,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/activate_mfa_totp_device.py.html>`__ to see an example of how to use activate_mfa_totp_device API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_mfa_totp_device.py.html>`__ to see an example of how to use activate_mfa_totp_device API.
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/activate"
         method = "POST"
@@ -211,7 +211,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/add_user_to_group.py.html>`__ to see an example of how to use add_user_to_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_user_to_group.py.html>`__ to see an example of how to use add_user_to_group API.
         """
         resource_path = "/userGroupMemberships"
         method = "POST"
@@ -283,7 +283,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/assemble_effective_tag_set.py.html>`__ to see an example of how to use assemble_effective_tag_set API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/assemble_effective_tag_set.py.html>`__ to see an example of how to use assemble_effective_tag_set API.
         """
         resource_path = "/tagDefaults/actions/assembleEffectiveTagSet"
         method = "GET"
@@ -376,7 +376,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/bulk_delete_resources.py.html>`__ to see an example of how to use bulk_delete_resources API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_resources.py.html>`__ to see an example of how to use bulk_delete_resources API.
         """
         resource_path = "/compartments/{compartmentId}/actions/bulkDeleteResources"
         method = "POST"
@@ -483,7 +483,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/bulk_delete_tags.py.html>`__ to see an example of how to use bulk_delete_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_tags.py.html>`__ to see an example of how to use bulk_delete_tags API.
         """
         resource_path = "/tags/actions/bulkDelete"
         method = "POST"
@@ -571,7 +571,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/bulk_edit_tags.py.html>`__ to see an example of how to use bulk_edit_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_edit_tags.py.html>`__ to see an example of how to use bulk_edit_tags API.
         """
         resource_path = "/tags/actions/bulkEdit"
         method = "POST"
@@ -656,7 +656,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/bulk_move_resources.py.html>`__ to see an example of how to use bulk_move_resources API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_move_resources.py.html>`__ to see an example of how to use bulk_move_resources API.
         """
         resource_path = "/compartments/{compartmentId}/actions/bulkMoveResources"
         method = "POST"
@@ -766,7 +766,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/cascade_delete_tag_namespace.py.html>`__ to see an example of how to use cascade_delete_tag_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/cascade_delete_tag_namespace.py.html>`__ to see an example of how to use cascade_delete_tag_namespace API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/cascadeDelete"
         method = "POST"
@@ -859,7 +859,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/change_tag_namespace_compartment.py.html>`__ to see an example of how to use change_tag_namespace_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_tag_namespace_compartment.py.html>`__ to see an example of how to use change_tag_namespace_compartment API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/changeCompartment"
         method = "POST"
@@ -954,7 +954,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
         """
         resource_path = "/users/{userId}/authTokens"
         method = "POST"
@@ -1058,7 +1058,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_compartment.py.html>`__ to see an example of how to use create_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_compartment.py.html>`__ to see an example of how to use create_compartment API.
         """
         resource_path = "/compartments"
         method = "POST"
@@ -1144,7 +1144,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
         """
         resource_path = "/users/{userId}/customerSecretKeys"
         method = "POST"
@@ -1247,7 +1247,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_dynamic_group.py.html>`__ to see an example of how to use create_dynamic_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_dynamic_group.py.html>`__ to see an example of how to use create_dynamic_group API.
         """
         resource_path = "/dynamicGroups"
         method = "POST"
@@ -1341,7 +1341,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_group.py.html>`__ to see an example of how to use create_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_group.py.html>`__ to see an example of how to use create_group API.
         """
         resource_path = "/groups"
         method = "POST"
@@ -1432,7 +1432,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
         """
         resource_path = "/identityProviders"
         method = "POST"
@@ -1507,7 +1507,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_idp_group_mapping.py.html>`__ to see an example of how to use create_idp_group_mapping API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_idp_group_mapping.py.html>`__ to see an example of how to use create_idp_group_mapping API.
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "POST"
@@ -1590,7 +1590,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_mfa_totp_device.py.html>`__ to see an example of how to use create_mfa_totp_device API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_mfa_totp_device.py.html>`__ to see an example of how to use create_mfa_totp_device API.
         """
         resource_path = "/users/{userId}/mfaTotpDevices"
         method = "POST"
@@ -1695,7 +1695,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_network_source.py.html>`__ to see an example of how to use create_network_source API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_network_source.py.html>`__ to see an example of how to use create_network_source API.
         """
         resource_path = "/networkSources"
         method = "POST"
@@ -1769,7 +1769,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_o_auth_client_credential.py.html>`__ to see an example of how to use create_o_auth_client_credential API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_o_auth_client_credential.py.html>`__ to see an example of how to use create_o_auth_client_credential API.
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials"
         method = "POST"
@@ -1864,7 +1864,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_or_reset_ui_password.py.html>`__ to see an example of how to use create_or_reset_ui_password API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_or_reset_ui_password.py.html>`__ to see an example of how to use create_or_reset_ui_password API.
         """
         resource_path = "/users/{userId}/uiPassword"
         method = "POST"
@@ -1965,7 +1965,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_policy.py.html>`__ to see an example of how to use create_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_policy.py.html>`__ to see an example of how to use create_policy API.
         """
         resource_path = "/policies"
         method = "POST"
@@ -2039,7 +2039,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_region_subscription.py.html>`__ to see an example of how to use create_region_subscription API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_region_subscription.py.html>`__ to see an example of how to use create_region_subscription API.
         """
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "POST"
@@ -2128,7 +2128,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
         """
         resource_path = "/users/{userId}/smtpCredentials"
         method = "POST"
@@ -2227,7 +2227,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_swift_password.py.html>`__ to see an example of how to use create_swift_password API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_swift_password.py.html>`__ to see an example of how to use create_swift_password API.
         """
         resource_path = "/users/{userId}/swiftPasswords"
         method = "POST"
@@ -2334,7 +2334,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_tag.py.html>`__ to see an example of how to use create_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag.py.html>`__ to see an example of how to use create_tag API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
         method = "POST"
@@ -2428,7 +2428,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_tag_default.py.html>`__ to see an example of how to use create_tag_default API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_default.py.html>`__ to see an example of how to use create_tag_default API.
         """
         resource_path = "/tagDefaults"
         method = "POST"
@@ -2514,7 +2514,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_tag_namespace.py.html>`__ to see an example of how to use create_tag_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_namespace.py.html>`__ to see an example of how to use create_tag_namespace API.
         """
         resource_path = "/tagNamespaces"
         method = "POST"
@@ -2623,7 +2623,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/create_user.py.html>`__ to see an example of how to use create_user API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_user.py.html>`__ to see an example of how to use create_user API.
         """
         resource_path = "/users"
         method = "POST"
@@ -2700,7 +2700,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
         """
         resource_path = "/users/{userId}/apiKeys/{fingerprint}"
         method = "DELETE"
@@ -2779,7 +2779,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
         """
         resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "DELETE"
@@ -2855,7 +2855,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_compartment.py.html>`__ to see an example of how to use delete_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_compartment.py.html>`__ to see an example of how to use delete_compartment API.
         """
         resource_path = "/compartments/{compartmentId}"
         method = "DELETE"
@@ -2933,7 +2933,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
         """
         resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         method = "DELETE"
@@ -3009,7 +3009,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_dynamic_group.py.html>`__ to see an example of how to use delete_dynamic_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_dynamic_group.py.html>`__ to see an example of how to use delete_dynamic_group API.
         """
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "DELETE"
@@ -3084,7 +3084,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_group.py.html>`__ to see an example of how to use delete_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_group.py.html>`__ to see an example of how to use delete_group API.
         """
         resource_path = "/groups/{groupId}"
         method = "DELETE"
@@ -3160,7 +3160,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
         """
         resource_path = "/identityProviders/{identityProviderId}"
         method = "DELETE"
@@ -3238,7 +3238,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_idp_group_mapping.py.html>`__ to see an example of how to use delete_idp_group_mapping API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_idp_group_mapping.py.html>`__ to see an example of how to use delete_idp_group_mapping API.
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "DELETE"
@@ -3317,7 +3317,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_mfa_totp_device.py.html>`__ to see an example of how to use delete_mfa_totp_device API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_mfa_totp_device.py.html>`__ to see an example of how to use delete_mfa_totp_device API.
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
         method = "DELETE"
@@ -3393,7 +3393,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_network_source.py.html>`__ to see an example of how to use delete_network_source API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_network_source.py.html>`__ to see an example of how to use delete_network_source API.
         """
         resource_path = "/networkSources/{networkSourceId}"
         method = "DELETE"
@@ -3471,7 +3471,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_o_auth_client_credential.py.html>`__ to see an example of how to use delete_o_auth_client_credential API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_o_auth_client_credential.py.html>`__ to see an example of how to use delete_o_auth_client_credential API.
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials/{oauth2ClientCredentialId}"
         method = "DELETE"
@@ -3547,7 +3547,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
         """
         resource_path = "/policies/{policyId}"
         method = "DELETE"
@@ -3625,7 +3625,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
         """
         resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
         method = "DELETE"
@@ -3706,7 +3706,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_swift_password.py.html>`__ to see an example of how to use delete_swift_password API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_swift_password.py.html>`__ to see an example of how to use delete_swift_password API.
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "DELETE"
@@ -3805,7 +3805,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_tag.py.html>`__ to see an example of how to use delete_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag.py.html>`__ to see an example of how to use delete_tag API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "DELETE"
@@ -3885,7 +3885,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_tag_default.py.html>`__ to see an example of how to use delete_tag_default API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_default.py.html>`__ to see an example of how to use delete_tag_default API.
         """
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "DELETE"
@@ -3972,7 +3972,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_tag_namespace.py.html>`__ to see an example of how to use delete_tag_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_namespace.py.html>`__ to see an example of how to use delete_tag_namespace API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "DELETE"
@@ -4049,7 +4049,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/delete_user.py.html>`__ to see an example of how to use delete_user API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_user.py.html>`__ to see an example of how to use delete_user API.
         """
         resource_path = "/users/{userId}"
         method = "DELETE"
@@ -4127,7 +4127,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/generate_totp_seed.py.html>`__ to see an example of how to use generate_totp_seed API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/generate_totp_seed.py.html>`__ to see an example of how to use generate_totp_seed API.
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/generateSeed"
         method = "POST"
@@ -4201,7 +4201,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_authentication_policy.py.html>`__ to see an example of how to use get_authentication_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_authentication_policy.py.html>`__ to see an example of how to use get_authentication_policy API.
         """
         resource_path = "/authenticationPolicies/{compartmentId}"
         method = "GET"
@@ -4274,7 +4274,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_compartment.py.html>`__ to see an example of how to use get_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_compartment.py.html>`__ to see an example of how to use get_compartment API.
         """
         resource_path = "/compartments/{compartmentId}"
         method = "GET"
@@ -4340,7 +4340,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_dynamic_group.py.html>`__ to see an example of how to use get_dynamic_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_dynamic_group.py.html>`__ to see an example of how to use get_dynamic_group API.
         """
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "GET"
@@ -4410,7 +4410,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_group.py.html>`__ to see an example of how to use get_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_group.py.html>`__ to see an example of how to use get_group API.
         """
         resource_path = "/groups/{groupId}"
         method = "GET"
@@ -4476,7 +4476,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
         """
         resource_path = "/identityProviders/{identityProviderId}"
         method = "GET"
@@ -4545,7 +4545,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_idp_group_mapping.py.html>`__ to see an example of how to use get_idp_group_mapping API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_idp_group_mapping.py.html>`__ to see an example of how to use get_idp_group_mapping API.
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "GET"
@@ -4615,7 +4615,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_mfa_totp_device.py.html>`__ to see an example of how to use get_mfa_totp_device API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_mfa_totp_device.py.html>`__ to see an example of how to use get_mfa_totp_device API.
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
         method = "GET"
@@ -4682,7 +4682,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_network_source.py.html>`__ to see an example of how to use get_network_source API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_network_source.py.html>`__ to see an example of how to use get_network_source API.
         """
         resource_path = "/networkSources/{networkSourceId}"
         method = "GET"
@@ -4748,7 +4748,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_policy.py.html>`__ to see an example of how to use get_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_policy.py.html>`__ to see an example of how to use get_policy API.
         """
         resource_path = "/policies/{policyId}"
         method = "GET"
@@ -4817,7 +4817,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_tag.py.html>`__ to see an example of how to use get_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag.py.html>`__ to see an example of how to use get_tag API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "GET"
@@ -4884,7 +4884,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_tag_default.py.html>`__ to see an example of how to use get_tag_default API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_default.py.html>`__ to see an example of how to use get_tag_default API.
         """
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "GET"
@@ -4950,7 +4950,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_tag_namespace.py.html>`__ to see an example of how to use get_tag_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_namespace.py.html>`__ to see an example of how to use get_tag_namespace API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "GET"
@@ -5017,7 +5017,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_tagging_work_request.py.html>`__ to see an example of how to use get_tagging_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tagging_work_request.py.html>`__ to see an example of how to use get_tagging_work_request API.
         """
         resource_path = "/taggingWorkRequests/{workRequestId}"
         method = "GET"
@@ -5083,7 +5083,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_tenancy.py.html>`__ to see an example of how to use get_tenancy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tenancy.py.html>`__ to see an example of how to use get_tenancy API.
         """
         resource_path = "/tenancies/{tenancyId}"
         method = "GET"
@@ -5149,7 +5149,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_user.py.html>`__ to see an example of how to use get_user API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user.py.html>`__ to see an example of how to use get_user API.
         """
         resource_path = "/users/{userId}"
         method = "GET"
@@ -5215,7 +5215,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_user_group_membership.py.html>`__ to see an example of how to use get_user_group_membership API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_group_membership.py.html>`__ to see an example of how to use get_user_group_membership API.
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "GET"
@@ -5282,7 +5282,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_user_ui_password_information.py.html>`__ to see an example of how to use get_user_ui_password_information API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_ui_password_information.py.html>`__ to see an example of how to use get_user_ui_password_information API.
         """
         resource_path = "/users/{userId}/uiPassword"
         method = "GET"
@@ -5349,7 +5349,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -5418,7 +5418,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
         """
         resource_path = "/users/{userId}/apiKeys"
         method = "GET"
@@ -5485,7 +5485,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
         """
         resource_path = "/users/{userId}/authTokens"
         method = "GET"
@@ -5557,7 +5557,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_availability_domains.py.html>`__ to see an example of how to use list_availability_domains API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_availability_domains.py.html>`__ to see an example of how to use list_availability_domains API.
         """
         resource_path = "/availabilityDomains"
         method = "GET"
@@ -5634,7 +5634,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_bulk_action_resource_types.py.html>`__ to see an example of how to use list_bulk_action_resource_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_action_resource_types.py.html>`__ to see an example of how to use list_bulk_action_resource_types API.
         """
         resource_path = "/compartments/bulkActionResourceTypes"
         method = "GET"
@@ -5711,7 +5711,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_bulk_edit_tags_resource_types.py.html>`__ to see an example of how to use list_bulk_edit_tags_resource_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_edit_tags_resource_types.py.html>`__ to see an example of how to use list_bulk_edit_tags_resource_types API.
         """
         resource_path = "/tags/bulkEditResourceTypes"
         method = "GET"
@@ -5847,7 +5847,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_compartments.py.html>`__ to see an example of how to use list_compartments API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_compartments.py.html>`__ to see an example of how to use list_compartments API.
         """
         resource_path = "/compartments"
         method = "GET"
@@ -5964,7 +5964,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_cost_tracking_tags.py.html>`__ to see an example of how to use list_cost_tracking_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_cost_tracking_tags.py.html>`__ to see an example of how to use list_cost_tracking_tags API.
         """
         resource_path = "/tagNamespaces/actions/listCostTrackingTags"
         method = "GET"
@@ -6033,7 +6033,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
         """
         resource_path = "/users/{userId}/customerSecretKeys"
         method = "GET"
@@ -6135,7 +6135,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_dynamic_groups.py.html>`__ to see an example of how to use list_dynamic_groups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_dynamic_groups.py.html>`__ to see an example of how to use list_dynamic_groups API.
         """
         resource_path = "/dynamicGroups"
         method = "GET"
@@ -6239,7 +6239,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_fault_domains.py.html>`__ to see an example of how to use list_fault_domains API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_fault_domains.py.html>`__ to see an example of how to use list_fault_domains API.
         """
         resource_path = "/faultDomains"
         method = "GET"
@@ -6337,7 +6337,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_groups.py.html>`__ to see an example of how to use list_groups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_groups.py.html>`__ to see an example of how to use list_groups API.
         """
         resource_path = "/groups"
         method = "GET"
@@ -6448,7 +6448,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_identity_provider_groups.py.html>`__ to see an example of how to use list_identity_provider_groups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_provider_groups.py.html>`__ to see an example of how to use list_identity_provider_groups API.
         """
         resource_path = "/identityProviders/{identityProviderId}/groups"
         method = "GET"
@@ -6580,7 +6580,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
         """
         resource_path = "/identityProviders"
         method = "GET"
@@ -6684,7 +6684,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_idp_group_mappings.py.html>`__ to see an example of how to use list_idp_group_mappings API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_idp_group_mappings.py.html>`__ to see an example of how to use list_idp_group_mappings API.
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "GET"
@@ -6788,7 +6788,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_mfa_totp_devices.py.html>`__ to see an example of how to use list_mfa_totp_devices API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_mfa_totp_devices.py.html>`__ to see an example of how to use list_mfa_totp_devices API.
         """
         resource_path = "/users/{userId}/mfaTotpDevices"
         method = "GET"
@@ -6921,7 +6921,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_network_sources.py.html>`__ to see an example of how to use list_network_sources API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_network_sources.py.html>`__ to see an example of how to use list_network_sources API.
         """
         resource_path = "/networkSources"
         method = "GET"
@@ -7029,7 +7029,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_o_auth_client_credentials.py.html>`__ to see an example of how to use list_o_auth_client_credentials API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_o_auth_client_credentials.py.html>`__ to see an example of how to use list_o_auth_client_credentials API.
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials"
         method = "GET"
@@ -7155,7 +7155,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_policies.py.html>`__ to see an example of how to use list_policies API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
         resource_path = "/policies"
         method = "GET"
@@ -7252,7 +7252,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_region_subscriptions.py.html>`__ to see an example of how to use list_region_subscriptions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_region_subscriptions.py.html>`__ to see an example of how to use list_region_subscriptions API.
         """
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "GET"
@@ -7315,7 +7315,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_regions.py.html>`__ to see an example of how to use list_regions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_regions.py.html>`__ to see an example of how to use list_regions API.
         """
         resource_path = "/regions"
         method = "GET"
@@ -7370,7 +7370,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
         """
         resource_path = "/users/{userId}/smtpCredentials"
         method = "GET"
@@ -7439,7 +7439,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_swift_passwords.py.html>`__ to see an example of how to use list_swift_passwords API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_swift_passwords.py.html>`__ to see an example of how to use list_swift_passwords API.
         """
         resource_path = "/users/{userId}/swiftPasswords"
         method = "GET"
@@ -7522,7 +7522,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_tag_defaults.py.html>`__ to see an example of how to use list_tag_defaults API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_defaults.py.html>`__ to see an example of how to use list_tag_defaults API.
         """
         resource_path = "/tagDefaults"
         method = "GET"
@@ -7619,7 +7619,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_tag_namespaces.py.html>`__ to see an example of how to use list_tag_namespaces API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_namespaces.py.html>`__ to see an example of how to use list_tag_namespaces API.
         """
         resource_path = "/tagNamespaces"
         method = "GET"
@@ -7704,7 +7704,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_tagging_work_request_errors.py.html>`__ to see an example of how to use list_tagging_work_request_errors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_errors.py.html>`__ to see an example of how to use list_tagging_work_request_errors API.
         """
         resource_path = "/taggingWorkRequests/{workRequestId}/errors"
         method = "GET"
@@ -7789,7 +7789,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_tagging_work_request_logs.py.html>`__ to see an example of how to use list_tagging_work_request_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_logs.py.html>`__ to see an example of how to use list_tagging_work_request_logs API.
         """
         resource_path = "/taggingWorkRequests/{workRequestId}/logs"
         method = "GET"
@@ -7877,7 +7877,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_tagging_work_requests.py.html>`__ to see an example of how to use list_tagging_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_requests.py.html>`__ to see an example of how to use list_tagging_work_requests API.
         """
         resource_path = "/taggingWorkRequests"
         method = "GET"
@@ -7958,7 +7958,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_tags.py.html>`__ to see an example of how to use list_tags API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tags.py.html>`__ to see an example of how to use list_tags API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
         method = "GET"
@@ -8069,7 +8069,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_user_group_memberships.py.html>`__ to see an example of how to use list_user_group_memberships API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_user_group_memberships.py.html>`__ to see an example of how to use list_user_group_memberships API.
         """
         resource_path = "/userGroupMemberships"
         method = "GET"
@@ -8183,7 +8183,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_users.py.html>`__ to see an example of how to use list_users API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_users.py.html>`__ to see an example of how to use list_users API.
         """
         resource_path = "/users"
         method = "GET"
@@ -8293,7 +8293,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -8391,7 +8391,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/move_compartment.py.html>`__ to see an example of how to use move_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/move_compartment.py.html>`__ to see an example of how to use move_compartment API.
         """
         resource_path = "/compartments/{compartmentId}/actions/moveCompartment"
         method = "POST"
@@ -8478,7 +8478,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/recover_compartment.py.html>`__ to see an example of how to use recover_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/recover_compartment.py.html>`__ to see an example of how to use recover_compartment API.
         """
         resource_path = "/compartments/{compartmentId}/actions/recoverCompartment"
         method = "POST"
@@ -8557,7 +8557,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/remove_user_from_group.py.html>`__ to see an example of how to use remove_user_from_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_user_from_group.py.html>`__ to see an example of how to use remove_user_from_group API.
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "DELETE"
@@ -8627,7 +8627,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/reset_idp_scim_client.py.html>`__ to see an example of how to use reset_idp_scim_client API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/reset_idp_scim_client.py.html>`__ to see an example of how to use reset_idp_scim_client API.
         """
         resource_path = "/identityProviders/{identityProviderId}/actions/resetScimClient"
         method = "POST"
@@ -8704,7 +8704,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_auth_token.py.html>`__ to see an example of how to use update_auth_token API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_auth_token.py.html>`__ to see an example of how to use update_auth_token API.
         """
         resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "PUT"
@@ -8787,7 +8787,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_authentication_policy.py.html>`__ to see an example of how to use update_authentication_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_authentication_policy.py.html>`__ to see an example of how to use update_authentication_policy API.
         """
         resource_path = "/authenticationPolicies/{compartmentId}"
         method = "PUT"
@@ -8869,7 +8869,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_compartment.py.html>`__ to see an example of how to use update_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_compartment.py.html>`__ to see an example of how to use update_compartment API.
         """
         resource_path = "/compartments/{compartmentId}"
         method = "PUT"
@@ -8954,7 +8954,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_customer_secret_key.py.html>`__ to see an example of how to use update_customer_secret_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_customer_secret_key.py.html>`__ to see an example of how to use update_customer_secret_key API.
         """
         resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         method = "PUT"
@@ -9037,7 +9037,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_dynamic_group.py.html>`__ to see an example of how to use update_dynamic_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_dynamic_group.py.html>`__ to see an example of how to use update_dynamic_group API.
         """
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "PUT"
@@ -9119,7 +9119,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_group.py.html>`__ to see an example of how to use update_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_group.py.html>`__ to see an example of how to use update_group API.
         """
         resource_path = "/groups/{groupId}"
         method = "PUT"
@@ -9201,7 +9201,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_identity_provider.py.html>`__ to see an example of how to use update_identity_provider API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_identity_provider.py.html>`__ to see an example of how to use update_identity_provider API.
         """
         resource_path = "/identityProviders/{identityProviderId}"
         method = "PUT"
@@ -9286,7 +9286,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_idp_group_mapping.py.html>`__ to see an example of how to use update_idp_group_mapping API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_idp_group_mapping.py.html>`__ to see an example of how to use update_idp_group_mapping API.
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "PUT"
@@ -9369,7 +9369,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_network_source.py.html>`__ to see an example of how to use update_network_source API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_network_source.py.html>`__ to see an example of how to use update_network_source API.
         """
         resource_path = "/networkSources/{networkSourceId}"
         method = "PUT"
@@ -9454,7 +9454,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_o_auth_client_credential.py.html>`__ to see an example of how to use update_o_auth_client_credential API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_o_auth_client_credential.py.html>`__ to see an example of how to use update_o_auth_client_credential API.
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials/{oauth2ClientCredentialId}"
         method = "PUT"
@@ -9539,7 +9539,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_policy.py.html>`__ to see an example of how to use update_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_policy.py.html>`__ to see an example of how to use update_policy API.
         """
         resource_path = "/policies/{policyId}"
         method = "PUT"
@@ -9624,7 +9624,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_smtp_credential.py.html>`__ to see an example of how to use update_smtp_credential API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_smtp_credential.py.html>`__ to see an example of how to use update_smtp_credential API.
         """
         resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
         method = "PUT"
@@ -9712,7 +9712,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_swift_password.py.html>`__ to see an example of how to use update_swift_password API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_swift_password.py.html>`__ to see an example of how to use update_swift_password API.
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "PUT"
@@ -9807,7 +9807,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_tag.py.html>`__ to see an example of how to use update_tag API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag.py.html>`__ to see an example of how to use update_tag API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "PUT"
@@ -9899,7 +9899,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_tag_default.py.html>`__ to see an example of how to use update_tag_default API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_default.py.html>`__ to see an example of how to use update_tag_default API.
         """
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "PUT"
@@ -9988,7 +9988,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_tag_namespace.py.html>`__ to see an example of how to use update_tag_namespace API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_namespace.py.html>`__ to see an example of how to use update_tag_namespace API.
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "PUT"
@@ -10064,7 +10064,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_user.py.html>`__ to see an example of how to use update_user API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user.py.html>`__ to see an example of how to use update_user API.
         """
         resource_path = "/users/{userId}"
         method = "PUT"
@@ -10146,7 +10146,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_user_capabilities.py.html>`__ to see an example of how to use update_user_capabilities API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_capabilities.py.html>`__ to see an example of how to use update_user_capabilities API.
         """
         resource_path = "/users/{userId}/capabilities"
         method = "PUT"
@@ -10228,7 +10228,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/update_user_state.py.html>`__ to see an example of how to use update_user_state API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_state.py.html>`__ to see an example of how to use update_user_state API.
         """
         resource_path = "/users/{userId}/state"
         method = "PUT"
@@ -10326,7 +10326,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/identity/upload_api_key.py.html>`__ to see an example of how to use upload_api_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/upload_api_key.py.html>`__ to see an example of how to use upload_api_key API.
         """
         resource_path = "/users/{userId}/apiKeys"
         method = "POST"

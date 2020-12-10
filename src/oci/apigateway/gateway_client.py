@@ -127,7 +127,7 @@ class GatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/change_gateway_compartment.py.html>`__ to see an example of how to use change_gateway_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_gateway_compartment.py.html>`__ to see an example of how to use change_gateway_compartment API.
         """
         resource_path = "/gateways/{gatewayId}/actions/changeCompartment"
         method = "POST"
@@ -215,7 +215,7 @@ class GatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/create_gateway.py.html>`__ to see an example of how to use create_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_gateway.py.html>`__ to see an example of how to use create_gateway API.
         """
         resource_path = "/gateways"
         method = "POST"
@@ -291,7 +291,7 @@ class GatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/delete_gateway.py.html>`__ to see an example of how to use delete_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_gateway.py.html>`__ to see an example of how to use delete_gateway API.
         """
         resource_path = "/gateways/{gatewayId}"
         method = "DELETE"
@@ -366,7 +366,7 @@ class GatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/get_gateway.py.html>`__ to see an example of how to use get_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_gateway.py.html>`__ to see an example of how to use get_gateway API.
         """
         resource_path = "/gateways/{gatewayId}"
         method = "GET"
@@ -475,7 +475,7 @@ class GatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/list_gateways.py.html>`__ to see an example of how to use list_gateways API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_gateways.py.html>`__ to see an example of how to use list_gateways API.
         """
         resource_path = "/gateways"
         method = "GET"
@@ -590,7 +590,7 @@ class GatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/update_gateway.py.html>`__ to see an example of how to use update_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_gateway.py.html>`__ to see an example of how to use update_gateway API.
         """
         resource_path = "/gateways/{gatewayId}"
         method = "PUT"

@@ -120,7 +120,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/change_sender_compartment.py.html>`__ to see an example of how to use change_sender_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/change_sender_compartment.py.html>`__ to see an example of how to use change_sender_compartment API.
         """
         resource_path = "/senders/{senderId}/actions/changeCompartment"
         method = "POST"
@@ -197,7 +197,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/create_sender.py.html>`__ to see an example of how to use create_sender API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/create_sender.py.html>`__ to see an example of how to use create_sender API.
         """
         resource_path = "/senders"
         method = "POST"
@@ -265,7 +265,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/create_suppression.py.html>`__ to see an example of how to use create_suppression API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/create_suppression.py.html>`__ to see an example of how to use create_suppression API.
         """
         resource_path = "/suppressions"
         method = "POST"
@@ -336,7 +336,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/delete_sender.py.html>`__ to see an example of how to use delete_sender API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/delete_sender.py.html>`__ to see an example of how to use delete_sender API.
         """
         resource_path = "/senders/{senderId}"
         method = "DELETE"
@@ -412,7 +412,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/delete_suppression.py.html>`__ to see an example of how to use delete_suppression API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/delete_suppression.py.html>`__ to see an example of how to use delete_suppression API.
         """
         resource_path = "/suppressions/{suppressionId}"
         method = "DELETE"
@@ -485,7 +485,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/get_sender.py.html>`__ to see an example of how to use get_sender API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_sender.py.html>`__ to see an example of how to use get_sender API.
         """
         resource_path = "/senders/{senderId}"
         method = "GET"
@@ -561,7 +561,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/get_suppression.py.html>`__ to see an example of how to use get_suppression API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_suppression.py.html>`__ to see an example of how to use get_suppression API.
         """
         resource_path = "/suppressions/{suppressionId}"
         method = "GET"
@@ -671,7 +671,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/list_senders.py.html>`__ to see an example of how to use list_senders API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_senders.py.html>`__ to see an example of how to use list_senders API.
         """
         resource_path = "/senders"
         method = "GET"
@@ -826,7 +826,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/list_suppressions.py.html>`__ to see an example of how to use list_suppressions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_suppressions.py.html>`__ to see an example of how to use list_suppressions API.
         """
         resource_path = "/suppressions"
         method = "GET"
@@ -937,7 +937,7 @@ class EmailClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/email/update_sender.py.html>`__ to see an example of how to use update_sender API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/update_sender.py.html>`__ to see an example of how to use update_sender API.
         """
         resource_path = "/senders/{senderId}"
         method = "PUT"

@@ -109,7 +109,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/usageapi/request_summarized_configurations.py.html>`__ to see an example of how to use request_summarized_configurations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_configurations.py.html>`__ to see an example of how to use request_summarized_configurations API.
         """
         resource_path = "/configuration"
         method = "GET"
@@ -187,7 +187,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/usageapi/request_summarized_usages.py.html>`__ to see an example of how to use request_summarized_usages API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_usages.py.html>`__ to see an example of how to use request_summarized_usages API.
         """
         resource_path = "/usage"
         method = "POST"

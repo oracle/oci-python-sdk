@@ -127,7 +127,7 @@ class DeploymentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/change_deployment_compartment.py.html>`__ to see an example of how to use change_deployment_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_deployment_compartment.py.html>`__ to see an example of how to use change_deployment_compartment API.
         """
         resource_path = "/deployments/{deploymentId}/actions/changeCompartment"
         method = "POST"
@@ -215,7 +215,7 @@ class DeploymentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
         """
         resource_path = "/deployments"
         method = "POST"
@@ -291,7 +291,7 @@ class DeploymentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/delete_deployment.py.html>`__ to see an example of how to use delete_deployment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_deployment.py.html>`__ to see an example of how to use delete_deployment API.
         """
         resource_path = "/deployments/{deploymentId}"
         method = "DELETE"
@@ -366,7 +366,7 @@ class DeploymentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
         """
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
@@ -475,7 +475,7 @@ class DeploymentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
         """
         resource_path = "/deployments"
         method = "GET"
@@ -590,7 +590,7 @@ class DeploymentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/apigateway/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
         """
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"

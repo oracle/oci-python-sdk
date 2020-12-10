@@ -125,7 +125,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/change_detector_recipe_compartment.py.html>`__ to see an example of how to use change_detector_recipe_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_detector_recipe_compartment.py.html>`__ to see an example of how to use change_detector_recipe_compartment API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/actions/changeCompartment"
         method = "POST"
@@ -223,7 +223,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/change_managed_list_compartment.py.html>`__ to see an example of how to use change_managed_list_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_managed_list_compartment.py.html>`__ to see an example of how to use change_managed_list_compartment API.
         """
         resource_path = "/managedLists/{managedListId}/actions/changeCompartment"
         method = "POST"
@@ -321,7 +321,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/change_responder_recipe_compartment.py.html>`__ to see an example of how to use change_responder_recipe_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_responder_recipe_compartment.py.html>`__ to see an example of how to use change_responder_recipe_compartment API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}/actions/changeCompartment"
         method = "POST"
@@ -409,7 +409,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/create_detector_recipe.py.html>`__ to see an example of how to use create_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe.py.html>`__ to see an example of how to use create_detector_recipe API.
         """
         resource_path = "/detectorRecipes"
         method = "POST"
@@ -485,7 +485,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/create_managed_list.py.html>`__ to see an example of how to use create_managed_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_managed_list.py.html>`__ to see an example of how to use create_managed_list API.
         """
         resource_path = "/managedLists"
         method = "POST"
@@ -561,7 +561,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/create_responder_recipe.py.html>`__ to see an example of how to use create_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_responder_recipe.py.html>`__ to see an example of how to use create_responder_recipe API.
         """
         resource_path = "/responderRecipes"
         method = "POST"
@@ -637,7 +637,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/create_target.py.html>`__ to see an example of how to use create_target API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target.py.html>`__ to see an example of how to use create_target API.
         """
         resource_path = "/targets"
         method = "POST"
@@ -716,7 +716,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/create_target_detector_recipe.py.html>`__ to see an example of how to use create_target_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_detector_recipe.py.html>`__ to see an example of how to use create_target_detector_recipe API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes"
         method = "POST"
@@ -807,7 +807,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/create_target_responder_recipe.py.html>`__ to see an example of how to use create_target_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_responder_recipe.py.html>`__ to see an example of how to use create_target_responder_recipe API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes"
         method = "POST"
@@ -902,7 +902,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/delete_detector_recipe.py.html>`__ to see an example of how to use delete_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe.py.html>`__ to see an example of how to use delete_detector_recipe API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "DELETE"
@@ -995,7 +995,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/delete_managed_list.py.html>`__ to see an example of how to use delete_managed_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_managed_list.py.html>`__ to see an example of how to use delete_managed_list API.
         """
         resource_path = "/managedLists/{managedListId}"
         method = "DELETE"
@@ -1081,7 +1081,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/delete_responder_recipe.py.html>`__ to see an example of how to use delete_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_responder_recipe.py.html>`__ to see an example of how to use delete_responder_recipe API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "DELETE"
@@ -1163,7 +1163,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/delete_target.py.html>`__ to see an example of how to use delete_target API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target.py.html>`__ to see an example of how to use delete_target API.
         """
         resource_path = "/targets/{targetId}"
         method = "DELETE"
@@ -1248,7 +1248,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/delete_target_detector_recipe.py.html>`__ to see an example of how to use delete_target_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_detector_recipe.py.html>`__ to see an example of how to use delete_target_detector_recipe API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "DELETE"
@@ -1334,7 +1334,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/delete_target_responder_recipe.py.html>`__ to see an example of how to use delete_target_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_responder_recipe.py.html>`__ to see an example of how to use delete_target_responder_recipe API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "DELETE"
@@ -1430,7 +1430,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/execute_responder_execution.py.html>`__ to see an example of how to use execute_responder_execution API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/execute_responder_execution.py.html>`__ to see an example of how to use execute_responder_execution API.
         """
         resource_path = "/responderExecutions/{responderExecutionId}/actions/execute"
         method = "POST"
@@ -1527,7 +1527,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_condition_metadata_type.py.html>`__ to see an example of how to use get_condition_metadata_type API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_condition_metadata_type.py.html>`__ to see an example of how to use get_condition_metadata_type API.
         """
         resource_path = "/conditionMetadataTypes/{conditionMetadataTypeId}"
         method = "GET"
@@ -1612,7 +1612,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
         resource_path = "/configuration"
         method = "GET"
@@ -1682,7 +1682,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_detector.py.html>`__ to see an example of how to use get_detector API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector.py.html>`__ to see an example of how to use get_detector API.
         """
         resource_path = "/detectors/{detectorId}"
         method = "GET"
@@ -1757,7 +1757,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_detector_recipe.py.html>`__ to see an example of how to use get_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe.py.html>`__ to see an example of how to use get_detector_recipe API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "GET"
@@ -1835,7 +1835,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_detector_recipe_detector_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_detector_recipe_detector_rule API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "GET"
@@ -1914,7 +1914,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_detector_rule.py.html>`__ to see an example of how to use get_detector_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_rule.py.html>`__ to see an example of how to use get_detector_rule API.
         """
         resource_path = "/detectors/{detectorId}/detectorRules/{detectorRuleId}"
         method = "GET"
@@ -1990,7 +1990,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_managed_list.py.html>`__ to see an example of how to use get_managed_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_managed_list.py.html>`__ to see an example of how to use get_managed_list API.
         """
         resource_path = "/managedLists/{managedListId}"
         method = "GET"
@@ -2065,7 +2065,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_problem.py.html>`__ to see an example of how to use get_problem API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_problem.py.html>`__ to see an example of how to use get_problem API.
         """
         resource_path = "/problems/{problemId}"
         method = "GET"
@@ -2140,7 +2140,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_responder_execution.py.html>`__ to see an example of how to use get_responder_execution API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_execution.py.html>`__ to see an example of how to use get_responder_execution API.
         """
         resource_path = "/responderExecutions/{responderExecutionId}"
         method = "GET"
@@ -2215,7 +2215,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_responder_recipe.py.html>`__ to see an example of how to use get_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe.py.html>`__ to see an example of how to use get_responder_recipe API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "GET"
@@ -2293,7 +2293,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_responder_recipe_responder_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_responder_recipe_responder_rule API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules/{responderRuleId}"
         method = "GET"
@@ -2369,7 +2369,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_responder_rule.py.html>`__ to see an example of how to use get_responder_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_rule.py.html>`__ to see an example of how to use get_responder_rule API.
         """
         resource_path = "/responderRules/{responderRuleId}"
         method = "GET"
@@ -2444,7 +2444,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_target.py.html>`__ to see an example of how to use get_target API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target.py.html>`__ to see an example of how to use get_target API.
         """
         resource_path = "/targets/{targetId}"
         method = "GET"
@@ -2522,7 +2522,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_target_detector_recipe.py.html>`__ to see an example of how to use get_target_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe.py.html>`__ to see an example of how to use get_target_detector_recipe API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "GET"
@@ -2604,7 +2604,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_target_detector_recipe_detector_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_target_detector_recipe_detector_rule API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "GET"
@@ -2684,7 +2684,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_target_responder_recipe.py.html>`__ to see an example of how to use get_target_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe.py.html>`__ to see an example of how to use get_target_responder_recipe API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "GET"
@@ -2766,7 +2766,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/get_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_target_responder_recipe_responder_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_target_responder_recipe_responder_rule API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules/{responderRuleId}"
         method = "GET"
@@ -2864,7 +2864,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_condition_metadata_types.py.html>`__ to see an example of how to use list_condition_metadata_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_condition_metadata_types.py.html>`__ to see an example of how to use list_condition_metadata_types API.
         """
         resource_path = "/conditionMetadataTypes"
         method = "GET"
@@ -2992,7 +2992,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_detector_recipe_detector_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_detector_recipe_detector_rules API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules"
         method = "GET"
@@ -3165,7 +3165,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_detector_recipes.py.html>`__ to see an example of how to use list_detector_recipes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipes.py.html>`__ to see an example of how to use list_detector_recipes API.
         """
         resource_path = "/detectorRecipes"
         method = "GET"
@@ -3308,7 +3308,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_detector_rules.py.html>`__ to see an example of how to use list_detector_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_rules.py.html>`__ to see an example of how to use list_detector_rules API.
         """
         resource_path = "/detectors/{detectorId}/detectorRules"
         method = "GET"
@@ -3444,7 +3444,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_detectors.py.html>`__ to see an example of how to use list_detectors API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detectors.py.html>`__ to see an example of how to use list_detectors API.
         """
         resource_path = "/detectors"
         method = "GET"
@@ -3561,7 +3561,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_impacted_resources.py.html>`__ to see an example of how to use list_impacted_resources API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_impacted_resources.py.html>`__ to see an example of how to use list_impacted_resources API.
         """
         resource_path = "/problems/{problemId}/impactedResources"
         method = "GET"
@@ -3685,7 +3685,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_managed_list_types.py.html>`__ to see an example of how to use list_managed_list_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_list_types.py.html>`__ to see an example of how to use list_managed_list_types API.
         """
         resource_path = "/managedListTypes"
         method = "GET"
@@ -3848,7 +3848,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_managed_lists.py.html>`__ to see an example of how to use list_managed_lists API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_lists.py.html>`__ to see an example of how to use list_managed_lists API.
         """
         resource_path = "/managedLists"
         method = "GET"
@@ -3992,7 +3992,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_problem_histories.py.html>`__ to see an example of how to use list_problem_histories API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_histories.py.html>`__ to see an example of how to use list_problem_histories API.
         """
         resource_path = "/problems/{problemId}/histories"
         method = "GET"
@@ -4198,7 +4198,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_problems.py.html>`__ to see an example of how to use list_problems API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problems.py.html>`__ to see an example of how to use list_problems API.
         """
         resource_path = "/problems"
         method = "GET"
@@ -4400,7 +4400,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
         resource_path = "/recommendations"
         method = "GET"
@@ -4544,7 +4544,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
         """
         resource_path = "/resourceTypes"
         method = "GET"
@@ -4661,7 +4661,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_responder_activities.py.html>`__ to see an example of how to use list_responder_activities API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_activities.py.html>`__ to see an example of how to use list_responder_activities API.
         """
         resource_path = "/problems/{problemId}/responderActivities"
         method = "GET"
@@ -4831,7 +4831,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_responder_executions.py.html>`__ to see an example of how to use list_responder_executions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_executions.py.html>`__ to see an example of how to use list_responder_executions API.
         """
         resource_path = "/responderExecutions"
         method = "GET"
@@ -5002,7 +5002,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_responder_recipe_responder_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_responder_recipe_responder_rules API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules"
         method = "GET"
@@ -5174,7 +5174,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_responder_recipes.py.html>`__ to see an example of how to use list_responder_recipes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipes.py.html>`__ to see an example of how to use list_responder_recipes API.
         """
         resource_path = "/responderRecipes"
         method = "GET"
@@ -5314,7 +5314,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_responder_rules.py.html>`__ to see an example of how to use list_responder_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_rules.py.html>`__ to see an example of how to use list_responder_rules API.
         """
         resource_path = "/responderRules"
         method = "GET"
@@ -5447,7 +5447,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_target_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_target_detector_recipe_detector_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_target_detector_recipe_detector_rules API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules"
         method = "GET"
@@ -5590,7 +5590,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_target_detector_recipes.py.html>`__ to see an example of how to use list_target_detector_recipes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipes.py.html>`__ to see an example of how to use list_target_detector_recipes API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes"
         method = "GET"
@@ -5735,7 +5735,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_target_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_target_responder_recipe_responder_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_target_responder_recipe_responder_rules API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules"
         method = "GET"
@@ -5878,7 +5878,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_target_responder_recipes.py.html>`__ to see an example of how to use list_target_responder_recipes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipes.py.html>`__ to see an example of how to use list_target_responder_recipes API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes"
         method = "GET"
@@ -6045,7 +6045,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/list_targets.py.html>`__ to see an example of how to use list_targets API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_targets.py.html>`__ to see an example of how to use list_targets API.
         """
         resource_path = "/targets"
         method = "GET"
@@ -6165,7 +6165,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_risk_scores.py.html>`__ to see an example of how to use request_risk_scores API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_risk_scores.py.html>`__ to see an example of how to use request_risk_scores API.
         """
         resource_path = "/riskScores"
         method = "POST"
@@ -6252,7 +6252,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_security_score_summarized_trend.py.html>`__ to see an example of how to use request_security_score_summarized_trend API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_score_summarized_trend.py.html>`__ to see an example of how to use request_security_score_summarized_trend API.
         """
         resource_path = "/securityScores/actions/summarizeTrend"
         method = "POST"
@@ -6336,7 +6336,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_security_scores.py.html>`__ to see an example of how to use request_security_scores API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_scores.py.html>`__ to see an example of how to use request_security_scores API.
         """
         resource_path = "/securityScores"
         method = "POST"
@@ -6450,7 +6450,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_activity_problems.py.html>`__ to see an example of how to use request_summarized_activity_problems API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_activity_problems.py.html>`__ to see an example of how to use request_summarized_activity_problems API.
         """
         resource_path = "/problems/actions/summarizeActivityProblems"
         method = "POST"
@@ -6574,7 +6574,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_problems.py.html>`__ to see an example of how to use request_summarized_problems API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_problems.py.html>`__ to see an example of how to use request_summarized_problems API.
         """
         resource_path = "/problems/actions/summarize"
         method = "POST"
@@ -6716,7 +6716,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_responder_executions.py.html>`__ to see an example of how to use request_summarized_responder_executions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_responder_executions.py.html>`__ to see an example of how to use request_summarized_responder_executions API.
         """
         resource_path = "/responderExecutions/actions/summarize"
         method = "POST"
@@ -6835,7 +6835,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_risk_scores.py.html>`__ to see an example of how to use request_summarized_risk_scores API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_risk_scores.py.html>`__ to see an example of how to use request_summarized_risk_scores API.
         """
         resource_path = "/problems/actions/summarizeRiskScore"
         method = "POST"
@@ -6915,7 +6915,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_security_scores.py.html>`__ to see an example of how to use request_summarized_security_scores API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_security_scores.py.html>`__ to see an example of how to use request_summarized_security_scores API.
         """
         resource_path = "/problems/actions/summarizeSecurityScore"
         method = "POST"
@@ -7027,7 +7027,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_trend_problems.py.html>`__ to see an example of how to use request_summarized_trend_problems API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_problems.py.html>`__ to see an example of how to use request_summarized_trend_problems API.
         """
         resource_path = "/problems/actions/summarizeTrend"
         method = "POST"
@@ -7154,7 +7154,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_trend_responder_executions.py.html>`__ to see an example of how to use request_summarized_trend_responder_executions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_responder_executions.py.html>`__ to see an example of how to use request_summarized_trend_responder_executions API.
         """
         resource_path = "/responderExecutions/actions/summarizeTrend"
         method = "POST"
@@ -7255,7 +7255,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/request_summarized_trend_security_scores.py.html>`__ to see an example of how to use request_summarized_trend_security_scores API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_security_scores.py.html>`__ to see an example of how to use request_summarized_trend_security_scores API.
         """
         resource_path = "/problems/actions/summarizeSecurityScoreTrend"
         method = "POST"
@@ -7334,7 +7334,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/skip_bulk_responder_execution.py.html>`__ to see an example of how to use skip_bulk_responder_execution API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_bulk_responder_execution.py.html>`__ to see an example of how to use skip_bulk_responder_execution API.
         """
         resource_path = "/responderExecutions/actions/bulkSkip"
         method = "POST"
@@ -7414,7 +7414,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/skip_responder_execution.py.html>`__ to see an example of how to use skip_responder_execution API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_responder_execution.py.html>`__ to see an example of how to use skip_responder_execution API.
         """
         resource_path = "/responderExecutions/{responderExecutionId}/actions/skip"
         method = "POST"
@@ -7517,7 +7517,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/trigger_responder.py.html>`__ to see an example of how to use trigger_responder API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/trigger_responder.py.html>`__ to see an example of how to use trigger_responder API.
         """
         resource_path = "/problems/{problemId}/actions/triggerResponder"
         method = "POST"
@@ -7599,7 +7599,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_bulk_problem_status.py.html>`__ to see an example of how to use update_bulk_problem_status API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_bulk_problem_status.py.html>`__ to see an example of how to use update_bulk_problem_status API.
         """
         resource_path = "/problems/actions/bulkUpdateStatus"
         method = "POST"
@@ -7679,7 +7679,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
         resource_path = "/configuration"
         method = "PUT"
@@ -7774,7 +7774,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_detector_recipe.py.html>`__ to see an example of how to use update_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe.py.html>`__ to see an example of how to use update_detector_recipe API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "PUT"
@@ -7870,7 +7870,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_detector_recipe_detector_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_detector_recipe_detector_rule API.
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "PUT"
@@ -7967,7 +7967,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_managed_list.py.html>`__ to see an example of how to use update_managed_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_managed_list.py.html>`__ to see an example of how to use update_managed_list API.
         """
         resource_path = "/managedLists/{managedListId}"
         method = "PUT"
@@ -8067,7 +8067,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_problem_status.py.html>`__ to see an example of how to use update_problem_status API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_problem_status.py.html>`__ to see an example of how to use update_problem_status API.
         """
         resource_path = "/problems/{problemId}/actions/updateStatus"
         method = "POST"
@@ -8160,7 +8160,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_responder_recipe.py.html>`__ to see an example of how to use update_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe.py.html>`__ to see an example of how to use update_responder_recipe API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "PUT"
@@ -8252,7 +8252,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_responder_recipe_responder_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_responder_recipe_responder_rule API.
         """
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules/{responderRuleId}"
         method = "PUT"
@@ -8342,7 +8342,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_target.py.html>`__ to see an example of how to use update_target API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target.py.html>`__ to see an example of how to use update_target API.
         """
         resource_path = "/targets/{targetId}"
         method = "PUT"
@@ -8434,7 +8434,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_target_detector_recipe.py.html>`__ to see an example of how to use update_target_detector_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe.py.html>`__ to see an example of how to use update_target_detector_recipe API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "PUT"
@@ -8530,7 +8530,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_target_detector_recipe_detector_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_target_detector_recipe_detector_rule API.
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "PUT"
@@ -8624,7 +8624,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_target_responder_recipe.py.html>`__ to see an example of how to use update_target_responder_recipe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe.py.html>`__ to see an example of how to use update_target_responder_recipe API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "PUT"
@@ -8720,7 +8720,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/cloudguard/update_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_target_responder_recipe_responder_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_target_responder_recipe_responder_rule API.
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules/{responderRuleId}"
         method = "PUT"

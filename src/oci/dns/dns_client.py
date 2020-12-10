@@ -136,7 +136,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/change_resolver_compartment.py.html>`__ to see an example of how to use change_resolver_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_resolver_compartment.py.html>`__ to see an example of how to use change_resolver_compartment API.
         """
         resource_path = "/resolvers/{resolverId}/actions/changeCompartment"
         method = "POST"
@@ -257,7 +257,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/change_steering_policy_compartment.py.html>`__ to see an example of how to use change_steering_policy_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_steering_policy_compartment.py.html>`__ to see an example of how to use change_steering_policy_compartment API.
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}/actions/changeCompartment"
         method = "POST"
@@ -378,7 +378,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/change_tsig_key_compartment.py.html>`__ to see an example of how to use change_tsig_key_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_tsig_key_compartment.py.html>`__ to see an example of how to use change_tsig_key_compartment API.
         """
         resource_path = "/tsigKeys/{tsigKeyId}/actions/changeCompartment"
         method = "POST"
@@ -499,7 +499,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/change_view_compartment.py.html>`__ to see an example of how to use change_view_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_view_compartment.py.html>`__ to see an example of how to use change_view_compartment API.
         """
         resource_path = "/views/{viewId}/actions/changeCompartment"
         method = "POST"
@@ -622,7 +622,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/change_zone_compartment.py.html>`__ to see an example of how to use change_zone_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_zone_compartment.py.html>`__ to see an example of how to use change_zone_compartment API.
         """
         resource_path = "/zones/{zoneId}/actions/changeCompartment"
         method = "POST"
@@ -736,7 +736,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/create_resolver_endpoint.py.html>`__ to see an example of how to use create_resolver_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_resolver_endpoint.py.html>`__ to see an example of how to use create_resolver_endpoint API.
         """
         resource_path = "/resolvers/{resolverId}/endpoints"
         method = "POST"
@@ -850,7 +850,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/create_steering_policy.py.html>`__ to see an example of how to use create_steering_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_steering_policy.py.html>`__ to see an example of how to use create_steering_policy API.
         """
         resource_path = "/steeringPolicies"
         method = "POST"
@@ -954,7 +954,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/create_steering_policy_attachment.py.html>`__ to see an example of how to use create_steering_policy_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_steering_policy_attachment.py.html>`__ to see an example of how to use create_steering_policy_attachment API.
         """
         resource_path = "/steeringPolicyAttachments"
         method = "POST"
@@ -1046,7 +1046,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/create_tsig_key.py.html>`__ to see an example of how to use create_tsig_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_tsig_key.py.html>`__ to see an example of how to use create_tsig_key API.
         """
         resource_path = "/tsigKeys"
         method = "POST"
@@ -1141,7 +1141,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/create_view.py.html>`__ to see an example of how to use create_view API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_view.py.html>`__ to see an example of how to use create_view API.
         """
         resource_path = "/views"
         method = "POST"
@@ -1240,7 +1240,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/create_zone.py.html>`__ to see an example of how to use create_zone API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_zone.py.html>`__ to see an example of how to use create_zone API.
         """
         resource_path = "/zones"
         method = "POST"
@@ -1354,7 +1354,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_domain_records.py.html>`__ to see an example of how to use delete_domain_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_domain_records.py.html>`__ to see an example of how to use delete_domain_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "DELETE"
@@ -1477,7 +1477,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_resolver_endpoint.py.html>`__ to see an example of how to use delete_resolver_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_resolver_endpoint.py.html>`__ to see an example of how to use delete_resolver_endpoint API.
         """
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "DELETE"
@@ -1603,7 +1603,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_rr_set.py.html>`__ to see an example of how to use delete_rr_set API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_rr_set.py.html>`__ to see an example of how to use delete_rr_set API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "DELETE"
@@ -1725,7 +1725,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_steering_policy.py.html>`__ to see an example of how to use delete_steering_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_steering_policy.py.html>`__ to see an example of how to use delete_steering_policy API.
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "DELETE"
@@ -1839,7 +1839,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_steering_policy_attachment.py.html>`__ to see an example of how to use delete_steering_policy_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_steering_policy_attachment.py.html>`__ to see an example of how to use delete_steering_policy_attachment API.
         """
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "DELETE"
@@ -1952,7 +1952,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_tsig_key.py.html>`__ to see an example of how to use delete_tsig_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_tsig_key.py.html>`__ to see an example of how to use delete_tsig_key API.
         """
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "DELETE"
@@ -2069,7 +2069,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_view.py.html>`__ to see an example of how to use delete_view API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_view.py.html>`__ to see an example of how to use delete_view API.
         """
         resource_path = "/views/{viewId}"
         method = "DELETE"
@@ -2190,7 +2190,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/delete_zone.py.html>`__ to see an example of how to use delete_zone API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_zone.py.html>`__ to see an example of how to use delete_zone API.
         """
         resource_path = "/zones/{zoneNameOrId}"
         method = "DELETE"
@@ -2341,7 +2341,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_domain_records.py.html>`__ to see an example of how to use get_domain_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_domain_records.py.html>`__ to see an example of how to use get_domain_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "GET"
@@ -2487,7 +2487,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_resolver.py.html>`__ to see an example of how to use get_resolver API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_resolver.py.html>`__ to see an example of how to use get_resolver API.
         """
         resource_path = "/resolvers/{resolverId}"
         method = "GET"
@@ -2604,7 +2604,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_resolver_endpoint.py.html>`__ to see an example of how to use get_resolver_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_resolver_endpoint.py.html>`__ to see an example of how to use get_resolver_endpoint API.
         """
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "GET"
@@ -2740,7 +2740,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_rr_set.py.html>`__ to see an example of how to use get_rr_set API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_rr_set.py.html>`__ to see an example of how to use get_rr_set API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "GET"
@@ -2865,7 +2865,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_steering_policy.py.html>`__ to see an example of how to use get_steering_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_steering_policy.py.html>`__ to see an example of how to use get_steering_policy API.
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "GET"
@@ -2978,7 +2978,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_steering_policy_attachment.py.html>`__ to see an example of how to use get_steering_policy_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_steering_policy_attachment.py.html>`__ to see an example of how to use get_steering_policy_attachment API.
         """
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "GET"
@@ -3091,7 +3091,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_tsig_key.py.html>`__ to see an example of how to use get_tsig_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_tsig_key.py.html>`__ to see an example of how to use get_tsig_key API.
         """
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "GET"
@@ -3206,7 +3206,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_view.py.html>`__ to see an example of how to use get_view API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_view.py.html>`__ to see an example of how to use get_view API.
         """
         resource_path = "/views/{viewId}"
         method = "GET"
@@ -3326,7 +3326,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_zone.py.html>`__ to see an example of how to use get_zone API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_zone.py.html>`__ to see an example of how to use get_zone API.
         """
         resource_path = "/zones/{zoneNameOrId}"
         method = "GET"
@@ -3486,7 +3486,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/get_zone_records.py.html>`__ to see an example of how to use get_zone_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_zone_records.py.html>`__ to see an example of how to use get_zone_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "GET"
@@ -3648,7 +3648,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_resolver_endpoints.py.html>`__ to see an example of how to use list_resolver_endpoints API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_resolver_endpoints.py.html>`__ to see an example of how to use list_resolver_endpoints API.
         """
         resource_path = "/resolvers/{resolverId}/endpoints"
         method = "GET"
@@ -3810,7 +3810,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_resolvers.py.html>`__ to see an example of how to use list_resolvers API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_resolvers.py.html>`__ to see an example of how to use list_resolvers API.
         """
         resource_path = "/resolvers"
         method = "GET"
@@ -3982,7 +3982,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_steering_policies.py.html>`__ to see an example of how to use list_steering_policies API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_steering_policies.py.html>`__ to see an example of how to use list_steering_policies API.
         """
         resource_path = "/steeringPolicies"
         method = "GET"
@@ -4168,7 +4168,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_steering_policy_attachments.py.html>`__ to see an example of how to use list_steering_policy_attachments API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_steering_policy_attachments.py.html>`__ to see an example of how to use list_steering_policy_attachments API.
         """
         resource_path = "/steeringPolicyAttachments"
         method = "GET"
@@ -4328,7 +4328,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_tsig_keys.py.html>`__ to see an example of how to use list_tsig_keys API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_tsig_keys.py.html>`__ to see an example of how to use list_tsig_keys API.
         """
         resource_path = "/tsigKeys"
         method = "GET"
@@ -4481,7 +4481,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_views.py.html>`__ to see an example of how to use list_views API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_views.py.html>`__ to see an example of how to use list_views API.
         """
         resource_path = "/views"
         method = "GET"
@@ -4653,7 +4653,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/list_zones.py.html>`__ to see an example of how to use list_zones API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_zones.py.html>`__ to see an example of how to use list_zones API.
         """
         resource_path = "/zones"
         method = "GET"
@@ -4818,7 +4818,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/patch_domain_records.py.html>`__ to see an example of how to use patch_domain_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/patch_domain_records.py.html>`__ to see an example of how to use patch_domain_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "PATCH"
@@ -4955,7 +4955,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/patch_rr_set.py.html>`__ to see an example of how to use patch_rr_set API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/patch_rr_set.py.html>`__ to see an example of how to use patch_rr_set API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "PATCH"
@@ -5090,7 +5090,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/patch_zone_records.py.html>`__ to see an example of how to use patch_zone_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/patch_zone_records.py.html>`__ to see an example of how to use patch_zone_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "PATCH"
@@ -5228,7 +5228,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_domain_records.py.html>`__ to see an example of how to use update_domain_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_domain_records.py.html>`__ to see an example of how to use update_domain_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "PUT"
@@ -5353,7 +5353,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_resolver.py.html>`__ to see an example of how to use update_resolver API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_resolver.py.html>`__ to see an example of how to use update_resolver API.
         """
         resource_path = "/resolvers/{resolverId}"
         method = "PUT"
@@ -5476,7 +5476,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_resolver_endpoint.py.html>`__ to see an example of how to use update_resolver_endpoint API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_resolver_endpoint.py.html>`__ to see an example of how to use update_resolver_endpoint API.
         """
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "PUT"
@@ -5609,7 +5609,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_rr_set.py.html>`__ to see an example of how to use update_rr_set API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_rr_set.py.html>`__ to see an example of how to use update_rr_set API.
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "PUT"
@@ -5735,7 +5735,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_steering_policy.py.html>`__ to see an example of how to use update_steering_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_steering_policy.py.html>`__ to see an example of how to use update_steering_policy API.
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "PUT"
@@ -5855,7 +5855,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_steering_policy_attachment.py.html>`__ to see an example of how to use update_steering_policy_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_steering_policy_attachment.py.html>`__ to see an example of how to use update_steering_policy_attachment API.
         """
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "PUT"
@@ -5975,7 +5975,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_tsig_key.py.html>`__ to see an example of how to use update_tsig_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_tsig_key.py.html>`__ to see an example of how to use update_tsig_key API.
         """
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "PUT"
@@ -6095,7 +6095,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_view.py.html>`__ to see an example of how to use update_view API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_view.py.html>`__ to see an example of how to use update_view API.
         """
         resource_path = "/views/{viewId}"
         method = "PUT"
@@ -6225,7 +6225,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_zone.py.html>`__ to see an example of how to use update_zone API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_zone.py.html>`__ to see an example of how to use update_zone API.
         """
         resource_path = "/zones/{zoneNameOrId}"
         method = "PUT"
@@ -6359,7 +6359,7 @@ class DnsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dns/update_zone_records.py.html>`__ to see an example of how to use update_zone_records API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_zone_records.py.html>`__ to see an example of how to use update_zone_records API.
         """
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "PUT"

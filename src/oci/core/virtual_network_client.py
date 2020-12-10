@@ -116,7 +116,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/add_network_security_group_security_rules.py.html>`__ to see an example of how to use add_network_security_group_security_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_network_security_group_security_rules.py.html>`__ to see an example of how to use add_network_security_group_security_rules API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/addSecurityRules"
         method = "POST"
@@ -201,7 +201,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/add_public_ip_pool_capacity.py.html>`__ to see an example of how to use add_public_ip_pool_capacity API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_public_ip_pool_capacity.py.html>`__ to see an example of how to use add_public_ip_pool_capacity API.
         """
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/addCapacity"
         method = "POST"
@@ -305,7 +305,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/add_vcn_cidr.py.html>`__ to see an example of how to use add_vcn_cidr API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_vcn_cidr.py.html>`__ to see an example of how to use add_vcn_cidr API.
         """
         resource_path = "/vcns/{vcnId}/actions/addCidr"
         method = "POST"
@@ -388,7 +388,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/advertise_byoip_range.py.html>`__ to see an example of how to use advertise_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/advertise_byoip_range.py.html>`__ to see an example of how to use advertise_byoip_range API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/advertise"
         method = "POST"
@@ -477,7 +477,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/attach_service_id.py.html>`__ to see an example of how to use attach_service_id API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/attach_service_id.py.html>`__ to see an example of how to use attach_service_id API.
         """
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/attachService"
         method = "POST"
@@ -557,7 +557,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/bulk_add_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use bulk_add_virtual_circuit_public_prefixes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/bulk_add_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use bulk_add_virtual_circuit_public_prefixes API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkAddPublicPrefixes"
         method = "POST"
@@ -629,7 +629,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/bulk_delete_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use bulk_delete_virtual_circuit_public_prefixes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/bulk_delete_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use bulk_delete_virtual_circuit_public_prefixes API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkDeletePublicPrefixes"
         method = "POST"
@@ -713,7 +713,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_byoip_range_compartment.py.html>`__ to see an example of how to use change_byoip_range_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_byoip_range_compartment.py.html>`__ to see an example of how to use change_byoip_range_compartment API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/changeCompartment"
         method = "POST"
@@ -807,7 +807,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_cpe_compartment.py.html>`__ to see an example of how to use change_cpe_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cpe_compartment.py.html>`__ to see an example of how to use change_cpe_compartment API.
         """
         resource_path = "/cpes/{cpeId}/actions/changeCompartment"
         method = "POST"
@@ -901,7 +901,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_cross_connect_compartment.py.html>`__ to see an example of how to use change_cross_connect_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cross_connect_compartment.py.html>`__ to see an example of how to use change_cross_connect_compartment API.
         """
         resource_path = "/crossConnects/{crossConnectId}/actions/changeCompartment"
         method = "POST"
@@ -995,7 +995,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_cross_connect_group_compartment.py.html>`__ to see an example of how to use change_cross_connect_group_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cross_connect_group_compartment.py.html>`__ to see an example of how to use change_cross_connect_group_compartment API.
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}/actions/changeCompartment"
         method = "POST"
@@ -1089,7 +1089,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_dhcp_options_compartment.py.html>`__ to see an example of how to use change_dhcp_options_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_dhcp_options_compartment.py.html>`__ to see an example of how to use change_dhcp_options_compartment API.
         """
         resource_path = "/dhcps/{dhcpId}/actions/changeCompartment"
         method = "POST"
@@ -1183,7 +1183,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_drg_compartment.py.html>`__ to see an example of how to use change_drg_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_drg_compartment.py.html>`__ to see an example of how to use change_drg_compartment API.
         """
         resource_path = "/drgs/{drgId}/actions/changeCompartment"
         method = "POST"
@@ -1277,7 +1277,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_internet_gateway_compartment.py.html>`__ to see an example of how to use change_internet_gateway_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_internet_gateway_compartment.py.html>`__ to see an example of how to use change_internet_gateway_compartment API.
         """
         resource_path = "/internetGateways/{igId}/actions/changeCompartment"
         method = "POST"
@@ -1371,7 +1371,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_ip_sec_connection_compartment.py.html>`__ to see an example of how to use change_ip_sec_connection_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_ip_sec_connection_compartment.py.html>`__ to see an example of how to use change_ip_sec_connection_compartment API.
         """
         resource_path = "/ipsecConnections/{ipscId}/actions/changeCompartment"
         method = "POST"
@@ -1465,7 +1465,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_local_peering_gateway_compartment.py.html>`__ to see an example of how to use change_local_peering_gateway_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_local_peering_gateway_compartment.py.html>`__ to see an example of how to use change_local_peering_gateway_compartment API.
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/changeCompartment"
         method = "POST"
@@ -1561,7 +1561,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_nat_gateway_compartment.py.html>`__ to see an example of how to use change_nat_gateway_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_nat_gateway_compartment.py.html>`__ to see an example of how to use change_nat_gateway_compartment API.
         """
         resource_path = "/natGateways/{natGatewayId}/actions/changeCompartment"
         method = "POST"
@@ -1656,7 +1656,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_network_security_group_compartment.py.html>`__ to see an example of how to use change_network_security_group_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_network_security_group_compartment.py.html>`__ to see an example of how to use change_network_security_group_compartment API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/changeCompartment"
         method = "POST"
@@ -1753,7 +1753,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_public_ip_compartment.py.html>`__ to see an example of how to use change_public_ip_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_public_ip_compartment.py.html>`__ to see an example of how to use change_public_ip_compartment API.
         """
         resource_path = "/publicIps/{publicIpId}/actions/changeCompartment"
         method = "POST"
@@ -1847,7 +1847,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_public_ip_pool_compartment.py.html>`__ to see an example of how to use change_public_ip_pool_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_public_ip_pool_compartment.py.html>`__ to see an example of how to use change_public_ip_pool_compartment API.
         """
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/changeCompartment"
         method = "POST"
@@ -1941,7 +1941,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_remote_peering_connection_compartment.py.html>`__ to see an example of how to use change_remote_peering_connection_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_remote_peering_connection_compartment.py.html>`__ to see an example of how to use change_remote_peering_connection_compartment API.
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}/actions/changeCompartment"
         method = "POST"
@@ -2035,7 +2035,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_route_table_compartment.py.html>`__ to see an example of how to use change_route_table_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_route_table_compartment.py.html>`__ to see an example of how to use change_route_table_compartment API.
         """
         resource_path = "/routeTables/{rtId}/actions/changeCompartment"
         method = "POST"
@@ -2129,7 +2129,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_security_list_compartment.py.html>`__ to see an example of how to use change_security_list_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_security_list_compartment.py.html>`__ to see an example of how to use change_security_list_compartment API.
         """
         resource_path = "/securityLists/{securityListId}/actions/changeCompartment"
         method = "POST"
@@ -2225,7 +2225,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_service_gateway_compartment.py.html>`__ to see an example of how to use change_service_gateway_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_service_gateway_compartment.py.html>`__ to see an example of how to use change_service_gateway_compartment API.
         """
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/changeCompartment"
         method = "POST"
@@ -2319,7 +2319,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_subnet_compartment.py.html>`__ to see an example of how to use change_subnet_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_subnet_compartment.py.html>`__ to see an example of how to use change_subnet_compartment API.
         """
         resource_path = "/subnets/{subnetId}/actions/changeCompartment"
         method = "POST"
@@ -2415,7 +2415,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_vcn_compartment.py.html>`__ to see an example of how to use change_vcn_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_vcn_compartment.py.html>`__ to see an example of how to use change_vcn_compartment API.
         """
         resource_path = "/vcns/{vcnId}/actions/changeCompartment"
         method = "POST"
@@ -2509,7 +2509,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_virtual_circuit_compartment.py.html>`__ to see an example of how to use change_virtual_circuit_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_virtual_circuit_compartment.py.html>`__ to see an example of how to use change_virtual_circuit_compartment API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/changeCompartment"
         method = "POST"
@@ -2610,7 +2610,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/change_vlan_compartment.py.html>`__ to see an example of how to use change_vlan_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_vlan_compartment.py.html>`__ to see an example of how to use change_vlan_compartment API.
         """
         resource_path = "/vlans/{vlanId}/actions/changeCompartment"
         method = "POST"
@@ -2700,7 +2700,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/connect_local_peering_gateways.py.html>`__ to see an example of how to use connect_local_peering_gateways API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/connect_local_peering_gateways.py.html>`__ to see an example of how to use connect_local_peering_gateways API.
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/connect"
         method = "POST"
@@ -2778,7 +2778,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/connect_remote_peering_connections.py.html>`__ to see an example of how to use connect_remote_peering_connections API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/connect_remote_peering_connections.py.html>`__ to see an example of how to use connect_remote_peering_connections API.
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}/actions/connect"
         method = "POST"
@@ -2855,7 +2855,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_byoip_range.py.html>`__ to see an example of how to use create_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_byoip_range.py.html>`__ to see an example of how to use create_byoip_range API.
         """
         resource_path = "/byoipRanges"
         method = "POST"
@@ -2947,7 +2947,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_cpe.py.html>`__ to see an example of how to use create_cpe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cpe.py.html>`__ to see an example of how to use create_cpe API.
         """
         resource_path = "/cpes"
         method = "POST"
@@ -3040,7 +3040,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_cross_connect.py.html>`__ to see an example of how to use create_cross_connect API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cross_connect.py.html>`__ to see an example of how to use create_cross_connect API.
         """
         resource_path = "/crossConnects"
         method = "POST"
@@ -3129,7 +3129,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_cross_connect_group.py.html>`__ to see an example of how to use create_cross_connect_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cross_connect_group.py.html>`__ to see an example of how to use create_cross_connect_group API.
         """
         resource_path = "/crossConnectGroups"
         method = "POST"
@@ -3214,7 +3214,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_dhcp_options.py.html>`__ to see an example of how to use create_dhcp_options API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_dhcp_options.py.html>`__ to see an example of how to use create_dhcp_options API.
         """
         resource_path = "/dhcps"
         method = "POST"
@@ -3300,7 +3300,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_drg.py.html>`__ to see an example of how to use create_drg API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg.py.html>`__ to see an example of how to use create_drg API.
         """
         resource_path = "/drgs"
         method = "POST"
@@ -3384,7 +3384,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_drg_attachment.py.html>`__ to see an example of how to use create_drg_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg_attachment.py.html>`__ to see an example of how to use create_drg_attachment API.
         """
         resource_path = "/drgAttachments"
         method = "POST"
@@ -3479,7 +3479,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_internet_gateway.py.html>`__ to see an example of how to use create_internet_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_internet_gateway.py.html>`__ to see an example of how to use create_internet_gateway API.
         """
         resource_path = "/internetGateways"
         method = "POST"
@@ -3583,7 +3583,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_ip_sec_connection.py.html>`__ to see an example of how to use create_ip_sec_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_ip_sec_connection.py.html>`__ to see an example of how to use create_ip_sec_connection API.
         """
         resource_path = "/ipsecConnections"
         method = "POST"
@@ -3658,7 +3658,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_ipv6.py.html>`__ to see an example of how to use create_ipv6 API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_ipv6.py.html>`__ to see an example of how to use create_ipv6 API.
         """
         resource_path = "/ipv6"
         method = "POST"
@@ -3731,7 +3731,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_local_peering_gateway.py.html>`__ to see an example of how to use create_local_peering_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_local_peering_gateway.py.html>`__ to see an example of how to use create_local_peering_gateway API.
         """
         resource_path = "/localPeeringGateways"
         method = "POST"
@@ -3803,7 +3803,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_nat_gateway.py.html>`__ to see an example of how to use create_nat_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_nat_gateway.py.html>`__ to see an example of how to use create_nat_gateway API.
         """
         resource_path = "/natGateways"
         method = "POST"
@@ -3874,7 +3874,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_network_security_group.py.html>`__ to see an example of how to use create_network_security_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_network_security_group.py.html>`__ to see an example of how to use create_network_security_group API.
         """
         resource_path = "/networkSecurityGroups"
         method = "POST"
@@ -3949,7 +3949,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_private_ip.py.html>`__ to see an example of how to use create_private_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_private_ip.py.html>`__ to see an example of how to use create_private_ip API.
         """
         resource_path = "/privateIps"
         method = "POST"
@@ -4042,7 +4042,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_public_ip.py.html>`__ to see an example of how to use create_public_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_public_ip.py.html>`__ to see an example of how to use create_public_ip API.
         """
         resource_path = "/publicIps"
         method = "POST"
@@ -4117,7 +4117,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_public_ip_pool.py.html>`__ to see an example of how to use create_public_ip_pool API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_public_ip_pool.py.html>`__ to see an example of how to use create_public_ip_pool API.
         """
         resource_path = "/publicIpPools"
         method = "POST"
@@ -4190,7 +4190,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_remote_peering_connection.py.html>`__ to see an example of how to use create_remote_peering_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_remote_peering_connection.py.html>`__ to see an example of how to use create_remote_peering_connection API.
         """
         resource_path = "/remotePeeringConnections"
         method = "POST"
@@ -4280,7 +4280,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_route_table.py.html>`__ to see an example of how to use create_route_table API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_route_table.py.html>`__ to see an example of how to use create_route_table API.
         """
         resource_path = "/routeTables"
         method = "POST"
@@ -4369,7 +4369,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_security_list.py.html>`__ to see an example of how to use create_security_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_security_list.py.html>`__ to see an example of how to use create_security_list API.
         """
         resource_path = "/securityLists"
         method = "POST"
@@ -4451,7 +4451,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_service_gateway.py.html>`__ to see an example of how to use create_service_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_service_gateway.py.html>`__ to see an example of how to use create_service_gateway API.
         """
         resource_path = "/serviceGateways"
         method = "POST"
@@ -4561,7 +4561,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_subnet.py.html>`__ to see an example of how to use create_subnet API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_subnet.py.html>`__ to see an example of how to use create_subnet API.
         """
         resource_path = "/subnets"
         method = "POST"
@@ -4673,7 +4673,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_vcn.py.html>`__ to see an example of how to use create_vcn API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_vcn.py.html>`__ to see an example of how to use create_vcn API.
         """
         resource_path = "/vcns"
         method = "POST"
@@ -4769,7 +4769,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_virtual_circuit.py.html>`__ to see an example of how to use create_virtual_circuit API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_virtual_circuit.py.html>`__ to see an example of how to use create_virtual_circuit API.
         """
         resource_path = "/virtualCircuits"
         method = "POST"
@@ -4844,7 +4844,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/create_vlan.py.html>`__ to see an example of how to use create_vlan API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_vlan.py.html>`__ to see an example of how to use create_vlan API.
         """
         resource_path = "/vlans"
         method = "POST"
@@ -4924,7 +4924,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_byoip_range.py.html>`__ to see an example of how to use delete_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_byoip_range.py.html>`__ to see an example of how to use delete_byoip_range API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "DELETE"
@@ -5003,7 +5003,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_cpe.py.html>`__ to see an example of how to use delete_cpe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_cpe.py.html>`__ to see an example of how to use delete_cpe API.
         """
         resource_path = "/cpes/{cpeId}"
         method = "DELETE"
@@ -5079,7 +5079,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_cross_connect.py.html>`__ to see an example of how to use delete_cross_connect API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_cross_connect.py.html>`__ to see an example of how to use delete_cross_connect API.
         """
         resource_path = "/crossConnects/{crossConnectId}"
         method = "DELETE"
@@ -5156,7 +5156,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_cross_connect_group.py.html>`__ to see an example of how to use delete_cross_connect_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_cross_connect_group.py.html>`__ to see an example of how to use delete_cross_connect_group API.
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "DELETE"
@@ -5235,7 +5235,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_dhcp_options.py.html>`__ to see an example of how to use delete_dhcp_options API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_dhcp_options.py.html>`__ to see an example of how to use delete_dhcp_options API.
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "DELETE"
@@ -5313,7 +5313,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_drg.py.html>`__ to see an example of how to use delete_drg API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg.py.html>`__ to see an example of how to use delete_drg API.
         """
         resource_path = "/drgs/{drgId}"
         method = "DELETE"
@@ -5390,7 +5390,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_drg_attachment.py.html>`__ to see an example of how to use delete_drg_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg_attachment.py.html>`__ to see an example of how to use delete_drg_attachment API.
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "DELETE"
@@ -5469,7 +5469,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_internet_gateway.py.html>`__ to see an example of how to use delete_internet_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_internet_gateway.py.html>`__ to see an example of how to use delete_internet_gateway API.
         """
         resource_path = "/internetGateways/{igId}"
         method = "DELETE"
@@ -5551,7 +5551,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_ip_sec_connection.py.html>`__ to see an example of how to use delete_ip_sec_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_ip_sec_connection.py.html>`__ to see an example of how to use delete_ip_sec_connection API.
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "DELETE"
@@ -5633,7 +5633,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_ipv6.py.html>`__ to see an example of how to use delete_ipv6 API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_ipv6.py.html>`__ to see an example of how to use delete_ipv6 API.
         """
         resource_path = "/ipv6/{ipv6Id}"
         method = "DELETE"
@@ -5713,7 +5713,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_local_peering_gateway.py.html>`__ to see an example of how to use delete_local_peering_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_local_peering_gateway.py.html>`__ to see an example of how to use delete_local_peering_gateway API.
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "DELETE"
@@ -5794,7 +5794,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_nat_gateway.py.html>`__ to see an example of how to use delete_nat_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_nat_gateway.py.html>`__ to see an example of how to use delete_nat_gateway API.
         """
         resource_path = "/natGateways/{natGatewayId}"
         method = "DELETE"
@@ -5877,7 +5877,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_network_security_group.py.html>`__ to see an example of how to use delete_network_security_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_network_security_group.py.html>`__ to see an example of how to use delete_network_security_group API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "DELETE"
@@ -5964,7 +5964,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_private_ip.py.html>`__ to see an example of how to use delete_private_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_private_ip.py.html>`__ to see an example of how to use delete_private_ip API.
         """
         resource_path = "/privateIps/{privateIpId}"
         method = "DELETE"
@@ -6053,7 +6053,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_public_ip.py.html>`__ to see an example of how to use delete_public_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_public_ip.py.html>`__ to see an example of how to use delete_public_ip API.
         """
         resource_path = "/publicIps/{publicIpId}"
         method = "DELETE"
@@ -6134,7 +6134,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_public_ip_pool.py.html>`__ to see an example of how to use delete_public_ip_pool API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_public_ip_pool.py.html>`__ to see an example of how to use delete_public_ip_pool API.
         """
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "DELETE"
@@ -6214,7 +6214,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_remote_peering_connection.py.html>`__ to see an example of how to use delete_remote_peering_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_remote_peering_connection.py.html>`__ to see an example of how to use delete_remote_peering_connection API.
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "DELETE"
@@ -6293,7 +6293,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_route_table.py.html>`__ to see an example of how to use delete_route_table API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_route_table.py.html>`__ to see an example of how to use delete_route_table API.
         """
         resource_path = "/routeTables/{rtId}"
         method = "DELETE"
@@ -6372,7 +6372,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_security_list.py.html>`__ to see an example of how to use delete_security_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_security_list.py.html>`__ to see an example of how to use delete_security_list API.
         """
         resource_path = "/securityLists/{securityListId}"
         method = "DELETE"
@@ -6450,7 +6450,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_service_gateway.py.html>`__ to see an example of how to use delete_service_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_service_gateway.py.html>`__ to see an example of how to use delete_service_gateway API.
         """
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "DELETE"
@@ -6527,7 +6527,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_subnet.py.html>`__ to see an example of how to use delete_subnet API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_subnet.py.html>`__ to see an example of how to use delete_subnet API.
         """
         resource_path = "/subnets/{subnetId}"
         method = "DELETE"
@@ -6606,7 +6606,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_vcn.py.html>`__ to see an example of how to use delete_vcn API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_vcn.py.html>`__ to see an example of how to use delete_vcn API.
         """
         resource_path = "/vcns/{vcnId}"
         method = "DELETE"
@@ -6685,7 +6685,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_virtual_circuit.py.html>`__ to see an example of how to use delete_virtual_circuit API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_virtual_circuit.py.html>`__ to see an example of how to use delete_virtual_circuit API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "DELETE"
@@ -6766,7 +6766,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/delete_vlan.py.html>`__ to see an example of how to use delete_vlan API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_vlan.py.html>`__ to see an example of how to use delete_vlan API.
         """
         resource_path = "/vlans/{vlanId}"
         method = "DELETE"
@@ -6859,7 +6859,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/detach_service_id.py.html>`__ to see an example of how to use detach_service_id API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/detach_service_id.py.html>`__ to see an example of how to use detach_service_id API.
         """
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/detachService"
         method = "POST"
@@ -6937,7 +6937,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_byoip_range.py.html>`__ to see an example of how to use get_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_byoip_range.py.html>`__ to see an example of how to use get_byoip_range API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "GET"
@@ -7009,7 +7009,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cpe.py.html>`__ to see an example of how to use get_cpe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cpe.py.html>`__ to see an example of how to use get_cpe API.
         """
         resource_path = "/cpes/{cpeId}"
         method = "GET"
@@ -7096,7 +7096,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cpe_device_config_content.py.html>`__ to see an example of how to use get_cpe_device_config_content API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cpe_device_config_content.py.html>`__ to see an example of how to use get_cpe_device_config_content API.
         """
         resource_path = "/cpes/{cpeId}/cpeConfigContent"
         method = "GET"
@@ -7182,7 +7182,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cpe_device_shape.py.html>`__ to see an example of how to use get_cpe_device_shape API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cpe_device_shape.py.html>`__ to see an example of how to use get_cpe_device_shape API.
         """
         resource_path = "/cpeDeviceShapes/{cpeDeviceShapeId}"
         method = "GET"
@@ -7254,7 +7254,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cross_connect.py.html>`__ to see an example of how to use get_cross_connect API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect.py.html>`__ to see an example of how to use get_cross_connect API.
         """
         resource_path = "/crossConnects/{crossConnectId}"
         method = "GET"
@@ -7320,7 +7320,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cross_connect_group.py.html>`__ to see an example of how to use get_cross_connect_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect_group.py.html>`__ to see an example of how to use get_cross_connect_group API.
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "GET"
@@ -7386,7 +7386,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cross_connect_letter_of_authority.py.html>`__ to see an example of how to use get_cross_connect_letter_of_authority API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect_letter_of_authority.py.html>`__ to see an example of how to use get_cross_connect_letter_of_authority API.
         """
         resource_path = "/crossConnects/{crossConnectId}/letterOfAuthority"
         method = "GET"
@@ -7452,7 +7452,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_cross_connect_status.py.html>`__ to see an example of how to use get_cross_connect_status API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect_status.py.html>`__ to see an example of how to use get_cross_connect_status API.
         """
         resource_path = "/crossConnects/{crossConnectId}/status"
         method = "GET"
@@ -7518,7 +7518,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_dhcp_options.py.html>`__ to see an example of how to use get_dhcp_options API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_dhcp_options.py.html>`__ to see an example of how to use get_dhcp_options API.
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "GET"
@@ -7584,7 +7584,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_drg.py.html>`__ to see an example of how to use get_drg API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg.py.html>`__ to see an example of how to use get_drg API.
         """
         resource_path = "/drgs/{drgId}"
         method = "GET"
@@ -7650,7 +7650,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_drg_attachment.py.html>`__ to see an example of how to use get_drg_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_attachment.py.html>`__ to see an example of how to use get_drg_attachment API.
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "GET"
@@ -7723,7 +7723,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_drg_redundancy_status.py.html>`__ to see an example of how to use get_drg_redundancy_status API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_redundancy_status.py.html>`__ to see an example of how to use get_drg_redundancy_status API.
         """
         resource_path = "/drgs/{drgId}/redundancyStatus"
         method = "GET"
@@ -7798,7 +7798,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_fast_connect_provider_service.py.html>`__ to see an example of how to use get_fast_connect_provider_service API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_fast_connect_provider_service.py.html>`__ to see an example of how to use get_fast_connect_provider_service API.
         """
         resource_path = "/fastConnectProviderServices/{providerServiceId}"
         method = "GET"
@@ -7871,7 +7871,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_fast_connect_provider_service_key.py.html>`__ to see an example of how to use get_fast_connect_provider_service_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_fast_connect_provider_service_key.py.html>`__ to see an example of how to use get_fast_connect_provider_service_key API.
         """
         resource_path = "/fastConnectProviderServices/{providerServiceId}/providerServiceKeys/{providerServiceKeyName}"
         method = "GET"
@@ -7938,7 +7938,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_internet_gateway.py.html>`__ to see an example of how to use get_internet_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_internet_gateway.py.html>`__ to see an example of how to use get_internet_gateway API.
         """
         resource_path = "/internetGateways/{igId}"
         method = "GET"
@@ -8006,7 +8006,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ip_sec_connection.py.html>`__ to see an example of how to use get_ip_sec_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection.py.html>`__ to see an example of how to use get_ip_sec_connection API.
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "GET"
@@ -8075,7 +8075,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ip_sec_connection_device_config.py.html>`__ to see an example of how to use get_ip_sec_connection_device_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_device_config.py.html>`__ to see an example of how to use get_ip_sec_connection_device_config API.
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
         method = "GET"
@@ -8142,7 +8142,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ip_sec_connection_device_status.py.html>`__ to see an example of how to use get_ip_sec_connection_device_status API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_device_status.py.html>`__ to see an example of how to use get_ip_sec_connection_device_status API.
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
         method = "GET"
@@ -8215,7 +8215,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ip_sec_connection_tunnel.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_tunnel.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
         method = "GET"
@@ -8288,7 +8288,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ip_sec_connection_tunnel_shared_secret.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel_shared_secret API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_tunnel_shared_secret.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel_shared_secret API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
         method = "GET"
@@ -8377,7 +8377,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ipsec_cpe_device_config_content.py.html>`__ to see an example of how to use get_ipsec_cpe_device_config_content API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ipsec_cpe_device_config_content.py.html>`__ to see an example of how to use get_ipsec_cpe_device_config_content API.
         """
         resource_path = "/ipsecConnections/{ipscId}/cpeConfigContent"
         method = "GET"
@@ -8458,7 +8458,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_ipv6.py.html>`__ to see an example of how to use get_ipv6 API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ipv6.py.html>`__ to see an example of how to use get_ipv6 API.
         """
         resource_path = "/ipv6/{ipv6Id}"
         method = "GET"
@@ -8530,7 +8530,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_local_peering_gateway.py.html>`__ to see an example of how to use get_local_peering_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_local_peering_gateway.py.html>`__ to see an example of how to use get_local_peering_gateway API.
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "GET"
@@ -8598,7 +8598,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_nat_gateway.py.html>`__ to see an example of how to use get_nat_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_nat_gateway.py.html>`__ to see an example of how to use get_nat_gateway API.
         """
         resource_path = "/natGateways/{natGatewayId}"
         method = "GET"
@@ -8672,7 +8672,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_network_security_group.py.html>`__ to see an example of how to use get_network_security_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_network_security_group.py.html>`__ to see an example of how to use get_network_security_group API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "GET"
@@ -8741,7 +8741,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_private_ip.py.html>`__ to see an example of how to use get_private_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_private_ip.py.html>`__ to see an example of how to use get_private_ip API.
         """
         resource_path = "/privateIps/{privateIpId}"
         method = "GET"
@@ -8817,7 +8817,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_public_ip.py.html>`__ to see an example of how to use get_public_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip.py.html>`__ to see an example of how to use get_public_ip API.
         """
         resource_path = "/publicIps/{publicIpId}"
         method = "GET"
@@ -8887,7 +8887,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_public_ip_by_ip_address.py.html>`__ to see an example of how to use get_public_ip_by_ip_address API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip_by_ip_address.py.html>`__ to see an example of how to use get_public_ip_by_ip_address API.
         """
         resource_path = "/publicIps/actions/getByIpAddress"
         method = "POST"
@@ -8953,7 +8953,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_public_ip_by_private_ip_id.py.html>`__ to see an example of how to use get_public_ip_by_private_ip_id API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip_by_private_ip_id.py.html>`__ to see an example of how to use get_public_ip_by_private_ip_id API.
         """
         resource_path = "/publicIps/actions/getByPrivateIpId"
         method = "POST"
@@ -9013,7 +9013,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_public_ip_pool.py.html>`__ to see an example of how to use get_public_ip_pool API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip_pool.py.html>`__ to see an example of how to use get_public_ip_pool API.
         """
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "GET"
@@ -9085,7 +9085,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_remote_peering_connection.py.html>`__ to see an example of how to use get_remote_peering_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_remote_peering_connection.py.html>`__ to see an example of how to use get_remote_peering_connection API.
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "GET"
@@ -9151,7 +9151,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_route_table.py.html>`__ to see an example of how to use get_route_table API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_route_table.py.html>`__ to see an example of how to use get_route_table API.
         """
         resource_path = "/routeTables/{rtId}"
         method = "GET"
@@ -9217,7 +9217,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_security_list.py.html>`__ to see an example of how to use get_security_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_security_list.py.html>`__ to see an example of how to use get_security_list API.
         """
         resource_path = "/securityLists/{securityListId}"
         method = "GET"
@@ -9285,7 +9285,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_service.py.html>`__ to see an example of how to use get_service API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_service.py.html>`__ to see an example of how to use get_service API.
         """
         resource_path = "/services/{serviceId}"
         method = "GET"
@@ -9353,7 +9353,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_service_gateway.py.html>`__ to see an example of how to use get_service_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_service_gateway.py.html>`__ to see an example of how to use get_service_gateway API.
         """
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "GET"
@@ -9419,7 +9419,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_subnet.py.html>`__ to see an example of how to use get_subnet API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_subnet.py.html>`__ to see an example of how to use get_subnet API.
         """
         resource_path = "/subnets/{subnetId}"
         method = "GET"
@@ -9498,7 +9498,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_tunnel_cpe_device_config.py.html>`__ to see an example of how to use get_tunnel_cpe_device_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_tunnel_cpe_device_config.py.html>`__ to see an example of how to use get_tunnel_cpe_device_config API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
         method = "GET"
@@ -9597,7 +9597,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_tunnel_cpe_device_config_content.py.html>`__ to see an example of how to use get_tunnel_cpe_device_config_content API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_tunnel_cpe_device_config_content.py.html>`__ to see an example of how to use get_tunnel_cpe_device_config_content API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig/content"
         method = "GET"
@@ -9672,7 +9672,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_vcn.py.html>`__ to see an example of how to use get_vcn API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vcn.py.html>`__ to see an example of how to use get_vcn API.
         """
         resource_path = "/vcns/{vcnId}"
         method = "GET"
@@ -9744,7 +9744,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_vcn_dns_resolver_association.py.html>`__ to see an example of how to use get_vcn_dns_resolver_association API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vcn_dns_resolver_association.py.html>`__ to see an example of how to use get_vcn_dns_resolver_association API.
         """
         resource_path = "/vcns/{vcnId}/dnsResolverAssociation"
         method = "GET"
@@ -9816,7 +9816,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_virtual_circuit.py.html>`__ to see an example of how to use get_virtual_circuit API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_virtual_circuit.py.html>`__ to see an example of how to use get_virtual_circuit API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "GET"
@@ -9888,7 +9888,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_vlan.py.html>`__ to see an example of how to use get_vlan API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vlan.py.html>`__ to see an example of how to use get_vlan API.
         """
         resource_path = "/vlans/{vlanId}"
         method = "GET"
@@ -9963,7 +9963,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/get_vnic.py.html>`__ to see an example of how to use get_vnic API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vnic.py.html>`__ to see an example of how to use get_vnic API.
         """
         resource_path = "/vnics/{vnicId}"
         method = "GET"
@@ -10029,7 +10029,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_allowed_peer_regions_for_remote_peering.py.html>`__ to see an example of how to use list_allowed_peer_regions_for_remote_peering API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_allowed_peer_regions_for_remote_peering.py.html>`__ to see an example of how to use list_allowed_peer_regions_for_remote_peering API.
         """
         resource_path = "/allowedPeerRegionsForRemotePeering"
         method = "GET"
@@ -10104,7 +10104,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_byoip_allocated_ranges.py.html>`__ to see an example of how to use list_byoip_allocated_ranges API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_byoip_allocated_ranges.py.html>`__ to see an example of how to use list_byoip_allocated_ranges API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}/byoipAllocatedRanges"
         method = "GET"
@@ -10233,7 +10233,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_byoip_ranges.py.html>`__ to see an example of how to use list_byoip_ranges API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_byoip_ranges.py.html>`__ to see an example of how to use list_byoip_ranges API.
         """
         resource_path = "/byoipRanges"
         method = "GET"
@@ -10355,7 +10355,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cpe_device_shapes.py.html>`__ to see an example of how to use list_cpe_device_shapes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cpe_device_shapes.py.html>`__ to see an example of how to use list_cpe_device_shapes API.
         """
         resource_path = "/cpeDeviceShapes"
         method = "GET"
@@ -10443,7 +10443,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cpes.py.html>`__ to see an example of how to use list_cpes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cpes.py.html>`__ to see an example of how to use list_cpes API.
         """
         resource_path = "/cpes"
         method = "GET"
@@ -10555,7 +10555,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cross_connect_groups.py.html>`__ to see an example of how to use list_cross_connect_groups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connect_groups.py.html>`__ to see an example of how to use list_cross_connect_groups API.
         """
         resource_path = "/crossConnectGroups"
         method = "GET"
@@ -10671,7 +10671,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cross_connect_locations.py.html>`__ to see an example of how to use list_cross_connect_locations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connect_locations.py.html>`__ to see an example of how to use list_cross_connect_locations API.
         """
         resource_path = "/crossConnectLocations"
         method = "GET"
@@ -10787,7 +10787,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_cross_connects.py.html>`__ to see an example of how to use list_cross_connects API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connects.py.html>`__ to see an example of how to use list_cross_connects API.
         """
         resource_path = "/crossConnects"
         method = "GET"
@@ -10906,7 +10906,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_crossconnect_port_speed_shapes.py.html>`__ to see an example of how to use list_crossconnect_port_speed_shapes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_crossconnect_port_speed_shapes.py.html>`__ to see an example of how to use list_crossconnect_port_speed_shapes API.
         """
         resource_path = "/crossConnectPortSpeedShapes"
         method = "GET"
@@ -11026,7 +11026,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_dhcp_options.py.html>`__ to see an example of how to use list_dhcp_options API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_dhcp_options.py.html>`__ to see an example of how to use list_dhcp_options API.
         """
         resource_path = "/dhcps"
         method = "GET"
@@ -11152,7 +11152,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_drg_attachments.py.html>`__ to see an example of how to use list_drg_attachments API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_attachments.py.html>`__ to see an example of how to use list_drg_attachments API.
         """
         resource_path = "/drgAttachments"
         method = "GET"
@@ -11242,7 +11242,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_drgs.py.html>`__ to see an example of how to use list_drgs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drgs.py.html>`__ to see an example of how to use list_drgs API.
         """
         resource_path = "/drgs"
         method = "GET"
@@ -11336,7 +11336,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_fast_connect_provider_services.py.html>`__ to see an example of how to use list_fast_connect_provider_services API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_fast_connect_provider_services.py.html>`__ to see an example of how to use list_fast_connect_provider_services API.
         """
         resource_path = "/fastConnectProviderServices"
         method = "GET"
@@ -11425,7 +11425,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_fast_connect_provider_virtual_circuit_bandwidth_shapes.py.html>`__ to see an example of how to use list_fast_connect_provider_virtual_circuit_bandwidth_shapes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_fast_connect_provider_virtual_circuit_bandwidth_shapes.py.html>`__ to see an example of how to use list_fast_connect_provider_virtual_circuit_bandwidth_shapes API.
         """
         resource_path = "/fastConnectProviderServices/{providerServiceId}/virtualCircuitBandwidthShapes"
         method = "GET"
@@ -11554,7 +11554,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_internet_gateways.py.html>`__ to see an example of how to use list_internet_gateways API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_internet_gateways.py.html>`__ to see an example of how to use list_internet_gateways API.
         """
         resource_path = "/internetGateways"
         method = "GET"
@@ -11669,7 +11669,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_ip_sec_connection_tunnels.py.html>`__ to see an example of how to use list_ip_sec_connection_tunnels API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ip_sec_connection_tunnels.py.html>`__ to see an example of how to use list_ip_sec_connection_tunnels API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels"
         method = "GET"
@@ -11773,7 +11773,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_ip_sec_connections.py.html>`__ to see an example of how to use list_ip_sec_connections API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ip_sec_connections.py.html>`__ to see an example of how to use list_ip_sec_connections API.
         """
         resource_path = "/ipsecConnections"
         method = "GET"
@@ -11879,7 +11879,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_ipv6s.py.html>`__ to see an example of how to use list_ipv6s API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ipv6s.py.html>`__ to see an example of how to use list_ipv6s API.
         """
         resource_path = "/ipv6"
         method = "GET"
@@ -11979,7 +11979,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_local_peering_gateways.py.html>`__ to see an example of how to use list_local_peering_gateways API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_local_peering_gateways.py.html>`__ to see an example of how to use list_local_peering_gateways API.
         """
         resource_path = "/localPeeringGateways"
         method = "GET"
@@ -12099,7 +12099,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_nat_gateways.py.html>`__ to see an example of how to use list_nat_gateways API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_nat_gateways.py.html>`__ to see an example of how to use list_nat_gateways API.
         """
         resource_path = "/natGateways"
         method = "GET"
@@ -12233,7 +12233,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_network_security_group_security_rules.py.html>`__ to see an example of how to use list_network_security_group_security_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_network_security_group_security_rules.py.html>`__ to see an example of how to use list_network_security_group_security_rules API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/securityRules"
         method = "GET"
@@ -12368,7 +12368,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_network_security_group_vnics.py.html>`__ to see an example of how to use list_network_security_group_vnics API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_network_security_group_vnics.py.html>`__ to see an example of how to use list_network_security_group_vnics API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/vnics"
         method = "GET"
@@ -12514,7 +12514,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_network_security_groups.py.html>`__ to see an example of how to use list_network_security_groups API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_network_security_groups.py.html>`__ to see an example of how to use list_network_security_groups API.
         """
         resource_path = "/networkSecurityGroups"
         method = "GET"
@@ -12656,7 +12656,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_private_ips.py.html>`__ to see an example of how to use list_private_ips API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_private_ips.py.html>`__ to see an example of how to use list_private_ips API.
         """
         resource_path = "/privateIps"
         method = "GET"
@@ -12778,7 +12778,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_public_ip_pools.py.html>`__ to see an example of how to use list_public_ip_pools API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_public_ip_pools.py.html>`__ to see an example of how to use list_public_ip_pools API.
         """
         resource_path = "/publicIpPools"
         method = "GET"
@@ -12935,7 +12935,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_public_ips.py.html>`__ to see an example of how to use list_public_ips API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_public_ips.py.html>`__ to see an example of how to use list_public_ips API.
         """
         resource_path = "/publicIps"
         method = "GET"
@@ -13045,7 +13045,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_remote_peering_connections.py.html>`__ to see an example of how to use list_remote_peering_connections API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_remote_peering_connections.py.html>`__ to see an example of how to use list_remote_peering_connections API.
         """
         resource_path = "/remotePeeringConnections"
         method = "GET"
@@ -13167,7 +13167,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_route_tables.py.html>`__ to see an example of how to use list_route_tables API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_route_tables.py.html>`__ to see an example of how to use list_route_tables API.
         """
         resource_path = "/routeTables"
         method = "GET"
@@ -13316,7 +13316,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_security_lists.py.html>`__ to see an example of how to use list_security_lists API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_security_lists.py.html>`__ to see an example of how to use list_security_lists API.
         """
         resource_path = "/securityLists"
         method = "GET"
@@ -13462,7 +13462,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_service_gateways.py.html>`__ to see an example of how to use list_service_gateways API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_service_gateways.py.html>`__ to see an example of how to use list_service_gateways API.
         """
         resource_path = "/serviceGateways"
         method = "GET"
@@ -13573,7 +13573,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_services.py.html>`__ to see an example of how to use list_services API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_services.py.html>`__ to see an example of how to use list_services API.
         """
         resource_path = "/services"
         method = "GET"
@@ -13690,7 +13690,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_subnets.py.html>`__ to see an example of how to use list_subnets API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_subnets.py.html>`__ to see an example of how to use list_subnets API.
         """
         resource_path = "/subnets"
         method = "GET"
@@ -13833,7 +13833,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_vcns.py.html>`__ to see an example of how to use list_vcns API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_vcns.py.html>`__ to see an example of how to use list_vcns API.
         """
         resource_path = "/vcns"
         method = "GET"
@@ -13948,7 +13948,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_virtual_circuit_bandwidth_shapes.py.html>`__ to see an example of how to use list_virtual_circuit_bandwidth_shapes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_virtual_circuit_bandwidth_shapes.py.html>`__ to see an example of how to use list_virtual_circuit_bandwidth_shapes API.
         """
         resource_path = "/virtualCircuitBandwidthShapes"
         method = "GET"
@@ -14023,7 +14023,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use list_virtual_circuit_public_prefixes API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use list_virtual_circuit_public_prefixes API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/publicPrefixes"
         method = "GET"
@@ -14151,7 +14151,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_virtual_circuits.py.html>`__ to see an example of how to use list_virtual_circuits API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_virtual_circuits.py.html>`__ to see an example of how to use list_virtual_circuits API.
         """
         resource_path = "/virtualCircuits"
         method = "GET"
@@ -14301,7 +14301,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/list_vlans.py.html>`__ to see an example of how to use list_vlans API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_vlans.py.html>`__ to see an example of how to use list_vlans API.
         """
         resource_path = "/vlans"
         method = "GET"
@@ -14430,7 +14430,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/modify_vcn_cidr.py.html>`__ to see an example of how to use modify_vcn_cidr API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/modify_vcn_cidr.py.html>`__ to see an example of how to use modify_vcn_cidr API.
         """
         resource_path = "/vcns/{vcnId}/actions/modifyCidr"
         method = "POST"
@@ -14514,7 +14514,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/remove_network_security_group_security_rules.py.html>`__ to see an example of how to use remove_network_security_group_security_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_network_security_group_security_rules.py.html>`__ to see an example of how to use remove_network_security_group_security_rules API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/removeSecurityRules"
         method = "POST"
@@ -14594,7 +14594,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/remove_public_ip_pool_capacity.py.html>`__ to see an example of how to use remove_public_ip_pool_capacity API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_public_ip_pool_capacity.py.html>`__ to see an example of how to use remove_public_ip_pool_capacity API.
         """
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/removeCapacity"
         method = "POST"
@@ -14694,7 +14694,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/remove_vcn_cidr.py.html>`__ to see an example of how to use remove_vcn_cidr API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_vcn_cidr.py.html>`__ to see an example of how to use remove_vcn_cidr API.
         """
         resource_path = "/vcns/{vcnId}/actions/removeCidr"
         method = "POST"
@@ -14784,7 +14784,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_byoip_range.py.html>`__ to see an example of how to use update_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_byoip_range.py.html>`__ to see an example of how to use update_byoip_range API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "PUT"
@@ -14869,7 +14869,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_cpe.py.html>`__ to see an example of how to use update_cpe API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cpe.py.html>`__ to see an example of how to use update_cpe API.
         """
         resource_path = "/cpes/{cpeId}"
         method = "PUT"
@@ -14951,7 +14951,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_cross_connect.py.html>`__ to see an example of how to use update_cross_connect API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cross_connect.py.html>`__ to see an example of how to use update_cross_connect API.
         """
         resource_path = "/crossConnects/{crossConnectId}"
         method = "PUT"
@@ -15034,7 +15034,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_cross_connect_group.py.html>`__ to see an example of how to use update_cross_connect_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cross_connect_group.py.html>`__ to see an example of how to use update_cross_connect_group API.
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "PUT"
@@ -15119,7 +15119,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_dhcp_options.py.html>`__ to see an example of how to use update_dhcp_options API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_dhcp_options.py.html>`__ to see an example of how to use update_dhcp_options API.
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "PUT"
@@ -15201,7 +15201,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_drg.py.html>`__ to see an example of how to use update_drg API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg.py.html>`__ to see an example of how to use update_drg API.
         """
         resource_path = "/drgs/{drgId}"
         method = "PUT"
@@ -15284,7 +15284,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_drg_attachment.py.html>`__ to see an example of how to use update_drg_attachment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_attachment.py.html>`__ to see an example of how to use update_drg_attachment API.
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "PUT"
@@ -15370,7 +15370,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_internet_gateway.py.html>`__ to see an example of how to use update_internet_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_internet_gateway.py.html>`__ to see an example of how to use update_internet_gateway API.
         """
         resource_path = "/internetGateways/{igId}"
         method = "PUT"
@@ -15455,7 +15455,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_ip_sec_connection.py.html>`__ to see an example of how to use update_ip_sec_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ip_sec_connection.py.html>`__ to see an example of how to use update_ip_sec_connection API.
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "PUT"
@@ -15557,7 +15557,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_ip_sec_connection_tunnel.py.html>`__ to see an example of how to use update_ip_sec_connection_tunnel API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ip_sec_connection_tunnel.py.html>`__ to see an example of how to use update_ip_sec_connection_tunnel API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
         method = "PUT"
@@ -15649,7 +15649,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_ip_sec_connection_tunnel_shared_secret.py.html>`__ to see an example of how to use update_ip_sec_connection_tunnel_shared_secret API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ip_sec_connection_tunnel_shared_secret.py.html>`__ to see an example of how to use update_ip_sec_connection_tunnel_shared_secret API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
         method = "PUT"
@@ -15744,7 +15744,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_ipv6.py.html>`__ to see an example of how to use update_ipv6 API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ipv6.py.html>`__ to see an example of how to use update_ipv6 API.
         """
         resource_path = "/ipv6/{ipv6Id}"
         method = "PUT"
@@ -15828,7 +15828,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_local_peering_gateway.py.html>`__ to see an example of how to use update_local_peering_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_local_peering_gateway.py.html>`__ to see an example of how to use update_local_peering_gateway API.
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "PUT"
@@ -15912,7 +15912,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_nat_gateway.py.html>`__ to see an example of how to use update_nat_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_nat_gateway.py.html>`__ to see an example of how to use update_nat_gateway API.
         """
         resource_path = "/natGateways/{natGatewayId}"
         method = "PUT"
@@ -16010,7 +16010,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_network_security_group.py.html>`__ to see an example of how to use update_network_security_group API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_network_security_group.py.html>`__ to see an example of how to use update_network_security_group API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "PUT"
@@ -16090,7 +16090,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_network_security_group_security_rules.py.html>`__ to see an example of how to use update_network_security_group_security_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_network_security_group_security_rules.py.html>`__ to see an example of how to use update_network_security_group_security_rules API.
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/updateSecurityRules"
         method = "POST"
@@ -16175,7 +16175,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_private_ip.py.html>`__ to see an example of how to use update_private_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_private_ip.py.html>`__ to see an example of how to use update_private_ip API.
         """
         resource_path = "/privateIps/{privateIpId}"
         method = "PUT"
@@ -16297,7 +16297,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_public_ip.py.html>`__ to see an example of how to use update_public_ip API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_public_ip.py.html>`__ to see an example of how to use update_public_ip API.
         """
         resource_path = "/publicIps/{publicIpId}"
         method = "PUT"
@@ -16383,7 +16383,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_public_ip_pool.py.html>`__ to see an example of how to use update_public_ip_pool API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_public_ip_pool.py.html>`__ to see an example of how to use update_public_ip_pool API.
         """
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "PUT"
@@ -16467,7 +16467,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_remote_peering_connection.py.html>`__ to see an example of how to use update_remote_peering_connection API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_remote_peering_connection.py.html>`__ to see an example of how to use update_remote_peering_connection API.
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "PUT"
@@ -16552,7 +16552,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_route_table.py.html>`__ to see an example of how to use update_route_table API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_route_table.py.html>`__ to see an example of how to use update_route_table API.
         """
         resource_path = "/routeTables/{rtId}"
         method = "PUT"
@@ -16638,7 +16638,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_security_list.py.html>`__ to see an example of how to use update_security_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_security_list.py.html>`__ to see an example of how to use update_security_list API.
         """
         resource_path = "/securityLists/{securityListId}"
         method = "PUT"
@@ -16723,7 +16723,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_service_gateway.py.html>`__ to see an example of how to use update_service_gateway API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_service_gateway.py.html>`__ to see an example of how to use update_service_gateway API.
         """
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "PUT"
@@ -16805,7 +16805,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_subnet.py.html>`__ to see an example of how to use update_subnet API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_subnet.py.html>`__ to see an example of how to use update_subnet API.
         """
         resource_path = "/subnets/{subnetId}"
         method = "PUT"
@@ -16905,7 +16905,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_tunnel_cpe_device_config.py.html>`__ to see an example of how to use update_tunnel_cpe_device_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_tunnel_cpe_device_config.py.html>`__ to see an example of how to use update_tunnel_cpe_device_config API.
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
         method = "PUT"
@@ -16996,7 +16996,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_vcn.py.html>`__ to see an example of how to use update_vcn API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vcn.py.html>`__ to see an example of how to use update_vcn API.
         """
         resource_path = "/vcns/{vcnId}"
         method = "PUT"
@@ -17103,7 +17103,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_virtual_circuit.py.html>`__ to see an example of how to use update_virtual_circuit API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_virtual_circuit.py.html>`__ to see an example of how to use update_virtual_circuit API.
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "PUT"
@@ -17193,7 +17193,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_vlan.py.html>`__ to see an example of how to use update_vlan API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vlan.py.html>`__ to see an example of how to use update_vlan API.
         """
         resource_path = "/vlans/{vlanId}"
         method = "PUT"
@@ -17277,7 +17277,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/update_vnic.py.html>`__ to see an example of how to use update_vnic API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vnic.py.html>`__ to see an example of how to use update_vnic API.
         """
         resource_path = "/vnics/{vnicId}"
         method = "PUT"
@@ -17356,7 +17356,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/validate_byoip_range.py.html>`__ to see an example of how to use validate_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/validate_byoip_range.py.html>`__ to see an example of how to use validate_byoip_range API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/validate"
         method = "POST"
@@ -17430,7 +17430,7 @@ class VirtualNetworkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/core/withdraw_byoip_range.py.html>`__ to see an example of how to use withdraw_byoip_range API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/withdraw_byoip_range.py.html>`__ to see an example of how to use withdraw_byoip_range API.
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/withdraw"
         method = "POST"

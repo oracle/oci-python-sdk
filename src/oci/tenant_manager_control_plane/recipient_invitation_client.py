@@ -122,7 +122,7 @@ class RecipientInvitationClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/accept_recipient_invitation.py.html>`__ to see an example of how to use accept_recipient_invitation API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/accept_recipient_invitation.py.html>`__ to see an example of how to use accept_recipient_invitation API.
         """
         resource_path = "/recipientInvitations/{recipientInvitationId}/actions/accept"
         method = "POST"
@@ -201,7 +201,7 @@ class RecipientInvitationClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/get_recipient_invitation.py.html>`__ to see an example of how to use get_recipient_invitation API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/get_recipient_invitation.py.html>`__ to see an example of how to use get_recipient_invitation API.
         """
         resource_path = "/recipientInvitations/{recipientInvitationId}"
         method = "GET"
@@ -290,7 +290,7 @@ class RecipientInvitationClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/ignore_recipient_invitation.py.html>`__ to see an example of how to use ignore_recipient_invitation API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/ignore_recipient_invitation.py.html>`__ to see an example of how to use ignore_recipient_invitation API.
         """
         resource_path = "/recipientInvitations/{recipientInvitationId}/actions/ignore"
         method = "POST"
@@ -387,7 +387,7 @@ class RecipientInvitationClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/list_recipient_invitations.py.html>`__ to see an example of how to use list_recipient_invitations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/list_recipient_invitations.py.html>`__ to see an example of how to use list_recipient_invitations API.
         """
         resource_path = "/recipientInvitations"
         method = "GET"
@@ -489,7 +489,7 @@ class RecipientInvitationClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/update_recipient_invitation.py.html>`__ to see an example of how to use update_recipient_invitation API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/update_recipient_invitation.py.html>`__ to see an example of how to use update_recipient_invitation API.
         """
         resource_path = "/recipientInvitations/{recipientInvitationId}"
         method = "PUT"

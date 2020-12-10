@@ -111,7 +111,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/attach_devices_to_transfer_package.py.html>`__ to see an example of how to use attach_devices_to_transfer_package API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/attach_devices_to_transfer_package.py.html>`__ to see an example of how to use attach_devices_to_transfer_package API.
         """
         resource_path = "/transferJobs/{id}/transferPackages/{transferPackageLabel}/actions/attachDevices"
         method = "POST"
@@ -183,7 +183,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/create_transfer_package.py.html>`__ to see an example of how to use create_transfer_package API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_transfer_package.py.html>`__ to see an example of how to use create_transfer_package API.
         """
         resource_path = "/transferJobs/{id}/transferPackages"
         method = "POST"
@@ -263,7 +263,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/delete_transfer_package.py.html>`__ to see an example of how to use delete_transfer_package API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/delete_transfer_package.py.html>`__ to see an example of how to use delete_transfer_package API.
         """
         resource_path = "/transferJobs/{id}/transferPackages/{transferPackageLabel}"
         method = "DELETE"
@@ -334,7 +334,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/detach_devices_from_transfer_package.py.html>`__ to see an example of how to use detach_devices_from_transfer_package API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/detach_devices_from_transfer_package.py.html>`__ to see an example of how to use detach_devices_from_transfer_package API.
         """
         resource_path = "/transferJobs/{id}/transferPackages/{transferPackageLabel}/actions/detachDevices"
         method = "POST"
@@ -404,7 +404,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/get_transfer_package.py.html>`__ to see an example of how to use get_transfer_package API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_package.py.html>`__ to see an example of how to use get_transfer_package API.
         """
         resource_path = "/transferJobs/{id}/transferPackages/{transferPackageLabel}"
         method = "GET"
@@ -479,7 +479,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/list_transfer_packages.py.html>`__ to see an example of how to use list_transfer_packages API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_transfer_packages.py.html>`__ to see an example of how to use list_transfer_packages API.
         """
         resource_path = "/transferJobs/{id}/transferPackages"
         method = "GET"
@@ -575,7 +575,7 @@ class TransferPackageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/dts/update_transfer_package.py.html>`__ to see an example of how to use update_transfer_package API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/update_transfer_package.py.html>`__ to see an example of how to use update_transfer_package API.
         """
         resource_path = "/transferJobs/{id}/transferPackages/{transferPackageLabel}"
         method = "PUT"

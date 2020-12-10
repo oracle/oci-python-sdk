@@ -115,7 +115,7 @@ class LinkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/delete_link.py.html>`__ to see an example of how to use delete_link API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/delete_link.py.html>`__ to see an example of how to use delete_link API.
         """
         resource_path = "/links/{linkId}"
         method = "DELETE"
@@ -190,7 +190,7 @@ class LinkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/get_link.py.html>`__ to see an example of how to use get_link API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/get_link.py.html>`__ to see an example of how to use get_link API.
         """
         resource_path = "/links/{linkId}"
         method = "GET"
@@ -284,7 +284,7 @@ class LinkClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/tenantmanagercontrolplane/list_links.py.html>`__ to see an example of how to use list_links API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/list_links.py.html>`__ to see an example of how to use list_links API.
         """
         resource_path = "/links"
         method = "GET"

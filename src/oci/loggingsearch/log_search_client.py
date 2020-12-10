@@ -121,7 +121,7 @@ class LogSearchClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/loggingsearch/search_logs.py.html>`__ to see an example of how to use search_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loggingsearch/search_logs.py.html>`__ to see an example of how to use search_logs API.
         """
         resource_path = "/search"
         method = "POST"

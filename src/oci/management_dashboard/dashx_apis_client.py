@@ -125,7 +125,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/change_management_dashboards_compartment.py.html>`__ to see an example of how to use change_management_dashboards_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/change_management_dashboards_compartment.py.html>`__ to see an example of how to use change_management_dashboards_compartment API.
         """
         resource_path = "/managementDashboards/{managementDashboardId}/actions/changeCompartment"
         method = "POST"
@@ -223,7 +223,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/change_management_saved_searches_compartment.py.html>`__ to see an example of how to use change_management_saved_searches_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/change_management_saved_searches_compartment.py.html>`__ to see an example of how to use change_management_saved_searches_compartment API.
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}/actions/changeCompartment"
         method = "POST"
@@ -311,7 +311,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/create_management_dashboard.py.html>`__ to see an example of how to use create_management_dashboard API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/create_management_dashboard.py.html>`__ to see an example of how to use create_management_dashboard API.
         """
         resource_path = "/managementDashboards"
         method = "POST"
@@ -387,7 +387,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/create_management_saved_search.py.html>`__ to see an example of how to use create_management_saved_search API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/create_management_saved_search.py.html>`__ to see an example of how to use create_management_saved_search API.
         """
         resource_path = "/managementSavedSearches"
         method = "POST"
@@ -463,7 +463,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/delete_management_dashboard.py.html>`__ to see an example of how to use delete_management_dashboard API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/delete_management_dashboard.py.html>`__ to see an example of how to use delete_management_dashboard API.
         """
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "DELETE"
@@ -545,7 +545,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/delete_management_saved_search.py.html>`__ to see an example of how to use delete_management_saved_search API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/delete_management_saved_search.py.html>`__ to see an example of how to use delete_management_saved_search API.
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "DELETE"
@@ -627,7 +627,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/export_dashboard.py.html>`__ to see an example of how to use export_dashboard API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/export_dashboard.py.html>`__ to see an example of how to use export_dashboard API.
         """
         resource_path = "/managementDashboards/actions/exportDashboard/{exportDashboardId}"
         method = "GET"
@@ -713,7 +713,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/get_management_dashboard.py.html>`__ to see an example of how to use get_management_dashboard API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/get_management_dashboard.py.html>`__ to see an example of how to use get_management_dashboard API.
         """
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "GET"
@@ -799,7 +799,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/get_management_saved_search.py.html>`__ to see an example of how to use get_management_saved_search API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/get_management_saved_search.py.html>`__ to see an example of how to use get_management_saved_search API.
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "GET"
@@ -892,7 +892,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/import_dashboard.py.html>`__ to see an example of how to use import_dashboard API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/import_dashboard.py.html>`__ to see an example of how to use import_dashboard API.
         """
         resource_path = "/managementDashboards/actions/importDashboard"
         method = "POST"
@@ -980,7 +980,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/list_management_dashboards.py.html>`__ to see an example of how to use list_management_dashboards API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/list_management_dashboards.py.html>`__ to see an example of how to use list_management_dashboards API.
         """
         resource_path = "/managementDashboards"
         method = "GET"
@@ -1093,7 +1093,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/list_management_saved_searches.py.html>`__ to see an example of how to use list_management_saved_searches API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/list_management_saved_searches.py.html>`__ to see an example of how to use list_management_saved_searches API.
         """
         resource_path = "/managementSavedSearches"
         method = "GET"
@@ -1204,7 +1204,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/update_management_dashboard.py.html>`__ to see an example of how to use update_management_dashboard API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/update_management_dashboard.py.html>`__ to see an example of how to use update_management_dashboard API.
         """
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "PUT"
@@ -1304,7 +1304,7 @@ class DashxApisClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/managementdashboard/update_management_saved_search.py.html>`__ to see an example of how to use update_management_saved_search API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/update_management_saved_search.py.html>`__ to see an example of how to use update_management_saved_search API.
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "PUT"

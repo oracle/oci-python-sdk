@@ -119,7 +119,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/accept_recommendations.py.html>`__ to see an example of how to use accept_recommendations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/accept_recommendations.py.html>`__ to see an example of how to use accept_recommendations API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/actions/acceptWafConfigRecommendations"
         method = "POST"
@@ -205,7 +205,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
@@ -299,7 +299,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/change_address_list_compartment.py.html>`__ to see an example of how to use change_address_list_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_address_list_compartment.py.html>`__ to see an example of how to use change_address_list_compartment API.
         """
         resource_path = "/addressLists/{addressListId}/actions/changeCompartment"
         method = "POST"
@@ -394,7 +394,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
@@ -488,7 +488,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/change_custom_protection_rule_compartment.py.html>`__ to see an example of how to use change_custom_protection_rule_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_custom_protection_rule_compartment.py.html>`__ to see an example of how to use change_custom_protection_rule_compartment API.
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}/actions/changeCompartment"
         method = "POST"
@@ -583,7 +583,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/change_waas_policy_compartment.py.html>`__ to see an example of how to use change_waas_policy_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_waas_policy_compartment.py.html>`__ to see an example of how to use change_waas_policy_compartment API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/actions/changeCompartment"
         method = "POST"
@@ -668,7 +668,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/create_address_list.py.html>`__ to see an example of how to use create_address_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_address_list.py.html>`__ to see an example of how to use create_address_list API.
         """
         resource_path = "/addressLists"
         method = "POST"
@@ -745,7 +745,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
         resource_path = "/certificates"
         method = "POST"
@@ -823,7 +823,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/create_custom_protection_rule.py.html>`__ to see an example of how to use create_custom_protection_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_custom_protection_rule.py.html>`__ to see an example of how to use create_custom_protection_rule API.
         """
         resource_path = "/customProtectionRules"
         method = "POST"
@@ -911,7 +911,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/create_waas_policy.py.html>`__ to see an example of how to use create_waas_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_waas_policy.py.html>`__ to see an example of how to use create_waas_policy API.
         """
         resource_path = "/waasPolicies"
         method = "POST"
@@ -987,7 +987,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/delete_address_list.py.html>`__ to see an example of how to use delete_address_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_address_list.py.html>`__ to see an example of how to use delete_address_list API.
         """
         resource_path = "/addressLists/{addressListId}"
         method = "DELETE"
@@ -1075,7 +1075,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
         resource_path = "/certificates/{certificateId}"
         method = "DELETE"
@@ -1163,7 +1163,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/delete_custom_protection_rule.py.html>`__ to see an example of how to use delete_custom_protection_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_custom_protection_rule.py.html>`__ to see an example of how to use delete_custom_protection_rule API.
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "DELETE"
@@ -1251,7 +1251,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/delete_waas_policy.py.html>`__ to see an example of how to use delete_waas_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_waas_policy.py.html>`__ to see an example of how to use delete_waas_policy API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "DELETE"
@@ -1332,7 +1332,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_address_list.py.html>`__ to see an example of how to use get_address_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_address_list.py.html>`__ to see an example of how to use get_address_list API.
         """
         resource_path = "/addressLists/{addressListId}"
         method = "GET"
@@ -1409,7 +1409,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
         resource_path = "/certificates/{certificateId}"
         method = "GET"
@@ -1486,7 +1486,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_custom_protection_rule.py.html>`__ to see an example of how to use get_custom_protection_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_custom_protection_rule.py.html>`__ to see an example of how to use get_custom_protection_rule API.
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "GET"
@@ -1563,7 +1563,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_device_fingerprint_challenge.py.html>`__ to see an example of how to use get_device_fingerprint_challenge API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_device_fingerprint_challenge.py.html>`__ to see an example of how to use get_device_fingerprint_challenge API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/deviceFingerprintChallenge"
         method = "GET"
@@ -1640,7 +1640,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_human_interaction_challenge.py.html>`__ to see an example of how to use get_human_interaction_challenge API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_human_interaction_challenge.py.html>`__ to see an example of how to use get_human_interaction_challenge API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/humanInteractionChallenge"
         method = "GET"
@@ -1717,7 +1717,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_js_challenge.py.html>`__ to see an example of how to use get_js_challenge API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_js_challenge.py.html>`__ to see an example of how to use get_js_challenge API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/jsChallenge"
         method = "GET"
@@ -1794,7 +1794,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_policy_config.py.html>`__ to see an example of how to use get_policy_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_policy_config.py.html>`__ to see an example of how to use get_policy_config API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/policyConfig"
         method = "GET"
@@ -1874,7 +1874,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_protection_rule.py.html>`__ to see an example of how to use get_protection_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_rule.py.html>`__ to see an example of how to use get_protection_rule API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules/{protectionRuleKey}"
         method = "GET"
@@ -1952,7 +1952,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_protection_settings.py.html>`__ to see an example of how to use get_protection_settings API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_settings.py.html>`__ to see an example of how to use get_protection_settings API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionSettings"
         method = "GET"
@@ -2029,7 +2029,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_waas_policy.py.html>`__ to see an example of how to use get_waas_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waas_policy.py.html>`__ to see an example of how to use get_waas_policy API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "GET"
@@ -2106,7 +2106,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_waf_address_rate_limiting.py.html>`__ to see an example of how to use get_waf_address_rate_limiting API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_address_rate_limiting.py.html>`__ to see an example of how to use get_waf_address_rate_limiting API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/addressRateLimiting"
         method = "GET"
@@ -2183,7 +2183,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_waf_config.py.html>`__ to see an example of how to use get_waf_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_config.py.html>`__ to see an example of how to use get_waf_config API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig"
         method = "GET"
@@ -2260,7 +2260,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -2344,7 +2344,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_access_rules.py.html>`__ to see an example of how to use list_access_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_access_rules.py.html>`__ to see an example of how to use list_access_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/accessRules"
         method = "GET"
@@ -2464,7 +2464,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_address_lists.py.html>`__ to see an example of how to use list_address_lists API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_address_lists.py.html>`__ to see an example of how to use list_address_lists API.
         """
         resource_path = "/addressLists"
         method = "GET"
@@ -2583,7 +2583,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_caching_rules.py.html>`__ to see an example of how to use list_caching_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_caching_rules.py.html>`__ to see an example of how to use list_caching_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/cachingRules"
         method = "GET"
@@ -2680,7 +2680,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_captchas.py.html>`__ to see an example of how to use list_captchas API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_captchas.py.html>`__ to see an example of how to use list_captchas API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/captchas"
         method = "GET"
@@ -2800,7 +2800,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
         resource_path = "/certificates"
         method = "GET"
@@ -2945,7 +2945,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_custom_protection_rules.py.html>`__ to see an example of how to use list_custom_protection_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_custom_protection_rules.py.html>`__ to see an example of how to use list_custom_protection_rules API.
         """
         resource_path = "/customProtectionRules"
         method = "GET"
@@ -3068,7 +3068,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_edge_subnets.py.html>`__ to see an example of how to use list_edge_subnets API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_edge_subnets.py.html>`__ to see an example of how to use list_edge_subnets API.
         """
         resource_path = "/edgeSubnets"
         method = "GET"
@@ -3169,7 +3169,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_good_bots.py.html>`__ to see an example of how to use list_good_bots API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_good_bots.py.html>`__ to see an example of how to use list_good_bots API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/goodBots"
         method = "GET"
@@ -3271,7 +3271,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_protection_rules.py.html>`__ to see an example of how to use list_protection_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_protection_rules.py.html>`__ to see an example of how to use list_protection_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules"
         method = "GET"
@@ -3386,7 +3386,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/recommendations"
         method = "GET"
@@ -3490,7 +3490,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_threat_feeds.py.html>`__ to see an example of how to use list_threat_feeds API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_threat_feeds.py.html>`__ to see an example of how to use list_threat_feeds API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/threatFeeds"
         method = "GET"
@@ -3610,7 +3610,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_waas_policies.py.html>`__ to see an example of how to use list_waas_policies API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policies.py.html>`__ to see an example of how to use list_waas_policies API.
         """
         resource_path = "/waasPolicies"
         method = "GET"
@@ -3736,7 +3736,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use list_waas_policy_custom_protection_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use list_waas_policy_custom_protection_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/customProtectionRules"
         method = "GET"
@@ -3852,7 +3852,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_waf_blocked_requests.py.html>`__ to see an example of how to use list_waf_blocked_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_blocked_requests.py.html>`__ to see an example of how to use list_waf_blocked_requests API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/blocked"
         method = "GET"
@@ -4028,7 +4028,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_waf_logs.py.html>`__ to see an example of how to use list_waf_logs API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_logs.py.html>`__ to see an example of how to use list_waf_logs API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafLogs"
         method = "GET"
@@ -4191,7 +4191,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_waf_requests.py.html>`__ to see an example of how to use list_waf_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_requests.py.html>`__ to see an example of how to use list_waf_requests API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/requests"
         method = "GET"
@@ -4295,7 +4295,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_waf_traffic.py.html>`__ to see an example of how to use list_waf_traffic API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_traffic.py.html>`__ to see an example of how to use list_waf_traffic API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/traffic"
         method = "GET"
@@ -4392,7 +4392,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_whitelists.py.html>`__ to see an example of how to use list_whitelists API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_whitelists.py.html>`__ to see an example of how to use list_whitelists API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/whitelists"
         method = "GET"
@@ -4500,7 +4500,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -4603,7 +4603,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/purge_cache.py.html>`__ to see an example of how to use purge_cache API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/purge_cache.py.html>`__ to see an example of how to use purge_cache API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/actions/purgeCache"
         method = "POST"
@@ -4700,7 +4700,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_access_rules.py.html>`__ to see an example of how to use update_access_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_access_rules.py.html>`__ to see an example of how to use update_access_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/accessRules"
         method = "PUT"
@@ -4789,7 +4789,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_address_list.py.html>`__ to see an example of how to use update_address_list API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_address_list.py.html>`__ to see an example of how to use update_address_list API.
         """
         resource_path = "/addressLists/{addressListId}"
         method = "PUT"
@@ -4888,7 +4888,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_caching_rules.py.html>`__ to see an example of how to use update_caching_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_caching_rules.py.html>`__ to see an example of how to use update_caching_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/cachingRules"
         method = "PUT"
@@ -4989,7 +4989,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_captchas.py.html>`__ to see an example of how to use update_captchas API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_captchas.py.html>`__ to see an example of how to use update_captchas API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/captchas"
         method = "PUT"
@@ -5078,7 +5078,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
@@ -5170,7 +5170,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_custom_protection_rule.py.html>`__ to see an example of how to use update_custom_protection_rule API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_custom_protection_rule.py.html>`__ to see an example of how to use update_custom_protection_rule API.
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "PUT"
@@ -5269,7 +5269,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_device_fingerprint_challenge.py.html>`__ to see an example of how to use update_device_fingerprint_challenge API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_device_fingerprint_challenge.py.html>`__ to see an example of how to use update_device_fingerprint_challenge API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/deviceFingerprintChallenge"
         method = "PUT"
@@ -5365,7 +5365,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_good_bots.py.html>`__ to see an example of how to use update_good_bots API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_good_bots.py.html>`__ to see an example of how to use update_good_bots API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/goodBots"
         method = "PUT"
@@ -5458,7 +5458,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_human_interaction_challenge.py.html>`__ to see an example of how to use update_human_interaction_challenge API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_human_interaction_challenge.py.html>`__ to see an example of how to use update_human_interaction_challenge API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/humanInteractionChallenge"
         method = "PUT"
@@ -5553,7 +5553,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_js_challenge.py.html>`__ to see an example of how to use update_js_challenge API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_js_challenge.py.html>`__ to see an example of how to use update_js_challenge API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/jsChallenge"
         method = "PUT"
@@ -5646,7 +5646,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_policy_config.py.html>`__ to see an example of how to use update_policy_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_policy_config.py.html>`__ to see an example of how to use update_policy_config API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/policyConfig"
         method = "PUT"
@@ -5738,7 +5738,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_protection_rules.py.html>`__ to see an example of how to use update_protection_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_rules.py.html>`__ to see an example of how to use update_protection_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules"
         method = "PUT"
@@ -5827,7 +5827,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_protection_settings.py.html>`__ to see an example of how to use update_protection_settings API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_settings.py.html>`__ to see an example of how to use update_protection_settings API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionSettings"
         method = "PUT"
@@ -5916,7 +5916,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_threat_feeds.py.html>`__ to see an example of how to use update_threat_feeds API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_threat_feeds.py.html>`__ to see an example of how to use update_threat_feeds API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/threatFeeds"
         method = "PUT"
@@ -6007,7 +6007,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_waas_policy.py.html>`__ to see an example of how to use update_waas_policy API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy.py.html>`__ to see an example of how to use update_waas_policy API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "PUT"
@@ -6101,7 +6101,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use update_waas_policy_custom_protection_rules API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use update_waas_policy_custom_protection_rules API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/customProtectionRules"
         method = "PUT"
@@ -6194,7 +6194,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_waf_address_rate_limiting.py.html>`__ to see an example of how to use update_waf_address_rate_limiting API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_address_rate_limiting.py.html>`__ to see an example of how to use update_waf_address_rate_limiting API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/addressRateLimiting"
         method = "PUT"
@@ -6294,7 +6294,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_waf_config.py.html>`__ to see an example of how to use update_waf_config API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_config.py.html>`__ to see an example of how to use update_waf_config API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig"
         method = "PUT"
@@ -6394,7 +6394,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/waas/update_whitelists.py.html>`__ to see an example of how to use update_whitelists API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_whitelists.py.html>`__ to see an example of how to use update_whitelists API.
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/whitelists"
         method = "PUT"

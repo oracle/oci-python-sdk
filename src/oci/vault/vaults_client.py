@@ -119,7 +119,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/cancel_secret_deletion.py.html>`__ to see an example of how to use cancel_secret_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/cancel_secret_deletion.py.html>`__ to see an example of how to use cancel_secret_deletion API.
         """
         resource_path = "/secrets/{secretId}/actions/cancelDeletion"
         method = "POST"
@@ -206,7 +206,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/cancel_secret_version_deletion.py.html>`__ to see an example of how to use cancel_secret_version_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/cancel_secret_version_deletion.py.html>`__ to see an example of how to use cancel_secret_version_deletion API.
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/cancelDeletion"
         method = "POST"
@@ -307,7 +307,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/change_secret_compartment.py.html>`__ to see an example of how to use change_secret_compartment API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/change_secret_compartment.py.html>`__ to see an example of how to use change_secret_compartment API.
         """
         resource_path = "/secrets/{secretId}/actions/changeCompartment"
         method = "POST"
@@ -400,7 +400,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/create_secret.py.html>`__ to see an example of how to use create_secret API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/create_secret.py.html>`__ to see an example of how to use create_secret API.
         """
         resource_path = "/secrets"
         method = "POST"
@@ -471,7 +471,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/get_secret.py.html>`__ to see an example of how to use get_secret API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/get_secret.py.html>`__ to see an example of how to use get_secret API.
         """
         resource_path = "/secrets/{secretId}"
         method = "GET"
@@ -551,7 +551,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/get_secret_version.py.html>`__ to see an example of how to use get_secret_version API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/get_secret_version.py.html>`__ to see an example of how to use get_secret_version API.
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}"
         method = "GET"
@@ -646,7 +646,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/list_secret_versions.py.html>`__ to see an example of how to use list_secret_versions API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/list_secret_versions.py.html>`__ to see an example of how to use list_secret_versions API.
         """
         resource_path = "/secrets/{secretId}/versions"
         method = "GET"
@@ -780,7 +780,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/list_secrets.py.html>`__ to see an example of how to use list_secrets API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/list_secrets.py.html>`__ to see an example of how to use list_secrets API.
         """
         resource_path = "/secrets"
         method = "GET"
@@ -898,7 +898,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/schedule_secret_deletion.py.html>`__ to see an example of how to use schedule_secret_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/schedule_secret_deletion.py.html>`__ to see an example of how to use schedule_secret_deletion API.
         """
         resource_path = "/secrets/{secretId}/actions/scheduleDeletion"
         method = "POST"
@@ -991,7 +991,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/schedule_secret_version_deletion.py.html>`__ to see an example of how to use schedule_secret_version_deletion API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/schedule_secret_version_deletion.py.html>`__ to see an example of how to use schedule_secret_version_deletion API.
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/scheduleDeletion"
         method = "POST"
@@ -1086,7 +1086,7 @@ class VaultsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/vault/update_secret.py.html>`__ to see an example of how to use update_secret API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/update_secret.py.html>`__ to see an example of how to use update_secret API.
         """
         resource_path = "/secrets/{secretId}"
         method = "PUT"

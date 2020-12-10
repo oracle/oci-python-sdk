@@ -116,7 +116,7 @@ class QuotasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/create_quota.py.html>`__ to see an example of how to use create_quota API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/create_quota.py.html>`__ to see an example of how to use create_quota API.
         """
         resource_path = "/20181025/quotas"
         method = "POST"
@@ -191,7 +191,7 @@ class QuotasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/delete_quota.py.html>`__ to see an example of how to use delete_quota API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/delete_quota.py.html>`__ to see an example of how to use delete_quota API.
         """
         resource_path = "/20181025/quotas/{quotaId}"
         method = "DELETE"
@@ -267,7 +267,7 @@ class QuotasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/get_quota.py.html>`__ to see an example of how to use get_quota API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/get_quota.py.html>`__ to see an example of how to use get_quota API.
         """
         resource_path = "/20181025/quotas/{quotaId}"
         method = "GET"
@@ -367,7 +367,7 @@ class QuotasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/list_quotas.py.html>`__ to see an example of how to use list_quotas API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/list_quotas.py.html>`__ to see an example of how to use list_quotas API.
         """
         resource_path = "/20181025/quotas"
         method = "GET"
@@ -479,7 +479,7 @@ class QuotasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/limits/update_quota.py.html>`__ to see an example of how to use update_quota API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/update_quota.py.html>`__ to see an example of how to use update_quota API.
         """
         resource_path = "/20181025/quotas/{quotaId}"
         method = "PUT"

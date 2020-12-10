@@ -111,7 +111,7 @@ class KmsCryptoClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/decrypt.py.html>`__ to see an example of how to use decrypt API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/decrypt.py.html>`__ to see an example of how to use decrypt API.
         """
         resource_path = "/20180608/decrypt"
         method = "POST"
@@ -181,7 +181,7 @@ class KmsCryptoClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/encrypt.py.html>`__ to see an example of how to use encrypt API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/encrypt.py.html>`__ to see an example of how to use encrypt API.
         """
         resource_path = "/20180608/encrypt"
         method = "POST"
@@ -245,7 +245,7 @@ class KmsCryptoClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/export_key.py.html>`__ to see an example of how to use export_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/export_key.py.html>`__ to see an example of how to use export_key API.
         """
         resource_path = "/20180608/exportKey"
         method = "POST"
@@ -306,7 +306,7 @@ class KmsCryptoClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-examples/latest/keymanagement/generate_data_encryption_key.py.html>`__ to see an example of how to use generate_data_encryption_key API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/generate_data_encryption_key.py.html>`__ to see an example of how to use generate_data_encryption_key API.
         """
         resource_path = "/20180608/generateDataEncryptionKey"
         method = "POST"
