@@ -608,7 +608,7 @@ class ShowOCIService(object):
     # find shape info
     # returns CPUs, Memory and Local Storage SSD
     ##########################################################################
-    def shape_details(self, shape_name):
+    def get_shape_details(self, shape_name):
         for array in self.shapes_array:
             if array['shape'] == shape_name:
                 return array
