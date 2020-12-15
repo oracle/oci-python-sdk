@@ -66,7 +66,7 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
 
         :param patterns:
             The value to assign to the patterns property of this UnifiedAgentMultilineGrokParser.
-        :type patterns: list[GrokPattern]
+        :type patterns: list[oci.logging.models.GrokPattern]
 
         """
         self.swagger_types = {
@@ -179,7 +179,7 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
         Gets the patterns of this UnifiedAgentMultilineGrokParser.
 
         :return: The patterns of this UnifiedAgentMultilineGrokParser.
-        :rtype: list[GrokPattern]
+        :rtype: list[oci.logging.models.GrokPattern]
         """
         return self._patterns
 
@@ -189,7 +189,7 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
         Sets the patterns of this UnifiedAgentMultilineGrokParser.
 
         :param patterns: The patterns of this UnifiedAgentMultilineGrokParser.
-        :type: list[GrokPattern]
+        :type: list[oci.logging.models.GrokPattern]
         """
         self._patterns = patterns
 

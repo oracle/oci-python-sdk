@@ -35,7 +35,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
+        :param oci.core.models.AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
             Byoip Range prefix and a cidr from it
 
         :param list[str] wait_for_states:
@@ -78,7 +78,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddVcnCidrDetails add_vcn_cidr_details: (required)
+        :param oci.core.models.AddVcnCidrDetails add_vcn_cidr_details: (required)
             Details object for deleting a VCN CIDR.
 
         :param list[str] work_request_states: (optional)
@@ -118,7 +118,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ServiceIdRequestDetails attach_service_details: (required)
+        :param oci.core.models.ServiceIdRequestDetails attach_service_details: (required)
             ServiceId of Service to be attached to a service gateway.
 
         :param list[str] wait_for_states:
@@ -159,7 +159,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_id: (required)
             The OCID of the DRG.
 
-        :param ChangeDrgCompartmentDetails change_drg_compartment_details: (required)
+        :param oci.core.models.ChangeDrgCompartmentDetails change_drg_compartment_details: (required)
             Request to change the compartment of a DRG.
 
         :param list[str] work_request_states: (optional)
@@ -197,7 +197,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The OCID of the subnet.
 
-        :param ChangeSubnetCompartmentDetails change_subnet_compartment_details: (required)
+        :param oci.core.models.ChangeSubnetCompartmentDetails change_subnet_compartment_details: (required)
             Request to change the compartment of a given subnet.
 
         :param list[str] work_request_states: (optional)
@@ -237,7 +237,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeVcnCompartmentDetails change_vcn_compartment_details: (required)
+        :param oci.core.models.ChangeVcnCompartmentDetails change_vcn_compartment_details: (required)
             Request to change the compartment of a given VCN.
 
         :param list[str] work_request_states: (optional)
@@ -277,7 +277,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ChangeVlanCompartmentDetails change_vlan_compartment_details: (required)
+        :param oci.core.models.ChangeVlanCompartmentDetails change_vlan_compartment_details: (required)
             Request to change the compartment of a given VLAN.
 
         :param list[str] work_request_states: (optional)
@@ -312,7 +312,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_byoip_range` and waits for the :py:class:`~oci.core.models.ByoipRange` acted upon
         to enter the given state(s).
 
-        :param CreateByoipRangeDetails create_byoip_range_details: (required)
+        :param oci.core.models.CreateByoipRangeDetails create_byoip_range_details: (required)
             Create Byoip Range details.
 
         :param list[str] wait_for_states:
@@ -350,7 +350,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_cross_connect` and waits for the :py:class:`~oci.core.models.CrossConnect` acted upon
         to enter the given state(s).
 
-        :param CreateCrossConnectDetails create_cross_connect_details: (required)
+        :param oci.core.models.CreateCrossConnectDetails create_cross_connect_details: (required)
             Details to create a CrossConnect
 
         :param list[str] wait_for_states:
@@ -388,7 +388,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_cross_connect_group` and waits for the :py:class:`~oci.core.models.CrossConnectGroup` acted upon
         to enter the given state(s).
 
-        :param CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
+        :param oci.core.models.CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
             Details to create a CrossConnectGroup
 
         :param list[str] wait_for_states:
@@ -426,7 +426,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_dhcp_options` and waits for the :py:class:`~oci.core.models.DhcpOptions` acted upon
         to enter the given state(s).
 
-        :param CreateDhcpDetails create_dhcp_details: (required)
+        :param oci.core.models.CreateDhcpDetails create_dhcp_details: (required)
             Request object for creating a new set of DHCP options.
 
         :param list[str] wait_for_states:
@@ -464,7 +464,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_drg` and waits for the :py:class:`~oci.core.models.Drg` acted upon
         to enter the given state(s).
 
-        :param CreateDrgDetails create_drg_details: (required)
+        :param oci.core.models.CreateDrgDetails create_drg_details: (required)
             Details for creating a DRG.
 
         :param list[str] wait_for_states:
@@ -502,7 +502,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_drg_attachment` and waits for the :py:class:`~oci.core.models.DrgAttachment` acted upon
         to enter the given state(s).
 
-        :param CreateDrgAttachmentDetails create_drg_attachment_details: (required)
+        :param oci.core.models.CreateDrgAttachmentDetails create_drg_attachment_details: (required)
             Details for creating a `DrgAttachment`.
 
         :param list[str] wait_for_states:
@@ -540,7 +540,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_internet_gateway` and waits for the :py:class:`~oci.core.models.InternetGateway` acted upon
         to enter the given state(s).
 
-        :param CreateInternetGatewayDetails create_internet_gateway_details: (required)
+        :param oci.core.models.CreateInternetGatewayDetails create_internet_gateway_details: (required)
             Details for creating a new internet gateway.
 
         :param list[str] wait_for_states:
@@ -578,7 +578,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_ip_sec_connection` and waits for the :py:class:`~oci.core.models.IPSecConnection` acted upon
         to enter the given state(s).
 
-        :param CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
+        :param oci.core.models.CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
             Details for creating an `IPSecConnection`.
 
         :param list[str] wait_for_states:
@@ -616,7 +616,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_ipv6` and waits for the :py:class:`~oci.core.models.Ipv6` acted upon
         to enter the given state(s).
 
-        :param CreateIpv6Details create_ipv6_details: (required)
+        :param oci.core.models.CreateIpv6Details create_ipv6_details: (required)
             Create IPv6 details.
 
         :param list[str] wait_for_states:
@@ -654,7 +654,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_local_peering_gateway` and waits for the :py:class:`~oci.core.models.LocalPeeringGateway` acted upon
         to enter the given state(s).
 
-        :param CreateLocalPeeringGatewayDetails create_local_peering_gateway_details: (required)
+        :param oci.core.models.CreateLocalPeeringGatewayDetails create_local_peering_gateway_details: (required)
             Details for creating a new local peering gateway.
 
         :param list[str] wait_for_states:
@@ -692,7 +692,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_nat_gateway` and waits for the :py:class:`~oci.core.models.NatGateway` acted upon
         to enter the given state(s).
 
-        :param CreateNatGatewayDetails create_nat_gateway_details: (required)
+        :param oci.core.models.CreateNatGatewayDetails create_nat_gateway_details: (required)
             Details for creating a NAT gateway.
 
         :param list[str] wait_for_states:
@@ -730,7 +730,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_network_security_group` and waits for the :py:class:`~oci.core.models.NetworkSecurityGroup` acted upon
         to enter the given state(s).
 
-        :param CreateNetworkSecurityGroupDetails create_network_security_group_details: (required)
+        :param oci.core.models.CreateNetworkSecurityGroupDetails create_network_security_group_details: (required)
             Details for creating a network security group.
 
         :param list[str] wait_for_states:
@@ -768,7 +768,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_public_ip` and waits for the :py:class:`~oci.core.models.PublicIp` acted upon
         to enter the given state(s).
 
-        :param CreatePublicIpDetails create_public_ip_details: (required)
+        :param oci.core.models.CreatePublicIpDetails create_public_ip_details: (required)
             Create public IP details.
 
         :param list[str] wait_for_states:
@@ -806,7 +806,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_public_ip_pool` and waits for the :py:class:`~oci.core.models.PublicIpPool` acted upon
         to enter the given state(s).
 
-        :param CreatePublicIpPoolDetails create_public_ip_pool_details: (required)
+        :param oci.core.models.CreatePublicIpPoolDetails create_public_ip_pool_details: (required)
             Create Public Ip Pool details
 
         :param list[str] wait_for_states:
@@ -844,7 +844,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_remote_peering_connection` and waits for the :py:class:`~oci.core.models.RemotePeeringConnection` acted upon
         to enter the given state(s).
 
-        :param CreateRemotePeeringConnectionDetails create_remote_peering_connection_details: (required)
+        :param oci.core.models.CreateRemotePeeringConnectionDetails create_remote_peering_connection_details: (required)
             Request to create peering connection to remote region
 
         :param list[str] wait_for_states:
@@ -882,7 +882,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_route_table` and waits for the :py:class:`~oci.core.models.RouteTable` acted upon
         to enter the given state(s).
 
-        :param CreateRouteTableDetails create_route_table_details: (required)
+        :param oci.core.models.CreateRouteTableDetails create_route_table_details: (required)
             Details for creating a new route table.
 
         :param list[str] wait_for_states:
@@ -920,7 +920,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_security_list` and waits for the :py:class:`~oci.core.models.SecurityList` acted upon
         to enter the given state(s).
 
-        :param CreateSecurityListDetails create_security_list_details: (required)
+        :param oci.core.models.CreateSecurityListDetails create_security_list_details: (required)
             Details regarding the security list to create.
 
         :param list[str] wait_for_states:
@@ -958,7 +958,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_service_gateway` and waits for the :py:class:`~oci.core.models.ServiceGateway` acted upon
         to enter the given state(s).
 
-        :param CreateServiceGatewayDetails create_service_gateway_details: (required)
+        :param oci.core.models.CreateServiceGatewayDetails create_service_gateway_details: (required)
             Details for creating a service gateway.
 
         :param list[str] wait_for_states:
@@ -996,7 +996,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_subnet` and waits for the :py:class:`~oci.core.models.Subnet` acted upon
         to enter the given state(s).
 
-        :param CreateSubnetDetails create_subnet_details: (required)
+        :param oci.core.models.CreateSubnetDetails create_subnet_details: (required)
             Details for creating a subnet.
 
         :param list[str] wait_for_states:
@@ -1034,7 +1034,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_vcn` and waits for the :py:class:`~oci.core.models.Vcn` acted upon
         to enter the given state(s).
 
-        :param CreateVcnDetails create_vcn_details: (required)
+        :param oci.core.models.CreateVcnDetails create_vcn_details: (required)
             Details for creating a new VCN.
 
         :param list[str] wait_for_states:
@@ -1072,7 +1072,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_virtual_circuit` and waits for the :py:class:`~oci.core.models.VirtualCircuit` acted upon
         to enter the given state(s).
 
-        :param CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
+        :param oci.core.models.CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
             Details to create a VirtualCircuit.
 
         :param list[str] wait_for_states:
@@ -1110,7 +1110,7 @@ class VirtualNetworkClientCompositeOperations(object):
         Calls :py:func:`~oci.core.VirtualNetworkClient.create_vlan` and waits for the :py:class:`~oci.core.models.Vlan` acted upon
         to enter the given state(s).
 
-        :param CreateVlanDetails create_vlan_details: (required)
+        :param oci.core.models.CreateVlanDetails create_vlan_details: (required)
             Details for creating a VLAN
 
         :param list[str] wait_for_states:
@@ -2187,7 +2187,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ServiceIdRequestDetails detach_service_details: (required)
+        :param oci.core.models.ServiceIdRequestDetails detach_service_details: (required)
             ServiceId of Service to be detached from a service gateway.
 
         :param list[str] wait_for_states:
@@ -2230,7 +2230,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
+        :param oci.core.models.ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
             Details object for updating a VCN CIDR.
 
         :param list[str] work_request_states: (optional)
@@ -2268,7 +2268,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
+        :param oci.core.models.RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
             The Cidr to be removed from the Public Ip Pool
 
         :param list[str] wait_for_states:
@@ -2311,7 +2311,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
+        :param oci.core.models.RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
             Details object for removing a VCN CIDR.
 
         :param list[str] work_request_states: (optional)
@@ -2349,7 +2349,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str byoip_range_id: (required)
             The OCID of the Byoip Range object.
 
-        :param UpdateByoipRangeDetails update_byoip_range_details: (required)
+        :param oci.core.models.UpdateByoipRangeDetails update_byoip_range_details: (required)
             Byoip Range details.
 
         :param list[str] wait_for_states:
@@ -2390,7 +2390,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str cross_connect_id: (required)
             The OCID of the cross-connect.
 
-        :param UpdateCrossConnectDetails update_cross_connect_details: (required)
+        :param oci.core.models.UpdateCrossConnectDetails update_cross_connect_details: (required)
             Update CrossConnect fields.
 
         :param list[str] wait_for_states:
@@ -2431,7 +2431,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str cross_connect_group_id: (required)
             The OCID of the cross-connect group.
 
-        :param UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
+        :param oci.core.models.UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
             Update CrossConnectGroup fields
 
         :param list[str] wait_for_states:
@@ -2472,7 +2472,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str dhcp_id: (required)
             The OCID for the set of DHCP options.
 
-        :param UpdateDhcpDetails update_dhcp_details: (required)
+        :param oci.core.models.UpdateDhcpDetails update_dhcp_details: (required)
             Request object for updating a set of DHCP options.
 
         :param list[str] wait_for_states:
@@ -2513,7 +2513,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_id: (required)
             The OCID of the DRG.
 
-        :param UpdateDrgDetails update_drg_details: (required)
+        :param oci.core.models.UpdateDrgDetails update_drg_details: (required)
             Details object for updating a DRG.
 
         :param list[str] wait_for_states:
@@ -2554,7 +2554,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_attachment_id: (required)
             The OCID of the DRG attachment.
 
-        :param UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
+        :param oci.core.models.UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
             Details object for updating a `DrgAttachment`.
 
         :param list[str] wait_for_states:
@@ -2595,7 +2595,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ig_id: (required)
             The OCID of the internet gateway.
 
-        :param UpdateInternetGatewayDetails update_internet_gateway_details: (required)
+        :param oci.core.models.UpdateInternetGatewayDetails update_internet_gateway_details: (required)
             Details for updating the internet gateway.
 
         :param list[str] wait_for_states:
@@ -2636,7 +2636,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
-        :param UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
+        :param oci.core.models.UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
             Details object for updating a IPSec connection.
 
         :param list[str] wait_for_states:
@@ -2682,7 +2682,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
+        :param oci.core.models.UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
             Details object for updating a IPSecConnection tunnel's details.
 
         :param list[str] wait_for_states:
@@ -2725,7 +2725,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateIpv6Details update_ipv6_details: (required)
+        :param oci.core.models.UpdateIpv6Details update_ipv6_details: (required)
             IPv6 details to be updated.
 
         :param list[str] wait_for_states:
@@ -2766,7 +2766,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str local_peering_gateway_id: (required)
             The OCID of the local peering gateway.
 
-        :param UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
+        :param oci.core.models.UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
             Details object for updating a local peering gateway.
 
         :param list[str] wait_for_states:
@@ -2809,7 +2809,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateNatGatewayDetails update_nat_gateway_details: (required)
+        :param oci.core.models.UpdateNatGatewayDetails update_nat_gateway_details: (required)
             Details object for updating a NAT gateway.
 
         :param list[str] wait_for_states:
@@ -2852,7 +2852,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateNetworkSecurityGroupDetails update_network_security_group_details: (required)
+        :param oci.core.models.UpdateNetworkSecurityGroupDetails update_network_security_group_details: (required)
             Details object for updating a network security group.
 
         :param list[str] wait_for_states:
@@ -2893,7 +2893,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_id: (required)
             The OCID of the public IP.
 
-        :param UpdatePublicIpDetails update_public_ip_details: (required)
+        :param oci.core.models.UpdatePublicIpDetails update_public_ip_details: (required)
             Public IP details.
 
         :param list[str] wait_for_states:
@@ -2934,7 +2934,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The OCID of the Public Ip Pool object.
 
-        :param UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
+        :param oci.core.models.UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
             Public Ip Pool details.
 
         :param list[str] wait_for_states:
@@ -2975,7 +2975,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str remote_peering_connection_id: (required)
             The OCID of the remote peering connection (RPC).
 
-        :param UpdateRemotePeeringConnectionDetails update_remote_peering_connection_details: (required)
+        :param oci.core.models.UpdateRemotePeeringConnectionDetails update_remote_peering_connection_details: (required)
             Request to the update the peering connection to remote region
 
         :param list[str] wait_for_states:
@@ -3016,7 +3016,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str rt_id: (required)
             The OCID of the route table.
 
-        :param UpdateRouteTableDetails update_route_table_details: (required)
+        :param oci.core.models.UpdateRouteTableDetails update_route_table_details: (required)
             Details object for updating a route table.
 
         :param list[str] wait_for_states:
@@ -3057,7 +3057,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str security_list_id: (required)
             The OCID of the security list.
 
-        :param UpdateSecurityListDetails update_security_list_details: (required)
+        :param oci.core.models.UpdateSecurityListDetails update_security_list_details: (required)
             Updated details for the security list.
 
         :param list[str] wait_for_states:
@@ -3100,7 +3100,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateServiceGatewayDetails update_service_gateway_details: (required)
+        :param oci.core.models.UpdateServiceGatewayDetails update_service_gateway_details: (required)
             Details object for updating a service gateway.
 
         :param list[str] wait_for_states:
@@ -3141,7 +3141,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The OCID of the subnet.
 
-        :param UpdateSubnetDetails update_subnet_details: (required)
+        :param oci.core.models.UpdateSubnetDetails update_subnet_details: (required)
             Details object for updating a subnet.
 
         :param list[str] wait_for_states:
@@ -3184,7 +3184,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVcnDetails update_vcn_details: (required)
+        :param oci.core.models.UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.
 
         :param list[str] wait_for_states:
@@ -3225,7 +3225,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str virtual_circuit_id: (required)
             The OCID of the virtual circuit.
 
-        :param UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
+        :param oci.core.models.UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
             Update VirtualCircuit fields.
 
         :param list[str] wait_for_states:
@@ -3268,7 +3268,7 @@ class VirtualNetworkClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateVlanDetails update_vlan_details: (required)
+        :param oci.core.models.UpdateVlanDetails update_vlan_details: (required)
             Details object for updating a subnet.
 
         :param list[str] wait_for_states:
@@ -3309,7 +3309,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vnic_id: (required)
             The OCID of the VNIC.
 
-        :param UpdateVnicDetails update_vnic_details: (required)
+        :param oci.core.models.UpdateVnicDetails update_vnic_details: (required)
             Details object for updating a VNIC.
 
         :param list[str] wait_for_states:

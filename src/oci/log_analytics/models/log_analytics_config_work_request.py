@@ -58,7 +58,7 @@ class LogAnalyticsConfigWorkRequest(object):
 
         :param payload:
             The value to assign to the payload property of this LogAnalyticsConfigWorkRequest.
-        :type payload: list[LogAnalyticsConfigWorkRequestPayload]
+        :type payload: list[oci.log_analytics.models.LogAnalyticsConfigWorkRequestPayload]
 
         :param percent_complete:
             The value to assign to the percent_complete property of this LogAnalyticsConfigWorkRequest.
@@ -203,7 +203,7 @@ class LogAnalyticsConfigWorkRequest(object):
 
 
         :return: The payload of this LogAnalyticsConfigWorkRequest.
-        :rtype: list[LogAnalyticsConfigWorkRequestPayload]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsConfigWorkRequestPayload]
         """
         return self._payload
 
@@ -215,7 +215,7 @@ class LogAnalyticsConfigWorkRequest(object):
 
 
         :param payload: The payload of this LogAnalyticsConfigWorkRequest.
-        :type: list[LogAnalyticsConfigWorkRequestPayload]
+        :type: list[oci.log_analytics.models.LogAnalyticsConfigWorkRequestPayload]
         """
         self._payload = payload
 

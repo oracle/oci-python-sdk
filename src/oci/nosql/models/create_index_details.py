@@ -28,7 +28,7 @@ class CreateIndexDetails(object):
 
         :param keys:
             The value to assign to the keys property of this CreateIndexDetails.
-        :type keys: list[IndexKey]
+        :type keys: list[oci.nosql.models.IndexKey]
 
         :param is_if_not_exists:
             The value to assign to the is_if_not_exists property of this CreateIndexDetails.
@@ -118,7 +118,7 @@ class CreateIndexDetails(object):
 
 
         :return: The keys of this CreateIndexDetails.
-        :rtype: list[IndexKey]
+        :rtype: list[oci.nosql.models.IndexKey]
         """
         return self._keys
 
@@ -130,7 +130,7 @@ class CreateIndexDetails(object):
 
 
         :param keys: The keys of this CreateIndexDetails.
-        :type: list[IndexKey]
+        :type: list[oci.nosql.models.IndexKey]
         """
         self._keys = keys
 

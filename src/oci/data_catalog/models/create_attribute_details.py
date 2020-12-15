@@ -76,7 +76,7 @@ class CreateAttributeDetails(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this CreateAttributeDetails.
-        :type custom_property_members: list[CustomPropertySetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertySetUsage]
 
         :param properties:
             The value to assign to the properties property of this CreateAttributeDetails.
@@ -488,7 +488,7 @@ class CreateAttributeDetails(object):
 
 
         :return: The custom_property_members of this CreateAttributeDetails.
-        :rtype: list[CustomPropertySetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         return self._custom_property_members
 
@@ -500,7 +500,7 @@ class CreateAttributeDetails(object):
 
 
         :param custom_property_members: The custom_property_members of this CreateAttributeDetails.
-        :type: list[CustomPropertySetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         self._custom_property_members = custom_property_members
 

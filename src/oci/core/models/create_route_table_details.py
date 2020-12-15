@@ -36,7 +36,7 @@ class CreateRouteTableDetails(object):
 
         :param route_rules:
             The value to assign to the route_rules property of this CreateRouteTableDetails.
-        :type route_rules: list[RouteRule]
+        :type route_rules: list[oci.core.models.RouteRule]
 
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateRouteTableDetails.
@@ -192,7 +192,7 @@ class CreateRouteTableDetails(object):
 
 
         :return: The route_rules of this CreateRouteTableDetails.
-        :rtype: list[RouteRule]
+        :rtype: list[oci.core.models.RouteRule]
         """
         return self._route_rules
 
@@ -204,7 +204,7 @@ class CreateRouteTableDetails(object):
 
 
         :param route_rules: The route_rules of this CreateRouteTableDetails.
-        :type: list[RouteRule]
+        :type: list[oci.core.models.RouteRule]
         """
         self._route_rules = route_rules
 

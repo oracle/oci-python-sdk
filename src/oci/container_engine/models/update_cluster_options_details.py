@@ -20,7 +20,7 @@ class UpdateClusterOptionsDetails(object):
 
         :param admission_controller_options:
             The value to assign to the admission_controller_options property of this UpdateClusterOptionsDetails.
-        :type admission_controller_options: AdmissionControllerOptions
+        :type admission_controller_options: oci.container_engine.models.AdmissionControllerOptions
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UpdateClusterOptionsDetails(object):
 
 
         :return: The admission_controller_options of this UpdateClusterOptionsDetails.
-        :rtype: AdmissionControllerOptions
+        :rtype: oci.container_engine.models.AdmissionControllerOptions
         """
         return self._admission_controller_options
 
@@ -53,7 +53,7 @@ class UpdateClusterOptionsDetails(object):
 
 
         :param admission_controller_options: The admission_controller_options of this UpdateClusterOptionsDetails.
-        :type: AdmissionControllerOptions
+        :type: oci.container_engine.models.AdmissionControllerOptions
         """
         self._admission_controller_options = admission_controller_options
 

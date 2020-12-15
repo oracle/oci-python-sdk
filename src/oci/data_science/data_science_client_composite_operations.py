@@ -108,7 +108,7 @@ class DataScienceClientCompositeOperations(object):
         Calls :py:func:`~oci.data_science.DataScienceClient.create_model` and waits for the :py:class:`~oci.data_science.models.Model` acted upon
         to enter the given state(s).
 
-        :param CreateModelDetails create_model_details: (required)
+        :param oci.data_science.models.CreateModelDetails create_model_details: (required)
             Details for creating a new model.
 
         :param list[str] wait_for_states:
@@ -146,7 +146,7 @@ class DataScienceClientCompositeOperations(object):
         Calls :py:func:`~oci.data_science.DataScienceClient.create_notebook_session` and waits for the :py:class:`~oci.data_science.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateNotebookSessionDetails create_notebook_session_details: (required)
+        :param oci.data_science.models.CreateNotebookSessionDetails create_notebook_session_details: (required)
             Details for creating a new notebook session.
 
         :param list[str] wait_for_states:
@@ -184,7 +184,7 @@ class DataScienceClientCompositeOperations(object):
         Calls :py:func:`~oci.data_science.DataScienceClient.create_project` and waits for the :py:class:`~oci.data_science.models.Project` acted upon
         to enter the given state(s).
 
-        :param CreateProjectDetails create_project_details: (required)
+        :param oci.data_science.models.CreateProjectDetails create_project_details: (required)
             Details for creating a new project.
 
         :param list[str] wait_for_states:
@@ -452,7 +452,7 @@ class DataScienceClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateModelDetails update_model_details: (required)
+        :param oci.data_science.models.UpdateModelDetails update_model_details: (required)
             Details for updating a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
 
         :param list[str] wait_for_states:
@@ -495,7 +495,7 @@ class DataScienceClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateNotebookSessionDetails update_notebook_session_details: (required)
+        :param oci.data_science.models.UpdateNotebookSessionDetails update_notebook_session_details: (required)
             Details for updating a notebook session. `notebookSessionConfigurationDetails` can only be updated while the notebook session is in the `INACTIVE` state.
             Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
 
@@ -539,7 +539,7 @@ class DataScienceClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
-        :param UpdateProjectDetails update_project_details: (required)
+        :param oci.data_science.models.UpdateProjectDetails update_project_details: (required)
             Details for updating a project. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
 
         :param list[str] wait_for_states:

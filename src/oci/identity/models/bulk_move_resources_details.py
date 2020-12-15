@@ -20,7 +20,7 @@ class BulkMoveResourcesDetails(object):
 
         :param resources:
             The value to assign to the resources property of this BulkMoveResourcesDetails.
-        :type resources: list[BulkActionResource]
+        :type resources: list[oci.identity.models.BulkActionResource]
 
         :param target_compartment_id:
             The value to assign to the target_compartment_id property of this BulkMoveResourcesDetails.
@@ -48,7 +48,7 @@ class BulkMoveResourcesDetails(object):
 
 
         :return: The resources of this BulkMoveResourcesDetails.
-        :rtype: list[BulkActionResource]
+        :rtype: list[oci.identity.models.BulkActionResource]
         """
         return self._resources
 
@@ -60,7 +60,7 @@ class BulkMoveResourcesDetails(object):
 
 
         :param resources: The resources of this BulkMoveResourcesDetails.
-        :type: list[BulkActionResource]
+        :type: list[oci.identity.models.BulkActionResource]
         """
         self._resources = resources
 

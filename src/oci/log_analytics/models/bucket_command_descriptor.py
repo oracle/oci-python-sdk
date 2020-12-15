@@ -38,11 +38,11 @@ class BucketCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this BucketCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this BucketCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param max_buckets:
             The value to assign to the max_buckets property of this BucketCommandDescriptor.
@@ -54,7 +54,7 @@ class BucketCommandDescriptor(AbstractCommandDescriptor):
 
         :param ranges:
             The value to assign to the ranges property of this BucketCommandDescriptor.
-        :type ranges: list[BucketRange]
+        :type ranges: list[oci.log_analytics.models.BucketRange]
 
         :param default_value:
             The value to assign to the default_value property of this BucketCommandDescriptor.
@@ -155,7 +155,7 @@ class BucketCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The ranges of this BucketCommandDescriptor.
-        :rtype: list[BucketRange]
+        :rtype: list[oci.log_analytics.models.BucketRange]
         """
         return self._ranges
 
@@ -167,7 +167,7 @@ class BucketCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param ranges: The ranges of this BucketCommandDescriptor.
-        :type: list[BucketRange]
+        :type: list[oci.log_analytics.models.BucketRange]
         """
         self._ranges = ranges
 

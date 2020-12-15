@@ -34,11 +34,11 @@ class ReencryptObjectDetails(object):
 
         :param sse_customer_key:
             The value to assign to the sse_customer_key property of this ReencryptObjectDetails.
-        :type sse_customer_key: SSECustomerKeyDetails
+        :type sse_customer_key: oci.object_storage.models.SSECustomerKeyDetails
 
         :param source_sse_customer_key:
             The value to assign to the source_sse_customer_key property of this ReencryptObjectDetails.
-        :type source_sse_customer_key: SSECustomerKeyDetails
+        :type source_sse_customer_key: oci.object_storage.models.SSECustomerKeyDetails
 
         """
         self.swagger_types = {
@@ -97,7 +97,7 @@ class ReencryptObjectDetails(object):
         Gets the sse_customer_key of this ReencryptObjectDetails.
 
         :return: The sse_customer_key of this ReencryptObjectDetails.
-        :rtype: SSECustomerKeyDetails
+        :rtype: oci.object_storage.models.SSECustomerKeyDetails
         """
         return self._sse_customer_key
 
@@ -107,7 +107,7 @@ class ReencryptObjectDetails(object):
         Sets the sse_customer_key of this ReencryptObjectDetails.
 
         :param sse_customer_key: The sse_customer_key of this ReencryptObjectDetails.
-        :type: SSECustomerKeyDetails
+        :type: oci.object_storage.models.SSECustomerKeyDetails
         """
         self._sse_customer_key = sse_customer_key
 
@@ -117,7 +117,7 @@ class ReencryptObjectDetails(object):
         Gets the source_sse_customer_key of this ReencryptObjectDetails.
 
         :return: The source_sse_customer_key of this ReencryptObjectDetails.
-        :rtype: SSECustomerKeyDetails
+        :rtype: oci.object_storage.models.SSECustomerKeyDetails
         """
         return self._source_sse_customer_key
 
@@ -127,7 +127,7 @@ class ReencryptObjectDetails(object):
         Sets the source_sse_customer_key of this ReencryptObjectDetails.
 
         :param source_sse_customer_key: The source_sse_customer_key of this ReencryptObjectDetails.
-        :type: SSECustomerKeyDetails
+        :type: oci.object_storage.models.SSECustomerKeyDetails
         """
         self._source_sse_customer_key = source_sse_customer_key
 

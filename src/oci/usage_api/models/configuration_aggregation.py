@@ -20,7 +20,7 @@ class ConfigurationAggregation(object):
 
         :param items:
             The value to assign to the items property of this ConfigurationAggregation.
-        :type items: list[Configuration]
+        :type items: list[oci.usage_api.models.Configuration]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ConfigurationAggregation(object):
 
 
         :return: The items of this ConfigurationAggregation.
-        :rtype: list[Configuration]
+        :rtype: list[oci.usage_api.models.Configuration]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ConfigurationAggregation(object):
 
 
         :param items: The items of this ConfigurationAggregation.
-        :type: list[Configuration]
+        :type: list[oci.usage_api.models.Configuration]
         """
         self._items = items
 

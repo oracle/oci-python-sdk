@@ -38,23 +38,23 @@ class BackendSet(object):
 
         :param backends:
             The value to assign to the backends property of this BackendSet.
-        :type backends: list[Backend]
+        :type backends: list[oci.load_balancer.models.Backend]
 
         :param health_checker:
             The value to assign to the health_checker property of this BackendSet.
-        :type health_checker: HealthChecker
+        :type health_checker: oci.load_balancer.models.HealthChecker
 
         :param ssl_configuration:
             The value to assign to the ssl_configuration property of this BackendSet.
-        :type ssl_configuration: SSLConfiguration
+        :type ssl_configuration: oci.load_balancer.models.SSLConfiguration
 
         :param session_persistence_configuration:
             The value to assign to the session_persistence_configuration property of this BackendSet.
-        :type session_persistence_configuration: SessionPersistenceConfigurationDetails
+        :type session_persistence_configuration: oci.load_balancer.models.SessionPersistenceConfigurationDetails
 
         :param lb_cookie_session_persistence_configuration:
             The value to assign to the lb_cookie_session_persistence_configuration property of this BackendSet.
-        :type lb_cookie_session_persistence_configuration: LBCookieSessionPersistenceConfigurationDetails
+        :type lb_cookie_session_persistence_configuration: oci.load_balancer.models.LBCookieSessionPersistenceConfigurationDetails
 
         """
         self.swagger_types = {
@@ -155,7 +155,7 @@ class BackendSet(object):
         **[Required]** Gets the backends of this BackendSet.
 
         :return: The backends of this BackendSet.
-        :rtype: list[Backend]
+        :rtype: list[oci.load_balancer.models.Backend]
         """
         return self._backends
 
@@ -165,7 +165,7 @@ class BackendSet(object):
         Sets the backends of this BackendSet.
 
         :param backends: The backends of this BackendSet.
-        :type: list[Backend]
+        :type: list[oci.load_balancer.models.Backend]
         """
         self._backends = backends
 
@@ -175,7 +175,7 @@ class BackendSet(object):
         **[Required]** Gets the health_checker of this BackendSet.
 
         :return: The health_checker of this BackendSet.
-        :rtype: HealthChecker
+        :rtype: oci.load_balancer.models.HealthChecker
         """
         return self._health_checker
 
@@ -185,7 +185,7 @@ class BackendSet(object):
         Sets the health_checker of this BackendSet.
 
         :param health_checker: The health_checker of this BackendSet.
-        :type: HealthChecker
+        :type: oci.load_balancer.models.HealthChecker
         """
         self._health_checker = health_checker
 
@@ -195,7 +195,7 @@ class BackendSet(object):
         Gets the ssl_configuration of this BackendSet.
 
         :return: The ssl_configuration of this BackendSet.
-        :rtype: SSLConfiguration
+        :rtype: oci.load_balancer.models.SSLConfiguration
         """
         return self._ssl_configuration
 
@@ -205,7 +205,7 @@ class BackendSet(object):
         Sets the ssl_configuration of this BackendSet.
 
         :param ssl_configuration: The ssl_configuration of this BackendSet.
-        :type: SSLConfiguration
+        :type: oci.load_balancer.models.SSLConfiguration
         """
         self._ssl_configuration = ssl_configuration
 
@@ -215,7 +215,7 @@ class BackendSet(object):
         Gets the session_persistence_configuration of this BackendSet.
 
         :return: The session_persistence_configuration of this BackendSet.
-        :rtype: SessionPersistenceConfigurationDetails
+        :rtype: oci.load_balancer.models.SessionPersistenceConfigurationDetails
         """
         return self._session_persistence_configuration
 
@@ -225,7 +225,7 @@ class BackendSet(object):
         Sets the session_persistence_configuration of this BackendSet.
 
         :param session_persistence_configuration: The session_persistence_configuration of this BackendSet.
-        :type: SessionPersistenceConfigurationDetails
+        :type: oci.load_balancer.models.SessionPersistenceConfigurationDetails
         """
         self._session_persistence_configuration = session_persistence_configuration
 
@@ -235,7 +235,7 @@ class BackendSet(object):
         Gets the lb_cookie_session_persistence_configuration of this BackendSet.
 
         :return: The lb_cookie_session_persistence_configuration of this BackendSet.
-        :rtype: LBCookieSessionPersistenceConfigurationDetails
+        :rtype: oci.load_balancer.models.LBCookieSessionPersistenceConfigurationDetails
         """
         return self._lb_cookie_session_persistence_configuration
 
@@ -245,7 +245,7 @@ class BackendSet(object):
         Sets the lb_cookie_session_persistence_configuration of this BackendSet.
 
         :param lb_cookie_session_persistence_configuration: The lb_cookie_session_persistence_configuration of this BackendSet.
-        :type: LBCookieSessionPersistenceConfigurationDetails
+        :type: oci.load_balancer.models.LBCookieSessionPersistenceConfigurationDetails
         """
         self._lb_cookie_session_persistence_configuration = lb_cookie_session_persistence_configuration
 

@@ -20,7 +20,7 @@ class UploadFileCollection(object):
 
         :param items:
             The value to assign to the items property of this UploadFileCollection.
-        :type items: list[UploadFileSummary]
+        :type items: list[oci.log_analytics.models.UploadFileSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UploadFileCollection(object):
 
 
         :return: The items of this UploadFileCollection.
-        :rtype: list[UploadFileSummary]
+        :rtype: list[oci.log_analytics.models.UploadFileSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class UploadFileCollection(object):
 
 
         :param items: The items of this UploadFileCollection.
-        :type: list[UploadFileSummary]
+        :type: list[oci.log_analytics.models.UploadFileSummary]
         """
         self._items = items
 

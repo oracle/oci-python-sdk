@@ -24,7 +24,7 @@ class UpdateOAuth2ClientCredentialDetails(object):
 
         :param scopes:
             The value to assign to the scopes property of this UpdateOAuth2ClientCredentialDetails.
-        :type scopes: list[FullyQualifiedScope]
+        :type scopes: list[oci.identity.models.FullyQualifiedScope]
 
         :param is_reset_password:
             The value to assign to the is_reset_password property of this UpdateOAuth2ClientCredentialDetails.
@@ -79,7 +79,7 @@ class UpdateOAuth2ClientCredentialDetails(object):
 
 
         :return: The scopes of this UpdateOAuth2ClientCredentialDetails.
-        :rtype: list[FullyQualifiedScope]
+        :rtype: list[oci.identity.models.FullyQualifiedScope]
         """
         return self._scopes
 
@@ -91,7 +91,7 @@ class UpdateOAuth2ClientCredentialDetails(object):
 
 
         :param scopes: The scopes of this UpdateOAuth2ClientCredentialDetails.
-        :type: list[FullyQualifiedScope]
+        :type: list[oci.identity.models.FullyQualifiedScope]
         """
         self._scopes = scopes
 

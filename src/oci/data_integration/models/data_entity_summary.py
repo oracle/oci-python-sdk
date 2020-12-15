@@ -44,7 +44,7 @@ class DataEntitySummary(object):
 
         :param metadata:
             The value to assign to the metadata property of this DataEntitySummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -115,7 +115,7 @@ class DataEntitySummary(object):
         Gets the metadata of this DataEntitySummary.
 
         :return: The metadata of this DataEntitySummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -125,7 +125,7 @@ class DataEntitySummary(object):
         Sets the metadata of this DataEntitySummary.
 
         :param metadata: The metadata of this DataEntitySummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

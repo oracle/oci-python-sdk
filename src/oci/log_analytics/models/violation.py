@@ -28,7 +28,7 @@ class Violation(object):
 
         :param indexes:
             The value to assign to the indexes property of this Violation.
-        :type indexes: list[Indexes]
+        :type indexes: list[oci.log_analytics.models.Indexes]
 
         :param rule_description:
             The value to assign to the rule_description property of this Violation.
@@ -79,7 +79,7 @@ class Violation(object):
 
 
         :return: The indexes of this Violation.
-        :rtype: list[Indexes]
+        :rtype: list[oci.log_analytics.models.Indexes]
         """
         return self._indexes
 
@@ -91,7 +91,7 @@ class Violation(object):
 
 
         :param indexes: The indexes of this Violation.
-        :type: list[Indexes]
+        :type: list[oci.log_analytics.models.Indexes]
         """
         self._indexes = indexes
 

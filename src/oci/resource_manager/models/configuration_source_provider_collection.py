@@ -20,7 +20,7 @@ class ConfigurationSourceProviderCollection(object):
 
         :param items:
             The value to assign to the items property of this ConfigurationSourceProviderCollection.
-        :type items: list[ConfigurationSourceProviderSummary]
+        :type items: list[oci.resource_manager.models.ConfigurationSourceProviderSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ConfigurationSourceProviderCollection(object):
 
 
         :return: The items of this ConfigurationSourceProviderCollection.
-        :rtype: list[ConfigurationSourceProviderSummary]
+        :rtype: list[oci.resource_manager.models.ConfigurationSourceProviderSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ConfigurationSourceProviderCollection(object):
 
 
         :param items: The items of this ConfigurationSourceProviderCollection.
-        :type: list[ConfigurationSourceProviderSummary]
+        :type: list[oci.resource_manager.models.ConfigurationSourceProviderSummary]
         """
         self._items = items
 

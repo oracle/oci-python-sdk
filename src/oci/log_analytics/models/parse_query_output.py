@@ -28,7 +28,7 @@ class ParseQueryOutput(object):
 
         :param columns:
             The value to assign to the columns property of this ParseQueryOutput.
-        :type columns: list[AbstractColumn]
+        :type columns: list[oci.log_analytics.models.AbstractColumn]
 
         :param response_time_in_ms:
             The value to assign to the response_time_in_ms property of this ParseQueryOutput.
@@ -36,7 +36,7 @@ class ParseQueryOutput(object):
 
         :param commands:
             The value to assign to the commands property of this ParseQueryOutput.
-        :type commands: list[AbstractCommandDescriptor]
+        :type commands: list[oci.log_analytics.models.AbstractCommandDescriptor]
 
         """
         self.swagger_types = {
@@ -117,7 +117,7 @@ class ParseQueryOutput(object):
 
 
         :return: The columns of this ParseQueryOutput.
-        :rtype: list[AbstractColumn]
+        :rtype: list[oci.log_analytics.models.AbstractColumn]
         """
         return self._columns
 
@@ -129,7 +129,7 @@ class ParseQueryOutput(object):
 
 
         :param columns: The columns of this ParseQueryOutput.
-        :type: list[AbstractColumn]
+        :type: list[oci.log_analytics.models.AbstractColumn]
         """
         self._columns = columns
 
@@ -165,7 +165,7 @@ class ParseQueryOutput(object):
 
 
         :return: The commands of this ParseQueryOutput.
-        :rtype: list[AbstractCommandDescriptor]
+        :rtype: list[oci.log_analytics.models.AbstractCommandDescriptor]
         """
         return self._commands
 
@@ -177,7 +177,7 @@ class ParseQueryOutput(object):
 
 
         :param commands: The commands of this ParseQueryOutput.
-        :type: list[AbstractCommandDescriptor]
+        :type: list[oci.log_analytics.models.AbstractCommandDescriptor]
         """
         self._commands = commands
 

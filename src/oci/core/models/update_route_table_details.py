@@ -32,7 +32,7 @@ class UpdateRouteTableDetails(object):
 
         :param route_rules:
             The value to assign to the route_rules property of this UpdateRouteTableDetails.
-        :type route_rules: list[RouteRule]
+        :type route_rules: list[oci.core.models.RouteRule]
 
         """
         self.swagger_types = {
@@ -156,7 +156,7 @@ class UpdateRouteTableDetails(object):
 
 
         :return: The route_rules of this UpdateRouteTableDetails.
-        :rtype: list[RouteRule]
+        :rtype: list[oci.core.models.RouteRule]
         """
         return self._route_rules
 
@@ -168,7 +168,7 @@ class UpdateRouteTableDetails(object):
 
 
         :param route_rules: The route_rules of this UpdateRouteTableDetails.
-        :type: list[RouteRule]
+        :type: list[oci.core.models.RouteRule]
         """
         self._route_rules = route_rules
 

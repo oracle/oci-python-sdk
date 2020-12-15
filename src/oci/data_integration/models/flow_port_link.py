@@ -51,7 +51,7 @@ class FlowPortLink(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this FlowPortLink.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_status:
             The value to assign to the object_status property of this FlowPortLink.
@@ -199,7 +199,7 @@ class FlowPortLink(object):
         Gets the parent_ref of this FlowPortLink.
 
         :return: The parent_ref of this FlowPortLink.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -209,7 +209,7 @@ class FlowPortLink(object):
         Sets the parent_ref of this FlowPortLink.
 
         :param parent_ref: The parent_ref of this FlowPortLink.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 

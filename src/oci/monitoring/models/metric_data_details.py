@@ -44,7 +44,7 @@ class MetricDataDetails(object):
 
         :param datapoints:
             The value to assign to the datapoints property of this MetricDataDetails.
-        :type datapoints: list[Datapoint]
+        :type datapoints: list[oci.monitoring.models.Datapoint]
 
         """
         self.swagger_types = {
@@ -277,7 +277,7 @@ class MetricDataDetails(object):
 
 
         :return: The datapoints of this MetricDataDetails.
-        :rtype: list[Datapoint]
+        :rtype: list[oci.monitoring.models.Datapoint]
         """
         return self._datapoints
 
@@ -289,7 +289,7 @@ class MetricDataDetails(object):
 
 
         :param datapoints: The datapoints of this MetricDataDetails.
-        :type: list[Datapoint]
+        :type: list[oci.monitoring.models.Datapoint]
         """
         self._datapoints = datapoints
 

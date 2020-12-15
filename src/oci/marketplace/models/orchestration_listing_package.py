@@ -38,7 +38,7 @@ class OrchestrationListingPackage(ListingPackage):
 
         :param pricing:
             The value to assign to the pricing property of this OrchestrationListingPackage.
-        :type pricing: PricingModel
+        :type pricing: oci.marketplace.models.PricingModel
 
         :param resource_id:
             The value to assign to the resource_id property of this OrchestrationListingPackage.
@@ -54,11 +54,11 @@ class OrchestrationListingPackage(ListingPackage):
 
         :param variables:
             The value to assign to the variables property of this OrchestrationListingPackage.
-        :type variables: list[OrchestrationVariable]
+        :type variables: list[oci.marketplace.models.OrchestrationVariable]
 
         :param regions:
             The value to assign to the regions property of this OrchestrationListingPackage.
-        :type regions: list[Region]
+        :type regions: list[oci.marketplace.models.Region]
 
         """
         self.swagger_types = {
@@ -131,7 +131,7 @@ class OrchestrationListingPackage(ListingPackage):
 
 
         :return: The variables of this OrchestrationListingPackage.
-        :rtype: list[OrchestrationVariable]
+        :rtype: list[oci.marketplace.models.OrchestrationVariable]
         """
         return self._variables
 
@@ -143,7 +143,7 @@ class OrchestrationListingPackage(ListingPackage):
 
 
         :param variables: The variables of this OrchestrationListingPackage.
-        :type: list[OrchestrationVariable]
+        :type: list[oci.marketplace.models.OrchestrationVariable]
         """
         self._variables = variables
 
@@ -155,7 +155,7 @@ class OrchestrationListingPackage(ListingPackage):
 
 
         :return: The regions of this OrchestrationListingPackage.
-        :rtype: list[Region]
+        :rtype: list[oci.marketplace.models.Region]
         """
         return self._regions
 
@@ -167,7 +167,7 @@ class OrchestrationListingPackage(ListingPackage):
 
 
         :param regions: The regions of this OrchestrationListingPackage.
-        :type: list[Region]
+        :type: list[oci.marketplace.models.Region]
         """
         self._regions = regions
 

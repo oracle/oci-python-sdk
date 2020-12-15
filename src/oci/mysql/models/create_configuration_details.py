@@ -36,7 +36,7 @@ class CreateConfigurationDetails(object):
 
         :param variables:
             The value to assign to the variables property of this CreateConfigurationDetails.
-        :type variables: ConfigurationVariables
+        :type variables: oci.mysql.models.ConfigurationVariables
 
         :param parent_configuration_id:
             The value to assign to the parent_configuration_id property of this CreateConfigurationDetails.
@@ -184,7 +184,7 @@ class CreateConfigurationDetails(object):
         Gets the variables of this CreateConfigurationDetails.
 
         :return: The variables of this CreateConfigurationDetails.
-        :rtype: ConfigurationVariables
+        :rtype: oci.mysql.models.ConfigurationVariables
         """
         return self._variables
 
@@ -194,7 +194,7 @@ class CreateConfigurationDetails(object):
         Sets the variables of this CreateConfigurationDetails.
 
         :param variables: The variables of this CreateConfigurationDetails.
-        :type: ConfigurationVariables
+        :type: oci.mysql.models.ConfigurationVariables
         """
         self._variables = variables
 

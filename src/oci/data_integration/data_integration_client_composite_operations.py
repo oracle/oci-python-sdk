@@ -31,7 +31,7 @@ class DataIntegrationClientCompositeOperations(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param ChangeCompartmentDetails change_compartment_details: (required)
+        :param oci.data_integration.models.ChangeCompartmentDetails change_compartment_details: (required)
             The information needed to move a workspace to a specified compartment.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class DataIntegrationClientCompositeOperations(object):
         Calls :py:func:`~oci.data_integration.DataIntegrationClient.create_workspace` and waits for the :py:class:`~oci.data_integration.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateWorkspaceDetails create_workspace_details: (required)
+        :param oci.data_integration.models.CreateWorkspaceDetails create_workspace_details: (required)
             The information needed to create a new Data Integration workspace.
 
         :param list[str] wait_for_states:
@@ -232,7 +232,7 @@ class DataIntegrationClientCompositeOperations(object):
         :param str workspace_id: (required)
             The workspace ID.
 
-        :param UpdateWorkspaceDetails update_workspace_details: (required)
+        :param oci.data_integration.models.UpdateWorkspaceDetails update_workspace_details: (required)
             The information needed to update the workspace.
 
         :param list[str] wait_for_states:

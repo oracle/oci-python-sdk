@@ -120,7 +120,7 @@ class Recommendation(object):
 
         :param resource_counts:
             The value to assign to the resource_counts property of this Recommendation.
-        :type resource_counts: list[ResourceCount]
+        :type resource_counts: list[oci.optimizer.models.ResourceCount]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Recommendation.
@@ -156,7 +156,7 @@ class Recommendation(object):
 
         :param supported_levels:
             The value to assign to the supported_levels property of this Recommendation.
-        :type supported_levels: SupportedLevels
+        :type supported_levels: oci.optimizer.models.SupportedLevels
 
         """
         self.swagger_types = {
@@ -369,7 +369,7 @@ class Recommendation(object):
 
 
         :return: The resource_counts of this Recommendation.
-        :rtype: list[ResourceCount]
+        :rtype: list[oci.optimizer.models.ResourceCount]
         """
         return self._resource_counts
 
@@ -381,7 +381,7 @@ class Recommendation(object):
 
 
         :param resource_counts: The resource_counts of this Recommendation.
-        :type: list[ResourceCount]
+        :type: list[oci.optimizer.models.ResourceCount]
         """
         self._resource_counts = resource_counts
 
@@ -581,7 +581,7 @@ class Recommendation(object):
         Gets the supported_levels of this Recommendation.
 
         :return: The supported_levels of this Recommendation.
-        :rtype: SupportedLevels
+        :rtype: oci.optimizer.models.SupportedLevels
         """
         return self._supported_levels
 
@@ -591,7 +591,7 @@ class Recommendation(object):
         Sets the supported_levels of this Recommendation.
 
         :param supported_levels: The supported_levels of this Recommendation.
-        :type: SupportedLevels
+        :type: oci.optimizer.models.SupportedLevels
         """
         self._supported_levels = supported_levels
 

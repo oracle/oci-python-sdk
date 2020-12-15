@@ -20,7 +20,7 @@ class TerraformVersionCollection(object):
 
         :param items:
             The value to assign to the items property of this TerraformVersionCollection.
-        :type items: list[TerraformVersionSummary]
+        :type items: list[oci.resource_manager.models.TerraformVersionSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TerraformVersionCollection(object):
 
 
         :return: The items of this TerraformVersionCollection.
-        :rtype: list[TerraformVersionSummary]
+        :rtype: list[oci.resource_manager.models.TerraformVersionSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TerraformVersionCollection(object):
 
 
         :param items: The items of this TerraformVersionCollection.
-        :type: list[TerraformVersionSummary]
+        :type: list[oci.resource_manager.models.TerraformVersionSummary]
         """
         self._items = items
 

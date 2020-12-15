@@ -35,7 +35,7 @@ class CompositeCondition(Condition):
 
         :param left_operand:
             The value to assign to the left_operand property of this CompositeCondition.
-        :type left_operand: Condition
+        :type left_operand: oci.cloud_guard.models.Condition
 
         :param composite_operator:
             The value to assign to the composite_operator property of this CompositeCondition.
@@ -45,7 +45,7 @@ class CompositeCondition(Condition):
 
         :param right_operand:
             The value to assign to the right_operand property of this CompositeCondition.
-        :type right_operand: Condition
+        :type right_operand: oci.cloud_guard.models.Condition
 
         """
         self.swagger_types = {
@@ -74,7 +74,7 @@ class CompositeCondition(Condition):
         Gets the left_operand of this CompositeCondition.
 
         :return: The left_operand of this CompositeCondition.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._left_operand
 
@@ -84,7 +84,7 @@ class CompositeCondition(Condition):
         Sets the left_operand of this CompositeCondition.
 
         :param left_operand: The left_operand of this CompositeCondition.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._left_operand = left_operand
 
@@ -120,7 +120,7 @@ class CompositeCondition(Condition):
         Gets the right_operand of this CompositeCondition.
 
         :return: The right_operand of this CompositeCondition.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._right_operand
 
@@ -130,7 +130,7 @@ class CompositeCondition(Condition):
         Sets the right_operand of this CompositeCondition.
 
         :param right_operand: The right_operand of this CompositeCondition.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._right_operand = right_operand
 

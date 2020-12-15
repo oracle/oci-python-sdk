@@ -20,7 +20,7 @@ class WorkRequestLogEntryCollection(object):
 
         :param items:
             The value to assign to the items property of this WorkRequestLogEntryCollection.
-        :type items: list[WorkRequestLogEntry]
+        :type items: list[oci.ocvp.models.WorkRequestLogEntry]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class WorkRequestLogEntryCollection(object):
 
 
         :return: The items of this WorkRequestLogEntryCollection.
-        :rtype: list[WorkRequestLogEntry]
+        :rtype: list[oci.ocvp.models.WorkRequestLogEntry]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class WorkRequestLogEntryCollection(object):
 
 
         :param items: The items of this WorkRequestLogEntryCollection.
-        :type: list[WorkRequestLogEntry]
+        :type: list[oci.ocvp.models.WorkRequestLogEntry]
         """
         self._items = items
 

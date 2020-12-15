@@ -20,7 +20,7 @@ class LogAnalyticsObjectCollectionRuleCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsObjectCollectionRuleCollection.
-        :type items: list[LogAnalyticsObjectCollectionRuleSummary]
+        :type items: list[oci.log_analytics.models.LogAnalyticsObjectCollectionRuleSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsObjectCollectionRuleCollection(object):
 
 
         :return: The items of this LogAnalyticsObjectCollectionRuleCollection.
-        :rtype: list[LogAnalyticsObjectCollectionRuleSummary]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsObjectCollectionRuleSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsObjectCollectionRuleCollection(object):
 
 
         :param items: The items of this LogAnalyticsObjectCollectionRuleCollection.
-        :type: list[LogAnalyticsObjectCollectionRuleSummary]
+        :type: list[oci.log_analytics.models.LogAnalyticsObjectCollectionRuleSummary]
         """
         self._items = items
 

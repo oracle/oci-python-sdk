@@ -20,7 +20,7 @@ class ResourceTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this ResourceTypeCollection.
-        :type items: list[ResourceTypeSummary]
+        :type items: list[oci.cloud_guard.models.ResourceTypeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ResourceTypeCollection(object):
 
 
         :return: The items of this ResourceTypeCollection.
-        :rtype: list[ResourceTypeSummary]
+        :rtype: list[oci.cloud_guard.models.ResourceTypeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ResourceTypeCollection(object):
 
 
         :param items: The items of this ResourceTypeCollection.
-        :type: list[ResourceTypeSummary]
+        :type: list[oci.cloud_guard.models.ResourceTypeSummary]
         """
         self._items = items
 

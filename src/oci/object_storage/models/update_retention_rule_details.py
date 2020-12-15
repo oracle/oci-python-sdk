@@ -24,7 +24,7 @@ class UpdateRetentionRuleDetails(object):
 
         :param duration:
             The value to assign to the duration property of this UpdateRetentionRuleDetails.
-        :type duration: Duration
+        :type duration: oci.object_storage.models.Duration
 
         :param time_rule_locked:
             The value to assign to the time_rule_locked property of this UpdateRetentionRuleDetails.
@@ -77,7 +77,7 @@ class UpdateRetentionRuleDetails(object):
         Gets the duration of this UpdateRetentionRuleDetails.
 
         :return: The duration of this UpdateRetentionRuleDetails.
-        :rtype: Duration
+        :rtype: oci.object_storage.models.Duration
         """
         return self._duration
 
@@ -87,7 +87,7 @@ class UpdateRetentionRuleDetails(object):
         Sets the duration of this UpdateRetentionRuleDetails.
 
         :param duration: The duration of this UpdateRetentionRuleDetails.
-        :type: Duration
+        :type: oci.object_storage.models.Duration
         """
         self._duration = duration
 

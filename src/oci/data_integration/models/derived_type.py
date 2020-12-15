@@ -34,7 +34,7 @@ class DerivedType(BaseType):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DerivedType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this DerivedType.

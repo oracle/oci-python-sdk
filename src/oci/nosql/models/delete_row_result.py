@@ -32,7 +32,7 @@ class DeleteRowResult(object):
 
         :param usage:
             The value to assign to the usage property of this DeleteRowResult.
-        :type usage: RequestUsage
+        :type usage: oci.nosql.models.RequestUsage
 
         """
         self.swagger_types = {
@@ -136,7 +136,7 @@ class DeleteRowResult(object):
         Gets the usage of this DeleteRowResult.
 
         :return: The usage of this DeleteRowResult.
-        :rtype: RequestUsage
+        :rtype: oci.nosql.models.RequestUsage
         """
         return self._usage
 
@@ -146,7 +146,7 @@ class DeleteRowResult(object):
         Sets the usage of this DeleteRowResult.
 
         :param usage: The usage of this DeleteRowResult.
-        :type: RequestUsage
+        :type: oci.nosql.models.RequestUsage
         """
         self._usage = usage
 

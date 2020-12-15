@@ -24,7 +24,7 @@ class DataAssetCollection(object):
 
         :param items:
             The value to assign to the items property of this DataAssetCollection.
-        :type items: list[DataAssetSummary]
+        :type items: list[oci.data_catalog.models.DataAssetSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class DataAssetCollection(object):
 
 
         :return: The items of this DataAssetCollection.
-        :rtype: list[DataAssetSummary]
+        :rtype: list[oci.data_catalog.models.DataAssetSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class DataAssetCollection(object):
 
 
         :param items: The items of this DataAssetCollection.
-        :type: list[DataAssetSummary]
+        :type: list[oci.data_catalog.models.DataAssetSummary]
         """
         self._items = items
 

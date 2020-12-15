@@ -20,7 +20,7 @@ class StorageWorkRequestCollection(object):
 
         :param items:
             The value to assign to the items property of this StorageWorkRequestCollection.
-        :type items: list[StorageWorkRequestSummary]
+        :type items: list[oci.log_analytics.models.StorageWorkRequestSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class StorageWorkRequestCollection(object):
 
 
         :return: The items of this StorageWorkRequestCollection.
-        :rtype: list[StorageWorkRequestSummary]
+        :rtype: list[oci.log_analytics.models.StorageWorkRequestSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class StorageWorkRequestCollection(object):
 
 
         :param items: The items of this StorageWorkRequestCollection.
-        :type: list[StorageWorkRequestSummary]
+        :type: list[oci.log_analytics.models.StorageWorkRequestSummary]
         """
         self._items = items
 

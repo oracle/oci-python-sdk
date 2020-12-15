@@ -20,7 +20,7 @@ class UpdateKeyStoreDetails(object):
 
         :param type_details:
             The value to assign to the type_details property of this UpdateKeyStoreDetails.
-        :type type_details: KeyStoreTypeDetails
+        :type type_details: oci.database.models.KeyStoreTypeDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateKeyStoreDetails.
@@ -53,7 +53,7 @@ class UpdateKeyStoreDetails(object):
         Gets the type_details of this UpdateKeyStoreDetails.
 
         :return: The type_details of this UpdateKeyStoreDetails.
-        :rtype: KeyStoreTypeDetails
+        :rtype: oci.database.models.KeyStoreTypeDetails
         """
         return self._type_details
 
@@ -63,7 +63,7 @@ class UpdateKeyStoreDetails(object):
         Sets the type_details of this UpdateKeyStoreDetails.
 
         :param type_details: The type_details of this UpdateKeyStoreDetails.
-        :type: KeyStoreTypeDetails
+        :type: oci.database.models.KeyStoreTypeDetails
         """
         self._type_details = type_details
 

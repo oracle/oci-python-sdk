@@ -28,7 +28,7 @@ class Row(object):
 
         :param usage:
             The value to assign to the usage property of this Row.
-        :type usage: RequestUsage
+        :type usage: oci.nosql.models.RequestUsage
 
         """
         self.swagger_types = {
@@ -105,7 +105,7 @@ class Row(object):
         Gets the usage of this Row.
 
         :return: The usage of this Row.
-        :rtype: RequestUsage
+        :rtype: oci.nosql.models.RequestUsage
         """
         return self._usage
 
@@ -115,7 +115,7 @@ class Row(object):
         Sets the usage of this Row.
 
         :param usage: The usage of this Row.
-        :type: RequestUsage
+        :type: oci.nosql.models.RequestUsage
         """
         self._usage = usage
 

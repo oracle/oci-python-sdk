@@ -72,7 +72,7 @@ class NotebookSession(object):
 
         :param notebook_session_configuration_details:
             The value to assign to the notebook_session_configuration_details property of this NotebookSession.
-        :type notebook_session_configuration_details: NotebookSessionConfigurationDetails
+        :type notebook_session_configuration_details: oci.data_science.models.NotebookSessionConfigurationDetails
 
         :param notebook_session_url:
             The value to assign to the notebook_session_url property of this NotebookSession.
@@ -314,7 +314,7 @@ class NotebookSession(object):
         Gets the notebook_session_configuration_details of this NotebookSession.
 
         :return: The notebook_session_configuration_details of this NotebookSession.
-        :rtype: NotebookSessionConfigurationDetails
+        :rtype: oci.data_science.models.NotebookSessionConfigurationDetails
         """
         return self._notebook_session_configuration_details
 
@@ -324,7 +324,7 @@ class NotebookSession(object):
         Sets the notebook_session_configuration_details of this NotebookSession.
 
         :param notebook_session_configuration_details: The notebook_session_configuration_details of this NotebookSession.
-        :type: NotebookSessionConfigurationDetails
+        :type: oci.data_science.models.NotebookSessionConfigurationDetails
         """
         self._notebook_session_configuration_details = notebook_session_configuration_details
 

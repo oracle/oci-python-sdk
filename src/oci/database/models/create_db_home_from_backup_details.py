@@ -26,7 +26,7 @@ class CreateDbHomeFromBackupDetails(object):
 
         :param database:
             The value to assign to the database property of this CreateDbHomeFromBackupDetails.
-        :type database: CreateDatabaseFromBackupDetails
+        :type database: oci.database.models.CreateDatabaseFromBackupDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDbHomeFromBackupDetails.
@@ -86,7 +86,7 @@ class CreateDbHomeFromBackupDetails(object):
         **[Required]** Gets the database of this CreateDbHomeFromBackupDetails.
 
         :return: The database of this CreateDbHomeFromBackupDetails.
-        :rtype: CreateDatabaseFromBackupDetails
+        :rtype: oci.database.models.CreateDatabaseFromBackupDetails
         """
         return self._database
 
@@ -96,7 +96,7 @@ class CreateDbHomeFromBackupDetails(object):
         Sets the database of this CreateDbHomeFromBackupDetails.
 
         :param database: The database of this CreateDbHomeFromBackupDetails.
-        :type: CreateDatabaseFromBackupDetails
+        :type: oci.database.models.CreateDatabaseFromBackupDetails
         """
         self._database = database
 

@@ -20,7 +20,7 @@ class ProblemTrendAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this ProblemTrendAggregationCollection.
-        :type items: list[ProblemTrendAggregation]
+        :type items: list[oci.cloud_guard.models.ProblemTrendAggregation]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ProblemTrendAggregationCollection(object):
 
 
         :return: The items of this ProblemTrendAggregationCollection.
-        :rtype: list[ProblemTrendAggregation]
+        :rtype: list[oci.cloud_guard.models.ProblemTrendAggregation]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ProblemTrendAggregationCollection(object):
 
 
         :param items: The items of this ProblemTrendAggregationCollection.
-        :type: list[ProblemTrendAggregation]
+        :type: list[oci.cloud_guard.models.ProblemTrendAggregation]
         """
         self._items = items
 

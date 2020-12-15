@@ -34,7 +34,7 @@ class ConfiguredType(BaseType):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConfiguredType.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this ConfiguredType.
@@ -54,11 +54,11 @@ class ConfiguredType(BaseType):
 
         :param config_values:
             The value to assign to the config_values property of this ConfiguredType.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param config_definition:
             The value to assign to the config_definition property of this ConfiguredType.
-        :type config_definition: ConfigDefinition
+        :type config_definition: oci.data_integration.models.ConfigDefinition
 
         """
         self.swagger_types = {
@@ -129,7 +129,7 @@ class ConfiguredType(BaseType):
         Gets the config_values of this ConfiguredType.
 
         :return: The config_values of this ConfiguredType.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -139,7 +139,7 @@ class ConfiguredType(BaseType):
         Sets the config_values of this ConfiguredType.
 
         :param config_values: The config_values of this ConfiguredType.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 
@@ -149,7 +149,7 @@ class ConfiguredType(BaseType):
         Gets the config_definition of this ConfiguredType.
 
         :return: The config_definition of this ConfiguredType.
-        :rtype: ConfigDefinition
+        :rtype: oci.data_integration.models.ConfigDefinition
         """
         return self._config_definition
 
@@ -159,7 +159,7 @@ class ConfiguredType(BaseType):
         Sets the config_definition of this ConfiguredType.
 
         :param config_definition: The config_definition of this ConfiguredType.
-        :type: ConfigDefinition
+        :type: oci.data_integration.models.ConfigDefinition
         """
         self._config_definition = config_definition
 

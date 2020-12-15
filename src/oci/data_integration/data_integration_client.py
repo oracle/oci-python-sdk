@@ -119,6 +119,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/change_compartment.py.html>`__ to see an example of how to use change_compartment API.
         """
         resource_path = "/workspaces/{workspaceId}/actions/changeCompartment"
         method = "POST"
@@ -205,6 +208,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Application`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_application.py.html>`__ to see an example of how to use create_application API.
         """
         resource_path = "/workspaces/{workspaceId}/applications"
         method = "POST"
@@ -291,6 +297,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Connection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
         resource_path = "/workspaces/{workspaceId}/connections"
         method = "POST"
@@ -377,6 +386,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ConnectionValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_connection_validation.py.html>`__ to see an example of how to use create_connection_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations"
         method = "POST"
@@ -463,6 +475,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets"
         method = "POST"
@@ -549,6 +564,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlow`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_data_flow.py.html>`__ to see an example of how to use create_data_flow API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows"
         method = "POST"
@@ -635,6 +653,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlowValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_data_flow_validation.py.html>`__ to see an example of how to use create_data_flow_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations"
         method = "POST"
@@ -732,6 +753,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.EntityShape`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_entity_shape.py.html>`__ to see an example of how to use create_entity_shape API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/entityShapes"
         method = "POST"
@@ -825,6 +849,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublication`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_external_publication.py.html>`__ to see an example of how to use create_external_publication API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
         method = "POST"
@@ -915,6 +942,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_external_publication_validation.py.html>`__ to see an example of how to use create_external_publication_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
         method = "POST"
@@ -1003,6 +1033,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Folder`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_folder.py.html>`__ to see an example of how to use create_folder API.
         """
         resource_path = "/workspaces/{workspaceId}/folders"
         method = "POST"
@@ -1092,6 +1125,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Patch`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_patch.py.html>`__ to see an example of how to use create_patch API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches"
         method = "POST"
@@ -1179,6 +1215,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Project`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_project.py.html>`__ to see an example of how to use create_project API.
         """
         resource_path = "/workspaces/{workspaceId}/projects"
         method = "POST"
@@ -1265,6 +1304,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Task`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task.py.html>`__ to see an example of how to use create_task API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks"
         method = "POST"
@@ -1354,6 +1396,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskRun`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task_run.py.html>`__ to see an example of how to use create_task_run API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns"
         method = "POST"
@@ -1441,6 +1486,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task_validation.py.html>`__ to see an example of how to use create_task_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations"
         method = "POST"
@@ -1524,6 +1572,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_workspace.py.html>`__ to see an example of how to use create_workspace API.
         """
         resource_path = "/workspaces"
         method = "POST"
@@ -1598,6 +1649,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_application.py.html>`__ to see an example of how to use delete_application API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "DELETE"
@@ -1681,6 +1735,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "DELETE"
@@ -1764,6 +1821,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_connection_validation.py.html>`__ to see an example of how to use delete_connection_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations/{connectionValidationKey}"
         method = "DELETE"
@@ -1847,6 +1907,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
@@ -1930,6 +1993,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_data_flow.py.html>`__ to see an example of how to use delete_data_flow API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "DELETE"
@@ -2013,6 +2079,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_data_flow_validation.py.html>`__ to see an example of how to use delete_data_flow_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations/{dataFlowValidationKey}"
         method = "DELETE"
@@ -2099,6 +2168,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_external_publication.py.html>`__ to see an example of how to use delete_external_publication API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "DELETE"
@@ -2186,6 +2258,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_external_publication_validation.py.html>`__ to see an example of how to use delete_external_publication_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
         method = "DELETE"
@@ -2270,6 +2345,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_folder.py.html>`__ to see an example of how to use delete_folder API.
         """
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "DELETE"
@@ -2356,6 +2434,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_patch.py.html>`__ to see an example of how to use delete_patch API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         method = "DELETE"
@@ -2440,6 +2521,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "DELETE"
@@ -2523,6 +2607,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task.py.html>`__ to see an example of how to use delete_task API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "DELETE"
@@ -2609,6 +2696,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task_run.py.html>`__ to see an example of how to use delete_task_run API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "DELETE"
@@ -2693,6 +2783,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task_validation.py.html>`__ to see an example of how to use delete_task_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations/{taskValidationKey}"
         method = "DELETE"
@@ -2779,6 +2872,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_workspace.py.html>`__ to see an example of how to use delete_workspace API.
         """
         resource_path = "/workspaces/{workspaceId}"
         method = "DELETE"
@@ -2866,6 +2962,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Application`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_application.py.html>`__ to see an example of how to use get_application API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "GET"
@@ -2944,6 +3043,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Connection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "GET"
@@ -3022,6 +3124,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ConnectionValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_connection_validation.py.html>`__ to see an example of how to use get_connection_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations/{connectionValidationKey}"
         method = "GET"
@@ -3101,6 +3206,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.CountStatistic`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_count_statistic.py.html>`__ to see an example of how to use get_count_statistic API.
         """
         resource_path = "/workspaces/{workspaceId}/countStatistics/{countStatisticKey}"
         method = "GET"
@@ -3179,6 +3287,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "GET"
@@ -3263,6 +3374,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataEntity`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_entity.py.html>`__ to see an example of how to use get_data_entity API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities/{dataEntityKey}"
         method = "GET"
@@ -3343,6 +3457,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlow`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_flow.py.html>`__ to see an example of how to use get_data_flow API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "GET"
@@ -3421,6 +3538,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlowValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_flow_validation.py.html>`__ to see an example of how to use get_data_flow_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations/{dataFlowValidationKey}"
         method = "GET"
@@ -3502,6 +3622,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DependentObject`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_dependent_object.py.html>`__ to see an example of how to use get_dependent_object API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/dependentObjects/{dependentObjectKey}"
         method = "GET"
@@ -3584,6 +3707,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublication`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_external_publication.py.html>`__ to see an example of how to use get_external_publication API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "GET"
@@ -3666,6 +3792,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_external_publication_validation.py.html>`__ to see an example of how to use get_external_publication_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
         method = "GET"
@@ -3745,6 +3874,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Folder`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_folder.py.html>`__ to see an example of how to use get_folder API.
         """
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "GET"
@@ -3826,6 +3958,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Patch`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_patch.py.html>`__ to see an example of how to use get_patch API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         method = "GET"
@@ -3905,6 +4040,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Project`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_project.py.html>`__ to see an example of how to use get_project API.
         """
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "GET"
@@ -3989,6 +4127,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PublishedObject`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_published_object.py.html>`__ to see an example of how to use get_published_object API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/publishedObjects/{publishedObjectKey}"
         method = "GET"
@@ -4079,6 +4220,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Reference`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_reference.py.html>`__ to see an example of how to use get_reference API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
         method = "GET"
@@ -4161,6 +4305,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Schema`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_schema.py.html>`__ to see an example of how to use get_schema API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}"
         method = "GET"
@@ -4240,6 +4387,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Task`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task.py.html>`__ to see an example of how to use get_task API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "GET"
@@ -4321,6 +4471,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskRun`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task_run.py.html>`__ to see an example of how to use get_task_run API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "GET"
@@ -4400,6 +4553,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskValidation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task_validation.py.html>`__ to see an example of how to use get_task_validation API.
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations/{taskValidationKey}"
         method = "GET"
@@ -4475,6 +4631,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -4549,6 +4708,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Workspace`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_workspace.py.html>`__ to see an example of how to use get_workspace API.
         """
         resource_path = "/workspaces/{workspaceId}"
         method = "GET"
@@ -4652,6 +4814,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ApplicationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_applications.py.html>`__ to see an example of how to use list_applications API.
         """
         resource_path = "/workspaces/{workspaceId}/applications"
         method = "GET"
@@ -4792,6 +4957,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ConnectionValidationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_connection_validations.py.html>`__ to see an example of how to use list_connection_validations API.
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations"
         method = "GET"
@@ -4934,6 +5102,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ConnectionSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
         resource_path = "/workspaces/{workspaceId}/connections"
         method = "GET"
@@ -5072,6 +5243,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataAssetSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets"
         method = "GET"
@@ -5215,6 +5389,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataEntitySummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_entities.py.html>`__ to see an example of how to use list_data_entities API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities"
         method = "GET"
@@ -5357,6 +5534,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlowValidationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_flow_validations.py.html>`__ to see an example of how to use list_data_flow_validations API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations"
         method = "GET"
@@ -5499,6 +5679,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlowSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_flows.py.html>`__ to see an example of how to use list_data_flows API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows"
         method = "GET"
@@ -5651,6 +5834,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DependentObjectSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_dependent_objects.py.html>`__ to see an example of how to use list_dependent_objects API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/dependentObjects"
         method = "GET"
@@ -5796,6 +5982,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationValidationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_external_publication_validations.py.html>`__ to see an example of how to use list_external_publication_validations API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
         method = "GET"
@@ -5934,6 +6123,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_external_publications.py.html>`__ to see an example of how to use list_external_publications API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
         method = "GET"
@@ -6073,6 +6265,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.FolderSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_folders.py.html>`__ to see an example of how to use list_folders API.
         """
         resource_path = "/workspaces/{workspaceId}/folders"
         method = "GET"
@@ -6215,6 +6410,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PatchChangeSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_patch_changes.py.html>`__ to see an example of how to use list_patch_changes API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patchChanges"
         method = "GET"
@@ -6356,6 +6554,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PatchSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_patches.py.html>`__ to see an example of how to use list_patches API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches"
         method = "GET"
@@ -6494,6 +6695,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ProjectSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
         resource_path = "/workspaces/{workspaceId}/projects"
         method = "GET"
@@ -6644,6 +6848,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PublishedObjectSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_published_objects.py.html>`__ to see an example of how to use list_published_objects API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/publishedObjects"
         method = "GET"
@@ -6783,6 +6990,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ReferenceSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_references.py.html>`__ to see an example of how to use list_references API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references"
         method = "GET"
@@ -6920,6 +7130,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.SchemaSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas"
         method = "GET"
@@ -7054,6 +7267,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_integration.models.TaskRunLogSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_run_logs.py.html>`__ to see an example of how to use list_task_run_logs API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}/logs"
         method = "GET"
@@ -7190,6 +7406,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskRunSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_runs.py.html>`__ to see an example of how to use list_task_runs API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns"
         method = "GET"
@@ -7331,6 +7550,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskValidationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_validations.py.html>`__ to see an example of how to use list_task_validations API.
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations"
         method = "GET"
@@ -7479,6 +7701,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskSummaryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_tasks.py.html>`__ to see an example of how to use list_tasks API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks"
         method = "GET"
@@ -7613,6 +7838,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_integration.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/workRequestErrors"
         method = "GET"
@@ -7735,6 +7963,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_integration.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -7862,6 +8093,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_integration.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -7990,6 +8224,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_integration.models.WorkspaceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_workspaces.py.html>`__ to see an example of how to use list_workspaces API.
         """
         resource_path = "/workspaces"
         method = "GET"
@@ -8100,6 +8337,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/start_workspace.py.html>`__ to see an example of how to use start_workspace API.
         """
         resource_path = "/workspaces/{workspaceId}/actions/start"
         method = "POST"
@@ -8192,6 +8432,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/stop_workspace.py.html>`__ to see an example of how to use stop_workspace API.
         """
         resource_path = "/workspaces/{workspaceId}/actions/stop"
         method = "POST"
@@ -8291,6 +8534,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Application`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_application.py.html>`__ to see an example of how to use update_application API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "PUT"
@@ -8381,6 +8627,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Connection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "PUT"
@@ -8471,6 +8720,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "PUT"
@@ -8561,6 +8813,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.DataFlow`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_data_flow.py.html>`__ to see an example of how to use update_data_flow API.
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "PUT"
@@ -8654,6 +8909,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublication`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_external_publication.py.html>`__ to see an example of how to use update_external_publication API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "PUT"
@@ -8745,6 +9003,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Folder`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_folder.py.html>`__ to see an example of how to use update_folder API.
         """
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "PUT"
@@ -8835,6 +9096,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Project`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_project.py.html>`__ to see an example of how to use update_project API.
         """
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "PUT"
@@ -8931,6 +9195,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Reference`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_reference.py.html>`__ to see an example of how to use update_reference API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
         method = "PUT"
@@ -9026,6 +9293,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Task`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_task.py.html>`__ to see an example of how to use update_task API.
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "PUT"
@@ -9119,6 +9389,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskRunDetails`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_task_run.py.html>`__ to see an example of how to use update_task_run API.
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "PUT"
@@ -9207,6 +9480,9 @@ class DataIntegrationClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Workspace`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_workspace.py.html>`__ to see an example of how to use update_workspace API.
         """
         resource_path = "/workspaces/{workspaceId}"
         method = "PUT"

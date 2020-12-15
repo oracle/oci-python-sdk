@@ -20,7 +20,7 @@ class OsnCollection(object):
 
         :param items:
             The value to assign to the items property of this OsnCollection.
-        :type items: list[OsnSummary]
+        :type items: list[oci.blockchain.models.OsnSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class OsnCollection(object):
 
 
         :return: The items of this OsnCollection.
-        :rtype: list[OsnSummary]
+        :rtype: list[oci.blockchain.models.OsnSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class OsnCollection(object):
 
 
         :param items: The items of this OsnCollection.
-        :type: list[OsnSummary]
+        :type: list[oci.blockchain.models.OsnSummary]
         """
         self._items = items
 

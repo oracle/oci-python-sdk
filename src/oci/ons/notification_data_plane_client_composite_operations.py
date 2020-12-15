@@ -28,7 +28,7 @@ class NotificationDataPlaneClientCompositeOperations(object):
         Calls :py:func:`~oci.ons.NotificationDataPlaneClient.create_subscription` and waits for the :py:class:`~oci.ons.models.Subscription` acted upon
         to enter the given state(s).
 
-        :param CreateSubscriptionDetails create_subscription_details: (required)
+        :param oci.ons.models.CreateSubscriptionDetails create_subscription_details: (required)
             The subscription to create.
 
         :param list[str] wait_for_states:

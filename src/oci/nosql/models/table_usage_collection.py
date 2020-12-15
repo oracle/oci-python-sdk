@@ -20,7 +20,7 @@ class TableUsageCollection(object):
 
         :param items:
             The value to assign to the items property of this TableUsageCollection.
-        :type items: list[TableUsageSummary]
+        :type items: list[oci.nosql.models.TableUsageSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TableUsageCollection(object):
 
 
         :return: The items of this TableUsageCollection.
-        :rtype: list[TableUsageSummary]
+        :rtype: list[oci.nosql.models.TableUsageSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TableUsageCollection(object):
 
 
         :param items: The items of this TableUsageCollection.
-        :type: list[TableUsageSummary]
+        :type: list[oci.nosql.models.TableUsageSummary]
         """
         self._items = items
 

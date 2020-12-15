@@ -20,15 +20,15 @@ class HeaderTransformationPolicy(object):
 
         :param set_headers:
             The value to assign to the set_headers property of this HeaderTransformationPolicy.
-        :type set_headers: SetHeaderPolicy
+        :type set_headers: oci.apigateway.models.SetHeaderPolicy
 
         :param rename_headers:
             The value to assign to the rename_headers property of this HeaderTransformationPolicy.
-        :type rename_headers: RenameHeaderPolicy
+        :type rename_headers: oci.apigateway.models.RenameHeaderPolicy
 
         :param filter_headers:
             The value to assign to the filter_headers property of this HeaderTransformationPolicy.
-        :type filter_headers: FilterHeaderPolicy
+        :type filter_headers: oci.apigateway.models.FilterHeaderPolicy
 
         """
         self.swagger_types = {
@@ -53,7 +53,7 @@ class HeaderTransformationPolicy(object):
         Gets the set_headers of this HeaderTransformationPolicy.
 
         :return: The set_headers of this HeaderTransformationPolicy.
-        :rtype: SetHeaderPolicy
+        :rtype: oci.apigateway.models.SetHeaderPolicy
         """
         return self._set_headers
 
@@ -63,7 +63,7 @@ class HeaderTransformationPolicy(object):
         Sets the set_headers of this HeaderTransformationPolicy.
 
         :param set_headers: The set_headers of this HeaderTransformationPolicy.
-        :type: SetHeaderPolicy
+        :type: oci.apigateway.models.SetHeaderPolicy
         """
         self._set_headers = set_headers
 
@@ -73,7 +73,7 @@ class HeaderTransformationPolicy(object):
         Gets the rename_headers of this HeaderTransformationPolicy.
 
         :return: The rename_headers of this HeaderTransformationPolicy.
-        :rtype: RenameHeaderPolicy
+        :rtype: oci.apigateway.models.RenameHeaderPolicy
         """
         return self._rename_headers
 
@@ -83,7 +83,7 @@ class HeaderTransformationPolicy(object):
         Sets the rename_headers of this HeaderTransformationPolicy.
 
         :param rename_headers: The rename_headers of this HeaderTransformationPolicy.
-        :type: RenameHeaderPolicy
+        :type: oci.apigateway.models.RenameHeaderPolicy
         """
         self._rename_headers = rename_headers
 
@@ -93,7 +93,7 @@ class HeaderTransformationPolicy(object):
         Gets the filter_headers of this HeaderTransformationPolicy.
 
         :return: The filter_headers of this HeaderTransformationPolicy.
-        :rtype: FilterHeaderPolicy
+        :rtype: oci.apigateway.models.FilterHeaderPolicy
         """
         return self._filter_headers
 
@@ -103,7 +103,7 @@ class HeaderTransformationPolicy(object):
         Sets the filter_headers of this HeaderTransformationPolicy.
 
         :param filter_headers: The filter_headers of this HeaderTransformationPolicy.
-        :type: FilterHeaderPolicy
+        :type: oci.apigateway.models.FilterHeaderPolicy
         """
         self._filter_headers = filter_headers
 

@@ -20,7 +20,7 @@ class BulkDeleteVirtualCircuitPublicPrefixesDetails(object):
 
         :param public_prefixes:
             The value to assign to the public_prefixes property of this BulkDeleteVirtualCircuitPublicPrefixesDetails.
-        :type public_prefixes: list[DeleteVirtualCircuitPublicPrefixDetails]
+        :type public_prefixes: list[oci.core.models.DeleteVirtualCircuitPublicPrefixDetails]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class BulkDeleteVirtualCircuitPublicPrefixesDetails(object):
 
 
         :return: The public_prefixes of this BulkDeleteVirtualCircuitPublicPrefixesDetails.
-        :rtype: list[DeleteVirtualCircuitPublicPrefixDetails]
+        :rtype: list[oci.core.models.DeleteVirtualCircuitPublicPrefixDetails]
         """
         return self._public_prefixes
 
@@ -53,7 +53,7 @@ class BulkDeleteVirtualCircuitPublicPrefixesDetails(object):
 
 
         :param public_prefixes: The public_prefixes of this BulkDeleteVirtualCircuitPublicPrefixesDetails.
-        :type: list[DeleteVirtualCircuitPublicPrefixDetails]
+        :type: list[oci.core.models.DeleteVirtualCircuitPublicPrefixDetails]
         """
         self._public_prefixes = public_prefixes
 

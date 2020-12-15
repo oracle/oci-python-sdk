@@ -86,7 +86,7 @@ class ServiceGateway(object):
 
         :param services:
             The value to assign to the services property of this ServiceGateway.
-        :type services: list[ServiceIdResponseDetails]
+        :type services: list[oci.core.models.ServiceIdResponseDetails]
 
         :param time_created:
             The value to assign to the time_created property of this ServiceGateway.
@@ -392,7 +392,7 @@ class ServiceGateway(object):
 
 
         :return: The services of this ServiceGateway.
-        :rtype: list[ServiceIdResponseDetails]
+        :rtype: list[oci.core.models.ServiceIdResponseDetails]
         """
         return self._services
 
@@ -407,7 +407,7 @@ class ServiceGateway(object):
 
 
         :param services: The services of this ServiceGateway.
-        :type: list[ServiceIdResponseDetails]
+        :type: list[oci.core.models.ServiceIdResponseDetails]
         """
         self._services = services
 

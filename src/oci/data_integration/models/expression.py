@@ -32,7 +32,7 @@ class Expression(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Expression.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param expr_string:
             The value to assign to the expr_string property of this Expression.
@@ -40,7 +40,7 @@ class Expression(object):
 
         :param config_values:
             The value to assign to the config_values property of this Expression.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this Expression.
@@ -153,7 +153,7 @@ class Expression(object):
         Gets the parent_ref of this Expression.
 
         :return: The parent_ref of this Expression.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -163,7 +163,7 @@ class Expression(object):
         Sets the parent_ref of this Expression.
 
         :param parent_ref: The parent_ref of this Expression.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -197,7 +197,7 @@ class Expression(object):
         Gets the config_values of this Expression.
 
         :return: The config_values of this Expression.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -207,7 +207,7 @@ class Expression(object):
         Sets the config_values of this Expression.
 
         :param config_values: The config_values of this Expression.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 

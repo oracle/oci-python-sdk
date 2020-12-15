@@ -99,11 +99,11 @@ class HttpProbeResultSummary(object):
 
         :param connection:
             The value to assign to the connection property of this HttpProbeResultSummary.
-        :type connection: TcpConnection
+        :type connection: oci.healthchecks.models.TcpConnection
 
         :param dns:
             The value to assign to the dns property of this HttpProbeResultSummary.
-        :type dns: DNS
+        :type dns: oci.healthchecks.models.DNS
 
         :param status_code:
             The value to assign to the status_code property of this HttpProbeResultSummary.
@@ -517,7 +517,7 @@ class HttpProbeResultSummary(object):
         Gets the connection of this HttpProbeResultSummary.
 
         :return: The connection of this HttpProbeResultSummary.
-        :rtype: TcpConnection
+        :rtype: oci.healthchecks.models.TcpConnection
         """
         return self._connection
 
@@ -527,7 +527,7 @@ class HttpProbeResultSummary(object):
         Sets the connection of this HttpProbeResultSummary.
 
         :param connection: The connection of this HttpProbeResultSummary.
-        :type: TcpConnection
+        :type: oci.healthchecks.models.TcpConnection
         """
         self._connection = connection
 
@@ -537,7 +537,7 @@ class HttpProbeResultSummary(object):
         Gets the dns of this HttpProbeResultSummary.
 
         :return: The dns of this HttpProbeResultSummary.
-        :rtype: DNS
+        :rtype: oci.healthchecks.models.DNS
         """
         return self._dns
 
@@ -547,7 +547,7 @@ class HttpProbeResultSummary(object):
         Sets the dns of this HttpProbeResultSummary.
 
         :param dns: The dns of this HttpProbeResultSummary.
-        :type: DNS
+        :type: oci.healthchecks.models.DNS
         """
         self._dns = dns
 

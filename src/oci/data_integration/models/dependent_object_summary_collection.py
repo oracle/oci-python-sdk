@@ -20,7 +20,7 @@ class DependentObjectSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this DependentObjectSummaryCollection.
-        :type items: list[DependentObjectSummary]
+        :type items: list[oci.data_integration.models.DependentObjectSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DependentObjectSummaryCollection(object):
 
 
         :return: The items of this DependentObjectSummaryCollection.
-        :rtype: list[DependentObjectSummary]
+        :rtype: list[oci.data_integration.models.DependentObjectSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DependentObjectSummaryCollection(object):
 
 
         :param items: The items of this DependentObjectSummaryCollection.
-        :type: list[DependentObjectSummary]
+        :type: list[oci.data_integration.models.DependentObjectSummary]
         """
         self._items = items
 

@@ -132,11 +132,11 @@ class IntegrationInstance(object):
 
         :param custom_endpoint:
             The value to assign to the custom_endpoint property of this IntegrationInstance.
-        :type custom_endpoint: CustomEndpointDetails
+        :type custom_endpoint: oci.integration.models.CustomEndpointDetails
 
         :param alternate_custom_endpoints:
             The value to assign to the alternate_custom_endpoints property of this IntegrationInstance.
-        :type alternate_custom_endpoints: list[CustomEndpointDetails]
+        :type alternate_custom_endpoints: list[oci.integration.models.CustomEndpointDetails]
 
         :param consumption_model:
             The value to assign to the consumption_model property of this IntegrationInstance.
@@ -592,7 +592,7 @@ class IntegrationInstance(object):
         Gets the custom_endpoint of this IntegrationInstance.
 
         :return: The custom_endpoint of this IntegrationInstance.
-        :rtype: CustomEndpointDetails
+        :rtype: oci.integration.models.CustomEndpointDetails
         """
         return self._custom_endpoint
 
@@ -602,7 +602,7 @@ class IntegrationInstance(object):
         Sets the custom_endpoint of this IntegrationInstance.
 
         :param custom_endpoint: The custom_endpoint of this IntegrationInstance.
-        :type: CustomEndpointDetails
+        :type: oci.integration.models.CustomEndpointDetails
         """
         self._custom_endpoint = custom_endpoint
 
@@ -614,7 +614,7 @@ class IntegrationInstance(object):
 
 
         :return: The alternate_custom_endpoints of this IntegrationInstance.
-        :rtype: list[CustomEndpointDetails]
+        :rtype: list[oci.integration.models.CustomEndpointDetails]
         """
         return self._alternate_custom_endpoints
 
@@ -626,7 +626,7 @@ class IntegrationInstance(object):
 
 
         :param alternate_custom_endpoints: The alternate_custom_endpoints of this IntegrationInstance.
-        :type: list[CustomEndpointDetails]
+        :type: list[oci.integration.models.CustomEndpointDetails]
         """
         self._alternate_custom_endpoints = alternate_custom_endpoints
 

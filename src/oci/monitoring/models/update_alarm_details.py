@@ -74,7 +74,7 @@ class UpdateAlarmDetails(object):
 
         :param suppression:
             The value to assign to the suppression property of this UpdateAlarmDetails.
-        :type suppression: Suppression
+        :type suppression: oci.monitoring.models.Suppression
 
         :param is_enabled:
             The value to assign to the is_enabled property of this UpdateAlarmDetails.
@@ -627,7 +627,7 @@ class UpdateAlarmDetails(object):
 
 
         :return: The suppression of this UpdateAlarmDetails.
-        :rtype: Suppression
+        :rtype: oci.monitoring.models.Suppression
         """
         return self._suppression
 
@@ -639,7 +639,7 @@ class UpdateAlarmDetails(object):
 
 
         :param suppression: The suppression of this UpdateAlarmDetails.
-        :type: Suppression
+        :type: oci.monitoring.models.Suppression
         """
         self._suppression = suppression
 

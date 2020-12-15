@@ -20,31 +20,31 @@ class WafConfig(object):
 
         :param access_rules:
             The value to assign to the access_rules property of this WafConfig.
-        :type access_rules: list[AccessRule]
+        :type access_rules: list[oci.waas.models.AccessRule]
 
         :param address_rate_limiting:
             The value to assign to the address_rate_limiting property of this WafConfig.
-        :type address_rate_limiting: AddressRateLimiting
+        :type address_rate_limiting: oci.waas.models.AddressRateLimiting
 
         :param captchas:
             The value to assign to the captchas property of this WafConfig.
-        :type captchas: list[Captcha]
+        :type captchas: list[oci.waas.models.Captcha]
 
         :param device_fingerprint_challenge:
             The value to assign to the device_fingerprint_challenge property of this WafConfig.
-        :type device_fingerprint_challenge: DeviceFingerprintChallenge
+        :type device_fingerprint_challenge: oci.waas.models.DeviceFingerprintChallenge
 
         :param good_bots:
             The value to assign to the good_bots property of this WafConfig.
-        :type good_bots: list[GoodBot]
+        :type good_bots: list[oci.waas.models.GoodBot]
 
         :param human_interaction_challenge:
             The value to assign to the human_interaction_challenge property of this WafConfig.
-        :type human_interaction_challenge: HumanInteractionChallenge
+        :type human_interaction_challenge: oci.waas.models.HumanInteractionChallenge
 
         :param js_challenge:
             The value to assign to the js_challenge property of this WafConfig.
-        :type js_challenge: JsChallenge
+        :type js_challenge: oci.waas.models.JsChallenge
 
         :param origin:
             The value to assign to the origin property of this WafConfig.
@@ -52,11 +52,11 @@ class WafConfig(object):
 
         :param caching_rules:
             The value to assign to the caching_rules property of this WafConfig.
-        :type caching_rules: list[CachingRule]
+        :type caching_rules: list[oci.waas.models.CachingRule]
 
         :param custom_protection_rules:
             The value to assign to the custom_protection_rules property of this WafConfig.
-        :type custom_protection_rules: list[CustomProtectionRuleSetting]
+        :type custom_protection_rules: list[oci.waas.models.CustomProtectionRuleSetting]
 
         :param origin_groups:
             The value to assign to the origin_groups property of this WafConfig.
@@ -64,19 +64,19 @@ class WafConfig(object):
 
         :param protection_rules:
             The value to assign to the protection_rules property of this WafConfig.
-        :type protection_rules: list[ProtectionRule]
+        :type protection_rules: list[oci.waas.models.ProtectionRule]
 
         :param protection_settings:
             The value to assign to the protection_settings property of this WafConfig.
-        :type protection_settings: ProtectionSettings
+        :type protection_settings: oci.waas.models.ProtectionSettings
 
         :param threat_feeds:
             The value to assign to the threat_feeds property of this WafConfig.
-        :type threat_feeds: list[ThreatFeed]
+        :type threat_feeds: list[oci.waas.models.ThreatFeed]
 
         :param whitelists:
             The value to assign to the whitelists property of this WafConfig.
-        :type whitelists: list[Whitelist]
+        :type whitelists: list[oci.waas.models.Whitelist]
 
         """
         self.swagger_types = {
@@ -139,7 +139,7 @@ class WafConfig(object):
 
 
         :return: The access_rules of this WafConfig.
-        :rtype: list[AccessRule]
+        :rtype: list[oci.waas.models.AccessRule]
         """
         return self._access_rules
 
@@ -151,7 +151,7 @@ class WafConfig(object):
 
 
         :param access_rules: The access_rules of this WafConfig.
-        :type: list[AccessRule]
+        :type: list[oci.waas.models.AccessRule]
         """
         self._access_rules = access_rules
 
@@ -163,7 +163,7 @@ class WafConfig(object):
 
 
         :return: The address_rate_limiting of this WafConfig.
-        :rtype: AddressRateLimiting
+        :rtype: oci.waas.models.AddressRateLimiting
         """
         return self._address_rate_limiting
 
@@ -175,7 +175,7 @@ class WafConfig(object):
 
 
         :param address_rate_limiting: The address_rate_limiting of this WafConfig.
-        :type: AddressRateLimiting
+        :type: oci.waas.models.AddressRateLimiting
         """
         self._address_rate_limiting = address_rate_limiting
 
@@ -187,7 +187,7 @@ class WafConfig(object):
 
 
         :return: The captchas of this WafConfig.
-        :rtype: list[Captcha]
+        :rtype: list[oci.waas.models.Captcha]
         """
         return self._captchas
 
@@ -199,7 +199,7 @@ class WafConfig(object):
 
 
         :param captchas: The captchas of this WafConfig.
-        :type: list[Captcha]
+        :type: list[oci.waas.models.Captcha]
         """
         self._captchas = captchas
 
@@ -211,7 +211,7 @@ class WafConfig(object):
 
 
         :return: The device_fingerprint_challenge of this WafConfig.
-        :rtype: DeviceFingerprintChallenge
+        :rtype: oci.waas.models.DeviceFingerprintChallenge
         """
         return self._device_fingerprint_challenge
 
@@ -223,7 +223,7 @@ class WafConfig(object):
 
 
         :param device_fingerprint_challenge: The device_fingerprint_challenge of this WafConfig.
-        :type: DeviceFingerprintChallenge
+        :type: oci.waas.models.DeviceFingerprintChallenge
         """
         self._device_fingerprint_challenge = device_fingerprint_challenge
 
@@ -235,7 +235,7 @@ class WafConfig(object):
 
 
         :return: The good_bots of this WafConfig.
-        :rtype: list[GoodBot]
+        :rtype: list[oci.waas.models.GoodBot]
         """
         return self._good_bots
 
@@ -247,7 +247,7 @@ class WafConfig(object):
 
 
         :param good_bots: The good_bots of this WafConfig.
-        :type: list[GoodBot]
+        :type: list[oci.waas.models.GoodBot]
         """
         self._good_bots = good_bots
 
@@ -259,7 +259,7 @@ class WafConfig(object):
 
 
         :return: The human_interaction_challenge of this WafConfig.
-        :rtype: HumanInteractionChallenge
+        :rtype: oci.waas.models.HumanInteractionChallenge
         """
         return self._human_interaction_challenge
 
@@ -271,7 +271,7 @@ class WafConfig(object):
 
 
         :param human_interaction_challenge: The human_interaction_challenge of this WafConfig.
-        :type: HumanInteractionChallenge
+        :type: oci.waas.models.HumanInteractionChallenge
         """
         self._human_interaction_challenge = human_interaction_challenge
 
@@ -283,7 +283,7 @@ class WafConfig(object):
 
 
         :return: The js_challenge of this WafConfig.
-        :rtype: JsChallenge
+        :rtype: oci.waas.models.JsChallenge
         """
         return self._js_challenge
 
@@ -295,7 +295,7 @@ class WafConfig(object):
 
 
         :param js_challenge: The js_challenge of this WafConfig.
-        :type: JsChallenge
+        :type: oci.waas.models.JsChallenge
         """
         self._js_challenge = js_challenge
 
@@ -331,7 +331,7 @@ class WafConfig(object):
 
 
         :return: The caching_rules of this WafConfig.
-        :rtype: list[CachingRule]
+        :rtype: list[oci.waas.models.CachingRule]
         """
         return self._caching_rules
 
@@ -343,7 +343,7 @@ class WafConfig(object):
 
 
         :param caching_rules: The caching_rules of this WafConfig.
-        :type: list[CachingRule]
+        :type: list[oci.waas.models.CachingRule]
         """
         self._caching_rules = caching_rules
 
@@ -355,7 +355,7 @@ class WafConfig(object):
 
 
         :return: The custom_protection_rules of this WafConfig.
-        :rtype: list[CustomProtectionRuleSetting]
+        :rtype: list[oci.waas.models.CustomProtectionRuleSetting]
         """
         return self._custom_protection_rules
 
@@ -367,7 +367,7 @@ class WafConfig(object):
 
 
         :param custom_protection_rules: The custom_protection_rules of this WafConfig.
-        :type: list[CustomProtectionRuleSetting]
+        :type: list[oci.waas.models.CustomProtectionRuleSetting]
         """
         self._custom_protection_rules = custom_protection_rules
 
@@ -405,7 +405,7 @@ class WafConfig(object):
 
 
         :return: The protection_rules of this WafConfig.
-        :rtype: list[ProtectionRule]
+        :rtype: list[oci.waas.models.ProtectionRule]
         """
         return self._protection_rules
 
@@ -417,7 +417,7 @@ class WafConfig(object):
 
 
         :param protection_rules: The protection_rules of this WafConfig.
-        :type: list[ProtectionRule]
+        :type: list[oci.waas.models.ProtectionRule]
         """
         self._protection_rules = protection_rules
 
@@ -429,7 +429,7 @@ class WafConfig(object):
 
 
         :return: The protection_settings of this WafConfig.
-        :rtype: ProtectionSettings
+        :rtype: oci.waas.models.ProtectionSettings
         """
         return self._protection_settings
 
@@ -441,7 +441,7 @@ class WafConfig(object):
 
 
         :param protection_settings: The protection_settings of this WafConfig.
-        :type: ProtectionSettings
+        :type: oci.waas.models.ProtectionSettings
         """
         self._protection_settings = protection_settings
 
@@ -453,7 +453,7 @@ class WafConfig(object):
 
 
         :return: The threat_feeds of this WafConfig.
-        :rtype: list[ThreatFeed]
+        :rtype: list[oci.waas.models.ThreatFeed]
         """
         return self._threat_feeds
 
@@ -465,7 +465,7 @@ class WafConfig(object):
 
 
         :param threat_feeds: The threat_feeds of this WafConfig.
-        :type: list[ThreatFeed]
+        :type: list[oci.waas.models.ThreatFeed]
         """
         self._threat_feeds = threat_feeds
 
@@ -477,7 +477,7 @@ class WafConfig(object):
 
 
         :return: The whitelists of this WafConfig.
-        :rtype: list[Whitelist]
+        :rtype: list[oci.waas.models.Whitelist]
         """
         return self._whitelists
 
@@ -489,7 +489,7 @@ class WafConfig(object):
 
 
         :param whitelists: The whitelists of this WafConfig.
-        :type: list[Whitelist]
+        :type: list[oci.waas.models.Whitelist]
         """
         self._whitelists = whitelists
 

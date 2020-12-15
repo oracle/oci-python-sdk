@@ -35,7 +35,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str boot_volume_backup_id: (required)
             The OCID of the boot volume backup.
 
-        :param CopyBootVolumeBackupDetails copy_boot_volume_backup_details: (required)
+        :param oci.core.models.CopyBootVolumeBackupDetails copy_boot_volume_backup_details: (required)
             Request to create a cross-region copy of given boot volume backup.
 
         :param list[str] wait_for_states:
@@ -76,7 +76,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :param CopyVolumeBackupDetails copy_volume_backup_details: (required)
+        :param oci.core.models.CopyVolumeBackupDetails copy_volume_backup_details: (required)
             Request to create a cross-region copy of given backup.
 
         :param list[str] wait_for_states:
@@ -114,7 +114,7 @@ class BlockstorageClientCompositeOperations(object):
         Calls :py:func:`~oci.core.BlockstorageClient.create_boot_volume` and waits for the :py:class:`~oci.core.models.BootVolume` acted upon
         to enter the given state(s).
 
-        :param CreateBootVolumeDetails create_boot_volume_details: (required)
+        :param oci.core.models.CreateBootVolumeDetails create_boot_volume_details: (required)
             Request to create a new boot volume.
 
         :param list[str] wait_for_states:
@@ -152,7 +152,7 @@ class BlockstorageClientCompositeOperations(object):
         Calls :py:func:`~oci.core.BlockstorageClient.create_boot_volume_backup` and waits for the :py:class:`~oci.core.models.BootVolumeBackup` acted upon
         to enter the given state(s).
 
-        :param CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
+        :param oci.core.models.CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
             Request to create a new backup of given boot volume.
 
         :param list[str] wait_for_states:
@@ -190,7 +190,7 @@ class BlockstorageClientCompositeOperations(object):
         Calls :py:func:`~oci.core.BlockstorageClient.create_volume` and waits for the :py:class:`~oci.core.models.Volume` acted upon
         to enter the given state(s).
 
-        :param CreateVolumeDetails create_volume_details: (required)
+        :param oci.core.models.CreateVolumeDetails create_volume_details: (required)
             Request to create a new volume.
 
         :param list[str] wait_for_states:
@@ -228,7 +228,7 @@ class BlockstorageClientCompositeOperations(object):
         Calls :py:func:`~oci.core.BlockstorageClient.create_volume_backup` and waits for the :py:class:`~oci.core.models.VolumeBackup` acted upon
         to enter the given state(s).
 
-        :param CreateVolumeBackupDetails create_volume_backup_details: (required)
+        :param oci.core.models.CreateVolumeBackupDetails create_volume_backup_details: (required)
             Request to create a new backup of given volume.
 
         :param list[str] wait_for_states:
@@ -266,7 +266,7 @@ class BlockstorageClientCompositeOperations(object):
         Calls :py:func:`~oci.core.BlockstorageClient.create_volume_group` and waits for the :py:class:`~oci.core.models.VolumeGroup` acted upon
         to enter the given state(s).
 
-        :param CreateVolumeGroupDetails create_volume_group_details: (required)
+        :param oci.core.models.CreateVolumeGroupDetails create_volume_group_details: (required)
             Request to create a new volume group.
 
         :param list[str] wait_for_states:
@@ -304,7 +304,7 @@ class BlockstorageClientCompositeOperations(object):
         Calls :py:func:`~oci.core.BlockstorageClient.create_volume_group_backup` and waits for the :py:class:`~oci.core.models.VolumeGroupBackup` acted upon
         to enter the given state(s).
 
-        :param CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
+        :param oci.core.models.CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
             Request to create a new backup group of given volume group.
 
         :param list[str] wait_for_states:
@@ -627,7 +627,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
-        :param UpdateBootVolumeDetails update_boot_volume_details: (required)
+        :param oci.core.models.UpdateBootVolumeDetails update_boot_volume_details: (required)
             Update boot volume's display name.
 
         :param list[str] wait_for_states:
@@ -668,7 +668,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str boot_volume_backup_id: (required)
             The OCID of the boot volume backup.
 
-        :param UpdateBootVolumeBackupDetails update_boot_volume_backup_details: (required)
+        :param oci.core.models.UpdateBootVolumeBackupDetails update_boot_volume_backup_details: (required)
             Update boot volume backup fields
 
         :param list[str] wait_for_states:
@@ -709,7 +709,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str volume_id: (required)
             The OCID of the volume.
 
-        :param UpdateVolumeDetails update_volume_details: (required)
+        :param oci.core.models.UpdateVolumeDetails update_volume_details: (required)
             Update volume's display name. Avoid entering confidential information.
 
         :param list[str] wait_for_states:
@@ -750,7 +750,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str volume_backup_id: (required)
             The OCID of the volume backup.
 
-        :param UpdateVolumeBackupDetails update_volume_backup_details: (required)
+        :param oci.core.models.UpdateVolumeBackupDetails update_volume_backup_details: (required)
             Update volume backup fields
 
         :param list[str] wait_for_states:
@@ -791,7 +791,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str volume_group_id: (required)
             The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
 
-        :param UpdateVolumeGroupDetails update_volume_group_details: (required)
+        :param oci.core.models.UpdateVolumeGroupDetails update_volume_group_details: (required)
             Update volume group's set of volumes and/or display name
 
         :param list[str] wait_for_states:
@@ -832,7 +832,7 @@ class BlockstorageClientCompositeOperations(object):
         :param str volume_group_backup_id: (required)
             The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
 
-        :param UpdateVolumeGroupBackupDetails update_volume_group_backup_details: (required)
+        :param oci.core.models.UpdateVolumeGroupBackupDetails update_volume_group_backup_details: (required)
             Update volume group backup fields
 
         :param list[str] wait_for_states:

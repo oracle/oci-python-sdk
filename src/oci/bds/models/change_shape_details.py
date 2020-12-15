@@ -24,7 +24,7 @@ class ChangeShapeDetails(object):
 
         :param nodes:
             The value to assign to the nodes property of this ChangeShapeDetails.
-        :type nodes: ChangeShapeNodes
+        :type nodes: oci.bds.models.ChangeShapeNodes
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class ChangeShapeDetails(object):
 
 
         :return: The nodes of this ChangeShapeDetails.
-        :rtype: ChangeShapeNodes
+        :rtype: oci.bds.models.ChangeShapeNodes
         """
         return self._nodes
 
@@ -84,7 +84,7 @@ class ChangeShapeDetails(object):
 
 
         :param nodes: The nodes of this ChangeShapeDetails.
-        :type: ChangeShapeNodes
+        :type: oci.bds.models.ChangeShapeNodes
         """
         self._nodes = nodes
 

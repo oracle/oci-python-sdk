@@ -44,7 +44,7 @@ class InstanceAgentCommandContentInfo(object):
 
         :param content:
             The value to assign to the content property of this InstanceAgentCommandContentInfo.
-        :type content: InstanceAgentCommandContent
+        :type content: oci.compute_instance_agent.models.InstanceAgentCommandContent
 
         """
         self.swagger_types = {
@@ -225,7 +225,7 @@ class InstanceAgentCommandContentInfo(object):
         **[Required]** Gets the content of this InstanceAgentCommandContentInfo.
 
         :return: The content of this InstanceAgentCommandContentInfo.
-        :rtype: InstanceAgentCommandContent
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandContent
         """
         return self._content
 
@@ -235,7 +235,7 @@ class InstanceAgentCommandContentInfo(object):
         Sets the content of this InstanceAgentCommandContentInfo.
 
         :param content: The content of this InstanceAgentCommandContentInfo.
-        :type: InstanceAgentCommandContent
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandContent
         """
         self._content = content
 

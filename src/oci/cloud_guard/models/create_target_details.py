@@ -81,11 +81,11 @@ class CreateTargetDetails(object):
 
         :param target_detector_recipes:
             The value to assign to the target_detector_recipes property of this CreateTargetDetails.
-        :type target_detector_recipes: list[CreateTargetDetectorRecipeDetails]
+        :type target_detector_recipes: list[oci.cloud_guard.models.CreateTargetDetectorRecipeDetails]
 
         :param target_responder_recipes:
             The value to assign to the target_responder_recipes property of this CreateTargetDetails.
-        :type target_responder_recipes: list[CreateTargetResponderRecipeDetails]
+        :type target_responder_recipes: list[oci.cloud_guard.models.CreateTargetResponderRecipeDetails]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CreateTargetDetails.
@@ -274,7 +274,7 @@ class CreateTargetDetails(object):
 
 
         :return: The target_detector_recipes of this CreateTargetDetails.
-        :rtype: list[CreateTargetDetectorRecipeDetails]
+        :rtype: list[oci.cloud_guard.models.CreateTargetDetectorRecipeDetails]
         """
         return self._target_detector_recipes
 
@@ -286,7 +286,7 @@ class CreateTargetDetails(object):
 
 
         :param target_detector_recipes: The target_detector_recipes of this CreateTargetDetails.
-        :type: list[CreateTargetDetectorRecipeDetails]
+        :type: list[oci.cloud_guard.models.CreateTargetDetectorRecipeDetails]
         """
         self._target_detector_recipes = target_detector_recipes
 
@@ -298,7 +298,7 @@ class CreateTargetDetails(object):
 
 
         :return: The target_responder_recipes of this CreateTargetDetails.
-        :rtype: list[CreateTargetResponderRecipeDetails]
+        :rtype: list[oci.cloud_guard.models.CreateTargetResponderRecipeDetails]
         """
         return self._target_responder_recipes
 
@@ -310,7 +310,7 @@ class CreateTargetDetails(object):
 
 
         :param target_responder_recipes: The target_responder_recipes of this CreateTargetDetails.
-        :type: list[CreateTargetResponderRecipeDetails]
+        :type: list[oci.cloud_guard.models.CreateTargetResponderRecipeDetails]
         """
         self._target_responder_recipes = target_responder_recipes
 

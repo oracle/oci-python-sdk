@@ -20,7 +20,7 @@ class DeploymentCollection(object):
 
         :param items:
             The value to assign to the items property of this DeploymentCollection.
-        :type items: list[DeploymentSummary]
+        :type items: list[oci.apigateway.models.DeploymentSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DeploymentCollection(object):
 
 
         :return: The items of this DeploymentCollection.
-        :rtype: list[DeploymentSummary]
+        :rtype: list[oci.apigateway.models.DeploymentSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DeploymentCollection(object):
 
 
         :param items: The items of this DeploymentCollection.
-        :type: list[DeploymentSummary]
+        :type: list[oci.apigateway.models.DeploymentSummary]
         """
         self._items = items
 

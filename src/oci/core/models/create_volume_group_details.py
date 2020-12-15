@@ -40,7 +40,7 @@ class CreateVolumeGroupDetails(object):
 
         :param source_details:
             The value to assign to the source_details property of this CreateVolumeGroupDetails.
-        :type source_details: VolumeGroupSourceDetails
+        :type source_details: oci.core.models.VolumeGroupSourceDetails
 
         """
         self.swagger_types = {
@@ -217,7 +217,7 @@ class CreateVolumeGroupDetails(object):
 
 
         :return: The source_details of this CreateVolumeGroupDetails.
-        :rtype: VolumeGroupSourceDetails
+        :rtype: oci.core.models.VolumeGroupSourceDetails
         """
         return self._source_details
 
@@ -230,7 +230,7 @@ class CreateVolumeGroupDetails(object):
 
 
         :param source_details: The source_details of this CreateVolumeGroupDetails.
-        :type: VolumeGroupSourceDetails
+        :type: oci.core.models.VolumeGroupSourceDetails
         """
         self._source_details = source_details
 

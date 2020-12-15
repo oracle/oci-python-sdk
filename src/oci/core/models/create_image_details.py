@@ -52,7 +52,7 @@ class CreateImageDetails(object):
 
         :param image_source_details:
             The value to assign to the image_source_details property of this CreateImageDetails.
-        :type image_source_details: ImageSourceDetails
+        :type image_source_details: oci.core.models.ImageSourceDetails
 
         :param instance_id:
             The value to assign to the instance_id property of this CreateImageDetails.
@@ -226,7 +226,7 @@ class CreateImageDetails(object):
 
 
         :return: The image_source_details of this CreateImageDetails.
-        :rtype: ImageSourceDetails
+        :rtype: oci.core.models.ImageSourceDetails
         """
         return self._image_source_details
 
@@ -238,7 +238,7 @@ class CreateImageDetails(object):
 
 
         :param image_source_details: The image_source_details of this CreateImageDetails.
-        :type: ImageSourceDetails
+        :type: oci.core.models.ImageSourceDetails
         """
         self._image_source_details = image_source_details
 

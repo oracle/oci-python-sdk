@@ -58,7 +58,7 @@ class DataAssetSummaryFromOracle(DataAssetSummary):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummaryFromOracle.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummaryFromOracle.
@@ -66,11 +66,11 @@ class DataAssetSummaryFromOracle(DataAssetSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummaryFromOracle.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummaryFromOracle.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param host:
             The value to assign to the host property of this DataAssetSummaryFromOracle.
@@ -98,7 +98,7 @@ class DataAssetSummaryFromOracle(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromOracle.
-        :type default_connection: ConnectionSummaryFromOracle
+        :type default_connection: oci.data_integration.models.ConnectionSummaryFromOracle
 
         """
         self.swagger_types = {
@@ -319,7 +319,7 @@ class DataAssetSummaryFromOracle(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromOracle.
 
         :return: The default_connection of this DataAssetSummaryFromOracle.
-        :rtype: ConnectionSummaryFromOracle
+        :rtype: oci.data_integration.models.ConnectionSummaryFromOracle
         """
         return self._default_connection
 
@@ -329,7 +329,7 @@ class DataAssetSummaryFromOracle(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromOracle.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromOracle.
-        :type: ConnectionSummaryFromOracle
+        :type: oci.data_integration.models.ConnectionSummaryFromOracle
         """
         self._default_connection = default_connection
 

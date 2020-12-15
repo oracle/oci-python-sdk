@@ -40,7 +40,7 @@ class UpdateTagDetails(object):
 
         :param validator:
             The value to assign to the validator property of this UpdateTagDetails.
-        :type validator: BaseTagDefinitionValidator
+        :type validator: oci.identity.models.BaseTagDefinitionValidator
 
         """
         self.swagger_types = {
@@ -220,7 +220,7 @@ class UpdateTagDetails(object):
         Gets the validator of this UpdateTagDetails.
 
         :return: The validator of this UpdateTagDetails.
-        :rtype: BaseTagDefinitionValidator
+        :rtype: oci.identity.models.BaseTagDefinitionValidator
         """
         return self._validator
 
@@ -230,7 +230,7 @@ class UpdateTagDetails(object):
         Sets the validator of this UpdateTagDetails.
 
         :param validator: The validator of this UpdateTagDetails.
-        :type: BaseTagDefinitionValidator
+        :type: oci.identity.models.BaseTagDefinitionValidator
         """
         self._validator = validator
 

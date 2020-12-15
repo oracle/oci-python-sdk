@@ -34,7 +34,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+        :param oci.data_catalog.models.DataSelectorPatternDetails data_selector_pattern_details: (required)
             The information used to add the patterns for deriving logical entities.
 
         :param list[str] wait_for_states:
@@ -78,7 +78,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str type_key: (required)
             Unique type key.
 
-        :param TypeCustomPropertyDetails associate_custom_property_details: (required)
+        :param oci.data_catalog.models.TypeCustomPropertyDetails associate_custom_property_details: (required)
             The information used to associate the custom property for the type.
 
         :param list[str] wait_for_states:
@@ -116,7 +116,7 @@ class DataCatalogClientCompositeOperations(object):
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.attach_catalog_private_endpoint` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
         to enter the given state(s).
 
-        :param AttachCatalogPrivateEndpointDetails attach_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.AttachCatalogPrivateEndpointDetails attach_catalog_private_endpoint_details: (required)
             Details for private reverse connection endpoint to be used for attachment.
 
         :param str catalog_id: (required)
@@ -157,7 +157,7 @@ class DataCatalogClientCompositeOperations(object):
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.change_catalog_compartment` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
         to enter the given state(s).
 
-        :param ChangeCatalogCompartmentDetails change_catalog_compartment_details: (required)
+        :param oci.data_catalog.models.ChangeCatalogCompartmentDetails change_catalog_compartment_details: (required)
             Details for the target compartment.
 
         :param str catalog_id: (required)
@@ -198,7 +198,7 @@ class DataCatalogClientCompositeOperations(object):
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.change_catalog_private_endpoint_compartment` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
         to enter the given state(s).
 
-        :param ChangeCatalogPrivateEndpointCompartmentDetails change_catalog_private_endpoint_compartment_details: (required)
+        :param oci.data_catalog.models.ChangeCatalogPrivateEndpointCompartmentDetails change_catalog_private_endpoint_compartment_details: (required)
             Details for the target compartment.
 
         :param str catalog_private_endpoint_id: (required)
@@ -248,7 +248,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str entity_key: (required)
             Unique entity key.
 
-        :param CreateAttributeDetails create_attribute_details: (required)
+        :param oci.data_catalog.models.CreateAttributeDetails create_attribute_details: (required)
             The information used to create an entity attribute.
 
         :param list[str] wait_for_states:
@@ -298,7 +298,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str attribute_key: (required)
             Unique attribute key.
 
-        :param CreateTagDetails create_attribute_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_attribute_tag_details: (required)
             The information used to create an entity attribute tag.
 
         :param list[str] wait_for_states:
@@ -336,7 +336,7 @@ class DataCatalogClientCompositeOperations(object):
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.create_catalog` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateCatalogDetails create_catalog_details: (required)
+        :param oci.data_catalog.models.CreateCatalogDetails create_catalog_details: (required)
             Details for the new data catalog.
 
         :param list[str] wait_for_states:
@@ -374,7 +374,7 @@ class DataCatalogClientCompositeOperations(object):
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.create_catalog_private_endpoint` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateCatalogPrivateEndpointDetails create_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.CreateCatalogPrivateEndpointDetails create_catalog_private_endpoint_details: (required)
             The information used to create the private reverse connection.
 
         :param list[str] wait_for_states:
@@ -418,7 +418,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateConnectionDetails create_connection_details: (required)
+        :param oci.data_catalog.models.CreateConnectionDetails create_connection_details: (required)
             The information used to create the connection.
 
         :param list[str] wait_for_states:
@@ -462,7 +462,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str namespace_id: (required)
             Unique namespace identifier.
 
-        :param CreateCustomPropertyDetails create_custom_property_details: (required)
+        :param oci.data_catalog.models.CreateCustomPropertyDetails create_custom_property_details: (required)
             The information used to create the Custom Property.
 
         :param list[str] wait_for_states:
@@ -503,7 +503,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateDataAssetDetails create_data_asset_details: (required)
+        :param oci.data_catalog.models.CreateDataAssetDetails create_data_asset_details: (required)
             The information used to create the data asset.
 
         :param list[str] wait_for_states:
@@ -547,7 +547,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateTagDetails create_data_asset_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_data_asset_tag_details: (required)
             The information used to create the data asset tag.
 
         :param list[str] wait_for_states:
@@ -591,7 +591,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateEntityDetails create_entity_details: (required)
+        :param oci.data_catalog.models.CreateEntityDetails create_entity_details: (required)
             The information used to create the data entity.
 
         :param list[str] wait_for_states:
@@ -638,7 +638,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str entity_key: (required)
             Unique entity key.
 
-        :param CreateTagDetails create_entity_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_entity_tag_details: (required)
             The information used to create the entity tag.
 
         :param list[str] wait_for_states:
@@ -682,7 +682,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param CreateFolderDetails create_folder_details: (required)
+        :param oci.data_catalog.models.CreateFolderDetails create_folder_details: (required)
             The information used to create the folder.
 
         :param list[str] wait_for_states:
@@ -729,7 +729,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str folder_key: (required)
             Unique folder key.
 
-        :param CreateTagDetails create_folder_tag_details: (required)
+        :param oci.data_catalog.models.CreateTagDetails create_folder_tag_details: (required)
             The information used to create the folder tag.
 
         :param list[str] wait_for_states:
@@ -770,7 +770,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateGlossaryDetails create_glossary_details: (required)
+        :param oci.data_catalog.models.CreateGlossaryDetails create_glossary_details: (required)
             The information used to create the glossary.
 
         :param list[str] wait_for_states:
@@ -811,7 +811,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateJobDetails create_job_details: (required)
+        :param oci.data_catalog.models.CreateJobDetails create_job_details: (required)
             The information used to create the job.
 
         :param list[str] wait_for_states:
@@ -852,7 +852,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateJobDefinitionDetails create_job_definition_details: (required)
+        :param oci.data_catalog.models.CreateJobDefinitionDetails create_job_definition_details: (required)
             The information used to create the job definition.
 
         :param list[str] wait_for_states:
@@ -896,7 +896,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str job_key: (required)
             Unique job key.
 
-        :param CreateJobExecutionDetails create_job_execution_details: (required)
+        :param oci.data_catalog.models.CreateJobExecutionDetails create_job_execution_details: (required)
             The information used to create the job execution.
 
         :param list[str] wait_for_states:
@@ -937,7 +937,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreateNamespaceDetails create_namespace_details: (required)
+        :param oci.data_catalog.models.CreateNamespaceDetails create_namespace_details: (required)
             The information used to create the Namespace.
 
         :param list[str] wait_for_states:
@@ -978,7 +978,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param CreatePatternDetails create_pattern_details: (required)
+        :param oci.data_catalog.models.CreatePatternDetails create_pattern_details: (required)
             The information used to create the pattern.
 
         :param list[str] wait_for_states:
@@ -1022,7 +1022,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str glossary_key: (required)
             Unique glossary key.
 
-        :param CreateTermDetails create_term_details: (required)
+        :param oci.data_catalog.models.CreateTermDetails create_term_details: (required)
             The information used to create the term.
 
         :param list[str] wait_for_states:
@@ -1069,7 +1069,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str term_key: (required)
             Unique glossary term key.
 
-        :param CreateTermRelationshipDetails create_term_relationship_details: (required)
+        :param oci.data_catalog.models.CreateTermRelationshipDetails create_term_relationship_details: (required)
             The information used to create the term relationship.
 
         :param list[str] wait_for_states:
@@ -1199,7 +1199,7 @@ class DataCatalogClientCompositeOperations(object):
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.detach_catalog_private_endpoint` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
         to enter the given state(s).
 
-        :param DetachCatalogPrivateEndpointDetails detach_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.DetachCatalogPrivateEndpointDetails detach_catalog_private_endpoint_details: (required)
             Details for private reverse connection endpoint to be used for attachment
 
         :param str catalog_id: (required)
@@ -1246,7 +1246,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str type_key: (required)
             Unique type key.
 
-        :param TypeCustomPropertyDetails disassociate_custom_property_details: (required)
+        :param oci.data_catalog.models.TypeCustomPropertyDetails disassociate_custom_property_details: (required)
             The information used to remove the custom properties.
 
         :param list[str] wait_for_states:
@@ -1290,7 +1290,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+        :param oci.data_catalog.models.DataSelectorPatternDetails data_selector_pattern_details: (required)
             The information used to remove the data selector patterns.
 
         :param list[str] wait_for_states:
@@ -1340,7 +1340,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str attribute_key: (required)
             Unique attribute key.
 
-        :param UpdateAttributeDetails update_attribute_details: (required)
+        :param oci.data_catalog.models.UpdateAttributeDetails update_attribute_details: (required)
             The information to be updated in the attribute.
 
         :param list[str] wait_for_states:
@@ -1381,7 +1381,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_id: (required)
             Unique catalog identifier.
 
-        :param UpdateCatalogDetails update_catalog_details: (required)
+        :param oci.data_catalog.models.UpdateCatalogDetails update_catalog_details: (required)
             The data catalog information to be updated.
 
         :param list[str] wait_for_states:
@@ -1422,7 +1422,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str catalog_private_endpoint_id: (required)
             Unique private reverse connection identifier.
 
-        :param UpdateCatalogPrivateEndpointDetails update_catalog_private_endpoint_details: (required)
+        :param oci.data_catalog.models.UpdateCatalogPrivateEndpointDetails update_catalog_private_endpoint_details: (required)
             The information to be updated in private reverse connection
 
         :param list[str] wait_for_states:
@@ -1469,7 +1469,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str connection_key: (required)
             Unique connection key.
 
-        :param UpdateConnectionDetails update_connection_details: (required)
+        :param oci.data_catalog.models.UpdateConnectionDetails update_connection_details: (required)
             The information to be updated in the connection.
 
         :param list[str] wait_for_states:
@@ -1516,7 +1516,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str custom_property_key: (required)
             Unique Custom Property key
 
-        :param UpdateCustomPropertyDetails update_custom_property_details: (required)
+        :param oci.data_catalog.models.UpdateCustomPropertyDetails update_custom_property_details: (required)
             The information to be updated in the custom property.
 
         :param list[str] wait_for_states:
@@ -1560,7 +1560,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str data_asset_key: (required)
             Unique data asset key.
 
-        :param UpdateDataAssetDetails update_data_asset_details: (required)
+        :param oci.data_catalog.models.UpdateDataAssetDetails update_data_asset_details: (required)
             The information to be updated in the data asset.
 
         :param list[str] wait_for_states:
@@ -1607,7 +1607,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str entity_key: (required)
             Unique entity key.
 
-        :param UpdateEntityDetails update_entity_details: (required)
+        :param oci.data_catalog.models.UpdateEntityDetails update_entity_details: (required)
             The information to be updated in the data entity.
 
         :param list[str] wait_for_states:
@@ -1654,7 +1654,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str folder_key: (required)
             Unique folder key.
 
-        :param UpdateFolderDetails update_folder_details: (required)
+        :param oci.data_catalog.models.UpdateFolderDetails update_folder_details: (required)
             The information to be updated in the folder.
 
         :param list[str] wait_for_states:
@@ -1698,7 +1698,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str glossary_key: (required)
             Unique glossary key.
 
-        :param UpdateGlossaryDetails update_glossary_details: (required)
+        :param oci.data_catalog.models.UpdateGlossaryDetails update_glossary_details: (required)
             The information to be updated in the glossary.
 
         :param list[str] wait_for_states:
@@ -1742,7 +1742,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str job_key: (required)
             Unique job key.
 
-        :param UpdateJobDetails update_job_details: (required)
+        :param oci.data_catalog.models.UpdateJobDetails update_job_details: (required)
             The information to be updated in the job.
 
         :param list[str] wait_for_states:
@@ -1786,7 +1786,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str job_definition_key: (required)
             Unique job definition key.
 
-        :param UpdateJobDefinitionDetails update_job_definition_details: (required)
+        :param oci.data_catalog.models.UpdateJobDefinitionDetails update_job_definition_details: (required)
             The information to be updated in the job definition.
 
         :param list[str] wait_for_states:
@@ -1830,7 +1830,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str namespace_id: (required)
             Unique namespace identifier.
 
-        :param UpdateNamespaceDetails update_namespace_details: (required)
+        :param oci.data_catalog.models.UpdateNamespaceDetails update_namespace_details: (required)
             The information to be updated in the namespace.
 
         :param list[str] wait_for_states:
@@ -1874,7 +1874,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str pattern_key: (required)
             Unique pattern key.
 
-        :param UpdatePatternDetails update_pattern_details: (required)
+        :param oci.data_catalog.models.UpdatePatternDetails update_pattern_details: (required)
             The information to be updated in the pattern.
 
         :param list[str] wait_for_states:
@@ -1921,7 +1921,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str term_key: (required)
             Unique glossary term key.
 
-        :param UpdateTermDetails update_term_details: (required)
+        :param oci.data_catalog.models.UpdateTermDetails update_term_details: (required)
             The information to be updated in the term.
 
         :param list[str] wait_for_states:
@@ -1971,7 +1971,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str term_relationship_key: (required)
             Unique glossary term relationship key.
 
-        :param UpdateTermRelationshipDetails update_term_relationship_details: (required)
+        :param oci.data_catalog.models.UpdateTermRelationshipDetails update_term_relationship_details: (required)
             The information to be updated in the term relationship.
 
         :param list[str] wait_for_states:
@@ -2018,7 +2018,7 @@ class DataCatalogClientCompositeOperations(object):
         :param str connection_key: (required)
             Unique connection key.
 
-        :param UploadCredentialsDetails upload_credentials_details: (required)
+        :param oci.data_catalog.models.UploadCredentialsDetails upload_credentials_details: (required)
             The information used to upload the credentials file and metadata for updating this connection.
 
         :param list[str] wait_for_states:

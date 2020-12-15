@@ -32,7 +32,7 @@ class CreateStackDetails(object):
 
         :param config_source:
             The value to assign to the config_source property of this CreateStackDetails.
-        :type config_source: CreateConfigSourceDetails
+        :type config_source: oci.resource_manager.models.CreateConfigSourceDetails
 
         :param variables:
             The value to assign to the variables property of this CreateStackDetails.
@@ -164,7 +164,7 @@ class CreateStackDetails(object):
         **[Required]** Gets the config_source of this CreateStackDetails.
 
         :return: The config_source of this CreateStackDetails.
-        :rtype: CreateConfigSourceDetails
+        :rtype: oci.resource_manager.models.CreateConfigSourceDetails
         """
         return self._config_source
 
@@ -174,7 +174,7 @@ class CreateStackDetails(object):
         Sets the config_source of this CreateStackDetails.
 
         :param config_source: The config_source of this CreateStackDetails.
-        :type: CreateConfigSourceDetails
+        :type: oci.resource_manager.models.CreateConfigSourceDetails
         """
         self._config_source = config_source
 

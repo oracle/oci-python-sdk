@@ -42,11 +42,11 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
 
         :param projected_utilization:
             The value to assign to the projected_utilization property of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        :type projected_utilization: ResourceInsightProjectedUtilization
+        :type projected_utilization: oci.opsi.models.ResourceInsightProjectedUtilization
 
         :param current_utilization:
             The value to assign to the current_utilization property of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        :type current_utilization: ResourceInsightCurrentUtilization
+        :type current_utilization: oci.opsi.models.ResourceInsightCurrentUtilization
 
         """
         self.swagger_types = {
@@ -155,7 +155,7 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
         **[Required]** Gets the projected_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
 
         :return: The projected_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        :rtype: ResourceInsightProjectedUtilization
+        :rtype: oci.opsi.models.ResourceInsightProjectedUtilization
         """
         return self._projected_utilization
 
@@ -165,7 +165,7 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
         Sets the projected_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
 
         :param projected_utilization: The projected_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        :type: ResourceInsightProjectedUtilization
+        :type: oci.opsi.models.ResourceInsightProjectedUtilization
         """
         self._projected_utilization = projected_utilization
 
@@ -175,7 +175,7 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
         **[Required]** Gets the current_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
 
         :return: The current_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        :rtype: ResourceInsightCurrentUtilization
+        :rtype: oci.opsi.models.ResourceInsightCurrentUtilization
         """
         return self._current_utilization
 
@@ -185,7 +185,7 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
         Sets the current_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
 
         :param current_utilization: The current_utilization of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        :type: ResourceInsightCurrentUtilization
+        :type: oci.opsi.models.ResourceInsightCurrentUtilization
         """
         self._current_utilization = current_utilization
 

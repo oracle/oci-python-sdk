@@ -57,7 +57,7 @@ class CreateMigrationDetails(object):
 
         :param discovery_details:
             The value to assign to the discovery_details property of this CreateMigrationDetails.
-        :type discovery_details: DiscoveryDetails
+        :type discovery_details: oci.application_migration.models.DiscoveryDetails
 
         :param pre_created_target_database_type:
             The value to assign to the pre_created_target_database_type property of this CreateMigrationDetails.
@@ -255,7 +255,7 @@ class CreateMigrationDetails(object):
         **[Required]** Gets the discovery_details of this CreateMigrationDetails.
 
         :return: The discovery_details of this CreateMigrationDetails.
-        :rtype: DiscoveryDetails
+        :rtype: oci.application_migration.models.DiscoveryDetails
         """
         return self._discovery_details
 
@@ -265,7 +265,7 @@ class CreateMigrationDetails(object):
         Sets the discovery_details of this CreateMigrationDetails.
 
         :param discovery_details: The discovery_details of this CreateMigrationDetails.
-        :type: DiscoveryDetails
+        :type: oci.application_migration.models.DiscoveryDetails
         """
         self._discovery_details = discovery_details
 

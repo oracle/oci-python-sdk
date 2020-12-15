@@ -32,7 +32,7 @@ class UpdateDataFlowDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this UpdateDataFlowDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this UpdateDataFlowDetails.
@@ -48,11 +48,11 @@ class UpdateDataFlowDetails(object):
 
         :param nodes:
             The value to assign to the nodes property of this UpdateDataFlowDetails.
-        :type nodes: list[FlowNode]
+        :type nodes: list[oci.data_integration.models.FlowNode]
 
         :param parameters:
             The value to assign to the parameters property of this UpdateDataFlowDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param description:
             The value to assign to the description property of this UpdateDataFlowDetails.
@@ -60,7 +60,7 @@ class UpdateDataFlowDetails(object):
 
         :param flow_config_values:
             The value to assign to the flow_config_values property of this UpdateDataFlowDetails.
-        :type flow_config_values: ConfigValues
+        :type flow_config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this UpdateDataFlowDetails.
@@ -68,7 +68,7 @@ class UpdateDataFlowDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateDataFlowDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -195,7 +195,7 @@ class UpdateDataFlowDetails(object):
         Gets the parent_ref of this UpdateDataFlowDetails.
 
         :return: The parent_ref of this UpdateDataFlowDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -205,7 +205,7 @@ class UpdateDataFlowDetails(object):
         Sets the parent_ref of this UpdateDataFlowDetails.
 
         :param parent_ref: The parent_ref of this UpdateDataFlowDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -289,7 +289,7 @@ class UpdateDataFlowDetails(object):
 
 
         :return: The nodes of this UpdateDataFlowDetails.
-        :rtype: list[FlowNode]
+        :rtype: list[oci.data_integration.models.FlowNode]
         """
         return self._nodes
 
@@ -301,7 +301,7 @@ class UpdateDataFlowDetails(object):
 
 
         :param nodes: The nodes of this UpdateDataFlowDetails.
-        :type: list[FlowNode]
+        :type: list[oci.data_integration.models.FlowNode]
         """
         self._nodes = nodes
 
@@ -313,7 +313,7 @@ class UpdateDataFlowDetails(object):
 
 
         :return: The parameters of this UpdateDataFlowDetails.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -325,7 +325,7 @@ class UpdateDataFlowDetails(object):
 
 
         :param parameters: The parameters of this UpdateDataFlowDetails.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -359,7 +359,7 @@ class UpdateDataFlowDetails(object):
         Gets the flow_config_values of this UpdateDataFlowDetails.
 
         :return: The flow_config_values of this UpdateDataFlowDetails.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._flow_config_values
 
@@ -369,7 +369,7 @@ class UpdateDataFlowDetails(object):
         Sets the flow_config_values of this UpdateDataFlowDetails.
 
         :param flow_config_values: The flow_config_values of this UpdateDataFlowDetails.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._flow_config_values = flow_config_values
 
@@ -403,7 +403,7 @@ class UpdateDataFlowDetails(object):
         Gets the registry_metadata of this UpdateDataFlowDetails.
 
         :return: The registry_metadata of this UpdateDataFlowDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -413,7 +413,7 @@ class UpdateDataFlowDetails(object):
         Sets the registry_metadata of this UpdateDataFlowDetails.
 
         :param registry_metadata: The registry_metadata of this UpdateDataFlowDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

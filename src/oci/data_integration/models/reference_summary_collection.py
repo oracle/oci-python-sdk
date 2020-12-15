@@ -20,7 +20,7 @@ class ReferenceSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this ReferenceSummaryCollection.
-        :type items: list[ReferenceSummary]
+        :type items: list[oci.data_integration.models.ReferenceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ReferenceSummaryCollection(object):
 
 
         :return: The items of this ReferenceSummaryCollection.
-        :rtype: list[ReferenceSummary]
+        :rtype: list[oci.data_integration.models.ReferenceSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ReferenceSummaryCollection(object):
 
 
         :param items: The items of this ReferenceSummaryCollection.
-        :type: list[ReferenceSummary]
+        :type: list[oci.data_integration.models.ReferenceSummary]
         """
         self._items = items
 

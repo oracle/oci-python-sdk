@@ -42,11 +42,11 @@ class SearchResult(object):
 
         :param tag_summary:
             The value to assign to the tag_summary property of this SearchResult.
-        :type tag_summary: list[SearchTagSummary]
+        :type tag_summary: list[oci.data_catalog.models.SearchTagSummary]
 
         :param term_summary:
             The value to assign to the term_summary property of this SearchResult.
-        :type term_summary: list[SearchTermSummary]
+        :type term_summary: list[oci.data_catalog.models.SearchTermSummary]
 
         :param type_name:
             The value to assign to the type_name property of this SearchResult.
@@ -130,7 +130,7 @@ class SearchResult(object):
 
         :param custom_properties:
             The value to assign to the custom_properties property of this SearchResult.
-        :type custom_properties: list[FacetedSearchCustomProperty]
+        :type custom_properties: list[oci.data_catalog.models.FacetedSearchCustomProperty]
 
         """
         self.swagger_types = {
@@ -364,7 +364,7 @@ class SearchResult(object):
 
 
         :return: The tag_summary of this SearchResult.
-        :rtype: list[SearchTagSummary]
+        :rtype: list[oci.data_catalog.models.SearchTagSummary]
         """
         return self._tag_summary
 
@@ -376,7 +376,7 @@ class SearchResult(object):
 
 
         :param tag_summary: The tag_summary of this SearchResult.
-        :type: list[SearchTagSummary]
+        :type: list[oci.data_catalog.models.SearchTagSummary]
         """
         self._tag_summary = tag_summary
 
@@ -388,7 +388,7 @@ class SearchResult(object):
 
 
         :return: The term_summary of this SearchResult.
-        :rtype: list[SearchTermSummary]
+        :rtype: list[oci.data_catalog.models.SearchTermSummary]
         """
         return self._term_summary
 
@@ -400,7 +400,7 @@ class SearchResult(object):
 
 
         :param term_summary: The term_summary of this SearchResult.
-        :type: list[SearchTermSummary]
+        :type: list[oci.data_catalog.models.SearchTermSummary]
         """
         self._term_summary = term_summary
 
@@ -892,7 +892,7 @@ class SearchResult(object):
 
 
         :return: The custom_properties of this SearchResult.
-        :rtype: list[FacetedSearchCustomProperty]
+        :rtype: list[oci.data_catalog.models.FacetedSearchCustomProperty]
         """
         return self._custom_properties
 
@@ -904,7 +904,7 @@ class SearchResult(object):
 
 
         :param custom_properties: The custom_properties of this SearchResult.
-        :type: list[FacetedSearchCustomProperty]
+        :type: list[oci.data_catalog.models.FacetedSearchCustomProperty]
         """
         self._custom_properties = custom_properties
 

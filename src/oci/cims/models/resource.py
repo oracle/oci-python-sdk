@@ -256,7 +256,7 @@ class Resource(object):
 
         :param item:
             The value to assign to the item property of this Resource.
-        :type item: Item
+        :type item: oci.cims.models.Item
 
         :param region:
             The value to assign to the region property of this Resource.
@@ -293,7 +293,7 @@ class Resource(object):
         Gets the item of this Resource.
 
         :return: The item of this Resource.
-        :rtype: Item
+        :rtype: oci.cims.models.Item
         """
         return self._item
 
@@ -303,7 +303,7 @@ class Resource(object):
         Sets the item of this Resource.
 
         :param item: The item of this Resource.
-        :type: Item
+        :type: oci.cims.models.Item
         """
         self._item = item
 

@@ -34,7 +34,7 @@ class OutputLink(FlowPortLink):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this OutputLink.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_status:
             The value to assign to the object_status property of this OutputLink.

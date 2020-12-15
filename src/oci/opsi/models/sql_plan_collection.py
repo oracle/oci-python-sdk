@@ -28,7 +28,7 @@ class SqlPlanCollection(object):
 
         :param items:
             The value to assign to the items property of this SqlPlanCollection.
-        :type items: list[SqlPlanSummary]
+        :type items: list[oci.opsi.models.SqlPlanSummary]
 
         """
         self.swagger_types = {
@@ -107,7 +107,7 @@ class SqlPlanCollection(object):
 
 
         :return: The items of this SqlPlanCollection.
-        :rtype: list[SqlPlanSummary]
+        :rtype: list[oci.opsi.models.SqlPlanSummary]
         """
         return self._items
 
@@ -119,7 +119,7 @@ class SqlPlanCollection(object):
 
 
         :param items: The items of this SqlPlanCollection.
-        :type: list[SqlPlanSummary]
+        :type: list[oci.opsi.models.SqlPlanSummary]
         """
         self._items = items
 

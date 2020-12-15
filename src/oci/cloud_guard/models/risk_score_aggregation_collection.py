@@ -20,7 +20,7 @@ class RiskScoreAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this RiskScoreAggregationCollection.
-        :type items: list[RiskScoreAggregation]
+        :type items: list[oci.cloud_guard.models.RiskScoreAggregation]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RiskScoreAggregationCollection(object):
 
 
         :return: The items of this RiskScoreAggregationCollection.
-        :rtype: list[RiskScoreAggregation]
+        :rtype: list[oci.cloud_guard.models.RiskScoreAggregation]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RiskScoreAggregationCollection(object):
 
 
         :param items: The items of this RiskScoreAggregationCollection.
-        :type: list[RiskScoreAggregation]
+        :type: list[oci.cloud_guard.models.RiskScoreAggregation]
         """
         self._items = items
 

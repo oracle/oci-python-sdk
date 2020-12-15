@@ -20,7 +20,7 @@ class ProblemHistoryCollection(object):
 
         :param items:
             The value to assign to the items property of this ProblemHistoryCollection.
-        :type items: list[ProblemHistorySummary]
+        :type items: list[oci.cloud_guard.models.ProblemHistorySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ProblemHistoryCollection(object):
 
 
         :return: The items of this ProblemHistoryCollection.
-        :rtype: list[ProblemHistorySummary]
+        :rtype: list[oci.cloud_guard.models.ProblemHistorySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ProblemHistoryCollection(object):
 
 
         :param items: The items of this ProblemHistoryCollection.
-        :type: list[ProblemHistorySummary]
+        :type: list[oci.cloud_guard.models.ProblemHistorySummary]
         """
         self._items = items
 

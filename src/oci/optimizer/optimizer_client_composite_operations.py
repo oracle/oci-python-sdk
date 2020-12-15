@@ -31,7 +31,7 @@ class OptimizerClientCompositeOperations(object):
         :param str recommendation_id: (required)
             The unique OCID associated with the recommendation.
 
-        :param BulkApplyRecommendationsDetails bulk_apply_recommendations_details: (required)
+        :param oci.optimizer.models.BulkApplyRecommendationsDetails bulk_apply_recommendations_details: (required)
             Details about bulk recommendation actions.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class OptimizerClientCompositeOperations(object):
         Calls :py:func:`~oci.optimizer.OptimizerClient.create_profile` and waits for the :py:class:`~oci.optimizer.models.Profile` acted upon
         to enter the given state(s).
 
-        :param CreateProfileDetails create_profile_details: (required)
+        :param oci.optimizer.models.CreateProfileDetails create_profile_details: (required)
             Details for creating the profile.
 
         :param list[str] wait_for_states:
@@ -157,7 +157,7 @@ class OptimizerClientCompositeOperations(object):
         :param str enrollment_status_id: (required)
             The unique OCID associated with the enrollment status.
 
-        :param UpdateEnrollmentStatusDetails update_enrollment_status_details: (required)
+        :param oci.optimizer.models.UpdateEnrollmentStatusDetails update_enrollment_status_details: (required)
             The request object for updating the enrollment status.
 
         :param list[str] wait_for_states:
@@ -198,7 +198,7 @@ class OptimizerClientCompositeOperations(object):
         :param str profile_id: (required)
             The unique OCID of the profile.
 
-        :param UpdateProfileDetails update_profile_details: (required)
+        :param oci.optimizer.models.UpdateProfileDetails update_profile_details: (required)
             The profile information to use for the update.
 
         :param list[str] wait_for_states:
@@ -239,7 +239,7 @@ class OptimizerClientCompositeOperations(object):
         :param str recommendation_id: (required)
             The unique OCID associated with the recommendation.
 
-        :param UpdateRecommendationDetails update_recommendation_details: (required)
+        :param oci.optimizer.models.UpdateRecommendationDetails update_recommendation_details: (required)
             The request object for udpating the recommendation details.
 
         :param list[str] wait_for_states:
@@ -280,7 +280,7 @@ class OptimizerClientCompositeOperations(object):
         :param str resource_action_id: (required)
             The unique OCID associated with the resource action.
 
-        :param UpdateResourceActionDetails update_resource_action_details: (required)
+        :param oci.optimizer.models.UpdateResourceActionDetails update_resource_action_details: (required)
             The resource action information to be updated.
 
         :param list[str] wait_for_states:

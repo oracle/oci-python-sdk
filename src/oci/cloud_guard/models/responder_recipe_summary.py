@@ -74,7 +74,7 @@ class ResponderRecipeSummary(object):
 
         :param responder_rules:
             The value to assign to the responder_rules property of this ResponderRecipeSummary.
-        :type responder_rules: list[ResponderRecipeResponderRule]
+        :type responder_rules: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
 
         :param source_responder_recipe_id:
             The value to assign to the source_responder_recipe_id property of this ResponderRecipeSummary.
@@ -274,7 +274,7 @@ class ResponderRecipeSummary(object):
 
 
         :return: The responder_rules of this ResponderRecipeSummary.
-        :rtype: list[ResponderRecipeResponderRule]
+        :rtype: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
         """
         return self._responder_rules
 
@@ -286,7 +286,7 @@ class ResponderRecipeSummary(object):
 
 
         :param responder_rules: The responder_rules of this ResponderRecipeSummary.
-        :type: list[ResponderRecipeResponderRule]
+        :type: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
         """
         self._responder_rules = responder_rules
 

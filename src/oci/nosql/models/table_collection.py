@@ -20,7 +20,7 @@ class TableCollection(object):
 
         :param items:
             The value to assign to the items property of this TableCollection.
-        :type items: list[TableSummary]
+        :type items: list[oci.nosql.models.TableSummary]
 
         :param max_auto_reclaimable_tables:
             The value to assign to the max_auto_reclaimable_tables property of this TableCollection.
@@ -55,7 +55,7 @@ class TableCollection(object):
 
 
         :return: The items of this TableCollection.
-        :rtype: list[TableSummary]
+        :rtype: list[oci.nosql.models.TableSummary]
         """
         return self._items
 
@@ -67,7 +67,7 @@ class TableCollection(object):
 
 
         :param items: The items of this TableCollection.
-        :type: list[TableSummary]
+        :type: list[oci.nosql.models.TableSummary]
         """
         self._items = items
 

@@ -83,7 +83,7 @@ class DhcpOptions(object):
 
         :param options:
             The value to assign to the options property of this DhcpOptions.
-        :type options: list[DhcpOption]
+        :type options: list[oci.core.models.DhcpOption]
 
         :param time_created:
             The value to assign to the time_created property of this DhcpOptions.
@@ -308,7 +308,7 @@ class DhcpOptions(object):
 
 
         :return: The options of this DhcpOptions.
-        :rtype: list[DhcpOption]
+        :rtype: list[oci.core.models.DhcpOption]
         """
         return self._options
 
@@ -320,7 +320,7 @@ class DhcpOptions(object):
 
 
         :param options: The options of this DhcpOptions.
-        :type: list[DhcpOption]
+        :type: list[oci.core.models.DhcpOption]
         """
         self._options = options
 

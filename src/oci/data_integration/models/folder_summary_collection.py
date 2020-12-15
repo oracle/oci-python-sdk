@@ -20,7 +20,7 @@ class FolderSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this FolderSummaryCollection.
-        :type items: list[FolderSummary]
+        :type items: list[oci.data_integration.models.FolderSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class FolderSummaryCollection(object):
 
 
         :return: The items of this FolderSummaryCollection.
-        :rtype: list[FolderSummary]
+        :rtype: list[oci.data_integration.models.FolderSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class FolderSummaryCollection(object):
 
 
         :param items: The items of this FolderSummaryCollection.
-        :type: list[FolderSummary]
+        :type: list[oci.data_integration.models.FolderSummary]
         """
         self._items = items
 

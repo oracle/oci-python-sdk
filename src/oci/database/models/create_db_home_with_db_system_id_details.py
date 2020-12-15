@@ -23,6 +23,14 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
             The value to assign to the display_name property of this CreateDbHomeWithDbSystemIdDetails.
         :type display_name: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateDbHomeWithDbSystemIdDetails.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this CreateDbHomeWithDbSystemIdDetails.
+        :type kms_key_version_id: str
+
         :param database_software_image_id:
             The value to assign to the database_software_image_id property of this CreateDbHomeWithDbSystemIdDetails.
         :type database_software_image_id: str
@@ -50,11 +58,13 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
 
         :param database:
             The value to assign to the database property of this CreateDbHomeWithDbSystemIdDetails.
-        :type database: CreateDatabaseDetails
+        :type database: oci.database.models.CreateDatabaseDetails
 
         """
         self.swagger_types = {
             'display_name': 'str',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'database_software_image_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -66,6 +76,8 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'database_software_image_id': 'databaseSoftwareImageId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -76,6 +88,8 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
         }
 
         self._display_name = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._database_software_image_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -143,7 +157,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
         Gets the database of this CreateDbHomeWithDbSystemIdDetails.
 
         :return: The database of this CreateDbHomeWithDbSystemIdDetails.
-        :rtype: CreateDatabaseDetails
+        :rtype: oci.database.models.CreateDatabaseDetails
         """
         return self._database
 
@@ -153,7 +167,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
         Sets the database of this CreateDbHomeWithDbSystemIdDetails.
 
         :param database: The database of this CreateDbHomeWithDbSystemIdDetails.
-        :type: CreateDatabaseDetails
+        :type: oci.database.models.CreateDatabaseDetails
         """
         self._database = database
 

@@ -20,7 +20,7 @@ class IngestSqlBucketDetails(object):
 
         :param items:
             The value to assign to the items property of this IngestSqlBucketDetails.
-        :type items: list[SqlBucket]
+        :type items: list[oci.opsi.models.SqlBucket]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class IngestSqlBucketDetails(object):
 
 
         :return: The items of this IngestSqlBucketDetails.
-        :rtype: list[SqlBucket]
+        :rtype: list[oci.opsi.models.SqlBucket]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class IngestSqlBucketDetails(object):
 
 
         :param items: The items of this IngestSqlBucketDetails.
-        :type: list[SqlBucket]
+        :type: list[oci.opsi.models.SqlBucket]
         """
         self._items = items
 

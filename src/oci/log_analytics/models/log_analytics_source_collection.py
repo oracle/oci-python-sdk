@@ -20,7 +20,7 @@ class LogAnalyticsSourceCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsSourceCollection.
-        :type items: list[LogAnalyticsSourceSummary]
+        :type items: list[oci.log_analytics.models.LogAnalyticsSourceSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsSourceCollection(object):
 
 
         :return: The items of this LogAnalyticsSourceCollection.
-        :rtype: list[LogAnalyticsSourceSummary]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsSourceCollection(object):
 
 
         :param items: The items of this LogAnalyticsSourceCollection.
-        :type: list[LogAnalyticsSourceSummary]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceSummary]
         """
         self._items = items
 

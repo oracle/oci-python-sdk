@@ -36,7 +36,7 @@ class UpdateRowResult(object):
 
         :param usage:
             The value to assign to the usage property of this UpdateRowResult.
-        :type usage: RequestUsage
+        :type usage: oci.nosql.models.RequestUsage
 
         """
         self.swagger_types = {
@@ -173,7 +173,7 @@ class UpdateRowResult(object):
         Gets the usage of this UpdateRowResult.
 
         :return: The usage of this UpdateRowResult.
-        :rtype: RequestUsage
+        :rtype: oci.nosql.models.RequestUsage
         """
         return self._usage
 
@@ -183,7 +183,7 @@ class UpdateRowResult(object):
         Sets the usage of this UpdateRowResult.
 
         :param usage: The usage of this UpdateRowResult.
-        :type: RequestUsage
+        :type: oci.nosql.models.RequestUsage
         """
         self._usage = usage
 

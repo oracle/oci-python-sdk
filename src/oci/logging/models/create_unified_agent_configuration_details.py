@@ -28,7 +28,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
 
         :param service_configuration:
             The value to assign to the service_configuration property of this CreateUnifiedAgentConfigurationDetails.
-        :type service_configuration: UnifiedAgentServiceConfigurationDetails
+        :type service_configuration: oci.logging.models.UnifiedAgentServiceConfigurationDetails
 
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateUnifiedAgentConfigurationDetails.
@@ -48,7 +48,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
 
         :param group_association:
             The value to assign to the group_association property of this CreateUnifiedAgentConfigurationDetails.
-        :type group_association: GroupAssociationDetails
+        :type group_association: oci.logging.models.GroupAssociationDetails
 
         """
         self.swagger_types = {
@@ -138,7 +138,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
         **[Required]** Gets the service_configuration of this CreateUnifiedAgentConfigurationDetails.
 
         :return: The service_configuration of this CreateUnifiedAgentConfigurationDetails.
-        :rtype: UnifiedAgentServiceConfigurationDetails
+        :rtype: oci.logging.models.UnifiedAgentServiceConfigurationDetails
         """
         return self._service_configuration
 
@@ -148,7 +148,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
         Sets the service_configuration of this CreateUnifiedAgentConfigurationDetails.
 
         :param service_configuration: The service_configuration of this CreateUnifiedAgentConfigurationDetails.
-        :type: UnifiedAgentServiceConfigurationDetails
+        :type: oci.logging.models.UnifiedAgentServiceConfigurationDetails
         """
         self._service_configuration = service_configuration
 
@@ -272,7 +272,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
         Gets the group_association of this CreateUnifiedAgentConfigurationDetails.
 
         :return: The group_association of this CreateUnifiedAgentConfigurationDetails.
-        :rtype: GroupAssociationDetails
+        :rtype: oci.logging.models.GroupAssociationDetails
         """
         return self._group_association
 
@@ -282,7 +282,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
         Sets the group_association of this CreateUnifiedAgentConfigurationDetails.
 
         :param group_association: The group_association of this CreateUnifiedAgentConfigurationDetails.
-        :type: GroupAssociationDetails
+        :type: oci.logging.models.GroupAssociationDetails
         """
         self._group_association = group_association
 

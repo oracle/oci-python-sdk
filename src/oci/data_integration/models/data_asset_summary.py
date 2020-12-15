@@ -91,7 +91,7 @@ class DataAssetSummary(object):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummary.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummary.
@@ -99,11 +99,11 @@ class DataAssetSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -408,7 +408,7 @@ class DataAssetSummary(object):
         Gets the native_type_system of this DataAssetSummary.
 
         :return: The native_type_system of this DataAssetSummary.
-        :rtype: TypeSystem
+        :rtype: oci.data_integration.models.TypeSystem
         """
         return self._native_type_system
 
@@ -418,7 +418,7 @@ class DataAssetSummary(object):
         Sets the native_type_system of this DataAssetSummary.
 
         :param native_type_system: The native_type_system of this DataAssetSummary.
-        :type: TypeSystem
+        :type: oci.data_integration.models.TypeSystem
         """
         self._native_type_system = native_type_system
 
@@ -452,7 +452,7 @@ class DataAssetSummary(object):
         Gets the parent_ref of this DataAssetSummary.
 
         :return: The parent_ref of this DataAssetSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -462,7 +462,7 @@ class DataAssetSummary(object):
         Sets the parent_ref of this DataAssetSummary.
 
         :param parent_ref: The parent_ref of this DataAssetSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -472,7 +472,7 @@ class DataAssetSummary(object):
         Gets the metadata of this DataAssetSummary.
 
         :return: The metadata of this DataAssetSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -482,7 +482,7 @@ class DataAssetSummary(object):
         Sets the metadata of this DataAssetSummary.
 
         :param metadata: The metadata of this DataAssetSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

@@ -32,7 +32,7 @@ class FlowNode(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this FlowNode.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this FlowNode.
@@ -44,23 +44,23 @@ class FlowNode(object):
 
         :param input_links:
             The value to assign to the input_links property of this FlowNode.
-        :type input_links: list[InputLink]
+        :type input_links: list[oci.data_integration.models.InputLink]
 
         :param output_links:
             The value to assign to the output_links property of this FlowNode.
-        :type output_links: list[OutputLink]
+        :type output_links: list[oci.data_integration.models.OutputLink]
 
         :param operator:
             The value to assign to the operator property of this FlowNode.
-        :type operator: Operator
+        :type operator: oci.data_integration.models.Operator
 
         :param ui_properties:
             The value to assign to the ui_properties property of this FlowNode.
-        :type ui_properties: UIProperties
+        :type ui_properties: oci.data_integration.models.UIProperties
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this FlowNode.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param object_status:
             The value to assign to the object_status property of this FlowNode.
@@ -188,7 +188,7 @@ class FlowNode(object):
         Gets the parent_ref of this FlowNode.
 
         :return: The parent_ref of this FlowNode.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -198,7 +198,7 @@ class FlowNode(object):
         Sets the parent_ref of this FlowNode.
 
         :param parent_ref: The parent_ref of this FlowNode.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -258,7 +258,7 @@ class FlowNode(object):
 
 
         :return: The input_links of this FlowNode.
-        :rtype: list[InputLink]
+        :rtype: list[oci.data_integration.models.InputLink]
         """
         return self._input_links
 
@@ -270,7 +270,7 @@ class FlowNode(object):
 
 
         :param input_links: The input_links of this FlowNode.
-        :type: list[InputLink]
+        :type: list[oci.data_integration.models.InputLink]
         """
         self._input_links = input_links
 
@@ -282,7 +282,7 @@ class FlowNode(object):
 
 
         :return: The output_links of this FlowNode.
-        :rtype: list[OutputLink]
+        :rtype: list[oci.data_integration.models.OutputLink]
         """
         return self._output_links
 
@@ -294,7 +294,7 @@ class FlowNode(object):
 
 
         :param output_links: The output_links of this FlowNode.
-        :type: list[OutputLink]
+        :type: list[oci.data_integration.models.OutputLink]
         """
         self._output_links = output_links
 
@@ -304,7 +304,7 @@ class FlowNode(object):
         Gets the operator of this FlowNode.
 
         :return: The operator of this FlowNode.
-        :rtype: Operator
+        :rtype: oci.data_integration.models.Operator
         """
         return self._operator
 
@@ -314,7 +314,7 @@ class FlowNode(object):
         Sets the operator of this FlowNode.
 
         :param operator: The operator of this FlowNode.
-        :type: Operator
+        :type: oci.data_integration.models.Operator
         """
         self._operator = operator
 
@@ -324,7 +324,7 @@ class FlowNode(object):
         Gets the ui_properties of this FlowNode.
 
         :return: The ui_properties of this FlowNode.
-        :rtype: UIProperties
+        :rtype: oci.data_integration.models.UIProperties
         """
         return self._ui_properties
 
@@ -334,7 +334,7 @@ class FlowNode(object):
         Sets the ui_properties of this FlowNode.
 
         :param ui_properties: The ui_properties of this FlowNode.
-        :type: UIProperties
+        :type: oci.data_integration.models.UIProperties
         """
         self._ui_properties = ui_properties
 
@@ -344,7 +344,7 @@ class FlowNode(object):
         Gets the config_provider_delegate of this FlowNode.
 
         :return: The config_provider_delegate of this FlowNode.
-        :rtype: ConfigProvider
+        :rtype: oci.data_integration.models.ConfigProvider
         """
         return self._config_provider_delegate
 
@@ -354,7 +354,7 @@ class FlowNode(object):
         Sets the config_provider_delegate of this FlowNode.
 
         :param config_provider_delegate: The config_provider_delegate of this FlowNode.
-        :type: ConfigProvider
+        :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
 

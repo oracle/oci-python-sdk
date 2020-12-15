@@ -20,7 +20,7 @@ class WorkRequestErrorCollection(object):
 
         :param items:
             The value to assign to the items property of this WorkRequestErrorCollection.
-        :type items: list[WorkRequestError]
+        :type items: list[oci.apigateway.models.WorkRequestError]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class WorkRequestErrorCollection(object):
 
 
         :return: The items of this WorkRequestErrorCollection.
-        :rtype: list[WorkRequestError]
+        :rtype: list[oci.apigateway.models.WorkRequestError]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class WorkRequestErrorCollection(object):
 
 
         :param items: The items of this WorkRequestErrorCollection.
-        :type: list[WorkRequestError]
+        :type: list[oci.apigateway.models.WorkRequestError]
         """
         self._items = items
 

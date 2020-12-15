@@ -24,7 +24,7 @@ class CreateRetentionRuleDetails(object):
 
         :param duration:
             The value to assign to the duration property of this CreateRetentionRuleDetails.
-        :type duration: Duration
+        :type duration: oci.object_storage.models.Duration
 
         :param time_rule_locked:
             The value to assign to the time_rule_locked property of this CreateRetentionRuleDetails.
@@ -77,7 +77,7 @@ class CreateRetentionRuleDetails(object):
         Gets the duration of this CreateRetentionRuleDetails.
 
         :return: The duration of this CreateRetentionRuleDetails.
-        :rtype: Duration
+        :rtype: oci.object_storage.models.Duration
         """
         return self._duration
 
@@ -87,7 +87,7 @@ class CreateRetentionRuleDetails(object):
         Sets the duration of this CreateRetentionRuleDetails.
 
         :param duration: The duration of this CreateRetentionRuleDetails.
-        :type: Duration
+        :type: oci.object_storage.models.Duration
         """
         self._duration = duration
 

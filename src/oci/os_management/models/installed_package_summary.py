@@ -44,7 +44,7 @@ class InstalledPackageSummary(object):
 
         :param software_sources:
             The value to assign to the software_sources property of this InstalledPackageSummary.
-        :type software_sources: list[SoftwareSourceId]
+        :type software_sources: list[oci.os_management.models.SoftwareSourceId]
 
         """
         self.swagger_types = {
@@ -227,7 +227,7 @@ class InstalledPackageSummary(object):
 
 
         :return: The software_sources of this InstalledPackageSummary.
-        :rtype: list[SoftwareSourceId]
+        :rtype: list[oci.os_management.models.SoftwareSourceId]
         """
         return self._software_sources
 
@@ -239,7 +239,7 @@ class InstalledPackageSummary(object):
 
 
         :param software_sources: The software_sources of this InstalledPackageSummary.
-        :type: list[SoftwareSourceId]
+        :type: list[oci.os_management.models.SoftwareSourceId]
         """
         self._software_sources = software_sources
 

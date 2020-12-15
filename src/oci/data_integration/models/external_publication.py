@@ -44,11 +44,11 @@ class ExternalPublication(object):
 
         :param resource_configuration:
             The value to assign to the resource_configuration property of this ExternalPublication.
-        :type resource_configuration: ResourceConfiguration
+        :type resource_configuration: oci.data_integration.models.ResourceConfiguration
 
         :param configuration_details:
             The value to assign to the configuration_details property of this ExternalPublication.
-        :type configuration_details: ConfigurationDetails
+        :type configuration_details: oci.data_integration.models.ConfigurationDetails
 
         :param status:
             The value to assign to the status property of this ExternalPublication.
@@ -94,11 +94,11 @@ class ExternalPublication(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ExternalPublication.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this ExternalPublication.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this ExternalPublication.
@@ -244,7 +244,7 @@ class ExternalPublication(object):
         Gets the resource_configuration of this ExternalPublication.
 
         :return: The resource_configuration of this ExternalPublication.
-        :rtype: ResourceConfiguration
+        :rtype: oci.data_integration.models.ResourceConfiguration
         """
         return self._resource_configuration
 
@@ -254,7 +254,7 @@ class ExternalPublication(object):
         Sets the resource_configuration of this ExternalPublication.
 
         :param resource_configuration: The resource_configuration of this ExternalPublication.
-        :type: ResourceConfiguration
+        :type: oci.data_integration.models.ResourceConfiguration
         """
         self._resource_configuration = resource_configuration
 
@@ -264,7 +264,7 @@ class ExternalPublication(object):
         Gets the configuration_details of this ExternalPublication.
 
         :return: The configuration_details of this ExternalPublication.
-        :rtype: ConfigurationDetails
+        :rtype: oci.data_integration.models.ConfigurationDetails
         """
         return self._configuration_details
 
@@ -274,7 +274,7 @@ class ExternalPublication(object):
         Sets the configuration_details of this ExternalPublication.
 
         :param configuration_details: The configuration_details of this ExternalPublication.
-        :type: ConfigurationDetails
+        :type: oci.data_integration.models.ConfigurationDetails
         """
         self._configuration_details = configuration_details
 
@@ -530,7 +530,7 @@ class ExternalPublication(object):
         Gets the parent_ref of this ExternalPublication.
 
         :return: The parent_ref of this ExternalPublication.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -540,7 +540,7 @@ class ExternalPublication(object):
         Sets the parent_ref of this ExternalPublication.
 
         :param parent_ref: The parent_ref of this ExternalPublication.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -550,7 +550,7 @@ class ExternalPublication(object):
         Gets the metadata of this ExternalPublication.
 
         :return: The metadata of this ExternalPublication.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -560,7 +560,7 @@ class ExternalPublication(object):
         Sets the metadata of this ExternalPublication.
 
         :param metadata: The metadata of this ExternalPublication.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

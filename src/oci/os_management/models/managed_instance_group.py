@@ -72,7 +72,7 @@ class ManagedInstanceGroup(object):
 
         :param managed_instances:
             The value to assign to the managed_instances property of this ManagedInstanceGroup.
-        :type managed_instances: list[Id]
+        :type managed_instances: list[oci.os_management.models.Id]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagedInstanceGroup.
@@ -233,7 +233,7 @@ class ManagedInstanceGroup(object):
 
 
         :return: The managed_instances of this ManagedInstanceGroup.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instances
 
@@ -245,7 +245,7 @@ class ManagedInstanceGroup(object):
 
 
         :param managed_instances: The managed_instances of this ManagedInstanceGroup.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instances = managed_instances
 

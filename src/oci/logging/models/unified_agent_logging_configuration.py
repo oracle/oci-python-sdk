@@ -26,11 +26,11 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
 
         :param sources:
             The value to assign to the sources property of this UnifiedAgentLoggingConfiguration.
-        :type sources: list[UnifiedAgentLoggingSource]
+        :type sources: list[oci.logging.models.UnifiedAgentLoggingSource]
 
         :param destination:
             The value to assign to the destination property of this UnifiedAgentLoggingConfiguration.
-        :type destination: UnifiedAgentLoggingDestination
+        :type destination: oci.logging.models.UnifiedAgentLoggingDestination
 
         """
         self.swagger_types = {
@@ -56,7 +56,7 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
         Gets the sources of this UnifiedAgentLoggingConfiguration.
 
         :return: The sources of this UnifiedAgentLoggingConfiguration.
-        :rtype: list[UnifiedAgentLoggingSource]
+        :rtype: list[oci.logging.models.UnifiedAgentLoggingSource]
         """
         return self._sources
 
@@ -66,7 +66,7 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
         Sets the sources of this UnifiedAgentLoggingConfiguration.
 
         :param sources: The sources of this UnifiedAgentLoggingConfiguration.
-        :type: list[UnifiedAgentLoggingSource]
+        :type: list[oci.logging.models.UnifiedAgentLoggingSource]
         """
         self._sources = sources
 
@@ -76,7 +76,7 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
         Gets the destination of this UnifiedAgentLoggingConfiguration.
 
         :return: The destination of this UnifiedAgentLoggingConfiguration.
-        :rtype: UnifiedAgentLoggingDestination
+        :rtype: oci.logging.models.UnifiedAgentLoggingDestination
         """
         return self._destination
 
@@ -86,7 +86,7 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
         Sets the destination of this UnifiedAgentLoggingConfiguration.
 
         :param destination: The destination of this UnifiedAgentLoggingConfiguration.
-        :type: UnifiedAgentLoggingDestination
+        :type: oci.logging.models.UnifiedAgentLoggingDestination
         """
         self._destination = destination
 

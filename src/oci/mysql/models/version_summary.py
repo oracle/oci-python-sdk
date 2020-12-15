@@ -24,7 +24,7 @@ class VersionSummary(object):
 
         :param versions:
             The value to assign to the versions property of this VersionSummary.
-        :type versions: list[Version]
+        :type versions: list[oci.mysql.models.Version]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class VersionSummary(object):
 
 
         :return: The versions of this VersionSummary.
-        :rtype: list[Version]
+        :rtype: list[oci.mysql.models.Version]
         """
         return self._versions
 
@@ -84,7 +84,7 @@ class VersionSummary(object):
 
 
         :param versions: The versions of this VersionSummary.
-        :type: list[Version]
+        :type: list[oci.mysql.models.Version]
         """
         self._versions = versions
 

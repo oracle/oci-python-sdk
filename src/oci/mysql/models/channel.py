@@ -68,11 +68,11 @@ class Channel(object):
 
         :param source:
             The value to assign to the source property of this Channel.
-        :type source: ChannelSource
+        :type source: oci.mysql.models.ChannelSource
 
         :param target:
             The value to assign to the target property of this Channel.
-        :type target: ChannelTarget
+        :type target: oci.mysql.models.ChannelTarget
 
         :param description:
             The value to assign to the description property of this Channel.
@@ -253,7 +253,7 @@ class Channel(object):
         **[Required]** Gets the source of this Channel.
 
         :return: The source of this Channel.
-        :rtype: ChannelSource
+        :rtype: oci.mysql.models.ChannelSource
         """
         return self._source
 
@@ -263,7 +263,7 @@ class Channel(object):
         Sets the source of this Channel.
 
         :param source: The source of this Channel.
-        :type: ChannelSource
+        :type: oci.mysql.models.ChannelSource
         """
         self._source = source
 
@@ -273,7 +273,7 @@ class Channel(object):
         **[Required]** Gets the target of this Channel.
 
         :return: The target of this Channel.
-        :rtype: ChannelTarget
+        :rtype: oci.mysql.models.ChannelTarget
         """
         return self._target
 
@@ -283,7 +283,7 @@ class Channel(object):
         Sets the target of this Channel.
 
         :param target: The target of this Channel.
-        :type: ChannelTarget
+        :type: oci.mysql.models.ChannelTarget
         """
         self._target = target
 

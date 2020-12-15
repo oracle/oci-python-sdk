@@ -36,11 +36,11 @@ class SqlPlanInsightAggregationCollection(object):
 
         :param insights:
             The value to assign to the insights property of this SqlPlanInsightAggregationCollection.
-        :type insights: list[SqlPlanInsights]
+        :type insights: list[oci.opsi.models.SqlPlanInsights]
 
         :param items:
             The value to assign to the items property of this SqlPlanInsightAggregationCollection.
-        :type items: list[SqlPlanInsightAggregation]
+        :type items: list[oci.opsi.models.SqlPlanInsightAggregation]
 
         """
         self.swagger_types = {
@@ -176,7 +176,7 @@ class SqlPlanInsightAggregationCollection(object):
 
 
         :return: The insights of this SqlPlanInsightAggregationCollection.
-        :rtype: list[SqlPlanInsights]
+        :rtype: list[oci.opsi.models.SqlPlanInsights]
         """
         return self._insights
 
@@ -188,7 +188,7 @@ class SqlPlanInsightAggregationCollection(object):
 
 
         :param insights: The insights of this SqlPlanInsightAggregationCollection.
-        :type: list[SqlPlanInsights]
+        :type: list[oci.opsi.models.SqlPlanInsights]
         """
         self._insights = insights
 
@@ -200,7 +200,7 @@ class SqlPlanInsightAggregationCollection(object):
 
 
         :return: The items of this SqlPlanInsightAggregationCollection.
-        :rtype: list[SqlPlanInsightAggregation]
+        :rtype: list[oci.opsi.models.SqlPlanInsightAggregation]
         """
         return self._items
 
@@ -212,7 +212,7 @@ class SqlPlanInsightAggregationCollection(object):
 
 
         :param items: The items of this SqlPlanInsightAggregationCollection.
-        :type: list[SqlPlanInsightAggregation]
+        :type: list[oci.opsi.models.SqlPlanInsightAggregation]
         """
         self._items = items
 

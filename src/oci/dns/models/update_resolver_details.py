@@ -34,11 +34,11 @@ class UpdateResolverDetails(object):
 
         :param attached_views:
             The value to assign to the attached_views property of this UpdateResolverDetails.
-        :type attached_views: list[AttachedViewDetails]
+        :type attached_views: list[oci.dns.models.AttachedViewDetails]
 
         :param rules:
             The value to assign to the rules property of this UpdateResolverDetails.
-        :type rules: list[ResolverRuleDetails]
+        :type rules: list[oci.dns.models.ResolverRuleDetails]
 
         """
         self.swagger_types = {
@@ -167,7 +167,7 @@ class UpdateResolverDetails(object):
 
 
         :return: The attached_views of this UpdateResolverDetails.
-        :rtype: list[AttachedViewDetails]
+        :rtype: list[oci.dns.models.AttachedViewDetails]
         """
         return self._attached_views
 
@@ -179,7 +179,7 @@ class UpdateResolverDetails(object):
 
 
         :param attached_views: The attached_views of this UpdateResolverDetails.
-        :type: list[AttachedViewDetails]
+        :type: list[oci.dns.models.AttachedViewDetails]
         """
         self._attached_views = attached_views
 
@@ -191,7 +191,7 @@ class UpdateResolverDetails(object):
 
 
         :return: The rules of this UpdateResolverDetails.
-        :rtype: list[ResolverRuleDetails]
+        :rtype: list[oci.dns.models.ResolverRuleDetails]
         """
         return self._rules
 
@@ -203,7 +203,7 @@ class UpdateResolverDetails(object):
 
 
         :param rules: The rules of this UpdateResolverDetails.
-        :type: list[ResolverRuleDetails]
+        :type: list[oci.dns.models.ResolverRuleDetails]
         """
         self._rules = rules
 

@@ -58,7 +58,7 @@ class CreateDataAssetFromMySQL(CreateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataAssetFromMySQL.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param host:
             The value to assign to the host property of this CreateDataAssetFromMySQL.
@@ -74,7 +74,7 @@ class CreateDataAssetFromMySQL(CreateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this CreateDataAssetFromMySQL.
-        :type default_connection: CreateConnectionFromMySQL
+        :type default_connection: oci.data_integration.models.CreateConnectionFromMySQL
 
         """
         self.swagger_types = {
@@ -205,7 +205,7 @@ class CreateDataAssetFromMySQL(CreateDataAssetDetails):
         Gets the default_connection of this CreateDataAssetFromMySQL.
 
         :return: The default_connection of this CreateDataAssetFromMySQL.
-        :rtype: CreateConnectionFromMySQL
+        :rtype: oci.data_integration.models.CreateConnectionFromMySQL
         """
         return self._default_connection
 
@@ -215,7 +215,7 @@ class CreateDataAssetFromMySQL(CreateDataAssetDetails):
         Sets the default_connection of this CreateDataAssetFromMySQL.
 
         :param default_connection: The default_connection of this CreateDataAssetFromMySQL.
-        :type: CreateConnectionFromMySQL
+        :type: oci.data_integration.models.CreateConnectionFromMySQL
         """
         self._default_connection = default_connection
 

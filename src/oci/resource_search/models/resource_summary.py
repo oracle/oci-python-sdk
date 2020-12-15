@@ -60,7 +60,7 @@ class ResourceSummary(object):
 
         :param search_context:
             The value to assign to the search_context property of this ResourceSummary.
-        :type search_context: SearchContext
+        :type search_context: oci.resource_search.models.SearchContext
 
         :param identity_context:
             The value to assign to the identity_context property of this ResourceSummary.
@@ -380,7 +380,7 @@ class ResourceSummary(object):
         Gets the search_context of this ResourceSummary.
 
         :return: The search_context of this ResourceSummary.
-        :rtype: SearchContext
+        :rtype: oci.resource_search.models.SearchContext
         """
         return self._search_context
 
@@ -390,7 +390,7 @@ class ResourceSummary(object):
         Sets the search_context of this ResourceSummary.
 
         :param search_context: The search_context of this ResourceSummary.
-        :type: SearchContext
+        :type: oci.resource_search.models.SearchContext
         """
         self._search_context = search_context
 

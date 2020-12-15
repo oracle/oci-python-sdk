@@ -34,7 +34,7 @@ class EntityShape(object):
 
         :param metadata:
             The value to assign to the metadata property of this EntityShape.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -99,7 +99,7 @@ class EntityShape(object):
         Gets the metadata of this EntityShape.
 
         :return: The metadata of this EntityShape.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -109,7 +109,7 @@ class EntityShape(object):
         Sets the metadata of this EntityShape.
 
         :param metadata: The metadata of this EntityShape.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

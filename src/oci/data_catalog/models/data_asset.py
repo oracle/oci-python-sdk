@@ -104,11 +104,11 @@ class DataAsset(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this DataAsset.
-        :type custom_property_members: list[CustomPropertyGetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
 
         :param data_selector_patterns:
             The value to assign to the data_selector_patterns property of this DataAsset.
-        :type data_selector_patterns: list[PatternSummary]
+        :type data_selector_patterns: list[oci.data_catalog.models.PatternSummary]
 
         :param properties:
             The value to assign to the properties property of this DataAsset.
@@ -481,7 +481,7 @@ class DataAsset(object):
 
 
         :return: The custom_property_members of this DataAsset.
-        :rtype: list[CustomPropertyGetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         return self._custom_property_members
 
@@ -493,7 +493,7 @@ class DataAsset(object):
 
 
         :param custom_property_members: The custom_property_members of this DataAsset.
-        :type: list[CustomPropertyGetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         self._custom_property_members = custom_property_members
 
@@ -505,7 +505,7 @@ class DataAsset(object):
 
 
         :return: The data_selector_patterns of this DataAsset.
-        :rtype: list[PatternSummary]
+        :rtype: list[oci.data_catalog.models.PatternSummary]
         """
         return self._data_selector_patterns
 
@@ -517,7 +517,7 @@ class DataAsset(object):
 
 
         :param data_selector_patterns: The data_selector_patterns of this DataAsset.
-        :type: list[PatternSummary]
+        :type: list[oci.data_catalog.models.PatternSummary]
         """
         self._data_selector_patterns = data_selector_patterns
 

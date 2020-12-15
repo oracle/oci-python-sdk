@@ -42,7 +42,7 @@ class CreateProfileDetails(object):
 
         :param levels_configuration:
             The value to assign to the levels_configuration property of this CreateProfileDetails.
-        :type levels_configuration: LevelsConfiguration
+        :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
         """
         self.swagger_types = {
@@ -216,7 +216,7 @@ class CreateProfileDetails(object):
         **[Required]** Gets the levels_configuration of this CreateProfileDetails.
 
         :return: The levels_configuration of this CreateProfileDetails.
-        :rtype: LevelsConfiguration
+        :rtype: oci.optimizer.models.LevelsConfiguration
         """
         return self._levels_configuration
 
@@ -226,7 +226,7 @@ class CreateProfileDetails(object):
         Sets the levels_configuration of this CreateProfileDetails.
 
         :param levels_configuration: The levels_configuration of this CreateProfileDetails.
-        :type: LevelsConfiguration
+        :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
 

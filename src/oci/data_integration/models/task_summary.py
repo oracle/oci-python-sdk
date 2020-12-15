@@ -47,7 +47,7 @@ class TaskSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskSummary.
@@ -71,27 +71,27 @@ class TaskSummary(object):
 
         :param input_ports:
             The value to assign to the input_ports property of this TaskSummary.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this TaskSummary.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this TaskSummary.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this TaskSummary.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this TaskSummary.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param metadata:
             The value to assign to the metadata property of this TaskSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this TaskSummary.
@@ -253,7 +253,7 @@ class TaskSummary(object):
         Gets the parent_ref of this TaskSummary.
 
         :return: The parent_ref of this TaskSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -263,7 +263,7 @@ class TaskSummary(object):
         Sets the parent_ref of this TaskSummary.
 
         :param parent_ref: The parent_ref of this TaskSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -395,7 +395,7 @@ class TaskSummary(object):
 
 
         :return: The input_ports of this TaskSummary.
-        :rtype: list[InputPort]
+        :rtype: list[oci.data_integration.models.InputPort]
         """
         return self._input_ports
 
@@ -407,7 +407,7 @@ class TaskSummary(object):
 
 
         :param input_ports: The input_ports of this TaskSummary.
-        :type: list[InputPort]
+        :type: list[oci.data_integration.models.InputPort]
         """
         self._input_ports = input_ports
 
@@ -419,7 +419,7 @@ class TaskSummary(object):
 
 
         :return: The output_ports of this TaskSummary.
-        :rtype: list[OutputPort]
+        :rtype: list[oci.data_integration.models.OutputPort]
         """
         return self._output_ports
 
@@ -431,7 +431,7 @@ class TaskSummary(object):
 
 
         :param output_ports: The output_ports of this TaskSummary.
-        :type: list[OutputPort]
+        :type: list[oci.data_integration.models.OutputPort]
         """
         self._output_ports = output_ports
 
@@ -443,7 +443,7 @@ class TaskSummary(object):
 
 
         :return: The parameters of this TaskSummary.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -455,7 +455,7 @@ class TaskSummary(object):
 
 
         :param parameters: The parameters of this TaskSummary.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -465,7 +465,7 @@ class TaskSummary(object):
         Gets the op_config_values of this TaskSummary.
 
         :return: The op_config_values of this TaskSummary.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._op_config_values
 
@@ -475,7 +475,7 @@ class TaskSummary(object):
         Sets the op_config_values of this TaskSummary.
 
         :param op_config_values: The op_config_values of this TaskSummary.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._op_config_values = op_config_values
 
@@ -485,7 +485,7 @@ class TaskSummary(object):
         Gets the config_provider_delegate of this TaskSummary.
 
         :return: The config_provider_delegate of this TaskSummary.
-        :rtype: ConfigProvider
+        :rtype: oci.data_integration.models.ConfigProvider
         """
         return self._config_provider_delegate
 
@@ -495,7 +495,7 @@ class TaskSummary(object):
         Sets the config_provider_delegate of this TaskSummary.
 
         :param config_provider_delegate: The config_provider_delegate of this TaskSummary.
-        :type: ConfigProvider
+        :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
 
@@ -505,7 +505,7 @@ class TaskSummary(object):
         Gets the metadata of this TaskSummary.
 
         :return: The metadata of this TaskSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -515,7 +515,7 @@ class TaskSummary(object):
         Sets the metadata of this TaskSummary.
 
         :param metadata: The metadata of this TaskSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

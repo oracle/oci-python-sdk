@@ -118,11 +118,11 @@ class CreateScheduledJobDetails(object):
 
         :param managed_instances:
             The value to assign to the managed_instances property of this CreateScheduledJobDetails.
-        :type managed_instances: list[Id]
+        :type managed_instances: list[oci.os_management.models.Id]
 
         :param managed_instance_groups:
             The value to assign to the managed_instance_groups property of this CreateScheduledJobDetails.
-        :type managed_instance_groups: list[Id]
+        :type managed_instance_groups: list[oci.os_management.models.Id]
 
         :param operation_type:
             The value to assign to the operation_type property of this CreateScheduledJobDetails.
@@ -136,7 +136,7 @@ class CreateScheduledJobDetails(object):
 
         :param package_names:
             The value to assign to the package_names property of this CreateScheduledJobDetails.
-        :type package_names: list[PackageName]
+        :type package_names: list[oci.os_management.models.PackageName]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateScheduledJobDetails.
@@ -405,7 +405,7 @@ class CreateScheduledJobDetails(object):
 
 
         :return: The managed_instances of this CreateScheduledJobDetails.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instances
 
@@ -419,7 +419,7 @@ class CreateScheduledJobDetails(object):
 
 
         :param managed_instances: The managed_instances of this CreateScheduledJobDetails.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instances = managed_instances
 
@@ -433,7 +433,7 @@ class CreateScheduledJobDetails(object):
 
 
         :return: The managed_instance_groups of this CreateScheduledJobDetails.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instance_groups
 
@@ -447,7 +447,7 @@ class CreateScheduledJobDetails(object):
 
 
         :param managed_instance_groups: The managed_instance_groups of this CreateScheduledJobDetails.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instance_groups = managed_instance_groups
 
@@ -523,7 +523,7 @@ class CreateScheduledJobDetails(object):
 
 
         :return: The package_names of this CreateScheduledJobDetails.
-        :rtype: list[PackageName]
+        :rtype: list[oci.os_management.models.PackageName]
         """
         return self._package_names
 
@@ -535,7 +535,7 @@ class CreateScheduledJobDetails(object):
 
 
         :param package_names: The package_names of this CreateScheduledJobDetails.
-        :type: list[PackageName]
+        :type: list[oci.os_management.models.PackageName]
         """
         self._package_names = package_names
 

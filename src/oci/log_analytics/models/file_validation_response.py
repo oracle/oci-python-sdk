@@ -28,7 +28,7 @@ class FileValidationResponse(object):
 
         :param files:
             The value to assign to the files property of this FileValidationResponse.
-        :type files: list[UploadFileStatus]
+        :type files: list[oci.log_analytics.models.UploadFileStatus]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class FileValidationResponse(object):
 
 
         :return: The files of this FileValidationResponse.
-        :rtype: list[UploadFileStatus]
+        :rtype: list[oci.log_analytics.models.UploadFileStatus]
         """
         return self._files
 
@@ -115,7 +115,7 @@ class FileValidationResponse(object):
 
 
         :param files: The files of this FileValidationResponse.
-        :type: list[UploadFileStatus]
+        :type: list[oci.log_analytics.models.UploadFileStatus]
         """
         self._files = files
 

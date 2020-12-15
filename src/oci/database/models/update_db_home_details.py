@@ -20,7 +20,7 @@ class UpdateDbHomeDetails(object):
 
         :param db_version:
             The value to assign to the db_version property of this UpdateDbHomeDetails.
-        :type db_version: PatchDetails
+        :type db_version: oci.database.models.PatchDetails
 
         :param one_off_patches:
             The value to assign to the one_off_patches property of this UpdateDbHomeDetails.
@@ -60,7 +60,7 @@ class UpdateDbHomeDetails(object):
         Gets the db_version of this UpdateDbHomeDetails.
 
         :return: The db_version of this UpdateDbHomeDetails.
-        :rtype: PatchDetails
+        :rtype: oci.database.models.PatchDetails
         """
         return self._db_version
 
@@ -70,7 +70,7 @@ class UpdateDbHomeDetails(object):
         Sets the db_version of this UpdateDbHomeDetails.
 
         :param db_version: The db_version of this UpdateDbHomeDetails.
-        :type: PatchDetails
+        :type: oci.database.models.PatchDetails
         """
         self._db_version = db_version
 

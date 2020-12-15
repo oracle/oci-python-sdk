@@ -34,7 +34,7 @@ class UpdateVolumeBackupPolicyDetails(object):
 
         :param schedules:
             The value to assign to the schedules property of this UpdateVolumeBackupPolicyDetails.
-        :type schedules: list[VolumeBackupSchedule]
+        :type schedules: list[oci.core.models.VolumeBackupSchedule]
 
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateVolumeBackupPolicyDetails.
@@ -138,7 +138,7 @@ class UpdateVolumeBackupPolicyDetails(object):
 
 
         :return: The schedules of this UpdateVolumeBackupPolicyDetails.
-        :rtype: list[VolumeBackupSchedule]
+        :rtype: list[oci.core.models.VolumeBackupSchedule]
         """
         return self._schedules
 
@@ -155,7 +155,7 @@ class UpdateVolumeBackupPolicyDetails(object):
 
 
         :param schedules: The schedules of this UpdateVolumeBackupPolicyDetails.
-        :type: list[VolumeBackupSchedule]
+        :type: list[oci.core.models.VolumeBackupSchedule]
         """
         self._schedules = schedules
 

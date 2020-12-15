@@ -20,7 +20,7 @@ class AttachVnicDetails(object):
 
         :param create_vnic_details:
             The value to assign to the create_vnic_details property of this AttachVnicDetails.
-        :type create_vnic_details: CreateVnicDetails
+        :type create_vnic_details: oci.core.models.CreateVnicDetails
 
         :param display_name:
             The value to assign to the display_name property of this AttachVnicDetails.
@@ -62,7 +62,7 @@ class AttachVnicDetails(object):
 
 
         :return: The create_vnic_details of this AttachVnicDetails.
-        :rtype: CreateVnicDetails
+        :rtype: oci.core.models.CreateVnicDetails
         """
         return self._create_vnic_details
 
@@ -74,7 +74,7 @@ class AttachVnicDetails(object):
 
 
         :param create_vnic_details: The create_vnic_details of this AttachVnicDetails.
-        :type: CreateVnicDetails
+        :type: oci.core.models.CreateVnicDetails
         """
         self._create_vnic_details = create_vnic_details
 

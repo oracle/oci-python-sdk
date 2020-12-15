@@ -20,7 +20,7 @@ class LogAnalyticsMetaFunctionCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsMetaFunctionCollection.
-        :type items: list[LogAnalyticsMetaFunction]
+        :type items: list[oci.log_analytics.models.LogAnalyticsMetaFunction]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsMetaFunctionCollection(object):
 
 
         :return: The items of this LogAnalyticsMetaFunctionCollection.
-        :rtype: list[LogAnalyticsMetaFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsMetaFunction]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsMetaFunctionCollection(object):
 
 
         :param items: The items of this LogAnalyticsMetaFunctionCollection.
-        :type: list[LogAnalyticsMetaFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsMetaFunction]
         """
         self._items = items
 

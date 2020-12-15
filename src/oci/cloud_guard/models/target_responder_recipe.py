@@ -62,11 +62,11 @@ class TargetResponderRecipe(object):
 
         :param responder_rules:
             The value to assign to the responder_rules property of this TargetResponderRecipe.
-        :type responder_rules: list[TargetResponderRecipeResponderRule]
+        :type responder_rules: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
 
         :param effective_responder_rules:
             The value to assign to the effective_responder_rules property of this TargetResponderRecipe.
-        :type effective_responder_rules: list[TargetResponderRecipeResponderRule]
+        :type effective_responder_rules: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
 
         """
         self.swagger_types = {
@@ -312,7 +312,7 @@ class TargetResponderRecipe(object):
 
 
         :return: The responder_rules of this TargetResponderRecipe.
-        :rtype: list[TargetResponderRecipeResponderRule]
+        :rtype: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
         """
         return self._responder_rules
 
@@ -324,7 +324,7 @@ class TargetResponderRecipe(object):
 
 
         :param responder_rules: The responder_rules of this TargetResponderRecipe.
-        :type: list[TargetResponderRecipeResponderRule]
+        :type: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
         """
         self._responder_rules = responder_rules
 
@@ -336,7 +336,7 @@ class TargetResponderRecipe(object):
 
 
         :return: The effective_responder_rules of this TargetResponderRecipe.
-        :rtype: list[TargetResponderRecipeResponderRule]
+        :rtype: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
         """
         return self._effective_responder_rules
 
@@ -348,7 +348,7 @@ class TargetResponderRecipe(object):
 
 
         :param effective_responder_rules: The effective_responder_rules of this TargetResponderRecipe.
-        :type: list[TargetResponderRecipeResponderRule]
+        :type: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
         """
         self._effective_responder_rules = effective_responder_rules
 

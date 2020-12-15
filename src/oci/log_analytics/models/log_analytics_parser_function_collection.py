@@ -20,7 +20,7 @@ class LogAnalyticsParserFunctionCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsParserFunctionCollection.
-        :type items: list[LogAnalyticsParserFunction]
+        :type items: list[oci.log_analytics.models.LogAnalyticsParserFunction]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsParserFunctionCollection(object):
 
 
         :return: The items of this LogAnalyticsParserFunctionCollection.
-        :rtype: list[LogAnalyticsParserFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsParserFunctionCollection(object):
 
 
         :param items: The items of this LogAnalyticsParserFunctionCollection.
-        :type: list[LogAnalyticsParserFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         self._items = items
 

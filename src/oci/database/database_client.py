@@ -120,6 +120,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/activate_exadata_infrastructure.py.html>`__ to see an example of how to use activate_exadata_infrastructure API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/activate"
         method = "POST"
@@ -215,6 +218,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/autonomous_database_manual_refresh.py.html>`__ to see an example of how to use autonomous_database_manual_refresh API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/refresh"
         method = "POST"
@@ -316,6 +322,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_container_database_compartment.py.html>`__ to see an example of how to use change_autonomous_container_database_compartment API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
@@ -415,6 +424,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_database_compartment.py.html>`__ to see an example of how to use change_autonomous_database_compartment API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/changeCompartment"
         method = "POST"
@@ -514,6 +526,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_exadata_infrastructure_compartment.py.html>`__ to see an example of how to use change_autonomous_exadata_infrastructure_compartment API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
@@ -610,6 +625,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_vm_cluster_compartment.py.html>`__ to see an example of how to use change_autonomous_vm_cluster_compartment API.
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/changeCompartment"
         method = "POST"
@@ -709,6 +727,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_backup_destination_compartment.py.html>`__ to see an example of how to use change_backup_destination_compartment API.
         """
         resource_path = "/backupDestinations/{backupDestinationId}/actions/changeCompartment"
         method = "POST"
@@ -806,6 +827,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_cloud_exadata_infrastructure_compartment.py.html>`__ to see an example of how to use change_cloud_exadata_infrastructure_compartment API.
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
@@ -901,6 +925,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_cloud_vm_cluster_compartment.py.html>`__ to see an example of how to use change_cloud_vm_cluster_compartment API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/actions/changeCompartment"
         method = "POST"
@@ -1000,6 +1027,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_database_software_image_compartment.py.html>`__ to see an example of how to use change_database_software_image_compartment API.
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}/actions/changeCompartment"
         method = "POST"
@@ -1099,6 +1129,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_db_system_compartment.py.html>`__ to see an example of how to use change_db_system_compartment API.
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/changeCompartment"
         method = "POST"
@@ -1195,6 +1228,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_exadata_infrastructure_compartment.py.html>`__ to see an example of how to use change_exadata_infrastructure_compartment API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
@@ -1294,6 +1330,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_key_store_compartment.py.html>`__ to see an example of how to use change_key_store_compartment API.
         """
         resource_path = "/keyStores/{keyStoreId}/actions/changeCompartment"
         method = "POST"
@@ -1390,6 +1429,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_vm_cluster_compartment.py.html>`__ to see an example of how to use change_vm_cluster_compartment API.
         """
         resource_path = "/vmClusters/{vmClusterId}/actions/changeCompartment"
         method = "POST"
@@ -1486,6 +1528,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalBackupJob`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/complete_external_backup_job.py.html>`__ to see an example of how to use complete_external_backup_job API.
         """
         resource_path = "/externalBackupJobs/{backupId}/actions/complete"
         method = "POST"
@@ -1568,6 +1613,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_container_database.py.html>`__ to see an example of how to use create_autonomous_container_database API.
         """
         resource_path = "/autonomousContainerDatabases"
         method = "POST"
@@ -1611,142 +1659,6 @@ class DatabaseClient(object):
                 body=create_autonomous_container_database_details,
                 response_type="AutonomousContainerDatabase")
 
-    def create_autonomous_data_warehouse(self, create_autonomous_data_warehouse_details, **kwargs):
-        """
-        **Deprecated.** To create a new Autonomous Data Warehouse, use the :func:`create_autonomous_database` operation and specify `DW` as the workload type.
-
-
-        :param oci.database.models.CreateAutonomousDataWarehouseDetails create_autonomous_data_warehouse_details: (required)
-            Request to create a new Autonomous Data Warehouse.
-
-        :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouse`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "opc_retry_token"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "create_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                body=create_autonomous_data_warehouse_details,
-                response_type="AutonomousDataWarehouse")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                body=create_autonomous_data_warehouse_details,
-                response_type="AutonomousDataWarehouse")
-
-    def create_autonomous_data_warehouse_backup(self, create_autonomous_data_warehouse_backup_details, **kwargs):
-        """
-        **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the :func:`create_autonomous_database_backup` operation.
-
-
-        :param oci.database.models.CreateAutonomousDataWarehouseBackupDetails create_autonomous_data_warehouse_backup_details: (required)
-            Request to create a new Autonomous Data Warehouse backup.
-
-        :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouseBackup`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouseBackups"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "opc_retry_token"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "create_autonomous_data_warehouse_backup got unknown kwargs: {!r}".format(extra_kwargs))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                body=create_autonomous_data_warehouse_backup_details,
-                response_type="AutonomousDataWarehouseBackup")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                body=create_autonomous_data_warehouse_backup_details,
-                response_type="AutonomousDataWarehouseBackup")
-
     def create_autonomous_database(self, create_autonomous_database_details, **kwargs):
         """
         Creates a new Autonomous Database.
@@ -1775,6 +1687,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_database.py.html>`__ to see an example of how to use create_autonomous_database API.
         """
         resource_path = "/autonomousDatabases"
         method = "POST"
@@ -1848,6 +1763,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseBackup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_database_backup.py.html>`__ to see an example of how to use create_autonomous_database_backup API.
         """
         resource_path = "/autonomousDatabaseBackups"
         method = "POST"
@@ -1921,6 +1839,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_vm_cluster.py.html>`__ to see an example of how to use create_autonomous_vm_cluster API.
         """
         resource_path = "/autonomousVmClusters"
         method = "POST"
@@ -1991,6 +1912,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Backup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_backup.py.html>`__ to see an example of how to use create_backup API.
         """
         resource_path = "/backups"
         method = "POST"
@@ -2062,6 +1986,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BackupDestination`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_backup_destination.py.html>`__ to see an example of how to use create_backup_destination API.
         """
         resource_path = "/backupDestinations"
         method = "POST"
@@ -2139,6 +2066,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use create_cloud_exadata_infrastructure API.
         """
         resource_path = "/cloudExadataInfrastructures"
         method = "POST"
@@ -2214,6 +2144,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudVmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_cloud_vm_cluster.py.html>`__ to see an example of how to use create_cloud_vm_cluster API.
         """
         resource_path = "/cloudVmClusters"
         method = "POST"
@@ -2291,6 +2224,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleConnection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_console_connection.py.html>`__ to see an example of how to use create_console_connection API.
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
         method = "POST"
@@ -2386,6 +2322,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_data_guard_association.py.html>`__ to see an example of how to use create_data_guard_association API.
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
         method = "POST"
@@ -2469,6 +2408,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_database.py.html>`__ to see an example of how to use create_database API.
         """
         resource_path = "/databases"
         method = "POST"
@@ -2539,6 +2481,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseSoftwareImage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_database_software_image.py.html>`__ to see an example of how to use create_database_software_image API.
         """
         resource_path = "/databaseSoftwareImages"
         method = "POST"
@@ -2607,6 +2552,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbHome`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_db_home.py.html>`__ to see an example of how to use create_db_home API.
         """
         resource_path = "/dbHomes"
         method = "POST"
@@ -2679,6 +2627,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_exadata_infrastructure.py.html>`__ to see an example of how to use create_exadata_infrastructure API.
         """
         resource_path = "/exadataInfrastructures"
         method = "POST"
@@ -2753,6 +2704,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalBackupJob`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_external_backup_job.py.html>`__ to see an example of how to use create_external_backup_job API.
         """
         resource_path = "/externalBackupJobs"
         method = "POST"
@@ -2824,6 +2778,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.KeyStore`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_key_store.py.html>`__ to see an example of how to use create_key_store API.
         """
         resource_path = "/keyStores"
         method = "POST"
@@ -2898,6 +2855,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_vm_cluster.py.html>`__ to see an example of how to use create_vm_cluster API.
         """
         resource_path = "/vmClusters"
         method = "POST"
@@ -2977,6 +2937,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_vm_cluster_network.py.html>`__ to see an example of how to use create_vm_cluster_network API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks"
         method = "POST"
@@ -3083,6 +3046,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbNode`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/db_node_action.py.html>`__ to see an example of how to use db_node_action API.
         """
         resource_path = "/dbNodes/{dbNodeId}"
         method = "POST"
@@ -3145,80 +3111,6 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="DbNode")
 
-    def delete_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
-        """
-        **Deprecated.** To delete an Autonomous Data Warehouse, use the :func:`delete_autonomous_database` operation.
-
-
-        :param str autonomous_data_warehouse_id: (required)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type None
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}"
-        method = "DELETE"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "if_match"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "delete_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params)
-
     def delete_autonomous_database(self, autonomous_database_id, **kwargs):
         """
         Deletes the specified Autonomous Database.
@@ -3247,6 +3139,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_autonomous_database.py.html>`__ to see an example of how to use delete_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "DELETE"
@@ -3326,6 +3221,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_autonomous_vm_cluster.py.html>`__ to see an example of how to use delete_autonomous_vm_cluster API.
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "DELETE"
@@ -3402,6 +3300,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_backup.py.html>`__ to see an example of how to use delete_backup API.
         """
         resource_path = "/backups/{backupId}"
         method = "DELETE"
@@ -3479,6 +3380,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_backup_destination.py.html>`__ to see an example of how to use delete_backup_destination API.
         """
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "DELETE"
@@ -3561,6 +3465,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use delete_cloud_exadata_infrastructure API.
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "DELETE"
@@ -3648,6 +3555,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_cloud_vm_cluster.py.html>`__ to see an example of how to use delete_cloud_vm_cluster API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "DELETE"
@@ -3727,6 +3637,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_console_connection.py.html>`__ to see an example of how to use delete_console_connection API.
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         method = "DELETE"
@@ -3814,6 +3727,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_database.py.html>`__ to see an example of how to use delete_database API.
         """
         resource_path = "/databases/{databaseId}"
         method = "DELETE"
@@ -3898,6 +3814,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_database_software_image.py.html>`__ to see an example of how to use delete_database_software_image API.
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "DELETE"
@@ -3981,6 +3900,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_db_home.py.html>`__ to see an example of how to use delete_db_home API.
         """
         resource_path = "/dbHomes/{dbHomeId}"
         method = "DELETE"
@@ -4066,6 +3988,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_exadata_infrastructure.py.html>`__ to see an example of how to use delete_exadata_infrastructure API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "DELETE"
@@ -4145,6 +4070,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_key_store.py.html>`__ to see an example of how to use delete_key_store API.
         """
         resource_path = "/keyStores/{keyStoreId}"
         method = "DELETE"
@@ -4224,6 +4152,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_vm_cluster.py.html>`__ to see an example of how to use delete_vm_cluster API.
         """
         resource_path = "/vmClusters/{vmClusterId}"
         method = "DELETE"
@@ -4309,6 +4240,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_vm_cluster_network.py.html>`__ to see an example of how to use delete_vm_cluster_network API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "DELETE"
@@ -4374,7 +4308,7 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
-        :param DeregisterAutonomousDatabaseDataSafeDetails deregister_autonomous_database_data_safe_details: (optional)
+        :param oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails deregister_autonomous_database_data_safe_details: (optional)
             Details for deregistering an Autonomous Database with Data Safe.
 
         :param obj retry_strategy: (optional)
@@ -4387,6 +4321,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/deregister_autonomous_database_data_safe.py.html>`__ to see an example of how to use deregister_autonomous_database_data_safe API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/deregisterDataSafe"
         method = "POST"
@@ -4462,6 +4399,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_autonomous_database_operations_insights.py.html>`__ to see an example of how to use disable_autonomous_database_operations_insights API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
@@ -4541,6 +4481,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/download_exadata_infrastructure_config_file.py.html>`__ to see an example of how to use download_exadata_infrastructure_config_file API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/downloadConfigFile"
         method = "POST"
@@ -4631,6 +4574,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/download_vm_cluster_network_config_file.py.html>`__ to see an example of how to use download_vm_cluster_network_config_file API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/downloadConfigFile"
         method = "POST"
@@ -4710,6 +4656,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_autonomous_database_operations_insights.py.html>`__ to see an example of how to use enable_autonomous_database_operations_insights API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
@@ -4794,6 +4743,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/fail_over_autonomous_database.py.html>`__ to see an example of how to use fail_over_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/failover"
         method = "POST"
@@ -4883,6 +4835,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/failover_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use failover_autonomous_container_database_dataguard_association API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/failover"
         method = "POST"
@@ -4972,6 +4927,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/failover_data_guard_association.py.html>`__ to see an example of how to use failover_data_guard_association API.
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/failover"
         method = "POST"
@@ -5026,96 +4984,6 @@ class DatabaseClient(object):
                 body=failover_data_guard_association_details,
                 response_type="DataGuardAssociation")
 
-    def generate_autonomous_data_warehouse_wallet(self, autonomous_data_warehouse_id, generate_autonomous_data_warehouse_wallet_details, **kwargs):
-        """
-        **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the :func:`generate_autonomous_database_wallet` operation.
-
-
-        :param str autonomous_data_warehouse_id: (required)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.database.models.GenerateAutonomousDataWarehouseWalletDetails generate_autonomous_data_warehouse_wallet_details: (required)
-            Request to create a new Autonomous Data Warehouse wallet.
-
-        :param str opc_request_id: (optional)
-            Unique identifier for the request.
-
-        :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type stream
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}/actions/generateWallet"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "opc_request_id",
-            "opc_retry_token"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "generate_autonomous_data_warehouse_wallet got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/octet-stream",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=generate_autonomous_data_warehouse_wallet_details,
-                response_type="stream")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=generate_autonomous_data_warehouse_wallet_details,
-                response_type="stream")
-
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
         Creates and downloads a wallet for the specified Autonomous Database.
@@ -5149,6 +5017,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/generate_autonomous_database_wallet.py.html>`__ to see an example of how to use generate_autonomous_database_wallet API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/generateWallet"
         method = "POST"
@@ -5239,6 +5110,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetworkDetails`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/generate_recommended_vm_cluster_network.py.html>`__ to see an example of how to use generate_recommended_vm_cluster_network API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/actions/generateRecommendedNetwork"
         method = "POST"
@@ -5316,6 +5190,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_container_database.py.html>`__ to see an example of how to use get_autonomous_container_database API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "GET"
@@ -5386,6 +5263,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use get_autonomous_container_database_dataguard_association API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         method = "GET"
@@ -5432,136 +5312,6 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="AutonomousContainerDatabaseDataguardAssociation")
 
-    def get_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
-        """
-        **Deprecated.** To get the details of an Autonomous Data Warehouse, use the :func:`get_autonomous_database` operation.
-
-
-        :param str autonomous_data_warehouse_id: (required)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouse`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}"
-        method = "GET"
-
-        expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "get_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json"
-        }
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="AutonomousDataWarehouse")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="AutonomousDataWarehouse")
-
-    def get_autonomous_data_warehouse_backup(self, autonomous_data_warehouse_backup_id, **kwargs):
-        """
-        **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the :func:`get_autonomous_database_backup` operation.
-
-
-        :param str autonomous_data_warehouse_backup_id: (required)
-            The `OCID`__ of the Autonomous Data Warehouse backup.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouseBackup`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouseBackups/{autonomousDataWarehouseBackupId}"
-        method = "GET"
-
-        expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "get_autonomous_data_warehouse_backup got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseBackupId": autonomous_data_warehouse_backup_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json"
-        }
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="AutonomousDataWarehouseBackup")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="AutonomousDataWarehouseBackup")
-
     def get_autonomous_database(self, autonomous_database_id, **kwargs):
         """
         Gets the details of the specified Autonomous Database.
@@ -5585,6 +5335,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database.py.html>`__ to see an example of how to use get_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "GET"
@@ -5659,6 +5412,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseBackup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_backup.py.html>`__ to see an example of how to use get_autonomous_database_backup API.
         """
         resource_path = "/autonomousDatabaseBackups/{autonomousDatabaseBackupId}"
         method = "GET"
@@ -5738,6 +5494,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_dataguard_association.py.html>`__ to see an example of how to use get_autonomous_database_dataguard_association API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/autonomousDatabaseDataguardAssociations/{autonomousDatabaseDataguardAssociationId}"
         method = "GET"
@@ -5808,6 +5567,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseWallet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_regional_wallet.py.html>`__ to see an example of how to use get_autonomous_database_regional_wallet API.
         """
         resource_path = "/autonomousDatabases/wallet"
         method = "GET"
@@ -5870,6 +5632,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseWallet`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_wallet.py.html>`__ to see an example of how to use get_autonomous_database_wallet API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/wallet"
         method = "GET"
@@ -5941,6 +5706,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use get_autonomous_exadata_infrastructure API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "GET"
@@ -6006,6 +5774,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousPatch`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_patch.py.html>`__ to see an example of how to use get_autonomous_patch API.
         """
         resource_path = "/autonomousPatches/{autonomousPatchId}"
         method = "GET"
@@ -6074,6 +5845,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_vm_cluster.py.html>`__ to see an example of how to use get_autonomous_vm_cluster API.
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "GET"
@@ -6145,6 +5919,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Backup`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_backup.py.html>`__ to see an example of how to use get_backup API.
         """
         resource_path = "/backups/{backupId}"
         method = "GET"
@@ -6213,6 +5990,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BackupDestination`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_backup_destination.py.html>`__ to see an example of how to use get_backup_destination API.
         """
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "GET"
@@ -6287,6 +6067,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use get_cloud_exadata_infrastructure API.
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "GET"
@@ -6361,6 +6144,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudVmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster.py.html>`__ to see an example of how to use get_cloud_vm_cluster API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "GET"
@@ -6436,6 +6222,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster_iorm_config.py.html>`__ to see an example of how to use get_cloud_vm_cluster_iorm_config API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         method = "GET"
@@ -6515,6 +6304,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Update`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster_update.py.html>`__ to see an example of how to use get_cloud_vm_cluster_update API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updates/{updateId}"
         method = "GET"
@@ -6595,6 +6387,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.UpdateHistoryEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster_update_history_entry.py.html>`__ to see an example of how to use get_cloud_vm_cluster_update_history_entry API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updateHistoryEntries/{updateHistoryEntryId}"
         method = "GET"
@@ -6670,6 +6465,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleConnection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_console_connection.py.html>`__ to see an example of how to use get_console_connection API.
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         method = "GET"
@@ -6741,6 +6539,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_data_guard_association.py.html>`__ to see an example of how to use get_data_guard_association API.
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}"
         method = "GET"
@@ -6807,6 +6608,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_database.py.html>`__ to see an example of how to use get_database API.
         """
         resource_path = "/databases/{databaseId}"
         method = "GET"
@@ -6872,6 +6676,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseSoftwareImage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_database_software_image.py.html>`__ to see an example of how to use get_database_software_image API.
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "GET"
@@ -6945,6 +6752,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseUpgradeHistoryEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_database_upgrade_history_entry.py.html>`__ to see an example of how to use get_database_upgrade_history_entry API.
         """
         resource_path = "/databases/{databaseId}/upgradeHistoryEntries/{upgradeHistoryEntryId}"
         method = "GET"
@@ -7017,6 +6827,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbHome`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_home.py.html>`__ to see an example of how to use get_db_home API.
         """
         resource_path = "/dbHomes/{dbHomeId}"
         method = "GET"
@@ -7087,6 +6900,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_home_patch.py.html>`__ to see an example of how to use get_db_home_patch API.
         """
         resource_path = "/dbHomes/{dbHomeId}/patches/{patchId}"
         method = "GET"
@@ -7158,6 +6974,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_home_patch_history_entry.py.html>`__ to see an example of how to use get_db_home_patch_history_entry API.
         """
         resource_path = "/dbHomes/{dbHomeId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
@@ -7224,6 +7043,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbNode`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_node.py.html>`__ to see an example of how to use get_db_node API.
         """
         resource_path = "/dbNodes/{dbNodeId}"
         method = "GET"
@@ -7289,6 +7111,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbSystem`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system.py.html>`__ to see an example of how to use get_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
@@ -7359,6 +7184,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system_patch.py.html>`__ to see an example of how to use get_db_system_patch API.
         """
         resource_path = "/dbSystems/{dbSystemId}/patches/{patchId}"
         method = "GET"
@@ -7430,6 +7258,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system_patch_history_entry.py.html>`__ to see an example of how to use get_db_system_patch_history_entry API.
         """
         resource_path = "/dbSystems/{dbSystemId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
@@ -7500,6 +7331,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_exadata_infrastructure.py.html>`__ to see an example of how to use get_exadata_infrastructure API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "GET"
@@ -7574,6 +7408,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.OCPUs`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_exadata_infrastructure_ocpus.py.html>`__ to see an example of how to use get_exadata_infrastructure_ocpus API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/ocpus"
         method = "GET"
@@ -7649,6 +7486,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_exadata_iorm_config.py.html>`__ to see an example of how to use get_exadata_iorm_config API.
         """
         resource_path = "/dbSystems/{dbSystemId}/ExadataIormConfig"
         method = "GET"
@@ -7724,6 +7564,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalBackupJob`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_external_backup_job.py.html>`__ to see an example of how to use get_external_backup_job API.
         """
         resource_path = "/externalBackupJobs/{backupId}"
         method = "GET"
@@ -7792,6 +7635,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.KeyStore`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_key_store.py.html>`__ to see an example of how to use get_key_store API.
         """
         resource_path = "/keyStores/{keyStoreId}"
         method = "GET"
@@ -7861,6 +7707,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.MaintenanceRun`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_maintenance_run.py.html>`__ to see an example of how to use get_maintenance_run API.
         """
         resource_path = "/maintenanceRuns/{maintenanceRunId}"
         method = "GET"
@@ -7929,6 +7778,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster.py.html>`__ to see an example of how to use get_vm_cluster API.
         """
         resource_path = "/vmClusters/{vmClusterId}"
         method = "GET"
@@ -8009,6 +7861,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_network.py.html>`__ to see an example of how to use get_vm_cluster_network API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "GET"
@@ -8086,6 +7941,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_patch.py.html>`__ to see an example of how to use get_vm_cluster_patch API.
         """
         resource_path = "/vmClusters/{vmClusterId}/patches/{patchId}"
         method = "GET"
@@ -8157,6 +8015,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_patch_history_entry.py.html>`__ to see an example of how to use get_vm_cluster_patch_history_entry API.
         """
         resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
@@ -8228,6 +8089,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/launch_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use launch_autonomous_exadata_infrastructure API.
         """
         resource_path = "/autonomousExadataInfrastructures"
         method = "POST"
@@ -8306,6 +8170,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbSystem`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/launch_db_system.py.html>`__ to see an example of how to use launch_db_system API.
         """
         resource_path = "/dbSystems"
         method = "POST"
@@ -8375,6 +8242,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_container_database_dataguard_associations.py.html>`__ to see an example of how to use list_autonomous_container_database_dataguard_associations API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations"
         method = "GET"
@@ -8500,6 +8370,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousContainerDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_container_databases.py.html>`__ to see an example of how to use list_autonomous_container_databases API.
         """
         resource_path = "/autonomousContainerDatabases"
         method = "GET"
@@ -8593,258 +8466,6 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="list[AutonomousContainerDatabaseSummary]")
 
-    def list_autonomous_data_warehouse_backups(self, **kwargs):
-        """
-        **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the :func:`list_autonomous_database_backups` operation.
-
-
-        :param str autonomous_data_warehouse_id: (optional)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str compartment_id: (optional)
-            The compartment `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param int limit: (optional)
-            The maximum number of items to return per page.
-
-        :param str page: (optional)
-            The pagination token to continue listing from.
-
-        :param str sort_by: (optional)
-            The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
-
-            **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
-
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
-
-        :param str sort_order: (optional)
-            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
-
-            Allowed values are: "ASC", "DESC"
-
-        :param str lifecycle_state: (optional)
-            A filter to return only resources that match the given lifecycle state exactly.
-
-            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
-
-        :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given. The match is not case sensitive.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDataWarehouseBackupSummary`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouseBackups"
-        method = "GET"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "autonomous_data_warehouse_id",
-            "compartment_id",
-            "limit",
-            "page",
-            "sort_by",
-            "sort_order",
-            "lifecycle_state",
-            "display_name"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "list_autonomous_data_warehouse_backups got unknown kwargs: {!r}".format(extra_kwargs))
-
-        if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
-            if kwargs['sort_by'] not in sort_by_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
-                )
-
-        if 'sort_order' in kwargs:
-            sort_order_allowed_values = ["ASC", "DESC"]
-            if kwargs['sort_order'] not in sort_order_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
-                )
-
-        if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
-            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
-                raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
-                )
-
-        query_params = {
-            "autonomousDataWarehouseId": kwargs.get("autonomous_data_warehouse_id", missing),
-            "compartmentId": kwargs.get("compartment_id", missing),
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing),
-            "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json"
-        }
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="list[AutonomousDataWarehouseBackupSummary]")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="list[AutonomousDataWarehouseBackupSummary]")
-
-    def list_autonomous_data_warehouses(self, compartment_id, **kwargs):
-        """
-        **Deprecated.** To get a list of Autonomous Data Warehouses, use the :func:`list_autonomous_databases` operation and specify `DW` as the workload type.
-
-
-        :param str compartment_id: (required)
-            The compartment `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param int limit: (optional)
-            The maximum number of items to return per page.
-
-        :param str page: (optional)
-            The pagination token to continue listing from.
-
-        :param str sort_by: (optional)
-            The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
-
-            **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
-
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
-
-        :param str sort_order: (optional)
-            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
-
-            Allowed values are: "ASC", "DESC"
-
-        :param str lifecycle_state: (optional)
-            A filter to return only resources that match the given lifecycle state exactly.
-
-            Allowed values are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"
-
-        :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given. The match is not case sensitive.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDataWarehouseSummary`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses"
-        method = "GET"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "limit",
-            "page",
-            "sort_by",
-            "sort_order",
-            "lifecycle_state",
-            "display_name"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "list_autonomous_data_warehouses got unknown kwargs: {!r}".format(extra_kwargs))
-
-        if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
-            if kwargs['sort_by'] not in sort_by_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
-                )
-
-        if 'sort_order' in kwargs:
-            sort_order_allowed_values = ["ASC", "DESC"]
-            if kwargs['sort_order'] not in sort_order_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
-                )
-
-        if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"]
-            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
-                raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
-                )
-
-        query_params = {
-            "compartmentId": compartment_id,
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing),
-            "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json"
-        }
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="list[AutonomousDataWarehouseSummary]")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="list[AutonomousDataWarehouseSummary]")
-
     def list_autonomous_database_backups(self, **kwargs):
         """
         Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
@@ -8899,6 +8520,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseBackupSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_backups.py.html>`__ to see an example of how to use list_autonomous_database_backups API.
         """
         resource_path = "/autonomousDatabaseBackups"
         method = "GET"
@@ -9040,6 +8664,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_clones.py.html>`__ to see an example of how to use list_autonomous_database_clones API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/clones"
         method = "GET"
@@ -9166,6 +8793,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_dataguard_associations.py.html>`__ to see an example of how to use list_autonomous_database_dataguard_associations API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/autonomousDatabaseDataguardAssociations"
         method = "GET"
@@ -9270,7 +8900,7 @@ class DatabaseClient(object):
         :param str db_workload: (optional)
             A filter to return only autonomous database resources that match the specified workload type.
 
-            Allowed values are: "OLTP", "DW", "AJD"
+            Allowed values are: "OLTP", "DW", "AJD", "APEX"
 
         :param str db_version: (optional)
             A filter to return only autonomous database resources that match the specified dbVersion.
@@ -9302,6 +8932,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_databases.py.html>`__ to see an example of how to use list_autonomous_databases API.
         """
         resource_path = "/autonomousDatabases"
         method = "GET"
@@ -9358,7 +8991,7 @@ class DatabaseClient(object):
                 )
 
         if 'db_workload' in kwargs:
-            db_workload_allowed_values = ["OLTP", "DW", "AJD"]
+            db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
                     "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
@@ -9453,6 +9086,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDbPreviewVersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_db_preview_versions.py.html>`__ to see an example of how to use list_autonomous_db_preview_versions API.
         """
         resource_path = "/autonomousDbPreviewVersions"
         method = "GET"
@@ -9543,7 +9179,7 @@ class DatabaseClient(object):
         :param str db_workload: (optional)
             A filter to return only autonomous database resources that match the specified workload type.
 
-            Allowed values are: "OLTP", "DW", "AJD"
+            Allowed values are: "OLTP", "DW", "AJD", "APEX"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -9560,6 +9196,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDbVersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_db_versions.py.html>`__ to see an example of how to use list_autonomous_db_versions API.
         """
         resource_path = "/autonomousDbVersions"
         method = "GET"
@@ -9579,7 +9218,7 @@ class DatabaseClient(object):
                 "list_autonomous_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'db_workload' in kwargs:
-            db_workload_allowed_values = ["OLTP", "DW", "AJD"]
+            db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
                     "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
@@ -9660,6 +9299,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousExadataInfrastructureShapeSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_exadata_infrastructure_shapes.py.html>`__ to see an example of how to use list_autonomous_exadata_infrastructure_shapes API.
         """
         resource_path = "/autonomousExadataInfrastructureShapes"
         method = "GET"
@@ -9760,6 +9402,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousExadataInfrastructureSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_exadata_infrastructures.py.html>`__ to see an example of how to use list_autonomous_exadata_infrastructures API.
         """
         resource_path = "/autonomousExadataInfrastructures"
         method = "GET"
@@ -9888,6 +9533,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousVmClusterSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_vm_clusters.py.html>`__ to see an example of how to use list_autonomous_vm_clusters API.
         """
         resource_path = "/autonomousVmClusters"
         method = "GET"
@@ -10001,6 +9649,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BackupDestinationSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_backup_destination.py.html>`__ to see an example of how to use list_backup_destination API.
         """
         resource_path = "/backupDestinations"
         method = "GET"
@@ -10084,6 +9735,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BackupSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_backups.py.html>`__ to see an example of how to use list_backups API.
         """
         resource_path = "/backups"
         method = "GET"
@@ -10181,6 +9835,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.CloudExadataInfrastructureSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_exadata_infrastructures.py.html>`__ to see an example of how to use list_cloud_exadata_infrastructures API.
         """
         resource_path = "/cloudExadataInfrastructures"
         method = "GET"
@@ -10294,6 +9951,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.UpdateHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_vm_cluster_update_history_entries.py.html>`__ to see an example of how to use list_cloud_vm_cluster_update_history_entries API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updateHistoryEntries"
         method = "GET"
@@ -10398,6 +10058,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.UpdateSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_vm_cluster_updates.py.html>`__ to see an example of how to use list_cloud_vm_cluster_updates API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updates"
         method = "GET"
@@ -10518,6 +10181,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.CloudVmClusterSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_vm_clusters.py.html>`__ to see an example of how to use list_cloud_vm_clusters API.
         """
         resource_path = "/cloudVmClusters"
         method = "GET"
@@ -10619,6 +10285,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ConsoleConnectionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_console_connections.py.html>`__ to see an example of how to use list_console_connections API.
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
         method = "GET"
@@ -10695,6 +10364,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousPatchSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_container_database_patches.py.html>`__ to see an example of how to use list_container_database_patches API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/patches"
         method = "GET"
@@ -10780,6 +10452,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DataGuardAssociationSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_data_guard_associations.py.html>`__ to see an example of how to use list_data_guard_associations API.
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
         method = "GET"
@@ -10895,6 +10570,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseSoftwareImageSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_database_software_images.py.html>`__ to see an example of how to use list_database_software_images API.
         """
         resource_path = "/databaseSoftwareImages"
         method = "GET"
@@ -11040,6 +10718,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseUpgradeHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_database_upgrade_history_entries.py.html>`__ to see an example of how to use list_database_upgrade_history_entries API.
         """
         resource_path = "/databases/{databaseId}/upgradeHistoryEntries"
         method = "GET"
@@ -11191,6 +10872,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_databases.py.html>`__ to see an example of how to use list_databases API.
         """
         resource_path = "/databases"
         method = "GET"
@@ -11297,6 +10981,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_home_patch_history_entries.py.html>`__ to see an example of how to use list_db_home_patch_history_entries API.
         """
         resource_path = "/dbHomes/{dbHomeId}/patchHistoryEntries"
         method = "GET"
@@ -11381,6 +11068,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_home_patches.py.html>`__ to see an example of how to use list_db_home_patches API.
         """
         resource_path = "/dbHomes/{dbHomeId}/patches"
         method = "GET"
@@ -11501,6 +11191,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbHomeSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_homes.py.html>`__ to see an example of how to use list_db_homes API.
         """
         resource_path = "/dbHomes"
         method = "GET"
@@ -11636,6 +11329,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbNodeSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_nodes.py.html>`__ to see an example of how to use list_db_nodes API.
         """
         resource_path = "/dbNodes"
         method = "GET"
@@ -11740,6 +11436,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_patch_history_entries.py.html>`__ to see an example of how to use list_db_system_patch_history_entries API.
         """
         resource_path = "/dbSystems/{dbSystemId}/patchHistoryEntries"
         method = "GET"
@@ -11824,6 +11523,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_patches.py.html>`__ to see an example of how to use list_db_system_patches API.
         """
         resource_path = "/dbSystems/{dbSystemId}/patches"
         method = "GET"
@@ -11911,6 +11613,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbSystemShapeSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_shapes.py.html>`__ to see an example of how to use list_db_system_shapes API.
         """
         resource_path = "/dbSystemShapes"
         method = "GET"
@@ -12014,6 +11719,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbSystemSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_systems.py.html>`__ to see an example of how to use list_db_systems API.
         """
         resource_path = "/dbSystems"
         method = "GET"
@@ -12138,6 +11846,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbVersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_versions.py.html>`__ to see an example of how to use list_db_versions API.
         """
         resource_path = "/dbVersions"
         method = "GET"
@@ -12248,6 +11959,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ExadataInfrastructureSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_exadata_infrastructures.py.html>`__ to see an example of how to use list_exadata_infrastructures API.
         """
         resource_path = "/exadataInfrastructures"
         method = "GET"
@@ -12327,6 +12041,115 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="list[ExadataInfrastructureSummary]")
 
+    def list_flex_components(self, compartment_id, **kwargs):
+        """
+        Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+
+
+        :param str compartment_id: (required)
+            The compartment `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name given. The match is not case sensitive.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for NAME is ascending. The NAME sort order is case sensitive.
+
+            Allowed values are: "NAME"
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.FlexComponentCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_flex_components.py.html>`__ to see an example of how to use list_flex_components API.
+        """
+        resource_path = "/dbSystemShapes/flexComponents"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "name",
+            "sort_order",
+            "sort_by",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_flex_components got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "name": kwargs.get("name", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FlexComponentCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FlexComponentCollection")
+
     def list_gi_versions(self, compartment_id, **kwargs):
         """
         Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
@@ -12361,6 +12184,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.GiVersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_gi_versions.py.html>`__ to see an example of how to use list_gi_versions API.
         """
         resource_path = "/giVersions"
         method = "GET"
@@ -12448,6 +12274,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.KeyStoreSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_key_stores.py.html>`__ to see an example of how to use list_key_stores API.
         """
         resource_path = "/keyStores"
         method = "GET"
@@ -12557,6 +12386,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.MaintenanceRunSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_maintenance_runs.py.html>`__ to see an example of how to use list_maintenance_runs API.
         """
         resource_path = "/maintenanceRuns"
         method = "GET"
@@ -12705,6 +12537,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.VmClusterNetworkSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_networks.py.html>`__ to see an example of how to use list_vm_cluster_networks API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks"
         method = "GET"
@@ -12822,6 +12657,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_patch_history_entries.py.html>`__ to see an example of how to use list_vm_cluster_patch_history_entries API.
         """
         resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries"
         method = "GET"
@@ -12906,6 +12744,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_patches.py.html>`__ to see an example of how to use list_vm_cluster_patches API.
         """
         resource_path = "/vmClusters/{vmClusterId}/patches"
         method = "GET"
@@ -13015,6 +12856,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.VmClusterSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_clusters.py.html>`__ to see an example of how to use list_vm_clusters API.
         """
         resource_path = "/vmClusters"
         method = "GET"
@@ -13131,6 +12975,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataDbSystemMigration`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/migrate_exadata_db_system_resource_model.py.html>`__ to see an example of how to use migrate_exadata_db_system_resource_model API.
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/migration"
         method = "POST"
@@ -13188,6 +13035,108 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="ExadataDbSystemMigration")
 
+    def migrate_vault_key(self, database_id, migrate_vault_key_details, **kwargs):
+        """
+        Changes encryption key management from customer-managed, using the `Vault service`__, to Oracle-managed.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+
+
+        :param str database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.MigrateVaultKeyDetails migrate_vault_key_details: (required)
+            Request to change the source of the encryption key for the database.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/migrate_vault_key.py.html>`__ to see an example of how to use migrate_vault_key API.
+        """
+        resource_path = "/databases/{databaseId}/actions/migrateKey"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "migrate_vault_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "databaseId": database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=migrate_vault_key_details,
+                response_type="Database")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=migrate_vault_key_details,
+                response_type="Database")
+
     def register_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
         Asynchronously registers this Autonomous Database with Data Safe.
@@ -13201,7 +13150,7 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
-        :param RegisterAutonomousDatabaseDataSafeDetails register_autonomous_database_data_safe_details: (optional)
+        :param oci.database.models.RegisterAutonomousDatabaseDataSafeDetails register_autonomous_database_data_safe_details: (optional)
             Request to register an Autonomous Database with Data Safe.
 
         :param obj retry_strategy: (optional)
@@ -13214,6 +13163,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/register_autonomous_database_data_safe.py.html>`__ to see an example of how to use register_autonomous_database_data_safe API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/registerDataSafe"
         method = "POST"
@@ -13296,6 +13248,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/reinstate_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use reinstate_autonomous_container_database_dataguard_association API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/reinstate"
         method = "POST"
@@ -13381,6 +13336,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/reinstate_data_guard_association.py.html>`__ to see an example of how to use reinstate_data_guard_association API.
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/reinstate"
         method = "POST"
@@ -13463,6 +13421,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restart_autonomous_container_database.py.html>`__ to see an example of how to use restart_autonomous_container_database API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/restart"
         method = "POST"
@@ -13541,6 +13502,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restart_autonomous_database.py.html>`__ to see an example of how to use restart_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/restart"
         method = "POST"
@@ -13592,87 +13556,6 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="AutonomousDatabase")
 
-    def restore_autonomous_data_warehouse(self, autonomous_data_warehouse_id, restore_autonomous_data_warehouse_details, **kwargs):
-        """
-        **Deprecated.** To restore an Autonomous Data Warehouse, use the :func:`restore_autonomous_database` operation.
-
-
-        :param str autonomous_data_warehouse_id: (required)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.database.models.RestoreAutonomousDataWarehouseDetails restore_autonomous_data_warehouse_details: (required)
-            Request to perform an Autonomous Data Warehouse restore.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouse`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}/actions/restore"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "if_match"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "restore_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=restore_autonomous_data_warehouse_details,
-                response_type="AutonomousDataWarehouse")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=restore_autonomous_data_warehouse_details,
-                response_type="AutonomousDataWarehouse")
-
     def restore_autonomous_database(self, autonomous_database_id, restore_autonomous_database_details, **kwargs):
         """
         Restores an Autonomous Database based on the provided request parameters.
@@ -13701,6 +13584,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restore_autonomous_database.py.html>`__ to see an example of how to use restore_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/restore"
         method = "POST"
@@ -13782,6 +13668,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restore_database.py.html>`__ to see an example of how to use restore_database API.
         """
         resource_path = "/databases/{databaseId}/actions/restore"
         method = "POST"
@@ -13872,6 +13761,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_container_database_encryption_key.py.html>`__ to see an example of how to use rotate_autonomous_container_database_encryption_key API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/rotateKey"
         method = "POST"
@@ -13966,6 +13858,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_database_encryption_key.py.html>`__ to see an example of how to use rotate_autonomous_database_encryption_key API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/rotateKey"
         method = "POST"
@@ -14058,6 +13953,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_ords_certs.py.html>`__ to see an example of how to use rotate_ords_certs API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateOrdsCerts"
         method = "POST"
@@ -14148,6 +14046,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_ssl_certs.py.html>`__ to see an example of how to use rotate_ssl_certs API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateSslCerts"
         method = "POST"
@@ -14203,12 +14104,14 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
-    def start_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
+    def rotate_vault_key(self, database_id, **kwargs):
         """
-        **Deprecated.** To start an Autonomous Data Warehouse, use the :func:`start_autonomous_database` operation.
+        Creates a new version of an existing `Vault service`__ key.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
-        :param str autonomous_data_warehouse_id: (required)
+        :param str database_id: (required)
             The database `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -14218,6 +14121,16 @@ class DatabaseClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -14226,24 +14139,29 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouse`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_vault_key.py.html>`__ to see an example of how to use rotate_vault_key API.
         """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}/actions/start"
+        resource_path = "/databases/{databaseId}/actions/rotateKey"
         method = "POST"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "if_match"
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
+                "rotate_vault_key got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
+            "databaseId": database_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -14255,7 +14173,9 @@ class DatabaseClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -14264,20 +14184,22 @@ class DatabaseClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDataWarehouse")
+                response_type="Database")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDataWarehouse")
+                response_type="Database")
 
     def start_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -14304,6 +14226,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/start_autonomous_database.py.html>`__ to see an example of how to use start_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/start"
         method = "POST"
@@ -14355,82 +14280,6 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="AutonomousDatabase")
 
-    def stop_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
-        """
-        **Deprecated.** To stop an Autonomous Data Warehouse, use the :func:`stop_autonomous_database` operation.
-
-
-        :param str autonomous_data_warehouse_id: (required)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouse`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}/actions/stop"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "if_match"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "stop_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="AutonomousDataWarehouse")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="AutonomousDataWarehouse")
-
     def stop_autonomous_database(self, autonomous_database_id, **kwargs):
         """
         Stops the specified Autonomous Database.
@@ -14459,6 +14308,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/stop_autonomous_database.py.html>`__ to see an example of how to use stop_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/stop"
         method = "POST"
@@ -14544,6 +14396,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/switchover_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use switchover_autonomous_container_database_dataguard_association API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/switchover"
         method = "POST"
@@ -14631,6 +14486,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/switchover_autonomous_database.py.html>`__ to see an example of how to use switchover_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/switchover"
         method = "POST"
@@ -14724,6 +14582,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/switchover_data_guard_association.py.html>`__ to see an example of how to use switchover_data_guard_association API.
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/switchover"
         method = "POST"
@@ -14803,6 +14664,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/terminate_autonomous_container_database.py.html>`__ to see an example of how to use terminate_autonomous_container_database API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "DELETE"
@@ -14877,6 +14741,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/terminate_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use terminate_autonomous_exadata_infrastructure API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "DELETE"
@@ -14951,6 +14818,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/terminate_db_system.py.html>`__ to see an example of how to use terminate_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
@@ -15028,6 +14898,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_container_database.py.html>`__ to see an example of how to use update_autonomous_container_database API.
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "PUT"
@@ -15081,87 +14954,6 @@ class DatabaseClient(object):
                 body=update_autonomous_container_database_details,
                 response_type="AutonomousContainerDatabase")
 
-    def update_autonomous_data_warehouse(self, autonomous_data_warehouse_id, update_autonomous_data_warehouse_details, **kwargs):
-        """
-        **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the :func:`update_autonomous_database` operation.
-
-
-        :param str autonomous_data_warehouse_id: (required)
-            The database `OCID`__.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.database.models.UpdateAutonomousDataWarehouseDetails update_autonomous_data_warehouse_details: (required)
-            Request to update the properties of an Autonomous Data Warehouse.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDataWarehouse`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/autonomousDataWarehouses/{autonomousDataWarehouseId}"
-        method = "PUT"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "if_match"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "update_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "autonomousDataWarehouseId": autonomous_data_warehouse_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=update_autonomous_data_warehouse_details,
-                response_type="AutonomousDataWarehouse")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=update_autonomous_data_warehouse_details,
-                response_type="AutonomousDataWarehouse")
-
     def update_autonomous_database(self, autonomous_database_id, update_autonomous_database_details, **kwargs):
         """
         Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
@@ -15193,6 +14985,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database.py.html>`__ to see an example of how to use update_autonomous_database API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "PUT"
@@ -15269,6 +15064,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database_regional_wallet.py.html>`__ to see an example of how to use update_autonomous_database_regional_wallet API.
         """
         resource_path = "/autonomousDatabases/wallet"
         method = "PUT"
@@ -15334,6 +15132,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database_wallet.py.html>`__ to see an example of how to use update_autonomous_database_wallet API.
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/wallet"
         method = "PUT"
@@ -15413,6 +15214,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use update_autonomous_exadata_infrastructure API.
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "PUT"
@@ -15497,6 +15301,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_vm_cluster.py.html>`__ to see an example of how to use update_autonomous_vm_cluster API.
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "PUT"
@@ -15586,6 +15393,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BackupDestination`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_backup_destination.py.html>`__ to see an example of how to use update_backup_destination API.
         """
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "PUT"
@@ -15672,6 +15482,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use update_cloud_exadata_infrastructure API.
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "PUT"
@@ -15758,6 +15571,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudVmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_vm_cluster.py.html>`__ to see an example of how to use update_cloud_vm_cluster API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "PUT"
@@ -15844,6 +15660,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_vm_cluster_iorm_config.py.html>`__ to see an example of how to use update_cloud_vm_cluster_iorm_config API.
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         method = "PUT"
@@ -15927,6 +15746,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_database.py.html>`__ to see an example of how to use update_database API.
         """
         resource_path = "/databases/{databaseId}"
         method = "PUT"
@@ -16008,6 +15830,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseSoftwareImage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_database_software_image.py.html>`__ to see an example of how to use update_database_software_image API.
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "PUT"
@@ -16089,6 +15914,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbHome`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_db_home.py.html>`__ to see an example of how to use update_db_home API.
         """
         resource_path = "/dbHomes/{dbHomeId}"
         method = "PUT"
@@ -16170,6 +15998,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbSystem`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_db_system.py.html>`__ to see an example of how to use update_db_system API.
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"
@@ -16255,6 +16086,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_exadata_infrastructure.py.html>`__ to see an example of how to use update_exadata_infrastructure API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "PUT"
@@ -16341,6 +16175,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_exadata_iorm_config.py.html>`__ to see an example of how to use update_exadata_iorm_config API.
         """
         resource_path = "/dbSystems/{dbSystemId}/ExadataIormConfig"
         method = "PUT"
@@ -16427,6 +16264,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.KeyStore`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_key_store.py.html>`__ to see an example of how to use update_key_store API.
         """
         resource_path = "/keyStores/{keyStoreId}"
         method = "PUT"
@@ -16508,6 +16348,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.MaintenanceRun`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_maintenance_run.py.html>`__ to see an example of how to use update_maintenance_run API.
         """
         resource_path = "/maintenanceRuns/{maintenanceRunId}"
         method = "PUT"
@@ -16592,6 +16435,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_vm_cluster.py.html>`__ to see an example of how to use update_vm_cluster API.
         """
         resource_path = "/vmClusters/{vmClusterId}"
         method = "PUT"
@@ -16684,6 +16530,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_vm_cluster_network.py.html>`__ to see an example of how to use update_vm_cluster_network API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "PUT"
@@ -16771,6 +16620,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/upgrade_database.py.html>`__ to see an example of how to use upgrade_database API.
         """
         resource_path = "/databases/{databaseId}/actions/upgrade"
         method = "POST"
@@ -16861,6 +16713,9 @@ class DatabaseClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/validate_vm_cluster_network.py.html>`__ to see an example of how to use validate_vm_cluster_network API.
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/validate"
         method = "POST"

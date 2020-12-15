@@ -57,11 +57,11 @@ class UpdateTargetDetails(object):
 
         :param target_detector_recipes:
             The value to assign to the target_detector_recipes property of this UpdateTargetDetails.
-        :type target_detector_recipes: list[UpdateTargetDetectorRecipe]
+        :type target_detector_recipes: list[oci.cloud_guard.models.UpdateTargetDetectorRecipe]
 
         :param target_responder_recipes:
             The value to assign to the target_responder_recipes property of this UpdateTargetDetails.
-        :type target_responder_recipes: list[UpdateTargetResponderRecipe]
+        :type target_responder_recipes: list[oci.cloud_guard.models.UpdateTargetResponderRecipe]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateTargetDetails.
@@ -161,7 +161,7 @@ class UpdateTargetDetails(object):
 
 
         :return: The target_detector_recipes of this UpdateTargetDetails.
-        :rtype: list[UpdateTargetDetectorRecipe]
+        :rtype: list[oci.cloud_guard.models.UpdateTargetDetectorRecipe]
         """
         return self._target_detector_recipes
 
@@ -173,7 +173,7 @@ class UpdateTargetDetails(object):
 
 
         :param target_detector_recipes: The target_detector_recipes of this UpdateTargetDetails.
-        :type: list[UpdateTargetDetectorRecipe]
+        :type: list[oci.cloud_guard.models.UpdateTargetDetectorRecipe]
         """
         self._target_detector_recipes = target_detector_recipes
 
@@ -185,7 +185,7 @@ class UpdateTargetDetails(object):
 
 
         :return: The target_responder_recipes of this UpdateTargetDetails.
-        :rtype: list[UpdateTargetResponderRecipe]
+        :rtype: list[oci.cloud_guard.models.UpdateTargetResponderRecipe]
         """
         return self._target_responder_recipes
 
@@ -197,7 +197,7 @@ class UpdateTargetDetails(object):
 
 
         :param target_responder_recipes: The target_responder_recipes of this UpdateTargetDetails.
-        :type: list[UpdateTargetResponderRecipe]
+        :type: list[oci.cloud_guard.models.UpdateTargetResponderRecipe]
         """
         self._target_responder_recipes = target_responder_recipes
 

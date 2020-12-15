@@ -74,7 +74,7 @@ class RouteTable(object):
 
         :param route_rules:
             The value to assign to the route_rules property of this RouteTable.
-        :type route_rules: list[RouteRule]
+        :type route_rules: list[oci.core.models.RouteRule]
 
         :param time_created:
             The value to assign to the time_created property of this RouteTable.
@@ -299,7 +299,7 @@ class RouteTable(object):
 
 
         :return: The route_rules of this RouteTable.
-        :rtype: list[RouteRule]
+        :rtype: list[oci.core.models.RouteRule]
         """
         return self._route_rules
 
@@ -311,7 +311,7 @@ class RouteTable(object):
 
 
         :param route_rules: The route_rules of this RouteTable.
-        :type: list[RouteRule]
+        :type: list[oci.core.models.RouteRule]
         """
         self._route_rules = route_rules
 

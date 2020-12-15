@@ -20,7 +20,7 @@ class PatchDomainRecordsDetails(object):
 
         :param items:
             The value to assign to the items property of this PatchDomainRecordsDetails.
-        :type items: list[RecordOperation]
+        :type items: list[oci.dns.models.RecordOperation]
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class PatchDomainRecordsDetails(object):
         Gets the items of this PatchDomainRecordsDetails.
 
         :return: The items of this PatchDomainRecordsDetails.
-        :rtype: list[RecordOperation]
+        :rtype: list[oci.dns.models.RecordOperation]
         """
         return self._items
 
@@ -49,7 +49,7 @@ class PatchDomainRecordsDetails(object):
         Sets the items of this PatchDomainRecordsDetails.
 
         :param items: The items of this PatchDomainRecordsDetails.
-        :type: list[RecordOperation]
+        :type: list[oci.dns.models.RecordOperation]
         """
         self._items = items
 

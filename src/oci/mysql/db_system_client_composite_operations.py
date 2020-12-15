@@ -33,7 +33,7 @@ class DbSystemClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param AddAnalyticsClusterDetails add_analytics_cluster_details: (required)
+        :param oci.mysql.models.AddAnalyticsClusterDetails add_analytics_cluster_details: (required)
             Request to add an Analytics Cluster.
 
         :param list[str] wait_for_states:
@@ -71,7 +71,7 @@ class DbSystemClientCompositeOperations(object):
         Calls :py:func:`~oci.mysql.DbSystemClient.create_db_system` and waits for the :py:class:`~oci.mysql.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateDbSystemDetails create_db_system_details: (required)
+        :param oci.mysql.models.CreateDbSystemDetails create_db_system_details: (required)
             Request to create a DB System.
 
         :param list[str] wait_for_states:
@@ -290,7 +290,7 @@ class DbSystemClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param RestartDbSystemDetails restart_db_system_details: (required)
+        :param oci.mysql.models.RestartDbSystemDetails restart_db_system_details: (required)
             Optional parameters for the stop portion of the restart action.
 
         :param list[str] wait_for_states:
@@ -453,7 +453,7 @@ class DbSystemClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param StopDbSystemDetails stop_db_system_details: (required)
+        :param oci.mysql.models.StopDbSystemDetails stop_db_system_details: (required)
             Optional parameters for the stop action.
 
         :param list[str] wait_for_states:
@@ -496,7 +496,7 @@ class DbSystemClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateAnalyticsClusterDetails update_analytics_cluster_details: (required)
+        :param oci.mysql.models.UpdateAnalyticsClusterDetails update_analytics_cluster_details: (required)
             Request to update an Analytics Cluster.
 
         :param list[str] wait_for_states:
@@ -539,7 +539,7 @@ class DbSystemClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateDbSystemDetails update_db_system_details: (required)
+        :param oci.mysql.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update a DB System.
 
         :param list[str] wait_for_states:

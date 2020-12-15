@@ -28,7 +28,7 @@ class CloudGuardClientCompositeOperations(object):
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_detector_recipe` and waits for the :py:class:`~oci.cloud_guard.models.DetectorRecipe` acted upon
         to enter the given state(s).
 
-        :param CreateDetectorRecipeDetails create_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.CreateDetectorRecipeDetails create_detector_recipe_details: (required)
             Details for the new DetectorRecipe.
 
         :param list[str] wait_for_states:
@@ -66,7 +66,7 @@ class CloudGuardClientCompositeOperations(object):
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_managed_list` and waits for the :py:class:`~oci.cloud_guard.models.ManagedList` acted upon
         to enter the given state(s).
 
-        :param CreateManagedListDetails create_managed_list_details: (required)
+        :param oci.cloud_guard.models.CreateManagedListDetails create_managed_list_details: (required)
             Details for the new ManagedList.
 
         :param list[str] wait_for_states:
@@ -104,7 +104,7 @@ class CloudGuardClientCompositeOperations(object):
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_responder_recipe` and waits for the :py:class:`~oci.cloud_guard.models.ResponderRecipe` acted upon
         to enter the given state(s).
 
-        :param CreateResponderRecipeDetails create_responder_recipe_details: (required)
+        :param oci.cloud_guard.models.CreateResponderRecipeDetails create_responder_recipe_details: (required)
             Details for ResponderRecipe.
 
         :param list[str] wait_for_states:
@@ -142,7 +142,7 @@ class CloudGuardClientCompositeOperations(object):
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_target` and waits for the :py:class:`~oci.cloud_guard.models.Target` acted upon
         to enter the given state(s).
 
-        :param CreateTargetDetails create_target_details: (required)
+        :param oci.cloud_guard.models.CreateTargetDetails create_target_details: (required)
             Details for the new Target.
 
         :param list[str] wait_for_states:
@@ -183,7 +183,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str target_id: (required)
             OCID of target
 
-        :param AttachTargetDetectorRecipeDetails attach_target_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.AttachTargetDetectorRecipeDetails attach_target_detector_recipe_details: (required)
             Details for associating DetectorRecipe to Target
 
         :param list[str] wait_for_states:
@@ -412,7 +412,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str detector_recipe_id: (required)
             DetectorRecipe OCID
 
-        :param UpdateDetectorRecipeDetails update_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateDetectorRecipeDetails update_detector_recipe_details: (required)
             Details for the DetectorRecipe to be updated
 
         :param list[str] wait_for_states:
@@ -456,7 +456,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str detector_rule_id: (required)
             The key of Detector Rule.
 
-        :param UpdateDetectorRecipeDetectorRuleDetails update_detector_recipe_detector_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateDetectorRecipeDetectorRuleDetails update_detector_recipe_detector_rule_details: (required)
             The details to be updated for DetectorRule.
 
         :param list[str] wait_for_states:
@@ -497,7 +497,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str managed_list_id: (required)
             The cloudguard list OCID to be passed in the request.
 
-        :param UpdateManagedListDetails update_managed_list_details: (required)
+        :param oci.cloud_guard.models.UpdateManagedListDetails update_managed_list_details: (required)
             Details for the ManagedList to be updated
 
         :param list[str] wait_for_states:
@@ -538,7 +538,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str problem_id: (required)
             OCId of the problem.
 
-        :param UpdateProblemStatusDetails update_problem_status_details: (required)
+        :param oci.cloud_guard.models.UpdateProblemStatusDetails update_problem_status_details: (required)
             The additional details for the problem.
 
         :param list[str] wait_for_states:
@@ -579,7 +579,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str responder_recipe_id: (required)
             OCID of ResponderRecipe
 
-        :param UpdateResponderRecipeDetails update_responder_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateResponderRecipeDetails update_responder_recipe_details: (required)
             The details to be updated.
 
         :param list[str] wait_for_states:
@@ -623,7 +623,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str responder_rule_id: (required)
             The id of ResponderRule
 
-        :param UpdateResponderRecipeResponderRuleDetails update_responder_recipe_responder_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateResponderRecipeResponderRuleDetails update_responder_recipe_responder_rule_details: (required)
             The details to be updated for ResponderRule.
 
         :param list[str] wait_for_states:
@@ -664,7 +664,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str target_id: (required)
             OCID of target
 
-        :param UpdateTargetDetails update_target_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetDetails update_target_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:
@@ -708,7 +708,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str target_detector_recipe_id: (required)
             OCID of TargetDetectorRecipe
 
-        :param UpdateTargetDetectorRecipeDetails update_target_detector_recipe_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetails update_target_detector_recipe_details: (required)
             The details to be updated.
 
         :param list[str] wait_for_states:
@@ -755,7 +755,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str detector_rule_id: (required)
             The id of DetectorRule
 
-        :param UpdateTargetDetectorRecipeDetectorRuleDetails update_target_detector_recipe_detector_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetectorRuleDetails update_target_detector_recipe_detector_rule_details: (required)
             The details to be updated for DetectorRule.
 
         :param list[str] wait_for_states:
@@ -802,7 +802,7 @@ class CloudGuardClientCompositeOperations(object):
         :param str responder_rule_id: (required)
             The id of ResponderRule
 
-        :param UpdateTargetResponderRecipeResponderRuleDetails update_target_responder_recipe_responder_rule_details: (required)
+        :param oci.cloud_guard.models.UpdateTargetResponderRecipeResponderRuleDetails update_target_responder_recipe_responder_rule_details: (required)
             The details to be updated for ResponderRule.
 
         :param list[str] wait_for_states:

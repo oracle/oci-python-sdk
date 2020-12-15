@@ -69,19 +69,19 @@ class Shape(object):
 
         :param ocpu_options:
             The value to assign to the ocpu_options property of this Shape.
-        :type ocpu_options: ShapeOcpuOptions
+        :type ocpu_options: oci.core.models.ShapeOcpuOptions
 
         :param memory_options:
             The value to assign to the memory_options property of this Shape.
-        :type memory_options: ShapeMemoryOptions
+        :type memory_options: oci.core.models.ShapeMemoryOptions
 
         :param networking_bandwidth_options:
             The value to assign to the networking_bandwidth_options property of this Shape.
-        :type networking_bandwidth_options: ShapeNetworkingBandwidthOptions
+        :type networking_bandwidth_options: oci.core.models.ShapeNetworkingBandwidthOptions
 
         :param max_vnic_attachment_options:
             The value to assign to the max_vnic_attachment_options property of this Shape.
-        :type max_vnic_attachment_options: ShapeMaxVnicAttachmentOptions
+        :type max_vnic_attachment_options: oci.core.models.ShapeMaxVnicAttachmentOptions
 
         """
         self.swagger_types = {
@@ -420,7 +420,7 @@ class Shape(object):
         Gets the ocpu_options of this Shape.
 
         :return: The ocpu_options of this Shape.
-        :rtype: ShapeOcpuOptions
+        :rtype: oci.core.models.ShapeOcpuOptions
         """
         return self._ocpu_options
 
@@ -430,7 +430,7 @@ class Shape(object):
         Sets the ocpu_options of this Shape.
 
         :param ocpu_options: The ocpu_options of this Shape.
-        :type: ShapeOcpuOptions
+        :type: oci.core.models.ShapeOcpuOptions
         """
         self._ocpu_options = ocpu_options
 
@@ -440,7 +440,7 @@ class Shape(object):
         Gets the memory_options of this Shape.
 
         :return: The memory_options of this Shape.
-        :rtype: ShapeMemoryOptions
+        :rtype: oci.core.models.ShapeMemoryOptions
         """
         return self._memory_options
 
@@ -450,7 +450,7 @@ class Shape(object):
         Sets the memory_options of this Shape.
 
         :param memory_options: The memory_options of this Shape.
-        :type: ShapeMemoryOptions
+        :type: oci.core.models.ShapeMemoryOptions
         """
         self._memory_options = memory_options
 
@@ -460,7 +460,7 @@ class Shape(object):
         Gets the networking_bandwidth_options of this Shape.
 
         :return: The networking_bandwidth_options of this Shape.
-        :rtype: ShapeNetworkingBandwidthOptions
+        :rtype: oci.core.models.ShapeNetworkingBandwidthOptions
         """
         return self._networking_bandwidth_options
 
@@ -470,7 +470,7 @@ class Shape(object):
         Sets the networking_bandwidth_options of this Shape.
 
         :param networking_bandwidth_options: The networking_bandwidth_options of this Shape.
-        :type: ShapeNetworkingBandwidthOptions
+        :type: oci.core.models.ShapeNetworkingBandwidthOptions
         """
         self._networking_bandwidth_options = networking_bandwidth_options
 
@@ -480,7 +480,7 @@ class Shape(object):
         Gets the max_vnic_attachment_options of this Shape.
 
         :return: The max_vnic_attachment_options of this Shape.
-        :rtype: ShapeMaxVnicAttachmentOptions
+        :rtype: oci.core.models.ShapeMaxVnicAttachmentOptions
         """
         return self._max_vnic_attachment_options
 
@@ -490,7 +490,7 @@ class Shape(object):
         Sets the max_vnic_attachment_options of this Shape.
 
         :param max_vnic_attachment_options: The max_vnic_attachment_options of this Shape.
-        :type: ShapeMaxVnicAttachmentOptions
+        :type: oci.core.models.ShapeMaxVnicAttachmentOptions
         """
         self._max_vnic_attachment_options = max_vnic_attachment_options
 

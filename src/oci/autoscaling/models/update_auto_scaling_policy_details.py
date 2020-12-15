@@ -29,7 +29,7 @@ class UpdateAutoScalingPolicyDetails(object):
 
         :param capacity:
             The value to assign to the capacity property of this UpdateAutoScalingPolicyDetails.
-        :type capacity: Capacity
+        :type capacity: oci.autoscaling.models.Capacity
 
         :param policy_type:
             The value to assign to the policy_type property of this UpdateAutoScalingPolicyDetails.
@@ -107,7 +107,7 @@ class UpdateAutoScalingPolicyDetails(object):
 
 
         :return: The capacity of this UpdateAutoScalingPolicyDetails.
-        :rtype: Capacity
+        :rtype: oci.autoscaling.models.Capacity
         """
         return self._capacity
 
@@ -119,7 +119,7 @@ class UpdateAutoScalingPolicyDetails(object):
 
 
         :param capacity: The capacity of this UpdateAutoScalingPolicyDetails.
-        :type: Capacity
+        :type: oci.autoscaling.models.Capacity
         """
         self._capacity = capacity
 

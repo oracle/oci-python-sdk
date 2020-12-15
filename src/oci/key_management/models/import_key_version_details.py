@@ -28,7 +28,7 @@ class ImportKeyVersionDetails(object):
 
         :param wrapped_import_key:
             The value to assign to the wrapped_import_key property of this ImportKeyVersionDetails.
-        :type wrapped_import_key: WrappedImportKey
+        :type wrapped_import_key: oci.key_management.models.WrappedImportKey
 
         """
         self.swagger_types = {
@@ -117,7 +117,7 @@ class ImportKeyVersionDetails(object):
         **[Required]** Gets the wrapped_import_key of this ImportKeyVersionDetails.
 
         :return: The wrapped_import_key of this ImportKeyVersionDetails.
-        :rtype: WrappedImportKey
+        :rtype: oci.key_management.models.WrappedImportKey
         """
         return self._wrapped_import_key
 
@@ -127,7 +127,7 @@ class ImportKeyVersionDetails(object):
         Sets the wrapped_import_key of this ImportKeyVersionDetails.
 
         :param wrapped_import_key: The wrapped_import_key of this ImportKeyVersionDetails.
-        :type: WrappedImportKey
+        :type: oci.key_management.models.WrappedImportKey
         """
         self._wrapped_import_key = wrapped_import_key
 

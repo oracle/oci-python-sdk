@@ -36,7 +36,7 @@ class LogAnalyticsLookup(object):
 
         :param fields:
             The value to assign to the fields property of this LogAnalyticsLookup.
-        :type fields: list[LookupField]
+        :type fields: list[oci.log_analytics.models.LookupField]
 
         :param lookup_reference:
             The value to assign to the lookup_reference property of this LogAnalyticsLookup.
@@ -60,11 +60,11 @@ class LogAnalyticsLookup(object):
 
         :param referring_sources:
             The value to assign to the referring_sources property of this LogAnalyticsLookup.
-        :type referring_sources: AutoLookups
+        :type referring_sources: oci.log_analytics.models.AutoLookups
 
         :param status_summary:
             The value to assign to the status_summary property of this LogAnalyticsLookup.
-        :type status_summary: StatusSummary
+        :type status_summary: oci.log_analytics.models.StatusSummary
 
         :param time_updated:
             The value to assign to the time_updated property of this LogAnalyticsLookup.
@@ -221,7 +221,7 @@ class LogAnalyticsLookup(object):
 
 
         :return: The fields of this LogAnalyticsLookup.
-        :rtype: list[LookupField]
+        :rtype: list[oci.log_analytics.models.LookupField]
         """
         return self._fields
 
@@ -233,7 +233,7 @@ class LogAnalyticsLookup(object):
 
 
         :param fields: The fields of this LogAnalyticsLookup.
-        :type: list[LookupField]
+        :type: list[oci.log_analytics.models.LookupField]
         """
         self._fields = fields
 
@@ -363,7 +363,7 @@ class LogAnalyticsLookup(object):
         Gets the referring_sources of this LogAnalyticsLookup.
 
         :return: The referring_sources of this LogAnalyticsLookup.
-        :rtype: AutoLookups
+        :rtype: oci.log_analytics.models.AutoLookups
         """
         return self._referring_sources
 
@@ -373,7 +373,7 @@ class LogAnalyticsLookup(object):
         Sets the referring_sources of this LogAnalyticsLookup.
 
         :param referring_sources: The referring_sources of this LogAnalyticsLookup.
-        :type: AutoLookups
+        :type: oci.log_analytics.models.AutoLookups
         """
         self._referring_sources = referring_sources
 
@@ -383,7 +383,7 @@ class LogAnalyticsLookup(object):
         Gets the status_summary of this LogAnalyticsLookup.
 
         :return: The status_summary of this LogAnalyticsLookup.
-        :rtype: StatusSummary
+        :rtype: oci.log_analytics.models.StatusSummary
         """
         return self._status_summary
 
@@ -393,7 +393,7 @@ class LogAnalyticsLookup(object):
         Sets the status_summary of this LogAnalyticsLookup.
 
         :param status_summary: The status_summary of this LogAnalyticsLookup.
-        :type: StatusSummary
+        :type: oci.log_analytics.models.StatusSummary
         """
         self._status_summary = status_summary
 

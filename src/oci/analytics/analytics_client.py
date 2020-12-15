@@ -123,6 +123,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/change_analytics_instance_compartment.py.html>`__ to see an example of how to use change_analytics_instance_compartment API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/changeCompartment"
         method = "POST"
@@ -218,6 +221,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/change_analytics_instance_network_endpoint.py.html>`__ to see an example of how to use change_analytics_instance_network_endpoint API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/changeNetworkEndpoint"
         method = "POST"
@@ -305,6 +311,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.analytics.models.AnalyticsInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/create_analytics_instance.py.html>`__ to see an example of how to use create_analytics_instance API.
         """
         resource_path = "/analyticsInstances"
         method = "POST"
@@ -385,6 +394,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/delete_analytics_instance.py.html>`__ to see an example of how to use delete_analytics_instance API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "DELETE"
@@ -467,6 +479,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
@@ -540,6 +555,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.analytics.models.AnalyticsInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/get_analytics_instance.py.html>`__ to see an example of how to use get_analytics_instance API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "GET"
@@ -613,6 +631,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.analytics.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -734,6 +755,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.analytics.models.AnalyticsInstanceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_analytics_instances.py.html>`__ to see an example of how to use list_analytics_instances API.
         """
         resource_path = "/analyticsInstances"
         method = "GET"
@@ -869,6 +893,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.analytics.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -968,6 +995,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.analytics.models.WorkRequestLog`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1090,6 +1120,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.analytics.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1217,6 +1250,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/scale_analytics_instance.py.html>`__ to see an example of how to use scale_analytics_instance API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/scale"
         method = "POST"
@@ -1309,6 +1345,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/start_analytics_instance.py.html>`__ to see an example of how to use start_analytics_instance API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/start"
         method = "POST"
@@ -1399,6 +1438,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/stop_analytics_instance.py.html>`__ to see an example of how to use stop_analytics_instance API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/stop"
         method = "POST"
@@ -1486,6 +1528,9 @@ class AnalyticsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.analytics.models.AnalyticsInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/update_analytics_instance.py.html>`__ to see an example of how to use update_analytics_instance API.
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "PUT"

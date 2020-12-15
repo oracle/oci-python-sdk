@@ -72,7 +72,7 @@ class ClusterNetworkSummary(object):
 
         :param instance_pools:
             The value to assign to the instance_pools property of this ClusterNetworkSummary.
-        :type instance_pools: list[InstancePoolSummary]
+        :type instance_pools: list[oci.core.models.InstancePoolSummary]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ClusterNetworkSummary.
@@ -281,7 +281,7 @@ class ClusterNetworkSummary(object):
 
 
         :return: The instance_pools of this ClusterNetworkSummary.
-        :rtype: list[InstancePoolSummary]
+        :rtype: list[oci.core.models.InstancePoolSummary]
         """
         return self._instance_pools
 
@@ -293,7 +293,7 @@ class ClusterNetworkSummary(object):
 
 
         :param instance_pools: The instance_pools of this ClusterNetworkSummary.
-        :type: list[InstancePoolSummary]
+        :type: list[oci.core.models.InstancePoolSummary]
         """
         self._instance_pools = instance_pools
 

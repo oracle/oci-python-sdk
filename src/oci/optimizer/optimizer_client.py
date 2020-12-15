@@ -117,6 +117,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/bulk_apply_recommendations.py.html>`__ to see an example of how to use bulk_apply_recommendations API.
         """
         resource_path = "/recommendations/{recommendationId}/actions/bulkApplyRecommendations"
         method = "POST"
@@ -201,6 +204,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.Profile`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/create_profile.py.html>`__ to see an example of how to use create_profile API.
         """
         resource_path = "/profiles"
         method = "POST"
@@ -275,6 +281,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/delete_profile.py.html>`__ to see an example of how to use delete_profile API.
         """
         resource_path = "/profiles/{profileId}"
         method = "DELETE"
@@ -348,6 +357,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.Category`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_category.py.html>`__ to see an example of how to use get_category API.
         """
         resource_path = "/categories/{categoryId}"
         method = "GET"
@@ -421,6 +433,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.EnrollmentStatus`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_enrollment_status.py.html>`__ to see an example of how to use get_enrollment_status API.
         """
         resource_path = "/enrollmentStatus/{enrollmentStatusId}"
         method = "GET"
@@ -494,6 +509,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.Profile`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_profile.py.html>`__ to see an example of how to use get_profile API.
         """
         resource_path = "/profiles/{profileId}"
         method = "GET"
@@ -567,6 +585,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.Recommendation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_recommendation.py.html>`__ to see an example of how to use get_recommendation API.
         """
         resource_path = "/recommendations/{recommendationId}"
         method = "GET"
@@ -640,6 +661,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.ResourceAction`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_resource_action.py.html>`__ to see an example of how to use get_resource_action API.
         """
         resource_path = "/resourceActions/{resourceActionId}"
         method = "GET"
@@ -713,6 +737,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -815,6 +842,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.CategoryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_categories.py.html>`__ to see an example of how to use list_categories API.
         """
         resource_path = "/categories"
         method = "GET"
@@ -943,6 +973,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.EnrollmentStatusCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_enrollment_statuses.py.html>`__ to see an example of how to use list_enrollment_statuses API.
         """
         resource_path = "/enrollmentStatus"
         method = "GET"
@@ -1095,6 +1128,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.HistoryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_histories.py.html>`__ to see an example of how to use list_histories API.
         """
         resource_path = "/histories"
         method = "GET"
@@ -1236,6 +1272,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.ProfileCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_profiles.py.html>`__ to see an example of how to use list_profiles API.
         """
         resource_path = "/profiles"
         method = "GET"
@@ -1374,6 +1413,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.RecommendationCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
         resource_path = "/recommendations"
         method = "GET"
@@ -1526,6 +1568,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.ResourceActionCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_resource_actions.py.html>`__ to see an example of how to use list_resource_actions API.
         """
         resource_path = "/resourceActions"
         method = "GET"
@@ -1646,6 +1691,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -1735,6 +1783,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.WorkRequestLogEntryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1824,6 +1875,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.WorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1906,6 +1960,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.EnrollmentStatus`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_enrollment_status.py.html>`__ to see an example of how to use update_enrollment_status API.
         """
         resource_path = "/enrollmentStatus/{enrollmentStatusId}"
         method = "PUT"
@@ -1993,6 +2050,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.Profile`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_profile.py.html>`__ to see an example of how to use update_profile API.
         """
         resource_path = "/profiles/{profileId}"
         method = "PUT"
@@ -2085,6 +2145,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.Recommendation`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_recommendation.py.html>`__ to see an example of how to use update_recommendation API.
         """
         resource_path = "/recommendations/{recommendationId}"
         method = "PUT"
@@ -2177,6 +2240,9 @@ class OptimizerClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.optimizer.models.ResourceAction`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_resource_action.py.html>`__ to see an example of how to use update_resource_action API.
         """
         resource_path = "/resourceActions/{resourceActionId}"
         method = "PUT"

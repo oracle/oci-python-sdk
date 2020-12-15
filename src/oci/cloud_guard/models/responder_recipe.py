@@ -74,11 +74,11 @@ class ResponderRecipe(object):
 
         :param responder_rules:
             The value to assign to the responder_rules property of this ResponderRecipe.
-        :type responder_rules: list[ResponderRecipeResponderRule]
+        :type responder_rules: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
 
         :param effective_responder_rules:
             The value to assign to the effective_responder_rules property of this ResponderRecipe.
-        :type effective_responder_rules: list[ResponderRecipeResponderRule]
+        :type effective_responder_rules: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
 
         :param source_responder_recipe_id:
             The value to assign to the source_responder_recipe_id property of this ResponderRecipe.
@@ -281,7 +281,7 @@ class ResponderRecipe(object):
 
 
         :return: The responder_rules of this ResponderRecipe.
-        :rtype: list[ResponderRecipeResponderRule]
+        :rtype: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
         """
         return self._responder_rules
 
@@ -293,7 +293,7 @@ class ResponderRecipe(object):
 
 
         :param responder_rules: The responder_rules of this ResponderRecipe.
-        :type: list[ResponderRecipeResponderRule]
+        :type: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
         """
         self._responder_rules = responder_rules
 
@@ -305,7 +305,7 @@ class ResponderRecipe(object):
 
 
         :return: The effective_responder_rules of this ResponderRecipe.
-        :rtype: list[ResponderRecipeResponderRule]
+        :rtype: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
         """
         return self._effective_responder_rules
 
@@ -317,7 +317,7 @@ class ResponderRecipe(object):
 
 
         :param effective_responder_rules: The effective_responder_rules of this ResponderRecipe.
-        :type: list[ResponderRecipeResponderRule]
+        :type: list[oci.cloud_guard.models.ResponderRecipeResponderRule]
         """
         self._effective_responder_rules = effective_responder_rules
 

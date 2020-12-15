@@ -38,11 +38,11 @@ class FieldSummaryCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this FieldSummaryCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this FieldSummaryCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param max_values:
             The value to assign to the max_values property of this FieldSummaryCommandDescriptor.

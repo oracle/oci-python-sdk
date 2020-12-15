@@ -20,7 +20,7 @@ class LogAnalyticsParserFunction(object):
 
         :param parser_meta_plugin:
             The value to assign to the parser_meta_plugin property of this LogAnalyticsParserFunction.
-        :type parser_meta_plugin: LogAnalyticsParserMetaPlugin
+        :type parser_meta_plugin: oci.log_analytics.models.LogAnalyticsParserMetaPlugin
 
         :param parser_function_id:
             The value to assign to the parser_function_id property of this LogAnalyticsParserFunction.
@@ -56,7 +56,7 @@ class LogAnalyticsParserFunction(object):
 
         :param parser_function_parameters:
             The value to assign to the parser_function_parameters property of this LogAnalyticsParserFunction.
-        :type parser_function_parameters: list[LogAnalyticsParserFunctionParameter]
+        :type parser_function_parameters: list[oci.log_analytics.models.LogAnalyticsParserFunctionParameter]
 
         """
         self.swagger_types = {
@@ -102,7 +102,7 @@ class LogAnalyticsParserFunction(object):
         Gets the parser_meta_plugin of this LogAnalyticsParserFunction.
 
         :return: The parser_meta_plugin of this LogAnalyticsParserFunction.
-        :rtype: LogAnalyticsParserMetaPlugin
+        :rtype: oci.log_analytics.models.LogAnalyticsParserMetaPlugin
         """
         return self._parser_meta_plugin
 
@@ -112,7 +112,7 @@ class LogAnalyticsParserFunction(object):
         Sets the parser_meta_plugin of this LogAnalyticsParserFunction.
 
         :param parser_meta_plugin: The parser_meta_plugin of this LogAnalyticsParserFunction.
-        :type: LogAnalyticsParserMetaPlugin
+        :type: oci.log_analytics.models.LogAnalyticsParserMetaPlugin
         """
         self._parser_meta_plugin = parser_meta_plugin
 
@@ -316,7 +316,7 @@ class LogAnalyticsParserFunction(object):
 
 
         :return: The parser_function_parameters of this LogAnalyticsParserFunction.
-        :rtype: list[LogAnalyticsParserFunctionParameter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserFunctionParameter]
         """
         return self._parser_function_parameters
 
@@ -328,7 +328,7 @@ class LogAnalyticsParserFunction(object):
 
 
         :param parser_function_parameters: The parser_function_parameters of this LogAnalyticsParserFunction.
-        :type: list[LogAnalyticsParserFunctionParameter]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserFunctionParameter]
         """
         self._parser_function_parameters = parser_function_parameters
 

@@ -20,7 +20,7 @@ class Schema(object):
 
         :param columns:
             The value to assign to the columns property of this Schema.
-        :type columns: list[Column]
+        :type columns: list[oci.nosql.models.Column]
 
         :param primary_key:
             The value to assign to the primary_key property of this Schema.
@@ -62,7 +62,7 @@ class Schema(object):
 
 
         :return: The columns of this Schema.
-        :rtype: list[Column]
+        :rtype: list[oci.nosql.models.Column]
         """
         return self._columns
 
@@ -74,7 +74,7 @@ class Schema(object):
 
 
         :param columns: The columns of this Schema.
-        :type: list[Column]
+        :type: list[oci.nosql.models.Column]
         """
         self._columns = columns
 

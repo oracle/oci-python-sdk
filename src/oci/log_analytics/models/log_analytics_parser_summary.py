@@ -60,7 +60,7 @@ class LogAnalyticsParserSummary(object):
 
         :param field_maps:
             The value to assign to the field_maps property of this LogAnalyticsParserSummary.
-        :type field_maps: list[LogAnalyticsParserField]
+        :type field_maps: list[oci.log_analytics.models.LogAnalyticsParserField]
 
         :param footer_content:
             The value to assign to the footer_content property of this LogAnalyticsParserSummary.
@@ -100,7 +100,7 @@ class LogAnalyticsParserSummary(object):
 
         :param mapped_parsers:
             The value to assign to the mapped_parsers property of this LogAnalyticsParserSummary.
-        :type mapped_parsers: list[LogAnalyticsParser]
+        :type mapped_parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         :param parser_ignoreline_characters:
             The value to assign to the parser_ignoreline_characters property of this LogAnalyticsParserSummary.
@@ -120,7 +120,7 @@ class LogAnalyticsParserSummary(object):
 
         :param parser_filter:
             The value to assign to the parser_filter property of this LogAnalyticsParserSummary.
-        :type parser_filter: LogAnalyticsParserFilter
+        :type parser_filter: oci.log_analytics.models.LogAnalyticsParserFilter
 
         :param is_parser_written_once:
             The value to assign to the is_parser_written_once property of this LogAnalyticsParserSummary.
@@ -128,7 +128,7 @@ class LogAnalyticsParserSummary(object):
 
         :param parser_functions:
             The value to assign to the parser_functions property of this LogAnalyticsParserSummary.
-        :type parser_functions: list[LogAnalyticsParserFunction]
+        :type parser_functions: list[oci.log_analytics.models.LogAnalyticsParserFunction]
 
         :param sources_count:
             The value to assign to the sources_count property of this LogAnalyticsParserSummary.
@@ -136,7 +136,7 @@ class LogAnalyticsParserSummary(object):
 
         :param sources:
             The value to assign to the sources property of this LogAnalyticsParserSummary.
-        :type sources: list[LogAnalyticsSource]
+        :type sources: list[oci.log_analytics.models.LogAnalyticsSource]
 
         :param should_tokenize_original_text:
             The value to assign to the should_tokenize_original_text property of this LogAnalyticsParserSummary.
@@ -399,7 +399,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :return: The field_maps of this LogAnalyticsParserSummary.
-        :rtype: list[LogAnalyticsParserField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         return self._field_maps
 
@@ -411,7 +411,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :param field_maps: The field_maps of this LogAnalyticsParserSummary.
-        :type: list[LogAnalyticsParserField]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         self._field_maps = field_maps
 
@@ -639,7 +639,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :return: The mapped_parsers of this LogAnalyticsParserSummary.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._mapped_parsers
 
@@ -651,7 +651,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :param mapped_parsers: The mapped_parsers of this LogAnalyticsParserSummary.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._mapped_parsers = mapped_parsers
 
@@ -757,7 +757,7 @@ class LogAnalyticsParserSummary(object):
         Gets the parser_filter of this LogAnalyticsParserSummary.
 
         :return: The parser_filter of this LogAnalyticsParserSummary.
-        :rtype: LogAnalyticsParserFilter
+        :rtype: oci.log_analytics.models.LogAnalyticsParserFilter
         """
         return self._parser_filter
 
@@ -767,7 +767,7 @@ class LogAnalyticsParserSummary(object):
         Sets the parser_filter of this LogAnalyticsParserSummary.
 
         :param parser_filter: The parser_filter of this LogAnalyticsParserSummary.
-        :type: LogAnalyticsParserFilter
+        :type: oci.log_analytics.models.LogAnalyticsParserFilter
         """
         self._parser_filter = parser_filter
 
@@ -803,7 +803,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :return: The parser_functions of this LogAnalyticsParserSummary.
-        :rtype: list[LogAnalyticsParserFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         return self._parser_functions
 
@@ -815,7 +815,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :param parser_functions: The parser_functions of this LogAnalyticsParserSummary.
-        :type: list[LogAnalyticsParserFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         self._parser_functions = parser_functions
 
@@ -851,7 +851,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :return: The sources of this LogAnalyticsParserSummary.
-        :rtype: list[LogAnalyticsSource]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSource]
         """
         return self._sources
 
@@ -863,7 +863,7 @@ class LogAnalyticsParserSummary(object):
 
 
         :param sources: The sources of this LogAnalyticsParserSummary.
-        :type: list[LogAnalyticsSource]
+        :type: list[oci.log_analytics.models.LogAnalyticsSource]
         """
         self._sources = sources
 

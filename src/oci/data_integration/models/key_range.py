@@ -20,7 +20,7 @@ class KeyRange(object):
 
         :param key:
             The value to assign to the key property of this KeyRange.
-        :type key: ShapeField
+        :type key: oci.data_integration.models.ShapeField
 
         :param range:
             The value to assign to the range property of this KeyRange.
@@ -46,7 +46,7 @@ class KeyRange(object):
         Gets the key of this KeyRange.
 
         :return: The key of this KeyRange.
-        :rtype: ShapeField
+        :rtype: oci.data_integration.models.ShapeField
         """
         return self._key
 
@@ -56,7 +56,7 @@ class KeyRange(object):
         Sets the key of this KeyRange.
 
         :param key: The key of this KeyRange.
-        :type: ShapeField
+        :type: oci.data_integration.models.ShapeField
         """
         self._key = key
 

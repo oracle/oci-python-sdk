@@ -34,7 +34,7 @@ class UpdateDbSystemDetails(object):
 
         :param version:
             The value to assign to the version property of this UpdateDbSystemDetails.
-        :type version: PatchDetails
+        :type version: oci.database.models.PatchDetails
 
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this UpdateDbSystemDetails.
@@ -71,7 +71,7 @@ class UpdateDbSystemDetails(object):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this UpdateDbSystemDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         """
         self.swagger_types = {
@@ -144,7 +144,7 @@ class UpdateDbSystemDetails(object):
         Gets the version of this UpdateDbSystemDetails.
 
         :return: The version of this UpdateDbSystemDetails.
-        :rtype: PatchDetails
+        :rtype: oci.database.models.PatchDetails
         """
         return self._version
 
@@ -154,7 +154,7 @@ class UpdateDbSystemDetails(object):
         Sets the version of this UpdateDbSystemDetails.
 
         :param version: The version of this UpdateDbSystemDetails.
-        :type: PatchDetails
+        :type: oci.database.models.PatchDetails
         """
         self._version = version
 
@@ -402,7 +402,7 @@ class UpdateDbSystemDetails(object):
         Gets the maintenance_window_details of this UpdateDbSystemDetails.
 
         :return: The maintenance_window_details of this UpdateDbSystemDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -412,7 +412,7 @@ class UpdateDbSystemDetails(object):
         Sets the maintenance_window_details of this UpdateDbSystemDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this UpdateDbSystemDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 

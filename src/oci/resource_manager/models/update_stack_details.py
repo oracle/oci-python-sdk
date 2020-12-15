@@ -28,7 +28,7 @@ class UpdateStackDetails(object):
 
         :param config_source:
             The value to assign to the config_source property of this UpdateStackDetails.
-        :type config_source: UpdateConfigSourceDetails
+        :type config_source: oci.resource_manager.models.UpdateConfigSourceDetails
 
         :param variables:
             The value to assign to the variables property of this UpdateStackDetails.
@@ -129,7 +129,7 @@ class UpdateStackDetails(object):
         Gets the config_source of this UpdateStackDetails.
 
         :return: The config_source of this UpdateStackDetails.
-        :rtype: UpdateConfigSourceDetails
+        :rtype: oci.resource_manager.models.UpdateConfigSourceDetails
         """
         return self._config_source
 
@@ -139,7 +139,7 @@ class UpdateStackDetails(object):
         Sets the config_source of this UpdateStackDetails.
 
         :param config_source: The config_source of this UpdateStackDetails.
-        :type: UpdateConfigSourceDetails
+        :type: oci.resource_manager.models.UpdateConfigSourceDetails
         """
         self._config_source = config_source
 

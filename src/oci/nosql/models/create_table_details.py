@@ -32,7 +32,7 @@ class CreateTableDetails(object):
 
         :param table_limits:
             The value to assign to the table_limits property of this CreateTableDetails.
-        :type table_limits: TableLimits
+        :type table_limits: oci.nosql.models.TableLimits
 
         :param is_auto_reclaimable:
             The value to assign to the is_auto_reclaimable property of this CreateTableDetails.
@@ -153,7 +153,7 @@ class CreateTableDetails(object):
         **[Required]** Gets the table_limits of this CreateTableDetails.
 
         :return: The table_limits of this CreateTableDetails.
-        :rtype: TableLimits
+        :rtype: oci.nosql.models.TableLimits
         """
         return self._table_limits
 
@@ -163,7 +163,7 @@ class CreateTableDetails(object):
         Sets the table_limits of this CreateTableDetails.
 
         :param table_limits: The table_limits of this CreateTableDetails.
-        :type: TableLimits
+        :type: oci.nosql.models.TableLimits
         """
         self._table_limits = table_limits
 

@@ -24,7 +24,7 @@ class TermCollection(object):
 
         :param items:
             The value to assign to the items property of this TermCollection.
-        :type items: list[TermSummary]
+        :type items: list[oci.data_catalog.models.TermSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class TermCollection(object):
 
 
         :return: The items of this TermCollection.
-        :rtype: list[TermSummary]
+        :rtype: list[oci.data_catalog.models.TermSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class TermCollection(object):
 
 
         :param items: The items of this TermCollection.
-        :type: list[TermSummary]
+        :type: list[oci.data_catalog.models.TermSummary]
         """
         self._items = items
 

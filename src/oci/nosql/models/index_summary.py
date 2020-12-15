@@ -24,7 +24,7 @@ class IndexSummary(object):
 
         :param keys:
             The value to assign to the keys property of this IndexSummary.
-        :type keys: list[IndexKey]
+        :type keys: list[oci.nosql.models.IndexKey]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this IndexSummary.
@@ -86,7 +86,7 @@ class IndexSummary(object):
 
 
         :return: The keys of this IndexSummary.
-        :rtype: list[IndexKey]
+        :rtype: list[oci.nosql.models.IndexKey]
         """
         return self._keys
 
@@ -98,7 +98,7 @@ class IndexSummary(object):
 
 
         :param keys: The keys of this IndexSummary.
-        :type: list[IndexKey]
+        :type: list[oci.nosql.models.IndexKey]
         """
         self._keys = keys
 

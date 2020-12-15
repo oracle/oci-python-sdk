@@ -44,11 +44,11 @@ class ImportKeyDetails(object):
 
         :param key_shape:
             The value to assign to the key_shape property of this ImportKeyDetails.
-        :type key_shape: KeyShape
+        :type key_shape: oci.key_management.models.KeyShape
 
         :param wrapped_import_key:
             The value to assign to the wrapped_import_key property of this ImportKeyDetails.
-        :type wrapped_import_key: WrappedImportKey
+        :type wrapped_import_key: oci.key_management.models.WrappedImportKey
 
         :param protection_mode:
             The value to assign to the protection_mode property of this ImportKeyDetails.
@@ -194,7 +194,7 @@ class ImportKeyDetails(object):
         **[Required]** Gets the key_shape of this ImportKeyDetails.
 
         :return: The key_shape of this ImportKeyDetails.
-        :rtype: KeyShape
+        :rtype: oci.key_management.models.KeyShape
         """
         return self._key_shape
 
@@ -204,7 +204,7 @@ class ImportKeyDetails(object):
         Sets the key_shape of this ImportKeyDetails.
 
         :param key_shape: The key_shape of this ImportKeyDetails.
-        :type: KeyShape
+        :type: oci.key_management.models.KeyShape
         """
         self._key_shape = key_shape
 
@@ -214,7 +214,7 @@ class ImportKeyDetails(object):
         **[Required]** Gets the wrapped_import_key of this ImportKeyDetails.
 
         :return: The wrapped_import_key of this ImportKeyDetails.
-        :rtype: WrappedImportKey
+        :rtype: oci.key_management.models.WrappedImportKey
         """
         return self._wrapped_import_key
 
@@ -224,7 +224,7 @@ class ImportKeyDetails(object):
         Sets the wrapped_import_key of this ImportKeyDetails.
 
         :param wrapped_import_key: The wrapped_import_key of this ImportKeyDetails.
-        :type: WrappedImportKey
+        :type: oci.key_management.models.WrappedImportKey
         """
         self._wrapped_import_key = wrapped_import_key
 

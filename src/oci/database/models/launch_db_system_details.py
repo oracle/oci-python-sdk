@@ -93,7 +93,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemDetails.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemDetails.
@@ -127,6 +127,14 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemDetails.
         :type initial_data_storage_size_in_gb: int
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this LaunchDbSystemDetails.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this LaunchDbSystemDetails.
+        :type kms_key_version_id: str
+
         :param node_count:
             The value to assign to the node_count property of this LaunchDbSystemDetails.
         :type node_count: int
@@ -150,7 +158,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemDetails.
-        :type db_home: CreateDbHomeDetails
+        :type db_home: oci.database.models.CreateDbHomeDetails
 
         :param database_edition:
             The value to assign to the database_edition property of this LaunchDbSystemDetails.
@@ -169,7 +177,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this LaunchDbSystemDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         """
         self.swagger_types = {
@@ -192,6 +200,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
             'initial_data_storage_size_in_gb': 'int',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -224,6 +234,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
             'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -255,6 +267,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         self._cluster_name = None
         self._data_storage_percentage = None
         self._initial_data_storage_size_in_gb = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._node_count = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -273,7 +287,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         **[Required]** Gets the db_home of this LaunchDbSystemDetails.
 
         :return: The db_home of this LaunchDbSystemDetails.
-        :rtype: CreateDbHomeDetails
+        :rtype: oci.database.models.CreateDbHomeDetails
         """
         return self._db_home
 
@@ -283,7 +297,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         Sets the db_home of this LaunchDbSystemDetails.
 
         :param db_home: The db_home of this LaunchDbSystemDetails.
-        :type: CreateDbHomeDetails
+        :type: oci.database.models.CreateDbHomeDetails
         """
         self._db_home = db_home
 
@@ -395,7 +409,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         Gets the maintenance_window_details of this LaunchDbSystemDetails.
 
         :return: The maintenance_window_details of this LaunchDbSystemDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -405,7 +419,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         Sets the maintenance_window_details of this LaunchDbSystemDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this LaunchDbSystemDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 

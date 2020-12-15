@@ -40,11 +40,11 @@ class ListenerDetails(object):
 
         :param ssl_configuration:
             The value to assign to the ssl_configuration property of this ListenerDetails.
-        :type ssl_configuration: SSLConfigurationDetails
+        :type ssl_configuration: oci.load_balancer.models.SSLConfigurationDetails
 
         :param connection_configuration:
             The value to assign to the connection_configuration property of this ListenerDetails.
-        :type connection_configuration: ConnectionConfiguration
+        :type connection_configuration: oci.load_balancer.models.ConnectionConfiguration
 
         :param rule_set_names:
             The value to assign to the rule_set_names property of this ListenerDetails.
@@ -230,7 +230,7 @@ class ListenerDetails(object):
         Gets the ssl_configuration of this ListenerDetails.
 
         :return: The ssl_configuration of this ListenerDetails.
-        :rtype: SSLConfigurationDetails
+        :rtype: oci.load_balancer.models.SSLConfigurationDetails
         """
         return self._ssl_configuration
 
@@ -240,7 +240,7 @@ class ListenerDetails(object):
         Sets the ssl_configuration of this ListenerDetails.
 
         :param ssl_configuration: The ssl_configuration of this ListenerDetails.
-        :type: SSLConfigurationDetails
+        :type: oci.load_balancer.models.SSLConfigurationDetails
         """
         self._ssl_configuration = ssl_configuration
 
@@ -250,7 +250,7 @@ class ListenerDetails(object):
         Gets the connection_configuration of this ListenerDetails.
 
         :return: The connection_configuration of this ListenerDetails.
-        :rtype: ConnectionConfiguration
+        :rtype: oci.load_balancer.models.ConnectionConfiguration
         """
         return self._connection_configuration
 
@@ -260,7 +260,7 @@ class ListenerDetails(object):
         Sets the connection_configuration of this ListenerDetails.
 
         :param connection_configuration: The connection_configuration of this ListenerDetails.
-        :type: ConnectionConfiguration
+        :type: oci.load_balancer.models.ConnectionConfiguration
         """
         self._connection_configuration = connection_configuration
 

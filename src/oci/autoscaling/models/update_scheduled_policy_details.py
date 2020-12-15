@@ -25,7 +25,7 @@ class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
 
         :param capacity:
             The value to assign to the capacity property of this UpdateScheduledPolicyDetails.
-        :type capacity: Capacity
+        :type capacity: oci.autoscaling.models.Capacity
 
         :param policy_type:
             The value to assign to the policy_type property of this UpdateScheduledPolicyDetails.
@@ -37,7 +37,7 @@ class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
 
         :param execution_schedule:
             The value to assign to the execution_schedule property of this UpdateScheduledPolicyDetails.
-        :type execution_schedule: ExecutionSchedule
+        :type execution_schedule: oci.autoscaling.models.ExecutionSchedule
 
         """
         self.swagger_types = {
@@ -69,7 +69,7 @@ class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
         Gets the execution_schedule of this UpdateScheduledPolicyDetails.
 
         :return: The execution_schedule of this UpdateScheduledPolicyDetails.
-        :rtype: ExecutionSchedule
+        :rtype: oci.autoscaling.models.ExecutionSchedule
         """
         return self._execution_schedule
 
@@ -79,7 +79,7 @@ class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
         Sets the execution_schedule of this UpdateScheduledPolicyDetails.
 
         :param execution_schedule: The execution_schedule of this UpdateScheduledPolicyDetails.
-        :type: ExecutionSchedule
+        :type: oci.autoscaling.models.ExecutionSchedule
         """
         self._execution_schedule = execution_schedule
 

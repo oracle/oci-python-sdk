@@ -75,7 +75,7 @@ class WorkRequest(object):
 
         :param error_details:
             The value to assign to the error_details property of this WorkRequest.
-        :type error_details: list[WorkRequestError]
+        :type error_details: list[oci.load_balancer.models.WorkRequestError]
 
         """
         self.swagger_types = {
@@ -356,7 +356,7 @@ class WorkRequest(object):
         **[Required]** Gets the error_details of this WorkRequest.
 
         :return: The error_details of this WorkRequest.
-        :rtype: list[WorkRequestError]
+        :rtype: list[oci.load_balancer.models.WorkRequestError]
         """
         return self._error_details
 
@@ -366,7 +366,7 @@ class WorkRequest(object):
         Sets the error_details of this WorkRequest.
 
         :param error_details: The error_details of this WorkRequest.
-        :type: list[WorkRequestError]
+        :type: list[oci.load_balancer.models.WorkRequestError]
         """
         self._error_details = error_details
 

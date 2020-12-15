@@ -184,7 +184,7 @@ class AutonomousContainerDatabase(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this AutonomousContainerDatabase.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param standby_maintenance_buffer_in_days:
             The value to assign to the standby_maintenance_buffer_in_days property of this AutonomousContainerDatabase.
@@ -214,7 +214,7 @@ class AutonomousContainerDatabase(object):
 
         :param backup_config:
             The value to assign to the backup_config property of this AutonomousContainerDatabase.
-        :type backup_config: AutonomousContainerDatabaseBackupConfig
+        :type backup_config: oci.database.models.AutonomousContainerDatabaseBackupConfig
 
         :param key_store_id:
             The value to assign to the key_store_id property of this AutonomousContainerDatabase.
@@ -605,7 +605,7 @@ class AutonomousContainerDatabase(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this AutonomousContainerDatabase.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this AutonomousContainerDatabase.
@@ -617,7 +617,7 @@ class AutonomousContainerDatabase(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this AutonomousContainerDatabase.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this AutonomousContainerDatabase.
@@ -769,7 +769,7 @@ class AutonomousContainerDatabase(object):
         Gets the maintenance_window of this AutonomousContainerDatabase.
 
         :return: The maintenance_window of this AutonomousContainerDatabase.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -779,7 +779,7 @@ class AutonomousContainerDatabase(object):
         Sets the maintenance_window of this AutonomousContainerDatabase.
 
         :param maintenance_window: The maintenance_window of this AutonomousContainerDatabase.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 
@@ -957,7 +957,7 @@ class AutonomousContainerDatabase(object):
         Gets the backup_config of this AutonomousContainerDatabase.
 
         :return: The backup_config of this AutonomousContainerDatabase.
-        :rtype: AutonomousContainerDatabaseBackupConfig
+        :rtype: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         return self._backup_config
 
@@ -967,7 +967,7 @@ class AutonomousContainerDatabase(object):
         Sets the backup_config of this AutonomousContainerDatabase.
 
         :param backup_config: The backup_config of this AutonomousContainerDatabase.
-        :type: AutonomousContainerDatabaseBackupConfig
+        :type: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         self._backup_config = backup_config
 

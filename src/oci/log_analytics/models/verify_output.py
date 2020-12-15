@@ -36,7 +36,7 @@ class VerifyOutput(object):
 
         :param columns:
             The value to assign to the columns property of this VerifyOutput.
-        :type columns: list[ResultColumn]
+        :type columns: list[oci.log_analytics.models.ResultColumn]
 
         :param results:
             The value to assign to the results property of this VerifyOutput.
@@ -172,7 +172,7 @@ class VerifyOutput(object):
 
 
         :return: The columns of this VerifyOutput.
-        :rtype: list[ResultColumn]
+        :rtype: list[oci.log_analytics.models.ResultColumn]
         """
         return self._columns
 
@@ -184,7 +184,7 @@ class VerifyOutput(object):
 
 
         :param columns: The columns of this VerifyOutput.
-        :type: list[ResultColumn]
+        :type: list[oci.log_analytics.models.ResultColumn]
         """
         self._columns = columns
 

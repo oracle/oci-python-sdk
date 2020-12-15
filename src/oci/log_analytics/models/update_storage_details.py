@@ -20,7 +20,7 @@ class UpdateStorageDetails(object):
 
         :param archiving_configuration:
             The value to assign to the archiving_configuration property of this UpdateStorageDetails.
-        :type archiving_configuration: ArchivingConfiguration
+        :type archiving_configuration: oci.log_analytics.models.ArchivingConfiguration
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class UpdateStorageDetails(object):
         **[Required]** Gets the archiving_configuration of this UpdateStorageDetails.
 
         :return: The archiving_configuration of this UpdateStorageDetails.
-        :rtype: ArchivingConfiguration
+        :rtype: oci.log_analytics.models.ArchivingConfiguration
         """
         return self._archiving_configuration
 
@@ -49,7 +49,7 @@ class UpdateStorageDetails(object):
         Sets the archiving_configuration of this UpdateStorageDetails.
 
         :param archiving_configuration: The archiving_configuration of this UpdateStorageDetails.
-        :type: ArchivingConfiguration
+        :type: oci.log_analytics.models.ArchivingConfiguration
         """
         self._archiving_configuration = archiving_configuration
 

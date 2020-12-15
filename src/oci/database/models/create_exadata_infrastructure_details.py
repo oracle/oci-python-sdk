@@ -65,11 +65,11 @@ class CreateExadataInfrastructureDetails(object):
 
         :param contacts:
             The value to assign to the contacts property of this CreateExadataInfrastructureDetails.
-        :type contacts: list[ExadataInfrastructureContact]
+        :type contacts: list[oci.database.models.ExadataInfrastructureContact]
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this CreateExadataInfrastructureDetails.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param dns_server:
             The value to assign to the dns_server property of this CreateExadataInfrastructureDetails.
@@ -428,7 +428,7 @@ class CreateExadataInfrastructureDetails(object):
 
 
         :return: The contacts of this CreateExadataInfrastructureDetails.
-        :rtype: list[ExadataInfrastructureContact]
+        :rtype: list[oci.database.models.ExadataInfrastructureContact]
         """
         return self._contacts
 
@@ -440,7 +440,7 @@ class CreateExadataInfrastructureDetails(object):
 
 
         :param contacts: The contacts of this CreateExadataInfrastructureDetails.
-        :type: list[ExadataInfrastructureContact]
+        :type: list[oci.database.models.ExadataInfrastructureContact]
         """
         self._contacts = contacts
 
@@ -450,7 +450,7 @@ class CreateExadataInfrastructureDetails(object):
         Gets the maintenance_window of this CreateExadataInfrastructureDetails.
 
         :return: The maintenance_window of this CreateExadataInfrastructureDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -460,7 +460,7 @@ class CreateExadataInfrastructureDetails(object):
         Sets the maintenance_window of this CreateExadataInfrastructureDetails.
 
         :param maintenance_window: The maintenance_window of this CreateExadataInfrastructureDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

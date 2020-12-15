@@ -35,7 +35,7 @@ class InputLink(FlowPortLink):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this InputLink.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_status:
             The value to assign to the object_status property of this InputLink.
@@ -55,7 +55,7 @@ class InputLink(FlowPortLink):
 
         :param field_map:
             The value to assign to the field_map property of this InputLink.
-        :type field_map: FieldMap
+        :type field_map: oci.data_integration.models.FieldMap
 
         """
         self.swagger_types = {
@@ -123,7 +123,7 @@ class InputLink(FlowPortLink):
         Gets the field_map of this InputLink.
 
         :return: The field_map of this InputLink.
-        :rtype: FieldMap
+        :rtype: oci.data_integration.models.FieldMap
         """
         return self._field_map
 
@@ -133,7 +133,7 @@ class InputLink(FlowPortLink):
         Sets the field_map of this InputLink.
 
         :param field_map: The field_map of this InputLink.
-        :type: FieldMap
+        :type: oci.data_integration.models.FieldMap
         """
         self._field_map = field_map
 

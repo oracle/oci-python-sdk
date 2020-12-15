@@ -130,6 +130,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/change_sddc_compartment.py.html>`__ to see an example of how to use change_sddc_compartment API.
         """
         resource_path = "/sddcs/{sddcId}/actions/changeCompartment"
         method = "POST"
@@ -219,6 +222,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/create_sddc.py.html>`__ to see an example of how to use create_sddc API.
         """
         resource_path = "/sddcs"
         method = "POST"
@@ -298,6 +304,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/delete_sddc.py.html>`__ to see an example of how to use delete_sddc API.
         """
         resource_path = "/sddcs/{sddcId}"
         method = "DELETE"
@@ -373,6 +382,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ocvp.models.Sddc`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/get_sddc.py.html>`__ to see an example of how to use get_sddc API.
         """
         resource_path = "/sddcs/{sddcId}"
         method = "GET"
@@ -494,6 +506,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ocvp.models.SddcCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_sddcs.py.html>`__ to see an example of how to use list_sddcs API.
         """
         resource_path = "/sddcs"
         method = "GET"
@@ -614,6 +629,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ocvp.models.SupportedVmwareSoftwareVersionCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_vmware_software_versions.py.html>`__ to see an example of how to use list_supported_vmware_software_versions API.
         """
         resource_path = "/supportedVmwareSoftwareVersions"
         method = "GET"
@@ -703,6 +721,9 @@ class SddcClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ocvp.models.Sddc`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/update_sddc.py.html>`__ to see an example of how to use update_sddc API.
         """
         resource_path = "/sddcs/{sddcId}"
         method = "PUT"

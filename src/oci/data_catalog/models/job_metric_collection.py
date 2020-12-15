@@ -24,7 +24,7 @@ class JobMetricCollection(object):
 
         :param items:
             The value to assign to the items property of this JobMetricCollection.
-        :type items: list[JobMetricSummary]
+        :type items: list[oci.data_catalog.models.JobMetricSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class JobMetricCollection(object):
 
 
         :return: The items of this JobMetricCollection.
-        :rtype: list[JobMetricSummary]
+        :rtype: list[oci.data_catalog.models.JobMetricSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class JobMetricCollection(object):
 
 
         :param items: The items of this JobMetricCollection.
-        :type: list[JobMetricSummary]
+        :type: list[oci.data_catalog.models.JobMetricSummary]
         """
         self._items = items
 

@@ -56,7 +56,7 @@ class TestParserPayloadDetails(object):
 
         :param field_maps:
             The value to assign to the field_maps property of this TestParserPayloadDetails.
-        :type field_maps: list[LogAnalyticsParserField]
+        :type field_maps: list[oci.log_analytics.models.LogAnalyticsParserField]
 
         :param footer_content:
             The value to assign to the footer_content property of this TestParserPayloadDetails.
@@ -96,7 +96,7 @@ class TestParserPayloadDetails(object):
 
         :param metadata:
             The value to assign to the metadata property of this TestParserPayloadDetails.
-        :type metadata: UiParserTestMetadata
+        :type metadata: oci.log_analytics.models.UiParserTestMetadata
 
         :param parser_ignoreline_characters:
             The value to assign to the parser_ignoreline_characters property of this TestParserPayloadDetails.
@@ -120,7 +120,7 @@ class TestParserPayloadDetails(object):
 
         :param parser_functions:
             The value to assign to the parser_functions property of this TestParserPayloadDetails.
-        :type parser_functions: list[LogAnalyticsParserFunction]
+        :type parser_functions: list[oci.log_analytics.models.LogAnalyticsParserFunction]
 
         :param should_tokenize_original_text:
             The value to assign to the should_tokenize_original_text property of this TestParserPayloadDetails.
@@ -339,7 +339,7 @@ class TestParserPayloadDetails(object):
 
 
         :return: The field_maps of this TestParserPayloadDetails.
-        :rtype: list[LogAnalyticsParserField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         return self._field_maps
 
@@ -351,7 +351,7 @@ class TestParserPayloadDetails(object):
 
 
         :param field_maps: The field_maps of this TestParserPayloadDetails.
-        :type: list[LogAnalyticsParserField]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserField]
         """
         self._field_maps = field_maps
 
@@ -577,7 +577,7 @@ class TestParserPayloadDetails(object):
         Gets the metadata of this TestParserPayloadDetails.
 
         :return: The metadata of this TestParserPayloadDetails.
-        :rtype: UiParserTestMetadata
+        :rtype: oci.log_analytics.models.UiParserTestMetadata
         """
         return self._metadata
 
@@ -587,7 +587,7 @@ class TestParserPayloadDetails(object):
         Sets the metadata of this TestParserPayloadDetails.
 
         :param metadata: The metadata of this TestParserPayloadDetails.
-        :type: UiParserTestMetadata
+        :type: oci.log_analytics.models.UiParserTestMetadata
         """
         self._metadata = metadata
 
@@ -719,7 +719,7 @@ class TestParserPayloadDetails(object):
 
 
         :return: The parser_functions of this TestParserPayloadDetails.
-        :rtype: list[LogAnalyticsParserFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         return self._parser_functions
 
@@ -731,7 +731,7 @@ class TestParserPayloadDetails(object):
 
 
         :param parser_functions: The parser_functions of this TestParserPayloadDetails.
-        :type: list[LogAnalyticsParserFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserFunction]
         """
         self._parser_functions = parser_functions
 

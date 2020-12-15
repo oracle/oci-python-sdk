@@ -36,7 +36,7 @@ class DetectorConfiguration(object):
 
         :param values:
             The value to assign to the values property of this DetectorConfiguration.
-        :type values: list[ConfigValue]
+        :type values: list[oci.cloud_guard.models.ConfigValue]
 
         """
         self.swagger_types = {
@@ -165,7 +165,7 @@ class DetectorConfiguration(object):
 
 
         :return: The values of this DetectorConfiguration.
-        :rtype: list[ConfigValue]
+        :rtype: list[oci.cloud_guard.models.ConfigValue]
         """
         return self._values
 
@@ -177,7 +177,7 @@ class DetectorConfiguration(object):
 
 
         :param values: The values of this DetectorConfiguration.
-        :type: list[ConfigValue]
+        :type: list[oci.cloud_guard.models.ConfigValue]
         """
         self._values = values
 

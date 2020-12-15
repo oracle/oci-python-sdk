@@ -28,7 +28,7 @@ class OsManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.os_management.OsManagementClient.create_managed_instance_group` and waits for the :py:class:`~oci.os_management.models.ManagedInstanceGroup` acted upon
         to enter the given state(s).
 
-        :param CreateManagedInstanceGroupDetails create_managed_instance_group_details: (required)
+        :param oci.os_management.models.CreateManagedInstanceGroupDetails create_managed_instance_group_details: (required)
             Details about a Managed Instance Group to create
 
         :param list[str] wait_for_states:
@@ -66,7 +66,7 @@ class OsManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.os_management.OsManagementClient.create_scheduled_job` and waits for the :py:class:`~oci.os_management.models.ScheduledJob` acted upon
         to enter the given state(s).
 
-        :param CreateScheduledJobDetails create_scheduled_job_details: (required)
+        :param oci.os_management.models.CreateScheduledJobDetails create_scheduled_job_details: (required)
             Details about a Scheduled Job to create
 
         :param list[str] wait_for_states:
@@ -104,7 +104,7 @@ class OsManagementClientCompositeOperations(object):
         Calls :py:func:`~oci.os_management.OsManagementClient.create_software_source` and waits for the :py:class:`~oci.os_management.models.SoftwareSource` acted upon
         to enter the given state(s).
 
-        :param CreateSoftwareSourceDetails create_software_source_details: (required)
+        :param oci.os_management.models.CreateSoftwareSourceDetails create_software_source_details: (required)
             Details about a Sofware Source to create
 
         :param list[str] wait_for_states:
@@ -528,7 +528,7 @@ class OsManagementClientCompositeOperations(object):
         :param str managed_instance_group_id: (required)
             OCID for the managed instance group
 
-        :param UpdateManagedInstanceGroupDetails update_managed_instance_group_details: (required)
+        :param oci.os_management.models.UpdateManagedInstanceGroupDetails update_managed_instance_group_details: (required)
             Details about a Managed Instance Group to update
 
         :param list[str] wait_for_states:
@@ -569,7 +569,7 @@ class OsManagementClientCompositeOperations(object):
         :param str scheduled_job_id: (required)
             The ID of the scheduled job.
 
-        :param UpdateScheduledJobDetails update_scheduled_job_details: (required)
+        :param oci.os_management.models.UpdateScheduledJobDetails update_scheduled_job_details: (required)
             Details about a Scheduled Job to update
 
         :param list[str] wait_for_states:
@@ -610,7 +610,7 @@ class OsManagementClientCompositeOperations(object):
         :param str software_source_id: (required)
             The OCID of the software source.
 
-        :param UpdateSoftwareSourceDetails update_software_source_details: (required)
+        :param oci.os_management.models.UpdateSoftwareSourceDetails update_software_source_details: (required)
             Details about a Sofware Source to update
 
         :param list[str] wait_for_states:

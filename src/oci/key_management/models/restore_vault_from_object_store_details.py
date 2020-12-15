@@ -20,7 +20,7 @@ class RestoreVaultFromObjectStoreDetails(object):
 
         :param backup_location:
             The value to assign to the backup_location property of this RestoreVaultFromObjectStoreDetails.
-        :type backup_location: BackupLocation
+        :type backup_location: oci.key_management.models.BackupLocation
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class RestoreVaultFromObjectStoreDetails(object):
         Gets the backup_location of this RestoreVaultFromObjectStoreDetails.
 
         :return: The backup_location of this RestoreVaultFromObjectStoreDetails.
-        :rtype: BackupLocation
+        :rtype: oci.key_management.models.BackupLocation
         """
         return self._backup_location
 
@@ -49,7 +49,7 @@ class RestoreVaultFromObjectStoreDetails(object):
         Sets the backup_location of this RestoreVaultFromObjectStoreDetails.
 
         :param backup_location: The backup_location of this RestoreVaultFromObjectStoreDetails.
-        :type: BackupLocation
+        :type: oci.key_management.models.BackupLocation
         """
         self._backup_location = backup_location
 

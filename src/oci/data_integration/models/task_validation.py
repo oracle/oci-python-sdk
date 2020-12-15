@@ -52,7 +52,7 @@ class TaskValidation(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskValidation.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskValidation.
@@ -76,7 +76,7 @@ class TaskValidation(object):
 
         :param metadata:
             The value to assign to the metadata property of this TaskValidation.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -329,7 +329,7 @@ class TaskValidation(object):
         Gets the parent_ref of this TaskValidation.
 
         :return: The parent_ref of this TaskValidation.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -339,7 +339,7 @@ class TaskValidation(object):
         Sets the parent_ref of this TaskValidation.
 
         :param parent_ref: The parent_ref of this TaskValidation.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -469,7 +469,7 @@ class TaskValidation(object):
         Gets the metadata of this TaskValidation.
 
         :return: The metadata of this TaskValidation.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -479,7 +479,7 @@ class TaskValidation(object):
         Sets the metadata of this TaskValidation.
 
         :param metadata: The metadata of this TaskValidation.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

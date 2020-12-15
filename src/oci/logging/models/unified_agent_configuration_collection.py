@@ -20,7 +20,7 @@ class UnifiedAgentConfigurationCollection(object):
 
         :param items:
             The value to assign to the items property of this UnifiedAgentConfigurationCollection.
-        :type items: list[UnifiedAgentConfigurationSummary]
+        :type items: list[oci.logging.models.UnifiedAgentConfigurationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UnifiedAgentConfigurationCollection(object):
 
 
         :return: The items of this UnifiedAgentConfigurationCollection.
-        :rtype: list[UnifiedAgentConfigurationSummary]
+        :rtype: list[oci.logging.models.UnifiedAgentConfigurationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class UnifiedAgentConfigurationCollection(object):
 
 
         :param items: The items of this UnifiedAgentConfigurationCollection.
-        :type: list[UnifiedAgentConfigurationSummary]
+        :type: list[oci.logging.models.UnifiedAgentConfigurationSummary]
         """
         self._items = items
 

@@ -24,7 +24,7 @@ class UsageAggregation(object):
 
         :param items:
             The value to assign to the items property of this UsageAggregation.
-        :type items: list[UsageSummary]
+        :type items: list[oci.usage_api.models.UsageSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class UsageAggregation(object):
 
 
         :return: The items of this UsageAggregation.
-        :rtype: list[UsageSummary]
+        :rtype: list[oci.usage_api.models.UsageSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class UsageAggregation(object):
 
 
         :param items: The items of this UsageAggregation.
-        :type: list[UsageSummary]
+        :type: list[oci.usage_api.models.UsageSummary]
         """
         self._items = items
 

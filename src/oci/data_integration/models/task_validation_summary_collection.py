@@ -20,7 +20,7 @@ class TaskValidationSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this TaskValidationSummaryCollection.
-        :type items: list[TaskValidationSummary]
+        :type items: list[oci.data_integration.models.TaskValidationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TaskValidationSummaryCollection(object):
 
 
         :return: The items of this TaskValidationSummaryCollection.
-        :rtype: list[TaskValidationSummary]
+        :rtype: list[oci.data_integration.models.TaskValidationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TaskValidationSummaryCollection(object):
 
 
         :param items: The items of this TaskValidationSummaryCollection.
-        :type: list[TaskValidationSummary]
+        :type: list[oci.data_integration.models.TaskValidationSummary]
         """
         self._items = items
 

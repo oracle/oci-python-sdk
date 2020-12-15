@@ -36,7 +36,7 @@ class UpdateRuleDetails(object):
 
         :param actions:
             The value to assign to the actions property of this UpdateRuleDetails.
-        :type actions: ActionDetailsList
+        :type actions: oci.events.models.ActionDetailsList
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateRuleDetails.
@@ -237,7 +237,7 @@ class UpdateRuleDetails(object):
         Gets the actions of this UpdateRuleDetails.
 
         :return: The actions of this UpdateRuleDetails.
-        :rtype: ActionDetailsList
+        :rtype: oci.events.models.ActionDetailsList
         """
         return self._actions
 
@@ -247,7 +247,7 @@ class UpdateRuleDetails(object):
         Sets the actions of this UpdateRuleDetails.
 
         :param actions: The actions of this UpdateRuleDetails.
-        :type: ActionDetailsList
+        :type: oci.events.models.ActionDetailsList
         """
         self._actions = actions
 

@@ -20,7 +20,7 @@ class ContactList(object):
 
         :param contact_list:
             The value to assign to the contact_list property of this ContactList.
-        :type contact_list: list[Contact]
+        :type contact_list: list[oci.cims.models.Contact]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ContactList(object):
 
 
         :return: The contact_list of this ContactList.
-        :rtype: list[Contact]
+        :rtype: list[oci.cims.models.Contact]
         """
         return self._contact_list
 
@@ -53,7 +53,7 @@ class ContactList(object):
 
 
         :param contact_list: The contact_list of this ContactList.
-        :type: list[Contact]
+        :type: list[oci.cims.models.Contact]
         """
         self._contact_list = contact_list
 

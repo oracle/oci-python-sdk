@@ -34,11 +34,11 @@ class MacroField(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this MacroField.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this MacroField.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this MacroField.
@@ -54,11 +54,11 @@ class MacroField(TypedObject):
 
         :param expr:
             The value to assign to the expr property of this MacroField.
-        :type expr: Expression
+        :type expr: oci.data_integration.models.Expression
 
         :param type:
             The value to assign to the type property of this MacroField.
-        :type type: BaseType
+        :type type: oci.data_integration.models.BaseType
 
         :param is_use_source_type:
             The value to assign to the is_use_source_type property of this MacroField.
@@ -66,7 +66,7 @@ class MacroField(TypedObject):
 
         :param use_type:
             The value to assign to the use_type property of this MacroField.
-        :type use_type: ConfiguredType
+        :type use_type: oci.data_integration.models.ConfiguredType
 
         :param labels:
             The value to assign to the labels property of this MacroField.
@@ -126,7 +126,7 @@ class MacroField(TypedObject):
         Gets the expr of this MacroField.
 
         :return: The expr of this MacroField.
-        :rtype: Expression
+        :rtype: oci.data_integration.models.Expression
         """
         return self._expr
 
@@ -136,7 +136,7 @@ class MacroField(TypedObject):
         Sets the expr of this MacroField.
 
         :param expr: The expr of this MacroField.
-        :type: Expression
+        :type: oci.data_integration.models.Expression
         """
         self._expr = expr
 
@@ -146,7 +146,7 @@ class MacroField(TypedObject):
         Gets the type of this MacroField.
 
         :return: The type of this MacroField.
-        :rtype: BaseType
+        :rtype: oci.data_integration.models.BaseType
         """
         return self._type
 
@@ -156,7 +156,7 @@ class MacroField(TypedObject):
         Sets the type of this MacroField.
 
         :param type: The type of this MacroField.
-        :type: BaseType
+        :type: oci.data_integration.models.BaseType
         """
         self._type = type
 
@@ -190,7 +190,7 @@ class MacroField(TypedObject):
         Gets the use_type of this MacroField.
 
         :return: The use_type of this MacroField.
-        :rtype: ConfiguredType
+        :rtype: oci.data_integration.models.ConfiguredType
         """
         return self._use_type
 
@@ -200,7 +200,7 @@ class MacroField(TypedObject):
         Sets the use_type of this MacroField.
 
         :param use_type: The use_type of this MacroField.
-        :type: ConfiguredType
+        :type: oci.data_integration.models.ConfiguredType
         """
         self._use_type = use_type
 

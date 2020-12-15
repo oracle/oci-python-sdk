@@ -28,7 +28,7 @@ class WorkflowMonitor(object):
 
         :param workflow_steps:
             The value to assign to the workflow_steps property of this WorkflowMonitor.
-        :type workflow_steps: list[WorkflowStep]
+        :type workflow_steps: list[oci.oce.models.WorkflowStep]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class WorkflowMonitor(object):
 
 
         :return: The workflow_steps of this WorkflowMonitor.
-        :rtype: list[WorkflowStep]
+        :rtype: list[oci.oce.models.WorkflowStep]
         """
         return self._workflow_steps
 
@@ -115,7 +115,7 @@ class WorkflowMonitor(object):
 
 
         :param workflow_steps: The workflow_steps of this WorkflowMonitor.
-        :type: list[WorkflowStep]
+        :type: list[oci.oce.models.WorkflowStep]
         """
         self._workflow_steps = workflow_steps
 

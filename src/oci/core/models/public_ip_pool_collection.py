@@ -20,7 +20,7 @@ class PublicIpPoolCollection(object):
 
         :param items:
             The value to assign to the items property of this PublicIpPoolCollection.
-        :type items: list[PublicIpPoolSummary]
+        :type items: list[oci.core.models.PublicIpPoolSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PublicIpPoolCollection(object):
 
 
         :return: The items of this PublicIpPoolCollection.
-        :rtype: list[PublicIpPoolSummary]
+        :rtype: list[oci.core.models.PublicIpPoolSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class PublicIpPoolCollection(object):
 
 
         :param items: The items of this PublicIpPoolCollection.
-        :type: list[PublicIpPoolSummary]
+        :type: list[oci.core.models.PublicIpPoolSummary]
         """
         self._items = items
 

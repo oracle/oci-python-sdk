@@ -90,7 +90,7 @@ class CreateDataAssetDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataAssetDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -388,7 +388,7 @@ class CreateDataAssetDetails(object):
         Gets the registry_metadata of this CreateDataAssetDetails.
 
         :return: The registry_metadata of this CreateDataAssetDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -398,7 +398,7 @@ class CreateDataAssetDetails(object):
         Sets the registry_metadata of this CreateDataAssetDetails.
 
         :param registry_metadata: The registry_metadata of this CreateDataAssetDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

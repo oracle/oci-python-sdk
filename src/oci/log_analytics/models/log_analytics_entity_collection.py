@@ -20,7 +20,7 @@ class LogAnalyticsEntityCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsEntityCollection.
-        :type items: list[LogAnalyticsEntitySummary]
+        :type items: list[oci.log_analytics.models.LogAnalyticsEntitySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsEntityCollection(object):
 
 
         :return: The items of this LogAnalyticsEntityCollection.
-        :rtype: list[LogAnalyticsEntitySummary]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsEntitySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsEntityCollection(object):
 
 
         :param items: The items of this LogAnalyticsEntityCollection.
-        :type: list[LogAnalyticsEntitySummary]
+        :type: list[oci.log_analytics.models.LogAnalyticsEntitySummary]
         """
         self._items = items
 

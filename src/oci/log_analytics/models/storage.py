@@ -24,7 +24,7 @@ class Storage(object):
 
         :param archiving_configuration:
             The value to assign to the archiving_configuration property of this Storage.
-        :type archiving_configuration: ArchivingConfiguration
+        :type archiving_configuration: oci.log_analytics.models.ArchivingConfiguration
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class Storage(object):
         **[Required]** Gets the archiving_configuration of this Storage.
 
         :return: The archiving_configuration of this Storage.
-        :rtype: ArchivingConfiguration
+        :rtype: oci.log_analytics.models.ArchivingConfiguration
         """
         return self._archiving_configuration
 
@@ -80,7 +80,7 @@ class Storage(object):
         Sets the archiving_configuration of this Storage.
 
         :param archiving_configuration: The archiving_configuration of this Storage.
-        :type: ArchivingConfiguration
+        :type: oci.log_analytics.models.ArchivingConfiguration
         """
         self._archiving_configuration = archiving_configuration
 

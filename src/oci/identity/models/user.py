@@ -118,7 +118,7 @@ class User(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this User.
-        :type capabilities: UserCapabilities
+        :type capabilities: oci.identity.models.UserCapabilities
 
         :param is_mfa_activated:
             The value to assign to the is_mfa_activated property of this User.
@@ -553,7 +553,7 @@ class User(object):
         Gets the capabilities of this User.
 
         :return: The capabilities of this User.
-        :rtype: UserCapabilities
+        :rtype: oci.identity.models.UserCapabilities
         """
         return self._capabilities
 
@@ -563,7 +563,7 @@ class User(object):
         Sets the capabilities of this User.
 
         :param capabilities: The capabilities of this User.
-        :type: UserCapabilities
+        :type: oci.identity.models.UserCapabilities
         """
         self._capabilities = capabilities
 

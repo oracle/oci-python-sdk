@@ -28,15 +28,15 @@ class SqlInsightAggregationCollection(object):
 
         :param inventory:
             The value to assign to the inventory property of this SqlInsightAggregationCollection.
-        :type inventory: SqlInventory
+        :type inventory: oci.opsi.models.SqlInventory
 
         :param items:
             The value to assign to the items property of this SqlInsightAggregationCollection.
-        :type items: list[SqlInsightAggregation]
+        :type items: list[oci.opsi.models.SqlInsightAggregation]
 
         :param thresholds:
             The value to assign to the thresholds property of this SqlInsightAggregationCollection.
-        :type thresholds: SqlInsightThresholds
+        :type thresholds: oci.opsi.models.SqlInsightThresholds
 
         """
         self.swagger_types = {
@@ -115,7 +115,7 @@ class SqlInsightAggregationCollection(object):
         **[Required]** Gets the inventory of this SqlInsightAggregationCollection.
 
         :return: The inventory of this SqlInsightAggregationCollection.
-        :rtype: SqlInventory
+        :rtype: oci.opsi.models.SqlInventory
         """
         return self._inventory
 
@@ -125,7 +125,7 @@ class SqlInsightAggregationCollection(object):
         Sets the inventory of this SqlInsightAggregationCollection.
 
         :param inventory: The inventory of this SqlInsightAggregationCollection.
-        :type: SqlInventory
+        :type: oci.opsi.models.SqlInventory
         """
         self._inventory = inventory
 
@@ -137,7 +137,7 @@ class SqlInsightAggregationCollection(object):
 
 
         :return: The items of this SqlInsightAggregationCollection.
-        :rtype: list[SqlInsightAggregation]
+        :rtype: list[oci.opsi.models.SqlInsightAggregation]
         """
         return self._items
 
@@ -149,7 +149,7 @@ class SqlInsightAggregationCollection(object):
 
 
         :param items: The items of this SqlInsightAggregationCollection.
-        :type: list[SqlInsightAggregation]
+        :type: list[oci.opsi.models.SqlInsightAggregation]
         """
         self._items = items
 
@@ -159,7 +159,7 @@ class SqlInsightAggregationCollection(object):
         **[Required]** Gets the thresholds of this SqlInsightAggregationCollection.
 
         :return: The thresholds of this SqlInsightAggregationCollection.
-        :rtype: SqlInsightThresholds
+        :rtype: oci.opsi.models.SqlInsightThresholds
         """
         return self._thresholds
 
@@ -169,7 +169,7 @@ class SqlInsightAggregationCollection(object):
         Sets the thresholds of this SqlInsightAggregationCollection.
 
         :param thresholds: The thresholds of this SqlInsightAggregationCollection.
-        :type: SqlInsightThresholds
+        :type: oci.opsi.models.SqlInsightThresholds
         """
         self._thresholds = thresholds
 

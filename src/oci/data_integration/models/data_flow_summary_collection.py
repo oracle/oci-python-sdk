@@ -20,7 +20,7 @@ class DataFlowSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this DataFlowSummaryCollection.
-        :type items: list[DataFlowSummary]
+        :type items: list[oci.data_integration.models.DataFlowSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DataFlowSummaryCollection(object):
 
 
         :return: The items of this DataFlowSummaryCollection.
-        :rtype: list[DataFlowSummary]
+        :rtype: list[oci.data_integration.models.DataFlowSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DataFlowSummaryCollection(object):
 
 
         :param items: The items of this DataFlowSummaryCollection.
-        :type: list[DataFlowSummary]
+        :type: list[oci.data_integration.models.DataFlowSummary]
         """
         self._items = items
 

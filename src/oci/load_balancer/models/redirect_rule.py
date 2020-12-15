@@ -41,11 +41,11 @@ class RedirectRule(Rule):
 
         :param conditions:
             The value to assign to the conditions property of this RedirectRule.
-        :type conditions: list[RuleCondition]
+        :type conditions: list[oci.load_balancer.models.RuleCondition]
 
         :param redirect_uri:
             The value to assign to the redirect_uri property of this RedirectRule.
-        :type redirect_uri: RedirectUri
+        :type redirect_uri: oci.load_balancer.models.RedirectUri
 
         """
         self.swagger_types = {
@@ -124,7 +124,7 @@ class RedirectRule(Rule):
         **[Required]** Gets the conditions of this RedirectRule.
 
         :return: The conditions of this RedirectRule.
-        :rtype: list[RuleCondition]
+        :rtype: list[oci.load_balancer.models.RuleCondition]
         """
         return self._conditions
 
@@ -134,7 +134,7 @@ class RedirectRule(Rule):
         Sets the conditions of this RedirectRule.
 
         :param conditions: The conditions of this RedirectRule.
-        :type: list[RuleCondition]
+        :type: list[oci.load_balancer.models.RuleCondition]
         """
         self._conditions = conditions
 
@@ -144,7 +144,7 @@ class RedirectRule(Rule):
         Gets the redirect_uri of this RedirectRule.
 
         :return: The redirect_uri of this RedirectRule.
-        :rtype: RedirectUri
+        :rtype: oci.load_balancer.models.RedirectUri
         """
         return self._redirect_uri
 
@@ -154,7 +154,7 @@ class RedirectRule(Rule):
         Sets the redirect_uri of this RedirectRule.
 
         :param redirect_uri: The redirect_uri of this RedirectRule.
-        :type: RedirectUri
+        :type: oci.load_balancer.models.RedirectUri
         """
         self._redirect_uri = redirect_uri
 

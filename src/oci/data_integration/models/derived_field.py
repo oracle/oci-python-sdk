@@ -34,11 +34,11 @@ class DerivedField(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DerivedField.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this DerivedField.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this DerivedField.
@@ -54,7 +54,7 @@ class DerivedField(TypedObject):
 
         :param expr:
             The value to assign to the expr property of this DerivedField.
-        :type expr: Expression
+        :type expr: oci.data_integration.models.Expression
 
         :param type:
             The value to assign to the type property of this DerivedField.
@@ -112,7 +112,7 @@ class DerivedField(TypedObject):
         Gets the expr of this DerivedField.
 
         :return: The expr of this DerivedField.
-        :rtype: Expression
+        :rtype: oci.data_integration.models.Expression
         """
         return self._expr
 
@@ -122,7 +122,7 @@ class DerivedField(TypedObject):
         Sets the expr of this DerivedField.
 
         :param expr: The expr of this DerivedField.
-        :type: Expression
+        :type: oci.data_integration.models.Expression
         """
         self._expr = expr
 

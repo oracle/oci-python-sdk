@@ -62,7 +62,7 @@ class UpdateDataAssetFromMySQL(UpdateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateDataAssetFromMySQL.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param host:
             The value to assign to the host property of this UpdateDataAssetFromMySQL.
@@ -78,7 +78,7 @@ class UpdateDataAssetFromMySQL(UpdateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this UpdateDataAssetFromMySQL.
-        :type default_connection: UpdateConnectionFromMySQL
+        :type default_connection: oci.data_integration.models.UpdateConnectionFromMySQL
 
         """
         self.swagger_types = {
@@ -212,7 +212,7 @@ class UpdateDataAssetFromMySQL(UpdateDataAssetDetails):
         Gets the default_connection of this UpdateDataAssetFromMySQL.
 
         :return: The default_connection of this UpdateDataAssetFromMySQL.
-        :rtype: UpdateConnectionFromMySQL
+        :rtype: oci.data_integration.models.UpdateConnectionFromMySQL
         """
         return self._default_connection
 
@@ -222,7 +222,7 @@ class UpdateDataAssetFromMySQL(UpdateDataAssetDetails):
         Sets the default_connection of this UpdateDataAssetFromMySQL.
 
         :param default_connection: The default_connection of this UpdateDataAssetFromMySQL.
-        :type: UpdateConnectionFromMySQL
+        :type: oci.data_integration.models.UpdateConnectionFromMySQL
         """
         self._default_connection = default_connection
 

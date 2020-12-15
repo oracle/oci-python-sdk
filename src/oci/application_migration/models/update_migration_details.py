@@ -32,7 +32,7 @@ class UpdateMigrationDetails(object):
 
         :param discovery_details:
             The value to assign to the discovery_details property of this UpdateMigrationDetails.
-        :type discovery_details: DiscoveryDetails
+        :type discovery_details: oci.application_migration.models.DiscoveryDetails
 
         :param service_config:
             The value to assign to the service_config property of this UpdateMigrationDetails.
@@ -133,7 +133,7 @@ class UpdateMigrationDetails(object):
         Gets the discovery_details of this UpdateMigrationDetails.
 
         :return: The discovery_details of this UpdateMigrationDetails.
-        :rtype: DiscoveryDetails
+        :rtype: oci.application_migration.models.DiscoveryDetails
         """
         return self._discovery_details
 
@@ -143,7 +143,7 @@ class UpdateMigrationDetails(object):
         Sets the discovery_details of this UpdateMigrationDetails.
 
         :param discovery_details: The discovery_details of this UpdateMigrationDetails.
-        :type: DiscoveryDetails
+        :type: oci.application_migration.models.DiscoveryDetails
         """
         self._discovery_details = discovery_details
 

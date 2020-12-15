@@ -36,7 +36,7 @@ class CreateVirtualCircuitDetails(object):
 
         :param cross_connect_mappings:
             The value to assign to the cross_connect_mappings property of this CreateVirtualCircuitDetails.
-        :type cross_connect_mappings: list[CrossConnectMapping]
+        :type cross_connect_mappings: list[oci.core.models.CrossConnectMapping]
 
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this CreateVirtualCircuitDetails.
@@ -80,7 +80,7 @@ class CreateVirtualCircuitDetails(object):
 
         :param public_prefixes:
             The value to assign to the public_prefixes property of this CreateVirtualCircuitDetails.
-        :type public_prefixes: list[CreateVirtualCircuitPublicPrefixDetails]
+        :type public_prefixes: list[oci.core.models.CreateVirtualCircuitPublicPrefixDetails]
 
         :param region:
             The value to assign to the region property of this CreateVirtualCircuitDetails.
@@ -212,7 +212,7 @@ class CreateVirtualCircuitDetails(object):
 
 
         :return: The cross_connect_mappings of this CreateVirtualCircuitDetails.
-        :rtype: list[CrossConnectMapping]
+        :rtype: list[oci.core.models.CrossConnectMapping]
         """
         return self._cross_connect_mappings
 
@@ -225,7 +225,7 @@ class CreateVirtualCircuitDetails(object):
 
 
         :param cross_connect_mappings: The cross_connect_mappings of this CreateVirtualCircuitDetails.
-        :type: list[CrossConnectMapping]
+        :type: list[oci.core.models.CrossConnectMapping]
         """
         self._cross_connect_mappings = cross_connect_mappings
 
@@ -524,7 +524,7 @@ class CreateVirtualCircuitDetails(object):
 
 
         :return: The public_prefixes of this CreateVirtualCircuitDetails.
-        :rtype: list[CreateVirtualCircuitPublicPrefixDetails]
+        :rtype: list[oci.core.models.CreateVirtualCircuitPublicPrefixDetails]
         """
         return self._public_prefixes
 
@@ -537,7 +537,7 @@ class CreateVirtualCircuitDetails(object):
 
 
         :param public_prefixes: The public_prefixes of this CreateVirtualCircuitDetails.
-        :type: list[CreateVirtualCircuitPublicPrefixDetails]
+        :type: list[oci.core.models.CreateVirtualCircuitPublicPrefixDetails]
         """
         self._public_prefixes = public_prefixes
 

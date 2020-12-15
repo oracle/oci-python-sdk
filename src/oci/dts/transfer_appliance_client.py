@@ -95,7 +95,7 @@ class TransferApplianceClient(object):
 
         :param str opc_retry_token: (optional)
 
-        :param CreateTransferApplianceDetails create_transfer_appliance_details: (optional)
+        :param oci.dts.models.CreateTransferApplianceDetails create_transfer_appliance_details: (optional)
             Creates a New Transfer Appliance
 
         :param obj retry_strategy: (optional)
@@ -108,6 +108,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferAppliance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_transfer_appliance.py.html>`__ to see an example of how to use create_transfer_appliance API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances"
         method = "POST"
@@ -187,6 +190,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferApplianceCertificate`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_transfer_appliance_admin_credentials.py.html>`__ to see an example of how to use create_transfer_appliance_admin_credentials API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}/admin_credentials"
         method = "POST"
@@ -256,6 +262,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/delete_transfer_appliance.py.html>`__ to see an example of how to use delete_transfer_appliance API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}"
         method = "DELETE"
@@ -321,6 +330,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferAppliance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_appliance.py.html>`__ to see an example of how to use get_transfer_appliance API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}"
         method = "GET"
@@ -388,6 +400,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferApplianceCertificate`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_appliance_certificate_authority_certificate.py.html>`__ to see an example of how to use get_transfer_appliance_certificate_authority_certificate API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}/certificate_authority_certificate"
         method = "GET"
@@ -455,6 +470,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferApplianceEncryptionPassphrase`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_appliance_encryption_passphrase.py.html>`__ to see an example of how to use get_transfer_appliance_encryption_passphrase API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}/encryptionPassphrase"
         method = "GET"
@@ -524,6 +542,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.MultipleTransferAppliances`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_transfer_appliances.py.html>`__ to see an example of how to use list_transfer_appliances API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances"
         method = "GET"
@@ -615,6 +636,9 @@ class TransferApplianceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferAppliance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/update_transfer_appliance.py.html>`__ to see an example of how to use update_transfer_appliance API.
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}"
         method = "PUT"

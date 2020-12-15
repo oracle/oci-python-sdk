@@ -34,7 +34,7 @@ class RenameRule(ProjectionRule):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this RenameRule.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param is_java_regex_syntax:
             The value to assign to the is_java_regex_syntax property of this RenameRule.
@@ -42,7 +42,7 @@ class RenameRule(ProjectionRule):
 
         :param config_values:
             The value to assign to the config_values property of this RenameRule.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this RenameRule.

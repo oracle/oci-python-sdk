@@ -36,11 +36,11 @@ class UpdateExternalPublicationDetails(object):
 
         :param resource_configuration:
             The value to assign to the resource_configuration property of this UpdateExternalPublicationDetails.
-        :type resource_configuration: ResourceConfiguration
+        :type resource_configuration: oci.data_integration.models.ResourceConfiguration
 
         :param configuration_details:
             The value to assign to the configuration_details property of this UpdateExternalPublicationDetails.
-        :type configuration_details: ConfigurationDetails
+        :type configuration_details: oci.data_integration.models.ConfigurationDetails
 
         """
         self.swagger_types = {
@@ -170,7 +170,7 @@ class UpdateExternalPublicationDetails(object):
         Gets the resource_configuration of this UpdateExternalPublicationDetails.
 
         :return: The resource_configuration of this UpdateExternalPublicationDetails.
-        :rtype: ResourceConfiguration
+        :rtype: oci.data_integration.models.ResourceConfiguration
         """
         return self._resource_configuration
 
@@ -180,7 +180,7 @@ class UpdateExternalPublicationDetails(object):
         Sets the resource_configuration of this UpdateExternalPublicationDetails.
 
         :param resource_configuration: The resource_configuration of this UpdateExternalPublicationDetails.
-        :type: ResourceConfiguration
+        :type: oci.data_integration.models.ResourceConfiguration
         """
         self._resource_configuration = resource_configuration
 
@@ -190,7 +190,7 @@ class UpdateExternalPublicationDetails(object):
         Gets the configuration_details of this UpdateExternalPublicationDetails.
 
         :return: The configuration_details of this UpdateExternalPublicationDetails.
-        :rtype: ConfigurationDetails
+        :rtype: oci.data_integration.models.ConfigurationDetails
         """
         return self._configuration_details
 
@@ -200,7 +200,7 @@ class UpdateExternalPublicationDetails(object):
         Sets the configuration_details of this UpdateExternalPublicationDetails.
 
         :param configuration_details: The configuration_details of this UpdateExternalPublicationDetails.
-        :type: ConfigurationDetails
+        :type: oci.data_integration.models.ConfigurationDetails
         """
         self._configuration_details = configuration_details
 

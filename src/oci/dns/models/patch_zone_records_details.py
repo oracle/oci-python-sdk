@@ -20,7 +20,7 @@ class PatchZoneRecordsDetails(object):
 
         :param items:
             The value to assign to the items property of this PatchZoneRecordsDetails.
-        :type items: list[RecordOperation]
+        :type items: list[oci.dns.models.RecordOperation]
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class PatchZoneRecordsDetails(object):
         Gets the items of this PatchZoneRecordsDetails.
 
         :return: The items of this PatchZoneRecordsDetails.
-        :rtype: list[RecordOperation]
+        :rtype: list[oci.dns.models.RecordOperation]
         """
         return self._items
 
@@ -49,7 +49,7 @@ class PatchZoneRecordsDetails(object):
         Sets the items of this PatchZoneRecordsDetails.
 
         :param items: The items of this PatchZoneRecordsDetails.
-        :type: list[RecordOperation]
+        :type: list[oci.dns.models.RecordOperation]
         """
         self._items = items
 

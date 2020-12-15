@@ -35,7 +35,7 @@ class FilterHeaderPolicy(object):
 
         :param items:
             The value to assign to the items property of this FilterHeaderPolicy.
-        :type items: list[FilterHeaderPolicyItem]
+        :type items: list[oci.apigateway.models.FilterHeaderPolicyItem]
 
         """
         self.swagger_types = {
@@ -91,7 +91,7 @@ class FilterHeaderPolicy(object):
 
 
         :return: The items of this FilterHeaderPolicy.
-        :rtype: list[FilterHeaderPolicyItem]
+        :rtype: list[oci.apigateway.models.FilterHeaderPolicyItem]
         """
         return self._items
 
@@ -103,7 +103,7 @@ class FilterHeaderPolicy(object):
 
 
         :param items: The items of this FilterHeaderPolicy.
-        :type: list[FilterHeaderPolicyItem]
+        :type: list[oci.apigateway.models.FilterHeaderPolicyItem]
         """
         self._items = items
 

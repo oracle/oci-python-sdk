@@ -104,19 +104,19 @@ class BdsInstance(object):
 
         :param network_config:
             The value to assign to the network_config property of this BdsInstance.
-        :type network_config: NetworkConfig
+        :type network_config: oci.bds.models.NetworkConfig
 
         :param cluster_details:
             The value to assign to the cluster_details property of this BdsInstance.
-        :type cluster_details: ClusterDetails
+        :type cluster_details: oci.bds.models.ClusterDetails
 
         :param nodes:
             The value to assign to the nodes property of this BdsInstance.
-        :type nodes: list[Node]
+        :type nodes: list[oci.bds.models.Node]
 
         :param cloud_sql_details:
             The value to assign to the cloud_sql_details property of this BdsInstance.
-        :type cloud_sql_details: CloudSqlDetails
+        :type cloud_sql_details: oci.bds.models.CloudSqlDetails
 
         :param created_by:
             The value to assign to the created_by property of this BdsInstance.
@@ -416,7 +416,7 @@ class BdsInstance(object):
 
 
         :return: The network_config of this BdsInstance.
-        :rtype: NetworkConfig
+        :rtype: oci.bds.models.NetworkConfig
         """
         return self._network_config
 
@@ -428,7 +428,7 @@ class BdsInstance(object):
 
 
         :param network_config: The network_config of this BdsInstance.
-        :type: NetworkConfig
+        :type: oci.bds.models.NetworkConfig
         """
         self._network_config = network_config
 
@@ -440,7 +440,7 @@ class BdsInstance(object):
 
 
         :return: The cluster_details of this BdsInstance.
-        :rtype: ClusterDetails
+        :rtype: oci.bds.models.ClusterDetails
         """
         return self._cluster_details
 
@@ -452,7 +452,7 @@ class BdsInstance(object):
 
 
         :param cluster_details: The cluster_details of this BdsInstance.
-        :type: ClusterDetails
+        :type: oci.bds.models.ClusterDetails
         """
         self._cluster_details = cluster_details
 
@@ -464,7 +464,7 @@ class BdsInstance(object):
 
 
         :return: The nodes of this BdsInstance.
-        :rtype: list[Node]
+        :rtype: list[oci.bds.models.Node]
         """
         return self._nodes
 
@@ -476,7 +476,7 @@ class BdsInstance(object):
 
 
         :param nodes: The nodes of this BdsInstance.
-        :type: list[Node]
+        :type: list[oci.bds.models.Node]
         """
         self._nodes = nodes
 
@@ -488,7 +488,7 @@ class BdsInstance(object):
 
 
         :return: The cloud_sql_details of this BdsInstance.
-        :rtype: CloudSqlDetails
+        :rtype: oci.bds.models.CloudSqlDetails
         """
         return self._cloud_sql_details
 
@@ -500,7 +500,7 @@ class BdsInstance(object):
 
 
         :param cloud_sql_details: The cloud_sql_details of this BdsInstance.
-        :type: CloudSqlDetails
+        :type: oci.bds.models.CloudSqlDetails
         """
         self._cloud_sql_details = cloud_sql_details
 

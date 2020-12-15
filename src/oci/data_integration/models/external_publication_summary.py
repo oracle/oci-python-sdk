@@ -44,11 +44,11 @@ class ExternalPublicationSummary(object):
 
         :param resource_configuration:
             The value to assign to the resource_configuration property of this ExternalPublicationSummary.
-        :type resource_configuration: ResourceConfiguration
+        :type resource_configuration: oci.data_integration.models.ResourceConfiguration
 
         :param configuration_details:
             The value to assign to the configuration_details property of this ExternalPublicationSummary.
-        :type configuration_details: ConfigurationDetails
+        :type configuration_details: oci.data_integration.models.ConfigurationDetails
 
         :param status:
             The value to assign to the status property of this ExternalPublicationSummary.
@@ -94,11 +94,11 @@ class ExternalPublicationSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ExternalPublicationSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this ExternalPublicationSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this ExternalPublicationSummary.
@@ -244,7 +244,7 @@ class ExternalPublicationSummary(object):
         Gets the resource_configuration of this ExternalPublicationSummary.
 
         :return: The resource_configuration of this ExternalPublicationSummary.
-        :rtype: ResourceConfiguration
+        :rtype: oci.data_integration.models.ResourceConfiguration
         """
         return self._resource_configuration
 
@@ -254,7 +254,7 @@ class ExternalPublicationSummary(object):
         Sets the resource_configuration of this ExternalPublicationSummary.
 
         :param resource_configuration: The resource_configuration of this ExternalPublicationSummary.
-        :type: ResourceConfiguration
+        :type: oci.data_integration.models.ResourceConfiguration
         """
         self._resource_configuration = resource_configuration
 
@@ -264,7 +264,7 @@ class ExternalPublicationSummary(object):
         Gets the configuration_details of this ExternalPublicationSummary.
 
         :return: The configuration_details of this ExternalPublicationSummary.
-        :rtype: ConfigurationDetails
+        :rtype: oci.data_integration.models.ConfigurationDetails
         """
         return self._configuration_details
 
@@ -274,7 +274,7 @@ class ExternalPublicationSummary(object):
         Sets the configuration_details of this ExternalPublicationSummary.
 
         :param configuration_details: The configuration_details of this ExternalPublicationSummary.
-        :type: ConfigurationDetails
+        :type: oci.data_integration.models.ConfigurationDetails
         """
         self._configuration_details = configuration_details
 
@@ -530,7 +530,7 @@ class ExternalPublicationSummary(object):
         Gets the parent_ref of this ExternalPublicationSummary.
 
         :return: The parent_ref of this ExternalPublicationSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -540,7 +540,7 @@ class ExternalPublicationSummary(object):
         Sets the parent_ref of this ExternalPublicationSummary.
 
         :param parent_ref: The parent_ref of this ExternalPublicationSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -550,7 +550,7 @@ class ExternalPublicationSummary(object):
         Gets the metadata of this ExternalPublicationSummary.
 
         :return: The metadata of this ExternalPublicationSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -560,7 +560,7 @@ class ExternalPublicationSummary(object):
         Sets the metadata of this ExternalPublicationSummary.
 
         :param metadata: The metadata of this ExternalPublicationSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

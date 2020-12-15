@@ -58,7 +58,7 @@ class LogAnalyticsEntityType(object):
 
         :param properties:
             The value to assign to the properties property of this LogAnalyticsEntityType.
-        :type properties: list[EntityTypeProperty]
+        :type properties: list[oci.log_analytics.models.EntityTypeProperty]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this LogAnalyticsEntityType.
@@ -247,7 +247,7 @@ class LogAnalyticsEntityType(object):
 
 
         :return: The properties of this LogAnalyticsEntityType.
-        :rtype: list[EntityTypeProperty]
+        :rtype: list[oci.log_analytics.models.EntityTypeProperty]
         """
         return self._properties
 
@@ -259,7 +259,7 @@ class LogAnalyticsEntityType(object):
 
 
         :param properties: The properties of this LogAnalyticsEntityType.
-        :type: list[EntityTypeProperty]
+        :type: list[oci.log_analytics.models.EntityTypeProperty]
         """
         self._properties = properties
 

@@ -34,7 +34,7 @@ class ConditionalInputLink(FlowPortLink):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ConditionalInputLink.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_status:
             The value to assign to the object_status property of this ConditionalInputLink.
@@ -50,15 +50,15 @@ class ConditionalInputLink(FlowPortLink):
 
         :param from_link:
             The value to assign to the from_link property of this ConditionalInputLink.
-        :type from_link: OutputLink
+        :type from_link: oci.data_integration.models.OutputLink
 
         :param field_map:
             The value to assign to the field_map property of this ConditionalInputLink.
-        :type field_map: FieldMap
+        :type field_map: oci.data_integration.models.FieldMap
 
         :param condition:
             The value to assign to the condition property of this ConditionalInputLink.
-        :type condition: Expression
+        :type condition: oci.data_integration.models.Expression
 
         """
         self.swagger_types = {
@@ -105,7 +105,7 @@ class ConditionalInputLink(FlowPortLink):
         Gets the from_link of this ConditionalInputLink.
 
         :return: The from_link of this ConditionalInputLink.
-        :rtype: OutputLink
+        :rtype: oci.data_integration.models.OutputLink
         """
         return self._from_link
 
@@ -115,7 +115,7 @@ class ConditionalInputLink(FlowPortLink):
         Sets the from_link of this ConditionalInputLink.
 
         :param from_link: The from_link of this ConditionalInputLink.
-        :type: OutputLink
+        :type: oci.data_integration.models.OutputLink
         """
         self._from_link = from_link
 
@@ -125,7 +125,7 @@ class ConditionalInputLink(FlowPortLink):
         Gets the field_map of this ConditionalInputLink.
 
         :return: The field_map of this ConditionalInputLink.
-        :rtype: FieldMap
+        :rtype: oci.data_integration.models.FieldMap
         """
         return self._field_map
 
@@ -135,7 +135,7 @@ class ConditionalInputLink(FlowPortLink):
         Sets the field_map of this ConditionalInputLink.
 
         :param field_map: The field_map of this ConditionalInputLink.
-        :type: FieldMap
+        :type: oci.data_integration.models.FieldMap
         """
         self._field_map = field_map
 
@@ -145,7 +145,7 @@ class ConditionalInputLink(FlowPortLink):
         Gets the condition of this ConditionalInputLink.
 
         :return: The condition of this ConditionalInputLink.
-        :rtype: Expression
+        :rtype: oci.data_integration.models.Expression
         """
         return self._condition
 
@@ -155,7 +155,7 @@ class ConditionalInputLink(FlowPortLink):
         Sets the condition of this ConditionalInputLink.
 
         :param condition: The condition of this ConditionalInputLink.
-        :type: Expression
+        :type: oci.data_integration.models.Expression
         """
         self._condition = condition
 

@@ -30,7 +30,7 @@ class KeyRangePartitionConfig(PartitionConfig):
 
         :param key_range:
             The value to assign to the key_range property of this KeyRangePartitionConfig.
-        :type key_range: KeyRange
+        :type key_range: oci.data_integration.models.KeyRange
 
         """
         self.swagger_types = {
@@ -80,7 +80,7 @@ class KeyRangePartitionConfig(PartitionConfig):
         Gets the key_range of this KeyRangePartitionConfig.
 
         :return: The key_range of this KeyRangePartitionConfig.
-        :rtype: KeyRange
+        :rtype: oci.data_integration.models.KeyRange
         """
         return self._key_range
 
@@ -90,7 +90,7 @@ class KeyRangePartitionConfig(PartitionConfig):
         Sets the key_range of this KeyRangePartitionConfig.
 
         :param key_range: The key_range of this KeyRangePartitionConfig.
-        :type: KeyRange
+        :type: oci.data_integration.models.KeyRange
         """
         self._key_range = key_range
 

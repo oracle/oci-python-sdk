@@ -20,7 +20,7 @@ class GatewayCollection(object):
 
         :param items:
             The value to assign to the items property of this GatewayCollection.
-        :type items: list[GatewaySummary]
+        :type items: list[oci.apigateway.models.GatewaySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class GatewayCollection(object):
 
 
         :return: The items of this GatewayCollection.
-        :rtype: list[GatewaySummary]
+        :rtype: list[oci.apigateway.models.GatewaySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class GatewayCollection(object):
 
 
         :param items: The items of this GatewayCollection.
-        :type: list[GatewaySummary]
+        :type: list[oci.apigateway.models.GatewaySummary]
         """
         self._items = items
 

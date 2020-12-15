@@ -95,7 +95,7 @@ class Folder(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this Folder.
-        :type custom_property_members: list[CustomPropertyGetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
 
         :param properties:
             The value to assign to the properties property of this Folder.
@@ -361,7 +361,7 @@ class Folder(object):
 
 
         :return: The custom_property_members of this Folder.
-        :rtype: list[CustomPropertyGetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         return self._custom_property_members
 
@@ -373,7 +373,7 @@ class Folder(object):
 
 
         :param custom_property_members: The custom_property_members of this Folder.
-        :type: list[CustomPropertyGetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         self._custom_property_members = custom_property_members
 

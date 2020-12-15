@@ -20,7 +20,7 @@ class DetectorRuleCollection(object):
 
         :param items:
             The value to assign to the items property of this DetectorRuleCollection.
-        :type items: list[DetectorRuleSummary]
+        :type items: list[oci.cloud_guard.models.DetectorRuleSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DetectorRuleCollection(object):
 
 
         :return: The items of this DetectorRuleCollection.
-        :rtype: list[DetectorRuleSummary]
+        :rtype: list[oci.cloud_guard.models.DetectorRuleSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DetectorRuleCollection(object):
 
 
         :param items: The items of this DetectorRuleCollection.
-        :type: list[DetectorRuleSummary]
+        :type: list[oci.cloud_guard.models.DetectorRuleSummary]
         """
         self._items = items
 

@@ -20,7 +20,7 @@ class ResourceActionCollection(object):
 
         :param items:
             The value to assign to the items property of this ResourceActionCollection.
-        :type items: list[ResourceActionSummary]
+        :type items: list[oci.optimizer.models.ResourceActionSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ResourceActionCollection(object):
 
 
         :return: The items of this ResourceActionCollection.
-        :rtype: list[ResourceActionSummary]
+        :rtype: list[oci.optimizer.models.ResourceActionSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ResourceActionCollection(object):
 
 
         :param items: The items of this ResourceActionCollection.
-        :type: list[ResourceActionSummary]
+        :type: list[oci.optimizer.models.ResourceActionSummary]
         """
         self._items = items
 

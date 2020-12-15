@@ -154,7 +154,7 @@ class TransferAppliance(object):
 
         :param customer_shipping_address:
             The value to assign to the customer_shipping_address property of this TransferAppliance.
-        :type customer_shipping_address: ShippingAddress
+        :type customer_shipping_address: oci.dts.models.ShippingAddress
 
         :param upload_status_log_uri:
             The value to assign to the upload_status_log_uri property of this TransferAppliance.
@@ -489,7 +489,7 @@ class TransferAppliance(object):
         Gets the customer_shipping_address of this TransferAppliance.
 
         :return: The customer_shipping_address of this TransferAppliance.
-        :rtype: ShippingAddress
+        :rtype: oci.dts.models.ShippingAddress
         """
         return self._customer_shipping_address
 
@@ -499,7 +499,7 @@ class TransferAppliance(object):
         Sets the customer_shipping_address of this TransferAppliance.
 
         :param customer_shipping_address: The customer_shipping_address of this TransferAppliance.
-        :type: ShippingAddress
+        :type: oci.dts.models.ShippingAddress
         """
         self._customer_shipping_address = customer_shipping_address
 

@@ -20,11 +20,11 @@ class ResourceInsightProjectedUtilization(object):
 
         :param low:
             The value to assign to the low property of this ResourceInsightProjectedUtilization.
-        :type low: list[ResourceInsightProjectedUtilizationItem]
+        :type low: list[oci.opsi.models.ResourceInsightProjectedUtilizationItem]
 
         :param high:
             The value to assign to the high property of this ResourceInsightProjectedUtilization.
-        :type high: list[ResourceInsightProjectedUtilizationItem]
+        :type high: list[oci.opsi.models.ResourceInsightProjectedUtilizationItem]
 
         """
         self.swagger_types = {
@@ -48,7 +48,7 @@ class ResourceInsightProjectedUtilization(object):
 
 
         :return: The low of this ResourceInsightProjectedUtilization.
-        :rtype: list[ResourceInsightProjectedUtilizationItem]
+        :rtype: list[oci.opsi.models.ResourceInsightProjectedUtilizationItem]
         """
         return self._low
 
@@ -60,7 +60,7 @@ class ResourceInsightProjectedUtilization(object):
 
 
         :param low: The low of this ResourceInsightProjectedUtilization.
-        :type: list[ResourceInsightProjectedUtilizationItem]
+        :type: list[oci.opsi.models.ResourceInsightProjectedUtilizationItem]
         """
         self._low = low
 
@@ -72,7 +72,7 @@ class ResourceInsightProjectedUtilization(object):
 
 
         :return: The high of this ResourceInsightProjectedUtilization.
-        :rtype: list[ResourceInsightProjectedUtilizationItem]
+        :rtype: list[oci.opsi.models.ResourceInsightProjectedUtilizationItem]
         """
         return self._high
 
@@ -84,7 +84,7 @@ class ResourceInsightProjectedUtilization(object):
 
 
         :param high: The high of this ResourceInsightProjectedUtilization.
-        :type: list[ResourceInsightProjectedUtilizationItem]
+        :type: list[oci.opsi.models.ResourceInsightProjectedUtilizationItem]
         """
         self._high = high
 

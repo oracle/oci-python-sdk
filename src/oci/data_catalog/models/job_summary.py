@@ -176,7 +176,7 @@ class JobSummary(object):
 
         :param executions:
             The value to assign to the executions property of this JobSummary.
-        :type executions: list[JobExecutionSummary]
+        :type executions: list[oci.data_catalog.models.JobExecutionSummary]
 
         """
         self.swagger_types = {
@@ -775,7 +775,7 @@ class JobSummary(object):
 
 
         :return: The executions of this JobSummary.
-        :rtype: list[JobExecutionSummary]
+        :rtype: list[oci.data_catalog.models.JobExecutionSummary]
         """
         return self._executions
 
@@ -787,7 +787,7 @@ class JobSummary(object):
 
 
         :param executions: The executions of this JobSummary.
-        :type: list[JobExecutionSummary]
+        :type: list[oci.data_catalog.models.JobExecutionSummary]
         """
         self._executions = executions
 

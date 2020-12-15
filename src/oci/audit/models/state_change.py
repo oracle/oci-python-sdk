@@ -11,15 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class StateChange(object):
     """
     A container object for state change attributes.
-
-    Example:
-
-    -----
-    {
-    \"previous\": null,
-    \"current\": null
-    }
-    -----
     """
 
     def __init__(self, **kwargs):

@@ -20,7 +20,7 @@ class IndexCollection(object):
 
         :param items:
             The value to assign to the items property of this IndexCollection.
-        :type items: list[IndexSummary]
+        :type items: list[oci.nosql.models.IndexSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class IndexCollection(object):
 
 
         :return: The items of this IndexCollection.
-        :rtype: list[IndexSummary]
+        :rtype: list[oci.nosql.models.IndexSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class IndexCollection(object):
 
 
         :param items: The items of this IndexCollection.
-        :type: list[IndexSummary]
+        :type: list[oci.nosql.models.IndexSummary]
         """
         self._items = items
 

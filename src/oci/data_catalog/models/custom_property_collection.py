@@ -24,7 +24,7 @@ class CustomPropertyCollection(object):
 
         :param items:
             The value to assign to the items property of this CustomPropertyCollection.
-        :type items: list[CustomPropertySummary]
+        :type items: list[oci.data_catalog.models.CustomPropertySummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class CustomPropertyCollection(object):
 
 
         :return: The items of this CustomPropertyCollection.
-        :rtype: list[CustomPropertySummary]
+        :rtype: list[oci.data_catalog.models.CustomPropertySummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class CustomPropertyCollection(object):
 
 
         :param items: The items of this CustomPropertyCollection.
-        :type: list[CustomPropertySummary]
+        :type: list[oci.data_catalog.models.CustomPropertySummary]
         """
         self._items = items
 

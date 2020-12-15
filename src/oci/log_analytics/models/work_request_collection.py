@@ -20,7 +20,7 @@ class WorkRequestCollection(object):
 
         :param items:
             The value to assign to the items property of this WorkRequestCollection.
-        :type items: list[WorkRequestSummary]
+        :type items: list[oci.log_analytics.models.WorkRequestSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class WorkRequestCollection(object):
 
 
         :return: The items of this WorkRequestCollection.
-        :rtype: list[WorkRequestSummary]
+        :rtype: list[oci.log_analytics.models.WorkRequestSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class WorkRequestCollection(object):
 
 
         :param items: The items of this WorkRequestCollection.
-        :type: list[WorkRequestSummary]
+        :type: list[oci.log_analytics.models.WorkRequestSummary]
         """
         self._items = items
 

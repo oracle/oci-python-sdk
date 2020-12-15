@@ -32,7 +32,7 @@ class ValidatePatternResult(object):
 
         :param derived_logical_entities:
             The value to assign to the derived_logical_entities property of this ValidatePatternResult.
-        :type derived_logical_entities: list[DerivedLogicalEntities]
+        :type derived_logical_entities: list[oci.data_catalog.models.DerivedLogicalEntities]
 
         """
         self.swagger_types = {
@@ -134,7 +134,7 @@ class ValidatePatternResult(object):
 
 
         :return: The derived_logical_entities of this ValidatePatternResult.
-        :rtype: list[DerivedLogicalEntities]
+        :rtype: list[oci.data_catalog.models.DerivedLogicalEntities]
         """
         return self._derived_logical_entities
 
@@ -146,7 +146,7 @@ class ValidatePatternResult(object):
 
 
         :param derived_logical_entities: The derived_logical_entities of this ValidatePatternResult.
-        :type: list[DerivedLogicalEntities]
+        :type: list[oci.data_catalog.models.DerivedLogicalEntities]
         """
         self._derived_logical_entities = derived_logical_entities
 

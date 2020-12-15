@@ -20,7 +20,7 @@ class LogAnalyticsPatternFilter(object):
 
         :param pattern:
             The value to assign to the pattern property of this LogAnalyticsPatternFilter.
-        :type pattern: LogAnalyticsSourcePattern
+        :type pattern: oci.log_analytics.models.LogAnalyticsSourcePattern
 
         :param agent_version:
             The value to assign to the agent_version property of this LogAnalyticsPatternFilter.
@@ -48,7 +48,7 @@ class LogAnalyticsPatternFilter(object):
 
         :param source:
             The value to assign to the source property of this LogAnalyticsPatternFilter.
-        :type source: LogAnalyticsSource
+        :type source: oci.log_analytics.models.LogAnalyticsSource
 
         """
         self.swagger_types = {
@@ -88,7 +88,7 @@ class LogAnalyticsPatternFilter(object):
         Gets the pattern of this LogAnalyticsPatternFilter.
 
         :return: The pattern of this LogAnalyticsPatternFilter.
-        :rtype: LogAnalyticsSourcePattern
+        :rtype: oci.log_analytics.models.LogAnalyticsSourcePattern
         """
         return self._pattern
 
@@ -98,7 +98,7 @@ class LogAnalyticsPatternFilter(object):
         Sets the pattern of this LogAnalyticsPatternFilter.
 
         :param pattern: The pattern of this LogAnalyticsPatternFilter.
-        :type: LogAnalyticsSourcePattern
+        :type: oci.log_analytics.models.LogAnalyticsSourcePattern
         """
         self._pattern = pattern
 
@@ -252,7 +252,7 @@ class LogAnalyticsPatternFilter(object):
         Gets the source of this LogAnalyticsPatternFilter.
 
         :return: The source of this LogAnalyticsPatternFilter.
-        :rtype: LogAnalyticsSource
+        :rtype: oci.log_analytics.models.LogAnalyticsSource
         """
         return self._source
 
@@ -262,7 +262,7 @@ class LogAnalyticsPatternFilter(object):
         Sets the source of this LogAnalyticsPatternFilter.
 
         :param source: The source of this LogAnalyticsPatternFilter.
-        :type: LogAnalyticsSource
+        :type: oci.log_analytics.models.LogAnalyticsSource
         """
         self._source = source
 

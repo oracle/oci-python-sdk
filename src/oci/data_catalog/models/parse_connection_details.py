@@ -20,7 +20,7 @@ class ParseConnectionDetails(object):
 
         :param connection_detail:
             The value to assign to the connection_detail property of this ParseConnectionDetails.
-        :type connection_detail: Connection
+        :type connection_detail: oci.data_catalog.models.Connection
 
         :param connection_payload:
             The value to assign to the connection_payload property of this ParseConnectionDetails.
@@ -46,7 +46,7 @@ class ParseConnectionDetails(object):
         Gets the connection_detail of this ParseConnectionDetails.
 
         :return: The connection_detail of this ParseConnectionDetails.
-        :rtype: Connection
+        :rtype: oci.data_catalog.models.Connection
         """
         return self._connection_detail
 
@@ -56,7 +56,7 @@ class ParseConnectionDetails(object):
         Sets the connection_detail of this ParseConnectionDetails.
 
         :param connection_detail: The connection_detail of this ParseConnectionDetails.
-        :type: Connection
+        :type: oci.data_catalog.models.Connection
         """
         self._connection_detail = connection_detail
 

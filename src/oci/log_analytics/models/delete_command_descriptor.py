@@ -38,11 +38,11 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this DeleteCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this DeleteCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param is_dry_run:
             The value to assign to the is_dry_run property of this DeleteCommandDescriptor.

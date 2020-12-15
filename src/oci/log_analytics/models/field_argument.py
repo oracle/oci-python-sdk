@@ -26,7 +26,7 @@ class FieldArgument(Argument):
 
         :param value:
             The value to assign to the value property of this FieldArgument.
-        :type value: AbstractField
+        :type value: oci.log_analytics.models.AbstractField
 
         """
         self.swagger_types = {
@@ -49,7 +49,7 @@ class FieldArgument(Argument):
         Gets the value of this FieldArgument.
 
         :return: The value of this FieldArgument.
-        :rtype: AbstractField
+        :rtype: oci.log_analytics.models.AbstractField
         """
         return self._value
 
@@ -59,7 +59,7 @@ class FieldArgument(Argument):
         Sets the value of this FieldArgument.
 
         :param value: The value of this FieldArgument.
-        :type: AbstractField
+        :type: oci.log_analytics.models.AbstractField
         """
         self._value = value
 

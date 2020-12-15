@@ -64,7 +64,7 @@ class ManagementAgentPluginSummary(object):
 
         :param supported_platform_types:
             The value to assign to the supported_platform_types property of this ManagementAgentPluginSummary.
-        :type supported_platform_types: list[PlatformTypes]
+        :type supported_platform_types: list[oci.management_agent.models.PlatformTypes]
 
         :param display_name:
             The value to assign to the display_name property of this ManagementAgentPluginSummary.
@@ -196,7 +196,7 @@ class ManagementAgentPluginSummary(object):
 
 
         :return: The supported_platform_types of this ManagementAgentPluginSummary.
-        :rtype: list[PlatformTypes]
+        :rtype: list[oci.management_agent.models.PlatformTypes]
         """
         return self._supported_platform_types
 
@@ -208,7 +208,7 @@ class ManagementAgentPluginSummary(object):
 
 
         :param supported_platform_types: The supported_platform_types of this ManagementAgentPluginSummary.
-        :type: list[PlatformTypes]
+        :type: list[oci.management_agent.models.PlatformTypes]
         """
         self._supported_platform_types = supported_platform_types
 

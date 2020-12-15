@@ -66,7 +66,7 @@ class BackupDestinationSummary(object):
 
         :param associated_databases:
             The value to assign to the associated_databases property of this BackupDestinationSummary.
-        :type associated_databases: list[AssociatedDatabaseDetails]
+        :type associated_databases: list[oci.database.models.AssociatedDatabaseDetails]
 
         :param connection_string:
             The value to assign to the connection_string property of this BackupDestinationSummary.
@@ -290,7 +290,7 @@ class BackupDestinationSummary(object):
 
 
         :return: The associated_databases of this BackupDestinationSummary.
-        :rtype: list[AssociatedDatabaseDetails]
+        :rtype: list[oci.database.models.AssociatedDatabaseDetails]
         """
         return self._associated_databases
 
@@ -302,7 +302,7 @@ class BackupDestinationSummary(object):
 
 
         :param associated_databases: The associated_databases of this BackupDestinationSummary.
-        :type: list[AssociatedDatabaseDetails]
+        :type: list[oci.database.models.AssociatedDatabaseDetails]
         """
         self._associated_databases = associated_databases
 

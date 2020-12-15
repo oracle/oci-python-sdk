@@ -20,7 +20,7 @@ class LogAnalyticsConfigWorkRequestCollection(object):
 
         :param items:
             The value to assign to the items property of this LogAnalyticsConfigWorkRequestCollection.
-        :type items: list[LogAnalyticsConfigWorkRequestSummary]
+        :type items: list[oci.log_analytics.models.LogAnalyticsConfigWorkRequestSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogAnalyticsConfigWorkRequestCollection(object):
 
 
         :return: The items of this LogAnalyticsConfigWorkRequestCollection.
-        :rtype: list[LogAnalyticsConfigWorkRequestSummary]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsConfigWorkRequestSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogAnalyticsConfigWorkRequestCollection(object):
 
 
         :param items: The items of this LogAnalyticsConfigWorkRequestCollection.
-        :type: list[LogAnalyticsConfigWorkRequestSummary]
+        :type: list[oci.log_analytics.models.LogAnalyticsConfigWorkRequestSummary]
         """
         self._items = items
 

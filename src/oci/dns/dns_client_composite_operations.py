@@ -31,7 +31,7 @@ class DnsClientCompositeOperations(object):
         :param str resolver_id: (required)
             The OCID of the target resolver.
 
-        :param CreateResolverEndpointDetails create_resolver_endpoint_details: (required)
+        :param oci.dns.models.CreateResolverEndpointDetails create_resolver_endpoint_details: (required)
             Details for creating a new resolver endpoint.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class DnsClientCompositeOperations(object):
         Calls :py:func:`~oci.dns.DnsClient.create_steering_policy` and waits for the :py:class:`~oci.dns.models.SteeringPolicy` acted upon
         to enter the given state(s).
 
-        :param CreateSteeringPolicyDetails create_steering_policy_details: (required)
+        :param oci.dns.models.CreateSteeringPolicyDetails create_steering_policy_details: (required)
             Details for creating a new steering policy.
 
         :param list[str] wait_for_states:
@@ -107,7 +107,7 @@ class DnsClientCompositeOperations(object):
         Calls :py:func:`~oci.dns.DnsClient.create_steering_policy_attachment` and waits for the :py:class:`~oci.dns.models.SteeringPolicyAttachment` acted upon
         to enter the given state(s).
 
-        :param CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
+        :param oci.dns.models.CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
             Details for creating a new steering policy attachment.
 
         :param list[str] wait_for_states:
@@ -145,7 +145,7 @@ class DnsClientCompositeOperations(object):
         Calls :py:func:`~oci.dns.DnsClient.create_tsig_key` and waits for the :py:class:`~oci.dns.models.TsigKey` acted upon
         to enter the given state(s).
 
-        :param CreateTsigKeyDetails create_tsig_key_details: (required)
+        :param oci.dns.models.CreateTsigKeyDetails create_tsig_key_details: (required)
             Details for creating a new TSIG key.
 
         :param list[str] wait_for_states:
@@ -183,7 +183,7 @@ class DnsClientCompositeOperations(object):
         Calls :py:func:`~oci.dns.DnsClient.create_view` and waits for the :py:class:`~oci.dns.models.View` acted upon
         to enter the given state(s).
 
-        :param CreateViewDetails create_view_details: (required)
+        :param oci.dns.models.CreateViewDetails create_view_details: (required)
             Details for creating a new view.
 
         :param list[str] wait_for_states:
@@ -221,7 +221,7 @@ class DnsClientCompositeOperations(object):
         Calls :py:func:`~oci.dns.DnsClient.create_zone` and waits for the :py:class:`~oci.dns.models.Zone` acted upon
         to enter the given state(s).
 
-        :param CreateZoneBaseDetails create_zone_details: (required)
+        :param oci.dns.models.CreateZoneBaseDetails create_zone_details: (required)
             Details for creating a new zone.
 
         :param list[str] wait_for_states:
@@ -497,7 +497,7 @@ class DnsClientCompositeOperations(object):
         :param str resolver_id: (required)
             The OCID of the target resolver.
 
-        :param UpdateResolverDetails update_resolver_details: (required)
+        :param oci.dns.models.UpdateResolverDetails update_resolver_details: (required)
             New data for the resolver.
 
         :param list[str] wait_for_states:
@@ -541,7 +541,7 @@ class DnsClientCompositeOperations(object):
         :param str resolver_endpoint_name: (required)
             The name of the target resolver endpoint.
 
-        :param UpdateResolverEndpointDetails update_resolver_endpoint_details: (required)
+        :param oci.dns.models.UpdateResolverEndpointDetails update_resolver_endpoint_details: (required)
             New data for the resolver endpoint.
 
         :param list[str] wait_for_states:
@@ -582,7 +582,7 @@ class DnsClientCompositeOperations(object):
         :param str steering_policy_id: (required)
             The OCID of the target steering policy.
 
-        :param UpdateSteeringPolicyDetails update_steering_policy_details: (required)
+        :param oci.dns.models.UpdateSteeringPolicyDetails update_steering_policy_details: (required)
             New data for the steering policy.
 
         :param list[str] wait_for_states:
@@ -623,7 +623,7 @@ class DnsClientCompositeOperations(object):
         :param str steering_policy_attachment_id: (required)
             The OCID of the target steering policy attachment.
 
-        :param UpdateSteeringPolicyAttachmentDetails update_steering_policy_attachment_details: (required)
+        :param oci.dns.models.UpdateSteeringPolicyAttachmentDetails update_steering_policy_attachment_details: (required)
             New data for the steering policy attachment.
 
         :param list[str] wait_for_states:
@@ -664,7 +664,7 @@ class DnsClientCompositeOperations(object):
         :param str tsig_key_id: (required)
             The OCID of the target TSIG key.
 
-        :param UpdateTsigKeyDetails update_tsig_key_details: (required)
+        :param oci.dns.models.UpdateTsigKeyDetails update_tsig_key_details: (required)
             New data for the TSIG key.
 
         :param list[str] wait_for_states:
@@ -705,7 +705,7 @@ class DnsClientCompositeOperations(object):
         :param str view_id: (required)
             The OCID of the target view.
 
-        :param UpdateViewDetails update_view_details: (required)
+        :param oci.dns.models.UpdateViewDetails update_view_details: (required)
             New data for the view.
 
         :param list[str] wait_for_states:
@@ -746,7 +746,7 @@ class DnsClientCompositeOperations(object):
         :param str zone_name_or_id: (required)
             The name or OCID of the target zone.
 
-        :param UpdateZoneDetails update_zone_details: (required)
+        :param oci.dns.models.UpdateZoneDetails update_zone_details: (required)
             New data for the zone.
 
         :param list[str] wait_for_states:

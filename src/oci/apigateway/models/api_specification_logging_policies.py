@@ -20,11 +20,11 @@ class ApiSpecificationLoggingPolicies(object):
 
         :param access_log:
             The value to assign to the access_log property of this ApiSpecificationLoggingPolicies.
-        :type access_log: AccessLogPolicy
+        :type access_log: oci.apigateway.models.AccessLogPolicy
 
         :param execution_log:
             The value to assign to the execution_log property of this ApiSpecificationLoggingPolicies.
-        :type execution_log: ExecutionLogPolicy
+        :type execution_log: oci.apigateway.models.ExecutionLogPolicy
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class ApiSpecificationLoggingPolicies(object):
         Gets the access_log of this ApiSpecificationLoggingPolicies.
 
         :return: The access_log of this ApiSpecificationLoggingPolicies.
-        :rtype: AccessLogPolicy
+        :rtype: oci.apigateway.models.AccessLogPolicy
         """
         return self._access_log
 
@@ -56,7 +56,7 @@ class ApiSpecificationLoggingPolicies(object):
         Sets the access_log of this ApiSpecificationLoggingPolicies.
 
         :param access_log: The access_log of this ApiSpecificationLoggingPolicies.
-        :type: AccessLogPolicy
+        :type: oci.apigateway.models.AccessLogPolicy
         """
         self._access_log = access_log
 
@@ -66,7 +66,7 @@ class ApiSpecificationLoggingPolicies(object):
         Gets the execution_log of this ApiSpecificationLoggingPolicies.
 
         :return: The execution_log of this ApiSpecificationLoggingPolicies.
-        :rtype: ExecutionLogPolicy
+        :rtype: oci.apigateway.models.ExecutionLogPolicy
         """
         return self._execution_log
 
@@ -76,7 +76,7 @@ class ApiSpecificationLoggingPolicies(object):
         Sets the execution_log of this ApiSpecificationLoggingPolicies.
 
         :param execution_log: The execution_log of this ApiSpecificationLoggingPolicies.
-        :type: ExecutionLogPolicy
+        :type: oci.apigateway.models.ExecutionLogPolicy
         """
         self._execution_log = execution_log
 

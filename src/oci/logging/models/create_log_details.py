@@ -49,7 +49,7 @@ class CreateLogDetails(object):
 
         :param configuration:
             The value to assign to the configuration property of this CreateLogDetails.
-        :type configuration: Configuration
+        :type configuration: oci.logging.models.Configuration
 
         :param retention_duration:
             The value to assign to the retention_duration property of this CreateLogDetails.
@@ -238,7 +238,7 @@ class CreateLogDetails(object):
         Gets the configuration of this CreateLogDetails.
 
         :return: The configuration of this CreateLogDetails.
-        :rtype: Configuration
+        :rtype: oci.logging.models.Configuration
         """
         return self._configuration
 
@@ -248,7 +248,7 @@ class CreateLogDetails(object):
         Sets the configuration of this CreateLogDetails.
 
         :param configuration: The configuration of this CreateLogDetails.
-        :type: Configuration
+        :type: oci.logging.models.Configuration
         """
         self._configuration = configuration
 

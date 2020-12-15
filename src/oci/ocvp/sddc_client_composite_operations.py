@@ -28,7 +28,7 @@ class SddcClientCompositeOperations(object):
         Calls :py:func:`~oci.ocvp.SddcClient.create_sddc` and waits for the :py:class:`~oci.ocvp.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateSddcDetails create_sddc_details: (required)
+        :param oci.ocvp.models.CreateSddcDetails create_sddc_details: (required)
             Details for the SDDC.
 
         :param list[str] wait_for_states:
@@ -119,7 +119,7 @@ class SddcClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param UpdateSddcDetails update_sddc_details: (required)
+        :param oci.ocvp.models.UpdateSddcDetails update_sddc_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

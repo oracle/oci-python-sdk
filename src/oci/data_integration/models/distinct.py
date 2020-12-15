@@ -34,7 +34,7 @@ class Distinct(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Distinct.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Distinct.
@@ -50,11 +50,11 @@ class Distinct(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this Distinct.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Distinct.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Distinct.
@@ -66,11 +66,11 @@ class Distinct(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this Distinct.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Distinct.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         """
         self.swagger_types = {

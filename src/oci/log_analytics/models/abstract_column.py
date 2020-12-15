@@ -105,7 +105,7 @@ class AbstractColumn(object):
 
         :param values:
             The value to assign to the values property of this AbstractColumn.
-        :type values: list[FieldValue]
+        :type values: list[oci.log_analytics.models.FieldValue]
 
         :param is_list_of_values:
             The value to assign to the is_list_of_values property of this AbstractColumn.
@@ -298,7 +298,7 @@ class AbstractColumn(object):
 
 
         :return: The values of this AbstractColumn.
-        :rtype: list[FieldValue]
+        :rtype: list[oci.log_analytics.models.FieldValue]
         """
         return self._values
 
@@ -310,7 +310,7 @@ class AbstractColumn(object):
 
 
         :param values: The values of this AbstractColumn.
-        :type: list[FieldValue]
+        :type: list[oci.log_analytics.models.FieldValue]
         """
         self._values = values
 

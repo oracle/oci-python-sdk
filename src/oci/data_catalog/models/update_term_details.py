@@ -57,7 +57,7 @@ class UpdateTermDetails(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this UpdateTermDetails.
-        :type custom_property_members: list[CustomPropertySetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertySetUsage]
 
         """
         self.swagger_types = {
@@ -223,7 +223,7 @@ class UpdateTermDetails(object):
 
 
         :return: The custom_property_members of this UpdateTermDetails.
-        :rtype: list[CustomPropertySetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         return self._custom_property_members
 
@@ -235,7 +235,7 @@ class UpdateTermDetails(object):
 
 
         :param custom_property_members: The custom_property_members of this UpdateTermDetails.
-        :type: list[CustomPropertySetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         self._custom_property_members = custom_property_members
 

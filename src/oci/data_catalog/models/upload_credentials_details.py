@@ -20,7 +20,7 @@ class UploadCredentialsDetails(object):
 
         :param connection_detail:
             The value to assign to the connection_detail property of this UploadCredentialsDetails.
-        :type connection_detail: UpdateConnectionDetails
+        :type connection_detail: oci.data_catalog.models.UpdateConnectionDetails
 
         :param credential_payload:
             The value to assign to the credential_payload property of this UploadCredentialsDetails.
@@ -46,7 +46,7 @@ class UploadCredentialsDetails(object):
         Gets the connection_detail of this UploadCredentialsDetails.
 
         :return: The connection_detail of this UploadCredentialsDetails.
-        :rtype: UpdateConnectionDetails
+        :rtype: oci.data_catalog.models.UpdateConnectionDetails
         """
         return self._connection_detail
 
@@ -56,7 +56,7 @@ class UploadCredentialsDetails(object):
         Sets the connection_detail of this UploadCredentialsDetails.
 
         :param connection_detail: The connection_detail of this UploadCredentialsDetails.
-        :type: UpdateConnectionDetails
+        :type: oci.data_catalog.models.UpdateConnectionDetails
         """
         self._connection_detail = connection_detail
 

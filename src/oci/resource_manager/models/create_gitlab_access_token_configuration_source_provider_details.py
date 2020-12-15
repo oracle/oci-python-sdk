@@ -89,8 +89,8 @@ class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
     def api_endpoint(self):
         """
         **[Required]** Gets the api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The Git service API endpoint.
-        Example: `https://gitlab.com/api/v4/`
+        The Git service endpoint.
+        Example: `https://gitlab.com`
 
 
         :return: The api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -102,8 +102,8 @@ class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
     def api_endpoint(self, api_endpoint):
         """
         Sets the api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The Git service API endpoint.
-        Example: `https://gitlab.com/api/v4/`
+        The Git service endpoint.
+        Example: `https://gitlab.com`
 
 
         :param api_endpoint: The api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -115,7 +115,7 @@ class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
     def access_token(self):
         """
         **[Required]** Gets the access_token of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The personal access token to be configured on the Git repository. Avoid entering confidential information.
+        The personal access token to be configured on the GitLab repository. Avoid entering confidential information.
 
 
         :return: The access_token of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -127,7 +127,7 @@ class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
     def access_token(self, access_token):
         """
         Sets the access_token of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
-        The personal access token to be configured on the Git repository. Avoid entering confidential information.
+        The personal access token to be configured on the GitLab repository. Avoid entering confidential information.
 
 
         :param access_token: The access_token of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.

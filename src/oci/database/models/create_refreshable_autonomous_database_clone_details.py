@@ -41,7 +41,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateRefreshableAutonomousDatabaseCloneDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:

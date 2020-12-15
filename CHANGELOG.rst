@@ -4,6 +4,43 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.26.0 - 2020-12-15
+====================
+
+Added
+-----
+* Support for filtering listKeys based on KeyShape in KeyManagement service
+* Support for the Oracle Roving Edge Infrastructure service
+* Support for flexible ShapeDetails in Load Balancer service
+* Support for listing of harvested Rules, additional filtering for Logical Entity list calls in Data Catalog service
+* Support second level domain for audit SDK
+* Support for listing flex components in Database service
+* Support for APEX service for ADBS on OCI console for Database service
+* Support for Customer-Managed Key features as a part of the Database service
+* Support for Github configuration source provider as part of the Resource Manager service
+
+Breaking
+--------
+* Removed deprecated create_autonomous_data_warehouse API from Database service
+* Removed deprecated create_autonomous_data_warehouse_backup API from Database service
+* Removed deprecated delete_autonomous_data_warehouse API from Database service
+* Removed deprecated generate_autonomous_data_warehouse_wallet API from Database service
+* Removed deprecated get_autonomous_data_warehouse API from Database service
+* Removed deprecated get_autonomous_data_warehouse_backup API from Database service
+* Removed deprecated list_autonomous_data_warehouse_backups API from Database service
+* Removed deprecated list_autonomous_data_warehouses API from Database service
+* Removed deprecated restore_autonomous_data_warehouse API from Database service
+* Removed deprecated start_autonomous_data_warehouse API from Database service
+* Removed deprecated stop_autonomous_data_warehouse API from Database service
+* Removed deprecated update_autonomous_data_warehouse API from Database service
+* The enum attributes `lifecycle_state` and `license_model` from Model `AutonomousDataWarehouseSummary` in the Database service raise `ValueError` if they receive an invalid value. In the earlier versions, the value defaults to `UNKNOWN_ENUM_VALUE`.
+* The enum attributes `lifecycle_state` and `license_model` from Model `AutonomousDataWarehouse` in the Database service raise `ValueError` if they receive an invalid value. In the earlier versions, the value defaults to `UNKNOWN_ENUM_VALUE`.
+
+Fixed
+-----
+* Fixed an issue in the documentation where model links were incorrect
+
+====================
 2.25.1 - 2020-12-08
 ====================
 

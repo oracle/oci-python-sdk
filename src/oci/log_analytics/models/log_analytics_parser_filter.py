@@ -24,7 +24,7 @@ class LogAnalyticsParserFilter(object):
 
         :param parser:
             The value to assign to the parser property of this LogAnalyticsParserFilter.
-        :type parser: LogAnalyticsParser
+        :type parser: oci.log_analytics.models.LogAnalyticsParser
 
         :param agent_version:
             The value to assign to the agent_version property of this LogAnalyticsParserFilter.
@@ -105,7 +105,7 @@ class LogAnalyticsParserFilter(object):
         Gets the parser of this LogAnalyticsParserFilter.
 
         :return: The parser of this LogAnalyticsParserFilter.
-        :rtype: LogAnalyticsParser
+        :rtype: oci.log_analytics.models.LogAnalyticsParser
         """
         return self._parser
 
@@ -115,7 +115,7 @@ class LogAnalyticsParserFilter(object):
         Sets the parser of this LogAnalyticsParserFilter.
 
         :param parser: The parser of this LogAnalyticsParserFilter.
-        :type: LogAnalyticsParser
+        :type: oci.log_analytics.models.LogAnalyticsParser
         """
         self._parser = parser
 

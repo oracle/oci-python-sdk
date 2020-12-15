@@ -58,7 +58,7 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetSummaryFromAtp.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetSummaryFromAtp.
@@ -66,11 +66,11 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetSummaryFromAtp.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetSummaryFromAtp.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param service_name:
             The value to assign to the service_name property of this DataAssetSummaryFromAtp.
@@ -86,7 +86,7 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromAtp.
-        :type default_connection: ConnectionSummaryFromAtp
+        :type default_connection: oci.data_integration.models.ConnectionSummaryFromAtp
 
         """
         self.swagger_types = {
@@ -226,7 +226,7 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromAtp.
 
         :return: The default_connection of this DataAssetSummaryFromAtp.
-        :rtype: ConnectionSummaryFromAtp
+        :rtype: oci.data_integration.models.ConnectionSummaryFromAtp
         """
         return self._default_connection
 
@@ -236,7 +236,7 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromAtp.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromAtp.
-        :type: ConnectionSummaryFromAtp
+        :type: oci.data_integration.models.ConnectionSummaryFromAtp
         """
         self._default_connection = default_connection
 

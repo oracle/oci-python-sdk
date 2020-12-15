@@ -52,11 +52,11 @@ class Publisher(object):
 
         :param logo:
             The value to assign to the logo property of this Publisher.
-        :type logo: UploadData
+        :type logo: oci.marketplace.models.UploadData
 
         :param links:
             The value to assign to the links property of this Publisher.
-        :type links: list[Link]
+        :type links: list[oci.marketplace.models.Link]
 
         """
         self.swagger_types = {
@@ -294,7 +294,7 @@ class Publisher(object):
         Gets the logo of this Publisher.
 
         :return: The logo of this Publisher.
-        :rtype: UploadData
+        :rtype: oci.marketplace.models.UploadData
         """
         return self._logo
 
@@ -304,7 +304,7 @@ class Publisher(object):
         Sets the logo of this Publisher.
 
         :param logo: The logo of this Publisher.
-        :type: UploadData
+        :type: oci.marketplace.models.UploadData
         """
         self._logo = logo
 
@@ -316,7 +316,7 @@ class Publisher(object):
 
 
         :return: The links of this Publisher.
-        :rtype: list[Link]
+        :rtype: list[oci.marketplace.models.Link]
         """
         return self._links
 
@@ -328,7 +328,7 @@ class Publisher(object):
 
 
         :param links: The links of this Publisher.
-        :type: list[Link]
+        :type: list[oci.marketplace.models.Link]
         """
         self._links = links
 

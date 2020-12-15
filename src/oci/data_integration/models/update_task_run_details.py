@@ -53,7 +53,7 @@ class UpdateTaskRunDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateTaskRunDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -269,7 +269,7 @@ class UpdateTaskRunDetails(object):
         Gets the registry_metadata of this UpdateTaskRunDetails.
 
         :return: The registry_metadata of this UpdateTaskRunDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -279,7 +279,7 @@ class UpdateTaskRunDetails(object):
         Sets the registry_metadata of this UpdateTaskRunDetails.
 
         :param registry_metadata: The registry_metadata of this UpdateTaskRunDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

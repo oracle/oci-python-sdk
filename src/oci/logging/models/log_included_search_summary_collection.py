@@ -20,7 +20,7 @@ class LogIncludedSearchSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this LogIncludedSearchSummaryCollection.
-        :type items: list[LogIncludedSearchSummary]
+        :type items: list[oci.logging.models.LogIncludedSearchSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LogIncludedSearchSummaryCollection(object):
 
 
         :return: The items of this LogIncludedSearchSummaryCollection.
-        :rtype: list[LogIncludedSearchSummary]
+        :rtype: list[oci.logging.models.LogIncludedSearchSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LogIncludedSearchSummaryCollection(object):
 
 
         :param items: The items of this LogIncludedSearchSummaryCollection.
-        :type: list[LogIncludedSearchSummary]
+        :type: list[oci.logging.models.LogIncludedSearchSummary]
         """
         self._items = items
 

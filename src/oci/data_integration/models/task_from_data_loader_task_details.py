@@ -34,7 +34,7 @@ class TaskFromDataLoaderTaskDetails(Task):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskFromDataLoaderTaskDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskFromDataLoaderTaskDetails.
@@ -58,27 +58,27 @@ class TaskFromDataLoaderTaskDetails(Task):
 
         :param input_ports:
             The value to assign to the input_ports property of this TaskFromDataLoaderTaskDetails.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this TaskFromDataLoaderTaskDetails.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this TaskFromDataLoaderTaskDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this TaskFromDataLoaderTaskDetails.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this TaskFromDataLoaderTaskDetails.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param metadata:
             The value to assign to the metadata property of this TaskFromDataLoaderTaskDetails.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this TaskFromDataLoaderTaskDetails.
@@ -86,7 +86,7 @@ class TaskFromDataLoaderTaskDetails(Task):
 
         :param data_flow:
             The value to assign to the data_flow property of this TaskFromDataLoaderTaskDetails.
-        :type data_flow: DataFlow
+        :type data_flow: oci.data_integration.models.DataFlow
 
         """
         self.swagger_types = {
@@ -154,7 +154,7 @@ class TaskFromDataLoaderTaskDetails(Task):
         Gets the data_flow of this TaskFromDataLoaderTaskDetails.
 
         :return: The data_flow of this TaskFromDataLoaderTaskDetails.
-        :rtype: DataFlow
+        :rtype: oci.data_integration.models.DataFlow
         """
         return self._data_flow
 
@@ -164,7 +164,7 @@ class TaskFromDataLoaderTaskDetails(Task):
         Sets the data_flow of this TaskFromDataLoaderTaskDetails.
 
         :param data_flow: The data_flow of this TaskFromDataLoaderTaskDetails.
-        :type: DataFlow
+        :type: oci.data_integration.models.DataFlow
         """
         self._data_flow = data_flow
 

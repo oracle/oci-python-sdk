@@ -34,7 +34,7 @@ class TransferDeviceClientCompositeOperations(object):
         :param str transfer_device_label: (required)
             Label of the Transfer Device
 
-        :param UpdateTransferDeviceDetails update_transfer_device_details: (required)
+        :param oci.dts.models.UpdateTransferDeviceDetails update_transfer_device_details: (required)
             fields to update
 
         :param list[str] wait_for_states:

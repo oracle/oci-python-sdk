@@ -20,7 +20,7 @@ class ServiceConnectorCollection(object):
 
         :param items:
             The value to assign to the items property of this ServiceConnectorCollection.
-        :type items: list[ServiceConnectorSummary]
+        :type items: list[oci.sch.models.ServiceConnectorSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ServiceConnectorCollection(object):
 
 
         :return: The items of this ServiceConnectorCollection.
-        :rtype: list[ServiceConnectorSummary]
+        :rtype: list[oci.sch.models.ServiceConnectorSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ServiceConnectorCollection(object):
 
 
         :param items: The items of this ServiceConnectorCollection.
-        :type: list[ServiceConnectorSummary]
+        :type: list[oci.sch.models.ServiceConnectorSummary]
         """
         self._items = items
 

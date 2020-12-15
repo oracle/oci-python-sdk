@@ -20,11 +20,11 @@ class InstanceAgentCommandContent(object):
 
         :param source:
             The value to assign to the source property of this InstanceAgentCommandContent.
-        :type source: InstanceAgentCommandSourceDetails
+        :type source: oci.compute_instance_agent.models.InstanceAgentCommandSourceDetails
 
         :param output:
             The value to assign to the output property of this InstanceAgentCommandContent.
-        :type output: InstanceAgentCommandOutputDetails
+        :type output: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class InstanceAgentCommandContent(object):
         **[Required]** Gets the source of this InstanceAgentCommandContent.
 
         :return: The source of this InstanceAgentCommandContent.
-        :rtype: InstanceAgentCommandSourceDetails
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandSourceDetails
         """
         return self._source
 
@@ -56,7 +56,7 @@ class InstanceAgentCommandContent(object):
         Sets the source of this InstanceAgentCommandContent.
 
         :param source: The source of this InstanceAgentCommandContent.
-        :type: InstanceAgentCommandSourceDetails
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandSourceDetails
         """
         self._source = source
 
@@ -66,7 +66,7 @@ class InstanceAgentCommandContent(object):
         Gets the output of this InstanceAgentCommandContent.
 
         :return: The output of this InstanceAgentCommandContent.
-        :rtype: InstanceAgentCommandOutputDetails
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails
         """
         return self._output
 
@@ -76,7 +76,7 @@ class InstanceAgentCommandContent(object):
         Sets the output of this InstanceAgentCommandContent.
 
         :param output: The output of this InstanceAgentCommandContent.
-        :type: InstanceAgentCommandOutputDetails
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails
         """
         self._output = output
 

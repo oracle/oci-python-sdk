@@ -28,15 +28,15 @@ class CreateStreamPoolDetails(object):
 
         :param kafka_settings:
             The value to assign to the kafka_settings property of this CreateStreamPoolDetails.
-        :type kafka_settings: KafkaSettings
+        :type kafka_settings: oci.streaming.models.KafkaSettings
 
         :param custom_encryption_key_details:
             The value to assign to the custom_encryption_key_details property of this CreateStreamPoolDetails.
-        :type custom_encryption_key_details: CustomEncryptionKeyDetails
+        :type custom_encryption_key_details: oci.streaming.models.CustomEncryptionKeyDetails
 
         :param private_endpoint_details:
             The value to assign to the private_endpoint_details property of this CreateStreamPoolDetails.
-        :type private_endpoint_details: PrivateEndpointDetails
+        :type private_endpoint_details: oci.streaming.models.PrivateEndpointDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateStreamPoolDetails.
@@ -133,7 +133,7 @@ class CreateStreamPoolDetails(object):
         Gets the kafka_settings of this CreateStreamPoolDetails.
 
         :return: The kafka_settings of this CreateStreamPoolDetails.
-        :rtype: KafkaSettings
+        :rtype: oci.streaming.models.KafkaSettings
         """
         return self._kafka_settings
 
@@ -143,7 +143,7 @@ class CreateStreamPoolDetails(object):
         Sets the kafka_settings of this CreateStreamPoolDetails.
 
         :param kafka_settings: The kafka_settings of this CreateStreamPoolDetails.
-        :type: KafkaSettings
+        :type: oci.streaming.models.KafkaSettings
         """
         self._kafka_settings = kafka_settings
 
@@ -153,7 +153,7 @@ class CreateStreamPoolDetails(object):
         Gets the custom_encryption_key_details of this CreateStreamPoolDetails.
 
         :return: The custom_encryption_key_details of this CreateStreamPoolDetails.
-        :rtype: CustomEncryptionKeyDetails
+        :rtype: oci.streaming.models.CustomEncryptionKeyDetails
         """
         return self._custom_encryption_key_details
 
@@ -163,7 +163,7 @@ class CreateStreamPoolDetails(object):
         Sets the custom_encryption_key_details of this CreateStreamPoolDetails.
 
         :param custom_encryption_key_details: The custom_encryption_key_details of this CreateStreamPoolDetails.
-        :type: CustomEncryptionKeyDetails
+        :type: oci.streaming.models.CustomEncryptionKeyDetails
         """
         self._custom_encryption_key_details = custom_encryption_key_details
 
@@ -173,7 +173,7 @@ class CreateStreamPoolDetails(object):
         Gets the private_endpoint_details of this CreateStreamPoolDetails.
 
         :return: The private_endpoint_details of this CreateStreamPoolDetails.
-        :rtype: PrivateEndpointDetails
+        :rtype: oci.streaming.models.PrivateEndpointDetails
         """
         return self._private_endpoint_details
 
@@ -183,7 +183,7 @@ class CreateStreamPoolDetails(object):
         Sets the private_endpoint_details of this CreateStreamPoolDetails.
 
         :param private_endpoint_details: The private_endpoint_details of this CreateStreamPoolDetails.
-        :type: PrivateEndpointDetails
+        :type: oci.streaming.models.PrivateEndpointDetails
         """
         self._private_endpoint_details = private_endpoint_details
 

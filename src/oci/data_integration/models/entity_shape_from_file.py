@@ -51,7 +51,7 @@ class EntityShapeFromFile(EntityShape):
 
         :param metadata:
             The value to assign to the metadata property of this EntityShapeFromFile.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key:
             The value to assign to the key property of this EntityShapeFromFile.
@@ -63,7 +63,7 @@ class EntityShapeFromFile(EntityShape):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this EntityShapeFromFile.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this EntityShapeFromFile.
@@ -83,7 +83,7 @@ class EntityShapeFromFile(EntityShape):
 
         :param shape:
             The value to assign to the shape property of this EntityShapeFromFile.
-        :type shape: Shape
+        :type shape: oci.data_integration.models.Shape
 
         :param shape_id:
             The value to assign to the shape_id property of this EntityShapeFromFile.
@@ -91,7 +91,7 @@ class EntityShapeFromFile(EntityShape):
 
         :param types:
             The value to assign to the types property of this EntityShapeFromFile.
-        :type types: TypeLibrary
+        :type types: oci.data_integration.models.TypeLibrary
 
         :param entity_type:
             The value to assign to the entity_type property of this EntityShapeFromFile.
@@ -105,11 +105,11 @@ class EntityShapeFromFile(EntityShape):
 
         :param unique_keys:
             The value to assign to the unique_keys property of this EntityShapeFromFile.
-        :type unique_keys: list[UniqueKey]
+        :type unique_keys: list[oci.data_integration.models.UniqueKey]
 
         :param foreign_keys:
             The value to assign to the foreign_keys property of this EntityShapeFromFile.
-        :type foreign_keys: list[ForeignKey]
+        :type foreign_keys: list[oci.data_integration.models.ForeignKey]
 
         :param resource_name:
             The value to assign to the resource_name property of this EntityShapeFromFile.
@@ -117,7 +117,7 @@ class EntityShapeFromFile(EntityShape):
 
         :param data_format:
             The value to assign to the data_format property of this EntityShapeFromFile.
-        :type data_format: DataFormat
+        :type data_format: oci.data_integration.models.DataFormat
 
         :param object_status:
             The value to assign to the object_status property of this EntityShapeFromFile.
@@ -250,7 +250,7 @@ class EntityShapeFromFile(EntityShape):
         Gets the parent_ref of this EntityShapeFromFile.
 
         :return: The parent_ref of this EntityShapeFromFile.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -260,7 +260,7 @@ class EntityShapeFromFile(EntityShape):
         Sets the parent_ref of this EntityShapeFromFile.
 
         :param parent_ref: The parent_ref of this EntityShapeFromFile.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -366,7 +366,7 @@ class EntityShapeFromFile(EntityShape):
         Gets the shape of this EntityShapeFromFile.
 
         :return: The shape of this EntityShapeFromFile.
-        :rtype: Shape
+        :rtype: oci.data_integration.models.Shape
         """
         return self._shape
 
@@ -376,7 +376,7 @@ class EntityShapeFromFile(EntityShape):
         Sets the shape of this EntityShapeFromFile.
 
         :param shape: The shape of this EntityShapeFromFile.
-        :type: Shape
+        :type: oci.data_integration.models.Shape
         """
         self._shape = shape
 
@@ -410,7 +410,7 @@ class EntityShapeFromFile(EntityShape):
         Gets the types of this EntityShapeFromFile.
 
         :return: The types of this EntityShapeFromFile.
-        :rtype: TypeLibrary
+        :rtype: oci.data_integration.models.TypeLibrary
         """
         return self._types
 
@@ -420,7 +420,7 @@ class EntityShapeFromFile(EntityShape):
         Sets the types of this EntityShapeFromFile.
 
         :param types: The types of this EntityShapeFromFile.
-        :type: TypeLibrary
+        :type: oci.data_integration.models.TypeLibrary
         """
         self._types = types
 
@@ -486,7 +486,7 @@ class EntityShapeFromFile(EntityShape):
 
 
         :return: The unique_keys of this EntityShapeFromFile.
-        :rtype: list[UniqueKey]
+        :rtype: list[oci.data_integration.models.UniqueKey]
         """
         return self._unique_keys
 
@@ -498,7 +498,7 @@ class EntityShapeFromFile(EntityShape):
 
 
         :param unique_keys: The unique_keys of this EntityShapeFromFile.
-        :type: list[UniqueKey]
+        :type: list[oci.data_integration.models.UniqueKey]
         """
         self._unique_keys = unique_keys
 
@@ -510,7 +510,7 @@ class EntityShapeFromFile(EntityShape):
 
 
         :return: The foreign_keys of this EntityShapeFromFile.
-        :rtype: list[ForeignKey]
+        :rtype: list[oci.data_integration.models.ForeignKey]
         """
         return self._foreign_keys
 
@@ -522,7 +522,7 @@ class EntityShapeFromFile(EntityShape):
 
 
         :param foreign_keys: The foreign_keys of this EntityShapeFromFile.
-        :type: list[ForeignKey]
+        :type: list[oci.data_integration.models.ForeignKey]
         """
         self._foreign_keys = foreign_keys
 
@@ -556,7 +556,7 @@ class EntityShapeFromFile(EntityShape):
         Gets the data_format of this EntityShapeFromFile.
 
         :return: The data_format of this EntityShapeFromFile.
-        :rtype: DataFormat
+        :rtype: oci.data_integration.models.DataFormat
         """
         return self._data_format
 
@@ -566,7 +566,7 @@ class EntityShapeFromFile(EntityShape):
         Sets the data_format of this EntityShapeFromFile.
 
         :param data_format: The data_format of this EntityShapeFromFile.
-        :type: DataFormat
+        :type: oci.data_integration.models.DataFormat
         """
         self._data_format = data_format
 

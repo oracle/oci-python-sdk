@@ -24,7 +24,7 @@ class KeyAttribute(object):
 
         :param attribute:
             The value to assign to the attribute property of this KeyAttribute.
-        :type attribute: ShapeField
+        :type attribute: oci.data_integration.models.ShapeField
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class KeyAttribute(object):
         Gets the attribute of this KeyAttribute.
 
         :return: The attribute of this KeyAttribute.
-        :rtype: ShapeField
+        :rtype: oci.data_integration.models.ShapeField
         """
         return self._attribute
 
@@ -80,7 +80,7 @@ class KeyAttribute(object):
         Sets the attribute of this KeyAttribute.
 
         :param attribute: The attribute of this KeyAttribute.
-        :type: ShapeField
+        :type: oci.data_integration.models.ShapeField
         """
         self._attribute = attribute
 

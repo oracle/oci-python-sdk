@@ -20,7 +20,7 @@ class LogAnalyticsSourceSummary(object):
 
         :param label_conditions:
             The value to assign to the label_conditions property of this LogAnalyticsSourceSummary.
-        :type label_conditions: list[LogAnalyticsSourceLabelCondition]
+        :type label_conditions: list[oci.log_analytics.models.LogAnalyticsSourceLabelCondition]
 
         :param association_count:
             The value to assign to the association_count property of this LogAnalyticsSourceSummary.
@@ -28,11 +28,11 @@ class LogAnalyticsSourceSummary(object):
 
         :param association_entity:
             The value to assign to the association_entity property of this LogAnalyticsSourceSummary.
-        :type association_entity: list[LogAnalyticsAssociation]
+        :type association_entity: list[oci.log_analytics.models.LogAnalyticsAssociation]
 
         :param data_filter_definitions:
             The value to assign to the data_filter_definitions property of this LogAnalyticsSourceSummary.
-        :type data_filter_definitions: list[LogAnalyticsSourceDataFilter]
+        :type data_filter_definitions: list[oci.log_analytics.models.LogAnalyticsSourceDataFilter]
 
         :param database_credential:
             The value to assign to the database_credential property of this LogAnalyticsSourceSummary.
@@ -40,7 +40,7 @@ class LogAnalyticsSourceSummary(object):
 
         :param extended_field_definitions:
             The value to assign to the extended_field_definitions property of this LogAnalyticsSourceSummary.
-        :type extended_field_definitions: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :type extended_field_definitions: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
 
         :param is_for_cloud:
             The value to assign to the is_for_cloud property of this LogAnalyticsSourceSummary.
@@ -48,23 +48,23 @@ class LogAnalyticsSourceSummary(object):
 
         :param labels:
             The value to assign to the labels property of this LogAnalyticsSourceSummary.
-        :type labels: list[LogAnalyticsLabelView]
+        :type labels: list[oci.log_analytics.models.LogAnalyticsLabelView]
 
         :param metric_definitions:
             The value to assign to the metric_definitions property of this LogAnalyticsSourceSummary.
-        :type metric_definitions: list[LogAnalyticsMetric]
+        :type metric_definitions: list[oci.log_analytics.models.LogAnalyticsMetric]
 
         :param metrics:
             The value to assign to the metrics property of this LogAnalyticsSourceSummary.
-        :type metrics: list[LogAnalyticsSourceMetric]
+        :type metrics: list[oci.log_analytics.models.LogAnalyticsSourceMetric]
 
         :param oob_parsers:
             The value to assign to the oob_parsers property of this LogAnalyticsSourceSummary.
-        :type oob_parsers: list[LogAnalyticsParser]
+        :type oob_parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         :param parameters:
             The value to assign to the parameters property of this LogAnalyticsSourceSummary.
-        :type parameters: list[LogAnalyticsParameter]
+        :type parameters: list[oci.log_analytics.models.LogAnalyticsParameter]
 
         :param pattern_count:
             The value to assign to the pattern_count property of this LogAnalyticsSourceSummary.
@@ -72,7 +72,7 @@ class LogAnalyticsSourceSummary(object):
 
         :param patterns:
             The value to assign to the patterns property of this LogAnalyticsSourceSummary.
-        :type patterns: list[LogAnalyticsSourcePattern]
+        :type patterns: list[oci.log_analytics.models.LogAnalyticsSourcePattern]
 
         :param description:
             The value to assign to the description property of this LogAnalyticsSourceSummary.
@@ -88,7 +88,7 @@ class LogAnalyticsSourceSummary(object):
 
         :param functions:
             The value to assign to the functions property of this LogAnalyticsSourceSummary.
-        :type functions: list[LogAnalyticsSourceFunction]
+        :type functions: list[oci.log_analytics.models.LogAnalyticsSourceFunction]
 
         :param source_id:
             The value to assign to the source_id property of this LogAnalyticsSourceSummary.
@@ -108,7 +108,7 @@ class LogAnalyticsSourceSummary(object):
 
         :param parsers:
             The value to assign to the parsers property of this LogAnalyticsSourceSummary.
-        :type parsers: list[LogAnalyticsParser]
+        :type parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         :param is_auto_association_enabled:
             The value to assign to the is_auto_association_enabled property of this LogAnalyticsSourceSummary.
@@ -136,15 +136,15 @@ class LogAnalyticsSourceSummary(object):
 
         :param metadata_fields:
             The value to assign to the metadata_fields property of this LogAnalyticsSourceSummary.
-        :type metadata_fields: list[LogAnalyticsSourceMetadataField]
+        :type metadata_fields: list[oci.log_analytics.models.LogAnalyticsSourceMetadataField]
 
         :param label_definitions:
             The value to assign to the label_definitions property of this LogAnalyticsSourceSummary.
-        :type label_definitions: list[LogAnalyticsLabelDefinition]
+        :type label_definitions: list[oci.log_analytics.models.LogAnalyticsLabelDefinition]
 
         :param entity_types:
             The value to assign to the entity_types property of this LogAnalyticsSourceSummary.
-        :type entity_types: list[LogAnalyticsSourceEntityType]
+        :type entity_types: list[oci.log_analytics.models.LogAnalyticsSourceEntityType]
 
         :param is_timezone_override:
             The value to assign to the is_timezone_override property of this LogAnalyticsSourceSummary.
@@ -152,7 +152,7 @@ class LogAnalyticsSourceSummary(object):
 
         :param user_parsers:
             The value to assign to the user_parsers property of this LogAnalyticsSourceSummary.
-        :type user_parsers: list[LogAnalyticsParser]
+        :type user_parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
         :param time_updated:
             The value to assign to the time_updated property of this LogAnalyticsSourceSummary.
@@ -279,7 +279,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The label_conditions of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceLabelCondition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceLabelCondition]
         """
         return self._label_conditions
 
@@ -291,7 +291,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param label_conditions: The label_conditions of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceLabelCondition]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceLabelCondition]
         """
         self._label_conditions = label_conditions
 
@@ -327,7 +327,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The association_entity of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsAssociation]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsAssociation]
         """
         return self._association_entity
 
@@ -339,7 +339,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param association_entity: The association_entity of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsAssociation]
+        :type: list[oci.log_analytics.models.LogAnalyticsAssociation]
         """
         self._association_entity = association_entity
 
@@ -351,7 +351,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The data_filter_definitions of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceDataFilter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceDataFilter]
         """
         return self._data_filter_definitions
 
@@ -363,7 +363,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param data_filter_definitions: The data_filter_definitions of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceDataFilter]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceDataFilter]
         """
         self._data_filter_definitions = data_filter_definitions
 
@@ -399,7 +399,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The extended_field_definitions of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
         """
         return self._extended_field_definitions
 
@@ -411,7 +411,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param extended_field_definitions: The extended_field_definitions of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceExtendedFieldDefinition]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinition]
         """
         self._extended_field_definitions = extended_field_definitions
 
@@ -447,7 +447,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The labels of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsLabelView]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelView]
         """
         return self._labels
 
@@ -459,7 +459,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param labels: The labels of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsLabelView]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelView]
         """
         self._labels = labels
 
@@ -471,7 +471,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The metric_definitions of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsMetric]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsMetric]
         """
         return self._metric_definitions
 
@@ -483,7 +483,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param metric_definitions: The metric_definitions of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsMetric]
+        :type: list[oci.log_analytics.models.LogAnalyticsMetric]
         """
         self._metric_definitions = metric_definitions
 
@@ -495,7 +495,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The metrics of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceMetric]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceMetric]
         """
         return self._metrics
 
@@ -507,7 +507,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param metrics: The metrics of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceMetric]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceMetric]
         """
         self._metrics = metrics
 
@@ -519,7 +519,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The oob_parsers of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._oob_parsers
 
@@ -531,7 +531,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param oob_parsers: The oob_parsers of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._oob_parsers = oob_parsers
 
@@ -543,7 +543,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The parameters of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsParameter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParameter]
         """
         return self._parameters
 
@@ -555,7 +555,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param parameters: The parameters of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsParameter]
+        :type: list[oci.log_analytics.models.LogAnalyticsParameter]
         """
         self._parameters = parameters
 
@@ -591,7 +591,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The patterns of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourcePattern]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourcePattern]
         """
         return self._patterns
 
@@ -603,7 +603,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param patterns: The patterns of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourcePattern]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourcePattern]
         """
         self._patterns = patterns
 
@@ -687,7 +687,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The functions of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceFunction]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceFunction]
         """
         return self._functions
 
@@ -699,7 +699,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param functions: The functions of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceFunction]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceFunction]
         """
         self._functions = functions
 
@@ -807,7 +807,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The parsers of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._parsers
 
@@ -819,7 +819,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param parsers: The parsers of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._parsers = parsers
 
@@ -975,7 +975,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The metadata_fields of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceMetadataField]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceMetadataField]
         """
         return self._metadata_fields
 
@@ -987,7 +987,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param metadata_fields: The metadata_fields of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceMetadataField]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceMetadataField]
         """
         self._metadata_fields = metadata_fields
 
@@ -999,7 +999,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The label_definitions of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsLabelDefinition]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsLabelDefinition]
         """
         return self._label_definitions
 
@@ -1011,7 +1011,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param label_definitions: The label_definitions of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsLabelDefinition]
+        :type: list[oci.log_analytics.models.LogAnalyticsLabelDefinition]
         """
         self._label_definitions = label_definitions
 
@@ -1023,7 +1023,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The entity_types of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsSourceEntityType]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSourceEntityType]
         """
         return self._entity_types
 
@@ -1035,7 +1035,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param entity_types: The entity_types of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsSourceEntityType]
+        :type: list[oci.log_analytics.models.LogAnalyticsSourceEntityType]
         """
         self._entity_types = entity_types
 
@@ -1071,7 +1071,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :return: The user_parsers of this LogAnalyticsSourceSummary.
-        :rtype: list[LogAnalyticsParser]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         return self._user_parsers
 
@@ -1083,7 +1083,7 @@ class LogAnalyticsSourceSummary(object):
 
 
         :param user_parsers: The user_parsers of this LogAnalyticsSourceSummary.
-        :type: list[LogAnalyticsParser]
+        :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._user_parsers = user_parsers
 

@@ -24,7 +24,7 @@ class ResourceType(object):
 
         :param categories:
             The value to assign to the categories property of this ResourceType.
-        :type categories: list[Category]
+        :type categories: list[oci.logging.models.Category]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class ResourceType(object):
 
 
         :return: The categories of this ResourceType.
-        :rtype: list[Category]
+        :rtype: list[oci.logging.models.Category]
         """
         return self._categories
 
@@ -84,7 +84,7 @@ class ResourceType(object):
 
 
         :param categories: The categories of this ResourceType.
-        :type: list[Category]
+        :type: list[oci.logging.models.Category]
         """
         self._categories = categories
 

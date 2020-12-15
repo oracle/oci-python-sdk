@@ -92,7 +92,7 @@ class WorkRequest(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequest.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.data_science.models.WorkRequestResource]
 
         :param time_accepted:
             The value to assign to the time_accepted property of this WorkRequest.
@@ -289,7 +289,7 @@ class WorkRequest(object):
 
 
         :return: The resources of this WorkRequest.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.data_science.models.WorkRequestResource]
         """
         return self._resources
 
@@ -301,7 +301,7 @@ class WorkRequest(object):
 
 
         :param resources: The resources of this WorkRequest.
-        :type: list[WorkRequestResource]
+        :type: list[oci.data_science.models.WorkRequestResource]
         """
         self._resources = resources
 

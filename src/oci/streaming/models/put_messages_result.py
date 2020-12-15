@@ -25,7 +25,7 @@ class PutMessagesResult(object):
 
         :param entries:
             The value to assign to the entries property of this PutMessagesResult.
-        :type entries: list[PutMessagesResultEntry]
+        :type entries: list[oci.streaming.models.PutMessagesResultEntry]
 
         """
         self.swagger_types = {
@@ -76,7 +76,7 @@ class PutMessagesResult(object):
 
 
         :return: The entries of this PutMessagesResult.
-        :rtype: list[PutMessagesResultEntry]
+        :rtype: list[oci.streaming.models.PutMessagesResultEntry]
         """
         return self._entries
 
@@ -91,7 +91,7 @@ class PutMessagesResult(object):
 
 
         :param entries: The entries of this PutMessagesResult.
-        :type: list[PutMessagesResultEntry]
+        :type: list[oci.streaming.models.PutMessagesResultEntry]
         """
         self._entries = entries
 

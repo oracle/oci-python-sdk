@@ -32,7 +32,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.attach_boot_volume` and waits for the :py:class:`~oci.core.models.BootVolumeAttachment` acted upon
         to enter the given state(s).
 
-        :param AttachBootVolumeDetails attach_boot_volume_details: (required)
+        :param oci.core.models.AttachBootVolumeDetails attach_boot_volume_details: (required)
             Attach boot volume request
 
         :param list[str] wait_for_states:
@@ -70,7 +70,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.attach_vnic` and waits for the :py:class:`~oci.core.models.VnicAttachment` acted upon
         to enter the given state(s).
 
-        :param AttachVnicDetails attach_vnic_details: (required)
+        :param oci.core.models.AttachVnicDetails attach_vnic_details: (required)
             Attach VNIC details.
 
         :param list[str] wait_for_states:
@@ -108,7 +108,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.attach_volume` and waits for the :py:class:`~oci.core.models.VolumeAttachment` acted upon
         to enter the given state(s).
 
-        :param AttachVolumeDetails attach_volume_details: (required)
+        :param oci.core.models.AttachVolumeDetails attach_volume_details: (required)
             Attach volume request
 
         :param list[str] wait_for_states:
@@ -146,7 +146,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.capture_console_history` and waits for the :py:class:`~oci.core.models.ConsoleHistory` acted upon
         to enter the given state(s).
 
-        :param CaptureConsoleHistoryDetails capture_console_history_details: (required)
+        :param oci.core.models.CaptureConsoleHistoryDetails capture_console_history_details: (required)
             Console history details
 
         :param list[str] wait_for_states:
@@ -187,7 +187,7 @@ class ComputeClientCompositeOperations(object):
         :param str dedicated_vm_host_id: (required)
             The OCID of the dedicated VM host.
 
-        :param ChangeDedicatedVmHostCompartmentDetails change_dedicated_vm_host_compartment_details: (required)
+        :param oci.core.models.ChangeDedicatedVmHostCompartmentDetails change_dedicated_vm_host_compartment_details: (required)
             The request to move the dedicated virtual machine host to a different compartment.
 
         :param list[str] work_request_states: (optional)
@@ -225,7 +225,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :param ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
+        :param oci.core.models.ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
             Request to change the compartment of a given instance.
 
         :param list[str] work_request_states: (optional)
@@ -260,7 +260,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.create_dedicated_vm_host` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
+        :param oci.core.models.CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
             The details for creating a new dedicated virtual machine host.
 
         :param list[str] work_request_states: (optional)
@@ -295,7 +295,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.create_dedicated_vm_host` and waits for the :py:class:`~oci.core.models.DedicatedVmHost` acted upon
         to enter the given state(s).
 
-        :param CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
+        :param oci.core.models.CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
             The details for creating a new dedicated virtual machine host.
 
         :param list[str] wait_for_states:
@@ -333,7 +333,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.create_image` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param CreateImageDetails create_image_details: (required)
+        :param oci.core.models.CreateImageDetails create_image_details: (required)
             Image creation details
 
         :param list[str] work_request_states: (optional)
@@ -368,7 +368,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.create_image` and waits for the :py:class:`~oci.core.models.Image` acted upon
         to enter the given state(s).
 
-        :param CreateImageDetails create_image_details: (required)
+        :param oci.core.models.CreateImageDetails create_image_details: (required)
             Image creation details
 
         :param list[str] wait_for_states:
@@ -406,7 +406,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.create_instance_console_connection` and waits for the :py:class:`~oci.core.models.InstanceConsoleConnection` acted upon
         to enter the given state(s).
 
-        :param CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
+        :param oci.core.models.CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
             Request object for creating an InstanceConsoleConnection
 
         :param list[str] wait_for_states:
@@ -768,7 +768,7 @@ class ComputeClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ExportImageDetails export_image_details: (required)
+        :param oci.core.models.ExportImageDetails export_image_details: (required)
             Details for the image export.
 
         :param list[str] work_request_states: (optional)
@@ -808,7 +808,7 @@ class ComputeClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ExportImageDetails export_image_details: (required)
+        :param oci.core.models.ExportImageDetails export_image_details: (required)
             Details for the image export.
 
         :param list[str] wait_for_states:
@@ -889,7 +889,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.launch_instance` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param LaunchInstanceDetails launch_instance_details: (required)
+        :param oci.core.models.LaunchInstanceDetails launch_instance_details: (required)
             Instance details
 
         :param list[str] work_request_states: (optional)
@@ -924,7 +924,7 @@ class ComputeClientCompositeOperations(object):
         Calls :py:func:`~oci.core.ComputeClient.launch_instance` and waits for the :py:class:`~oci.core.models.Instance` acted upon
         to enter the given state(s).
 
-        :param LaunchInstanceDetails launch_instance_details: (required)
+        :param oci.core.models.LaunchInstanceDetails launch_instance_details: (required)
             Instance details
 
         :param list[str] wait_for_states:
@@ -1012,7 +1012,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_console_history_id: (required)
             The OCID of the console history.
 
-        :param UpdateConsoleHistoryDetails update_console_history_details: (required)
+        :param oci.core.models.UpdateConsoleHistoryDetails update_console_history_details: (required)
             Update instance fields
 
         :param list[str] wait_for_states:
@@ -1053,7 +1053,7 @@ class ComputeClientCompositeOperations(object):
         :param str dedicated_vm_host_id: (required)
             The OCID of the dedicated VM host.
 
-        :param UpdateDedicatedVmHostDetails update_dedicated_vm_host_details: (required)
+        :param oci.core.models.UpdateDedicatedVmHostDetails update_dedicated_vm_host_details: (required)
             Update dedicated VM host details
 
         :param list[str] wait_for_states:
@@ -1096,7 +1096,7 @@ class ComputeClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateImageDetails update_image_details: (required)
+        :param oci.core.models.UpdateImageDetails update_image_details: (required)
             Updates the image display name field. Avoid entering confidential information.
 
         :param list[str] wait_for_states:
@@ -1137,7 +1137,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :param UpdateInstanceDetails update_instance_details: (required)
+        :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields
 
         :param list[str] work_request_states: (optional)
@@ -1175,7 +1175,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The OCID of the instance.
 
-        :param UpdateInstanceDetails update_instance_details: (required)
+        :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields
 
         :param list[str] wait_for_states:
@@ -1216,7 +1216,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_console_connection_id: (required)
             The OCID of the instance console connection.
 
-        :param UpdateInstanceConsoleConnectionDetails update_instance_console_connection_details: (required)
+        :param oci.core.models.UpdateInstanceConsoleConnectionDetails update_instance_console_connection_details: (required)
             Update instanceConsoleConnection tags
 
         :param list[str] wait_for_states:
