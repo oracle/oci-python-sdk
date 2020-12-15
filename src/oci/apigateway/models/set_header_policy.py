@@ -20,7 +20,7 @@ class SetHeaderPolicy(object):
 
         :param items:
             The value to assign to the items property of this SetHeaderPolicy.
-        :type items: list[SetHeaderPolicyItem]
+        :type items: list[oci.apigateway.models.SetHeaderPolicyItem]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SetHeaderPolicy(object):
 
 
         :return: The items of this SetHeaderPolicy.
-        :rtype: list[SetHeaderPolicyItem]
+        :rtype: list[oci.apigateway.models.SetHeaderPolicyItem]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SetHeaderPolicy(object):
 
 
         :param items: The items of this SetHeaderPolicy.
-        :type: list[SetHeaderPolicyItem]
+        :type: list[oci.apigateway.models.SetHeaderPolicyItem]
         """
         self._items = items
 

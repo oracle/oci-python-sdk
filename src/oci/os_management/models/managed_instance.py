@@ -94,15 +94,15 @@ class ManagedInstance(object):
 
         :param parent_software_source:
             The value to assign to the parent_software_source property of this ManagedInstance.
-        :type parent_software_source: SoftwareSourceId
+        :type parent_software_source: oci.os_management.models.SoftwareSourceId
 
         :param child_software_sources:
             The value to assign to the child_software_sources property of this ManagedInstance.
-        :type child_software_sources: list[SoftwareSourceId]
+        :type child_software_sources: list[oci.os_management.models.SoftwareSourceId]
 
         :param managed_instance_groups:
             The value to assign to the managed_instance_groups property of this ManagedInstance.
-        :type managed_instance_groups: list[Id]
+        :type managed_instance_groups: list[oci.os_management.models.Id]
 
         :param os_family:
             The value to assign to the os_family property of this ManagedInstance.
@@ -448,7 +448,7 @@ class ManagedInstance(object):
 
 
         :return: The parent_software_source of this ManagedInstance.
-        :rtype: SoftwareSourceId
+        :rtype: oci.os_management.models.SoftwareSourceId
         """
         return self._parent_software_source
 
@@ -460,7 +460,7 @@ class ManagedInstance(object):
 
 
         :param parent_software_source: The parent_software_source of this ManagedInstance.
-        :type: SoftwareSourceId
+        :type: oci.os_management.models.SoftwareSourceId
         """
         self._parent_software_source = parent_software_source
 
@@ -472,7 +472,7 @@ class ManagedInstance(object):
 
 
         :return: The child_software_sources of this ManagedInstance.
-        :rtype: list[SoftwareSourceId]
+        :rtype: list[oci.os_management.models.SoftwareSourceId]
         """
         return self._child_software_sources
 
@@ -484,7 +484,7 @@ class ManagedInstance(object):
 
 
         :param child_software_sources: The child_software_sources of this ManagedInstance.
-        :type: list[SoftwareSourceId]
+        :type: list[oci.os_management.models.SoftwareSourceId]
         """
         self._child_software_sources = child_software_sources
 
@@ -497,7 +497,7 @@ class ManagedInstance(object):
 
 
         :return: The managed_instance_groups of this ManagedInstance.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._managed_instance_groups
 
@@ -510,7 +510,7 @@ class ManagedInstance(object):
 
 
         :param managed_instance_groups: The managed_instance_groups of this ManagedInstance.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._managed_instance_groups = managed_instance_groups
 

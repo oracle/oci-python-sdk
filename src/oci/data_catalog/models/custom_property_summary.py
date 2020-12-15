@@ -136,7 +136,7 @@ class CustomPropertySummary(object):
 
         :param scope:
             The value to assign to the scope property of this CustomPropertySummary.
-        :type scope: list[CustomPropertyTypeUsage]
+        :type scope: list[oci.data_catalog.models.CustomPropertyTypeUsage]
 
         :param allowed_values:
             The value to assign to the allowed_values property of this CustomPropertySummary.
@@ -587,7 +587,7 @@ class CustomPropertySummary(object):
 
 
         :return: The scope of this CustomPropertySummary.
-        :rtype: list[CustomPropertyTypeUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyTypeUsage]
         """
         return self._scope
 
@@ -599,7 +599,7 @@ class CustomPropertySummary(object):
 
 
         :param scope: The scope of this CustomPropertySummary.
-        :type: list[CustomPropertyTypeUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyTypeUsage]
         """
         self._scope = scope
 

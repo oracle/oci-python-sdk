@@ -80,7 +80,7 @@ class LogSummary(object):
 
         :param configuration:
             The value to assign to the configuration property of this LogSummary.
-        :type configuration: Configuration
+        :type configuration: oci.logging.models.Configuration
 
         :param defined_tags:
             The value to assign to the defined_tags property of this LogSummary.
@@ -317,7 +317,7 @@ class LogSummary(object):
         Gets the configuration of this LogSummary.
 
         :return: The configuration of this LogSummary.
-        :rtype: Configuration
+        :rtype: oci.logging.models.Configuration
         """
         return self._configuration
 
@@ -327,7 +327,7 @@ class LogSummary(object):
         Sets the configuration of this LogSummary.
 
         :param configuration: The configuration of this LogSummary.
-        :type: Configuration
+        :type: oci.logging.models.Configuration
         """
         self._configuration = configuration
 

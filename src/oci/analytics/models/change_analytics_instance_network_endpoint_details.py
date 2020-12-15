@@ -20,7 +20,7 @@ class ChangeAnalyticsInstanceNetworkEndpointDetails(object):
 
         :param network_endpoint_details:
             The value to assign to the network_endpoint_details property of this ChangeAnalyticsInstanceNetworkEndpointDetails.
-        :type network_endpoint_details: NetworkEndpointDetails
+        :type network_endpoint_details: oci.analytics.models.NetworkEndpointDetails
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class ChangeAnalyticsInstanceNetworkEndpointDetails(object):
         **[Required]** Gets the network_endpoint_details of this ChangeAnalyticsInstanceNetworkEndpointDetails.
 
         :return: The network_endpoint_details of this ChangeAnalyticsInstanceNetworkEndpointDetails.
-        :rtype: NetworkEndpointDetails
+        :rtype: oci.analytics.models.NetworkEndpointDetails
         """
         return self._network_endpoint_details
 
@@ -49,7 +49,7 @@ class ChangeAnalyticsInstanceNetworkEndpointDetails(object):
         Sets the network_endpoint_details of this ChangeAnalyticsInstanceNetworkEndpointDetails.
 
         :param network_endpoint_details: The network_endpoint_details of this ChangeAnalyticsInstanceNetworkEndpointDetails.
-        :type: NetworkEndpointDetails
+        :type: oci.analytics.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
 

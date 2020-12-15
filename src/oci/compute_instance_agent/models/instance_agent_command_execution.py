@@ -100,7 +100,7 @@ class InstanceAgentCommandExecution(object):
 
         :param content:
             The value to assign to the content property of this InstanceAgentCommandExecution.
-        :type content: InstanceAgentCommandExecutionOutputContent
+        :type content: oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputContent
 
         """
         self.swagger_types = {
@@ -369,7 +369,7 @@ class InstanceAgentCommandExecution(object):
         **[Required]** Gets the content of this InstanceAgentCommandExecution.
 
         :return: The content of this InstanceAgentCommandExecution.
-        :rtype: InstanceAgentCommandExecutionOutputContent
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputContent
         """
         return self._content
 
@@ -379,7 +379,7 @@ class InstanceAgentCommandExecution(object):
         Sets the content of this InstanceAgentCommandExecution.
 
         :param content: The content of this InstanceAgentCommandExecution.
-        :type: InstanceAgentCommandExecutionOutputContent
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputContent
         """
         self._content = content
 

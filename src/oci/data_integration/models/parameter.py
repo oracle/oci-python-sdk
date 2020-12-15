@@ -51,11 +51,11 @@ class Parameter(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Parameter.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this Parameter.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this Parameter.
@@ -71,7 +71,7 @@ class Parameter(TypedObject):
 
         :param type:
             The value to assign to the type property of this Parameter.
-        :type type: BaseType
+        :type type: oci.data_integration.models.BaseType
 
         :param default_value:
             The value to assign to the default_value property of this Parameter.
@@ -159,7 +159,7 @@ class Parameter(TypedObject):
         Gets the type of this Parameter.
 
         :return: The type of this Parameter.
-        :rtype: BaseType
+        :rtype: oci.data_integration.models.BaseType
         """
         return self._type
 
@@ -169,7 +169,7 @@ class Parameter(TypedObject):
         Sets the type of this Parameter.
 
         :param type: The type of this Parameter.
-        :type: BaseType
+        :type: oci.data_integration.models.BaseType
         """
         self._type = type
 

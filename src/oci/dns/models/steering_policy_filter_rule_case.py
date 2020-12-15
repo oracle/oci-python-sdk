@@ -24,7 +24,7 @@ class SteeringPolicyFilterRuleCase(object):
 
         :param answer_data:
             The value to assign to the answer_data property of this SteeringPolicyFilterRuleCase.
-        :type answer_data: list[SteeringPolicyFilterAnswerData]
+        :type answer_data: list[oci.dns.models.SteeringPolicyFilterAnswerData]
 
         """
         self.swagger_types = {
@@ -82,7 +82,7 @@ class SteeringPolicyFilterRuleCase(object):
 
 
         :return: The answer_data of this SteeringPolicyFilterRuleCase.
-        :rtype: list[SteeringPolicyFilterAnswerData]
+        :rtype: list[oci.dns.models.SteeringPolicyFilterAnswerData]
         """
         return self._answer_data
 
@@ -94,7 +94,7 @@ class SteeringPolicyFilterRuleCase(object):
 
 
         :param answer_data: The answer_data of this SteeringPolicyFilterRuleCase.
-        :type: list[SteeringPolicyFilterAnswerData]
+        :type: list[oci.dns.models.SteeringPolicyFilterAnswerData]
         """
         self._answer_data = answer_data
 

@@ -28,11 +28,11 @@ class OracleAdwcWriteAttributes(object):
 
         :param staging_data_asset:
             The value to assign to the staging_data_asset property of this OracleAdwcWriteAttributes.
-        :type staging_data_asset: DataAsset
+        :type staging_data_asset: oci.data_integration.models.DataAsset
 
         :param staging_connection:
             The value to assign to the staging_connection property of this OracleAdwcWriteAttributes.
-        :type staging_connection: Connection
+        :type staging_connection: oci.data_integration.models.Connection
 
         """
         self.swagger_types = {
@@ -108,7 +108,7 @@ class OracleAdwcWriteAttributes(object):
         Gets the staging_data_asset of this OracleAdwcWriteAttributes.
 
         :return: The staging_data_asset of this OracleAdwcWriteAttributes.
-        :rtype: DataAsset
+        :rtype: oci.data_integration.models.DataAsset
         """
         return self._staging_data_asset
 
@@ -118,7 +118,7 @@ class OracleAdwcWriteAttributes(object):
         Sets the staging_data_asset of this OracleAdwcWriteAttributes.
 
         :param staging_data_asset: The staging_data_asset of this OracleAdwcWriteAttributes.
-        :type: DataAsset
+        :type: oci.data_integration.models.DataAsset
         """
         self._staging_data_asset = staging_data_asset
 
@@ -128,7 +128,7 @@ class OracleAdwcWriteAttributes(object):
         Gets the staging_connection of this OracleAdwcWriteAttributes.
 
         :return: The staging_connection of this OracleAdwcWriteAttributes.
-        :rtype: Connection
+        :rtype: oci.data_integration.models.Connection
         """
         return self._staging_connection
 
@@ -138,7 +138,7 @@ class OracleAdwcWriteAttributes(object):
         Sets the staging_connection of this OracleAdwcWriteAttributes.
 
         :param staging_connection: The staging_connection of this OracleAdwcWriteAttributes.
-        :type: Connection
+        :type: oci.data_integration.models.Connection
         """
         self._staging_connection = staging_connection
 

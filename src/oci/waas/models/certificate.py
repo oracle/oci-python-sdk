@@ -61,11 +61,11 @@ class Certificate(object):
 
         :param subject_name:
             The value to assign to the subject_name property of this Certificate.
-        :type subject_name: CertificateSubjectName
+        :type subject_name: oci.waas.models.CertificateSubjectName
 
         :param issuer_name:
             The value to assign to the issuer_name property of this Certificate.
-        :type issuer_name: CertificateIssuerName
+        :type issuer_name: oci.waas.models.CertificateIssuerName
 
         :param serial_number:
             The value to assign to the serial_number property of this Certificate.
@@ -89,11 +89,11 @@ class Certificate(object):
 
         :param public_key_info:
             The value to assign to the public_key_info property of this Certificate.
-        :type public_key_info: CertificatePublicKeyInfo
+        :type public_key_info: oci.waas.models.CertificatePublicKeyInfo
 
         :param extensions:
             The value to assign to the extensions property of this Certificate.
-        :type extensions: list[CertificateExtensions]
+        :type extensions: list[oci.waas.models.CertificateExtensions]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Certificate.
@@ -278,7 +278,7 @@ class Certificate(object):
         Gets the subject_name of this Certificate.
 
         :return: The subject_name of this Certificate.
-        :rtype: CertificateSubjectName
+        :rtype: oci.waas.models.CertificateSubjectName
         """
         return self._subject_name
 
@@ -288,7 +288,7 @@ class Certificate(object):
         Sets the subject_name of this Certificate.
 
         :param subject_name: The subject_name of this Certificate.
-        :type: CertificateSubjectName
+        :type: oci.waas.models.CertificateSubjectName
         """
         self._subject_name = subject_name
 
@@ -298,7 +298,7 @@ class Certificate(object):
         Gets the issuer_name of this Certificate.
 
         :return: The issuer_name of this Certificate.
-        :rtype: CertificateIssuerName
+        :rtype: oci.waas.models.CertificateIssuerName
         """
         return self._issuer_name
 
@@ -308,7 +308,7 @@ class Certificate(object):
         Sets the issuer_name of this Certificate.
 
         :param issuer_name: The issuer_name of this Certificate.
-        :type: CertificateIssuerName
+        :type: oci.waas.models.CertificateIssuerName
         """
         self._issuer_name = issuer_name
 
@@ -438,7 +438,7 @@ class Certificate(object):
         Gets the public_key_info of this Certificate.
 
         :return: The public_key_info of this Certificate.
-        :rtype: CertificatePublicKeyInfo
+        :rtype: oci.waas.models.CertificatePublicKeyInfo
         """
         return self._public_key_info
 
@@ -448,7 +448,7 @@ class Certificate(object):
         Sets the public_key_info of this Certificate.
 
         :param public_key_info: The public_key_info of this Certificate.
-        :type: CertificatePublicKeyInfo
+        :type: oci.waas.models.CertificatePublicKeyInfo
         """
         self._public_key_info = public_key_info
 
@@ -460,7 +460,7 @@ class Certificate(object):
 
 
         :return: The extensions of this Certificate.
-        :rtype: list[CertificateExtensions]
+        :rtype: list[oci.waas.models.CertificateExtensions]
         """
         return self._extensions
 
@@ -472,7 +472,7 @@ class Certificate(object):
 
 
         :param extensions: The extensions of this Certificate.
-        :type: list[CertificateExtensions]
+        :type: list[oci.waas.models.CertificateExtensions]
         """
         self._extensions = extensions
 

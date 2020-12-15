@@ -28,7 +28,7 @@ class Category(object):
 
         :param parameters:
             The value to assign to the parameters property of this Category.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.logging.models.Parameter]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class Category(object):
 
 
         :return: The parameters of this Category.
-        :rtype: list[Parameter]
+        :rtype: list[oci.logging.models.Parameter]
         """
         return self._parameters
 
@@ -115,7 +115,7 @@ class Category(object):
 
 
         :param parameters: The parameters of this Category.
-        :type: list[Parameter]
+        :type: list[oci.logging.models.Parameter]
         """
         self._parameters = parameters
 

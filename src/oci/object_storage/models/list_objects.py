@@ -24,7 +24,7 @@ class ListObjects(object):
 
         :param objects:
             The value to assign to the objects property of this ListObjects.
-        :type objects: list[ObjectSummary]
+        :type objects: list[oci.object_storage.models.ObjectSummary]
 
         :param prefixes:
             The value to assign to the prefixes property of this ListObjects.
@@ -59,7 +59,7 @@ class ListObjects(object):
 
 
         :return: The objects of this ListObjects.
-        :rtype: list[ObjectSummary]
+        :rtype: list[oci.object_storage.models.ObjectSummary]
         """
         return self._objects
 
@@ -71,7 +71,7 @@ class ListObjects(object):
 
 
         :param objects: The objects of this ListObjects.
-        :type: list[ObjectSummary]
+        :type: list[oci.object_storage.models.ObjectSummary]
         """
         self._objects = objects
 

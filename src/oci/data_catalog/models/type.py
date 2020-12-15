@@ -103,7 +103,7 @@ class Type(object):
 
         :param custom_properties:
             The value to assign to the custom_properties property of this Type.
-        :type custom_properties: list[CustomPropertySummary]
+        :type custom_properties: list[oci.data_catalog.models.CustomPropertySummary]
 
         """
         self.swagger_types = {
@@ -490,7 +490,7 @@ class Type(object):
 
 
         :return: The custom_properties of this Type.
-        :rtype: list[CustomPropertySummary]
+        :rtype: list[oci.data_catalog.models.CustomPropertySummary]
         """
         return self._custom_properties
 
@@ -502,7 +502,7 @@ class Type(object):
 
 
         :param custom_properties: The custom_properties of this Type.
-        :type: list[CustomPropertySummary]
+        :type: list[oci.data_catalog.models.CustomPropertySummary]
         """
         self._custom_properties = custom_properties
 

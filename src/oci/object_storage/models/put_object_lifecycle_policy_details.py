@@ -20,7 +20,7 @@ class PutObjectLifecyclePolicyDetails(object):
 
         :param items:
             The value to assign to the items property of this PutObjectLifecyclePolicyDetails.
-        :type items: list[ObjectLifecycleRule]
+        :type items: list[oci.object_storage.models.ObjectLifecycleRule]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PutObjectLifecyclePolicyDetails(object):
 
 
         :return: The items of this PutObjectLifecyclePolicyDetails.
-        :rtype: list[ObjectLifecycleRule]
+        :rtype: list[oci.object_storage.models.ObjectLifecycleRule]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class PutObjectLifecyclePolicyDetails(object):
 
 
         :param items: The items of this PutObjectLifecyclePolicyDetails.
-        :type: list[ObjectLifecycleRule]
+        :type: list[oci.object_storage.models.ObjectLifecycleRule]
         """
         self._items = items
 

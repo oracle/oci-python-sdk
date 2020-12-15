@@ -52,11 +52,11 @@ class ProjectDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ProjectDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this ProjectDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -294,7 +294,7 @@ class ProjectDetails(object):
         Gets the parent_ref of this ProjectDetails.
 
         :return: The parent_ref of this ProjectDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -304,7 +304,7 @@ class ProjectDetails(object):
         Sets the parent_ref of this ProjectDetails.
 
         :param parent_ref: The parent_ref of this ProjectDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -314,7 +314,7 @@ class ProjectDetails(object):
         Gets the registry_metadata of this ProjectDetails.
 
         :return: The registry_metadata of this ProjectDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -324,7 +324,7 @@ class ProjectDetails(object):
         Sets the registry_metadata of this ProjectDetails.
 
         :param registry_metadata: The registry_metadata of this ProjectDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

@@ -34,7 +34,7 @@ class Aggregator(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Aggregator.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Aggregator.
@@ -50,11 +50,11 @@ class Aggregator(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this Aggregator.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Aggregator.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Aggregator.
@@ -66,15 +66,15 @@ class Aggregator(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this Aggregator.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Aggregator.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param group_by_columns:
             The value to assign to the group_by_columns property of this Aggregator.
-        :type group_by_columns: DynamicProxyField
+        :type group_by_columns: oci.data_integration.models.DynamicProxyField
 
         """
         self.swagger_types = {
@@ -133,7 +133,7 @@ class Aggregator(Operator):
         Gets the group_by_columns of this Aggregator.
 
         :return: The group_by_columns of this Aggregator.
-        :rtype: DynamicProxyField
+        :rtype: oci.data_integration.models.DynamicProxyField
         """
         return self._group_by_columns
 
@@ -143,7 +143,7 @@ class Aggregator(Operator):
         Sets the group_by_columns of this Aggregator.
 
         :param group_by_columns: The group_by_columns of this Aggregator.
-        :type: DynamicProxyField
+        :type: oci.data_integration.models.DynamicProxyField
         """
         self._group_by_columns = group_by_columns
 

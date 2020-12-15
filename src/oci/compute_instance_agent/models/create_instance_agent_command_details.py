@@ -32,11 +32,11 @@ class CreateInstanceAgentCommandDetails(object):
 
         :param target:
             The value to assign to the target property of this CreateInstanceAgentCommandDetails.
-        :type target: InstanceAgentCommandTarget
+        :type target: oci.compute_instance_agent.models.InstanceAgentCommandTarget
 
         :param content:
             The value to assign to the content property of this CreateInstanceAgentCommandDetails.
-        :type content: InstanceAgentCommandContent
+        :type content: oci.compute_instance_agent.models.InstanceAgentCommandContent
 
         """
         self.swagger_types = {
@@ -143,7 +143,7 @@ class CreateInstanceAgentCommandDetails(object):
         **[Required]** Gets the target of this CreateInstanceAgentCommandDetails.
 
         :return: The target of this CreateInstanceAgentCommandDetails.
-        :rtype: InstanceAgentCommandTarget
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandTarget
         """
         return self._target
 
@@ -153,7 +153,7 @@ class CreateInstanceAgentCommandDetails(object):
         Sets the target of this CreateInstanceAgentCommandDetails.
 
         :param target: The target of this CreateInstanceAgentCommandDetails.
-        :type: InstanceAgentCommandTarget
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandTarget
         """
         self._target = target
 
@@ -163,7 +163,7 @@ class CreateInstanceAgentCommandDetails(object):
         **[Required]** Gets the content of this CreateInstanceAgentCommandDetails.
 
         :return: The content of this CreateInstanceAgentCommandDetails.
-        :rtype: InstanceAgentCommandContent
+        :rtype: oci.compute_instance_agent.models.InstanceAgentCommandContent
         """
         return self._content
 
@@ -173,7 +173,7 @@ class CreateInstanceAgentCommandDetails(object):
         Sets the content of this CreateInstanceAgentCommandDetails.
 
         :param content: The content of this CreateInstanceAgentCommandDetails.
-        :type: InstanceAgentCommandContent
+        :type: oci.compute_instance_agent.models.InstanceAgentCommandContent
         """
         self._content = content
 

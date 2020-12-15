@@ -31,7 +31,7 @@ class GatewayClientCompositeOperations(object):
         :param str gateway_id: (required)
             The ocid of the gateway.
 
-        :param ChangeGatewayCompartmentDetails change_gateway_compartment_details: (required)
+        :param oci.apigateway.models.ChangeGatewayCompartmentDetails change_gateway_compartment_details: (required)
             Details of the target compartment.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class GatewayClientCompositeOperations(object):
         Calls :py:func:`~oci.apigateway.GatewayClient.create_gateway` and waits for the :py:class:`~oci.apigateway.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateGatewayDetails create_gateway_details: (required)
+        :param oci.apigateway.models.CreateGatewayDetails create_gateway_details: (required)
             Details for the new gateway.
 
         :param list[str] wait_for_states:
@@ -156,7 +156,7 @@ class GatewayClientCompositeOperations(object):
         :param str gateway_id: (required)
             The ocid of the gateway.
 
-        :param UpdateGatewayDetails update_gateway_details: (required)
+        :param oci.apigateway.models.UpdateGatewayDetails update_gateway_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

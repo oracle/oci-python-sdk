@@ -120,7 +120,7 @@ class RecommendationSummary(object):
 
         :param resource_counts:
             The value to assign to the resource_counts property of this RecommendationSummary.
-        :type resource_counts: list[ResourceCount]
+        :type resource_counts: list[oci.optimizer.models.ResourceCount]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this RecommendationSummary.
@@ -156,7 +156,7 @@ class RecommendationSummary(object):
 
         :param supported_levels:
             The value to assign to the supported_levels property of this RecommendationSummary.
-        :type supported_levels: SupportedLevels
+        :type supported_levels: oci.optimizer.models.SupportedLevels
 
         """
         self.swagger_types = {
@@ -369,7 +369,7 @@ class RecommendationSummary(object):
 
 
         :return: The resource_counts of this RecommendationSummary.
-        :rtype: list[ResourceCount]
+        :rtype: list[oci.optimizer.models.ResourceCount]
         """
         return self._resource_counts
 
@@ -381,7 +381,7 @@ class RecommendationSummary(object):
 
 
         :param resource_counts: The resource_counts of this RecommendationSummary.
-        :type: list[ResourceCount]
+        :type: list[oci.optimizer.models.ResourceCount]
         """
         self._resource_counts = resource_counts
 
@@ -581,7 +581,7 @@ class RecommendationSummary(object):
         Gets the supported_levels of this RecommendationSummary.
 
         :return: The supported_levels of this RecommendationSummary.
-        :rtype: SupportedLevels
+        :rtype: oci.optimizer.models.SupportedLevels
         """
         return self._supported_levels
 
@@ -591,7 +591,7 @@ class RecommendationSummary(object):
         Sets the supported_levels of this RecommendationSummary.
 
         :param supported_levels: The supported_levels of this RecommendationSummary.
-        :type: SupportedLevels
+        :type: oci.optimizer.models.SupportedLevels
         """
         self._supported_levels = supported_levels
 

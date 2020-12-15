@@ -65,6 +65,7 @@ from .ssl_cipher_suite_details import SSLCipherSuiteDetails
 from .ssl_configuration import SSLConfiguration
 from .ssl_configuration_details import SSLConfigurationDetails
 from .session_persistence_configuration_details import SessionPersistenceConfigurationDetails
+from .shape_details import ShapeDetails
 from .source_ip_address_condition import SourceIpAddressCondition
 from .source_vcn_id_condition import SourceVcnIdCondition
 from .source_vcn_ip_address_condition import SourceVcnIpAddressCondition
@@ -145,6 +146,7 @@ load_balancer_type_mapping = {
     "SSLConfiguration": SSLConfiguration,
     "SSLConfigurationDetails": SSLConfigurationDetails,
     "SessionPersistenceConfigurationDetails": SessionPersistenceConfigurationDetails,
+    "ShapeDetails": ShapeDetails,
     "SourceIpAddressCondition": SourceIpAddressCondition,
     "SourceVcnIdCondition": SourceVcnIdCondition,
     "SourceVcnIpAddressCondition": SourceVcnIpAddressCondition,

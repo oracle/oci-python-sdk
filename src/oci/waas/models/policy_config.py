@@ -106,7 +106,7 @@ class PolicyConfig(object):
 
         :param load_balancing_method:
             The value to assign to the load_balancing_method property of this PolicyConfig.
-        :type load_balancing_method: LoadBalancingMethod
+        :type load_balancing_method: oci.waas.models.LoadBalancingMethod
 
         :param websocket_path_prefixes:
             The value to assign to the websocket_path_prefixes property of this PolicyConfig.
@@ -118,7 +118,7 @@ class PolicyConfig(object):
 
         :param health_checks:
             The value to assign to the health_checks property of this PolicyConfig.
-        :type health_checks: HealthCheck
+        :type health_checks: oci.waas.models.HealthCheck
 
         """
         self.swagger_types = {
@@ -490,7 +490,7 @@ class PolicyConfig(object):
 
 
         :return: The load_balancing_method of this PolicyConfig.
-        :rtype: LoadBalancingMethod
+        :rtype: oci.waas.models.LoadBalancingMethod
         """
         return self._load_balancing_method
 
@@ -502,7 +502,7 @@ class PolicyConfig(object):
 
 
         :param load_balancing_method: The load_balancing_method of this PolicyConfig.
-        :type: LoadBalancingMethod
+        :type: oci.waas.models.LoadBalancingMethod
         """
         self._load_balancing_method = load_balancing_method
 
@@ -560,7 +560,7 @@ class PolicyConfig(object):
         Gets the health_checks of this PolicyConfig.
 
         :return: The health_checks of this PolicyConfig.
-        :rtype: HealthCheck
+        :rtype: oci.waas.models.HealthCheck
         """
         return self._health_checks
 
@@ -570,7 +570,7 @@ class PolicyConfig(object):
         Sets the health_checks of this PolicyConfig.
 
         :param health_checks: The health_checks of this PolicyConfig.
-        :type: HealthCheck
+        :type: oci.waas.models.HealthCheck
         """
         self._health_checks = health_checks
 

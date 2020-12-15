@@ -170,11 +170,11 @@ class ExadataInfrastructure(object):
 
         :param contacts:
             The value to assign to the contacts property of this ExadataInfrastructure.
-        :type contacts: list[ExadataInfrastructureContact]
+        :type contacts: list[oci.database.models.ExadataInfrastructureContact]
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this ExadataInfrastructure.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructure.
@@ -932,7 +932,7 @@ class ExadataInfrastructure(object):
 
 
         :return: The contacts of this ExadataInfrastructure.
-        :rtype: list[ExadataInfrastructureContact]
+        :rtype: list[oci.database.models.ExadataInfrastructureContact]
         """
         return self._contacts
 
@@ -944,7 +944,7 @@ class ExadataInfrastructure(object):
 
 
         :param contacts: The contacts of this ExadataInfrastructure.
-        :type: list[ExadataInfrastructureContact]
+        :type: list[oci.database.models.ExadataInfrastructureContact]
         """
         self._contacts = contacts
 
@@ -954,7 +954,7 @@ class ExadataInfrastructure(object):
         Gets the maintenance_window of this ExadataInfrastructure.
 
         :return: The maintenance_window of this ExadataInfrastructure.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -964,7 +964,7 @@ class ExadataInfrastructure(object):
         Sets the maintenance_window of this ExadataInfrastructure.
 
         :param maintenance_window: The maintenance_window of this ExadataInfrastructure.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

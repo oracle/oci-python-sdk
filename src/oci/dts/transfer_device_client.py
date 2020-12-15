@@ -108,6 +108,9 @@ class TransferDeviceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.NewTransferDevice`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_transfer_device.py.html>`__ to see an example of how to use create_transfer_device API.
         """
         resource_path = "/transferJobs/{id}/transferDevices"
         method = "POST"
@@ -184,6 +187,9 @@ class TransferDeviceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/delete_transfer_device.py.html>`__ to see an example of how to use delete_transfer_device API.
         """
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "DELETE"
@@ -249,6 +255,9 @@ class TransferDeviceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferDevice`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_device.py.html>`__ to see an example of how to use get_transfer_device API.
         """
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "GET"
@@ -321,6 +330,9 @@ class TransferDeviceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.MultipleTransferDevices`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_transfer_devices.py.html>`__ to see an example of how to use list_transfer_devices API.
         """
         resource_path = "/transferJobs/{id}/transferDevices"
         method = "GET"
@@ -414,6 +426,9 @@ class TransferDeviceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferDevice`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/update_transfer_device.py.html>`__ to see an example of how to use update_transfer_device API.
         """
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "PUT"

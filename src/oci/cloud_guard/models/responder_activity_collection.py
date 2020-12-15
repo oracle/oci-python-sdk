@@ -20,7 +20,7 @@ class ResponderActivityCollection(object):
 
         :param items:
             The value to assign to the items property of this ResponderActivityCollection.
-        :type items: list[ResponderActivitySummary]
+        :type items: list[oci.cloud_guard.models.ResponderActivitySummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ResponderActivityCollection(object):
 
 
         :return: The items of this ResponderActivityCollection.
-        :rtype: list[ResponderActivitySummary]
+        :rtype: list[oci.cloud_guard.models.ResponderActivitySummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ResponderActivityCollection(object):
 
 
         :param items: The items of this ResponderActivityCollection.
-        :type: list[ResponderActivitySummary]
+        :type: list[oci.cloud_guard.models.ResponderActivitySummary]
         """
         self._items = items
 

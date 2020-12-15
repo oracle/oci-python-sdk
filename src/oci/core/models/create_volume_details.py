@@ -60,7 +60,7 @@ class CreateVolumeDetails(object):
 
         :param source_details:
             The value to assign to the source_details property of this CreateVolumeDetails.
-        :type source_details: VolumeSourceDetails
+        :type source_details: oci.core.models.VolumeSourceDetails
 
         :param volume_backup_id:
             The value to assign to the volume_backup_id property of this CreateVolumeDetails.
@@ -423,7 +423,7 @@ class CreateVolumeDetails(object):
 
 
         :return: The source_details of this CreateVolumeDetails.
-        :rtype: VolumeSourceDetails
+        :rtype: oci.core.models.VolumeSourceDetails
         """
         return self._source_details
 
@@ -437,7 +437,7 @@ class CreateVolumeDetails(object):
 
 
         :param source_details: The source_details of this CreateVolumeDetails.
-        :type: VolumeSourceDetails
+        :type: oci.core.models.VolumeSourceDetails
         """
         self._source_details = source_details
 

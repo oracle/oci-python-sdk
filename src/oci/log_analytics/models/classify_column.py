@@ -35,7 +35,7 @@ class ClassifyColumn(AbstractColumn):
 
         :param values:
             The value to assign to the values property of this ClassifyColumn.
-        :type values: list[FieldValue]
+        :type values: list[oci.log_analytics.models.FieldValue]
 
         :param is_list_of_values:
             The value to assign to the is_list_of_values property of this ClassifyColumn.
@@ -80,7 +80,7 @@ class ClassifyColumn(AbstractColumn):
 
         :param classify_columns:
             The value to assign to the classify_columns property of this ClassifyColumn.
-        :type classify_columns: list[AbstractColumn]
+        :type classify_columns: list[oci.log_analytics.models.AbstractColumn]
 
         :param classify_result:
             The value to assign to the classify_result property of this ClassifyColumn.
@@ -88,7 +88,7 @@ class ClassifyColumn(AbstractColumn):
 
         :param classify_correlate_columns:
             The value to assign to the classify_correlate_columns property of this ClassifyColumn.
-        :type classify_correlate_columns: list[AbstractColumn]
+        :type classify_correlate_columns: list[oci.log_analytics.models.AbstractColumn]
 
         :param classify_correlate_result:
             The value to assign to the classify_correlate_result property of this ClassifyColumn.
@@ -237,7 +237,7 @@ class ClassifyColumn(AbstractColumn):
 
 
         :return: The classify_columns of this ClassifyColumn.
-        :rtype: list[AbstractColumn]
+        :rtype: list[oci.log_analytics.models.AbstractColumn]
         """
         return self._classify_columns
 
@@ -249,7 +249,7 @@ class ClassifyColumn(AbstractColumn):
 
 
         :param classify_columns: The classify_columns of this ClassifyColumn.
-        :type: list[AbstractColumn]
+        :type: list[oci.log_analytics.models.AbstractColumn]
         """
         self._classify_columns = classify_columns
 
@@ -285,7 +285,7 @@ class ClassifyColumn(AbstractColumn):
 
 
         :return: The classify_correlate_columns of this ClassifyColumn.
-        :rtype: list[AbstractColumn]
+        :rtype: list[oci.log_analytics.models.AbstractColumn]
         """
         return self._classify_correlate_columns
 
@@ -297,7 +297,7 @@ class ClassifyColumn(AbstractColumn):
 
 
         :param classify_correlate_columns: The classify_correlate_columns of this ClassifyColumn.
-        :type: list[AbstractColumn]
+        :type: list[oci.log_analytics.models.AbstractColumn]
         """
         self._classify_correlate_columns = classify_correlate_columns
 

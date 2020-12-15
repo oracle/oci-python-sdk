@@ -128,6 +128,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/change_table_compartment.py.html>`__ to see an example of how to use change_table_compartment API.
         """
         resource_path = "/tables/{tableNameOrId}/actions/changeCompartment"
         method = "POST"
@@ -218,6 +221,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/create_index.py.html>`__ to see an example of how to use create_index API.
         """
         resource_path = "/tables/{tableNameOrId}/indexes"
         method = "POST"
@@ -303,6 +309,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/create_table.py.html>`__ to see an example of how to use create_table API.
         """
         resource_path = "/tables"
         method = "POST"
@@ -385,6 +394,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_index.py.html>`__ to see an example of how to use delete_index API.
         """
         resource_path = "/tables/{tableNameOrId}/indexes/{indexName}"
         method = "DELETE"
@@ -491,6 +503,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.DeleteRowResult`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_row.py.html>`__ to see an example of how to use delete_row API.
         """
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "DELETE"
@@ -593,6 +608,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_table.py.html>`__ to see an example of how to use delete_table API.
         """
         resource_path = "/tables/{tableNameOrId}"
         method = "DELETE"
@@ -682,6 +700,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
@@ -762,6 +783,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.Index`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_index.py.html>`__ to see an example of how to use get_index API.
         """
         resource_path = "/tables/{tableNameOrId}/indexes/{indexName}"
         method = "GET"
@@ -860,6 +884,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.Row`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_row.py.html>`__ to see an example of how to use get_row API.
         """
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "GET"
@@ -957,6 +984,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.Table`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_table.py.html>`__ to see an example of how to use get_table API.
         """
         resource_path = "/tables/{tableNameOrId}"
         method = "GET"
@@ -1037,6 +1067,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -1143,6 +1176,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.IndexCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_indexes.py.html>`__ to see an example of how to use list_indexes API.
         """
         resource_path = "/tables/{tableNameOrId}/indexes"
         method = "GET"
@@ -1277,6 +1313,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.TableUsageCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_table_usage.py.html>`__ to see an example of how to use list_table_usage API.
         """
         resource_path = "/tables/{tableNameOrId}/usage"
         method = "GET"
@@ -1394,6 +1433,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.TableCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_tables.py.html>`__ to see an example of how to use list_tables API.
         """
         resource_path = "/tables"
         method = "GET"
@@ -1502,6 +1544,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -1592,6 +1637,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.WorkRequestLogEntryCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -1682,6 +1730,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.WorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -1756,6 +1807,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.PreparedStatement`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/prepare_statement.py.html>`__ to see an example of how to use prepare_statement API.
         """
         resource_path = "/query/prepare"
         method = "GET"
@@ -1832,6 +1886,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.QueryResultCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/query.py.html>`__ to see an example of how to use query API.
         """
         resource_path = "/query"
         method = "POST"
@@ -1907,6 +1964,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.StatementSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/summarize_statement.py.html>`__ to see an example of how to use summarize_statement API.
         """
         resource_path = "/query/summarize"
         method = "GET"
@@ -1985,6 +2045,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.nosql.models.UpdateRowResult`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/update_row.py.html>`__ to see an example of how to use update_row API.
         """
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "PUT"
@@ -2072,6 +2135,9 @@ class NosqlClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/update_table.py.html>`__ to see an example of how to use update_table API.
         """
         resource_path = "/tables/{tableNameOrId}"
         method = "PUT"

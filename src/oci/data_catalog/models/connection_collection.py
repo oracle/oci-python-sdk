@@ -24,7 +24,7 @@ class ConnectionCollection(object):
 
         :param items:
             The value to assign to the items property of this ConnectionCollection.
-        :type items: list[ConnectionSummary]
+        :type items: list[oci.data_catalog.models.ConnectionSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class ConnectionCollection(object):
 
 
         :return: The items of this ConnectionCollection.
-        :rtype: list[ConnectionSummary]
+        :rtype: list[oci.data_catalog.models.ConnectionSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class ConnectionCollection(object):
 
 
         :param items: The items of this ConnectionCollection.
-        :type: list[ConnectionSummary]
+        :type: list[oci.data_catalog.models.ConnectionSummary]
         """
         self._items = items
 

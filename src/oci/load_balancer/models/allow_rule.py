@@ -36,7 +36,7 @@ class AllowRule(Rule):
 
         :param conditions:
             The value to assign to the conditions property of this AllowRule.
-        :type conditions: list[RuleCondition]
+        :type conditions: list[oci.load_balancer.models.RuleCondition]
 
         :param description:
             The value to assign to the description property of this AllowRule.
@@ -66,7 +66,7 @@ class AllowRule(Rule):
         **[Required]** Gets the conditions of this AllowRule.
 
         :return: The conditions of this AllowRule.
-        :rtype: list[RuleCondition]
+        :rtype: list[oci.load_balancer.models.RuleCondition]
         """
         return self._conditions
 
@@ -76,7 +76,7 @@ class AllowRule(Rule):
         Sets the conditions of this AllowRule.
 
         :param conditions: The conditions of this AllowRule.
-        :type: list[RuleCondition]
+        :type: list[oci.load_balancer.models.RuleCondition]
         """
         self._conditions = conditions
 

@@ -28,7 +28,7 @@ class SortClause(object):
 
         :param field:
             The value to assign to the field property of this SortClause.
-        :type field: ShapeField
+        :type field: oci.data_integration.models.ShapeField
 
         :param order:
             The value to assign to the order property of this SortClause.
@@ -56,7 +56,7 @@ class SortClause(object):
         Gets the field of this SortClause.
 
         :return: The field of this SortClause.
-        :rtype: ShapeField
+        :rtype: oci.data_integration.models.ShapeField
         """
         return self._field
 
@@ -66,7 +66,7 @@ class SortClause(object):
         Sets the field of this SortClause.
 
         :param field: The field of this SortClause.
-        :type: ShapeField
+        :type: oci.data_integration.models.ShapeField
         """
         self._field = field
 

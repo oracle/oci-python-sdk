@@ -136,11 +136,11 @@ class DetectorRuleSummary(object):
 
         :param candidate_responder_rules:
             The value to assign to the candidate_responder_rules property of this DetectorRuleSummary.
-        :type candidate_responder_rules: list[CandidateResponderRule]
+        :type candidate_responder_rules: list[oci.cloud_guard.models.CandidateResponderRule]
 
         :param detector_details:
             The value to assign to the detector_details property of this DetectorRuleSummary.
-        :type detector_details: DetectorDetails
+        :type detector_details: oci.cloud_guard.models.DetectorDetails
 
         :param time_created:
             The value to assign to the time_created property of this DetectorRuleSummary.
@@ -422,7 +422,7 @@ class DetectorRuleSummary(object):
 
 
         :return: The candidate_responder_rules of this DetectorRuleSummary.
-        :rtype: list[CandidateResponderRule]
+        :rtype: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         return self._candidate_responder_rules
 
@@ -434,7 +434,7 @@ class DetectorRuleSummary(object):
 
 
         :param candidate_responder_rules: The candidate_responder_rules of this DetectorRuleSummary.
-        :type: list[CandidateResponderRule]
+        :type: list[oci.cloud_guard.models.CandidateResponderRule]
         """
         self._candidate_responder_rules = candidate_responder_rules
 
@@ -444,7 +444,7 @@ class DetectorRuleSummary(object):
         Gets the detector_details of this DetectorRuleSummary.
 
         :return: The detector_details of this DetectorRuleSummary.
-        :rtype: DetectorDetails
+        :rtype: oci.cloud_guard.models.DetectorDetails
         """
         return self._detector_details
 
@@ -454,7 +454,7 @@ class DetectorRuleSummary(object):
         Sets the detector_details of this DetectorRuleSummary.
 
         :param detector_details: The detector_details of this DetectorRuleSummary.
-        :type: DetectorDetails
+        :type: oci.cloud_guard.models.DetectorDetails
         """
         self._detector_details = detector_details
 

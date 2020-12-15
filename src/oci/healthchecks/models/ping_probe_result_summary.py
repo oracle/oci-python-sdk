@@ -94,11 +94,11 @@ class PingProbeResultSummary(object):
 
         :param connection:
             The value to assign to the connection property of this PingProbeResultSummary.
-        :type connection: Connection
+        :type connection: oci.healthchecks.models.Connection
 
         :param dns:
             The value to assign to the dns property of this PingProbeResultSummary.
-        :type dns: DNS
+        :type dns: oci.healthchecks.models.DNS
 
         :param domain_lookup_start:
             The value to assign to the domain_lookup_start property of this PingProbeResultSummary.
@@ -456,7 +456,7 @@ class PingProbeResultSummary(object):
         Gets the connection of this PingProbeResultSummary.
 
         :return: The connection of this PingProbeResultSummary.
-        :rtype: Connection
+        :rtype: oci.healthchecks.models.Connection
         """
         return self._connection
 
@@ -466,7 +466,7 @@ class PingProbeResultSummary(object):
         Sets the connection of this PingProbeResultSummary.
 
         :param connection: The connection of this PingProbeResultSummary.
-        :type: Connection
+        :type: oci.healthchecks.models.Connection
         """
         self._connection = connection
 
@@ -476,7 +476,7 @@ class PingProbeResultSummary(object):
         Gets the dns of this PingProbeResultSummary.
 
         :return: The dns of this PingProbeResultSummary.
-        :rtype: DNS
+        :rtype: oci.healthchecks.models.DNS
         """
         return self._dns
 
@@ -486,7 +486,7 @@ class PingProbeResultSummary(object):
         Sets the dns of this PingProbeResultSummary.
 
         :param dns: The dns of this PingProbeResultSummary.
-        :type: DNS
+        :type: oci.healthchecks.models.DNS
         """
         self._dns = dns
 

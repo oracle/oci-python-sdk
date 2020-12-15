@@ -112,6 +112,9 @@ class ComputeInstanceAgentClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/cancel_instance_agent_command.py.html>`__ to see an example of how to use cancel_instance_agent_command API.
         """
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}"
         method = "DELETE"
@@ -192,6 +195,9 @@ class ComputeInstanceAgentClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.compute_instance_agent.models.InstanceAgentCommand`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/create_instance_agent_command.py.html>`__ to see an example of how to use create_instance_agent_command API.
         """
         resource_path = "/instanceAgentCommands"
         method = "POST"
@@ -259,6 +265,9 @@ class ComputeInstanceAgentClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.compute_instance_agent.models.InstanceAgentCommand`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/get_instance_agent_command.py.html>`__ to see an example of how to use get_instance_agent_command API.
         """
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}"
         method = "GET"
@@ -335,6 +344,9 @@ class ComputeInstanceAgentClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.compute_instance_agent.models.InstanceAgentCommandExecution`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/get_instance_agent_command_execution.py.html>`__ to see an example of how to use get_instance_agent_command_execution API.
         """
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}/status"
         method = "GET"
@@ -449,6 +461,9 @@ class ComputeInstanceAgentClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.compute_instance_agent.models.InstanceAgentCommandExecutionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/list_instance_agent_command_executions.py.html>`__ to see an example of how to use list_instance_agent_command_executions API.
         """
         resource_path = "/instanceAgentCommandExecutions"
         method = "GET"
@@ -575,6 +590,9 @@ class ComputeInstanceAgentClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.compute_instance_agent.models.InstanceAgentCommandSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/list_instance_agent_commands.py.html>`__ to see an example of how to use list_instance_agent_commands API.
         """
         resource_path = "/instanceAgentCommands"
         method = "GET"

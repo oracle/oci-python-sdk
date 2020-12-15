@@ -86,7 +86,7 @@ class AlarmStatusSummary(object):
 
         :param suppression:
             The value to assign to the suppression property of this AlarmStatusSummary.
-        :type suppression: Suppression
+        :type suppression: oci.monitoring.models.Suppression
 
         """
         self.swagger_types = {
@@ -274,7 +274,7 @@ class AlarmStatusSummary(object):
 
 
         :return: The suppression of this AlarmStatusSummary.
-        :rtype: Suppression
+        :rtype: oci.monitoring.models.Suppression
         """
         return self._suppression
 
@@ -286,7 +286,7 @@ class AlarmStatusSummary(object):
 
 
         :param suppression: The suppression of this AlarmStatusSummary.
-        :type: Suppression
+        :type: oci.monitoring.models.Suppression
         """
         self._suppression = suppression
 

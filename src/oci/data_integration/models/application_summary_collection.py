@@ -20,7 +20,7 @@ class ApplicationSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this ApplicationSummaryCollection.
-        :type items: list[ApplicationSummary]
+        :type items: list[oci.data_integration.models.ApplicationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ApplicationSummaryCollection(object):
 
 
         :return: The items of this ApplicationSummaryCollection.
-        :rtype: list[ApplicationSummary]
+        :rtype: list[oci.data_integration.models.ApplicationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ApplicationSummaryCollection(object):
 
 
         :param items: The items of this ApplicationSummaryCollection.
-        :type: list[ApplicationSummary]
+        :type: list[oci.data_integration.models.ApplicationSummary]
         """
         self._items = items
 

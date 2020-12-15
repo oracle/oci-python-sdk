@@ -24,7 +24,7 @@ class SqlStatisticsTimeSeriesByPlanAggregation(object):
 
         :param statistics:
             The value to assign to the statistics property of this SqlStatisticsTimeSeriesByPlanAggregation.
-        :type statistics: list[SqlStatisticsTimeSeries]
+        :type statistics: list[oci.opsi.models.SqlStatisticsTimeSeries]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class SqlStatisticsTimeSeriesByPlanAggregation(object):
 
 
         :return: The statistics of this SqlStatisticsTimeSeriesByPlanAggregation.
-        :rtype: list[SqlStatisticsTimeSeries]
+        :rtype: list[oci.opsi.models.SqlStatisticsTimeSeries]
         """
         return self._statistics
 
@@ -84,7 +84,7 @@ class SqlStatisticsTimeSeriesByPlanAggregation(object):
 
 
         :param statistics: The statistics of this SqlStatisticsTimeSeriesByPlanAggregation.
-        :type: list[SqlStatisticsTimeSeries]
+        :type: list[oci.opsi.models.SqlStatisticsTimeSeries]
         """
         self._statistics = statistics
 

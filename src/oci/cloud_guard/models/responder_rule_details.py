@@ -28,11 +28,11 @@ class ResponderRuleDetails(object):
 
         :param condition:
             The value to assign to the condition property of this ResponderRuleDetails.
-        :type condition: Condition
+        :type condition: oci.cloud_guard.models.Condition
 
         :param configurations:
             The value to assign to the configurations property of this ResponderRuleDetails.
-        :type configurations: list[ResponderConfiguration]
+        :type configurations: list[oci.cloud_guard.models.ResponderConfiguration]
 
         :param is_enabled:
             The value to assign to the is_enabled property of this ResponderRuleDetails.
@@ -70,7 +70,7 @@ class ResponderRuleDetails(object):
         Gets the condition of this ResponderRuleDetails.
 
         :return: The condition of this ResponderRuleDetails.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._condition
 
@@ -80,7 +80,7 @@ class ResponderRuleDetails(object):
         Sets the condition of this ResponderRuleDetails.
 
         :param condition: The condition of this ResponderRuleDetails.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._condition = condition
 
@@ -92,7 +92,7 @@ class ResponderRuleDetails(object):
 
 
         :return: The configurations of this ResponderRuleDetails.
-        :rtype: list[ResponderConfiguration]
+        :rtype: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         return self._configurations
 
@@ -104,7 +104,7 @@ class ResponderRuleDetails(object):
 
 
         :param configurations: The configurations of this ResponderRuleDetails.
-        :type: list[ResponderConfiguration]
+        :type: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         self._configurations = configurations
 

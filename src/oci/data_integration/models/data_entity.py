@@ -44,7 +44,7 @@ class DataEntity(object):
 
         :param metadata:
             The value to assign to the metadata property of this DataEntity.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -115,7 +115,7 @@ class DataEntity(object):
         Gets the metadata of this DataEntity.
 
         :return: The metadata of this DataEntity.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -125,7 +125,7 @@ class DataEntity(object):
         Sets the metadata of this DataEntity.
 
         :param metadata: The metadata of this DataEntity.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

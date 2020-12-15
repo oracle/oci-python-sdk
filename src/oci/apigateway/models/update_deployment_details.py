@@ -24,7 +24,7 @@ class UpdateDeploymentDetails(object):
 
         :param specification:
             The value to assign to the specification property of this UpdateDeploymentDetails.
-        :type specification: ApiSpecification
+        :type specification: oci.apigateway.models.ApiSpecification
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDeploymentDetails.
@@ -90,7 +90,7 @@ class UpdateDeploymentDetails(object):
         Gets the specification of this UpdateDeploymentDetails.
 
         :return: The specification of this UpdateDeploymentDetails.
-        :rtype: ApiSpecification
+        :rtype: oci.apigateway.models.ApiSpecification
         """
         return self._specification
 
@@ -100,7 +100,7 @@ class UpdateDeploymentDetails(object):
         Sets the specification of this UpdateDeploymentDetails.
 
         :param specification: The specification of this UpdateDeploymentDetails.
-        :type: ApiSpecification
+        :type: oci.apigateway.models.ApiSpecification
         """
         self._specification = specification
 

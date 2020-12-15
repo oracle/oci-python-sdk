@@ -34,11 +34,11 @@ class ShapeField(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ShapeField.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this ShapeField.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this ShapeField.
@@ -62,7 +62,7 @@ class ShapeField(TypedObject):
 
         :param native_shape_field:
             The value to assign to the native_shape_field property of this ShapeField.
-        :type native_shape_field: NativeShapeField
+        :type native_shape_field: oci.data_integration.models.NativeShapeField
 
         """
         self.swagger_types = {
@@ -160,7 +160,7 @@ class ShapeField(TypedObject):
         Gets the native_shape_field of this ShapeField.
 
         :return: The native_shape_field of this ShapeField.
-        :rtype: NativeShapeField
+        :rtype: oci.data_integration.models.NativeShapeField
         """
         return self._native_shape_field
 
@@ -170,7 +170,7 @@ class ShapeField(TypedObject):
         Sets the native_shape_field of this ShapeField.
 
         :param native_shape_field: The native_shape_field of this ShapeField.
-        :type: NativeShapeField
+        :type: oci.data_integration.models.NativeShapeField
         """
         self._native_shape_field = native_shape_field
 

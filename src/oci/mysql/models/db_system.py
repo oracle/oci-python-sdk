@@ -74,7 +74,7 @@ class DbSystem(object):
 
         :param analytics_cluster:
             The value to assign to the analytics_cluster property of this DbSystem.
-        :type analytics_cluster: AnalyticsClusterSummary
+        :type analytics_cluster: oci.mysql.models.AnalyticsClusterSummary
 
         :param availability_domain:
             The value to assign to the availability_domain property of this DbSystem.
@@ -94,11 +94,11 @@ class DbSystem(object):
 
         :param backup_policy:
             The value to assign to the backup_policy property of this DbSystem.
-        :type backup_policy: BackupPolicy
+        :type backup_policy: oci.mysql.models.BackupPolicy
 
         :param source:
             The value to assign to the source property of this DbSystem.
-        :type source: DbSystemSource
+        :type source: oci.mysql.models.DbSystemSource
 
         :param configuration_id:
             The value to assign to the configuration_id property of this DbSystem.
@@ -126,11 +126,11 @@ class DbSystem(object):
 
         :param endpoints:
             The value to assign to the endpoints property of this DbSystem.
-        :type endpoints: list[DbSystemEndpoint]
+        :type endpoints: list[oci.mysql.models.DbSystemEndpoint]
 
         :param channels:
             The value to assign to the channels property of this DbSystem.
-        :type channels: list[ChannelSummary]
+        :type channels: list[oci.mysql.models.ChannelSummary]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbSystem.
@@ -144,7 +144,7 @@ class DbSystem(object):
 
         :param maintenance:
             The value to assign to the maintenance property of this DbSystem.
-        :type maintenance: MaintenanceDetails
+        :type maintenance: oci.mysql.models.MaintenanceDetails
 
         :param time_created:
             The value to assign to the time_created property of this DbSystem.
@@ -404,7 +404,7 @@ class DbSystem(object):
         Gets the analytics_cluster of this DbSystem.
 
         :return: The analytics_cluster of this DbSystem.
-        :rtype: AnalyticsClusterSummary
+        :rtype: oci.mysql.models.AnalyticsClusterSummary
         """
         return self._analytics_cluster
 
@@ -414,7 +414,7 @@ class DbSystem(object):
         Sets the analytics_cluster of this DbSystem.
 
         :param analytics_cluster: The analytics_cluster of this DbSystem.
-        :type: AnalyticsClusterSummary
+        :type: oci.mysql.models.AnalyticsClusterSummary
         """
         self._analytics_cluster = analytics_cluster
 
@@ -528,7 +528,7 @@ class DbSystem(object):
         Gets the backup_policy of this DbSystem.
 
         :return: The backup_policy of this DbSystem.
-        :rtype: BackupPolicy
+        :rtype: oci.mysql.models.BackupPolicy
         """
         return self._backup_policy
 
@@ -538,7 +538,7 @@ class DbSystem(object):
         Sets the backup_policy of this DbSystem.
 
         :param backup_policy: The backup_policy of this DbSystem.
-        :type: BackupPolicy
+        :type: oci.mysql.models.BackupPolicy
         """
         self._backup_policy = backup_policy
 
@@ -548,7 +548,7 @@ class DbSystem(object):
         Gets the source of this DbSystem.
 
         :return: The source of this DbSystem.
-        :rtype: DbSystemSource
+        :rtype: oci.mysql.models.DbSystemSource
         """
         return self._source
 
@@ -558,7 +558,7 @@ class DbSystem(object):
         Sets the source of this DbSystem.
 
         :param source: The source of this DbSystem.
-        :type: DbSystemSource
+        :type: oci.mysql.models.DbSystemSource
         """
         self._source = source
 
@@ -726,7 +726,7 @@ class DbSystem(object):
 
 
         :return: The endpoints of this DbSystem.
-        :rtype: list[DbSystemEndpoint]
+        :rtype: list[oci.mysql.models.DbSystemEndpoint]
         """
         return self._endpoints
 
@@ -738,7 +738,7 @@ class DbSystem(object):
 
 
         :param endpoints: The endpoints of this DbSystem.
-        :type: list[DbSystemEndpoint]
+        :type: list[oci.mysql.models.DbSystemEndpoint]
         """
         self._endpoints = endpoints
 
@@ -750,7 +750,7 @@ class DbSystem(object):
 
 
         :return: The channels of this DbSystem.
-        :rtype: list[ChannelSummary]
+        :rtype: list[oci.mysql.models.ChannelSummary]
         """
         return self._channels
 
@@ -762,7 +762,7 @@ class DbSystem(object):
 
 
         :param channels: The channels of this DbSystem.
-        :type: list[ChannelSummary]
+        :type: list[oci.mysql.models.ChannelSummary]
         """
         self._channels = channels
 
@@ -826,7 +826,7 @@ class DbSystem(object):
         **[Required]** Gets the maintenance of this DbSystem.
 
         :return: The maintenance of this DbSystem.
-        :rtype: MaintenanceDetails
+        :rtype: oci.mysql.models.MaintenanceDetails
         """
         return self._maintenance
 
@@ -836,7 +836,7 @@ class DbSystem(object):
         Sets the maintenance of this DbSystem.
 
         :param maintenance: The maintenance of this DbSystem.
-        :type: MaintenanceDetails
+        :type: oci.mysql.models.MaintenanceDetails
         """
         self._maintenance = maintenance
 

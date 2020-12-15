@@ -68,7 +68,7 @@ class Table(object):
 
         :param table_limits:
             The value to assign to the table_limits property of this Table.
-        :type table_limits: TableLimits
+        :type table_limits: oci.nosql.models.TableLimits
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Table.
@@ -90,7 +90,7 @@ class Table(object):
 
         :param schema:
             The value to assign to the schema property of this Table.
-        :type schema: Schema
+        :type schema: oci.nosql.models.Schema
 
         :param ddl_statement:
             The value to assign to the ddl_statement property of this Table.
@@ -291,7 +291,7 @@ class Table(object):
         Gets the table_limits of this Table.
 
         :return: The table_limits of this Table.
-        :rtype: TableLimits
+        :rtype: oci.nosql.models.TableLimits
         """
         return self._table_limits
 
@@ -301,7 +301,7 @@ class Table(object):
         Sets the table_limits of this Table.
 
         :param table_limits: The table_limits of this Table.
-        :type: TableLimits
+        :type: oci.nosql.models.TableLimits
         """
         self._table_limits = table_limits
 
@@ -417,7 +417,7 @@ class Table(object):
         Gets the schema of this Table.
 
         :return: The schema of this Table.
-        :rtype: Schema
+        :rtype: oci.nosql.models.Schema
         """
         return self._schema
 
@@ -427,7 +427,7 @@ class Table(object):
         Sets the schema of this Table.
 
         :param schema: The schema of this Table.
-        :type: Schema
+        :type: oci.nosql.models.Schema
         """
         self._schema = schema
 

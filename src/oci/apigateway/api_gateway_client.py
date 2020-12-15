@@ -125,6 +125,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_api_compartment.py.html>`__ to see an example of how to use change_api_compartment API.
         """
         resource_path = "/apis/{apiId}/actions/changeCompartment"
         method = "POST"
@@ -220,6 +223,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
@@ -305,6 +311,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.Api`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_api.py.html>`__ to see an example of how to use create_api API.
         """
         resource_path = "/apis"
         method = "POST"
@@ -378,6 +387,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.Certificate`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
         resource_path = "/certificates"
         method = "POST"
@@ -451,6 +463,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_api.py.html>`__ to see an example of how to use delete_api API.
         """
         resource_path = "/apis/{apiId}"
         method = "DELETE"
@@ -530,6 +545,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
         resource_path = "/certificates/{certificateId}"
         method = "DELETE"
@@ -602,6 +620,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.Api`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api.py.html>`__ to see an example of how to use get_api API.
         """
         resource_path = "/apis/{apiId}"
         method = "GET"
@@ -681,6 +702,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_content.py.html>`__ to see an example of how to use get_api_content API.
         """
         resource_path = "/apis/{apiId}/content"
         method = "GET"
@@ -762,6 +786,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.ApiSpecification`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_deployment_specification.py.html>`__ to see an example of how to use get_api_deployment_specification API.
         """
         resource_path = "/apis/{apiId}/deploymentSpecification"
         method = "GET"
@@ -843,6 +870,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.ApiValidations`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_validations.py.html>`__ to see an example of how to use get_api_validations API.
         """
         resource_path = "/apis/{apiId}/validations"
         method = "GET"
@@ -917,6 +947,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.Certificate`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
         resource_path = "/certificates/{certificateId}"
         method = "GET"
@@ -1020,6 +1053,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.ApiCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_apis.py.html>`__ to see an example of how to use list_apis API.
         """
         resource_path = "/apis"
         method = "GET"
@@ -1151,6 +1187,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.CertificateCollection`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
         resource_path = "/certificates"
         method = "GET"
@@ -1261,6 +1300,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_api.py.html>`__ to see an example of how to use update_api API.
         """
         resource_path = "/apis/{apiId}"
         method = "PUT"
@@ -1345,6 +1387,9 @@ class ApiGatewayClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
         resource_path = "/certificates/{certificateId}"
         method = "PUT"

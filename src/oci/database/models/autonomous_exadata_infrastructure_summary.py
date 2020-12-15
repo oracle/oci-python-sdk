@@ -130,7 +130,7 @@ class AutonomousExadataInfrastructureSummary(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this AutonomousExadataInfrastructureSummary.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this AutonomousExadataInfrastructureSummary.
@@ -564,7 +564,7 @@ class AutonomousExadataInfrastructureSummary(object):
         **[Required]** Gets the maintenance_window of this AutonomousExadataInfrastructureSummary.
 
         :return: The maintenance_window of this AutonomousExadataInfrastructureSummary.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -574,7 +574,7 @@ class AutonomousExadataInfrastructureSummary(object):
         Sets the maintenance_window of this AutonomousExadataInfrastructureSummary.
 
         :param maintenance_window: The maintenance_window of this AutonomousExadataInfrastructureSummary.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

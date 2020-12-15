@@ -20,7 +20,7 @@ class AutonomousContainerDatabaseBackupConfig(object):
 
         :param backup_destination_details:
             The value to assign to the backup_destination_details property of this AutonomousContainerDatabaseBackupConfig.
-        :type backup_destination_details: list[BackupDestinationDetails]
+        :type backup_destination_details: list[oci.database.models.BackupDestinationDetails]
 
         :param recovery_window_in_days:
             The value to assign to the recovery_window_in_days property of this AutonomousContainerDatabaseBackupConfig.
@@ -48,7 +48,7 @@ class AutonomousContainerDatabaseBackupConfig(object):
 
 
         :return: The backup_destination_details of this AutonomousContainerDatabaseBackupConfig.
-        :rtype: list[BackupDestinationDetails]
+        :rtype: list[oci.database.models.BackupDestinationDetails]
         """
         return self._backup_destination_details
 
@@ -60,7 +60,7 @@ class AutonomousContainerDatabaseBackupConfig(object):
 
 
         :param backup_destination_details: The backup_destination_details of this AutonomousContainerDatabaseBackupConfig.
-        :type: list[BackupDestinationDetails]
+        :type: list[oci.database.models.BackupDestinationDetails]
         """
         self._backup_destination_details = backup_destination_details
 

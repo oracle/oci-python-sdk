@@ -19,6 +19,7 @@ class CreateConfigurationSourceProviderDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.CreateGitlabAccessTokenConfigurationSourceProviderDetails`
+        * :class:`~oci.resource_manager.models.CreateGithubAccessTokenConfigurationSourceProviderDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -82,6 +83,9 @@ class CreateConfigurationSourceProviderDetails(object):
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'CreateGitlabAccessTokenConfigurationSourceProviderDetails'
+
+        if type == 'GITHUB_ACCESS_TOKEN':
+            return 'CreateGithubAccessTokenConfigurationSourceProviderDetails'
         else:
             return 'CreateConfigurationSourceProviderDetails'
 
@@ -167,7 +171,9 @@ class CreateConfigurationSourceProviderDetails(object):
     def config_source_provider_type(self):
         """
         **[Required]** Gets the config_source_provider_type of this CreateConfigurationSourceProviderDetails.
-        The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to Git.
+        The type of configuration source provider.
+        The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+        The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
 
         :return: The config_source_provider_type of this CreateConfigurationSourceProviderDetails.
@@ -179,7 +185,9 @@ class CreateConfigurationSourceProviderDetails(object):
     def config_source_provider_type(self, config_source_provider_type):
         """
         Sets the config_source_provider_type of this CreateConfigurationSourceProviderDetails.
-        The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to Git.
+        The type of configuration source provider.
+        The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+        The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
 
         :param config_source_provider_type: The config_source_provider_type of this CreateConfigurationSourceProviderDetails.

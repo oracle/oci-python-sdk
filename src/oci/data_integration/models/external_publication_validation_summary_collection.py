@@ -20,7 +20,7 @@ class ExternalPublicationValidationSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this ExternalPublicationValidationSummaryCollection.
-        :type items: list[ExternalPublicationValidationSummary]
+        :type items: list[oci.data_integration.models.ExternalPublicationValidationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ExternalPublicationValidationSummaryCollection(object):
 
 
         :return: The items of this ExternalPublicationValidationSummaryCollection.
-        :rtype: list[ExternalPublicationValidationSummary]
+        :rtype: list[oci.data_integration.models.ExternalPublicationValidationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ExternalPublicationValidationSummaryCollection(object):
 
 
         :param items: The items of this ExternalPublicationValidationSummaryCollection.
-        :type: list[ExternalPublicationValidationSummary]
+        :type: list[oci.data_integration.models.ExternalPublicationValidationSummary]
         """
         self._items = items
 

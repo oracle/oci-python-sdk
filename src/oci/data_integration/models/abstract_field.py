@@ -35,11 +35,11 @@ class AbstractField(TypedObject):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this AbstractField.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param config_values:
             The value to assign to the config_values property of this AbstractField.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this AbstractField.

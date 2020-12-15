@@ -20,7 +20,7 @@ class ResponderExecutionAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this ResponderExecutionAggregationCollection.
-        :type items: list[ResponderExecutionAggregation]
+        :type items: list[oci.cloud_guard.models.ResponderExecutionAggregation]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ResponderExecutionAggregationCollection(object):
 
 
         :return: The items of this ResponderExecutionAggregationCollection.
-        :rtype: list[ResponderExecutionAggregation]
+        :rtype: list[oci.cloud_guard.models.ResponderExecutionAggregation]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ResponderExecutionAggregationCollection(object):
 
 
         :param items: The items of this ResponderExecutionAggregationCollection.
-        :type: list[ResponderExecutionAggregation]
+        :type: list[oci.cloud_guard.models.ResponderExecutionAggregation]
         """
         self._items = items
 

@@ -20,7 +20,7 @@ class ByoipAllocatedRangeCollection(object):
 
         :param items:
             The value to assign to the items property of this ByoipAllocatedRangeCollection.
-        :type items: list[ByoipAllocatedRangeSummary]
+        :type items: list[oci.core.models.ByoipAllocatedRangeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ByoipAllocatedRangeCollection(object):
 
 
         :return: The items of this ByoipAllocatedRangeCollection.
-        :rtype: list[ByoipAllocatedRangeSummary]
+        :rtype: list[oci.core.models.ByoipAllocatedRangeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ByoipAllocatedRangeCollection(object):
 
 
         :param items: The items of this ByoipAllocatedRangeCollection.
-        :type: list[ByoipAllocatedRangeSummary]
+        :type: list[oci.core.models.ByoipAllocatedRangeSummary]
         """
         self._items = items
 

@@ -62,7 +62,7 @@ class SubscriptionSummary(object):
 
         :param delivery_policy:
             The value to assign to the delivery_policy property of this SubscriptionSummary.
-        :type delivery_policy: DeliveryPolicy
+        :type delivery_policy: oci.ons.models.DeliveryPolicy
 
         :param etag:
             The value to assign to the etag property of this SubscriptionSummary.
@@ -319,7 +319,7 @@ class SubscriptionSummary(object):
         Gets the delivery_policy of this SubscriptionSummary.
 
         :return: The delivery_policy of this SubscriptionSummary.
-        :rtype: DeliveryPolicy
+        :rtype: oci.ons.models.DeliveryPolicy
         """
         return self._delivery_policy
 
@@ -329,7 +329,7 @@ class SubscriptionSummary(object):
         Sets the delivery_policy of this SubscriptionSummary.
 
         :param delivery_policy: The delivery_policy of this SubscriptionSummary.
-        :type: DeliveryPolicy
+        :type: oci.ons.models.DeliveryPolicy
         """
         self._delivery_policy = delivery_policy
 

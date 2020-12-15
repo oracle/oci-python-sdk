@@ -70,7 +70,7 @@ class SecurityList(object):
 
         :param egress_security_rules:
             The value to assign to the egress_security_rules property of this SecurityList.
-        :type egress_security_rules: list[EgressSecurityRule]
+        :type egress_security_rules: list[oci.core.models.EgressSecurityRule]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SecurityList.
@@ -82,7 +82,7 @@ class SecurityList(object):
 
         :param ingress_security_rules:
             The value to assign to the ingress_security_rules property of this SecurityList.
-        :type ingress_security_rules: list[IngressSecurityRule]
+        :type ingress_security_rules: list[oci.core.models.IngressSecurityRule]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SecurityList.
@@ -228,7 +228,7 @@ class SecurityList(object):
 
 
         :return: The egress_security_rules of this SecurityList.
-        :rtype: list[EgressSecurityRule]
+        :rtype: list[oci.core.models.EgressSecurityRule]
         """
         return self._egress_security_rules
 
@@ -240,7 +240,7 @@ class SecurityList(object):
 
 
         :param egress_security_rules: The egress_security_rules of this SecurityList.
-        :type: list[EgressSecurityRule]
+        :type: list[oci.core.models.EgressSecurityRule]
         """
         self._egress_security_rules = egress_security_rules
 
@@ -310,7 +310,7 @@ class SecurityList(object):
 
 
         :return: The ingress_security_rules of this SecurityList.
-        :rtype: list[IngressSecurityRule]
+        :rtype: list[oci.core.models.IngressSecurityRule]
         """
         return self._ingress_security_rules
 
@@ -322,7 +322,7 @@ class SecurityList(object):
 
 
         :param ingress_security_rules: The ingress_security_rules of this SecurityList.
-        :type: list[IngressSecurityRule]
+        :type: list[oci.core.models.IngressSecurityRule]
         """
         self._ingress_security_rules = ingress_security_rules
 

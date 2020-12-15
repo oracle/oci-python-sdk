@@ -31,7 +31,7 @@ class BudgetClientCompositeOperations(object):
         :param str budget_id: (required)
             The unique Budget OCID
 
-        :param CreateAlertRuleDetails create_alert_rule_details: (required)
+        :param oci.budget.models.CreateAlertRuleDetails create_alert_rule_details: (required)
             Details for the new Alert Rule.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class BudgetClientCompositeOperations(object):
         Calls :py:func:`~oci.budget.BudgetClient.create_budget` and waits for the :py:class:`~oci.budget.models.Budget` acted upon
         to enter the given state(s).
 
-        :param CreateBudgetDetails create_budget_details: (required)
+        :param oci.budget.models.CreateBudgetDetails create_budget_details: (required)
             Details for the new Budget.
 
         :param list[str] wait_for_states:
@@ -160,7 +160,7 @@ class BudgetClientCompositeOperations(object):
         :param str alert_rule_id: (required)
             The unique Alert Rule OCID
 
-        :param UpdateAlertRuleDetails update_alert_rule_details: (required)
+        :param oci.budget.models.UpdateAlertRuleDetails update_alert_rule_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:
@@ -201,7 +201,7 @@ class BudgetClientCompositeOperations(object):
         :param str budget_id: (required)
             The unique Budget OCID
 
-        :param UpdateBudgetDetails update_budget_details: (required)
+        :param oci.budget.models.UpdateBudgetDetails update_budget_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

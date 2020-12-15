@@ -37,7 +37,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this UpdateAutonomousContainerDatabaseDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         :param standby_maintenance_buffer_in_days:
             The value to assign to the standby_maintenance_buffer_in_days property of this UpdateAutonomousContainerDatabaseDetails.
@@ -53,7 +53,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
 
         :param backup_config:
             The value to assign to the backup_config property of this UpdateAutonomousContainerDatabaseDetails.
-        :type backup_config: AutonomousContainerDatabaseBackupConfig
+        :type backup_config: oci.database.models.AutonomousContainerDatabaseBackupConfig
 
         """
         self.swagger_types = {
@@ -146,7 +146,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         Gets the maintenance_window_details of this UpdateAutonomousContainerDatabaseDetails.
 
         :return: The maintenance_window_details of this UpdateAutonomousContainerDatabaseDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -156,7 +156,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         Sets the maintenance_window_details of this UpdateAutonomousContainerDatabaseDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this UpdateAutonomousContainerDatabaseDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 
@@ -256,7 +256,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         Gets the backup_config of this UpdateAutonomousContainerDatabaseDetails.
 
         :return: The backup_config of this UpdateAutonomousContainerDatabaseDetails.
-        :rtype: AutonomousContainerDatabaseBackupConfig
+        :rtype: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         return self._backup_config
 
@@ -266,7 +266,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         Sets the backup_config of this UpdateAutonomousContainerDatabaseDetails.
 
         :param backup_config: The backup_config of this UpdateAutonomousContainerDatabaseDetails.
-        :type: AutonomousContainerDatabaseBackupConfig
+        :type: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         self._backup_config = backup_config
 

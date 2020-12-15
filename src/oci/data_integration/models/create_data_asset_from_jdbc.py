@@ -58,7 +58,7 @@ class CreateDataAssetFromJdbc(CreateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataAssetFromJdbc.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param host:
             The value to assign to the host property of this CreateDataAssetFromJdbc.
@@ -74,7 +74,7 @@ class CreateDataAssetFromJdbc(CreateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this CreateDataAssetFromJdbc.
-        :type default_connection: CreateConnectionFromJdbc
+        :type default_connection: oci.data_integration.models.CreateConnectionFromJdbc
 
         """
         self.swagger_types = {
@@ -205,7 +205,7 @@ class CreateDataAssetFromJdbc(CreateDataAssetDetails):
         Gets the default_connection of this CreateDataAssetFromJdbc.
 
         :return: The default_connection of this CreateDataAssetFromJdbc.
-        :rtype: CreateConnectionFromJdbc
+        :rtype: oci.data_integration.models.CreateConnectionFromJdbc
         """
         return self._default_connection
 
@@ -215,7 +215,7 @@ class CreateDataAssetFromJdbc(CreateDataAssetDetails):
         Sets the default_connection of this CreateDataAssetFromJdbc.
 
         :param default_connection: The default_connection of this CreateDataAssetFromJdbc.
-        :type: CreateConnectionFromJdbc
+        :type: oci.data_integration.models.CreateConnectionFromJdbc
         """
         self._default_connection = default_connection
 

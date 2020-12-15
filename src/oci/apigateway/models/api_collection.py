@@ -20,7 +20,7 @@ class ApiCollection(object):
 
         :param items:
             The value to assign to the items property of this ApiCollection.
-        :type items: list[ApiSummary]
+        :type items: list[oci.apigateway.models.ApiSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ApiCollection(object):
 
 
         :return: The items of this ApiCollection.
-        :rtype: list[ApiSummary]
+        :rtype: list[oci.apigateway.models.ApiSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ApiCollection(object):
 
 
         :param items: The items of this ApiCollection.
-        :type: list[ApiSummary]
+        :type: list[oci.apigateway.models.ApiSummary]
         """
         self._items = items
 

@@ -28,7 +28,7 @@ class ResourceTypeSummary(object):
 
         :param rules:
             The value to assign to the rules property of this ResourceTypeSummary.
-        :type rules: list[RuleSummary]
+        :type rules: list[oci.cloud_guard.models.RuleSummary]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class ResourceTypeSummary(object):
 
 
         :return: The rules of this ResourceTypeSummary.
-        :rtype: list[RuleSummary]
+        :rtype: list[oci.cloud_guard.models.RuleSummary]
         """
         return self._rules
 
@@ -115,7 +115,7 @@ class ResourceTypeSummary(object):
 
 
         :param rules: The rules of this ResourceTypeSummary.
-        :type: list[RuleSummary]
+        :type: list[oci.cloud_guard.models.RuleSummary]
         """
         self._rules = rules
 

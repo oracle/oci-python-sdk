@@ -82,7 +82,7 @@ class Source(object):
 
         :param source_details:
             The value to assign to the source_details property of this Source.
-        :type source_details: SourceDetails
+        :type source_details: oci.application_migration.models.SourceDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Source.
@@ -318,7 +318,7 @@ class Source(object):
         Gets the source_details of this Source.
 
         :return: The source_details of this Source.
-        :rtype: SourceDetails
+        :rtype: oci.application_migration.models.SourceDetails
         """
         return self._source_details
 
@@ -328,7 +328,7 @@ class Source(object):
         Sets the source_details of this Source.
 
         :param source_details: The source_details of this Source.
-        :type: SourceDetails
+        :type: oci.application_migration.models.SourceDetails
         """
         self._source_details = source_details
 

@@ -20,15 +20,15 @@ class ApiSpecification(object):
 
         :param request_policies:
             The value to assign to the request_policies property of this ApiSpecification.
-        :type request_policies: ApiSpecificationRequestPolicies
+        :type request_policies: oci.apigateway.models.ApiSpecificationRequestPolicies
 
         :param logging_policies:
             The value to assign to the logging_policies property of this ApiSpecification.
-        :type logging_policies: ApiSpecificationLoggingPolicies
+        :type logging_policies: oci.apigateway.models.ApiSpecificationLoggingPolicies
 
         :param routes:
             The value to assign to the routes property of this ApiSpecification.
-        :type routes: list[ApiSpecificationRoute]
+        :type routes: list[oci.apigateway.models.ApiSpecificationRoute]
 
         """
         self.swagger_types = {
@@ -53,7 +53,7 @@ class ApiSpecification(object):
         Gets the request_policies of this ApiSpecification.
 
         :return: The request_policies of this ApiSpecification.
-        :rtype: ApiSpecificationRequestPolicies
+        :rtype: oci.apigateway.models.ApiSpecificationRequestPolicies
         """
         return self._request_policies
 
@@ -63,7 +63,7 @@ class ApiSpecification(object):
         Sets the request_policies of this ApiSpecification.
 
         :param request_policies: The request_policies of this ApiSpecification.
-        :type: ApiSpecificationRequestPolicies
+        :type: oci.apigateway.models.ApiSpecificationRequestPolicies
         """
         self._request_policies = request_policies
 
@@ -73,7 +73,7 @@ class ApiSpecification(object):
         Gets the logging_policies of this ApiSpecification.
 
         :return: The logging_policies of this ApiSpecification.
-        :rtype: ApiSpecificationLoggingPolicies
+        :rtype: oci.apigateway.models.ApiSpecificationLoggingPolicies
         """
         return self._logging_policies
 
@@ -83,7 +83,7 @@ class ApiSpecification(object):
         Sets the logging_policies of this ApiSpecification.
 
         :param logging_policies: The logging_policies of this ApiSpecification.
-        :type: ApiSpecificationLoggingPolicies
+        :type: oci.apigateway.models.ApiSpecificationLoggingPolicies
         """
         self._logging_policies = logging_policies
 
@@ -95,7 +95,7 @@ class ApiSpecification(object):
 
 
         :return: The routes of this ApiSpecification.
-        :rtype: list[ApiSpecificationRoute]
+        :rtype: list[oci.apigateway.models.ApiSpecificationRoute]
         """
         return self._routes
 
@@ -107,7 +107,7 @@ class ApiSpecification(object):
 
 
         :param routes: The routes of this ApiSpecification.
-        :type: list[ApiSpecificationRoute]
+        :type: list[oci.apigateway.models.ApiSpecificationRoute]
         """
         self._routes = routes
 

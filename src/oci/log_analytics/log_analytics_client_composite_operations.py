@@ -31,7 +31,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsEntityDetails create_log_analytics_entity_details: (required)
             Details for the new log analytics entity.
 
         :param list[str] wait_for_states:
@@ -72,7 +72,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
+        :param oci.log_analytics.models.CreateLogAnalyticsObjectCollectionRuleDetails create_log_analytics_object_collection_rule_details: (required)
             Details of the rule to be created.
 
         :param list[str] wait_for_states:
@@ -113,7 +113,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param CreateScheduledTaskDetails create_scheduled_task_details: (required)
+        :param oci.log_analytics.models.CreateScheduledTaskDetails create_scheduled_task_details: (required)
             Scheduled task to be created.
 
         :param list[str] wait_for_states:
@@ -154,7 +154,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.DeleteLogAnalyticsAssociationDetails delete_log_analytics_association_details: (required)
             details for association
 
         :param list[str] wait_for_states:
@@ -271,7 +271,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param PurgeStorageDataDetails purge_storage_data_details: (required)
+        :param oci.log_analytics.models.PurgeStorageDataDetails purge_storage_data_details: (required)
             This is the input to purge old data.
 
         :param list[str] wait_for_states:
@@ -312,7 +312,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param QueryDetails query_details: (required)
+        :param oci.log_analytics.models.QueryDetails query_details: (required)
             Query to be executed.
 
         :param list[str] wait_for_states:
@@ -353,7 +353,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param RecallArchivedDataDetails recall_archived_data_details: (required)
+        :param oci.log_analytics.models.RecallArchivedDataDetails recall_archived_data_details: (required)
             This is the input to recall archived data.
 
         :param list[str] wait_for_states:
@@ -394,7 +394,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param ReleaseRecalledDataDetails release_recalled_data_details: (required)
+        :param oci.log_analytics.models.ReleaseRecalledDataDetails release_recalled_data_details: (required)
             This is the input to release recalled data
 
         :param list[str] wait_for_states:
@@ -438,7 +438,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str log_analytics_entity_id: (required)
             The log analytics entity OCID.
 
-        :param UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:
@@ -484,7 +484,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
+        :param oci.log_analytics.models.UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
             The rule config to be updated.
 
         :param list[str] wait_for_states:
@@ -529,7 +529,7 @@ class LogAnalyticsClientCompositeOperations(object):
             Unique scheduledTask id returned from task create.
             If invalid will lead to a 404 not found.
 
-        :param UpdateScheduledTaskDetails update_scheduled_task_details: (required)
+        :param oci.log_analytics.models.UpdateScheduledTaskDetails update_scheduled_task_details: (required)
             Update details.
             Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
 
@@ -571,7 +571,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
-        :param UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
+        :param oci.log_analytics.models.UpsertLogAnalyticsAssociationDetails upsert_log_analytics_association_details: (required)
             list of association details
 
         :param list[str] wait_for_states:

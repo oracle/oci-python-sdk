@@ -20,11 +20,11 @@ class AnnouncementsCollection(object):
 
         :param items:
             The value to assign to the items property of this AnnouncementsCollection.
-        :type items: list[AnnouncementSummary]
+        :type items: list[oci.announcements_service.models.AnnouncementSummary]
 
         :param user_statuses:
             The value to assign to the user_statuses property of this AnnouncementsCollection.
-        :type user_statuses: list[AnnouncementUserStatusDetails]
+        :type user_statuses: list[oci.announcements_service.models.AnnouncementUserStatusDetails]
 
         """
         self.swagger_types = {
@@ -48,7 +48,7 @@ class AnnouncementsCollection(object):
 
 
         :return: The items of this AnnouncementsCollection.
-        :rtype: list[AnnouncementSummary]
+        :rtype: list[oci.announcements_service.models.AnnouncementSummary]
         """
         return self._items
 
@@ -60,7 +60,7 @@ class AnnouncementsCollection(object):
 
 
         :param items: The items of this AnnouncementsCollection.
-        :type: list[AnnouncementSummary]
+        :type: list[oci.announcements_service.models.AnnouncementSummary]
         """
         self._items = items
 
@@ -72,7 +72,7 @@ class AnnouncementsCollection(object):
 
 
         :return: The user_statuses of this AnnouncementsCollection.
-        :rtype: list[AnnouncementUserStatusDetails]
+        :rtype: list[oci.announcements_service.models.AnnouncementUserStatusDetails]
         """
         return self._user_statuses
 
@@ -84,7 +84,7 @@ class AnnouncementsCollection(object):
 
 
         :param user_statuses: The user_statuses of this AnnouncementsCollection.
-        :type: list[AnnouncementUserStatusDetails]
+        :type: list[oci.announcements_service.models.AnnouncementUserStatusDetails]
         """
         self._user_statuses = user_statuses
 

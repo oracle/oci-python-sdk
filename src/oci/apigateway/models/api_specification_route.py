@@ -62,19 +62,19 @@ class ApiSpecificationRoute(object):
 
         :param request_policies:
             The value to assign to the request_policies property of this ApiSpecificationRoute.
-        :type request_policies: ApiSpecificationRouteRequestPolicies
+        :type request_policies: oci.apigateway.models.ApiSpecificationRouteRequestPolicies
 
         :param response_policies:
             The value to assign to the response_policies property of this ApiSpecificationRoute.
-        :type response_policies: ApiSpecificationRouteResponsePolicies
+        :type response_policies: oci.apigateway.models.ApiSpecificationRouteResponsePolicies
 
         :param logging_policies:
             The value to assign to the logging_policies property of this ApiSpecificationRoute.
-        :type logging_policies: ApiSpecificationLoggingPolicies
+        :type logging_policies: oci.apigateway.models.ApiSpecificationLoggingPolicies
 
         :param backend:
             The value to assign to the backend property of this ApiSpecificationRoute.
-        :type backend: ApiSpecificationRouteBackend
+        :type backend: oci.apigateway.models.ApiSpecificationRouteBackend
 
         """
         self.swagger_types = {
@@ -164,7 +164,7 @@ class ApiSpecificationRoute(object):
         Gets the request_policies of this ApiSpecificationRoute.
 
         :return: The request_policies of this ApiSpecificationRoute.
-        :rtype: ApiSpecificationRouteRequestPolicies
+        :rtype: oci.apigateway.models.ApiSpecificationRouteRequestPolicies
         """
         return self._request_policies
 
@@ -174,7 +174,7 @@ class ApiSpecificationRoute(object):
         Sets the request_policies of this ApiSpecificationRoute.
 
         :param request_policies: The request_policies of this ApiSpecificationRoute.
-        :type: ApiSpecificationRouteRequestPolicies
+        :type: oci.apigateway.models.ApiSpecificationRouteRequestPolicies
         """
         self._request_policies = request_policies
 
@@ -184,7 +184,7 @@ class ApiSpecificationRoute(object):
         Gets the response_policies of this ApiSpecificationRoute.
 
         :return: The response_policies of this ApiSpecificationRoute.
-        :rtype: ApiSpecificationRouteResponsePolicies
+        :rtype: oci.apigateway.models.ApiSpecificationRouteResponsePolicies
         """
         return self._response_policies
 
@@ -194,7 +194,7 @@ class ApiSpecificationRoute(object):
         Sets the response_policies of this ApiSpecificationRoute.
 
         :param response_policies: The response_policies of this ApiSpecificationRoute.
-        :type: ApiSpecificationRouteResponsePolicies
+        :type: oci.apigateway.models.ApiSpecificationRouteResponsePolicies
         """
         self._response_policies = response_policies
 
@@ -204,7 +204,7 @@ class ApiSpecificationRoute(object):
         Gets the logging_policies of this ApiSpecificationRoute.
 
         :return: The logging_policies of this ApiSpecificationRoute.
-        :rtype: ApiSpecificationLoggingPolicies
+        :rtype: oci.apigateway.models.ApiSpecificationLoggingPolicies
         """
         return self._logging_policies
 
@@ -214,7 +214,7 @@ class ApiSpecificationRoute(object):
         Sets the logging_policies of this ApiSpecificationRoute.
 
         :param logging_policies: The logging_policies of this ApiSpecificationRoute.
-        :type: ApiSpecificationLoggingPolicies
+        :type: oci.apigateway.models.ApiSpecificationLoggingPolicies
         """
         self._logging_policies = logging_policies
 
@@ -224,7 +224,7 @@ class ApiSpecificationRoute(object):
         **[Required]** Gets the backend of this ApiSpecificationRoute.
 
         :return: The backend of this ApiSpecificationRoute.
-        :rtype: ApiSpecificationRouteBackend
+        :rtype: oci.apigateway.models.ApiSpecificationRouteBackend
         """
         return self._backend
 
@@ -234,7 +234,7 @@ class ApiSpecificationRoute(object):
         Sets the backend of this ApiSpecificationRoute.
 
         :param backend: The backend of this ApiSpecificationRoute.
-        :type: ApiSpecificationRouteBackend
+        :type: oci.apigateway.models.ApiSpecificationRouteBackend
         """
         self._backend = backend
 

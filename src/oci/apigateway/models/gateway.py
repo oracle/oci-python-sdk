@@ -103,7 +103,7 @@ class Gateway(object):
 
         :param ip_addresses:
             The value to assign to the ip_addresses property of this Gateway.
-        :type ip_addresses: list[IpAddress]
+        :type ip_addresses: list[oci.apigateway.models.IpAddress]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Gateway.
@@ -483,7 +483,7 @@ class Gateway(object):
 
 
         :return: The ip_addresses of this Gateway.
-        :rtype: list[IpAddress]
+        :rtype: list[oci.apigateway.models.IpAddress]
         """
         return self._ip_addresses
 
@@ -495,7 +495,7 @@ class Gateway(object):
 
 
         :param ip_addresses: The ip_addresses of this Gateway.
-        :type: list[IpAddress]
+        :type: list[oci.apigateway.models.IpAddress]
         """
         self._ip_addresses = ip_addresses
 

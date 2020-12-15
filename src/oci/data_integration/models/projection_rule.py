@@ -62,7 +62,7 @@ class ProjectionRule(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this ProjectionRule.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param is_java_regex_syntax:
             The value to assign to the is_java_regex_syntax property of this ProjectionRule.
@@ -70,7 +70,7 @@ class ProjectionRule(object):
 
         :param config_values:
             The value to assign to the config_values property of this ProjectionRule.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this ProjectionRule.
@@ -221,7 +221,7 @@ class ProjectionRule(object):
         Gets the parent_ref of this ProjectionRule.
 
         :return: The parent_ref of this ProjectionRule.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -231,7 +231,7 @@ class ProjectionRule(object):
         Sets the parent_ref of this ProjectionRule.
 
         :param parent_ref: The parent_ref of this ProjectionRule.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -265,7 +265,7 @@ class ProjectionRule(object):
         Gets the config_values of this ProjectionRule.
 
         :return: The config_values of this ProjectionRule.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -275,7 +275,7 @@ class ProjectionRule(object):
         Sets the config_values of this ProjectionRule.
 
         :param config_values: The config_values of this ProjectionRule.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 

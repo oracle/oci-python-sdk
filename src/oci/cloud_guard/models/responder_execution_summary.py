@@ -138,7 +138,7 @@ class ResponderExecutionSummary(object):
 
         :param responder_rule_execution_details:
             The value to assign to the responder_rule_execution_details property of this ResponderExecutionSummary.
-        :type responder_rule_execution_details: ResponderRuleExecutionDetails
+        :type responder_rule_execution_details: oci.cloud_guard.models.ResponderRuleExecutionDetails
 
         """
         self.swagger_types = {
@@ -607,7 +607,7 @@ class ResponderExecutionSummary(object):
         Gets the responder_rule_execution_details of this ResponderExecutionSummary.
 
         :return: The responder_rule_execution_details of this ResponderExecutionSummary.
-        :rtype: ResponderRuleExecutionDetails
+        :rtype: oci.cloud_guard.models.ResponderRuleExecutionDetails
         """
         return self._responder_rule_execution_details
 
@@ -617,7 +617,7 @@ class ResponderExecutionSummary(object):
         Sets the responder_rule_execution_details of this ResponderExecutionSummary.
 
         :param responder_rule_execution_details: The responder_rule_execution_details of this ResponderExecutionSummary.
-        :type: ResponderRuleExecutionDetails
+        :type: oci.cloud_guard.models.ResponderRuleExecutionDetails
         """
         self._responder_rule_execution_details = responder_rule_execution_details
 

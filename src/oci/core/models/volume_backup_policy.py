@@ -33,7 +33,7 @@ class VolumeBackupPolicy(object):
 
         :param schedules:
             The value to assign to the schedules property of this VolumeBackupPolicy.
-        :type schedules: list[VolumeBackupSchedule]
+        :type schedules: list[oci.core.models.VolumeBackupSchedule]
 
         :param destination_region:
             The value to assign to the destination_region property of this VolumeBackupPolicy.
@@ -145,7 +145,7 @@ class VolumeBackupPolicy(object):
 
 
         :return: The schedules of this VolumeBackupPolicy.
-        :rtype: list[VolumeBackupSchedule]
+        :rtype: list[oci.core.models.VolumeBackupSchedule]
         """
         return self._schedules
 
@@ -157,7 +157,7 @@ class VolumeBackupPolicy(object):
 
 
         :param schedules: The schedules of this VolumeBackupPolicy.
-        :type: list[VolumeBackupSchedule]
+        :type: list[oci.core.models.VolumeBackupSchedule]
         """
         self._schedules = schedules
 

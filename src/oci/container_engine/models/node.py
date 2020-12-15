@@ -84,7 +84,7 @@ class Node(object):
 
         :param node_error:
             The value to assign to the node_error property of this Node.
-        :type node_error: NodeError
+        :type node_error: oci.container_engine.models.NodeError
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Node.
@@ -364,7 +364,7 @@ class Node(object):
 
 
         :return: The node_error of this Node.
-        :rtype: NodeError
+        :rtype: oci.container_engine.models.NodeError
         """
         return self._node_error
 
@@ -376,7 +376,7 @@ class Node(object):
 
 
         :param node_error: The node_error of this Node.
-        :type: NodeError
+        :type: oci.container_engine.models.NodeError
         """
         self._node_error = node_error
 

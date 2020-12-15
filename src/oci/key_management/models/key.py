@@ -104,7 +104,7 @@ class Key(object):
 
         :param key_shape:
             The value to assign to the key_shape property of this Key.
-        :type key_shape: KeyShape
+        :type key_shape: oci.key_management.models.KeyShape
 
         :param protection_mode:
             The value to assign to the protection_mode property of this Key.
@@ -353,7 +353,7 @@ class Key(object):
         **[Required]** Gets the key_shape of this Key.
 
         :return: The key_shape of this Key.
-        :rtype: KeyShape
+        :rtype: oci.key_management.models.KeyShape
         """
         return self._key_shape
 
@@ -363,7 +363,7 @@ class Key(object):
         Sets the key_shape of this Key.
 
         :param key_shape: The key_shape of this Key.
-        :type: KeyShape
+        :type: oci.key_management.models.KeyShape
         """
         self._key_shape = key_shape
 

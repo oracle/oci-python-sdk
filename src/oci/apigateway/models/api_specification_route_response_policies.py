@@ -20,7 +20,7 @@ class ApiSpecificationRouteResponsePolicies(object):
 
         :param header_transformations:
             The value to assign to the header_transformations property of this ApiSpecificationRouteResponsePolicies.
-        :type header_transformations: HeaderTransformationPolicy
+        :type header_transformations: oci.apigateway.models.HeaderTransformationPolicy
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class ApiSpecificationRouteResponsePolicies(object):
         Gets the header_transformations of this ApiSpecificationRouteResponsePolicies.
 
         :return: The header_transformations of this ApiSpecificationRouteResponsePolicies.
-        :rtype: HeaderTransformationPolicy
+        :rtype: oci.apigateway.models.HeaderTransformationPolicy
         """
         return self._header_transformations
 
@@ -49,7 +49,7 @@ class ApiSpecificationRouteResponsePolicies(object):
         Sets the header_transformations of this ApiSpecificationRouteResponsePolicies.
 
         :param header_transformations: The header_transformations of this ApiSpecificationRouteResponsePolicies.
-        :type: HeaderTransformationPolicy
+        :type: oci.apigateway.models.HeaderTransformationPolicy
         """
         self._header_transformations = header_transformations
 

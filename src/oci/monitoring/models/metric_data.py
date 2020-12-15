@@ -65,7 +65,7 @@ class MetricData(object):
 
         :param aggregated_datapoints:
             The value to assign to the aggregated_datapoints property of this MetricData.
-        :type aggregated_datapoints: list[AggregatedDatapoint]
+        :type aggregated_datapoints: list[oci.monitoring.models.AggregatedDatapoint]
 
         """
         self.swagger_types = {
@@ -322,7 +322,7 @@ class MetricData(object):
 
 
         :return: The aggregated_datapoints of this MetricData.
-        :rtype: list[AggregatedDatapoint]
+        :rtype: list[oci.monitoring.models.AggregatedDatapoint]
         """
         return self._aggregated_datapoints
 
@@ -335,7 +335,7 @@ class MetricData(object):
 
 
         :param aggregated_datapoints: The aggregated_datapoints of this MetricData.
-        :type: list[AggregatedDatapoint]
+        :type: list[oci.monitoring.models.AggregatedDatapoint]
         """
         self._aggregated_datapoints = aggregated_datapoints
 

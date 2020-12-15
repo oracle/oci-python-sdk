@@ -79,6 +79,7 @@ Load Balancer
     oci.load_balancer.models.SSLConfiguration
     oci.load_balancer.models.SSLConfigurationDetails
     oci.load_balancer.models.SessionPersistenceConfigurationDetails
+    oci.load_balancer.models.ShapeDetails
     oci.load_balancer.models.SourceIpAddressCondition
     oci.load_balancer.models.SourceVcnIdCondition
     oci.load_balancer.models.SourceVcnIpAddressCondition

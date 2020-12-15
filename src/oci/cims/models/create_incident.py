@@ -42,7 +42,7 @@ class CreateIncident(object):
 
         :param ticket:
             The value to assign to the ticket property of this CreateIncident.
-        :type ticket: CreateTicketDetails
+        :type ticket: oci.cims.models.CreateTicketDetails
 
         :param csi:
             The value to assign to the csi property of this CreateIncident.
@@ -55,7 +55,7 @@ class CreateIncident(object):
 
         :param contacts:
             The value to assign to the contacts property of this CreateIncident.
-        :type contacts: list[Contact]
+        :type contacts: list[oci.cims.models.Contact]
 
         :param referrer:
             The value to assign to the referrer property of this CreateIncident.
@@ -117,7 +117,7 @@ class CreateIncident(object):
         **[Required]** Gets the ticket of this CreateIncident.
 
         :return: The ticket of this CreateIncident.
-        :rtype: CreateTicketDetails
+        :rtype: oci.cims.models.CreateTicketDetails
         """
         return self._ticket
 
@@ -127,7 +127,7 @@ class CreateIncident(object):
         Sets the ticket of this CreateIncident.
 
         :param ticket: The ticket of this CreateIncident.
-        :type: CreateTicketDetails
+        :type: oci.cims.models.CreateTicketDetails
         """
         self._ticket = ticket
 
@@ -195,7 +195,7 @@ class CreateIncident(object):
 
 
         :return: The contacts of this CreateIncident.
-        :rtype: list[Contact]
+        :rtype: list[oci.cims.models.Contact]
         """
         return self._contacts
 
@@ -207,7 +207,7 @@ class CreateIncident(object):
 
 
         :param contacts: The contacts of this CreateIncident.
-        :type: list[Contact]
+        :type: list[oci.cims.models.Contact]
         """
         self._contacts = contacts
 

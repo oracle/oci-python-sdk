@@ -40,7 +40,7 @@ class AutoScalingConfigurationSummary(object):
 
         :param resource:
             The value to assign to the resource property of this AutoScalingConfigurationSummary.
-        :type resource: Resource
+        :type resource: oci.autoscaling.models.Resource
 
         :param defined_tags:
             The value to assign to the defined_tags property of this AutoScalingConfigurationSummary.
@@ -225,7 +225,7 @@ class AutoScalingConfigurationSummary(object):
         **[Required]** Gets the resource of this AutoScalingConfigurationSummary.
 
         :return: The resource of this AutoScalingConfigurationSummary.
-        :rtype: Resource
+        :rtype: oci.autoscaling.models.Resource
         """
         return self._resource
 
@@ -235,7 +235,7 @@ class AutoScalingConfigurationSummary(object):
         Sets the resource of this AutoScalingConfigurationSummary.
 
         :param resource: The resource of this AutoScalingConfigurationSummary.
-        :type: Resource
+        :type: oci.autoscaling.models.Resource
         """
         self._resource = resource
 

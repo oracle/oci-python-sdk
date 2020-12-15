@@ -47,7 +47,7 @@ class PublishedObject(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this PublishedObject.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this PublishedObject.
@@ -204,7 +204,7 @@ class PublishedObject(object):
         Gets the parent_ref of this PublishedObject.
 
         :return: The parent_ref of this PublishedObject.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -214,7 +214,7 @@ class PublishedObject(object):
         Sets the parent_ref of this PublishedObject.
 
         :param parent_ref: The parent_ref of this PublishedObject.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 

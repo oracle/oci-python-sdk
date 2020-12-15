@@ -20,7 +20,7 @@ class SqlTextCollection(object):
 
         :param items:
             The value to assign to the items property of this SqlTextCollection.
-        :type items: list[SqlTextSummary]
+        :type items: list[oci.opsi.models.SqlTextSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SqlTextCollection(object):
 
 
         :return: The items of this SqlTextCollection.
-        :rtype: list[SqlTextSummary]
+        :rtype: list[oci.opsi.models.SqlTextSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SqlTextCollection(object):
 
 
         :param items: The items of this SqlTextCollection.
-        :type: list[SqlTextSummary]
+        :type: list[oci.opsi.models.SqlTextSummary]
         """
         self._items = items
 

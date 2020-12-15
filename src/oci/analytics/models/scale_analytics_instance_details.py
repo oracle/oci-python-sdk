@@ -20,7 +20,7 @@ class ScaleAnalyticsInstanceDetails(object):
 
         :param capacity:
             The value to assign to the capacity property of this ScaleAnalyticsInstanceDetails.
-        :type capacity: Capacity
+        :type capacity: oci.analytics.models.Capacity
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class ScaleAnalyticsInstanceDetails(object):
         **[Required]** Gets the capacity of this ScaleAnalyticsInstanceDetails.
 
         :return: The capacity of this ScaleAnalyticsInstanceDetails.
-        :rtype: Capacity
+        :rtype: oci.analytics.models.Capacity
         """
         return self._capacity
 
@@ -49,7 +49,7 @@ class ScaleAnalyticsInstanceDetails(object):
         Sets the capacity of this ScaleAnalyticsInstanceDetails.
 
         :param capacity: The capacity of this ScaleAnalyticsInstanceDetails.
-        :type: Capacity
+        :type: oci.analytics.models.Capacity
         """
         self._capacity = capacity
 

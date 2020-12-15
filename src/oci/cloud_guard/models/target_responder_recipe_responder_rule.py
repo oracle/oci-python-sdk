@@ -92,7 +92,7 @@ class TargetResponderRecipeResponderRule(object):
 
         :param details:
             The value to assign to the details property of this TargetResponderRecipeResponderRule.
-        :type details: ResponderRuleDetails
+        :type details: oci.cloud_guard.models.ResponderRuleDetails
 
         :param compartment_id:
             The value to assign to the compartment_id property of this TargetResponderRecipeResponderRule.
@@ -322,7 +322,7 @@ class TargetResponderRecipeResponderRule(object):
         Gets the details of this TargetResponderRecipeResponderRule.
 
         :return: The details of this TargetResponderRecipeResponderRule.
-        :rtype: ResponderRuleDetails
+        :rtype: oci.cloud_guard.models.ResponderRuleDetails
         """
         return self._details
 
@@ -332,7 +332,7 @@ class TargetResponderRecipeResponderRule(object):
         Sets the details of this TargetResponderRecipeResponderRule.
 
         :param details: The details of this TargetResponderRecipeResponderRule.
-        :type: ResponderRuleDetails
+        :type: oci.cloud_guard.models.ResponderRuleDetails
         """
         self._details = details
 

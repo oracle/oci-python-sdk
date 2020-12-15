@@ -28,7 +28,7 @@ class UpdateTableDetails(object):
 
         :param table_limits:
             The value to assign to the table_limits property of this UpdateTableDetails.
-        :type table_limits: TableLimits
+        :type table_limits: oci.nosql.models.TableLimits
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateTableDetails.
@@ -123,7 +123,7 @@ class UpdateTableDetails(object):
         Gets the table_limits of this UpdateTableDetails.
 
         :return: The table_limits of this UpdateTableDetails.
-        :rtype: TableLimits
+        :rtype: oci.nosql.models.TableLimits
         """
         return self._table_limits
 
@@ -133,7 +133,7 @@ class UpdateTableDetails(object):
         Sets the table_limits of this UpdateTableDetails.
 
         :param table_limits: The table_limits of this UpdateTableDetails.
-        :type: TableLimits
+        :type: oci.nosql.models.TableLimits
         """
         self._table_limits = table_limits
 

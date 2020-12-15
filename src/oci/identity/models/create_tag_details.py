@@ -40,7 +40,7 @@ class CreateTagDetails(object):
 
         :param validator:
             The value to assign to the validator property of this CreateTagDetails.
-        :type validator: BaseTagDefinitionValidator
+        :type validator: oci.identity.models.BaseTagDefinitionValidator
 
         """
         self.swagger_types = {
@@ -216,7 +216,7 @@ class CreateTagDetails(object):
         Gets the validator of this CreateTagDetails.
 
         :return: The validator of this CreateTagDetails.
-        :rtype: BaseTagDefinitionValidator
+        :rtype: oci.identity.models.BaseTagDefinitionValidator
         """
         return self._validator
 
@@ -226,7 +226,7 @@ class CreateTagDetails(object):
         Sets the validator of this CreateTagDetails.
 
         :param validator: The validator of this CreateTagDetails.
-        :type: BaseTagDefinitionValidator
+        :type: oci.identity.models.BaseTagDefinitionValidator
         """
         self._validator = validator
 

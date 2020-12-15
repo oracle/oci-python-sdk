@@ -88,7 +88,7 @@ class DbSystem(object):
 
         :param iorm_config_cache:
             The value to assign to the iorm_config_cache property of this DbSystem.
-        :type iorm_config_cache: ExadataIormConfig
+        :type iorm_config_cache: oci.database.models.ExadataIormConfig
 
         :param id:
             The value to assign to the id property of this DbSystem.
@@ -132,7 +132,7 @@ class DbSystem(object):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this DbSystem.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this DbSystem.
@@ -149,6 +149,10 @@ class DbSystem(object):
         :param domain:
             The value to assign to the domain property of this DbSystem.
         :type domain: str
+
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this DbSystem.
+        :type kms_key_id: str
 
         :param version:
             The value to assign to the version property of this DbSystem.
@@ -236,7 +240,7 @@ class DbSystem(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this DbSystem.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this DbSystem.
@@ -280,6 +284,7 @@ class DbSystem(object):
             'time_zone': 'str',
             'hostname': 'str',
             'domain': 'str',
+            'kms_key_id': 'str',
             'version': 'str',
             'cpu_core_count': 'int',
             'cluster_name': 'str',
@@ -325,6 +330,7 @@ class DbSystem(object):
             'time_zone': 'timeZone',
             'hostname': 'hostname',
             'domain': 'domain',
+            'kms_key_id': 'kmsKeyId',
             'version': 'version',
             'cpu_core_count': 'cpuCoreCount',
             'cluster_name': 'clusterName',
@@ -369,6 +375,7 @@ class DbSystem(object):
         self._time_zone = None
         self._hostname = None
         self._domain = None
+        self._kms_key_id = None
         self._version = None
         self._cpu_core_count = None
         self._cluster_name = None
@@ -402,7 +409,7 @@ class DbSystem(object):
         Gets the iorm_config_cache of this DbSystem.
 
         :return: The iorm_config_cache of this DbSystem.
-        :rtype: ExadataIormConfig
+        :rtype: oci.database.models.ExadataIormConfig
         """
         return self._iorm_config_cache
 
@@ -412,7 +419,7 @@ class DbSystem(object):
         Sets the iorm_config_cache of this DbSystem.
 
         :param iorm_config_cache: The iorm_config_cache of this DbSystem.
-        :type: ExadataIormConfig
+        :type: oci.database.models.ExadataIormConfig
         """
         self._iorm_config_cache = iorm_config_cache
 
@@ -718,7 +725,7 @@ class DbSystem(object):
         Gets the db_system_options of this DbSystem.
 
         :return: The db_system_options of this DbSystem.
-        :rtype: DbSystemOptions
+        :rtype: oci.database.models.DbSystemOptions
         """
         return self._db_system_options
 
@@ -728,7 +735,7 @@ class DbSystem(object):
         Sets the db_system_options of this DbSystem.
 
         :param db_system_options: The db_system_options of this DbSystem.
-        :type: DbSystemOptions
+        :type: oci.database.models.DbSystemOptions
         """
         self._db_system_options = db_system_options
 
@@ -831,6 +838,30 @@ class DbSystem(object):
         :type: str
         """
         self._domain = domain
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this DbSystem.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this DbSystem.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this DbSystem.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this DbSystem.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def version(self):
@@ -1070,7 +1101,7 @@ class DbSystem(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DbSystem.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :return: The lifecycle_details of this DbSystem.
@@ -1082,7 +1113,7 @@ class DbSystem(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DbSystem.
-        Additional information about the current lifecycleState.
+        Additional information about the current lifecycle state.
 
 
         :param lifecycle_details: The lifecycle_details of this DbSystem.
@@ -1356,7 +1387,7 @@ class DbSystem(object):
         Gets the maintenance_window of this DbSystem.
 
         :return: The maintenance_window of this DbSystem.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -1366,7 +1397,7 @@ class DbSystem(object):
         Sets the maintenance_window of this DbSystem.
 
         :param maintenance_window: The maintenance_window of this DbSystem.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

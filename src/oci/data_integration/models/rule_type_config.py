@@ -35,7 +35,7 @@ class RuleTypeConfig(DynamicTypeHandler):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this RuleTypeConfig.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param scope:
             The value to assign to the scope property of this RuleTypeConfig.
@@ -47,11 +47,11 @@ class RuleTypeConfig(DynamicTypeHandler):
 
         :param projection_rules:
             The value to assign to the projection_rules property of this RuleTypeConfig.
-        :type projection_rules: list[ProjectionRule]
+        :type projection_rules: list[oci.data_integration.models.ProjectionRule]
 
         :param config_values:
             The value to assign to the config_values property of this RuleTypeConfig.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this RuleTypeConfig.
@@ -147,7 +147,7 @@ class RuleTypeConfig(DynamicTypeHandler):
         Gets the parent_ref of this RuleTypeConfig.
 
         :return: The parent_ref of this RuleTypeConfig.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -157,7 +157,7 @@ class RuleTypeConfig(DynamicTypeHandler):
         Sets the parent_ref of this RuleTypeConfig.
 
         :param parent_ref: The parent_ref of this RuleTypeConfig.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -217,7 +217,7 @@ class RuleTypeConfig(DynamicTypeHandler):
 
 
         :return: The projection_rules of this RuleTypeConfig.
-        :rtype: list[ProjectionRule]
+        :rtype: list[oci.data_integration.models.ProjectionRule]
         """
         return self._projection_rules
 
@@ -229,7 +229,7 @@ class RuleTypeConfig(DynamicTypeHandler):
 
 
         :param projection_rules: The projection_rules of this RuleTypeConfig.
-        :type: list[ProjectionRule]
+        :type: list[oci.data_integration.models.ProjectionRule]
         """
         self._projection_rules = projection_rules
 
@@ -239,7 +239,7 @@ class RuleTypeConfig(DynamicTypeHandler):
         Gets the config_values of this RuleTypeConfig.
 
         :return: The config_values of this RuleTypeConfig.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -249,7 +249,7 @@ class RuleTypeConfig(DynamicTypeHandler):
         Sets the config_values of this RuleTypeConfig.
 
         :param config_values: The config_values of this RuleTypeConfig.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 

@@ -92,11 +92,11 @@ class SteeringPolicy(object):
 
         :param answers:
             The value to assign to the answers property of this SteeringPolicy.
-        :type answers: list[SteeringPolicyAnswer]
+        :type answers: list[oci.dns.models.SteeringPolicyAnswer]
 
         :param rules:
             The value to assign to the rules property of this SteeringPolicy.
-        :type rules: list[SteeringPolicyRule]
+        :type rules: list[oci.dns.models.SteeringPolicyRule]
 
         :param _self:
             The value to assign to the _self property of this SteeringPolicy.
@@ -479,7 +479,7 @@ class SteeringPolicy(object):
 
 
         :return: The answers of this SteeringPolicy.
-        :rtype: list[SteeringPolicyAnswer]
+        :rtype: list[oci.dns.models.SteeringPolicyAnswer]
         """
         return self._answers
 
@@ -491,7 +491,7 @@ class SteeringPolicy(object):
 
 
         :param answers: The answers of this SteeringPolicy.
-        :type: list[SteeringPolicyAnswer]
+        :type: list[oci.dns.models.SteeringPolicyAnswer]
         """
         self._answers = answers
 
@@ -509,7 +509,7 @@ class SteeringPolicy(object):
 
 
         :return: The rules of this SteeringPolicy.
-        :rtype: list[SteeringPolicyRule]
+        :rtype: list[oci.dns.models.SteeringPolicyRule]
         """
         return self._rules
 
@@ -527,7 +527,7 @@ class SteeringPolicy(object):
 
 
         :param rules: The rules of this SteeringPolicy.
-        :type: list[SteeringPolicyRule]
+        :type: list[oci.dns.models.SteeringPolicyRule]
         """
         self._rules = rules
 

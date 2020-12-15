@@ -20,7 +20,7 @@ class UpdateIncident(object):
 
         :param ticket:
             The value to assign to the ticket property of this UpdateIncident.
-        :type ticket: UpdateTicketDetails
+        :type ticket: oci.cims.models.UpdateTicketDetails
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class UpdateIncident(object):
         **[Required]** Gets the ticket of this UpdateIncident.
 
         :return: The ticket of this UpdateIncident.
-        :rtype: UpdateTicketDetails
+        :rtype: oci.cims.models.UpdateTicketDetails
         """
         return self._ticket
 
@@ -49,7 +49,7 @@ class UpdateIncident(object):
         Sets the ticket of this UpdateIncident.
 
         :param ticket: The ticket of this UpdateIncident.
-        :type: UpdateTicketDetails
+        :type: oci.cims.models.UpdateTicketDetails
         """
         self._ticket = ticket
 

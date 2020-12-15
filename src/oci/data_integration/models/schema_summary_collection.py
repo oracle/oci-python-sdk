@@ -20,7 +20,7 @@ class SchemaSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this SchemaSummaryCollection.
-        :type items: list[SchemaSummary]
+        :type items: list[oci.data_integration.models.SchemaSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SchemaSummaryCollection(object):
 
 
         :return: The items of this SchemaSummaryCollection.
-        :rtype: list[SchemaSummary]
+        :rtype: list[oci.data_integration.models.SchemaSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SchemaSummaryCollection(object):
 
 
         :param items: The items of this SchemaSummaryCollection.
-        :type: list[SchemaSummary]
+        :type: list[oci.data_integration.models.SchemaSummary]
         """
         self._items = items
 

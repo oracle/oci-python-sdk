@@ -32,7 +32,7 @@ class Origin(object):
 
         :param custom_headers:
             The value to assign to the custom_headers property of this Origin.
-        :type custom_headers: list[Header]
+        :type custom_headers: list[oci.waas.models.Header]
 
         """
         self.swagger_types = {
@@ -134,7 +134,7 @@ class Origin(object):
 
 
         :return: The custom_headers of this Origin.
-        :rtype: list[Header]
+        :rtype: list[oci.waas.models.Header]
         """
         return self._custom_headers
 
@@ -146,7 +146,7 @@ class Origin(object):
 
 
         :param custom_headers: The custom_headers of this Origin.
-        :type: list[Header]
+        :type: list[oci.waas.models.Header]
         """
         self._custom_headers = custom_headers
 

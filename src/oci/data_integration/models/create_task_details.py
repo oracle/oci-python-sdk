@@ -46,7 +46,7 @@ class CreateTaskDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateTaskDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateTaskDetails.
@@ -66,27 +66,27 @@ class CreateTaskDetails(object):
 
         :param input_ports:
             The value to assign to the input_ports property of this CreateTaskDetails.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this CreateTaskDetails.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this CreateTaskDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this CreateTaskDetails.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this CreateTaskDetails.
-        :type config_provider_delegate: CreateConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.CreateConfigProvider
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -240,7 +240,7 @@ class CreateTaskDetails(object):
         Gets the parent_ref of this CreateTaskDetails.
 
         :return: The parent_ref of this CreateTaskDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -250,7 +250,7 @@ class CreateTaskDetails(object):
         Sets the parent_ref of this CreateTaskDetails.
 
         :param parent_ref: The parent_ref of this CreateTaskDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -358,7 +358,7 @@ class CreateTaskDetails(object):
 
 
         :return: The input_ports of this CreateTaskDetails.
-        :rtype: list[InputPort]
+        :rtype: list[oci.data_integration.models.InputPort]
         """
         return self._input_ports
 
@@ -370,7 +370,7 @@ class CreateTaskDetails(object):
 
 
         :param input_ports: The input_ports of this CreateTaskDetails.
-        :type: list[InputPort]
+        :type: list[oci.data_integration.models.InputPort]
         """
         self._input_ports = input_ports
 
@@ -382,7 +382,7 @@ class CreateTaskDetails(object):
 
 
         :return: The output_ports of this CreateTaskDetails.
-        :rtype: list[OutputPort]
+        :rtype: list[oci.data_integration.models.OutputPort]
         """
         return self._output_ports
 
@@ -394,7 +394,7 @@ class CreateTaskDetails(object):
 
 
         :param output_ports: The output_ports of this CreateTaskDetails.
-        :type: list[OutputPort]
+        :type: list[oci.data_integration.models.OutputPort]
         """
         self._output_ports = output_ports
 
@@ -406,7 +406,7 @@ class CreateTaskDetails(object):
 
 
         :return: The parameters of this CreateTaskDetails.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -418,7 +418,7 @@ class CreateTaskDetails(object):
 
 
         :param parameters: The parameters of this CreateTaskDetails.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -428,7 +428,7 @@ class CreateTaskDetails(object):
         Gets the op_config_values of this CreateTaskDetails.
 
         :return: The op_config_values of this CreateTaskDetails.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._op_config_values
 
@@ -438,7 +438,7 @@ class CreateTaskDetails(object):
         Sets the op_config_values of this CreateTaskDetails.
 
         :param op_config_values: The op_config_values of this CreateTaskDetails.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._op_config_values = op_config_values
 
@@ -448,7 +448,7 @@ class CreateTaskDetails(object):
         Gets the config_provider_delegate of this CreateTaskDetails.
 
         :return: The config_provider_delegate of this CreateTaskDetails.
-        :rtype: CreateConfigProvider
+        :rtype: oci.data_integration.models.CreateConfigProvider
         """
         return self._config_provider_delegate
 
@@ -458,7 +458,7 @@ class CreateTaskDetails(object):
         Sets the config_provider_delegate of this CreateTaskDetails.
 
         :param config_provider_delegate: The config_provider_delegate of this CreateTaskDetails.
-        :type: CreateConfigProvider
+        :type: oci.data_integration.models.CreateConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
 
@@ -468,7 +468,7 @@ class CreateTaskDetails(object):
         **[Required]** Gets the registry_metadata of this CreateTaskDetails.
 
         :return: The registry_metadata of this CreateTaskDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -478,7 +478,7 @@ class CreateTaskDetails(object):
         Sets the registry_metadata of this CreateTaskDetails.
 
         :param registry_metadata: The registry_metadata of this CreateTaskDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

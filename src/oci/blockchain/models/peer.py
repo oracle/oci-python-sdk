@@ -44,7 +44,7 @@ class Peer(object):
 
         :param ocpu_allocation_param:
             The value to assign to the ocpu_allocation_param property of this Peer.
-        :type ocpu_allocation_param: OcpuAllocationNumberParam
+        :type ocpu_allocation_param: oci.blockchain.models.OcpuAllocationNumberParam
 
         :param host:
             The value to assign to the host property of this Peer.
@@ -167,7 +167,7 @@ class Peer(object):
         Gets the ocpu_allocation_param of this Peer.
 
         :return: The ocpu_allocation_param of this Peer.
-        :rtype: OcpuAllocationNumberParam
+        :rtype: oci.blockchain.models.OcpuAllocationNumberParam
         """
         return self._ocpu_allocation_param
 
@@ -177,7 +177,7 @@ class Peer(object):
         Sets the ocpu_allocation_param of this Peer.
 
         :param ocpu_allocation_param: The ocpu_allocation_param of this Peer.
-        :type: OcpuAllocationNumberParam
+        :type: oci.blockchain.models.OcpuAllocationNumberParam
         """
         self._ocpu_allocation_param = ocpu_allocation_param
 

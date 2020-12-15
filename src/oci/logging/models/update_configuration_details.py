@@ -20,11 +20,11 @@ class UpdateConfigurationDetails(object):
 
         :param source:
             The value to assign to the source property of this UpdateConfigurationDetails.
-        :type source: SourceUpdateDetails
+        :type source: oci.logging.models.SourceUpdateDetails
 
         :param archiving:
             The value to assign to the archiving property of this UpdateConfigurationDetails.
-        :type archiving: Archiving
+        :type archiving: oci.logging.models.Archiving
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class UpdateConfigurationDetails(object):
         **[Required]** Gets the source of this UpdateConfigurationDetails.
 
         :return: The source of this UpdateConfigurationDetails.
-        :rtype: SourceUpdateDetails
+        :rtype: oci.logging.models.SourceUpdateDetails
         """
         return self._source
 
@@ -56,7 +56,7 @@ class UpdateConfigurationDetails(object):
         Sets the source of this UpdateConfigurationDetails.
 
         :param source: The source of this UpdateConfigurationDetails.
-        :type: SourceUpdateDetails
+        :type: oci.logging.models.SourceUpdateDetails
         """
         self._source = source
 
@@ -66,7 +66,7 @@ class UpdateConfigurationDetails(object):
         Gets the archiving of this UpdateConfigurationDetails.
 
         :return: The archiving of this UpdateConfigurationDetails.
-        :rtype: Archiving
+        :rtype: oci.logging.models.Archiving
         """
         return self._archiving
 
@@ -76,7 +76,7 @@ class UpdateConfigurationDetails(object):
         Sets the archiving of this UpdateConfigurationDetails.
 
         :param archiving: The archiving of this UpdateConfigurationDetails.
-        :type: Archiving
+        :type: oci.logging.models.Archiving
         """
         self._archiving = archiving
 

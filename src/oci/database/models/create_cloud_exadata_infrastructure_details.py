@@ -44,7 +44,7 @@ class CreateCloudExadataInfrastructureDetails(object):
 
         :param maintenance_window:
             The value to assign to the maintenance_window property of this CreateCloudExadataInfrastructureDetails.
-        :type maintenance_window: MaintenanceWindow
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateCloudExadataInfrastructureDetails.
@@ -243,7 +243,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Gets the maintenance_window of this CreateCloudExadataInfrastructureDetails.
 
         :return: The maintenance_window of this CreateCloudExadataInfrastructureDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window
 
@@ -253,7 +253,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Sets the maintenance_window of this CreateCloudExadataInfrastructureDetails.
 
         :param maintenance_window: The maintenance_window of this CreateCloudExadataInfrastructureDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
 

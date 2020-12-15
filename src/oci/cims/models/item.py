@@ -38,15 +38,15 @@ class Item(object):
 
         :param category:
             The value to assign to the category property of this Item.
-        :type category: Category
+        :type category: oci.cims.models.Category
 
         :param sub_category:
             The value to assign to the sub_category property of this Item.
-        :type sub_category: SubCategory
+        :type sub_category: oci.cims.models.SubCategory
 
         :param issue_type:
             The value to assign to the issue_type property of this Item.
-        :type issue_type: IssueType
+        :type issue_type: oci.cims.models.IssueType
 
         """
         self.swagger_types = {
@@ -171,7 +171,7 @@ class Item(object):
         Gets the category of this Item.
 
         :return: The category of this Item.
-        :rtype: Category
+        :rtype: oci.cims.models.Category
         """
         return self._category
 
@@ -181,7 +181,7 @@ class Item(object):
         Sets the category of this Item.
 
         :param category: The category of this Item.
-        :type: Category
+        :type: oci.cims.models.Category
         """
         self._category = category
 
@@ -191,7 +191,7 @@ class Item(object):
         Gets the sub_category of this Item.
 
         :return: The sub_category of this Item.
-        :rtype: SubCategory
+        :rtype: oci.cims.models.SubCategory
         """
         return self._sub_category
 
@@ -201,7 +201,7 @@ class Item(object):
         Sets the sub_category of this Item.
 
         :param sub_category: The sub_category of this Item.
-        :type: SubCategory
+        :type: oci.cims.models.SubCategory
         """
         self._sub_category = sub_category
 
@@ -211,7 +211,7 @@ class Item(object):
         Gets the issue_type of this Item.
 
         :return: The issue_type of this Item.
-        :rtype: IssueType
+        :rtype: oci.cims.models.IssueType
         """
         return self._issue_type
 
@@ -221,7 +221,7 @@ class Item(object):
         Sets the issue_type of this Item.
 
         :param issue_type: The issue_type of this Item.
-        :type: IssueType
+        :type: oci.cims.models.IssueType
         """
         self._issue_type = issue_type
 

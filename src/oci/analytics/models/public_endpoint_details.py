@@ -30,7 +30,7 @@ class PublicEndpointDetails(NetworkEndpointDetails):
 
         :param whitelisted_vcns:
             The value to assign to the whitelisted_vcns property of this PublicEndpointDetails.
-        :type whitelisted_vcns: list[VirtualCloudNetwork]
+        :type whitelisted_vcns: list[oci.analytics.models.VirtualCloudNetwork]
 
         """
         self.swagger_types = {
@@ -82,7 +82,7 @@ class PublicEndpointDetails(NetworkEndpointDetails):
 
 
         :return: The whitelisted_vcns of this PublicEndpointDetails.
-        :rtype: list[VirtualCloudNetwork]
+        :rtype: list[oci.analytics.models.VirtualCloudNetwork]
         """
         return self._whitelisted_vcns
 
@@ -94,7 +94,7 @@ class PublicEndpointDetails(NetworkEndpointDetails):
 
 
         :param whitelisted_vcns: The whitelisted_vcns of this PublicEndpointDetails.
-        :type: list[VirtualCloudNetwork]
+        :type: list[oci.analytics.models.VirtualCloudNetwork]
         """
         self._whitelisted_vcns = whitelisted_vcns
 

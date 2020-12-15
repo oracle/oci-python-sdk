@@ -20,15 +20,15 @@ class QueryParameterTransformationPolicy(object):
 
         :param set_query_parameters:
             The value to assign to the set_query_parameters property of this QueryParameterTransformationPolicy.
-        :type set_query_parameters: SetQueryParameterPolicy
+        :type set_query_parameters: oci.apigateway.models.SetQueryParameterPolicy
 
         :param rename_query_parameters:
             The value to assign to the rename_query_parameters property of this QueryParameterTransformationPolicy.
-        :type rename_query_parameters: RenameQueryParameterPolicy
+        :type rename_query_parameters: oci.apigateway.models.RenameQueryParameterPolicy
 
         :param filter_query_parameters:
             The value to assign to the filter_query_parameters property of this QueryParameterTransformationPolicy.
-        :type filter_query_parameters: FilterQueryParameterPolicy
+        :type filter_query_parameters: oci.apigateway.models.FilterQueryParameterPolicy
 
         """
         self.swagger_types = {
@@ -53,7 +53,7 @@ class QueryParameterTransformationPolicy(object):
         Gets the set_query_parameters of this QueryParameterTransformationPolicy.
 
         :return: The set_query_parameters of this QueryParameterTransformationPolicy.
-        :rtype: SetQueryParameterPolicy
+        :rtype: oci.apigateway.models.SetQueryParameterPolicy
         """
         return self._set_query_parameters
 
@@ -63,7 +63,7 @@ class QueryParameterTransformationPolicy(object):
         Sets the set_query_parameters of this QueryParameterTransformationPolicy.
 
         :param set_query_parameters: The set_query_parameters of this QueryParameterTransformationPolicy.
-        :type: SetQueryParameterPolicy
+        :type: oci.apigateway.models.SetQueryParameterPolicy
         """
         self._set_query_parameters = set_query_parameters
 
@@ -73,7 +73,7 @@ class QueryParameterTransformationPolicy(object):
         Gets the rename_query_parameters of this QueryParameterTransformationPolicy.
 
         :return: The rename_query_parameters of this QueryParameterTransformationPolicy.
-        :rtype: RenameQueryParameterPolicy
+        :rtype: oci.apigateway.models.RenameQueryParameterPolicy
         """
         return self._rename_query_parameters
 
@@ -83,7 +83,7 @@ class QueryParameterTransformationPolicy(object):
         Sets the rename_query_parameters of this QueryParameterTransformationPolicy.
 
         :param rename_query_parameters: The rename_query_parameters of this QueryParameterTransformationPolicy.
-        :type: RenameQueryParameterPolicy
+        :type: oci.apigateway.models.RenameQueryParameterPolicy
         """
         self._rename_query_parameters = rename_query_parameters
 
@@ -93,7 +93,7 @@ class QueryParameterTransformationPolicy(object):
         Gets the filter_query_parameters of this QueryParameterTransformationPolicy.
 
         :return: The filter_query_parameters of this QueryParameterTransformationPolicy.
-        :rtype: FilterQueryParameterPolicy
+        :rtype: oci.apigateway.models.FilterQueryParameterPolicy
         """
         return self._filter_query_parameters
 
@@ -103,7 +103,7 @@ class QueryParameterTransformationPolicy(object):
         Sets the filter_query_parameters of this QueryParameterTransformationPolicy.
 
         :param filter_query_parameters: The filter_query_parameters of this QueryParameterTransformationPolicy.
-        :type: FilterQueryParameterPolicy
+        :type: oci.apigateway.models.FilterQueryParameterPolicy
         """
         self._filter_query_parameters = filter_query_parameters
 

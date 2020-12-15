@@ -28,7 +28,7 @@ class StreamAdminClientCompositeOperations(object):
         Calls :py:func:`~oci.streaming.StreamAdminClient.create_connect_harness` and waits for the :py:class:`~oci.streaming.models.ConnectHarness` acted upon
         to enter the given state(s).
 
-        :param CreateConnectHarnessDetails create_connect_harness_details: (required)
+        :param oci.streaming.models.CreateConnectHarnessDetails create_connect_harness_details: (required)
             The connect harness to create.
 
         :param list[str] wait_for_states:
@@ -66,7 +66,7 @@ class StreamAdminClientCompositeOperations(object):
         Calls :py:func:`~oci.streaming.StreamAdminClient.create_stream` and waits for the :py:class:`~oci.streaming.models.Stream` acted upon
         to enter the given state(s).
 
-        :param CreateStreamDetails create_stream_details: (required)
+        :param oci.streaming.models.CreateStreamDetails create_stream_details: (required)
             The stream to create.
 
         :param list[str] wait_for_states:
@@ -104,7 +104,7 @@ class StreamAdminClientCompositeOperations(object):
         Calls :py:func:`~oci.streaming.StreamAdminClient.create_stream_pool` and waits for the :py:class:`~oci.streaming.models.StreamPool` acted upon
         to enter the given state(s).
 
-        :param CreateStreamPoolDetails create_stream_pool_details: (required)
+        :param oci.streaming.models.CreateStreamPoolDetails create_stream_pool_details: (required)
             The stream pool to create.
 
         :param list[str] wait_for_states:
@@ -286,7 +286,7 @@ class StreamAdminClientCompositeOperations(object):
         :param str connect_harness_id: (required)
             The OCID of the connect harness.
 
-        :param UpdateConnectHarnessDetails update_connect_harness_details: (required)
+        :param oci.streaming.models.UpdateConnectHarnessDetails update_connect_harness_details: (required)
             The connect harness is updated with the tags provided.
 
         :param list[str] wait_for_states:
@@ -327,7 +327,7 @@ class StreamAdminClientCompositeOperations(object):
         :param str stream_id: (required)
             The OCID of the stream.
 
-        :param UpdateStreamDetails update_stream_details: (required)
+        :param oci.streaming.models.UpdateStreamDetails update_stream_details: (required)
             The stream is updated with the values provided.
 
         :param list[str] wait_for_states:
@@ -368,7 +368,7 @@ class StreamAdminClientCompositeOperations(object):
         :param str stream_pool_id: (required)
             The OCID of the stream pool.
 
-        :param UpdateStreamPoolDetails update_stream_pool_details: (required)
+        :param oci.streaming.models.UpdateStreamPoolDetails update_stream_pool_details: (required)
             The pool is updated with the provided fields.
 
         :param list[str] wait_for_states:

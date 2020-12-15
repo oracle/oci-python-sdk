@@ -48,15 +48,15 @@ class NodePoolSummary(object):
 
         :param node_shape_config:
             The value to assign to the node_shape_config property of this NodePoolSummary.
-        :type node_shape_config: NodeShapeConfig
+        :type node_shape_config: oci.container_engine.models.NodeShapeConfig
 
         :param node_source:
             The value to assign to the node_source property of this NodePoolSummary.
-        :type node_source: NodeSourceOption
+        :type node_source: oci.container_engine.models.NodeSourceOption
 
         :param node_source_details:
             The value to assign to the node_source_details property of this NodePoolSummary.
-        :type node_source_details: NodeSourceDetails
+        :type node_source_details: oci.container_engine.models.NodeSourceDetails
 
         :param node_shape:
             The value to assign to the node_shape property of this NodePoolSummary.
@@ -64,7 +64,7 @@ class NodePoolSummary(object):
 
         :param initial_node_labels:
             The value to assign to the initial_node_labels property of this NodePoolSummary.
-        :type initial_node_labels: list[KeyValue]
+        :type initial_node_labels: list[oci.container_engine.models.KeyValue]
 
         :param ssh_public_key:
             The value to assign to the ssh_public_key property of this NodePoolSummary.
@@ -80,7 +80,7 @@ class NodePoolSummary(object):
 
         :param node_config_details:
             The value to assign to the node_config_details property of this NodePoolSummary.
-        :type node_config_details: NodePoolNodeConfigDetails
+        :type node_config_details: oci.container_engine.models.NodePoolNodeConfigDetails
 
         """
         self.swagger_types = {
@@ -314,7 +314,7 @@ class NodePoolSummary(object):
 
 
         :return: The node_shape_config of this NodePoolSummary.
-        :rtype: NodeShapeConfig
+        :rtype: oci.container_engine.models.NodeShapeConfig
         """
         return self._node_shape_config
 
@@ -326,7 +326,7 @@ class NodePoolSummary(object):
 
 
         :param node_shape_config: The node_shape_config of this NodePoolSummary.
-        :type: NodeShapeConfig
+        :type: oci.container_engine.models.NodeShapeConfig
         """
         self._node_shape_config = node_shape_config
 
@@ -338,7 +338,7 @@ class NodePoolSummary(object):
 
 
         :return: The node_source of this NodePoolSummary.
-        :rtype: NodeSourceOption
+        :rtype: oci.container_engine.models.NodeSourceOption
         """
         return self._node_source
 
@@ -350,7 +350,7 @@ class NodePoolSummary(object):
 
 
         :param node_source: The node_source of this NodePoolSummary.
-        :type: NodeSourceOption
+        :type: oci.container_engine.models.NodeSourceOption
         """
         self._node_source = node_source
 
@@ -362,7 +362,7 @@ class NodePoolSummary(object):
 
 
         :return: The node_source_details of this NodePoolSummary.
-        :rtype: NodeSourceDetails
+        :rtype: oci.container_engine.models.NodeSourceDetails
         """
         return self._node_source_details
 
@@ -374,7 +374,7 @@ class NodePoolSummary(object):
 
 
         :param node_source_details: The node_source_details of this NodePoolSummary.
-        :type: NodeSourceDetails
+        :type: oci.container_engine.models.NodeSourceDetails
         """
         self._node_source_details = node_source_details
 
@@ -410,7 +410,7 @@ class NodePoolSummary(object):
 
 
         :return: The initial_node_labels of this NodePoolSummary.
-        :rtype: list[KeyValue]
+        :rtype: list[oci.container_engine.models.KeyValue]
         """
         return self._initial_node_labels
 
@@ -422,7 +422,7 @@ class NodePoolSummary(object):
 
 
         :param initial_node_labels: The initial_node_labels of this NodePoolSummary.
-        :type: list[KeyValue]
+        :type: list[oci.container_engine.models.KeyValue]
         """
         self._initial_node_labels = initial_node_labels
 
@@ -506,7 +506,7 @@ class NodePoolSummary(object):
 
 
         :return: The node_config_details of this NodePoolSummary.
-        :rtype: NodePoolNodeConfigDetails
+        :rtype: oci.container_engine.models.NodePoolNodeConfigDetails
         """
         return self._node_config_details
 
@@ -518,7 +518,7 @@ class NodePoolSummary(object):
 
 
         :param node_config_details: The node_config_details of this NodePoolSummary.
-        :type: NodePoolNodeConfigDetails
+        :type: oci.container_engine.models.NodePoolNodeConfigDetails
         """
         self._node_config_details = node_config_details
 

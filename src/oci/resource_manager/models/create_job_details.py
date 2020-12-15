@@ -32,11 +32,11 @@ class CreateJobDetails(object):
 
         :param job_operation_details:
             The value to assign to the job_operation_details property of this CreateJobDetails.
-        :type job_operation_details: CreateJobOperationDetails
+        :type job_operation_details: oci.resource_manager.models.CreateJobOperationDetails
 
         :param apply_job_plan_resolution:
             The value to assign to the apply_job_plan_resolution property of this CreateJobDetails.
-        :type apply_job_plan_resolution: ApplyJobPlanResolution
+        :type apply_job_plan_resolution: oci.resource_manager.models.ApplyJobPlanResolution
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateJobDetails.
@@ -157,7 +157,7 @@ class CreateJobDetails(object):
         Gets the job_operation_details of this CreateJobDetails.
 
         :return: The job_operation_details of this CreateJobDetails.
-        :rtype: CreateJobOperationDetails
+        :rtype: oci.resource_manager.models.CreateJobOperationDetails
         """
         return self._job_operation_details
 
@@ -167,7 +167,7 @@ class CreateJobDetails(object):
         Sets the job_operation_details of this CreateJobDetails.
 
         :param job_operation_details: The job_operation_details of this CreateJobDetails.
-        :type: CreateJobOperationDetails
+        :type: oci.resource_manager.models.CreateJobOperationDetails
         """
         self._job_operation_details = job_operation_details
 
@@ -177,7 +177,7 @@ class CreateJobDetails(object):
         Gets the apply_job_plan_resolution of this CreateJobDetails.
 
         :return: The apply_job_plan_resolution of this CreateJobDetails.
-        :rtype: ApplyJobPlanResolution
+        :rtype: oci.resource_manager.models.ApplyJobPlanResolution
         """
         return self._apply_job_plan_resolution
 
@@ -187,7 +187,7 @@ class CreateJobDetails(object):
         Sets the apply_job_plan_resolution of this CreateJobDetails.
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this CreateJobDetails.
-        :type: ApplyJobPlanResolution
+        :type: oci.resource_manager.models.ApplyJobPlanResolution
         """
         self._apply_job_plan_resolution = apply_job_plan_resolution
 

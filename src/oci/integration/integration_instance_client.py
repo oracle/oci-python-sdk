@@ -124,6 +124,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/change_integration_instance_compartment.py.html>`__ to see an example of how to use change_integration_instance_compartment API.
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/changeCompartment"
         method = "POST"
@@ -210,6 +213,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/create_integration_instance.py.html>`__ to see an example of how to use create_integration_instance API.
         """
         resource_path = "/integrationInstances"
         method = "POST"
@@ -281,6 +287,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/delete_integration_instance.py.html>`__ to see an example of how to use delete_integration_instance API.
         """
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "DELETE"
@@ -353,6 +362,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.integration.models.IntegrationInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/get_integration_instance.py.html>`__ to see an example of how to use get_integration_instance API.
         """
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "GET"
@@ -425,6 +437,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.integration.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -525,6 +540,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.integration.models.IntegrationInstanceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_integration_instances.py.html>`__ to see an example of how to use list_integration_instances API.
         """
         resource_path = "/integrationInstances"
         method = "GET"
@@ -634,6 +652,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.integration.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -726,6 +747,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.integration.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -818,6 +842,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.integration.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -906,6 +933,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/start_integration_instance.py.html>`__ to see an example of how to use start_integration_instance API.
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/start"
         method = "POST"
@@ -997,6 +1027,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/stop_integration_instance.py.html>`__ to see an example of how to use stop_integration_instance API.
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/stop"
         method = "POST"
@@ -1083,6 +1116,9 @@ class IntegrationInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/update_integration_instance.py.html>`__ to see an example of how to use update_integration_instance API.
         """
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "PUT"

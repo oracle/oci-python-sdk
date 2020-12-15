@@ -33,7 +33,7 @@ class LoadBalancerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param ChangeLoadBalancerCompartmentDetails change_load_balancer_compartment_details: (required)
+        :param oci.load_balancer.models.ChangeLoadBalancerCompartmentDetails change_load_balancer_compartment_details: (required)
             The configuration details for moving a load balancer to a different compartment.
 
         :param list[str] wait_for_states:
@@ -71,7 +71,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_backend` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateBackendDetails create_backend_details: (required)
+        :param oci.load_balancer.models.CreateBackendDetails create_backend_details: (required)
             The details to add a backend server to a backend set.
 
         :param str load_balancer_id: (required)
@@ -119,7 +119,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_backend_set` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateBackendSetDetails create_backend_set_details: (required)
+        :param oci.load_balancer.models.CreateBackendSetDetails create_backend_set_details: (required)
             The details for adding a backend set.
 
         :param str load_balancer_id: (required)
@@ -162,7 +162,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_certificate` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateCertificateDetails create_certificate_details: (required)
+        :param oci.load_balancer.models.CreateCertificateDetails create_certificate_details: (required)
             The details of the certificate bundle to add.
 
         :param str load_balancer_id: (required)
@@ -205,7 +205,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_hostname` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateHostnameDetails create_hostname_details: (required)
+        :param oci.load_balancer.models.CreateHostnameDetails create_hostname_details: (required)
             The details of the hostname resource to add to the specified load balancer.
 
         :param str load_balancer_id: (required)
@@ -248,7 +248,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_listener` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateListenerDetails create_listener_details: (required)
+        :param oci.load_balancer.models.CreateListenerDetails create_listener_details: (required)
             Details to add a listener.
 
         :param str load_balancer_id: (required)
@@ -291,7 +291,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_load_balancer` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateLoadBalancerDetails create_load_balancer_details: (required)
+        :param oci.load_balancer.models.CreateLoadBalancerDetails create_load_balancer_details: (required)
             The configuration details for creating a load balancer.
 
         :param list[str] wait_for_states:
@@ -329,7 +329,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_path_route_set` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreatePathRouteSetDetails create_path_route_set_details: (required)
+        :param oci.load_balancer.models.CreatePathRouteSetDetails create_path_route_set_details: (required)
             The details of the path route set to add.
 
         :param str load_balancer_id: (required)
@@ -377,7 +377,7 @@ class LoadBalancerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param CreateRuleSetDetails create_rule_set_details: (required)
+        :param oci.load_balancer.models.CreateRuleSetDetails create_rule_set_details: (required)
             The configuration details for the rule set to create.
 
         :param list[str] wait_for_states:
@@ -415,7 +415,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_ssl_cipher_suite` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateSSLCipherSuiteDetails create_ssl_cipher_suite_details: (required)
+        :param oci.load_balancer.models.CreateSSLCipherSuiteDetails create_ssl_cipher_suite_details: (required)
             The details of the SSL cipher suite to add.
 
         :param str load_balancer_id: (required)
@@ -936,7 +936,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_backend` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateBackendDetails update_backend_details: (required)
+        :param oci.load_balancer.models.UpdateBackendDetails update_backend_details: (required)
             Details for updating a backend server.
 
         :param str load_balancer_id: (required)
@@ -989,7 +989,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_backend_set` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateBackendSetDetails update_backend_set_details: (required)
+        :param oci.load_balancer.models.UpdateBackendSetDetails update_backend_set_details: (required)
             The details to update a backend set.
 
         :param str load_balancer_id: (required)
@@ -1037,7 +1037,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_health_checker` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateHealthCheckerDetails health_checker: (required)
+        :param oci.load_balancer.models.UpdateHealthCheckerDetails health_checker: (required)
             The health check policy configuration details.
 
         :param str load_balancer_id: (required)
@@ -1085,7 +1085,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_hostname` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateHostnameDetails update_hostname_details: (required)
+        :param oci.load_balancer.models.UpdateHostnameDetails update_hostname_details: (required)
             The configuration details to update a virtual hostname.
 
         :param str load_balancer_id: (required)
@@ -1134,7 +1134,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_listener` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateListenerDetails update_listener_details: (required)
+        :param oci.load_balancer.models.UpdateListenerDetails update_listener_details: (required)
             Details to update a listener.
 
         :param str load_balancer_id: (required)
@@ -1182,7 +1182,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_load_balancer` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateLoadBalancerDetails update_load_balancer_details: (required)
+        :param oci.load_balancer.models.UpdateLoadBalancerDetails update_load_balancer_details: (required)
             The details for updating a load balancer's configuration.
 
         :param str load_balancer_id: (required)
@@ -1230,7 +1230,7 @@ class LoadBalancerClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
+        :param oci.load_balancer.models.UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
             The details for updating a load balancer's shape. This contains the new, desired shape.
 
         :param list[str] wait_for_states:
@@ -1268,7 +1268,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_network_security_groups` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
+        :param oci.load_balancer.models.UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
             The details for updating the NSGs associated with the specified load balancer.
 
         :param str load_balancer_id: (required)
@@ -1311,7 +1311,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_path_route_set` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdatePathRouteSetDetails update_path_route_set_details: (required)
+        :param oci.load_balancer.models.UpdatePathRouteSetDetails update_path_route_set_details: (required)
             The configuration details to update a path route set.
 
         :param str load_balancer_id: (required)
@@ -1369,7 +1369,7 @@ class LoadBalancerClientCompositeOperations(object):
 
             Example: `example_rule_set`
 
-        :param UpdateRuleSetDetails update_rule_set_details: (required)
+        :param oci.load_balancer.models.UpdateRuleSetDetails update_rule_set_details: (required)
             The configuration details to update a set of rules.
 
         :param list[str] wait_for_states:
@@ -1407,7 +1407,7 @@ class LoadBalancerClientCompositeOperations(object):
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_ssl_cipher_suite` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
         to enter the given state(s).
 
-        :param UpdateSSLCipherSuiteDetails update_ssl_cipher_suite_details: (required)
+        :param oci.load_balancer.models.UpdateSSLCipherSuiteDetails update_ssl_cipher_suite_details: (required)
             The configuration details to update an SSL cipher suite.
 
         :param str load_balancer_id: (required)

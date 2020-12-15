@@ -26,7 +26,7 @@ class StaticPublicKeySet(PublicKeySet):
 
         :param keys:
             The value to assign to the keys property of this StaticPublicKeySet.
-        :type keys: list[StaticPublicKey]
+        :type keys: list[oci.apigateway.models.StaticPublicKey]
 
         """
         self.swagger_types = {
@@ -51,7 +51,7 @@ class StaticPublicKeySet(PublicKeySet):
 
 
         :return: The keys of this StaticPublicKeySet.
-        :rtype: list[StaticPublicKey]
+        :rtype: list[oci.apigateway.models.StaticPublicKey]
         """
         return self._keys
 
@@ -63,7 +63,7 @@ class StaticPublicKeySet(PublicKeySet):
 
 
         :param keys: The keys of this StaticPublicKeySet.
-        :type: list[StaticPublicKey]
+        :type: list[oci.apigateway.models.StaticPublicKey]
         """
         self._keys = keys
 

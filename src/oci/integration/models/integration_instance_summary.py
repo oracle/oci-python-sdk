@@ -124,11 +124,11 @@ class IntegrationInstanceSummary(object):
 
         :param custom_endpoint:
             The value to assign to the custom_endpoint property of this IntegrationInstanceSummary.
-        :type custom_endpoint: CustomEndpointDetails
+        :type custom_endpoint: oci.integration.models.CustomEndpointDetails
 
         :param alternate_custom_endpoints:
             The value to assign to the alternate_custom_endpoints property of this IntegrationInstanceSummary.
-        :type alternate_custom_endpoints: list[CustomEndpointDetails]
+        :type alternate_custom_endpoints: list[oci.integration.models.CustomEndpointDetails]
 
         :param consumption_model:
             The value to assign to the consumption_model property of this IntegrationInstanceSummary.
@@ -522,7 +522,7 @@ class IntegrationInstanceSummary(object):
         Gets the custom_endpoint of this IntegrationInstanceSummary.
 
         :return: The custom_endpoint of this IntegrationInstanceSummary.
-        :rtype: CustomEndpointDetails
+        :rtype: oci.integration.models.CustomEndpointDetails
         """
         return self._custom_endpoint
 
@@ -532,7 +532,7 @@ class IntegrationInstanceSummary(object):
         Sets the custom_endpoint of this IntegrationInstanceSummary.
 
         :param custom_endpoint: The custom_endpoint of this IntegrationInstanceSummary.
-        :type: CustomEndpointDetails
+        :type: oci.integration.models.CustomEndpointDetails
         """
         self._custom_endpoint = custom_endpoint
 
@@ -544,7 +544,7 @@ class IntegrationInstanceSummary(object):
 
 
         :return: The alternate_custom_endpoints of this IntegrationInstanceSummary.
-        :rtype: list[CustomEndpointDetails]
+        :rtype: list[oci.integration.models.CustomEndpointDetails]
         """
         return self._alternate_custom_endpoints
 
@@ -556,7 +556,7 @@ class IntegrationInstanceSummary(object):
 
 
         :param alternate_custom_endpoints: The alternate_custom_endpoints of this IntegrationInstanceSummary.
-        :type: list[CustomEndpointDetails]
+        :type: list[oci.integration.models.CustomEndpointDetails]
         """
         self._alternate_custom_endpoints = alternate_custom_endpoints
 

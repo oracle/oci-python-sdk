@@ -32,7 +32,7 @@ class CreateDataFlowValidationDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateDataFlowValidationDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateDataFlowValidationDetails.
@@ -48,11 +48,11 @@ class CreateDataFlowValidationDetails(object):
 
         :param nodes:
             The value to assign to the nodes property of this CreateDataFlowValidationDetails.
-        :type nodes: list[FlowNode]
+        :type nodes: list[oci.data_integration.models.FlowNode]
 
         :param parameters:
             The value to assign to the parameters property of this CreateDataFlowValidationDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param description:
             The value to assign to the description property of this CreateDataFlowValidationDetails.
@@ -60,7 +60,7 @@ class CreateDataFlowValidationDetails(object):
 
         :param flow_config_values:
             The value to assign to the flow_config_values property of this CreateDataFlowValidationDetails.
-        :type flow_config_values: ConfigValues
+        :type flow_config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this CreateDataFlowValidationDetails.
@@ -68,7 +68,7 @@ class CreateDataFlowValidationDetails(object):
 
         :param metadata:
             The value to assign to the metadata property of this CreateDataFlowValidationDetails.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this CreateDataFlowValidationDetails.
@@ -202,7 +202,7 @@ class CreateDataFlowValidationDetails(object):
         Gets the parent_ref of this CreateDataFlowValidationDetails.
 
         :return: The parent_ref of this CreateDataFlowValidationDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -212,7 +212,7 @@ class CreateDataFlowValidationDetails(object):
         Sets the parent_ref of this CreateDataFlowValidationDetails.
 
         :param parent_ref: The parent_ref of this CreateDataFlowValidationDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -296,7 +296,7 @@ class CreateDataFlowValidationDetails(object):
 
 
         :return: The nodes of this CreateDataFlowValidationDetails.
-        :rtype: list[FlowNode]
+        :rtype: list[oci.data_integration.models.FlowNode]
         """
         return self._nodes
 
@@ -308,7 +308,7 @@ class CreateDataFlowValidationDetails(object):
 
 
         :param nodes: The nodes of this CreateDataFlowValidationDetails.
-        :type: list[FlowNode]
+        :type: list[oci.data_integration.models.FlowNode]
         """
         self._nodes = nodes
 
@@ -320,7 +320,7 @@ class CreateDataFlowValidationDetails(object):
 
 
         :return: The parameters of this CreateDataFlowValidationDetails.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -332,7 +332,7 @@ class CreateDataFlowValidationDetails(object):
 
 
         :param parameters: The parameters of this CreateDataFlowValidationDetails.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -366,7 +366,7 @@ class CreateDataFlowValidationDetails(object):
         Gets the flow_config_values of this CreateDataFlowValidationDetails.
 
         :return: The flow_config_values of this CreateDataFlowValidationDetails.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._flow_config_values
 
@@ -376,7 +376,7 @@ class CreateDataFlowValidationDetails(object):
         Sets the flow_config_values of this CreateDataFlowValidationDetails.
 
         :param flow_config_values: The flow_config_values of this CreateDataFlowValidationDetails.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._flow_config_values = flow_config_values
 
@@ -410,7 +410,7 @@ class CreateDataFlowValidationDetails(object):
         Gets the metadata of this CreateDataFlowValidationDetails.
 
         :return: The metadata of this CreateDataFlowValidationDetails.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -420,7 +420,7 @@ class CreateDataFlowValidationDetails(object):
         Sets the metadata of this CreateDataFlowValidationDetails.
 
         :param metadata: The metadata of this CreateDataFlowValidationDetails.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

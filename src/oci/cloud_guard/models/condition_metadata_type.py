@@ -24,7 +24,7 @@ class ConditionMetadataType(object):
 
         :param service_types:
             The value to assign to the service_types property of this ConditionMetadataType.
-        :type service_types: list[ServiceTypeSummary]
+        :type service_types: list[oci.cloud_guard.models.ServiceTypeSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class ConditionMetadataType(object):
 
 
         :return: The service_types of this ConditionMetadataType.
-        :rtype: list[ServiceTypeSummary]
+        :rtype: list[oci.cloud_guard.models.ServiceTypeSummary]
         """
         return self._service_types
 
@@ -84,7 +84,7 @@ class ConditionMetadataType(object):
 
 
         :param service_types: The service_types of this ConditionMetadataType.
-        :type: list[ServiceTypeSummary]
+        :type: list[oci.cloud_guard.models.ServiceTypeSummary]
         """
         self._service_types = service_types
 

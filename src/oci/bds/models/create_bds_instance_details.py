@@ -48,11 +48,11 @@ class CreateBdsInstanceDetails(object):
 
         :param network_config:
             The value to assign to the network_config property of this CreateBdsInstanceDetails.
-        :type network_config: NetworkConfig
+        :type network_config: oci.bds.models.NetworkConfig
 
         :param nodes:
             The value to assign to the nodes property of this CreateBdsInstanceDetails.
-        :type nodes: list[CreateNodeDetails]
+        :type nodes: list[oci.bds.models.CreateNodeDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateBdsInstanceDetails.
@@ -279,7 +279,7 @@ class CreateBdsInstanceDetails(object):
 
 
         :return: The network_config of this CreateBdsInstanceDetails.
-        :rtype: NetworkConfig
+        :rtype: oci.bds.models.NetworkConfig
         """
         return self._network_config
 
@@ -291,7 +291,7 @@ class CreateBdsInstanceDetails(object):
 
 
         :param network_config: The network_config of this CreateBdsInstanceDetails.
-        :type: NetworkConfig
+        :type: oci.bds.models.NetworkConfig
         """
         self._network_config = network_config
 
@@ -303,7 +303,7 @@ class CreateBdsInstanceDetails(object):
 
 
         :return: The nodes of this CreateBdsInstanceDetails.
-        :rtype: list[CreateNodeDetails]
+        :rtype: list[oci.bds.models.CreateNodeDetails]
         """
         return self._nodes
 
@@ -315,7 +315,7 @@ class CreateBdsInstanceDetails(object):
 
 
         :param nodes: The nodes of this CreateBdsInstanceDetails.
-        :type: list[CreateNodeDetails]
+        :type: list[oci.bds.models.CreateNodeDetails]
         """
         self._nodes = nodes
 

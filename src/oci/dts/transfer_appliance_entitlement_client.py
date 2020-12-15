@@ -114,6 +114,9 @@ class TransferApplianceEntitlementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferApplianceEntitlement`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_transfer_appliance_entitlement.py.html>`__ to see an example of how to use create_transfer_appliance_entitlement API.
         """
         resource_path = "/transferApplianceEntitlement"
         method = "POST"
@@ -188,6 +191,9 @@ class TransferApplianceEntitlementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferApplianceEntitlement`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_appliance_entitlement.py.html>`__ to see an example of how to use get_transfer_appliance_entitlement API.
         """
         resource_path = "/transferApplianceEntitlement/{id}"
         method = "GET"
@@ -271,6 +277,9 @@ class TransferApplianceEntitlementClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dts.models.TransferApplianceEntitlementSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_transfer_appliance_entitlement.py.html>`__ to see an example of how to use list_transfer_appliance_entitlement API.
         """
         resource_path = "/transferApplianceEntitlement"
         method = "GET"

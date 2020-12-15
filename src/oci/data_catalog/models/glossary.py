@@ -123,7 +123,7 @@ class Glossary(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this Glossary.
-        :type custom_property_members: list[CustomPropertyGetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
 
         :param import_job_definition_key:
             The value to assign to the import_job_definition_key property of this Glossary.
@@ -500,7 +500,7 @@ class Glossary(object):
 
 
         :return: The custom_property_members of this Glossary.
-        :rtype: list[CustomPropertyGetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         return self._custom_property_members
 
@@ -512,7 +512,7 @@ class Glossary(object):
 
 
         :param custom_property_members: The custom_property_members of this Glossary.
-        :type: list[CustomPropertyGetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         self._custom_property_members = custom_property_members
 

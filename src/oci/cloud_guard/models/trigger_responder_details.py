@@ -24,7 +24,7 @@ class TriggerResponderDetails(object):
 
         :param configurations:
             The value to assign to the configurations property of this TriggerResponderDetails.
-        :type configurations: list[ResponderConfiguration]
+        :type configurations: list[oci.cloud_guard.models.ResponderConfiguration]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class TriggerResponderDetails(object):
 
 
         :return: The configurations of this TriggerResponderDetails.
-        :rtype: list[ResponderConfiguration]
+        :rtype: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         return self._configurations
 
@@ -84,7 +84,7 @@ class TriggerResponderDetails(object):
 
 
         :param configurations: The configurations of this TriggerResponderDetails.
-        :type: list[ResponderConfiguration]
+        :type: list[oci.cloud_guard.models.ResponderConfiguration]
         """
         self._configurations = configurations
 

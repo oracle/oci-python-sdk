@@ -93,7 +93,7 @@ class Tag(object):
 
         :param validator:
             The value to assign to the validator property of this Tag.
-        :type validator: BaseTagDefinitionValidator
+        :type validator: oci.identity.models.BaseTagDefinitionValidator
 
         """
         self.swagger_types = {
@@ -474,7 +474,7 @@ class Tag(object):
         Gets the validator of this Tag.
 
         :return: The validator of this Tag.
-        :rtype: BaseTagDefinitionValidator
+        :rtype: oci.identity.models.BaseTagDefinitionValidator
         """
         return self._validator
 
@@ -484,7 +484,7 @@ class Tag(object):
         Sets the validator of this Tag.
 
         :param validator: The validator of this Tag.
-        :type: BaseTagDefinitionValidator
+        :type: oci.identity.models.BaseTagDefinitionValidator
         """
         self._validator = validator
 

@@ -106,7 +106,7 @@ class ResourceActionSummary(object):
 
         :param action:
             The value to assign to the action property of this ResourceActionSummary.
-        :type action: Action
+        :type action: oci.optimizer.models.Action
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ResourceActionSummary.
@@ -408,7 +408,7 @@ class ResourceActionSummary(object):
         **[Required]** Gets the action of this ResourceActionSummary.
 
         :return: The action of this ResourceActionSummary.
-        :rtype: Action
+        :rtype: oci.optimizer.models.Action
         """
         return self._action
 
@@ -418,7 +418,7 @@ class ResourceActionSummary(object):
         Sets the action of this ResourceActionSummary.
 
         :param action: The action of this ResourceActionSummary.
-        :type: Action
+        :type: oci.optimizer.models.Action
         """
         self._action = action
 

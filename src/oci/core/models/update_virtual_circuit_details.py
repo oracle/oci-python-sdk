@@ -32,7 +32,7 @@ class UpdateVirtualCircuitDetails(object):
 
         :param cross_connect_mappings:
             The value to assign to the cross_connect_mappings property of this UpdateVirtualCircuitDetails.
-        :type cross_connect_mappings: list[CrossConnectMapping]
+        :type cross_connect_mappings: list[oci.core.models.CrossConnectMapping]
 
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this UpdateVirtualCircuitDetails.
@@ -155,7 +155,7 @@ class UpdateVirtualCircuitDetails(object):
 
 
         :return: The cross_connect_mappings of this UpdateVirtualCircuitDetails.
-        :rtype: list[CrossConnectMapping]
+        :rtype: list[oci.core.models.CrossConnectMapping]
         """
         return self._cross_connect_mappings
 
@@ -172,7 +172,7 @@ class UpdateVirtualCircuitDetails(object):
 
 
         :param cross_connect_mappings: The cross_connect_mappings of this UpdateVirtualCircuitDetails.
-        :type: list[CrossConnectMapping]
+        :type: list[oci.core.models.CrossConnectMapping]
         """
         self._cross_connect_mappings = cross_connect_mappings
 

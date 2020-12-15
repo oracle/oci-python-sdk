@@ -24,7 +24,7 @@ class GlossaryCollection(object):
 
         :param items:
             The value to assign to the items property of this GlossaryCollection.
-        :type items: list[GlossarySummary]
+        :type items: list[oci.data_catalog.models.GlossarySummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class GlossaryCollection(object):
 
 
         :return: The items of this GlossaryCollection.
-        :rtype: list[GlossarySummary]
+        :rtype: list[oci.data_catalog.models.GlossarySummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class GlossaryCollection(object):
 
 
         :param items: The items of this GlossaryCollection.
-        :type: list[GlossarySummary]
+        :type: list[oci.data_catalog.models.GlossarySummary]
         """
         self._items = items
 

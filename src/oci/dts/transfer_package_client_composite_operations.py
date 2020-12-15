@@ -72,7 +72,7 @@ class TransferPackageClientCompositeOperations(object):
         :param str transfer_package_label: (required)
             Label of the Transfer Package
 
-        :param UpdateTransferPackageDetails update_transfer_package_details: (required)
+        :param oci.dts.models.UpdateTransferPackageDetails update_transfer_package_details: (required)
             fields to update
 
         :param list[str] wait_for_states:

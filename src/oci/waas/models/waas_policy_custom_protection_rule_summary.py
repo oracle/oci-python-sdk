@@ -46,7 +46,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
 
         :param exclusions:
             The value to assign to the exclusions property of this WaasPolicyCustomProtectionRuleSummary.
-        :type exclusions: list[ProtectionRuleExclusion]
+        :type exclusions: list[oci.waas.models.ProtectionRuleExclusion]
 
         """
         self.swagger_types = {
@@ -189,7 +189,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
         Gets the exclusions of this WaasPolicyCustomProtectionRuleSummary.
 
         :return: The exclusions of this WaasPolicyCustomProtectionRuleSummary.
-        :rtype: list[ProtectionRuleExclusion]
+        :rtype: list[oci.waas.models.ProtectionRuleExclusion]
         """
         return self._exclusions
 
@@ -199,7 +199,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
         Sets the exclusions of this WaasPolicyCustomProtectionRuleSummary.
 
         :param exclusions: The exclusions of this WaasPolicyCustomProtectionRuleSummary.
-        :type: list[ProtectionRuleExclusion]
+        :type: list[oci.waas.models.ProtectionRuleExclusion]
         """
         self._exclusions = exclusions
 

@@ -108,6 +108,9 @@ from .pattern import Pattern
 from .pattern_collection import PatternCollection
 from .pattern_summary import PatternSummary
 from .property_definition import PropertyDefinition
+from .rule_attribute import RuleAttribute
+from .rule_collection import RuleCollection
+from .rule_summary import RuleSummary
 from .search_criteria import SearchCriteria
 from .search_result import SearchResult
 from .search_result_collection import SearchResultCollection
@@ -255,6 +258,9 @@ data_catalog_type_mapping = {
     "PatternCollection": PatternCollection,
     "PatternSummary": PatternSummary,
     "PropertyDefinition": PropertyDefinition,
+    "RuleAttribute": RuleAttribute,
+    "RuleCollection": RuleCollection,
+    "RuleSummary": RuleSummary,
     "SearchCriteria": SearchCriteria,
     "SearchResult": SearchResult,
     "SearchResultCollection": SearchResultCollection,

@@ -21,7 +21,7 @@ class ListenerRuleSummary(object):
 
         :param rule:
             The value to assign to the rule property of this ListenerRuleSummary.
-        :type rule: Rule
+        :type rule: oci.load_balancer.models.Rule
 
         :param rule_set_name:
             The value to assign to the rule_set_name property of this ListenerRuleSummary.
@@ -49,7 +49,7 @@ class ListenerRuleSummary(object):
 
 
         :return: The rule of this ListenerRuleSummary.
-        :rtype: Rule
+        :rtype: oci.load_balancer.models.Rule
         """
         return self._rule
 
@@ -61,7 +61,7 @@ class ListenerRuleSummary(object):
 
 
         :param rule: The rule of this ListenerRuleSummary.
-        :type: Rule
+        :type: oci.load_balancer.models.Rule
         """
         self._rule = rule
 

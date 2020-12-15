@@ -20,7 +20,7 @@ class QueryWorkRequestCollection(object):
 
         :param items:
             The value to assign to the items property of this QueryWorkRequestCollection.
-        :type items: list[QueryWorkRequestSummary]
+        :type items: list[oci.log_analytics.models.QueryWorkRequestSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class QueryWorkRequestCollection(object):
 
 
         :return: The items of this QueryWorkRequestCollection.
-        :rtype: list[QueryWorkRequestSummary]
+        :rtype: list[oci.log_analytics.models.QueryWorkRequestSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class QueryWorkRequestCollection(object):
 
 
         :param items: The items of this QueryWorkRequestCollection.
-        :type: list[QueryWorkRequestSummary]
+        :type: list[oci.log_analytics.models.QueryWorkRequestSummary]
         """
         self._items = items
 

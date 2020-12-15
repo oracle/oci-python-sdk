@@ -110,7 +110,7 @@ class ManagementAgent(object):
 
         :param plugin_list:
             The value to assign to the plugin_list property of this ManagementAgent.
-        :type plugin_list: list[ManagementAgentPluginDetails]
+        :type plugin_list: list[oci.management_agent.models.ManagementAgentPluginDetails]
 
         :param compartment_id:
             The value to assign to the compartment_id property of this ManagementAgent.
@@ -454,7 +454,7 @@ class ManagementAgent(object):
 
 
         :return: The plugin_list of this ManagementAgent.
-        :rtype: list[ManagementAgentPluginDetails]
+        :rtype: list[oci.management_agent.models.ManagementAgentPluginDetails]
         """
         return self._plugin_list
 
@@ -466,7 +466,7 @@ class ManagementAgent(object):
 
 
         :param plugin_list: The plugin_list of this ManagementAgent.
-        :type: list[ManagementAgentPluginDetails]
+        :type: list[oci.management_agent.models.ManagementAgentPluginDetails]
         """
         self._plugin_list = plugin_list
 

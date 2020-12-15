@@ -35,7 +35,7 @@ class ObjectStorageClientCompositeOperations(object):
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
 
-        :param CopyObjectDetails copy_object_details: (required)
+        :param oci.object_storage.models.CopyObjectDetails copy_object_details: (required)
             The source and destination of the object to be copied.
 
         :param list[str] wait_for_states:

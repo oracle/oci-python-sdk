@@ -20,7 +20,7 @@ class LevelsConfiguration(object):
 
         :param items:
             The value to assign to the items property of this LevelsConfiguration.
-        :type items: list[LevelConfiguration]
+        :type items: list[oci.optimizer.models.LevelConfiguration]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class LevelsConfiguration(object):
 
 
         :return: The items of this LevelsConfiguration.
-        :rtype: list[LevelConfiguration]
+        :rtype: list[oci.optimizer.models.LevelConfiguration]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class LevelsConfiguration(object):
 
 
         :param items: The items of this LevelsConfiguration.
-        :type: list[LevelConfiguration]
+        :type: list[oci.optimizer.models.LevelConfiguration]
         """
         self._items = items
 

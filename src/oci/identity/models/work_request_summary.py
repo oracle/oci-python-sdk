@@ -72,11 +72,11 @@ class WorkRequestSummary(object):
 
         :param resources:
             The value to assign to the resources property of this WorkRequestSummary.
-        :type resources: list[WorkRequestResource]
+        :type resources: list[oci.identity.models.WorkRequestResource]
 
         :param errors:
             The value to assign to the errors property of this WorkRequestSummary.
-        :type errors: list[WorkRequestError]
+        :type errors: list[oci.identity.models.WorkRequestError]
 
         :param time_accepted:
             The value to assign to the time_accepted property of this WorkRequestSummary.
@@ -248,7 +248,7 @@ class WorkRequestSummary(object):
 
 
         :return: The resources of this WorkRequestSummary.
-        :rtype: list[WorkRequestResource]
+        :rtype: list[oci.identity.models.WorkRequestResource]
         """
         return self._resources
 
@@ -260,7 +260,7 @@ class WorkRequestSummary(object):
 
 
         :param resources: The resources of this WorkRequestSummary.
-        :type: list[WorkRequestResource]
+        :type: list[oci.identity.models.WorkRequestResource]
         """
         self._resources = resources
 
@@ -272,7 +272,7 @@ class WorkRequestSummary(object):
 
 
         :return: The errors of this WorkRequestSummary.
-        :rtype: list[WorkRequestError]
+        :rtype: list[oci.identity.models.WorkRequestError]
         """
         return self._errors
 
@@ -284,7 +284,7 @@ class WorkRequestSummary(object):
 
 
         :param errors: The errors of this WorkRequestSummary.
-        :type: list[WorkRequestError]
+        :type: list[oci.identity.models.WorkRequestError]
         """
         self._errors = errors
 

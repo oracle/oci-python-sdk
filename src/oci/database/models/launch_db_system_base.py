@@ -85,7 +85,7 @@ class LaunchDbSystemBase(object):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemBase.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
@@ -118,6 +118,14 @@ class LaunchDbSystemBase(object):
         :param initial_data_storage_size_in_gb:
             The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemBase.
         :type initial_data_storage_size_in_gb: int
+
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this LaunchDbSystemBase.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this LaunchDbSystemBase.
+        :type kms_key_version_id: str
 
         :param node_count:
             The value to assign to the node_count property of this LaunchDbSystemBase.
@@ -161,6 +169,8 @@ class LaunchDbSystemBase(object):
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
             'initial_data_storage_size_in_gb': 'int',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -188,6 +198,8 @@ class LaunchDbSystemBase(object):
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
             'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -214,6 +226,8 @@ class LaunchDbSystemBase(object):
         self._cluster_name = None
         self._data_storage_percentage = None
         self._initial_data_storage_size_in_gb = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._node_count = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -580,7 +594,7 @@ class LaunchDbSystemBase(object):
         Gets the db_system_options of this LaunchDbSystemBase.
 
         :return: The db_system_options of this LaunchDbSystemBase.
-        :rtype: DbSystemOptions
+        :rtype: oci.database.models.DbSystemOptions
         """
         return self._db_system_options
 
@@ -590,7 +604,7 @@ class LaunchDbSystemBase(object):
         Sets the db_system_options of this LaunchDbSystemBase.
 
         :param db_system_options: The db_system_options of this LaunchDbSystemBase.
-        :type: DbSystemOptions
+        :type: oci.database.models.DbSystemOptions
         """
         self._db_system_options = db_system_options
 
@@ -835,6 +849,54 @@ class LaunchDbSystemBase(object):
         :type: int
         """
         self._initial_data_storage_size_in_gb = initial_data_storage_size_in_gb
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this LaunchDbSystemBase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this LaunchDbSystemBase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this LaunchDbSystemBase.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this LaunchDbSystemBase.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
 
     @property
     def node_count(self):

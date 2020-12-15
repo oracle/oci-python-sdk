@@ -24,7 +24,7 @@ class SteeringPolicyPriorityRuleCase(object):
 
         :param answer_data:
             The value to assign to the answer_data property of this SteeringPolicyPriorityRuleCase.
-        :type answer_data: list[SteeringPolicyPriorityAnswerData]
+        :type answer_data: list[oci.dns.models.SteeringPolicyPriorityAnswerData]
 
         """
         self.swagger_types = {
@@ -82,7 +82,7 @@ class SteeringPolicyPriorityRuleCase(object):
 
 
         :return: The answer_data of this SteeringPolicyPriorityRuleCase.
-        :rtype: list[SteeringPolicyPriorityAnswerData]
+        :rtype: list[oci.dns.models.SteeringPolicyPriorityAnswerData]
         """
         return self._answer_data
 
@@ -94,7 +94,7 @@ class SteeringPolicyPriorityRuleCase(object):
 
 
         :param answer_data: The answer_data of this SteeringPolicyPriorityRuleCase.
-        :type: list[SteeringPolicyPriorityAnswerData]
+        :type: list[oci.dns.models.SteeringPolicyPriorityAnswerData]
         """
         self._answer_data = answer_data
 

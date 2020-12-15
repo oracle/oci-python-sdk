@@ -91,7 +91,7 @@ class DataAsset(object):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAsset.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAsset.
@@ -99,11 +99,11 @@ class DataAsset(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAsset.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAsset.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this DataAsset.
@@ -415,7 +415,7 @@ class DataAsset(object):
         Gets the native_type_system of this DataAsset.
 
         :return: The native_type_system of this DataAsset.
-        :rtype: TypeSystem
+        :rtype: oci.data_integration.models.TypeSystem
         """
         return self._native_type_system
 
@@ -425,7 +425,7 @@ class DataAsset(object):
         Sets the native_type_system of this DataAsset.
 
         :param native_type_system: The native_type_system of this DataAsset.
-        :type: TypeSystem
+        :type: oci.data_integration.models.TypeSystem
         """
         self._native_type_system = native_type_system
 
@@ -459,7 +459,7 @@ class DataAsset(object):
         Gets the parent_ref of this DataAsset.
 
         :return: The parent_ref of this DataAsset.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -469,7 +469,7 @@ class DataAsset(object):
         Sets the parent_ref of this DataAsset.
 
         :param parent_ref: The parent_ref of this DataAsset.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -479,7 +479,7 @@ class DataAsset(object):
         Gets the metadata of this DataAsset.
 
         :return: The metadata of this DataAsset.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -489,7 +489,7 @@ class DataAsset(object):
         Sets the metadata of this DataAsset.
 
         :param metadata: The metadata of this DataAsset.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

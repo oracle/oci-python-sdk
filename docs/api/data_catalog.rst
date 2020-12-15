@@ -122,6 +122,9 @@ Data Catalog
     oci.data_catalog.models.PatternCollection
     oci.data_catalog.models.PatternSummary
     oci.data_catalog.models.PropertyDefinition
+    oci.data_catalog.models.RuleAttribute
+    oci.data_catalog.models.RuleCollection
+    oci.data_catalog.models.RuleSummary
     oci.data_catalog.models.SearchCriteria
     oci.data_catalog.models.SearchResult
     oci.data_catalog.models.SearchResultCollection

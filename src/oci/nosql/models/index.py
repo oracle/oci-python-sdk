@@ -60,7 +60,7 @@ class Index(object):
 
         :param keys:
             The value to assign to the keys property of this Index.
-        :type keys: list[IndexKey]
+        :type keys: list[oci.nosql.models.IndexKey]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Index.
@@ -205,7 +205,7 @@ class Index(object):
 
 
         :return: The keys of this Index.
-        :rtype: list[IndexKey]
+        :rtype: list[oci.nosql.models.IndexKey]
         """
         return self._keys
 
@@ -217,7 +217,7 @@ class Index(object):
 
 
         :param keys: The keys of this Index.
-        :type: list[IndexKey]
+        :type: list[oci.nosql.models.IndexKey]
         """
         self._keys = keys
 

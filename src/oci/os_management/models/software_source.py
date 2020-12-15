@@ -180,7 +180,7 @@ class SoftwareSource(object):
 
         :param associated_managed_instances:
             The value to assign to the associated_managed_instances property of this SoftwareSource.
-        :type associated_managed_instances: list[Id]
+        :type associated_managed_instances: list[oci.os_management.models.Id]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SoftwareSource.
@@ -752,7 +752,7 @@ class SoftwareSource(object):
 
 
         :return: The associated_managed_instances of this SoftwareSource.
-        :rtype: list[Id]
+        :rtype: list[oci.os_management.models.Id]
         """
         return self._associated_managed_instances
 
@@ -764,7 +764,7 @@ class SoftwareSource(object):
 
 
         :param associated_managed_instances: The associated_managed_instances of this SoftwareSource.
-        :type: list[Id]
+        :type: list[oci.os_management.models.Id]
         """
         self._associated_managed_instances = associated_managed_instances
 

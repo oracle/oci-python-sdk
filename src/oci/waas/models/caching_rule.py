@@ -54,7 +54,7 @@ class CachingRule(object):
 
         :param criteria:
             The value to assign to the criteria property of this CachingRule.
-        :type criteria: list[CachingRuleCriteria]
+        :type criteria: list[oci.waas.models.CachingRuleCriteria]
 
         """
         self.swagger_types = {
@@ -255,7 +255,7 @@ class CachingRule(object):
 
 
         :return: The criteria of this CachingRule.
-        :rtype: list[CachingRuleCriteria]
+        :rtype: list[oci.waas.models.CachingRuleCriteria]
         """
         return self._criteria
 
@@ -267,7 +267,7 @@ class CachingRule(object):
 
 
         :param criteria: The criteria of this CachingRule.
-        :type: list[CachingRuleCriteria]
+        :type: list[oci.waas.models.CachingRuleCriteria]
         """
         self._criteria = criteria
 

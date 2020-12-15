@@ -28,7 +28,7 @@ class IngressSecurityRule(object):
 
         :param icmp_options:
             The value to assign to the icmp_options property of this IngressSecurityRule.
-        :type icmp_options: IcmpOptions
+        :type icmp_options: oci.core.models.IcmpOptions
 
         :param is_stateless:
             The value to assign to the is_stateless property of this IngressSecurityRule.
@@ -50,11 +50,11 @@ class IngressSecurityRule(object):
 
         :param tcp_options:
             The value to assign to the tcp_options property of this IngressSecurityRule.
-        :type tcp_options: TcpOptions
+        :type tcp_options: oci.core.models.TcpOptions
 
         :param udp_options:
             The value to assign to the udp_options property of this IngressSecurityRule.
-        :type udp_options: UdpOptions
+        :type udp_options: oci.core.models.UdpOptions
 
         :param description:
             The value to assign to the description property of this IngressSecurityRule.
@@ -113,7 +113,7 @@ class IngressSecurityRule(object):
 
 
         :return: The icmp_options of this IngressSecurityRule.
-        :rtype: IcmpOptions
+        :rtype: oci.core.models.IcmpOptions
         """
         return self._icmp_options
 
@@ -138,7 +138,7 @@ class IngressSecurityRule(object):
 
 
         :param icmp_options: The icmp_options of this IngressSecurityRule.
-        :type: IcmpOptions
+        :type: oci.core.models.IcmpOptions
         """
         self._icmp_options = icmp_options
 
@@ -309,7 +309,7 @@ class IngressSecurityRule(object):
 
 
         :return: The tcp_options of this IngressSecurityRule.
-        :rtype: TcpOptions
+        :rtype: oci.core.models.TcpOptions
         """
         return self._tcp_options
 
@@ -322,7 +322,7 @@ class IngressSecurityRule(object):
 
 
         :param tcp_options: The tcp_options of this IngressSecurityRule.
-        :type: TcpOptions
+        :type: oci.core.models.TcpOptions
         """
         self._tcp_options = tcp_options
 
@@ -335,7 +335,7 @@ class IngressSecurityRule(object):
 
 
         :return: The udp_options of this IngressSecurityRule.
-        :rtype: UdpOptions
+        :rtype: oci.core.models.UdpOptions
         """
         return self._udp_options
 
@@ -348,7 +348,7 @@ class IngressSecurityRule(object):
 
 
         :param udp_options: The udp_options of this IngressSecurityRule.
-        :type: UdpOptions
+        :type: oci.core.models.UdpOptions
         """
         self._udp_options = udp_options
 

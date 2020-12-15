@@ -20,11 +20,11 @@ class UpdateAuthenticationPolicyDetails(object):
 
         :param password_policy:
             The value to assign to the password_policy property of this UpdateAuthenticationPolicyDetails.
-        :type password_policy: PasswordPolicy
+        :type password_policy: oci.identity.models.PasswordPolicy
 
         :param network_policy:
             The value to assign to the network_policy property of this UpdateAuthenticationPolicyDetails.
-        :type network_policy: NetworkPolicy
+        :type network_policy: oci.identity.models.NetworkPolicy
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class UpdateAuthenticationPolicyDetails(object):
         Gets the password_policy of this UpdateAuthenticationPolicyDetails.
 
         :return: The password_policy of this UpdateAuthenticationPolicyDetails.
-        :rtype: PasswordPolicy
+        :rtype: oci.identity.models.PasswordPolicy
         """
         return self._password_policy
 
@@ -56,7 +56,7 @@ class UpdateAuthenticationPolicyDetails(object):
         Sets the password_policy of this UpdateAuthenticationPolicyDetails.
 
         :param password_policy: The password_policy of this UpdateAuthenticationPolicyDetails.
-        :type: PasswordPolicy
+        :type: oci.identity.models.PasswordPolicy
         """
         self._password_policy = password_policy
 
@@ -66,7 +66,7 @@ class UpdateAuthenticationPolicyDetails(object):
         Gets the network_policy of this UpdateAuthenticationPolicyDetails.
 
         :return: The network_policy of this UpdateAuthenticationPolicyDetails.
-        :rtype: NetworkPolicy
+        :rtype: oci.identity.models.NetworkPolicy
         """
         return self._network_policy
 
@@ -76,7 +76,7 @@ class UpdateAuthenticationPolicyDetails(object):
         Sets the network_policy of this UpdateAuthenticationPolicyDetails.
 
         :param network_policy: The network_policy of this UpdateAuthenticationPolicyDetails.
-        :type: NetworkPolicy
+        :type: oci.identity.models.NetworkPolicy
         """
         self._network_policy = network_policy
 

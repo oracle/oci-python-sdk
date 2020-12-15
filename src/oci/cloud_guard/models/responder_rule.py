@@ -92,7 +92,7 @@ class ResponderRule(object):
 
         :param details:
             The value to assign to the details property of this ResponderRule.
-        :type details: ResponderRuleDetails
+        :type details: oci.cloud_guard.models.ResponderRuleDetails
 
         :param time_created:
             The value to assign to the time_created property of this ResponderRule.
@@ -315,7 +315,7 @@ class ResponderRule(object):
         Gets the details of this ResponderRule.
 
         :return: The details of this ResponderRule.
-        :rtype: ResponderRuleDetails
+        :rtype: oci.cloud_guard.models.ResponderRuleDetails
         """
         return self._details
 
@@ -325,7 +325,7 @@ class ResponderRule(object):
         Sets the details of this ResponderRule.
 
         :param details: The details of this ResponderRule.
-        :type: ResponderRuleDetails
+        :type: oci.cloud_guard.models.ResponderRuleDetails
         """
         self._details = details
 

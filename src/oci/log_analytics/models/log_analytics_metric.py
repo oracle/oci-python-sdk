@@ -128,7 +128,7 @@ class LogAnalyticsMetric(object):
 
         :param sources:
             The value to assign to the sources property of this LogAnalyticsMetric.
-        :type sources: list[LogAnalyticsSource]
+        :type sources: list[oci.log_analytics.models.LogAnalyticsSource]
 
         :param entity_type:
             The value to assign to the entity_type property of this LogAnalyticsMetric.
@@ -621,7 +621,7 @@ class LogAnalyticsMetric(object):
 
 
         :return: The sources of this LogAnalyticsMetric.
-        :rtype: list[LogAnalyticsSource]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsSource]
         """
         return self._sources
 
@@ -633,7 +633,7 @@ class LogAnalyticsMetric(object):
 
 
         :param sources: The sources of this LogAnalyticsMetric.
-        :type: list[LogAnalyticsSource]
+        :type: list[oci.log_analytics.models.LogAnalyticsSource]
         """
         self._sources = sources
 

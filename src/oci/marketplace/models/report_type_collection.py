@@ -20,7 +20,7 @@ class ReportTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this ReportTypeCollection.
-        :type items: list[ReportTypeSummary]
+        :type items: list[oci.marketplace.models.ReportTypeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ReportTypeCollection(object):
 
 
         :return: The items of this ReportTypeCollection.
-        :rtype: list[ReportTypeSummary]
+        :rtype: list[oci.marketplace.models.ReportTypeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ReportTypeCollection(object):
 
 
         :param items: The items of this ReportTypeCollection.
-        :type: list[ReportTypeSummary]
+        :type: list[oci.marketplace.models.ReportTypeSummary]
         """
         self._items = items
 

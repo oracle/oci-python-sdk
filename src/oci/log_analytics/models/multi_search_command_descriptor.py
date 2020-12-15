@@ -38,15 +38,15 @@ class MultiSearchCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this MultiSearchCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this MultiSearchCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param sub_queries:
             The value to assign to the sub_queries property of this MultiSearchCommandDescriptor.
-        :type sub_queries: list[ParseQueryOutput]
+        :type sub_queries: list[oci.log_analytics.models.ParseQueryOutput]
 
         """
         self.swagger_types = {
@@ -86,7 +86,7 @@ class MultiSearchCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The sub_queries of this MultiSearchCommandDescriptor.
-        :rtype: list[ParseQueryOutput]
+        :rtype: list[oci.log_analytics.models.ParseQueryOutput]
         """
         return self._sub_queries
 
@@ -98,7 +98,7 @@ class MultiSearchCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param sub_queries: The sub_queries of this MultiSearchCommandDescriptor.
-        :type: list[ParseQueryOutput]
+        :type: list[oci.log_analytics.models.ParseQueryOutput]
         """
         self._sub_queries = sub_queries
 

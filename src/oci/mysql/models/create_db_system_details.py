@@ -84,15 +84,15 @@ class CreateDbSystemDetails(object):
 
         :param backup_policy:
             The value to assign to the backup_policy property of this CreateDbSystemDetails.
-        :type backup_policy: CreateBackupPolicyDetails
+        :type backup_policy: oci.mysql.models.CreateBackupPolicyDetails
 
         :param source:
             The value to assign to the source property of this CreateDbSystemDetails.
-        :type source: CreateDbSystemSourceDetails
+        :type source: oci.mysql.models.CreateDbSystemSourceDetails
 
         :param maintenance:
             The value to assign to the maintenance property of this CreateDbSystemDetails.
-        :type maintenance: CreateMaintenanceDetails
+        :type maintenance: oci.mysql.models.CreateMaintenanceDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDbSystemDetails.
@@ -597,7 +597,7 @@ class CreateDbSystemDetails(object):
         Gets the backup_policy of this CreateDbSystemDetails.
 
         :return: The backup_policy of this CreateDbSystemDetails.
-        :rtype: CreateBackupPolicyDetails
+        :rtype: oci.mysql.models.CreateBackupPolicyDetails
         """
         return self._backup_policy
 
@@ -607,7 +607,7 @@ class CreateDbSystemDetails(object):
         Sets the backup_policy of this CreateDbSystemDetails.
 
         :param backup_policy: The backup_policy of this CreateDbSystemDetails.
-        :type: CreateBackupPolicyDetails
+        :type: oci.mysql.models.CreateBackupPolicyDetails
         """
         self._backup_policy = backup_policy
 
@@ -617,7 +617,7 @@ class CreateDbSystemDetails(object):
         Gets the source of this CreateDbSystemDetails.
 
         :return: The source of this CreateDbSystemDetails.
-        :rtype: CreateDbSystemSourceDetails
+        :rtype: oci.mysql.models.CreateDbSystemSourceDetails
         """
         return self._source
 
@@ -627,7 +627,7 @@ class CreateDbSystemDetails(object):
         Sets the source of this CreateDbSystemDetails.
 
         :param source: The source of this CreateDbSystemDetails.
-        :type: CreateDbSystemSourceDetails
+        :type: oci.mysql.models.CreateDbSystemSourceDetails
         """
         self._source = source
 
@@ -637,7 +637,7 @@ class CreateDbSystemDetails(object):
         Gets the maintenance of this CreateDbSystemDetails.
 
         :return: The maintenance of this CreateDbSystemDetails.
-        :rtype: CreateMaintenanceDetails
+        :rtype: oci.mysql.models.CreateMaintenanceDetails
         """
         return self._maintenance
 
@@ -647,7 +647,7 @@ class CreateDbSystemDetails(object):
         Sets the maintenance of this CreateDbSystemDetails.
 
         :param maintenance: The maintenance of this CreateDbSystemDetails.
-        :type: CreateMaintenanceDetails
+        :type: oci.mysql.models.CreateMaintenanceDetails
         """
         self._maintenance = maintenance
 

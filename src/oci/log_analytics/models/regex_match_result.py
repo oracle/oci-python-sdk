@@ -28,7 +28,7 @@ class RegexMatchResult(object):
 
         :param regex_steps_info:
             The value to assign to the regex_steps_info property of this RegexMatchResult.
-        :type regex_steps_info: list[StepInfo]
+        :type regex_steps_info: list[oci.log_analytics.models.StepInfo]
 
         :param step_count:
             The value to assign to the step_count property of this RegexMatchResult.
@@ -117,7 +117,7 @@ class RegexMatchResult(object):
 
 
         :return: The regex_steps_info of this RegexMatchResult.
-        :rtype: list[StepInfo]
+        :rtype: list[oci.log_analytics.models.StepInfo]
         """
         return self._regex_steps_info
 
@@ -129,7 +129,7 @@ class RegexMatchResult(object):
 
 
         :param regex_steps_info: The regex_steps_info of this RegexMatchResult.
-        :type: list[StepInfo]
+        :type: list[oci.log_analytics.models.StepInfo]
         """
         self._regex_steps_info = regex_steps_info
 

@@ -32,7 +32,7 @@ class ExadataDbSystemMigration(object):
 
         :param additional_migrations:
             The value to assign to the additional_migrations property of this ExadataDbSystemMigration.
-        :type additional_migrations: list[ExadataDbSystemMigrationSummary]
+        :type additional_migrations: list[oci.database.models.ExadataDbSystemMigrationSummary]
 
         """
         self.swagger_types = {
@@ -146,7 +146,7 @@ class ExadataDbSystemMigration(object):
 
 
         :return: The additional_migrations of this ExadataDbSystemMigration.
-        :rtype: list[ExadataDbSystemMigrationSummary]
+        :rtype: list[oci.database.models.ExadataDbSystemMigrationSummary]
         """
         return self._additional_migrations
 
@@ -158,7 +158,7 @@ class ExadataDbSystemMigration(object):
 
 
         :param additional_migrations: The additional_migrations of this ExadataDbSystemMigration.
-        :type: list[ExadataDbSystemMigrationSummary]
+        :type: list[oci.database.models.ExadataDbSystemMigrationSummary]
         """
         self._additional_migrations = additional_migrations
 

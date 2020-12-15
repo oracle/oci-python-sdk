@@ -31,7 +31,7 @@ class IntegrationInstanceClientCompositeOperations(object):
         :param str integration_instance_id: (required)
             Unique Integration Instance identifier.
 
-        :param ChangeIntegrationInstanceCompartmentDetails change_integration_instance_compartment_details: (required)
+        :param oci.integration.models.ChangeIntegrationInstanceCompartmentDetails change_integration_instance_compartment_details: (required)
             Details for the update integration instance
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class IntegrationInstanceClientCompositeOperations(object):
         Calls :py:func:`~oci.integration.IntegrationInstanceClient.create_integration_instance` and waits for the :py:class:`~oci.integration.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateIntegrationInstanceDetails create_integration_instance_details: (required)
+        :param oci.integration.models.CreateIntegrationInstanceDetails create_integration_instance_details: (required)
             Details for the new Integration Instance.
 
         :param list[str] wait_for_states:
@@ -232,7 +232,7 @@ class IntegrationInstanceClientCompositeOperations(object):
         :param str integration_instance_id: (required)
             Unique Integration Instance identifier.
 
-        :param UpdateIntegrationInstanceDetails update_integration_instance_details: (required)
+        :param oci.integration.models.UpdateIntegrationInstanceDetails update_integration_instance_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

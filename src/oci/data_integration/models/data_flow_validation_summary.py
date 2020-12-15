@@ -52,7 +52,7 @@ class DataFlowValidationSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataFlowValidationSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this DataFlowValidationSummary.
@@ -76,7 +76,7 @@ class DataFlowValidationSummary(object):
 
         :param metadata:
             The value to assign to the metadata property of this DataFlowValidationSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -329,7 +329,7 @@ class DataFlowValidationSummary(object):
         Gets the parent_ref of this DataFlowValidationSummary.
 
         :return: The parent_ref of this DataFlowValidationSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -339,7 +339,7 @@ class DataFlowValidationSummary(object):
         Sets the parent_ref of this DataFlowValidationSummary.
 
         :param parent_ref: The parent_ref of this DataFlowValidationSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -469,7 +469,7 @@ class DataFlowValidationSummary(object):
         Gets the metadata of this DataFlowValidationSummary.
 
         :return: The metadata of this DataFlowValidationSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -479,7 +479,7 @@ class DataFlowValidationSummary(object):
         Sets the metadata of this DataFlowValidationSummary.
 
         :param metadata: The metadata of this DataFlowValidationSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

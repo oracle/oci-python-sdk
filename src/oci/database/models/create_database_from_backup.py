@@ -34,15 +34,25 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
             Allowed values for this property are: "NONE", "DB_BACKUP"
         :type source: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateDatabaseFromBackup.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this CreateDatabaseFromBackup.
+        :type kms_key_version_id: str
+
         :param database:
             The value to assign to the database property of this CreateDatabaseFromBackup.
-        :type database: CreateDatabaseFromBackupDetails
+        :type database: oci.database.models.CreateDatabaseFromBackupDetails
 
         """
         self.swagger_types = {
             'db_home_id': 'str',
             'db_version': 'str',
             'source': 'str',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'database': 'CreateDatabaseFromBackupDetails'
         }
 
@@ -50,12 +60,16 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
             'db_home_id': 'dbHomeId',
             'db_version': 'dbVersion',
             'source': 'source',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'database': 'database'
         }
 
         self._db_home_id = None
         self._db_version = None
         self._source = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._database = None
         self._source = 'DB_BACKUP'
 
@@ -65,7 +79,7 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
         **[Required]** Gets the database of this CreateDatabaseFromBackup.
 
         :return: The database of this CreateDatabaseFromBackup.
-        :rtype: CreateDatabaseFromBackupDetails
+        :rtype: oci.database.models.CreateDatabaseFromBackupDetails
         """
         return self._database
 
@@ -75,7 +89,7 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
         Sets the database of this CreateDatabaseFromBackup.
 
         :param database: The database of this CreateDatabaseFromBackup.
-        :type: CreateDatabaseFromBackupDetails
+        :type: oci.database.models.CreateDatabaseFromBackupDetails
         """
         self._database = database
 

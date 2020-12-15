@@ -58,7 +58,7 @@ class ObjectLifecycleRule(object):
 
         :param object_name_filter:
             The value to assign to the object_name_filter property of this ObjectLifecycleRule.
-        :type object_name_filter: ObjectNameFilter
+        :type object_name_filter: oci.object_storage.models.ObjectNameFilter
 
         """
         self.swagger_types = {
@@ -273,7 +273,7 @@ class ObjectLifecycleRule(object):
         Gets the object_name_filter of this ObjectLifecycleRule.
 
         :return: The object_name_filter of this ObjectLifecycleRule.
-        :rtype: ObjectNameFilter
+        :rtype: oci.object_storage.models.ObjectNameFilter
         """
         return self._object_name_filter
 
@@ -283,7 +283,7 @@ class ObjectLifecycleRule(object):
         Sets the object_name_filter of this ObjectLifecycleRule.
 
         :param object_name_filter: The object_name_filter of this ObjectLifecycleRule.
-        :type: ObjectNameFilter
+        :type: oci.object_storage.models.ObjectNameFilter
         """
         self._object_name_filter = object_name_filter
 

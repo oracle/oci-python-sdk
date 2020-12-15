@@ -36,7 +36,7 @@ class ManagementDashboardForImportExportDetails(object):
 
         :param tiles:
             The value to assign to the tiles property of this ManagementDashboardForImportExportDetails.
-        :type tiles: list[ManagementDashboardTileDetails]
+        :type tiles: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
 
         :param display_name:
             The value to assign to the display_name property of this ManagementDashboardForImportExportDetails.
@@ -92,7 +92,7 @@ class ManagementDashboardForImportExportDetails(object):
 
         :param saved_searches:
             The value to assign to the saved_searches property of this ManagementDashboardForImportExportDetails.
-        :type saved_searches: list[ManagementSavedSearchForImportDetails]
+        :type saved_searches: list[oci.management_dashboard.models.ManagementSavedSearchForImportDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboardForImportExportDetails.
@@ -277,7 +277,7 @@ class ManagementDashboardForImportExportDetails(object):
 
 
         :return: The tiles of this ManagementDashboardForImportExportDetails.
-        :rtype: list[ManagementDashboardTileDetails]
+        :rtype: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
         """
         return self._tiles
 
@@ -289,7 +289,7 @@ class ManagementDashboardForImportExportDetails(object):
 
 
         :param tiles: The tiles of this ManagementDashboardForImportExportDetails.
-        :type: list[ManagementDashboardTileDetails]
+        :type: list[oci.management_dashboard.models.ManagementDashboardTileDetails]
         """
         self._tiles = tiles
 
@@ -613,7 +613,7 @@ class ManagementDashboardForImportExportDetails(object):
 
 
         :return: The saved_searches of this ManagementDashboardForImportExportDetails.
-        :rtype: list[ManagementSavedSearchForImportDetails]
+        :rtype: list[oci.management_dashboard.models.ManagementSavedSearchForImportDetails]
         """
         return self._saved_searches
 
@@ -625,7 +625,7 @@ class ManagementDashboardForImportExportDetails(object):
 
 
         :param saved_searches: The saved_searches of this ManagementDashboardForImportExportDetails.
-        :type: list[ManagementSavedSearchForImportDetails]
+        :type: list[oci.management_dashboard.models.ManagementSavedSearchForImportDetails]
         """
         self._saved_searches = saved_searches
 

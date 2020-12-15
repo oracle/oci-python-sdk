@@ -28,7 +28,7 @@ class TransferJobClientCompositeOperations(object):
         Calls :py:func:`~oci.dts.TransferJobClient.create_transfer_job` and waits for the :py:class:`~oci.dts.models.TransferJob` acted upon
         to enter the given state(s).
 
-        :param CreateTransferJobDetails create_transfer_job_details: (required)
+        :param oci.dts.models.CreateTransferJobDetails create_transfer_job_details: (required)
             Creates a New Transfer Job
 
         :param list[str] wait_for_states:
@@ -116,7 +116,7 @@ class TransferJobClientCompositeOperations(object):
         :param str id: (required)
             ID of the Transfer Job
 
-        :param UpdateTransferJobDetails update_transfer_job_details: (required)
+        :param oci.dts.models.UpdateTransferJobDetails update_transfer_job_details: (required)
             fields to update
 
         :param list[str] wait_for_states:

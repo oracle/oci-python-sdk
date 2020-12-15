@@ -24,7 +24,7 @@ class ConditionGroup(object):
 
         :param condition:
             The value to assign to the condition property of this ConditionGroup.
-        :type condition: Condition
+        :type condition: oci.cloud_guard.models.Condition
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class ConditionGroup(object):
         **[Required]** Gets the condition of this ConditionGroup.
 
         :return: The condition of this ConditionGroup.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._condition
 
@@ -80,7 +80,7 @@ class ConditionGroup(object):
         Sets the condition of this ConditionGroup.
 
         :param condition: The condition of this ConditionGroup.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._condition = condition
 

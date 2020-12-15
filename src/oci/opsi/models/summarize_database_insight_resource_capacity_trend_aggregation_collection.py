@@ -68,7 +68,7 @@ class SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection(object)
 
         :param capacity_data:
             The value to assign to the capacity_data property of this SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection.
-        :type capacity_data: list[ResourceCapacityTrendAggregation]
+        :type capacity_data: list[oci.opsi.models.ResourceCapacityTrendAggregation]
 
         """
         self.swagger_types = {
@@ -236,7 +236,7 @@ class SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection(object)
 
 
         :return: The capacity_data of this SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection.
-        :rtype: list[ResourceCapacityTrendAggregation]
+        :rtype: list[oci.opsi.models.ResourceCapacityTrendAggregation]
         """
         return self._capacity_data
 
@@ -248,7 +248,7 @@ class SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection(object)
 
 
         :param capacity_data: The capacity_data of this SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection.
-        :type: list[ResourceCapacityTrendAggregation]
+        :type: list[oci.opsi.models.ResourceCapacityTrendAggregation]
         """
         self._capacity_data = capacity_data
 

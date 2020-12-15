@@ -62,7 +62,7 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateDataAssetFromObjectStorage.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param url:
             The value to assign to the url property of this UpdateDataAssetFromObjectStorage.
@@ -78,7 +78,7 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this UpdateDataAssetFromObjectStorage.
-        :type default_connection: UpdateConnectionFromObjectStorage
+        :type default_connection: oci.data_integration.models.UpdateConnectionFromObjectStorage
 
         """
         self.swagger_types = {
@@ -212,7 +212,7 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
         Gets the default_connection of this UpdateDataAssetFromObjectStorage.
 
         :return: The default_connection of this UpdateDataAssetFromObjectStorage.
-        :rtype: UpdateConnectionFromObjectStorage
+        :rtype: oci.data_integration.models.UpdateConnectionFromObjectStorage
         """
         return self._default_connection
 
@@ -222,7 +222,7 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
         Sets the default_connection of this UpdateDataAssetFromObjectStorage.
 
         :param default_connection: The default_connection of this UpdateDataAssetFromObjectStorage.
-        :type: UpdateConnectionFromObjectStorage
+        :type: oci.data_integration.models.UpdateConnectionFromObjectStorage
         """
         self._default_connection = default_connection
 

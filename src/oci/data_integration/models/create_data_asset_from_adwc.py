@@ -58,7 +58,7 @@ class CreateDataAssetFromAdwc(CreateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataAssetFromAdwc.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param service_name:
             The value to assign to the service_name property of this CreateDataAssetFromAdwc.
@@ -74,7 +74,7 @@ class CreateDataAssetFromAdwc(CreateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this CreateDataAssetFromAdwc.
-        :type default_connection: CreateConnectionFromAdwc
+        :type default_connection: oci.data_integration.models.CreateConnectionFromAdwc
 
         """
         self.swagger_types = {
@@ -205,7 +205,7 @@ class CreateDataAssetFromAdwc(CreateDataAssetDetails):
         Gets the default_connection of this CreateDataAssetFromAdwc.
 
         :return: The default_connection of this CreateDataAssetFromAdwc.
-        :rtype: CreateConnectionFromAdwc
+        :rtype: oci.data_integration.models.CreateConnectionFromAdwc
         """
         return self._default_connection
 
@@ -215,7 +215,7 @@ class CreateDataAssetFromAdwc(CreateDataAssetDetails):
         Sets the default_connection of this CreateDataAssetFromAdwc.
 
         :param default_connection: The default_connection of this CreateDataAssetFromAdwc.
-        :type: CreateConnectionFromAdwc
+        :type: oci.data_integration.models.CreateConnectionFromAdwc
         """
         self._default_connection = default_connection
 

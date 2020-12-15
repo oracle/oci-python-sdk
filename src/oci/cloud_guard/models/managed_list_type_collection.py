@@ -20,7 +20,7 @@ class ManagedListTypeCollection(object):
 
         :param items:
             The value to assign to the items property of this ManagedListTypeCollection.
-        :type items: list[ManagedListTypeSummary]
+        :type items: list[oci.cloud_guard.models.ManagedListTypeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ManagedListTypeCollection(object):
 
 
         :return: The items of this ManagedListTypeCollection.
-        :rtype: list[ManagedListTypeSummary]
+        :rtype: list[oci.cloud_guard.models.ManagedListTypeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ManagedListTypeCollection(object):
 
 
         :param items: The items of this ManagedListTypeCollection.
-        :type: list[ManagedListTypeSummary]
+        :type: list[oci.cloud_guard.models.ManagedListTypeSummary]
         """
         self._items = items
 

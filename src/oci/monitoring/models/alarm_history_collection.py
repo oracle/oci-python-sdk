@@ -28,7 +28,7 @@ class AlarmHistoryCollection(object):
 
         :param entries:
             The value to assign to the entries property of this AlarmHistoryCollection.
-        :type entries: list[AlarmHistoryEntry]
+        :type entries: list[oci.monitoring.models.AlarmHistoryEntry]
 
         """
         self.swagger_types = {
@@ -111,7 +111,7 @@ class AlarmHistoryCollection(object):
 
 
         :return: The entries of this AlarmHistoryCollection.
-        :rtype: list[AlarmHistoryEntry]
+        :rtype: list[oci.monitoring.models.AlarmHistoryEntry]
         """
         return self._entries
 
@@ -123,7 +123,7 @@ class AlarmHistoryCollection(object):
 
 
         :param entries: The entries of this AlarmHistoryCollection.
-        :type: list[AlarmHistoryEntry]
+        :type: list[oci.monitoring.models.AlarmHistoryEntry]
         """
         self._entries = entries
 

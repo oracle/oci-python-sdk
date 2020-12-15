@@ -104,19 +104,19 @@ class PatchSummary(object):
 
         :param dependent_object_metadata:
             The value to assign to the dependent_object_metadata property of this PatchSummary.
-        :type dependent_object_metadata: list[PatchObjectMetadata]
+        :type dependent_object_metadata: list[oci.data_integration.models.PatchObjectMetadata]
 
         :param patch_object_metadata:
             The value to assign to the patch_object_metadata property of this PatchSummary.
-        :type patch_object_metadata: list[PatchObjectMetadata]
+        :type patch_object_metadata: list[oci.data_integration.models.PatchObjectMetadata]
 
         :param parent_ref:
             The value to assign to the parent_ref property of this PatchSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this PatchSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this PatchSummary.
@@ -520,7 +520,7 @@ class PatchSummary(object):
 
 
         :return: The dependent_object_metadata of this PatchSummary.
-        :rtype: list[PatchObjectMetadata]
+        :rtype: list[oci.data_integration.models.PatchObjectMetadata]
         """
         return self._dependent_object_metadata
 
@@ -532,7 +532,7 @@ class PatchSummary(object):
 
 
         :param dependent_object_metadata: The dependent_object_metadata of this PatchSummary.
-        :type: list[PatchObjectMetadata]
+        :type: list[oci.data_integration.models.PatchObjectMetadata]
         """
         self._dependent_object_metadata = dependent_object_metadata
 
@@ -544,7 +544,7 @@ class PatchSummary(object):
 
 
         :return: The patch_object_metadata of this PatchSummary.
-        :rtype: list[PatchObjectMetadata]
+        :rtype: list[oci.data_integration.models.PatchObjectMetadata]
         """
         return self._patch_object_metadata
 
@@ -556,7 +556,7 @@ class PatchSummary(object):
 
 
         :param patch_object_metadata: The patch_object_metadata of this PatchSummary.
-        :type: list[PatchObjectMetadata]
+        :type: list[oci.data_integration.models.PatchObjectMetadata]
         """
         self._patch_object_metadata = patch_object_metadata
 
@@ -566,7 +566,7 @@ class PatchSummary(object):
         Gets the parent_ref of this PatchSummary.
 
         :return: The parent_ref of this PatchSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -576,7 +576,7 @@ class PatchSummary(object):
         Sets the parent_ref of this PatchSummary.
 
         :param parent_ref: The parent_ref of this PatchSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -586,7 +586,7 @@ class PatchSummary(object):
         Gets the metadata of this PatchSummary.
 
         :return: The metadata of this PatchSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -596,7 +596,7 @@ class PatchSummary(object):
         Sets the metadata of this PatchSummary.
 
         :param metadata: The metadata of this PatchSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

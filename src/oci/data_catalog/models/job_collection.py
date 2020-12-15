@@ -24,7 +24,7 @@ class JobCollection(object):
 
         :param items:
             The value to assign to the items property of this JobCollection.
-        :type items: list[JobSummary]
+        :type items: list[oci.data_catalog.models.JobSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class JobCollection(object):
 
 
         :return: The items of this JobCollection.
-        :rtype: list[JobSummary]
+        :rtype: list[oci.data_catalog.models.JobSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class JobCollection(object):
 
 
         :param items: The items of this JobCollection.
-        :type: list[JobSummary]
+        :type: list[oci.data_catalog.models.JobSummary]
         """
         self._items = items
 

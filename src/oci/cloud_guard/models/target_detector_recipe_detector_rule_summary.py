@@ -136,7 +136,7 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
 
         :param detector_details:
             The value to assign to the detector_details property of this TargetDetectorRecipeDetectorRuleSummary.
-        :type detector_details: TargetDetectorDetails
+        :type detector_details: oci.cloud_guard.models.TargetDetectorDetails
 
         :param time_created:
             The value to assign to the time_created property of this TargetDetectorRecipeDetectorRuleSummary.
@@ -413,7 +413,7 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
         Gets the detector_details of this TargetDetectorRecipeDetectorRuleSummary.
 
         :return: The detector_details of this TargetDetectorRecipeDetectorRuleSummary.
-        :rtype: TargetDetectorDetails
+        :rtype: oci.cloud_guard.models.TargetDetectorDetails
         """
         return self._detector_details
 
@@ -423,7 +423,7 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
         Sets the detector_details of this TargetDetectorRecipeDetectorRuleSummary.
 
         :param detector_details: The detector_details of this TargetDetectorRecipeDetectorRuleSummary.
-        :type: TargetDetectorDetails
+        :type: oci.cloud_guard.models.TargetDetectorDetails
         """
         self._detector_details = detector_details
 

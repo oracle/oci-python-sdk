@@ -28,7 +28,7 @@ class Group(object):
 
         :param reservations:
             The value to assign to the reservations property of this Group.
-        :type reservations: list[PartitionReservation]
+        :type reservations: list[oci.streaming.models.PartitionReservation]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class Group(object):
 
 
         :return: The reservations of this Group.
-        :rtype: list[PartitionReservation]
+        :rtype: list[oci.streaming.models.PartitionReservation]
         """
         return self._reservations
 
@@ -115,7 +115,7 @@ class Group(object):
 
 
         :param reservations: The reservations of this Group.
-        :type: list[PartitionReservation]
+        :type: list[oci.streaming.models.PartitionReservation]
         """
         self._reservations = reservations
 

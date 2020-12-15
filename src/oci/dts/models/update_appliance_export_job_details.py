@@ -105,7 +105,7 @@ class UpdateApplianceExportJobDetails(object):
 
         :param customer_shipping_address:
             The value to assign to the customer_shipping_address property of this UpdateApplianceExportJobDetails.
-        :type customer_shipping_address: ShippingAddress
+        :type customer_shipping_address: oci.dts.models.ShippingAddress
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateApplianceExportJobDetails.
@@ -512,7 +512,7 @@ class UpdateApplianceExportJobDetails(object):
         Gets the customer_shipping_address of this UpdateApplianceExportJobDetails.
 
         :return: The customer_shipping_address of this UpdateApplianceExportJobDetails.
-        :rtype: ShippingAddress
+        :rtype: oci.dts.models.ShippingAddress
         """
         return self._customer_shipping_address
 
@@ -522,7 +522,7 @@ class UpdateApplianceExportJobDetails(object):
         Sets the customer_shipping_address of this UpdateApplianceExportJobDetails.
 
         :param customer_shipping_address: The customer_shipping_address of this UpdateApplianceExportJobDetails.
-        :type: ShippingAddress
+        :type: oci.dts.models.ShippingAddress
         """
         self._customer_shipping_address = customer_shipping_address
 

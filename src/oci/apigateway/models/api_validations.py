@@ -20,7 +20,7 @@ class ApiValidations(object):
 
         :param validations:
             The value to assign to the validations property of this ApiValidations.
-        :type validations: list[ApiValidationDetails]
+        :type validations: list[oci.apigateway.models.ApiValidationDetails]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ApiValidations(object):
 
 
         :return: The validations of this ApiValidations.
-        :rtype: list[ApiValidationDetails]
+        :rtype: list[oci.apigateway.models.ApiValidationDetails]
         """
         return self._validations
 
@@ -53,7 +53,7 @@ class ApiValidations(object):
 
 
         :param validations: The validations of this ApiValidations.
-        :type: list[ApiValidationDetails]
+        :type: list[oci.apigateway.models.ApiValidationDetails]
         """
         self._validations = validations
 

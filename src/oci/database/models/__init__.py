@@ -12,12 +12,10 @@ from .autonomous_container_database_backup_config import AutonomousContainerData
 from .autonomous_container_database_dataguard_association import AutonomousContainerDatabaseDataguardAssociation
 from .autonomous_container_database_summary import AutonomousContainerDatabaseSummary
 from .autonomous_data_warehouse import AutonomousDataWarehouse
-from .autonomous_data_warehouse_backup import AutonomousDataWarehouseBackup
-from .autonomous_data_warehouse_backup_summary import AutonomousDataWarehouseBackupSummary
 from .autonomous_data_warehouse_connection_strings import AutonomousDataWarehouseConnectionStrings
-from .autonomous_data_warehouse_console_token_details import AutonomousDataWarehouseConsoleTokenDetails
 from .autonomous_data_warehouse_summary import AutonomousDataWarehouseSummary
 from .autonomous_database import AutonomousDatabase
+from .autonomous_database_apex import AutonomousDatabaseApex
 from .autonomous_database_backup import AutonomousDatabaseBackup
 from .autonomous_database_backup_config import AutonomousDatabaseBackupConfig
 from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
@@ -58,8 +56,6 @@ from .complete_external_backup_job_details import CompleteExternalBackupJobDetai
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
-from .create_autonomous_data_warehouse_backup_details import CreateAutonomousDataWarehouseBackupDetails
-from .create_autonomous_data_warehouse_details import CreateAutonomousDataWarehouseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
 from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCloneDetails
@@ -137,7 +133,8 @@ from .exadata_iorm_config import ExadataIormConfig
 from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
 from .external_backup_job import ExternalBackupJob
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
-from .generate_autonomous_data_warehouse_wallet_details import GenerateAutonomousDataWarehouseWalletDetails
+from .flex_component_collection import FlexComponentCollection
+from .flex_component_summary import FlexComponentSummary
 from .generate_autonomous_database_wallet_details import GenerateAutonomousDatabaseWalletDetails
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
 from .gi_version_summary import GiVersionSummary
@@ -156,6 +153,7 @@ from .launch_db_system_from_db_system_details import LaunchDbSystemFromDbSystemD
 from .maintenance_run import MaintenanceRun
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
+from .migrate_vault_key_details import MigrateVaultKeyDetails
 from .month import Month
 from .mount_type_details import MountTypeDetails
 from .node_details import NodeDetails
@@ -168,7 +166,6 @@ from .patch_summary import PatchSummary
 from .peer_autonomous_container_database_backup_config import PeerAutonomousContainerDatabaseBackupConfig
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
-from .restore_autonomous_data_warehouse_details import RestoreAutonomousDataWarehouseDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
@@ -176,7 +173,6 @@ from .self_mount_details import SelfMountDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .update import Update
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
-from .update_autonomous_data_warehouse_details import UpdateAutonomousDataWarehouseDetails
 from .update_autonomous_database_details import UpdateAutonomousDatabaseDetails
 from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseWalletDetails
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
@@ -216,12 +212,10 @@ database_type_mapping = {
     "AutonomousContainerDatabaseDataguardAssociation": AutonomousContainerDatabaseDataguardAssociation,
     "AutonomousContainerDatabaseSummary": AutonomousContainerDatabaseSummary,
     "AutonomousDataWarehouse": AutonomousDataWarehouse,
-    "AutonomousDataWarehouseBackup": AutonomousDataWarehouseBackup,
-    "AutonomousDataWarehouseBackupSummary": AutonomousDataWarehouseBackupSummary,
     "AutonomousDataWarehouseConnectionStrings": AutonomousDataWarehouseConnectionStrings,
-    "AutonomousDataWarehouseConsoleTokenDetails": AutonomousDataWarehouseConsoleTokenDetails,
     "AutonomousDataWarehouseSummary": AutonomousDataWarehouseSummary,
     "AutonomousDatabase": AutonomousDatabase,
+    "AutonomousDatabaseApex": AutonomousDatabaseApex,
     "AutonomousDatabaseBackup": AutonomousDatabaseBackup,
     "AutonomousDatabaseBackupConfig": AutonomousDatabaseBackupConfig,
     "AutonomousDatabaseBackupSummary": AutonomousDatabaseBackupSummary,
@@ -262,8 +256,6 @@ database_type_mapping = {
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
-    "CreateAutonomousDataWarehouseBackupDetails": CreateAutonomousDataWarehouseBackupDetails,
-    "CreateAutonomousDataWarehouseDetails": CreateAutonomousDataWarehouseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
     "CreateAutonomousDatabaseCloneDetails": CreateAutonomousDatabaseCloneDetails,
@@ -341,7 +333,8 @@ database_type_mapping = {
     "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,
     "ExternalBackupJob": ExternalBackupJob,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
-    "GenerateAutonomousDataWarehouseWalletDetails": GenerateAutonomousDataWarehouseWalletDetails,
+    "FlexComponentCollection": FlexComponentCollection,
+    "FlexComponentSummary": FlexComponentSummary,
     "GenerateAutonomousDatabaseWalletDetails": GenerateAutonomousDatabaseWalletDetails,
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
     "GiVersionSummary": GiVersionSummary,
@@ -360,6 +353,7 @@ database_type_mapping = {
     "MaintenanceRun": MaintenanceRun,
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,
+    "MigrateVaultKeyDetails": MigrateVaultKeyDetails,
     "Month": Month,
     "MountTypeDetails": MountTypeDetails,
     "NodeDetails": NodeDetails,
@@ -372,7 +366,6 @@ database_type_mapping = {
     "PeerAutonomousContainerDatabaseBackupConfig": PeerAutonomousContainerDatabaseBackupConfig,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
-    "RestoreAutonomousDataWarehouseDetails": RestoreAutonomousDataWarehouseDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "ScanDetails": ScanDetails,
@@ -380,7 +373,6 @@ database_type_mapping = {
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
-    "UpdateAutonomousDataWarehouseDetails": UpdateAutonomousDataWarehouseDetails,
     "UpdateAutonomousDatabaseDetails": UpdateAutonomousDatabaseDetails,
     "UpdateAutonomousDatabaseWalletDetails": UpdateAutonomousDatabaseWalletDetails,
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,

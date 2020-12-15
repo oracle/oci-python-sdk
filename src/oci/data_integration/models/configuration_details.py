@@ -20,11 +20,11 @@ class ConfigurationDetails(object):
 
         :param data_asset:
             The value to assign to the data_asset property of this ConfigurationDetails.
-        :type data_asset: DataAsset
+        :type data_asset: oci.data_integration.models.DataAsset
 
         :param connection:
             The value to assign to the connection property of this ConfigurationDetails.
-        :type connection: Connection
+        :type connection: oci.data_integration.models.Connection
 
         :param compartment_id:
             The value to assign to the compartment_id property of this ConfigurationDetails.
@@ -32,7 +32,7 @@ class ConfigurationDetails(object):
 
         :param schema:
             The value to assign to the schema property of this ConfigurationDetails.
-        :type schema: Schema
+        :type schema: oci.data_integration.models.Schema
 
         """
         self.swagger_types = {
@@ -60,7 +60,7 @@ class ConfigurationDetails(object):
         Gets the data_asset of this ConfigurationDetails.
 
         :return: The data_asset of this ConfigurationDetails.
-        :rtype: DataAsset
+        :rtype: oci.data_integration.models.DataAsset
         """
         return self._data_asset
 
@@ -70,7 +70,7 @@ class ConfigurationDetails(object):
         Sets the data_asset of this ConfigurationDetails.
 
         :param data_asset: The data_asset of this ConfigurationDetails.
-        :type: DataAsset
+        :type: oci.data_integration.models.DataAsset
         """
         self._data_asset = data_asset
 
@@ -80,7 +80,7 @@ class ConfigurationDetails(object):
         Gets the connection of this ConfigurationDetails.
 
         :return: The connection of this ConfigurationDetails.
-        :rtype: Connection
+        :rtype: oci.data_integration.models.Connection
         """
         return self._connection
 
@@ -90,7 +90,7 @@ class ConfigurationDetails(object):
         Sets the connection of this ConfigurationDetails.
 
         :param connection: The connection of this ConfigurationDetails.
-        :type: Connection
+        :type: oci.data_integration.models.Connection
         """
         self._connection = connection
 
@@ -124,7 +124,7 @@ class ConfigurationDetails(object):
         Gets the schema of this ConfigurationDetails.
 
         :return: The schema of this ConfigurationDetails.
-        :rtype: Schema
+        :rtype: oci.data_integration.models.Schema
         """
         return self._schema
 
@@ -134,7 +134,7 @@ class ConfigurationDetails(object):
         Sets the schema of this ConfigurationDetails.
 
         :param schema: The schema of this ConfigurationDetails.
-        :type: Schema
+        :type: oci.data_integration.models.Schema
         """
         self._schema = schema
 

@@ -102,11 +102,11 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
 
         :param historical_data:
             The value to assign to the historical_data property of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
-        :type historical_data: list[HistoricalDataItem]
+        :type historical_data: list[oci.opsi.models.HistoricalDataItem]
 
         :param projected_data:
             The value to assign to the projected_data property of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
-        :type projected_data: list[ProjectedDataItem]
+        :type projected_data: list[oci.opsi.models.ProjectedDataItem]
 
         """
         self.swagger_types = {
@@ -283,7 +283,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
 
 
         :return: The historical_data of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
-        :rtype: list[HistoricalDataItem]
+        :rtype: list[oci.opsi.models.HistoricalDataItem]
         """
         return self._historical_data
 
@@ -295,7 +295,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
 
 
         :param historical_data: The historical_data of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
-        :type: list[HistoricalDataItem]
+        :type: list[oci.opsi.models.HistoricalDataItem]
         """
         self._historical_data = historical_data
 
@@ -307,7 +307,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
 
 
         :return: The projected_data of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
-        :rtype: list[ProjectedDataItem]
+        :rtype: list[oci.opsi.models.ProjectedDataItem]
         """
         return self._projected_data
 
@@ -319,7 +319,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
 
 
         :param projected_data: The projected_data of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
-        :type: list[ProjectedDataItem]
+        :type: list[oci.opsi.models.ProjectedDataItem]
         """
         self._projected_data = projected_data
 

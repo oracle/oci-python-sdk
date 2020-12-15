@@ -28,7 +28,7 @@ class PostMetricDataDetails(object):
 
         :param metric_data:
             The value to assign to the metric_data property of this PostMetricDataDetails.
-        :type metric_data: list[MetricDataDetails]
+        :type metric_data: list[oci.monitoring.models.MetricDataDetails]
 
         :param batch_atomicity:
             The value to assign to the batch_atomicity property of this PostMetricDataDetails.
@@ -57,7 +57,7 @@ class PostMetricDataDetails(object):
 
 
         :return: The metric_data of this PostMetricDataDetails.
-        :rtype: list[MetricDataDetails]
+        :rtype: list[oci.monitoring.models.MetricDataDetails]
         """
         return self._metric_data
 
@@ -69,7 +69,7 @@ class PostMetricDataDetails(object):
 
 
         :param metric_data: The metric_data of this PostMetricDataDetails.
-        :type: list[MetricDataDetails]
+        :type: list[oci.monitoring.models.MetricDataDetails]
         """
         self._metric_data = metric_data
 

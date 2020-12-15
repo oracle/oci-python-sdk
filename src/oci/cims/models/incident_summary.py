@@ -44,19 +44,19 @@ class IncidentSummary(object):
 
         :param contact_list:
             The value to assign to the contact_list property of this IncidentSummary.
-        :type contact_list: ContactList
+        :type contact_list: oci.cims.models.ContactList
 
         :param tenancy_information:
             The value to assign to the tenancy_information property of this IncidentSummary.
-        :type tenancy_information: TenancyInformation
+        :type tenancy_information: oci.cims.models.TenancyInformation
 
         :param ticket:
             The value to assign to the ticket property of this IncidentSummary.
-        :type ticket: Ticket
+        :type ticket: oci.cims.models.Ticket
 
         :param incident_type:
             The value to assign to the incident_type property of this IncidentSummary.
-        :type incident_type: IncidentResourceType
+        :type incident_type: oci.cims.models.IncidentResourceType
 
         :param problem_type:
             The value to assign to the problem_type property of this IncidentSummary.
@@ -147,7 +147,7 @@ class IncidentSummary(object):
         Gets the contact_list of this IncidentSummary.
 
         :return: The contact_list of this IncidentSummary.
-        :rtype: ContactList
+        :rtype: oci.cims.models.ContactList
         """
         return self._contact_list
 
@@ -157,7 +157,7 @@ class IncidentSummary(object):
         Sets the contact_list of this IncidentSummary.
 
         :param contact_list: The contact_list of this IncidentSummary.
-        :type: ContactList
+        :type: oci.cims.models.ContactList
         """
         self._contact_list = contact_list
 
@@ -167,7 +167,7 @@ class IncidentSummary(object):
         Gets the tenancy_information of this IncidentSummary.
 
         :return: The tenancy_information of this IncidentSummary.
-        :rtype: TenancyInformation
+        :rtype: oci.cims.models.TenancyInformation
         """
         return self._tenancy_information
 
@@ -177,7 +177,7 @@ class IncidentSummary(object):
         Sets the tenancy_information of this IncidentSummary.
 
         :param tenancy_information: The tenancy_information of this IncidentSummary.
-        :type: TenancyInformation
+        :type: oci.cims.models.TenancyInformation
         """
         self._tenancy_information = tenancy_information
 
@@ -187,7 +187,7 @@ class IncidentSummary(object):
         Gets the ticket of this IncidentSummary.
 
         :return: The ticket of this IncidentSummary.
-        :rtype: Ticket
+        :rtype: oci.cims.models.Ticket
         """
         return self._ticket
 
@@ -197,7 +197,7 @@ class IncidentSummary(object):
         Sets the ticket of this IncidentSummary.
 
         :param ticket: The ticket of this IncidentSummary.
-        :type: Ticket
+        :type: oci.cims.models.Ticket
         """
         self._ticket = ticket
 
@@ -207,7 +207,7 @@ class IncidentSummary(object):
         Gets the incident_type of this IncidentSummary.
 
         :return: The incident_type of this IncidentSummary.
-        :rtype: IncidentResourceType
+        :rtype: oci.cims.models.IncidentResourceType
         """
         return self._incident_type
 
@@ -217,7 +217,7 @@ class IncidentSummary(object):
         Sets the incident_type of this IncidentSummary.
 
         :param incident_type: The incident_type of this IncidentSummary.
-        :type: IncidentResourceType
+        :type: oci.cims.models.IncidentResourceType
         """
         self._incident_type = incident_type
 

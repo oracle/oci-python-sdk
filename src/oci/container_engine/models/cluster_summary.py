@@ -64,11 +64,11 @@ class ClusterSummary(object):
 
         :param options:
             The value to assign to the options property of this ClusterSummary.
-        :type options: ClusterCreateOptions
+        :type options: oci.container_engine.models.ClusterCreateOptions
 
         :param metadata:
             The value to assign to the metadata property of this ClusterSummary.
-        :type metadata: ClusterMetadata
+        :type metadata: oci.container_engine.models.ClusterMetadata
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ClusterSummary.
@@ -82,7 +82,7 @@ class ClusterSummary(object):
 
         :param endpoints:
             The value to assign to the endpoints property of this ClusterSummary.
-        :type endpoints: ClusterEndpoints
+        :type endpoints: oci.container_engine.models.ClusterEndpoints
 
         :param available_kubernetes_upgrades:
             The value to assign to the available_kubernetes_upgrades property of this ClusterSummary.
@@ -257,7 +257,7 @@ class ClusterSummary(object):
 
 
         :return: The options of this ClusterSummary.
-        :rtype: ClusterCreateOptions
+        :rtype: oci.container_engine.models.ClusterCreateOptions
         """
         return self._options
 
@@ -269,7 +269,7 @@ class ClusterSummary(object):
 
 
         :param options: The options of this ClusterSummary.
-        :type: ClusterCreateOptions
+        :type: oci.container_engine.models.ClusterCreateOptions
         """
         self._options = options
 
@@ -281,7 +281,7 @@ class ClusterSummary(object):
 
 
         :return: The metadata of this ClusterSummary.
-        :rtype: ClusterMetadata
+        :rtype: oci.container_engine.models.ClusterMetadata
         """
         return self._metadata
 
@@ -293,7 +293,7 @@ class ClusterSummary(object):
 
 
         :param metadata: The metadata of this ClusterSummary.
-        :type: ClusterMetadata
+        :type: oci.container_engine.models.ClusterMetadata
         """
         self._metadata = metadata
 
@@ -359,7 +359,7 @@ class ClusterSummary(object):
 
 
         :return: The endpoints of this ClusterSummary.
-        :rtype: ClusterEndpoints
+        :rtype: oci.container_engine.models.ClusterEndpoints
         """
         return self._endpoints
 
@@ -371,7 +371,7 @@ class ClusterSummary(object):
 
 
         :param endpoints: The endpoints of this ClusterSummary.
-        :type: ClusterEndpoints
+        :type: oci.container_engine.models.ClusterEndpoints
         """
         self._endpoints = endpoints
 

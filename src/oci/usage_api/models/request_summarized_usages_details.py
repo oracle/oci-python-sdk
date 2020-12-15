@@ -74,7 +74,7 @@ class RequestSummarizedUsagesDetails(object):
 
         :param filter:
             The value to assign to the filter property of this RequestSummarizedUsagesDetails.
-        :type filter: Filter
+        :type filter: oci.usage_api.models.Filter
 
         """
         self.swagger_types = {
@@ -314,7 +314,7 @@ class RequestSummarizedUsagesDetails(object):
         Gets the filter of this RequestSummarizedUsagesDetails.
 
         :return: The filter of this RequestSummarizedUsagesDetails.
-        :rtype: Filter
+        :rtype: oci.usage_api.models.Filter
         """
         return self._filter
 
@@ -324,7 +324,7 @@ class RequestSummarizedUsagesDetails(object):
         Sets the filter of this RequestSummarizedUsagesDetails.
 
         :param filter: The filter of this RequestSummarizedUsagesDetails.
-        :type: Filter
+        :type: oci.usage_api.models.Filter
         """
         self._filter = filter
 

@@ -38,7 +38,7 @@ class UpgradeDatabaseDetails(object):
 
         :param database_upgrade_source_details:
             The value to assign to the database_upgrade_source_details property of this UpgradeDatabaseDetails.
-        :type database_upgrade_source_details: DatabaseUpgradeSourceBase
+        :type database_upgrade_source_details: oci.database.models.DatabaseUpgradeSourceBase
 
         """
         self.swagger_types = {
@@ -92,7 +92,7 @@ class UpgradeDatabaseDetails(object):
         Gets the database_upgrade_source_details of this UpgradeDatabaseDetails.
 
         :return: The database_upgrade_source_details of this UpgradeDatabaseDetails.
-        :rtype: DatabaseUpgradeSourceBase
+        :rtype: oci.database.models.DatabaseUpgradeSourceBase
         """
         return self._database_upgrade_source_details
 
@@ -102,7 +102,7 @@ class UpgradeDatabaseDetails(object):
         Sets the database_upgrade_source_details of this UpgradeDatabaseDetails.
 
         :param database_upgrade_source_details: The database_upgrade_source_details of this UpgradeDatabaseDetails.
-        :type: DatabaseUpgradeSourceBase
+        :type: oci.database.models.DatabaseUpgradeSourceBase
         """
         self._database_upgrade_source_details = database_upgrade_source_details
 

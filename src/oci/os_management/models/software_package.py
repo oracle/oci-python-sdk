@@ -60,15 +60,15 @@ class SoftwarePackage(object):
 
         :param dependencies:
             The value to assign to the dependencies property of this SoftwarePackage.
-        :type dependencies: list[SoftwarePackageDependency]
+        :type dependencies: list[oci.os_management.models.SoftwarePackageDependency]
 
         :param files:
             The value to assign to the files property of this SoftwarePackage.
-        :type files: list[SoftwarePackageFile]
+        :type files: list[oci.os_management.models.SoftwarePackageFile]
 
         :param software_sources:
             The value to assign to the software_sources property of this SoftwarePackage.
-        :type software_sources: list[SoftwareSourceId]
+        :type software_sources: list[oci.os_management.models.SoftwareSourceId]
 
         """
         self.swagger_types = {
@@ -365,7 +365,7 @@ class SoftwarePackage(object):
 
 
         :return: The dependencies of this SoftwarePackage.
-        :rtype: list[SoftwarePackageDependency]
+        :rtype: list[oci.os_management.models.SoftwarePackageDependency]
         """
         return self._dependencies
 
@@ -377,7 +377,7 @@ class SoftwarePackage(object):
 
 
         :param dependencies: The dependencies of this SoftwarePackage.
-        :type: list[SoftwarePackageDependency]
+        :type: list[oci.os_management.models.SoftwarePackageDependency]
         """
         self._dependencies = dependencies
 
@@ -389,7 +389,7 @@ class SoftwarePackage(object):
 
 
         :return: The files of this SoftwarePackage.
-        :rtype: list[SoftwarePackageFile]
+        :rtype: list[oci.os_management.models.SoftwarePackageFile]
         """
         return self._files
 
@@ -401,7 +401,7 @@ class SoftwarePackage(object):
 
 
         :param files: The files of this SoftwarePackage.
-        :type: list[SoftwarePackageFile]
+        :type: list[oci.os_management.models.SoftwarePackageFile]
         """
         self._files = files
 
@@ -413,7 +413,7 @@ class SoftwarePackage(object):
 
 
         :return: The software_sources of this SoftwarePackage.
-        :rtype: list[SoftwareSourceId]
+        :rtype: list[oci.os_management.models.SoftwareSourceId]
         """
         return self._software_sources
 
@@ -425,7 +425,7 @@ class SoftwarePackage(object):
 
 
         :param software_sources: The software_sources of this SoftwarePackage.
-        :type: list[SoftwareSourceId]
+        :type: list[oci.os_management.models.SoftwareSourceId]
         """
         self._software_sources = software_sources
 

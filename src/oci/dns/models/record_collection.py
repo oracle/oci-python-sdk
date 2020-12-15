@@ -20,7 +20,7 @@ class RecordCollection(object):
 
         :param items:
             The value to assign to the items property of this RecordCollection.
-        :type items: list[Record]
+        :type items: list[oci.dns.models.Record]
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class RecordCollection(object):
         **[Required]** Gets the items of this RecordCollection.
 
         :return: The items of this RecordCollection.
-        :rtype: list[Record]
+        :rtype: list[oci.dns.models.Record]
         """
         return self._items
 
@@ -49,7 +49,7 @@ class RecordCollection(object):
         Sets the items of this RecordCollection.
 
         :param items: The items of this RecordCollection.
-        :type: list[Record]
+        :type: list[oci.dns.models.Record]
         """
         self._items = items
 

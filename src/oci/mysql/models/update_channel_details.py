@@ -20,11 +20,11 @@ class UpdateChannelDetails(object):
 
         :param source:
             The value to assign to the source property of this UpdateChannelDetails.
-        :type source: UpdateChannelSourceDetails
+        :type source: oci.mysql.models.UpdateChannelSourceDetails
 
         :param target:
             The value to assign to the target property of this UpdateChannelDetails.
-        :type target: UpdateChannelTargetDetails
+        :type target: oci.mysql.models.UpdateChannelTargetDetails
 
         :param display_name:
             The value to assign to the display_name property of this UpdateChannelDetails.
@@ -81,7 +81,7 @@ class UpdateChannelDetails(object):
         Gets the source of this UpdateChannelDetails.
 
         :return: The source of this UpdateChannelDetails.
-        :rtype: UpdateChannelSourceDetails
+        :rtype: oci.mysql.models.UpdateChannelSourceDetails
         """
         return self._source
 
@@ -91,7 +91,7 @@ class UpdateChannelDetails(object):
         Sets the source of this UpdateChannelDetails.
 
         :param source: The source of this UpdateChannelDetails.
-        :type: UpdateChannelSourceDetails
+        :type: oci.mysql.models.UpdateChannelSourceDetails
         """
         self._source = source
 
@@ -101,7 +101,7 @@ class UpdateChannelDetails(object):
         Gets the target of this UpdateChannelDetails.
 
         :return: The target of this UpdateChannelDetails.
-        :rtype: UpdateChannelTargetDetails
+        :rtype: oci.mysql.models.UpdateChannelTargetDetails
         """
         return self._target
 
@@ -111,7 +111,7 @@ class UpdateChannelDetails(object):
         Sets the target of this UpdateChannelDetails.
 
         :param target: The target of this UpdateChannelDetails.
-        :type: UpdateChannelTargetDetails
+        :type: oci.mysql.models.UpdateChannelTargetDetails
         """
         self._target = target
 

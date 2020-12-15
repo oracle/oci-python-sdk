@@ -24,7 +24,7 @@ class ModifyPeerDetails(object):
 
         :param ocpu_allocation_param:
             The value to assign to the ocpu_allocation_param property of this ModifyPeerDetails.
-        :type ocpu_allocation_param: OcpuAllocationNumberParam
+        :type ocpu_allocation_param: oci.blockchain.models.OcpuAllocationNumberParam
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class ModifyPeerDetails(object):
         **[Required]** Gets the ocpu_allocation_param of this ModifyPeerDetails.
 
         :return: The ocpu_allocation_param of this ModifyPeerDetails.
-        :rtype: OcpuAllocationNumberParam
+        :rtype: oci.blockchain.models.OcpuAllocationNumberParam
         """
         return self._ocpu_allocation_param
 
@@ -80,7 +80,7 @@ class ModifyPeerDetails(object):
         Sets the ocpu_allocation_param of this ModifyPeerDetails.
 
         :param ocpu_allocation_param: The ocpu_allocation_param of this ModifyPeerDetails.
-        :type: OcpuAllocationNumberParam
+        :type: oci.blockchain.models.OcpuAllocationNumberParam
         """
         self._ocpu_allocation_param = ocpu_allocation_param
 

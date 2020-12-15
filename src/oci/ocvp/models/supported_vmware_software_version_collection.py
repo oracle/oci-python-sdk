@@ -20,7 +20,7 @@ class SupportedVmwareSoftwareVersionCollection(object):
 
         :param items:
             The value to assign to the items property of this SupportedVmwareSoftwareVersionCollection.
-        :type items: list[SupportedVmwareSoftwareVersionSummary]
+        :type items: list[oci.ocvp.models.SupportedVmwareSoftwareVersionSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class SupportedVmwareSoftwareVersionCollection(object):
 
 
         :return: The items of this SupportedVmwareSoftwareVersionCollection.
-        :rtype: list[SupportedVmwareSoftwareVersionSummary]
+        :rtype: list[oci.ocvp.models.SupportedVmwareSoftwareVersionSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class SupportedVmwareSoftwareVersionCollection(object):
 
 
         :param items: The items of this SupportedVmwareSoftwareVersionCollection.
-        :type: list[SupportedVmwareSoftwareVersionSummary]
+        :type: list[oci.ocvp.models.SupportedVmwareSoftwareVersionSummary]
         """
         self._items = items
 

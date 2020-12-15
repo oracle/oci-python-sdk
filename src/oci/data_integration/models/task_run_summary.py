@@ -68,7 +68,7 @@ class TaskRunSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskRunSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskRunSummary.
@@ -124,7 +124,7 @@ class TaskRunSummary(object):
 
         :param metadata:
             The value to assign to the metadata property of this TaskRunSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -263,7 +263,7 @@ class TaskRunSummary(object):
         Gets the parent_ref of this TaskRunSummary.
 
         :return: The parent_ref of this TaskRunSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -273,7 +273,7 @@ class TaskRunSummary(object):
         Sets the parent_ref of this TaskRunSummary.
 
         :param parent_ref: The parent_ref of this TaskRunSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -583,7 +583,7 @@ class TaskRunSummary(object):
         Gets the metadata of this TaskRunSummary.
 
         :return: The metadata of this TaskRunSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -593,7 +593,7 @@ class TaskRunSummary(object):
         Sets the metadata of this TaskRunSummary.
 
         :param metadata: The metadata of this TaskRunSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

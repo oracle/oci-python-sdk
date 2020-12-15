@@ -52,7 +52,7 @@ class FolderDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this FolderDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_version:
             The value to assign to the object_version property of this FolderDetails.
@@ -60,7 +60,7 @@ class FolderDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this FolderDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -301,7 +301,7 @@ class FolderDetails(object):
         Gets the parent_ref of this FolderDetails.
 
         :return: The parent_ref of this FolderDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -311,7 +311,7 @@ class FolderDetails(object):
         Sets the parent_ref of this FolderDetails.
 
         :param parent_ref: The parent_ref of this FolderDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -345,7 +345,7 @@ class FolderDetails(object):
         Gets the registry_metadata of this FolderDetails.
 
         :return: The registry_metadata of this FolderDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -355,7 +355,7 @@ class FolderDetails(object):
         Sets the registry_metadata of this FolderDetails.
 
         :param registry_metadata: The registry_metadata of this FolderDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

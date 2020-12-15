@@ -44,7 +44,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
-        :type items: list[SqlStatisticsTimeSeriesByPlanAggregation]
+        :type items: list[oci.opsi.models.SqlStatisticsTimeSeriesByPlanAggregation]
 
         """
         self.swagger_types = {
@@ -231,7 +231,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
 
 
         :return: The items of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
-        :rtype: list[SqlStatisticsTimeSeriesByPlanAggregation]
+        :rtype: list[oci.opsi.models.SqlStatisticsTimeSeriesByPlanAggregation]
         """
         return self._items
 
@@ -243,7 +243,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
 
 
         :param items: The items of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
-        :type: list[SqlStatisticsTimeSeriesByPlanAggregation]
+        :type: list[oci.opsi.models.SqlStatisticsTimeSeriesByPlanAggregation]
         """
         self._items = items
 

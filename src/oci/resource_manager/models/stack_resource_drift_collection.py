@@ -20,7 +20,7 @@ class StackResourceDriftCollection(object):
 
         :param items:
             The value to assign to the items property of this StackResourceDriftCollection.
-        :type items: list[StackResourceDriftSummary]
+        :type items: list[oci.resource_manager.models.StackResourceDriftSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class StackResourceDriftCollection(object):
 
 
         :return: The items of this StackResourceDriftCollection.
-        :rtype: list[StackResourceDriftSummary]
+        :rtype: list[oci.resource_manager.models.StackResourceDriftSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class StackResourceDriftCollection(object):
 
 
         :param items: The items of this StackResourceDriftCollection.
-        :type: list[StackResourceDriftSummary]
+        :type: list[oci.resource_manager.models.StackResourceDriftSummary]
         """
         self._items = items
 

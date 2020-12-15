@@ -116,7 +116,7 @@ class KmsVaultClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param BackupVaultDetails backup_vault_details: (optional)
+        :param oci.key_management.models.BackupVaultDetails backup_vault_details: (optional)
             BackupVaultDetails
 
         :param obj retry_strategy: (optional)
@@ -129,6 +129,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/backup_vault.py.html>`__ to see an example of how to use backup_vault API.
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/backup"
         method = "POST"
@@ -235,6 +238,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/cancel_vault_deletion.py.html>`__ to see an example of how to use cancel_vault_deletion API.
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
@@ -342,6 +348,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/change_vault_compartment.py.html>`__ to see an example of how to use change_vault_compartment API.
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/changeCompartment"
         method = "POST"
@@ -438,6 +447,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_vault.py.html>`__ to see an example of how to use create_vault API.
         """
         resource_path = "/20180608/vaults"
         method = "POST"
@@ -511,6 +523,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_vault.py.html>`__ to see an example of how to use get_vault API.
         """
         resource_path = "/20180608/vaults/{vaultId}"
         method = "GET"
@@ -585,6 +600,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.VaultUsage`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_vault_usage.py.html>`__ to see an example of how to use get_vault_usage API.
         """
         resource_path = "/20180608/vaults/{vaultId}/usage"
         method = "GET"
@@ -683,6 +701,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.VaultSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_vaults.py.html>`__ to see an example of how to use list_vaults API.
         """
         resource_path = "/20180608/vaults"
         method = "GET"
@@ -806,6 +827,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_vault_from_file.py.html>`__ to see an example of how to use restore_vault_from_file API.
         """
         resource_path = "/20180608/vaults/actions/restoreFromFile"
         method = "POST"
@@ -911,7 +935,7 @@ class KmsVaultClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
-        :param RestoreVaultFromObjectStoreDetails restore_vault_from_object_store_details: (optional)
+        :param oci.key_management.models.RestoreVaultFromObjectStoreDetails restore_vault_from_object_store_details: (optional)
             RestoreVaultFromObjectStoreDetails
 
         :param obj retry_strategy: (optional)
@@ -924,6 +948,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_vault_from_object_store.py.html>`__ to see an example of how to use restore_vault_from_object_store API.
         """
         resource_path = "/20180608/vaults/actions/restoreFromObjectStore"
         method = "POST"
@@ -1029,6 +1056,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/schedule_vault_deletion.py.html>`__ to see an example of how to use schedule_vault_deletion API.
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
@@ -1128,6 +1158,9 @@ class KmsVaultClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/update_vault.py.html>`__ to see an example of how to use update_vault API.
         """
         resource_path = "/20180608/vaults/{vaultId}"
         method = "PUT"

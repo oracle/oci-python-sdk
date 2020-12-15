@@ -38,7 +38,7 @@ class EgressSecurityRule(object):
 
         :param icmp_options:
             The value to assign to the icmp_options property of this EgressSecurityRule.
-        :type icmp_options: IcmpOptions
+        :type icmp_options: oci.core.models.IcmpOptions
 
         :param is_stateless:
             The value to assign to the is_stateless property of this EgressSecurityRule.
@@ -50,11 +50,11 @@ class EgressSecurityRule(object):
 
         :param tcp_options:
             The value to assign to the tcp_options property of this EgressSecurityRule.
-        :type tcp_options: TcpOptions
+        :type tcp_options: oci.core.models.TcpOptions
 
         :param udp_options:
             The value to assign to the udp_options property of this EgressSecurityRule.
-        :type udp_options: UdpOptions
+        :type udp_options: oci.core.models.UdpOptions
 
         :param description:
             The value to assign to the description property of this EgressSecurityRule.
@@ -209,7 +209,7 @@ class EgressSecurityRule(object):
 
 
         :return: The icmp_options of this EgressSecurityRule.
-        :rtype: IcmpOptions
+        :rtype: oci.core.models.IcmpOptions
         """
         return self._icmp_options
 
@@ -234,7 +234,7 @@ class EgressSecurityRule(object):
 
 
         :param icmp_options: The icmp_options of this EgressSecurityRule.
-        :type: IcmpOptions
+        :type: oci.core.models.IcmpOptions
         """
         self._icmp_options = icmp_options
 
@@ -313,7 +313,7 @@ class EgressSecurityRule(object):
 
 
         :return: The tcp_options of this EgressSecurityRule.
-        :rtype: TcpOptions
+        :rtype: oci.core.models.TcpOptions
         """
         return self._tcp_options
 
@@ -326,7 +326,7 @@ class EgressSecurityRule(object):
 
 
         :param tcp_options: The tcp_options of this EgressSecurityRule.
-        :type: TcpOptions
+        :type: oci.core.models.TcpOptions
         """
         self._tcp_options = tcp_options
 
@@ -339,7 +339,7 @@ class EgressSecurityRule(object):
 
 
         :return: The udp_options of this EgressSecurityRule.
-        :rtype: UdpOptions
+        :rtype: oci.core.models.UdpOptions
         """
         return self._udp_options
 
@@ -352,7 +352,7 @@ class EgressSecurityRule(object):
 
 
         :param udp_options: The udp_options of this EgressSecurityRule.
-        :type: UdpOptions
+        :type: oci.core.models.UdpOptions
         """
         self._udp_options = udp_options
 

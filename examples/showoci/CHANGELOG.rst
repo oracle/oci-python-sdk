@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.12.15 - 20.12.15
+=====================
+* Added OCVS Support (VMWare) under -paas
+* Enable OAC Native under -paas
+* Added Network Vlans
+* Added Users Capabilities and last login
+* Added tag namespace to identity
+
+=====================
 20.12.08 - 20.12.08
 =====================
 * Added retry policy to all pagination calls

@@ -20,7 +20,7 @@ class OriginGroup(object):
 
         :param origins:
             The value to assign to the origins property of this OriginGroup.
-        :type origins: list[OriginGroupOrigins]
+        :type origins: list[oci.waas.models.OriginGroupOrigins]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class OriginGroup(object):
 
 
         :return: The origins of this OriginGroup.
-        :rtype: list[OriginGroupOrigins]
+        :rtype: list[oci.waas.models.OriginGroupOrigins]
         """
         return self._origins
 
@@ -53,7 +53,7 @@ class OriginGroup(object):
 
 
         :param origins: The origins of this OriginGroup.
-        :type: list[OriginGroupOrigins]
+        :type: list[oci.waas.models.OriginGroupOrigins]
         """
         self._origins = origins
 

@@ -32,7 +32,7 @@ class NodePoolOptions(object):
 
         :param sources:
             The value to assign to the sources property of this NodePoolOptions.
-        :type sources: list[NodeSourceOption]
+        :type sources: list[oci.container_engine.models.NodeSourceOption]
 
         """
         self.swagger_types = {
@@ -138,7 +138,7 @@ class NodePoolOptions(object):
 
 
         :return: The sources of this NodePoolOptions.
-        :rtype: list[NodeSourceOption]
+        :rtype: list[oci.container_engine.models.NodeSourceOption]
         """
         return self._sources
 
@@ -150,7 +150,7 @@ class NodePoolOptions(object):
 
 
         :param sources: The sources of this NodePoolOptions.
-        :type: list[NodeSourceOption]
+        :type: list[oci.container_engine.models.NodeSourceOption]
         """
         self._sources = sources
 

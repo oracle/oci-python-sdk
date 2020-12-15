@@ -20,7 +20,7 @@ class PatchChangeSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this PatchChangeSummaryCollection.
-        :type items: list[PatchChangeSummary]
+        :type items: list[oci.data_integration.models.PatchChangeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class PatchChangeSummaryCollection(object):
 
 
         :return: The items of this PatchChangeSummaryCollection.
-        :rtype: list[PatchChangeSummary]
+        :rtype: list[oci.data_integration.models.PatchChangeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class PatchChangeSummaryCollection(object):
 
 
         :param items: The items of this PatchChangeSummaryCollection.
-        :type: list[PatchChangeSummary]
+        :type: list[oci.data_integration.models.PatchChangeSummary]
         """
         self._items = items
 

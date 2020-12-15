@@ -24,7 +24,7 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this UpdateAutonomousExadataInfrastructureDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateAutonomousExadataInfrastructureDetails.
@@ -91,7 +91,7 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         Gets the maintenance_window_details of this UpdateAutonomousExadataInfrastructureDetails.
 
         :return: The maintenance_window_details of this UpdateAutonomousExadataInfrastructureDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -101,7 +101,7 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         Sets the maintenance_window_details of this UpdateAutonomousExadataInfrastructureDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this UpdateAutonomousExadataInfrastructureDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 

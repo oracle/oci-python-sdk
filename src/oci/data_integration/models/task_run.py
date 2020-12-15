@@ -68,7 +68,7 @@ class TaskRun(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskRun.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskRun.
@@ -84,7 +84,7 @@ class TaskRun(object):
 
         :param config_provider:
             The value to assign to the config_provider property of this TaskRun.
-        :type config_provider: ConfigProvider
+        :type config_provider: oci.data_integration.models.ConfigProvider
 
         :param status:
             The value to assign to the status property of this TaskRun.
@@ -136,7 +136,7 @@ class TaskRun(object):
 
         :param metadata:
             The value to assign to the metadata property of this TaskRun.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this TaskRun.
@@ -291,7 +291,7 @@ class TaskRun(object):
         Gets the parent_ref of this TaskRun.
 
         :return: The parent_ref of this TaskRun.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -301,7 +301,7 @@ class TaskRun(object):
         Sets the parent_ref of this TaskRun.
 
         :param parent_ref: The parent_ref of this TaskRun.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -383,7 +383,7 @@ class TaskRun(object):
         Gets the config_provider of this TaskRun.
 
         :return: The config_provider of this TaskRun.
-        :rtype: ConfigProvider
+        :rtype: oci.data_integration.models.ConfigProvider
         """
         return self._config_provider
 
@@ -393,7 +393,7 @@ class TaskRun(object):
         Sets the config_provider of this TaskRun.
 
         :param config_provider: The config_provider of this TaskRun.
-        :type: ConfigProvider
+        :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider = config_provider
 
@@ -679,7 +679,7 @@ class TaskRun(object):
         Gets the metadata of this TaskRun.
 
         :return: The metadata of this TaskRun.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -689,7 +689,7 @@ class TaskRun(object):
         Sets the metadata of this TaskRun.
 
         :param metadata: The metadata of this TaskRun.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

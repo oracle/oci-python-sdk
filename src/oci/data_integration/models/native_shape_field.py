@@ -32,7 +32,7 @@ class NativeShapeField(object):
 
         :param config_values:
             The value to assign to the config_values property of this NativeShapeField.
-        :type config_values: ConfigValues
+        :type config_values: oci.data_integration.models.ConfigValues
 
         :param position:
             The value to assign to the position property of this NativeShapeField.
@@ -153,7 +153,7 @@ class NativeShapeField(object):
         Gets the config_values of this NativeShapeField.
 
         :return: The config_values of this NativeShapeField.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._config_values
 
@@ -163,7 +163,7 @@ class NativeShapeField(object):
         Sets the config_values of this NativeShapeField.
 
         :param config_values: The config_values of this NativeShapeField.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._config_values = config_values
 

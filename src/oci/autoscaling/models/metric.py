@@ -34,7 +34,7 @@ class Metric(object):
 
         :param threshold:
             The value to assign to the threshold property of this Metric.
-        :type threshold: Threshold
+        :type threshold: oci.autoscaling.models.Threshold
 
         """
         self.swagger_types = {
@@ -82,7 +82,7 @@ class Metric(object):
         **[Required]** Gets the threshold of this Metric.
 
         :return: The threshold of this Metric.
-        :rtype: Threshold
+        :rtype: oci.autoscaling.models.Threshold
         """
         return self._threshold
 
@@ -92,7 +92,7 @@ class Metric(object):
         Sets the threshold of this Metric.
 
         :param threshold: The threshold of this Metric.
-        :type: Threshold
+        :type: oci.autoscaling.models.Threshold
         """
         self._threshold = threshold
 

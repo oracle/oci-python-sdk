@@ -44,7 +44,7 @@ class CreateKeyDetails(object):
 
         :param key_shape:
             The value to assign to the key_shape property of this CreateKeyDetails.
-        :type key_shape: KeyShape
+        :type key_shape: oci.key_management.models.KeyShape
 
         :param protection_mode:
             The value to assign to the protection_mode property of this CreateKeyDetails.
@@ -197,7 +197,7 @@ class CreateKeyDetails(object):
         **[Required]** Gets the key_shape of this CreateKeyDetails.
 
         :return: The key_shape of this CreateKeyDetails.
-        :rtype: KeyShape
+        :rtype: oci.key_management.models.KeyShape
         """
         return self._key_shape
 
@@ -207,7 +207,7 @@ class CreateKeyDetails(object):
         Sets the key_shape of this CreateKeyDetails.
 
         :param key_shape: The key_shape of this CreateKeyDetails.
-        :type: KeyShape
+        :type: oci.key_management.models.KeyShape
         """
         self._key_shape = key_shape
 

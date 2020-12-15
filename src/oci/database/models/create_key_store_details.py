@@ -28,7 +28,7 @@ class CreateKeyStoreDetails(object):
 
         :param type_details:
             The value to assign to the type_details property of this CreateKeyStoreDetails.
-        :type type_details: KeyStoreTypeDetails
+        :type type_details: oci.database.models.KeyStoreTypeDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateKeyStoreDetails.
@@ -119,7 +119,7 @@ class CreateKeyStoreDetails(object):
         **[Required]** Gets the type_details of this CreateKeyStoreDetails.
 
         :return: The type_details of this CreateKeyStoreDetails.
-        :rtype: KeyStoreTypeDetails
+        :rtype: oci.database.models.KeyStoreTypeDetails
         """
         return self._type_details
 
@@ -129,7 +129,7 @@ class CreateKeyStoreDetails(object):
         Sets the type_details of this CreateKeyStoreDetails.
 
         :param type_details: The type_details of this CreateKeyStoreDetails.
-        :type: KeyStoreTypeDetails
+        :type: oci.database.models.KeyStoreTypeDetails
         """
         self._type_details = type_details
 

@@ -32,11 +32,11 @@ class ChannelSummary(object):
 
         :param source:
             The value to assign to the source property of this ChannelSummary.
-        :type source: ChannelSource
+        :type source: oci.mysql.models.ChannelSource
 
         :param target:
             The value to assign to the target property of this ChannelSummary.
-        :type target: ChannelTarget
+        :type target: oci.mysql.models.ChannelTarget
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ChannelSummary.
@@ -188,7 +188,7 @@ class ChannelSummary(object):
         **[Required]** Gets the source of this ChannelSummary.
 
         :return: The source of this ChannelSummary.
-        :rtype: ChannelSource
+        :rtype: oci.mysql.models.ChannelSource
         """
         return self._source
 
@@ -198,7 +198,7 @@ class ChannelSummary(object):
         Sets the source of this ChannelSummary.
 
         :param source: The source of this ChannelSummary.
-        :type: ChannelSource
+        :type: oci.mysql.models.ChannelSource
         """
         self._source = source
 
@@ -208,7 +208,7 @@ class ChannelSummary(object):
         **[Required]** Gets the target of this ChannelSummary.
 
         :return: The target of this ChannelSummary.
-        :rtype: ChannelTarget
+        :rtype: oci.mysql.models.ChannelTarget
         """
         return self._target
 
@@ -218,7 +218,7 @@ class ChannelSummary(object):
         Sets the target of this ChannelSummary.
 
         :param target: The target of this ChannelSummary.
-        :type: ChannelTarget
+        :type: oci.mysql.models.ChannelTarget
         """
         self._target = target
 

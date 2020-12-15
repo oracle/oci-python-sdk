@@ -58,7 +58,7 @@ class DeviceFingerprintChallenge(object):
 
         :param challenge_settings:
             The value to assign to the challenge_settings property of this DeviceFingerprintChallenge.
-        :type challenge_settings: BlockChallengeSettings
+        :type challenge_settings: oci.waas.models.BlockChallengeSettings
 
         """
         self.swagger_types = {
@@ -272,7 +272,7 @@ class DeviceFingerprintChallenge(object):
         Gets the challenge_settings of this DeviceFingerprintChallenge.
 
         :return: The challenge_settings of this DeviceFingerprintChallenge.
-        :rtype: BlockChallengeSettings
+        :rtype: oci.waas.models.BlockChallengeSettings
         """
         return self._challenge_settings
 
@@ -282,7 +282,7 @@ class DeviceFingerprintChallenge(object):
         Sets the challenge_settings of this DeviceFingerprintChallenge.
 
         :param challenge_settings: The challenge_settings of this DeviceFingerprintChallenge.
-        :type: BlockChallengeSettings
+        :type: oci.waas.models.BlockChallengeSettings
         """
         self._challenge_settings = challenge_settings
 

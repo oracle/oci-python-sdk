@@ -104,7 +104,7 @@ class KmsVaultClientCompositeOperations(object):
         Calls :py:func:`~oci.key_management.KmsVaultClient.create_vault` and waits for the :py:class:`~oci.key_management.models.Vault` acted upon
         to enter the given state(s).
 
-        :param CreateVaultDetails create_vault_details: (required)
+        :param oci.key_management.models.CreateVaultDetails create_vault_details: (required)
             CreateVaultDetails
 
         :param list[str] wait_for_states:
@@ -145,7 +145,7 @@ class KmsVaultClientCompositeOperations(object):
         :param str vault_id: (required)
             The OCID of the vault.
 
-        :param ScheduleVaultDeletionDetails schedule_vault_deletion_details: (required)
+        :param oci.key_management.models.ScheduleVaultDeletionDetails schedule_vault_deletion_details: (required)
             ScheduleVaultDeletionDetails
 
         :param list[str] wait_for_states:
@@ -186,7 +186,7 @@ class KmsVaultClientCompositeOperations(object):
         :param str vault_id: (required)
             The OCID of the vault.
 
-        :param UpdateVaultDetails update_vault_details: (required)
+        :param oci.key_management.models.UpdateVaultDetails update_vault_details: (required)
             UpdateVaultDetails
 
         :param list[str] wait_for_states:

@@ -24,7 +24,7 @@ class QueryResultCollection(object):
 
         :param usage:
             The value to assign to the usage property of this QueryResultCollection.
-        :type usage: RequestUsage
+        :type usage: oci.nosql.models.RequestUsage
 
         """
         self.swagger_types = {
@@ -70,7 +70,7 @@ class QueryResultCollection(object):
         Gets the usage of this QueryResultCollection.
 
         :return: The usage of this QueryResultCollection.
-        :rtype: RequestUsage
+        :rtype: oci.nosql.models.RequestUsage
         """
         return self._usage
 
@@ -80,7 +80,7 @@ class QueryResultCollection(object):
         Sets the usage of this QueryResultCollection.
 
         :param usage: The usage of this QueryResultCollection.
-        :type: RequestUsage
+        :type: oci.nosql.models.RequestUsage
         """
         self._usage = usage
 

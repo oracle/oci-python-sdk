@@ -44,7 +44,7 @@ class InstanceConfiguration(object):
 
         :param instance_details:
             The value to assign to the instance_details property of this InstanceConfiguration.
-        :type instance_details: InstanceConfigurationInstanceDetails
+        :type instance_details: oci.core.models.InstanceConfigurationInstanceDetails
 
         :param deferred_fields:
             The value to assign to the deferred_fields property of this InstanceConfiguration.
@@ -242,7 +242,7 @@ class InstanceConfiguration(object):
         Gets the instance_details of this InstanceConfiguration.
 
         :return: The instance_details of this InstanceConfiguration.
-        :rtype: InstanceConfigurationInstanceDetails
+        :rtype: oci.core.models.InstanceConfigurationInstanceDetails
         """
         return self._instance_details
 
@@ -252,7 +252,7 @@ class InstanceConfiguration(object):
         Sets the instance_details of this InstanceConfiguration.
 
         :param instance_details: The instance_details of this InstanceConfiguration.
-        :type: InstanceConfigurationInstanceDetails
+        :type: oci.core.models.InstanceConfigurationInstanceDetails
         """
         self._instance_details = instance_details
 

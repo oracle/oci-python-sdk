@@ -109,6 +109,9 @@ class KmsCryptoClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.DecryptedData`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/decrypt.py.html>`__ to see an example of how to use decrypt API.
         """
         resource_path = "/20180608/decrypt"
         method = "POST"
@@ -176,6 +179,9 @@ class KmsCryptoClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.EncryptedData`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/encrypt.py.html>`__ to see an example of how to use encrypt API.
         """
         resource_path = "/20180608/encrypt"
         method = "POST"
@@ -237,6 +243,9 @@ class KmsCryptoClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.ExportedKeyData`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/export_key.py.html>`__ to see an example of how to use export_key API.
         """
         resource_path = "/20180608/exportKey"
         method = "POST"
@@ -295,6 +304,9 @@ class KmsCryptoClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.GeneratedKey`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/generate_data_encryption_key.py.html>`__ to see an example of how to use generate_data_encryption_key API.
         """
         resource_path = "/20180608/generateDataEncryptionKey"
         method = "POST"

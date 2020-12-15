@@ -28,7 +28,7 @@ class SqlStatisticAggregationCollection(object):
 
         :param items:
             The value to assign to the items property of this SqlStatisticAggregationCollection.
-        :type items: list[SqlStatisticAggregation]
+        :type items: list[oci.opsi.models.SqlStatisticAggregation]
 
         """
         self.swagger_types = {
@@ -103,7 +103,7 @@ class SqlStatisticAggregationCollection(object):
 
 
         :return: The items of this SqlStatisticAggregationCollection.
-        :rtype: list[SqlStatisticAggregation]
+        :rtype: list[oci.opsi.models.SqlStatisticAggregation]
         """
         return self._items
 
@@ -115,7 +115,7 @@ class SqlStatisticAggregationCollection(object):
 
 
         :param items: The items of this SqlStatisticAggregationCollection.
-        :type: list[SqlStatisticAggregation]
+        :type: list[oci.opsi.models.SqlStatisticAggregation]
         """
         self._items = items
 

@@ -33,15 +33,15 @@ class TechSupportItem(Item):
 
         :param category:
             The value to assign to the category property of this TechSupportItem.
-        :type category: Category
+        :type category: oci.cims.models.Category
 
         :param sub_category:
             The value to assign to the sub_category property of this TechSupportItem.
-        :type sub_category: SubCategory
+        :type sub_category: oci.cims.models.SubCategory
 
         :param issue_type:
             The value to assign to the issue_type property of this TechSupportItem.
-        :type issue_type: IssueType
+        :type issue_type: oci.cims.models.IssueType
 
         """
         self.swagger_types = {

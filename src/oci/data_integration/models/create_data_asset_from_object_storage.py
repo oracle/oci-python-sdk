@@ -58,7 +58,7 @@ class CreateDataAssetFromObjectStorage(CreateDataAssetDetails):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataAssetFromObjectStorage.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param url:
             The value to assign to the url property of this CreateDataAssetFromObjectStorage.
@@ -74,7 +74,7 @@ class CreateDataAssetFromObjectStorage(CreateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this CreateDataAssetFromObjectStorage.
-        :type default_connection: CreateConnectionFromObjectStorage
+        :type default_connection: oci.data_integration.models.CreateConnectionFromObjectStorage
 
         """
         self.swagger_types = {
@@ -205,7 +205,7 @@ class CreateDataAssetFromObjectStorage(CreateDataAssetDetails):
         Gets the default_connection of this CreateDataAssetFromObjectStorage.
 
         :return: The default_connection of this CreateDataAssetFromObjectStorage.
-        :rtype: CreateConnectionFromObjectStorage
+        :rtype: oci.data_integration.models.CreateConnectionFromObjectStorage
         """
         return self._default_connection
 
@@ -215,7 +215,7 @@ class CreateDataAssetFromObjectStorage(CreateDataAssetDetails):
         Sets the default_connection of this CreateDataAssetFromObjectStorage.
 
         :param default_connection: The default_connection of this CreateDataAssetFromObjectStorage.
-        :type: CreateConnectionFromObjectStorage
+        :type: oci.data_integration.models.CreateConnectionFromObjectStorage
         """
         self._default_connection = default_connection
 

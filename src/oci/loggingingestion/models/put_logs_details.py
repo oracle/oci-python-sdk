@@ -24,7 +24,7 @@ class PutLogsDetails(object):
 
         :param log_entry_batches:
             The value to assign to the log_entry_batches property of this PutLogsDetails.
-        :type log_entry_batches: list[LogEntryBatch]
+        :type log_entry_batches: list[oci.loggingingestion.models.LogEntryBatch]
 
         """
         self.swagger_types = {
@@ -74,7 +74,7 @@ class PutLogsDetails(object):
 
 
         :return: The log_entry_batches of this PutLogsDetails.
-        :rtype: list[LogEntryBatch]
+        :rtype: list[oci.loggingingestion.models.LogEntryBatch]
         """
         return self._log_entry_batches
 
@@ -86,7 +86,7 @@ class PutLogsDetails(object):
 
 
         :param log_entry_batches: The log_entry_batches of this PutLogsDetails.
-        :type: list[LogEntryBatch]
+        :type: list[oci.loggingingestion.models.LogEntryBatch]
         """
         self._log_entry_batches = log_entry_batches
 

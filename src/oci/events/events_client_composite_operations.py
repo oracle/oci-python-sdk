@@ -28,7 +28,7 @@ class EventsClientCompositeOperations(object):
         Calls :py:func:`~oci.events.EventsClient.create_rule` and waits for the :py:class:`~oci.events.models.Rule` acted upon
         to enter the given state(s).
 
-        :param CreateRuleDetails create_rule_details: (required)
+        :param oci.events.models.CreateRuleDetails create_rule_details: (required)
             Specification of the rule to create
 
         :param list[str] wait_for_states:
@@ -120,7 +120,7 @@ class EventsClientCompositeOperations(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param UpdateRuleDetails update_rule_details: (required)
+        :param oci.events.models.UpdateRuleDetails update_rule_details: (required)
             The new rule spec to apply
 
         :param list[str] wait_for_states:

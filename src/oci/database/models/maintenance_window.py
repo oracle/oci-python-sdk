@@ -34,7 +34,7 @@ class MaintenanceWindow(object):
 
         :param months:
             The value to assign to the months property of this MaintenanceWindow.
-        :type months: list[Month]
+        :type months: list[oci.database.models.Month]
 
         :param weeks_of_month:
             The value to assign to the weeks_of_month property of this MaintenanceWindow.
@@ -42,7 +42,7 @@ class MaintenanceWindow(object):
 
         :param days_of_week:
             The value to assign to the days_of_week property of this MaintenanceWindow.
-        :type days_of_week: list[DayOfWeek]
+        :type days_of_week: list[oci.database.models.DayOfWeek]
 
         :param hours_of_day:
             The value to assign to the hours_of_day property of this MaintenanceWindow.
@@ -116,7 +116,7 @@ class MaintenanceWindow(object):
 
 
         :return: The months of this MaintenanceWindow.
-        :rtype: list[Month]
+        :rtype: list[oci.database.models.Month]
         """
         return self._months
 
@@ -128,7 +128,7 @@ class MaintenanceWindow(object):
 
 
         :param months: The months of this MaintenanceWindow.
-        :type: list[Month]
+        :type: list[oci.database.models.Month]
         """
         self._months = months
 
@@ -168,7 +168,7 @@ class MaintenanceWindow(object):
 
 
         :return: The days_of_week of this MaintenanceWindow.
-        :rtype: list[DayOfWeek]
+        :rtype: list[oci.database.models.DayOfWeek]
         """
         return self._days_of_week
 
@@ -180,7 +180,7 @@ class MaintenanceWindow(object):
 
 
         :param days_of_week: The days_of_week of this MaintenanceWindow.
-        :type: list[DayOfWeek]
+        :type: list[oci.database.models.DayOfWeek]
         """
         self._days_of_week = days_of_week
 

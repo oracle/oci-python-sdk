@@ -20,7 +20,7 @@ class DataFlowValidationSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this DataFlowValidationSummaryCollection.
-        :type items: list[DataFlowValidationSummary]
+        :type items: list[oci.data_integration.models.DataFlowValidationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class DataFlowValidationSummaryCollection(object):
 
 
         :return: The items of this DataFlowValidationSummaryCollection.
-        :rtype: list[DataFlowValidationSummary]
+        :rtype: list[oci.data_integration.models.DataFlowValidationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class DataFlowValidationSummaryCollection(object):
 
 
         :param items: The items of this DataFlowValidationSummaryCollection.
-        :type: list[DataFlowValidationSummary]
+        :type: list[oci.data_integration.models.DataFlowValidationSummary]
         """
         self._items = items
 

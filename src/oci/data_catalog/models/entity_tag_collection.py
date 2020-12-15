@@ -24,7 +24,7 @@ class EntityTagCollection(object):
 
         :param items:
             The value to assign to the items property of this EntityTagCollection.
-        :type items: list[EntityTagSummary]
+        :type items: list[oci.data_catalog.models.EntityTagSummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class EntityTagCollection(object):
 
 
         :return: The items of this EntityTagCollection.
-        :rtype: list[EntityTagSummary]
+        :rtype: list[oci.data_catalog.models.EntityTagSummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class EntityTagCollection(object):
 
 
         :param items: The items of this EntityTagCollection.
-        :type: list[EntityTagSummary]
+        :type: list[oci.data_catalog.models.EntityTagSummary]
         """
         self._items = items
 

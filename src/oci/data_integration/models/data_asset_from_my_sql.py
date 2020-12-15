@@ -58,7 +58,7 @@ class DataAssetFromMySQL(DataAsset):
 
         :param native_type_system:
             The value to assign to the native_type_system property of this DataAssetFromMySQL.
-        :type native_type_system: TypeSystem
+        :type native_type_system: oci.data_integration.models.TypeSystem
 
         :param object_version:
             The value to assign to the object_version property of this DataAssetFromMySQL.
@@ -66,11 +66,11 @@ class DataAssetFromMySQL(DataAsset):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this DataAssetFromMySQL.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param metadata:
             The value to assign to the metadata property of this DataAssetFromMySQL.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this DataAssetFromMySQL.
@@ -90,7 +90,7 @@ class DataAssetFromMySQL(DataAsset):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetFromMySQL.
-        :type default_connection: ConnectionFromMySQLDetails
+        :type default_connection: oci.data_integration.models.ConnectionFromMySQLDetails
 
         """
         self.swagger_types = {
@@ -233,7 +233,7 @@ class DataAssetFromMySQL(DataAsset):
         Gets the default_connection of this DataAssetFromMySQL.
 
         :return: The default_connection of this DataAssetFromMySQL.
-        :rtype: ConnectionFromMySQLDetails
+        :rtype: oci.data_integration.models.ConnectionFromMySQLDetails
         """
         return self._default_connection
 
@@ -243,7 +243,7 @@ class DataAssetFromMySQL(DataAsset):
         Sets the default_connection of this DataAssetFromMySQL.
 
         :param default_connection: The default_connection of this DataAssetFromMySQL.
-        :type: ConnectionFromMySQLDetails
+        :type: oci.data_integration.models.ConnectionFromMySQLDetails
         """
         self._default_connection = default_connection
 

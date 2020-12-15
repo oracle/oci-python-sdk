@@ -124,6 +124,9 @@ class FunctionsInvokeClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/invoke_function.py.html>`__ to see an example of how to use invoke_function API.
         """
         resource_path = "/functions/{functionId}/actions/invoke"
         method = "POST"

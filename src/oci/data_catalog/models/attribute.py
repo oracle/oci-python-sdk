@@ -46,6 +46,18 @@ class Attribute(object):
     #: This constant has a value of "MOVING"
     LIFECYCLE_STATE_MOVING = "MOVING"
 
+    #: A constant which can be used with the associated_rule_types property of a Attribute.
+    #: This constant has a value of "PRIMARYKEY"
+    ASSOCIATED_RULE_TYPES_PRIMARYKEY = "PRIMARYKEY"
+
+    #: A constant which can be used with the associated_rule_types property of a Attribute.
+    #: This constant has a value of "FOREIGNKEY"
+    ASSOCIATED_RULE_TYPES_FOREIGNKEY = "FOREIGNKEY"
+
+    #: A constant which can be used with the associated_rule_types property of a Attribute.
+    #: This constant has a value of "UNIQUEKEY"
+    ASSOCIATED_RULE_TYPES_UNIQUEKEY = "UNIQUEKEY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Attribute object with values from keyword arguments.
@@ -159,11 +171,17 @@ class Attribute(object):
 
         :param custom_property_members:
             The value to assign to the custom_property_members property of this Attribute.
-        :type custom_property_members: list[CustomPropertyGetUsage]
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
 
         :param properties:
             The value to assign to the properties property of this Attribute.
         :type properties: dict(str, dict(str, str))
+
+        :param associated_rule_types:
+            The value to assign to the associated_rule_types property of this Attribute.
+            Allowed values for items in this list are: "PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type associated_rule_types: list[str]
 
         """
         self.swagger_types = {
@@ -194,7 +212,8 @@ class Attribute(object):
             'uri': 'str',
             'path': 'str',
             'custom_property_members': 'list[CustomPropertyGetUsage]',
-            'properties': 'dict(str, dict(str, str))'
+            'properties': 'dict(str, dict(str, str))',
+            'associated_rule_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -225,7 +244,8 @@ class Attribute(object):
             'uri': 'uri',
             'path': 'path',
             'custom_property_members': 'customPropertyMembers',
-            'properties': 'properties'
+            'properties': 'properties',
+            'associated_rule_types': 'associatedRuleTypes'
         }
 
         self._key = None
@@ -256,6 +276,7 @@ class Attribute(object):
         self._path = None
         self._custom_property_members = None
         self._properties = None
+        self._associated_rule_types = None
 
     @property
     def key(self):
@@ -917,7 +938,7 @@ class Attribute(object):
 
 
         :return: The custom_property_members of this Attribute.
-        :rtype: list[CustomPropertyGetUsage]
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         return self._custom_property_members
 
@@ -929,7 +950,7 @@ class Attribute(object):
 
 
         :param custom_property_members: The custom_property_members of this Attribute.
-        :type: list[CustomPropertyGetUsage]
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
         """
         self._custom_property_members = custom_property_members
 
@@ -964,6 +985,36 @@ class Attribute(object):
         :type: dict(str, dict(str, str))
         """
         self._properties = properties
+
+    @property
+    def associated_rule_types(self):
+        """
+        Gets the associated_rule_types of this Attribute.
+        Rule types associated with attribute.
+
+        Allowed values for items in this list are: "PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The associated_rule_types of this Attribute.
+        :rtype: list[str]
+        """
+        return self._associated_rule_types
+
+    @associated_rule_types.setter
+    def associated_rule_types(self, associated_rule_types):
+        """
+        Sets the associated_rule_types of this Attribute.
+        Rule types associated with attribute.
+
+
+        :param associated_rule_types: The associated_rule_types of this Attribute.
+        :type: list[str]
+        """
+        allowed_values = ["PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY"]
+        if associated_rule_types:
+            associated_rule_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in associated_rule_types]
+        self._associated_rule_types = associated_rule_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

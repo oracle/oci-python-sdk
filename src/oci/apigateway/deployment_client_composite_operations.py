@@ -31,7 +31,7 @@ class DeploymentClientCompositeOperations(object):
         :param str deployment_id: (required)
             The ocid of the deployment.
 
-        :param ChangeDeploymentCompartmentDetails change_deployment_compartment_details: (required)
+        :param oci.apigateway.models.ChangeDeploymentCompartmentDetails change_deployment_compartment_details: (required)
             Details of the target compartment.
 
         :param list[str] wait_for_states:
@@ -69,7 +69,7 @@ class DeploymentClientCompositeOperations(object):
         Calls :py:func:`~oci.apigateway.DeploymentClient.create_deployment` and waits for the :py:class:`~oci.apigateway.models.WorkRequest`
         to enter the given state(s).
 
-        :param CreateDeploymentDetails create_deployment_details: (required)
+        :param oci.apigateway.models.CreateDeploymentDetails create_deployment_details: (required)
             Details for the new deployment
 
         :param list[str] wait_for_states:
@@ -156,7 +156,7 @@ class DeploymentClientCompositeOperations(object):
         :param str deployment_id: (required)
             The ocid of the deployment.
 
-        :param UpdateDeploymentDetails update_deployment_details: (required)
+        :param oci.apigateway.models.UpdateDeploymentDetails update_deployment_details: (required)
             The information to be updated.
 
         :param list[str] wait_for_states:

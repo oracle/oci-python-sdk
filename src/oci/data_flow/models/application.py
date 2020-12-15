@@ -128,7 +128,7 @@ class Application(object):
 
         :param parameters:
             The value to assign to the parameters property of this Application.
-        :type parameters: list[ApplicationParameter]
+        :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
         :param private_endpoint_id:
             The value to assign to the private_endpoint_id property of this Application.
@@ -756,7 +756,7 @@ class Application(object):
 
 
         :return: The parameters of this Application.
-        :rtype: list[ApplicationParameter]
+        :rtype: list[oci.data_flow.models.ApplicationParameter]
         """
         return self._parameters
 
@@ -771,7 +771,7 @@ class Application(object):
 
 
         :param parameters: The parameters of this Application.
-        :type: list[ApplicationParameter]
+        :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
 

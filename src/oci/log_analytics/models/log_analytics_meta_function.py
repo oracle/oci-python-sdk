@@ -20,7 +20,7 @@ class LogAnalyticsMetaFunction(object):
 
         :param meta_function_argument:
             The value to assign to the meta_function_argument property of this LogAnalyticsMetaFunction.
-        :type meta_function_argument: list[LogAnalyticsMetaFunctionArgument]
+        :type meta_function_argument: list[oci.log_analytics.models.LogAnalyticsMetaFunctionArgument]
 
         :param component:
             The value to assign to the component property of this LogAnalyticsMetaFunction.
@@ -83,7 +83,7 @@ class LogAnalyticsMetaFunction(object):
 
 
         :return: The meta_function_argument of this LogAnalyticsMetaFunction.
-        :rtype: list[LogAnalyticsMetaFunctionArgument]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsMetaFunctionArgument]
         """
         return self._meta_function_argument
 
@@ -95,7 +95,7 @@ class LogAnalyticsMetaFunction(object):
 
 
         :param meta_function_argument: The meta_function_argument of this LogAnalyticsMetaFunction.
-        :type: list[LogAnalyticsMetaFunctionArgument]
+        :type: list[oci.log_analytics.models.LogAnalyticsMetaFunctionArgument]
         """
         self._meta_function_argument = meta_function_argument
 

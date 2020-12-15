@@ -66,7 +66,7 @@ class Ticket(object):
 
         :param resource_list:
             The value to assign to the resource_list property of this Ticket.
-        :type resource_list: list[Resource]
+        :type resource_list: list[oci.cims.models.Resource]
 
         :param title:
             The value to assign to the title property of this Ticket.
@@ -193,7 +193,7 @@ class Ticket(object):
 
 
         :return: The resource_list of this Ticket.
-        :rtype: list[Resource]
+        :rtype: list[oci.cims.models.Resource]
         """
         return self._resource_list
 
@@ -205,7 +205,7 @@ class Ticket(object):
 
 
         :param resource_list: The resource_list of this Ticket.
-        :type: list[Resource]
+        :type: list[oci.cims.models.Resource]
         """
         self._resource_list = resource_list
 

@@ -20,7 +20,7 @@ class LogAnalyticsParserMetaPlugin(object):
 
         :param meta_plugin_parameters:
             The value to assign to the meta_plugin_parameters property of this LogAnalyticsParserMetaPlugin.
-        :type meta_plugin_parameters: list[LogAnalyticsParserMetaPluginParameter]
+        :type meta_plugin_parameters: list[oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter]
 
         :param description:
             The value to assign to the description property of this LogAnalyticsParserMetaPlugin.
@@ -62,7 +62,7 @@ class LogAnalyticsParserMetaPlugin(object):
 
 
         :return: The meta_plugin_parameters of this LogAnalyticsParserMetaPlugin.
-        :rtype: list[LogAnalyticsParserMetaPluginParameter]
+        :rtype: list[oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter]
         """
         return self._meta_plugin_parameters
 
@@ -74,7 +74,7 @@ class LogAnalyticsParserMetaPlugin(object):
 
 
         :param meta_plugin_parameters: The meta_plugin_parameters of this LogAnalyticsParserMetaPlugin.
-        :type: list[LogAnalyticsParserMetaPluginParameter]
+        :type: list[oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter]
         """
         self._meta_plugin_parameters = meta_plugin_parameters
 

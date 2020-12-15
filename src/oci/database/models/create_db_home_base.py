@@ -52,6 +52,14 @@ class CreateDbHomeBase(object):
             The value to assign to the display_name property of this CreateDbHomeBase.
         :type display_name: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateDbHomeBase.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this CreateDbHomeBase.
+        :type kms_key_version_id: str
+
         :param database_software_image_id:
             The value to assign to the database_software_image_id property of this CreateDbHomeBase.
         :type database_software_image_id: str
@@ -72,6 +80,8 @@ class CreateDbHomeBase(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'database_software_image_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -80,6 +90,8 @@ class CreateDbHomeBase(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'database_software_image_id': 'databaseSoftwareImageId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -87,6 +99,8 @@ class CreateDbHomeBase(object):
         }
 
         self._display_name = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._database_software_image_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -140,6 +154,54 @@ class CreateDbHomeBase(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateDbHomeBase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this CreateDbHomeBase.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateDbHomeBase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this CreateDbHomeBase.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this CreateDbHomeBase.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this CreateDbHomeBase.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this CreateDbHomeBase.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this CreateDbHomeBase.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
 
     @property
     def database_software_image_id(self):

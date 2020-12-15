@@ -35,7 +35,7 @@ class ChartColumn(AbstractColumn):
 
         :param values:
             The value to assign to the values property of this ChartColumn.
-        :type values: list[FieldValue]
+        :type values: list[oci.log_analytics.models.FieldValue]
 
         :param is_list_of_values:
             The value to assign to the is_list_of_values property of this ChartColumn.
@@ -80,7 +80,7 @@ class ChartColumn(AbstractColumn):
 
         :param series:
             The value to assign to the series property of this ChartColumn.
-        :type series: list[ChartDataColumn]
+        :type series: list[oci.log_analytics.models.ChartDataColumn]
 
         """
         self.swagger_types = {
@@ -216,7 +216,7 @@ class ChartColumn(AbstractColumn):
 
 
         :return: The series of this ChartColumn.
-        :rtype: list[ChartDataColumn]
+        :rtype: list[oci.log_analytics.models.ChartDataColumn]
         """
         return self._series
 
@@ -228,7 +228,7 @@ class ChartColumn(AbstractColumn):
 
 
         :param series: The series of this ChartColumn.
-        :type: list[ChartDataColumn]
+        :type: list[oci.log_analytics.models.ChartDataColumn]
         """
         self._series = series
 

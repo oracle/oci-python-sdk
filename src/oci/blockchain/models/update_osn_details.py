@@ -20,7 +20,7 @@ class UpdateOsnDetails(object):
 
         :param ocpu_allocation_param:
             The value to assign to the ocpu_allocation_param property of this UpdateOsnDetails.
-        :type ocpu_allocation_param: OcpuAllocationNumberParam
+        :type ocpu_allocation_param: oci.blockchain.models.OcpuAllocationNumberParam
 
         """
         self.swagger_types = {
@@ -39,7 +39,7 @@ class UpdateOsnDetails(object):
         **[Required]** Gets the ocpu_allocation_param of this UpdateOsnDetails.
 
         :return: The ocpu_allocation_param of this UpdateOsnDetails.
-        :rtype: OcpuAllocationNumberParam
+        :rtype: oci.blockchain.models.OcpuAllocationNumberParam
         """
         return self._ocpu_allocation_param
 
@@ -49,7 +49,7 @@ class UpdateOsnDetails(object):
         Sets the ocpu_allocation_param of this UpdateOsnDetails.
 
         :param ocpu_allocation_param: The ocpu_allocation_param of this UpdateOsnDetails.
-        :type: OcpuAllocationNumberParam
+        :type: oci.blockchain.models.OcpuAllocationNumberParam
         """
         self._ocpu_allocation_param = ocpu_allocation_param
 

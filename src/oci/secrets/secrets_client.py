@@ -118,6 +118,9 @@ class SecretsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.secrets.models.SecretBundle`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/secrets/get_secret_bundle.py.html>`__ to see an example of how to use get_secret_bundle API.
         """
         resource_path = "/secretbundles/{secretId}"
         method = "GET"
@@ -232,6 +235,9 @@ class SecretsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.secrets.models.SecretBundleVersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/secrets/list_secret_bundle_versions.py.html>`__ to see an example of how to use list_secret_bundle_versions API.
         """
         resource_path = "/secretbundles/{secretId}/versions"
         method = "GET"

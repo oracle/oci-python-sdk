@@ -38,11 +38,11 @@ class ClassifyCommandDescriptor(AbstractCommandDescriptor):
 
         :param referenced_fields:
             The value to assign to the referenced_fields property of this ClassifyCommandDescriptor.
-        :type referenced_fields: list[AbstractField]
+        :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
             The value to assign to the declared_fields property of this ClassifyCommandDescriptor.
-        :type declared_fields: list[AbstractField]
+        :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         :param top_count:
             The value to assign to the top_count property of this ClassifyCommandDescriptor.
@@ -54,7 +54,7 @@ class ClassifyCommandDescriptor(AbstractCommandDescriptor):
 
         :param correlate:
             The value to assign to the correlate property of this ClassifyCommandDescriptor.
-        :type correlate: list[FieldsAddRemoveField]
+        :type correlate: list[oci.log_analytics.models.FieldsAddRemoveField]
 
         """
         self.swagger_types = {
@@ -148,7 +148,7 @@ class ClassifyCommandDescriptor(AbstractCommandDescriptor):
 
 
         :return: The correlate of this ClassifyCommandDescriptor.
-        :rtype: list[FieldsAddRemoveField]
+        :rtype: list[oci.log_analytics.models.FieldsAddRemoveField]
         """
         return self._correlate
 
@@ -160,7 +160,7 @@ class ClassifyCommandDescriptor(AbstractCommandDescriptor):
 
 
         :param correlate: The correlate of this ClassifyCommandDescriptor.
-        :type: list[FieldsAddRemoveField]
+        :type: list[oci.log_analytics.models.FieldsAddRemoveField]
         """
         self._correlate = correlate
 

@@ -20,11 +20,11 @@ class ResourceStatisticsAggregation(object):
 
         :param database_details:
             The value to assign to the database_details property of this ResourceStatisticsAggregation.
-        :type database_details: DatabaseDetails
+        :type database_details: oci.opsi.models.DatabaseDetails
 
         :param current_statistics:
             The value to assign to the current_statistics property of this ResourceStatisticsAggregation.
-        :type current_statistics: ResourceStatistics
+        :type current_statistics: oci.opsi.models.ResourceStatistics
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class ResourceStatisticsAggregation(object):
         Gets the database_details of this ResourceStatisticsAggregation.
 
         :return: The database_details of this ResourceStatisticsAggregation.
-        :rtype: DatabaseDetails
+        :rtype: oci.opsi.models.DatabaseDetails
         """
         return self._database_details
 
@@ -56,7 +56,7 @@ class ResourceStatisticsAggregation(object):
         Sets the database_details of this ResourceStatisticsAggregation.
 
         :param database_details: The database_details of this ResourceStatisticsAggregation.
-        :type: DatabaseDetails
+        :type: oci.opsi.models.DatabaseDetails
         """
         self._database_details = database_details
 
@@ -66,7 +66,7 @@ class ResourceStatisticsAggregation(object):
         Gets the current_statistics of this ResourceStatisticsAggregation.
 
         :return: The current_statistics of this ResourceStatisticsAggregation.
-        :rtype: ResourceStatistics
+        :rtype: oci.opsi.models.ResourceStatistics
         """
         return self._current_statistics
 
@@ -76,7 +76,7 @@ class ResourceStatisticsAggregation(object):
         Sets the current_statistics of this ResourceStatisticsAggregation.
 
         :param current_statistics: The current_statistics of this ResourceStatisticsAggregation.
-        :type: ResourceStatistics
+        :type: oci.opsi.models.ResourceStatistics
         """
         self._current_statistics = current_statistics
 

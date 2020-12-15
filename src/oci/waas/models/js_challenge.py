@@ -46,11 +46,11 @@ class JsChallenge(object):
 
         :param set_http_header:
             The value to assign to the set_http_header property of this JsChallenge.
-        :type set_http_header: Header
+        :type set_http_header: oci.waas.models.Header
 
         :param challenge_settings:
             The value to assign to the challenge_settings property of this JsChallenge.
-        :type challenge_settings: BlockChallengeSettings
+        :type challenge_settings: oci.waas.models.BlockChallengeSettings
 
         :param are_redirects_challenged:
             The value to assign to the are_redirects_challenged property of this JsChallenge.
@@ -58,7 +58,7 @@ class JsChallenge(object):
 
         :param criteria:
             The value to assign to the criteria property of this JsChallenge.
-        :type criteria: list[AccessRuleCriteria]
+        :type criteria: list[oci.waas.models.AccessRuleCriteria]
 
         :param is_nat_enabled:
             The value to assign to the is_nat_enabled property of this JsChallenge.
@@ -209,7 +209,7 @@ class JsChallenge(object):
 
 
         :return: The set_http_header of this JsChallenge.
-        :rtype: Header
+        :rtype: oci.waas.models.Header
         """
         return self._set_http_header
 
@@ -221,7 +221,7 @@ class JsChallenge(object):
 
 
         :param set_http_header: The set_http_header of this JsChallenge.
-        :type: Header
+        :type: oci.waas.models.Header
         """
         self._set_http_header = set_http_header
 
@@ -231,7 +231,7 @@ class JsChallenge(object):
         Gets the challenge_settings of this JsChallenge.
 
         :return: The challenge_settings of this JsChallenge.
-        :rtype: BlockChallengeSettings
+        :rtype: oci.waas.models.BlockChallengeSettings
         """
         return self._challenge_settings
 
@@ -241,7 +241,7 @@ class JsChallenge(object):
         Sets the challenge_settings of this JsChallenge.
 
         :param challenge_settings: The challenge_settings of this JsChallenge.
-        :type: BlockChallengeSettings
+        :type: oci.waas.models.BlockChallengeSettings
         """
         self._challenge_settings = challenge_settings
 
@@ -277,7 +277,7 @@ class JsChallenge(object):
 
 
         :return: The criteria of this JsChallenge.
-        :rtype: list[AccessRuleCriteria]
+        :rtype: list[oci.waas.models.AccessRuleCriteria]
         """
         return self._criteria
 
@@ -289,7 +289,7 @@ class JsChallenge(object):
 
 
         :param criteria: The criteria of this JsChallenge.
-        :type: list[AccessRuleCriteria]
+        :type: list[oci.waas.models.AccessRuleCriteria]
         """
         self._criteria = criteria
 

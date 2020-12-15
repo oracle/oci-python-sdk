@@ -32,15 +32,15 @@ class CreateServiceConnectorDetails(object):
 
         :param source:
             The value to assign to the source property of this CreateServiceConnectorDetails.
-        :type source: SourceDetails
+        :type source: oci.sch.models.SourceDetails
 
         :param tasks:
             The value to assign to the tasks property of this CreateServiceConnectorDetails.
-        :type tasks: list[TaskDetails]
+        :type tasks: list[oci.sch.models.TaskDetails]
 
         :param target:
             The value to assign to the target property of this CreateServiceConnectorDetails.
-        :type target: TargetDetails
+        :type target: oci.sch.models.TargetDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateServiceConnectorDetails.
@@ -168,7 +168,7 @@ class CreateServiceConnectorDetails(object):
         **[Required]** Gets the source of this CreateServiceConnectorDetails.
 
         :return: The source of this CreateServiceConnectorDetails.
-        :rtype: SourceDetails
+        :rtype: oci.sch.models.SourceDetails
         """
         return self._source
 
@@ -178,7 +178,7 @@ class CreateServiceConnectorDetails(object):
         Sets the source of this CreateServiceConnectorDetails.
 
         :param source: The source of this CreateServiceConnectorDetails.
-        :type: SourceDetails
+        :type: oci.sch.models.SourceDetails
         """
         self._source = source
 
@@ -190,7 +190,7 @@ class CreateServiceConnectorDetails(object):
 
 
         :return: The tasks of this CreateServiceConnectorDetails.
-        :rtype: list[TaskDetails]
+        :rtype: list[oci.sch.models.TaskDetails]
         """
         return self._tasks
 
@@ -202,7 +202,7 @@ class CreateServiceConnectorDetails(object):
 
 
         :param tasks: The tasks of this CreateServiceConnectorDetails.
-        :type: list[TaskDetails]
+        :type: list[oci.sch.models.TaskDetails]
         """
         self._tasks = tasks
 
@@ -212,7 +212,7 @@ class CreateServiceConnectorDetails(object):
         **[Required]** Gets the target of this CreateServiceConnectorDetails.
 
         :return: The target of this CreateServiceConnectorDetails.
-        :rtype: TargetDetails
+        :rtype: oci.sch.models.TargetDetails
         """
         return self._target
 
@@ -222,7 +222,7 @@ class CreateServiceConnectorDetails(object):
         Sets the target of this CreateServiceConnectorDetails.
 
         :param target: The target of this CreateServiceConnectorDetails.
-        :type: TargetDetails
+        :type: oci.sch.models.TargetDetails
         """
         self._target = target
 

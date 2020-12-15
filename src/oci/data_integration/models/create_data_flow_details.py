@@ -28,7 +28,7 @@ class CreateDataFlowDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateDataFlowDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateDataFlowDetails.
@@ -40,11 +40,11 @@ class CreateDataFlowDetails(object):
 
         :param nodes:
             The value to assign to the nodes property of this CreateDataFlowDetails.
-        :type nodes: list[FlowNode]
+        :type nodes: list[oci.data_integration.models.FlowNode]
 
         :param parameters:
             The value to assign to the parameters property of this CreateDataFlowDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param description:
             The value to assign to the description property of this CreateDataFlowDetails.
@@ -52,7 +52,7 @@ class CreateDataFlowDetails(object):
 
         :param flow_config_values:
             The value to assign to the flow_config_values property of this CreateDataFlowDetails.
-        :type flow_config_values: ConfigValues
+        :type flow_config_values: oci.data_integration.models.ConfigValues
 
         :param object_status:
             The value to assign to the object_status property of this CreateDataFlowDetails.
@@ -60,7 +60,7 @@ class CreateDataFlowDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateDataFlowDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -157,7 +157,7 @@ class CreateDataFlowDetails(object):
         Gets the parent_ref of this CreateDataFlowDetails.
 
         :return: The parent_ref of this CreateDataFlowDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -167,7 +167,7 @@ class CreateDataFlowDetails(object):
         Sets the parent_ref of this CreateDataFlowDetails.
 
         :param parent_ref: The parent_ref of this CreateDataFlowDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -227,7 +227,7 @@ class CreateDataFlowDetails(object):
 
 
         :return: The nodes of this CreateDataFlowDetails.
-        :rtype: list[FlowNode]
+        :rtype: list[oci.data_integration.models.FlowNode]
         """
         return self._nodes
 
@@ -239,7 +239,7 @@ class CreateDataFlowDetails(object):
 
 
         :param nodes: The nodes of this CreateDataFlowDetails.
-        :type: list[FlowNode]
+        :type: list[oci.data_integration.models.FlowNode]
         """
         self._nodes = nodes
 
@@ -251,7 +251,7 @@ class CreateDataFlowDetails(object):
 
 
         :return: The parameters of this CreateDataFlowDetails.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -263,7 +263,7 @@ class CreateDataFlowDetails(object):
 
 
         :param parameters: The parameters of this CreateDataFlowDetails.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -297,7 +297,7 @@ class CreateDataFlowDetails(object):
         Gets the flow_config_values of this CreateDataFlowDetails.
 
         :return: The flow_config_values of this CreateDataFlowDetails.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._flow_config_values
 
@@ -307,7 +307,7 @@ class CreateDataFlowDetails(object):
         Sets the flow_config_values of this CreateDataFlowDetails.
 
         :param flow_config_values: The flow_config_values of this CreateDataFlowDetails.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._flow_config_values = flow_config_values
 
@@ -341,7 +341,7 @@ class CreateDataFlowDetails(object):
         **[Required]** Gets the registry_metadata of this CreateDataFlowDetails.
 
         :return: The registry_metadata of this CreateDataFlowDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -351,7 +351,7 @@ class CreateDataFlowDetails(object):
         Sets the registry_metadata of this CreateDataFlowDetails.
 
         :param registry_metadata: The registry_metadata of this CreateDataFlowDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 

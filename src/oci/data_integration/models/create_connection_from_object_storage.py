@@ -34,7 +34,7 @@ class CreateConnectionFromObjectStorage(CreateConnectionDetails):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateConnectionFromObjectStorage.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateConnectionFromObjectStorage.
@@ -54,11 +54,11 @@ class CreateConnectionFromObjectStorage(CreateConnectionDetails):
 
         :param connection_properties:
             The value to assign to the connection_properties property of this CreateConnectionFromObjectStorage.
-        :type connection_properties: list[ConnectionProperty]
+        :type connection_properties: list[oci.data_integration.models.ConnectionProperty]
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateConnectionFromObjectStorage.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         :param credential_file_content:
             The value to assign to the credential_file_content property of this CreateConnectionFromObjectStorage.

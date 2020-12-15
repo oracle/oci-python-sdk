@@ -96,11 +96,11 @@ class TargetDetectorRecipe(object):
 
         :param detector_rules:
             The value to assign to the detector_rules property of this TargetDetectorRecipe.
-        :type detector_rules: list[TargetDetectorRecipeDetectorRule]
+        :type detector_rules: list[oci.cloud_guard.models.TargetDetectorRecipeDetectorRule]
 
         :param effective_detector_rules:
             The value to assign to the effective_detector_rules property of this TargetDetectorRecipe.
-        :type effective_detector_rules: list[TargetDetectorRecipeDetectorRule]
+        :type effective_detector_rules: list[oci.cloud_guard.models.TargetDetectorRecipeDetectorRule]
 
         :param time_created:
             The value to assign to the time_created property of this TargetDetectorRecipe.
@@ -348,7 +348,7 @@ class TargetDetectorRecipe(object):
 
 
         :return: The detector_rules of this TargetDetectorRecipe.
-        :rtype: list[TargetDetectorRecipeDetectorRule]
+        :rtype: list[oci.cloud_guard.models.TargetDetectorRecipeDetectorRule]
         """
         return self._detector_rules
 
@@ -360,7 +360,7 @@ class TargetDetectorRecipe(object):
 
 
         :param detector_rules: The detector_rules of this TargetDetectorRecipe.
-        :type: list[TargetDetectorRecipeDetectorRule]
+        :type: list[oci.cloud_guard.models.TargetDetectorRecipeDetectorRule]
         """
         self._detector_rules = detector_rules
 
@@ -372,7 +372,7 @@ class TargetDetectorRecipe(object):
 
 
         :return: The effective_detector_rules of this TargetDetectorRecipe.
-        :rtype: list[TargetDetectorRecipeDetectorRule]
+        :rtype: list[oci.cloud_guard.models.TargetDetectorRecipeDetectorRule]
         """
         return self._effective_detector_rules
 
@@ -384,7 +384,7 @@ class TargetDetectorRecipe(object):
 
 
         :param effective_detector_rules: The effective_detector_rules of this TargetDetectorRecipe.
-        :type: list[TargetDetectorRecipeDetectorRule]
+        :type: list[oci.cloud_guard.models.TargetDetectorRecipeDetectorRule]
         """
         self._effective_detector_rules = effective_detector_rules
 

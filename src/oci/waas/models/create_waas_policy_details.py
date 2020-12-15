@@ -46,11 +46,11 @@ class CreateWaasPolicyDetails(object):
 
         :param policy_config:
             The value to assign to the policy_config property of this CreateWaasPolicyDetails.
-        :type policy_config: PolicyConfig
+        :type policy_config: oci.waas.models.PolicyConfig
 
         :param waf_config:
             The value to assign to the waf_config property of this CreateWaasPolicyDetails.
-        :type waf_config: WafConfigDetails
+        :type waf_config: oci.waas.models.WafConfigDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateWaasPolicyDetails.
@@ -254,7 +254,7 @@ class CreateWaasPolicyDetails(object):
         Gets the policy_config of this CreateWaasPolicyDetails.
 
         :return: The policy_config of this CreateWaasPolicyDetails.
-        :rtype: PolicyConfig
+        :rtype: oci.waas.models.PolicyConfig
         """
         return self._policy_config
 
@@ -264,7 +264,7 @@ class CreateWaasPolicyDetails(object):
         Sets the policy_config of this CreateWaasPolicyDetails.
 
         :param policy_config: The policy_config of this CreateWaasPolicyDetails.
-        :type: PolicyConfig
+        :type: oci.waas.models.PolicyConfig
         """
         self._policy_config = policy_config
 
@@ -274,7 +274,7 @@ class CreateWaasPolicyDetails(object):
         Gets the waf_config of this CreateWaasPolicyDetails.
 
         :return: The waf_config of this CreateWaasPolicyDetails.
-        :rtype: WafConfigDetails
+        :rtype: oci.waas.models.WafConfigDetails
         """
         return self._waf_config
 
@@ -284,7 +284,7 @@ class CreateWaasPolicyDetails(object):
         Sets the waf_config of this CreateWaasPolicyDetails.
 
         :param waf_config: The waf_config of this CreateWaasPolicyDetails.
-        :type: WafConfigDetails
+        :type: oci.waas.models.WafConfigDetails
         """
         self._waf_config = waf_config
 

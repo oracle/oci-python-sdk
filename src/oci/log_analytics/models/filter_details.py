@@ -33,7 +33,7 @@ class FilterDetails(object):
 
         :param filters:
             The value to assign to the filters property of this FilterDetails.
-        :type filters: list[Filter]
+        :type filters: list[oci.log_analytics.models.Filter]
 
         """
         self.swagger_types = {
@@ -116,7 +116,7 @@ class FilterDetails(object):
 
 
         :return: The filters of this FilterDetails.
-        :rtype: list[Filter]
+        :rtype: list[oci.log_analytics.models.Filter]
         """
         return self._filters
 
@@ -128,7 +128,7 @@ class FilterDetails(object):
 
 
         :param filters: The filters of this FilterDetails.
-        :type: list[Filter]
+        :type: list[oci.log_analytics.models.Filter]
         """
         self._filters = filters
 

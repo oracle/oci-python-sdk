@@ -45,6 +45,18 @@ class AttributeSummary(object):
     #: This constant has a value of "MOVING"
     LIFECYCLE_STATE_MOVING = "MOVING"
 
+    #: A constant which can be used with the associated_rule_types property of a AttributeSummary.
+    #: This constant has a value of "PRIMARYKEY"
+    ASSOCIATED_RULE_TYPES_PRIMARYKEY = "PRIMARYKEY"
+
+    #: A constant which can be used with the associated_rule_types property of a AttributeSummary.
+    #: This constant has a value of "FOREIGNKEY"
+    ASSOCIATED_RULE_TYPES_FOREIGNKEY = "FOREIGNKEY"
+
+    #: A constant which can be used with the associated_rule_types property of a AttributeSummary.
+    #: This constant has a value of "UNIQUEKEY"
+    ASSOCIATED_RULE_TYPES_UNIQUEKEY = "UNIQUEKEY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AttributeSummary object with values from keyword arguments.
@@ -124,6 +136,12 @@ class AttributeSummary(object):
             The value to assign to the path property of this AttributeSummary.
         :type path: str
 
+        :param associated_rule_types:
+            The value to assign to the associated_rule_types property of this AttributeSummary.
+            Allowed values for items in this list are: "PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type associated_rule_types: list[str]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -143,7 +161,8 @@ class AttributeSummary(object):
             'external_datatype_entity_key': 'str',
             'parent_attribute_key': 'str',
             'external_parent_attribute_key': 'str',
-            'path': 'str'
+            'path': 'str',
+            'associated_rule_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -164,7 +183,8 @@ class AttributeSummary(object):
             'external_datatype_entity_key': 'externalDatatypeEntityKey',
             'parent_attribute_key': 'parentAttributeKey',
             'external_parent_attribute_key': 'externalParentAttributeKey',
-            'path': 'path'
+            'path': 'path',
+            'associated_rule_types': 'associatedRuleTypes'
         }
 
         self._key = None
@@ -185,6 +205,7 @@ class AttributeSummary(object):
         self._parent_attribute_key = None
         self._external_parent_attribute_key = None
         self._path = None
+        self._associated_rule_types = None
 
     @property
     def key(self):
@@ -635,6 +656,36 @@ class AttributeSummary(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def associated_rule_types(self):
+        """
+        Gets the associated_rule_types of this AttributeSummary.
+        Rule types associated with attribute.
+
+        Allowed values for items in this list are: "PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The associated_rule_types of this AttributeSummary.
+        :rtype: list[str]
+        """
+        return self._associated_rule_types
+
+    @associated_rule_types.setter
+    def associated_rule_types(self, associated_rule_types):
+        """
+        Sets the associated_rule_types of this AttributeSummary.
+        Rule types associated with attribute.
+
+
+        :param associated_rule_types: The associated_rule_types of this AttributeSummary.
+        :type: list[str]
+        """
+        allowed_values = ["PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY"]
+        if associated_rule_types:
+            associated_rule_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in associated_rule_types]
+        self._associated_rule_types = associated_rule_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

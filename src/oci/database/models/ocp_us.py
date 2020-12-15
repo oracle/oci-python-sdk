@@ -28,7 +28,7 @@ class OCPUs(object):
 
         :param by_workload_type:
             The value to assign to the by_workload_type property of this OCPUs.
-        :type by_workload_type: WorkloadType
+        :type by_workload_type: oci.database.models.WorkloadType
 
         """
         self.swagger_types = {
@@ -101,7 +101,7 @@ class OCPUs(object):
         Gets the by_workload_type of this OCPUs.
 
         :return: The by_workload_type of this OCPUs.
-        :rtype: WorkloadType
+        :rtype: oci.database.models.WorkloadType
         """
         return self._by_workload_type
 
@@ -111,7 +111,7 @@ class OCPUs(object):
         Sets the by_workload_type of this OCPUs.
 
         :param by_workload_type: The by_workload_type of this OCPUs.
-        :type: WorkloadType
+        :type: oci.database.models.WorkloadType
         """
         self._by_workload_type = by_workload_type
 

@@ -34,7 +34,7 @@ class StockResponseBackend(ApiSpecificationRouteBackend):
 
         :param headers:
             The value to assign to the headers property of this StockResponseBackend.
-        :type headers: list[HeaderFieldSpecification]
+        :type headers: list[oci.apigateway.models.HeaderFieldSpecification]
 
         """
         self.swagger_types = {
@@ -113,7 +113,7 @@ class StockResponseBackend(ApiSpecificationRouteBackend):
 
 
         :return: The headers of this StockResponseBackend.
-        :rtype: list[HeaderFieldSpecification]
+        :rtype: list[oci.apigateway.models.HeaderFieldSpecification]
         """
         return self._headers
 
@@ -125,7 +125,7 @@ class StockResponseBackend(ApiSpecificationRouteBackend):
 
 
         :param headers: The headers of this StockResponseBackend.
-        :type: list[HeaderFieldSpecification]
+        :type: list[oci.apigateway.models.HeaderFieldSpecification]
         """
         self._headers = headers
 

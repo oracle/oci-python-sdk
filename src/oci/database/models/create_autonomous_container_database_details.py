@@ -82,7 +82,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         :param peer_autonomous_container_database_backup_config:
             The value to assign to the peer_autonomous_container_database_backup_config property of this CreateAutonomousContainerDatabaseDetails.
-        :type peer_autonomous_container_database_backup_config: PeerAutonomousContainerDatabaseBackupConfig
+        :type peer_autonomous_container_database_backup_config: oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
 
         :param autonomous_vm_cluster_id:
             The value to assign to the autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
@@ -99,7 +99,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this CreateAutonomousContainerDatabaseDetails.
-        :type maintenance_window_details: MaintenanceWindow
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         :param standby_maintenance_buffer_in_days:
             The value to assign to the standby_maintenance_buffer_in_days property of this CreateAutonomousContainerDatabaseDetails.
@@ -115,7 +115,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         :param backup_config:
             The value to assign to the backup_config property of this CreateAutonomousContainerDatabaseDetails.
-        :type backup_config: AutonomousContainerDatabaseBackupConfig
+        :type backup_config: oci.database.models.AutonomousContainerDatabaseBackupConfig
 
         :param kms_key_id:
             The value to assign to the kms_key_id property of this CreateAutonomousContainerDatabaseDetails.
@@ -463,7 +463,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Gets the peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
 
         :return: The peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
-        :rtype: PeerAutonomousContainerDatabaseBackupConfig
+        :rtype: oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
         """
         return self._peer_autonomous_container_database_backup_config
 
@@ -473,7 +473,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Sets the peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
 
         :param peer_autonomous_container_database_backup_config: The peer_autonomous_container_database_backup_config of this CreateAutonomousContainerDatabaseDetails.
-        :type: PeerAutonomousContainerDatabaseBackupConfig
+        :type: oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
         """
         self._peer_autonomous_container_database_backup_config = peer_autonomous_container_database_backup_config
 
@@ -567,7 +567,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Gets the maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
 
         :return: The maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
-        :rtype: MaintenanceWindow
+        :rtype: oci.database.models.MaintenanceWindow
         """
         return self._maintenance_window_details
 
@@ -577,7 +577,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Sets the maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
 
         :param maintenance_window_details: The maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
-        :type: MaintenanceWindow
+        :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
 
@@ -677,7 +677,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Gets the backup_config of this CreateAutonomousContainerDatabaseDetails.
 
         :return: The backup_config of this CreateAutonomousContainerDatabaseDetails.
-        :rtype: AutonomousContainerDatabaseBackupConfig
+        :rtype: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         return self._backup_config
 
@@ -687,7 +687,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Sets the backup_config of this CreateAutonomousContainerDatabaseDetails.
 
         :param backup_config: The backup_config of this CreateAutonomousContainerDatabaseDetails.
-        :type: AutonomousContainerDatabaseBackupConfig
+        :type: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         self._backup_config = backup_config
 

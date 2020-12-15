@@ -24,7 +24,7 @@ class EntityCollection(object):
 
         :param items:
             The value to assign to the items property of this EntityCollection.
-        :type items: list[EntitySummary]
+        :type items: list[oci.data_catalog.models.EntitySummary]
 
         """
         self.swagger_types = {
@@ -72,7 +72,7 @@ class EntityCollection(object):
 
 
         :return: The items of this EntityCollection.
-        :rtype: list[EntitySummary]
+        :rtype: list[oci.data_catalog.models.EntitySummary]
         """
         return self._items
 
@@ -84,7 +84,7 @@ class EntityCollection(object):
 
 
         :param items: The items of this EntityCollection.
-        :type: list[EntitySummary]
+        :type: list[oci.data_catalog.models.EntitySummary]
         """
         self._items = items
 

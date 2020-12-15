@@ -46,7 +46,7 @@ class CreateTaskValidationDetails(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this CreateTaskValidationDetails.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this CreateTaskValidationDetails.
@@ -70,27 +70,27 @@ class CreateTaskValidationDetails(object):
 
         :param input_ports:
             The value to assign to the input_ports property of this CreateTaskValidationDetails.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this CreateTaskValidationDetails.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param parameters:
             The value to assign to the parameters property of this CreateTaskValidationDetails.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this CreateTaskValidationDetails.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param config_provider_delegate:
             The value to assign to the config_provider_delegate property of this CreateTaskValidationDetails.
-        :type config_provider_delegate: ConfigProvider
+        :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
         :param metadata:
             The value to assign to the metadata property of this CreateTaskValidationDetails.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -247,7 +247,7 @@ class CreateTaskValidationDetails(object):
         Gets the parent_ref of this CreateTaskValidationDetails.
 
         :return: The parent_ref of this CreateTaskValidationDetails.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -257,7 +257,7 @@ class CreateTaskValidationDetails(object):
         Sets the parent_ref of this CreateTaskValidationDetails.
 
         :param parent_ref: The parent_ref of this CreateTaskValidationDetails.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -389,7 +389,7 @@ class CreateTaskValidationDetails(object):
 
 
         :return: The input_ports of this CreateTaskValidationDetails.
-        :rtype: list[InputPort]
+        :rtype: list[oci.data_integration.models.InputPort]
         """
         return self._input_ports
 
@@ -401,7 +401,7 @@ class CreateTaskValidationDetails(object):
 
 
         :param input_ports: The input_ports of this CreateTaskValidationDetails.
-        :type: list[InputPort]
+        :type: list[oci.data_integration.models.InputPort]
         """
         self._input_ports = input_ports
 
@@ -413,7 +413,7 @@ class CreateTaskValidationDetails(object):
 
 
         :return: The output_ports of this CreateTaskValidationDetails.
-        :rtype: list[OutputPort]
+        :rtype: list[oci.data_integration.models.OutputPort]
         """
         return self._output_ports
 
@@ -425,7 +425,7 @@ class CreateTaskValidationDetails(object):
 
 
         :param output_ports: The output_ports of this CreateTaskValidationDetails.
-        :type: list[OutputPort]
+        :type: list[oci.data_integration.models.OutputPort]
         """
         self._output_ports = output_ports
 
@@ -437,7 +437,7 @@ class CreateTaskValidationDetails(object):
 
 
         :return: The parameters of this CreateTaskValidationDetails.
-        :rtype: list[Parameter]
+        :rtype: list[oci.data_integration.models.Parameter]
         """
         return self._parameters
 
@@ -449,7 +449,7 @@ class CreateTaskValidationDetails(object):
 
 
         :param parameters: The parameters of this CreateTaskValidationDetails.
-        :type: list[Parameter]
+        :type: list[oci.data_integration.models.Parameter]
         """
         self._parameters = parameters
 
@@ -459,7 +459,7 @@ class CreateTaskValidationDetails(object):
         Gets the op_config_values of this CreateTaskValidationDetails.
 
         :return: The op_config_values of this CreateTaskValidationDetails.
-        :rtype: ConfigValues
+        :rtype: oci.data_integration.models.ConfigValues
         """
         return self._op_config_values
 
@@ -469,7 +469,7 @@ class CreateTaskValidationDetails(object):
         Sets the op_config_values of this CreateTaskValidationDetails.
 
         :param op_config_values: The op_config_values of this CreateTaskValidationDetails.
-        :type: ConfigValues
+        :type: oci.data_integration.models.ConfigValues
         """
         self._op_config_values = op_config_values
 
@@ -479,7 +479,7 @@ class CreateTaskValidationDetails(object):
         Gets the config_provider_delegate of this CreateTaskValidationDetails.
 
         :return: The config_provider_delegate of this CreateTaskValidationDetails.
-        :rtype: ConfigProvider
+        :rtype: oci.data_integration.models.ConfigProvider
         """
         return self._config_provider_delegate
 
@@ -489,7 +489,7 @@ class CreateTaskValidationDetails(object):
         Sets the config_provider_delegate of this CreateTaskValidationDetails.
 
         :param config_provider_delegate: The config_provider_delegate of this CreateTaskValidationDetails.
-        :type: ConfigProvider
+        :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
 
@@ -499,7 +499,7 @@ class CreateTaskValidationDetails(object):
         Gets the metadata of this CreateTaskValidationDetails.
 
         :return: The metadata of this CreateTaskValidationDetails.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -509,7 +509,7 @@ class CreateTaskValidationDetails(object):
         Sets the metadata of this CreateTaskValidationDetails.
 
         :param metadata: The metadata of this CreateTaskValidationDetails.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

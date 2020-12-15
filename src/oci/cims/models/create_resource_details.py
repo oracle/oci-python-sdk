@@ -258,7 +258,7 @@ class CreateResourceDetails(object):
 
         :param item:
             The value to assign to the item property of this CreateResourceDetails.
-        :type item: CreateItemDetails
+        :type item: oci.cims.models.CreateItemDetails
 
         :param region:
             The value to assign to the region property of this CreateResourceDetails.
@@ -293,7 +293,7 @@ class CreateResourceDetails(object):
         Gets the item of this CreateResourceDetails.
 
         :return: The item of this CreateResourceDetails.
-        :rtype: CreateItemDetails
+        :rtype: oci.cims.models.CreateItemDetails
         """
         return self._item
 
@@ -303,7 +303,7 @@ class CreateResourceDetails(object):
         Sets the item of this CreateResourceDetails.
 
         :param item: The item of this CreateResourceDetails.
-        :type: CreateItemDetails
+        :type: oci.cims.models.CreateItemDetails
         """
         self._item = item
 

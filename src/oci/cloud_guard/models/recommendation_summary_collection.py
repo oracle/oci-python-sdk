@@ -20,7 +20,7 @@ class RecommendationSummaryCollection(object):
 
         :param items:
             The value to assign to the items property of this RecommendationSummaryCollection.
-        :type items: list[RecommendationSummary]
+        :type items: list[oci.cloud_guard.models.RecommendationSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RecommendationSummaryCollection(object):
 
 
         :return: The items of this RecommendationSummaryCollection.
-        :rtype: list[RecommendationSummary]
+        :rtype: list[oci.cloud_guard.models.RecommendationSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RecommendationSummaryCollection(object):
 
 
         :param items: The items of this RecommendationSummaryCollection.
-        :type: list[RecommendationSummary]
+        :type: list[oci.cloud_guard.models.RecommendationSummary]
         """
         self._items = items
 

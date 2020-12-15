@@ -85,7 +85,7 @@ class Rule(object):
 
         :param actions:
             The value to assign to the actions property of this Rule.
-        :type actions: ActionList
+        :type actions: oci.events.models.ActionList
 
         :param id:
             The value to assign to the id property of this Rule.
@@ -433,7 +433,7 @@ class Rule(object):
         **[Required]** Gets the actions of this Rule.
 
         :return: The actions of this Rule.
-        :rtype: ActionList
+        :rtype: oci.events.models.ActionList
         """
         return self._actions
 
@@ -443,7 +443,7 @@ class Rule(object):
         Sets the actions of this Rule.
 
         :param actions: The actions of this Rule.
-        :type: ActionList
+        :type: oci.events.models.ActionList
         """
         self._actions = actions
 

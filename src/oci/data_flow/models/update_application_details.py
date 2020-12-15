@@ -97,7 +97,7 @@ class UpdateApplicationDetails(object):
 
         :param parameters:
             The value to assign to the parameters property of this UpdateApplicationDetails.
-        :type parameters: list[ApplicationParameter]
+        :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
         :param private_endpoint_id:
             The value to assign to the private_endpoint_id property of this UpdateApplicationDetails.
@@ -590,7 +590,7 @@ class UpdateApplicationDetails(object):
 
 
         :return: The parameters of this UpdateApplicationDetails.
-        :rtype: list[ApplicationParameter]
+        :rtype: list[oci.data_flow.models.ApplicationParameter]
         """
         return self._parameters
 
@@ -605,7 +605,7 @@ class UpdateApplicationDetails(object):
 
 
         :param parameters: The parameters of this UpdateApplicationDetails.
-        :type: list[ApplicationParameter]
+        :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
 

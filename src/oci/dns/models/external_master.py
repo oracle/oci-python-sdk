@@ -30,7 +30,7 @@ class ExternalMaster(object):
 
         :param tsig:
             The value to assign to the tsig property of this ExternalMaster.
-        :type tsig: TSIG
+        :type tsig: oci.dns.models.TSIG
 
         :param tsig_key_id:
             The value to assign to the tsig_key_id property of this ExternalMaster.
@@ -112,7 +112,7 @@ class ExternalMaster(object):
         Gets the tsig of this ExternalMaster.
 
         :return: The tsig of this ExternalMaster.
-        :rtype: TSIG
+        :rtype: oci.dns.models.TSIG
         """
         return self._tsig
 
@@ -122,7 +122,7 @@ class ExternalMaster(object):
         Sets the tsig of this ExternalMaster.
 
         :param tsig: The tsig of this ExternalMaster.
-        :type: TSIG
+        :type: oci.dns.models.TSIG
         """
         self._tsig = tsig
 

@@ -52,7 +52,7 @@ class TaskValidationSummary(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this TaskValidationSummary.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this TaskValidationSummary.
@@ -76,7 +76,7 @@ class TaskValidationSummary(object):
 
         :param metadata:
             The value to assign to the metadata property of this TaskValidationSummary.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         """
         self.swagger_types = {
@@ -329,7 +329,7 @@ class TaskValidationSummary(object):
         Gets the parent_ref of this TaskValidationSummary.
 
         :return: The parent_ref of this TaskValidationSummary.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -339,7 +339,7 @@ class TaskValidationSummary(object):
         Sets the parent_ref of this TaskValidationSummary.
 
         :param parent_ref: The parent_ref of this TaskValidationSummary.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -469,7 +469,7 @@ class TaskValidationSummary(object):
         Gets the metadata of this TaskValidationSummary.
 
         :return: The metadata of this TaskValidationSummary.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -479,7 +479,7 @@ class TaskValidationSummary(object):
         Sets the metadata of this TaskValidationSummary.
 
         :param metadata: The metadata of this TaskValidationSummary.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

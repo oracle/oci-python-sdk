@@ -25,11 +25,16 @@ class ConfigurationSourceProvider(object):
     #: This constant has a value of "GITLAB_ACCESS_TOKEN"
     CONFIG_SOURCE_PROVIDER_TYPE_GITLAB_ACCESS_TOKEN = "GITLAB_ACCESS_TOKEN"
 
+    #: A constant which can be used with the config_source_provider_type property of a ConfigurationSourceProvider.
+    #: This constant has a value of "GITHUB_ACCESS_TOKEN"
+    CONFIG_SOURCE_PROVIDER_TYPE_GITHUB_ACCESS_TOKEN = "GITHUB_ACCESS_TOKEN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConfigurationSourceProvider object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.resource_manager.models.GithubAccessTokenConfigurationSourceProvider`
         * :class:`~oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProvider`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -62,7 +67,7 @@ class ConfigurationSourceProvider(object):
 
         :param config_source_provider_type:
             The value to assign to the config_source_provider_type property of this ConfigurationSourceProvider.
-            Allowed values for this property are: "GITLAB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_provider_type: str
 
@@ -116,6 +121,9 @@ class ConfigurationSourceProvider(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['configSourceProviderType']
+
+        if type == 'GITHUB_ACCESS_TOKEN':
+            return 'GithubAccessTokenConfigurationSourceProvider'
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'GitlabAccessTokenConfigurationSourceProvider'
@@ -296,9 +304,11 @@ class ConfigurationSourceProvider(object):
     def config_source_provider_type(self):
         """
         **[Required]** Gets the config_source_provider_type of this ConfigurationSourceProvider.
-        The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to Git.
+        The type of configuration source provider.
+        The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+        The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
-        Allowed values for this property are: "GITLAB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -311,13 +321,15 @@ class ConfigurationSourceProvider(object):
     def config_source_provider_type(self, config_source_provider_type):
         """
         Sets the config_source_provider_type of this ConfigurationSourceProvider.
-        The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to Git.
+        The type of configuration source provider.
+        The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+        The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
 
         :param config_source_provider_type: The config_source_provider_type of this ConfigurationSourceProvider.
         :type: str
         """
-        allowed_values = ["GITLAB_ACCESS_TOKEN"]
+        allowed_values = ["GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"]
         if not value_allowed_none_or_none_sentinel(config_source_provider_type, allowed_values):
             config_source_provider_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_provider_type = config_source_provider_type

@@ -24,11 +24,11 @@ class ActivityProblemAggregation(object):
 
         :param political_location:
             The value to assign to the political_location property of this ActivityProblemAggregation.
-        :type political_location: PoliticalLocation
+        :type political_location: oci.cloud_guard.models.PoliticalLocation
 
         :param geographical_location:
             The value to assign to the geographical_location property of this ActivityProblemAggregation.
-        :type geographical_location: GeographicalLocation
+        :type geographical_location: oci.cloud_guard.models.GeographicalLocation
 
         :param count:
             The value to assign to the count property of this ActivityProblemAggregation.
@@ -84,7 +84,7 @@ class ActivityProblemAggregation(object):
         **[Required]** Gets the political_location of this ActivityProblemAggregation.
 
         :return: The political_location of this ActivityProblemAggregation.
-        :rtype: PoliticalLocation
+        :rtype: oci.cloud_guard.models.PoliticalLocation
         """
         return self._political_location
 
@@ -94,7 +94,7 @@ class ActivityProblemAggregation(object):
         Sets the political_location of this ActivityProblemAggregation.
 
         :param political_location: The political_location of this ActivityProblemAggregation.
-        :type: PoliticalLocation
+        :type: oci.cloud_guard.models.PoliticalLocation
         """
         self._political_location = political_location
 
@@ -104,7 +104,7 @@ class ActivityProblemAggregation(object):
         **[Required]** Gets the geographical_location of this ActivityProblemAggregation.
 
         :return: The geographical_location of this ActivityProblemAggregation.
-        :rtype: GeographicalLocation
+        :rtype: oci.cloud_guard.models.GeographicalLocation
         """
         return self._geographical_location
 
@@ -114,7 +114,7 @@ class ActivityProblemAggregation(object):
         Sets the geographical_location of this ActivityProblemAggregation.
 
         :param geographical_location: The geographical_location of this ActivityProblemAggregation.
-        :type: GeographicalLocation
+        :type: oci.cloud_guard.models.GeographicalLocation
         """
         self._geographical_location = geographical_location
 

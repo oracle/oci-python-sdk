@@ -20,7 +20,7 @@ class EsxiHostCollection(object):
 
         :param items:
             The value to assign to the items property of this EsxiHostCollection.
-        :type items: list[EsxiHostSummary]
+        :type items: list[oci.ocvp.models.EsxiHostSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class EsxiHostCollection(object):
 
 
         :return: The items of this EsxiHostCollection.
-        :rtype: list[EsxiHostSummary]
+        :rtype: list[oci.ocvp.models.EsxiHostSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class EsxiHostCollection(object):
 
 
         :param items: The items of this EsxiHostCollection.
-        :type: list[EsxiHostSummary]
+        :type: list[oci.ocvp.models.EsxiHostSummary]
         """
         self._items = items
 

@@ -22,7 +22,7 @@ class SupportedLevels(object):
 
         :param items:
             The value to assign to the items property of this SupportedLevels.
-        :type items: list[SupportedLevel]
+        :type items: list[oci.optimizer.models.SupportedLevel]
 
         """
         self.swagger_types = {
@@ -43,7 +43,7 @@ class SupportedLevels(object):
 
 
         :return: The items of this SupportedLevels.
-        :rtype: list[SupportedLevel]
+        :rtype: list[oci.optimizer.models.SupportedLevel]
         """
         return self._items
 
@@ -55,7 +55,7 @@ class SupportedLevels(object):
 
 
         :param items: The items of this SupportedLevels.
-        :type: list[SupportedLevel]
+        :type: list[oci.optimizer.models.SupportedLevel]
         """
         self._items = items
 

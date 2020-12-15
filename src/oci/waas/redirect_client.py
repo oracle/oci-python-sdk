@@ -117,6 +117,9 @@ class RedirectClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_http_redirect_compartment.py.html>`__ to see an example of how to use change_http_redirect_compartment API.
         """
         resource_path = "/httpRedirects/{httpRedirectId}/actions/changeCompartment"
         method = "POST"
@@ -199,6 +202,9 @@ class RedirectClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_http_redirect.py.html>`__ to see an example of how to use create_http_redirect API.
         """
         resource_path = "/httpRedirects"
         method = "POST"
@@ -272,6 +278,9 @@ class RedirectClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_http_redirect.py.html>`__ to see an example of how to use delete_http_redirect API.
         """
         resource_path = "/httpRedirects/{httpRedirectId}"
         method = "DELETE"
@@ -350,6 +359,9 @@ class RedirectClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.waas.models.HttpRedirect`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_http_redirect.py.html>`__ to see an example of how to use get_http_redirect API.
         """
         resource_path = "/httpRedirects/{httpRedirectId}"
         method = "GET"
@@ -457,6 +469,9 @@ class RedirectClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.waas.models.HttpRedirectSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_http_redirects.py.html>`__ to see an example of how to use list_http_redirects API.
         """
         resource_path = "/httpRedirects"
         method = "GET"
@@ -576,6 +591,9 @@ class RedirectClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_http_redirect.py.html>`__ to see an example of how to use update_http_redirect API.
         """
         resource_path = "/httpRedirects/{httpRedirectId}"
         method = "PUT"

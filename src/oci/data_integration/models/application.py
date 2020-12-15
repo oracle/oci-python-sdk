@@ -52,7 +52,7 @@ class Application(object):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Application.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param object_version:
             The value to assign to the object_version property of this Application.
@@ -60,7 +60,7 @@ class Application(object):
 
         :param dependent_object_metadata:
             The value to assign to the dependent_object_metadata property of this Application.
-        :type dependent_object_metadata: list[PatchObjectMetadata]
+        :type dependent_object_metadata: list[oci.data_integration.models.PatchObjectMetadata]
 
         :param published_object_metadata:
             The value to assign to the published_object_metadata property of this Application.
@@ -68,7 +68,7 @@ class Application(object):
 
         :param source_application_info:
             The value to assign to the source_application_info property of this Application.
-        :type source_application_info: SourceApplicationInfo
+        :type source_application_info: oci.data_integration.models.SourceApplicationInfo
 
         :param time_patched:
             The value to assign to the time_patched property of this Application.
@@ -76,7 +76,7 @@ class Application(object):
 
         :param metadata:
             The value to assign to the metadata property of this Application.
-        :type metadata: ObjectMetadata
+        :type metadata: oci.data_integration.models.ObjectMetadata
 
         :param key_map:
             The value to assign to the key_map property of this Application.
@@ -336,7 +336,7 @@ class Application(object):
         Gets the parent_ref of this Application.
 
         :return: The parent_ref of this Application.
-        :rtype: ParentReference
+        :rtype: oci.data_integration.models.ParentReference
         """
         return self._parent_ref
 
@@ -346,7 +346,7 @@ class Application(object):
         Sets the parent_ref of this Application.
 
         :param parent_ref: The parent_ref of this Application.
-        :type: ParentReference
+        :type: oci.data_integration.models.ParentReference
         """
         self._parent_ref = parent_ref
 
@@ -382,7 +382,7 @@ class Application(object):
 
 
         :return: The dependent_object_metadata of this Application.
-        :rtype: list[PatchObjectMetadata]
+        :rtype: list[oci.data_integration.models.PatchObjectMetadata]
         """
         return self._dependent_object_metadata
 
@@ -394,7 +394,7 @@ class Application(object):
 
 
         :param dependent_object_metadata: The dependent_object_metadata of this Application.
-        :type: list[PatchObjectMetadata]
+        :type: list[oci.data_integration.models.PatchObjectMetadata]
         """
         self._dependent_object_metadata = dependent_object_metadata
 
@@ -428,7 +428,7 @@ class Application(object):
         Gets the source_application_info of this Application.
 
         :return: The source_application_info of this Application.
-        :rtype: SourceApplicationInfo
+        :rtype: oci.data_integration.models.SourceApplicationInfo
         """
         return self._source_application_info
 
@@ -438,7 +438,7 @@ class Application(object):
         Sets the source_application_info of this Application.
 
         :param source_application_info: The source_application_info of this Application.
-        :type: SourceApplicationInfo
+        :type: oci.data_integration.models.SourceApplicationInfo
         """
         self._source_application_info = source_application_info
 
@@ -472,7 +472,7 @@ class Application(object):
         Gets the metadata of this Application.
 
         :return: The metadata of this Application.
-        :rtype: ObjectMetadata
+        :rtype: oci.data_integration.models.ObjectMetadata
         """
         return self._metadata
 
@@ -482,7 +482,7 @@ class Application(object):
         Sets the metadata of this Application.
 
         :param metadata: The metadata of this Application.
-        :type: ObjectMetadata
+        :type: oci.data_integration.models.ObjectMetadata
         """
         self._metadata = metadata
 

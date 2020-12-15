@@ -92,7 +92,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
 
         :param details:
             The value to assign to the details property of this TargetResponderRecipeResponderRuleSummary.
-        :type details: ResponderRuleDetails
+        :type details: oci.cloud_guard.models.ResponderRuleDetails
 
         :param compartment_id:
             The value to assign to the compartment_id property of this TargetResponderRecipeResponderRuleSummary.
@@ -322,7 +322,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
         Gets the details of this TargetResponderRecipeResponderRuleSummary.
 
         :return: The details of this TargetResponderRecipeResponderRuleSummary.
-        :rtype: ResponderRuleDetails
+        :rtype: oci.cloud_guard.models.ResponderRuleDetails
         """
         return self._details
 
@@ -332,7 +332,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
         Sets the details of this TargetResponderRecipeResponderRuleSummary.
 
         :param details: The details of this TargetResponderRecipeResponderRuleSummary.
-        :type: ResponderRuleDetails
+        :type: oci.cloud_guard.models.ResponderRuleDetails
         """
         self._details = details
 

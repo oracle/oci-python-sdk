@@ -22,7 +22,7 @@ class UpdateResourceDetails(object):
 
         :param item:
             The value to assign to the item property of this UpdateResourceDetails.
-        :type item: UpdateItemDetails
+        :type item: oci.cims.models.UpdateItemDetails
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class UpdateResourceDetails(object):
         Gets the item of this UpdateResourceDetails.
 
         :return: The item of this UpdateResourceDetails.
-        :rtype: UpdateItemDetails
+        :rtype: oci.cims.models.UpdateItemDetails
         """
         return self._item
 
@@ -51,7 +51,7 @@ class UpdateResourceDetails(object):
         Sets the item of this UpdateResourceDetails.
 
         :param item: The item of this UpdateResourceDetails.
-        :type: UpdateItemDetails
+        :type: oci.cims.models.UpdateItemDetails
         """
         self._item = item
 

@@ -27,6 +27,10 @@ class UpdateAutonomousDatabaseDetails(object):
     #: This constant has a value of "AJD"
     DB_WORKLOAD_AJD = "AJD"
 
+    #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "APEX"
+    DB_WORKLOAD_APEX = "APEX"
+
     #: A constant which can be used with the license_model property of a UpdateAutonomousDatabaseDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -98,7 +102,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this UpdateAutonomousDatabaseDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
         :type db_workload: str
 
         :param license_model:
@@ -454,8 +458,9 @@ class UpdateAutonomousDatabaseDetails(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
+        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD"
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
 
 
         :return: The db_workload of this UpdateAutonomousDatabaseDetails.
@@ -472,12 +477,13 @@ class UpdateAutonomousDatabaseDetails(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
+        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
 
 
         :param db_workload: The db_workload of this UpdateAutonomousDatabaseDetails.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             raise ValueError(
                 "Invalid value for `db_workload`, must be None or one of {0}"
@@ -489,7 +495,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
+        License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
+        Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
@@ -507,7 +515,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
+        License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
+        Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm

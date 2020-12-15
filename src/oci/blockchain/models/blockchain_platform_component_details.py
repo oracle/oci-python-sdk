@@ -20,11 +20,11 @@ class BlockchainPlatformComponentDetails(object):
 
         :param osns:
             The value to assign to the osns property of this BlockchainPlatformComponentDetails.
-        :type osns: list[Osn]
+        :type osns: list[oci.blockchain.models.Osn]
 
         :param peers:
             The value to assign to the peers property of this BlockchainPlatformComponentDetails.
-        :type peers: list[Peer]
+        :type peers: list[oci.blockchain.models.Peer]
 
         """
         self.swagger_types = {
@@ -48,7 +48,7 @@ class BlockchainPlatformComponentDetails(object):
 
 
         :return: The osns of this BlockchainPlatformComponentDetails.
-        :rtype: list[Osn]
+        :rtype: list[oci.blockchain.models.Osn]
         """
         return self._osns
 
@@ -60,7 +60,7 @@ class BlockchainPlatformComponentDetails(object):
 
 
         :param osns: The osns of this BlockchainPlatformComponentDetails.
-        :type: list[Osn]
+        :type: list[oci.blockchain.models.Osn]
         """
         self._osns = osns
 
@@ -72,7 +72,7 @@ class BlockchainPlatformComponentDetails(object):
 
 
         :return: The peers of this BlockchainPlatformComponentDetails.
-        :rtype: list[Peer]
+        :rtype: list[oci.blockchain.models.Peer]
         """
         return self._peers
 
@@ -84,7 +84,7 @@ class BlockchainPlatformComponentDetails(object):
 
 
         :param peers: The peers of this BlockchainPlatformComponentDetails.
-        :type: list[Peer]
+        :type: list[oci.blockchain.models.Peer]
         """
         self._peers = peers
 

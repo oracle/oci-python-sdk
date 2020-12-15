@@ -80,43 +80,43 @@ class Listing(object):
 
         :param publisher:
             The value to assign to the publisher property of this Listing.
-        :type publisher: Publisher
+        :type publisher: oci.marketplace.models.Publisher
 
         :param languages:
             The value to assign to the languages property of this Listing.
-        :type languages: list[Item]
+        :type languages: list[oci.marketplace.models.Item]
 
         :param screenshots:
             The value to assign to the screenshots property of this Listing.
-        :type screenshots: list[Screenshot]
+        :type screenshots: list[oci.marketplace.models.Screenshot]
 
         :param videos:
             The value to assign to the videos property of this Listing.
-        :type videos: list[NamedLink]
+        :type videos: list[oci.marketplace.models.NamedLink]
 
         :param support_contacts:
             The value to assign to the support_contacts property of this Listing.
-        :type support_contacts: list[SupportContact]
+        :type support_contacts: list[oci.marketplace.models.SupportContact]
 
         :param support_links:
             The value to assign to the support_links property of this Listing.
-        :type support_links: list[NamedLink]
+        :type support_links: list[oci.marketplace.models.NamedLink]
 
         :param documentation_links:
             The value to assign to the documentation_links property of this Listing.
-        :type documentation_links: list[DocumentationLink]
+        :type documentation_links: list[oci.marketplace.models.DocumentationLink]
 
         :param icon:
             The value to assign to the icon property of this Listing.
-        :type icon: UploadData
+        :type icon: oci.marketplace.models.UploadData
 
         :param banner:
             The value to assign to the banner property of this Listing.
-        :type banner: UploadData
+        :type banner: oci.marketplace.models.UploadData
 
         :param regions:
             The value to assign to the regions property of this Listing.
-        :type regions: list[Region]
+        :type regions: list[oci.marketplace.models.Region]
 
         :param package_type:
             The value to assign to the package_type property of this Listing.
@@ -130,7 +130,7 @@ class Listing(object):
 
         :param links:
             The value to assign to the links property of this Listing.
-        :type links: list[Link]
+        :type links: list[oci.marketplace.models.Link]
 
         :param is_featured:
             The value to assign to the is_featured property of this Listing.
@@ -543,7 +543,7 @@ class Listing(object):
         Gets the publisher of this Listing.
 
         :return: The publisher of this Listing.
-        :rtype: Publisher
+        :rtype: oci.marketplace.models.Publisher
         """
         return self._publisher
 
@@ -553,7 +553,7 @@ class Listing(object):
         Sets the publisher of this Listing.
 
         :param publisher: The publisher of this Listing.
-        :type: Publisher
+        :type: oci.marketplace.models.Publisher
         """
         self._publisher = publisher
 
@@ -565,7 +565,7 @@ class Listing(object):
 
 
         :return: The languages of this Listing.
-        :rtype: list[Item]
+        :rtype: list[oci.marketplace.models.Item]
         """
         return self._languages
 
@@ -577,7 +577,7 @@ class Listing(object):
 
 
         :param languages: The languages of this Listing.
-        :type: list[Item]
+        :type: list[oci.marketplace.models.Item]
         """
         self._languages = languages
 
@@ -589,7 +589,7 @@ class Listing(object):
 
 
         :return: The screenshots of this Listing.
-        :rtype: list[Screenshot]
+        :rtype: list[oci.marketplace.models.Screenshot]
         """
         return self._screenshots
 
@@ -601,7 +601,7 @@ class Listing(object):
 
 
         :param screenshots: The screenshots of this Listing.
-        :type: list[Screenshot]
+        :type: list[oci.marketplace.models.Screenshot]
         """
         self._screenshots = screenshots
 
@@ -613,7 +613,7 @@ class Listing(object):
 
 
         :return: The videos of this Listing.
-        :rtype: list[NamedLink]
+        :rtype: list[oci.marketplace.models.NamedLink]
         """
         return self._videos
 
@@ -625,7 +625,7 @@ class Listing(object):
 
 
         :param videos: The videos of this Listing.
-        :type: list[NamedLink]
+        :type: list[oci.marketplace.models.NamedLink]
         """
         self._videos = videos
 
@@ -637,7 +637,7 @@ class Listing(object):
 
 
         :return: The support_contacts of this Listing.
-        :rtype: list[SupportContact]
+        :rtype: list[oci.marketplace.models.SupportContact]
         """
         return self._support_contacts
 
@@ -649,7 +649,7 @@ class Listing(object):
 
 
         :param support_contacts: The support_contacts of this Listing.
-        :type: list[SupportContact]
+        :type: list[oci.marketplace.models.SupportContact]
         """
         self._support_contacts = support_contacts
 
@@ -661,7 +661,7 @@ class Listing(object):
 
 
         :return: The support_links of this Listing.
-        :rtype: list[NamedLink]
+        :rtype: list[oci.marketplace.models.NamedLink]
         """
         return self._support_links
 
@@ -673,7 +673,7 @@ class Listing(object):
 
 
         :param support_links: The support_links of this Listing.
-        :type: list[NamedLink]
+        :type: list[oci.marketplace.models.NamedLink]
         """
         self._support_links = support_links
 
@@ -685,7 +685,7 @@ class Listing(object):
 
 
         :return: The documentation_links of this Listing.
-        :rtype: list[DocumentationLink]
+        :rtype: list[oci.marketplace.models.DocumentationLink]
         """
         return self._documentation_links
 
@@ -697,7 +697,7 @@ class Listing(object):
 
 
         :param documentation_links: The documentation_links of this Listing.
-        :type: list[DocumentationLink]
+        :type: list[oci.marketplace.models.DocumentationLink]
         """
         self._documentation_links = documentation_links
 
@@ -707,7 +707,7 @@ class Listing(object):
         Gets the icon of this Listing.
 
         :return: The icon of this Listing.
-        :rtype: UploadData
+        :rtype: oci.marketplace.models.UploadData
         """
         return self._icon
 
@@ -717,7 +717,7 @@ class Listing(object):
         Sets the icon of this Listing.
 
         :param icon: The icon of this Listing.
-        :type: UploadData
+        :type: oci.marketplace.models.UploadData
         """
         self._icon = icon
 
@@ -727,7 +727,7 @@ class Listing(object):
         Gets the banner of this Listing.
 
         :return: The banner of this Listing.
-        :rtype: UploadData
+        :rtype: oci.marketplace.models.UploadData
         """
         return self._banner
 
@@ -737,7 +737,7 @@ class Listing(object):
         Sets the banner of this Listing.
 
         :param banner: The banner of this Listing.
-        :type: UploadData
+        :type: oci.marketplace.models.UploadData
         """
         self._banner = banner
 
@@ -749,7 +749,7 @@ class Listing(object):
 
 
         :return: The regions of this Listing.
-        :rtype: list[Region]
+        :rtype: list[oci.marketplace.models.Region]
         """
         return self._regions
 
@@ -761,7 +761,7 @@ class Listing(object):
 
 
         :param regions: The regions of this Listing.
-        :type: list[Region]
+        :type: list[oci.marketplace.models.Region]
         """
         self._regions = regions
 
@@ -827,7 +827,7 @@ class Listing(object):
 
 
         :return: The links of this Listing.
-        :rtype: list[Link]
+        :rtype: list[oci.marketplace.models.Link]
         """
         return self._links
 
@@ -839,7 +839,7 @@ class Listing(object):
 
 
         :param links: The links of this Listing.
-        :type: list[Link]
+        :type: list[oci.marketplace.models.Link]
         """
         self._links = links
 

@@ -20,7 +20,7 @@ class ManagementDashboardCollection(object):
 
         :param items:
             The value to assign to the items property of this ManagementDashboardCollection.
-        :type items: list[ManagementDashboardSummary]
+        :type items: list[oci.management_dashboard.models.ManagementDashboardSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class ManagementDashboardCollection(object):
 
 
         :return: The items of this ManagementDashboardCollection.
-        :rtype: list[ManagementDashboardSummary]
+        :rtype: list[oci.management_dashboard.models.ManagementDashboardSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class ManagementDashboardCollection(object):
 
 
         :param items: The items of this ManagementDashboardCollection.
-        :type: list[ManagementDashboardSummary]
+        :type: list[oci.management_dashboard.models.ManagementDashboardSummary]
         """
         self._items = items
 

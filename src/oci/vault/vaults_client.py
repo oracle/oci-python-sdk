@@ -117,6 +117,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/cancel_secret_deletion.py.html>`__ to see an example of how to use cancel_secret_deletion API.
         """
         resource_path = "/secrets/{secretId}/actions/cancelDeletion"
         method = "POST"
@@ -201,6 +204,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/cancel_secret_version_deletion.py.html>`__ to see an example of how to use cancel_secret_version_deletion API.
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/cancelDeletion"
         method = "POST"
@@ -299,6 +305,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/change_secret_compartment.py.html>`__ to see an example of how to use change_secret_compartment API.
         """
         resource_path = "/secrets/{secretId}/actions/changeCompartment"
         method = "POST"
@@ -389,6 +398,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.vault.models.Secret`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/create_secret.py.html>`__ to see an example of how to use create_secret API.
         """
         resource_path = "/secrets"
         method = "POST"
@@ -457,6 +469,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.vault.models.Secret`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/get_secret.py.html>`__ to see an example of how to use get_secret API.
         """
         resource_path = "/secrets/{secretId}"
         method = "GET"
@@ -534,6 +549,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.vault.models.SecretVersion`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/get_secret_version.py.html>`__ to see an example of how to use get_secret_version API.
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}"
         method = "GET"
@@ -626,6 +644,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.vault.models.SecretVersionSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/list_secret_versions.py.html>`__ to see an example of how to use list_secret_versions API.
         """
         resource_path = "/secrets/{secretId}/versions"
         method = "GET"
@@ -757,6 +778,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.vault.models.SecretSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/list_secrets.py.html>`__ to see an example of how to use list_secrets API.
         """
         resource_path = "/secrets"
         method = "GET"
@@ -872,6 +896,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/schedule_secret_deletion.py.html>`__ to see an example of how to use schedule_secret_deletion API.
         """
         resource_path = "/secrets/{secretId}/actions/scheduleDeletion"
         method = "POST"
@@ -962,6 +989,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/schedule_secret_version_deletion.py.html>`__ to see an example of how to use schedule_secret_version_deletion API.
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/scheduleDeletion"
         method = "POST"
@@ -1054,6 +1084,9 @@ class VaultsClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.vault.models.Secret`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/update_secret.py.html>`__ to see an example of how to use update_secret API.
         """
         resource_path = "/secrets/{secretId}"
         method = "PUT"

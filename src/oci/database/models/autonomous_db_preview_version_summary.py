@@ -27,6 +27,10 @@ class AutonomousDbPreviewVersionSummary(object):
     #: This constant has a value of "AJD"
     DB_WORKLOAD_AJD = "AJD"
 
+    #: A constant which can be used with the db_workload property of a AutonomousDbPreviewVersionSummary.
+    #: This constant has a value of "APEX"
+    DB_WORKLOAD_APEX = "APEX"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDbPreviewVersionSummary object with values from keyword arguments.
@@ -46,7 +50,7 @@ class AutonomousDbPreviewVersionSummary(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDbPreviewVersionSummary.
-            Allowed values for this property are: "OLTP", "DW", "AJD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
@@ -158,8 +162,9 @@ class AutonomousDbPreviewVersionSummary(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
+        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -177,12 +182,13 @@ class AutonomousDbPreviewVersionSummary(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
+        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
 
 
         :param db_workload: The db_workload of this AutonomousDbPreviewVersionSummary.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload

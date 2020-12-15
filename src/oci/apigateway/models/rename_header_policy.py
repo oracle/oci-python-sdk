@@ -20,7 +20,7 @@ class RenameHeaderPolicy(object):
 
         :param items:
             The value to assign to the items property of this RenameHeaderPolicy.
-        :type items: list[RenameHeaderPolicyItem]
+        :type items: list[oci.apigateway.models.RenameHeaderPolicyItem]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class RenameHeaderPolicy(object):
 
 
         :return: The items of this RenameHeaderPolicy.
-        :rtype: list[RenameHeaderPolicyItem]
+        :rtype: list[oci.apigateway.models.RenameHeaderPolicyItem]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class RenameHeaderPolicy(object):
 
 
         :param items: The items of this RenameHeaderPolicy.
-        :type: list[RenameHeaderPolicyItem]
+        :type: list[oci.apigateway.models.RenameHeaderPolicyItem]
         """
         self._items = items
 

@@ -50,11 +50,11 @@ class DetectorDetails(object):
 
         :param configurations:
             The value to assign to the configurations property of this DetectorDetails.
-        :type configurations: list[DetectorConfiguration]
+        :type configurations: list[oci.cloud_guard.models.DetectorConfiguration]
 
         :param condition:
             The value to assign to the condition property of this DetectorDetails.
-        :type condition: Condition
+        :type condition: oci.cloud_guard.models.Condition
 
         :param labels:
             The value to assign to the labels property of this DetectorDetails.
@@ -152,7 +152,7 @@ class DetectorDetails(object):
 
 
         :return: The configurations of this DetectorDetails.
-        :rtype: list[DetectorConfiguration]
+        :rtype: list[oci.cloud_guard.models.DetectorConfiguration]
         """
         return self._configurations
 
@@ -164,7 +164,7 @@ class DetectorDetails(object):
 
 
         :param configurations: The configurations of this DetectorDetails.
-        :type: list[DetectorConfiguration]
+        :type: list[oci.cloud_guard.models.DetectorConfiguration]
         """
         self._configurations = configurations
 
@@ -174,7 +174,7 @@ class DetectorDetails(object):
         Gets the condition of this DetectorDetails.
 
         :return: The condition of this DetectorDetails.
-        :rtype: Condition
+        :rtype: oci.cloud_guard.models.Condition
         """
         return self._condition
 
@@ -184,7 +184,7 @@ class DetectorDetails(object):
         Sets the condition of this DetectorDetails.
 
         :param condition: The condition of this DetectorDetails.
-        :type: Condition
+        :type: oci.cloud_guard.models.Condition
         """
         self._condition = condition
 

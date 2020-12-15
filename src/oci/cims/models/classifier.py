@@ -64,7 +64,7 @@ class Classifier(object):
 
         :param issue_type_list:
             The value to assign to the issue_type_list property of this Classifier.
-        :type issue_type_list: list[IssueType]
+        :type issue_type_list: list[oci.cims.models.IssueType]
 
         :param scope:
             The value to assign to the scope property of this Classifier.
@@ -211,7 +211,7 @@ class Classifier(object):
 
 
         :return: The issue_type_list of this Classifier.
-        :rtype: list[IssueType]
+        :rtype: list[oci.cims.models.IssueType]
         """
         return self._issue_type_list
 
@@ -223,7 +223,7 @@ class Classifier(object):
 
 
         :param issue_type_list: The issue_type_list of this Classifier.
-        :type: list[IssueType]
+        :type: list[oci.cims.models.IssueType]
         """
         self._issue_type_list = issue_type_list
 

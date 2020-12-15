@@ -28,7 +28,7 @@ class UpdateResponderRecipeDetails(object):
 
         :param responder_rules:
             The value to assign to the responder_rules property of this UpdateResponderRecipeDetails.
-        :type responder_rules: list[UpdateResponderRecipeResponderRule]
+        :type responder_rules: list[oci.cloud_guard.models.UpdateResponderRecipeResponderRule]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateResponderRecipeDetails.
@@ -117,7 +117,7 @@ class UpdateResponderRecipeDetails(object):
 
 
         :return: The responder_rules of this UpdateResponderRecipeDetails.
-        :rtype: list[UpdateResponderRecipeResponderRule]
+        :rtype: list[oci.cloud_guard.models.UpdateResponderRecipeResponderRule]
         """
         return self._responder_rules
 
@@ -129,7 +129,7 @@ class UpdateResponderRecipeDetails(object):
 
 
         :param responder_rules: The responder_rules of this UpdateResponderRecipeDetails.
-        :type: list[UpdateResponderRecipeResponderRule]
+        :type: list[oci.cloud_guard.models.UpdateResponderRecipeResponderRule]
         """
         self._responder_rules = responder_rules
 

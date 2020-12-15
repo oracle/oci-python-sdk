@@ -20,7 +20,7 @@ class MultipleTransferPackages(object):
 
         :param transfer_package_objects:
             The value to assign to the transfer_package_objects property of this MultipleTransferPackages.
-        :type transfer_package_objects: list[TransferPackageSummary]
+        :type transfer_package_objects: list[oci.dts.models.TransferPackageSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class MultipleTransferPackages(object):
 
 
         :return: The transfer_package_objects of this MultipleTransferPackages.
-        :rtype: list[TransferPackageSummary]
+        :rtype: list[oci.dts.models.TransferPackageSummary]
         """
         return self._transfer_package_objects
 
@@ -53,7 +53,7 @@ class MultipleTransferPackages(object):
 
 
         :param transfer_package_objects: The transfer_package_objects of this MultipleTransferPackages.
-        :type: list[TransferPackageSummary]
+        :type: list[oci.dts.models.TransferPackageSummary]
         """
         self._transfer_package_objects = transfer_package_objects
 

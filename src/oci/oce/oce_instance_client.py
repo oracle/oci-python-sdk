@@ -123,6 +123,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/change_oce_instance_compartment.py.html>`__ to see an example of how to use change_oce_instance_compartment API.
         """
         resource_path = "/oceInstances/{oceInstanceId}/actions/changeCompartment"
         method = "POST"
@@ -208,6 +211,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/create_oce_instance.py.html>`__ to see an example of how to use create_oce_instance API.
         """
         resource_path = "/oceInstances"
         method = "POST"
@@ -279,6 +285,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/delete_oce_instance.py.html>`__ to see an example of how to use delete_oce_instance API.
         """
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "DELETE"
@@ -351,6 +360,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oce.models.OceInstance`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/get_oce_instance.py.html>`__ to see an example of how to use get_oce_instance API.
         """
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "GET"
@@ -423,6 +435,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oce.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
@@ -521,6 +536,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oce.models.OceInstanceSummary`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/list_oce_instances.py.html>`__ to see an example of how to use list_oce_instances API.
         """
         resource_path = "/oceInstances"
         method = "GET"
@@ -627,6 +645,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oce.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
@@ -715,6 +736,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oce.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
@@ -806,6 +830,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.oce.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         resource_path = "/workRequests"
         method = "GET"
@@ -889,6 +916,9 @@ class OceInstanceClient(object):
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oce/update_oce_instance.py.html>`__ to see an example of how to use update_oce_instance API.
         """
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "PUT"

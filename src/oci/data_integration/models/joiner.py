@@ -51,7 +51,7 @@ class Joiner(Operator):
 
         :param parent_ref:
             The value to assign to the parent_ref property of this Joiner.
-        :type parent_ref: ParentReference
+        :type parent_ref: oci.data_integration.models.ParentReference
 
         :param name:
             The value to assign to the name property of this Joiner.
@@ -67,11 +67,11 @@ class Joiner(Operator):
 
         :param input_ports:
             The value to assign to the input_ports property of this Joiner.
-        :type input_ports: list[InputPort]
+        :type input_ports: list[oci.data_integration.models.InputPort]
 
         :param output_ports:
             The value to assign to the output_ports property of this Joiner.
-        :type output_ports: list[OutputPort]
+        :type output_ports: list[oci.data_integration.models.OutputPort]
 
         :param object_status:
             The value to assign to the object_status property of this Joiner.
@@ -83,11 +83,11 @@ class Joiner(Operator):
 
         :param parameters:
             The value to assign to the parameters property of this Joiner.
-        :type parameters: list[Parameter]
+        :type parameters: list[oci.data_integration.models.Parameter]
 
         :param op_config_values:
             The value to assign to the op_config_values property of this Joiner.
-        :type op_config_values: ConfigValues
+        :type op_config_values: oci.data_integration.models.ConfigValues
 
         :param join_type:
             The value to assign to the join_type property of this Joiner.
@@ -97,7 +97,7 @@ class Joiner(Operator):
 
         :param join_condition:
             The value to assign to the join_condition property of this Joiner.
-        :type join_condition: Expression
+        :type join_condition: oci.data_integration.models.Expression
 
         """
         self.swagger_types = {
@@ -189,7 +189,7 @@ class Joiner(Operator):
         Gets the join_condition of this Joiner.
 
         :return: The join_condition of this Joiner.
-        :rtype: Expression
+        :rtype: oci.data_integration.models.Expression
         """
         return self._join_condition
 
@@ -199,7 +199,7 @@ class Joiner(Operator):
         Sets the join_condition of this Joiner.
 
         :param join_condition: The join_condition of this Joiner.
-        :type: Expression
+        :type: oci.data_integration.models.Expression
         """
         self._join_condition = join_condition
 

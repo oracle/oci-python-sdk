@@ -69,7 +69,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
 
         :param db_system_options:
             The value to assign to the db_system_options property of this LaunchDbSystemFromDbSystemDetails.
-        :type db_system_options: DbSystemOptions
+        :type db_system_options: oci.database.models.DbSystemOptions
 
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromDbSystemDetails.
@@ -103,6 +103,14 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemFromDbSystemDetails.
         :type initial_data_storage_size_in_gb: int
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this LaunchDbSystemFromDbSystemDetails.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this LaunchDbSystemFromDbSystemDetails.
+        :type kms_key_version_id: str
+
         :param node_count:
             The value to assign to the node_count property of this LaunchDbSystemFromDbSystemDetails.
         :type node_count: int
@@ -130,7 +138,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
 
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemFromDbSystemDetails.
-        :type db_home: CreateDbHomeFromDbSystemDetails
+        :type db_home: oci.database.models.CreateDbHomeFromDbSystemDetails
 
         :param license_model:
             The value to assign to the license_model property of this LaunchDbSystemFromDbSystemDetails.
@@ -158,6 +166,8 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
             'initial_data_storage_size_in_gb': 'int',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -188,6 +198,8 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
             'initial_data_storage_size_in_gb': 'initialDataStorageSizeInGB',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -217,6 +229,8 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         self._cluster_name = None
         self._data_storage_percentage = None
         self._initial_data_storage_size_in_gb = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._node_count = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -261,7 +275,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         **[Required]** Gets the db_home of this LaunchDbSystemFromDbSystemDetails.
 
         :return: The db_home of this LaunchDbSystemFromDbSystemDetails.
-        :rtype: CreateDbHomeFromDbSystemDetails
+        :rtype: oci.database.models.CreateDbHomeFromDbSystemDetails
         """
         return self._db_home
 
@@ -271,7 +285,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         Sets the db_home of this LaunchDbSystemFromDbSystemDetails.
 
         :param db_home: The db_home of this LaunchDbSystemFromDbSystemDetails.
-        :type: CreateDbHomeFromDbSystemDetails
+        :type: oci.database.models.CreateDbHomeFromDbSystemDetails
         """
         self._db_home = db_home
 

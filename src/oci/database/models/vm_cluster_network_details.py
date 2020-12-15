@@ -28,7 +28,7 @@ class VmClusterNetworkDetails(object):
 
         :param scans:
             The value to assign to the scans property of this VmClusterNetworkDetails.
-        :type scans: list[ScanDetails]
+        :type scans: list[oci.database.models.ScanDetails]
 
         :param dns:
             The value to assign to the dns property of this VmClusterNetworkDetails.
@@ -40,7 +40,7 @@ class VmClusterNetworkDetails(object):
 
         :param vm_networks:
             The value to assign to the vm_networks property of this VmClusterNetworkDetails.
-        :type vm_networks: list[VmNetworkDetails]
+        :type vm_networks: list[oci.database.models.VmNetworkDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VmClusterNetworkDetails.
@@ -142,7 +142,7 @@ class VmClusterNetworkDetails(object):
 
 
         :return: The scans of this VmClusterNetworkDetails.
-        :rtype: list[ScanDetails]
+        :rtype: list[oci.database.models.ScanDetails]
         """
         return self._scans
 
@@ -154,7 +154,7 @@ class VmClusterNetworkDetails(object):
 
 
         :param scans: The scans of this VmClusterNetworkDetails.
-        :type: list[ScanDetails]
+        :type: list[oci.database.models.ScanDetails]
         """
         self._scans = scans
 
@@ -214,7 +214,7 @@ class VmClusterNetworkDetails(object):
 
 
         :return: The vm_networks of this VmClusterNetworkDetails.
-        :rtype: list[VmNetworkDetails]
+        :rtype: list[oci.database.models.VmNetworkDetails]
         """
         return self._vm_networks
 
@@ -226,7 +226,7 @@ class VmClusterNetworkDetails(object):
 
 
         :param vm_networks: The vm_networks of this VmClusterNetworkDetails.
-        :type: list[VmNetworkDetails]
+        :type: list[oci.database.models.VmNetworkDetails]
         """
         self._vm_networks = vm_networks
 

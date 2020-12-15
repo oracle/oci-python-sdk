@@ -11,113 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class Data(object):
     """
     The payload of the event. Information within `data` comes from the resource emitting the event.
-
-    Example:
-
-    -----
-    {
-    \"eventGroupingId\": null,
-    \"eventName\": \"GetInstance\",
-    \"compartmentId\": \"ocid1.tenancy.oc1..<unique_ID>\",
-    \"compartmentName\": \"compartmentA\",
-    \"resourceName\": \"my_instance\",
-    \"resourceId\": \"ocid1.instance.oc1.phx.<unique_ID>\",
-    \"availabilityDomain\": \"<availability_domain>\",
-    \"freeformTags\": null,
-    \"definedTags\": null,
-    \"identity\": {
-    \"principalName\": \"ExampleName\",
-    \"principalId\": \"ocid1.user.oc1..<unique_ID>\",
-    \"authType\": \"natv\",
-    \"callerName\": null,
-    \"callerId\": null,
-    \"tenantId\": \"ocid1.tenancy.oc1..<unique_ID>\",
-    \"ipAddress\": \"172.24.80.88\",
-    \"credentials\": null,
-    \"userAgent\": \"Jersey/2.23 (HttpUrlConnection 1.8.0_212)\",
-    \"consoleSessionId\": null
-    },
-    \"request\": {
-    \"id\": \"<unique_ID>\",
-    \"path\": \"/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>\",
-    \"action\": \"GET\",
-    \"parameters\": {},
-    \"headers\": {
-    \"opc-principal\": [
-    \"{\\\"tenantId\\\":\\\"ocid1.tenancy.oc1..<unique_ID>\\\",\\\"subjectId\\\":\\\"ocid1.user.oc1..<unique_ID>\\\",\\\"claims\\\":[{\\\"key\\\":\\\"pstype\\\",\\\"value\\\":\\\"natv\\\",\\\"issuer\\\":\\\"authService.oracle.com\\\"},{\\\"key\\\":\\\"h_host\\\",\\\"value\\\":\\\"iaas.r2.oracleiaas.com\\\",\\\"issuer\\\":\\\"h\\\"},{\\\"key\\\":\\\"h_opc-request-id\\\",\\\"value\\\":\\\"<unique_ID>\\\",\\\"issuer\\\":\\\"h\\\"},{\\\"key\\\":\\\"ptype\\\",\\\"value\\\":\\\"user\\\",\\\"issuer\\\":\\\"authService.oracle.com\\\"},{\\\"key\\\":\\\"h_date\\\",\\\"value\\\":\\\"Wed, 18 Sep 2019 00:10:58 UTC\\\",\\\"issuer\\\":\\\"h\\\"},{\\\"key\\\":\\\"h_accept\\\",\\\"value\\\":\\\"application/json\\\",\\\"issuer\\\":\\\"h\\\"},{\\\"key\\\":\\\"authorization\\\",\\\"value\\\":\\\"Signature headers=\\\\\\\"date (request-target) host accept opc-request-id\\\\\\\",keyId=\\\\\\\"ocid1.tenancy.oc1..<unique_ID>/ocid1.user.oc1..<unique_ID>/8c:b4:5f:18:e7:ec:db:08:b8:fa:d2:2a:7d:11:76:ac\\\\\\\",algorithm=\\\\\\\"rsa-pss-sha256\\\\\\\",signature=\\\\\\\"<unique_ID>\\\\\\\",version=\\\\\\\"1\\\\\\\"\\\",\\\"issuer\\\":\\\"h\\\"},{\\\"key\\\":\\\"h_(request-target)\\\",\\\"value\\\":\\\"get /20160918/instances/ocid1.instance.oc1.phx.<unique_ID>\\\",\\\"issuer\\\":\\\"h\\\"}]}\"
-    ],
-    \"Accept\": [
-    \"application/json\"
-    ],
-    \"X-Oracle-Auth-Client-CN\": [
-    \"splat-proxy-se-02302.node.ad2.r2\"
-    ],
-    \"X-Forwarded-Host\": [
-    \"compute-api.svc.ad1.r2\"
-    ],
-    \"Connection\": [
-    \"close\"
-    ],
-    \"User-Agent\": [
-    \"Jersey/2.23 (HttpUrlConnection 1.8.0_212)\"
-    ],
-    \"X-Forwarded-For\": [
-    \"172.24.80.88\"
-    ],
-    \"X-Real-IP\": [
-    \"172.24.80.88\"
-    ],
-    \"oci-original-url\": [
-    \"https://iaas.r2.oracleiaas.com/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>\"
-    ],
-    \"opc-request-id\": [
-    \"<unique_ID>\"
-    ],
-    \"Date\": [
-    \"Wed, 18 Sep 2019 00:10:58 UTC\"
-    ]
-    }
-    },
-    \"response\": {
-    \"status\": \"200\",
-    \"responseTime\": \"2019-09-18T00:10:59.278Z\",
-    \"headers\": {
-    \"ETag\": [
-    \"<unique_ID>\"
-    ],
-    \"Connection\": [
-    \"close\"
-    ],
-    \"Content-Length\": [
-    \"1828\"
-    ],
-    \"opc-request-id\": [
-    \"<unique_ID>\"
-    ],
-    \"Date\": [
-    \"Wed, 18 Sep 2019 00:10:59 GMT\"
-    ],
-    \"Content-Type\": [
-    \"application/json\"
-    ]
-    },
-    \"payload\": {
-    \"resourceName\": \"my_instance\",
-    \"id\": \"ocid1.instance.oc1.phx.<unique_ID>\"
-    },
-    \"message\": null
-    },
-    \"stateChange\": {
-    \"previous\": null,
-    \"current\": null
-    },
-    \"additionalDetails\": {
-    \"imageId\": \"ocid1.image.oc1.phx.<unique_ID>\",
-    \"shape\": \"VM.Standard1.1\",
-    \"type\": \"CustomerVmi\"
-    }
-    }
-    -----
     """
 
     def __init__(self, **kwargs):
@@ -163,19 +56,19 @@ class Data(object):
 
         :param identity:
             The value to assign to the identity property of this Data.
-        :type identity: Identity
+        :type identity: oci.audit.models.Identity
 
         :param request:
             The value to assign to the request property of this Data.
-        :type request: Request
+        :type request: oci.audit.models.Request
 
         :param response:
             The value to assign to the response property of this Data.
-        :type response: Response
+        :type response: oci.audit.models.Response
 
         :param state_change:
             The value to assign to the state_change property of this Data.
-        :type state_change: StateChange
+        :type state_change: oci.audit.models.StateChange
 
         :param additional_details:
             The value to assign to the additional_details property of this Data.
@@ -503,7 +396,7 @@ class Data(object):
         Gets the identity of this Data.
 
         :return: The identity of this Data.
-        :rtype: Identity
+        :rtype: oci.audit.models.Identity
         """
         return self._identity
 
@@ -513,7 +406,7 @@ class Data(object):
         Sets the identity of this Data.
 
         :param identity: The identity of this Data.
-        :type: Identity
+        :type: oci.audit.models.Identity
         """
         self._identity = identity
 
@@ -523,7 +416,7 @@ class Data(object):
         Gets the request of this Data.
 
         :return: The request of this Data.
-        :rtype: Request
+        :rtype: oci.audit.models.Request
         """
         return self._request
 
@@ -533,7 +426,7 @@ class Data(object):
         Sets the request of this Data.
 
         :param request: The request of this Data.
-        :type: Request
+        :type: oci.audit.models.Request
         """
         self._request = request
 
@@ -543,7 +436,7 @@ class Data(object):
         Gets the response of this Data.
 
         :return: The response of this Data.
-        :rtype: Response
+        :rtype: oci.audit.models.Response
         """
         return self._response
 
@@ -553,7 +446,7 @@ class Data(object):
         Sets the response of this Data.
 
         :param response: The response of this Data.
-        :type: Response
+        :type: oci.audit.models.Response
         """
         self._response = response
 
@@ -563,7 +456,7 @@ class Data(object):
         Gets the state_change of this Data.
 
         :return: The state_change of this Data.
-        :rtype: StateChange
+        :rtype: oci.audit.models.StateChange
         """
         return self._state_change
 
@@ -573,7 +466,7 @@ class Data(object):
         Sets the state_change of this Data.
 
         :param state_change: The state_change of this Data.
-        :type: StateChange
+        :type: oci.audit.models.StateChange
         """
         self._state_change = state_change
 

@@ -20,7 +20,7 @@ class TargetResponderRecipeCollection(object):
 
         :param items:
             The value to assign to the items property of this TargetResponderRecipeCollection.
-        :type items: list[TargetResponderRecipeSummary]
+        :type items: list[oci.cloud_guard.models.TargetResponderRecipeSummary]
 
         """
         self.swagger_types = {
@@ -41,7 +41,7 @@ class TargetResponderRecipeCollection(object):
 
 
         :return: The items of this TargetResponderRecipeCollection.
-        :rtype: list[TargetResponderRecipeSummary]
+        :rtype: list[oci.cloud_guard.models.TargetResponderRecipeSummary]
         """
         return self._items
 
@@ -53,7 +53,7 @@ class TargetResponderRecipeCollection(object):
 
 
         :param items: The items of this TargetResponderRecipeCollection.
-        :type: list[TargetResponderRecipeSummary]
+        :type: list[oci.cloud_guard.models.TargetResponderRecipeSummary]
         """
         self._items = items
 

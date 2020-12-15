@@ -65,7 +65,7 @@ class CreatePatchDetails(object):
 
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreatePatchDetails.
-        :type registry_metadata: RegistryMetadata
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
         """
         self.swagger_types = {
@@ -308,7 +308,7 @@ class CreatePatchDetails(object):
         Gets the registry_metadata of this CreatePatchDetails.
 
         :return: The registry_metadata of this CreatePatchDetails.
-        :rtype: RegistryMetadata
+        :rtype: oci.data_integration.models.RegistryMetadata
         """
         return self._registry_metadata
 
@@ -318,7 +318,7 @@ class CreatePatchDetails(object):
         Sets the registry_metadata of this CreatePatchDetails.
 
         :param registry_metadata: The registry_metadata of this CreatePatchDetails.
-        :type: RegistryMetadata
+        :type: oci.data_integration.models.RegistryMetadata
         """
         self._registry_metadata = registry_metadata
 
