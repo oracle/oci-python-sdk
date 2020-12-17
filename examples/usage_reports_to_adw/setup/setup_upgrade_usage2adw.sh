@@ -20,7 +20,7 @@ echo "##################################################" | tee -a $LOG
 echo "# Upgrade usage2adw" | tee -a $LOG
 echo "##################################################" | tee -a $LOG
 cd /home/opc
-echo "Chekcing file usage2adw.py location before upgrade" 
+echo "Checking file usage2adw.py location before upgrade"
 if [ -f "/home/opc/usage_reports_to_adw/usage2adw.py" ]; then
    echo "   File usage2adw.py exist in app - /home/opc/usage_reports_to_adw/usage2adw.py " 
 elif [ -f "/home/opc/oci-python-sdk/examples/usage_reports_to_adw/usage2adw.py" ]; then
