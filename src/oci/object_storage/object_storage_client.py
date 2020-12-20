@@ -4093,6 +4093,10 @@ class ObjectStorageClient(object):
                 if requests.utils.super_len(put_object_body) == 0:
                     header_params['Content-Length'] = '0'
 
+            if not hasattr(put_object_body, 'fileno') and not hasattr(header_params, 'Content-Length'):
+                raise TypeError('Must supply content_length parameter if passing stream for object body.')
+
+
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
