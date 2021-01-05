@@ -116,6 +116,14 @@ def test_config_from_file_does_not_allow_key_content():
     assert "'key_content' cannot be specified in a config file" in str(excinfo)
 
 
+def test_invalid_key_file_path():
+    with pytest.raises(oci.exceptions.InvalidKeyFilePath) as excinfo:
+        oci.config.from_file(file_location=get_resource_path('config'), profile_name='INVALID_KEY_FILE_PATH')
+
+    assert "invalid_key_file_path" in str(excinfo.value)
+    assert "line 65" in str(excinfo.value)
+
+
 def test_manual_config_doesnt_require_optional_fields():
     config = {
         'tenancy': HARDCODED_TENANCY,
