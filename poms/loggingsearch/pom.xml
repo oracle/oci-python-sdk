@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.oci.hydra.ibex</groupId>
         <artifactId>ibex-frontend-public-spec</artifactId>
-        <version>1.0.2136</version>
+        <version>1.0.2154</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

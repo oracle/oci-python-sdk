@@ -1,6 +1,6 @@
 # Code generated. DO NOT EDIT.
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import pytest
@@ -31,6 +31,47 @@ def vcr_fixture(request):
         cassette_location = os.path.join('generated', 'bds_{name}.yml'.format(name=request.function.__name__))
         with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
             yield
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_add_auto_scaling_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'AddAutoScalingConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'AddAutoScalingConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='AddAutoScalingConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.add_auto_scaling_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                add_auto_scaling_configuration_details=request.pop(util.camelize('AddAutoScalingConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'AddAutoScalingConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_auto_scaling_configuration',
+            False,
+            False
+        )
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
@@ -319,6 +360,47 @@ def test_delete_bds_instance(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_get_auto_scaling_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'GetAutoScalingConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'GetAutoScalingConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='GetAutoScalingConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.get_auto_scaling_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'GetAutoScalingConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autoScalingConfiguration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_get_bds_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'GetBdsInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -395,6 +477,69 @@ def test_get_work_request(testing_service_client):
             'workRequest',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_list_auto_scaling_configurations(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ListAutoScalingConfigurations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ListAutoScalingConfigurations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ListAutoScalingConfigurations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.list_auto_scaling_configurations(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_auto_scaling_configurations(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_auto_scaling_configurations(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ListAutoScalingConfigurations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autoScalingConfigurationSummary',
+            False,
+            True
         )
 
 
@@ -639,6 +784,48 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_remove_auto_scaling_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'RemoveAutoScalingConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'RemoveAutoScalingConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='RemoveAutoScalingConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.remove_auto_scaling_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                remove_auto_scaling_configuration_details=request.pop(util.camelize('RemoveAutoScalingConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'RemoveAutoScalingConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_auto_scaling_configuration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_remove_cloud_sql(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'RemoveCloudSql'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -715,6 +902,48 @@ def test_restart_node(testing_service_client):
             result,
             service_error,
             'restart_node',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_update_auto_scaling_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'UpdateAutoScalingConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'UpdateAutoScalingConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='UpdateAutoScalingConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.update_auto_scaling_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                update_auto_scaling_configuration_details=request.pop(util.camelize('UpdateAutoScalingConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'UpdateAutoScalingConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_auto_scaling_configuration',
             False,
             False
         )
