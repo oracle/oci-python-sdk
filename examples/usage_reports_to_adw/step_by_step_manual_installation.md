@@ -74,7 +74,7 @@ Oracle Application Express (APEX) will be used for reporting.
    --> OCPU = 1
    --> Storage = 1
    --> Auto Scale = No
-   --> Password = We1lc2om3e#4 (Please choose your own password)
+   --> Password = (Please choose your own password)
    --> Choose Network Access = Allow secure Access from Everywhere (you can use VCN as well which requires NSG)
    --> Choose License Type
 ```

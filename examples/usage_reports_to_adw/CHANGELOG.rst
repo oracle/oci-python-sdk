@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.12.03 - 2020-12-03
+=====================
+* Added Pagination call to the list_objects
+
+=====================
 20.11.10 - 2020-11-10
 =====================
 * Added tenant aggregation for cost report

@@ -231,6 +231,7 @@ class ShowOCIService(object):
     C_DATABASE_AUTONOMOUS = "autonomous"
     C_DATABASE_NOSQL = "nosql"
     C_DATABASE_MYSQL = "mysql"
+    C_DATABASE_SOFTWARE_IMAGES = "database_software_images"
 
     # container
     C_CONTAINER = "container"
@@ -1944,7 +1945,7 @@ class ShowOCIService(object):
                 # loop on the array
                 # vcn = oci.core.models.Vcn()
                 for vcn in vcns:
-                    val = {'id': str(vcn.id), 'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
+                    val = {'id': str(vcn.id), 'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name) + " - Main: " + str(vcn.cidr_block),
                            'display_name': str(vcn.display_name),
                            'cidr_block': str(vcn.cidr_block),
                            'cidr_blocks': vcn.cidr_blocks,
@@ -2004,11 +2005,11 @@ class ShowOCIService(object):
                         if 'not whitelisted' in str(e.message).lower():
                             print(" tenant not enabled for this region, skipped.")
                             return data
-                        if 'NotAuthorizedOrNotFound' in str(e.message):
-                            continue
                         if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                        raise
+                            self.__load_print_auth_warning('a', False)
+                            continue
+                        else:
+                            raise
 
                     for vlan in vlans:
                         val = {'id': str(vlan.id),
@@ -2039,6 +2040,8 @@ class ShowOCIService(object):
         except oci.exceptions.RequestException:
             raise
         except Exception as e:
+            if 'NotAuthorizedOrNotFound' in str(e.message):
+                return data
             self.__print_error("__load_core_network_vlan", e)
             return data
 
@@ -2135,6 +2138,7 @@ class ShowOCIService(object):
                     val = {'id': str(lpg.id),
                            'vcn_id': str(lpg.vcn_id),
                            'name': str(lpg.peering_status).ljust(8) + " - " + str(lpg.display_name) + str(cidr),
+                           'peering_status': str(lpg.peering_status),
                            'time_created': str(lpg.time_created),
                            'display_name': str(lpg.display_name),
                            'peer_advertised_cidr': str(lpg.peer_advertised_cidr),
@@ -3036,6 +3040,9 @@ class ShowOCIService(object):
                 for nat in natgws:
                     val = {'id': str(nat.id), 'vcn_id': str(nat.vcn_id), 'name': str(nat.display_name) + " - " + str(nat.nat_ip),
                            'time_created': str(nat.time_created),
+                           'block_traffic': str(nat.block_traffic),
+                           'nat_ip': str(nat.nat_ip),
+                           'display_name': str(nat.display_name),
                            'defined_tags': [] if nat.defined_tags is None else nat.defined_tags,
                            'freeform_tags': [] if nat.freeform_tags is None else nat.freeform_tags,
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
@@ -4892,10 +4899,12 @@ class ShowOCIService(object):
                     # add the rest
                     val = {'id': str(arr.id),
                            'shape_name': str(arr.shape_name),
+                           'shape_min_mbps': "",
+                           'shape_max_mbps': "",
                            'display_name': str(arr.display_name),
                            'is_private': str(arr.is_private),
                            'status': str(status),
-                           'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private")) for ip in arr.ip_addresses],
+                           'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
                            'nsg_ids': [],
@@ -4904,6 +4913,11 @@ class ShowOCIService(object):
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region']),
                            'subnet_ids': []}
+
+                    # Flexible Shapes
+                    if arr.shape_details:
+                        val['shape_min_mbps'] = str(arr.shape_details.minimum_bandwidth_in_mbps)
+                        val['shape_max_mbps'] = str(arr.shape_details.maximum_bandwidth_in_mbps)
 
                     # subnets
                     if arr.subnet_ids:
@@ -4971,7 +4985,7 @@ class ShowOCIService(object):
                     # RuleSets
                     val['rule_sets'] = []
                     if arr.rule_sets:
-                        val['rule_sets'] = self.__load_core_load_balancer_ruleset(arr.rule_sets)
+                        val['rule_sets'] = self.__load_load_balancer_ruleset(arr.rule_sets)
 
                     # Add data
                     data.append(val)
@@ -4993,7 +5007,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data compute read block volume backups
     ##########################################################################
-    def __load_core_load_balancer_ruleset(self, rule_sets):
+    def __load_load_balancer_ruleset(self, rule_sets):
 
         data = []
 
@@ -5039,7 +5053,7 @@ class ShowOCIService(object):
             return data
 
         except Exception as e:
-            self.__print_error("__load_core_load_balancer_ruleset", e)
+            self.__print_error("__load_load_balancer_ruleset", e)
             return data
 
     ##########################################################################
@@ -5967,6 +5981,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_AUTONOMOUS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_MYSQL)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_SOFTWARE_IMAGES)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -5977,6 +5992,7 @@ class ShowOCIService(object):
             db[self.C_DATABASE_AUTONOMOUS] += self.__load_database_autonomouns(database_client, compartments)
             db[self.C_DATABASE_NOSQL] += self.__load_database_nosql(nosql_client, compartments)
             db[self.C_DATABASE_MYSQL] += self.__load_database_mysql(mysql_client, compartments)
+            db[self.C_DATABASE_SOFTWARE_IMAGES] += self.__load_database_software_images(database_client, compartments)
 
             print("")
 
@@ -6088,7 +6104,7 @@ class ShowOCIService(object):
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning("a", False)
                         continue
                     else:
                         raise
@@ -7131,6 +7147,88 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_mysql", e)
+            return data
+
+    ##########################################################################
+    # __load_database_software_images
+    ##########################################################################
+    def __load_database_software_images(self, database_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Database Software Images")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                db_soft_images = []
+                try:
+                    db_soft_images = oci.pagination.list_call_get_all_results(
+                        database_client.list_database_software_images,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        print("e - " + str(e))
+                        return data
+
+                # loop on auto
+                # array = oci.database.models.DatabaseSoftwareImageSummary
+                for array in db_soft_images:
+                    if array.lifecycle_state == 'TERMINATED' or array.lifecycle_state == 'FAILED':
+                        continue
+
+                    value = {'id': str(array.id),
+                             'display_name': str(array.display_name),
+                             'database_version': str(array.database_version),
+                             'lifecycle_state': str(array.lifecycle_state),
+                             'lifecycle_details': str(array.lifecycle_details),
+                             'time_created': str(array.time_created),
+                             'image_type': str(array.image_type),
+                             'image_shape_family': str(array.image_shape_family),
+                             'patch_set': str(array.patch_set),
+                             'included_patches_summary': str(array.included_patches_summary),
+                             'ls_inventory': str(array.ls_inventory),
+                             'is_upgrade_supported': str(array.is_upgrade_supported),
+                             'database_software_image_included_patches': array.database_software_image_included_patches,
+                             'database_software_image_one_off_patches': array.database_software_image_one_off_patches,
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'defined_tags': [] if array.defined_tags is None else array.defined_tags,
+                             'freeform_tags': [] if array.freeform_tags is None else array.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_software_images", e)
             return data
 
     ##########################################################################
