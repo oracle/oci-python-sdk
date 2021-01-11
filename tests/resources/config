@@ -60,3 +60,6 @@ delegation_token_file=tests/resources/delegation_token
 tenancy=ocid1.tenancy.oc1..aaaaaaaacqp432hpa5oc2kvxm4kpwbkodfru4okbw2obkcdob5zuegi4rwxq
 authentication_type=instance_principal
 delegation_token_file=file/does/not/exist
+
+[INVALID_KEY_FILE_PATH]
+key_file=invalid_key_file_path # please add content after this line, so that you will not break the test test_invalid_key_file_path()

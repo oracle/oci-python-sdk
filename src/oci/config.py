@@ -31,7 +31,7 @@ import re
 import logging
 from oci._vendor import six
 
-from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
+from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig, InvalidKeyFilePath
 from .auth import signers
 from .util import AUTHENTICATION_TYPE_FIELD_NAME, get_authentication_type_from_config, DELEGATION_TOKEN_FILE_FIELD_NAME, DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE
 
@@ -115,6 +115,8 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     for key in CONFIG_FILE_BLACKLISTED_KEYS:
         if key in config:
             raise ValueError("'{}' cannot be specified in a config file for security reasons. To use this key you must add it to the config programmatically.".format(key))
+
+    invalid_key_file_path_checker(config, expanded_file_location, profile_name)
 
     return config
 
@@ -209,3 +211,29 @@ def _get_config_path_with_fallback(file_location):
 
     logger.debug("Config file found at {}".format(expanded_file_location))
     return expanded_file_location
+
+
+def invalid_key_file_path_checker(config, expanded_file_location, profile_name):
+    if 'key_file' in config:
+        key_file_path = os.path.expanduser(config.get('key_file'))
+        if not os.path.isfile(key_file_path):
+            line_number = get_linenum_from_file(config.get('key_file'), expanded_file_location, profile_name)
+            line_message = " at line {}".format(line_number) if line_number else ""
+            message = "Config file {} is invalid: the key_file's value \'{}\'{} must be a valid file path.".format(expanded_file_location, key_file_path, line_message)
+            raise InvalidKeyFilePath(message)
+
+
+def get_linenum_from_file(key, filename, profile):
+    with open(filename, 'r') as f:
+        profile_found = False
+        profile_token = "[" + profile + "]"
+        for line_number, line in enumerate(f):
+            line = line.strip()
+            if len(line) >= 1:
+                if line[0] == "#":
+                    continue
+            if profile_token in line:
+                profile_found = True
+            if profile_found and key in line:
+                return line_number + 1
+    return None

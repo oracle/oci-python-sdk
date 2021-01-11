@@ -72,6 +72,10 @@ class MissingPrivateKeyPassphrase(InvalidPrivateKey):
     """The provided key requires a passphrase."""
 
 
+class InvalidKeyFilePath(ClientError):
+    """The value is expected to be a file name but it's not a valid key_file path."""
+
+
 class ProfileNotFound(ClientError):
     """The specified profile was not found in the config file."""
 
