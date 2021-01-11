@@ -4,12 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.26.1 - TBD
+2.27.0 - 2021-01-12
 ====================
 
 Added
 -----
-* TBD
+* Support for auto-scaling in the Big Data service
+* Documentation fixes for the Logging Search service
+
+Breaking
+--------
+* Removed `LIFECYCLE_STATE_UPDATING_INFRA` from model BdsInstance in the Big Data service
+* Removed `LIFECYCLE_STATE_STOPPING` and `LIFECYCLE_STATE_STARTING` from model Node in the Big Data Service
 
 ====================
 2.26.0 - 2020-12-15
