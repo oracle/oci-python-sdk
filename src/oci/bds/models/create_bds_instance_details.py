@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -275,8 +275,6 @@ class CreateBdsInstanceDetails(object):
     def network_config(self):
         """
         Gets the network_config of this CreateBdsInstanceDetails.
-        Additional configuration of customer's network.
-
 
         :return: The network_config of this CreateBdsInstanceDetails.
         :rtype: oci.bds.models.NetworkConfig
@@ -287,8 +285,6 @@ class CreateBdsInstanceDetails(object):
     def network_config(self, network_config):
         """
         Sets the network_config of this CreateBdsInstanceDetails.
-        Additional configuration of customer's network.
-
 
         :param network_config: The network_config of this CreateBdsInstanceDetails.
         :type: oci.bds.models.NetworkConfig

@@ -10,7 +10,7 @@
 # 0 7 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_daily_report.sh > /home/opc/usage_reports_to_adw/run_daily_report_crontab_run.txt 2>&1
 #############################################################################################################################
 # Env Variables based on yum instant client
-export CLIENT_HOME=/usr/lib/oracle/19.6/client64
+export CLIENT_HOME=/usr/lib/oracle/current/client64
 export LD_LIBRARY_PATH=$CLIENT_HOME/lib
 export PATH=$PATH:$CLIENT_HOME/bin
 

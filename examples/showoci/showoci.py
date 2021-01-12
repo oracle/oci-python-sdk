@@ -71,7 +71,6 @@
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
 # - oci.vault.VaultsClient
-# - oci.work_requests.WorkRequestClient
 # - oci.blockchain.BlockchainPlatformClient
 # - oci.data_integration.DataIntegrationClient
 # - oci.data_safe.DataSafeClient
@@ -93,7 +92,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.12.15"
+version = "21.01.07"
 
 ##########################################################################
 # check OCI version
@@ -221,7 +220,10 @@ def execute_extract():
     ############################################
     # print completion
     ############################################
-    complete_message = return_error_message(data.get_service_errors(), data.get_service_warnings(), data.error)
+    service_errors = data.get_service_errors()
+    service_warnings = data.get_service_warnings()
+    output_errors = output.get_errors() + summary.get_errors()
+    complete_message = return_error_message(service_errors, service_warnings, data.error, output_errors)
 
     # if reboot migration
     if data.get_service_reboot_migration() > 0:
@@ -240,11 +242,11 @@ def execute_extract():
 ##########################################################################
 # compile the error message
 ##########################################################################
-def return_error_message(service_error, service_warning, data_error):
+def return_error_message(service_error, service_warning, data_error, output_error):
 
     complete_message = "Successfully"
 
-    if service_error > 0 or service_warning > 0 or data_error > 0:
+    if service_error > 0 or service_warning > 0 or data_error > 0 or output_error > 0:
         complete_message = "With "
 
         if service_error > 0:
@@ -255,6 +257,10 @@ def return_error_message(service_error, service_warning, data_error):
 
         if data_error > 0:
             complete_message += str(data_error) + " (Processing Errors) "
+
+        if output_error > 0:
+            complete_message += str(output_error) + "x(Output Errors) "
+
     return complete_message
 
 

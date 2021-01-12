@@ -1,12 +1,18 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
 
+from .add_auto_scaling_configuration_details import AddAutoScalingConfigurationDetails
 from .add_block_storage_details import AddBlockStorageDetails
 from .add_cloud_sql_details import AddCloudSqlDetails
 from .add_worker_nodes_details import AddWorkerNodesDetails
+from .auto_scale_policy import AutoScalePolicy
+from .auto_scale_policy_metric_rule import AutoScalePolicyMetricRule
+from .auto_scale_policy_rule import AutoScalePolicyRule
+from .auto_scaling_configuration import AutoScalingConfiguration
+from .auto_scaling_configuration_summary import AutoScalingConfigurationSummary
 from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
@@ -18,10 +24,13 @@ from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_node_details import CreateNodeDetails
 from .default_error import DefaultError
 from .kerberos_details import KerberosDetails
+from .metric_threshold_rule import MetricThresholdRule
 from .network_config import NetworkConfig
 from .node import Node
+from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .restart_node_details import RestartNodeDetails
+from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .volume_attachment_detail import VolumeAttachmentDetail
 from .work_request import WorkRequest
@@ -31,9 +40,15 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for bds services.
 bds_type_mapping = {
+    "AddAutoScalingConfigurationDetails": AddAutoScalingConfigurationDetails,
     "AddBlockStorageDetails": AddBlockStorageDetails,
     "AddCloudSqlDetails": AddCloudSqlDetails,
     "AddWorkerNodesDetails": AddWorkerNodesDetails,
+    "AutoScalePolicy": AutoScalePolicy,
+    "AutoScalePolicyMetricRule": AutoScalePolicyMetricRule,
+    "AutoScalePolicyRule": AutoScalePolicyRule,
+    "AutoScalingConfiguration": AutoScalingConfiguration,
+    "AutoScalingConfigurationSummary": AutoScalingConfigurationSummary,
     "BdsInstance": BdsInstance,
     "BdsInstanceSummary": BdsInstanceSummary,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
@@ -45,10 +60,13 @@ bds_type_mapping = {
     "CreateNodeDetails": CreateNodeDetails,
     "DefaultError": DefaultError,
     "KerberosDetails": KerberosDetails,
+    "MetricThresholdRule": MetricThresholdRule,
     "NetworkConfig": NetworkConfig,
     "Node": Node,
+    "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RestartNodeDetails": RestartNodeDetails,
+    "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
     "VolumeAttachmentDetail": VolumeAttachmentDetail,
     "WorkRequest": WorkRequest,

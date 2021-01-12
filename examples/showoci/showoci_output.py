@@ -27,6 +27,7 @@ class ShowOCIOutput(object):
     tabs = ' ' * 4
     taba = '--> '
     tabs2 = tabs + tabs
+    error = 0
 
     ############################################
     # Init
@@ -137,6 +138,12 @@ class ShowOCIOutput(object):
             raise Exception("Error in print_showoci_config: " + str(e.args))
 
     ##########################################################################
+    # get errors
+    ##########################################################################
+    def get_errors(self):
+        return self.error
+
+    ##########################################################################
     # print print error
     ##########################################################################
     def __print_error(self, msg, e):
@@ -146,6 +153,8 @@ class ShowOCIOutput(object):
             print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
         else:
             print("\nError in " + classname + ":" + msg + ": " + str(e))
+
+        self.error += 1
 
     ##########################################################################
     # Print Tenancy
@@ -914,7 +923,7 @@ class ShowOCIOutput(object):
                 for vm in dbs['vm_clusters']:
 
                     if 'display_name' in vm:
-                        print(self.tabs + "VMCLSTR : " + str(vm['display_name']))
+                        print(self.tabs + "VMCLSTR : " + str(vm['display_name']) + " (" + vm['lifecycle_state'] + ")")
 
                     if 'cluster_name' in vm:
                         if vm['cluster_name']:
@@ -1165,6 +1174,20 @@ class ShowOCIOutput(object):
     # print database nosql
     ##########################################################################
 
+    def __print_database_software_images(self, dbs):
+        try:
+            for db in dbs:
+                print(self.taba + "Name    : " + db['display_name'] + " - " + db['patch_set'] + " - " + db['image_shape_family'] + " - " + db['image_type'])
+                print(self.tabs + "Created : " + db['time_created'][0:16] + " (" + db['lifecycle_state'] + ")")
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_software_images", e)
+
+    ##########################################################################
+    # print database nosql
+    ##########################################################################
+
     def __print_database_nosql(self, dbs):
         try:
             for db in dbs:
@@ -1231,6 +1254,10 @@ class ShowOCIOutput(object):
                 self.print_header("NOSQL Tables", 2)
                 self.__print_database_nosql(list_databases['nosql'])
                 print("")
+
+            if 'software_images' in list_databases:
+                self.print_header("Database Software Images", 2)
+                self.__print_database_software_images(list_databases['software_images'])
 
         except Exception as e:
             self.__print_error("__print_database_main", e)
@@ -2081,6 +2108,7 @@ class ShowOCISummary(object):
     ##########################################################################
     tabs = ' ' * 4
     taba = '--> '
+    error = 0
 
     summary_global_list = []
     summary_global_data = []
@@ -2119,6 +2147,12 @@ class ShowOCISummary(object):
             self.__print_error("print_summary", e)
 
     ##########################################################################
+    # get errors
+    ##########################################################################
+    def get_errors(self):
+        return self.error
+
+    ##########################################################################
     # print print error
     ##########################################################################
     def __print_error(self, msg, e):
@@ -2128,6 +2162,8 @@ class ShowOCISummary(object):
             print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
         else:
             print("\nError in " + classname + ":" + msg + ": " + str(e))
+
+        self.error += 1
 
     ##########################################################################
     # Print header centered
@@ -2452,6 +2488,20 @@ class ShowOCISummary(object):
             self.__print_error("__summary_core_size", e)
 
     ##########################################################################
+    # sum core count
+    ##########################################################################
+
+    def __summary_core_count(self, objects, object_name):
+        try:
+            if len(objects) == 0:
+                return
+
+            self.summary_global_list.append({'type': object_name, 'size': len(objects)})
+
+        except Exception as e:
+            self.__print_error("__summary_core_count", e)
+
+    ##########################################################################
     # summary Compute
     ##########################################################################
     def __summary_core_compute_main(self, data):
@@ -2481,6 +2531,107 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_core_compute_main", e)
+
+    ##########################################################################
+    # summary network
+    ##########################################################################
+    def __summary_core_network_main(self, data):
+
+        try:
+            if len(data) == 0:
+                return
+
+            if 'vcn' in data:
+                self.__summary_core_count(data['vcn'], "Network VCN Count")
+                for vcn in data['vcn']:
+                    if 'data' in vcn:
+                        dt = vcn['data']
+
+                        # Subnets
+                        if 'subnets' in dt:
+                            self.__summary_core_count(dt['subnets'], "Network VCN Subnets")
+
+                        # SGW
+                        if 'sgw' in dt:
+                            for sgw in dt['sgw']:
+                                if 'services' in sgw:
+                                    if 'Object Storage' in sgw['services']:
+                                        self.summary_global_list.append({'type': "Network VCN Service Gateway Object Storage", 'size': 1})
+                                    else:
+                                        self.summary_global_list.append({'type': "Network VCN Service Gateway All Services", 'size': 1})
+
+                        # IGW
+                        if 'igw' in dt:
+                            self.__summary_core_count(dt['igw'], "Network VCN Internet Gateways")
+
+                        # NATGW
+                        if 'nat' in dt:
+                            for nat in dt['nat']:
+                                if 'block_traffic' in nat:
+                                    if 'True' in nat['block_traffic']:
+                                        self.summary_global_list.append({'type': "Network VCN NAT Gateways Blocked", 'size': 1})
+                                    else:
+                                        self.summary_global_list.append({'type': "Network VCN NAT Gateways", 'size': 1})
+                            self.__summary_core_count(dt['vlans'], "Network VCN VLANs")
+
+                        # NSG
+                        if 'security_groups' in dt:
+                            self.__summary_core_count(dt['security_groups'], "Network VCN Security Groups")
+
+                        # SL
+                        if 'security_lists' in dt:
+                            self.__summary_core_count(dt['security_lists'], "Network VCN Security Lists")
+
+                        # RT
+                        if 'route_tables' in dt:
+                            self.__summary_core_count(dt['route_tables'], "Network VCN Route Tables")
+
+                        # LPG
+                        if 'local_peering' in dt:
+                            for lpg in dt['local_peering']:
+                                if 'peering_status' in lpg:
+                                    if lpg['peering_status'] == "PEERED":
+                                        self.summary_global_list.append({'type': "Network VCN LPGs Peered", 'size': 1})
+                                    else:
+                                        self.summary_global_list.append({'type': "Network VCN LPGs Not Peered", 'size': 1})
+
+            # DRG
+            if 'drg' in data:
+                self.__summary_core_count(data['drg'], "Network DRG Count")
+
+            # CPE
+            if 'cpe' in data:
+                self.__summary_core_count(data['cpe'], "Network CPEs")
+
+            # IPSEC
+            if 'ipsec' in data:
+                for ipsec in data['ipsec']:
+                    if 'tunnels' in ipsec:
+                        for tunnel in ipsec['tunnels']:
+                            if tunnel['status'] == "UP":
+                                self.summary_global_list.append({'type': "Network DRG IPSEC Tunnels UP", 'size': 1})
+                            else:
+                                self.summary_global_list.append({'type': "Network DRG IPSEC Tunnels Down", 'size': 1})
+
+            # VC
+            if 'virtual_circuit' in data:
+                for vc in data['virtual_circuit']:
+                    if vc['bgp_session_state'] == "UP":
+                        self.summary_global_list.append({'type': "Network DRG Circuits BGP UP", 'size': 1})
+                    else:
+                        self.summary_global_list.append({'type': "Network DRG Circuits BGP Down", 'size': 1})
+
+            # RPG
+            if 'remote_peering' in data:
+                for rpg in data['remote_peering']:
+                    if 'peering_status' in rpg:
+                        if rpg['peering_status'] == "PEERED":
+                            self.summary_global_list.append({'type': "Network DRG RPG Peered", 'size': 1})
+                        else:
+                            self.summary_global_list.append({'type': "Network DRG RPG Not Peered", 'size': 1})
+
+        except Exception as e:
+            self.__print_error("__summary_core_network_main", e)
 
     ##########################################################################
     # Summary Group By
@@ -2546,6 +2697,8 @@ class ShowOCISummary(object):
 
                 compartment_header = ""
 
+                if 'network' in cdata:
+                    self.__summary_core_network_main(cdata['network'])
                 if 'compute' in cdata:
                     self.__summary_core_compute_main(cdata['compute'])
                 if 'database' in cdata:
@@ -2881,6 +3034,7 @@ class ShowOCICSV(object):
                 data = {'region_name': region_name,
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
+                        'vcn_cidrs': vcn['cidr_blocks'],
                         'vcn_compartment': vcn['compartment_name'],
                         'internet_gateway': igw,
                         'service_gateway': sgw,

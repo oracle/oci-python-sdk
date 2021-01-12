@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.01.07 - 21.01.07
+=====================
+* Added Network Summary
+* Added Flexible load balancers
+* Added database software images
+
+=====================
 20.12.15 - 20.12.15
 =====================
 * Added OCVS Support (VMWare) under -paas

@@ -70,7 +70,7 @@ import requests
 import time
 
 
-version = "20.11.10"
+version = "20.12.03"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -1546,7 +1546,7 @@ def main_process():
         usage_num = 0
         if not cmd.skip_usage:
             print("\nHandling Usage Report...")
-            objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size", limit=999, prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
+            objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
             for object_file in objects.objects:
                 usage_num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments)
             print("\n   Total " + str(usage_num) + " Usage Files Loaded")
@@ -1557,7 +1557,7 @@ def main_process():
         cost_num = 0
         if not cmd.skip_cost:
             print("\nHandling Cost Report...")
-            objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size", limit=999, prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
+            objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
             for object_file in objects.objects:
                 cost_num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments)
             print("\n   Total " + str(cost_num) + " Cost Files Loaded")

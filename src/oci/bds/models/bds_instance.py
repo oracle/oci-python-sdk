@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -24,10 +24,6 @@ class BdsInstance(object):
     #: A constant which can be used with the lifecycle_state property of a BdsInstance.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
-
-    #: A constant which can be used with the lifecycle_state property of a BdsInstance.
-    #: This constant has a value of "UPDATING_INFRA"
-    LIFECYCLE_STATE_UPDATING_INFRA = "UPDATING_INFRA"
 
     #: A constant which can be used with the lifecycle_state property of a BdsInstance.
     #: This constant has a value of "SUSPENDING"
@@ -80,7 +76,7 @@ class BdsInstance(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BdsInstance.
-            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "UPDATING_INFRA", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -282,7 +278,7 @@ class BdsInstance(object):
         **[Required]** Gets the lifecycle_state of this BdsInstance.
         The state of the BDS instance
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "UPDATING_INFRA", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -301,7 +297,7 @@ class BdsInstance(object):
         :param lifecycle_state: The lifecycle_state of this BdsInstance.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "UPDATING_INFRA", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -412,8 +408,6 @@ class BdsInstance(object):
     def network_config(self):
         """
         Gets the network_config of this BdsInstance.
-        Additional configuration of customer's network.
-
 
         :return: The network_config of this BdsInstance.
         :rtype: oci.bds.models.NetworkConfig
@@ -424,8 +418,6 @@ class BdsInstance(object):
     def network_config(self, network_config):
         """
         Sets the network_config of this BdsInstance.
-        Additional configuration of customer's network.
-
 
         :param network_config: The network_config of this BdsInstance.
         :type: oci.bds.models.NetworkConfig
@@ -436,8 +428,6 @@ class BdsInstance(object):
     def cluster_details(self):
         """
         Gets the cluster_details of this BdsInstance.
-        Specific info about a Hadoop cluster
-
 
         :return: The cluster_details of this BdsInstance.
         :rtype: oci.bds.models.ClusterDetails
@@ -448,8 +438,6 @@ class BdsInstance(object):
     def cluster_details(self, cluster_details):
         """
         Sets the cluster_details of this BdsInstance.
-        Specific info about a Hadoop cluster
-
 
         :param cluster_details: The cluster_details of this BdsInstance.
         :type: oci.bds.models.ClusterDetails
@@ -484,8 +472,6 @@ class BdsInstance(object):
     def cloud_sql_details(self):
         """
         Gets the cloud_sql_details of this BdsInstance.
-        The information about added Cloud SQL capability
-
 
         :return: The cloud_sql_details of this BdsInstance.
         :rtype: oci.bds.models.CloudSqlDetails
@@ -496,8 +482,6 @@ class BdsInstance(object):
     def cloud_sql_details(self, cloud_sql_details):
         """
         Sets the cloud_sql_details of this BdsInstance.
-        The information about added Cloud SQL capability
-
 
         :param cloud_sql_details: The cloud_sql_details of this BdsInstance.
         :type: oci.bds.models.CloudSqlDetails

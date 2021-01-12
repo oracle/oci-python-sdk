@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeShapeDetails(object):
     """
-    The information about additionaly added nodes
+    Resize details specified for individual nodes.
     """
 
     def __init__(self, **kwargs):
@@ -68,8 +68,6 @@ class ChangeShapeDetails(object):
     def nodes(self):
         """
         **[Required]** Gets the nodes of this ChangeShapeDetails.
-        Inidividial worker nodes groups details
-
 
         :return: The nodes of this ChangeShapeDetails.
         :rtype: oci.bds.models.ChangeShapeNodes
@@ -80,8 +78,6 @@ class ChangeShapeDetails(object):
     def nodes(self, nodes):
         """
         Sets the nodes of this ChangeShapeDetails.
-        Inidividial worker nodes groups details
-
 
         :param nodes: The nodes of this ChangeShapeDetails.
         :type: oci.bds.models.ChangeShapeNodes

@@ -101,7 +101,7 @@ The script will install Python3, Git and python packages - oci, oci-cli, cx_Orac
 Install Oracle Database Instance Client, Update bashrc and Clone the Python SDK
 ```
    # on oci github:
-   bash -c "$(curl -L https://raw.githubusercontent.com/oci-python-sdk/examples/usage_reports_to_adw/master/setup/setup_packages.sh)"
+   bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/setup/setup_packages.sh)"
 ```
 
 ## 7. Setup Credentials
@@ -194,7 +194,7 @@ This script will ask for Database Name, Admin Password, Application Password and
 ## 20. How to upgrade the usage2adw application and APEX
 ```
    # on oci github:
-   bash -c "$(curl -L https://raw.githubusercontent.com/oci-python-sdk/examples/usage_reports_to_adw/master/setup/setup_upgrade_usage2adw.sh)"    
+   bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/setup/setup_upgrade_usage2adw.sh)"    
 ```
 
 
