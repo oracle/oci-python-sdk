@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -98,16 +98,10 @@ class LogSearchClient(object):
             a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-            `List Pagination`__.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            The maximum number of items to return in a response. Pagination is not supported in this API.
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-            pagination, see `List Pagination`__.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            Reserved for future use. Pagination is not supported in this API.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

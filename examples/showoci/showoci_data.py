@@ -142,10 +142,9 @@ class ShowOCIData(object):
         return self.service.error
 
     ##########################################################################
-    # get service error flag
+    # get service warnings flag
     ##########################################################################
     def get_service_warnings(self):
-
         return self.service.warning
 
     ##########################################################################
@@ -378,9 +377,12 @@ class ShowOCIData(object):
             for arr in list_nat_gateways:
                 value = {'id': arr['id'],
                          'name': arr['name'],
+                         'display_name': arr['display_name'],
+                         'nat_ip': arr['nat_ip'],
                          'compartment_name': arr['compartment_name'],
                          'compartment_id': arr['compartment_id'],
                          'time_created': arr['time_created'],
+                         'block_traffic': arr['block_traffic'],
                          'defined_tags': arr['defined_tags'],
                          'freeform_tags': arr['freeform_tags']}
 
@@ -516,6 +518,7 @@ class ShowOCIData(object):
                          'route_table_id': lpg['route_table_id'],
                          'route_table_name': routestr,
                          'vcn_id': lpg['vcn_id'],
+                         'peering_status': lpg['peering_status'],
                          'peer_advertised_cidr': lpg['peer_advertised_cidr'],
                          'peer_advertised_cidr_details': lpg['peer_advertised_cidr_details'],
                          'is_cross_tenancy_peering': lpg['is_cross_tenancy_peering']
@@ -2220,6 +2223,20 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # __get_database_software_images
+    ##########################################################################
+    def __get_database_software_images(self, region_name, compartment):
+
+        data = []
+        try:
+            database_software_images = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_SOFTWARE_IMAGES, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return database_software_images
+
+        except Exception as e:
+            self.__print_error("__get_database_software_images", e)
+            return data
+
+    ##########################################################################
     # Database
     ##########################################################################
     def __get_database_main(self, region_name, compartment):
@@ -2251,6 +2268,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['mysql'] = data
+
+            data = self.__get_database_software_images(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['software_images'] = data
 
             return return_data
 
@@ -2484,10 +2506,13 @@ class ShowOCIData(object):
         data = {}
         try:
             lb = load_balance_obj
+            flexible = (str(lb['shape_min_mbps']) + "mbps:" + str(lb['shape_max_mbps']) + "mbps - ") if lb['shape_min_mbps'] else ""
             data['id'] = str(lb['id'])
-            data['name'] = str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + ("(Private)" if lb['is_private'] else "(Public)")
+            data['name'] = str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + flexible + ("(Private)" if lb['is_private'] else "(Public)")
             data['status'] = lb['status']
             data['shape_name'] = lb['shape_name']
+            data['shape_min_mbps'] = lb['shape_min_mbps']
+            data['shape_max_mbps'] = lb['shape_max_mbps']
             data['display_name'] = lb['display_name']
             data['is_private'] = lb['is_private']
             data['ips'] = lb['ip_addresses']

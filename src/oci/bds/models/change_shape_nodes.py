@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeShapeNodes(object):
     """
-    ChangeShapeNodes model.
+    Inidividual worker nodes groups details
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class ChangeShapeNodes(object):
     def worker(self):
         """
         Gets the worker of this ChangeShapeNodes.
-        worker nodes shape
+        Change shape of worker nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :return: The worker of this ChangeShapeNodes.
@@ -70,7 +70,7 @@ class ChangeShapeNodes(object):
     def worker(self, worker):
         """
         Sets the worker of this ChangeShapeNodes.
-        worker nodes shape
+        Change shape of worker nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :param worker: The worker of this ChangeShapeNodes.
@@ -82,7 +82,7 @@ class ChangeShapeNodes(object):
     def master(self):
         """
         Gets the master of this ChangeShapeNodes.
-        master nodes shape
+        Change shape of master nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :return: The master of this ChangeShapeNodes.
@@ -94,7 +94,7 @@ class ChangeShapeNodes(object):
     def master(self, master):
         """
         Sets the master of this ChangeShapeNodes.
-        master nodes shape
+        Change shape of master nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :param master: The master of this ChangeShapeNodes.
@@ -106,7 +106,7 @@ class ChangeShapeNodes(object):
     def utility(self):
         """
         Gets the utility of this ChangeShapeNodes.
-        utility nodes shape
+        Change shape of utility nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :return: The utility of this ChangeShapeNodes.
@@ -118,7 +118,7 @@ class ChangeShapeNodes(object):
     def utility(self, utility):
         """
         Sets the utility of this ChangeShapeNodes.
-        utility nodes shape
+        Change shape of utility nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :param utility: The utility of this ChangeShapeNodes.
@@ -130,7 +130,7 @@ class ChangeShapeNodes(object):
     def cloudsql(self):
         """
         Gets the cloudsql of this ChangeShapeNodes.
-        cloudsql node shape
+        Change shape of cloudsql node to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :return: The cloudsql of this ChangeShapeNodes.
@@ -142,7 +142,7 @@ class ChangeShapeNodes(object):
     def cloudsql(self, cloudsql):
         """
         Sets the cloudsql of this ChangeShapeNodes.
-        cloudsql node shape
+        Change shape of cloudsql node to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :param cloudsql: The cloudsql of this ChangeShapeNodes.

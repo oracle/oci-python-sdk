@@ -18,9 +18,15 @@ Bds
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.bds.models.AddAutoScalingConfigurationDetails
     oci.bds.models.AddBlockStorageDetails
     oci.bds.models.AddCloudSqlDetails
     oci.bds.models.AddWorkerNodesDetails
+    oci.bds.models.AutoScalePolicy
+    oci.bds.models.AutoScalePolicyMetricRule
+    oci.bds.models.AutoScalePolicyRule
+    oci.bds.models.AutoScalingConfiguration
+    oci.bds.models.AutoScalingConfigurationSummary
     oci.bds.models.BdsInstance
     oci.bds.models.BdsInstanceSummary
     oci.bds.models.ChangeBdsInstanceCompartmentDetails
@@ -32,10 +38,13 @@ Bds
     oci.bds.models.CreateNodeDetails
     oci.bds.models.DefaultError
     oci.bds.models.KerberosDetails
+    oci.bds.models.MetricThresholdRule
     oci.bds.models.NetworkConfig
     oci.bds.models.Node
+    oci.bds.models.RemoveAutoScalingConfigurationDetails
     oci.bds.models.RemoveCloudSqlDetails
     oci.bds.models.RestartNodeDetails
+    oci.bds.models.UpdateAutoScalingConfigurationDetails
     oci.bds.models.UpdateBdsInstanceDetails
     oci.bds.models.VolumeAttachmentDetail
     oci.bds.models.WorkRequest
