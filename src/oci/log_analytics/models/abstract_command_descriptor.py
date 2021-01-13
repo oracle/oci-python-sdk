@@ -161,6 +161,22 @@ class AbstractCommandDescriptor(object):
     #: This constant has a value of "HIGHLIGHT_ROWS"
     NAME_HIGHLIGHT_ROWS = "HIGHLIGHT_ROWS"
 
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "HIGHLIGHT_GROUPS"
+    NAME_HIGHLIGHT_GROUPS = "HIGHLIGHT_GROUPS"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "CREATE_VIEW"
+    NAME_CREATE_VIEW = "CREATE_VIEW"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "MAP"
+    NAME_MAP = "MAP"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "NLP"
+    NAME_NLP = "NLP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractCommandDescriptor object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -177,7 +193,9 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.LookupCommandDescriptor`
         * :class:`~oci.log_analytics.models.DemoModeCommandDescriptor`
         * :class:`~oci.log_analytics.models.FieldSummaryCommandDescriptor`
+        * :class:`~oci.log_analytics.models.MapCommandDescriptor`
         * :class:`~oci.log_analytics.models.EventStatsCommandDescriptor`
+        * :class:`~oci.log_analytics.models.HighlightGroupsCommandDescriptor`
         * :class:`~oci.log_analytics.models.WhereCommandDescriptor`
         * :class:`~oci.log_analytics.models.ClusterSplitCommandDescriptor`
         * :class:`~oci.log_analytics.models.TimeStatsCommandDescriptor`
@@ -192,6 +210,7 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.LinkCommandDescriptor`
         * :class:`~oci.log_analytics.models.SortCommandDescriptor`
         * :class:`~oci.log_analytics.models.ExtractCommandDescriptor`
+        * :class:`~oci.log_analytics.models.NlpCommandDescriptor`
         * :class:`~oci.log_analytics.models.BottomCommandDescriptor`
         * :class:`~oci.log_analytics.models.FieldsCommandDescriptor`
         * :class:`~oci.log_analytics.models.HighlightRowsCommandDescriptor`
@@ -200,6 +219,7 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.LinkDetailsCommandDescriptor`
         * :class:`~oci.log_analytics.models.SearchLookupCommandDescriptor`
         * :class:`~oci.log_analytics.models.HeadCommandDescriptor`
+        * :class:`~oci.log_analytics.models.CreateViewCommandDescriptor`
         * :class:`~oci.log_analytics.models.AddFieldsCommandDescriptor`
         * :class:`~oci.log_analytics.models.EvalCommandDescriptor`
         * :class:`~oci.log_analytics.models.RenameCommandDescriptor`
@@ -208,7 +228,7 @@ class AbstractCommandDescriptor(object):
 
         :param name:
             The value to assign to the name property of this AbstractCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -299,8 +319,14 @@ class AbstractCommandDescriptor(object):
         if type == 'FIELD_SUMMARY':
             return 'FieldSummaryCommandDescriptor'
 
+        if type == 'MAP':
+            return 'MapCommandDescriptor'
+
         if type == 'EVENT_STATS':
             return 'EventStatsCommandDescriptor'
+
+        if type == 'HIGHLIGHT_GROUPS':
+            return 'HighlightGroupsCommandDescriptor'
 
         if type == 'WHERE':
             return 'WhereCommandDescriptor'
@@ -344,6 +370,9 @@ class AbstractCommandDescriptor(object):
         if type == 'EXTRACT':
             return 'ExtractCommandDescriptor'
 
+        if type == 'NLP':
+            return 'NlpCommandDescriptor'
+
         if type == 'BOTTOM':
             return 'BottomCommandDescriptor'
 
@@ -368,6 +397,9 @@ class AbstractCommandDescriptor(object):
         if type == 'HEAD':
             return 'HeadCommandDescriptor'
 
+        if type == 'CREATE_VIEW':
+            return 'CreateViewCommandDescriptor'
+
         if type == 'ADD_FIELDS':
             return 'AddFieldsCommandDescriptor'
 
@@ -385,7 +417,7 @@ class AbstractCommandDescriptor(object):
         **[Required]** Gets the name of this AbstractCommandDescriptor.
         Name of querylanguage command
 
-        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -404,7 +436,7 @@ class AbstractCommandDescriptor(object):
         :param name: The name of this AbstractCommandDescriptor.
         :type: str
         """
-        allowed_values = ["COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS"]
+        allowed_values = ["COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name

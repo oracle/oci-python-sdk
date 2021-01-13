@@ -21,6 +21,18 @@ class LogAnalyticsConfigWorkRequest(object):
     #: This constant has a value of "DELETE_ASSOCIATIONS"
     OPERATION_TYPE_DELETE_ASSOCIATIONS = "DELETE_ASSOCIATIONS"
 
+    #: A constant which can be used with the operation_type property of a LogAnalyticsConfigWorkRequest.
+    #: This constant has a value of "APPEND_LOOKUP_DATA"
+    OPERATION_TYPE_APPEND_LOOKUP_DATA = "APPEND_LOOKUP_DATA"
+
+    #: A constant which can be used with the operation_type property of a LogAnalyticsConfigWorkRequest.
+    #: This constant has a value of "UPDATE_LOOKUP_DATA"
+    OPERATION_TYPE_UPDATE_LOOKUP_DATA = "UPDATE_LOOKUP_DATA"
+
+    #: A constant which can be used with the operation_type property of a LogAnalyticsConfigWorkRequest.
+    #: This constant has a value of "DELETE_LOOKUP"
+    OPERATION_TYPE_DELETE_LOOKUP = "DELETE_LOOKUP"
+
     #: A constant which can be used with the lifecycle_state property of a LogAnalyticsConfigWorkRequest.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -52,7 +64,7 @@ class LogAnalyticsConfigWorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this LogAnalyticsConfigWorkRequest.
-            Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -171,7 +183,7 @@ class LogAnalyticsConfigWorkRequest(object):
         Gets the operation_type of this LogAnalyticsConfigWorkRequest.
         operation type
 
-        Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -190,7 +202,7 @@ class LogAnalyticsConfigWorkRequest(object):
         :param operation_type: The operation_type of this LogAnalyticsConfigWorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS"]
+        allowed_values = ["CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

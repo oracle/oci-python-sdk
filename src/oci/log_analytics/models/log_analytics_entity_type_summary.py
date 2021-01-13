@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogAnalyticsEntityTypeSummary(object):
     """
-    Summary of an log analytics entity type.
+    Summary of a log analytics entity type.
     """
 
     #: A constant which can be used with the cloud_type property of a LogAnalyticsEntityTypeSummary.
@@ -171,7 +171,7 @@ class LogAnalyticsEntityTypeSummary(object):
     def cloud_type(self):
         """
         **[Required]** Gets the cloud_type of this LogAnalyticsEntityTypeSummary.
-        Nature of log analytics entity type.
+        Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
 
         Allowed values for this property are: "CLOUD", "NON_CLOUD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -186,7 +186,7 @@ class LogAnalyticsEntityTypeSummary(object):
     def cloud_type(self, cloud_type):
         """
         Sets the cloud_type of this LogAnalyticsEntityTypeSummary.
-        Nature of log analytics entity type.
+        Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
 
 
         :param cloud_type: The cloud_type of this LogAnalyticsEntityTypeSummary.
@@ -201,7 +201,7 @@ class LogAnalyticsEntityTypeSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this LogAnalyticsEntityTypeSummary.
-        The current state of the log analytics entity
+        The current lifecycle state of the log analytics entity type.
 
         Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -216,7 +216,7 @@ class LogAnalyticsEntityTypeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this LogAnalyticsEntityTypeSummary.
-        The current state of the log analytics entity
+        The current lifecycle state of the log analytics entity type.
 
 
         :param lifecycle_state: The lifecycle_state of this LogAnalyticsEntityTypeSummary.

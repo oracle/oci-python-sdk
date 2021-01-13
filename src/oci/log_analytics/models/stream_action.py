@@ -28,19 +28,26 @@ class StreamAction(Action):
             The value to assign to the saved_search_id property of this StreamAction.
         :type saved_search_id: str
 
+        :param metric_extraction:
+            The value to assign to the metric_extraction property of this StreamAction.
+        :type metric_extraction: oci.log_analytics.models.MetricExtraction
+
         """
         self.swagger_types = {
             'type': 'str',
-            'saved_search_id': 'str'
+            'saved_search_id': 'str',
+            'metric_extraction': 'MetricExtraction'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'saved_search_id': 'savedSearchId'
+            'saved_search_id': 'savedSearchId',
+            'metric_extraction': 'metricExtraction'
         }
 
         self._type = None
         self._saved_search_id = None
+        self._metric_extraction = None
         self._type = 'STREAM'
 
     @property
@@ -66,6 +73,26 @@ class StreamAction(Action):
         :type: str
         """
         self._saved_search_id = saved_search_id
+
+    @property
+    def metric_extraction(self):
+        """
+        Gets the metric_extraction of this StreamAction.
+
+        :return: The metric_extraction of this StreamAction.
+        :rtype: oci.log_analytics.models.MetricExtraction
+        """
+        return self._metric_extraction
+
+    @metric_extraction.setter
+    def metric_extraction(self, metric_extraction):
+        """
+        Sets the metric_extraction of this StreamAction.
+
+        :param metric_extraction: The metric_extraction of this StreamAction.
+        :type: oci.log_analytics.models.MetricExtraction
+        """
+        self._metric_extraction = metric_extraction
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -76,6 +76,48 @@ def test_add_entity_association(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_append_lookup_data(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'AppendLookupData'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'AppendLookupData')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='AppendLookupData')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.append_lookup_data(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                lookup_name=request.pop(util.camelize('lookupName')),
+                append_lookup_file_body=request.pop(util.camelize('AppendLookupFileBody')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'AppendLookupData',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'append_lookup_data',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_batch_get_basic_info(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'BatchGetBasicInfo'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -884,6 +926,47 @@ def test_delete_log_analytics_object_collection_rule(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_delete_lookup(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'DeleteLookup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'DeleteLookup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='DeleteLookup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_lookup(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                lookup_name=request.pop(util.camelize('lookupName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'DeleteLookup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_lookup',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_delete_parser(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'DeleteParser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1247,6 +1330,88 @@ def test_estimate_purge_data_size(testing_service_client):
             result,
             service_error,
             'estimatePurgeDataSizeResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_estimate_recall_data_size(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'EstimateRecallDataSize'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'EstimateRecallDataSize')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='EstimateRecallDataSize')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.estimate_recall_data_size(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                estimate_recall_data_size_details=request.pop(util.camelize('EstimateRecallDataSizeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'EstimateRecallDataSize',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'estimateRecallDataSizeResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_estimate_release_data_size(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'EstimateReleaseDataSize'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'EstimateReleaseDataSize')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='EstimateReleaseDataSize')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.estimate_release_data_size(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                estimate_release_data_size_details=request.pop(util.camelize('EstimateReleaseDataSizeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'EstimateReleaseDataSize',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'estimateReleaseDataSizeResult',
             False,
             False
         )
@@ -1983,6 +2148,47 @@ def test_get_log_analytics_object_collection_rule(testing_service_client):
             result,
             service_error,
             'logAnalyticsObjectCollectionRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_get_lookup(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'GetLookup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'GetLookup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='GetLookup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.get_lookup(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                lookup_name=request.pop(util.camelize('lookupName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'GetLookup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'logAnalyticsLookup',
             False,
             False
         )
@@ -3322,6 +3528,69 @@ def test_list_log_analytics_object_collection_rules(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_list_lookups(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ListLookups'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ListLookups')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ListLookups')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.list_lookups(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                type=request.pop(util.camelize('type')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_lookups(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    type=request.pop(util.camelize('type')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_lookups(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        type=request.pop(util.camelize('type')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ListLookups',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'logAnalyticsLookupCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_list_meta_source_types(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'ListMetaSourceTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3659,6 +3928,66 @@ def test_list_query_work_requests(testing_service_client):
             result,
             service_error,
             'queryWorkRequestCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_list_recalled_data(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ListRecalledData'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ListRecalledData')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ListRecalledData')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.list_recalled_data(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_recalled_data(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_recalled_data(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ListRecalledData',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'recalledDataCollection',
             False,
             True
         )
@@ -4541,6 +4870,69 @@ def test_list_uploads(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_list_warnings(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ListWarnings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ListWarnings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ListWarnings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.list_warnings(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_warnings(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_warnings(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ListWarnings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'logAnalyticsWarningCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4845,6 +5237,47 @@ def test_parse_query(testing_service_client):
             result,
             service_error,
             'parseQueryOutput',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_pause_scheduled_task(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'PauseScheduledTask'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'PauseScheduledTask')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='PauseScheduledTask')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.pause_scheduled_task(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                scheduled_task_id=request.pop(util.camelize('scheduledTaskId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'PauseScheduledTask',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'scheduledTask',
             False,
             False
         )
@@ -5162,6 +5595,47 @@ def test_remove_entity_associations(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_resume_scheduled_task(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ResumeScheduledTask'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ResumeScheduledTask')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ResumeScheduledTask')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.resume_scheduled_task(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                scheduled_task_id=request.pop(util.camelize('scheduledTaskId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ResumeScheduledTask',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'scheduledTask',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_run(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'Run'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5244,6 +5718,48 @@ def test_suggest(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_suppress_warning(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'SuppressWarning'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'SuppressWarning')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='SuppressWarning')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.suppress_warning(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                warning_reference_details=request.pop(util.camelize('WarningReferenceDetails')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'SuppressWarning',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'suppress_warning',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_test_parser(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'TestParser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5279,6 +5795,48 @@ def test_test_parser(testing_service_client):
             result,
             service_error,
             'parserTestResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_unsuppress_warning(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'UnsuppressWarning'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'UnsuppressWarning')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='UnsuppressWarning')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.unsuppress_warning(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                warning_reference_details=request.pop(util.camelize('WarningReferenceDetails')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'UnsuppressWarning',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'unsuppress_warning',
             False,
             False
         )
@@ -5447,6 +6005,90 @@ def test_update_log_analytics_object_collection_rule(testing_service_client):
             result,
             service_error,
             'logAnalyticsObjectCollectionRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_update_lookup(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'UpdateLookup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'UpdateLookup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='UpdateLookup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.update_lookup(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                lookup_name=request.pop(util.camelize('lookupName')),
+                update_lookup_metadata_details=request.pop(util.camelize('UpdateLookupMetadataDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'UpdateLookup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'logAnalyticsLookup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_update_lookup_data(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'UpdateLookupData'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'UpdateLookupData')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='UpdateLookupData')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.update_lookup_data(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                lookup_name=request.pop(util.camelize('lookupName')),
+                update_lookup_file_body=request.pop(util.camelize('UpdateLookupFileBody')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'UpdateLookupData',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_lookup_data',
             False,
             False
         )

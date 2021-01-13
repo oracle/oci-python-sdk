@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceMappingResponse(object):
     """
-    Response object containing match status and parsed representation of log data
+    Response object containing match status and parsed representation of log data.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class SourceMappingResponse(object):
     def parsed_response(self):
         """
         **[Required]** Gets the parsed_response of this SourceMappingResponse.
-        Parsed representation of the log file
+        Parsed representation of the log file.
 
 
         :return: The parsed_response of this SourceMappingResponse.
@@ -49,7 +49,7 @@ class SourceMappingResponse(object):
     def parsed_response(self, parsed_response):
         """
         Sets the parsed_response of this SourceMappingResponse.
-        Parsed representation of the log file
+        Parsed representation of the log file.
 
 
         :param parsed_response: The parsed_response of this SourceMappingResponse.

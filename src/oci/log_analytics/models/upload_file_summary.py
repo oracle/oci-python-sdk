@@ -149,7 +149,7 @@ class UploadFileSummary(object):
     def reference(self):
         """
         **[Required]** Gets the reference of this UploadFileSummary.
-        Unique internal identifier to refer to upload file
+        Unique internal identifier to refer upload file.
 
 
         :return: The reference of this UploadFileSummary.
@@ -161,7 +161,7 @@ class UploadFileSummary(object):
     def reference(self, reference):
         """
         Sets the reference of this UploadFileSummary.
-        Unique internal identifier to refer to upload file
+        Unique internal identifier to refer upload file.
 
 
         :param reference: The reference of this UploadFileSummary.
@@ -251,7 +251,7 @@ class UploadFileSummary(object):
     def chunks_consumed(self):
         """
         Gets the chunks_consumed of this UploadFileSummary.
-        Number of chunks processed
+        Number of chunks processed.
 
 
         :return: The chunks_consumed of this UploadFileSummary.
@@ -263,7 +263,7 @@ class UploadFileSummary(object):
     def chunks_consumed(self, chunks_consumed):
         """
         Sets the chunks_consumed of this UploadFileSummary.
-        Number of chunks processed
+        Number of chunks processed.
 
 
         :param chunks_consumed: The chunks_consumed of this UploadFileSummary.
@@ -275,7 +275,7 @@ class UploadFileSummary(object):
     def chunks_success(self):
         """
         Gets the chunks_success of this UploadFileSummary.
-        Number of chunks processed successfully
+        Number of chunks processed successfully.
 
 
         :return: The chunks_success of this UploadFileSummary.
@@ -287,7 +287,7 @@ class UploadFileSummary(object):
     def chunks_success(self, chunks_success):
         """
         Sets the chunks_success of this UploadFileSummary.
-        Number of chunks processed successfully
+        Number of chunks processed successfully.
 
 
         :param chunks_success: The chunks_success of this UploadFileSummary.
@@ -299,7 +299,7 @@ class UploadFileSummary(object):
     def chunks_fail(self):
         """
         Gets the chunks_fail of this UploadFileSummary.
-        Number of chunks failed processing
+        Number of chunks failed processing.
 
 
         :return: The chunks_fail of this UploadFileSummary.
@@ -311,7 +311,7 @@ class UploadFileSummary(object):
     def chunks_fail(self, chunks_fail):
         """
         Sets the chunks_fail of this UploadFileSummary.
-        Number of chunks failed processing
+        Number of chunks failed processing.
 
 
         :param chunks_fail: The chunks_fail of this UploadFileSummary.
@@ -323,7 +323,7 @@ class UploadFileSummary(object):
     def time_started(self):
         """
         Gets the time_started of this UploadFileSummary.
-        The time when this file processing started
+        The time when this file processing started.
 
 
         :return: The time_started of this UploadFileSummary.
@@ -335,7 +335,7 @@ class UploadFileSummary(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this UploadFileSummary.
-        The time when this file processing started
+        The time when this file processing started.
 
 
         :param time_started: The time_started of this UploadFileSummary.
@@ -347,7 +347,7 @@ class UploadFileSummary(object):
     def source_name(self):
         """
         Gets the source_name of this UploadFileSummary.
-        Name of the log source used for processing this file
+        Name of the log source used for processing this file.
 
 
         :return: The source_name of this UploadFileSummary.
@@ -359,7 +359,7 @@ class UploadFileSummary(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this UploadFileSummary.
-        Name of the log source used for processing this file
+        Name of the log source used for processing this file.
 
 
         :param source_name: The source_name of this UploadFileSummary.
@@ -371,7 +371,7 @@ class UploadFileSummary(object):
     def entity_type(self):
         """
         Gets the entity_type of this UploadFileSummary.
-        Name of the entity type
+        Name of the entity type.
 
 
         :return: The entity_type of this UploadFileSummary.
@@ -383,7 +383,7 @@ class UploadFileSummary(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this UploadFileSummary.
-        Name of the entity type
+        Name of the entity type.
 
 
         :param entity_type: The entity_type of this UploadFileSummary.
@@ -419,7 +419,7 @@ class UploadFileSummary(object):
     def log_namespace(self):
         """
         Gets the log_namespace of this UploadFileSummary.
-        Log namespace associated with the file.
+        (Deprecated) Name of the log namespace associated with the file.
 
 
         :return: The log_namespace of this UploadFileSummary.
@@ -431,7 +431,7 @@ class UploadFileSummary(object):
     def log_namespace(self, log_namespace):
         """
         Sets the log_namespace of this UploadFileSummary.
-        Log namespace associated with the file.
+        (Deprecated) Name of the log namespace associated with the file.
 
 
         :param log_namespace: The log_namespace of this UploadFileSummary.
@@ -467,7 +467,7 @@ class UploadFileSummary(object):
     def log_group_name(self):
         """
         Gets the log_group_name of this UploadFileSummary.
-        Log group name associated with the file.
+        Name of the log group associated with the file.
 
 
         :return: The log_group_name of this UploadFileSummary.
@@ -479,7 +479,7 @@ class UploadFileSummary(object):
     def log_group_name(self, log_group_name):
         """
         Sets the log_group_name of this UploadFileSummary.
-        Log group name associated with the file.
+        Name of the log group associated with the file.
 
 
         :param log_group_name: The log_group_name of this UploadFileSummary.
@@ -491,7 +491,7 @@ class UploadFileSummary(object):
     def failure_details(self):
         """
         Gets the failure_details of this UploadFileSummary.
-        The details about upload processing failure
+        The details about upload processing failure.
 
 
         :return: The failure_details of this UploadFileSummary.
@@ -503,7 +503,7 @@ class UploadFileSummary(object):
     def failure_details(self, failure_details):
         """
         Sets the failure_details of this UploadFileSummary.
-        The details about upload processing failure
+        The details about upload processing failure.
 
 
         :param failure_details: The failure_details of this UploadFileSummary.

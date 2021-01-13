@@ -213,7 +213,7 @@ class LogAnalyticsEntityType(object):
     def cloud_type(self):
         """
         **[Required]** Gets the cloud_type of this LogAnalyticsEntityType.
-        Nature of log analytics entity type.
+        Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
 
         Allowed values for this property are: "CLOUD", "NON_CLOUD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -228,7 +228,7 @@ class LogAnalyticsEntityType(object):
     def cloud_type(self, cloud_type):
         """
         Sets the cloud_type of this LogAnalyticsEntityType.
-        Nature of log analytics entity type.
+        Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
 
 
         :param cloud_type: The cloud_type of this LogAnalyticsEntityType.
@@ -267,7 +267,7 @@ class LogAnalyticsEntityType(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this LogAnalyticsEntityType.
-        The current state of the log analytics entity.
+        The current lifecycle state of the log analytics entity.
 
         Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -282,7 +282,7 @@ class LogAnalyticsEntityType(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this LogAnalyticsEntityType.
-        The current state of the log analytics entity.
+        The current lifecycle state of the log analytics entity.
 
 
         :param lifecycle_state: The lifecycle_state of this LogAnalyticsEntityType.

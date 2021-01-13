@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Upload(object):
     """
-    Upload is a container that can be used to optionally put all the relevant and related on-demand upload based log files.
+    Upload is a container that can be used to put all the relevant and related on-demand upload based log files together.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +79,7 @@ class Upload(object):
     def reference(self):
         """
         **[Required]** Gets the reference of this Upload.
-        Unique internal identifier to refer to the upload container
+        Unique internal identifier to refer the upload container.
 
 
         :return: The reference of this Upload.
@@ -91,7 +91,7 @@ class Upload(object):
     def reference(self, reference):
         """
         Sets the reference of this Upload.
-        Unique internal identifier to refer to the upload container
+        Unique internal identifier to refer the upload container.
 
 
         :param reference: The reference of this Upload.
@@ -103,7 +103,7 @@ class Upload(object):
     def name(self):
         """
         **[Required]** Gets the name of this Upload.
-        The name of the upload container
+        The name of the upload container.
 
 
         :return: The name of this Upload.
@@ -115,7 +115,7 @@ class Upload(object):
     def name(self, name):
         """
         Sets the name of this Upload.
-        The name of the upload container
+        The name of the upload container.
 
 
         :param name: The name of this Upload.
@@ -127,7 +127,7 @@ class Upload(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Upload.
-        The time when this upload container is created. An RFC3339 formatted datetime string
+        The time when this upload container is created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this Upload.
@@ -139,7 +139,7 @@ class Upload(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Upload.
-        The time when this upload container is created. An RFC3339 formatted datetime string
+        The time when this upload container is created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this Upload.
@@ -151,7 +151,7 @@ class Upload(object):
     def time_updated(self):
         """
         Gets the time_updated of this Upload.
-        The latest time when this upload container is modified. An RFC3339 formatted datetime string
+        The latest time when this upload container is modified. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this Upload.
@@ -163,7 +163,7 @@ class Upload(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Upload.
-        The latest time when this upload container is modified. An RFC3339 formatted datetime string
+        The latest time when this upload container is modified. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this Upload.
@@ -175,7 +175,7 @@ class Upload(object):
     def time_earliest_log_entry(self):
         """
         Gets the time_earliest_log_entry of this Upload.
-        This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string
+        This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
 
 
         :return: The time_earliest_log_entry of this Upload.
@@ -187,7 +187,7 @@ class Upload(object):
     def time_earliest_log_entry(self, time_earliest_log_entry):
         """
         Sets the time_earliest_log_entry of this Upload.
-        This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string
+        This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
 
 
         :param time_earliest_log_entry: The time_earliest_log_entry of this Upload.
@@ -199,7 +199,7 @@ class Upload(object):
     def time_latest_log_entry(self):
         """
         Gets the time_latest_log_entry of this Upload.
-        This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string
+        This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
 
 
         :return: The time_latest_log_entry of this Upload.
@@ -211,7 +211,7 @@ class Upload(object):
     def time_latest_log_entry(self, time_latest_log_entry):
         """
         Sets the time_latest_log_entry of this Upload.
-        This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string
+        This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
 
 
         :param time_latest_log_entry: The time_latest_log_entry of this Upload.

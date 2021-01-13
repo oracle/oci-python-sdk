@@ -21,7 +21,7 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
 
         :param name:
             The value to assign to the name property of this HighlightRowsCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS"
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP"
         :type name: str
 
         :param display_query_string:
@@ -44,6 +44,10 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
             The value to assign to the declared_fields property of this HighlightRowsCommandDescriptor.
         :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
+        :param color:
+            The value to assign to the color property of this HighlightRowsCommandDescriptor.
+        :type color: str
+
         :param keywords:
             The value to assign to the keywords property of this HighlightRowsCommandDescriptor.
         :type keywords: list[str]
@@ -56,6 +60,7 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
             'category': 'str',
             'referenced_fields': 'list[AbstractField]',
             'declared_fields': 'list[AbstractField]',
+            'color': 'str',
             'keywords': 'list[str]'
         }
 
@@ -66,6 +71,7 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
             'category': 'category',
             'referenced_fields': 'referencedFields',
             'declared_fields': 'declaredFields',
+            'color': 'color',
             'keywords': 'keywords'
         }
 
@@ -75,8 +81,33 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
         self._category = None
         self._referenced_fields = None
         self._declared_fields = None
+        self._color = None
         self._keywords = None
         self._name = 'HIGHLIGHT_ROWS'
+
+    @property
+    def color(self):
+        """
+        Gets the color of this HighlightRowsCommandDescriptor.
+        User specified color to highlight matches with if found.
+
+
+        :return: The color of this HighlightRowsCommandDescriptor.
+        :rtype: str
+        """
+        return self._color
+
+    @color.setter
+    def color(self, color):
+        """
+        Sets the color of this HighlightRowsCommandDescriptor.
+        User specified color to highlight matches with if found.
+
+
+        :param color: The color of this HighlightRowsCommandDescriptor.
+        :type: str
+        """
+        self._color = color
 
     @property
     def keywords(self):

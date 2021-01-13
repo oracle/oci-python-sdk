@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddEntityAssociationDetails(object):
     """
-    Information about the associations to be added between log analytics entity and other existing entities.
+    Information about the associations to be added between a source log analytics entity and other existing destination entities.
     """
 
     def __init__(self, **kwargs):

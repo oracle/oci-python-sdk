@@ -44,7 +44,7 @@ class UploadFileStatus(object):
     def file_name(self):
         """
         Gets the file_name of this UploadFileStatus.
-        Name of the file
+        Name of the file.
 
 
         :return: The file_name of this UploadFileStatus.
@@ -56,7 +56,7 @@ class UploadFileStatus(object):
     def file_name(self, file_name):
         """
         Sets the file_name of this UploadFileStatus.
-        Name of the file
+        Name of the file.
 
 
         :param file_name: The file_name of this UploadFileStatus.
@@ -68,7 +68,7 @@ class UploadFileStatus(object):
     def is_valid(self):
         """
         Gets the is_valid of this UploadFileStatus.
-        Is Valid flag
+        Is Valid flag.
 
 
         :return: The is_valid of this UploadFileStatus.
@@ -80,7 +80,7 @@ class UploadFileStatus(object):
     def is_valid(self, is_valid):
         """
         Sets the is_valid of this UploadFileStatus.
-        Is Valid flag
+        Is Valid flag.
 
 
         :param is_valid: The is_valid of this UploadFileStatus.

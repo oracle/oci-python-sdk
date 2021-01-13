@@ -61,6 +61,10 @@ class Field(AbstractField):
             The value to assign to the filter_query_string property of this Field.
         :type filter_query_string: str
 
+        :param unit_type:
+            The value to assign to the unit_type property of this Field.
+        :type unit_type: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -72,7 +76,8 @@ class Field(AbstractField):
             'is_groupable': 'bool',
             'is_duration': 'bool',
             'alias': 'str',
-            'filter_query_string': 'str'
+            'filter_query_string': 'str',
+            'unit_type': 'str'
         }
 
         self.attribute_map = {
@@ -85,7 +90,8 @@ class Field(AbstractField):
             'is_groupable': 'isGroupable',
             'is_duration': 'isDuration',
             'alias': 'alias',
-            'filter_query_string': 'filterQueryString'
+            'filter_query_string': 'filterQueryString',
+            'unit_type': 'unitType'
         }
 
         self._name = None
@@ -98,6 +104,7 @@ class Field(AbstractField):
         self._is_duration = None
         self._alias = None
         self._filter_query_string = None
+        self._unit_type = None
         self._name = 'FIELD'
 
     def __repr__(self):

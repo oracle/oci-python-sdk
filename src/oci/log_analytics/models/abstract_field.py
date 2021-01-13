@@ -117,6 +117,10 @@ class AbstractField(object):
             The value to assign to the filter_query_string property of this AbstractField.
         :type filter_query_string: str
 
+        :param unit_type:
+            The value to assign to the unit_type property of this AbstractField.
+        :type unit_type: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -128,7 +132,8 @@ class AbstractField(object):
             'is_groupable': 'bool',
             'is_duration': 'bool',
             'alias': 'str',
-            'filter_query_string': 'str'
+            'filter_query_string': 'str',
+            'unit_type': 'str'
         }
 
         self.attribute_map = {
@@ -141,7 +146,8 @@ class AbstractField(object):
             'is_groupable': 'isGroupable',
             'is_duration': 'isDuration',
             'alias': 'alias',
-            'filter_query_string': 'filterQueryString'
+            'filter_query_string': 'filterQueryString',
+            'unit_type': 'unitType'
         }
 
         self._name = None
@@ -154,6 +160,7 @@ class AbstractField(object):
         self._is_duration = None
         self._alias = None
         self._filter_query_string = None
+        self._unit_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -430,6 +437,30 @@ class AbstractField(object):
         :type: str
         """
         self._filter_query_string = filter_query_string
+
+    @property
+    def unit_type(self):
+        """
+        Gets the unit_type of this AbstractField.
+        Field denoting field unit type.
+
+
+        :return: The unit_type of this AbstractField.
+        :rtype: str
+        """
+        return self._unit_type
+
+    @unit_type.setter
+    def unit_type(self, unit_type):
+        """
+        Sets the unit_type of this AbstractField.
+        Field denoting field unit type.
+
+
+        :param unit_type: The unit_type of this AbstractField.
+        :type: str
+        """
+        self._unit_type = unit_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -37,7 +37,7 @@ class LogAnalyticsObjectCollectionRuleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this LogAnalyticsObjectCollectionRuleCollection.
-        list of LogAnalyticsObjectCollectionRuleSummary objects.
+        List of LogAnalyticsObjectCollectionRuleSummary objects.
 
 
         :return: The items of this LogAnalyticsObjectCollectionRuleCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsObjectCollectionRuleCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsObjectCollectionRuleCollection.
-        list of LogAnalyticsObjectCollectionRuleSummary objects.
+        List of LogAnalyticsObjectCollectionRuleSummary objects.
 
 
         :param items: The items of this LogAnalyticsObjectCollectionRuleCollection.

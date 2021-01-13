@@ -158,6 +158,10 @@ class LogAnalyticsSource(object):
             The value to assign to the time_updated property of this LogAnalyticsSource.
         :type time_updated: datetime
 
+        :param event_types:
+            The value to assign to the event_types property of this LogAnalyticsSource.
+        :type event_types: list[oci.log_analytics.models.EventType]
+
         """
         self.swagger_types = {
             'label_conditions': 'list[LogAnalyticsSourceLabelCondition]',
@@ -194,7 +198,8 @@ class LogAnalyticsSource(object):
             'entity_types': 'list[LogAnalyticsSourceEntityType]',
             'is_timezone_override': 'bool',
             'user_parsers': 'list[LogAnalyticsParser]',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'event_types': 'list[EventType]'
         }
 
         self.attribute_map = {
@@ -232,7 +237,8 @@ class LogAnalyticsSource(object):
             'entity_types': 'entityTypes',
             'is_timezone_override': 'isTimezoneOverride',
             'user_parsers': 'userParsers',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'event_types': 'eventTypes'
         }
 
         self._label_conditions = None
@@ -270,6 +276,7 @@ class LogAnalyticsSource(object):
         self._is_timezone_override = None
         self._user_parsers = None
         self._time_updated = None
+        self._event_types = None
 
     @property
     def label_conditions(self):
@@ -1110,6 +1117,30 @@ class LogAnalyticsSource(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def event_types(self):
+        """
+        Gets the event_types of this LogAnalyticsSource.
+        An array of event types.
+
+
+        :return: The event_types of this LogAnalyticsSource.
+        :rtype: list[oci.log_analytics.models.EventType]
+        """
+        return self._event_types
+
+    @event_types.setter
+    def event_types(self, event_types):
+        """
+        Sets the event_types of this LogAnalyticsSource.
+        An array of event types.
+
+
+        :param event_types: The event_types of this LogAnalyticsSource.
+        :type: list[oci.log_analytics.models.EventType]
+        """
+        self._event_types = event_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

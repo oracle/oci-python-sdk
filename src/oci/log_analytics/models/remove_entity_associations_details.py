@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveEntityAssociationsDetails(object):
     """
-    Information about the associations to be deleted between entity and other existing entities.
+    Information about the associations to be deleted between source entity and other existing destination entities.
     """
 
     def __init__(self, **kwargs):

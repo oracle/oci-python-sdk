@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateLogAnalyticsObjectCollectionRuleDetails(object):
     """
-    The configuration details of an Object Storage based collection rule to enable automatic log collection.
+    The configuration details of collection rule to enable automatic log collection from an object storage bucket.
     """
 
     #: A constant which can be used with the collection_type property of a CreateLogAnalyticsObjectCollectionRuleDetails.
@@ -79,6 +79,10 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             The value to assign to the char_encoding property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type char_encoding: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type is_enabled: bool
+
         :param overrides:
             The value to assign to the overrides property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type overrides: dict(str, list[PropertyOverride])
@@ -105,6 +109,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'log_source_name': 'str',
             'entity_id': 'str',
             'char_encoding': 'str',
+            'is_enabled': 'bool',
             'overrides': 'dict(str, list[PropertyOverride])',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
@@ -123,6 +128,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'log_source_name': 'logSourceName',
             'entity_id': 'entityId',
             'char_encoding': 'charEncoding',
+            'is_enabled': 'isEnabled',
             'overrides': 'overrides',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
@@ -140,6 +146,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         self._log_source_name = None
         self._entity_id = None
         self._char_encoding = None
+        self._is_enabled = None
         self._overrides = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -275,7 +282,6 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         """
         Gets the collection_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
         The type of collection.
-        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
 
         Allowed values for this property are: "LIVE", "HISTORIC", "HISTORIC_LIVE"
 
@@ -290,7 +296,6 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         """
         Sets the collection_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
         The type of collection.
-        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
 
 
         :param collection_type: The collection_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
@@ -310,7 +315,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         Gets the poll_since of this CreateLogAnalyticsObjectCollectionRuleDetails.
         The oldest time of the file in the bucket to consider for collection.
         Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 
 
         :return: The poll_since of this CreateLogAnalyticsObjectCollectionRuleDetails.
@@ -324,7 +329,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         Sets the poll_since of this CreateLogAnalyticsObjectCollectionRuleDetails.
         The oldest time of the file in the bucket to consider for collection.
         Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 
 
         :param poll_since: The poll_since of this CreateLogAnalyticsObjectCollectionRuleDetails.
@@ -336,9 +341,9 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
     def poll_till(self):
         """
         Gets the poll_till of this CreateLogAnalyticsObjectCollectionRuleDetails.
-        The oldest time of the file in the bucket to consider for collection.
+        The newest time of the file in the bucket to consider for collection.
         Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollTill will result in error.
+        Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 
 
         :return: The poll_till of this CreateLogAnalyticsObjectCollectionRuleDetails.
@@ -350,9 +355,9 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
     def poll_till(self, poll_till):
         """
         Sets the poll_till of this CreateLogAnalyticsObjectCollectionRuleDetails.
-        The oldest time of the file in the bucket to consider for collection.
+        The newest time of the file in the bucket to consider for collection.
         Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollTill will result in error.
+        Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 
 
         :param poll_till: The poll_till of this CreateLogAnalyticsObjectCollectionRuleDetails.
@@ -437,7 +442,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         """
         Gets the char_encoding of this CreateLogAnalyticsObjectCollectionRuleDetails.
         An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-        It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+        It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
         and very few alphabets.
         For e.g. this applies when configuring VCN Flow Logs.
 
@@ -452,7 +457,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         """
         Sets the char_encoding of this CreateLogAnalyticsObjectCollectionRuleDetails.
         An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-        It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+        It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
         and very few alphabets.
         For e.g. this applies when configuring VCN Flow Logs.
 
@@ -461,6 +466,30 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         :type: str
         """
         self._char_encoding = char_encoding
+
+    @property
+    def is_enabled(self):
+        """
+        Gets the is_enabled of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Whether or not this rule is currently enabled.
+
+
+        :return: The is_enabled of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Whether or not this rule is currently enabled.
+
+
+        :param is_enabled: The is_enabled of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     @property
     def overrides(self):

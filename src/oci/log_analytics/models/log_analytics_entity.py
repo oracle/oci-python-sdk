@@ -206,7 +206,7 @@ class LogAnalyticsEntity(object):
     def name(self):
         """
         **[Required]** Gets the name of this LogAnalyticsEntity.
-        Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+        Log analytics entity name.
 
 
         :return: The name of this LogAnalyticsEntity.
@@ -218,7 +218,7 @@ class LogAnalyticsEntity(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsEntity.
-        Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+        Log analytics entity name.
 
 
         :param name: The name of this LogAnalyticsEntity.

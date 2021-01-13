@@ -61,6 +61,10 @@ class FunctionField(AbstractField):
             The value to assign to the filter_query_string property of this FunctionField.
         :type filter_query_string: str
 
+        :param unit_type:
+            The value to assign to the unit_type property of this FunctionField.
+        :type unit_type: str
+
         :param function:
             The value to assign to the function property of this FunctionField.
         :type function: str
@@ -81,6 +85,7 @@ class FunctionField(AbstractField):
             'is_duration': 'bool',
             'alias': 'str',
             'filter_query_string': 'str',
+            'unit_type': 'str',
             'function': 'str',
             'arguments': 'list[Argument]'
         }
@@ -96,6 +101,7 @@ class FunctionField(AbstractField):
             'is_duration': 'isDuration',
             'alias': 'alias',
             'filter_query_string': 'filterQueryString',
+            'unit_type': 'unitType',
             'function': 'function',
             'arguments': 'arguments'
         }
@@ -110,6 +116,7 @@ class FunctionField(AbstractField):
         self._is_duration = None
         self._alias = None
         self._filter_query_string = None
+        self._unit_type = None
         self._function = None
         self._arguments = None
         self._name = 'FUNCTION'
