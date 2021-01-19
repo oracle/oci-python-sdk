@@ -25,6 +25,18 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
     #: This constant has a value of "HISTORIC_LIVE"
     COLLECTION_TYPE_HISTORIC_LIVE = "HISTORIC_LIVE"
 
+    #: A constant which can be used with the lifecycle_state property of a LogAnalyticsObjectCollectionRuleSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a LogAnalyticsObjectCollectionRuleSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a LogAnalyticsObjectCollectionRuleSummary.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsObjectCollectionRuleSummary object with values from keyword arguments.
@@ -62,6 +74,8 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this LogAnalyticsObjectCollectionRuleSummary.
+            Allowed values for this property are: "ACTIVE", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -75,6 +89,10 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         :param time_updated:
             The value to assign to the time_updated property of this LogAnalyticsObjectCollectionRuleSummary.
         :type time_updated: datetime
+
+        :param is_enabled:
+            The value to assign to the is_enabled property of this LogAnalyticsObjectCollectionRuleSummary.
+        :type is_enabled: bool
 
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRuleSummary.
@@ -97,6 +115,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'is_enabled': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -113,6 +132,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'is_enabled': 'isEnabled',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -128,6 +148,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._is_enabled = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -289,8 +310,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
     def collection_type(self):
         """
         **[Required]** Gets the collection_type of this LogAnalyticsObjectCollectionRuleSummary.
-        The type of collection.
-        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
+        The type of log collection.
 
         Allowed values for this property are: "LIVE", "HISTORIC", "HISTORIC_LIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -305,8 +325,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
     def collection_type(self, collection_type):
         """
         Sets the collection_type of this LogAnalyticsObjectCollectionRuleSummary.
-        The type of collection.
-        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
+        The type of log collection.
 
 
         :param collection_type: The collection_type of this LogAnalyticsObjectCollectionRuleSummary.
@@ -322,6 +341,9 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         """
         **[Required]** Gets the lifecycle_state of this LogAnalyticsObjectCollectionRuleSummary.
         The current state of the rule.
+
+        Allowed values for this property are: "ACTIVE", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this LogAnalyticsObjectCollectionRuleSummary.
@@ -339,6 +361,9 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         :param lifecycle_state: The lifecycle_state of this LogAnalyticsObjectCollectionRuleSummary.
         :type: str
         """
+        allowed_values = ["ACTIVE", "DELETED", "INACTIVE"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -412,6 +437,30 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def is_enabled(self):
+        """
+        **[Required]** Gets the is_enabled of this LogAnalyticsObjectCollectionRuleSummary.
+        Whether or not this rule is currently enabled.
+
+
+        :return: The is_enabled of this LogAnalyticsObjectCollectionRuleSummary.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this LogAnalyticsObjectCollectionRuleSummary.
+        Whether or not this rule is currently enabled.
+
+
+        :param is_enabled: The is_enabled of this LogAnalyticsObjectCollectionRuleSummary.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     @property
     def defined_tags(self):

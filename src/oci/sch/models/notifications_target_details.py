@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NotificationsTargetDetails(TargetDetails):
     """
-    The notifications target.
+    The topic used for the Notifications target.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class NotificationsTargetDetails(TargetDetails):
 
         :param kind:
             The value to assign to the kind property of this NotificationsTargetDetails.
-            Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications"
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
 
         :param topic_id:

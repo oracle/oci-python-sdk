@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FunctionsTargetDetails(TargetDetails):
     """
-    The function target.
+    The function used for the Functions target.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class FunctionsTargetDetails(TargetDetails):
 
         :param kind:
             The value to assign to the kind property of this FunctionsTargetDetails.
-            Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications"
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
 
         :param function_id:

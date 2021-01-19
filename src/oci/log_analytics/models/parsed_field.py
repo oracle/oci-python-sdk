@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ParsedField(object):
     """
-    Parsed field response
+    Parsed field response.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ParsedField(object):
     def log_content(self):
         """
         Gets the log_content of this ParsedField.
-        Sample log entries picked up from the given file for validation
+        Sample log entries picked up from the given file for validation.
 
 
         :return: The log_content of this ParsedField.
@@ -56,7 +56,7 @@ class ParsedField(object):
     def log_content(self, log_content):
         """
         Sets the log_content of this ParsedField.
-        Sample log entries picked up from the given file for validation
+        Sample log entries picked up from the given file for validation.
 
 
         :param log_content: The log_content of this ParsedField.
@@ -68,7 +68,7 @@ class ParsedField(object):
     def field_values(self):
         """
         Gets the field_values of this ParsedField.
-        Field Values
+        List of field Values.
 
 
         :return: The field_values of this ParsedField.
@@ -80,7 +80,7 @@ class ParsedField(object):
     def field_values(self, field_values):
         """
         Sets the field_values of this ParsedField.
-        Field Values
+        List of field Values.
 
 
         :param field_values: The field_values of this ParsedField.

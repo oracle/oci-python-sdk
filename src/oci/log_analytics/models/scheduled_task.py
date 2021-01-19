@@ -13,6 +13,14 @@ class ScheduledTask(object):
     Log analytics scheduled task resource.
     """
 
+    #: A constant which can be used with the kind property of a ScheduledTask.
+    #: This constant has a value of "ACCELERATION"
+    KIND_ACCELERATION = "ACCELERATION"
+
+    #: A constant which can be used with the kind property of a ScheduledTask.
+    #: This constant has a value of "STANDARD"
+    KIND_STANDARD = "STANDARD"
+
     #: A constant which can be used with the task_type property of a ScheduledTask.
     #: This constant has a value of "SAVED_SEARCH"
     TASK_TYPE_SAVED_SEARCH = "SAVED_SEARCH"
@@ -55,8 +63,18 @@ class ScheduledTask(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ScheduledTask object with values from keyword arguments.
+        Initializes a new ScheduledTask object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
+
+        * :class:`~oci.log_analytics.models.StandardTask`
+
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param kind:
+            The value to assign to the kind property of this ScheduledTask.
+            Allowed values for this property are: "ACCELERATION", "STANDARD", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type kind: str
 
         :param id:
             The value to assign to the id property of this ScheduledTask.
@@ -122,6 +140,7 @@ class ScheduledTask(object):
 
         """
         self.swagger_types = {
+            'kind': 'str',
             'id': 'str',
             'display_name': 'str',
             'task_type': 'str',
@@ -139,6 +158,7 @@ class ScheduledTask(object):
         }
 
         self.attribute_map = {
+            'kind': 'kind',
             'id': 'id',
             'display_name': 'displayName',
             'task_type': 'taskType',
@@ -155,6 +175,7 @@ class ScheduledTask(object):
             'defined_tags': 'definedTags'
         }
 
+        self._kind = None
         self._id = None
         self._display_name = None
         self._task_type = None
@@ -169,6 +190,49 @@ class ScheduledTask(object):
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @staticmethod
+    def get_subtype(object_dictionary):
+        """
+        Given the hash representation of a subtype of this class,
+        use the info in the hash to return the class of the subtype.
+        """
+        type = object_dictionary['kind']
+
+        if type == 'STANDARD':
+            return 'StandardTask'
+        else:
+            return 'ScheduledTask'
+
+    @property
+    def kind(self):
+        """
+        **[Required]** Gets the kind of this ScheduledTask.
+        Discriminator.
+
+        Allowed values for this property are: "ACCELERATION", "STANDARD", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The kind of this ScheduledTask.
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """
+        Sets the kind of this ScheduledTask.
+        Discriminator.
+
+
+        :param kind: The kind of this ScheduledTask.
+        :type: str
+        """
+        allowed_values = ["ACCELERATION", "STANDARD"]
+        if not value_allowed_none_or_none_sentinel(kind, allowed_values):
+            kind = 'UNKNOWN_ENUM_VALUE'
+        self._kind = kind
 
     @property
     def id(self):

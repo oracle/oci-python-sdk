@@ -79,7 +79,7 @@ class UpdateLogAnalyticsEntityDetails(object):
     def name(self):
         """
         Gets the name of this UpdateLogAnalyticsEntityDetails.
-        Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+        Log analytics entity name.
 
 
         :return: The name of this UpdateLogAnalyticsEntityDetails.
@@ -91,7 +91,7 @@ class UpdateLogAnalyticsEntityDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateLogAnalyticsEntityDetails.
-        Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+        Log analytics entity name.
 
 
         :param name: The name of this UpdateLogAnalyticsEntityDetails.

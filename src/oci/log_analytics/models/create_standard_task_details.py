@@ -141,6 +141,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
         """
         **[Required]** Gets the schedules of this CreateStandardTaskDetails.
         Schedules, typically a single schedule.
+        Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
 
 
         :return: The schedules of this CreateStandardTaskDetails.
@@ -153,6 +154,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
         """
         Sets the schedules of this CreateStandardTaskDetails.
         Schedules, typically a single schedule.
+        Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
 
 
         :param schedules: The schedules of this CreateStandardTaskDetails.

@@ -1,0 +1,11 @@
+EventType
+=========
+
+.. currentmodule:: oci.log_analytics.models
+
+.. autoclass:: EventType
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

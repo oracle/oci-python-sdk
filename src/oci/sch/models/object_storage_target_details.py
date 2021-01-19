@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectStorageTargetDetails(TargetDetails):
     """
-    The object storage target.
+    The bucket used for the Object Storage target.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class ObjectStorageTargetDetails(TargetDetails):
 
         :param kind:
             The value to assign to the kind property of this ObjectStorageTargetDetails.
-            Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications"
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
 
         :param namespace:
@@ -36,25 +36,39 @@ class ObjectStorageTargetDetails(TargetDetails):
             The value to assign to the object_name_prefix property of this ObjectStorageTargetDetails.
         :type object_name_prefix: str
 
+        :param batch_rollover_size_in_mbs:
+            The value to assign to the batch_rollover_size_in_mbs property of this ObjectStorageTargetDetails.
+        :type batch_rollover_size_in_mbs: int
+
+        :param batch_rollover_time_in_ms:
+            The value to assign to the batch_rollover_time_in_ms property of this ObjectStorageTargetDetails.
+        :type batch_rollover_time_in_ms: int
+
         """
         self.swagger_types = {
             'kind': 'str',
             'namespace': 'str',
             'bucket_name': 'str',
-            'object_name_prefix': 'str'
+            'object_name_prefix': 'str',
+            'batch_rollover_size_in_mbs': 'int',
+            'batch_rollover_time_in_ms': 'int'
         }
 
         self.attribute_map = {
             'kind': 'kind',
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
-            'object_name_prefix': 'objectNamePrefix'
+            'object_name_prefix': 'objectNamePrefix',
+            'batch_rollover_size_in_mbs': 'batchRolloverSizeInMBs',
+            'batch_rollover_time_in_ms': 'batchRolloverTimeInMs'
         }
 
         self._kind = None
         self._namespace = None
         self._bucket_name = None
         self._object_name_prefix = None
+        self._batch_rollover_size_in_mbs = None
+        self._batch_rollover_time_in_ms = None
         self._kind = 'objectStorage'
 
     @property
@@ -128,6 +142,54 @@ class ObjectStorageTargetDetails(TargetDetails):
         :type: str
         """
         self._object_name_prefix = object_name_prefix
+
+    @property
+    def batch_rollover_size_in_mbs(self):
+        """
+        Gets the batch_rollover_size_in_mbs of this ObjectStorageTargetDetails.
+        The batch rollover size in megabytes.
+
+
+        :return: The batch_rollover_size_in_mbs of this ObjectStorageTargetDetails.
+        :rtype: int
+        """
+        return self._batch_rollover_size_in_mbs
+
+    @batch_rollover_size_in_mbs.setter
+    def batch_rollover_size_in_mbs(self, batch_rollover_size_in_mbs):
+        """
+        Sets the batch_rollover_size_in_mbs of this ObjectStorageTargetDetails.
+        The batch rollover size in megabytes.
+
+
+        :param batch_rollover_size_in_mbs: The batch_rollover_size_in_mbs of this ObjectStorageTargetDetails.
+        :type: int
+        """
+        self._batch_rollover_size_in_mbs = batch_rollover_size_in_mbs
+
+    @property
+    def batch_rollover_time_in_ms(self):
+        """
+        Gets the batch_rollover_time_in_ms of this ObjectStorageTargetDetails.
+        The batch rollover time in milliseconds.
+
+
+        :return: The batch_rollover_time_in_ms of this ObjectStorageTargetDetails.
+        :rtype: int
+        """
+        return self._batch_rollover_time_in_ms
+
+    @batch_rollover_time_in_ms.setter
+    def batch_rollover_time_in_ms(self, batch_rollover_time_in_ms):
+        """
+        Sets the batch_rollover_time_in_ms of this ObjectStorageTargetDetails.
+        The batch rollover time in milliseconds.
+
+
+        :param batch_rollover_time_in_ms: The batch_rollover_time_in_ms of this ObjectStorageTargetDetails.
+        :type: int
+        """
+        self._batch_rollover_time_in_ms = batch_rollover_time_in_ms
 
     def __repr__(self):
         return formatted_flat_dict(self)
