@@ -23,6 +23,50 @@ class LogAnalyticsClientCompositeOperations(object):
         """
         self.client = client
 
+    def append_lookup_data_and_wait_for_state(self, namespace_name, lookup_name, append_lookup_file_body, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.append_lookup_data` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param stream append_lookup_file_body: (required)
+            The file to append.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.append_lookup_data`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.append_lookup_data(namespace_name, lookup_name, append_lookup_file_body, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_log_analytics_entity_and_wait_for_state(self, namespace_name, create_log_analytics_entity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.create_log_analytics_entity` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsEntity` acted upon
@@ -187,6 +231,55 @@ class LogAnalyticsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_lookup_and_wait_for_state(self, namespace_name, lookup_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_lookup` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_lookup`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_lookup(namespace_name, lookup_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def offboard_namespace_and_wait_for_state(self, namespace_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.offboard_namespace` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
@@ -255,6 +348,48 @@ class LogAnalyticsClientCompositeOperations(object):
                 self.client,
                 self.client.get_work_request(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def pause_scheduled_task_and_wait_for_state(self, namespace_name, scheduled_task_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.pause_scheduled_task` and waits for the :py:class:`~oci.log_analytics.models.ScheduledTask` acted upon
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str scheduled_task_id: (required)
+            Unique scheduledTask id returned from task create.
+            If invalid will lead to a 404 not found.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.ScheduledTask.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.pause_scheduled_task`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.pause_scheduled_task(namespace_name, scheduled_task_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_scheduled_task(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -427,6 +562,48 @@ class LogAnalyticsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def resume_scheduled_task_and_wait_for_state(self, namespace_name, scheduled_task_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.resume_scheduled_task` and waits for the :py:class:`~oci.log_analytics.models.ScheduledTask` acted upon
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str scheduled_task_id: (required)
+            Unique scheduledTask id returned from task create.
+            If invalid will lead to a 404 not found.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.ScheduledTask.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.resume_scheduled_task`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.resume_scheduled_task(namespace_name, scheduled_task_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_scheduled_task(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_log_analytics_entity_and_wait_for_state(self, namespace_name, log_analytics_entity_id, update_log_analytics_entity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.update_log_analytics_entity` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsEntity` acted upon
@@ -439,7 +616,7 @@ class LogAnalyticsClientCompositeOperations(object):
             The log analytics entity OCID.
 
         :param oci.log_analytics.models.UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
-            The information to be updated.
+            Log analytics entity information to be updated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsEntity.lifecycle_state`
@@ -480,7 +657,7 @@ class LogAnalyticsClientCompositeOperations(object):
             The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The Logging Analytics Object Collection Rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -509,6 +686,50 @@ class LogAnalyticsClientCompositeOperations(object):
                 self.client,
                 self.client.get_log_analytics_object_collection_rule(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_lookup_data_and_wait_for_state(self, namespace_name, lookup_name, update_lookup_file_body, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.update_lookup_data` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param stream update_lookup_file_body: (required)
+            The file to use for the lookup update.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.update_lookup_data`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_lookup_data(namespace_name, lookup_name, update_lookup_file_body, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result

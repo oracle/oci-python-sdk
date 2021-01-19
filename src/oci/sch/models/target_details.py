@@ -19,24 +19,28 @@ class TargetDetails(object):
     """
 
     #: A constant which can be used with the kind property of a TargetDetails.
-    #: This constant has a value of "streaming"
-    KIND_STREAMING = "streaming"
+    #: This constant has a value of "functions"
+    KIND_FUNCTIONS = "functions"
 
     #: A constant which can be used with the kind property of a TargetDetails.
-    #: This constant has a value of "objectStorage"
-    KIND_OBJECT_STORAGE = "objectStorage"
+    #: This constant has a value of "loggingAnalytics"
+    KIND_LOGGING_ANALYTICS = "loggingAnalytics"
 
     #: A constant which can be used with the kind property of a TargetDetails.
     #: This constant has a value of "monitoring"
     KIND_MONITORING = "monitoring"
 
     #: A constant which can be used with the kind property of a TargetDetails.
-    #: This constant has a value of "functions"
-    KIND_FUNCTIONS = "functions"
-
-    #: A constant which can be used with the kind property of a TargetDetails.
     #: This constant has a value of "notifications"
     KIND_NOTIFICATIONS = "notifications"
+
+    #: A constant which can be used with the kind property of a TargetDetails.
+    #: This constant has a value of "objectStorage"
+    KIND_OBJECT_STORAGE = "objectStorage"
+
+    #: A constant which can be used with the kind property of a TargetDetails.
+    #: This constant has a value of "streaming"
+    KIND_STREAMING = "streaming"
 
     def __init__(self, **kwargs):
         """
@@ -47,13 +51,14 @@ class TargetDetails(object):
         * :class:`~oci.sch.models.ObjectStorageTargetDetails`
         * :class:`~oci.sch.models.MonitoringTargetDetails`
         * :class:`~oci.sch.models.FunctionsTargetDetails`
+        * :class:`~oci.sch.models.LoggingAnalyticsTargetDetails`
         * :class:`~oci.sch.models.StreamingTargetDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param kind:
             The value to assign to the kind property of this TargetDetails.
-            Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -88,6 +93,9 @@ class TargetDetails(object):
         if type == 'functions':
             return 'FunctionsTargetDetails'
 
+        if type == 'loggingAnalytics':
+            return 'LoggingAnalyticsTargetDetails'
+
         if type == 'streaming':
             return 'StreamingTargetDetails'
         else:
@@ -99,7 +107,7 @@ class TargetDetails(object):
         **[Required]** Gets the kind of this TargetDetails.
         The type descriminator.
 
-        Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -118,7 +126,7 @@ class TargetDetails(object):
         :param kind: The kind of this TargetDetails.
         :type: str
         """
-        allowed_values = ["streaming", "objectStorage", "monitoring", "functions", "notifications"]
+        allowed_values = ["functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

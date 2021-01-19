@@ -23,6 +23,7 @@ Sch
     oci.sch.models.FunctionsTargetDetails
     oci.sch.models.LogRuleTaskDetails
     oci.sch.models.LogSource
+    oci.sch.models.LoggingAnalyticsTargetDetails
     oci.sch.models.LoggingSourceDetails
     oci.sch.models.MonitoringTargetDetails
     oci.sch.models.NotificationsTargetDetails

@@ -71,6 +71,10 @@ class SortField(AbstractField):
             The value to assign to the filter_query_string property of this SortField.
         :type filter_query_string: str
 
+        :param unit_type:
+            The value to assign to the unit_type property of this SortField.
+        :type unit_type: str
+
         :param direction:
             The value to assign to the direction property of this SortField.
             Allowed values for this property are: "ASCENDING", "DESCENDING", 'UNKNOWN_ENUM_VALUE'.
@@ -89,6 +93,7 @@ class SortField(AbstractField):
             'is_duration': 'bool',
             'alias': 'str',
             'filter_query_string': 'str',
+            'unit_type': 'str',
             'direction': 'str'
         }
 
@@ -103,6 +108,7 @@ class SortField(AbstractField):
             'is_duration': 'isDuration',
             'alias': 'alias',
             'filter_query_string': 'filterQueryString',
+            'unit_type': 'unitType',
             'direction': 'direction'
         }
 
@@ -116,6 +122,7 @@ class SortField(AbstractField):
         self._is_duration = None
         self._alias = None
         self._filter_query_string = None
+        self._unit_type = None
         self._direction = None
         self._name = 'SORT'
 

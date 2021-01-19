@@ -33,6 +33,10 @@ class LogAnalyticsObjectCollectionRule(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsObjectCollectionRule object with values from keyword arguments.
@@ -98,7 +102,7 @@ class LogAnalyticsObjectCollectionRule(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this LogAnalyticsObjectCollectionRule.
-            Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -113,6 +117,10 @@ class LogAnalyticsObjectCollectionRule(object):
         :param time_updated:
             The value to assign to the time_updated property of this LogAnalyticsObjectCollectionRule.
         :type time_updated: datetime
+
+        :param is_enabled:
+            The value to assign to the is_enabled property of this LogAnalyticsObjectCollectionRule.
+        :type is_enabled: bool
 
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRule.
@@ -142,6 +150,7 @@ class LogAnalyticsObjectCollectionRule(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'is_enabled': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -165,6 +174,7 @@ class LogAnalyticsObjectCollectionRule(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'is_enabled': 'isEnabled',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -187,6 +197,7 @@ class LogAnalyticsObjectCollectionRule(object):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._is_enabled = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -348,8 +359,7 @@ class LogAnalyticsObjectCollectionRule(object):
     def collection_type(self):
         """
         **[Required]** Gets the collection_type of this LogAnalyticsObjectCollectionRule.
-        The type of collection.
-        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
+        The type of log collection.
 
         Allowed values for this property are: "LIVE", "HISTORIC", "HISTORIC_LIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -364,8 +374,7 @@ class LogAnalyticsObjectCollectionRule(object):
     def collection_type(self, collection_type):
         """
         Sets the collection_type of this LogAnalyticsObjectCollectionRule.
-        The type of collection.
-        Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
+        The type of log collection.
 
 
         :param collection_type: The collection_type of this LogAnalyticsObjectCollectionRule.
@@ -382,7 +391,7 @@ class LogAnalyticsObjectCollectionRule(object):
         **[Required]** Gets the poll_since of this LogAnalyticsObjectCollectionRule.
         The oldest time of the file in the bucket to consider for collection.
         Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 
 
         :return: The poll_since of this LogAnalyticsObjectCollectionRule.
@@ -396,7 +405,7 @@ class LogAnalyticsObjectCollectionRule(object):
         Sets the poll_since of this LogAnalyticsObjectCollectionRule.
         The oldest time of the file in the bucket to consider for collection.
         Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
 
 
         :param poll_since: The poll_since of this LogAnalyticsObjectCollectionRule.
@@ -408,9 +417,9 @@ class LogAnalyticsObjectCollectionRule(object):
     def poll_till(self):
         """
         Gets the poll_till of this LogAnalyticsObjectCollectionRule.
-        The oldest time of the file in the bucket to consider for collection.
+        The newest time of the file in the bucket to consider for collection.
         Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollTill will result in error.
+        Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 
 
         :return: The poll_till of this LogAnalyticsObjectCollectionRule.
@@ -422,9 +431,9 @@ class LogAnalyticsObjectCollectionRule(object):
     def poll_till(self, poll_till):
         """
         Sets the poll_till of this LogAnalyticsObjectCollectionRule.
-        The oldest time of the file in the bucket to consider for collection.
+        The newest time of the file in the bucket to consider for collection.
         Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string.
-        When collectionType is LIVE, specifying pollTill will result in error.
+        Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 
 
         :param poll_till: The poll_till of this LogAnalyticsObjectCollectionRule.
@@ -509,7 +518,7 @@ class LogAnalyticsObjectCollectionRule(object):
         """
         Gets the char_encoding of this LogAnalyticsObjectCollectionRule.
         An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-        It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+        It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
         and very few alphabets.
         For e.g. this applies when configuring VCN Flow Logs.
 
@@ -524,7 +533,7 @@ class LogAnalyticsObjectCollectionRule(object):
         """
         Sets the char_encoding of this LogAnalyticsObjectCollectionRule.
         An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-        It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+        It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
         and very few alphabets.
         For e.g. this applies when configuring VCN Flow Logs.
 
@@ -568,7 +577,7 @@ class LogAnalyticsObjectCollectionRule(object):
         **[Required]** Gets the lifecycle_state of this LogAnalyticsObjectCollectionRule.
         The current state of the rule.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -587,7 +596,7 @@ class LogAnalyticsObjectCollectionRule(object):
         :param lifecycle_state: The lifecycle_state of this LogAnalyticsObjectCollectionRule.
         :type: str
         """
-        allowed_values = ["ACTIVE", "DELETED"]
+        allowed_values = ["ACTIVE", "DELETED", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -663,6 +672,30 @@ class LogAnalyticsObjectCollectionRule(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def is_enabled(self):
+        """
+        **[Required]** Gets the is_enabled of this LogAnalyticsObjectCollectionRule.
+        Whether or not this rule is currently enabled.
+
+
+        :return: The is_enabled of this LogAnalyticsObjectCollectionRule.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this LogAnalyticsObjectCollectionRule.
+        Whether or not this rule is currently enabled.
+
+
+        :param is_enabled: The is_enabled of this LogAnalyticsObjectCollectionRule.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     @property
     def defined_tags(self):

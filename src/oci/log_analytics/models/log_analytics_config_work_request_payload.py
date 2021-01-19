@@ -30,22 +30,29 @@ class LogAnalyticsConfigWorkRequestPayload(object):
             The value to assign to the lookup_reference property of this LogAnalyticsConfigWorkRequestPayload.
         :type lookup_reference: int
 
+        :param lookup_reference_string:
+            The value to assign to the lookup_reference_string property of this LogAnalyticsConfigWorkRequestPayload.
+        :type lookup_reference_string: str
+
         """
         self.swagger_types = {
             'source_name': 'str',
             'entity_id': 'str',
-            'lookup_reference': 'int'
+            'lookup_reference': 'int',
+            'lookup_reference_string': 'str'
         }
 
         self.attribute_map = {
             'source_name': 'sourceName',
             'entity_id': 'entityId',
-            'lookup_reference': 'lookupReference'
+            'lookup_reference': 'lookupReference',
+            'lookup_reference_string': 'lookupReferenceString'
         }
 
         self._source_name = None
         self._entity_id = None
         self._lookup_reference = None
+        self._lookup_reference_string = None
 
     @property
     def source_name(self):
@@ -118,6 +125,30 @@ class LogAnalyticsConfigWorkRequestPayload(object):
         :type: int
         """
         self._lookup_reference = lookup_reference
+
+    @property
+    def lookup_reference_string(self):
+        """
+        Gets the lookup_reference_string of this LogAnalyticsConfigWorkRequestPayload.
+        lookupReference
+
+
+        :return: The lookup_reference_string of this LogAnalyticsConfigWorkRequestPayload.
+        :rtype: str
+        """
+        return self._lookup_reference_string
+
+    @lookup_reference_string.setter
+    def lookup_reference_string(self, lookup_reference_string):
+        """
+        Sets the lookup_reference_string of this LogAnalyticsConfigWorkRequestPayload.
+        lookupReference
+
+
+        :param lookup_reference_string: The lookup_reference_string of this LogAnalyticsConfigWorkRequestPayload.
+        :type: str
+        """
+        self._lookup_reference_string = lookup_reference_string
 
     def __repr__(self):
         return formatted_flat_dict(self)

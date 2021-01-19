@@ -71,6 +71,10 @@ class FieldsAddRemoveField(AbstractField):
             The value to assign to the filter_query_string property of this FieldsAddRemoveField.
         :type filter_query_string: str
 
+        :param unit_type:
+            The value to assign to the unit_type property of this FieldsAddRemoveField.
+        :type unit_type: str
+
         :param operation:
             The value to assign to the operation property of this FieldsAddRemoveField.
             Allowed values for this property are: "ADD", "REMOVE", 'UNKNOWN_ENUM_VALUE'.
@@ -89,6 +93,7 @@ class FieldsAddRemoveField(AbstractField):
             'is_duration': 'bool',
             'alias': 'str',
             'filter_query_string': 'str',
+            'unit_type': 'str',
             'operation': 'str'
         }
 
@@ -103,6 +108,7 @@ class FieldsAddRemoveField(AbstractField):
             'is_duration': 'isDuration',
             'alias': 'alias',
             'filter_query_string': 'filterQueryString',
+            'unit_type': 'unitType',
             'operation': 'operation'
         }
 
@@ -116,6 +122,7 @@ class FieldsAddRemoveField(AbstractField):
         self._is_duration = None
         self._alias = None
         self._filter_query_string = None
+        self._unit_type = None
         self._operation = None
         self._name = 'FIELDS'
 

@@ -178,7 +178,7 @@ class LogAnalyticsEntitySummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this LogAnalyticsEntitySummary.
-        Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+        Log analytics entity name.
 
 
         :return: The name of this LogAnalyticsEntitySummary.
@@ -190,7 +190,7 @@ class LogAnalyticsEntitySummary(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsEntitySummary.
-        Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+        Log analytics entity name.
 
 
         :param name: The name of this LogAnalyticsEntitySummary.

@@ -87,7 +87,7 @@ class LogAnalyticsClient(object):
 
     def add_entity_association(self, namespace_name, log_analytics_entity_id, add_entity_association_details, **kwargs):
         """
-        Adds association between input source log analytics entity and destination entities.
+        Adds association between input source log analytics entity and one or more existing destination entities.
 
 
         :param str namespace_name: (required)
@@ -97,7 +97,7 @@ class LogAnalyticsClient(object):
             The log analytics entity OCID.
 
         :param oci.log_analytics.models.AddEntityAssociationDetails add_entity_association_details: (required)
-            This parameter specifies the entity OCIDs with which associations are to be created. Specify destination OCIDs as comma separated string.
+            This parameter specifies the destination entity OCIDs with which associations are to be created.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -186,6 +186,142 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_entity_association_details)
+
+    def append_lookup_data(self, namespace_name, lookup_name, append_lookup_file_body, **kwargs):
+        """
+        Append data to a lookup.  The file containing the information to append
+        must be provided.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param stream append_lookup_file_body: (required)
+            The file to append.
+
+        :param bool is_force: (optional)
+            is force
+
+        :param str char_encoding: (optional)
+            Character Encoding
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/append_lookup_data.py.html>`__ to see an example of how to use append_lookup_data API.
+        """
+        resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}/actions/appendData"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "is_force",
+            "char_encoding",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "append_lookup_data got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "lookupName": lookup_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isForce": kwargs.get("is_force", missing),
+            "charEncoding": kwargs.get("char_encoding", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            append_lookup_file_body
+        except NameError:
+            append_lookup_file_body = kwargs.get("append_lookup_file_body", missing)
+
+        if append_lookup_file_body is not missing and append_lookup_file_body is not None:
+            if (not isinstance(append_lookup_file_body, (six.binary_type, six.string_types)) and
+                    not hasattr(append_lookup_file_body, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(append_lookup_file_body, 'fileno') and hasattr(append_lookup_file_body, 'name') and append_lookup_file_body.name != '<stdin>':
+                if requests.utils.super_len(append_lookup_file_body) == 0:
+                    header_params['Content-Length'] = '0'
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        # Disable the retry_strategy to work around data corruption issue temporarily
+        if retry_strategy:
+            retry_strategy = None
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=append_lookup_file_body)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=append_lookup_file_body)
 
     def batch_get_basic_info(self, namespace_name, basic_details, is_include_deleted, **kwargs):
         """
@@ -609,14 +745,14 @@ class LogAnalyticsClient(object):
 
     def change_log_analytics_object_collection_rule_compartment(self, namespace_name, log_analytics_object_collection_rule_id, change_log_analytics_object_collection_rule_compartment_details, **kwargs):
         """
-        Move the rule from it's current compartment to given compartment.
+        Move the rule from it's current compartment to the given compartment.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The Logging Analytics Object Collection Rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1184,7 +1320,7 @@ class LogAnalyticsClient(object):
 
     def create_log_analytics_object_collection_rule(self, namespace_name, create_log_analytics_object_collection_rule_details, **kwargs):
         """
-        Create a configuration to collect logs from object storage bucket.
+        Creates a rule to collect logs from an object storage bucket.
 
 
         :param str namespace_name: (required)
@@ -1724,7 +1860,7 @@ class LogAnalyticsClient(object):
 
     def delete_log_analytics_entity_type(self, namespace_name, entity_type_name, **kwargs):
         """
-        Delete the log analytics entity type with the given name.
+        Delete log analytics entity type with the given name.
 
 
         :param str namespace_name: (required)
@@ -1896,15 +2032,15 @@ class LogAnalyticsClient(object):
 
     def delete_log_analytics_object_collection_rule(self, namespace_name, log_analytics_object_collection_rule_id, **kwargs):
         """
-        Deletes a configured object storage bucket based collection rule to stop the log collection of the configured bucket .
-        It will not delete the already collected log data from the configured bucket.
+        Deletes the configured object storage bucket based collection rule and stop the log collection.
+        It will not delete the existing processed data associated with this bucket from logging analytics storage.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The Logging Analytics Object Collection Rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1981,6 +2117,114 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                header_params=header_params)
+
+    def delete_lookup(self, namespace_name, lookup_name, **kwargs):
+        """
+        Delete the specified lookup.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param bool is_force: (optional)
+            is force
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/delete_lookup.py.html>`__ to see an example of how to use delete_lookup API.
+        """
+        resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "is_force",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "lookupName": lookup_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isForce": kwargs.get("is_force", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def delete_parser(self, namespace_name, parser_name, **kwargs):
@@ -2274,7 +2518,7 @@ class LogAnalyticsClient(object):
             The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
-            Unique internal identifier to refer to upload container
+            Unique internal identifier to refer upload container.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2353,18 +2597,18 @@ class LogAnalyticsClient(object):
 
     def delete_upload_file(self, namespace_name, upload_reference, file_reference, **kwargs):
         """
-        Deletes a specific log file inside an upload by providing upload file reference.
-        It deletes all the logs in storage asscoiated with the upload file and the corresponding upload metadata.
+        Deletes a specific log file inside an upload by upload file reference.
+        It deletes all the logs from storage associated with the file and the corresponding metadata.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
-            Unique internal identifier to refer to upload container
+            Unique internal identifier to refer upload container.
 
         :param str file_reference: (required)
-            Unique internal identifier to refer to upload file
+            Unique internal identifier to refer upload file.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2442,10 +2686,10 @@ class LogAnalyticsClient(object):
             The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
-            Unique internal identifier to refer to upload container
+            Unique internal identifier to refer upload container.
 
         :param str warning_reference: (required)
-            Unique internal identifier to refer to upload warning
+            Unique internal identifier to refer upload warning.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2781,6 +3025,166 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=estimate_purge_data_size_details,
                 response_type="EstimatePurgeDataSizeResult")
+
+    def estimate_recall_data_size(self, namespace_name, estimate_recall_data_size_details, **kwargs):
+        """
+        This API gives an active storage usage estimate for archived data to be recalled and the time range of such data.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param oci.log_analytics.models.EstimateRecallDataSizeDetails estimate_recall_data_size_details: (required)
+            This is the input to estimate the size of data to be recalled.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EstimateRecallDataSizeResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/estimate_recall_data_size.py.html>`__ to see an example of how to use estimate_recall_data_size API.
+        """
+        resource_path = "/namespaces/{namespaceName}/storage/actions/estimateRecallDataSize"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "estimate_recall_data_size got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=estimate_recall_data_size_details,
+                response_type="EstimateRecallDataSizeResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=estimate_recall_data_size_details,
+                response_type="EstimateRecallDataSizeResult")
+
+    def estimate_release_data_size(self, namespace_name, estimate_release_data_size_details, **kwargs):
+        """
+        This API gives an active storage usage estimate for recalled data to be released and the time range of such data.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param oci.log_analytics.models.EstimateReleaseDataSizeDetails estimate_release_data_size_details: (required)
+            This is the input to estimate the size of recalled data to be released.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EstimateReleaseDataSizeResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/estimate_release_data_size.py.html>`__ to see an example of how to use estimate_release_data_size API.
+        """
+        resource_path = "/namespaces/{namespaceName}/storage/actions/estimateReleaseDataSize"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "estimate_release_data_size got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=estimate_release_data_size_details,
+                response_type="EstimateReleaseDataSizeResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=estimate_release_data_size_details,
+                response_type="EstimateReleaseDataSizeResult")
 
     def export_custom_content(self, namespace_name, export_custom_content_details, **kwargs):
         """
@@ -3838,7 +4242,7 @@ class LogAnalyticsClient(object):
 
     def get_log_analytics_entities_summary(self, namespace_name, compartment_id, **kwargs):
         """
-        Returns log analytics entities count summary.
+        Returns log analytics entities count summary report.
 
 
         :param str namespace_name: (required)
@@ -4252,7 +4656,7 @@ class LogAnalyticsClient(object):
             The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The Logging Analytics Object Collection Rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -4323,6 +4727,85 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="LogAnalyticsObjectCollectionRule")
+
+    def get_lookup(self, namespace_name, lookup_name, **kwargs):
+        """
+        Obtains the lookup with the specified reference.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/get_lookup.py.html>`__ to see an example of how to use get_lookup API.
+        """
+        resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "lookupName": lookup_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LogAnalyticsLookup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LogAnalyticsLookup")
 
     def get_namespace(self, namespace_name, **kwargs):
         """
@@ -5235,14 +5718,14 @@ class LogAnalyticsClient(object):
 
     def get_upload(self, namespace_name, upload_reference, **kwargs):
         """
-        Gets an On-Demand Upload info by reference
+        Gets an On-Demand Upload info by reference.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
-            Unique internal identifier to refer to upload container
+            Unique internal identifier to refer upload container.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7101,7 +7584,7 @@ class LogAnalyticsClient(object):
 
     def list_log_analytics_object_collection_rules(self, namespace_name, compartment_id, **kwargs):
         """
-        Gets list of configuration details of Object Storage based collection rules.
+        Gets list of collection rules.
 
 
         :param str namespace_name: (required)
@@ -7242,6 +7725,176 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 response_type="LogAnalyticsObjectCollectionRuleCollection")
 
+    def list_lookups(self, namespace_name, type, **kwargs):
+        """
+        Obtains a list of lookups.  The list is filtered according to the filter criteria
+        specified by the user, and sorted according to the ordering criteria specified.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str type: (required)
+            type - possible values are Lookup or Dictionary
+
+            Allowed values are: "Lookup", "Dictionary"
+
+        :param str lookup_display_text: (optional)
+            Search by lookup display name or description.
+
+        :param str is_system: (optional)
+            Is system param of value (all, custom, sourceUsing)
+
+            Allowed values are: "ALL", "CUSTOM", "BUILT_IN"
+
+        :param str sort_by: (optional)
+            sort by field
+
+            Allowed values are: "displayName", "status", "type", "updatedTime", "creationType"
+
+        :param str status: (optional)
+            The lookup status used for filtering when fetching a list of lookups.
+
+            Allowed values are: "ALL", "SUCCESFUL", "FAILED", "INPROGRESS"
+
+        :param bool is_hide_special: (optional)
+            is include items
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookupCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/list_lookups.py.html>`__ to see an example of how to use list_lookups API.
+        """
+        resource_path = "/namespaces/{namespaceName}/lookups"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "lookup_display_text",
+            "is_system",
+            "sort_by",
+            "status",
+            "is_hide_special",
+            "limit",
+            "page",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_lookups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        type_allowed_values = ["Lookup", "Dictionary"]
+        if type not in type_allowed_values:
+            raise ValueError(
+                "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+            )
+
+        if 'is_system' in kwargs:
+            is_system_allowed_values = ["ALL", "CUSTOM", "BUILT_IN"]
+            if kwargs['is_system'] not in is_system_allowed_values:
+                raise ValueError(
+                    "Invalid value for `is_system`, must be one of {0}".format(is_system_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName", "status", "type", "updatedTime", "creationType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'status' in kwargs:
+            status_allowed_values = ["ALL", "SUCCESFUL", "FAILED", "INPROGRESS"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "lookupDisplayText": kwargs.get("lookup_display_text", missing),
+            "type": type,
+            "isSystem": kwargs.get("is_system", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "status": kwargs.get("status", missing),
+            "isHideSpecial": kwargs.get("is_hide_special", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="LogAnalyticsLookupCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="LogAnalyticsLookupCollection")
+
     def list_meta_source_types(self, namespace_name, **kwargs):
         """
         get all meta source types
@@ -7258,6 +7911,8 @@ class LogAnalyticsClient(object):
 
         :param str sort_by: (optional)
             sort by field
+
+            Allowed values are: "name"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -7307,6 +7962,13 @@ class LogAnalyticsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -7443,6 +8105,8 @@ class LogAnalyticsClient(object):
         :param str sort_by: (optional)
             sort by field
 
+            Allowed values are: "name"
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
 
@@ -7492,6 +8156,13 @@ class LogAnalyticsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -7555,6 +8226,8 @@ class LogAnalyticsClient(object):
         :param str sort_by: (optional)
             sort by field
 
+            Allowed values are: "name"
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
 
@@ -7603,6 +8276,13 @@ class LogAnalyticsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -7960,6 +8640,136 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="QueryWorkRequestCollection")
+
+    def list_recalled_data(self, namespace_name, **kwargs):
+        """
+        This API returns the list of recalled data of a tenancy.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_by: (optional)
+            This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeDataStarted
+            is descending. If no value is specified timeDataStarted is default.
+
+            Allowed values are: "timeStarted", "timeDataStarted"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param datetime time_data_started_greater_than_or_equal: (optional)
+            This is the start of the time range for recalled data
+
+        :param datetime time_data_ended_less_than: (optional)
+            This is the end of the time range for recalled data
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.RecalledDataCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/list_recalled_data.py.html>`__ to see an example of how to use list_recalled_data API.
+        """
+        resource_path = "/namespaces/{namespaceName}/storage/recalledData"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "sort_by",
+            "sort_order",
+            "time_data_started_greater_than_or_equal",
+            "time_data_ended_less_than"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_recalled_data got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeStarted", "timeDataStarted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "timeDataStartedGreaterThanOrEqual": kwargs.get("time_data_started_greater_than_or_equal", missing),
+            "timeDataEndedLessThan": kwargs.get("time_data_ended_less_than", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RecalledDataCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RecalledDataCollection")
 
     def list_scheduled_tasks(self, namespace_name, task_type, compartment_id, **kwargs):
         """
@@ -8392,6 +9202,8 @@ class LogAnalyticsClient(object):
         :param str sort_by: (optional)
             sort by field
 
+            Allowed values are: "name"
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
 
@@ -8440,6 +9252,13 @@ class LogAnalyticsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -8502,6 +9321,8 @@ class LogAnalyticsClient(object):
         :param str sort_by: (optional)
             sort by field
 
+            Allowed values are: "name"
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
 
@@ -8550,6 +9371,13 @@ class LogAnalyticsClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -8738,7 +9566,7 @@ class LogAnalyticsClient(object):
             entityType
 
         :param str source_display_text: (optional)
-            search by source display name or description
+            Search by source display name or description.
 
         :param str is_system: (optional)
             Is system param of value (all, custom, sourceUsing)
@@ -9189,7 +10017,7 @@ class LogAnalyticsClient(object):
 
     def list_supported_char_encodings(self, namespace_name, **kwargs):
         """
-        Gets the list of character encodings supported for log files.
+        Gets list of character encodings which are supported by on-demand upload.
 
 
         :param str namespace_name: (required)
@@ -9280,7 +10108,7 @@ class LogAnalyticsClient(object):
 
     def list_supported_timezones(self, namespace_name, **kwargs):
         """
-        Gets timezones that are supported when performing uploads.
+        Gets list of timezones which are supported by on-demand upload.
 
 
         :param str namespace_name: (required)
@@ -9371,14 +10199,14 @@ class LogAnalyticsClient(object):
 
     def list_upload_files(self, namespace_name, upload_reference, **kwargs):
         """
-        Gets list of files in an upload.
+        Gets list of files in an upload along with its processing state.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
-            Unique internal identifier to refer to upload container
+            Unique internal identifier to refer upload container.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -9392,15 +10220,16 @@ class LogAnalyticsClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+            The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+            timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
 
-            Allowed values are: "timeCreated", "fileName", "logGroup", "sourceName", "status"
+            Allowed values are: "timeStarted", "name", "logGroupName", "sourceName", "status", "timeCreated", "fileName", "logGroup"
 
         :param str search_str: (optional)
-            Search string used to filtering uploads based on file name, log group name and log source name.
+            This can be used to filter upload files based on the file, log group and log source names.
 
         :param list[str] status: (optional)
-            Upload Status.
+            Upload File processing state.
 
             Allowed values are: "IN_PROGRESS", "SUCCESSFUL", "FAILED"
 
@@ -9459,7 +10288,7 @@ class LogAnalyticsClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "fileName", "logGroup", "sourceName", "status"]
+            sort_by_allowed_values = ["timeStarted", "name", "logGroupName", "sourceName", "status", "timeCreated", "fileName", "logGroup"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9514,14 +10343,14 @@ class LogAnalyticsClient(object):
 
     def list_upload_warnings(self, namespace_name, upload_reference, **kwargs):
         """
-        Gets list of warnings in an upload explaining the failures due to incorrect configuration.
+        Gets list of warnings in an upload caused by incorrect configuration.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str upload_reference: (required)
-            Unique internal identifier to refer to upload container
+            Unique internal identifier to refer upload container.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -9737,6 +10566,192 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="UploadCollection")
+
+    def list_warnings(self, namespace_name, compartment_id, **kwargs):
+        """
+        Obtains a list of warnings.  The list is filtered according to the filter criteria
+        specified by the user, and sorted according to the ordering criteria specified.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str warning_state: (optional)
+            The warning state used for filtering.  A value of SUPPRESSED will return only
+            suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
+            warnings, and a value of ALL will return all warnings regardless of their
+            suppression state.  Default is UNSUPPRESSED.
+
+            Allowed values are: "ALL", "SUPPRESSED", "UNSUPPRESSED"
+
+        :param str source_name: (optional)
+            sourceName
+
+        :param str source_pattern: (optional)
+            sourcePattern
+
+        :param str warning_message: (optional)
+            warning message query parameter
+
+        :param str entity_name: (optional)
+            entityName
+
+        :param str entity_type: (optional)
+            entity type name
+
+        :param str warning_type: (optional)
+            The warning type query parameter.
+
+        :param bool is_no_source: (optional)
+            isNoSource
+
+        :param str start_time: (optional)
+            The warning start date query parameter.
+
+        :param str end_time: (optional)
+            The warning end date query parameter.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The attribute used to sort the returned warnings
+
+            Allowed values are: "EntityType", "SourceName", "PatternText", "FirstReported", "WarningMessage", "Host", "EntityName", "InitialWarningDate"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsWarningCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/list_warnings.py.html>`__ to see an example of how to use list_warnings API.
+        """
+        resource_path = "/namespaces/{namespaceName}/warnings"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "warning_state",
+            "source_name",
+            "source_pattern",
+            "warning_message",
+            "entity_name",
+            "entity_type",
+            "warning_type",
+            "is_no_source",
+            "start_time",
+            "end_time",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_warnings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'warning_state' in kwargs:
+            warning_state_allowed_values = ["ALL", "SUPPRESSED", "UNSUPPRESSED"]
+            if kwargs['warning_state'] not in warning_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `warning_state`, must be one of {0}".format(warning_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["EntityType", "SourceName", "PatternText", "FirstReported", "WarningMessage", "Host", "EntityName", "InitialWarningDate"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "warningState": kwargs.get("warning_state", missing),
+            "sourceName": kwargs.get("source_name", missing),
+            "sourcePattern": kwargs.get("source_pattern", missing),
+            "warningMessage": kwargs.get("warning_message", missing),
+            "entityName": kwargs.get("entity_name", missing),
+            "entityType": kwargs.get("entity_type", missing),
+            "warningType": kwargs.get("warning_type", missing),
+            "isNoSource": kwargs.get("is_no_source", missing),
+            "startTime": kwargs.get("start_time", missing),
+            "endTime": kwargs.get("end_time", missing),
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="LogAnalyticsWarningCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="LogAnalyticsWarningCollection")
 
     def list_work_request_errors(self, namespace_name, work_request_id, **kwargs):
         """
@@ -10274,6 +11289,95 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=parse_query_details,
                 response_type="ParseQueryOutput")
+
+    def pause_scheduled_task(self, namespace_name, scheduled_task_id, **kwargs):
+        """
+        Pause the scheduled task specified by {scheduledTaskId}.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str scheduled_task_id: (required)
+            Unique scheduledTask id returned from task create.
+            If invalid will lead to a 404 not found.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/pause_scheduled_task.py.html>`__ to see an example of how to use pause_scheduled_task API.
+        """
+        resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/pause"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "pause_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "scheduledTaskId": scheduled_task_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ScheduledTask")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ScheduledTask")
 
     def purge_storage_data(self, namespace_name, purge_storage_data_details, **kwargs):
         """
@@ -10915,7 +12019,7 @@ class LogAnalyticsClient(object):
             The log analytics entity OCID.
 
         :param oci.log_analytics.models.RemoveEntityAssociationsDetails remove_entity_associations_details: (required)
-            This parameter specifies the entity OCIDs with which associations are to be deleted. Specify destination OCIDs as comma separated string.
+            This parameter specifies the entity OCIDs with which associations are to be deleted.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -11004,6 +12108,95 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_entity_associations_details)
+
+    def resume_scheduled_task(self, namespace_name, scheduled_task_id, **kwargs):
+        """
+        Resume the scheduled task specified by {scheduledTaskId}.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str scheduled_task_id: (required)
+            Unique scheduledTask id returned from task create.
+            If invalid will lead to a 404 not found.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/resume_scheduled_task.py.html>`__ to see an example of how to use resume_scheduled_task API.
+        """
+        resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/resume"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "resume_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "scheduledTaskId": scheduled_task_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ScheduledTask")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ScheduledTask")
 
     def run(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -11194,6 +12387,107 @@ class LogAnalyticsClient(object):
                 body=suggest_details,
                 response_type="SuggestOutput")
 
+    def suppress_warning(self, namespace_name, warning_reference_details, compartment_id, **kwargs):
+        """
+        Accepts a list of warnings.  Any unsuppressed warnings in the input list will
+        be suppressed.  Warnings in the input list which are already suppressed will
+        not be modified.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param oci.log_analytics.models.WarningReferenceDetails warning_reference_details: (required)
+            list of agent warning references to suppress
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/suppress_warning.py.html>`__ to see an example of how to use suppress_warning API.
+        """
+        resource_path = "/namespaces/{namespaceName}/warnings/actions/suppress"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "suppress_warning got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=warning_reference_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=warning_reference_details)
+
     def test_parser(self, namespace_name, test_parser_payload_details, **kwargs):
         """
         test parser
@@ -11310,6 +12604,107 @@ class LogAnalyticsClient(object):
                 body=test_parser_payload_details,
                 response_type="ParserTestResult")
 
+    def unsuppress_warning(self, namespace_name, warning_reference_details, compartment_id, **kwargs):
+        """
+        Accepts a list of warnings.  Any suppressed warnings in the input list will
+        be unsuppressed.  Warnings in the input list which are unsuppressed will
+        not be modified.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param oci.log_analytics.models.WarningReferenceDetails warning_reference_details: (required)
+            warnings list
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/unsuppress_warning.py.html>`__ to see an example of how to use unsuppress_warning API.
+        """
+        resource_path = "/namespaces/{namespaceName}/warnings/actions/unsuppress"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "unsuppress_warning got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=warning_reference_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=warning_reference_details)
+
     def update_log_analytics_entity(self, namespace_name, log_analytics_entity_id, update_log_analytics_entity_details, **kwargs):
         """
         Update the log analytics entity with the given id.
@@ -11322,7 +12717,7 @@ class LogAnalyticsClient(object):
             The log analytics entity OCID.
 
         :param oci.log_analytics.models.UpdateLogAnalyticsEntityDetails update_log_analytics_entity_details: (required)
-            The information to be updated.
+            Log analytics entity information to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -11589,14 +12984,14 @@ class LogAnalyticsClient(object):
 
     def update_log_analytics_object_collection_rule(self, namespace_name, log_analytics_object_collection_rule_id, update_log_analytics_object_collection_rule_details, **kwargs):
         """
-        Update the rule with the given id.
+        Updates configuration of the object collection rule for the given id.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str log_analytics_object_collection_rule_id: (required)
-            The Logging Analytics Object Collection Rule `OCID`__
+            The Logging Analytics Object Collection Rule `OCID`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -11681,6 +13076,246 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=update_log_analytics_object_collection_rule_details,
                 response_type="LogAnalyticsObjectCollectionRule")
+
+    def update_lookup(self, namespace_name, lookup_name, update_lookup_metadata_details, **kwargs):
+        """
+        Updates the metadata of the specified lookup, such as the lookup description.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param oci.log_analytics.models.UpdateLookupMetadataDetails update_lookup_metadata_details: (required)
+            The information required to update a lookup.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/update_lookup.py.html>`__ to see an example of how to use update_lookup API.
+        """
+        resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "lookupName": lookup_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_lookup_metadata_details,
+                response_type="LogAnalyticsLookup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_lookup_metadata_details,
+                response_type="LogAnalyticsLookup")
+
+    def update_lookup_data(self, namespace_name, lookup_name, update_lookup_file_body, **kwargs):
+        """
+        Updates the specified lookup with the details provided.  This API will not update
+        lookup metadata (such as lookup description).
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str lookup_name: (required)
+            The name of the lookup to operate on.
+
+        :param stream update_lookup_file_body: (required)
+            The file to use for the lookup update.
+
+        :param bool is_force: (optional)
+            is force
+
+        :param str char_encoding: (optional)
+            Character Encoding
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/update_lookup_data.py.html>`__ to see an example of how to use update_lookup_data API.
+        """
+        resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}/actions/updateData"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "is_force",
+            "char_encoding",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_lookup_data got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "lookupName": lookup_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isForce": kwargs.get("is_force", missing),
+            "charEncoding": kwargs.get("char_encoding", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            update_lookup_file_body
+        except NameError:
+            update_lookup_file_body = kwargs.get("update_lookup_file_body", missing)
+
+        if update_lookup_file_body is not missing and update_lookup_file_body is not None:
+            if (not isinstance(update_lookup_file_body, (six.binary_type, six.string_types)) and
+                    not hasattr(update_lookup_file_body, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(update_lookup_file_body, 'fileno') and hasattr(update_lookup_file_body, 'name') and update_lookup_file_body.name != '<stdin>':
+                if requests.utils.super_len(update_lookup_file_body) == 0:
+                    header_params['Content-Length'] = '0'
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        # Disable the retry_strategy to work around data corruption issue temporarily
+        if retry_strategy:
+            retry_strategy = None
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_lookup_file_body)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_lookup_file_body)
 
     def update_scheduled_task(self, namespace_name, scheduled_task_id, update_scheduled_task_details, **kwargs):
         """
@@ -11896,7 +13531,8 @@ class LogAnalyticsClient(object):
             Timezone to be used when processing log entries whose timestamps do not include an explicit timezone. When this property is not specified, the timezone of the entity specified is used. If the entity is also not specified or do not have a valid timezone then UTC is used
 
         :param str char_encoding: (optional)
-            Character Encoding
+            Character encoding to be used to detect the encoding type of file(s) being uploaded.
+            When this property is not specified, system detected character encoding will be used.
 
         :param str date_format: (optional)
             This property is used to specify the format of the date. This is to be used for ambiguous dates like 12/11/10. This property can take any of the following values -  MONTH_DAY_YEAR, DAY_MONTH_YEAR, YEAR_MONTH_DAY, MONTH_DAY, DAY_MONTH.
@@ -12700,14 +14336,14 @@ class LogAnalyticsClient(object):
 
     def validate_file(self, namespace_name, object_location, filename, **kwargs):
         """
-        Validates a log file to check whether it is eligible to upload or not.
+        Validates a log file to check whether it is eligible to be uploaded or not.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str object_location: (required)
-            Location of the log file
+            Location of the log file.
 
         :param str filename: (required)
             The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).
@@ -12992,14 +14628,14 @@ class LogAnalyticsClient(object):
 
     def validate_source_mapping(self, namespace_name, object_location, filename, log_source_name, **kwargs):
         """
-        Validates the source mapping for given file and provides match status and parsed representation of log data.
+        Validates the source mapping for a given file and provides match status and the parsed representation of log data.
 
 
         :param str namespace_name: (required)
             The Logging Analytics namespace used for the request.
 
         :param str object_location: (required)
-            Location of the log file
+            Location of the log file.
 
         :param str filename: (required)
             The name of the file being uploaded. The extension of the filename part will be used to detect the type of file (like zip, tar).

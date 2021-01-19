@@ -44,7 +44,7 @@ class ArchivingConfiguration(object):
     def active_storage_duration(self):
         """
         Gets the active_storage_duration of this ArchivingConfiguration.
-        Thi is the duration data in active storage before data is archived, as described in
+        This is the duration data in active storage before data is archived, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations.
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 
@@ -58,7 +58,7 @@ class ArchivingConfiguration(object):
     def active_storage_duration(self, active_storage_duration):
         """
         Sets the active_storage_duration of this ArchivingConfiguration.
-        Thi is the duration data in active storage before data is archived, as described in
+        This is the duration data in active storage before data is archived, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations.
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 
@@ -72,7 +72,7 @@ class ArchivingConfiguration(object):
     def archival_storage_duration(self):
         """
         Gets the archival_storage_duration of this ArchivingConfiguration.
-        The is the duration before archived data is deleted from object storage, as described in
+        This is the duration before archived data is deleted from object storage, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 
@@ -86,7 +86,7 @@ class ArchivingConfiguration(object):
     def archival_storage_duration(self, archival_storage_duration):
         """
         Sets the archival_storage_duration of this ArchivingConfiguration.
-        The is the duration before archived data is deleted from object storage, as described in
+        This is the duration before archived data is deleted from object storage, as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations
         The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
 

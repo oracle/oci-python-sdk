@@ -45,6 +45,14 @@ class ScheduledTaskSummary(object):
     #: This constant has a value of "BLOCKED"
     TASK_STATUS_BLOCKED = "BLOCKED"
 
+    #: A constant which can be used with the last_execution_status property of a ScheduledTaskSummary.
+    #: This constant has a value of "FAILED"
+    LAST_EXECUTION_STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the last_execution_status property of a ScheduledTaskSummary.
+    #: This constant has a value of "SUCCEEDED"
+    LAST_EXECUTION_STATUS_SUCCEEDED = "SUCCEEDED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledTaskSummary object with values from keyword arguments.
@@ -98,6 +106,16 @@ class ScheduledTaskSummary(object):
             The value to assign to the defined_tags property of this ScheduledTaskSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param last_execution_status:
+            The value to assign to the last_execution_status property of this ScheduledTaskSummary.
+            Allowed values for this property are: "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type last_execution_status: str
+
+        :param time_last_executed:
+            The value to assign to the time_last_executed property of this ScheduledTaskSummary.
+        :type time_last_executed: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -110,7 +128,9 @@ class ScheduledTaskSummary(object):
             'work_request_id': 'str',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'last_execution_status': 'str',
+            'time_last_executed': 'datetime'
         }
 
         self.attribute_map = {
@@ -124,7 +144,9 @@ class ScheduledTaskSummary(object):
             'work_request_id': 'workRequestId',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'last_execution_status': 'lastExecutionStatus',
+            'time_last_executed': 'timeLastExecuted'
         }
 
         self._id = None
@@ -138,6 +160,8 @@ class ScheduledTaskSummary(object):
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._last_execution_status = None
+        self._time_last_executed = None
 
     @property
     def id(self):
@@ -436,6 +460,60 @@ class ScheduledTaskSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def last_execution_status(self):
+        """
+        Gets the last_execution_status of this ScheduledTaskSummary.
+        The most recent task execution status.
+
+        Allowed values for this property are: "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The last_execution_status of this ScheduledTaskSummary.
+        :rtype: str
+        """
+        return self._last_execution_status
+
+    @last_execution_status.setter
+    def last_execution_status(self, last_execution_status):
+        """
+        Sets the last_execution_status of this ScheduledTaskSummary.
+        The most recent task execution status.
+
+
+        :param last_execution_status: The last_execution_status of this ScheduledTaskSummary.
+        :type: str
+        """
+        allowed_values = ["FAILED", "SUCCEEDED"]
+        if not value_allowed_none_or_none_sentinel(last_execution_status, allowed_values):
+            last_execution_status = 'UNKNOWN_ENUM_VALUE'
+        self._last_execution_status = last_execution_status
+
+    @property
+    def time_last_executed(self):
+        """
+        Gets the time_last_executed of this ScheduledTaskSummary.
+        The date and time the scheduled task last executed, in the format defined by RFC3339.
+
+
+        :return: The time_last_executed of this ScheduledTaskSummary.
+        :rtype: datetime
+        """
+        return self._time_last_executed
+
+    @time_last_executed.setter
+    def time_last_executed(self, time_last_executed):
+        """
+        Sets the time_last_executed of this ScheduledTaskSummary.
+        The date and time the scheduled task last executed, in the format defined by RFC3339.
+
+
+        :param time_last_executed: The time_last_executed of this ScheduledTaskSummary.
+        :type: datetime
+        """
+        self._time_last_executed = time_last_executed
 
     def __repr__(self):
         return formatted_flat_dict(self)

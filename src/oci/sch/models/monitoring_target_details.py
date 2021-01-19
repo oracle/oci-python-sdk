@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonitoringTargetDetails(TargetDetails):
     """
-    The monitoring target.
+    The metric and metric namespace used for the Monitoring target.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class MonitoringTargetDetails(TargetDetails):
 
         :param kind:
             The value to assign to the kind property of this MonitoringTargetDetails.
-            Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications"
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
 
         :param compartment_id:

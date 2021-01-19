@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeLogAnalyticsEntityCompartmentDetails(object):
     """
-    log analytics entity compartment to be updated.
+    Log analytics entity compartment to be updated.
     """
 
     def __init__(self, **kwargs):

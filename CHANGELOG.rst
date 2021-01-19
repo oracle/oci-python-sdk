@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.28.0 - 2021-01-19
+====================
+
+Added
+-----
+* Support for Logging Analytics as a target in the Service Connector Hub service
+* Support for lookups, agent collection warnings, task commands, and data archive/recall in the Logging Analytics service
+
+Fixed
+-----
+* Fixed a bug in the endpoint used for the Management Dashboard service
+
+Breaking
+--------
+* A new required property `kind` is added to the models `UpdateScheduledTaskDetails` and `ScheduledTask` in the Log Analytics service
+* The allowed values for parameter `sort_by` are restricted for methods `list_meta_source_types`, `list_parser_functions`, `list_parser_meta_plugins`, `list_source_label_operators`, `list_source_meta_functions` in the Log Analytics service. For more information please see the documentation for `LogAnalyticsClient <https://docs.oracle.com/en-us/iaas/tools/python/latest/api/log_analytics/client/oci.log_analytics.LogAnalyticsClient.html#loganalyticsclient>`_
+
+====================
 2.27.0 - 2021-01-12
 ====================
 

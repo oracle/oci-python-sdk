@@ -9,6 +9,7 @@ from .create_service_connector_details import CreateServiceConnectorDetails
 from .functions_target_details import FunctionsTargetDetails
 from .log_rule_task_details import LogRuleTaskDetails
 from .log_source import LogSource
+from .logging_analytics_target_details import LoggingAnalyticsTargetDetails
 from .logging_source_details import LoggingSourceDetails
 from .monitoring_target_details import MonitoringTargetDetails
 from .notifications_target_details import NotificationsTargetDetails
@@ -36,6 +37,7 @@ sch_type_mapping = {
     "FunctionsTargetDetails": FunctionsTargetDetails,
     "LogRuleTaskDetails": LogRuleTaskDetails,
     "LogSource": LogSource,
+    "LoggingAnalyticsTargetDetails": LoggingAnalyticsTargetDetails,
     "LoggingSourceDetails": LoggingSourceDetails,
     "MonitoringTargetDetails": MonitoringTargetDetails,
     "NotificationsTargetDetails": NotificationsTargetDetails,

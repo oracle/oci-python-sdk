@@ -13,6 +13,14 @@ class LogAnalyticsLookup(object):
     LogAnalyticsLookup
     """
 
+    #: A constant which can be used with the type property of a LogAnalyticsLookup.
+    #: This constant has a value of "Lookup"
+    TYPE_LOOKUP = "Lookup"
+
+    #: A constant which can be used with the type property of a LogAnalyticsLookup.
+    #: This constant has a value of "Dictionary"
+    TYPE_DICTIONARY = "Dictionary"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsLookup object with values from keyword arguments.
@@ -41,6 +49,16 @@ class LogAnalyticsLookup(object):
         :param lookup_reference:
             The value to assign to the lookup_reference property of this LogAnalyticsLookup.
         :type lookup_reference: int
+
+        :param lookup_reference_string:
+            The value to assign to the lookup_reference_string property of this LogAnalyticsLookup.
+        :type lookup_reference_string: str
+
+        :param type:
+            The value to assign to the type property of this LogAnalyticsLookup.
+            Allowed values for this property are: "Lookup", "Dictionary", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
 
         :param name:
             The value to assign to the name property of this LogAnalyticsLookup.
@@ -78,6 +96,8 @@ class LogAnalyticsLookup(object):
             'edit_version': 'int',
             'fields': 'list[LookupField]',
             'lookup_reference': 'int',
+            'lookup_reference_string': 'str',
+            'type': 'str',
             'name': 'str',
             'is_built_in': 'int',
             'is_hidden': 'bool',
@@ -94,6 +114,8 @@ class LogAnalyticsLookup(object):
             'edit_version': 'editVersion',
             'fields': 'fields',
             'lookup_reference': 'lookupReference',
+            'lookup_reference_string': 'lookupReferenceString',
+            'type': 'type',
             'name': 'name',
             'is_built_in': 'isBuiltIn',
             'is_hidden': 'isHidden',
@@ -109,6 +131,8 @@ class LogAnalyticsLookup(object):
         self._edit_version = None
         self._fields = None
         self._lookup_reference = None
+        self._lookup_reference_string = None
+        self._type = None
         self._name = None
         self._is_built_in = None
         self._is_hidden = None
@@ -241,7 +265,7 @@ class LogAnalyticsLookup(object):
     def lookup_reference(self):
         """
         Gets the lookup_reference of this LogAnalyticsLookup.
-        lookupReference
+        The lookup reference as an integer.
 
 
         :return: The lookup_reference of this LogAnalyticsLookup.
@@ -253,13 +277,67 @@ class LogAnalyticsLookup(object):
     def lookup_reference(self, lookup_reference):
         """
         Sets the lookup_reference of this LogAnalyticsLookup.
-        lookupReference
+        The lookup reference as an integer.
 
 
         :param lookup_reference: The lookup_reference of this LogAnalyticsLookup.
         :type: int
         """
         self._lookup_reference = lookup_reference
+
+    @property
+    def lookup_reference_string(self):
+        """
+        Gets the lookup_reference_string of this LogAnalyticsLookup.
+        The lookup reference as a string.
+
+
+        :return: The lookup_reference_string of this LogAnalyticsLookup.
+        :rtype: str
+        """
+        return self._lookup_reference_string
+
+    @lookup_reference_string.setter
+    def lookup_reference_string(self, lookup_reference_string):
+        """
+        Sets the lookup_reference_string of this LogAnalyticsLookup.
+        The lookup reference as a string.
+
+
+        :param lookup_reference_string: The lookup_reference_string of this LogAnalyticsLookup.
+        :type: str
+        """
+        self._lookup_reference_string = lookup_reference_string
+
+    @property
+    def type(self):
+        """
+        Gets the type of this LogAnalyticsLookup.
+        The lookup type.  Valid values are LOOKUP or DICTIONARY.
+
+        Allowed values for this property are: "Lookup", "Dictionary", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this LogAnalyticsLookup.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this LogAnalyticsLookup.
+        The lookup type.  Valid values are LOOKUP or DICTIONARY.
+
+
+        :param type: The type of this LogAnalyticsLookup.
+        :type: str
+        """
+        allowed_values = ["Lookup", "Dictionary"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     @property
     def name(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ParsedContent(object):
     """
-    Parsed Content
+    Parsed representation of the log file.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class ParsedContent(object):
     def field_names(self):
         """
         Gets the field_names of this ParsedContent.
-        Field names
+        List of field names.
 
 
         :return: The field_names of this ParsedContent.
@@ -84,7 +84,7 @@ class ParsedContent(object):
     def field_names(self, field_names):
         """
         Sets the field_names of this ParsedContent.
-        Field names
+        List of field names.
 
 
         :param field_names: The field_names of this ParsedContent.
@@ -96,7 +96,7 @@ class ParsedContent(object):
     def field_display_names(self):
         """
         Gets the field_display_names of this ParsedContent.
-        Display names for fields
+        List of field display names.
 
 
         :return: The field_display_names of this ParsedContent.
@@ -108,7 +108,7 @@ class ParsedContent(object):
     def field_display_names(self, field_display_names):
         """
         Sets the field_display_names of this ParsedContent.
-        Display names for fields
+        List of field display names.
 
 
         :param field_display_names: The field_display_names of this ParsedContent.
@@ -120,7 +120,7 @@ class ParsedContent(object):
     def parsed_field_values(self):
         """
         Gets the parsed_field_values of this ParsedContent.
-        Parsed field values
+        Parsed field values.
 
 
         :return: The parsed_field_values of this ParsedContent.
@@ -132,7 +132,7 @@ class ParsedContent(object):
     def parsed_field_values(self, parsed_field_values):
         """
         Sets the parsed_field_values of this ParsedContent.
-        Parsed field values
+        Parsed field values.
 
 
         :param parsed_field_values: The parsed_field_values of this ParsedContent.
@@ -144,7 +144,7 @@ class ParsedContent(object):
     def log_content(self):
         """
         Gets the log_content of this ParsedContent.
-        Sample log entries picked up from the given file for validation
+        Sample log entries picked up from the given file for validation.
 
 
         :return: The log_content of this ParsedContent.
@@ -156,7 +156,7 @@ class ParsedContent(object):
     def log_content(self, log_content):
         """
         Sets the log_content of this ParsedContent.
-        Sample log entries picked up from the given file for validation
+        Sample log entries picked up from the given file for validation.
 
 
         :param log_content: The log_content of this ParsedContent.
@@ -168,7 +168,7 @@ class ParsedContent(object):
     def sample_size(self):
         """
         Gets the sample_size of this ParsedContent.
-        Sample Size taken for validation
+        Sample Size taken for validation.
 
 
         :return: The sample_size of this ParsedContent.
@@ -180,7 +180,7 @@ class ParsedContent(object):
     def sample_size(self, sample_size):
         """
         Sets the sample_size of this ParsedContent.
-        Sample Size taken for validation
+        Sample Size taken for validation.
 
 
         :param sample_size: The sample_size of this ParsedContent.
@@ -192,7 +192,7 @@ class ParsedContent(object):
     def match_status(self):
         """
         Gets the match_status of this ParsedContent.
-        Match Status
+        Match Status.
 
 
         :return: The match_status of this ParsedContent.
@@ -204,7 +204,7 @@ class ParsedContent(object):
     def match_status(self, match_status):
         """
         Sets the match_status of this ParsedContent.
-        Match Status
+        Match Status.
 
 
         :param match_status: The match_status of this ParsedContent.

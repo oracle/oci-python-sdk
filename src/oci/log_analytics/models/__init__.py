@@ -43,6 +43,7 @@ from .create_log_analytics_log_group_details import CreateLogAnalyticsLogGroupDe
 from .create_log_analytics_object_collection_rule_details import CreateLogAnalyticsObjectCollectionRuleDetails
 from .create_scheduled_task_details import CreateScheduledTaskDetails
 from .create_standard_task_details import CreateStandardTaskDetails
+from .create_view_command_descriptor import CreateViewCommandDescriptor
 from .cron_schedule import CronSchedule
 from .delete_command_descriptor import DeleteCommandDescriptor
 from .delete_log_analytics_association import DeleteLogAnalyticsAssociation
@@ -55,8 +56,13 @@ from .entity_type_property import EntityTypeProperty
 from .error_details import ErrorDetails
 from .estimate_purge_data_size_details import EstimatePurgeDataSizeDetails
 from .estimate_purge_data_size_result import EstimatePurgeDataSizeResult
+from .estimate_recall_data_size_details import EstimateRecallDataSizeDetails
+from .estimate_recall_data_size_result import EstimateRecallDataSizeResult
+from .estimate_release_data_size_details import EstimateReleaseDataSizeDetails
+from .estimate_release_data_size_result import EstimateReleaseDataSizeResult
 from .eval_command_descriptor import EvalCommandDescriptor
 from .event_stats_command_descriptor import EventStatsCommandDescriptor
+from .event_type import EventType
 from .export_content import ExportContent
 from .export_details import ExportDetails
 from .extended_fields_validation_result import ExtendedFieldsValidationResult
@@ -79,6 +85,7 @@ from .fixed_frequency_schedule import FixedFrequencySchedule
 from .function_field import FunctionField
 from .head_command_descriptor import HeadCommandDescriptor
 from .highlight_command_descriptor import HighlightCommandDescriptor
+from .highlight_groups_command_descriptor import HighlightGroupsCommandDescriptor
 from .highlight_rows_command_descriptor import HighlightRowsCommandDescriptor
 from .indexes import Indexes
 from .label_names import LabelNames
@@ -125,6 +132,8 @@ from .log_analytics_log_group import LogAnalyticsLogGroup
 from .log_analytics_log_group_summary import LogAnalyticsLogGroupSummary
 from .log_analytics_log_group_summary_collection import LogAnalyticsLogGroupSummaryCollection
 from .log_analytics_lookup import LogAnalyticsLookup
+from .log_analytics_lookup_collection import LogAnalyticsLookupCollection
+from .log_analytics_lookup_fields import LogAnalyticsLookupFields
 from .log_analytics_meta_function import LogAnalyticsMetaFunction
 from .log_analytics_meta_function_argument import LogAnalyticsMetaFunctionArgument
 from .log_analytics_meta_function_collection import LogAnalyticsMetaFunctionCollection
@@ -160,15 +169,20 @@ from .log_analytics_source_metric import LogAnalyticsSourceMetric
 from .log_analytics_source_pattern import LogAnalyticsSourcePattern
 from .log_analytics_source_pattern_collection import LogAnalyticsSourcePatternCollection
 from .log_analytics_source_summary import LogAnalyticsSourceSummary
+from .log_analytics_warning import LogAnalyticsWarning
+from .log_analytics_warning_collection import LogAnalyticsWarningCollection
 from .log_group_summary_report import LogGroupSummaryReport
 from .lookup_command_descriptor import LookupCommandDescriptor
 from .lookup_field import LookupField
 from .macro_command_descriptor import MacroCommandDescriptor
+from .map_command_descriptor import MapCommandDescriptor
 from .match_info import MatchInfo
+from .metric_extraction import MetricExtraction
 from .multi_search_command_descriptor import MultiSearchCommandDescriptor
 from .namespace import Namespace
 from .namespace_collection import NamespaceCollection
 from .namespace_summary import NamespaceSummary
+from .nlp_command_descriptor import NlpCommandDescriptor
 from .parse_query_details import ParseQueryDetails
 from .parse_query_output import ParseQueryOutput
 from .parsed_content import ParsedContent
@@ -184,6 +198,8 @@ from .query_work_request import QueryWorkRequest
 from .query_work_request_collection import QueryWorkRequestCollection
 from .query_work_request_summary import QueryWorkRequestSummary
 from .recall_archived_data_details import RecallArchivedDataDetails
+from .recalled_data import RecalledData
+from .recalled_data_collection import RecalledDataCollection
 from .regex_command_descriptor import RegexCommandDescriptor
 from .regex_match_result import RegexMatchResult
 from .release_recalled_data_details import ReleaseRecalledDataDetails
@@ -204,6 +220,7 @@ from .source_mapping_response import SourceMappingResponse
 from .source_summary_report import SourceSummaryReport
 from .source_validate_details import SourceValidateDetails
 from .source_validate_results import SourceValidateResults
+from .standard_task import StandardTask
 from .stats_command_descriptor import StatsCommandDescriptor
 from .status_summary import StatusSummary
 from .step_info import StepInfo
@@ -230,7 +247,9 @@ from .update_log_analytics_entity_details import UpdateLogAnalyticsEntityDetails
 from .update_log_analytics_entity_type_details import UpdateLogAnalyticsEntityTypeDetails
 from .update_log_analytics_log_group_details import UpdateLogAnalyticsLogGroupDetails
 from .update_log_analytics_object_collection_rule_details import UpdateLogAnalyticsObjectCollectionRuleDetails
+from .update_lookup_metadata_details import UpdateLookupMetadataDetails
 from .update_scheduled_task_details import UpdateScheduledTaskDetails
+from .update_standard_task_details import UpdateStandardTaskDetails
 from .update_storage_details import UpdateStorageDetails
 from .upload import Upload
 from .upload_collection import UploadCollection
@@ -249,6 +268,7 @@ from .upsert_log_analytics_source_details import UpsertLogAnalyticsSourceDetails
 from .usage_status_item import UsageStatusItem
 from .verify_output import VerifyOutput
 from .violation import Violation
+from .warning_reference_details import WarningReferenceDetails
 from .where_command_descriptor import WhereCommandDescriptor
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
@@ -300,6 +320,7 @@ log_analytics_type_mapping = {
     "CreateLogAnalyticsObjectCollectionRuleDetails": CreateLogAnalyticsObjectCollectionRuleDetails,
     "CreateScheduledTaskDetails": CreateScheduledTaskDetails,
     "CreateStandardTaskDetails": CreateStandardTaskDetails,
+    "CreateViewCommandDescriptor": CreateViewCommandDescriptor,
     "CronSchedule": CronSchedule,
     "DeleteCommandDescriptor": DeleteCommandDescriptor,
     "DeleteLogAnalyticsAssociation": DeleteLogAnalyticsAssociation,
@@ -312,8 +333,13 @@ log_analytics_type_mapping = {
     "ErrorDetails": ErrorDetails,
     "EstimatePurgeDataSizeDetails": EstimatePurgeDataSizeDetails,
     "EstimatePurgeDataSizeResult": EstimatePurgeDataSizeResult,
+    "EstimateRecallDataSizeDetails": EstimateRecallDataSizeDetails,
+    "EstimateRecallDataSizeResult": EstimateRecallDataSizeResult,
+    "EstimateReleaseDataSizeDetails": EstimateReleaseDataSizeDetails,
+    "EstimateReleaseDataSizeResult": EstimateReleaseDataSizeResult,
     "EvalCommandDescriptor": EvalCommandDescriptor,
     "EventStatsCommandDescriptor": EventStatsCommandDescriptor,
+    "EventType": EventType,
     "ExportContent": ExportContent,
     "ExportDetails": ExportDetails,
     "ExtendedFieldsValidationResult": ExtendedFieldsValidationResult,
@@ -336,6 +362,7 @@ log_analytics_type_mapping = {
     "FunctionField": FunctionField,
     "HeadCommandDescriptor": HeadCommandDescriptor,
     "HighlightCommandDescriptor": HighlightCommandDescriptor,
+    "HighlightGroupsCommandDescriptor": HighlightGroupsCommandDescriptor,
     "HighlightRowsCommandDescriptor": HighlightRowsCommandDescriptor,
     "Indexes": Indexes,
     "LabelNames": LabelNames,
@@ -382,6 +409,8 @@ log_analytics_type_mapping = {
     "LogAnalyticsLogGroupSummary": LogAnalyticsLogGroupSummary,
     "LogAnalyticsLogGroupSummaryCollection": LogAnalyticsLogGroupSummaryCollection,
     "LogAnalyticsLookup": LogAnalyticsLookup,
+    "LogAnalyticsLookupCollection": LogAnalyticsLookupCollection,
+    "LogAnalyticsLookupFields": LogAnalyticsLookupFields,
     "LogAnalyticsMetaFunction": LogAnalyticsMetaFunction,
     "LogAnalyticsMetaFunctionArgument": LogAnalyticsMetaFunctionArgument,
     "LogAnalyticsMetaFunctionCollection": LogAnalyticsMetaFunctionCollection,
@@ -417,15 +446,20 @@ log_analytics_type_mapping = {
     "LogAnalyticsSourcePattern": LogAnalyticsSourcePattern,
     "LogAnalyticsSourcePatternCollection": LogAnalyticsSourcePatternCollection,
     "LogAnalyticsSourceSummary": LogAnalyticsSourceSummary,
+    "LogAnalyticsWarning": LogAnalyticsWarning,
+    "LogAnalyticsWarningCollection": LogAnalyticsWarningCollection,
     "LogGroupSummaryReport": LogGroupSummaryReport,
     "LookupCommandDescriptor": LookupCommandDescriptor,
     "LookupField": LookupField,
     "MacroCommandDescriptor": MacroCommandDescriptor,
+    "MapCommandDescriptor": MapCommandDescriptor,
     "MatchInfo": MatchInfo,
+    "MetricExtraction": MetricExtraction,
     "MultiSearchCommandDescriptor": MultiSearchCommandDescriptor,
     "Namespace": Namespace,
     "NamespaceCollection": NamespaceCollection,
     "NamespaceSummary": NamespaceSummary,
+    "NlpCommandDescriptor": NlpCommandDescriptor,
     "ParseQueryDetails": ParseQueryDetails,
     "ParseQueryOutput": ParseQueryOutput,
     "ParsedContent": ParsedContent,
@@ -441,6 +475,8 @@ log_analytics_type_mapping = {
     "QueryWorkRequestCollection": QueryWorkRequestCollection,
     "QueryWorkRequestSummary": QueryWorkRequestSummary,
     "RecallArchivedDataDetails": RecallArchivedDataDetails,
+    "RecalledData": RecalledData,
+    "RecalledDataCollection": RecalledDataCollection,
     "RegexCommandDescriptor": RegexCommandDescriptor,
     "RegexMatchResult": RegexMatchResult,
     "ReleaseRecalledDataDetails": ReleaseRecalledDataDetails,
@@ -461,6 +497,7 @@ log_analytics_type_mapping = {
     "SourceSummaryReport": SourceSummaryReport,
     "SourceValidateDetails": SourceValidateDetails,
     "SourceValidateResults": SourceValidateResults,
+    "StandardTask": StandardTask,
     "StatsCommandDescriptor": StatsCommandDescriptor,
     "StatusSummary": StatusSummary,
     "StepInfo": StepInfo,
@@ -487,7 +524,9 @@ log_analytics_type_mapping = {
     "UpdateLogAnalyticsEntityTypeDetails": UpdateLogAnalyticsEntityTypeDetails,
     "UpdateLogAnalyticsLogGroupDetails": UpdateLogAnalyticsLogGroupDetails,
     "UpdateLogAnalyticsObjectCollectionRuleDetails": UpdateLogAnalyticsObjectCollectionRuleDetails,
+    "UpdateLookupMetadataDetails": UpdateLookupMetadataDetails,
     "UpdateScheduledTaskDetails": UpdateScheduledTaskDetails,
+    "UpdateStandardTaskDetails": UpdateStandardTaskDetails,
     "UpdateStorageDetails": UpdateStorageDetails,
     "Upload": Upload,
     "UploadCollection": UploadCollection,
@@ -506,6 +545,7 @@ log_analytics_type_mapping = {
     "UsageStatusItem": UsageStatusItem,
     "VerifyOutput": VerifyOutput,
     "Violation": Violation,
+    "WarningReferenceDetails": WarningReferenceDetails,
     "WhereCommandDescriptor": WhereCommandDescriptor,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,

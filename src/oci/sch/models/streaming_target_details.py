@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StreamingTargetDetails(TargetDetails):
     """
-    The streaming target.
+    The stream used for the Streaming target.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class StreamingTargetDetails(TargetDetails):
 
         :param kind:
             The value to assign to the kind property of this StreamingTargetDetails.
-            Allowed values for this property are: "streaming", "objectStorage", "monitoring", "functions", "notifications"
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
 
         :param stream_id:

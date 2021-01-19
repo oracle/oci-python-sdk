@@ -60,7 +60,7 @@ class PropertyOverride(object):
     def match_type(self):
         """
         Gets the match_type of this PropertyOverride.
-        Match Type. Accepted values are: contains
+        Match Type. Accepted values are: contains.
 
 
         :return: The match_type of this PropertyOverride.
@@ -72,7 +72,7 @@ class PropertyOverride(object):
     def match_type(self, match_type):
         """
         Sets the match_type of this PropertyOverride.
-        Match Type. Accepted values are: contains
+        Match Type. Accepted values are: contains.
 
 
         :param match_type: The match_type of this PropertyOverride.
@@ -132,7 +132,7 @@ class PropertyOverride(object):
     def property_value(self):
         """
         Gets the property_value of this PropertyOverride.
-        Value.
+        Value of the property.
 
 
         :return: The property_value of this PropertyOverride.
@@ -144,7 +144,7 @@ class PropertyOverride(object):
     def property_value(self, property_value):
         """
         Sets the property_value of this PropertyOverride.
-        Value.
+        Value of the property.
 
 
         :param property_value: The property_value of this PropertyOverride.

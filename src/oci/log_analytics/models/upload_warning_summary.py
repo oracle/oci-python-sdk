@@ -58,7 +58,7 @@ class UploadWarningSummary(object):
     def reference(self):
         """
         **[Required]** Gets the reference of this UploadWarningSummary.
-        Unique internal identifier to refer to upload warning
+        Unique internal identifier to refer upload warning.
 
 
         :return: The reference of this UploadWarningSummary.
@@ -70,7 +70,7 @@ class UploadWarningSummary(object):
     def reference(self, reference):
         """
         Sets the reference of this UploadWarningSummary.
-        Unique internal identifier to refer to upload warning
+        Unique internal identifier to refer upload warning.
 
 
         :param reference: The reference of this UploadWarningSummary.
@@ -82,7 +82,7 @@ class UploadWarningSummary(object):
     def status(self):
         """
         Gets the status of this UploadWarningSummary.
-        Status of the upload. Ex - Failed
+        Status of the upload. Ex - Failed.
 
 
         :return: The status of this UploadWarningSummary.
@@ -94,7 +94,7 @@ class UploadWarningSummary(object):
     def status(self, status):
         """
         Sets the status of this UploadWarningSummary.
-        Status of the upload. Ex - Failed
+        Status of the upload. Ex - Failed.
 
 
         :param status: The status of this UploadWarningSummary.
@@ -106,7 +106,7 @@ class UploadWarningSummary(object):
     def time_started(self):
         """
         Gets the time_started of this UploadWarningSummary.
-        The time when the upload processing started
+        The time when the upload processing started.
 
 
         :return: The time_started of this UploadWarningSummary.
@@ -118,7 +118,7 @@ class UploadWarningSummary(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this UploadWarningSummary.
-        The time when the upload processing started
+        The time when the upload processing started.
 
 
         :param time_started: The time_started of this UploadWarningSummary.
@@ -130,7 +130,7 @@ class UploadWarningSummary(object):
     def error_message(self):
         """
         Gets the error_message of this UploadWarningSummary.
-        The details about upload processing failure
+        The details about upload processing failure.
 
 
         :return: The error_message of this UploadWarningSummary.
@@ -142,7 +142,7 @@ class UploadWarningSummary(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this UploadWarningSummary.
-        The details about upload processing failure
+        The details about upload processing failure.
 
 
         :param error_message: The error_message of this UploadWarningSummary.
