@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PublicIpPool(object):
     """
-    A Public IP pool, conceptually, is a set of public IP addresses (represented as one or more CIDRs) Users can be allocated addresses from this for internet access.
+    A public IP pool is a set of public IP addresses represented as one or more IPv4 CIDR blocks. Resources like load balancers and compute instances can be allocated public IP addresses from a public IP pool.
     """
 
     #: A constant which can be used with the lifecycle_state property of a PublicIpPool.
@@ -108,7 +108,7 @@ class PublicIpPool(object):
     def cidr_blocks(self):
         """
         Gets the cidr_blocks of this PublicIpPool.
-        The CIDRs that make up this pool
+        The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
 
 
         :return: The cidr_blocks of this PublicIpPool.
@@ -120,7 +120,7 @@ class PublicIpPool(object):
     def cidr_blocks(self, cidr_blocks):
         """
         Sets the cidr_blocks of this PublicIpPool.
-        The CIDRs that make up this pool
+        The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
 
 
         :param cidr_blocks: The cidr_blocks of this PublicIpPool.
@@ -132,7 +132,9 @@ class PublicIpPool(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this PublicIpPool.
-        The OCID of the compartment containing the Public IP Pool
+        The `OCID`__ of the compartment containing this pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicIpPool.
@@ -144,7 +146,9 @@ class PublicIpPool(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PublicIpPool.
-        The OCID of the compartment containing the Public IP Pool
+        The `OCID`__ of the compartment containing this pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicIpPool.
@@ -250,7 +254,9 @@ class PublicIpPool(object):
     def id(self):
         """
         **[Required]** Gets the id of this PublicIpPool.
-        The Oracle ID (OCID) of the Public Ip Pool.
+        The `OCID`__ of the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PublicIpPool.
@@ -262,7 +268,9 @@ class PublicIpPool(object):
     def id(self, id):
         """
         Sets the id of this PublicIpPool.
-        The Oracle ID (OCID) of the Public Ip Pool.
+        The `OCID`__ of the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PublicIpPool.
@@ -274,7 +282,7 @@ class PublicIpPool(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this PublicIpPool.
-        The Public IP Pool's current state.
+        The public IP pool's current state.
 
         Allowed values for this property are: "INACTIVE", "UPDATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -289,7 +297,7 @@ class PublicIpPool(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this PublicIpPool.
-        The Public IP Pool's current state.
+        The public IP pool's current state.
 
 
         :param lifecycle_state: The lifecycle_state of this PublicIpPool.
@@ -304,7 +312,7 @@ class PublicIpPool(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this PublicIpPool.
-        The date and time the public IP Pool was created, in the format defined by `RFC3339`__.
+        The date and time the public IP pool was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -320,7 +328,7 @@ class PublicIpPool(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PublicIpPool.
-        The date and time the public IP Pool was created, in the format defined by `RFC3339`__.
+        The date and time the public IP pool was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 

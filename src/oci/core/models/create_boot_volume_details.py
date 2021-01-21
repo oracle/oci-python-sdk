@@ -373,9 +373,6 @@ class CreateBootVolumeDetails(object):
     def source_details(self):
         """
         **[Required]** Gets the source_details of this CreateBootVolumeDetails.
-        Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same availability domain or a boot volume backup.
-        This is a mandatory field for a boot volume.
-
 
         :return: The source_details of this CreateBootVolumeDetails.
         :rtype: oci.core.models.BootVolumeSourceDetails
@@ -386,9 +383,6 @@ class CreateBootVolumeDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this CreateBootVolumeDetails.
-        Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same availability domain or a boot volume backup.
-        This is a mandatory field for a boot volume.
-
 
         :param source_details: The source_details of this CreateBootVolumeDetails.
         :type: oci.core.models.BootVolumeSourceDetails

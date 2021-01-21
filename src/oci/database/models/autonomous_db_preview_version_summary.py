@@ -162,7 +162,7 @@ class AutonomousDbPreviewVersionSummary(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
+        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -182,7 +182,7 @@ class AutonomousDbPreviewVersionSummary(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
+        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
 
         :param db_workload: The db_workload of this AutonomousDbPreviewVersionSummary.

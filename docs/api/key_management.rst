@@ -51,10 +51,14 @@ Key Management
     oci.key_management.models.ScheduleKeyDeletionDetails
     oci.key_management.models.ScheduleKeyVersionDeletionDetails
     oci.key_management.models.ScheduleVaultDeletionDetails
+    oci.key_management.models.SignDataDetails
+    oci.key_management.models.SignedData
     oci.key_management.models.UpdateKeyDetails
     oci.key_management.models.UpdateVaultDetails
     oci.key_management.models.Vault
     oci.key_management.models.VaultSummary
     oci.key_management.models.VaultUsage
+    oci.key_management.models.VerifiedData
+    oci.key_management.models.VerifyDataDetails
     oci.key_management.models.WrappedImportKey
     oci.key_management.models.WrappingKey

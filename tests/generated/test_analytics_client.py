@@ -156,6 +156,88 @@ def test_create_analytics_instance(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_create_private_access_channel(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'CreatePrivateAccessChannel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'CreatePrivateAccessChannel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='CreatePrivateAccessChannel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.create_private_access_channel(
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                create_private_access_channel_details=request.pop(util.camelize('CreatePrivateAccessChannelDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'CreatePrivateAccessChannel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_private_access_channel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_create_vanity_url(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'CreateVanityUrl'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'CreateVanityUrl')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='CreateVanityUrl')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.create_vanity_url(
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                create_vanity_url_details=request.pop(util.camelize('CreateVanityUrlDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'CreateVanityUrl',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_vanity_url',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
 def test_delete_analytics_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('analytics', 'DeleteAnalyticsInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -190,6 +272,88 @@ def test_delete_analytics_instance(testing_service_client):
             result,
             service_error,
             'delete_analytics_instance',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_delete_private_access_channel(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'DeletePrivateAccessChannel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'DeletePrivateAccessChannel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='DeletePrivateAccessChannel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_private_access_channel(
+                private_access_channel_key=request.pop(util.camelize('privateAccessChannelKey')),
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'DeletePrivateAccessChannel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_private_access_channel',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_delete_vanity_url(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'DeleteVanityUrl'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'DeleteVanityUrl')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='DeleteVanityUrl')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_vanity_url(
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                vanity_url_key=request.pop(util.camelize('vanityUrlKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'DeleteVanityUrl',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_vanity_url',
             True,
             False
         )
@@ -270,6 +434,47 @@ def test_get_analytics_instance(testing_service_client):
             result,
             service_error,
             'analyticsInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_get_private_access_channel(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'GetPrivateAccessChannel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'GetPrivateAccessChannel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='GetPrivateAccessChannel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.get_private_access_channel(
+                private_access_channel_key=request.pop(util.camelize('privateAccessChannelKey')),
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'GetPrivateAccessChannel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'privateAccessChannel',
             False,
             False
         )
@@ -712,6 +917,90 @@ def test_update_analytics_instance(testing_service_client):
             result,
             service_error,
             'analyticsInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_update_private_access_channel(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'UpdatePrivateAccessChannel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'UpdatePrivateAccessChannel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='UpdatePrivateAccessChannel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.update_private_access_channel(
+                private_access_channel_key=request.pop(util.camelize('privateAccessChannelKey')),
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                update_private_access_channel_details=request.pop(util.camelize('UpdatePrivateAccessChannelDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'UpdatePrivateAccessChannel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_private_access_channel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_oac_ww_grp@oracle.com" jiraProject="OB" opsJiraProject="AOAC"
+def test_update_vanity_url(testing_service_client):
+    if not testing_service_client.is_api_enabled('analytics', 'UpdateVanityUrl'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('analytics', util.camelize('analytics'), 'UpdateVanityUrl')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='analytics', api_name='UpdateVanityUrl')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.update_vanity_url(
+                analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                vanity_url_key=request.pop(util.camelize('vanityUrlKey')),
+                update_vanity_url_details=request.pop(util.camelize('UpdateVanityUrlDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'analytics',
+            'UpdateVanityUrl',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_vanity_url',
             False,
             False
         )

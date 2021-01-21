@@ -521,6 +521,13 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move the DB system to a different compartment.
 
+            **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+            For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
@@ -2965,6 +2972,13 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB system.
 
+            **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+            For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
             Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
@@ -2999,6 +3013,13 @@ class DatabaseClientCompositeOperations(object):
 
         :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB system.
+
+            **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+            For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbSystem.lifecycle_state`
@@ -5900,7 +5921,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
-            Request to perform database upgrade.
+            Request to perform a database upgrade.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -5940,7 +5961,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
-            Request to perform database upgrade.
+            Request to perform a database upgrade.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Database.lifecycle_state`

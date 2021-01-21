@@ -73,6 +73,18 @@ class KeySummary(object):
     #: This constant has a value of "SOFTWARE"
     PROTECTION_MODE_SOFTWARE = "SOFTWARE"
 
+    #: A constant which can be used with the algorithm property of a KeySummary.
+    #: This constant has a value of "AES"
+    ALGORITHM_AES = "AES"
+
+    #: A constant which can be used with the algorithm property of a KeySummary.
+    #: This constant has a value of "RSA"
+    ALGORITHM_RSA = "RSA"
+
+    #: A constant which can be used with the algorithm property of a KeySummary.
+    #: This constant has a value of "ECDSA"
+    ALGORITHM_ECDSA = "ECDSA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new KeySummary object with values from keyword arguments.
@@ -118,6 +130,12 @@ class KeySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protection_mode: str
 
+        :param algorithm:
+            The value to assign to the algorithm property of this KeySummary.
+            Allowed values for this property are: "AES", "RSA", "ECDSA", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type algorithm: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -128,7 +146,8 @@ class KeySummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'vault_id': 'str',
-            'protection_mode': 'str'
+            'protection_mode': 'str',
+            'algorithm': 'str'
         }
 
         self.attribute_map = {
@@ -140,7 +159,8 @@ class KeySummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'vault_id': 'vaultId',
-            'protection_mode': 'protectionMode'
+            'protection_mode': 'protectionMode',
+            'algorithm': 'algorithm'
         }
 
         self._compartment_id = None
@@ -152,6 +172,7 @@ class KeySummary(object):
         self._time_created = None
         self._vault_id = None
         self._protection_mode = None
+        self._algorithm = None
 
     @property
     def compartment_id(self):
@@ -418,6 +439,36 @@ class KeySummary(object):
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             protection_mode = 'UNKNOWN_ENUM_VALUE'
         self._protection_mode = protection_mode
+
+    @property
+    def algorithm(self):
+        """
+        Gets the algorithm of this KeySummary.
+        The algorithm used by a key's key versions to encrypt or decrypt.
+
+        Allowed values for this property are: "AES", "RSA", "ECDSA", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The algorithm of this KeySummary.
+        :rtype: str
+        """
+        return self._algorithm
+
+    @algorithm.setter
+    def algorithm(self, algorithm):
+        """
+        Sets the algorithm of this KeySummary.
+        The algorithm used by a key's key versions to encrypt or decrypt.
+
+
+        :param algorithm: The algorithm of this KeySummary.
+        :type: str
+        """
+        allowed_values = ["AES", "RSA", "ECDSA"]
+        if not value_allowed_none_or_none_sentinel(algorithm, allowed_values):
+            algorithm = 'UNKNOWN_ENUM_VALUE'
+        self._algorithm = algorithm
 
     def __repr__(self):
         return formatted_flat_dict(self)

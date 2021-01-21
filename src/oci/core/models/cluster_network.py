@@ -314,8 +314,6 @@ class ClusterNetwork(object):
     def placement_configuration(self):
         """
         Gets the placement_configuration of this ClusterNetwork.
-        The placement configuration for the instance pools in the cluster network.
-
 
         :return: The placement_configuration of this ClusterNetwork.
         :rtype: oci.core.models.ClusterNetworkPlacementConfigurationDetails
@@ -326,8 +324,6 @@ class ClusterNetwork(object):
     def placement_configuration(self, placement_configuration):
         """
         Sets the placement_configuration of this ClusterNetwork.
-        The placement configuration for the instance pools in the cluster network.
-
 
         :param placement_configuration: The placement_configuration of this ClusterNetwork.
         :type: oci.core.models.ClusterNetworkPlacementConfigurationDetails

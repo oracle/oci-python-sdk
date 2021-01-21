@@ -31,6 +31,7 @@ from .create_stack_details import CreateStackDetails
 from .create_zip_upload_config_source_details import CreateZipUploadConfigSourceDetails
 from .destroy_job_operation_details import DestroyJobOperationDetails
 from .destroy_job_operation_details_summary import DestroyJobOperationDetailsSummary
+from .detect_stack_drift_details import DetectStackDriftDetails
 from .failure_details import FailureDetails
 from .git_config_source import GitConfigSource
 from .git_config_source_record import GitConfigSourceRecord
@@ -100,6 +101,7 @@ resource_manager_type_mapping = {
     "CreateZipUploadConfigSourceDetails": CreateZipUploadConfigSourceDetails,
     "DestroyJobOperationDetails": DestroyJobOperationDetails,
     "DestroyJobOperationDetailsSummary": DestroyJobOperationDetailsSummary,
+    "DetectStackDriftDetails": DetectStackDriftDetails,
     "FailureDetails": FailureDetails,
     "GitConfigSource": GitConfigSource,
     "GitConfigSourceRecord": GitConfigSourceRecord,

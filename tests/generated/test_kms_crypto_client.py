@@ -191,3 +191,83 @@ def test_generate_data_encryption_key(testing_service_client):
             False,
             False
         )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_sign(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'Sign'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_crypto'), 'Sign')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='Sign')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "Sign")
+            client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
+            response = client.sign(
+                sign_data_details=request.pop(util.camelize('SignDataDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'Sign',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'signedData',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_verify(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'Verify'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_crypto'), 'Verify')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='Verify')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "Verify")
+            client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
+            response = client.verify(
+                verify_data_details=request.pop(util.camelize('VerifyDataDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'Verify',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'verifiedData',
+            False,
+            False
+        )

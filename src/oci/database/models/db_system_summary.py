@@ -10,10 +10,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystemSummary(object):
     """
-    The Database Service supports several types of DB systems, ranging in size, price, and performance. For details about each type of system, see:
+    The Database Service supports several types of DB systems, ranging in size, price, and performance. For details about
+    each type of system, see `Bare Metal and Virtual Machine DB Systems`__.
 
-    - `Exadata DB Systems`__
-    - `Bare Metal and Virtual Machine DB Systems`__
+    **Note:** Deprecated for Exadata Cloud Service instances using the new `resource model`__.
+    To provision and manage new Exadata Cloud Service systems, use the
+    :class:`CloudExadataInfrastructure` and :class:`CloudVmCluster`.
+    See `Exadata Cloud Service`__ for more information on Exadata systems.
+
+    For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
@@ -28,8 +33,10 @@ class DbSystemSummary(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
     __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
+    __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
     __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm

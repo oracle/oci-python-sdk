@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipRangeCollection(object):
     """
-    Results of a ListByoipRange operation.
+    The results returned by a `ListByoipRange` operation.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ByoipRangeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ByoipRangeCollection.
-        list of Byoip Range object summaries
+        A list of `ByoipRange` resource summaries.
 
 
         :return: The items of this ByoipRangeCollection.
@@ -49,7 +49,7 @@ class ByoipRangeCollection(object):
     def items(self, items):
         """
         Sets the items of this ByoipRangeCollection.
-        list of Byoip Range object summaries
+        A list of `ByoipRange` resource summaries.
 
 
         :param items: The items of this ByoipRangeCollection.

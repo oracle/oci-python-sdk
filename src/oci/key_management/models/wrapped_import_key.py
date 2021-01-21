@@ -17,6 +17,10 @@ class WrappedImportKey(object):
     #: This constant has a value of "RSA_OAEP_SHA256"
     WRAPPING_ALGORITHM_RSA_OAEP_SHA256 = "RSA_OAEP_SHA256"
 
+    #: A constant which can be used with the wrapping_algorithm property of a WrappedImportKey.
+    #: This constant has a value of "RSA_OAEP_AES_SHA256"
+    WRAPPING_ALGORITHM_RSA_OAEP_AES_SHA256 = "RSA_OAEP_AES_SHA256"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WrappedImportKey object with values from keyword arguments.
@@ -28,7 +32,7 @@ class WrappedImportKey(object):
 
         :param wrapping_algorithm:
             The value to assign to the wrapping_algorithm property of this WrappedImportKey.
-            Allowed values for this property are: "RSA_OAEP_SHA256"
+            Allowed values for this property are: "RSA_OAEP_SHA256", "RSA_OAEP_AES_SHA256"
         :type wrapping_algorithm: str
 
         """
@@ -74,8 +78,12 @@ class WrappedImportKey(object):
         """
         **[Required]** Gets the wrapping_algorithm of this WrappedImportKey.
         The wrapping mechanism to use during key import.
+        RSA_OAEP_AES_SHA256 invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+        by the Vault RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+        The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+        RSA_OAEP_SHA256 means that the exportable key material is wrapped by the Vault RSA public wrapping key.
 
-        Allowed values for this property are: "RSA_OAEP_SHA256"
+        Allowed values for this property are: "RSA_OAEP_SHA256", "RSA_OAEP_AES_SHA256"
 
 
         :return: The wrapping_algorithm of this WrappedImportKey.
@@ -88,12 +96,16 @@ class WrappedImportKey(object):
         """
         Sets the wrapping_algorithm of this WrappedImportKey.
         The wrapping mechanism to use during key import.
+        RSA_OAEP_AES_SHA256 invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+        by the Vault RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+        The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+        RSA_OAEP_SHA256 means that the exportable key material is wrapped by the Vault RSA public wrapping key.
 
 
         :param wrapping_algorithm: The wrapping_algorithm of this WrappedImportKey.
         :type: str
         """
-        allowed_values = ["RSA_OAEP_SHA256"]
+        allowed_values = ["RSA_OAEP_SHA256", "RSA_OAEP_AES_SHA256"]
         if not value_allowed_none_or_none_sentinel(wrapping_algorithm, allowed_values):
             raise ValueError(
                 "Invalid value for `wrapping_algorithm`, must be None or one of {0}"

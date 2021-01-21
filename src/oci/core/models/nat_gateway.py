@@ -436,7 +436,7 @@ class NatGateway(object):
     def public_ip_id(self):
         """
         Gets the public_ip_id of this NatGateway.
-        The `OCID`__ of the Public IP associated with the NAT gateway.
+        The `OCID`__ of the public IP address associated with the NAT gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -450,7 +450,7 @@ class NatGateway(object):
     def public_ip_id(self, public_ip_id):
         """
         Sets the public_ip_id of this NatGateway.
-        The `OCID`__ of the Public IP associated with the NAT gateway.
+        The `OCID`__ of the public IP address associated with the NAT gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

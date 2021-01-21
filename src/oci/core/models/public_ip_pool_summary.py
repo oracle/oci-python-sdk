@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PublicIpPoolSummary(object):
     """
-    Summary information about a Public IP pool
+    Summary information about a public IP pool.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +79,9 @@ class PublicIpPoolSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this PublicIpPoolSummary.
-        The OCID of the compartment containing the Public IP Pool
+        The `OCID`__ of the compartment containing the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicIpPoolSummary.
@@ -91,7 +93,9 @@ class PublicIpPoolSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PublicIpPoolSummary.
-        The OCID of the compartment containing the Public IP Pool
+        The `OCID`__ of the compartment containing the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicIpPoolSummary.
@@ -197,7 +201,9 @@ class PublicIpPoolSummary(object):
     def id(self):
         """
         Gets the id of this PublicIpPoolSummary.
-        The Oracle ID (OCID) of the Public Ip Pool.
+        The `OCID`__ of the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PublicIpPoolSummary.
@@ -209,7 +215,9 @@ class PublicIpPoolSummary(object):
     def id(self, id):
         """
         Sets the id of this PublicIpPoolSummary.
-        The Oracle ID (OCID) of the Public Ip Pool.
+        The `OCID`__ of the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PublicIpPoolSummary.
@@ -221,7 +229,7 @@ class PublicIpPoolSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this PublicIpPoolSummary.
-        The Public IP Pool's current state.
+        The public IP pool's current state.
 
 
         :return: The lifecycle_state of this PublicIpPoolSummary.
@@ -233,7 +241,7 @@ class PublicIpPoolSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this PublicIpPoolSummary.
-        The Public IP Pool's current state.
+        The public IP pool's current state.
 
 
         :param lifecycle_state: The lifecycle_state of this PublicIpPoolSummary.
@@ -245,7 +253,7 @@ class PublicIpPoolSummary(object):
     def time_created(self):
         """
         Gets the time_created of this PublicIpPoolSummary.
-        The date and time the public IP Pool was created, in the format defined by `RFC3339`__.
+        The date and time the public IP pool was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -261,7 +269,7 @@ class PublicIpPoolSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PublicIpPoolSummary.
-        The date and time the public IP Pool was created, in the format defined by `RFC3339`__.
+        The date and time the public IP pool was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 

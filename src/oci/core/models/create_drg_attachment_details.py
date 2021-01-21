@@ -111,7 +111,6 @@ class CreateDrgAttachmentDetails(object):
         If you don't specify a route table here, the DRG attachment is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the DRG attachment.
-
         For information about why you would associate a route table with a DRG attachment, see:
 
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
@@ -135,7 +134,6 @@ class CreateDrgAttachmentDetails(object):
         If you don't specify a route table here, the DRG attachment is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the DRG attachment.
-
         For information about why you would associate a route table with a DRG attachment, see:
 
           * `Transit Routing: Access to Multiple VCNs in Same Region`__

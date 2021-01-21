@@ -680,8 +680,6 @@ class Instance(object):
     def launch_options(self):
         """
         Gets the launch_options of this Instance.
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-
 
         :return: The launch_options of this Instance.
         :rtype: oci.core.models.LaunchOptions
@@ -692,8 +690,6 @@ class Instance(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this Instance.
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-
 
         :param launch_options: The launch_options of this Instance.
         :type: oci.core.models.LaunchOptions
@@ -724,8 +720,6 @@ class Instance(object):
     def availability_config(self):
         """
         Gets the availability_config of this Instance.
-        Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :return: The availability_config of this Instance.
         :rtype: oci.core.models.InstanceAvailabilityConfig
@@ -736,8 +730,6 @@ class Instance(object):
     def availability_config(self, availability_config):
         """
         Sets the availability_config of this Instance.
-        Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :param availability_config: The availability_config of this Instance.
         :type: oci.core.models.InstanceAvailabilityConfig
@@ -884,8 +876,6 @@ class Instance(object):
     def source_details(self):
         """
         Gets the source_details of this Instance.
-        Details for creating an instance
-
 
         :return: The source_details of this Instance.
         :rtype: oci.core.models.InstanceSourceDetails
@@ -896,8 +886,6 @@ class Instance(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this Instance.
-        Details for creating an instance
-
 
         :param source_details: The source_details of this Instance.
         :type: oci.core.models.InstanceSourceDetails

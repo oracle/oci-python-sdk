@@ -58,8 +58,6 @@ class AttachVnicDetails(object):
     def create_vnic_details(self):
         """
         **[Required]** Gets the create_vnic_details of this AttachVnicDetails.
-        Details for creating a new VNIC.
-
 
         :return: The create_vnic_details of this AttachVnicDetails.
         :rtype: oci.core.models.CreateVnicDetails
@@ -70,8 +68,6 @@ class AttachVnicDetails(object):
     def create_vnic_details(self, create_vnic_details):
         """
         Sets the create_vnic_details of this AttachVnicDetails.
-        Details for creating a new VNIC.
-
 
         :param create_vnic_details: The create_vnic_details of this AttachVnicDetails.
         :type: oci.core.models.CreateVnicDetails

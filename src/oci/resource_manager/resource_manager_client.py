@@ -809,6 +809,9 @@ class ResourceManagerClient(object):
             if a resource has been deleted and purged from the system, then a retry of the original
             creation request may be rejected.
 
+        :param oci.resource_manager.models.DetectStackDriftDetails detect_stack_drift_details: (optional)
+            The details for detecting drift in a stack
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -831,7 +834,8 @@ class ResourceManagerClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "detect_stack_drift_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -869,13 +873,15 @@ class ResourceManagerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                body=kwargs.get('detect_stack_drift_details'))
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                body=kwargs.get('detect_stack_drift_details'))
 
     def get_configuration_source_provider(self, configuration_source_provider_id, **kwargs):
         """
@@ -2119,6 +2125,8 @@ class ResourceManagerClient(object):
         Lists drift status details for each resource defined in the specified stack.
         The drift status details for a given resource indicate differences, if any, between the actual state
         and the expected (defined) state for that resource.
+        The drift status details correspond to the specified work request (`workRequestId`).
+        If no work request is specified, then the drift status details correspond to the latest completed work request for the stack.
 
 
         :param str stack_id: (required)
@@ -2129,6 +2137,11 @@ class ResourceManagerClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param str work_request_id: (optional)
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[StackResourceDriftSummaryResourceDriftStatus] resource_drift_status: (optional)
             A filter that returns only resources that match the given drift status. The value is case-insensitive.
@@ -2171,6 +2184,7 @@ class ResourceManagerClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
+            "work_request_id",
             "resource_drift_status",
             "limit",
             "page"
@@ -2191,6 +2205,7 @@ class ResourceManagerClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
+            "workRequestId": kwargs.get("work_request_id", missing),
             "resourceDriftStatus": self.base_client.generate_collection_format_param(kwargs.get("resource_drift_status", missing), 'multi'),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)

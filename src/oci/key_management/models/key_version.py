@@ -78,6 +78,10 @@ class KeyVersion(object):
             The value to assign to the key_id property of this KeyVersion.
         :type key_id: str
 
+        :param public_key:
+            The value to assign to the public_key property of this KeyVersion.
+        :type public_key: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this KeyVersion.
             Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", 'UNKNOWN_ENUM_VALUE'.
@@ -111,6 +115,7 @@ class KeyVersion(object):
             'compartment_id': 'str',
             'id': 'str',
             'key_id': 'str',
+            'public_key': 'str',
             'lifecycle_state': 'str',
             'origin': 'str',
             'time_created': 'datetime',
@@ -123,6 +128,7 @@ class KeyVersion(object):
             'compartment_id': 'compartmentId',
             'id': 'id',
             'key_id': 'keyId',
+            'public_key': 'publicKey',
             'lifecycle_state': 'lifecycleState',
             'origin': 'origin',
             'time_created': 'timeCreated',
@@ -134,6 +140,7 @@ class KeyVersion(object):
         self._compartment_id = None
         self._id = None
         self._key_id = None
+        self._public_key = None
         self._lifecycle_state = None
         self._origin = None
         self._time_created = None
@@ -212,6 +219,30 @@ class KeyVersion(object):
         :type: str
         """
         self._key_id = key_id
+
+    @property
+    def public_key(self):
+        """
+        Gets the public_key of this KeyVersion.
+        The public key in PEM format which will be populated only in case of RSA and ECDSA keys.
+
+
+        :return: The public_key of this KeyVersion.
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """
+        Sets the public_key of this KeyVersion.
+        The public key in PEM format which will be populated only in case of RSA and ECDSA keys.
+
+
+        :param public_key: The public_key of this KeyVersion.
+        :type: str
+        """
+        self._public_key = public_key
 
     @property
     def lifecycle_state(self):

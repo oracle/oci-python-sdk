@@ -51,8 +51,6 @@ class InstanceConfigurationAttachVnicDetails(object):
     def create_vnic_details(self):
         """
         Gets the create_vnic_details of this InstanceConfigurationAttachVnicDetails.
-        Details for creating a new VNIC.
-
 
         :return: The create_vnic_details of this InstanceConfigurationAttachVnicDetails.
         :rtype: oci.core.models.InstanceConfigurationCreateVnicDetails
@@ -63,8 +61,6 @@ class InstanceConfigurationAttachVnicDetails(object):
     def create_vnic_details(self, create_vnic_details):
         """
         Sets the create_vnic_details of this InstanceConfigurationAttachVnicDetails.
-        Details for creating a new VNIC.
-
 
         :param create_vnic_details: The create_vnic_details of this InstanceConfigurationAttachVnicDetails.
         :type: oci.core.models.InstanceConfigurationCreateVnicDetails

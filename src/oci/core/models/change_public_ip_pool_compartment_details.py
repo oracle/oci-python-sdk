@@ -37,8 +37,7 @@ class ChangePublicIpPoolCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangePublicIpPoolCompartmentDetails.
-        The `OCID`__ of the compartment to move the
-        Public IP Pool to.
+        The `OCID`__ of the destination compartment for the public IP pool move.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -52,8 +51,7 @@ class ChangePublicIpPoolCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangePublicIpPoolCompartmentDetails.
-        The `OCID`__ of the compartment to move the
-        Public IP Pool to.
+        The `OCID`__ of the destination compartment for the public IP pool move.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

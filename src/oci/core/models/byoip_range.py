@@ -10,7 +10,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipRange(object):
     """
-    A ByoipRange, is an IP address prefix that the user owns and wishes to import into OCI.
+    Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses that you currently own to Oracle Cloud Infrastructure. A `ByoipRange` resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
+    The process used to `Bring Your Own IP`__ is explained in the documentation.
+
+    __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm
     """
 
     #: A constant which can be used with the lifecycle_details property of a ByoipRange.
@@ -40,6 +43,14 @@ class ByoipRange(object):
     #: A constant which can be used with the lifecycle_details property of a ByoipRange.
     #: This constant has a value of "DELETED"
     LIFECYCLE_DETAILS_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_details property of a ByoipRange.
+    #: This constant has a value of "ADVERTISING"
+    LIFECYCLE_DETAILS_ADVERTISING = "ADVERTISING"
+
+    #: A constant which can be used with the lifecycle_details property of a ByoipRange.
+    #: This constant has a value of "WITHDRAWING"
+    LIFECYCLE_DETAILS_WITHDRAWING = "WITHDRAWING"
 
     #: A constant which can be used with the lifecycle_state property of a ByoipRange.
     #: This constant has a value of "INACTIVE"
@@ -92,7 +103,7 @@ class ByoipRange(object):
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this ByoipRange.
-            Allowed values for this property are: "CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED", "ADVERTISING", "WITHDRAWING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_details: str
 
@@ -173,7 +184,7 @@ class ByoipRange(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this ByoipRange.
-        The address range the user is on-boarding.
+        The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
 
 
         :return: The cidr_block of this ByoipRange.
@@ -185,7 +196,7 @@ class ByoipRange(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this ByoipRange.
-        The address range the user is on-boarding.
+        The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
 
 
         :param cidr_block: The cidr_block of this ByoipRange.
@@ -197,7 +208,9 @@ class ByoipRange(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ByoipRange.
-        The OCID of the compartment containing the Byoip Range.
+        The `OCID`__ of the compartment containing the BYOIP CIDR block.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByoipRange.
@@ -209,7 +222,9 @@ class ByoipRange(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ByoipRange.
-        The OCID of the compartment containing the Byoip Range.
+        The `OCID`__ of the compartment containing the BYOIP CIDR block.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByoipRange.
@@ -315,7 +330,9 @@ class ByoipRange(object):
     def id(self):
         """
         **[Required]** Gets the id of this ByoipRange.
-        The Oracle ID (OCID) of the Byoip Range.
+        The `OCID`__ of the `ByoipRange` resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ByoipRange.
@@ -327,7 +344,9 @@ class ByoipRange(object):
     def id(self, id):
         """
         Sets the id of this ByoipRange.
-        The Oracle ID (OCID) of the Byoip Range.
+        The `OCID`__ of the `ByoipRange` resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ByoipRange.
@@ -339,9 +358,9 @@ class ByoipRange(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ByoipRange.
-        The Byoip Range's current substate.
+        The `ByoipRange` resource's current status.
 
-        Allowed values for this property are: "CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED", "ADVERTISING", "WITHDRAWING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -354,13 +373,13 @@ class ByoipRange(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ByoipRange.
-        The Byoip Range's current substate.
+        The `ByoipRange` resource's current status.
 
 
         :param lifecycle_details: The lifecycle_details of this ByoipRange.
         :type: str
         """
-        allowed_values = ["CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED", "ADVERTISING", "WITHDRAWING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             lifecycle_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_details = lifecycle_details
@@ -369,7 +388,7 @@ class ByoipRange(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ByoipRange.
-        The Byoip Range's current state.
+        The `ByoipRange` resource's current state.
 
         Allowed values for this property are: "INACTIVE", "UPDATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -384,7 +403,7 @@ class ByoipRange(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ByoipRange.
-        The Byoip Range's current state.
+        The `ByoipRange` resource's current state.
 
 
         :param lifecycle_state: The lifecycle_state of this ByoipRange.
@@ -399,7 +418,7 @@ class ByoipRange(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ByoipRange.
-        The date and time the Byoip Range was created, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -415,7 +434,7 @@ class ByoipRange(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ByoipRange.
-        The date and time the Byoip Range was created, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -431,7 +450,7 @@ class ByoipRange(object):
     def time_validated(self):
         """
         Gets the time_validated of this ByoipRange.
-        The date and time the Byoip Range was validated, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was validated, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -447,7 +466,7 @@ class ByoipRange(object):
     def time_validated(self, time_validated):
         """
         Sets the time_validated of this ByoipRange.
-        The date and time the Byoip Range was validated, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was validated, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -463,7 +482,7 @@ class ByoipRange(object):
     def time_advertised(self):
         """
         Gets the time_advertised of this ByoipRange.
-        The date and time the Byoip Range was advertised, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -479,7 +498,7 @@ class ByoipRange(object):
     def time_advertised(self, time_advertised):
         """
         Sets the time_advertised of this ByoipRange.
-        The date and time the Byoip Range was advertised, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -495,7 +514,7 @@ class ByoipRange(object):
     def time_withdrawn(self):
         """
         Gets the time_withdrawn of this ByoipRange.
-        The date and time the Byoip Range was withdrawn, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -511,7 +530,7 @@ class ByoipRange(object):
     def time_withdrawn(self, time_withdrawn):
         """
         Sets the time_withdrawn of this ByoipRange.
-        The date and time the Byoip Range was withdrawn, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -527,7 +546,9 @@ class ByoipRange(object):
     def validation_token(self):
         """
         **[Required]** Gets the validation_token of this ByoipRange.
-        This is an internally generated ASCII string that the user will then use as part of the validation process. Specifically, they will need to add the token string generated by the service to their Internet Registry record.
+        The validation token is an internally-generated ASCII string used in the validation process. See `Importing a CIDR block`__ for details.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr
 
 
         :return: The validation_token of this ByoipRange.
@@ -539,7 +560,9 @@ class ByoipRange(object):
     def validation_token(self, validation_token):
         """
         Sets the validation_token of this ByoipRange.
-        This is an internally generated ASCII string that the user will then use as part of the validation process. Specifically, they will need to add the token string generated by the service to their Internet Registry record.
+        The validation token is an internally-generated ASCII string used in the validation process. See `Importing a CIDR block`__ for details.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr
 
 
         :param validation_token: The validation_token of this ByoipRange.

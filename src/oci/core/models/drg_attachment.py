@@ -62,13 +62,13 @@ class DrgAttachment(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this DrgAttachment.
-        :type route_table_id: str
-
         :param time_created:
             The value to assign to the time_created property of this DrgAttachment.
         :type time_created: datetime
+
+        :param route_table_id:
+            The value to assign to the route_table_id property of this DrgAttachment.
+        :type route_table_id: str
 
         :param vcn_id:
             The value to assign to the vcn_id property of this DrgAttachment.
@@ -81,8 +81,8 @@ class DrgAttachment(object):
             'drg_id': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
-            'route_table_id': 'str',
             'time_created': 'datetime',
+            'route_table_id': 'str',
             'vcn_id': 'str'
         }
 
@@ -92,8 +92,8 @@ class DrgAttachment(object):
             'drg_id': 'drgId',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
-            'route_table_id': 'routeTableId',
             'time_created': 'timeCreated',
+            'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId'
         }
 
@@ -102,8 +102,8 @@ class DrgAttachment(object):
         self._drg_id = None
         self._id = None
         self._lifecycle_state = None
-        self._route_table_id = None
         self._time_created = None
+        self._route_table_id = None
         self._vcn_id = None
 
     @property
@@ -235,6 +235,38 @@ class DrgAttachment(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def time_created(self):
+        """
+        Gets the time_created of this DrgAttachment.
+        The date and time the DRG attachment was created, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_created of this DrgAttachment.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this DrgAttachment.
+        The date and time the DRG attachment was created, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_created: The time_created of this DrgAttachment.
+        :type: datetime
+        """
+        self._time_created = time_created
+
+    @property
     def route_table_id(self):
         """
         Gets the route_table_id of this DrgAttachment.
@@ -273,38 +305,6 @@ class DrgAttachment(object):
         :type: str
         """
         self._route_table_id = route_table_id
-
-    @property
-    def time_created(self):
-        """
-        Gets the time_created of this DrgAttachment.
-        The date and time the DRG attachment was created, in the format defined by `RFC3339`__.
-
-        Example: `2016-08-25T21:10:29.600Z`
-
-        __ https://tools.ietf.org/html/rfc3339
-
-
-        :return: The time_created of this DrgAttachment.
-        :rtype: datetime
-        """
-        return self._time_created
-
-    @time_created.setter
-    def time_created(self, time_created):
-        """
-        Sets the time_created of this DrgAttachment.
-        The date and time the DRG attachment was created, in the format defined by `RFC3339`__.
-
-        Example: `2016-08-25T21:10:29.600Z`
-
-        __ https://tools.ietf.org/html/rfc3339
-
-
-        :param time_created: The time_created of this DrgAttachment.
-        :type: datetime
-        """
-        self._time_created = time_created
 
     @property
     def vcn_id(self):

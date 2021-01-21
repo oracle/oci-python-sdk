@@ -22,6 +22,10 @@ class CreateVolumeGroupDetails(object):
             The value to assign to the availability_domain property of this CreateVolumeGroupDetails.
         :type availability_domain: str
 
+        :param backup_policy_id:
+            The value to assign to the backup_policy_id property of this CreateVolumeGroupDetails.
+        :type backup_policy_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateVolumeGroupDetails.
         :type compartment_id: str
@@ -45,6 +49,7 @@ class CreateVolumeGroupDetails(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'backup_policy_id': 'str',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -54,6 +59,7 @@ class CreateVolumeGroupDetails(object):
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'backup_policy_id': 'backupPolicyId',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -62,6 +68,7 @@ class CreateVolumeGroupDetails(object):
         }
 
         self._availability_domain = None
+        self._backup_policy_id = None
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
@@ -91,6 +98,32 @@ class CreateVolumeGroupDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def backup_policy_id(self):
+        """
+        Gets the backup_policy_id of this CreateVolumeGroupDetails.
+        If provided, specifies the ID of the volume backup policy to assign to the newly
+        created volume group. If omitted, no policy will be assigned.
+
+
+        :return: The backup_policy_id of this CreateVolumeGroupDetails.
+        :rtype: str
+        """
+        return self._backup_policy_id
+
+    @backup_policy_id.setter
+    def backup_policy_id(self, backup_policy_id):
+        """
+        Sets the backup_policy_id of this CreateVolumeGroupDetails.
+        If provided, specifies the ID of the volume backup policy to assign to the newly
+        created volume group. If omitted, no policy will be assigned.
+
+
+        :param backup_policy_id: The backup_policy_id of this CreateVolumeGroupDetails.
+        :type: str
+        """
+        self._backup_policy_id = backup_policy_id
 
     @property
     def compartment_id(self):
@@ -212,9 +245,6 @@ class CreateVolumeGroupDetails(object):
     def source_details(self):
         """
         **[Required]** Gets the source_details of this CreateVolumeGroupDetails.
-        Specifies the volume group source details for a new volume group. The volume source is either another a list of
-        volume ids in the same availability domain, another volume group or a volume group backup.
-
 
         :return: The source_details of this CreateVolumeGroupDetails.
         :rtype: oci.core.models.VolumeGroupSourceDetails
@@ -225,9 +255,6 @@ class CreateVolumeGroupDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this CreateVolumeGroupDetails.
-        Specifies the volume group source details for a new volume group. The volume source is either another a list of
-        volume ids in the same availability domain, another volume group or a volume group backup.
-
 
         :param source_details: The source_details of this CreateVolumeGroupDetails.
         :type: oci.core.models.VolumeGroupSourceDetails

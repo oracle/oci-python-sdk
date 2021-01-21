@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TcpOptions(object):
     """
-    Optional object to specify ports for a TCP rule. If you specify TCP as the
-    protocol but omit this object, then all ports are allowed.
+    Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.
+    If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
     """
 
     def __init__(self, **kwargs):
@@ -45,9 +45,6 @@ class TcpOptions(object):
     def destination_port_range(self):
         """
         Gets the destination_port_range of this TcpOptions.
-        An inclusive range of allowed destination ports. Use the same number for the min and max
-        to indicate a single port. Defaults to all ports if not specified.
-
 
         :return: The destination_port_range of this TcpOptions.
         :rtype: oci.core.models.PortRange
@@ -58,9 +55,6 @@ class TcpOptions(object):
     def destination_port_range(self, destination_port_range):
         """
         Sets the destination_port_range of this TcpOptions.
-        An inclusive range of allowed destination ports. Use the same number for the min and max
-        to indicate a single port. Defaults to all ports if not specified.
-
 
         :param destination_port_range: The destination_port_range of this TcpOptions.
         :type: oci.core.models.PortRange
@@ -71,9 +65,6 @@ class TcpOptions(object):
     def source_port_range(self):
         """
         Gets the source_port_range of this TcpOptions.
-        An inclusive range of allowed source ports. Use the same number for the min and max to
-        indicate a single port. Defaults to all ports if not specified.
-
 
         :return: The source_port_range of this TcpOptions.
         :rtype: oci.core.models.PortRange
@@ -84,9 +75,6 @@ class TcpOptions(object):
     def source_port_range(self, source_port_range):
         """
         Sets the source_port_range of this TcpOptions.
-        An inclusive range of allowed source ports. Use the same number for the min and max to
-        indicate a single port. Defaults to all ports if not specified.
-
 
         :param source_port_range: The source_port_range of this TcpOptions.
         :type: oci.core.models.PortRange

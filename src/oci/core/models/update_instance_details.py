@@ -212,8 +212,6 @@ class UpdateInstanceDetails(object):
     def agent_config(self):
         """
         Gets the agent_config of this UpdateInstanceDetails.
-        Instance agent configuration options to choose for updating the instance
-
 
         :return: The agent_config of this UpdateInstanceDetails.
         :rtype: oci.core.models.UpdateInstanceAgentConfigDetails
@@ -224,8 +222,6 @@ class UpdateInstanceDetails(object):
     def agent_config(self, agent_config):
         """
         Sets the agent_config of this UpdateInstanceDetails.
-        Instance agent configuration options to choose for updating the instance
-
 
         :param agent_config: The agent_config of this UpdateInstanceDetails.
         :type: oci.core.models.UpdateInstanceAgentConfigDetails
@@ -470,8 +466,6 @@ class UpdateInstanceDetails(object):
     def launch_options(self):
         """
         Gets the launch_options of this UpdateInstanceDetails.
-        Options for tuning the compatibility and performance of VM shapes.
-
 
         :return: The launch_options of this UpdateInstanceDetails.
         :rtype: oci.core.models.UpdateLaunchOptions
@@ -482,8 +476,6 @@ class UpdateInstanceDetails(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this UpdateInstanceDetails.
-        Options for tuning the compatibility and performance of VM shapes.
-
 
         :param launch_options: The launch_options of this UpdateInstanceDetails.
         :type: oci.core.models.UpdateLaunchOptions
@@ -494,8 +486,6 @@ class UpdateInstanceDetails(object):
     def availability_config(self):
         """
         Gets the availability_config of this UpdateInstanceDetails.
-        Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :return: The availability_config of this UpdateInstanceDetails.
         :rtype: oci.core.models.UpdateInstanceAvailabilityConfigDetails
@@ -506,8 +496,6 @@ class UpdateInstanceDetails(object):
     def availability_config(self, availability_config):
         """
         Sets the availability_config of this UpdateInstanceDetails.
-        Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :param availability_config: The availability_config of this UpdateInstanceDetails.
         :type: oci.core.models.UpdateInstanceAvailabilityConfigDetails

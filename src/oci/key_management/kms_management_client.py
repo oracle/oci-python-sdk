@@ -1491,12 +1491,17 @@ class KmsManagementClient(object):
             Allowed values are: "HSM", "SOFTWARE"
 
         :param str algorithm: (optional)
-            The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.
+            The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES, RSA and ECDSA are supported.
 
-            Allowed values are: "AES"
+            Allowed values are: "AES", "RSA", "ECDSA"
 
         :param int length: (optional)
-            The length of the key in bytes, expressed as an integer. Values of 16, 24, or 32 are supported.
+            The length of the key in bytes, expressed as an integer. Values of 16, 24, 32 are supported.
+
+        :param str curve_id: (optional)
+            The curve Id of the keys in case of ECDSA keys
+
+            Allowed values are: "NIST_P256", "NIST_P384", "NIST_P521"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1525,7 +1530,8 @@ class KmsManagementClient(object):
             "sort_order",
             "protection_mode",
             "algorithm",
-            "length"
+            "length",
+            "curve_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1554,10 +1560,17 @@ class KmsManagementClient(object):
                 )
 
         if 'algorithm' in kwargs:
-            algorithm_allowed_values = ["AES"]
+            algorithm_allowed_values = ["AES", "RSA", "ECDSA"]
             if kwargs['algorithm'] not in algorithm_allowed_values:
                 raise ValueError(
                     "Invalid value for `algorithm`, must be one of {0}".format(algorithm_allowed_values)
+                )
+
+        if 'curve_id' in kwargs:
+            curve_id_allowed_values = ["NIST_P256", "NIST_P384", "NIST_P521"]
+            if kwargs['curve_id'] not in curve_id_allowed_values:
+                raise ValueError(
+                    "Invalid value for `curve_id`, must be one of {0}".format(curve_id_allowed_values)
                 )
 
         query_params = {
@@ -1568,7 +1581,8 @@ class KmsManagementClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "protectionMode": kwargs.get("protection_mode", missing),
             "algorithm": kwargs.get("algorithm", missing),
-            "length": kwargs.get("length", missing)
+            "length": kwargs.get("length", missing),
+            "curveId": kwargs.get("curve_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

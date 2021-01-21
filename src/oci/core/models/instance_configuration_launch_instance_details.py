@@ -260,9 +260,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def create_vnic_details(self):
         """
         Gets the create_vnic_details of this InstanceConfigurationLaunchInstanceDetails.
-        Details for the primary VNIC, which is automatically created and attached when
-        the instance is launched.
-
 
         :return: The create_vnic_details of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: oci.core.models.InstanceConfigurationCreateVnicDetails
@@ -273,9 +270,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def create_vnic_details(self, create_vnic_details):
         """
         Sets the create_vnic_details of this InstanceConfigurationLaunchInstanceDetails.
-        Details for the primary VNIC, which is automatically created and attached when
-        the instance is launched.
-
 
         :param create_vnic_details: The create_vnic_details of this InstanceConfigurationLaunchInstanceDetails.
         :type: oci.core.models.InstanceConfigurationCreateVnicDetails
@@ -670,9 +664,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def source_details(self):
         """
         Gets the source_details of this InstanceConfigurationLaunchInstanceDetails.
-        Details for creating an instance.
-        Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
 
         :return: The source_details of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: oci.core.models.InstanceConfigurationInstanceSourceDetails
@@ -683,9 +674,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this InstanceConfigurationLaunchInstanceDetails.
-        Details for creating an instance.
-        Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
 
         :param source_details: The source_details of this InstanceConfigurationLaunchInstanceDetails.
         :type: oci.core.models.InstanceConfigurationInstanceSourceDetails
@@ -814,8 +802,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def launch_options(self):
         """
         Gets the launch_options of this InstanceConfigurationLaunchInstanceDetails.
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-
 
         :return: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: oci.core.models.InstanceConfigurationLaunchOptions
@@ -826,8 +812,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this InstanceConfigurationLaunchInstanceDetails.
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-
 
         :param launch_options: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
         :type: oci.core.models.InstanceConfigurationLaunchOptions
@@ -936,8 +920,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def availability_config(self):
         """
         Gets the availability_config of this InstanceConfigurationLaunchInstanceDetails.
-        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :return: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: oci.core.models.InstanceConfigurationAvailabilityConfig
@@ -948,8 +930,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def availability_config(self, availability_config):
         """
         Sets the availability_config of this InstanceConfigurationLaunchInstanceDetails.
-        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :param availability_config: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
         :type: oci.core.models.InstanceConfigurationAvailabilityConfig

@@ -52,6 +52,14 @@ class VolumeGroupBackup(object):
     #: This constant has a value of "REQUEST_RECEIVED"
     LIFECYCLE_STATE_REQUEST_RECEIVED = "REQUEST_RECEIVED"
 
+    #: A constant which can be used with the source_type property of a VolumeGroupBackup.
+    #: This constant has a value of "MANUAL"
+    SOURCE_TYPE_MANUAL = "MANUAL"
+
+    #: A constant which can be used with the source_type property of a VolumeGroupBackup.
+    #: This constant has a value of "SCHEDULED"
+    SOURCE_TYPE_SCHEDULED = "SCHEDULED"
+
     #: A constant which can be used with the type property of a VolumeGroupBackup.
     #: This constant has a value of "FULL"
     TYPE_FULL = "FULL"
@@ -77,6 +85,10 @@ class VolumeGroupBackup(object):
             The value to assign to the display_name property of this VolumeGroupBackup.
         :type display_name: str
 
+        :param expiration_time:
+            The value to assign to the expiration_time property of this VolumeGroupBackup.
+        :type expiration_time: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VolumeGroupBackup.
         :type freeform_tags: dict(str, str)
@@ -98,6 +110,12 @@ class VolumeGroupBackup(object):
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this VolumeGroupBackup.
         :type size_in_gbs: int
+
+        :param source_type:
+            The value to assign to the source_type property of this VolumeGroupBackup.
+            Allowed values for this property are: "MANUAL", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source_type: str
 
         :param time_created:
             The value to assign to the time_created property of this VolumeGroupBackup.
@@ -129,51 +147,63 @@ class VolumeGroupBackup(object):
             The value to assign to the volume_group_id property of this VolumeGroupBackup.
         :type volume_group_id: str
 
+        :param source_volume_group_backup_id:
+            The value to assign to the source_volume_group_backup_id property of this VolumeGroupBackup.
+        :type source_volume_group_backup_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'expiration_time': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'size_in_mbs': 'int',
             'size_in_gbs': 'int',
+            'source_type': 'str',
             'time_created': 'datetime',
             'time_request_received': 'datetime',
             'type': 'str',
             'unique_size_in_mbs': 'int',
             'unique_size_in_gbs': 'int',
             'volume_backup_ids': 'list[str]',
-            'volume_group_id': 'str'
+            'volume_group_id': 'str',
+            'source_volume_group_backup_id': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'expiration_time': 'expirationTime',
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'size_in_mbs': 'sizeInMBs',
             'size_in_gbs': 'sizeInGBs',
+            'source_type': 'sourceType',
             'time_created': 'timeCreated',
             'time_request_received': 'timeRequestReceived',
             'type': 'type',
             'unique_size_in_mbs': 'uniqueSizeInMbs',
             'unique_size_in_gbs': 'uniqueSizeInGbs',
             'volume_backup_ids': 'volumeBackupIds',
-            'volume_group_id': 'volumeGroupId'
+            'volume_group_id': 'volumeGroupId',
+            'source_volume_group_backup_id': 'sourceVolumeGroupBackupId'
         }
 
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
+        self._expiration_time = None
         self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._size_in_mbs = None
         self._size_in_gbs = None
+        self._source_type = None
         self._time_created = None
         self._time_request_received = None
         self._type = None
@@ -181,6 +211,7 @@ class VolumeGroupBackup(object):
         self._unique_size_in_gbs = None
         self._volume_backup_ids = None
         self._volume_group_id = None
+        self._source_volume_group_backup_id = None
 
     @property
     def compartment_id(self):
@@ -263,6 +294,42 @@ class VolumeGroupBackup(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def expiration_time(self):
+        """
+        Gets the expiration_time of this VolumeGroupBackup.
+        The date and time the volume group backup will expire and be automatically deleted.
+        Format defined by `RFC3339`__. This parameter will always be present for volume group
+        backups that were created automatically by a scheduled-backup policy. For manually
+        created volume group backups, it will be absent, signifying that there is no expiration
+        time and the backup will last forever until manually deleted.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The expiration_time of this VolumeGroupBackup.
+        :rtype: datetime
+        """
+        return self._expiration_time
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """
+        Sets the expiration_time of this VolumeGroupBackup.
+        The date and time the volume group backup will expire and be automatically deleted.
+        Format defined by `RFC3339`__. This parameter will always be present for volume group
+        backups that were created automatically by a scheduled-backup policy. For manually
+        created volume group backups, it will be absent, signifying that there is no expiration
+        time and the backup will last forever until manually deleted.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param expiration_time: The expiration_time of this VolumeGroupBackup.
+        :type: datetime
+        """
+        self._expiration_time = expiration_time
 
     @property
     def freeform_tags(self):
@@ -399,6 +466,36 @@ class VolumeGroupBackup(object):
         :type: int
         """
         self._size_in_gbs = size_in_gbs
+
+    @property
+    def source_type(self):
+        """
+        Gets the source_type of this VolumeGroupBackup.
+        Specifies whether the volume group backup was created manually, or via scheduled backup policy.
+
+        Allowed values for this property are: "MANUAL", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source_type of this VolumeGroupBackup.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type):
+        """
+        Sets the source_type of this VolumeGroupBackup.
+        Specifies whether the volume group backup was created manually, or via scheduled backup policy.
+
+
+        :param source_type: The source_type of this VolumeGroupBackup.
+        :type: str
+        """
+        allowed_values = ["MANUAL", "SCHEDULED"]
+        if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
+            source_type = 'UNKNOWN_ENUM_VALUE'
+        self._source_type = source_type
 
     @property
     def time_created(self):
@@ -591,6 +688,30 @@ class VolumeGroupBackup(object):
         :type: str
         """
         self._volume_group_id = volume_group_id
+
+    @property
+    def source_volume_group_backup_id(self):
+        """
+        Gets the source_volume_group_backup_id of this VolumeGroupBackup.
+        The OCID of the source volume group backup.
+
+
+        :return: The source_volume_group_backup_id of this VolumeGroupBackup.
+        :rtype: str
+        """
+        return self._source_volume_group_backup_id
+
+    @source_volume_group_backup_id.setter
+    def source_volume_group_backup_id(self, source_volume_group_backup_id):
+        """
+        Sets the source_volume_group_backup_id of this VolumeGroupBackup.
+        The OCID of the source volume group backup.
+
+
+        :param source_volume_group_backup_id: The source_volume_group_backup_id of this VolumeGroupBackup.
+        :type: str
+        """
+        self._source_volume_group_backup_id = source_volume_group_backup_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
