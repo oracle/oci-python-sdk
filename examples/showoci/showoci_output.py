@@ -530,7 +530,7 @@ class ShowOCIOutput(object):
 
                 if 'sgw' in vcn['data']:
                     for sgwloop in vcn['data']['sgw']:
-                        print(self.tabs + "Service GW  : " + sgwloop['name'] + " - " + sgwloop['services'] + self.__print_core_network_vcn_compartment(vcn_compartment, sgwloop['compartment_name']))
+                        print(self.tabs + "Service GW  : " + sgwloop['name'] + sgwloop['transit'] + " - " + sgwloop['services'] + self.__print_core_network_vcn_compartment(vcn_compartment, sgwloop['compartment_name']))
 
                 if 'nat' in vcn['data']:
                     for natloop in vcn['data']['nat']:
@@ -578,7 +578,16 @@ class ShowOCIOutput(object):
 
             self.print_header("DRGs", 2)
             for drg in drgs:
-                print(self.taba + "DRG    " + drg['name'] + ", Redundant: " + drg['redundancy'])
+                print(self.taba + "DRG   Name   : " + drg['name'] + ", Redundant: " + drg['redundancy'])
+                if drg['ip_sec_connections']:
+                    print(self.tabs + "      IPSECs : " + str(', '.join(x['name'] + " (" + x['tunnels_status'] + ")" for x in drg['ip_sec_connections'])))
+                if drg['virtual_circuits']:
+                    print(self.tabs + "      VCs    : " + str(', '.join(x['name'] + " (" + x['bgp_session_state'] + ")" for x in drg['virtual_circuits'])))
+                if drg['remote_peerings']:
+                    print(self.tabs + "      RPCs   : " + str(', '.join(x['name'] + " (" + x['peering_status'] + ")" for x in drg['remote_peerings'])))
+                if drg['vcns']:
+                    print(self.tabs + "      VCNs   : " + str(', '.join(x['name'] for x in drg['vcns'])))
+                print("")
 
         except Exception as e:
             self.__print_error("__print_core_network_vcn", e)
@@ -594,7 +603,7 @@ class ShowOCIOutput(object):
 
             self.print_header("Remote Peering", 2)
             for rpc in rpcs:
-                print(self.tabs + "RPC   Name   : " + rpc['name'])
+                print(self.taba + "RPC   Name   : " + rpc['name'])
                 print(self.tabs + "      DRG    : " + rpc['drg'])
 
                 # if peer has name if not id
