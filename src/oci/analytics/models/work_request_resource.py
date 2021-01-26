@@ -42,6 +42,30 @@ class WorkRequestResource(object):
     ACTION_RESULT_NETWORK_ENDPOINT_CHANGED = "NETWORK_ENDPOINT_CHANGED"
 
     #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "VANITY_URL_CREATED"
+    ACTION_RESULT_VANITY_URL_CREATED = "VANITY_URL_CREATED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "VANITY_URL_UPDATED"
+    ACTION_RESULT_VANITY_URL_UPDATED = "VANITY_URL_UPDATED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "VANITY_URL_DELETED"
+    ACTION_RESULT_VANITY_URL_DELETED = "VANITY_URL_DELETED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "PRIVATE_ACCESS_CHANNEL_CREATED"
+    ACTION_RESULT_PRIVATE_ACCESS_CHANNEL_CREATED = "PRIVATE_ACCESS_CHANNEL_CREATED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "PRIVATE_ACCESS_CHANNEL_UPDATED"
+    ACTION_RESULT_PRIVATE_ACCESS_CHANNEL_UPDATED = "PRIVATE_ACCESS_CHANNEL_UPDATED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "PRIVATE_ACCESS_CHANNEL_DELETED"
+    ACTION_RESULT_PRIVATE_ACCESS_CHANNEL_DELETED = "PRIVATE_ACCESS_CHANNEL_DELETED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
     #: This constant has a value of "NONE"
     ACTION_RESULT_NONE = "NONE"
 
@@ -56,7 +80,7 @@ class WorkRequestResource(object):
 
         :param action_result:
             The value to assign to the action_result property of this WorkRequestResource.
-            Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "VANITY_URL_CREATED", "VANITY_URL_UPDATED", "VANITY_URL_DELETED", "PRIVATE_ACCESS_CHANNEL_CREATED", "PRIVATE_ACCESS_CHANNEL_UPDATED", "PRIVATE_ACCESS_CHANNEL_DELETED", "NONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_result: str
 
@@ -107,7 +131,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the action_result of this WorkRequestResource.
         The way in which this resource was affected by this work request.
 
-        Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "VANITY_URL_CREATED", "VANITY_URL_UPDATED", "VANITY_URL_DELETED", "PRIVATE_ACCESS_CHANNEL_CREATED", "PRIVATE_ACCESS_CHANNEL_UPDATED", "PRIVATE_ACCESS_CHANNEL_DELETED", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -126,7 +150,7 @@ class WorkRequestResource(object):
         :param action_result: The action_result of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "NONE"]
+        allowed_values = ["COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "VANITY_URL_CREATED", "VANITY_URL_UPDATED", "VANITY_URL_DELETED", "PRIVATE_ACCESS_CHANNEL_CREATED", "PRIVATE_ACCESS_CHANNEL_UPDATED", "PRIVATE_ACCESS_CHANNEL_DELETED", "NONE"]
         if not value_allowed_none_or_none_sentinel(action_result, allowed_values):
             action_result = 'UNKNOWN_ENUM_VALUE'
         self._action_result = action_result

@@ -108,6 +108,14 @@ class AnalyticsInstance(object):
             The value to assign to the network_endpoint_details property of this AnalyticsInstance.
         :type network_endpoint_details: oci.analytics.models.NetworkEndpointDetails
 
+        :param private_access_channels:
+            The value to assign to the private_access_channels property of this AnalyticsInstance.
+        :type private_access_channels: dict(str, PrivateAccessChannel)
+
+        :param vanity_url_details:
+            The value to assign to the vanity_url_details property of this AnalyticsInstance.
+        :type vanity_url_details: dict(str, VanityUrlDetails)
+
         :param service_url:
             The value to assign to the service_url property of this AnalyticsInstance.
         :type service_url: str
@@ -140,6 +148,8 @@ class AnalyticsInstance(object):
             'license_type': 'str',
             'email_notification': 'str',
             'network_endpoint_details': 'NetworkEndpointDetails',
+            'private_access_channels': 'dict(str, PrivateAccessChannel)',
+            'vanity_url_details': 'dict(str, VanityUrlDetails)',
             'service_url': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
@@ -158,6 +168,8 @@ class AnalyticsInstance(object):
             'license_type': 'licenseType',
             'email_notification': 'emailNotification',
             'network_endpoint_details': 'networkEndpointDetails',
+            'private_access_channels': 'privateAccessChannels',
+            'vanity_url_details': 'vanityUrlDetails',
             'service_url': 'serviceUrl',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
@@ -175,6 +187,8 @@ class AnalyticsInstance(object):
         self._license_type = None
         self._email_notification = None
         self._network_endpoint_details = None
+        self._private_access_channels = None
+        self._vanity_url_details = None
         self._service_url = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -430,6 +444,54 @@ class AnalyticsInstance(object):
         :type: oci.analytics.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
+
+    @property
+    def private_access_channels(self):
+        """
+        Gets the private_access_channels of this AnalyticsInstance.
+        Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
+
+
+        :return: The private_access_channels of this AnalyticsInstance.
+        :rtype: dict(str, PrivateAccessChannel)
+        """
+        return self._private_access_channels
+
+    @private_access_channels.setter
+    def private_access_channels(self, private_access_channels):
+        """
+        Sets the private_access_channels of this AnalyticsInstance.
+        Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
+
+
+        :param private_access_channels: The private_access_channels of this AnalyticsInstance.
+        :type: dict(str, PrivateAccessChannel)
+        """
+        self._private_access_channels = private_access_channels
+
+    @property
+    def vanity_url_details(self):
+        """
+        Gets the vanity_url_details of this AnalyticsInstance.
+        Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
+
+
+        :return: The vanity_url_details of this AnalyticsInstance.
+        :rtype: dict(str, VanityUrlDetails)
+        """
+        return self._vanity_url_details
+
+    @vanity_url_details.setter
+    def vanity_url_details(self, vanity_url_details):
+        """
+        Sets the vanity_url_details of this AnalyticsInstance.
+        Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
+
+
+        :param vanity_url_details: The vanity_url_details of this AnalyticsInstance.
+        :type: dict(str, VanityUrlDetails)
+        """
+        self._vanity_url_details = vanity_url_details
 
     @property
     def service_url(self):

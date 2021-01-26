@@ -33,11 +33,15 @@ from .restore_vault_from_object_store_details import RestoreVaultFromObjectStore
 from .schedule_key_deletion_details import ScheduleKeyDeletionDetails
 from .schedule_key_version_deletion_details import ScheduleKeyVersionDeletionDetails
 from .schedule_vault_deletion_details import ScheduleVaultDeletionDetails
+from .sign_data_details import SignDataDetails
+from .signed_data import SignedData
 from .update_key_details import UpdateKeyDetails
 from .update_vault_details import UpdateVaultDetails
 from .vault import Vault
 from .vault_summary import VaultSummary
 from .vault_usage import VaultUsage
+from .verified_data import VerifiedData
+from .verify_data_details import VerifyDataDetails
 from .wrapped_import_key import WrappedImportKey
 from .wrapping_key import WrappingKey
 
@@ -72,11 +76,15 @@ key_management_type_mapping = {
     "ScheduleKeyDeletionDetails": ScheduleKeyDeletionDetails,
     "ScheduleKeyVersionDeletionDetails": ScheduleKeyVersionDeletionDetails,
     "ScheduleVaultDeletionDetails": ScheduleVaultDeletionDetails,
+    "SignDataDetails": SignDataDetails,
+    "SignedData": SignedData,
     "UpdateKeyDetails": UpdateKeyDetails,
     "UpdateVaultDetails": UpdateVaultDetails,
     "Vault": Vault,
     "VaultSummary": VaultSummary,
     "VaultUsage": VaultUsage,
+    "VerifiedData": VerifiedData,
+    "VerifyDataDetails": VerifyDataDetails,
     "WrappedImportKey": WrappedImportKey,
     "WrappingKey": WrappingKey
 }

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemovePublicIpPoolCapacityDetails(object):
     """
-    The data to remove capacity from a public ip pool
+    The information needed to remove capacity from a public IP pool.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RemovePublicIpPoolCapacityDetails(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this RemovePublicIpPoolCapacityDetails.
-        The CIDR IP address range to be removed from the Public Ip Pool
+        The CIDR block to remove from the  public IP pool.
         Example: `10.0.1.0/24`
 
 
@@ -50,7 +50,7 @@ class RemovePublicIpPoolCapacityDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this RemovePublicIpPoolCapacityDetails.
-        The CIDR IP address range to be removed from the Public Ip Pool
+        The CIDR block to remove from the  public IP pool.
         Example: `10.0.1.0/24`
 
 

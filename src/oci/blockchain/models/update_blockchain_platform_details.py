@@ -34,6 +34,10 @@ class UpdateBlockchainPlatformDetails(object):
             The value to assign to the total_ocpu_capacity property of this UpdateBlockchainPlatformDetails.
         :type total_ocpu_capacity: int
 
+        :param load_balancer_shape:
+            The value to assign to the load_balancer_shape property of this UpdateBlockchainPlatformDetails.
+        :type load_balancer_shape: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateBlockchainPlatformDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class UpdateBlockchainPlatformDetails(object):
             'storage_size_in_tbs': 'float',
             'replicas': 'ReplicaDetails',
             'total_ocpu_capacity': 'int',
+            'load_balancer_shape': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class UpdateBlockchainPlatformDetails(object):
             'storage_size_in_tbs': 'storageSizeInTBs',
             'replicas': 'replicas',
             'total_ocpu_capacity': 'totalOcpuCapacity',
+            'load_balancer_shape': 'loadBalancerShape',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class UpdateBlockchainPlatformDetails(object):
         self._storage_size_in_tbs = None
         self._replicas = None
         self._total_ocpu_capacity = None
+        self._load_balancer_shape = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -159,6 +166,30 @@ class UpdateBlockchainPlatformDetails(object):
         :type: int
         """
         self._total_ocpu_capacity = total_ocpu_capacity
+
+    @property
+    def load_balancer_shape(self):
+        """
+        Gets the load_balancer_shape of this UpdateBlockchainPlatformDetails.
+        Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+
+
+        :return: The load_balancer_shape of this UpdateBlockchainPlatformDetails.
+        :rtype: str
+        """
+        return self._load_balancer_shape
+
+    @load_balancer_shape.setter
+    def load_balancer_shape(self, load_balancer_shape):
+        """
+        Sets the load_balancer_shape of this UpdateBlockchainPlatformDetails.
+        Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+
+
+        :param load_balancer_shape: The load_balancer_shape of this UpdateBlockchainPlatformDetails.
+        :type: str
+        """
+        self._load_balancer_shape = load_balancer_shape
 
     @property
     def freeform_tags(self):

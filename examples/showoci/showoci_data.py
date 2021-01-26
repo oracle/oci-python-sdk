@@ -424,10 +424,24 @@ class ShowOCIData(object):
 
             list_service_gateways = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_SGW, 'vcn_id', vcn_id)
             for arr in list_service_gateways:
-                value = {'id': arr['id'], 'name': arr['name'], 'services': arr['services'],
+                value = {'id': arr['id'],
+                         'name': arr['name'],
+                         'services': arr['services'],
                          'compartment_name': arr['compartment_name'],
                          'compartment_id': arr['compartment_id'],
-                         'time_created': arr['time_created'], 'defined_tags': arr['defined_tags'], 'freeform_tags': arr['freeform_tags']}
+                         'route_table_id': arr['route_table_id'],
+                         'route_table': "",
+                         'transit': "",
+                         'time_created': arr['time_created'],
+                         'defined_tags': arr['defined_tags'],
+                         'freeform_tags': arr['freeform_tags']}
+
+                # check route table
+                if value['route_table_id'] != "None":
+                    route_table = self.__get_core_network_route(value['route_table_id'])
+                    value['route_table'] = route_table
+                    value['transit'] = " + Transit Route(" + route_table + ")"
+
                 data.append(value)
             return data
 
@@ -442,6 +456,7 @@ class ShowOCIData(object):
     def __get_core_network_vcn_drg_details(self, drg_attachment):
         retStr = ""
         name = ""
+        route_table = ""
         try:
             drg_id = drg_attachment['drg_id']
 
@@ -456,16 +471,22 @@ class ShowOCIData(object):
             if len(list_ip_sec_connections) > 0:
                 retStr += " + IPSEC (" + str(len(list_ip_sec_connections)) + ")"
 
+            # check if Virtual Circuits
+            list_virtual_circuits = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_VC, 'drg_id', drg_id)
+            if len(list_virtual_circuits) > 0:
+                retStr += " + Fastconnect (" + str(len(list_virtual_circuits)) + ")"
+
             # Check Remote Peering
             rpcs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'drg_id', drg_id)
             if len(rpcs) > 0:
                 retStr += " + Remote Peering (" + str(len(rpcs)) + ")"
 
             # check transit routing
-            if drg_attachment['route_table_id'] != "None":
-                retStr += " + Transit Route(" + str(self.__get_core_network_route(drg_attachment['route_table_id']) + ")")
+            if drg_attachment['route_table_id'] != "None" and drg_attachment['route_table_id'] != "":
+                route_table = str(self.__get_core_network_route(drg_attachment['route_table_id']))
+                retStr += " + Transit Route(" + route_table + ")"
 
-            return retStr, name
+            return retStr, name, route_table
 
         except Exception as e:
             self.__print_error("__get_core_network_vcn_drg_details", e)
@@ -481,10 +502,11 @@ class ShowOCIData(object):
 
             list_drg_attachments = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'vcn_id', vcn_id)
             for da in list_drg_attachments:
-                val, display_name = self.__get_core_network_vcn_drg_details(da)
+                val, display_name, route_table = self.__get_core_network_vcn_drg_details(da)
                 value = {'id': da['id'],
                          'drg_id': da['drg_id'],
                          'route_table_id': da['route_table_id'],
+                         'route_table': route_table,
                          'display_name': display_name,
                          'name': val,
                          'compartment_name': da['compartment_name'],
@@ -506,8 +528,10 @@ class ShowOCIData(object):
             local_peering_gateways = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_LPG, 'vcn_id', vcn_id)
             for lpg in local_peering_gateways:
                 routestr = ""
+                route_table = ""
                 if lpg['route_table_id'] != "None":
-                    routestr = " + Transit Route(" + str(self.__get_core_network_route(lpg['route_table_id'])) + ")"
+                    route_table = str(self.__get_core_network_route(lpg['route_table_id']))
+                    routestr = " + Transit Route(" + route_table + ")"
 
                 value = {'id': lpg['id'],
                          'name': (lpg['name'] + routestr),
@@ -516,7 +540,8 @@ class ShowOCIData(object):
                          'compartment_name': lpg['compartment_name'],
                          'time_created': lpg['time_created'],
                          'route_table_id': lpg['route_table_id'],
-                         'route_table_name': routestr,
+                         'route_table_name': route_table,
+                         'route_table': routestr,
                          'vcn_id': lpg['vcn_id'],
                          'peering_status': lpg['peering_status'],
                          'peer_advertised_cidr': lpg['peer_advertised_cidr'],
@@ -931,7 +956,29 @@ class ShowOCIData(object):
         data = []
         try:
             drgs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG, 'region_name', region_name, 'compartment_id', compartment['id'])
-            return drgs
+            for drg in drgs:
+                drg_id = drg['id']
+                val = {'id': drg['id'],
+                       'name': drg['name'],
+                       'time_created': drg['time_created'],
+                       'redundancy': drg['redundancy'],
+                       'compartment_name': drg['compartment_name'],
+                       'compartment_id': drg['compartment_id'],
+                       'defined_tags': drg['defined_tags'],
+                       'freeform_tags': drg['freeform_tags'],
+                       'region_name': drg['region_name'],
+                       'ip_sec_connections': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_IPS, 'drg_id', drg_id),
+                       'virtual_circuits': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_VC, 'drg_id', drg_id),
+                       'remote_peerings': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'drg_id', drg_id),
+                       'vcns': []
+                       }
+
+                # Add VCNs
+                drg_attachments = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'drg_id', drg_id)
+                for da in drg_attachments:
+                    val['vcns'].append(self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_VCN, 'id', da['vcn_id']))
+                data.append(val)
+            return data
 
         except Exception as e:
             self.__print_error("__get_core_network_drg", e)

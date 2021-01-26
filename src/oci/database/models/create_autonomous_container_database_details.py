@@ -84,6 +84,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the peer_autonomous_container_database_backup_config property of this CreateAutonomousContainerDatabaseDetails.
         :type peer_autonomous_container_database_backup_config: oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
 
+        :param peer_db_unique_name:
+            The value to assign to the peer_db_unique_name property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_db_unique_name: str
+
         :param autonomous_vm_cluster_id:
             The value to assign to the autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
         :type autonomous_vm_cluster_id: str
@@ -145,6 +149,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_vm_cluster_id': 'str',
             'peer_autonomous_container_database_compartment_id': 'str',
             'peer_autonomous_container_database_backup_config': 'PeerAutonomousContainerDatabaseBackupConfig',
+            'peer_db_unique_name': 'str',
             'autonomous_vm_cluster_id': 'str',
             'compartment_id': 'str',
             'patch_model': 'str',
@@ -170,6 +175,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_vm_cluster_id': 'peerAutonomousVmClusterId',
             'peer_autonomous_container_database_compartment_id': 'peerAutonomousContainerDatabaseCompartmentId',
             'peer_autonomous_container_database_backup_config': 'peerAutonomousContainerDatabaseBackupConfig',
+            'peer_db_unique_name': 'peerDbUniqueName',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'compartment_id': 'compartmentId',
             'patch_model': 'patchModel',
@@ -194,6 +200,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._peer_autonomous_vm_cluster_id = None
         self._peer_autonomous_container_database_compartment_id = None
         self._peer_autonomous_container_database_backup_config = None
+        self._peer_db_unique_name = None
         self._autonomous_vm_cluster_id = None
         self._compartment_id = None
         self._patch_model = None
@@ -476,6 +483,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
         """
         self._peer_autonomous_container_database_backup_config = peer_autonomous_container_database_backup_config
+
+    @property
+    def peer_db_unique_name(self):
+        """
+        Gets the peer_db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association.
+
+
+        :return: The peer_db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_db_unique_name
+
+    @peer_db_unique_name.setter
+    def peer_db_unique_name(self, peer_db_unique_name):
+        """
+        Sets the peer_db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association.
+
+
+        :param peer_db_unique_name: The peer_db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._peer_db_unique_name = peer_db_unique_name
 
     @property
     def autonomous_vm_cluster_id(self):

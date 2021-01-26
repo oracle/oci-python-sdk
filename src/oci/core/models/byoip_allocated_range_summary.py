@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipAllocatedRangeSummary(object):
     """
-    Subrange of ByoipRange which is allocated to a PublicIpPool
+    A summary of CIDR block subranges that are currently allocated to an IP pool.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ByoipAllocatedRangeSummary(object):
     def cidr_block(self):
         """
         Gets the cidr_block of this ByoipAllocatedRangeSummary.
-        The address range part of the ByoipRange which is used for a publicIpPool.
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
 
 
         :return: The cidr_block of this ByoipAllocatedRangeSummary.
@@ -56,7 +56,7 @@ class ByoipAllocatedRangeSummary(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this ByoipAllocatedRangeSummary.
-        The address range part of the ByoipRange which is used for a publicIpPool.
+        The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
 
 
         :param cidr_block: The cidr_block of this ByoipAllocatedRangeSummary.
@@ -68,7 +68,9 @@ class ByoipAllocatedRangeSummary(object):
     def public_ip_pool_id(self):
         """
         Gets the public_ip_pool_id of this ByoipAllocatedRangeSummary.
-        The OCID of the PublicIpPool containing the part of the Byoip range.
+        The `OCID`__ of the IP pool containing the CIDR block.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this ByoipAllocatedRangeSummary.
@@ -80,7 +82,9 @@ class ByoipAllocatedRangeSummary(object):
     def public_ip_pool_id(self, public_ip_pool_id):
         """
         Sets the public_ip_pool_id of this ByoipAllocatedRangeSummary.
-        The OCID of the PublicIpPool containing the part of the Byoip range.
+        The `OCID`__ of the IP pool containing the CIDR block.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this ByoipAllocatedRangeSummary.

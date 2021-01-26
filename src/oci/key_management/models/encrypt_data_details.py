@@ -13,6 +13,18 @@ class EncryptDataDetails(object):
     EncryptDataDetails model.
     """
 
+    #: A constant which can be used with the encryption_algorithm property of a EncryptDataDetails.
+    #: This constant has a value of "AES_256_GCM"
+    ENCRYPTION_ALGORITHM_AES_256_GCM = "AES_256_GCM"
+
+    #: A constant which can be used with the encryption_algorithm property of a EncryptDataDetails.
+    #: This constant has a value of "RSA_OAEP_SHA_1"
+    ENCRYPTION_ALGORITHM_RSA_OAEP_SHA_1 = "RSA_OAEP_SHA_1"
+
+    #: A constant which can be used with the encryption_algorithm property of a EncryptDataDetails.
+    #: This constant has a value of "RSA_OAEP_SHA_256"
+    ENCRYPTION_ALGORITHM_RSA_OAEP_SHA_256 = "RSA_OAEP_SHA_256"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EncryptDataDetails object with values from keyword arguments.
@@ -34,25 +46,40 @@ class EncryptDataDetails(object):
             The value to assign to the plaintext property of this EncryptDataDetails.
         :type plaintext: str
 
+        :param key_version_id:
+            The value to assign to the key_version_id property of this EncryptDataDetails.
+        :type key_version_id: str
+
+        :param encryption_algorithm:
+            The value to assign to the encryption_algorithm property of this EncryptDataDetails.
+            Allowed values for this property are: "AES_256_GCM", "RSA_OAEP_SHA_1", "RSA_OAEP_SHA_256"
+        :type encryption_algorithm: str
+
         """
         self.swagger_types = {
             'associated_data': 'dict(str, str)',
             'key_id': 'str',
             'logging_context': 'dict(str, str)',
-            'plaintext': 'str'
+            'plaintext': 'str',
+            'key_version_id': 'str',
+            'encryption_algorithm': 'str'
         }
 
         self.attribute_map = {
             'associated_data': 'associatedData',
             'key_id': 'keyId',
             'logging_context': 'loggingContext',
-            'plaintext': 'plaintext'
+            'plaintext': 'plaintext',
+            'key_version_id': 'keyVersionId',
+            'encryption_algorithm': 'encryptionAlgorithm'
         }
 
         self._associated_data = None
         self._key_id = None
         self._logging_context = None
         self._plaintext = None
+        self._key_version_id = None
+        self._encryption_algorithm = None
 
     @property
     def associated_data(self):
@@ -155,6 +182,66 @@ class EncryptDataDetails(object):
         :type: str
         """
         self._plaintext = plaintext
+
+    @property
+    def key_version_id(self):
+        """
+        Gets the key_version_id of this EncryptDataDetails.
+        The OCID of the keyVersion used to encrypt the ciphertext.
+
+
+        :return: The key_version_id of this EncryptDataDetails.
+        :rtype: str
+        """
+        return self._key_version_id
+
+    @key_version_id.setter
+    def key_version_id(self, key_version_id):
+        """
+        Sets the key_version_id of this EncryptDataDetails.
+        The OCID of the keyVersion used to encrypt the ciphertext.
+
+
+        :param key_version_id: The key_version_id of this EncryptDataDetails.
+        :type: str
+        """
+        self._key_version_id = key_version_id
+
+    @property
+    def encryption_algorithm(self):
+        """
+        Gets the encryption_algorithm of this EncryptDataDetails.
+        Encryption algorithm to be used while encrypting/decrypting data using a customer key
+        AES_256_GCM is the supported value AES keys and uses GCM mode of operation
+        RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+
+        Allowed values for this property are: "AES_256_GCM", "RSA_OAEP_SHA_1", "RSA_OAEP_SHA_256"
+
+
+        :return: The encryption_algorithm of this EncryptDataDetails.
+        :rtype: str
+        """
+        return self._encryption_algorithm
+
+    @encryption_algorithm.setter
+    def encryption_algorithm(self, encryption_algorithm):
+        """
+        Sets the encryption_algorithm of this EncryptDataDetails.
+        Encryption algorithm to be used while encrypting/decrypting data using a customer key
+        AES_256_GCM is the supported value AES keys and uses GCM mode of operation
+        RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+
+
+        :param encryption_algorithm: The encryption_algorithm of this EncryptDataDetails.
+        :type: str
+        """
+        allowed_values = ["AES_256_GCM", "RSA_OAEP_SHA_1", "RSA_OAEP_SHA_256"]
+        if not value_allowed_none_or_none_sentinel(encryption_algorithm, allowed_values):
+            raise ValueError(
+                "Invalid value for `encryption_algorithm`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._encryption_algorithm = encryption_algorithm
 
     def __repr__(self):
         return formatted_flat_dict(self)

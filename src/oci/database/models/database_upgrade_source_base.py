@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseUpgradeSourceBase(object):
     """
-    Details of upgrade source using which the database is upgraded.
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    Details for the database upgrade source.
     """
 
     #: A constant which can be used with the source property of a DatabaseUpgradeSourceBase.
@@ -76,10 +75,12 @@ class DatabaseUpgradeSourceBase(object):
     def source(self):
         """
         Gets the source of this DatabaseUpgradeSourceBase.
-        The source of the database upgrade
-        Use 'DB_HOME' for using existing db home to upgrade the database
-        Use 'DB_VERSION' for using database version to upgrade the database
-        Use 'DB_SOFTWARE_IMAGE' for using database software image to upgrade the database
+        The source of the Oracle Database software to be used for the upgrade.
+         - Use `DB_HOME` to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
+         - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
+         - Use `DB_SOFTWARE_IMAGE` to specify a `database software image`__ to upgrade the database.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
 
         Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"
 
@@ -93,10 +94,12 @@ class DatabaseUpgradeSourceBase(object):
     def source(self, source):
         """
         Sets the source of this DatabaseUpgradeSourceBase.
-        The source of the database upgrade
-        Use 'DB_HOME' for using existing db home to upgrade the database
-        Use 'DB_VERSION' for using database version to upgrade the database
-        Use 'DB_SOFTWARE_IMAGE' for using database software image to upgrade the database
+        The source of the Oracle Database software to be used for the upgrade.
+         - Use `DB_HOME` to specify an existing Database Home to upgrade the database. The database is moved to the target Database Home and makes use of the Oracle Database software version of the target Database Home.
+         - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
+         - Use `DB_SOFTWARE_IMAGE` to specify a `database software image`__ to upgrade the database.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
 
 
         :param source: The source of this DatabaseUpgradeSourceBase.

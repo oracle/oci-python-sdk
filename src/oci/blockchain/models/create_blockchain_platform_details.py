@@ -250,7 +250,7 @@ class CreateBlockchainPlatformDetails(object):
     @property
     def idcs_access_token(self):
         """
-        Gets the idcs_access_token of this CreateBlockchainPlatformDetails.
+        **[Required]** Gets the idcs_access_token of this CreateBlockchainPlatformDetails.
         IDCS access token with Identity Domain Administrator role
 
 

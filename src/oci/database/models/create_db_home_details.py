@@ -122,7 +122,7 @@ class CreateDbHomeDetails(object):
     def database_software_image_id(self):
         """
         Gets the database_software_image_id of this CreateDbHomeDetails.
-        The database software image `OCID`__
+        The database software image `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -136,7 +136,7 @@ class CreateDbHomeDetails(object):
     def database_software_image_id(self, database_software_image_id):
         """
         Sets the database_software_image_id of this CreateDbHomeDetails.
-        The database software image `OCID`__
+        The database software image `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

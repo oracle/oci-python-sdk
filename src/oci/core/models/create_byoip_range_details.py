@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateByoipRangeDetails(object):
     """
-    The data to create a Byoip Range
+    The information used to create a `ByoipRange` resource.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class CreateByoipRangeDetails(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this CreateByoipRangeDetails.
-        The CIDR IP address range of the prefix.
+        The BYOIP CIDR block. You can assign some or all of it to a public IP pool after it is validated.
         Example: `10.0.1.0/24`
 
 
@@ -78,7 +78,7 @@ class CreateByoipRangeDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this CreateByoipRangeDetails.
-        The CIDR IP address range of the prefix.
+        The BYOIP CIDR block. You can assign some or all of it to a public IP pool after it is validated.
         Example: `10.0.1.0/24`
 
 
@@ -91,7 +91,9 @@ class CreateByoipRangeDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateByoipRangeDetails.
-        The OCID of the compartment to contain the Byoip Range.
+        The `OCID`__ of the compartment containing the BYOIP CIDR block.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateByoipRangeDetails.
@@ -103,7 +105,9 @@ class CreateByoipRangeDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateByoipRangeDetails.
-        The OCID of the compartment to contain the Byoip Range.
+        The `OCID`__ of the compartment containing the BYOIP CIDR block.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateByoipRangeDetails.

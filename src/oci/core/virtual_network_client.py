@@ -166,14 +166,15 @@ class VirtualNetworkClient(object):
 
     def add_public_ip_pool_capacity(self, public_ip_pool_id, add_public_ip_pool_capacity_details, **kwargs):
         """
-        Adds a Cidr from the named Byoip Range prefix to the referenced Public IP Pool.
-        The cidr must be a subset of the Byoip Range in question.
-        The cidr must not overlap with any other cidr already added to this
-        or any other Public Ip Pool.
+        Adds some or all of a CIDR block to a public IP pool.
+
+        The CIDR block (or subrange) must not overlap with any other CIDR block already added to this or any other public IP pool.
 
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
             Byoip Range prefix and a cidr from it
@@ -261,12 +262,13 @@ class VirtualNetworkClient(object):
 
     def add_vcn_cidr(self, vcn_id, add_vcn_cidr_details, **kwargs):
         """
-        Add a CIDR to a VCN. The new CIDR must maintain the following rules -
+        Adds a CIDR block to a VCN. The CIDR block you add:
 
-        a. The CIDR provided is valid
-        b. The new CIDR range should not overlap with any existing CIDRs
-        c. The new CIDR should not exceed the max limit of CIDRs per VCNs
-        d. The new CIDR range does not overlap with any peered VCNs
+        - Must be valid.
+        - Must not overlap with another CIDR block in the VCN, a CIDR block of a peered VCN, or the on-premises network CIDR block.
+        - Must not exceed the limit of CIDR blocks allowed per VCN.
+
+        **Note:** Adding a CIDR block places your VCN in an updating state until the changes are complete. You cannot create or update the VCN's subnets, VLANs, LPGs, or route tables during this operation. The time to completion can take a few minutes. You can use the `GetWorkRequest` operation to check the status of the update.
 
 
         :param str vcn_id: (required)
@@ -365,12 +367,14 @@ class VirtualNetworkClient(object):
 
     def advertise_byoip_range(self, byoip_range_id, **kwargs):
         """
-        initiate route advertisements for the Byoip Range prefix.
-        the prefix must be in PROVISIONED state
+        Begins BGP route advertisements for the BYOIP CIDR block you imported to the Oracle Cloud.
+        The `ByoipRange` resource must be in the PROVISIONED state before the BYOIP CIDR block routes can be advertised with BGP.
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -677,7 +681,7 @@ class VirtualNetworkClient(object):
 
     def change_byoip_range_compartment(self, byoip_range_id, change_byoip_range_compartment_details, **kwargs):
         """
-        Moves a byoip range into a different compartment within the same tenancy. For information
+        Moves a BYOIP CIDR block to a different compartment. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
@@ -685,10 +689,12 @@ class VirtualNetworkClient(object):
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeByoipRangeCompartmentDetails change_byoip_range_compartment_details: (required)
-            Request to change the compartment of a Byoip Range.
+            Request to change the compartment of a BYOIP CIDR block.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1811,7 +1817,7 @@ class VirtualNetworkClient(object):
 
     def change_public_ip_pool_compartment(self, public_ip_pool_id, change_public_ip_pool_compartment_details, **kwargs):
         """
-        Moves a public IP pool into a different compartment within the same tenancy. For information
+        Moves a public IP pool to a different compartment. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
@@ -1819,10 +1825,12 @@ class VirtualNetworkClient(object):
 
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangePublicIpPoolCompartmentDetails change_public_ip_pool_compartment_details: (required)
-            Request to change the compartment of a Public IP pool.
+            Request to change the compartment of a public IP pool.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -2826,11 +2834,11 @@ class VirtualNetworkClient(object):
 
     def create_byoip_range(self, create_byoip_range_details, **kwargs):
         """
-        Creates a Byoip Range prefix.
+        Creates a subrange of the BYOIP CIDR block.
 
 
         :param oci.core.models.CreateByoipRangeDetails create_byoip_range_details: (required)
-            Create Byoip Range details.
+            Details needed to create a BYOIP CIDR block subrange.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -4088,7 +4096,7 @@ class VirtualNetworkClient(object):
 
     def create_public_ip_pool(self, create_public_ip_pool_details, **kwargs):
         """
-        Creates a Public Ip Pool
+        Creates a public IP pool.
 
 
         :param oci.core.models.CreatePublicIpPoolDetails create_public_ip_pool_details: (required)
@@ -4610,23 +4618,20 @@ class VirtualNetworkClient(object):
         Creates a new virtual cloud network (VCN). For more information, see
         `VCNs and Subnets`__.
 
-        To create the VCN, you may specify a list of IPv4 CIDR blocks. The CIDRs must maintain
-        the following rules -
+        For the VCN, you specify a list of one or more IPv4 CIDR blocks that meet the following criteria:
 
-        a. The list of CIDRs provided are valid
-        b. There is no overlap between different CIDRs
-        c. The list of CIDRs does not exceed the max limit of CIDRs per VCN
+        - The CIDR blocks must be valid.
+        - They must not overlap with each other or with the on-premises network CIDR block.
+        - The number of CIDR blocks does not exceed the limit of CIDR blocks allowed per VCN.
 
-        Oracle recommends using one of the private IP address ranges specified in `RFC 1918]
-        (https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example:
-        172.16.0.0/16. The CIDR blocks can range from /16 to /30, and they must not overlap with
-        your on-premises network.
+        For a CIDR block, Oracle recommends that you use one of the private IP address ranges specified in `RFC 1918`__ (10.0.0.0/8, 172.16/12, and 192.168/16). Example:
+        172.16.0.0/16. The CIDR blocks can range from /16 to /30.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
         reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
         compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
         Networking Service components. For more information about compartments and access control, see
-        [Overview of the IAM Service`__. For information about OCIDs, see
+        `Overview of the IAM Service`__. For information about OCIDs, see
         `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
@@ -4645,6 +4650,7 @@ class VirtualNetworkClient(object):
         `Overview of the Networking Service`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
+        __ https://tools.ietf.org/html/rfc1918
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
@@ -4892,16 +4898,19 @@ class VirtualNetworkClient(object):
 
     def delete_byoip_range(self, byoip_range_id, **kwargs):
         """
-        Deletes the specified Byoip Range prefix.
-        The prefix must be in CREATING, PROVISIONED or FAILED state.
-        It must not have any subranges allocated to a Public Ip Pool object.
-        You must specify the object's OCID.
+        Deletes the specified `ByoipRange` resource.
+        The resource must be in one of the following states: CREATING, PROVISIONED, ACTIVE, or FAILED.
+        It must not have any subranges currently allocated to a PublicIpPool object or the deletion will fail.
+        You must specify the `OCID`__.
+        If the `ByoipRange` resource is currently in the PROVISIONED or ACTIVE state, it will be de-provisioned and then deleted.
 
-        In case the range is currently PROVISIONED, the operation will be asynchronous as it needs to be de-ptovisioned first.
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6105,13 +6114,17 @@ class VirtualNetworkClient(object):
 
     def delete_public_ip_pool(self, public_ip_pool_id, **kwargs):
         """
-        Deletes the specified Public Ip Pool
-        It must not have any active address allocations
-        You must specify the object's OCID.
+        Deletes the specified public IP pool.
+        To delete a public IP pool it must not have any active IP address allocations.
+        You must specify the object's `OCID`__ when deleting an IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6915,11 +6928,15 @@ class VirtualNetworkClient(object):
 
     def get_byoip_range(self, byoip_range_id, **kwargs):
         """
-        Gets the specified Byoip Range object. You must specify the object's OCID.
+        Gets the `ByoipRange` resource. You must specify the `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -8991,11 +9008,15 @@ class VirtualNetworkClient(object):
 
     def get_public_ip_pool(self, public_ip_pool_id, **kwargs):
         """
-        Gets the specified Public Ip Pool object. You must specify the object's OCID.
+        Gets the specified `PublicIpPool` object. You must specify the object's `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10065,12 +10086,14 @@ class VirtualNetworkClient(object):
 
     def list_byoip_allocated_ranges(self, byoip_range_id, **kwargs):
         """
-        Lists the ByoipAllocatedRange objects for the ByoipRange.
-        Each ByoipAllocatedRange object has a CIDR block part of the ByoipRange and the PublicIpPool it is assigned to.
+        Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
+        Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10168,8 +10191,8 @@ class VirtualNetworkClient(object):
 
     def list_byoip_ranges(self, compartment_id, **kwargs):
         """
-        Lists the ByoipRange objects in the specified compartment.
-        You can filter the list by using query parameters.
+        Lists the `ByoipRange` resources in the specified compartment.
+        You can filter the list using query parameters.
 
 
         :param str compartment_id: (required)
@@ -12713,8 +12736,8 @@ class VirtualNetworkClient(object):
 
     def list_public_ip_pools(self, compartment_id, **kwargs):
         """
-        Lists the PublicIpPool objects in the specified compartment.
-        You can filter the list by using query parameters.
+        Lists the public IP pools in the specified compartment.
+        You can filter the list using query parameters.
 
 
         :param str compartment_id: (required)
@@ -12746,7 +12769,7 @@ class VirtualNetworkClient(object):
             A filter to return only resources that match the given display name exactly.
 
         :param str byoip_range_id: (optional)
-            A filter to return only resources that match the given Byoip Range
+            A filter to return only resources that match the given BYOIP CIDR block.
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -14384,14 +14407,15 @@ class VirtualNetworkClient(object):
 
     def modify_vcn_cidr(self, vcn_id, modify_vcn_cidr_details, **kwargs):
         """
-        Update a CIDR from a VCN. The new CIDR must maintain the following rules -
+        Updates the specified CIDR block of a VCN. The new CIDR IP range must meet the following criteria:
 
-        a. The CIDR provided is valid
-        b. The new CIDR range should not overlap with any existing CIDRs
-        c. The new CIDR should not exceed the max limit of CIDRs per VCNs
-        d. The new CIDR range does not overlap with any peered VCNs
-        e. The new CIDR should overlap with any existing route rule within a VCN
-        f. All existing subnet CIDRs are subsets of the updated CIDR ranges
+        - Must be valid.
+        - Must not overlap with another CIDR block in the VCN, a CIDR block of a peered VCN, or the on-premises network CIDR block.
+        - Must not exceed the limit of CIDR blocks allowed per VCN.
+        - Must include IP addresses from the original CIDR block that are used in the VCN's existing route rules.
+        - No IP address in an existing subnet should be outside of the new CIDR block range.
+
+        **Note:** Modifying a CIDR block places your VCN in an updating state until the changes are complete. You cannot create or update the VCN's subnets, VLANs, LPGs, or route tables during this operation. The time to completion can vary depending on the size of your network. Updating a small network could take about a minute, and updating a large network could take up to an hour. You can use the `GetWorkRequest` operation to check the status of the update.
 
 
         :param str vcn_id: (required)
@@ -14562,14 +14586,16 @@ class VirtualNetworkClient(object):
 
     def remove_public_ip_pool_capacity(self, public_ip_pool_id, remove_public_ip_pool_capacity_details, **kwargs):
         """
-        Removes a Cidr from the referenced Public IP Pool.
+        Removes a CIDR block from the referenced public IP pool.
 
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
-            The Cidr to be removed from the Public Ip Pool
+            The CIDR block to remove from the IP pool.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -14654,8 +14680,11 @@ class VirtualNetworkClient(object):
 
     def remove_vcn_cidr(self, vcn_id, remove_vcn_cidr_details, **kwargs):
         """
-        Remove a CIDR from a VCN. The CIDR being removed should not have
-        any resources allocated from it.
+        Removes a specified CIDR block from a VCN.
+
+        **Notes:**
+        - You cannot remove a CIDR block if an IP address in its range is in use.
+        - Removing a CIDR block places your VCN in an updating state until the changes are complete. You cannot create or update the VCN's subnets, VLANs, LPGs, or route tables during this operation. The time to completion can take a few minutes. You can use the `GetWorkRequest` operation to check the status of the update.
 
 
         :param str vcn_id: (required)
@@ -14754,11 +14783,13 @@ class VirtualNetworkClient(object):
 
     def update_byoip_range(self, byoip_range_id, update_byoip_range_details, **kwargs):
         """
-        Updates the specified Byoip Range.
+        Updates the tags or display name associated to the specified BYOIP CIDR block.
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateByoipRangeDetails update_byoip_range_details: (required)
             Byoip Range details.
@@ -16353,14 +16384,16 @@ class VirtualNetworkClient(object):
 
     def update_public_ip_pool(self, public_ip_pool_id, update_public_ip_pool_details, **kwargs):
         """
-        Updates the specified Public Ip Pool.
+        Updates the specified public IP pool.
 
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
-            Public Ip Pool details.
+            Public IP pool details.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17159,9 +17192,8 @@ class VirtualNetworkClient(object):
 
     def update_vlan(self, vlan_id, update_vlan_details, **kwargs):
         """
-        Updates the specified VLAN. This could result in changes to all
-        the VNICs in the VLAN, which can take time. During that transition
-        period, the VLAN will be in the UPDATING state.
+        Updates the specified VLAN. Note that this operation might require changes to all
+        the VNICs in the VLAN, which can take a while. The VLAN will be in the UPDATING state until the changes are complete.
 
 
         :param str vlan_id: (required)
@@ -17333,12 +17365,16 @@ class VirtualNetworkClient(object):
 
     def validate_byoip_range(self, byoip_range_id, **kwargs):
         """
-        submit the Byoip Range for validation. This presumes the user has
-        updated their IP registry record in accordance to validation requirements
+        Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for validation if you have not already
+        modified the information for the BYOIP CIDR block with your Regional Internet Registry. See `To import a CIDR block`__ for details.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17408,11 +17444,13 @@ class VirtualNetworkClient(object):
 
     def withdraw_byoip_range(self, byoip_range_id, **kwargs):
         """
-        stop route advertisements for the Byoip Range prefix.
+        Withdraws BGP route advertisement for the BYOIP CIDR block.
 
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.

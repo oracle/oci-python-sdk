@@ -53,6 +53,14 @@ class BlockchainPlatform(object):
     #: This constant has a value of "CUSTOM"
     PLATFORM_SHAPE_TYPE_CUSTOM = "CUSTOM"
 
+    #: A constant which can be used with the load_balancer_shape property of a BlockchainPlatform.
+    #: This constant has a value of "LB_100_MBPS"
+    LOAD_BALANCER_SHAPE_LB_100_MBPS = "LB_100_MBPS"
+
+    #: A constant which can be used with the load_balancer_shape property of a BlockchainPlatform.
+    #: This constant has a value of "LB_400_MBPS"
+    LOAD_BALANCER_SHAPE_LB_400_MBPS = "LB_400_MBPS"
+
     #: A constant which can be used with the lifecycle_state property of a BlockchainPlatform.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -140,6 +148,12 @@ class BlockchainPlatform(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_shape_type: str
 
+        :param load_balancer_shape:
+            The value to assign to the load_balancer_shape property of this BlockchainPlatform.
+            Allowed values for this property are: "LB_100_MBPS", "LB_400_MBPS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type load_balancer_shape: str
+
         :param service_endpoint:
             The value to assign to the service_endpoint property of this BlockchainPlatform.
         :type service_endpoint: str
@@ -203,6 +217,7 @@ class BlockchainPlatform(object):
             'platform_role': 'str',
             'compute_shape': 'str',
             'platform_shape_type': 'str',
+            'load_balancer_shape': 'str',
             'service_endpoint': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -229,6 +244,7 @@ class BlockchainPlatform(object):
             'platform_role': 'platformRole',
             'compute_shape': 'computeShape',
             'platform_shape_type': 'platformShapeType',
+            'load_balancer_shape': 'loadBalancerShape',
             'service_endpoint': 'serviceEndpoint',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -254,6 +270,7 @@ class BlockchainPlatform(object):
         self._platform_role = None
         self._compute_shape = None
         self._platform_shape_type = None
+        self._load_balancer_shape = None
         self._service_endpoint = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -548,6 +565,36 @@ class BlockchainPlatform(object):
         if not value_allowed_none_or_none_sentinel(platform_shape_type, allowed_values):
             platform_shape_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_shape_type = platform_shape_type
+
+    @property
+    def load_balancer_shape(self):
+        """
+        Gets the load_balancer_shape of this BlockchainPlatform.
+        Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+
+        Allowed values for this property are: "LB_100_MBPS", "LB_400_MBPS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The load_balancer_shape of this BlockchainPlatform.
+        :rtype: str
+        """
+        return self._load_balancer_shape
+
+    @load_balancer_shape.setter
+    def load_balancer_shape(self, load_balancer_shape):
+        """
+        Sets the load_balancer_shape of this BlockchainPlatform.
+        Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+
+
+        :param load_balancer_shape: The load_balancer_shape of this BlockchainPlatform.
+        :type: str
+        """
+        allowed_values = ["LB_100_MBPS", "LB_400_MBPS"]
+        if not value_allowed_none_or_none_sentinel(load_balancer_shape, allowed_values):
+            load_balancer_shape = 'UNKNOWN_ENUM_VALUE'
+        self._load_balancer_shape = load_balancer_shape
 
     @property
     def service_endpoint(self):

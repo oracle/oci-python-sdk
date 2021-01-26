@@ -134,6 +134,14 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseBase.
         :type whitelisted_ips: list[str]
 
+        :param are_primary_whitelisted_ips_used:
+            The value to assign to the are_primary_whitelisted_ips_used property of this CreateAutonomousDatabaseBase.
+        :type are_primary_whitelisted_ips_used: bool
+
+        :param standby_whitelisted_ips:
+            The value to assign to the standby_whitelisted_ips property of this CreateAutonomousDatabaseBase.
+        :type standby_whitelisted_ips: list[str]
+
         :param is_data_guard_enabled:
             The value to assign to the is_data_guard_enabled property of this CreateAutonomousDatabaseBase.
         :type is_data_guard_enabled: bool
@@ -184,6 +192,8 @@ class CreateAutonomousDatabaseBase(object):
             'autonomous_container_database_id': 'str',
             'is_access_control_enabled': 'bool',
             'whitelisted_ips': 'list[str]',
+            'are_primary_whitelisted_ips_used': 'bool',
+            'standby_whitelisted_ips': 'list[str]',
             'is_data_guard_enabled': 'bool',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
@@ -210,6 +220,8 @@ class CreateAutonomousDatabaseBase(object):
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'is_access_control_enabled': 'isAccessControlEnabled',
             'whitelisted_ips': 'whitelistedIps',
+            'are_primary_whitelisted_ips_used': 'arePrimaryWhitelistedIpsUsed',
+            'standby_whitelisted_ips': 'standbyWhitelistedIps',
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
@@ -235,6 +247,8 @@ class CreateAutonomousDatabaseBase(object):
         self._autonomous_container_database_id = None
         self._is_access_control_enabled = None
         self._whitelisted_ips = None
+        self._are_primary_whitelisted_ips_used = None
+        self._standby_whitelisted_ips = None
         self._is_data_guard_enabled = None
         self._subnet_id = None
         self._nsg_ids = None
@@ -354,7 +368,7 @@ class CreateAutonomousDatabaseBase(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
+        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
 
@@ -373,7 +387,7 @@ class CreateAutonomousDatabaseBase(object):
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
+        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
 
         :param db_workload: The db_workload of this CreateAutonomousDatabaseBase.
@@ -716,6 +730,80 @@ class CreateAutonomousDatabaseBase(object):
         :type: list[str]
         """
         self._whitelisted_ips = whitelisted_ips
+
+    @property
+    def are_primary_whitelisted_ips_used(self):
+        """
+        Gets the are_primary_whitelisted_ips_used of this CreateAutonomousDatabaseBase.
+        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
+        It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
+        It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+
+
+        :return: The are_primary_whitelisted_ips_used of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._are_primary_whitelisted_ips_used
+
+    @are_primary_whitelisted_ips_used.setter
+    def are_primary_whitelisted_ips_used(self, are_primary_whitelisted_ips_used):
+        """
+        Sets the are_primary_whitelisted_ips_used of this CreateAutonomousDatabaseBase.
+        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
+        It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
+        It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+
+
+        :param are_primary_whitelisted_ips_used: The are_primary_whitelisted_ips_used of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._are_primary_whitelisted_ips_used = are_primary_whitelisted_ips_used
+
+    @property
+    def standby_whitelisted_ips(self):
+        """
+        Gets the standby_whitelisted_ips of this CreateAutonomousDatabaseBase.
+        The client IP access control list (ACL). This feature is available for autonomous databases on `shared Exadata infrastructure`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+
+        For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+        For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+
+
+        :return: The standby_whitelisted_ips of this CreateAutonomousDatabaseBase.
+        :rtype: list[str]
+        """
+        return self._standby_whitelisted_ips
+
+    @standby_whitelisted_ips.setter
+    def standby_whitelisted_ips(self, standby_whitelisted_ips):
+        """
+        Sets the standby_whitelisted_ips of this CreateAutonomousDatabaseBase.
+        The client IP access control list (ACL). This feature is available for autonomous databases on `shared Exadata infrastructure`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+
+        For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
+        For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
+
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+
+
+        :param standby_whitelisted_ips: The standby_whitelisted_ips of this CreateAutonomousDatabaseBase.
+        :type: list[str]
+        """
+        self._standby_whitelisted_ips = standby_whitelisted_ips
 
     @property
     def is_data_guard_enabled(self):

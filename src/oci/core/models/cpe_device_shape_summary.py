@@ -75,8 +75,6 @@ class CpeDeviceShapeSummary(object):
     def cpe_device_info(self):
         """
         Gets the cpe_device_info of this CpeDeviceShapeSummary.
-        Basic information about this particular CPE device type.
-
 
         :return: The cpe_device_info of this CpeDeviceShapeSummary.
         :rtype: oci.core.models.CpeDeviceInfo
@@ -87,8 +85,6 @@ class CpeDeviceShapeSummary(object):
     def cpe_device_info(self, cpe_device_info):
         """
         Sets the cpe_device_info of this CpeDeviceShapeSummary.
-        Basic information about this particular CPE device type.
-
 
         :param cpe_device_info: The cpe_device_info of this CpeDeviceShapeSummary.
         :type: oci.core.models.CpeDeviceInfo

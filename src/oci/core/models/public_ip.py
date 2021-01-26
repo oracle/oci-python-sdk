@@ -684,7 +684,9 @@ class PublicIp(object):
     def public_ip_pool_id(self):
         """
         Gets the public_ip_pool_id of this PublicIp.
-        OCID of the pool object created by the current tenancy
+        The `OCID`__ of the pool object created in the current tenancy.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this PublicIp.
@@ -696,7 +698,9 @@ class PublicIp(object):
     def public_ip_pool_id(self, public_ip_pool_id):
         """
         Sets the public_ip_pool_id of this PublicIp.
-        OCID of the pool object created by the current tenancy
+        The `OCID`__ of the pool object created in the current tenancy.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this PublicIp.

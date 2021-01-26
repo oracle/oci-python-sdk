@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePublicIpPoolDetails(object):
     """
-    The data to create a public ip pool
+    The information used to create a public IP pool.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,9 @@ class CreatePublicIpPoolDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreatePublicIpPoolDetails.
-        The OCID of the compartment to contain the Public Ip Pool
+        The `OCID`__ of the compartment containing the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePublicIpPoolDetails.
@@ -70,7 +72,9 @@ class CreatePublicIpPoolDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreatePublicIpPoolDetails.
-        The OCID of the compartment to contain the Public Ip Pool
+        The `OCID`__ of the compartment containing the public IP pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePublicIpPoolDetails.

@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.29.0 - 2021-01-26
+====================
+
+Added
+-----
+* Support for creating, managing, and using asymmetric keys in the Key Management service
+* Support for peer ACD unique names in Exadata Cloud at Customer in the Database service
+* Support for ACLs on autonomous databases in Exadata Cloud at Customer Data Guard in the Database service
+* Support for drift detection on individual resources of a stack in the Resource Manager service
+* Support for private access channels and vanity URLs in the Analytics Cloud service
+* Support for updating load balancer shapes in the Blockchain Platform service
+* Support for assigning volume backup policies to volume groups in the Block Volume service
+
+Breaking
+--------
+* Parameter `idcs_access_token` in model `CreateBlockchainPlatformDetails` changed from optional to required in the Blockchain service
+
+====================
 2.28.0 - 2021-01-19
 ====================
 

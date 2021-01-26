@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.01.21 - 21.01.21
+=====================
+* Added SGW transit route
+* Added LPG CIDR Blocks
+* Added DRG Attachments
+
+=====================
 21.01.07 - 21.01.07
 =====================
 * Added Network Summary

@@ -224,12 +224,28 @@ class CreateInstanceConfigurationBase(object):
         such as the base image, shape, and metadata. You can also specify the associated resources for the
         instance, such as block volume attachments and network configuration.
 
+        When you create an instance configuration using an existing instance as a template, the instance
+        configuration does not include any information from the source instance's boot volume, such as installed
+        applications, binaries, and files on the instance. It also does not include the contents of
+        any block volumes that are attached to the instance.
+
+        To create an instance configuration that includes the custom setup from an instance's boot volume, you
+        must first create a custom image from the instance (see :func:`create_image`).
+        Then, use the custom image to launch a new instance
+        (see :func:`launch_instance`). Finally, create the instance
+        configuration based on the instance that you created from the custom image.
+
+        To include block volume contents with an instance configuration, first create a backup of the attached block volumes
+        (see :func:`create_volume_backup`). Then, create the instance
+        configuration by specifying the list of settings, using
+        :func:`instance_configuration_volume_source_from_volume_backup_details`
+        to include the block volume backups in the list of settings.
+
         The following values are supported:
 
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
 
-        * `INSTANCE`: Creates an instance configuration using an existing instance as a template. The
-        instance configuration uses the same settings as the instance.
+        * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
 
         Allowed values for this property are: "NONE", "INSTANCE"
 
@@ -248,12 +264,28 @@ class CreateInstanceConfigurationBase(object):
         such as the base image, shape, and metadata. You can also specify the associated resources for the
         instance, such as block volume attachments and network configuration.
 
+        When you create an instance configuration using an existing instance as a template, the instance
+        configuration does not include any information from the source instance's boot volume, such as installed
+        applications, binaries, and files on the instance. It also does not include the contents of
+        any block volumes that are attached to the instance.
+
+        To create an instance configuration that includes the custom setup from an instance's boot volume, you
+        must first create a custom image from the instance (see :func:`create_image`).
+        Then, use the custom image to launch a new instance
+        (see :func:`launch_instance`). Finally, create the instance
+        configuration based on the instance that you created from the custom image.
+
+        To include block volume contents with an instance configuration, first create a backup of the attached block volumes
+        (see :func:`create_volume_backup`). Then, create the instance
+        configuration by specifying the list of settings, using
+        :func:`instance_configuration_volume_source_from_volume_backup_details`
+        to include the block volume backups in the list of settings.
+
         The following values are supported:
 
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
 
-        * `INSTANCE`: Creates an instance configuration using an existing instance as a template. The
-        instance configuration uses the same settings as the instance.
+        * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
 
 
         :param source: The source of this CreateInstanceConfigurationBase.

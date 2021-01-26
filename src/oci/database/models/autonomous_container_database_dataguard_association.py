@@ -49,6 +49,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "UNAVAILABLE"
+    LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
+
     #: A constant which can be used with the peer_role property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "PRIMARY"
     PEER_ROLE_PRIMARY = "PRIMARY"
@@ -85,6 +89,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     #: This constant has a value of "FAILED"
     PEER_LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "UNAVAILABLE"
+    PEER_LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
+
     #: A constant which can be used with the protection_mode property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "MAXIMUM_AVAILABILITY"
     PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
@@ -114,7 +122,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -138,7 +146,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
 
         :param peer_lifecycle_state:
             The value to assign to the peer_lifecycle_state property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_lifecycle_state: str
 
@@ -316,7 +324,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         **[Required]** Gets the lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         The current state of Autonomous Data Guard.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -335,7 +343,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -452,7 +460,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         Gets the peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         The current state of Autonomous Data Guard.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -471,7 +479,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         :param peer_lifecycle_state: The peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(peer_lifecycle_state, allowed_values):
             peer_lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._peer_lifecycle_state = peer_lifecycle_state

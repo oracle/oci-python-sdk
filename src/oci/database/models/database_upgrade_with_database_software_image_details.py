@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseUpgradeWithDatabaseSoftwareImageDetails(DatabaseUpgradeSourceBase):
     """
-    Details of Database Software Image for upgrading a database.
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    Details of the database software image to be used to upgrade a database.
     """
 
     def __init__(self, **kwargs):
@@ -48,7 +47,9 @@ class DatabaseUpgradeWithDatabaseSoftwareImageDetails(DatabaseUpgradeSourceBase)
     def database_software_image_id(self):
         """
         **[Required]** Gets the database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.
-        the database software id used for upgrading the database.
+        The database software image `OCID`__ of the image to be used to upgrade a database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.
@@ -60,7 +61,9 @@ class DatabaseUpgradeWithDatabaseSoftwareImageDetails(DatabaseUpgradeSourceBase)
     def database_software_image_id(self, database_software_image_id):
         """
         Sets the database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.
-        the database software id used for upgrading the database.
+        The database software image `OCID`__ of the image to be used to upgrade a database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.

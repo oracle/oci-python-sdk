@@ -203,13 +203,6 @@ class CreateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self):
         """
         Gets the bgp_session_config of this CreateIPSecConnectionTunnelDetails.
-        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses
-        BGP dynamic routing.
-
-        If the tunnel instead uses static routing, you may optionally provide
-        this object and set an IP address for one or both ends of the IPSec tunnel for the purposes
-        of troubleshooting or monitoring the tunnel.
-
 
         :return: The bgp_session_config of this CreateIPSecConnectionTunnelDetails.
         :rtype: oci.core.models.CreateIPSecTunnelBgpSessionDetails
@@ -220,13 +213,6 @@ class CreateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self, bgp_session_config):
         """
         Sets the bgp_session_config of this CreateIPSecConnectionTunnelDetails.
-        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses
-        BGP dynamic routing.
-
-        If the tunnel instead uses static routing, you may optionally provide
-        this object and set an IP address for one or both ends of the IPSec tunnel for the purposes
-        of troubleshooting or monitoring the tunnel.
-
 
         :param bgp_session_config: The bgp_session_config of this CreateIPSecConnectionTunnelDetails.
         :type: oci.core.models.CreateIPSecTunnelBgpSessionDetails

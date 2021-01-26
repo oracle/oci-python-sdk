@@ -391,9 +391,6 @@ class VolumeGroup(object):
     def source_details(self):
         """
         Gets the source_details of this VolumeGroup.
-        The volume group source. The source is either another a list of
-        volume IDs in the same availability domain, another volume group, or a volume group backup.
-
 
         :return: The source_details of this VolumeGroup.
         :rtype: oci.core.models.VolumeGroupSourceDetails
@@ -404,9 +401,6 @@ class VolumeGroup(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this VolumeGroup.
-        The volume group source. The source is either another a list of
-        volume IDs in the same availability domain, another volume group, or a volume group backup.
-
 
         :param source_details: The source_details of this VolumeGroup.
         :type: oci.core.models.VolumeGroupSourceDetails

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipAllocatedRangeCollection(object):
     """
-    Results of a ListByoipAllocatedRanges operation.
+    Results of a `ListByoipAllocatedRanges` operation.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ByoipAllocatedRangeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ByoipAllocatedRangeCollection.
-        list of Byoip allocated ranges as part of public IP pool
+        A list of subranges of a BYOIP CIDR block allocated to an IP pool.
 
 
         :return: The items of this ByoipAllocatedRangeCollection.
@@ -49,7 +49,7 @@ class ByoipAllocatedRangeCollection(object):
     def items(self, items):
         """
         Sets the items of this ByoipAllocatedRangeCollection.
-        list of Byoip allocated ranges as part of public IP pool
+        A list of subranges of a BYOIP CIDR block allocated to an IP pool.
 
 
         :param items: The items of this ByoipAllocatedRangeCollection.
