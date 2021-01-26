@@ -370,10 +370,6 @@ class InstanceConfigurationCreateVolumeDetails(object):
     def source_details(self):
         """
         Gets the source_details of this InstanceConfigurationCreateVolumeDetails.
-        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same availability domain or a Block volume backup.
-        This is an optional field. If not specified or set to null, the new Block volume will be empty.
-        When specified, the new Block volume will contain data from the source volume or backup.
-
 
         :return: The source_details of this InstanceConfigurationCreateVolumeDetails.
         :rtype: oci.core.models.InstanceConfigurationVolumeSourceDetails
@@ -384,10 +380,6 @@ class InstanceConfigurationCreateVolumeDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this InstanceConfigurationCreateVolumeDetails.
-        Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same availability domain or a Block volume backup.
-        This is an optional field. If not specified or set to null, the new Block volume will be empty.
-        When specified, the new Block volume will contain data from the source volume or backup.
-
 
         :param source_details: The source_details of this InstanceConfigurationCreateVolumeDetails.
         :type: oci.core.models.InstanceConfigurationVolumeSourceDetails

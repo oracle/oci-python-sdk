@@ -564,9 +564,6 @@ class Volume(object):
     def source_details(self):
         """
         Gets the source_details of this Volume.
-        The volume source, either an existing volume in the same availability domain or a volume backup.
-        If null, an empty volume is created.
-
 
         :return: The source_details of this Volume.
         :rtype: oci.core.models.VolumeSourceDetails
@@ -577,9 +574,6 @@ class Volume(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this Volume.
-        The volume source, either an existing volume in the same availability domain or a volume backup.
-        If null, an empty volume is created.
-
 
         :param source_details: The source_details of this Volume.
         :type: oci.core.models.VolumeSourceDetails

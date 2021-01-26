@@ -41,6 +41,30 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT"
     OPERATION_TYPE_CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT = "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_VANITY_URL"
+    OPERATION_TYPE_CREATE_VANITY_URL = "CREATE_VANITY_URL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_VANITY_URL"
+    OPERATION_TYPE_UPDATE_VANITY_URL = "UPDATE_VANITY_URL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_VANITY_URL"
+    OPERATION_TYPE_DELETE_VANITY_URL = "DELETE_VANITY_URL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_PRIVATE_ACCESS_CHANNEL"
+    OPERATION_TYPE_CREATE_PRIVATE_ACCESS_CHANNEL = "CREATE_PRIVATE_ACCESS_CHANNEL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_PRIVATE_ACCESS_CHANNEL"
+    OPERATION_TYPE_UPDATE_PRIVATE_ACCESS_CHANNEL = "UPDATE_PRIVATE_ACCESS_CHANNEL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_PRIVATE_ACCESS_CHANNEL"
+    OPERATION_TYPE_DELETE_PRIVATE_ACCESS_CHANNEL = "DELETE_PRIVATE_ACCESS_CHANNEL"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -76,7 +100,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_ANALYTICS_INSTANCE", "DELETE_ANALYTICS_INSTANCE", "START_ANALYTICS_INSTANCE", "STOP_ANALYTICS_INSTANCE", "SCALE_ANALYTICS_INSTANCE", "CHANGE_ANALYTICS_INSTANCE_COMPARTMENT", "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_ANALYTICS_INSTANCE", "DELETE_ANALYTICS_INSTANCE", "START_ANALYTICS_INSTANCE", "STOP_ANALYTICS_INSTANCE", "SCALE_ANALYTICS_INSTANCE", "CHANGE_ANALYTICS_INSTANCE_COMPARTMENT", "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT", "CREATE_VANITY_URL", "UPDATE_VANITY_URL", "DELETE_VANITY_URL", "CREATE_PRIVATE_ACCESS_CHANNEL", "UPDATE_PRIVATE_ACCESS_CHANNEL", "DELETE_PRIVATE_ACCESS_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -168,7 +192,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The operation performed by the work request.
 
-        Allowed values for this property are: "CREATE_ANALYTICS_INSTANCE", "DELETE_ANALYTICS_INSTANCE", "START_ANALYTICS_INSTANCE", "STOP_ANALYTICS_INSTANCE", "SCALE_ANALYTICS_INSTANCE", "CHANGE_ANALYTICS_INSTANCE_COMPARTMENT", "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_ANALYTICS_INSTANCE", "DELETE_ANALYTICS_INSTANCE", "START_ANALYTICS_INSTANCE", "STOP_ANALYTICS_INSTANCE", "SCALE_ANALYTICS_INSTANCE", "CHANGE_ANALYTICS_INSTANCE_COMPARTMENT", "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT", "CREATE_VANITY_URL", "UPDATE_VANITY_URL", "DELETE_VANITY_URL", "CREATE_PRIVATE_ACCESS_CHANNEL", "UPDATE_PRIVATE_ACCESS_CHANNEL", "DELETE_PRIVATE_ACCESS_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -187,7 +211,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_ANALYTICS_INSTANCE", "DELETE_ANALYTICS_INSTANCE", "START_ANALYTICS_INSTANCE", "STOP_ANALYTICS_INSTANCE", "SCALE_ANALYTICS_INSTANCE", "CHANGE_ANALYTICS_INSTANCE_COMPARTMENT", "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT"]
+        allowed_values = ["CREATE_ANALYTICS_INSTANCE", "DELETE_ANALYTICS_INSTANCE", "START_ANALYTICS_INSTANCE", "STOP_ANALYTICS_INSTANCE", "SCALE_ANALYTICS_INSTANCE", "CHANGE_ANALYTICS_INSTANCE_COMPARTMENT", "CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT", "CREATE_VANITY_URL", "UPDATE_VANITY_URL", "DELETE_VANITY_URL", "CREATE_PRIVATE_ACCESS_CHANNEL", "UPDATE_PRIVATE_ACCESS_CHANNEL", "DELETE_PRIVATE_ACCESS_CHANNEL"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

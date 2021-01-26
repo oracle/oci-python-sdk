@@ -33,7 +33,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
             Byoip Range prefix and a cidr from it
@@ -313,7 +315,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.CreateByoipRangeDetails create_byoip_range_details: (required)
-            Create Byoip Range details.
+            Details needed to create a BYOIP CIDR block subrange.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ByoipRange.lifecycle_state`
@@ -1149,7 +1151,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1754,7 +1758,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.PublicIpPool.lifecycle_state`
@@ -2266,10 +2272,12 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
-            The Cidr to be removed from the Public Ip Pool
+            The CIDR block to remove from the IP pool.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.PublicIpPool.lifecycle_state`
@@ -2347,7 +2355,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateByoipRangeDetails update_byoip_range_details: (required)
             Byoip Range details.
@@ -2932,10 +2942,12 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str public_ip_pool_id: (required)
-            The OCID of the Public Ip Pool object.
+            The `OCID`__ of the public IP pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
-            Public Ip Pool details.
+            Public IP pool details.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.PublicIpPool.lifecycle_state`
@@ -3348,7 +3360,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str byoip_range_id: (required)
-            The OCID of the Byoip Range object.
+            The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`

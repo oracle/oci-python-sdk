@@ -222,8 +222,6 @@ class CreateImageDetails(object):
     def image_source_details(self):
         """
         Gets the image_source_details of this CreateImageDetails.
-        Details for creating an image through import
-
 
         :return: The image_source_details of this CreateImageDetails.
         :rtype: oci.core.models.ImageSourceDetails
@@ -234,8 +232,6 @@ class CreateImageDetails(object):
     def image_source_details(self, image_source_details):
         """
         Sets the image_source_details of this CreateImageDetails.
-        Details for creating an image through import
-
 
         :param image_source_details: The image_source_details of this CreateImageDetails.
         :type: oci.core.models.ImageSourceDetails

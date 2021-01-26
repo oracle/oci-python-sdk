@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatePublicIpPoolDetails(object):
     """
-    The data to update a public ip pool
+    The data to update for a public IP pool.
     """
 
     def __init__(self, **kwargs):

@@ -37,8 +37,7 @@ class ChangeByoipRangeCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeByoipRangeCompartmentDetails.
-        The `OCID`__ of the compartment to move the
-        Byoip Range to.
+        The `OCID`__ of the destination compartment for the BYOIP CIDR block move.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -52,8 +51,7 @@ class ChangeByoipRangeCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeByoipRangeCompartmentDetails.
-        The `OCID`__ of the compartment to move the
-        Byoip Range to.
+        The `OCID`__ of the destination compartment for the BYOIP CIDR block move.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

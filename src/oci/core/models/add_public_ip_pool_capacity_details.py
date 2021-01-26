@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddPublicIpPoolCapacityDetails(object):
     """
-    The data to add capacity to a public ip pool
+    The information used to add capacity to an IP pool.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,9 @@ class AddPublicIpPoolCapacityDetails(object):
     def byoip_range_id(self):
         """
         **[Required]** Gets the byoip_range_id of this AddPublicIpPoolCapacityDetails.
-        The OCID of the Byoip Range Id object to whch the cidr block belongs.
+        The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The byoip_range_id of this AddPublicIpPoolCapacityDetails.
@@ -56,7 +58,9 @@ class AddPublicIpPoolCapacityDetails(object):
     def byoip_range_id(self, byoip_range_id):
         """
         Sets the byoip_range_id of this AddPublicIpPoolCapacityDetails.
-        The OCID of the Byoip Range Id object to whch the cidr block belongs.
+        The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param byoip_range_id: The byoip_range_id of this AddPublicIpPoolCapacityDetails.
@@ -68,7 +72,7 @@ class AddPublicIpPoolCapacityDetails(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this AddPublicIpPoolCapacityDetails.
-        The CIDR IP address range to be added to the Public Ip Pool
+        The CIDR block to add to the public IP pool. It could be all of the CIDR block identified in `byoipRangeId`, or a subrange.
         Example: `10.0.1.0/24`
 
 
@@ -81,7 +85,7 @@ class AddPublicIpPoolCapacityDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this AddPublicIpPoolCapacityDetails.
-        The CIDR IP address range to be added to the Public Ip Pool
+        The CIDR block to add to the public IP pool. It could be all of the CIDR block identified in `byoipRangeId`, or a subrange.
         Example: `10.0.1.0/24`
 
 

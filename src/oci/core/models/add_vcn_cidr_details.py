@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddVcnCidrDetails(object):
     """
-    Contains a new CIDR which will be added to the VCN.
+    Details for adding a CIDR block to a VCN.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class AddVcnCidrDetails(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this AddVcnCidrDetails.
-        The CIDR IP address that needs to be added.
+        The CIDR block to add.
 
 
         :return: The cidr_block of this AddVcnCidrDetails.
@@ -49,7 +49,7 @@ class AddVcnCidrDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this AddVcnCidrDetails.
-        The CIDR IP address that needs to be added.
+        The CIDR block to add.
 
 
         :param cidr_block: The cidr_block of this AddVcnCidrDetails.

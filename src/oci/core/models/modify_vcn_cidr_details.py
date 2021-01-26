@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModifyVcnCidrDetails(object):
     """
-    Contains the original CIDR that needs to be updated and the
-    new CIDR which will replace the original CIDR.
+    Details for updating a CIDR block.
     """
 
     def __init__(self, **kwargs):
@@ -45,7 +44,7 @@ class ModifyVcnCidrDetails(object):
     def original_cidr_block(self):
         """
         **[Required]** Gets the original_cidr_block of this ModifyVcnCidrDetails.
-        The CIDR IP address that needs to be updated.
+        The CIDR IP address to update.
 
 
         :return: The original_cidr_block of this ModifyVcnCidrDetails.
@@ -57,7 +56,7 @@ class ModifyVcnCidrDetails(object):
     def original_cidr_block(self, original_cidr_block):
         """
         Sets the original_cidr_block of this ModifyVcnCidrDetails.
-        The CIDR IP address that needs to be updated.
+        The CIDR IP address to update.
 
 
         :param original_cidr_block: The original_cidr_block of this ModifyVcnCidrDetails.
@@ -69,7 +68,7 @@ class ModifyVcnCidrDetails(object):
     def new_cidr_block(self):
         """
         **[Required]** Gets the new_cidr_block of this ModifyVcnCidrDetails.
-        The new CIDR IP address which will replace the orginal one.
+        The new CIDR IP address.
 
 
         :return: The new_cidr_block of this ModifyVcnCidrDetails.
@@ -81,7 +80,7 @@ class ModifyVcnCidrDetails(object):
     def new_cidr_block(self, new_cidr_block):
         """
         Sets the new_cidr_block of this ModifyVcnCidrDetails.
-        The new CIDR IP address which will replace the orginal one.
+        The new CIDR IP address.
 
 
         :param new_cidr_block: The new_cidr_block of this ModifyVcnCidrDetails.

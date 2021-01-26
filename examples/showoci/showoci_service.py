@@ -700,7 +700,7 @@ class ShowOCIService(object):
             return [e for e in array if e[p1] == v1]
 
         except Exception as e:
-            self.__print_error("search_multi_items", e)
+            self.__print_error("search_multi_items " + module + ":" + section, e)
 
     ##########################################################################
     # initialize data key if not exist
@@ -1945,7 +1945,7 @@ class ShowOCIService(object):
                 # loop on the array
                 # vcn = oci.core.models.Vcn()
                 for vcn in vcns:
-                    val = {'id': str(vcn.id), 'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name) + " - Main: " + str(vcn.cidr_block),
+                    val = {'id': str(vcn.id), 'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
                            'display_name': str(vcn.display_name),
                            'cidr_block': str(vcn.cidr_block),
                            'cidr_blocks': vcn.cidr_blocks,
@@ -2133,6 +2133,7 @@ class ShowOCIService(object):
 
                     # get the cidr block of the peering
                     cidr = "" if lpg.peer_advertised_cidr is None else " - " + str(lpg.peer_advertised_cidr)
+                    cidr += "" if not lpg.peer_advertised_cidr_details else " (" + str(', '.join(x for x in lpg.peer_advertised_cidr_details)) + ")"
 
                     # add lpg info to data
                     val = {'id': str(lpg.id),
@@ -2974,10 +2975,14 @@ class ShowOCIService(object):
                 # loop on all sgws
                 # sgw = oci.core.models.ServiceGateway
                 for sgw in sgws:
-                    val = {'id': str(sgw.id), 'vcn_id': str(sgw.vcn_id), 'name': str(sgw.display_name),
+                    val = {'id': str(sgw.id),
+                           'vcn_id': str(sgw.vcn_id),
+                           'name': str(sgw.display_name),
                            'time_created': str(sgw.time_created),
+                           'route_table_id': str(sgw.route_table_id),
                            'services': str(', '.join(x.service_name for x in sgw.services)),
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
                            'defined_tags': [] if sgw.defined_tags is None else sgw.defined_tags,
                            'freeform_tags': [] if sgw.freeform_tags is None else sgw.freeform_tags,
                            'region_name': str(self.config['region'])}
@@ -3488,6 +3493,7 @@ class ShowOCIService(object):
                         data_tun = []
                         try:
                             tunnels = virtual_network.list_ip_sec_connection_tunnels(arr.id).data
+                            tunnels_status = ""
                             for tunnel in tunnels:
                                 tun_val = {'id': str(tunnel.id),
                                            'status': str(tunnel.status),
@@ -3498,6 +3504,9 @@ class ShowOCIService(object):
                                            'cpe_ip': str(tunnel.cpe_ip),
                                            'vpn_ip': str(tunnel.vpn_ip),
                                            'bgp_info': ""}
+                                if tunnels_status:
+                                    tunnels_status += " "
+                                tunnels_status += str(tunnel.status)
 
                                 if tunnel.bgp_session_info:
                                     bs = tunnel.bgp_session_info
@@ -3507,7 +3516,10 @@ class ShowOCIService(object):
                         except Exception:
                             pass
 
-                        val = {'id': str(arr.id), 'name': str(arr.display_name), 'drg_id': str(arr.drg_id),
+                        val = {'id': str(arr.id),
+                               'name': str(arr.display_name),
+                               'drg_id': str(arr.drg_id),
+                               'tunnels_status': tunnels_status,
                                'cpe_id': str(arr.cpe_id), 'time_created': str(arr.time_created),
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,

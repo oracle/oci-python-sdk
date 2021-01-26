@@ -237,9 +237,6 @@ class LaunchInstanceDetails(object):
     def create_vnic_details(self):
         """
         Gets the create_vnic_details of this LaunchInstanceDetails.
-        Details for the primary VNIC, which is automatically created and attached when
-        the instance is launched.
-
 
         :return: The create_vnic_details of this LaunchInstanceDetails.
         :rtype: oci.core.models.CreateVnicDetails
@@ -250,9 +247,6 @@ class LaunchInstanceDetails(object):
     def create_vnic_details(self, create_vnic_details):
         """
         Sets the create_vnic_details of this LaunchInstanceDetails.
-        Details for the primary VNIC, which is automatically created and attached when
-        the instance is launched.
-
 
         :param create_vnic_details: The create_vnic_details of this LaunchInstanceDetails.
         :type: oci.core.models.CreateVnicDetails
@@ -601,9 +595,6 @@ class LaunchInstanceDetails(object):
     def launch_options(self):
         """
         Gets the launch_options of this LaunchInstanceDetails.
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
-        default values.
-
 
         :return: The launch_options of this LaunchInstanceDetails.
         :rtype: oci.core.models.LaunchOptions
@@ -614,9 +605,6 @@ class LaunchInstanceDetails(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this LaunchInstanceDetails.
-        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
-        default values.
-
 
         :param launch_options: The launch_options of this LaunchInstanceDetails.
         :type: oci.core.models.LaunchOptions
@@ -647,8 +635,6 @@ class LaunchInstanceDetails(object):
     def availability_config(self):
         """
         Gets the availability_config of this LaunchInstanceDetails.
-        Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :return: The availability_config of this LaunchInstanceDetails.
         :rtype: oci.core.models.LaunchInstanceAvailabilityConfigDetails
@@ -659,8 +645,6 @@ class LaunchInstanceDetails(object):
     def availability_config(self, availability_config):
         """
         Sets the availability_config of this LaunchInstanceDetails.
-        Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
-
 
         :param availability_config: The availability_config of this LaunchInstanceDetails.
         :type: oci.core.models.LaunchInstanceAvailabilityConfigDetails
@@ -865,9 +849,6 @@ class LaunchInstanceDetails(object):
     def source_details(self):
         """
         Gets the source_details of this LaunchInstanceDetails.
-        Details for creating an instance.
-        Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
 
         :return: The source_details of this LaunchInstanceDetails.
         :rtype: oci.core.models.InstanceSourceDetails
@@ -878,9 +859,6 @@ class LaunchInstanceDetails(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this LaunchInstanceDetails.
-        Details for creating an instance.
-        Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
 
         :param source_details: The source_details of this LaunchInstanceDetails.
         :type: oci.core.models.InstanceSourceDetails

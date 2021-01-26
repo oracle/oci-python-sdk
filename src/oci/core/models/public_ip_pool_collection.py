@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PublicIpPoolCollection(object):
     """
-    Results of a ListPublicIpPool operation.
+    Results of a `ListPublicIpPool` operation.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class PublicIpPoolCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this PublicIpPoolCollection.
-        list of Public Ip pool object summaries
+        A list of public IP pool summaries.
 
 
         :return: The items of this PublicIpPoolCollection.
@@ -49,7 +49,7 @@ class PublicIpPoolCollection(object):
     def items(self, items):
         """
         Sets the items of this PublicIpPoolCollection.
-        list of Public Ip pool object summaries
+        A list of public IP pool summaries.
 
 
         :param items: The items of this PublicIpPoolCollection.

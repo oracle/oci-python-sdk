@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseUpgradeWithDbHomeDetails(DatabaseUpgradeSourceBase):
     """
-    Details of Database Home for upgrading a database.
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    Details of Database Home to be used to upgrade a database.
     """
 
     def __init__(self, **kwargs):

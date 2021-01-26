@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveVcnCidrDetails(object):
     """
-    Contains the CIDR which will be removed from the VCN.
+    Details for removing a CIDR block from a VCN.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RemoveVcnCidrDetails(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this RemoveVcnCidrDetails.
-        The CIDR IP address that needs to be removed.
+        The CIDR block to remove.
 
 
         :return: The cidr_block of this RemoveVcnCidrDetails.
@@ -49,7 +49,7 @@ class RemoveVcnCidrDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this RemoveVcnCidrDetails.
-        The CIDR IP address that needs to be removed.
+        The CIDR block to remove.
 
 
         :param cidr_block: The cidr_block of this RemoveVcnCidrDetails.

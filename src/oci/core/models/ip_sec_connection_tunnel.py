@@ -396,8 +396,6 @@ class IPSecConnectionTunnel(object):
     def bgp_session_info(self):
         """
         Gets the bgp_session_info of this IPSecConnectionTunnel.
-        Information for establishing the tunnel's BGP session.
-
 
         :return: The bgp_session_info of this IPSecConnectionTunnel.
         :rtype: oci.core.models.BgpSessionInfo
@@ -408,8 +406,6 @@ class IPSecConnectionTunnel(object):
     def bgp_session_info(self, bgp_session_info):
         """
         Sets the bgp_session_info of this IPSecConnectionTunnel.
-        Information for establishing the tunnel's BGP session.
-
 
         :param bgp_session_info: The bgp_session_info of this IPSecConnectionTunnel.
         :type: oci.core.models.BgpSessionInfo

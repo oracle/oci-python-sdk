@@ -166,8 +166,6 @@ class UpdateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self):
         """
         Gets the bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
-        Information for establishing a BGP session for the IPSec tunnel.
-
 
         :return: The bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
         :rtype: oci.core.models.UpdateIPSecTunnelBgpSessionDetails
@@ -178,8 +176,6 @@ class UpdateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self, bgp_session_config):
         """
         Sets the bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
-        Information for establishing a BGP session for the IPSec tunnel.
-
 
         :param bgp_session_config: The bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
         :type: oci.core.models.UpdateIPSecTunnelBgpSessionDetails

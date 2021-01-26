@@ -3301,8 +3301,17 @@ class ComputeClient(object):
         - **SOFTRESET** - Gracefully reboots the instance by sending a shutdown command to the operating system, and
         then powers the instance back on.
 
-        For more information, see `Stopping and Starting an Instance`__.
+        - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Warning: Sending a diagnostic interrupt to a live system can
+        cause data corruption or system failure.** Sends a diagnostic interrupt that causes the instance's
+        OS to crash and then reboot. Before you send a diagnostic interrupt, you must configure the instance to generate a
+        crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
+        the crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more information, see
+        `Sending a Diagnostic Interrupt`__.
 
+        For more information about managing instance lifecycle states, see
+        `Stopping and Starting an Instance`__.
+
+        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm
 
 

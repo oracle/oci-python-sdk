@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpgradeDatabaseDetails(object):
     """
-    Details for upgrading a database to a specific db version.
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    Details for upgrading a database to a specific Oracle Database version.
     """
 
     #: A constant which can be used with the action property of a UpgradeDatabaseDetails.
@@ -58,7 +57,7 @@ class UpgradeDatabaseDetails(object):
     def action(self):
         """
         **[Required]** Gets the action of this UpgradeDatabaseDetails.
-        action for upgrading database.
+        The database upgrade action.
 
         Allowed values for this property are: "PRECHECK", "UPGRADE", "ROLLBACK"
 
@@ -72,7 +71,7 @@ class UpgradeDatabaseDetails(object):
     def action(self, action):
         """
         Sets the action of this UpgradeDatabaseDetails.
-        action for upgrading database.
+        The database upgrade action.
 
 
         :param action: The action of this UpgradeDatabaseDetails.

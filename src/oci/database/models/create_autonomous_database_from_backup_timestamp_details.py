@@ -89,6 +89,14 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type whitelisted_ips: list[str]
 
+        :param are_primary_whitelisted_ips_used:
+            The value to assign to the are_primary_whitelisted_ips_used property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type are_primary_whitelisted_ips_used: bool
+
+        :param standby_whitelisted_ips:
+            The value to assign to the standby_whitelisted_ips property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type standby_whitelisted_ips: list[str]
+
         :param is_data_guard_enabled:
             The value to assign to the is_data_guard_enabled property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type is_data_guard_enabled: bool
@@ -152,6 +160,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'autonomous_container_database_id': 'str',
             'is_access_control_enabled': 'bool',
             'whitelisted_ips': 'list[str]',
+            'are_primary_whitelisted_ips_used': 'bool',
+            'standby_whitelisted_ips': 'list[str]',
             'is_data_guard_enabled': 'bool',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
@@ -181,6 +191,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'is_access_control_enabled': 'isAccessControlEnabled',
             'whitelisted_ips': 'whitelistedIps',
+            'are_primary_whitelisted_ips_used': 'arePrimaryWhitelistedIpsUsed',
+            'standby_whitelisted_ips': 'standbyWhitelistedIps',
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
@@ -209,6 +221,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._autonomous_container_database_id = None
         self._is_access_control_enabled = None
         self._whitelisted_ips = None
+        self._are_primary_whitelisted_ips_used = None
+        self._standby_whitelisted_ips = None
         self._is_data_guard_enabled = None
         self._subnet_id = None
         self._nsg_ids = None

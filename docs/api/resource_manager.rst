@@ -45,6 +45,7 @@ Resource Manager
     oci.resource_manager.models.CreateZipUploadConfigSourceDetails
     oci.resource_manager.models.DestroyJobOperationDetails
     oci.resource_manager.models.DestroyJobOperationDetailsSummary
+    oci.resource_manager.models.DetectStackDriftDetails
     oci.resource_manager.models.FailureDetails
     oci.resource_manager.models.GitConfigSource
     oci.resource_manager.models.GitConfigSourceRecord

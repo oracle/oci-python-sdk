@@ -1099,6 +1099,13 @@ class DatabaseClient(object):
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
             Request to move the DB system to a different compartment.
 
+            **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+            For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
@@ -7095,6 +7102,13 @@ class DatabaseClient(object):
         """
         Gets information about the specified DB system.
 
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
@@ -7464,8 +7478,18 @@ class DatabaseClient(object):
 
     def get_exadata_iorm_config(self, db_system_id, **kwargs):
         """
-        Gets the IORM configuration settings for the specified cloud Exadata system.
+        Gets the IORM configuration settings for the specified cloud Exadata DB system.
         All Exadata service instances have default IORM settings.
+
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        The :func:`get_cloud_vm_cluster_iorm_config` API is used for this operation with Exadata systems using the
+        new resource model.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
@@ -8141,17 +8165,28 @@ class DatabaseClient(object):
         Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
 
         An initial database is created on the DB system based on the request parameters you provide and some default
-        options. For detailed information about default options, see the following:
+        options. For detailed information about default options, see `Bare metal and virtual machine DB system default options.`__
 
-        - `Bare metal and virtual machine DB system default options`__
-        - `Exadata DB system default options`__
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#DefaultOptionsfortheInitialDatabase
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/exacreatingDBsystem.htm#DefaultOptionsfortheInitialDatabase
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        Use the :func:`create_cloud_exadata_infrastructure` and :func:`create_cloud_vm_cluster` APIs to provision a new Exadata Cloud Service instance.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
             Request to launch a DB system.
+
+            **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+            For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8349,7 +8384,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE"
 
         :param str availability_domain: (optional)
             A filter to return only resources that match the given availability domain exactly.
@@ -8419,7 +8454,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -10671,7 +10706,7 @@ class DatabaseClient(object):
 
     def list_database_upgrade_history_entries(self, database_id, **kwargs):
         """
-        gets the upgrade history for a specified database.
+        Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
 
 
         :param str database_id: (required)
@@ -11668,6 +11703,13 @@ class DatabaseClient(object):
     def list_db_systems(self, compartment_id, **kwargs):
         """
         Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
+
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str compartment_id: (required)
@@ -12942,7 +12984,10 @@ class DatabaseClient(object):
 
     def migrate_exadata_db_system_resource_model(self, db_system_id, **kwargs):
         """
-        Migrates the Exadata DB system to the cloud Exadata infrastructure model. All related resources will be migrated.
+        Migrates the Exadata DB system to the new `Exadata resource model`__.
+        All related resources will be migrated.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
 
         :param str db_system_id: (required)
@@ -14797,6 +14842,13 @@ class DatabaseClient(object):
         """
         Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
 
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
@@ -15974,6 +16026,13 @@ class DatabaseClient(object):
         """
         Updates the properties of the specified DB system.
 
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
@@ -16146,7 +16205,17 @@ class DatabaseClient(object):
 
     def update_exadata_iorm_config(self, db_system_id, exadata_iorm_config_update_details, **kwargs):
         """
-        Updates IORM settings for the specified Exadata system.
+        Updates IORM settings for the specified Exadata DB system.
+
+        **Note:** Deprecated for Exadata Cloud Service systems. Use the `new resource model APIs`__ instead.
+
+        For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
+
+        The :func:`update_cloud_vm_cluster_iorm_config` API is used for Exadata systems using the
+        new resource model.
+
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
@@ -16591,7 +16660,7 @@ class DatabaseClient(object):
 
     def upgrade_database(self, database_id, upgrade_database_details, **kwargs):
         """
-        Upgrade the specified database.
+        Upgrades the specified Oracle Database instance.
 
 
         :param str database_id: (required)
@@ -16600,7 +16669,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
-            Request to perform database upgrade.
+            Request to perform a database upgrade.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

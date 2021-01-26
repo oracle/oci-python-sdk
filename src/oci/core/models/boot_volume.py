@@ -568,9 +568,6 @@ class BootVolume(object):
     def source_details(self):
         """
         Gets the source_details of this BootVolume.
-        The boot volume source, either an existing boot volume in the same availability domain or a boot volume backup.
-        If null, this means that the boot volume was created from an image.
-
 
         :return: The source_details of this BootVolume.
         :rtype: oci.core.models.BootVolumeSourceDetails
@@ -581,9 +578,6 @@ class BootVolume(object):
     def source_details(self, source_details):
         """
         Sets the source_details of this BootVolume.
-        The boot volume source, either an existing boot volume in the same availability domain or a boot volume backup.
-        If null, this means that the boot volume was created from an image.
-
 
         :param source_details: The source_details of this BootVolume.
         :type: oci.core.models.BootVolumeSourceDetails

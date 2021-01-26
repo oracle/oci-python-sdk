@@ -143,6 +143,88 @@ class AnalyticsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_private_access_channel_and_wait_for_state(self, analytics_instance_id, create_private_access_channel_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.analytics.AnalyticsClient.create_private_access_channel` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str analytics_instance_id: (required)
+            The OCID of the AnalyticsInstance.
+
+        :param oci.analytics.models.CreatePrivateAccessChannelDetails create_private_access_channel_details: (required)
+            Input payload for creating a private access channel for an Analytics instance.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.analytics.AnalyticsClient.create_private_access_channel`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_private_access_channel(analytics_instance_id, create_private_access_channel_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_vanity_url_and_wait_for_state(self, analytics_instance_id, create_vanity_url_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.analytics.AnalyticsClient.create_vanity_url` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str analytics_instance_id: (required)
+            The OCID of the AnalyticsInstance.
+
+        :param oci.analytics.models.CreateVanityUrlDetails create_vanity_url_details: (required)
+            Vanity url details.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.analytics.AnalyticsClient.create_vanity_url`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_vanity_url(analytics_instance_id, create_vanity_url_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_analytics_instance_and_wait_for_state(self, analytics_instance_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.analytics.AnalyticsClient.delete_analytics_instance` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
@@ -164,6 +246,104 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_analytics_instance(analytics_instance_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_private_access_channel_and_wait_for_state(self, private_access_channel_key, analytics_instance_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.analytics.AnalyticsClient.delete_private_access_channel` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str private_access_channel_key: (required)
+            The unique identifier key of the Private Access Channel.
+
+        :param str analytics_instance_id: (required)
+            The OCID of the AnalyticsInstance.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.analytics.AnalyticsClient.delete_private_access_channel`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_private_access_channel(private_access_channel_key, analytics_instance_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_vanity_url_and_wait_for_state(self, analytics_instance_id, vanity_url_key, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.analytics.AnalyticsClient.delete_vanity_url` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str analytics_instance_id: (required)
+            The OCID of the AnalyticsInstance.
+
+        :param str vanity_url_key: (required)
+            Specify unique identifier key of a vanity url to update or delete.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.analytics.AnalyticsClient.delete_vanity_url`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_vanity_url(analytics_instance_id, vanity_url_key, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -340,6 +520,94 @@ class AnalyticsClientCompositeOperations(object):
                 self.client,
                 self.client.get_analytics_instance(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_private_access_channel_and_wait_for_state(self, private_access_channel_key, analytics_instance_id, update_private_access_channel_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.analytics.AnalyticsClient.update_private_access_channel` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str private_access_channel_key: (required)
+            The unique identifier key of the Private Access Channel.
+
+        :param str analytics_instance_id: (required)
+            The OCID of the AnalyticsInstance.
+
+        :param oci.analytics.models.UpdatePrivateAccessChannelDetails update_private_access_channel_details: (required)
+            Update the Private Access Channel with the given unique identifier key in the specified Analytics Instance.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.analytics.AnalyticsClient.update_private_access_channel`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_private_access_channel(private_access_channel_key, analytics_instance_id, update_private_access_channel_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_vanity_url_and_wait_for_state(self, analytics_instance_id, vanity_url_key, update_vanity_url_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.analytics.AnalyticsClient.update_vanity_url` and waits for the :py:class:`~oci.analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str analytics_instance_id: (required)
+            The OCID of the AnalyticsInstance.
+
+        :param str vanity_url_key: (required)
+            Specify unique identifier key of a vanity url to update or delete.
+
+        :param oci.analytics.models.UpdateVanityUrlDetails update_vanity_url_details: (required)
+            Vanity url details to update (certificate).
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.analytics.AnalyticsClient.update_vanity_url`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_vanity_url(analytics_instance_id, vanity_url_key, update_vanity_url_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result

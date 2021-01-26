@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipRangeSummary(object):
     """
-    Summary information about a ByoipRange
+    Information about a `ByoipRange` resource.
     """
 
     def __init__(self, **kwargs):
@@ -93,7 +93,7 @@ class ByoipRangeSummary(object):
     def cidr_block(self):
         """
         Gets the cidr_block of this ByoipRangeSummary.
-        The address range the user is on-boarding.
+        The public IPv4 address range you are importing to the Oracle cloud.
 
 
         :return: The cidr_block of this ByoipRangeSummary.
@@ -105,7 +105,7 @@ class ByoipRangeSummary(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this ByoipRangeSummary.
-        The address range the user is on-boarding.
+        The public IPv4 address range you are importing to the Oracle cloud.
 
 
         :param cidr_block: The cidr_block of this ByoipRangeSummary.
@@ -117,7 +117,9 @@ class ByoipRangeSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ByoipRangeSummary.
-        The OCID of the compartment containing the Byoip Range.
+        The `OCID`__ of the compartment containing the `ByoipRange` resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByoipRangeSummary.
@@ -129,7 +131,9 @@ class ByoipRangeSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ByoipRangeSummary.
-        The OCID of the compartment containing the Byoip Range.
+        The `OCID`__ of the compartment containing the `ByoipRange` resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByoipRangeSummary.
@@ -235,7 +239,9 @@ class ByoipRangeSummary(object):
     def id(self):
         """
         Gets the id of this ByoipRangeSummary.
-        The Oracle ID (OCID) of the Byoip Range.
+        The `OCID`__ of the `ByoipRange` resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ByoipRangeSummary.
@@ -247,7 +253,9 @@ class ByoipRangeSummary(object):
     def id(self, id):
         """
         Sets the id of this ByoipRangeSummary.
-        The Oracle ID (OCID) of the Byoip Range.
+        The `OCID`__ of the `ByoipRange` resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ByoipRangeSummary.
@@ -259,7 +267,7 @@ class ByoipRangeSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ByoipRangeSummary.
-        The Byoip Range's current state.
+        The `ByoipRange` resource's current state.
 
 
         :return: The lifecycle_state of this ByoipRangeSummary.
@@ -271,7 +279,7 @@ class ByoipRangeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ByoipRangeSummary.
-        The Byoip Range's current state.
+        The `ByoipRange` resource's current state.
 
 
         :param lifecycle_state: The lifecycle_state of this ByoipRangeSummary.
@@ -307,7 +315,7 @@ class ByoipRangeSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ByoipRangeSummary.
-        The date and time the Byoip Range was created, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -323,7 +331,7 @@ class ByoipRangeSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ByoipRangeSummary.
-        The date and time the Byoip Range was created, in the format defined by `RFC3339`__.
+        The date and time the `ByoipRange` resource was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
