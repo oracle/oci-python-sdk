@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceConfigurationLaunchInstanceAgentConfigDetails(object):
     """
-    Instance agent configuration options to choose for launching the instance
+    Configuration options for the Oracle Cloud Agent software running on the instance.
     """
 
     def __init__(self, **kwargs):
@@ -44,8 +44,8 @@ class InstanceConfigurationLaunchInstanceAgentConfigDetails(object):
     def is_monitoring_disabled(self):
         """
         Gets the is_monitoring_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
-        Whether the agent running on the instance can gather performance metrics and monitor the instance.
-        Default value is false.
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
+        monitoring plugins. Default value is false (monitoring plugins are enabled).
 
 
         :return: The is_monitoring_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
@@ -57,8 +57,8 @@ class InstanceConfigurationLaunchInstanceAgentConfigDetails(object):
     def is_monitoring_disabled(self, is_monitoring_disabled):
         """
         Sets the is_monitoring_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
-        Whether the agent running on the instance can gather performance metrics and monitor the instance.
-        Default value is false.
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
+        monitoring plugins. Default value is false (monitoring plugins are enabled).
 
 
         :param is_monitoring_disabled: The is_monitoring_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
@@ -70,8 +70,8 @@ class InstanceConfigurationLaunchInstanceAgentConfigDetails(object):
     def is_management_disabled(self):
         """
         Gets the is_management_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
-        Whether the agent running on the instance can run all the available management plugins.
-        Default value is false.
+        Whether Oracle Cloud Agent can run all the available management plugins.
+        Default value is false (management plugins are enabled).
 
 
         :return: The is_management_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
@@ -83,8 +83,8 @@ class InstanceConfigurationLaunchInstanceAgentConfigDetails(object):
     def is_management_disabled(self, is_management_disabled):
         """
         Sets the is_management_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.
-        Whether the agent running on the instance can run all the available management plugins.
-        Default value is false.
+        Whether Oracle Cloud Agent can run all the available management plugins.
+        Default value is false (management plugins are enabled).
 
 
         :param is_management_disabled: The is_management_disabled of this InstanceConfigurationLaunchInstanceAgentConfigDetails.

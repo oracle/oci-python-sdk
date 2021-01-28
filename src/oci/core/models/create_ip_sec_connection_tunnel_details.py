@@ -21,6 +21,10 @@ class CreateIPSecConnectionTunnelDetails(object):
     #: This constant has a value of "STATIC"
     ROUTING_STATIC = "STATIC"
 
+    #: A constant which can be used with the routing property of a CreateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "POLICY"
+    ROUTING_POLICY = "POLICY"
+
     #: A constant which can be used with the ike_version property of a CreateIPSecConnectionTunnelDetails.
     #: This constant has a value of "V1"
     IKE_VERSION_V1 = "V1"
@@ -40,7 +44,7 @@ class CreateIPSecConnectionTunnelDetails(object):
 
         :param routing:
             The value to assign to the routing property of this CreateIPSecConnectionTunnelDetails.
-            Allowed values for this property are: "BGP", "STATIC"
+            Allowed values for this property are: "BGP", "STATIC", "POLICY"
         :type routing: str
 
         :param ike_version:
@@ -56,13 +60,18 @@ class CreateIPSecConnectionTunnelDetails(object):
             The value to assign to the bgp_session_config property of this CreateIPSecConnectionTunnelDetails.
         :type bgp_session_config: oci.core.models.CreateIPSecTunnelBgpSessionDetails
 
+        :param encryption_domain_config:
+            The value to assign to the encryption_domain_config property of this CreateIPSecConnectionTunnelDetails.
+        :type encryption_domain_config: oci.core.models.CreateIPSecTunnelEncryptionDomainDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'routing': 'str',
             'ike_version': 'str',
             'shared_secret': 'str',
-            'bgp_session_config': 'CreateIPSecTunnelBgpSessionDetails'
+            'bgp_session_config': 'CreateIPSecTunnelBgpSessionDetails',
+            'encryption_domain_config': 'CreateIPSecTunnelEncryptionDomainDetails'
         }
 
         self.attribute_map = {
@@ -70,7 +79,8 @@ class CreateIPSecConnectionTunnelDetails(object):
             'routing': 'routing',
             'ike_version': 'ikeVersion',
             'shared_secret': 'sharedSecret',
-            'bgp_session_config': 'bgpSessionConfig'
+            'bgp_session_config': 'bgpSessionConfig',
+            'encryption_domain_config': 'encryptionDomainConfig'
         }
 
         self._display_name = None
@@ -78,6 +88,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         self._ike_version = None
         self._shared_secret = None
         self._bgp_session_config = None
+        self._encryption_domain_config = None
 
     @property
     def display_name(self):
@@ -111,7 +122,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         Gets the routing of this CreateIPSecConnectionTunnelDetails.
         The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
 
-        Allowed values for this property are: "BGP", "STATIC"
+        Allowed values for this property are: "BGP", "STATIC", "POLICY"
 
 
         :return: The routing of this CreateIPSecConnectionTunnelDetails.
@@ -129,7 +140,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         :param routing: The routing of this CreateIPSecConnectionTunnelDetails.
         :type: str
         """
-        allowed_values = ["BGP", "STATIC"]
+        allowed_values = ["BGP", "STATIC", "POLICY"]
         if not value_allowed_none_or_none_sentinel(routing, allowed_values):
             raise ValueError(
                 "Invalid value for `routing`, must be None or one of {0}"
@@ -218,6 +229,26 @@ class CreateIPSecConnectionTunnelDetails(object):
         :type: oci.core.models.CreateIPSecTunnelBgpSessionDetails
         """
         self._bgp_session_config = bgp_session_config
+
+    @property
+    def encryption_domain_config(self):
+        """
+        Gets the encryption_domain_config of this CreateIPSecConnectionTunnelDetails.
+
+        :return: The encryption_domain_config of this CreateIPSecConnectionTunnelDetails.
+        :rtype: oci.core.models.CreateIPSecTunnelEncryptionDomainDetails
+        """
+        return self._encryption_domain_config
+
+    @encryption_domain_config.setter
+    def encryption_domain_config(self, encryption_domain_config):
+        """
+        Sets the encryption_domain_config of this CreateIPSecConnectionTunnelDetails.
+
+        :param encryption_domain_config: The encryption_domain_config of this CreateIPSecConnectionTunnelDetails.
+        :type: oci.core.models.CreateIPSecTunnelEncryptionDomainDetails
+        """
+        self._encryption_domain_config = encryption_domain_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

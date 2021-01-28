@@ -159,7 +159,7 @@ class CreateInstanceConfigurationBase(object):
     def display_name(self):
         """
         Gets the display_name of this CreateInstanceConfigurationBase.
-        A user-friendly name for the instance configuration.  Does not have to be unique,
+        A user-friendly name for the instance configuration. Does not have to be unique,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -172,7 +172,7 @@ class CreateInstanceConfigurationBase(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateInstanceConfigurationBase.
-        A user-friendly name for the instance configuration.  Does not have to be unique,
+        A user-friendly name for the instance configuration. Does not have to be unique,
         and it's changeable. Avoid entering confidential information.
 
 

@@ -237,7 +237,7 @@ class CreateIpv6Details(object):
     @property
     def vnic_id(self):
         """
-        **[Required]** Gets the vnic_id of this CreateIpv6Details.
+        Gets the vnic_id of this CreateIpv6Details.
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 

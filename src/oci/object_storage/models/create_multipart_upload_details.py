@@ -17,6 +17,18 @@ class CreateMultipartUploadDetails(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the storage_tier property of a CreateMultipartUploadDetails.
+    #: This constant has a value of "Standard"
+    STORAGE_TIER_STANDARD = "Standard"
+
+    #: A constant which can be used with the storage_tier property of a CreateMultipartUploadDetails.
+    #: This constant has a value of "InfrequentAccess"
+    STORAGE_TIER_INFREQUENT_ACCESS = "InfrequentAccess"
+
+    #: A constant which can be used with the storage_tier property of a CreateMultipartUploadDetails.
+    #: This constant has a value of "Archive"
+    STORAGE_TIER_ARCHIVE = "Archive"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateMultipartUploadDetails object with values from keyword arguments.
@@ -46,6 +58,11 @@ class CreateMultipartUploadDetails(object):
             The value to assign to the cache_control property of this CreateMultipartUploadDetails.
         :type cache_control: str
 
+        :param storage_tier:
+            The value to assign to the storage_tier property of this CreateMultipartUploadDetails.
+            Allowed values for this property are: "Standard", "InfrequentAccess", "Archive"
+        :type storage_tier: str
+
         :param metadata:
             The value to assign to the metadata property of this CreateMultipartUploadDetails.
         :type metadata: dict(str, str)
@@ -58,6 +75,7 @@ class CreateMultipartUploadDetails(object):
             'content_encoding': 'str',
             'content_disposition': 'str',
             'cache_control': 'str',
+            'storage_tier': 'str',
             'metadata': 'dict(str, str)'
         }
 
@@ -68,6 +86,7 @@ class CreateMultipartUploadDetails(object):
             'content_encoding': 'contentEncoding',
             'content_disposition': 'contentDisposition',
             'cache_control': 'cacheControl',
+            'storage_tier': 'storageTier',
             'metadata': 'metadata'
         }
 
@@ -77,6 +96,7 @@ class CreateMultipartUploadDetails(object):
         self._content_encoding = None
         self._content_disposition = None
         self._cache_control = None
+        self._storage_tier = None
         self._metadata = None
 
     @property
@@ -256,6 +276,40 @@ class CreateMultipartUploadDetails(object):
         :type: str
         """
         self._cache_control = cache_control
+
+    @property
+    def storage_tier(self):
+        """
+        Gets the storage_tier of this CreateMultipartUploadDetails.
+        The storage tier that the object should be stored in. If not specified, the object will be stored in
+        the same storage tier as the bucket.
+
+        Allowed values for this property are: "Standard", "InfrequentAccess", "Archive"
+
+
+        :return: The storage_tier of this CreateMultipartUploadDetails.
+        :rtype: str
+        """
+        return self._storage_tier
+
+    @storage_tier.setter
+    def storage_tier(self, storage_tier):
+        """
+        Sets the storage_tier of this CreateMultipartUploadDetails.
+        The storage tier that the object should be stored in. If not specified, the object will be stored in
+        the same storage tier as the bucket.
+
+
+        :param storage_tier: The storage_tier of this CreateMultipartUploadDetails.
+        :type: str
+        """
+        allowed_values = ["Standard", "InfrequentAccess", "Archive"]
+        if not value_allowed_none_or_none_sentinel(storage_tier, allowed_values):
+            raise ValueError(
+                "Invalid value for `storage_tier`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._storage_tier = storage_tier
 
     @property
     def metadata(self):

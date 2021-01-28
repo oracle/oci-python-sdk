@@ -302,7 +302,8 @@ class SecurityRule(object):
     def direction(self):
         """
         **[Required]** Gets the direction of this SecurityRule.
-        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+        or `INGRESS` for rules to allow inbound IP packets.
 
         Allowed values for this property are: "EGRESS", "INGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -317,7 +318,8 @@ class SecurityRule(object):
     def direction(self, direction):
         """
         Sets the direction of this SecurityRule.
-        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+        or `INGRESS` for rules to allow inbound IP packets.
 
 
         :param direction: The direction of this SecurityRule.

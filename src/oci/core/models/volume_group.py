@@ -231,7 +231,8 @@ class VolumeGroup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this VolumeGroup.
-        A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the volume group. Does not have to be
+        unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this VolumeGroup.
@@ -243,7 +244,8 @@ class VolumeGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeGroup.
-        A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the volume group. Does not have to be
+        unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this VolumeGroup.
@@ -463,7 +465,8 @@ class VolumeGroup(object):
     def is_hydrated(self):
         """
         Gets the is_hydrated of this VolumeGroup.
-        Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
+        Specifies whether the newly created cloned volume group's data has finished copying
+        from the source volume group or backup.
 
 
         :return: The is_hydrated of this VolumeGroup.
@@ -475,7 +478,8 @@ class VolumeGroup(object):
     def is_hydrated(self, is_hydrated):
         """
         Sets the is_hydrated of this VolumeGroup.
-        Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
+        Specifies whether the newly created cloned volume group's data has finished copying
+        from the source volume group or backup.
 
 
         :param is_hydrated: The is_hydrated of this VolumeGroup.

@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PeerRegionForRemotePeering(object):
     """
-    Details about a region that supports remote VCN peering. For more information, see `VCN Peering`__.
+    Details about a region that supports remote VCN peering. For more
+    information, see `VCN Peering`__.
 
     __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
     """

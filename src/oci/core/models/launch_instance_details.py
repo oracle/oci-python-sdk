@@ -897,7 +897,7 @@ class LaunchInstanceDetails(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
-        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
@@ -909,7 +909,7 @@ class LaunchInstanceDetails(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.
-        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this LaunchInstanceDetails.

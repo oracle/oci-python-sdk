@@ -76,6 +76,7 @@ class CreatePreauthenticatedRequestDetails(object):
         """
         **[Required]** Gets the name of this CreatePreauthenticatedRequestDetails.
         A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
+        Avoid entering confidential information.
 
 
         :return: The name of this CreatePreauthenticatedRequestDetails.
@@ -88,6 +89,7 @@ class CreatePreauthenticatedRequestDetails(object):
         """
         Sets the name of this CreatePreauthenticatedRequestDetails.
         A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests.
+        Avoid entering confidential information.
 
 
         :param name: The name of this CreatePreauthenticatedRequestDetails.

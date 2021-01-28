@@ -381,7 +381,7 @@ class UpdateVirtualCircuitDetails(object):
         """
         Gets the provider_state of this UpdateVirtualCircuitDetails.
         The provider's state in relation to this virtual circuit. Relevant only
-        if the customer is using FastConnect via a provider.  ACTIVE
+        if the customer is using FastConnect via a provider. ACTIVE
         means the provider has provisioned the virtual circuit from their
         end. INACTIVE means the provider has not yet provisioned the virtual
         circuit, or has de-provisioned it.
@@ -401,7 +401,7 @@ class UpdateVirtualCircuitDetails(object):
         """
         Sets the provider_state of this UpdateVirtualCircuitDetails.
         The provider's state in relation to this virtual circuit. Relevant only
-        if the customer is using FastConnect via a provider.  ACTIVE
+        if the customer is using FastConnect via a provider. ACTIVE
         means the provider has provisioned the virtual circuit from their
         end. INACTIVE means the provider has not yet provisioned the virtual
         circuit, or has de-provisioned it.

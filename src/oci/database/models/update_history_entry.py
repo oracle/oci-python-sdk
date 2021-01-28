@@ -25,6 +25,10 @@ class UpdateHistoryEntry(object):
     #: This constant has a value of "PRECHECK"
     UPDATE_ACTION_PRECHECK = "PRECHECK"
 
+    #: A constant which can be used with the update_action property of a UpdateHistoryEntry.
+    #: This constant has a value of "ROLLBACK"
+    UPDATE_ACTION_ROLLBACK = "ROLLBACK"
+
     #: A constant which can be used with the update_type property of a UpdateHistoryEntry.
     #: This constant has a value of "GI_UPGRADE"
     UPDATE_TYPE_GI_UPGRADE = "GI_UPGRADE"
@@ -32,6 +36,10 @@ class UpdateHistoryEntry(object):
     #: A constant which can be used with the update_type property of a UpdateHistoryEntry.
     #: This constant has a value of "GI_PATCH"
     UPDATE_TYPE_GI_PATCH = "GI_PATCH"
+
+    #: A constant which can be used with the update_type property of a UpdateHistoryEntry.
+    #: This constant has a value of "OS_UPDATE"
+    UPDATE_TYPE_OS_UPDATE = "OS_UPDATE"
 
     #: A constant which can be used with the lifecycle_state property of a UpdateHistoryEntry.
     #: This constant has a value of "IN_PROGRESS"
@@ -60,13 +68,13 @@ class UpdateHistoryEntry(object):
 
         :param update_action:
             The value to assign to the update_action property of this UpdateHistoryEntry.
-            Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_action: str
 
         :param update_type:
             The value to assign to the update_type property of this UpdateHistoryEntry.
-            Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_type: str
 
@@ -182,7 +190,7 @@ class UpdateHistoryEntry(object):
         Gets the update_action of this UpdateHistoryEntry.
         The update action.
 
-        Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -201,7 +209,7 @@ class UpdateHistoryEntry(object):
         :param update_action: The update_action of this UpdateHistoryEntry.
         :type: str
         """
-        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK"]
+        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"]
         if not value_allowed_none_or_none_sentinel(update_action, allowed_values):
             update_action = 'UNKNOWN_ENUM_VALUE'
         self._update_action = update_action
@@ -212,7 +220,7 @@ class UpdateHistoryEntry(object):
         **[Required]** Gets the update_type of this UpdateHistoryEntry.
         The type of cloud VM cluster maintenance update.
 
-        Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -231,7 +239,7 @@ class UpdateHistoryEntry(object):
         :param update_type: The update_type of this UpdateHistoryEntry.
         :type: str
         """
-        allowed_values = ["GI_UPGRADE", "GI_PATCH"]
+        allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             update_type = 'UNKNOWN_ENUM_VALUE'
         self._update_type = update_type

@@ -540,7 +540,8 @@ class Volume(object):
     def size_in_mbs(self):
         """
         **[Required]** Gets the size_in_mbs of this Volume.
-        The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
+        The size of the volume in MBs. This field is deprecated. Use
+        sizeInGBs instead.
 
 
         :return: The size_in_mbs of this Volume.
@@ -552,7 +553,8 @@ class Volume(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this Volume.
-        The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
+        The size of the volume in MBs. This field is deprecated. Use
+        sizeInGBs instead.
 
 
         :param size_in_mbs: The size_in_mbs of this Volume.

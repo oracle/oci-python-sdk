@@ -182,7 +182,7 @@ class InstancePoolSummary(object):
     def display_name(self):
         """
         Gets the display_name of this InstancePoolSummary.
-        The user-friendly name.  Does not have to be unique.
+        The user-friendly name. Does not have to be unique.
 
 
         :return: The display_name of this InstancePoolSummary.
@@ -194,7 +194,7 @@ class InstancePoolSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstancePoolSummary.
-        The user-friendly name.  Does not have to be unique.
+        The user-friendly name. Does not have to be unique.
 
 
         :param display_name: The display_name of this InstancePoolSummary.

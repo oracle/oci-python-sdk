@@ -276,13 +276,13 @@ class ObjectStorageClient(object):
             The part numbers and entity tags (ETags) for the parts you want to commit.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -598,13 +598,13 @@ class ObjectStorageClient(object):
             Request object for creating a multipart upload.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -978,8 +978,9 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1066,8 +1067,9 @@ class ObjectStorageClient(object):
             Example: `test/object1.log`
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1165,8 +1167,9 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1414,8 +1417,9 @@ class ObjectStorageClient(object):
             The ID of the retention rule.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1499,13 +1503,13 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1786,13 +1790,13 @@ class ObjectStorageClient(object):
             VersionId used to identify a particular version of the object
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2360,13 +2364,13 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2458,13 +2462,13 @@ class ObjectStorageClient(object):
             VersionId used to identify a particular version of the object
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2576,6 +2580,9 @@ class ObjectStorageClient(object):
         Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
         and does not contain fields like the user-defined metadata.
 
+        ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
+        `opc-next-page` value with the `page` request parameter.
+
         To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
@@ -2590,10 +2597,17 @@ class ObjectStorageClient(object):
             The ID of the compartment in which to list buckets.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
             Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
@@ -2710,10 +2724,17 @@ class ObjectStorageClient(object):
             The upload ID for a multipart upload.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2808,10 +2829,17 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2895,6 +2923,9 @@ class ObjectStorageClient(object):
         """
         Lists the object versions in a bucket.
 
+        ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
+        more object versions, use the returned `opc-next-page` value with the `page` request parameter.
+
         To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
@@ -2919,7 +2950,11 @@ class ObjectStorageClient(object):
             Object names returned by a list query must be strictly less than this parameter.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
@@ -2929,13 +2964,13 @@ class ObjectStorageClient(object):
             Note that only '/' is a supported delimiter character at this time.
 
         :param str fields: (optional)
-            Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
-            (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time) and 'timeModified'
-            (object modification date and time).
-            Value of this parameter should be a comma-separated, case-insensitive list of those field names.
-            For example 'name,etag,timeCreated,md5,timeModified'
+            Object summary by default includes only the 'name' field. Use this parameter to also
+            include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+            'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
+            Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+            For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
 
-            Allowed values are: "name", "size", "etag", "timeCreated", "md5", "timeModified"
+            Allowed values are: "name", "size", "etag", "timeCreated", "md5", "timeModified", "storageTier", "archivalState"
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2944,7 +2979,10 @@ class ObjectStorageClient(object):
             Object names returned by a list query must be greater than this parameter.
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3035,7 +3073,12 @@ class ObjectStorageClient(object):
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
-        Lists the objects in a bucket.
+        Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+        parameter for other fields that you can optionally include in ListObjects response.
+
+        ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
+        value with the 'start' parameter. To filter which objects ListObjects returns, use the 'start' and 'end'
+        parameters.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
@@ -3061,7 +3104,11 @@ class ObjectStorageClient(object):
             Object names returned by a list query must be strictly less than this parameter.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
@@ -3071,13 +3118,13 @@ class ObjectStorageClient(object):
             Note that only '/' is a supported delimiter character at this time.
 
         :param str fields: (optional)
-            Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
-            (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time) and 'timeModified'
-            (object modification date and time).
-            Value of this parameter should be a comma-separated, case-insensitive list of those field names.
-            For example 'name,etag,timeCreated,md5,timeModified'
+            Object summary by default includes only the 'name' field. Use this parameter to also
+            include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+            'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
+            Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+            For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
 
-            Allowed values are: "name", "size", "etag", "timeCreated", "md5", "timeModified"
+            Allowed values are: "name", "size", "etag", "timeCreated", "md5", "timeModified", "storageTier", "archivalState"
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -3186,10 +3233,17 @@ class ObjectStorageClient(object):
             User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -3287,10 +3341,17 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3383,10 +3444,17 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3477,7 +3545,10 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3558,10 +3629,17 @@ class ObjectStorageClient(object):
             The ID of the asynchronous request.
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -3649,10 +3727,17 @@ class ObjectStorageClient(object):
             The ID of the asynchronous request.
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -3743,10 +3828,17 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str page: (optional)
-            The page at which to start retrieving results.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3925,13 +4017,13 @@ class ObjectStorageClient(object):
             The content length of the body.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -3998,6 +4090,12 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
+        :param str storage_tier: (optional)
+            The storage tier that the object should be stored in. If not specified, the object will be stored in
+            the same storage tier as the bucket.
+
+            Allowed values are: "Standard", "InfrequentAccess", "Archive"
+
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
 
@@ -4037,6 +4135,7 @@ class ObjectStorageClient(object):
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
             "opc_sse_customer_key_sha256",
+            "storage_tier",
             "opc_meta"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4072,6 +4171,7 @@ class ObjectStorageClient(object):
             "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
             "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
             "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
+            "storage-tier": kwargs.get("storage_tier", missing),
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
@@ -4137,13 +4237,13 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4433,7 +4533,7 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param oci.object_storage.models.RenameObjectDetails rename_object_details: (required)
-            The sourceName and newName of rename operation.
+            The sourceName and newName of rename operation. Avoid entering confidential information.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4609,8 +4709,9 @@ class ObjectStorageClient(object):
             Request object for updating a bucket.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4770,6 +4871,89 @@ class ObjectStorageClient(object):
                 body=update_namespace_metadata_details,
                 response_type="NamespaceMetadata")
 
+    def update_object_storage_tier(self, namespace_name, bucket_name, update_object_storage_tier_details, **kwargs):
+        """
+        Changes the storage tier of the object specified by the objectName parameter.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param oci.object_storage.models.UpdateObjectStorageTierDetails update_object_storage_tier_details: (required)
+            The object name and the desired storage tier.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/objectstorage/update_object_storage_tier.py.html>`__ to see an example of how to use update_object_storage_tier API.
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/actions/updateObjectStorageTier"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_object_storage_tier got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_object_storage_tier_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_object_storage_tier_details)
+
     def update_retention_rule(self, namespace_name, bucket_name, retention_rule_id, update_retention_rule_details, **kwargs):
         """
         Updates the specified retention rule. Rule changes take effect typically within 30 seconds.
@@ -4789,8 +4973,9 @@ class ObjectStorageClient(object):
             Request object for updating the retention rule.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4897,13 +5082,13 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str if_match: (optional)
-            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
-            For uploading a part, this is the entity tag of the target part.
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object
-            already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a
-            part, this is the entity tag of the target part.
+            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+            fail if the resource already exists.
 
         :param str expect: (optional)
             100-continue

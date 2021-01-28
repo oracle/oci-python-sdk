@@ -19,6 +19,18 @@ class CopyObjectDetails(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the destination_object_storage_tier property of a CopyObjectDetails.
+    #: This constant has a value of "Standard"
+    DESTINATION_OBJECT_STORAGE_TIER_STANDARD = "Standard"
+
+    #: A constant which can be used with the destination_object_storage_tier property of a CopyObjectDetails.
+    #: This constant has a value of "InfrequentAccess"
+    DESTINATION_OBJECT_STORAGE_TIER_INFREQUENT_ACCESS = "InfrequentAccess"
+
+    #: A constant which can be used with the destination_object_storage_tier property of a CopyObjectDetails.
+    #: This constant has a value of "Archive"
+    DESTINATION_OBJECT_STORAGE_TIER_ARCHIVE = "Archive"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CopyObjectDetails object with values from keyword arguments.
@@ -64,6 +76,11 @@ class CopyObjectDetails(object):
             The value to assign to the destination_object_metadata property of this CopyObjectDetails.
         :type destination_object_metadata: dict(str, str)
 
+        :param destination_object_storage_tier:
+            The value to assign to the destination_object_storage_tier property of this CopyObjectDetails.
+            Allowed values for this property are: "Standard", "InfrequentAccess", "Archive"
+        :type destination_object_storage_tier: str
+
         """
         self.swagger_types = {
             'source_object_name': 'str',
@@ -75,7 +92,8 @@ class CopyObjectDetails(object):
             'destination_object_name': 'str',
             'destination_object_if_match_e_tag': 'str',
             'destination_object_if_none_match_e_tag': 'str',
-            'destination_object_metadata': 'dict(str, str)'
+            'destination_object_metadata': 'dict(str, str)',
+            'destination_object_storage_tier': 'str'
         }
 
         self.attribute_map = {
@@ -88,7 +106,8 @@ class CopyObjectDetails(object):
             'destination_object_name': 'destinationObjectName',
             'destination_object_if_match_e_tag': 'destinationObjectIfMatchETag',
             'destination_object_if_none_match_e_tag': 'destinationObjectIfNoneMatchETag',
-            'destination_object_metadata': 'destinationObjectMetadata'
+            'destination_object_metadata': 'destinationObjectMetadata',
+            'destination_object_storage_tier': 'destinationObjectStorageTier'
         }
 
         self._source_object_name = None
@@ -101,6 +120,7 @@ class CopyObjectDetails(object):
         self._destination_object_if_match_e_tag = None
         self._destination_object_if_none_match_e_tag = None
         self._destination_object_metadata = None
+        self._destination_object_storage_tier = None
 
     @property
     def source_object_name(self):
@@ -252,7 +272,7 @@ class CopyObjectDetails(object):
     def destination_object_name(self):
         """
         **[Required]** Gets the destination_object_name of this CopyObjectDetails.
-        The name of the destination object resulting from the copy operation.
+        The name of the destination object resulting from the copy operation. Avoid entering confidential information.
 
 
         :return: The destination_object_name of this CopyObjectDetails.
@@ -264,7 +284,7 @@ class CopyObjectDetails(object):
     def destination_object_name(self, destination_object_name):
         """
         Sets the destination_object_name of this CopyObjectDetails.
-        The name of the destination object resulting from the copy operation.
+        The name of the destination object resulting from the copy operation. Avoid entering confidential information.
 
 
         :param destination_object_name: The destination_object_name of this CopyObjectDetails.
@@ -355,6 +375,40 @@ class CopyObjectDetails(object):
         :type: dict(str, str)
         """
         self._destination_object_metadata = destination_object_metadata
+
+    @property
+    def destination_object_storage_tier(self):
+        """
+        Gets the destination_object_storage_tier of this CopyObjectDetails.
+        The storage tier that the object should be stored in. If not specified, the object will be stored in
+        the same storage tier as the bucket.
+
+        Allowed values for this property are: "Standard", "InfrequentAccess", "Archive"
+
+
+        :return: The destination_object_storage_tier of this CopyObjectDetails.
+        :rtype: str
+        """
+        return self._destination_object_storage_tier
+
+    @destination_object_storage_tier.setter
+    def destination_object_storage_tier(self, destination_object_storage_tier):
+        """
+        Sets the destination_object_storage_tier of this CopyObjectDetails.
+        The storage tier that the object should be stored in. If not specified, the object will be stored in
+        the same storage tier as the bucket.
+
+
+        :param destination_object_storage_tier: The destination_object_storage_tier of this CopyObjectDetails.
+        :type: str
+        """
+        allowed_values = ["Standard", "InfrequentAccess", "Archive"]
+        if not value_allowed_none_or_none_sentinel(destination_object_storage_tier, allowed_values):
+            raise ValueError(
+                "Invalid value for `destination_object_storage_tier`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._destination_object_storage_tier = destination_object_storage_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

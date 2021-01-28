@@ -22,9 +22,6 @@ class ServiceGateway(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    **Warning:** Oracle recommends that you avoid using any confidential information when you
-    supply string values using the API.
-
     __ https://docs.cloud.oracle.com/Content/Network/Tasks/servicegateway.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """

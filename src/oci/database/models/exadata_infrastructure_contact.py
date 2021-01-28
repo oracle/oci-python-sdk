@@ -34,25 +34,32 @@ class ExadataInfrastructureContact(object):
             The value to assign to the is_primary property of this ExadataInfrastructureContact.
         :type is_primary: bool
 
+        :param is_contact_mos_validated:
+            The value to assign to the is_contact_mos_validated property of this ExadataInfrastructureContact.
+        :type is_contact_mos_validated: bool
+
         """
         self.swagger_types = {
             'name': 'str',
             'phone_number': 'str',
             'email': 'str',
-            'is_primary': 'bool'
+            'is_primary': 'bool',
+            'is_contact_mos_validated': 'bool'
         }
 
         self.attribute_map = {
             'name': 'name',
             'phone_number': 'phoneNumber',
             'email': 'email',
-            'is_primary': 'isPrimary'
+            'is_primary': 'isPrimary',
+            'is_contact_mos_validated': 'isContactMosValidated'
         }
 
         self._name = None
         self._phone_number = None
         self._email = None
         self._is_primary = None
+        self._is_contact_mos_validated = None
 
     @property
     def name(self):
@@ -130,7 +137,7 @@ class ExadataInfrastructureContact(object):
     def is_primary(self):
         """
         **[Required]** Gets the is_primary of this ExadataInfrastructureContact.
-        True, if this Exadata Infrastructure contact is a primary contact. False, if this Exadata Infrastructure is a secondary contact.
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
 
 
         :return: The is_primary of this ExadataInfrastructureContact.
@@ -142,13 +149,37 @@ class ExadataInfrastructureContact(object):
     def is_primary(self, is_primary):
         """
         Sets the is_primary of this ExadataInfrastructureContact.
-        True, if this Exadata Infrastructure contact is a primary contact. False, if this Exadata Infrastructure is a secondary contact.
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
 
 
         :param is_primary: The is_primary of this ExadataInfrastructureContact.
         :type: bool
         """
         self._is_primary = is_primary
+
+    @property
+    def is_contact_mos_validated(self):
+        """
+        Gets the is_contact_mos_validated of this ExadataInfrastructureContact.
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+
+
+        :return: The is_contact_mos_validated of this ExadataInfrastructureContact.
+        :rtype: bool
+        """
+        return self._is_contact_mos_validated
+
+    @is_contact_mos_validated.setter
+    def is_contact_mos_validated(self, is_contact_mos_validated):
+        """
+        Sets the is_contact_mos_validated of this ExadataInfrastructureContact.
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+
+
+        :param is_contact_mos_validated: The is_contact_mos_validated of this ExadataInfrastructureContact.
+        :type: bool
+        """
+        self._is_contact_mos_validated = is_contact_mos_validated
 
     def __repr__(self):
         return formatted_flat_dict(self)

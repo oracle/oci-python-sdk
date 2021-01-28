@@ -42,6 +42,7 @@ from .retention_rule_summary import RetentionRuleSummary
 from .sse_customer_key_details import SSECustomerKeyDetails
 from .update_bucket_details import UpdateBucketDetails
 from .update_namespace_metadata_details import UpdateNamespaceMetadataDetails
+from .update_object_storage_tier_details import UpdateObjectStorageTierDetails
 from .update_retention_rule_details import UpdateRetentionRuleDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -89,6 +90,7 @@ object_storage_type_mapping = {
     "SSECustomerKeyDetails": SSECustomerKeyDetails,
     "UpdateBucketDetails": UpdateBucketDetails,
     "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails,
+    "UpdateObjectStorageTierDetails": UpdateObjectStorageTierDetails,
     "UpdateRetentionRuleDetails": UpdateRetentionRuleDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

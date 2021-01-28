@@ -52,6 +52,7 @@ class CreateRetentionRuleDetails(object):
         """
         Gets the display_name of this CreateRetentionRuleDetails.
         A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateRetentionRuleDetails.
@@ -64,6 +65,7 @@ class CreateRetentionRuleDetails(object):
         """
         Sets the display_name of this CreateRetentionRuleDetails.
         A user-specified name for the retention rule. Names can be helpful in identifying retention rules.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateRetentionRuleDetails.

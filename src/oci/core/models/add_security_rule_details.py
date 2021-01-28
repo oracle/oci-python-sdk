@@ -278,7 +278,8 @@ class AddSecurityRuleDetails(object):
     def direction(self):
         """
         **[Required]** Gets the direction of this AddSecurityRuleDetails.
-        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+        or `INGRESS` for rules to allow inbound IP packets.
 
         Allowed values for this property are: "EGRESS", "INGRESS"
 
@@ -292,7 +293,8 @@ class AddSecurityRuleDetails(object):
     def direction(self, direction):
         """
         Sets the direction of this AddSecurityRuleDetails.
-        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
+        Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets,
+        or `INGRESS` for rules to allow inbound IP packets.
 
 
         :param direction: The direction of this AddSecurityRuleDetails.
