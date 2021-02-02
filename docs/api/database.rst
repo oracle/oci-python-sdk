@@ -105,6 +105,12 @@ Database
     oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
+    oci.database.models.CreateExternalContainerDatabaseDetails
+    oci.database.models.CreateExternalDatabaseConnectorDetails
+    oci.database.models.CreateExternalDatabaseDetailsBase
+    oci.database.models.CreateExternalMacsConnectorDetails
+    oci.database.models.CreateExternalNonContainerDatabaseDetails
+    oci.database.models.CreateExternalPluggableDatabaseDetails
     oci.database.models.CreateKeyStoreDetails
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
@@ -114,7 +120,12 @@ Database
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
+    oci.database.models.DatabaseConnectionCredentailsByName
+    oci.database.models.DatabaseConnectionCredentials
+    oci.database.models.DatabaseConnectionCredentialsByDetails
+    oci.database.models.DatabaseConnectionString
     oci.database.models.DatabaseConnectionStrings
+    oci.database.models.DatabaseManagementConfig
     oci.database.models.DatabaseSoftwareImage
     oci.database.models.DatabaseSoftwareImageSummary
     oci.database.models.DatabaseSummary
@@ -138,6 +149,10 @@ Database
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
+    oci.database.models.EnableExternalDatabaseManagementDetailsBase
+    oci.database.models.EnableExternalNonContainerDatabaseDatabaseManagementDetails
+    oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary
     oci.database.models.ExadataInfrastructure
@@ -146,6 +161,17 @@ Database
     oci.database.models.ExadataIormConfig
     oci.database.models.ExadataIormConfigUpdateDetails
     oci.database.models.ExternalBackupJob
+    oci.database.models.ExternalContainerDatabase
+    oci.database.models.ExternalContainerDatabaseSummary
+    oci.database.models.ExternalDatabaseBase
+    oci.database.models.ExternalDatabaseConnector
+    oci.database.models.ExternalDatabaseConnectorSummary
+    oci.database.models.ExternalMacsConnector
+    oci.database.models.ExternalMacsConnectorSummary
+    oci.database.models.ExternalNonContainerDatabase
+    oci.database.models.ExternalNonContainerDatabaseSummary
+    oci.database.models.ExternalPluggableDatabase
+    oci.database.models.ExternalPluggableDatabaseSummary
     oci.database.models.FailoverDataGuardAssociationDetails
     oci.database.models.FlexComponentCollection
     oci.database.models.FlexComponentSummary
@@ -200,6 +226,12 @@ Database
     oci.database.models.UpdateDbSystemDetails
     oci.database.models.UpdateDetails
     oci.database.models.UpdateExadataInfrastructureDetails
+    oci.database.models.UpdateExternalContainerDatabaseDetails
+    oci.database.models.UpdateExternalDatabaseConnectorDetails
+    oci.database.models.UpdateExternalDatabaseDetailsBase
+    oci.database.models.UpdateExternalMacsConnectorDetails
+    oci.database.models.UpdateExternalNonContainerDatabaseDetails
+    oci.database.models.UpdateExternalPluggableDatabaseDetails
     oci.database.models.UpdateHistoryEntry
     oci.database.models.UpdateHistoryEntrySummary
     oci.database.models.UpdateKeyStoreDetails

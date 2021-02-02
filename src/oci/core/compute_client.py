@@ -493,7 +493,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -590,7 +590,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -693,7 +693,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -797,7 +797,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -1209,7 +1209,7 @@ class ComputeClient(object):
         After the console connection has been created and is available,
         you connect to the console using SSH.
 
-        For more information about console access, see `Accessing the Console`__.
+        For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
         __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
 
@@ -1359,7 +1359,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1434,7 +1434,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1588,7 +1588,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1663,7 +1663,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1741,7 +1741,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1827,7 +1827,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1905,7 +1905,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2006,7 +2006,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -3294,12 +3294,14 @@ class ComputeClient(object):
         - **RESET** - Powers off the instance and then powers it back on.
 
         - **SOFTSTOP** - Gracefully shuts down the instance by sending a shutdown command to the operating system.
-        If the applications that run on the instance take a long time to shut down, they could be improperly stopped, resulting
-        in data corruption. To avoid this, shut down the instance using the commands available in the OS before you softstop the
+        After waiting 15 minutes for the OS to shut down, the instance is powered off.
+        If the applications that run on the instance take more than 15 minutes to shut down, they could be improperly stopped, resulting
+        in data corruption. To avoid this, manually shut down the instance using the commands available in the OS before you softstop the
         instance.
 
-        - **SOFTRESET** - Gracefully reboots the instance by sending a shutdown command to the operating system, and
-        then powers the instance back on.
+        - **SOFTRESET** - Gracefully reboots the instance by sending a shutdown command to the operating system.
+        After waiting 15 minutes for the OS to shut down, the instance is powered off and
+        then powered back on.
 
         - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Warning: Sending a diagnostic interrupt to a live system can
         cause data corruption or system failure.** Sends a diagnostic interrupt that causes the instance's
@@ -3307,6 +3309,7 @@ class ComputeClient(object):
         crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
         the crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more information, see
         `Sending a Diagnostic Interrupt`__.
+
 
         For more information about managing instance lifecycle states, see
         `Stopping and Starting an Instance`__.
@@ -3332,7 +3335,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4424,7 +4427,8 @@ class ComputeClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state
+            value is case-insensitive.
 
             Allowed values are: "REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED"
 
@@ -5218,7 +5222,8 @@ class ComputeClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state
+            value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED"
 
@@ -5321,7 +5326,7 @@ class ComputeClient(object):
         """
         Lists the console connections for the specified compartment or instance.
 
-        For more information about console access, see `Accessing the Console`__.
+        For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
         __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
 
@@ -5615,7 +5620,8 @@ class ComputeClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state
+            value is case-insensitive.
 
             Allowed values are: "MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"
 
@@ -6110,7 +6116,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param bool preserve_boot_volume: (optional)
@@ -6200,7 +6206,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6282,7 +6288,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6365,7 +6371,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -6473,7 +6479,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6572,7 +6578,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6662,7 +6668,7 @@ class ComputeClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)

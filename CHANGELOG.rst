@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.30.0 - 2021-02-02
+====================
+
+Added
+-----
+* Support for checking if a contact for Exadata infrastructure is valid in My Oracle Support in the Database service
+* Support for checking if Exadata infrastructure is in a degraded state in the Database service
+* Support for updating the operating system on a VM cluster in the Database service
+* Support for external databases in the Database service
+* Support for uploading objects to the infrequent access storage tier in the Object Storage service
+* Support for changing the storage tier of existing objects in the Object Storage service
+* Support for private templates in the Resource Manager service
+* Support for multiple encryption domains on IPSec tunnels in the Networking service
+
+Breaking
+--------
+* Attribute `vnic_id` in response model `Ipv6` changed from required to optional in the Networking service
+
+====================
 2.29.0 - 2021-01-26
 ====================
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateInstanceAgentConfigDetails(object):
     """
-    Instance agent configuration options to choose for updating the instance
+    Configuration options for the Oracle Cloud Agent software running on the instance.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,8 @@ class UpdateInstanceAgentConfigDetails(object):
     def is_monitoring_disabled(self):
         """
         Gets the is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
-        Whether the agent running on the instance can gather performance metrics and monitor the instance.
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
+        monitoring plugins.
 
 
         :return: The is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
@@ -56,7 +57,8 @@ class UpdateInstanceAgentConfigDetails(object):
     def is_monitoring_disabled(self, is_monitoring_disabled):
         """
         Sets the is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
-        Whether the agent running on the instance can gather performance metrics and monitor the instance.
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
+        monitoring plugins.
 
 
         :param is_monitoring_disabled: The is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
@@ -68,7 +70,7 @@ class UpdateInstanceAgentConfigDetails(object):
     def is_management_disabled(self):
         """
         Gets the is_management_disabled of this UpdateInstanceAgentConfigDetails.
-        Whether the agent running on the instance can run all the available management plugins
+        Whether Oracle Cloud Agent can run all the available management plugins.
 
 
         :return: The is_management_disabled of this UpdateInstanceAgentConfigDetails.
@@ -80,7 +82,7 @@ class UpdateInstanceAgentConfigDetails(object):
     def is_management_disabled(self, is_management_disabled):
         """
         Sets the is_management_disabled of this UpdateInstanceAgentConfigDetails.
-        Whether the agent running on the instance can run all the available management plugins
+        Whether Oracle Cloud Agent can run all the available management plugins.
 
 
         :param is_management_disabled: The is_management_disabled of this UpdateInstanceAgentConfigDetails.

@@ -81,7 +81,9 @@ class CreateVolumeGroupBackupDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateVolumeGroupBackupDetails.
-        The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
+        The OCID of the compartment that will contain the volume group
+        backup. This parameter is optional, by default backup will be created in
+        the same compartment and source volume group.
 
 
         :return: The compartment_id of this CreateVolumeGroupBackupDetails.
@@ -93,7 +95,9 @@ class CreateVolumeGroupBackupDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateVolumeGroupBackupDetails.
-        The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
+        The OCID of the compartment that will contain the volume group
+        backup. This parameter is optional, by default backup will be created in
+        the same compartment and source volume group.
 
 
         :param compartment_id: The compartment_id of this CreateVolumeGroupBackupDetails.

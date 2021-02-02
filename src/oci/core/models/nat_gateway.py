@@ -21,9 +21,6 @@ class NatGateway(object):
     policies to give users access, see `Getting Started with
     Policies`__.
 
-    **Warning:** Oracle recommends that you avoid using any confidential information when you
-    supply string values using the API.
-
     __ https://docs.cloud.oracle.com/Content/Network/Tasks/NATgateway.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -264,7 +261,8 @@ class NatGateway(object):
     def id(self):
         """
         **[Required]** Gets the id of this NatGateway.
-        The `OCID`__ of the NAT gateway.
+        The `OCID`__ of the
+        NAT gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -278,7 +276,8 @@ class NatGateway(object):
     def id(self, id):
         """
         Sets the id of this NatGateway.
-        The `OCID`__ of the NAT gateway.
+        The `OCID`__ of the
+        NAT gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

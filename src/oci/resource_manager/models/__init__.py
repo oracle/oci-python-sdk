@@ -9,6 +9,7 @@ from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_stack_compartment_details import ChangeStackCompartmentDetails
+from .change_template_compartment_details import ChangeTemplateCompartmentDetails
 from .compartment_config_source import CompartmentConfigSource
 from .config_source import ConfigSource
 from .config_source_record import ConfigSourceRecord
@@ -28,6 +29,10 @@ from .create_job_details import CreateJobDetails
 from .create_job_operation_details import CreateJobOperationDetails
 from .create_plan_job_operation_details import CreatePlanJobOperationDetails
 from .create_stack_details import CreateStackDetails
+from .create_stack_template_config_source_details import CreateStackTemplateConfigSourceDetails
+from .create_template_config_source_details import CreateTemplateConfigSourceDetails
+from .create_template_details import CreateTemplateDetails
+from .create_template_zip_upload_config_source_details import CreateTemplateZipUploadConfigSourceDetails
 from .create_zip_upload_config_source_details import CreateZipUploadConfigSourceDetails
 from .destroy_job_operation_details import DestroyJobOperationDetails
 from .destroy_job_operation_details_summary import DestroyJobOperationDetailsSummary
@@ -54,6 +59,13 @@ from .stack import Stack
 from .stack_resource_drift_collection import StackResourceDriftCollection
 from .stack_resource_drift_summary import StackResourceDriftSummary
 from .stack_summary import StackSummary
+from .template import Template
+from .template_category_summary import TemplateCategorySummary
+from .template_category_summary_collection import TemplateCategorySummaryCollection
+from .template_config_source import TemplateConfigSource
+from .template_summary import TemplateSummary
+from .template_summary_collection import TemplateSummaryCollection
+from .template_zip_upload_config_source import TemplateZipUploadConfigSource
 from .terraform_version_collection import TerraformVersionCollection
 from .terraform_version_summary import TerraformVersionSummary
 from .update_config_source_details import UpdateConfigSourceDetails
@@ -63,6 +75,9 @@ from .update_github_access_token_configuration_source_provider_details import Up
 from .update_gitlab_access_token_configuration_source_provider_details import UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 from .update_job_details import UpdateJobDetails
 from .update_stack_details import UpdateStackDetails
+from .update_template_config_source_details import UpdateTemplateConfigSourceDetails
+from .update_template_details import UpdateTemplateDetails
+from .update_template_zip_upload_config_source_details import UpdateTemplateZipUploadConfigSourceDetails
 from .update_zip_upload_config_source_details import UpdateZipUploadConfigSourceDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -79,6 +94,7 @@ resource_manager_type_mapping = {
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangeStackCompartmentDetails": ChangeStackCompartmentDetails,
+    "ChangeTemplateCompartmentDetails": ChangeTemplateCompartmentDetails,
     "CompartmentConfigSource": CompartmentConfigSource,
     "ConfigSource": ConfigSource,
     "ConfigSourceRecord": ConfigSourceRecord,
@@ -98,6 +114,10 @@ resource_manager_type_mapping = {
     "CreateJobOperationDetails": CreateJobOperationDetails,
     "CreatePlanJobOperationDetails": CreatePlanJobOperationDetails,
     "CreateStackDetails": CreateStackDetails,
+    "CreateStackTemplateConfigSourceDetails": CreateStackTemplateConfigSourceDetails,
+    "CreateTemplateConfigSourceDetails": CreateTemplateConfigSourceDetails,
+    "CreateTemplateDetails": CreateTemplateDetails,
+    "CreateTemplateZipUploadConfigSourceDetails": CreateTemplateZipUploadConfigSourceDetails,
     "CreateZipUploadConfigSourceDetails": CreateZipUploadConfigSourceDetails,
     "DestroyJobOperationDetails": DestroyJobOperationDetails,
     "DestroyJobOperationDetailsSummary": DestroyJobOperationDetailsSummary,
@@ -124,6 +144,13 @@ resource_manager_type_mapping = {
     "StackResourceDriftCollection": StackResourceDriftCollection,
     "StackResourceDriftSummary": StackResourceDriftSummary,
     "StackSummary": StackSummary,
+    "Template": Template,
+    "TemplateCategorySummary": TemplateCategorySummary,
+    "TemplateCategorySummaryCollection": TemplateCategorySummaryCollection,
+    "TemplateConfigSource": TemplateConfigSource,
+    "TemplateSummary": TemplateSummary,
+    "TemplateSummaryCollection": TemplateSummaryCollection,
+    "TemplateZipUploadConfigSource": TemplateZipUploadConfigSource,
     "TerraformVersionCollection": TerraformVersionCollection,
     "TerraformVersionSummary": TerraformVersionSummary,
     "UpdateConfigSourceDetails": UpdateConfigSourceDetails,
@@ -133,6 +160,9 @@ resource_manager_type_mapping = {
     "UpdateGitlabAccessTokenConfigurationSourceProviderDetails": UpdateGitlabAccessTokenConfigurationSourceProviderDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateStackDetails": UpdateStackDetails,
+    "UpdateTemplateConfigSourceDetails": UpdateTemplateConfigSourceDetails,
+    "UpdateTemplateDetails": UpdateTemplateDetails,
+    "UpdateTemplateZipUploadConfigSourceDetails": UpdateTemplateZipUploadConfigSourceDetails,
     "UpdateZipUploadConfigSourceDetails": UpdateZipUploadConfigSourceDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

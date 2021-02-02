@@ -420,7 +420,8 @@ class BootVolume(object):
     def is_hydrated(self):
         """
         Gets the is_hydrated of this BootVolume.
-        Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
+        Specifies whether the boot volume's data has finished copying
+        from the source boot volume or boot volume backup.
 
 
         :return: The is_hydrated of this BootVolume.
@@ -432,7 +433,8 @@ class BootVolume(object):
     def is_hydrated(self, is_hydrated):
         """
         Sets the is_hydrated of this BootVolume.
-        Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
+        Specifies whether the boot volume's data has finished copying
+        from the source boot volume or boot volume backup.
 
 
         :param is_hydrated: The is_hydrated of this BootVolume.

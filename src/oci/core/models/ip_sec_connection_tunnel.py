@@ -27,6 +27,10 @@ class IPSecConnectionTunnel(object):
     #: This constant has a value of "DOWN_FOR_MAINTENANCE"
     STATUS_DOWN_FOR_MAINTENANCE = "DOWN_FOR_MAINTENANCE"
 
+    #: A constant which can be used with the status property of a IPSecConnectionTunnel.
+    #: This constant has a value of "PARTIAL_UP"
+    STATUS_PARTIAL_UP = "PARTIAL_UP"
+
     #: A constant which can be used with the ike_version property of a IPSecConnectionTunnel.
     #: This constant has a value of "V1"
     IKE_VERSION_V1 = "V1"
@@ -59,6 +63,10 @@ class IPSecConnectionTunnel(object):
     #: This constant has a value of "STATIC"
     ROUTING_STATIC = "STATIC"
 
+    #: A constant which can be used with the routing property of a IPSecConnectionTunnel.
+    #: This constant has a value of "POLICY"
+    ROUTING_POLICY = "POLICY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IPSecConnectionTunnel object with values from keyword arguments.
@@ -82,7 +90,7 @@ class IPSecConnectionTunnel(object):
 
         :param status:
             The value to assign to the status property of this IPSecConnectionTunnel.
-            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -106,9 +114,13 @@ class IPSecConnectionTunnel(object):
             The value to assign to the bgp_session_info property of this IPSecConnectionTunnel.
         :type bgp_session_info: oci.core.models.BgpSessionInfo
 
+        :param encryption_domain_config:
+            The value to assign to the encryption_domain_config property of this IPSecConnectionTunnel.
+        :type encryption_domain_config: oci.core.models.EncryptionDomainConfig
+
         :param routing:
             The value to assign to the routing property of this IPSecConnectionTunnel.
-            Allowed values for this property are: "BGP", "STATIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BGP", "STATIC", "POLICY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing: str
 
@@ -131,6 +143,7 @@ class IPSecConnectionTunnel(object):
             'lifecycle_state': 'str',
             'display_name': 'str',
             'bgp_session_info': 'BgpSessionInfo',
+            'encryption_domain_config': 'EncryptionDomainConfig',
             'routing': 'str',
             'time_created': 'datetime',
             'time_status_updated': 'datetime'
@@ -146,6 +159,7 @@ class IPSecConnectionTunnel(object):
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'bgp_session_info': 'bgpSessionInfo',
+            'encryption_domain_config': 'encryptionDomainConfig',
             'routing': 'routing',
             'time_created': 'timeCreated',
             'time_status_updated': 'timeStatusUpdated'
@@ -160,6 +174,7 @@ class IPSecConnectionTunnel(object):
         self._lifecycle_state = None
         self._display_name = None
         self._bgp_session_info = None
+        self._encryption_domain_config = None
         self._routing = None
         self._time_created = None
         self._time_status_updated = None
@@ -282,7 +297,7 @@ class IPSecConnectionTunnel(object):
         Gets the status of this IPSecConnectionTunnel.
         The status of the tunnel based on IPSec protocol characteristics.
 
-        Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -301,7 +316,7 @@ class IPSecConnectionTunnel(object):
         :param status: The status of this IPSecConnectionTunnel.
         :type: str
         """
-        allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE"]
+        allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -413,12 +428,32 @@ class IPSecConnectionTunnel(object):
         self._bgp_session_info = bgp_session_info
 
     @property
+    def encryption_domain_config(self):
+        """
+        Gets the encryption_domain_config of this IPSecConnectionTunnel.
+
+        :return: The encryption_domain_config of this IPSecConnectionTunnel.
+        :rtype: oci.core.models.EncryptionDomainConfig
+        """
+        return self._encryption_domain_config
+
+    @encryption_domain_config.setter
+    def encryption_domain_config(self, encryption_domain_config):
+        """
+        Sets the encryption_domain_config of this IPSecConnectionTunnel.
+
+        :param encryption_domain_config: The encryption_domain_config of this IPSecConnectionTunnel.
+        :type: oci.core.models.EncryptionDomainConfig
+        """
+        self._encryption_domain_config = encryption_domain_config
+
+    @property
     def routing(self):
         """
         Gets the routing of this IPSecConnectionTunnel.
         The type of routing used for this tunnel (either BGP dynamic routing or static routing).
 
-        Allowed values for this property are: "BGP", "STATIC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BGP", "STATIC", "POLICY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -437,7 +472,7 @@ class IPSecConnectionTunnel(object):
         :param routing: The routing of this IPSecConnectionTunnel.
         :type: str
         """
-        allowed_values = ["BGP", "STATIC"]
+        allowed_values = ["BGP", "STATIC", "POLICY"]
         if not value_allowed_none_or_none_sentinel(routing, allowed_values):
             routing = 'UNKNOWN_ENUM_VALUE'
         self._routing = routing

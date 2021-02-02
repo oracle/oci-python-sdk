@@ -53,7 +53,8 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
     def boot_volume_size_in_gbs(self):
         """
         Gets the boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
-        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 16384 GB (16TB).
+        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum
+        value is 16384 GB (16TB).
 
 
         :return: The boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
@@ -65,7 +66,8 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
     def boot_volume_size_in_gbs(self, boot_volume_size_in_gbs):
         """
         Sets the boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
-        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 16384 GB (16TB).
+        The size of the boot volume in GBs. The minimum value is 50 GB and the maximum
+        value is 16384 GB (16TB).
 
 
         :param boot_volume_size_in_gbs: The boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.

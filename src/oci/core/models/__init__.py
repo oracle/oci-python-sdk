@@ -114,6 +114,7 @@ from .create_drg_details import CreateDrgDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_ip_sec_connection_tunnel_details import CreateIPSecConnectionTunnelDetails
 from .create_ip_sec_tunnel_bgp_session_details import CreateIPSecTunnelBgpSessionDetails
+from .create_ip_sec_tunnel_encryption_domain_details import CreateIPSecTunnelEncryptionDomainDetails
 from .create_image_details import CreateImageDetails
 from .create_instance_configuration_base import CreateInstanceConfigurationBase
 from .create_instance_configuration_details import CreateInstanceConfigurationDetails
@@ -168,6 +169,7 @@ from .drg_attachment import DrgAttachment
 from .drg_redundancy_status import DrgRedundancyStatus
 from .egress_security_rule import EgressSecurityRule
 from .emulated_volume_attachment import EmulatedVolumeAttachment
+from .encryption_domain_config import EncryptionDomainConfig
 from .enum_integer_image_capability_descriptor import EnumIntegerImageCapabilityDescriptor
 from .enum_string_image_capability_schema_descriptor import EnumStringImageCapabilitySchemaDescriptor
 from .export_image_details import ExportImageDetails
@@ -296,6 +298,7 @@ from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_ip_sec_connection_tunnel_details import UpdateIPSecConnectionTunnelDetails
 from .update_ip_sec_connection_tunnel_shared_secret_details import UpdateIPSecConnectionTunnelSharedSecretDetails
 from .update_ip_sec_tunnel_bgp_session_details import UpdateIPSecTunnelBgpSessionDetails
+from .update_ip_sec_tunnel_encryption_domain_details import UpdateIPSecTunnelEncryptionDomainDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_agent_config_details import UpdateInstanceAgentConfigDetails
 from .update_instance_availability_config_details import UpdateInstanceAvailabilityConfigDetails
@@ -470,6 +473,7 @@ core_type_mapping = {
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
     "CreateIPSecConnectionTunnelDetails": CreateIPSecConnectionTunnelDetails,
     "CreateIPSecTunnelBgpSessionDetails": CreateIPSecTunnelBgpSessionDetails,
+    "CreateIPSecTunnelEncryptionDomainDetails": CreateIPSecTunnelEncryptionDomainDetails,
     "CreateImageDetails": CreateImageDetails,
     "CreateInstanceConfigurationBase": CreateInstanceConfigurationBase,
     "CreateInstanceConfigurationDetails": CreateInstanceConfigurationDetails,
@@ -524,6 +528,7 @@ core_type_mapping = {
     "DrgRedundancyStatus": DrgRedundancyStatus,
     "EgressSecurityRule": EgressSecurityRule,
     "EmulatedVolumeAttachment": EmulatedVolumeAttachment,
+    "EncryptionDomainConfig": EncryptionDomainConfig,
     "EnumIntegerImageCapabilityDescriptor": EnumIntegerImageCapabilityDescriptor,
     "EnumStringImageCapabilitySchemaDescriptor": EnumStringImageCapabilitySchemaDescriptor,
     "ExportImageDetails": ExportImageDetails,
@@ -652,6 +657,7 @@ core_type_mapping = {
     "UpdateIPSecConnectionTunnelDetails": UpdateIPSecConnectionTunnelDetails,
     "UpdateIPSecConnectionTunnelSharedSecretDetails": UpdateIPSecConnectionTunnelSharedSecretDetails,
     "UpdateIPSecTunnelBgpSessionDetails": UpdateIPSecTunnelBgpSessionDetails,
+    "UpdateIPSecTunnelEncryptionDomainDetails": UpdateIPSecTunnelEncryptionDomainDetails,
     "UpdateImageDetails": UpdateImageDetails,
     "UpdateInstanceAgentConfigDetails": UpdateInstanceAgentConfigDetails,
     "UpdateInstanceAvailabilityConfigDetails": UpdateInstanceAvailabilityConfigDetails,

@@ -46,8 +46,10 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
     def destination_uri(self):
         """
         **[Required]** Gets the destination_uri of this ExportImageViaObjectStorageUriDetails.
-        The Object Storage URL to export the image to. See `Object Storage URLs`__
-        and `Using Pre-Authenticated Requests`__ for constructing URLs for image import/export.
+        The Object Storage URL to export the image to. See `Object
+        Storage URLs`__
+        and `Using Pre-Authenticated Requests`__
+        for constructing URLs for image import/export.
 
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
         __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
@@ -62,8 +64,10 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
     def destination_uri(self, destination_uri):
         """
         Sets the destination_uri of this ExportImageViaObjectStorageUriDetails.
-        The Object Storage URL to export the image to. See `Object Storage URLs`__
-        and `Using Pre-Authenticated Requests`__ for constructing URLs for image import/export.
+        The Object Storage URL to export the image to. See `Object
+        Storage URLs`__
+        and `Using Pre-Authenticated Requests`__
+        for constructing URLs for image import/export.
 
         __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
         __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm

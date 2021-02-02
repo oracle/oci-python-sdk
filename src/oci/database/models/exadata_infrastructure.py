@@ -57,6 +57,14 @@ class ExadataInfrastructure(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the maintenance_slo_status property of a ExadataInfrastructure.
+    #: This constant has a value of "OK"
+    MAINTENANCE_SLO_STATUS_OK = "OK"
+
+    #: A constant which can be used with the maintenance_slo_status property of a ExadataInfrastructure.
+    #: This constant has a value of "DEGRADED"
+    MAINTENANCE_SLO_STATUS_DEGRADED = "DEGRADED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataInfrastructure object with values from keyword arguments.
@@ -172,6 +180,12 @@ class ExadataInfrastructure(object):
             The value to assign to the contacts property of this ExadataInfrastructure.
         :type contacts: list[oci.database.models.ExadataInfrastructureContact]
 
+        :param maintenance_slo_status:
+            The value to assign to the maintenance_slo_status property of this ExadataInfrastructure.
+            Allowed values for this property are: "OK", "DEGRADED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type maintenance_slo_status: str
+
         :param maintenance_window:
             The value to assign to the maintenance_window property of this ExadataInfrastructure.
         :type maintenance_window: oci.database.models.MaintenanceWindow
@@ -213,6 +227,7 @@ class ExadataInfrastructure(object):
             'lifecycle_details': 'str',
             'csi_number': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
+            'maintenance_slo_status': 'str',
             'maintenance_window': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -246,6 +261,7 @@ class ExadataInfrastructure(object):
             'lifecycle_details': 'lifecycleDetails',
             'csi_number': 'csiNumber',
             'contacts': 'contacts',
+            'maintenance_slo_status': 'maintenanceSLOStatus',
             'maintenance_window': 'maintenanceWindow',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -278,6 +294,7 @@ class ExadataInfrastructure(object):
         self._lifecycle_details = None
         self._csi_number = None
         self._contacts = None
+        self._maintenance_slo_status = None
         self._maintenance_window = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -947,6 +964,36 @@ class ExadataInfrastructure(object):
         :type: list[oci.database.models.ExadataInfrastructureContact]
         """
         self._contacts = contacts
+
+    @property
+    def maintenance_slo_status(self):
+        """
+        Gets the maintenance_slo_status of this ExadataInfrastructure.
+        A field to capture \u2018Maintenance SLO Status\u2019 for the Exadata infrastructure with values \u2018OK\u2019, \u2018DEGRADED\u2019. Default is \u2018OK\u2019 when the infrastructure is provisioned.
+
+        Allowed values for this property are: "OK", "DEGRADED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The maintenance_slo_status of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._maintenance_slo_status
+
+    @maintenance_slo_status.setter
+    def maintenance_slo_status(self, maintenance_slo_status):
+        """
+        Sets the maintenance_slo_status of this ExadataInfrastructure.
+        A field to capture \u2018Maintenance SLO Status\u2019 for the Exadata infrastructure with values \u2018OK\u2019, \u2018DEGRADED\u2019. Default is \u2018OK\u2019 when the infrastructure is provisioned.
+
+
+        :param maintenance_slo_status: The maintenance_slo_status of this ExadataInfrastructure.
+        :type: str
+        """
+        allowed_values = ["OK", "DEGRADED"]
+        if not value_allowed_none_or_none_sentinel(maintenance_slo_status, allowed_values):
+            maintenance_slo_status = 'UNKNOWN_ENUM_VALUE'
+        self._maintenance_slo_status = maintenance_slo_status
 
     @property
     def maintenance_window(self):

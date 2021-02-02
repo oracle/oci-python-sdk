@@ -25,6 +25,10 @@ class UpdateDetails(object):
     #: This constant has a value of "PRECHECK"
     UPDATE_ACTION_PRECHECK = "PRECHECK"
 
+    #: A constant which can be used with the update_action property of a UpdateDetails.
+    #: This constant has a value of "ROLLBACK"
+    UPDATE_ACTION_ROLLBACK = "ROLLBACK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDetails object with values from keyword arguments.
@@ -36,7 +40,7 @@ class UpdateDetails(object):
 
         :param update_action:
             The value to assign to the update_action property of this UpdateDetails.
-            Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK"
+            Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"
         :type update_action: str
 
         """
@@ -87,7 +91,7 @@ class UpdateDetails(object):
         Gets the update_action of this UpdateDetails.
         The update action.
 
-        Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK"
+        Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"
 
 
         :return: The update_action of this UpdateDetails.
@@ -105,7 +109,7 @@ class UpdateDetails(object):
         :param update_action: The update_action of this UpdateDetails.
         :type: str
         """
-        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK"]
+        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"]
         if not value_allowed_none_or_none_sentinel(update_action, allowed_values):
             raise ValueError(
                 "Invalid value for `update_action`, must be None or one of {0}"

@@ -275,7 +275,8 @@ class VolumeGroupBackup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this VolumeGroupBackup.
-        A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the volume group backup. Does not have
+        to be unique and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this VolumeGroupBackup.
@@ -287,7 +288,8 @@ class VolumeGroupBackup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeGroupBackup.
-        A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the volume group backup. Does not have
+        to be unique and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this VolumeGroupBackup.
@@ -471,7 +473,8 @@ class VolumeGroupBackup(object):
     def source_type(self):
         """
         Gets the source_type of this VolumeGroupBackup.
-        Specifies whether the volume group backup was created manually, or via scheduled backup policy.
+        Specifies whether the volume group backup was created manually, or via scheduled
+        backup policy.
 
         Allowed values for this property are: "MANUAL", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -486,7 +489,8 @@ class VolumeGroupBackup(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this VolumeGroupBackup.
-        Specifies whether the volume group backup was created manually, or via scheduled backup policy.
+        Specifies whether the volume group backup was created manually, or via scheduled
+        backup policy.
 
 
         :param source_type: The source_type of this VolumeGroupBackup.
@@ -590,8 +594,9 @@ class VolumeGroupBackup(object):
         """
         Gets the unique_size_in_mbs of this VolumeGroupBackup.
         The aggregate size used by the volume group backup, in MBs.
-        It is typically smaller than sizeInMBs, depending on the space
-        consumed on the volume group and whether the volume backup is full or incremental.
+
+        It is typically smaller than sizeInMBs, depending on the spaceconsumed
+        on the volume group and whether the volume backup is full or incremental.
 
 
         :return: The unique_size_in_mbs of this VolumeGroupBackup.
@@ -604,8 +609,9 @@ class VolumeGroupBackup(object):
         """
         Sets the unique_size_in_mbs of this VolumeGroupBackup.
         The aggregate size used by the volume group backup, in MBs.
-        It is typically smaller than sizeInMBs, depending on the space
-        consumed on the volume group and whether the volume backup is full or incremental.
+
+        It is typically smaller than sizeInMBs, depending on the spaceconsumed
+        on the volume group and whether the volume backup is full or incremental.
 
 
         :param unique_size_in_mbs: The unique_size_in_mbs of this VolumeGroupBackup.
@@ -618,8 +624,9 @@ class VolumeGroupBackup(object):
         """
         Gets the unique_size_in_gbs of this VolumeGroupBackup.
         The aggregate size used by the volume group backup, in GBs.
-        It is typically smaller than sizeInGBs, depending on the space
-        consumed on the volume group and whether the volume backup is full or incremental.
+
+        It is typically smaller than sizeInGBs, depending on the spaceconsumed
+        on the volume group and whether the volume backup is full or incremental.
 
 
         :return: The unique_size_in_gbs of this VolumeGroupBackup.
@@ -632,8 +639,9 @@ class VolumeGroupBackup(object):
         """
         Sets the unique_size_in_gbs of this VolumeGroupBackup.
         The aggregate size used by the volume group backup, in GBs.
-        It is typically smaller than sizeInGBs, depending on the space
-        consumed on the volume group and whether the volume backup is full or incremental.
+
+        It is typically smaller than sizeInGBs, depending on the spaceconsumed
+        on the volume group and whether the volume backup is full or incremental.
 
 
         :param unique_size_in_gbs: The unique_size_in_gbs of this VolumeGroupBackup.

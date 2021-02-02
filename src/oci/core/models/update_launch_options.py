@@ -191,14 +191,15 @@ class UpdateLaunchOptions(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this UpdateLaunchOptions.
-        Whether to enable in-transit encryption for the boot volume's paravirtualized attachment.
+        Whether to enable in-transit encryption for the volume's paravirtualized attachment.
+        To enable in-transit encryption for block volumes and boot volumes, this field must be set to `true`.
 
         Data in transit is transferred over an internal and highly secure network. If you have specific
         compliance requirements related to the encryption of the data while it is moving between the
-        instance and the boot volume, you can enable in-transit encryption. In-transit encryption is
-        not enabled by default.
+        instance and the boot volume or the block volume, you can enable in-transit encryption.
+        In-transit encryption is not enabled by default.
 
-        All boot volumes are encrypted at rest.
+        All boot volumes and block volumes are encrypted at rest.
 
         For more information, see `Block Volume Encryption`__.
 
@@ -214,14 +215,15 @@ class UpdateLaunchOptions(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this UpdateLaunchOptions.
-        Whether to enable in-transit encryption for the boot volume's paravirtualized attachment.
+        Whether to enable in-transit encryption for the volume's paravirtualized attachment.
+        To enable in-transit encryption for block volumes and boot volumes, this field must be set to `true`.
 
         Data in transit is transferred over an internal and highly secure network. If you have specific
         compliance requirements related to the encryption of the data while it is moving between the
-        instance and the boot volume, you can enable in-transit encryption. In-transit encryption is
-        not enabled by default.
+        instance and the boot volume or the block volume, you can enable in-transit encryption.
+        In-transit encryption is not enabled by default.
 
-        All boot volumes are encrypted at rest.
+        All boot volumes and block volumes are encrypted at rest.
 
         For more information, see `Block Volume Encryption`__.
 
