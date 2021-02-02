@@ -91,6 +91,12 @@ from .create_db_home_with_vm_cluster_id_details import CreateDbHomeWithVmCluster
 from .create_db_home_with_vm_cluster_id_from_backup_details import CreateDbHomeWithVmClusterIdFromBackupDetails
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
+from .create_external_container_database_details import CreateExternalContainerDatabaseDetails
+from .create_external_database_connector_details import CreateExternalDatabaseConnectorDetails
+from .create_external_database_details_base import CreateExternalDatabaseDetailsBase
+from .create_external_macs_connector_details import CreateExternalMacsConnectorDetails
+from .create_external_non_container_database_details import CreateExternalNonContainerDatabaseDetails
+from .create_external_pluggable_database_details import CreateExternalPluggableDatabaseDetails
 from .create_key_store_details import CreateKeyStoreDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
@@ -100,7 +106,12 @@ from .create_vm_cluster_details import CreateVmClusterDetails
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
+from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
+from .database_connection_credentials import DatabaseConnectionCredentials
+from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
+from .database_connection_string import DatabaseConnectionString
 from .database_connection_strings import DatabaseConnectionStrings
+from .database_management_config import DatabaseManagementConfig
 from .database_software_image import DatabaseSoftwareImage
 from .database_software_image_summary import DatabaseSoftwareImageSummary
 from .database_summary import DatabaseSummary
@@ -124,6 +135,10 @@ from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
+from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
+from .enable_external_database_management_details_base import EnableExternalDatabaseManagementDetailsBase
+from .enable_external_non_container_database_database_management_details import EnableExternalNonContainerDatabaseDatabaseManagementDetails
+from .enable_external_pluggable_database_database_management_details import EnableExternalPluggableDatabaseDatabaseManagementDetails
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
 from .exadata_infrastructure import ExadataInfrastructure
@@ -132,6 +147,17 @@ from .exadata_infrastructure_summary import ExadataInfrastructureSummary
 from .exadata_iorm_config import ExadataIormConfig
 from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
 from .external_backup_job import ExternalBackupJob
+from .external_container_database import ExternalContainerDatabase
+from .external_container_database_summary import ExternalContainerDatabaseSummary
+from .external_database_base import ExternalDatabaseBase
+from .external_database_connector import ExternalDatabaseConnector
+from .external_database_connector_summary import ExternalDatabaseConnectorSummary
+from .external_macs_connector import ExternalMacsConnector
+from .external_macs_connector_summary import ExternalMacsConnectorSummary
+from .external_non_container_database import ExternalNonContainerDatabase
+from .external_non_container_database_summary import ExternalNonContainerDatabaseSummary
+from .external_pluggable_database import ExternalPluggableDatabase
+from .external_pluggable_database_summary import ExternalPluggableDatabaseSummary
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
 from .flex_component_collection import FlexComponentCollection
 from .flex_component_summary import FlexComponentSummary
@@ -186,6 +212,12 @@ from .update_db_home_details import UpdateDbHomeDetails
 from .update_db_system_details import UpdateDbSystemDetails
 from .update_details import UpdateDetails
 from .update_exadata_infrastructure_details import UpdateExadataInfrastructureDetails
+from .update_external_container_database_details import UpdateExternalContainerDatabaseDetails
+from .update_external_database_connector_details import UpdateExternalDatabaseConnectorDetails
+from .update_external_database_details_base import UpdateExternalDatabaseDetailsBase
+from .update_external_macs_connector_details import UpdateExternalMacsConnectorDetails
+from .update_external_non_container_database_details import UpdateExternalNonContainerDatabaseDetails
+from .update_external_pluggable_database_details import UpdateExternalPluggableDatabaseDetails
 from .update_history_entry import UpdateHistoryEntry
 from .update_history_entry_summary import UpdateHistoryEntrySummary
 from .update_key_store_details import UpdateKeyStoreDetails
@@ -291,6 +323,12 @@ database_type_mapping = {
     "CreateDbHomeWithVmClusterIdFromBackupDetails": CreateDbHomeWithVmClusterIdFromBackupDetails,
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
+    "CreateExternalContainerDatabaseDetails": CreateExternalContainerDatabaseDetails,
+    "CreateExternalDatabaseConnectorDetails": CreateExternalDatabaseConnectorDetails,
+    "CreateExternalDatabaseDetailsBase": CreateExternalDatabaseDetailsBase,
+    "CreateExternalMacsConnectorDetails": CreateExternalMacsConnectorDetails,
+    "CreateExternalNonContainerDatabaseDetails": CreateExternalNonContainerDatabaseDetails,
+    "CreateExternalPluggableDatabaseDetails": CreateExternalPluggableDatabaseDetails,
     "CreateKeyStoreDetails": CreateKeyStoreDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
@@ -300,7 +338,12 @@ database_type_mapping = {
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
+    "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
+    "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
+    "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
+    "DatabaseConnectionString": DatabaseConnectionString,
     "DatabaseConnectionStrings": DatabaseConnectionStrings,
+    "DatabaseManagementConfig": DatabaseManagementConfig,
     "DatabaseSoftwareImage": DatabaseSoftwareImage,
     "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
     "DatabaseSummary": DatabaseSummary,
@@ -324,6 +367,10 @@ database_type_mapping = {
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
+    "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
+    "EnableExternalDatabaseManagementDetailsBase": EnableExternalDatabaseManagementDetailsBase,
+    "EnableExternalNonContainerDatabaseDatabaseManagementDetails": EnableExternalNonContainerDatabaseDatabaseManagementDetails,
+    "EnableExternalPluggableDatabaseDatabaseManagementDetails": EnableExternalPluggableDatabaseDatabaseManagementDetails,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,
     "ExadataInfrastructure": ExadataInfrastructure,
@@ -332,6 +379,17 @@ database_type_mapping = {
     "ExadataIormConfig": ExadataIormConfig,
     "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,
     "ExternalBackupJob": ExternalBackupJob,
+    "ExternalContainerDatabase": ExternalContainerDatabase,
+    "ExternalContainerDatabaseSummary": ExternalContainerDatabaseSummary,
+    "ExternalDatabaseBase": ExternalDatabaseBase,
+    "ExternalDatabaseConnector": ExternalDatabaseConnector,
+    "ExternalDatabaseConnectorSummary": ExternalDatabaseConnectorSummary,
+    "ExternalMacsConnector": ExternalMacsConnector,
+    "ExternalMacsConnectorSummary": ExternalMacsConnectorSummary,
+    "ExternalNonContainerDatabase": ExternalNonContainerDatabase,
+    "ExternalNonContainerDatabaseSummary": ExternalNonContainerDatabaseSummary,
+    "ExternalPluggableDatabase": ExternalPluggableDatabase,
+    "ExternalPluggableDatabaseSummary": ExternalPluggableDatabaseSummary,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
     "FlexComponentCollection": FlexComponentCollection,
     "FlexComponentSummary": FlexComponentSummary,
@@ -386,6 +444,12 @@ database_type_mapping = {
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
     "UpdateDetails": UpdateDetails,
     "UpdateExadataInfrastructureDetails": UpdateExadataInfrastructureDetails,
+    "UpdateExternalContainerDatabaseDetails": UpdateExternalContainerDatabaseDetails,
+    "UpdateExternalDatabaseConnectorDetails": UpdateExternalDatabaseConnectorDetails,
+    "UpdateExternalDatabaseDetailsBase": UpdateExternalDatabaseDetailsBase,
+    "UpdateExternalMacsConnectorDetails": UpdateExternalMacsConnectorDetails,
+    "UpdateExternalNonContainerDatabaseDetails": UpdateExternalNonContainerDatabaseDetails,
+    "UpdateExternalPluggableDatabaseDetails": UpdateExternalPluggableDatabaseDetails,
     "UpdateHistoryEntry": UpdateHistoryEntry,
     "UpdateHistoryEntrySummary": UpdateHistoryEntrySummary,
     "UpdateKeyStoreDetails": UpdateKeyStoreDetails,

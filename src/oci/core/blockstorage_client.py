@@ -1407,7 +1407,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1482,7 +1482,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1557,7 +1557,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1637,7 +1637,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1712,7 +1712,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1797,7 +1797,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1874,7 +1874,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -1952,7 +1952,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2019,7 +2019,8 @@ class BlockstorageClient(object):
 
     def delete_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
-        Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see `Volume Groups`__.
+        Deletes a volume group backup. This operation deletes all the backups in
+        the volume group. For more information, see `Volume Groups`__.
 
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
 
@@ -2029,7 +2030,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2104,7 +2105,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2311,7 +2312,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2874,7 +2875,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2995,7 +2996,8 @@ class BlockstorageClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state value is
+            case-insensitive.
 
             Allowed values are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"
 
@@ -3334,7 +3336,8 @@ class BlockstorageClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state
+            value is case-insensitive.
 
             Allowed values are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"
 
@@ -3622,7 +3625,8 @@ class BlockstorageClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"
 
@@ -3773,7 +3777,8 @@ class BlockstorageClient(object):
             The OCID of the volume group.
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state
+            value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"
 
@@ -3883,7 +3888,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -3966,7 +3971,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4048,7 +4053,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4131,7 +4136,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4214,7 +4219,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4302,7 +4307,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -4408,7 +4413,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4492,7 +4497,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4574,7 +4579,7 @@ class BlockstorageClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)

@@ -17,9 +17,6 @@ class Vcn(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    **Warning:** Oracle recommends that you avoid using any confidential information when you
-    supply string values using the API.
-
     __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -499,7 +496,6 @@ class Vcn(object):
         value, Oracle provides a *different* CIDR for the `ipv6PublicCidrBlock`. Note that IPv6
         addressing is currently supported only in certain regions. See
         `IPv6 Addresses`__.
-
         Example: `2001:0db8:0123::/48`
 
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
@@ -520,7 +516,6 @@ class Vcn(object):
         value, Oracle provides a *different* CIDR for the `ipv6PublicCidrBlock`. Note that IPv6
         addressing is currently supported only in certain regions. See
         `IPv6 Addresses`__.
-
         Example: `2001:0db8:0123::/48`
 
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm

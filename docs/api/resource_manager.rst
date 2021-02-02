@@ -23,6 +23,7 @@ Resource Manager
     oci.resource_manager.models.ApplyJobPlanResolution
     oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
     oci.resource_manager.models.ChangeStackCompartmentDetails
+    oci.resource_manager.models.ChangeTemplateCompartmentDetails
     oci.resource_manager.models.CompartmentConfigSource
     oci.resource_manager.models.ConfigSource
     oci.resource_manager.models.ConfigSourceRecord
@@ -42,6 +43,10 @@ Resource Manager
     oci.resource_manager.models.CreateJobOperationDetails
     oci.resource_manager.models.CreatePlanJobOperationDetails
     oci.resource_manager.models.CreateStackDetails
+    oci.resource_manager.models.CreateStackTemplateConfigSourceDetails
+    oci.resource_manager.models.CreateTemplateConfigSourceDetails
+    oci.resource_manager.models.CreateTemplateDetails
+    oci.resource_manager.models.CreateTemplateZipUploadConfigSourceDetails
     oci.resource_manager.models.CreateZipUploadConfigSourceDetails
     oci.resource_manager.models.DestroyJobOperationDetails
     oci.resource_manager.models.DestroyJobOperationDetailsSummary
@@ -68,6 +73,13 @@ Resource Manager
     oci.resource_manager.models.StackResourceDriftCollection
     oci.resource_manager.models.StackResourceDriftSummary
     oci.resource_manager.models.StackSummary
+    oci.resource_manager.models.Template
+    oci.resource_manager.models.TemplateCategorySummary
+    oci.resource_manager.models.TemplateCategorySummaryCollection
+    oci.resource_manager.models.TemplateConfigSource
+    oci.resource_manager.models.TemplateSummary
+    oci.resource_manager.models.TemplateSummaryCollection
+    oci.resource_manager.models.TemplateZipUploadConfigSource
     oci.resource_manager.models.TerraformVersionCollection
     oci.resource_manager.models.TerraformVersionSummary
     oci.resource_manager.models.UpdateConfigSourceDetails
@@ -77,6 +89,9 @@ Resource Manager
     oci.resource_manager.models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateJobDetails
     oci.resource_manager.models.UpdateStackDetails
+    oci.resource_manager.models.UpdateTemplateConfigSourceDetails
+    oci.resource_manager.models.UpdateTemplateDetails
+    oci.resource_manager.models.UpdateTemplateZipUploadConfigSourceDetails
     oci.resource_manager.models.UpdateZipUploadConfigSourceDetails
     oci.resource_manager.models.WorkRequest
     oci.resource_manager.models.WorkRequestError

@@ -134,6 +134,7 @@ Core Services
     oci.core.models.CreateIPSecConnectionDetails
     oci.core.models.CreateIPSecConnectionTunnelDetails
     oci.core.models.CreateIPSecTunnelBgpSessionDetails
+    oci.core.models.CreateIPSecTunnelEncryptionDomainDetails
     oci.core.models.CreateImageDetails
     oci.core.models.CreateInstanceConfigurationBase
     oci.core.models.CreateInstanceConfigurationDetails
@@ -188,6 +189,7 @@ Core Services
     oci.core.models.DrgRedundancyStatus
     oci.core.models.EgressSecurityRule
     oci.core.models.EmulatedVolumeAttachment
+    oci.core.models.EncryptionDomainConfig
     oci.core.models.EnumIntegerImageCapabilityDescriptor
     oci.core.models.EnumStringImageCapabilitySchemaDescriptor
     oci.core.models.ExportImageDetails
@@ -316,6 +318,7 @@ Core Services
     oci.core.models.UpdateIPSecConnectionTunnelDetails
     oci.core.models.UpdateIPSecConnectionTunnelSharedSecretDetails
     oci.core.models.UpdateIPSecTunnelBgpSessionDetails
+    oci.core.models.UpdateIPSecTunnelEncryptionDomainDetails
     oci.core.models.UpdateImageDetails
     oci.core.models.UpdateInstanceAgentConfigDetails
     oci.core.models.UpdateInstanceAvailabilityConfigDetails

@@ -56,6 +56,7 @@ Object Storage
     oci.object_storage.models.SSECustomerKeyDetails
     oci.object_storage.models.UpdateBucketDetails
     oci.object_storage.models.UpdateNamespaceMetadataDetails
+    oci.object_storage.models.UpdateObjectStorageTierDetails
     oci.object_storage.models.UpdateRetentionRuleDetails
     oci.object_storage.models.WorkRequest
     oci.object_storage.models.WorkRequestError

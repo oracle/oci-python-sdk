@@ -292,7 +292,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -466,7 +466,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -2592,7 +2592,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -4918,7 +4918,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -4997,7 +4997,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5073,7 +5073,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5150,7 +5150,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5229,7 +5229,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5307,7 +5307,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5384,7 +5384,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5463,7 +5463,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5545,7 +5545,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5623,7 +5623,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -5707,7 +5707,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5788,7 +5788,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5871,7 +5871,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -5958,7 +5958,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6047,7 +6047,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6132,7 +6132,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6212,7 +6212,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6291,7 +6291,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6370,7 +6370,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6448,7 +6448,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6525,7 +6525,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6604,7 +6604,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6683,7 +6683,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -6760,7 +6760,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -6857,7 +6857,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -10562,7 +10562,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+            A filter to return only resources that match the specified lifecycle
+            state. The value is case insensitive.
 
             Allowed values are: "PROVISIONING", "PROVISIONED", "INACTIVE", "TERMINATING", "TERMINATED"
 
@@ -10794,7 +10795,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+            A filter to return only resources that match the specified lifecycle
+            state. The value is case insensitive.
 
             Allowed values are: "PENDING_CUSTOMER", "PROVISIONING", "PROVISIONED", "INACTIVE", "TERMINATING", "TERMINATED"
 
@@ -11033,7 +11035,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -11561,7 +11564,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -12106,7 +12110,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+            A filter to return only resources that match the specified lifecycle
+            state. The value is case insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -12521,7 +12526,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+            A filter to return only resources that match the specified lifecycle
+            state. The value is case insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -13174,7 +13180,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -13323,7 +13330,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -13469,7 +13477,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to return only resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
@@ -13697,7 +13706,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
 
@@ -13840,7 +13850,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
 
@@ -14029,7 +14040,9 @@ class VirtualNetworkClient(object):
             The OCID of the virtual circuit.
 
         :param str verification_state: (optional)
-            A filter to only return resources that match the given verification state.
+            A filter to only return resources that match the given verification
+            state.
+
             The state value is case-insensitive.
 
             Allowed values are: "IN_PROGRESS", "COMPLETED", "FAILED"
@@ -14158,7 +14171,8 @@ class VirtualNetworkClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+            A filter to return only resources that match the specified lifecycle
+            state. The value is case insensitive.
 
             Allowed values are: "PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED"
 
@@ -14308,7 +14322,8 @@ class VirtualNetworkClient(object):
             If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
 
@@ -14439,7 +14454,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -14708,7 +14723,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -14800,7 +14815,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -14885,7 +14900,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -14967,7 +14982,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15050,7 +15065,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15135,7 +15150,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15217,7 +15232,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15300,7 +15315,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15386,7 +15401,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15471,7 +15486,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15569,7 +15584,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -15665,7 +15680,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15756,7 +15771,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -15844,7 +15859,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -15928,7 +15943,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16026,7 +16041,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16191,7 +16206,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16313,7 +16328,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16401,7 +16416,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16485,7 +16500,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16570,7 +16585,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16656,7 +16671,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16741,7 +16756,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16823,7 +16838,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -16912,7 +16927,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_retry_token: (optional)
@@ -17014,7 +17029,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -17121,7 +17136,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
@@ -17206,7 +17221,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -17294,7 +17309,7 @@ class VirtualNetworkClient(object):
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)

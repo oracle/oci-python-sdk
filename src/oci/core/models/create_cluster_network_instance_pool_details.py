@@ -189,12 +189,6 @@ class CreateClusterNetworkInstancePoolDetails(object):
         **[Required]** Gets the size of this CreateClusterNetworkInstancePoolDetails.
         The number of instances that should be in the instance pool.
 
-        For cluster networks with 10 or more instances, the cluster network is created if the required
-        number of instances is available and at least 95% of the instances in the pool launch
-        successfully. For cluster networks with less than 10 instances, all instances in the pool must
-        launch successfully. If the cluster network fails to launch, wait a few minutes, and then try
-        creating it again.
-
 
         :return: The size of this CreateClusterNetworkInstancePoolDetails.
         :rtype: int
@@ -206,12 +200,6 @@ class CreateClusterNetworkInstancePoolDetails(object):
         """
         Sets the size of this CreateClusterNetworkInstancePoolDetails.
         The number of instances that should be in the instance pool.
-
-        For cluster networks with 10 or more instances, the cluster network is created if the required
-        number of instances is available and at least 95% of the instances in the pool launch
-        successfully. For cluster networks with less than 10 instances, all instances in the pool must
-        launch successfully. If the cluster network fails to launch, wait a few minutes, and then try
-        creating it again.
 
 
         :param size: The size of this CreateClusterNetworkInstancePoolDetails.

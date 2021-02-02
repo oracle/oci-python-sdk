@@ -159,7 +159,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_secret(self):
         """
         Gets the chap_secret of this IScsiVolumeAttachment.
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
+        The Challenge-Handshake-Authentication-Protocol (CHAP) secret
+        valid for the associated CHAP user name.
         (Also called the \"CHAP password\".)
 
 
@@ -172,7 +173,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_secret(self, chap_secret):
         """
         Sets the chap_secret of this IScsiVolumeAttachment.
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
+        The Challenge-Handshake-Authentication-Protocol (CHAP) secret
+        valid for the associated CHAP user name.
         (Also called the \"CHAP password\".)
 
 
@@ -185,7 +187,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_username(self):
         """
         Gets the chap_username of this IScsiVolumeAttachment.
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See `RFC 1994`__ for more on CHAP.
+        The volume's system-generated Challenge-Handshake-Authentication-Protocol
+        (CHAP) user name. See `RFC 1994`__ for more on CHAP.
 
         Example: `ocid1.volume.oc1.phx.<unique_ID>`
 
@@ -201,7 +204,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_username(self, chap_username):
         """
         Sets the chap_username of this IScsiVolumeAttachment.
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See `RFC 1994`__ for more on CHAP.
+        The volume's system-generated Challenge-Handshake-Authentication-Protocol
+        (CHAP) user name. See `RFC 1994`__ for more on CHAP.
 
         Example: `ocid1.volume.oc1.phx.<unique_ID>`
 
@@ -245,7 +249,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def iqn(self):
         """
         **[Required]** Gets the iqn of this IScsiVolumeAttachment.
-        The target volume's iSCSI Qualified Name in the format defined by `RFC 3720`__.
+        The target volume's iSCSI Qualified Name in the format defined
+        by `RFC 3720`__.
 
         Example: `iqn.2015-12.us.oracle.com:<CHAP_username>`
 
@@ -261,7 +266,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def iqn(self, iqn):
         """
         Sets the iqn of this IScsiVolumeAttachment.
-        The target volume's iSCSI Qualified Name in the format defined by `RFC 3720`__.
+        The target volume's iSCSI Qualified Name in the format defined
+        by `RFC 3720`__.
 
         Example: `iqn.2015-12.us.oracle.com:<CHAP_username>`
 

@@ -93,7 +93,7 @@ class RenameObjectDetails(object):
     def new_name(self):
         """
         **[Required]** Gets the new_name of this RenameObjectDetails.
-        The new name of the source object.
+        The new name of the source object. Avoid entering confidential information.
 
 
         :return: The new_name of this RenameObjectDetails.
@@ -105,7 +105,7 @@ class RenameObjectDetails(object):
     def new_name(self, new_name):
         """
         Sets the new_name of this RenameObjectDetails.
-        The new name of the source object.
+        The new name of the source object. Avoid entering confidential information.
 
 
         :param new_name: The new_name of this RenameObjectDetails.

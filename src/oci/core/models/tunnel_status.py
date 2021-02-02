@@ -25,6 +25,10 @@ class TunnelStatus(object):
     #: This constant has a value of "DOWN_FOR_MAINTENANCE"
     LIFECYCLE_STATE_DOWN_FOR_MAINTENANCE = "DOWN_FOR_MAINTENANCE"
 
+    #: A constant which can be used with the lifecycle_state property of a TunnelStatus.
+    #: This constant has a value of "PARTIAL_UP"
+    LIFECYCLE_STATE_PARTIAL_UP = "PARTIAL_UP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TunnelStatus object with values from keyword arguments.
@@ -36,7 +40,7 @@ class TunnelStatus(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TunnelStatus.
-            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -102,7 +106,7 @@ class TunnelStatus(object):
         Gets the lifecycle_state of this TunnelStatus.
         The tunnel's current state.
 
-        Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -121,7 +125,7 @@ class TunnelStatus(object):
         :param lifecycle_state: The lifecycle_state of this TunnelStatus.
         :type: str
         """
-        allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE"]
+        allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

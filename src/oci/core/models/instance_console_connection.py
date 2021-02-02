@@ -13,8 +13,7 @@ class InstanceConsoleConnection(object):
     The `InstanceConsoleConnection` API provides you with console access to Compute instances,
     enabling you to troubleshoot malfunctioning instances remotely.
 
-    For more information about console access, see
-    `Accessing the Console`__.
+    For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
     __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
     """

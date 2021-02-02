@@ -30,9 +30,6 @@ class VirtualCircuit(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    **Warning:** Oracle recommends that you avoid using any confidential information when you
-    supply string values using the API.
-
     __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -321,7 +318,7 @@ class VirtualCircuit(object):
     def bandwidth_shape_name(self):
         """
         Gets the bandwidth_shape_name of this VirtualCircuit.
-        The provisioned data rate of the connection.  To get a list of the
+        The provisioned data rate of the connection. To get a list of the
         available bandwidth levels (that is, shapes), see
         :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
 
@@ -337,7 +334,7 @@ class VirtualCircuit(object):
     def bandwidth_shape_name(self, bandwidth_shape_name):
         """
         Sets the bandwidth_shape_name of this VirtualCircuit.
-        The provisioned data rate of the connection.  To get a list of the
+        The provisioned data rate of the connection. To get a list of the
         available bandwidth levels (that is, shapes), see
         :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
 

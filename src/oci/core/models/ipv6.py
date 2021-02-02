@@ -295,7 +295,7 @@ class Ipv6(object):
         **[Required]** Gets the ip_address of this Ipv6.
         The IPv6 address of the `IPv6` object. The address is within the private IPv6 CIDR block
         of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the :class:`Subnet`
-        object).
+        object.
 
         Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 
@@ -311,7 +311,7 @@ class Ipv6(object):
         Sets the ip_address of this Ipv6.
         The IPv6 address of the `IPv6` object. The address is within the private IPv6 CIDR block
         of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the :class:`Subnet`
-        object).
+        object.
 
         Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 
@@ -500,7 +500,7 @@ class Ipv6(object):
     @property
     def vnic_id(self):
         """
-        **[Required]** Gets the vnic_id of this Ipv6.
+        Gets the vnic_id of this Ipv6.
         The `OCID`__ of the VNIC the IPv6 is assigned to.
         The VNIC and IPv6 must be in the same subnet.
 

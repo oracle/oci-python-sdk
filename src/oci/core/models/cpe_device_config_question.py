@@ -79,6 +79,7 @@ class CpeDeviceConfigQuestion(object):
         """
         Gets the display_name of this CpeDeviceConfigQuestion.
         A descriptive label for the question (for example, to display in a form in a graphical interface).
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CpeDeviceConfigQuestion.
@@ -91,6 +92,7 @@ class CpeDeviceConfigQuestion(object):
         """
         Sets the display_name of this CpeDeviceConfigQuestion.
         A descriptive label for the question (for example, to display in a form in a graphical interface).
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CpeDeviceConfigQuestion.

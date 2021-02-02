@@ -31,6 +31,10 @@ class UpdateSummary(object):
     #: This constant has a value of "PRECHECK"
     LAST_ACTION_PRECHECK = "PRECHECK"
 
+    #: A constant which can be used with the last_action property of a UpdateSummary.
+    #: This constant has a value of "ROLLBACK"
+    LAST_ACTION_ROLLBACK = "ROLLBACK"
+
     #: A constant which can be used with the available_actions property of a UpdateSummary.
     #: This constant has a value of "ROLLING_APPLY"
     AVAILABLE_ACTIONS_ROLLING_APPLY = "ROLLING_APPLY"
@@ -43,6 +47,10 @@ class UpdateSummary(object):
     #: This constant has a value of "PRECHECK"
     AVAILABLE_ACTIONS_PRECHECK = "PRECHECK"
 
+    #: A constant which can be used with the available_actions property of a UpdateSummary.
+    #: This constant has a value of "ROLLBACK"
+    AVAILABLE_ACTIONS_ROLLBACK = "ROLLBACK"
+
     #: A constant which can be used with the update_type property of a UpdateSummary.
     #: This constant has a value of "GI_UPGRADE"
     UPDATE_TYPE_GI_UPGRADE = "GI_UPGRADE"
@@ -50,6 +58,10 @@ class UpdateSummary(object):
     #: A constant which can be used with the update_type property of a UpdateSummary.
     #: This constant has a value of "GI_PATCH"
     UPDATE_TYPE_GI_PATCH = "GI_PATCH"
+
+    #: A constant which can be used with the update_type property of a UpdateSummary.
+    #: This constant has a value of "OS_UPDATE"
+    UPDATE_TYPE_OS_UPDATE = "OS_UPDATE"
 
     #: A constant which can be used with the lifecycle_state property of a UpdateSummary.
     #: This constant has a value of "AVAILABLE"
@@ -82,19 +94,19 @@ class UpdateSummary(object):
 
         :param last_action:
             The value to assign to the last_action property of this UpdateSummary.
-            Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type last_action: str
 
         :param available_actions:
             The value to assign to the available_actions property of this UpdateSummary.
-            Allowed values for items in this list are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type available_actions: list[str]
 
         :param update_type:
             The value to assign to the update_type property of this UpdateSummary.
-            Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_type: str
 
@@ -209,7 +221,7 @@ class UpdateSummary(object):
         Gets the last_action of this UpdateSummary.
         The update action.
 
-        Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -228,7 +240,7 @@ class UpdateSummary(object):
         :param last_action: The last_action of this UpdateSummary.
         :type: str
         """
-        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK"]
+        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"]
         if not value_allowed_none_or_none_sentinel(last_action, allowed_values):
             last_action = 'UNKNOWN_ENUM_VALUE'
         self._last_action = last_action
@@ -239,7 +251,7 @@ class UpdateSummary(object):
         Gets the available_actions of this UpdateSummary.
         The possible actions performed by the update operation on the infrastructure components.
 
-        Allowed values for items in this list are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -258,7 +270,7 @@ class UpdateSummary(object):
         :param available_actions: The available_actions of this UpdateSummary.
         :type: list[str]
         """
-        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK"]
+        allowed_values = ["ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"]
         if available_actions:
             available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
         self._available_actions = available_actions
@@ -269,7 +281,7 @@ class UpdateSummary(object):
         **[Required]** Gets the update_type of this UpdateSummary.
         The type of cloud VM cluster maintenance update.
 
-        Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -288,7 +300,7 @@ class UpdateSummary(object):
         :param update_type: The update_type of this UpdateSummary.
         :type: str
         """
-        allowed_values = ["GI_UPGRADE", "GI_PATCH"]
+        allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             update_type = 'UNKNOWN_ENUM_VALUE'
         self._update_type = update_type

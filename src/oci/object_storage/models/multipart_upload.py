@@ -24,6 +24,18 @@ class MultipartUpload(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the storage_tier property of a MultipartUpload.
+    #: This constant has a value of "Standard"
+    STORAGE_TIER_STANDARD = "Standard"
+
+    #: A constant which can be used with the storage_tier property of a MultipartUpload.
+    #: This constant has a value of "InfrequentAccess"
+    STORAGE_TIER_INFREQUENT_ACCESS = "InfrequentAccess"
+
+    #: A constant which can be used with the storage_tier property of a MultipartUpload.
+    #: This constant has a value of "Archive"
+    STORAGE_TIER_ARCHIVE = "Archive"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MultipartUpload object with values from keyword arguments.
@@ -49,13 +61,20 @@ class MultipartUpload(object):
             The value to assign to the time_created property of this MultipartUpload.
         :type time_created: datetime
 
+        :param storage_tier:
+            The value to assign to the storage_tier property of this MultipartUpload.
+            Allowed values for this property are: "Standard", "InfrequentAccess", "Archive", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type storage_tier: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
             'bucket': 'str',
             'object': 'str',
             'upload_id': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'storage_tier': 'str'
         }
 
         self.attribute_map = {
@@ -63,7 +82,8 @@ class MultipartUpload(object):
             'bucket': 'bucket',
             'object': 'object',
             'upload_id': 'uploadId',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'storage_tier': 'storageTier'
         }
 
         self._namespace = None
@@ -71,6 +91,7 @@ class MultipartUpload(object):
         self._object = None
         self._upload_id = None
         self._time_created = None
+        self._storage_tier = None
 
     @property
     def namespace(self):
@@ -195,6 +216,36 @@ class MultipartUpload(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def storage_tier(self):
+        """
+        Gets the storage_tier of this MultipartUpload.
+        The storage tier that the object is stored in.
+
+        Allowed values for this property are: "Standard", "InfrequentAccess", "Archive", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The storage_tier of this MultipartUpload.
+        :rtype: str
+        """
+        return self._storage_tier
+
+    @storage_tier.setter
+    def storage_tier(self, storage_tier):
+        """
+        Sets the storage_tier of this MultipartUpload.
+        The storage tier that the object is stored in.
+
+
+        :param storage_tier: The storage_tier of this MultipartUpload.
+        :type: str
+        """
+        allowed_values = ["Standard", "InfrequentAccess", "Archive"]
+        if not value_allowed_none_or_none_sentinel(storage_tier, allowed_values):
+            storage_tier = 'UNKNOWN_ENUM_VALUE'
+        self._storage_tier = storage_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentFeatures(object):
     """
-    Instance agent features supported on the image
+    Oracle Cloud Agent features supported on the image.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class InstanceAgentFeatures(object):
     def is_monitoring_supported(self):
         """
         Gets the is_monitoring_supported of this InstanceAgentFeatures.
-        Whether the agent running on the instance can gather performance metrics and monitor the instance.
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance.
 
 
         :return: The is_monitoring_supported of this InstanceAgentFeatures.
@@ -56,7 +56,7 @@ class InstanceAgentFeatures(object):
     def is_monitoring_supported(self, is_monitoring_supported):
         """
         Sets the is_monitoring_supported of this InstanceAgentFeatures.
-        Whether the agent running on the instance can gather performance metrics and monitor the instance.
+        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance.
 
 
         :param is_monitoring_supported: The is_monitoring_supported of this InstanceAgentFeatures.
@@ -68,7 +68,7 @@ class InstanceAgentFeatures(object):
     def is_management_supported(self):
         """
         Gets the is_management_supported of this InstanceAgentFeatures.
-        Whether the agent running on the instance can run all the available management plugins
+        Whether Oracle Cloud Agent can run all the available management plugins.
 
 
         :return: The is_management_supported of this InstanceAgentFeatures.
@@ -80,7 +80,7 @@ class InstanceAgentFeatures(object):
     def is_management_supported(self, is_management_supported):
         """
         Sets the is_management_supported of this InstanceAgentFeatures.
-        Whether the agent running on the instance can run all the available management plugins
+        Whether Oracle Cloud Agent can run all the available management plugins.
 
 
         :param is_management_supported: The is_management_supported of this InstanceAgentFeatures.

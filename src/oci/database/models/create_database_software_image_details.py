@@ -228,7 +228,7 @@ class CreateDatabaseSoftwareImageDetails(object):
     def image_type(self):
         """
         Gets the image_type of this CreateDatabaseSoftwareImageDetails.
-        List of the Fault Domains in which this DB system is provisioned.
+        The type of software image. Can be grid or database.
 
         Allowed values for this property are: "GRID_IMAGE", "DATABASE_IMAGE"
 
@@ -242,7 +242,7 @@ class CreateDatabaseSoftwareImageDetails(object):
     def image_type(self, image_type):
         """
         Sets the image_type of this CreateDatabaseSoftwareImageDetails.
-        List of the Fault Domains in which this DB system is provisioned.
+        The type of software image. Can be grid or database.
 
 
         :param image_type: The image_type of this CreateDatabaseSoftwareImageDetails.

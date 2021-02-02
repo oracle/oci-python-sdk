@@ -217,7 +217,7 @@ class Bucket(object):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this Bucket.
-        The Object Storage namespace in which the bucket lives.
+        The Object Storage namespace in which the bucket resides.
 
 
         :return: The namespace of this Bucket.
@@ -229,7 +229,7 @@ class Bucket(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this Bucket.
-        The Object Storage namespace in which the bucket lives.
+        The Object Storage namespace in which the bucket resides.
 
 
         :param namespace: The namespace of this Bucket.
@@ -433,10 +433,10 @@ class Bucket(object):
     def storage_tier(self):
         """
         Gets the storage_tier of this Bucket.
-        The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
-        objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+        The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means
+        objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type
         is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
-        The 'storageTier' property is immutable after bucket is created.
+        The `storageTier` property is immutable after bucket is created.
 
         Allowed values for this property are: "Standard", "Archive", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -451,10 +451,10 @@ class Bucket(object):
     def storage_tier(self, storage_tier):
         """
         Sets the storage_tier of this Bucket.
-        The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
-        objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+        The storage tier type assigned to the bucket. A bucket is set to `Standard` tier by default, which means
+        objects uploaded or copied to the bucket will be in the standard storage tier. When the `Archive` tier type
         is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
-        The 'storageTier' property is immutable after bucket is created.
+        The `storageTier` property is immutable after bucket is created.
 
 
         :param storage_tier: The storage_tier of this Bucket.

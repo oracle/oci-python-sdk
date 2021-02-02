@@ -51,7 +51,7 @@ class CreateReplicationPolicyDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateReplicationPolicyDetails.
-        The name of the policy.
+        The name of the policy. Avoid entering confidential information.
 
 
         :return: The name of this CreateReplicationPolicyDetails.
@@ -63,7 +63,7 @@ class CreateReplicationPolicyDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateReplicationPolicyDetails.
-        The name of the policy.
+        The name of the policy. Avoid entering confidential information.
 
 
         :param name: The name of this CreateReplicationPolicyDetails.

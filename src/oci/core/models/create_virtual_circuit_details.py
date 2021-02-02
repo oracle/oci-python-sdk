@@ -151,7 +151,7 @@ class CreateVirtualCircuitDetails(object):
     def bandwidth_shape_name(self):
         """
         Gets the bandwidth_shape_name of this CreateVirtualCircuitDetails.
-        The provisioned data rate of the connection.  To get a list of the
+        The provisioned data rate of the connection. To get a list of the
         available bandwidth levels (that is, shapes), see
         :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
 
@@ -167,7 +167,7 @@ class CreateVirtualCircuitDetails(object):
     def bandwidth_shape_name(self, bandwidth_shape_name):
         """
         Sets the bandwidth_shape_name of this CreateVirtualCircuitDetails.
-        The provisioned data rate of the connection.  To get a list of the
+        The provisioned data rate of the connection. To get a list of the
         available bandwidth levels (that is, shapes), see
         :func:`list_fast_connect_provider_virtual_circuit_bandwidth_shapes`.
 

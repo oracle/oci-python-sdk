@@ -21,6 +21,7 @@ class CreateConfigSourceDetails(object):
         * :class:`~oci.resource_manager.models.CreateZipUploadConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateGitConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateCompartmentConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.CreateStackTemplateConfigSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -62,6 +63,9 @@ class CreateConfigSourceDetails(object):
 
         if type == 'COMPARTMENT_CONFIG_SOURCE':
             return 'CreateCompartmentConfigSourceDetails'
+
+        if type == 'TEMPLATE_CONFIG_SOURCE':
+            return 'CreateStackTemplateConfigSourceDetails'
         else:
             return 'CreateConfigSourceDetails'
 

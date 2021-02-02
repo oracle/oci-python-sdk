@@ -376,7 +376,10 @@ class VolumeAttachment(object):
     def is_shareable(self):
         """
         Gets the is_shareable of this VolumeAttachment.
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
 
 
         :return: The is_shareable of this VolumeAttachment.
@@ -388,7 +391,10 @@ class VolumeAttachment(object):
     def is_shareable(self, is_shareable):
         """
         Sets the is_shareable of this VolumeAttachment.
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
 
 
         :param is_shareable: The is_shareable of this VolumeAttachment.
