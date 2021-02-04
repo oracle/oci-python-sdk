@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <budgets-control-plane-spec-spec-file>budget.api.cond.yaml</budgets-control-plane-spec-spec-file>
+    <budgets-control-plane-spec-spec-file>source/budget.api.cond.yaml</budgets-control-plane-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -134,7 +134,7 @@
       <dependency>
         <groupId>com.oracle.oci.usage.budgets</groupId>
         <artifactId>budgets-control-plane-spec</artifactId>
-        <version>2.4.6</version>
+        <version>2.4.9</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

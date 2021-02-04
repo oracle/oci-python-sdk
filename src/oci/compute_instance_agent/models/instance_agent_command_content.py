@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandContent(object):
     """
-    Command content.
+    The contents of the command.
     """
 
     def __init__(self, **kwargs):
@@ -44,6 +44,8 @@ class InstanceAgentCommandContent(object):
     def source(self):
         """
         **[Required]** Gets the source of this InstanceAgentCommandContent.
+        The source of the command.
+
 
         :return: The source of this InstanceAgentCommandContent.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandSourceDetails
@@ -54,6 +56,8 @@ class InstanceAgentCommandContent(object):
     def source(self, source):
         """
         Sets the source of this InstanceAgentCommandContent.
+        The source of the command.
+
 
         :param source: The source of this InstanceAgentCommandContent.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandSourceDetails
@@ -64,6 +68,8 @@ class InstanceAgentCommandContent(object):
     def output(self):
         """
         Gets the output of this InstanceAgentCommandContent.
+        The output destination for the command.
+
 
         :return: The output of this InstanceAgentCommandContent.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails
@@ -74,6 +80,8 @@ class InstanceAgentCommandContent(object):
     def output(self, output):
         """
         Sets the output of this InstanceAgentCommandContent.
+        The output destination for the command.
+
 
         :param output: The output of this InstanceAgentCommandContent.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails

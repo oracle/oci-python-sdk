@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandExecutionSummary(object):
     """
-    A command's execution summary.
+    Execution details for a command.
     """
 
     #: A constant which can be used with the delivery_state property of a InstanceAgentCommandExecutionSummary.
@@ -141,7 +141,9 @@ class InstanceAgentCommandExecutionSummary(object):
     def instance_agent_command_id(self):
         """
         **[Required]** Gets the instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
-        The OCID of the command
+        The `OCID`__ of the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
@@ -153,7 +155,9 @@ class InstanceAgentCommandExecutionSummary(object):
     def instance_agent_command_id(self, instance_agent_command_id):
         """
         Sets the instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
-        The OCID of the command
+        The `OCID`__ of the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_agent_command_id: The instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
@@ -165,7 +169,9 @@ class InstanceAgentCommandExecutionSummary(object):
     def instance_id(self):
         """
         **[Required]** Gets the instance_id of this InstanceAgentCommandExecutionSummary.
-        The OCID of the instance
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this InstanceAgentCommandExecutionSummary.
@@ -177,7 +183,9 @@ class InstanceAgentCommandExecutionSummary(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this InstanceAgentCommandExecutionSummary.
-        The OCID of the instance
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this InstanceAgentCommandExecutionSummary.
@@ -189,12 +197,12 @@ class InstanceAgentCommandExecutionSummary(object):
     def delivery_state(self):
         """
         **[Required]** Gets the delivery_state of this InstanceAgentCommandExecutionSummary.
-        Specifies the command delivery state.
-         * `VISIBLE` - The command is visible to instance.
-         * `PENDING` - The command is pending ack from the instance.
-         * `ACKED` - The command has been received and acked by the instance.
-         * `ACKED_CANCELED` - The canceled command has been received and acked by the instance.
-         * `EXPIRED` - The instance has not requested for commands and its delivery has expired.
+        The command delivery state.
+         * `VISIBLE` - The command is visible to the instance.
+         * `PENDING` - The command is pending acknowledgment from the instance.
+         * `ACKED` - The command has been received and acknowledged by the instance.
+         * `ACKED_CANCELED` - The canceled command has been received and acknowledged by the instance.
+         * `EXPIRED` - The instance has not requested for commands and the command's delivery has expired.
 
         Allowed values for this property are: "VISIBLE", "PENDING", "ACKED", "ACKED_CANCELED", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -209,12 +217,12 @@ class InstanceAgentCommandExecutionSummary(object):
     def delivery_state(self, delivery_state):
         """
         Sets the delivery_state of this InstanceAgentCommandExecutionSummary.
-        Specifies the command delivery state.
-         * `VISIBLE` - The command is visible to instance.
-         * `PENDING` - The command is pending ack from the instance.
-         * `ACKED` - The command has been received and acked by the instance.
-         * `ACKED_CANCELED` - The canceled command has been received and acked by the instance.
-         * `EXPIRED` - The instance has not requested for commands and its delivery has expired.
+        The command delivery state.
+         * `VISIBLE` - The command is visible to the instance.
+         * `PENDING` - The command is pending acknowledgment from the instance.
+         * `ACKED` - The command has been received and acknowledged by the instance.
+         * `ACKED_CANCELED` - The canceled command has been received and acknowledged by the instance.
+         * `EXPIRED` - The instance has not requested for commands and the command's delivery has expired.
 
 
         :param delivery_state: The delivery_state of this InstanceAgentCommandExecutionSummary.
@@ -229,13 +237,13 @@ class InstanceAgentCommandExecutionSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this InstanceAgentCommandExecutionSummary.
-        command execution life cycle state.
-        * `ACCEPTED` - The command execution has been accepted to run.
-        * `IN_PROGRESS` - The command execution is in progress.
-        * `SUCCEEDED` - The command execution is successful.
-        * `FAILED` - The command execution has failed.
-        * `TIMED_OUT` - The command execution has timedout.
-        * `CANCELED` - The command execution has canceled.
+        The command execution lifecycle state.
+        * `ACCEPTED` - The command has been accepted to run.
+        * `IN_PROGRESS` - The command is in progress.
+        * `SUCCEEDED` - The command was successfully executed.
+        * `FAILED` - The command failed to execute.
+        * `TIMED_OUT` - The command execution timed out.
+        * `CANCELED` - The command execution was canceled.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED", "TIMED_OUT", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -250,13 +258,13 @@ class InstanceAgentCommandExecutionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this InstanceAgentCommandExecutionSummary.
-        command execution life cycle state.
-        * `ACCEPTED` - The command execution has been accepted to run.
-        * `IN_PROGRESS` - The command execution is in progress.
-        * `SUCCEEDED` - The command execution is successful.
-        * `FAILED` - The command execution has failed.
-        * `TIMED_OUT` - The command execution has timedout.
-        * `CANCELED` - The command execution has canceled.
+        The command execution lifecycle state.
+        * `ACCEPTED` - The command has been accepted to run.
+        * `IN_PROGRESS` - The command is in progress.
+        * `SUCCEEDED` - The command was successfully executed.
+        * `FAILED` - The command failed to execute.
+        * `TIMED_OUT` - The command execution timed out.
+        * `CANCELED` - The command execution was canceled.
 
 
         :param lifecycle_state: The lifecycle_state of this InstanceAgentCommandExecutionSummary.
@@ -271,7 +279,10 @@ class InstanceAgentCommandExecutionSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this InstanceAgentCommandExecutionSummary.
-        The command creation date
+        The date and time the command was created, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this InstanceAgentCommandExecutionSummary.
@@ -283,7 +294,10 @@ class InstanceAgentCommandExecutionSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this InstanceAgentCommandExecutionSummary.
-        The command creation date
+        The date and time the command was created, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this InstanceAgentCommandExecutionSummary.
@@ -295,7 +309,10 @@ class InstanceAgentCommandExecutionSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this InstanceAgentCommandExecutionSummary.
-        The command last updated at date.
+        The date and time the command was last updated, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_updated of this InstanceAgentCommandExecutionSummary.
@@ -307,7 +324,10 @@ class InstanceAgentCommandExecutionSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this InstanceAgentCommandExecutionSummary.
-        The command last updated at date.
+        The date and time the command was last updated, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_updated: The time_updated of this InstanceAgentCommandExecutionSummary.
@@ -319,7 +339,7 @@ class InstanceAgentCommandExecutionSummary(object):
     def sequence_number(self):
         """
         **[Required]** Gets the sequence_number of this InstanceAgentCommandExecutionSummary.
-        The large non-consecutive number that Run Command Service assigns to each created command.
+        A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
 
 
         :return: The sequence_number of this InstanceAgentCommandExecutionSummary.
@@ -331,7 +351,7 @@ class InstanceAgentCommandExecutionSummary(object):
     def sequence_number(self, sequence_number):
         """
         Sets the sequence_number of this InstanceAgentCommandExecutionSummary.
-        The large non-consecutive number that Run Command Service assigns to each created command.
+        A large, non-consecutive number that Oracle Cloud Agent assigns to each created command.
 
 
         :param sequence_number: The sequence_number of this InstanceAgentCommandExecutionSummary.
@@ -343,7 +363,7 @@ class InstanceAgentCommandExecutionSummary(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceAgentCommandExecutionSummary.
-        The user friendly display name of the command.
+        A user-friendly name. Does not have to be unique.
 
 
         :return: The display_name of this InstanceAgentCommandExecutionSummary.
@@ -355,7 +375,7 @@ class InstanceAgentCommandExecutionSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceAgentCommandExecutionSummary.
-        The user friendly display name of the command.
+        A user-friendly name. Does not have to be unique.
 
 
         :param display_name: The display_name of this InstanceAgentCommandExecutionSummary.
@@ -367,6 +387,8 @@ class InstanceAgentCommandExecutionSummary(object):
     def content(self):
         """
         **[Required]** Gets the content of this InstanceAgentCommandExecutionSummary.
+        The execution output from a command.
+
 
         :return: The content of this InstanceAgentCommandExecutionSummary.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputContent
@@ -377,6 +399,8 @@ class InstanceAgentCommandExecutionSummary(object):
     def content(self, content):
         """
         Sets the content of this InstanceAgentCommandExecutionSummary.
+        The execution output from a command.
+
 
         :param content: The content of this InstanceAgentCommandExecutionSummary.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputContent

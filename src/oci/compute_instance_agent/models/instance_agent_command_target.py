@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandTarget(object):
     """
-    Target instances that will receive a command.
+    The target instance that the command runs on.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,9 @@ class InstanceAgentCommandTarget(object):
     def instance_id(self):
         """
         Gets the instance_id of this InstanceAgentCommandTarget.
-        The target instance OCID
+        The `OCID`__ of the target instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this InstanceAgentCommandTarget.
@@ -49,7 +51,9 @@ class InstanceAgentCommandTarget(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this InstanceAgentCommandTarget.
-        The target instance OCID
+        The `OCID`__ of the target instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this InstanceAgentCommandTarget.

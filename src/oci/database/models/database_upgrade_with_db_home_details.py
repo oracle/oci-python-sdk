@@ -24,6 +24,10 @@ class DatabaseUpgradeWithDbHomeDetails(DatabaseUpgradeSourceBase):
             Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"
         :type source: str
 
+        :param options:
+            The value to assign to the options property of this DatabaseUpgradeWithDbHomeDetails.
+        :type options: str
+
         :param db_home_id:
             The value to assign to the db_home_id property of this DatabaseUpgradeWithDbHomeDetails.
         :type db_home_id: str
@@ -31,15 +35,18 @@ class DatabaseUpgradeWithDbHomeDetails(DatabaseUpgradeSourceBase):
         """
         self.swagger_types = {
             'source': 'str',
+            'options': 'str',
             'db_home_id': 'str'
         }
 
         self.attribute_map = {
             'source': 'source',
+            'options': 'options',
             'db_home_id': 'dbHomeId'
         }
 
         self._source = None
+        self._options = None
         self._db_home_id = None
         self._source = 'DB_HOME'
 

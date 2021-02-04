@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandSourceViaObjectStorageTupleDetails(InstanceAgentCommandSourceDetails):
     """
-    Command content via object storage tuple.
+    The source of the command when imported from an Object Storage bucket.
     """
 
     def __init__(self, **kwargs):
@@ -109,7 +109,7 @@ class InstanceAgentCommandSourceViaObjectStorageTupleDetails(InstanceAgentComman
     def object_name(self):
         """
         **[Required]** Gets the object_name of this InstanceAgentCommandSourceViaObjectStorageTupleDetails.
-        The Object Storage name for the command.
+        The Object Storage object name for the command.
 
 
         :return: The object_name of this InstanceAgentCommandSourceViaObjectStorageTupleDetails.
@@ -121,7 +121,7 @@ class InstanceAgentCommandSourceViaObjectStorageTupleDetails(InstanceAgentComman
     def object_name(self, object_name):
         """
         Sets the object_name of this InstanceAgentCommandSourceViaObjectStorageTupleDetails.
-        The Object Storage name for the command.
+        The Object Storage object name for the command.
 
 
         :param object_name: The object_name of this InstanceAgentCommandSourceViaObjectStorageTupleDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandSummary(object):
     """
-    command summary.
+    Summary information for a command.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,9 @@ class InstanceAgentCommandSummary(object):
     def instance_agent_command_id(self):
         """
         **[Required]** Gets the instance_agent_command_id of this InstanceAgentCommandSummary.
-        The command OCID
+        The `OCID`__ of the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_agent_command_id of this InstanceAgentCommandSummary.
@@ -84,7 +86,9 @@ class InstanceAgentCommandSummary(object):
     def instance_agent_command_id(self, instance_agent_command_id):
         """
         Sets the instance_agent_command_id of this InstanceAgentCommandSummary.
-        The command OCID
+        The `OCID`__ of the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_agent_command_id: The instance_agent_command_id of this InstanceAgentCommandSummary.
@@ -96,7 +100,7 @@ class InstanceAgentCommandSummary(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceAgentCommandSummary.
-        The user friendly display name of the command.
+        A user-friendly name. Does not have to be unique.
 
 
         :return: The display_name of this InstanceAgentCommandSummary.
@@ -108,7 +112,7 @@ class InstanceAgentCommandSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceAgentCommandSummary.
-        The user friendly display name of the command.
+        A user-friendly name. Does not have to be unique.
 
 
         :param display_name: The display_name of this InstanceAgentCommandSummary.
@@ -120,7 +124,9 @@ class InstanceAgentCommandSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstanceAgentCommandSummary.
-        The OCID of the compartment the command is created in.
+        The `OCID`__ of the compartment containing the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstanceAgentCommandSummary.
@@ -132,7 +138,9 @@ class InstanceAgentCommandSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstanceAgentCommandSummary.
-        The OCID of the compartment the command is created in.
+        The `OCID`__ of the compartment containing the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstanceAgentCommandSummary.
@@ -144,7 +152,10 @@ class InstanceAgentCommandSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this InstanceAgentCommandSummary.
-        The command creation date
+        The date and time the command was created, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this InstanceAgentCommandSummary.
@@ -156,7 +167,10 @@ class InstanceAgentCommandSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this InstanceAgentCommandSummary.
-        The command creation date
+        The date and time the command was created, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this InstanceAgentCommandSummary.
@@ -168,7 +182,10 @@ class InstanceAgentCommandSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this InstanceAgentCommandSummary.
-        The command last updated at date.
+        The date and time the command was last updated, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_updated of this InstanceAgentCommandSummary.
@@ -180,7 +197,10 @@ class InstanceAgentCommandSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this InstanceAgentCommandSummary.
-        The command last updated at date.
+        The date and time the command was last updated, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_updated: The time_updated of this InstanceAgentCommandSummary.
@@ -192,7 +212,7 @@ class InstanceAgentCommandSummary(object):
     def is_canceled(self):
         """
         Gets the is_canceled of this InstanceAgentCommandSummary.
-        Set to true, if the command has been canceled.
+        Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
 
 
         :return: The is_canceled of this InstanceAgentCommandSummary.
@@ -204,7 +224,7 @@ class InstanceAgentCommandSummary(object):
     def is_canceled(self, is_canceled):
         """
         Sets the is_canceled of this InstanceAgentCommandSummary.
-        Set to true, if the command has been canceled.
+        Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
 
 
         :param is_canceled: The is_canceled of this InstanceAgentCommandSummary.

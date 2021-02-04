@@ -7,7 +7,11 @@ Compute Instance Agent
     :template: autosummary/service_client.rst
 
     oci.compute_instance_agent.ComputeInstanceAgentClient
+    oci.compute_instance_agent.PluginClient
+    oci.compute_instance_agent.PluginconfigClient
     oci.compute_instance_agent.ComputeInstanceAgentClientCompositeOperations
+    oci.compute_instance_agent.PluginClientCompositeOperations
+    oci.compute_instance_agent.PluginconfigClientCompositeOperations
 
 --------
  Models
@@ -18,10 +22,10 @@ Compute Instance Agent
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.compute_instance_agent.models.AvailablePluginSummary
     oci.compute_instance_agent.models.CreateInstanceAgentCommandDetails
     oci.compute_instance_agent.models.InstanceAgentCommand
     oci.compute_instance_agent.models.InstanceAgentCommandContent
-    oci.compute_instance_agent.models.InstanceAgentCommandContentInfo
     oci.compute_instance_agent.models.InstanceAgentCommandExecution
     oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputContent
     oci.compute_instance_agent.models.InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails
@@ -38,3 +42,6 @@ Compute Instance Agent
     oci.compute_instance_agent.models.InstanceAgentCommandSourceViaTextDetails
     oci.compute_instance_agent.models.InstanceAgentCommandSummary
     oci.compute_instance_agent.models.InstanceAgentCommandTarget
+    oci.compute_instance_agent.models.InstanceAgentPlugin
+    oci.compute_instance_agent.models.InstanceAgentPluginSummary
+    oci.compute_instance_agent.models.Plugin

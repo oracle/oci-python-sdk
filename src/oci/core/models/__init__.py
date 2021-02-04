@@ -199,6 +199,7 @@ from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
 from .instance_agent_config import InstanceAgentConfig
 from .instance_agent_features import InstanceAgentFeatures
+from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetails
 from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
@@ -558,6 +559,7 @@ core_type_mapping = {
     "Instance": Instance,
     "InstanceAgentConfig": InstanceAgentConfig,
     "InstanceAgentFeatures": InstanceAgentFeatures,
+    "InstanceAgentPluginConfigDetails": InstanceAgentPluginConfigDetails,
     "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,

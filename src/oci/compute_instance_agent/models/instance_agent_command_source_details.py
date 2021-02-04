@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandSourceDetails(object):
     """
-    Command content.
+    The source of the command.
     """
 
     #: A constant which can be used with the source_type property of a InstanceAgentCommandSourceDetails.
@@ -76,8 +76,16 @@ class InstanceAgentCommandSourceDetails(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this InstanceAgentCommandSourceDetails.
-        The source type of the command. Use `TEXT` for inlining the command. Use `OBJECT_STORAGE_TUPLE` when specifying
-        the namespace, bucket name, and object name. Use `OBJECT_STORAGE_URI` when specifying the Object Storage URL.
+        The source type for the command. The following values are supported:
+
+        - `TEXT` - uses a plain text command that is specified inline with the request.
+        - `OBJECT_STORAGE_URI` - imports a command from an Object Storage URL.
+        - `OBJECT_STORAGE_TUPLE` - imports a command from an Object Storage bucket.
+
+        For background information about Object Storage buckets and URLs, see
+        `Overview of Object Storage`__.
+
+        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
 
         Allowed values for this property are: "TEXT", "OBJECT_STORAGE_URI", "OBJECT_STORAGE_TUPLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -92,8 +100,16 @@ class InstanceAgentCommandSourceDetails(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this InstanceAgentCommandSourceDetails.
-        The source type of the command. Use `TEXT` for inlining the command. Use `OBJECT_STORAGE_TUPLE` when specifying
-        the namespace, bucket name, and object name. Use `OBJECT_STORAGE_URI` when specifying the Object Storage URL.
+        The source type for the command. The following values are supported:
+
+        - `TEXT` - uses a plain text command that is specified inline with the request.
+        - `OBJECT_STORAGE_URI` - imports a command from an Object Storage URL.
+        - `OBJECT_STORAGE_TUPLE` - imports a command from an Object Storage bucket.
+
+        For background information about Object Storage buckets and URLs, see
+        `Overview of Object Storage`__.
+
+        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
 
 
         :param source_type: The source_type of this InstanceAgentCommandSourceDetails.

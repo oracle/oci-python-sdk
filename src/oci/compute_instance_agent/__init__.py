@@ -7,6 +7,10 @@ from __future__ import absolute_import
 
 from .compute_instance_agent_client import ComputeInstanceAgentClient
 from .compute_instance_agent_client_composite_operations import ComputeInstanceAgentClientCompositeOperations
+from .plugin_client import PluginClient
+from .plugin_client_composite_operations import PluginClientCompositeOperations
+from .pluginconfig_client import PluginconfigClient
+from .pluginconfig_client_composite_operations import PluginconfigClientCompositeOperations
 from . import models
 
-__all__ = ["ComputeInstanceAgentClient", "ComputeInstanceAgentClientCompositeOperations", "models"]
+__all__ = ["ComputeInstanceAgentClient", "ComputeInstanceAgentClientCompositeOperations", "PluginClient", "PluginClientCompositeOperations", "PluginconfigClient", "PluginconfigClientCompositeOperations", "models"]

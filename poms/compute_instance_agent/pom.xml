@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.compute.ias</groupId>
         <artifactId>instance-agent-service-api-spec</artifactId>
-        <version>0.0.29</version>
+        <version>0.0.39</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

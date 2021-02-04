@@ -41,16 +41,23 @@ class DatabaseUpgradeSourceBase(object):
             Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"
         :type source: str
 
+        :param options:
+            The value to assign to the options property of this DatabaseUpgradeSourceBase.
+        :type options: str
+
         """
         self.swagger_types = {
-            'source': 'str'
+            'source': 'str',
+            'options': 'str'
         }
 
         self.attribute_map = {
-            'source': 'source'
+            'source': 'source',
+            'options': 'options'
         }
 
         self._source = None
+        self._options = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -112,6 +119,32 @@ class DatabaseUpgradeSourceBase(object):
                 .format(allowed_values)
             )
         self._source = source
+
+    @property
+    def options(self):
+        """
+        Gets the options of this DatabaseUpgradeSourceBase.
+        Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+        Example: \"-upgradeTimezone false -keepEvents\"
+
+
+        :return: The options of this DatabaseUpgradeSourceBase.
+        :rtype: str
+        """
+        return self._options
+
+    @options.setter
+    def options(self, options):
+        """
+        Sets the options of this DatabaseUpgradeSourceBase.
+        Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+        Example: \"-upgradeTimezone false -keepEvents\"
+
+
+        :param options: The options of this DatabaseUpgradeSourceBase.
+        :type: str
+        """
+        self._options = options
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -86,6 +86,14 @@ class AttributeSummary(object):
             The value to assign to the length property of this AttributeSummary.
         :type length: int
 
+        :param precision:
+            The value to assign to the precision property of this AttributeSummary.
+        :type precision: int
+
+        :param scale:
+            The value to assign to the scale property of this AttributeSummary.
+        :type scale: int
+
         :param is_nullable:
             The value to assign to the is_nullable property of this AttributeSummary.
         :type is_nullable: bool
@@ -150,6 +158,8 @@ class AttributeSummary(object):
             'entity_key': 'str',
             'external_key': 'str',
             'length': 'int',
+            'precision': 'int',
+            'scale': 'int',
             'is_nullable': 'bool',
             'uri': 'str',
             'lifecycle_state': 'str',
@@ -172,6 +182,8 @@ class AttributeSummary(object):
             'entity_key': 'entityKey',
             'external_key': 'externalKey',
             'length': 'length',
+            'precision': 'precision',
+            'scale': 'scale',
             'is_nullable': 'isNullable',
             'uri': 'uri',
             'lifecycle_state': 'lifecycleState',
@@ -193,6 +205,8 @@ class AttributeSummary(object):
         self._entity_key = None
         self._external_key = None
         self._length = None
+        self._precision = None
+        self._scale = None
         self._is_nullable = None
         self._uri = None
         self._lifecycle_state = None
@@ -352,6 +366,54 @@ class AttributeSummary(object):
         :type: int
         """
         self._length = length
+
+    @property
+    def precision(self):
+        """
+        Gets the precision of this AttributeSummary.
+        Precision of the attribute value usually applies to float data type.
+
+
+        :return: The precision of this AttributeSummary.
+        :rtype: int
+        """
+        return self._precision
+
+    @precision.setter
+    def precision(self, precision):
+        """
+        Sets the precision of this AttributeSummary.
+        Precision of the attribute value usually applies to float data type.
+
+
+        :param precision: The precision of this AttributeSummary.
+        :type: int
+        """
+        self._precision = precision
+
+    @property
+    def scale(self):
+        """
+        Gets the scale of this AttributeSummary.
+        Scale of the attribute value usually applies to float data type.
+
+
+        :return: The scale of this AttributeSummary.
+        :rtype: int
+        """
+        return self._scale
+
+    @scale.setter
+    def scale(self, scale):
+        """
+        Sets the scale of this AttributeSummary.
+        Scale of the attribute value usually applies to float data type.
+
+
+        :param scale: The scale of this AttributeSummary.
+        :type: int
+        """
+        self._scale = scale
 
     @property
     def is_nullable(self):

@@ -68,6 +68,10 @@ class BudgetSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type reset_period: str
 
+        :param budget_processing_period_start_offset:
+            The value to assign to the budget_processing_period_start_offset property of this BudgetSummary.
+        :type budget_processing_period_start_offset: int
+
         :param target_type:
             The value to assign to the target_type property of this BudgetSummary.
             Allowed values for this property are: "COMPARTMENT", "TAG", 'UNKNOWN_ENUM_VALUE'.
@@ -129,6 +133,7 @@ class BudgetSummary(object):
             'description': 'str',
             'amount': 'float',
             'reset_period': 'str',
+            'budget_processing_period_start_offset': 'int',
             'target_type': 'str',
             'targets': 'list[str]',
             'lifecycle_state': 'str',
@@ -151,6 +156,7 @@ class BudgetSummary(object):
             'description': 'description',
             'amount': 'amount',
             'reset_period': 'resetPeriod',
+            'budget_processing_period_start_offset': 'budgetProcessingPeriodStartOffset',
             'target_type': 'targetType',
             'targets': 'targets',
             'lifecycle_state': 'lifecycleState',
@@ -172,6 +178,7 @@ class BudgetSummary(object):
         self._description = None
         self._amount = None
         self._reset_period = None
+        self._budget_processing_period_start_offset = None
         self._target_type = None
         self._targets = None
         self._lifecycle_state = None
@@ -362,6 +369,30 @@ class BudgetSummary(object):
         if not value_allowed_none_or_none_sentinel(reset_period, allowed_values):
             reset_period = 'UNKNOWN_ENUM_VALUE'
         self._reset_period = reset_period
+
+    @property
+    def budget_processing_period_start_offset(self):
+        """
+        Gets the budget_processing_period_start_offset of this BudgetSummary.
+        The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+
+
+        :return: The budget_processing_period_start_offset of this BudgetSummary.
+        :rtype: int
+        """
+        return self._budget_processing_period_start_offset
+
+    @budget_processing_period_start_offset.setter
+    def budget_processing_period_start_offset(self, budget_processing_period_start_offset):
+        """
+        Sets the budget_processing_period_start_offset of this BudgetSummary.
+        The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+
+
+        :param budget_processing_period_start_offset: The budget_processing_period_start_offset of this BudgetSummary.
+        :type: int
+        """
+        self._budget_processing_period_start_offset = budget_processing_period_start_offset
 
     @property
     def target_type(self):

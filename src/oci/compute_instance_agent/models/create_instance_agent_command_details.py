@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateInstanceAgentCommandDetails(object):
     """
-    Create Command Details
+    Creation details for an Oracle Cloud Agent command.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,9 @@ class CreateInstanceAgentCommandDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateInstanceAgentCommandDetails.
-        The OCID of the compartment you want to create the command.
+        The `OCID`__ of the compartment to create the command in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateInstanceAgentCommandDetails.
@@ -77,7 +79,9 @@ class CreateInstanceAgentCommandDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateInstanceAgentCommandDetails.
-        The OCID of the compartment you want to create the command.
+        The `OCID`__ of the compartment to create the command in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateInstanceAgentCommandDetails.
@@ -89,7 +93,8 @@ class CreateInstanceAgentCommandDetails(object):
     def execution_time_out_in_seconds(self):
         """
         **[Required]** Gets the execution_time_out_in_seconds of this CreateInstanceAgentCommandDetails.
-        Command execution time limit. Zero means no timeout.
+        The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+        out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
 
 
         :return: The execution_time_out_in_seconds of this CreateInstanceAgentCommandDetails.
@@ -101,7 +106,8 @@ class CreateInstanceAgentCommandDetails(object):
     def execution_time_out_in_seconds(self, execution_time_out_in_seconds):
         """
         Sets the execution_time_out_in_seconds of this CreateInstanceAgentCommandDetails.
-        Command execution time limit. Zero means no timeout.
+        The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+        out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
 
 
         :param execution_time_out_in_seconds: The execution_time_out_in_seconds of this CreateInstanceAgentCommandDetails.
@@ -115,7 +121,8 @@ class CreateInstanceAgentCommandDetails(object):
         Gets the display_name of this CreateInstanceAgentCommandDetails.
         A user-friendly name for the command. It does not have to be unique.
         Avoid entering confidential information.
-        Example: `Database Backup Command`
+
+        Example: `Database Backup Script`
 
 
         :return: The display_name of this CreateInstanceAgentCommandDetails.
@@ -129,7 +136,8 @@ class CreateInstanceAgentCommandDetails(object):
         Sets the display_name of this CreateInstanceAgentCommandDetails.
         A user-friendly name for the command. It does not have to be unique.
         Avoid entering confidential information.
-        Example: `Database Backup Command`
+
+        Example: `Database Backup Script`
 
 
         :param display_name: The display_name of this CreateInstanceAgentCommandDetails.
@@ -141,6 +149,8 @@ class CreateInstanceAgentCommandDetails(object):
     def target(self):
         """
         **[Required]** Gets the target of this CreateInstanceAgentCommandDetails.
+        The target instance to run the command on.
+
 
         :return: The target of this CreateInstanceAgentCommandDetails.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandTarget
@@ -151,6 +161,8 @@ class CreateInstanceAgentCommandDetails(object):
     def target(self, target):
         """
         Sets the target of this CreateInstanceAgentCommandDetails.
+        The target instance to run the command on.
+
 
         :param target: The target of this CreateInstanceAgentCommandDetails.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandTarget
@@ -161,6 +173,8 @@ class CreateInstanceAgentCommandDetails(object):
     def content(self):
         """
         **[Required]** Gets the content of this CreateInstanceAgentCommandDetails.
+        The contents of the command.
+
 
         :return: The content of this CreateInstanceAgentCommandDetails.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandContent
@@ -171,6 +185,8 @@ class CreateInstanceAgentCommandDetails(object):
     def content(self, content):
         """
         Sets the content of this CreateInstanceAgentCommandDetails.
+        The contents of the command.
+
 
         :param content: The content of this CreateInstanceAgentCommandDetails.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandContent

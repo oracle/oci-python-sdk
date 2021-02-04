@@ -5106,6 +5106,90 @@ def test_parse_connection(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_process_recommendation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ProcessRecommendation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ProcessRecommendation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ProcessRecommendation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.process_recommendation(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                process_recommendation_details=request.pop(util.camelize('ProcessRecommendationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ProcessRecommendation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'processRecommendationDetails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_recommendations(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'Recommendations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'Recommendations')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='Recommendations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.recommendations(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                recommendation_type=request.pop(util.camelize('recommendationType')),
+                source_object_key=request.pop(util.camelize('sourceObjectKey')),
+                source_object_type=request.pop(util.camelize('sourceObjectType')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'Recommendations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'recommendationCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_remove_data_selector_patterns(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'RemoveDataSelectorPatterns'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class ComputeInstanceAgentClient(object):
     """
-    Instance Agent Service API
+    API for the Oracle Cloud Agent software running on compute instances. Oracle Cloud Agent
+    is a lightweight process that monitors and manages compute instances.
     """
 
     def __init__(self, config, **kwargs):
@@ -87,15 +88,21 @@ class ComputeInstanceAgentClient(object):
 
     def cancel_instance_agent_command(self, instance_agent_command_id, **kwargs):
         """
-        Cancel a command. Cancel is best effort attempt. If the commmand has already completed it will skip cancel.
+        Cancels a command that is scheduled to run on a compute instance that is managed
+        by Oracle Cloud Agent.
+
+        Canceling a command is a best-effort attempt. If the command has already
+        completed, it will not be canceled.
 
 
         :param str instance_agent_command_id: (required)
-            The OCID of the command.
+            The `OCID`__ of the command.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -168,15 +175,21 @@ class ComputeInstanceAgentClient(object):
 
     def create_instance_agent_command(self, create_instance_agent_command_details, **kwargs):
         """
-        Create command for one or more managed instances
+        Creates a command or script to run on a compute instance that is managed by Oracle Cloud Agent.
+
+        On Linux instances, the script runs in a bash shell. On Windows instances, the
+        script runs in a batch shell.
+
+        Commands that require administrator privileges will run only if Oracle Cloud Agent
+        is running with administrator privileges.
 
 
         :param oci.compute_instance_agent.models.CreateInstanceAgentCommandDetails create_instance_agent_command_details: (required)
             Create Instance agent command details
 
         :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -245,15 +258,17 @@ class ComputeInstanceAgentClient(object):
 
     def get_instance_agent_command(self, instance_agent_command_id, **kwargs):
         """
-        Gets information about the specified instance agent commandId.
+        Gets information about an Oracle Cloud Agent command.
 
 
         :param str instance_agent_command_id: (required)
-            The OCID of the command.
+            The `OCID`__ of the command.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -325,14 +340,18 @@ class ComputeInstanceAgentClient(object):
 
 
         :param str instance_agent_command_id: (required)
-            The OCID of the command.
+            The `OCID`__ of the command.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -407,8 +426,8 @@ class ComputeInstanceAgentClient(object):
 
     def list_instance_agent_command_executions(self, compartment_id, instance_id, **kwargs):
         """
-        List all executions of a command, i.e return command execution results from all targeted instances batch by
-        batch.
+        Lists the execution details for Oracle Cloud Agent commands that run on the specified compute
+        instance.
 
 
         :param str compartment_id: (required)
@@ -417,21 +436,31 @@ class ComputeInstanceAgentClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
-            TIMECREATED is descending.
+            `TIMECREATED` is descending.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
             optionally filter by availability domain if the scope of the resource type is within a
@@ -441,7 +470,7 @@ class ComputeInstanceAgentClient(object):
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The `DISPLAYNAME` sort order
             is case sensitive.
 
             Allowed values are: "ASC", "DESC"
@@ -544,8 +573,7 @@ class ComputeInstanceAgentClient(object):
 
     def list_instance_agent_commands(self, compartment_id, **kwargs):
         """
-        List Instance agent commands issued with the specified filter.
-        Additonally you can filter commands sent to a particular InstanceId
+        Lists the Oracle Cloud Agent commands issued in a compartment.
 
 
         :param str compartment_id: (required)
@@ -554,18 +582,26 @@ class ComputeInstanceAgentClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
-            TIMECREATED is descending.
+            `TIMECREATED` is descending.
 
             **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
             optionally filter by availability domain if the scope of the resource type is within a
@@ -575,7 +611,7 @@ class ComputeInstanceAgentClient(object):
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
         :param str sort_order: (optional)
-            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The `DISPLAYNAME` sort order
             is case sensitive.
 
             Allowed values are: "ASC", "DESC"
