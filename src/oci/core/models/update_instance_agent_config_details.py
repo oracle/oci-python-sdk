@@ -26,19 +26,33 @@ class UpdateInstanceAgentConfigDetails(object):
             The value to assign to the is_management_disabled property of this UpdateInstanceAgentConfigDetails.
         :type is_management_disabled: bool
 
+        :param are_all_plugins_disabled:
+            The value to assign to the are_all_plugins_disabled property of this UpdateInstanceAgentConfigDetails.
+        :type are_all_plugins_disabled: bool
+
+        :param plugins_config:
+            The value to assign to the plugins_config property of this UpdateInstanceAgentConfigDetails.
+        :type plugins_config: list[oci.core.models.InstanceAgentPluginConfigDetails]
+
         """
         self.swagger_types = {
             'is_monitoring_disabled': 'bool',
-            'is_management_disabled': 'bool'
+            'is_management_disabled': 'bool',
+            'are_all_plugins_disabled': 'bool',
+            'plugins_config': 'list[InstanceAgentPluginConfigDetails]'
         }
 
         self.attribute_map = {
             'is_monitoring_disabled': 'isMonitoringDisabled',
-            'is_management_disabled': 'isManagementDisabled'
+            'is_management_disabled': 'isManagementDisabled',
+            'are_all_plugins_disabled': 'areAllPluginsDisabled',
+            'plugins_config': 'pluginsConfig'
         }
 
         self._is_monitoring_disabled = None
         self._is_management_disabled = None
+        self._are_all_plugins_disabled = None
+        self._plugins_config = None
 
     @property
     def is_monitoring_disabled(self):
@@ -46,6 +60,18 @@ class UpdateInstanceAgentConfigDetails(object):
         Gets the is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
         Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
         monitoring plugins.
+
+        These are the monitoring plugins: Compute Instance Monitoring
+        and Custom Logs Monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin
+        configuration in the `pluginsConfig` object.
+
+        - If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of
+        the per-plugin configuration.
+        - If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You
+        can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig`
+        object.
 
 
         :return: The is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
@@ -60,6 +86,18 @@ class UpdateInstanceAgentConfigDetails(object):
         Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the
         monitoring plugins.
 
+        These are the monitoring plugins: Compute Instance Monitoring
+        and Custom Logs Monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin
+        configuration in the `pluginsConfig` object.
+
+        - If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of
+        the per-plugin configuration.
+        - If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You
+        can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig`
+        object.
+
 
         :param is_monitoring_disabled: The is_monitoring_disabled of this UpdateInstanceAgentConfigDetails.
         :type: bool
@@ -71,6 +109,18 @@ class UpdateInstanceAgentConfigDetails(object):
         """
         Gets the is_management_disabled of this UpdateInstanceAgentConfigDetails.
         Whether Oracle Cloud Agent can run all the available management plugins.
+
+        These are the management plugins: OS Management Service Agent and Compute Instance
+        Run Command.
+
+        The management plugins are controlled by this parameter and by the per-plugin
+        configuration in the `pluginsConfig` object.
+
+        - If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of
+        the per-plugin configuration.
+        - If `isManagementDisabled` is false, all of the management plugins are enabled. You
+        can optionally disable individual management plugins by providing a value in the `pluginsConfig`
+        object.
 
 
         :return: The is_management_disabled of this UpdateInstanceAgentConfigDetails.
@@ -84,11 +134,87 @@ class UpdateInstanceAgentConfigDetails(object):
         Sets the is_management_disabled of this UpdateInstanceAgentConfigDetails.
         Whether Oracle Cloud Agent can run all the available management plugins.
 
+        These are the management plugins: OS Management Service Agent and Compute Instance
+        Run Command.
+
+        The management plugins are controlled by this parameter and by the per-plugin
+        configuration in the `pluginsConfig` object.
+
+        - If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of
+        the per-plugin configuration.
+        - If `isManagementDisabled` is false, all of the management plugins are enabled. You
+        can optionally disable individual management plugins by providing a value in the `pluginsConfig`
+        object.
+
 
         :param is_management_disabled: The is_management_disabled of this UpdateInstanceAgentConfigDetails.
         :type: bool
         """
         self._is_management_disabled = is_management_disabled
+
+    @property
+    def are_all_plugins_disabled(self):
+        """
+        Gets the are_all_plugins_disabled of this UpdateInstanceAgentConfigDetails.
+        Whether Oracle Cloud Agent can run all the available plugins.
+        This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the
+        :func:`list_instanceagent_available_plugins`
+        operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+        `Managing Plugins with Oracle Cloud Agent`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
+
+
+        :return: The are_all_plugins_disabled of this UpdateInstanceAgentConfigDetails.
+        :rtype: bool
+        """
+        return self._are_all_plugins_disabled
+
+    @are_all_plugins_disabled.setter
+    def are_all_plugins_disabled(self, are_all_plugins_disabled):
+        """
+        Sets the are_all_plugins_disabled of this UpdateInstanceAgentConfigDetails.
+        Whether Oracle Cloud Agent can run all the available plugins.
+        This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the
+        :func:`list_instanceagent_available_plugins`
+        operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+        `Managing Plugins with Oracle Cloud Agent`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
+
+
+        :param are_all_plugins_disabled: The are_all_plugins_disabled of this UpdateInstanceAgentConfigDetails.
+        :type: bool
+        """
+        self._are_all_plugins_disabled = are_all_plugins_disabled
+
+    @property
+    def plugins_config(self):
+        """
+        Gets the plugins_config of this UpdateInstanceAgentConfigDetails.
+        The configuration of plugins associated with this instance.
+
+
+        :return: The plugins_config of this UpdateInstanceAgentConfigDetails.
+        :rtype: list[oci.core.models.InstanceAgentPluginConfigDetails]
+        """
+        return self._plugins_config
+
+    @plugins_config.setter
+    def plugins_config(self, plugins_config):
+        """
+        Sets the plugins_config of this UpdateInstanceAgentConfigDetails.
+        The configuration of plugins associated with this instance.
+
+
+        :param plugins_config: The plugins_config of this UpdateInstanceAgentConfigDetails.
+        :type: list[oci.core.models.InstanceAgentPluginConfigDetails]
+        """
+        self._plugins_config = plugins_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

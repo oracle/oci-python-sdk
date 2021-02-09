@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExecutionOutputContent):
     """
-    command execution output via text.
+    The execution output from a command when returned in plain text.
     """
 
     def __init__(self, **kwargs):
@@ -67,8 +67,8 @@ class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExec
     @property
     def text(self):
         """
-        **[Required]** Gets the text of this InstanceAgentCommandExecutionOutputViaTextDetails.
-        The command response output.
+        Gets the text of this InstanceAgentCommandExecutionOutputViaTextDetails.
+        The command output.
 
 
         :return: The text of this InstanceAgentCommandExecutionOutputViaTextDetails.
@@ -80,7 +80,7 @@ class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExec
     def text(self, text):
         """
         Sets the text of this InstanceAgentCommandExecutionOutputViaTextDetails.
-        The command response output.
+        The command output.
 
 
         :param text: The text of this InstanceAgentCommandExecutionOutputViaTextDetails.
@@ -92,7 +92,7 @@ class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExec
     def text_sha256(self):
         """
         Gets the text_sha256 of this InstanceAgentCommandExecutionOutputViaTextDetails.
-        Sha256 checksum value of the text content
+        SHA-256 checksum value of the text content.
 
 
         :return: The text_sha256 of this InstanceAgentCommandExecutionOutputViaTextDetails.
@@ -104,7 +104,7 @@ class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExec
     def text_sha256(self, text_sha256):
         """
         Sets the text_sha256 of this InstanceAgentCommandExecutionOutputViaTextDetails.
-        Sha256 checksum value of the text content
+        SHA-256 checksum value of the text content.
 
 
         :param text_sha256: The text_sha256 of this InstanceAgentCommandExecutionOutputViaTextDetails.

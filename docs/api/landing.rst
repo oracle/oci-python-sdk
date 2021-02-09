@@ -19,6 +19,8 @@ API Reference
 * :doc:`User <cims/client/oci.cims.UserClient>`
 * :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
 * :doc:`Compute Instance Agent <compute_instance_agent/client/oci.compute_instance_agent.ComputeInstanceAgentClient>`
+* :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
+* :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
@@ -30,6 +32,7 @@ API Reference
 * :doc:`Data Safe <data_safe/client/oci.data_safe.DataSafeClient>`
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
+* :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
 * :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
@@ -133,6 +136,7 @@ API Reference
     data_safe
     data_science
     database
+    database_management
     dns
     dts
     email

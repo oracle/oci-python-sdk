@@ -4,10 +4,10 @@
 
 from __future__ import absolute_import
 
+from .available_plugin_summary import AvailablePluginSummary
 from .create_instance_agent_command_details import CreateInstanceAgentCommandDetails
 from .instance_agent_command import InstanceAgentCommand
 from .instance_agent_command_content import InstanceAgentCommandContent
-from .instance_agent_command_content_info import InstanceAgentCommandContentInfo
 from .instance_agent_command_execution import InstanceAgentCommandExecution
 from .instance_agent_command_execution_output_content import InstanceAgentCommandExecutionOutputContent
 from .instance_agent_command_execution_output_via_object_storage_tuple_details import InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails
@@ -24,13 +24,16 @@ from .instance_agent_command_source_via_object_storage_uri_details import Instan
 from .instance_agent_command_source_via_text_details import InstanceAgentCommandSourceViaTextDetails
 from .instance_agent_command_summary import InstanceAgentCommandSummary
 from .instance_agent_command_target import InstanceAgentCommandTarget
+from .instance_agent_plugin import InstanceAgentPlugin
+from .instance_agent_plugin_summary import InstanceAgentPluginSummary
+from .plugin import Plugin
 
 # Maps type names to classes for compute_instance_agent services.
 compute_instance_agent_type_mapping = {
+    "AvailablePluginSummary": AvailablePluginSummary,
     "CreateInstanceAgentCommandDetails": CreateInstanceAgentCommandDetails,
     "InstanceAgentCommand": InstanceAgentCommand,
     "InstanceAgentCommandContent": InstanceAgentCommandContent,
-    "InstanceAgentCommandContentInfo": InstanceAgentCommandContentInfo,
     "InstanceAgentCommandExecution": InstanceAgentCommandExecution,
     "InstanceAgentCommandExecutionOutputContent": InstanceAgentCommandExecutionOutputContent,
     "InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails": InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails,
@@ -46,5 +49,8 @@ compute_instance_agent_type_mapping = {
     "InstanceAgentCommandSourceViaObjectStorageUriDetails": InstanceAgentCommandSourceViaObjectStorageUriDetails,
     "InstanceAgentCommandSourceViaTextDetails": InstanceAgentCommandSourceViaTextDetails,
     "InstanceAgentCommandSummary": InstanceAgentCommandSummary,
-    "InstanceAgentCommandTarget": InstanceAgentCommandTarget
+    "InstanceAgentCommandTarget": InstanceAgentCommandTarget,
+    "InstanceAgentPlugin": InstanceAgentPlugin,
+    "InstanceAgentPluginSummary": InstanceAgentPluginSummary,
+    "Plugin": Plugin
 }

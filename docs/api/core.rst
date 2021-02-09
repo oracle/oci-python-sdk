@@ -219,6 +219,7 @@ Core Services
     oci.core.models.Instance
     oci.core.models.InstanceAgentConfig
     oci.core.models.InstanceAgentFeatures
+    oci.core.models.InstanceAgentPluginConfigDetails
     oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAttachVnicDetails

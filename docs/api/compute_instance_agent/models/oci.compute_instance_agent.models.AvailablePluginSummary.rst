@@ -1,9 +1,9 @@
-InstanceAgentCommandContentInfo
-===============================
+AvailablePluginSummary
+======================
 
 .. currentmodule:: oci.compute_instance_agent.models
 
-.. autoclass:: InstanceAgentCommandContentInfo
+.. autoclass:: AvailablePluginSummary
     :show-inheritance:
     :special-members: __init__
     :members:

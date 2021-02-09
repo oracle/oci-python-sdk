@@ -114,6 +114,30 @@ class ManagedInstance(object):
             The value to assign to the is_reboot_required property of this ManagedInstance.
         :type is_reboot_required: bool
 
+        :param security_updates_available:
+            The value to assign to the security_updates_available property of this ManagedInstance.
+        :type security_updates_available: int
+
+        :param bug_updates_available:
+            The value to assign to the bug_updates_available property of this ManagedInstance.
+        :type bug_updates_available: int
+
+        :param enhancement_updates_available:
+            The value to assign to the enhancement_updates_available property of this ManagedInstance.
+        :type enhancement_updates_available: int
+
+        :param other_updates_available:
+            The value to assign to the other_updates_available property of this ManagedInstance.
+        :type other_updates_available: int
+
+        :param scheduled_job_count:
+            The value to assign to the scheduled_job_count property of this ManagedInstance.
+        :type scheduled_job_count: int
+
+        :param work_request_count:
+            The value to assign to the work_request_count property of this ManagedInstance.
+        :type work_request_count: int
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -131,7 +155,13 @@ class ManagedInstance(object):
             'child_software_sources': 'list[SoftwareSourceId]',
             'managed_instance_groups': 'list[Id]',
             'os_family': 'str',
-            'is_reboot_required': 'bool'
+            'is_reboot_required': 'bool',
+            'security_updates_available': 'int',
+            'bug_updates_available': 'int',
+            'enhancement_updates_available': 'int',
+            'other_updates_available': 'int',
+            'scheduled_job_count': 'int',
+            'work_request_count': 'int'
         }
 
         self.attribute_map = {
@@ -150,7 +180,13 @@ class ManagedInstance(object):
             'child_software_sources': 'childSoftwareSources',
             'managed_instance_groups': 'managedInstanceGroups',
             'os_family': 'osFamily',
-            'is_reboot_required': 'isRebootRequired'
+            'is_reboot_required': 'isRebootRequired',
+            'security_updates_available': 'securityUpdatesAvailable',
+            'bug_updates_available': 'bugUpdatesAvailable',
+            'enhancement_updates_available': 'enhancementUpdatesAvailable',
+            'other_updates_available': 'otherUpdatesAvailable',
+            'scheduled_job_count': 'scheduledJobCount',
+            'work_request_count': 'workRequestCount'
         }
 
         self._display_name = None
@@ -169,6 +205,12 @@ class ManagedInstance(object):
         self._managed_instance_groups = None
         self._os_family = None
         self._is_reboot_required = None
+        self._security_updates_available = None
+        self._bug_updates_available = None
+        self._enhancement_updates_available = None
+        self._other_updates_available = None
+        self._scheduled_job_count = None
+        self._work_request_count = None
 
     @property
     def display_name(self):
@@ -567,6 +609,150 @@ class ManagedInstance(object):
         :type: bool
         """
         self._is_reboot_required = is_reboot_required
+
+    @property
+    def security_updates_available(self):
+        """
+        Gets the security_updates_available of this ManagedInstance.
+        Number of security type updates available to be installed
+
+
+        :return: The security_updates_available of this ManagedInstance.
+        :rtype: int
+        """
+        return self._security_updates_available
+
+    @security_updates_available.setter
+    def security_updates_available(self, security_updates_available):
+        """
+        Sets the security_updates_available of this ManagedInstance.
+        Number of security type updates available to be installed
+
+
+        :param security_updates_available: The security_updates_available of this ManagedInstance.
+        :type: int
+        """
+        self._security_updates_available = security_updates_available
+
+    @property
+    def bug_updates_available(self):
+        """
+        Gets the bug_updates_available of this ManagedInstance.
+        Number of bug fix type updates available to be installed
+
+
+        :return: The bug_updates_available of this ManagedInstance.
+        :rtype: int
+        """
+        return self._bug_updates_available
+
+    @bug_updates_available.setter
+    def bug_updates_available(self, bug_updates_available):
+        """
+        Sets the bug_updates_available of this ManagedInstance.
+        Number of bug fix type updates available to be installed
+
+
+        :param bug_updates_available: The bug_updates_available of this ManagedInstance.
+        :type: int
+        """
+        self._bug_updates_available = bug_updates_available
+
+    @property
+    def enhancement_updates_available(self):
+        """
+        Gets the enhancement_updates_available of this ManagedInstance.
+        Number of enhancement type updates available to be installed
+
+
+        :return: The enhancement_updates_available of this ManagedInstance.
+        :rtype: int
+        """
+        return self._enhancement_updates_available
+
+    @enhancement_updates_available.setter
+    def enhancement_updates_available(self, enhancement_updates_available):
+        """
+        Sets the enhancement_updates_available of this ManagedInstance.
+        Number of enhancement type updates available to be installed
+
+
+        :param enhancement_updates_available: The enhancement_updates_available of this ManagedInstance.
+        :type: int
+        """
+        self._enhancement_updates_available = enhancement_updates_available
+
+    @property
+    def other_updates_available(self):
+        """
+        Gets the other_updates_available of this ManagedInstance.
+        Number of non-classified updates available to be installed
+
+
+        :return: The other_updates_available of this ManagedInstance.
+        :rtype: int
+        """
+        return self._other_updates_available
+
+    @other_updates_available.setter
+    def other_updates_available(self, other_updates_available):
+        """
+        Sets the other_updates_available of this ManagedInstance.
+        Number of non-classified updates available to be installed
+
+
+        :param other_updates_available: The other_updates_available of this ManagedInstance.
+        :type: int
+        """
+        self._other_updates_available = other_updates_available
+
+    @property
+    def scheduled_job_count(self):
+        """
+        Gets the scheduled_job_count of this ManagedInstance.
+        Number of scheduled jobs associated with this instance
+
+
+        :return: The scheduled_job_count of this ManagedInstance.
+        :rtype: int
+        """
+        return self._scheduled_job_count
+
+    @scheduled_job_count.setter
+    def scheduled_job_count(self, scheduled_job_count):
+        """
+        Sets the scheduled_job_count of this ManagedInstance.
+        Number of scheduled jobs associated with this instance
+
+
+        :param scheduled_job_count: The scheduled_job_count of this ManagedInstance.
+        :type: int
+        """
+        self._scheduled_job_count = scheduled_job_count
+
+    @property
+    def work_request_count(self):
+        """
+        Gets the work_request_count of this ManagedInstance.
+        Number of work requests associated with this instance
+
+
+        :return: The work_request_count of this ManagedInstance.
+        :rtype: int
+        """
+        return self._work_request_count
+
+    @work_request_count.setter
+    def work_request_count(self, work_request_count):
+        """
+        Sets the work_request_count of this ManagedInstance.
+        Number of work requests associated with this instance
+
+
+        :param work_request_count: The work_request_count of this ManagedInstance.
+        :type: int
+        """
+        self._work_request_count = work_request_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

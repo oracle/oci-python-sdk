@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandOutputViaTextDetails(InstanceAgentCommandOutputDetails):
     """
-    Command output via text.
+    The command output destination when returned in plain text.
     """
 
     def __init__(self, **kwargs):

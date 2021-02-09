@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandSourceViaObjectStorageUriDetails(InstanceAgentCommandSourceDetails):
     """
-    Command content via uri.
+    The source of the command when imported from an Object Storage URL.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class InstanceAgentCommandSourceViaObjectStorageUriDetails(InstanceAgentCommandS
     def source_uri(self):
         """
         **[Required]** Gets the source_uri of this InstanceAgentCommandSourceViaObjectStorageUriDetails.
-        The Object Storage URL or PAR for the command.
+        The Object Storage URL or pre-authenticated request (PAR) for the command.
 
 
         :return: The source_uri of this InstanceAgentCommandSourceViaObjectStorageUriDetails.
@@ -59,7 +59,7 @@ class InstanceAgentCommandSourceViaObjectStorageUriDetails(InstanceAgentCommandS
     def source_uri(self, source_uri):
         """
         Sets the source_uri of this InstanceAgentCommandSourceViaObjectStorageUriDetails.
-        The Object Storage URL or PAR for the command.
+        The Object Storage URL or pre-authenticated request (PAR) for the command.
 
 
         :param source_uri: The source_uri of this InstanceAgentCommandSourceViaObjectStorageUriDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandOutputViaObjectStorageUriDetails(InstanceAgentCommandOutputDetails):
     """
-    Command output via uri.
+    The command output destination when saved to an Object Storage URL.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class InstanceAgentCommandOutputViaObjectStorageUriDetails(InstanceAgentCommandO
     def output_uri(self):
         """
         **[Required]** Gets the output_uri of this InstanceAgentCommandOutputViaObjectStorageUriDetails.
-        The Object Storage URL or PAR for the command output.
+        The Object Storage URL or pre-authenticated request (PAR) for the command output.
 
 
         :return: The output_uri of this InstanceAgentCommandOutputViaObjectStorageUriDetails.
@@ -59,7 +59,7 @@ class InstanceAgentCommandOutputViaObjectStorageUriDetails(InstanceAgentCommandO
     def output_uri(self, output_uri):
         """
         Sets the output_uri of this InstanceAgentCommandOutputViaObjectStorageUriDetails.
-        The Object Storage URL or PAR for the command output.
+        The Object Storage URL or pre-authenticated request (PAR) for the command output.
 
 
         :param output_uri: The output_uri of this InstanceAgentCommandOutputViaObjectStorageUriDetails.

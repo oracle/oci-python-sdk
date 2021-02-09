@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.31.0 - 2021-02-09
+====================
+
+Added
+-----
+* Support for the Database Management service
+* Support for setting an offset for budget processing in the Budgets service
+* Support for enabling and disabling Oracle Cloud Agent plugins in the Compute service
+* Support for listing available plugins and for getting the status of plugins in the Oracle Cloud Agent service
+* Support for one-off patching in autonomous transaction processing - dedicated databases in the Database service
+* Support for additional database upgrade options in the Database service
+* Support for glossary term recommendations in the Data Catalog service
+* Support for listing errata in the OS Management service
+
+Breaking
+--------
+* Model `InstanceAgentCommandContentInfo` is removed from Compute Instance Agent service
+
+====================
 2.30.0 - 2021-02-02
 ====================
 
