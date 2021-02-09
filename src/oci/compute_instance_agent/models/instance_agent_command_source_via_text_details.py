@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandSourceViaTextDetails(InstanceAgentCommandSourceDetails):
     """
-    Command content via text.
+    The source of the command when provided using plain text.
     """
 
     def __init__(self, **kwargs):
@@ -78,7 +78,7 @@ class InstanceAgentCommandSourceViaTextDetails(InstanceAgentCommandSourceDetails
     def text_sha256(self):
         """
         Gets the text_sha256 of this InstanceAgentCommandSourceViaTextDetails.
-        Sha256 checksum value of the text content
+        SHA-256 checksum value of the text content.
 
 
         :return: The text_sha256 of this InstanceAgentCommandSourceViaTextDetails.
@@ -90,7 +90,7 @@ class InstanceAgentCommandSourceViaTextDetails(InstanceAgentCommandSourceDetails
     def text_sha256(self, text_sha256):
         """
         Sets the text_sha256 of this InstanceAgentCommandSourceViaTextDetails.
-        Sha256 checksum value of the text content
+        SHA-256 checksum value of the text content.
 
 
         :param text_sha256: The text_sha256 of this InstanceAgentCommandSourceViaTextDetails.

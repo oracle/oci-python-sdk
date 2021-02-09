@@ -114,6 +114,10 @@ class DatabaseUpgradeHistoryEntry(object):
             The value to assign to the time_ended property of this DatabaseUpgradeHistoryEntry.
         :type time_ended: datetime
 
+        :param options:
+            The value to assign to the options property of this DatabaseUpgradeHistoryEntry.
+        :type options: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -126,7 +130,8 @@ class DatabaseUpgradeHistoryEntry(object):
             'target_db_home_id': 'str',
             'source_db_home_id': 'str',
             'time_started': 'datetime',
-            'time_ended': 'datetime'
+            'time_ended': 'datetime',
+            'options': 'str'
         }
 
         self.attribute_map = {
@@ -140,7 +145,8 @@ class DatabaseUpgradeHistoryEntry(object):
             'target_db_home_id': 'targetDbHomeId',
             'source_db_home_id': 'sourceDbHomeId',
             'time_started': 'timeStarted',
-            'time_ended': 'timeEnded'
+            'time_ended': 'timeEnded',
+            'options': 'options'
         }
 
         self._id = None
@@ -154,6 +160,7 @@ class DatabaseUpgradeHistoryEntry(object):
         self._source_db_home_id = None
         self._time_started = None
         self._time_ended = None
+        self._options = None
 
     @property
     def id(self):
@@ -458,6 +465,32 @@ class DatabaseUpgradeHistoryEntry(object):
         :type: datetime
         """
         self._time_ended = time_ended
+
+    @property
+    def options(self):
+        """
+        Gets the options of this DatabaseUpgradeHistoryEntry.
+        Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+        Example: \"-upgradeTimezone false -keepEvents\"
+
+
+        :return: The options of this DatabaseUpgradeHistoryEntry.
+        :rtype: str
+        """
+        return self._options
+
+    @options.setter
+    def options(self, options):
+        """
+        Sets the options of this DatabaseUpgradeHistoryEntry.
+        Additional upgrade options supported by DBUA(Database Upgrade Assistant).
+        Example: \"-upgradeTimezone false -keepEvents\"
+
+
+        :param options: The options of this DatabaseUpgradeHistoryEntry.
+        :type: str
+        """
+        self._options = options
 
     def __repr__(self):
         return formatted_flat_dict(self)

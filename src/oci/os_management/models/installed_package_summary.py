@@ -42,6 +42,10 @@ class InstalledPackageSummary(object):
             The value to assign to the install_time property of this InstalledPackageSummary.
         :type install_time: str
 
+        :param issued:
+            The value to assign to the issued property of this InstalledPackageSummary.
+        :type issued: str
+
         :param software_sources:
             The value to assign to the software_sources property of this InstalledPackageSummary.
         :type software_sources: list[oci.os_management.models.SoftwareSourceId]
@@ -54,6 +58,7 @@ class InstalledPackageSummary(object):
             'version': 'str',
             'architecture': 'str',
             'install_time': 'str',
+            'issued': 'str',
             'software_sources': 'list[SoftwareSourceId]'
         }
 
@@ -64,6 +69,7 @@ class InstalledPackageSummary(object):
             'version': 'version',
             'architecture': 'architecture',
             'install_time': 'installTime',
+            'issued': 'issued',
             'software_sources': 'softwareSources'
         }
 
@@ -73,6 +79,7 @@ class InstalledPackageSummary(object):
         self._version = None
         self._architecture = None
         self._install_time = None
+        self._issued = None
         self._software_sources = None
 
     @property
@@ -218,6 +225,30 @@ class InstalledPackageSummary(object):
         :type: str
         """
         self._install_time = install_time
+
+    @property
+    def issued(self):
+        """
+        Gets the issued of this InstalledPackageSummary.
+        date the package was issued by a providing erratum (if available)
+
+
+        :return: The issued of this InstalledPackageSummary.
+        :rtype: str
+        """
+        return self._issued
+
+    @issued.setter
+    def issued(self, issued):
+        """
+        Sets the issued of this InstalledPackageSummary.
+        date the package was issued by a providing erratum (if available)
+
+
+        :param issued: The issued of this InstalledPackageSummary.
+        :type: str
+        """
+        self._issued = issued
 
     @property
     def software_sources(self):

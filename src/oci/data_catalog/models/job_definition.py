@@ -75,6 +75,10 @@ class JobDefinition(object):
     #: This constant has a value of "SCHEDULED_EXECUTION_INSTANCE"
     JOB_TYPE_SCHEDULED_EXECUTION_INSTANCE = "SCHEDULED_EXECUTION_INSTANCE"
 
+    #: A constant which can be used with the job_type property of a JobDefinition.
+    #: This constant has a value of "ASYNC_DELETE"
+    JOB_TYPE_ASYNC_DELETE = "ASYNC_DELETE"
+
     #: A constant which can be used with the lifecycle_state property of a JobDefinition.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -131,6 +135,10 @@ class JobDefinition(object):
     #: This constant has a value of "CANCELED"
     JOB_EXECUTION_STATE_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "SUCCEEDED_WITH_WARNINGS"
+    JOB_EXECUTION_STATE_SUCCEEDED_WITH_WARNINGS = "SUCCEEDED_WITH_WARNINGS"
+
     #: A constant which can be used with the schedule_type property of a JobDefinition.
     #: This constant has a value of "SCHEDULED"
     SCHEDULE_TYPE_SCHEDULED = "SCHEDULED"
@@ -158,7 +166,7 @@ class JobDefinition(object):
 
         :param job_type:
             The value to assign to the job_type property of this JobDefinition.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -226,7 +234,7 @@ class JobDefinition(object):
 
         :param job_execution_state:
             The value to assign to the job_execution_state property of this JobDefinition.
-            Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_execution_state: str
 
@@ -394,7 +402,7 @@ class JobDefinition(object):
         Gets the job_type of this JobDefinition.
         Type of the job definition.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -413,7 +421,7 @@ class JobDefinition(object):
         :param job_type: The job_type of this JobDefinition.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type
@@ -812,7 +820,7 @@ class JobDefinition(object):
         Gets the job_execution_state of this JobDefinition.
         Status of the latest job execution, such as running, paused, or completed.
 
-        Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -831,7 +839,7 @@ class JobDefinition(object):
         :param job_execution_state: The job_execution_state of this JobDefinition.
         :type: str
         """
-        allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+        allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"]
         if not value_allowed_none_or_none_sentinel(job_execution_state, allowed_values):
             job_execution_state = 'UNKNOWN_ENUM_VALUE'
         self._job_execution_state = job_execution_state

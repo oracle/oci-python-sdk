@@ -62,6 +62,10 @@ class CreateBudgetDetails(object):
             Allowed values for this property are: "MONTHLY"
         :type reset_period: str
 
+        :param budget_processing_period_start_offset:
+            The value to assign to the budget_processing_period_start_offset property of this CreateBudgetDetails.
+        :type budget_processing_period_start_offset: int
+
         :param target_type:
             The value to assign to the target_type property of this CreateBudgetDetails.
             Allowed values for this property are: "COMPARTMENT", "TAG"
@@ -87,6 +91,7 @@ class CreateBudgetDetails(object):
             'description': 'str',
             'amount': 'float',
             'reset_period': 'str',
+            'budget_processing_period_start_offset': 'int',
             'target_type': 'str',
             'targets': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -100,6 +105,7 @@ class CreateBudgetDetails(object):
             'description': 'description',
             'amount': 'amount',
             'reset_period': 'resetPeriod',
+            'budget_processing_period_start_offset': 'budgetProcessingPeriodStartOffset',
             'target_type': 'targetType',
             'targets': 'targets',
             'freeform_tags': 'freeformTags',
@@ -112,6 +118,7 @@ class CreateBudgetDetails(object):
         self._description = None
         self._amount = None
         self._reset_period = None
+        self._budget_processing_period_start_offset = None
         self._target_type = None
         self._targets = None
         self._freeform_tags = None
@@ -268,6 +275,30 @@ class CreateBudgetDetails(object):
                 .format(allowed_values)
             )
         self._reset_period = reset_period
+
+    @property
+    def budget_processing_period_start_offset(self):
+        """
+        Gets the budget_processing_period_start_offset of this CreateBudgetDetails.
+        The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+
+
+        :return: The budget_processing_period_start_offset of this CreateBudgetDetails.
+        :rtype: int
+        """
+        return self._budget_processing_period_start_offset
+
+    @budget_processing_period_start_offset.setter
+    def budget_processing_period_start_offset(self, budget_processing_period_start_offset):
+        """
+        Sets the budget_processing_period_start_offset of this CreateBudgetDetails.
+        The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
+
+
+        :param budget_processing_period_start_offset: The budget_processing_period_start_offset of this CreateBudgetDetails.
+        :type: int
+        """
+        self._budget_processing_period_start_offset = budget_processing_period_start_offset
 
     @property
     def target_type(self):

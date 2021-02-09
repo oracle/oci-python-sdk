@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ErratumSummary(object):
     """
-    Important changes for software. This can include security advisories, bug fixes, or enhancements.
+    Important changes for software. This can include security | advisories, bug fixes, or enhancements.
     """
 
     #: A constant which can be used with the advisory_type property of a ErratumSummary.
@@ -60,7 +60,8 @@ class ErratumSummary(object):
 
         :param advisory_type:
             The value to assign to the advisory_type property of this ErratumSummary.
-            Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER"
+            Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type advisory_type: str
 
         :param related_cves:
@@ -249,7 +250,8 @@ class ErratumSummary(object):
         Gets the advisory_type of this ErratumSummary.
         Type of the erratum.
 
-        Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER"
+        Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The advisory_type of this ErratumSummary.
@@ -269,10 +271,7 @@ class ErratumSummary(object):
         """
         allowed_values = ["SECURITY", "BUG", "ENHANCEMENT", "OTHER"]
         if not value_allowed_none_or_none_sentinel(advisory_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `advisory_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            advisory_type = 'UNKNOWN_ENUM_VALUE'
         self._advisory_type = advisory_type
 
     @property

@@ -107,7 +107,10 @@ from .parse_connection_details import ParseConnectionDetails
 from .pattern import Pattern
 from .pattern_collection import PatternCollection
 from .pattern_summary import PatternSummary
+from .process_recommendation_details import ProcessRecommendationDetails
 from .property_definition import PropertyDefinition
+from .recommendation_collection import RecommendationCollection
+from .recommendation_details import RecommendationDetails
 from .rule_attribute import RuleAttribute
 from .rule_collection import RuleCollection
 from .rule_summary import RuleSummary
@@ -257,7 +260,10 @@ data_catalog_type_mapping = {
     "Pattern": Pattern,
     "PatternCollection": PatternCollection,
     "PatternSummary": PatternSummary,
+    "ProcessRecommendationDetails": ProcessRecommendationDetails,
     "PropertyDefinition": PropertyDefinition,
+    "RecommendationCollection": RecommendationCollection,
+    "RecommendationDetails": RecommendationDetails,
     "RuleAttribute": RuleAttribute,
     "RuleCollection": RuleCollection,
     "RuleSummary": RuleSummary,

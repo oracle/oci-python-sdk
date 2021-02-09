@@ -7530,7 +7530,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity attribute summary response.
 
-            Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"
+            Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "precision", "scale", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
@@ -7619,7 +7619,7 @@ class DataCatalogClient(object):
                 )
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"]
+            fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "precision", "scale", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -9934,7 +9934,7 @@ class DataCatalogClient(object):
         :param str job_execution_state: (optional)
             Job execution state.
 
-            Allowed values are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"
+            Allowed values are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -9944,7 +9944,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
 
         :param bool is_incremental: (optional)
             Whether job definition is an incremental harvest (true) or a full harvest (false).
@@ -10054,7 +10054,7 @@ class DataCatalogClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'job_execution_state' in kwargs:
-            job_execution_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+            job_execution_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"]
             if kwargs['job_execution_state'] not in job_execution_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_execution_state`, must be one of {0}".format(job_execution_state_allowed_values)
@@ -10068,7 +10068,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -10161,7 +10161,7 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             Job execution lifecycle state.
 
-            Allowed values are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"
+            Allowed values are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"
 
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
@@ -10182,7 +10182,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
 
         :param str sub_type: (optional)
             Sub-type of this job execution.
@@ -10304,14 +10304,14 @@ class DataCatalogClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+            lifecycle_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -10829,7 +10829,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
 
         :param str job_definition_key: (optional)
             Unique job definition key.
@@ -10956,7 +10956,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -12879,6 +12879,222 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=parse_connection_details,
                 response_type="list[ConnectionAliasSummary]")
+
+    def process_recommendation(self, catalog_id, process_recommendation_details, **kwargs):
+        """
+        Act on a recommendation. A recommendation can be accepted or rejected. For example, if a recommendation of type LINK_GLOSSARY_TERM
+        is accepted, the system will link the source object (e.g. an attribute) to a target glossary term.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param oci.data_catalog.models.ProcessRecommendationDetails process_recommendation_details: (required)
+            Recommendation to be processed.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ProcessRecommendationDetails`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/process_recommendation.py.html>`__ to see an example of how to use process_recommendation API.
+        """
+        resource_path = "/catalogs/{catalogId}/actions/processRecommendation"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "process_recommendation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=process_recommendation_details,
+                response_type="ProcessRecommendationDetails")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=process_recommendation_details,
+                response_type="ProcessRecommendationDetails")
+
+    def recommendations(self, catalog_id, recommendation_type, source_object_key, source_object_type, **kwargs):
+        """
+        Returns a list of recommendations for the given object and recommendation type.
+        By default, it will return inferred recommendations for review. The optional query param 'RecommendationStatus' can be set,
+        to return only recommendations having that status.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param oci.data_catalog.models.list[str] recommendation_type: (required)
+            A filter used to return only recommendations of the specified type.
+
+            Allowed values are: "LINK_GLOSSARY_TERM"
+
+        :param str source_object_key: (required)
+            A filter used to provide the unique identifier of the source object, for which a list of recommendations will be returned for review.
+
+        :param str source_object_type: (required)
+            A filter used to provide the type of the source object, for which a list of recommendations will be returned for review.
+
+            Allowed values are: "DATA_ENTITY", "ATTRIBUTE", "TERM", "CATEGORY"
+
+        :param str recommendation_status: (optional)
+            A filter used to return only recommendations having the requested status.
+
+            Allowed values are: "ACCEPTED", "REJECTED", "INFERRED"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.RecommendationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/recommendations.py.html>`__ to see an example of how to use recommendations API.
+        """
+        resource_path = "/catalogs/{catalogId}/actions/getRecommendations"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "recommendation_status",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        recommendation_type_allowed_values = ["LINK_GLOSSARY_TERM"]
+        for recommendation_type_item in recommendation_type:
+            if recommendation_type_item not in recommendation_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `recommendation_type`, must be one of {0}".format(recommendation_type_allowed_values)
+                )
+
+        source_object_type_allowed_values = ["DATA_ENTITY", "ATTRIBUTE", "TERM", "CATEGORY"]
+        if source_object_type not in source_object_type_allowed_values:
+            raise ValueError(
+                "Invalid value for `source_object_type`, must be one of {0}".format(source_object_type_allowed_values)
+            )
+
+        if 'recommendation_status' in kwargs:
+            recommendation_status_allowed_values = ["ACCEPTED", "REJECTED", "INFERRED"]
+            if kwargs['recommendation_status'] not in recommendation_status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `recommendation_status`, must be one of {0}".format(recommendation_status_allowed_values)
+                )
+
+        query_params = {
+            "recommendationType": self.base_client.generate_collection_format_param(recommendation_type, 'multi'),
+            "sourceObjectKey": source_object_key,
+            "sourceObjectType": source_object_type,
+            "recommendationStatus": kwargs.get("recommendation_status", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RecommendationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RecommendationCollection")
 
     def remove_data_selector_patterns(self, catalog_id, data_asset_key, data_selector_pattern_details, **kwargs):
         """

@@ -121,7 +121,10 @@ Data Catalog
     oci.data_catalog.models.Pattern
     oci.data_catalog.models.PatternCollection
     oci.data_catalog.models.PatternSummary
+    oci.data_catalog.models.ProcessRecommendationDetails
     oci.data_catalog.models.PropertyDefinition
+    oci.data_catalog.models.RecommendationCollection
+    oci.data_catalog.models.RecommendationDetails
     oci.data_catalog.models.RuleAttribute
     oci.data_catalog.models.RuleCollection
     oci.data_catalog.models.RuleSummary

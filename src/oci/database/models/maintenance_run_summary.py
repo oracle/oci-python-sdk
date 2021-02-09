@@ -45,6 +45,10 @@ class MaintenanceRunSummary(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a MaintenanceRunSummary.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
     #: A constant which can be used with the target_resource_type property of a MaintenanceRunSummary.
     #: This constant has a value of "AUTONOMOUS_EXADATA_INFRASTRUCTURE"
     TARGET_RESOURCE_TYPE_AUTONOMOUS_EXADATA_INFRASTRUCTURE = "AUTONOMOUS_EXADATA_INFRASTRUCTURE"
@@ -85,6 +89,10 @@ class MaintenanceRunSummary(object):
     #: This constant has a value of "CRITICAL"
     MAINTENANCE_SUBTYPE_CRITICAL = "CRITICAL"
 
+    #: A constant which can be used with the maintenance_subtype property of a MaintenanceRunSummary.
+    #: This constant has a value of "ONEOFF"
+    MAINTENANCE_SUBTYPE_ONEOFF = "ONEOFF"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaintenanceRunSummary object with values from keyword arguments.
@@ -108,7 +116,7 @@ class MaintenanceRunSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MaintenanceRunSummary.
-            Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -150,7 +158,7 @@ class MaintenanceRunSummary(object):
 
         :param maintenance_subtype:
             The value to assign to the maintenance_subtype property of this MaintenanceRunSummary.
-            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_subtype: str
 
@@ -313,7 +321,7 @@ class MaintenanceRunSummary(object):
         **[Required]** Gets the lifecycle_state of this MaintenanceRunSummary.
         The current state of the maintenance run.
 
-        Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -332,7 +340,7 @@ class MaintenanceRunSummary(object):
         :param lifecycle_state: The lifecycle_state of this MaintenanceRunSummary.
         :type: str
         """
-        allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED"]
+        allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -547,7 +555,7 @@ class MaintenanceRunSummary(object):
         Gets the maintenance_subtype of this MaintenanceRunSummary.
         Maintenance sub-type.
 
-        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -566,7 +574,7 @@ class MaintenanceRunSummary(object):
         :param maintenance_subtype: The maintenance_subtype of this MaintenanceRunSummary.
         :type: str
         """
-        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL"]
+        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "ONEOFF"]
         if not value_allowed_none_or_none_sentinel(maintenance_subtype, allowed_values):
             maintenance_subtype = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_subtype = maintenance_subtype

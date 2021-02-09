@@ -93,7 +93,9 @@ class InstanceAgentCommand(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstanceAgentCommand.
-        The command OCID
+        The `OCID`__ of the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstanceAgentCommand.
@@ -105,7 +107,9 @@ class InstanceAgentCommand(object):
     def id(self, id):
         """
         Sets the id of this InstanceAgentCommand.
-        The command OCID
+        The `OCID`__ of the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstanceAgentCommand.
@@ -117,7 +121,9 @@ class InstanceAgentCommand(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstanceAgentCommand.
-        The OCID of the compartment the command is created in.
+        The `OCID`__ of the compartment containing the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstanceAgentCommand.
@@ -129,7 +135,9 @@ class InstanceAgentCommand(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstanceAgentCommand.
-        The OCID of the compartment the command is created in.
+        The `OCID`__ of the compartment containing the command.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstanceAgentCommand.
@@ -141,7 +149,7 @@ class InstanceAgentCommand(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceAgentCommand.
-        The user friendly display name of the command.
+        A user-friendly name. Does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this InstanceAgentCommand.
@@ -153,7 +161,7 @@ class InstanceAgentCommand(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceAgentCommand.
-        The user friendly display name of the command.
+        A user-friendly name. Does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this InstanceAgentCommand.
@@ -165,7 +173,10 @@ class InstanceAgentCommand(object):
     def time_created(self):
         """
         Gets the time_created of this InstanceAgentCommand.
-        the time command was created at.
+        The date and time the command was created, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this InstanceAgentCommand.
@@ -177,7 +188,10 @@ class InstanceAgentCommand(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this InstanceAgentCommand.
-        the time command was created at.
+        The date and time the command was created, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this InstanceAgentCommand.
@@ -189,7 +203,10 @@ class InstanceAgentCommand(object):
     def time_updated(self):
         """
         Gets the time_updated of this InstanceAgentCommand.
-        the time command was updated at.
+        The date and time the command was last updated, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_updated of this InstanceAgentCommand.
@@ -201,7 +218,10 @@ class InstanceAgentCommand(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this InstanceAgentCommand.
-        the time command was updated at.
+        The date and time the command was last updated, in the format defined by
+        `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_updated: The time_updated of this InstanceAgentCommand.
@@ -213,7 +233,7 @@ class InstanceAgentCommand(object):
     def is_canceled(self):
         """
         Gets the is_canceled of this InstanceAgentCommand.
-        Whether the command has been requested to be canceled.
+        Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
 
 
         :return: The is_canceled of this InstanceAgentCommand.
@@ -225,7 +245,7 @@ class InstanceAgentCommand(object):
     def is_canceled(self, is_canceled):
         """
         Sets the is_canceled of this InstanceAgentCommand.
-        Whether the command has been requested to be canceled.
+        Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
 
 
         :param is_canceled: The is_canceled of this InstanceAgentCommand.
@@ -237,7 +257,8 @@ class InstanceAgentCommand(object):
     def execution_time_out_in_seconds(self):
         """
         Gets the execution_time_out_in_seconds of this InstanceAgentCommand.
-        Command execution time limit that the instance agent will honor when executing the command inside the instance. This timer starts when the instance agent starts the commond. Zero means no timeout.
+        The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+        out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
 
 
         :return: The execution_time_out_in_seconds of this InstanceAgentCommand.
@@ -249,7 +270,8 @@ class InstanceAgentCommand(object):
     def execution_time_out_in_seconds(self, execution_time_out_in_seconds):
         """
         Sets the execution_time_out_in_seconds of this InstanceAgentCommand.
-        Command execution time limit that the instance agent will honor when executing the command inside the instance. This timer starts when the instance agent starts the commond. Zero means no timeout.
+        The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+        out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
 
 
         :param execution_time_out_in_seconds: The execution_time_out_in_seconds of this InstanceAgentCommand.
@@ -261,6 +283,8 @@ class InstanceAgentCommand(object):
     def target(self):
         """
         **[Required]** Gets the target of this InstanceAgentCommand.
+        The target instance that the command runs on.
+
 
         :return: The target of this InstanceAgentCommand.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandTarget
@@ -271,6 +295,8 @@ class InstanceAgentCommand(object):
     def target(self, target):
         """
         Sets the target of this InstanceAgentCommand.
+        The target instance that the command runs on.
+
 
         :param target: The target of this InstanceAgentCommand.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandTarget
@@ -281,6 +307,8 @@ class InstanceAgentCommand(object):
     def content(self):
         """
         **[Required]** Gets the content of this InstanceAgentCommand.
+        The contents of the command.
+
 
         :return: The content of this InstanceAgentCommand.
         :rtype: oci.compute_instance_agent.models.InstanceAgentCommandContent
@@ -291,6 +319,8 @@ class InstanceAgentCommand(object):
     def content(self, content):
         """
         Sets the content of this InstanceAgentCommand.
+        The contents of the command.
+
 
         :param content: The content of this InstanceAgentCommand.
         :type: oci.compute_instance_agent.models.InstanceAgentCommandContent

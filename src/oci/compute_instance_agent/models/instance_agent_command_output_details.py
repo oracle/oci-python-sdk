@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentCommandOutputDetails(object):
     """
-    Command output.
+    The output destination for the command.
     """
 
     #: A constant which can be used with the output_type property of a InstanceAgentCommandOutputDetails.
@@ -76,8 +76,16 @@ class InstanceAgentCommandOutputDetails(object):
     def output_type(self):
         """
         **[Required]** Gets the output_type of this InstanceAgentCommandOutputDetails.
-        The output type of the command. Use `OBJECT_STORAGE_URI` when specifying the Object Storage URL.
-        Use `OBJECT_STORAGE_TUPLE` when specifying the namespace, bucket name, and object name.
+        The output type for the command. The following values are supported:
+
+        - `TEXT` - the command output is returned as plain text.
+        - `OBJECT_STORAGE_URI` - the command output is saved to an Object Storage URL.
+        - `OBJECT_STORAGE_TUPLE` - the command output is saved to an Object Storage bucket.
+
+        For background information about Object Storage buckets and URLs, see
+        `Overview of Object Storage`__.
+
+        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
 
         Allowed values for this property are: "TEXT", "OBJECT_STORAGE_URI", "OBJECT_STORAGE_TUPLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -92,8 +100,16 @@ class InstanceAgentCommandOutputDetails(object):
     def output_type(self, output_type):
         """
         Sets the output_type of this InstanceAgentCommandOutputDetails.
-        The output type of the command. Use `OBJECT_STORAGE_URI` when specifying the Object Storage URL.
-        Use `OBJECT_STORAGE_TUPLE` when specifying the namespace, bucket name, and object name.
+        The output type for the command. The following values are supported:
+
+        - `TEXT` - the command output is returned as plain text.
+        - `OBJECT_STORAGE_URI` - the command output is saved to an Object Storage URL.
+        - `OBJECT_STORAGE_TUPLE` - the command output is saved to an Object Storage bucket.
+
+        For background information about Object Storage buckets and URLs, see
+        `Overview of Object Storage`__.
+
+        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
 
 
         :param output_type: The output_type of this InstanceAgentCommandOutputDetails.
