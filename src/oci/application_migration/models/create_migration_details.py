@@ -64,6 +64,10 @@ class CreateMigrationDetails(object):
             Allowed values for this property are: "DATABASE_SYSTEM", "NOT_SET"
         :type pre_created_target_database_type: str
 
+        :param is_selective_migration:
+            The value to assign to the is_selective_migration property of this CreateMigrationDetails.
+        :type is_selective_migration: bool
+
         :param service_config:
             The value to assign to the service_config property of this CreateMigrationDetails.
         :type service_config: dict(str, ConfigurationField)
@@ -89,6 +93,7 @@ class CreateMigrationDetails(object):
             'application_name': 'str',
             'discovery_details': 'DiscoveryDetails',
             'pre_created_target_database_type': 'str',
+            'is_selective_migration': 'bool',
             'service_config': 'dict(str, ConfigurationField)',
             'application_config': 'dict(str, ConfigurationField)',
             'freeform_tags': 'dict(str, str)',
@@ -103,6 +108,7 @@ class CreateMigrationDetails(object):
             'application_name': 'applicationName',
             'discovery_details': 'discoveryDetails',
             'pre_created_target_database_type': 'preCreatedTargetDatabaseType',
+            'is_selective_migration': 'isSelectiveMigration',
             'service_config': 'serviceConfig',
             'application_config': 'applicationConfig',
             'freeform_tags': 'freeformTags',
@@ -116,6 +122,7 @@ class CreateMigrationDetails(object):
         self._application_name = None
         self._discovery_details = None
         self._pre_created_target_database_type = None
+        self._is_selective_migration = None
         self._service_config = None
         self._application_config = None
         self._freeform_tags = None
@@ -302,6 +309,30 @@ class CreateMigrationDetails(object):
                 .format(allowed_values)
             )
         self._pre_created_target_database_type = pre_created_target_database_type
+
+    @property
+    def is_selective_migration(self):
+        """
+        Gets the is_selective_migration of this CreateMigrationDetails.
+        If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+
+
+        :return: The is_selective_migration of this CreateMigrationDetails.
+        :rtype: bool
+        """
+        return self._is_selective_migration
+
+    @is_selective_migration.setter
+    def is_selective_migration(self, is_selective_migration):
+        """
+        Sets the is_selective_migration of this CreateMigrationDetails.
+        If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+
+
+        :param is_selective_migration: The is_selective_migration of this CreateMigrationDetails.
+        :type: bool
+        """
+        self._is_selective_migration = is_selective_migration
 
     @property
     def service_config(self):

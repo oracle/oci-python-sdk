@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.migration.application</groupId>
         <artifactId>ams-spec</artifactId>
-        <version>0.1.48</version>
+        <version>0.1.51</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

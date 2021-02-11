@@ -220,6 +220,14 @@ class DbSystem(object):
             The value to assign to the scan_dns_record_id property of this DbSystem.
         :type scan_dns_record_id: str
 
+        :param scan_dns_name:
+            The value to assign to the scan_dns_name property of this DbSystem.
+        :type scan_dns_name: str
+
+        :param zone_id:
+            The value to assign to the zone_id property of this DbSystem.
+        :type zone_id: str
+
         :param data_storage_size_in_gbs:
             The value to assign to the data_storage_size_in_gbs property of this DbSystem.
         :type data_storage_size_in_gbs: int
@@ -300,6 +308,8 @@ class DbSystem(object):
             'scan_ip_ids': 'list[str]',
             'vip_ids': 'list[str]',
             'scan_dns_record_id': 'str',
+            'scan_dns_name': 'str',
+            'zone_id': 'str',
             'data_storage_size_in_gbs': 'int',
             'reco_storage_size_in_gb': 'int',
             'node_count': 'int',
@@ -346,6 +356,8 @@ class DbSystem(object):
             'scan_ip_ids': 'scanIpIds',
             'vip_ids': 'vipIds',
             'scan_dns_record_id': 'scanDnsRecordId',
+            'scan_dns_name': 'scanDnsName',
+            'zone_id': 'zoneId',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'reco_storage_size_in_gb': 'recoStorageSizeInGB',
             'node_count': 'nodeCount',
@@ -391,6 +403,8 @@ class DbSystem(object):
         self._scan_ip_ids = None
         self._vip_ids = None
         self._scan_dns_record_id = None
+        self._scan_dns_name = None
+        self._zone_id = None
         self._data_storage_size_in_gbs = None
         self._reco_storage_size_in_gb = None
         self._node_count = None
@@ -1278,6 +1292,54 @@ class DbSystem(object):
         :type: str
         """
         self._scan_dns_record_id = scan_dns_record_id
+
+    @property
+    def scan_dns_name(self):
+        """
+        Gets the scan_dns_name of this DbSystem.
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
+
+
+        :return: The scan_dns_name of this DbSystem.
+        :rtype: str
+        """
+        return self._scan_dns_name
+
+    @scan_dns_name.setter
+    def scan_dns_name(self, scan_dns_name):
+        """
+        Sets the scan_dns_name of this DbSystem.
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
+
+
+        :param scan_dns_name: The scan_dns_name of this DbSystem.
+        :type: str
+        """
+        self._scan_dns_name = scan_dns_name
+
+    @property
+    def zone_id(self):
+        """
+        Gets the zone_id of this DbSystem.
+        The OCID of the zone the DB system is associated with.
+
+
+        :return: The zone_id of this DbSystem.
+        :rtype: str
+        """
+        return self._zone_id
+
+    @zone_id.setter
+    def zone_id(self, zone_id):
+        """
+        Sets the zone_id of this DbSystem.
+        The OCID of the zone the DB system is associated with.
+
+
+        :param zone_id: The zone_id of this DbSystem.
+        :type: str
+        """
+        self._zone_id = zone_id
 
     @property
     def data_storage_size_in_gbs(self):

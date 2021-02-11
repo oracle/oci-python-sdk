@@ -144,6 +144,10 @@ class IntegrationInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type consumption_model: str
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this IntegrationInstance.
+        :type network_endpoint_details: oci.integration.models.NetworkEndpointDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -163,7 +167,8 @@ class IntegrationInstance(object):
             'is_visual_builder_enabled': 'bool',
             'custom_endpoint': 'CustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CustomEndpointDetails]',
-            'consumption_model': 'str'
+            'consumption_model': 'str',
+            'network_endpoint_details': 'NetworkEndpointDetails'
         }
 
         self.attribute_map = {
@@ -184,7 +189,8 @@ class IntegrationInstance(object):
             'is_visual_builder_enabled': 'isVisualBuilderEnabled',
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
-            'consumption_model': 'consumptionModel'
+            'consumption_model': 'consumptionModel',
+            'network_endpoint_details': 'networkEndpointDetails'
         }
 
         self._id = None
@@ -205,6 +211,7 @@ class IntegrationInstance(object):
         self._custom_endpoint = None
         self._alternate_custom_endpoints = None
         self._consumption_model = None
+        self._network_endpoint_details = None
 
     @property
     def id(self):
@@ -659,6 +666,26 @@ class IntegrationInstance(object):
         if not value_allowed_none_or_none_sentinel(consumption_model, allowed_values):
             consumption_model = 'UNKNOWN_ENUM_VALUE'
         self._consumption_model = consumption_model
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this IntegrationInstance.
+
+        :return: The network_endpoint_details of this IntegrationInstance.
+        :rtype: oci.integration.models.NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this IntegrationInstance.
+
+        :param network_endpoint_details: The network_endpoint_details of this IntegrationInstance.
+        :type: oci.integration.models.NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

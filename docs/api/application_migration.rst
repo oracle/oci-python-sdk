@@ -31,10 +31,13 @@ Application Migration
     oci.application_migration.models.Migration
     oci.application_migration.models.MigrationSummary
     oci.application_migration.models.OacDiscoveryDetails
+    oci.application_migration.models.OccAuthorizationDetails
+    oci.application_migration.models.OccSourceDetails
     oci.application_migration.models.OcicAuthorizationDetails
     oci.application_migration.models.OcicSourceDetails
     oci.application_migration.models.OicDiscoveryDetails
     oci.application_migration.models.PcsDiscoveryDetails
+    oci.application_migration.models.ResourceField
     oci.application_migration.models.SoacsDiscoveryDetails
     oci.application_migration.models.Source
     oci.application_migration.models.SourceApplication

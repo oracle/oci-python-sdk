@@ -212,6 +212,14 @@ class CloudVmCluster(object):
             The value to assign to the defined_tags property of this CloudVmCluster.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param scan_dns_name:
+            The value to assign to the scan_dns_name property of this CloudVmCluster.
+        :type scan_dns_name: str
+
+        :param zone_id:
+            The value to assign to the zone_id property of this CloudVmCluster.
+        :type zone_id: str
+
         """
         self.swagger_types = {
             'iorm_config_cache': 'ExadataIormConfig',
@@ -249,7 +257,9 @@ class CloudVmCluster(object):
             'vip_ids': 'list[str]',
             'scan_dns_record_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'scan_dns_name': 'str',
+            'zone_id': 'str'
         }
 
         self.attribute_map = {
@@ -288,7 +298,9 @@ class CloudVmCluster(object):
             'vip_ids': 'vipIds',
             'scan_dns_record_id': 'scanDnsRecordId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'scan_dns_name': 'scanDnsName',
+            'zone_id': 'zoneId'
         }
 
         self._iorm_config_cache = None
@@ -327,6 +339,8 @@ class CloudVmCluster(object):
         self._scan_dns_record_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._scan_dns_name = None
+        self._zone_id = None
 
     @property
     def iorm_config_cache(self):
@@ -1321,6 +1335,54 @@ class CloudVmCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def scan_dns_name(self):
+        """
+        Gets the scan_dns_name of this CloudVmCluster.
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
+
+
+        :return: The scan_dns_name of this CloudVmCluster.
+        :rtype: str
+        """
+        return self._scan_dns_name
+
+    @scan_dns_name.setter
+    def scan_dns_name(self, scan_dns_name):
+        """
+        Sets the scan_dns_name of this CloudVmCluster.
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
+
+
+        :param scan_dns_name: The scan_dns_name of this CloudVmCluster.
+        :type: str
+        """
+        self._scan_dns_name = scan_dns_name
+
+    @property
+    def zone_id(self):
+        """
+        Gets the zone_id of this CloudVmCluster.
+        The OCID of the zone the cloud VM cluster is associated with.
+
+
+        :return: The zone_id of this CloudVmCluster.
+        :rtype: str
+        """
+        return self._zone_id
+
+    @zone_id.setter
+    def zone_id(self, zone_id):
+        """
+        Sets the zone_id of this CloudVmCluster.
+        The OCID of the zone the cloud VM cluster is associated with.
+
+
+        :param zone_id: The zone_id of this CloudVmCluster.
+        :type: str
+        """
+        self._zone_id = zone_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

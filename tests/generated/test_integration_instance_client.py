@@ -75,6 +75,47 @@ def test_change_integration_instance_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
+def test_change_integration_instance_network_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('integration', 'ChangeIntegrationInstanceNetworkEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('integration', util.camelize('integration_instance'), 'ChangeIntegrationInstanceNetworkEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='integration', api_name='ChangeIntegrationInstanceNetworkEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
+            response = client.change_integration_instance_network_endpoint(
+                integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                change_integration_instance_network_endpoint_details=request.pop(util.camelize('ChangeIntegrationInstanceNetworkEndpointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'integration',
+            'ChangeIntegrationInstanceNetworkEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_integration_instance_network_endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
 def test_create_integration_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('integration', 'CreateIntegrationInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

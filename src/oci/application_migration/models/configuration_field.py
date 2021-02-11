@@ -40,6 +40,10 @@ class ConfigurationField(object):
             The value to assign to the description property of this ConfigurationField.
         :type description: str
 
+        :param resource_list:
+            The value to assign to the resource_list property of this ConfigurationField.
+        :type resource_list: list[oci.application_migration.models.ResourceField]
+
         :param is_required:
             The value to assign to the is_required property of this ConfigurationField.
         :type is_required: bool
@@ -55,6 +59,7 @@ class ConfigurationField(object):
             'type': 'str',
             'value': 'str',
             'description': 'str',
+            'resource_list': 'list[ResourceField]',
             'is_required': 'bool',
             'is_mutable': 'bool'
         }
@@ -65,6 +70,7 @@ class ConfigurationField(object):
             'type': 'type',
             'value': 'value',
             'description': 'description',
+            'resource_list': 'resourceList',
             'is_required': 'isRequired',
             'is_mutable': 'isMutable'
         }
@@ -74,6 +80,7 @@ class ConfigurationField(object):
         self._type = None
         self._value = None
         self._description = None
+        self._resource_list = None
         self._is_required = None
         self._is_mutable = None
 
@@ -196,6 +203,30 @@ class ConfigurationField(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def resource_list(self):
+        """
+        Gets the resource_list of this ConfigurationField.
+        A list of resources associated with a specific configuration object.
+
+
+        :return: The resource_list of this ConfigurationField.
+        :rtype: list[oci.application_migration.models.ResourceField]
+        """
+        return self._resource_list
+
+    @resource_list.setter
+    def resource_list(self, resource_list):
+        """
+        Sets the resource_list of this ConfigurationField.
+        A list of resources associated with a specific configuration object.
+
+
+        :param resource_list: The resource_list of this ConfigurationField.
+        :type: list[oci.application_migration.models.ResourceField]
+        """
+        self._resource_list = resource_list
 
     @property
     def is_required(self):

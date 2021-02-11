@@ -34,6 +34,10 @@ class UpdateMigrationDetails(object):
             The value to assign to the discovery_details property of this UpdateMigrationDetails.
         :type discovery_details: oci.application_migration.models.DiscoveryDetails
 
+        :param is_selective_migration:
+            The value to assign to the is_selective_migration property of this UpdateMigrationDetails.
+        :type is_selective_migration: bool
+
         :param service_config:
             The value to assign to the service_config property of this UpdateMigrationDetails.
         :type service_config: dict(str, ConfigurationField)
@@ -55,6 +59,7 @@ class UpdateMigrationDetails(object):
             'display_name': 'str',
             'description': 'str',
             'discovery_details': 'DiscoveryDetails',
+            'is_selective_migration': 'bool',
             'service_config': 'dict(str, ConfigurationField)',
             'application_config': 'dict(str, ConfigurationField)',
             'freeform_tags': 'dict(str, str)',
@@ -65,6 +70,7 @@ class UpdateMigrationDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'discovery_details': 'discoveryDetails',
+            'is_selective_migration': 'isSelectiveMigration',
             'service_config': 'serviceConfig',
             'application_config': 'applicationConfig',
             'freeform_tags': 'freeformTags',
@@ -74,6 +80,7 @@ class UpdateMigrationDetails(object):
         self._display_name = None
         self._description = None
         self._discovery_details = None
+        self._is_selective_migration = None
         self._service_config = None
         self._application_config = None
         self._freeform_tags = None
@@ -146,6 +153,30 @@ class UpdateMigrationDetails(object):
         :type: oci.application_migration.models.DiscoveryDetails
         """
         self._discovery_details = discovery_details
+
+    @property
+    def is_selective_migration(self):
+        """
+        Gets the is_selective_migration of this UpdateMigrationDetails.
+        If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+
+
+        :return: The is_selective_migration of this UpdateMigrationDetails.
+        :rtype: bool
+        """
+        return self._is_selective_migration
+
+    @is_selective_migration.setter
+    def is_selective_migration(self, is_selective_migration):
+        """
+        Sets the is_selective_migration of this UpdateMigrationDetails.
+        If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+
+
+        :param is_selective_migration: The is_selective_migration of this UpdateMigrationDetails.
+        :type: bool
+        """
+        self._is_selective_migration = is_selective_migration
 
     @property
     def service_config(self):
