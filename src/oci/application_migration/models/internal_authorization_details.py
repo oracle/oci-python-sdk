@@ -21,7 +21,7 @@ class InternalAuthorizationDetails(AuthorizationDetails):
 
         :param type:
             The value to assign to the type property of this InternalAuthorizationDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
         :type type: str
 
         :param username:

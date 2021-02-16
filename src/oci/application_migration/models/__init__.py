@@ -17,10 +17,13 @@ from .jcs_discovery_details import JcsDiscoveryDetails
 from .migration import Migration
 from .migration_summary import MigrationSummary
 from .oac_discovery_details import OacDiscoveryDetails
+from .occ_authorization_details import OccAuthorizationDetails
+from .occ_source_details import OccSourceDetails
 from .ocic_authorization_details import OcicAuthorizationDetails
 from .ocic_source_details import OcicSourceDetails
 from .oic_discovery_details import OicDiscoveryDetails
 from .pcs_discovery_details import PcsDiscoveryDetails
+from .resource_field import ResourceField
 from .soacs_discovery_details import SoacsDiscoveryDetails
 from .source import Source
 from .source_application import SourceApplication
@@ -50,10 +53,13 @@ application_migration_type_mapping = {
     "Migration": Migration,
     "MigrationSummary": MigrationSummary,
     "OacDiscoveryDetails": OacDiscoveryDetails,
+    "OccAuthorizationDetails": OccAuthorizationDetails,
+    "OccSourceDetails": OccSourceDetails,
     "OcicAuthorizationDetails": OcicAuthorizationDetails,
     "OcicSourceDetails": OcicSourceDetails,
     "OicDiscoveryDetails": OicDiscoveryDetails,
     "PcsDiscoveryDetails": PcsDiscoveryDetails,
+    "ResourceField": ResourceField,
     "SoacsDiscoveryDetails": SoacsDiscoveryDetails,
     "Source": Source,
     "SourceApplication": SourceApplication,

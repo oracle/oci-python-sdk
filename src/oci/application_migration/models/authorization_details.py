@@ -22,11 +22,16 @@ class AuthorizationDetails(object):
     #: This constant has a value of "INTERNAL_COMPUTE"
     TYPE_INTERNAL_COMPUTE = "INTERNAL_COMPUTE"
 
+    #: A constant which can be used with the type property of a AuthorizationDetails.
+    #: This constant has a value of "OCC"
+    TYPE_OCC = "OCC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuthorizationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.application_migration.models.OccAuthorizationDetails`
         * :class:`~oci.application_migration.models.InternalAuthorizationDetails`
         * :class:`~oci.application_migration.models.OcicAuthorizationDetails`
 
@@ -34,7 +39,7 @@ class AuthorizationDetails(object):
 
         :param type:
             The value to assign to the type property of this AuthorizationDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
         :type type: str
 
         """
@@ -56,6 +61,9 @@ class AuthorizationDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'OCC':
+            return 'OccAuthorizationDetails'
+
         if type == 'INTERNAL_COMPUTE':
             return 'InternalAuthorizationDetails'
 
@@ -70,7 +78,7 @@ class AuthorizationDetails(object):
         **[Required]** Gets the type of this AuthorizationDetails.
         Type of the source environment from which you are migrating applications to Oracle Cloud Infrastructure.
 
-        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE"
+        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
 
 
         :return: The type of this AuthorizationDetails.
@@ -88,7 +96,7 @@ class AuthorizationDetails(object):
         :param type: The type of this AuthorizationDetails.
         :type: str
         """
-        allowed_values = ["OCIC", "INTERNAL_COMPUTE"]
+        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"
