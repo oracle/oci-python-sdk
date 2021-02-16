@@ -130,6 +130,14 @@ class AutonomousExadataInfrastructure(object):
             The value to assign to the defined_tags property of this AutonomousExadataInfrastructure.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param scan_dns_name:
+            The value to assign to the scan_dns_name property of this AutonomousExadataInfrastructure.
+        :type scan_dns_name: str
+
+        :param zone_id:
+            The value to assign to the zone_id property of this AutonomousExadataInfrastructure.
+        :type zone_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -149,7 +157,9 @@ class AutonomousExadataInfrastructure(object):
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'scan_dns_name': 'str',
+            'zone_id': 'str'
         }
 
         self.attribute_map = {
@@ -170,7 +180,9 @@ class AutonomousExadataInfrastructure(object):
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'scan_dns_name': 'scanDnsName',
+            'zone_id': 'zoneId'
         }
 
         self._id = None
@@ -191,6 +203,8 @@ class AutonomousExadataInfrastructure(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._scan_dns_name = None
+        self._zone_id = None
 
     @property
     def id(self):
@@ -679,6 +693,54 @@ class AutonomousExadataInfrastructure(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def scan_dns_name(self):
+        """
+        Gets the scan_dns_name of this AutonomousExadataInfrastructure.
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
+
+
+        :return: The scan_dns_name of this AutonomousExadataInfrastructure.
+        :rtype: str
+        """
+        return self._scan_dns_name
+
+    @scan_dns_name.setter
+    def scan_dns_name(self, scan_dns_name):
+        """
+        Sets the scan_dns_name of this AutonomousExadataInfrastructure.
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
+
+
+        :param scan_dns_name: The scan_dns_name of this AutonomousExadataInfrastructure.
+        :type: str
+        """
+        self._scan_dns_name = scan_dns_name
+
+    @property
+    def zone_id(self):
+        """
+        Gets the zone_id of this AutonomousExadataInfrastructure.
+        The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
+
+
+        :return: The zone_id of this AutonomousExadataInfrastructure.
+        :rtype: str
+        """
+        return self._zone_id
+
+    @zone_id.setter
+    def zone_id(self, zone_id):
+        """
+        Sets the zone_id of this AutonomousExadataInfrastructure.
+        The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
+
+
+        :param zone_id: The zone_id of this AutonomousExadataInfrastructure.
+        :type: str
+        """
+        self._zone_id = zone_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

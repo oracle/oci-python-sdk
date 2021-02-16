@@ -92,6 +92,10 @@ class CreateIntegrationInstanceDetails(object):
             The value to assign to the is_file_server_enabled property of this CreateIntegrationInstanceDetails.
         :type is_file_server_enabled: bool
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this CreateIntegrationInstanceDetails.
+        :type network_endpoint_details: oci.integration.models.NetworkEndpointDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -106,7 +110,8 @@ class CreateIntegrationInstanceDetails(object):
             'custom_endpoint': 'CreateCustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CreateCustomEndpointDetails]',
             'consumption_model': 'str',
-            'is_file_server_enabled': 'bool'
+            'is_file_server_enabled': 'bool',
+            'network_endpoint_details': 'NetworkEndpointDetails'
         }
 
         self.attribute_map = {
@@ -122,7 +127,8 @@ class CreateIntegrationInstanceDetails(object):
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
-            'is_file_server_enabled': 'isFileServerEnabled'
+            'is_file_server_enabled': 'isFileServerEnabled',
+            'network_endpoint_details': 'networkEndpointDetails'
         }
 
         self._display_name = None
@@ -138,6 +144,7 @@ class CreateIntegrationInstanceDetails(object):
         self._alternate_custom_endpoints = None
         self._consumption_model = None
         self._is_file_server_enabled = None
+        self._network_endpoint_details = None
 
     @property
     def display_name(self):
@@ -303,7 +310,7 @@ class CreateIntegrationInstanceDetails(object):
     def idcs_at(self):
         """
         Gets the idcs_at of this CreateIntegrationInstanceDetails.
-        IDCS Authentication token. This is is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
+        IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 
 
         :return: The idcs_at of this CreateIntegrationInstanceDetails.
@@ -315,7 +322,7 @@ class CreateIntegrationInstanceDetails(object):
     def idcs_at(self, idcs_at):
         """
         Sets the idcs_at of this CreateIntegrationInstanceDetails.
-        IDCS Authentication token. This is is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
+        IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 
 
         :param idcs_at: The idcs_at of this CreateIntegrationInstanceDetails.
@@ -472,6 +479,26 @@ class CreateIntegrationInstanceDetails(object):
         :type: bool
         """
         self._is_file_server_enabled = is_file_server_enabled
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this CreateIntegrationInstanceDetails.
+
+        :return: The network_endpoint_details of this CreateIntegrationInstanceDetails.
+        :rtype: oci.integration.models.NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this CreateIntegrationInstanceDetails.
+
+        :param network_endpoint_details: The network_endpoint_details of this CreateIntegrationInstanceDetails.
+        :type: oci.integration.models.NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

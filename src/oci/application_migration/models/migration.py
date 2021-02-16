@@ -155,6 +155,10 @@ class Migration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type pre_created_target_database_type: str
 
+        :param is_selective_migration:
+            The value to assign to the is_selective_migration property of this Migration.
+        :type is_selective_migration: bool
+
         :param service_config:
             The value to assign to the service_config property of this Migration.
         :type service_config: dict(str, ConfigurationField)
@@ -198,6 +202,7 @@ class Migration(object):
             'application_name': 'str',
             'application_type': 'str',
             'pre_created_target_database_type': 'str',
+            'is_selective_migration': 'bool',
             'service_config': 'dict(str, ConfigurationField)',
             'application_config': 'dict(str, ConfigurationField)',
             'lifecycle_state': 'str',
@@ -217,6 +222,7 @@ class Migration(object):
             'application_name': 'applicationName',
             'application_type': 'applicationType',
             'pre_created_target_database_type': 'preCreatedTargetDatabaseType',
+            'is_selective_migration': 'isSelectiveMigration',
             'service_config': 'serviceConfig',
             'application_config': 'applicationConfig',
             'lifecycle_state': 'lifecycleState',
@@ -235,6 +241,7 @@ class Migration(object):
         self._application_name = None
         self._application_type = None
         self._pre_created_target_database_type = None
+        self._is_selective_migration = None
         self._service_config = None
         self._application_config = None
         self._lifecycle_state = None
@@ -484,6 +491,30 @@ class Migration(object):
         if not value_allowed_none_or_none_sentinel(pre_created_target_database_type, allowed_values):
             pre_created_target_database_type = 'UNKNOWN_ENUM_VALUE'
         self._pre_created_target_database_type = pre_created_target_database_type
+
+    @property
+    def is_selective_migration(self):
+        """
+        Gets the is_selective_migration of this Migration.
+        If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+
+
+        :return: The is_selective_migration of this Migration.
+        :rtype: bool
+        """
+        return self._is_selective_migration
+
+    @is_selective_migration.setter
+    def is_selective_migration(self, is_selective_migration):
+        """
+        Sets the is_selective_migration of this Migration.
+        If set to `true`, Application Migration migrates the application resources selectively depending on the source.
+
+
+        :param is_selective_migration: The is_selective_migration of this Migration.
+        :type: bool
+        """
+        self._is_selective_migration = is_selective_migration
 
     @property
     def service_config(self):
