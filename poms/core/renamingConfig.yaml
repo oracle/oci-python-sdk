@@ -18,3 +18,9 @@ languages:
           identifier: "default_per_ocpu_in_g_bs"
         includes:
           - ShapeMemoryOptions
+
+      - originalName: "allowedValues"
+        mapping:
+          identifier: "service_allowed_values"
+        includes:
+          - ShapeNumaNodesPerSocketPlatformOptions
