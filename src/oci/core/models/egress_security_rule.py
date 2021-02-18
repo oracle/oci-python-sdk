@@ -109,7 +109,7 @@ class EgressSecurityRule(object):
             setting up a security list rule for traffic destined for a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The destination of this EgressSecurityRule.
@@ -134,7 +134,7 @@ class EgressSecurityRule(object):
             setting up a security list rule for traffic destined for a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param destination: The destination of this EgressSecurityRule.

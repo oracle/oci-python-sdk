@@ -328,7 +328,7 @@ class CreateSubnetDetails(object):
 
         Example: `subnet123`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this CreateSubnetDetails.
@@ -355,7 +355,7 @@ class CreateSubnetDetails(object):
 
         Example: `subnet123`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this CreateSubnetDetails.
@@ -409,7 +409,7 @@ class CreateSubnetDetails(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this CreateSubnetDetails.
@@ -429,7 +429,7 @@ class CreateSubnetDetails(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this CreateSubnetDetails.

@@ -13,7 +13,7 @@ class DrgAttachment(object):
     A link between a DRG and VCN. For more information, see
     `Overview of the Networking Service`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DrgAttachment.
@@ -274,8 +274,8 @@ class DrgAttachment(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :return: The route_table_id of this DrgAttachment.
@@ -294,8 +294,8 @@ class DrgAttachment(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :param route_table_id: The route_table_id of this DrgAttachment.

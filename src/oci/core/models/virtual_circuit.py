@@ -30,8 +30,8 @@ class VirtualCircuit(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the bgp_management property of a VirtualCircuit.
@@ -672,7 +672,7 @@ class VirtualCircuit(object):
         the different states, see
         `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
         Allowed values for this property are: "PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -691,7 +691,7 @@ class VirtualCircuit(object):
         the different states, see
         `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param lifecycle_state: The lifecycle_state of this VirtualCircuit.
@@ -1009,7 +1009,7 @@ class VirtualCircuit(object):
         Whether the virtual circuit supports private or public peering. For more information,
         see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
         Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1027,7 +1027,7 @@ class VirtualCircuit(object):
         Whether the virtual circuit supports private or public peering. For more information,
         see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param type: The type of this VirtualCircuit.

@@ -35,7 +35,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
             Byoip Range prefix and a cidr from it
@@ -78,7 +78,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddVcnCidrDetails add_vcn_cidr_details: (required)
             Details object for deleting a VCN CIDR.
@@ -118,7 +118,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ServiceIdRequestDetails attach_service_details: (required)
             ServiceId of Service to be attached to a service gateway.
@@ -237,7 +237,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeVcnCompartmentDetails change_vcn_compartment_details: (required)
             Request to change the compartment of a given VCN.
@@ -277,7 +277,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeVlanCompartmentDetails change_vlan_compartment_details: (required)
             Request to change the compartment of a given VLAN.
@@ -1153,7 +1153,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1519,7 +1519,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ipv6_id: (required)
             The `OCID`__ of the IPv6.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Ipv6.lifecycle_state`
@@ -1615,7 +1615,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.NatGateway.lifecycle_state`
@@ -1664,7 +1664,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.NetworkSecurityGroup.lifecycle_state`
@@ -1760,7 +1760,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.PublicIpPool.lifecycle_state`
@@ -1950,7 +1950,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ServiceGateway.lifecycle_state`
@@ -2046,7 +2046,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Vcn.lifecycle_state`
@@ -2142,7 +2142,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Vlan.lifecycle_state`
@@ -2191,7 +2191,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ServiceIdRequestDetails detach_service_details: (required)
             ServiceId of Service to be detached from a service gateway.
@@ -2234,7 +2234,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
             Details object for updating a VCN CIDR.
@@ -2274,7 +2274,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
             The CIDR block to remove from the IP pool.
@@ -2317,7 +2317,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
             Details object for removing a VCN CIDR.
@@ -2357,7 +2357,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateByoipRangeDetails update_byoip_range_details: (required)
             Byoip Range details.
@@ -2690,7 +2690,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
             Details object for updating a IPSecConnection tunnel's details.
@@ -2733,7 +2733,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ipv6_id: (required)
             The `OCID`__ of the IPv6.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIpv6Details update_ipv6_details: (required)
             IPv6 details to be updated.
@@ -2817,7 +2817,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateNatGatewayDetails update_nat_gateway_details: (required)
             Details object for updating a NAT gateway.
@@ -2860,7 +2860,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateNetworkSecurityGroupDetails update_network_security_group_details: (required)
             Details object for updating a network security group.
@@ -2944,7 +2944,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
             Public IP pool details.
@@ -3110,7 +3110,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateServiceGatewayDetails update_service_gateway_details: (required)
             Details object for updating a service gateway.
@@ -3194,7 +3194,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.
@@ -3278,7 +3278,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVlanDetails update_vlan_details: (required)
             Details object for updating a subnet.
@@ -3362,7 +3362,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`

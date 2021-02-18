@@ -13,7 +13,7 @@ class DrgRedundancyStatus(object):
     The redundancy status of the DRG. For more information, see
     `Redundancy Remedies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Troubleshoot/drgredundancy.htm
     """
 
     #: A constant which can be used with the status property of a DrgRedundancyStatus.

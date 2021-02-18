@@ -104,3 +104,4 @@
 ^src/oci/tenant_manager_control_plane/.*\.py$
 ^src/oci/rover/.*\.py$
 ^src/oci/database_management/.*\.py$
+^src/oci/artifacts/.*\.py$

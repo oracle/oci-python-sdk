@@ -241,7 +241,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this CreateIpv6Details.
@@ -256,7 +256,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this CreateIpv6Details.

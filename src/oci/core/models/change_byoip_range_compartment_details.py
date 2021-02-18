@@ -39,7 +39,7 @@ class ChangeByoipRangeCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeByoipRangeCompartmentDetails.
         The `OCID`__ of the destination compartment for the BYOIP CIDR block move.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeByoipRangeCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeByoipRangeCompartmentDetails(object):
         Sets the compartment_id of this ChangeByoipRangeCompartmentDetails.
         The `OCID`__ of the destination compartment for the BYOIP CIDR block move.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeByoipRangeCompartmentDetails.

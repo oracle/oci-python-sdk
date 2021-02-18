@@ -88,6 +88,14 @@ class ProfileSummary(object):
             The value to assign to the levels_configuration property of this ProfileSummary.
         :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
+        :param target_compartments:
+            The value to assign to the target_compartments property of this ProfileSummary.
+        :type target_compartments: oci.optimizer.models.TargetCompartments
+
+        :param target_tags:
+            The value to assign to the target_tags property of this ProfileSummary.
+        :type target_tags: oci.optimizer.models.TargetTags
+
         :param time_created:
             The value to assign to the time_created property of this ProfileSummary.
         :type time_created: datetime
@@ -106,6 +114,8 @@ class ProfileSummary(object):
             'freeform_tags': 'dict(str, str)',
             'lifecycle_state': 'str',
             'levels_configuration': 'LevelsConfiguration',
+            'target_compartments': 'TargetCompartments',
+            'target_tags': 'TargetTags',
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
@@ -119,6 +129,8 @@ class ProfileSummary(object):
             'freeform_tags': 'freeformTags',
             'lifecycle_state': 'lifecycleState',
             'levels_configuration': 'levelsConfiguration',
+            'target_compartments': 'targetCompartments',
+            'target_tags': 'targetTags',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
@@ -131,6 +143,8 @@ class ProfileSummary(object):
         self._freeform_tags = None
         self._lifecycle_state = None
         self._levels_configuration = None
+        self._target_compartments = None
+        self._target_tags = None
         self._time_created = None
         self._time_updated = None
 
@@ -347,6 +361,46 @@ class ProfileSummary(object):
         :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
+
+    @property
+    def target_compartments(self):
+        """
+        Gets the target_compartments of this ProfileSummary.
+
+        :return: The target_compartments of this ProfileSummary.
+        :rtype: oci.optimizer.models.TargetCompartments
+        """
+        return self._target_compartments
+
+    @target_compartments.setter
+    def target_compartments(self, target_compartments):
+        """
+        Sets the target_compartments of this ProfileSummary.
+
+        :param target_compartments: The target_compartments of this ProfileSummary.
+        :type: oci.optimizer.models.TargetCompartments
+        """
+        self._target_compartments = target_compartments
+
+    @property
+    def target_tags(self):
+        """
+        Gets the target_tags of this ProfileSummary.
+
+        :return: The target_tags of this ProfileSummary.
+        :rtype: oci.optimizer.models.TargetTags
+        """
+        return self._target_tags
+
+    @target_tags.setter
+    def target_tags(self, target_tags):
+        """
+        Sets the target_tags of this ProfileSummary.
+
+        :param target_tags: The target_tags of this ProfileSummary.
+        :type: oci.optimizer.models.TargetTags
+        """
+        self._target_tags = target_tags
 
     @property
     def time_created(self):

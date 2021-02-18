@@ -198,8 +198,8 @@ class CreateVcnDetails(object):
 
         Example: `2001:0db8:0123::/48`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this CreateVcnDetails.
@@ -232,8 +232,8 @@ class CreateVcnDetails(object):
 
         Example: `2001:0db8:0123::/48`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this CreateVcnDetails.
@@ -321,7 +321,7 @@ class CreateVcnDetails(object):
 
         Example: `vcn1`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this CreateVcnDetails.
@@ -349,7 +349,7 @@ class CreateVcnDetails(object):
 
         Example: `vcn1`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this CreateVcnDetails.
@@ -400,7 +400,7 @@ class CreateVcnDetails(object):
 
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The is_ipv6_enabled of this CreateVcnDetails.
@@ -417,7 +417,7 @@ class CreateVcnDetails(object):
 
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param is_ipv6_enabled: The is_ipv6_enabled of this CreateVcnDetails.

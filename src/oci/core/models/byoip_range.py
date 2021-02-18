@@ -13,7 +13,7 @@ class ByoipRange(object):
     Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses that you currently own to Oracle Cloud Infrastructure. A `ByoipRange` resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
     The process used to `Bring Your Own IP`__ is explained in the documentation.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm
     """
 
     #: A constant which can be used with the lifecycle_details property of a ByoipRange.
@@ -210,7 +210,7 @@ class ByoipRange(object):
         **[Required]** Gets the compartment_id of this ByoipRange.
         The `OCID`__ of the compartment containing the BYOIP CIDR block.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByoipRange.
@@ -224,7 +224,7 @@ class ByoipRange(object):
         Sets the compartment_id of this ByoipRange.
         The `OCID`__ of the compartment containing the BYOIP CIDR block.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByoipRange.
@@ -332,7 +332,7 @@ class ByoipRange(object):
         **[Required]** Gets the id of this ByoipRange.
         The `OCID`__ of the `ByoipRange` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ByoipRange.
@@ -346,7 +346,7 @@ class ByoipRange(object):
         Sets the id of this ByoipRange.
         The `OCID`__ of the `ByoipRange` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ByoipRange.
@@ -548,7 +548,7 @@ class ByoipRange(object):
         **[Required]** Gets the validation_token of this ByoipRange.
         The validation token is an internally-generated ASCII string used in the validation process. See `Importing a CIDR block`__ for details.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr
 
 
         :return: The validation_token of this ByoipRange.
@@ -562,7 +562,7 @@ class ByoipRange(object):
         Sets the validation_token of this ByoipRange.
         The validation token is an internally-generated ASCII string used in the validation process. See `Importing a CIDR block`__ for details.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr
 
 
         :param validation_token: The validation_token of this ByoipRange.

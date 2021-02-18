@@ -119,7 +119,7 @@ class ByoipRangeSummary(object):
         Gets the compartment_id of this ByoipRangeSummary.
         The `OCID`__ of the compartment containing the `ByoipRange` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByoipRangeSummary.
@@ -133,7 +133,7 @@ class ByoipRangeSummary(object):
         Sets the compartment_id of this ByoipRangeSummary.
         The `OCID`__ of the compartment containing the `ByoipRange` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByoipRangeSummary.
@@ -241,7 +241,7 @@ class ByoipRangeSummary(object):
         Gets the id of this ByoipRangeSummary.
         The `OCID`__ of the `ByoipRange` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ByoipRangeSummary.
@@ -255,7 +255,7 @@ class ByoipRangeSummary(object):
         Sets the id of this ByoipRangeSummary.
         The `OCID`__ of the `ByoipRange` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ByoipRangeSummary.

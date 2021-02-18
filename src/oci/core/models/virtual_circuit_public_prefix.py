@@ -14,7 +14,7 @@ class VirtualCircuitPublicPrefix(object):
     specifies the customer-owned public IP prefixes to advertise across the connection.
     For more information, see `FastConnect Overview`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
     """
 
     #: A constant which can be used with the verification_state property of a VirtualCircuitPublicPrefix.

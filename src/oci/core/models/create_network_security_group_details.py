@@ -68,7 +68,7 @@ class CreateNetworkSecurityGroupDetails(object):
         The `OCID`__ of the compartment to contain the
         network security group.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateNetworkSecurityGroupDetails.
@@ -83,7 +83,7 @@ class CreateNetworkSecurityGroupDetails(object):
         The `OCID`__ of the compartment to contain the
         network security group.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateNetworkSecurityGroupDetails.
@@ -192,7 +192,7 @@ class CreateNetworkSecurityGroupDetails(object):
         The `OCID`__ of the VCN to create the network
         security group in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateNetworkSecurityGroupDetails.
@@ -207,7 +207,7 @@ class CreateNetworkSecurityGroupDetails(object):
         The `OCID`__ of the VCN to create the network
         security group in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateNetworkSecurityGroupDetails.

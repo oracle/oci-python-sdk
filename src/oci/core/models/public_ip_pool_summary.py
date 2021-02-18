@@ -81,7 +81,7 @@ class PublicIpPoolSummary(object):
         Gets the compartment_id of this PublicIpPoolSummary.
         The `OCID`__ of the compartment containing the public IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicIpPoolSummary.
@@ -95,7 +95,7 @@ class PublicIpPoolSummary(object):
         Sets the compartment_id of this PublicIpPoolSummary.
         The `OCID`__ of the compartment containing the public IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicIpPoolSummary.
@@ -203,7 +203,7 @@ class PublicIpPoolSummary(object):
         Gets the id of this PublicIpPoolSummary.
         The `OCID`__ of the public IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PublicIpPoolSummary.
@@ -217,7 +217,7 @@ class PublicIpPoolSummary(object):
         Sets the id of this PublicIpPoolSummary.
         The `OCID`__ of the public IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PublicIpPoolSummary.

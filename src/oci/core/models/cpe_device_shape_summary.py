@@ -48,7 +48,7 @@ class CpeDeviceShapeSummary(object):
         The `OCID`__ of the CPE device shape.
         This value uniquely identifies the type of CPE device.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CpeDeviceShapeSummary.
@@ -63,7 +63,7 @@ class CpeDeviceShapeSummary(object):
         The `OCID`__ of the CPE device shape.
         This value uniquely identifies the type of CPE device.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CpeDeviceShapeSummary.

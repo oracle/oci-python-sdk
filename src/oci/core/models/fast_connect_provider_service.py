@@ -13,7 +13,7 @@ class FastConnectProviderService(object):
     A service offering from a supported provider. For more information,
     see `FastConnect Overview`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
     """
 
     #: A constant which can be used with the private_peering_bgp_management property of a FastConnectProviderService.

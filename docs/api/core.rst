@@ -30,6 +30,8 @@ Core Services
     oci.core.models.AddSecurityRuleDetails
     oci.core.models.AddVcnCidrDetails
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
+    oci.core.models.AmdMilanBmLaunchInstancePlatformConfig
+    oci.core.models.AmdMilanBmPlatformConfig
     oci.core.models.AppCatalogListing
     oci.core.models.AppCatalogListingResourceVersion
     oci.core.models.AppCatalogListingResourceVersionAgreements
@@ -222,6 +224,7 @@ Core Services
     oci.core.models.InstanceAgentPluginConfigDetails
     oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
+    oci.core.models.InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAttachVnicDetails
     oci.core.models.InstanceConfigurationAttachVolumeDetails
     oci.core.models.InstanceConfigurationAvailabilityConfig
@@ -236,6 +239,7 @@ Core Services
     oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails
     oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
     oci.core.models.InstanceConfigurationLaunchInstanceDetails
+    oci.core.models.InstanceConfigurationLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
     oci.core.models.InstanceConfigurationLaunchOptions
     oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails
@@ -262,6 +266,7 @@ Core Services
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceAvailabilityConfigDetails
     oci.core.models.LaunchInstanceDetails
+    oci.core.models.LaunchInstancePlatformConfig
     oci.core.models.LaunchInstanceShapeConfigDetails
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
@@ -272,6 +277,7 @@ Core Services
     oci.core.models.NetworkSecurityGroupVnic
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
+    oci.core.models.PlatformConfig
     oci.core.models.PortRange
     oci.core.models.PrivateIp
     oci.core.models.PublicIp

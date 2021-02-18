@@ -20,7 +20,7 @@ class PublicIp(object):
     For more information and comparison of the two types,
     see `Public IP Addresses`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
     """
 
     #: A constant which can be used with the assigned_entity_type property of a PublicIp.
@@ -520,7 +520,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -550,7 +550,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this PublicIp.
@@ -683,7 +683,7 @@ class PublicIp(object):
         Gets the public_ip_pool_id of this PublicIp.
         The `OCID`__ of the pool object created in the current tenancy.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this PublicIp.
@@ -697,7 +697,7 @@ class PublicIp(object):
         Sets the public_ip_pool_id of this PublicIp.
         The `OCID`__ of the pool object created in the current tenancy.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this PublicIp.

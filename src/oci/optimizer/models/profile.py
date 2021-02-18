@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class Profile(object):
     """
     The metadata associated with the profile.
-
-    **Caution:** Avoid using any confidential information when you use the API to supply string values.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Profile.
@@ -84,6 +82,14 @@ class Profile(object):
             The value to assign to the levels_configuration property of this Profile.
         :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
+        :param target_compartments:
+            The value to assign to the target_compartments property of this Profile.
+        :type target_compartments: oci.optimizer.models.TargetCompartments
+
+        :param target_tags:
+            The value to assign to the target_tags property of this Profile.
+        :type target_tags: oci.optimizer.models.TargetTags
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Profile.
             Allowed values for this property are: "ACTIVE", "FAILED", "INACTIVE", "ATTACHING", "DETACHING", "DELETING", "DELETED", "UPDATING", "CREATING", 'UNKNOWN_ENUM_VALUE'.
@@ -107,6 +113,8 @@ class Profile(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'levels_configuration': 'LevelsConfiguration',
+            'target_compartments': 'TargetCompartments',
+            'target_tags': 'TargetTags',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
@@ -120,6 +128,8 @@ class Profile(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'levels_configuration': 'levelsConfiguration',
+            'target_compartments': 'targetCompartments',
+            'target_tags': 'targetTags',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
@@ -132,6 +142,8 @@ class Profile(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._levels_configuration = None
+        self._target_compartments = None
+        self._target_tags = None
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
@@ -188,7 +200,7 @@ class Profile(object):
     def name(self):
         """
         **[Required]** Gets the name of this Profile.
-        The name assigned to the profile.
+        The name assigned to the profile. Avoid entering confidential information.
 
 
         :return: The name of this Profile.
@@ -200,7 +212,7 @@ class Profile(object):
     def name(self, name):
         """
         Sets the name of this Profile.
-        The name assigned to the profile.
+        The name assigned to the profile. Avoid entering confidential information.
 
 
         :param name: The name of this Profile.
@@ -212,7 +224,7 @@ class Profile(object):
     def description(self):
         """
         **[Required]** Gets the description of this Profile.
-        Text describing the profile.
+        Text describing the profile. Avoid entering confidential information.
 
 
         :return: The description of this Profile.
@@ -224,7 +236,7 @@ class Profile(object):
     def description(self, description):
         """
         Sets the description of this Profile.
-        Text describing the profile.
+        Text describing the profile. Avoid entering confidential information.
 
 
         :param description: The description of this Profile.
@@ -319,6 +331,46 @@ class Profile(object):
         :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
+
+    @property
+    def target_compartments(self):
+        """
+        Gets the target_compartments of this Profile.
+
+        :return: The target_compartments of this Profile.
+        :rtype: oci.optimizer.models.TargetCompartments
+        """
+        return self._target_compartments
+
+    @target_compartments.setter
+    def target_compartments(self, target_compartments):
+        """
+        Sets the target_compartments of this Profile.
+
+        :param target_compartments: The target_compartments of this Profile.
+        :type: oci.optimizer.models.TargetCompartments
+        """
+        self._target_compartments = target_compartments
+
+    @property
+    def target_tags(self):
+        """
+        Gets the target_tags of this Profile.
+
+        :return: The target_tags of this Profile.
+        :rtype: oci.optimizer.models.TargetTags
+        """
+        return self._target_tags
+
+    @target_tags.setter
+    def target_tags(self, target_tags):
+        """
+        Sets the target_tags of this Profile.
+
+        :param target_tags: The target_tags of this Profile.
+        :type: oci.optimizer.models.TargetTags
+        """
+        self._target_tags = target_tags
 
     @property
     def lifecycle_state(self):
