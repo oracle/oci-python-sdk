@@ -14,7 +14,7 @@ def main():
     artifacts_client = ArtifactsClient(config)
 
     # Upload Image and Signature Flow
-    kms_key_id = "ocid1.key.oc1.region_name.bbqc3acqaadfa.abyhqljtb2hrommkvjggqn7zr3y3kt3akybs75qzoq7us6fwda2fcnoyzgbq"
+    kms_key_id = "ocid1.key.oc1..exampleuniqueID"
     kms_key_version_id = "ocid1.keyversion.oc1..exampleuniqueID"
     signing_algo = "SHA_512_RSA_PKCS_PSS"
     compartment_id = "ocid1.compartment.oc1..exampleuniqueID"
