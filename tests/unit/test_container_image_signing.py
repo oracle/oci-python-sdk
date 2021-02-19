@@ -10,6 +10,7 @@ from src.oci.artifacts.models.container_image_signature_summary import Container
 from src.oci.key_management.kms_crypto_client import KmsCryptoClient
 from src.oci.key_management.models.signed_data import SignedData
 from src.oci.key_management.models.verified_data import VerifiedData
+from tests.util import get_resource_path
 
 kms_key_id = "ocid1.key.oc1.region_name.bbqc3acqaadfa.abyhqljtb2hrommkvjggqn7zr3y3kt3akybs75qzoq7us6fwda2fcnoyzgbq"
 kms_key_version_id = "ocid1.keyversion.oc1.region_name.bnpxdhjuaabm4.ccufmawjxiaaa.ab2g6ljrxaw42yqgd2rnv5yjbwmhztovk562lzjqqrcjnw"
@@ -76,7 +77,7 @@ verify_signature_response = oci.Response(
 @patch.object(ArtifactsClient, 'create_container_image_signature', return_value=container_image_signature_response)
 def test_sign_and_upload_container_image_signature_metadata(sign_data_details_response, container_image_signature_response):
     # Default config file and profile
-    config = oci.config.from_file()
+    config = oci.config.from_file(file_location=get_resource_path('config'))
     # Create artifact
     artifacts_client = ArtifactsClient(config)
 
@@ -94,7 +95,7 @@ def test_sign_and_upload_container_image_signature_metadata(sign_data_details_re
 @patch.object(KmsCryptoClient, 'verify', return_value=verify_signature_response)
 def test_get_and_verify_image_signature_metadata(container_image_signature_collection_response, verify_signature_response):
     # Default config file and profile
-    config = oci.config.from_file()
+    config = oci.config.from_file(file_location=get_resource_path('config'))
     # Create artifact
     artifacts_client = ArtifactsClient(config)
 
