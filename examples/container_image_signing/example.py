@@ -37,7 +37,7 @@ def main():
     verified = get_and_verify_image_signature_metadata(artifacts_client, compartment_id, False, repo_name, image_digest, trusted_keys)
     if verified:
         logging.INFO("At least one of the signatures is verified")
-    else :
+    else:
         logging.WARN("None of the signatures is verified")
 
 

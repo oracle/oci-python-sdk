@@ -113,7 +113,7 @@ def get_and_verify_image_signature_metadata_helper(artifacts_client, config, com
     # Filter out the keys
     container_image_signature_summaries = filter_item_by_trusted_keys(signature_collection.items, trusted_keys)
     logging.info("Filtered out %d signatures by the trusted keys",
-                 len(signature_collection.items)-len(container_image_signature_summaries))
+                 len(signature_collection.items) - len(container_image_signature_summaries))
 
     # Verify signature
     logging.info("Verifying signature")
@@ -179,7 +179,7 @@ def list_container_image_signatures_with_repo_path(artifacts_client, compartment
     if page != "":
         response = artifacts_client.list_container_image_signatures(
             compartment_id=compartment_id,
-            compartment_id_in_subtree =compartment_id_in_subtree,
+            compartment_id_in_subtree=compartment_id_in_subtree,
             repository_name=repository_name,
             image_digest=image_digest,
             page=page)
