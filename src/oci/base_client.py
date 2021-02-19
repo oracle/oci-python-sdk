@@ -34,9 +34,6 @@ APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
-if APPEND_USER_AGENT:
-    USER_INFO += " {}".format(APPEND_USER_AGENT)
-
 DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')  # noqa: W605
 LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')  # noqa: W605
 
@@ -56,7 +53,10 @@ def build_user_agent(extra=""):
         platform.system(),
         (extra or "")
     )
-    return agent.strip()
+    agent = agent.strip()
+    if APPEND_USER_AGENT:
+        agent += " {}".format(APPEND_USER_AGENT)
+    return agent
 
 
 def utc_now():
