@@ -41,6 +41,11 @@ def sign_and_upload_container_image_signature_metadata(artifacts_client, config,
     - should not have whitespaces or escape characters.
     :return: The signed container image signature metadata.
     """
+    signing_algo_list = [
+        "SHA_224_RSA_PKCS_PSS", "SHA_256_RSA_PKCS_PSS", "SHA_384_RSA_PKCS_PSS", "SHA_512_RSA_PKCS_PSS"
+    ]
+    if signing_algorithm not in signing_algo_list:
+        raise Exception("The signing algorithm is not valid. Please check.")
     signing_algo_kms = mapping_sign_data_details_signing_algorithm.get(signing_algorithm)
     signing_algo_ocir = mapping_create_container_image_signature_details_signing_algorithm.get(signing_algorithm)
     region = config.get("region")
@@ -60,7 +65,7 @@ def sign_and_upload_container_image_signature_metadata(artifacts_client, config,
         "signing_algorithm": signing_algorithm
     }
     json_string = json.dumps(message)
-    encoded_json = base64.b64encode(json_string.encode()).decode()
+    encoded_json = base64.b64encode(json_string)
 
     # Sign image digest
     logging.info("Generating signature")
@@ -93,8 +98,7 @@ def get_and_verify_image_signature_metadata(artifacts_client, config, compartmen
     :param trusted_keys: List of OCIDs of the kmsKeyId used to sign the container image.
     :return: Boolean to indicate if any of the signatures of the container image is verified
     """
-    return get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id, compartment_id_in_subtree,
-                                                          repository_name, image_digest, trusted_keys, "")
+    return get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id, compartment_id_in_subtree, repository_name, image_digest, trusted_keys, "")
 
 
 def get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id, compartment_id_in_subtree,
@@ -105,6 +109,7 @@ def get_and_verify_image_signature_metadata_helper(artifacts_client, config, com
         signature_collection, next_page = list_container_image_signatures_with_repo_path(
             artifacts_client, compartment_id, compartment_id_in_subtree, repository_name, image_digest, page)
     except Exception:
+        logging.error("Unable to get container image signature list using repo path.")
         return False
     logging.info("Fetched signature: %d signature in compartment %s with image URL: %s:%s. Remaining count %d",
                  len(signature_collection.items), compartment_id, repository_name, image_digest,
@@ -117,18 +122,12 @@ def get_and_verify_image_signature_metadata_helper(artifacts_client, config, com
 
     # Verify signature
     logging.info("Verifying signature")
-    try:
-        verified = verify_signatures(config, container_image_signature_summaries)
-        if verified is False and next_page != "":
-            return get_and_verify_image_signature_metadata(compartment_id,
-                                                           compartment_id_in_subtree,
-                                                           repository_name,
-                                                           image_digest,
-                                                           trusted_keys,
-                                                           next_page)
-        return verified
-    except Exception:
-        return False
+    verified = verify_signatures(config, container_image_signature_summaries)
+    if verified is False and next_page is not None:
+        return get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id,
+                                                              compartment_id_in_subtree, repository_name, image_digest,
+                                                              trusted_keys, next_page)
+    return verified
 
 
 def sign_container_image(kms_crypto_client, message, key_id, key_version_id, signing_algorithm):
@@ -213,26 +212,23 @@ def filter_item_by_trusted_keys(items, trusted_keys):
 
 
 def verify_signatures(config, container_image_signature_summary):
-    try:
-        region = config.get("region")
+    region = config.get("region")
 
-        for signature_summary in container_image_signature_summary:
-            vault_crypto_client = build_vault_crypto_client(config, signature_summary.kms_key_id, region)
-            algo = mapping_verify_data_details_signing_algorithm.get(signature_summary.signing_algorithm)
-            verified_data = verify_signature(
-                vault_crypto_client,
-                signature_summary.message,
-                signature_summary.signature,
-                signature_summary.kms_key_id,
-                signature_summary.kms_key_version_id,
-                algo
-            )
+    for signature_summary in container_image_signature_summary:
+        vault_crypto_client = build_vault_crypto_client(config, signature_summary.kms_key_id, region)
+        algo = mapping_verify_data_details_signing_algorithm.get(signature_summary.signing_algorithm)
+        verified_data = verify_signature(
+            vault_crypto_client,
+            signature_summary.message,
+            signature_summary.signature,
+            signature_summary.kms_key_id,
+            signature_summary.kms_key_version_id,
+            algo
+        )
 
-            if verified_data.is_signature_valid:
-                return True
-        return False
-    except Exception:
-        return False
+        if verified_data.is_signature_valid:
+            return True
+    return False
 
 
 def verify_signature(kms_crypto_client, message, signature, key_id, key_version_id, signing_algorithm):
