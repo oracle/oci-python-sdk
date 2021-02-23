@@ -41,13 +41,12 @@ def sign_and_upload_container_image_signature_metadata(artifacts_client, config,
     - should not have whitespaces or escape characters.
     :return: The signed container image signature metadata.
     """
-    signing_algo_list = [
-        "SHA_224_RSA_PKCS_PSS", "SHA_256_RSA_PKCS_PSS", "SHA_384_RSA_PKCS_PSS", "SHA_512_RSA_PKCS_PSS"
-    ]
-    if signing_algorithm not in signing_algo_list:
-        raise Exception("The signing algorithm is not valid. Please check.")
     signing_algo_kms = mapping_sign_data_details_signing_algorithm.get(signing_algorithm)
+    if signing_algo_kms is None:
+        raise Exception("The sign data details signing algorithm is not valid. Please check.")
     signing_algo_ocir = mapping_create_container_image_signature_details_signing_algorithm.get(signing_algorithm)
+    if signing_algo_ocir is None:
+        raise Exception("The create container image signature details signing algorithm is not valid. Please check.")
     region = config.get("region")
 
     # Create KMS client
@@ -66,7 +65,6 @@ def sign_and_upload_container_image_signature_metadata(artifacts_client, config,
     }
     json_string = json.dumps(message)
     encoded_json = base64.b64encode(json_string.encode()).decode()
-    print(encoded_json)
 
     # Sign image digest
     logging.info("Generating signature")
@@ -176,21 +174,12 @@ def build_vault_crypto_client(config, key_id, region):
 
 def list_container_image_signatures_with_repo_path(artifacts_client, compartment_id, compartment_id_in_subtree,
                                                    repository_name, image_digest, page):
-    if page != "":
-        response = artifacts_client.list_container_image_signatures(
-            compartment_id=compartment_id,
-            compartment_id_in_subtree=compartment_id_in_subtree,
-            repository_name=repository_name,
-            image_digest=image_digest,
-            page=page)
-    else:
-        response = artifacts_client.list_container_image_signatures(
-            compartment_id=compartment_id,
-            compartment_id_in_subtree=compartment_id_in_subtree,
-            repository_name=repository_name,
-            image_digest=image_digest
-        )
-
+    response = artifacts_client.list_container_image_signatures(
+        compartment_id=compartment_id,
+        compartment_id_in_subtree=compartment_id_in_subtree,
+        repository_name=repository_name,
+        image_digest=image_digest,
+        page=page)
     if response.status != 200:
         raise Exception("Failed to list the signatures of repository_name %s, image_digest %s, status_code %d",
                         repository_name, image_digest, response.status)
