@@ -65,7 +65,8 @@ def sign_and_upload_container_image_signature_metadata(artifacts_client, config,
         "signing_algorithm": signing_algorithm
     }
     json_string = json.dumps(message)
-    encoded_json = base64.b64encode(json_string)
+    encoded_json = base64.b64encode(json_string.encode()).decode()
+    print(encoded_json)
 
     # Sign image digest
     logging.info("Generating signature")
