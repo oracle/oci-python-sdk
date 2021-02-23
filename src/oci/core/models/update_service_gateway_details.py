@@ -200,7 +200,7 @@ class UpdateServiceGatewayDetails(object):
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :return: The route_table_id of this UpdateServiceGatewayDetails.
@@ -216,7 +216,7 @@ class UpdateServiceGatewayDetails(object):
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :param route_table_id: The route_table_id of this UpdateServiceGatewayDetails.

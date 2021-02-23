@@ -20,8 +20,8 @@ class LocalPeeringGateway(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
@@ -508,7 +508,7 @@ class LocalPeeringGateway(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this LocalPeeringGateway.
@@ -525,7 +525,7 @@ class LocalPeeringGateway(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this LocalPeeringGateway.
@@ -569,7 +569,9 @@ class LocalPeeringGateway(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this LocalPeeringGateway.
-        The OCID of the VCN the LPG belongs to.
+        The `OCID`__ of the VCN that uses the LPG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this LocalPeeringGateway.
@@ -581,7 +583,9 @@ class LocalPeeringGateway(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this LocalPeeringGateway.
-        The OCID of the VCN the LPG belongs to.
+        The `OCID`__ of the VCN that uses the LPG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this LocalPeeringGateway.

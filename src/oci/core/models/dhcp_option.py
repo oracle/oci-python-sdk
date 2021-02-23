@@ -17,8 +17,8 @@ class DhcpOption(object):
     and `DHCP Options`__.
 
     __ https://tools.ietf.org/html/rfc1533
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDHCP.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm
     """
 
     def __init__(self, **kwargs):

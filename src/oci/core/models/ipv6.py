@@ -19,7 +19,7 @@ class Ipv6(object):
     **Note:** IPv6 addressing is currently supported only in certain regions. For important
     details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Ipv6.
@@ -144,7 +144,7 @@ class Ipv6(object):
         The `OCID`__ of the compartment containing the IPv6.
         This is the same as the VNIC's compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Ipv6.
@@ -159,7 +159,7 @@ class Ipv6(object):
         The `OCID`__ of the compartment containing the IPv6.
         This is the same as the VNIC's compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Ipv6.
@@ -267,7 +267,7 @@ class Ipv6(object):
         **[Required]** Gets the id of this Ipv6.
         The `OCID`__ of the IPv6.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Ipv6.
@@ -281,7 +281,7 @@ class Ipv6(object):
         Sets the id of this Ipv6.
         The `OCID`__ of the IPv6.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Ipv6.
@@ -443,7 +443,7 @@ class Ipv6(object):
         **[Required]** Gets the subnet_id of this Ipv6.
         The `OCID`__ of the subnet the VNIC is in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this Ipv6.
@@ -457,7 +457,7 @@ class Ipv6(object):
         Sets the subnet_id of this Ipv6.
         The `OCID`__ of the subnet the VNIC is in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this Ipv6.
@@ -504,7 +504,7 @@ class Ipv6(object):
         The `OCID`__ of the VNIC the IPv6 is assigned to.
         The VNIC and IPv6 must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this Ipv6.
@@ -519,7 +519,7 @@ class Ipv6(object):
         The `OCID`__ of the VNIC the IPv6 is assigned to.
         The VNIC and IPv6 must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this Ipv6.

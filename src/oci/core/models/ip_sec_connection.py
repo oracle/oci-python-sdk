@@ -32,8 +32,8 @@ class IPSecConnection(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
@@ -399,7 +399,7 @@ class IPSecConnection(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :return: The cpe_local_identifier of this IPSecConnection.
@@ -425,7 +425,7 @@ class IPSecConnection(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :param cpe_local_identifier: The cpe_local_identifier of this IPSecConnection.
@@ -484,7 +484,7 @@ class IPSecConnection(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The static_routes of this IPSecConnection.
@@ -511,7 +511,7 @@ class IPSecConnection(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param static_routes: The static_routes of this IPSecConnection.

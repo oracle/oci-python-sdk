@@ -40,7 +40,7 @@ class ChangePublicIpCompartmentDetails(object):
         The `OCID`__ of the compartment to move the
         public IP to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangePublicIpCompartmentDetails.
@@ -55,7 +55,7 @@ class ChangePublicIpCompartmentDetails(object):
         The `OCID`__ of the compartment to move the
         public IP to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangePublicIpCompartmentDetails.

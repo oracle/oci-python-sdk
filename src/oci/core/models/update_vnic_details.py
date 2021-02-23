@@ -182,7 +182,7 @@ class UpdateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this UpdateVnicDetails.
@@ -210,7 +210,7 @@ class UpdateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this UpdateVnicDetails.
@@ -272,7 +272,7 @@ class UpdateVnicDetails(object):
         This is because the source/destination check is always disabled for VNICs in a VLAN.
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :return: The skip_source_dest_check of this UpdateVnicDetails.
@@ -294,7 +294,7 @@ class UpdateVnicDetails(object):
         This is because the source/destination check is always disabled for VNICs in a VLAN.
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param skip_source_dest_check: The skip_source_dest_check of this UpdateVnicDetails.

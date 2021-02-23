@@ -212,7 +212,7 @@ class CreatePublicIpDetails(object):
         Infrastructure public IP pool. For more information, see
         `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED"
 
@@ -230,7 +230,7 @@ class CreatePublicIpDetails(object):
         Infrastructure public IP pool. For more information, see
         `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this CreatePublicIpDetails.
@@ -288,7 +288,7 @@ class CreatePublicIpDetails(object):
         Gets the public_ip_pool_id of this CreatePublicIpDetails.
         The `OCID`__ of the public IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this CreatePublicIpDetails.
@@ -302,7 +302,7 @@ class CreatePublicIpDetails(object):
         Sets the public_ip_pool_id of this CreatePublicIpDetails.
         The `OCID`__ of the public IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this CreatePublicIpDetails.

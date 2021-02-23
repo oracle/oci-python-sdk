@@ -187,6 +187,10 @@ class Instance(object):
             The value to assign to the time_maintenance_reboot_due property of this Instance.
         :type time_maintenance_reboot_due: datetime
 
+        :param platform_config:
+            The value to assign to the platform_config property of this Instance.
+        :type platform_config: oci.core.models.PlatformConfig
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -213,7 +217,8 @@ class Instance(object):
             'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'agent_config': 'InstanceAgentConfig',
-            'time_maintenance_reboot_due': 'datetime'
+            'time_maintenance_reboot_due': 'datetime',
+            'platform_config': 'PlatformConfig'
         }
 
         self.attribute_map = {
@@ -241,7 +246,8 @@ class Instance(object):
             'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'agent_config': 'agentConfig',
-            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
+            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
+            'platform_config': 'platformConfig'
         }
 
         self._availability_domain = None
@@ -269,6 +275,7 @@ class Instance(object):
         self._time_created = None
         self._agent_config = None
         self._time_maintenance_reboot_due = None
+        self._platform_config = None
 
     @property
     def availability_domain(self):
@@ -1003,6 +1010,26 @@ class Instance(object):
         :type: datetime
         """
         self._time_maintenance_reboot_due = time_maintenance_reboot_due
+
+    @property
+    def platform_config(self):
+        """
+        Gets the platform_config of this Instance.
+
+        :return: The platform_config of this Instance.
+        :rtype: oci.core.models.PlatformConfig
+        """
+        return self._platform_config
+
+    @platform_config.setter
+    def platform_config(self, platform_config):
+        """
+        Sets the platform_config of this Instance.
+
+        :param platform_config: The platform_config of this Instance.
+        :type: oci.core.models.PlatformConfig
+        """
+        self._platform_config = platform_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

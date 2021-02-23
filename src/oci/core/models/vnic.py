@@ -32,9 +32,9 @@ class Vnic(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Vnic.
@@ -351,7 +351,7 @@ class Vnic(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this Vnic.
@@ -377,7 +377,7 @@ class Vnic(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this Vnic.
@@ -637,7 +637,7 @@ class Vnic(object):
 
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :return: The skip_source_dest_check of this Vnic.
@@ -661,7 +661,7 @@ class Vnic(object):
 
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param skip_source_dest_check: The skip_source_dest_check of this Vnic.

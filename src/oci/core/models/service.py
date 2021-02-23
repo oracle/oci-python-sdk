@@ -17,7 +17,7 @@ class Service(object):
     IP address ranges of the Oracle service or services covered by a given `Service` object. That
     unique string is the value of the `Service` object's `cidrBlock` attribute.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/servicegateway.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm
     """
 
     def __init__(self, **kwargs):
@@ -139,7 +139,7 @@ class Service(object):
         **[Required]** Gets the id of this Service.
         The `Service` object's `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Service.
@@ -153,7 +153,7 @@ class Service(object):
         Sets the id of this Service.
         The `Service` object's `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Service.

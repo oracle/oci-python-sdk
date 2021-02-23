@@ -99,7 +99,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails add_network_security_group_security_rules_details: (required)
             Request with one or more security rules to be associated with the network security group.
@@ -174,7 +174,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddPublicIpPoolCapacityDetails add_public_ip_pool_capacity_details: (required)
             Byoip Range prefix and a cidr from it
@@ -274,7 +274,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddVcnCidrDetails add_vcn_cidr_details: (required)
             Details object for deleting a VCN CIDR.
@@ -374,7 +374,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -459,7 +459,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ServiceIdRequestDetails attach_service_details: (required)
             ServiceId of Service to be attached to a service gateway.
@@ -691,7 +691,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeByoipRangeCompartmentDetails change_byoip_range_compartment_details: (required)
             Request to change the compartment of a BYOIP CIDR block.
@@ -1539,7 +1539,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeNatGatewayCompartmentDetails change_nat_gateway_compartment_details: (required)
             Request to change the compartment of a given NAT Gateway.
@@ -1634,7 +1634,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeNetworkSecurityGroupCompartmentDetails change_network_security_group_compartment_details: (required)
             Request to change the compartment of a network security group.
@@ -1827,7 +1827,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangePublicIpPoolCompartmentDetails change_public_ip_pool_compartment_details: (required)
             Request to change the compartment of a public IP pool.
@@ -2205,7 +2205,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeServiceGatewayCompartmentDetails change_service_gateway_compartment_details: (required)
             Request to change the compartment of a given Service Gateway.
@@ -2395,7 +2395,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeVcnCompartmentDetails change_vcn_compartment_details: (required)
             Request to change the compartment of a given VCN.
@@ -2585,7 +2585,7 @@ class VirtualNetworkClient(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeVlanCompartmentDetails change_vlan_compartment_details: (required)
             Request to change the compartment of a given VLAN.
@@ -2687,7 +2687,7 @@ class VirtualNetworkClient(object):
         operation will fail. For more information, see
         `VCN Peering`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
 
 
         :param str local_peering_gateway_id: (required)
@@ -2765,7 +2765,7 @@ class VirtualNetworkClient(object):
         operation will fail. For more information, see
         `VCN Peering`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
 
 
         :param str remote_peering_connection_id: (required)
@@ -2927,10 +2927,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
         be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm
 
 
         :param oci.core.models.CreateCpeDetails create_cpe_details: (required)
@@ -3021,9 +3021,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the cross-connect.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateCrossConnectDetails create_cross_connect_details: (required)
@@ -3110,9 +3110,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the cross-connect group.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateCrossConnectGroupDetails create_cross_connect_group_details: (required)
@@ -3196,8 +3196,8 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateDhcpDetails create_dhcp_details: (required)
@@ -3281,9 +3281,9 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the DRG, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDRGs.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateDrgDetails create_drg_details: (required)
@@ -3366,8 +3366,8 @@ class VirtualNetworkClient(object):
         as the VCN. For more information about compartments and access control, see
         `Overview of the IAM Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDRGs.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
 
 
         :param oci.core.models.CreateDrgAttachmentDetails create_drg_attachment_details: (required)
@@ -3460,9 +3460,9 @@ class VirtualNetworkClient(object):
         use :func:`update_internet_gateway` to easily disable/enable
         the gateway without changing the route rule.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIGs.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateInternetGatewayDetails create_internet_gateway_details: (required)
@@ -3563,10 +3563,10 @@ class VirtualNetworkClient(object):
         (that is, the pre-shared key). For more information, see
         `Configuring Your On-Premises Router for an IPSec VPN`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm
 
 
         :param oci.core.models.CreateIPSecConnectionDetails create_ip_sec_connection_details: (required)
@@ -3932,7 +3932,7 @@ class VirtualNetworkClient(object):
         For more information about secondary private IPs, see
         `IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
 
 
         :param oci.core.models.CreatePrivateIpDetails create_private_ip_details: (required)
@@ -4025,7 +4025,7 @@ class VirtualNetworkClient(object):
         asynchronous. Poll the public IP's `lifecycleState` to determine if the assignment
         succeeded.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param oci.core.models.CreatePublicIpDetails create_public_ip_details: (required)
@@ -4260,10 +4260,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the route table, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateRouteTableDetails create_route_table_details: (required)
@@ -4349,10 +4349,10 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the security list, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateSecurityListDetails create_security_list_details: (required)
@@ -4433,8 +4433,8 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateServiceGatewayDetails create_service_gateway_details: (required)
@@ -4537,14 +4537,14 @@ class VirtualNetworkClient(object):
         VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/servicelimits.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingDHCP.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param oci.core.models.CreateSubnetDetails create_subnet_details: (required)
@@ -4649,12 +4649,12 @@ class VirtualNetworkClient(object):
         or FastConnect. For more information, see
         `Overview of the Networking Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
         __ https://tools.ietf.org/html/rfc1918
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
 
 
         :param oci.core.models.CreateVcnDetails create_vcn_details: (required)
@@ -4747,10 +4747,10 @@ class VirtualNetworkClient(object):
         traffic will not flow. For more information, see
         `Route Tables`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
 
 
         :param oci.core.models.CreateVirtualCircuitDetails create_virtual_circuit_details: (required)
@@ -4904,13 +4904,13 @@ class VirtualNetworkClient(object):
         You must specify the `OCID`__.
         If the `ByoipRange` resource is currently in the PROVISIONED or ACTIVE state, it will be de-provisioned and then deleted.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -5619,7 +5619,7 @@ class VirtualNetworkClient(object):
         :param str ipv6_id: (required)
             The `OCID`__ of the IPv6.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5784,7 +5784,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5867,7 +5867,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5950,7 +5950,7 @@ class VirtualNetworkClient(object):
         unassigning it from the VNIC causes that route rule to blackhole and the traffic
         will be dropped.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param str private_ip_id: (required)
@@ -6118,13 +6118,13 @@ class VirtualNetworkClient(object):
         To delete a public IP pool it must not have any active IP address allocations.
         You must specify the object's `OCID`__ when deleting an IP pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6444,7 +6444,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6600,7 +6600,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6756,7 +6756,7 @@ class VirtualNetworkClient(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6850,7 +6850,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ServiceIdRequestDetails detach_service_details: (required)
             ServiceId of Service to be detached from a service gateway.
@@ -6930,13 +6930,13 @@ class VirtualNetworkClient(object):
         """
         Gets the `ByoipRange` resource. You must specify the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -7181,7 +7181,7 @@ class VirtualNetworkClient(object):
         :param str cpe_device_shape_id: (required)
             The `OCID`__ of the CPE device shape.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -7718,7 +7718,7 @@ class VirtualNetworkClient(object):
         Gets the redundancy status for the specified DRG. For more information, see
         `Redundancy Remedies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Troubleshoot/drgredundancy.htm
 
 
         :param str drg_id: (required)
@@ -7797,7 +7797,7 @@ class VirtualNetworkClient(object):
         Gets the specified provider service.
         For more information, see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param str provider_service_id: (required)
@@ -8218,7 +8218,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8291,7 +8291,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8457,7 +8457,7 @@ class VirtualNetworkClient(object):
         :param str ipv6_id: (required)
             The `OCID`__ of the IPv6.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -8601,7 +8601,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8675,7 +8675,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9010,13 +9010,13 @@ class VirtualNetworkClient(object):
         """
         Gets the specified `PublicIpPool` object. You must specify the object's `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -9292,7 +9292,7 @@ class VirtualNetworkClient(object):
         :param str service_id: (required)
             The service's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9360,7 +9360,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9501,7 +9501,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -9600,7 +9600,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -9679,7 +9679,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9747,7 +9747,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -9891,7 +9891,7 @@ class VirtualNetworkClient(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10035,7 +10035,7 @@ class VirtualNetworkClient(object):
         Lists the regions that support remote VCN peering (which is peering across regions).
         For more information, see `VCN Peering`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/VCNpeering.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
 
 
         :param obj retry_strategy: (optional)
@@ -10093,7 +10093,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10995,7 +10995,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11145,7 +11145,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
             The OCID of the DRG.
@@ -11326,7 +11326,7 @@ class VirtualNetworkClient(object):
 
         For more information, see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param str compartment_id: (required)
@@ -11417,7 +11417,7 @@ class VirtualNetworkClient(object):
 
         For more information about virtual circuits, see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param str provider_service_id: (required)
@@ -11524,7 +11524,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11992,7 +11992,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -12070,7 +12070,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -12214,7 +12214,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str direction: (optional)
             Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets,
@@ -12355,7 +12355,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -12486,7 +12486,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -12671,7 +12671,7 @@ class VirtualNetworkClient(object):
         :param str vlan_id: (optional)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13156,7 +13156,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -13306,7 +13306,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -13440,7 +13440,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -13682,7 +13682,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -14278,7 +14278,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -14436,7 +14436,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ModifyVcnCidrDetails modify_vcn_cidr_details: (required)
             Details object for updating a VCN CIDR.
@@ -14535,7 +14535,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails remove_network_security_group_security_rules_details: (required)
             Request with one or more security rules associated with the network security group that
@@ -14607,7 +14607,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemovePublicIpPoolCapacityDetails remove_public_ip_pool_capacity_details: (required)
             The CIDR block to remove from the IP pool.
@@ -14705,7 +14705,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemoveVcnCidrDetails remove_vcn_cidr_details: (required)
             Details object for removing a VCN CIDR.
@@ -14804,7 +14804,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateByoipRangeDetails update_byoip_range_details: (required)
             Byoip Range details.
@@ -15577,7 +15577,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
             Details object for updating a IPSecConnection tunnel's details.
@@ -15673,7 +15673,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionTunnelSharedSecretDetails update_ip_sec_connection_tunnel_shared_secret_details: (required)
             Details object for updating a IPSec connection tunnel's sharedSecret.
@@ -15764,7 +15764,7 @@ class VirtualNetworkClient(object):
         :param str ipv6_id: (required)
             The `OCID`__ of the IPv6.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIpv6Details update_ipv6_details: (required)
             IPv6 details to be updated.
@@ -15936,7 +15936,7 @@ class VirtualNetworkClient(object):
         :param str nat_gateway_id: (required)
             The NAT gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateNatGatewayDetails update_nat_gateway_details: (required)
             Details object for updating a NAT gateway.
@@ -16034,7 +16034,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateNetworkSecurityGroupDetails update_network_security_group_details: (required)
             Details object for updating a network security group.
@@ -16118,7 +16118,7 @@ class VirtualNetworkClient(object):
         :param str network_security_group_id: (required)
             The `OCID`__ of the network security group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateNetworkSecurityGroupSecurityRulesDetails update_network_security_group_security_rules_details: (required)
             Request with one or more security rules associated with the network security group that
@@ -16317,7 +16317,7 @@ class VirtualNetworkClient(object):
         returned. For information about the public IP limits, see
         `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param str public_ip_id: (required)
@@ -16405,7 +16405,7 @@ class VirtualNetworkClient(object):
         :param str public_ip_pool_id: (required)
             The `OCID`__ of the public IP pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePublicIpPoolDetails update_public_ip_pool_details: (required)
             Public IP pool details.
@@ -16749,7 +16749,7 @@ class VirtualNetworkClient(object):
         :param str service_gateway_id: (required)
             The service gateway's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateServiceGatewayDetails update_service_gateway_details: (required)
             Details object for updating a service gateway.
@@ -16920,7 +16920,7 @@ class VirtualNetworkClient(object):
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateTunnelCpeDeviceConfigDetails update_tunnel_cpe_device_config_details: (required)
             Request to input the tunnel's cpe configuration parameters
@@ -17022,7 +17022,7 @@ class VirtualNetworkClient(object):
         :param str vcn_id: (required)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.
@@ -17125,7 +17125,7 @@ class VirtualNetworkClient(object):
         Oracle must verify the customer's ownership of each added prefix before
         traffic for that prefix will flow across the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param str virtual_circuit_id: (required)
@@ -17214,7 +17214,7 @@ class VirtualNetworkClient(object):
         :param str vlan_id: (required)
             The `OCID`__ of the VLAN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVlanDetails update_vlan_details: (required)
             Details object for updating a subnet.
@@ -17383,13 +17383,13 @@ class VirtualNetworkClient(object):
         Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for validation if you have not already
         modified the information for the BYOIP CIDR block with your Regional Internet Registry. See `To import a CIDR block`__ for details.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/BYOIP.htm#import_cidr
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr
 
 
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17465,7 +17465,7 @@ class VirtualNetworkClient(object):
         :param str byoip_range_id: (required)
             The `OCID`__ of the `ByoipRange` resource containing the BYOIP CIDR block.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.

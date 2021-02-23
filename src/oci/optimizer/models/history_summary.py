@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class HistorySummary(object):
     """
     The metadata associated with the recommendation history and its related resources.
-
-    **Caution:** Avoid using any confidential information when you use the API to supply string values.
     """
 
     #: A constant which can be used with the lifecycle_state property of a HistorySummary.

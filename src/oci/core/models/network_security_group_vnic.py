@@ -54,7 +54,7 @@ class NetworkSecurityGroupVnic(object):
         The `OCID`__ of the parent resource that the VNIC
         is attached to (for example, a Compute instance).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this NetworkSecurityGroupVnic.
@@ -69,7 +69,7 @@ class NetworkSecurityGroupVnic(object):
         The `OCID`__ of the parent resource that the VNIC
         is attached to (for example, a Compute instance).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this NetworkSecurityGroupVnic.
@@ -117,7 +117,7 @@ class NetworkSecurityGroupVnic(object):
         **[Required]** Gets the vnic_id of this NetworkSecurityGroupVnic.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this NetworkSecurityGroupVnic.
@@ -131,7 +131,7 @@ class NetworkSecurityGroupVnic(object):
         Sets the vnic_id of this NetworkSecurityGroupVnic.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this NetworkSecurityGroupVnic.

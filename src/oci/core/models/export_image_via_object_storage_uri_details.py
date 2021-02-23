@@ -23,6 +23,11 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
             The value to assign to the destination_type property of this ExportImageViaObjectStorageUriDetails.
         :type destination_type: str
 
+        :param export_format:
+            The value to assign to the export_format property of this ExportImageViaObjectStorageUriDetails.
+            Allowed values for this property are: "QCOW2", "VMDK", "OCI", "VHD", "VDI"
+        :type export_format: str
+
         :param destination_uri:
             The value to assign to the destination_uri property of this ExportImageViaObjectStorageUriDetails.
         :type destination_uri: str
@@ -30,15 +35,18 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
         """
         self.swagger_types = {
             'destination_type': 'str',
+            'export_format': 'str',
             'destination_uri': 'str'
         }
 
         self.attribute_map = {
             'destination_type': 'destinationType',
+            'export_format': 'exportFormat',
             'destination_uri': 'destinationUri'
         }
 
         self._destination_type = None
+        self._export_format = None
         self._destination_uri = None
         self._destination_type = 'objectStorageUri'
 

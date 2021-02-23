@@ -14,7 +14,7 @@ class DhcpDnsOption(DhcpOption):
     For more information, see
     `DNS in Your Virtual Cloud Network`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
     """
 
     #: A constant which can be used with the server_type property of a DhcpDnsOption.
@@ -113,7 +113,7 @@ class DhcpDnsOption(DhcpOption):
         * **CustomDnsServer:** Instances use a DNS server of your choice (three
         maximum).
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
         Allowed values for this property are: "VcnLocal", "VcnLocalPlusInternet", "CustomDnsServer", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -144,7 +144,7 @@ class DhcpDnsOption(DhcpOption):
         * **CustomDnsServer:** Instances use a DNS server of your choice (three
         maximum).
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param server_type: The server_type of this DhcpDnsOption.

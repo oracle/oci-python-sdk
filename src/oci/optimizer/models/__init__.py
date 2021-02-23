@@ -6,6 +6,7 @@ from __future__ import absolute_import
 
 from .action import Action
 from .bulk_apply_recommendations_details import BulkApplyRecommendationsDetails
+from .bulk_apply_resource_action import BulkApplyResourceAction
 from .category import Category
 from .category_collection import CategoryCollection
 from .category_summary import CategorySummary
@@ -23,13 +24,20 @@ from .profile_summary import ProfileSummary
 from .recommendation import Recommendation
 from .recommendation_collection import RecommendationCollection
 from .recommendation_count import RecommendationCount
+from .recommendation_strategy_collection import RecommendationStrategyCollection
+from .recommendation_strategy_summary import RecommendationStrategySummary
 from .recommendation_summary import RecommendationSummary
 from .resource_action import ResourceAction
 from .resource_action_collection import ResourceActionCollection
 from .resource_action_summary import ResourceActionSummary
 from .resource_count import ResourceCount
+from .strategy import Strategy
+from .strategy_parameter import StrategyParameter
 from .supported_level import SupportedLevel
 from .supported_levels import SupportedLevels
+from .target_compartments import TargetCompartments
+from .target_tag import TargetTag
+from .target_tags import TargetTags
 from .update_enrollment_status_details import UpdateEnrollmentStatusDetails
 from .update_profile_details import UpdateProfileDetails
 from .update_recommendation_details import UpdateRecommendationDetails
@@ -46,6 +54,7 @@ from .work_request_resource import WorkRequestResource
 optimizer_type_mapping = {
     "Action": Action,
     "BulkApplyRecommendationsDetails": BulkApplyRecommendationsDetails,
+    "BulkApplyResourceAction": BulkApplyResourceAction,
     "Category": Category,
     "CategoryCollection": CategoryCollection,
     "CategorySummary": CategorySummary,
@@ -63,13 +72,20 @@ optimizer_type_mapping = {
     "Recommendation": Recommendation,
     "RecommendationCollection": RecommendationCollection,
     "RecommendationCount": RecommendationCount,
+    "RecommendationStrategyCollection": RecommendationStrategyCollection,
+    "RecommendationStrategySummary": RecommendationStrategySummary,
     "RecommendationSummary": RecommendationSummary,
     "ResourceAction": ResourceAction,
     "ResourceActionCollection": ResourceActionCollection,
     "ResourceActionSummary": ResourceActionSummary,
     "ResourceCount": ResourceCount,
+    "Strategy": Strategy,
+    "StrategyParameter": StrategyParameter,
     "SupportedLevel": SupportedLevel,
     "SupportedLevels": SupportedLevels,
+    "TargetCompartments": TargetCompartments,
+    "TargetTag": TargetTag,
+    "TargetTags": TargetTags,
     "UpdateEnrollmentStatusDetails": UpdateEnrollmentStatusDetails,
     "UpdateProfileDetails": UpdateProfileDetails,
     "UpdateRecommendationDetails": UpdateRecommendationDetails,

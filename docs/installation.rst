@@ -20,7 +20,7 @@ This topic describes how to install, configure, and use the Oracle Cloud Infrast
 
 The Python SDK requires:
 
-* Python version 3.5 or 3.6
+* Python version 3.6+
 * `OpenSSL`_ version 1.0.1 or later. The Python SDK uses the `Cryptography.io`_ library which requires `OpenSSL`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
 
 In addition, all Oracle Cloud Infrastructure SDKs require:

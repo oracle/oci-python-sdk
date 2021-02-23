@@ -107,6 +107,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this LaunchInstanceDetails.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param platform_config:
+            The value to assign to the platform_config property of this LaunchInstanceDetails.
+        :type platform_config: oci.core.models.LaunchInstancePlatformConfig
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -130,7 +134,8 @@ class LaunchInstanceDetails(object):
             'shape_config': 'LaunchInstanceShapeConfigDetails',
             'source_details': 'InstanceSourceDetails',
             'subnet_id': 'str',
-            'is_pv_encryption_in_transit_enabled': 'bool'
+            'is_pv_encryption_in_transit_enabled': 'bool',
+            'platform_config': 'LaunchInstancePlatformConfig'
         }
 
         self.attribute_map = {
@@ -155,7 +160,8 @@ class LaunchInstanceDetails(object):
             'shape_config': 'shapeConfig',
             'source_details': 'sourceDetails',
             'subnet_id': 'subnetId',
-            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'platform_config': 'platformConfig'
         }
 
         self._availability_domain = None
@@ -180,6 +186,7 @@ class LaunchInstanceDetails(object):
         self._source_details = None
         self._subnet_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._platform_config = None
 
     @property
     def availability_domain(self):
@@ -916,6 +923,26 @@ class LaunchInstanceDetails(object):
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def platform_config(self):
+        """
+        Gets the platform_config of this LaunchInstanceDetails.
+
+        :return: The platform_config of this LaunchInstanceDetails.
+        :rtype: oci.core.models.LaunchInstancePlatformConfig
+        """
+        return self._platform_config
+
+    @platform_config.setter
+    def platform_config(self, platform_config):
+        """
+        Sets the platform_config of this LaunchInstanceDetails.
+
+        :param platform_config: The platform_config of this LaunchInstanceDetails.
+        :type: oci.core.models.LaunchInstancePlatformConfig
+        """
+        self._platform_config = platform_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

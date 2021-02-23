@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.31.2 - 2021-02-23
+====================
+
+Added
+-----
+* Support for the OCI Registry service
+* Support for exporting an existing running VM, or a copy of VM, into a VMDK, QCOW2, VDI, VHD, or OCI formatted image in the Compute service
+* Support for platform configurations on instances in the Compute service
+* Support for providing target tags and target compartments on profiles in the Optimizer service
+* Support for the 'Fix it' feature in the Optimizer service
+
+====================
 2.31.1 - 2021-02-16
 ====================
 

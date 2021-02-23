@@ -46,7 +46,7 @@ class ServiceIdResponseDetails(object):
         **[Required]** Gets the service_id of this ServiceIdResponseDetails.
         The `OCID`__ of the service.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The service_id of this ServiceIdResponseDetails.
@@ -60,7 +60,7 @@ class ServiceIdResponseDetails(object):
         Sets the service_id of this ServiceIdResponseDetails.
         The `OCID`__ of the service.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param service_id: The service_id of this ServiceIdResponseDetails.

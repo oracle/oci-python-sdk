@@ -10,6 +10,8 @@ from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
 from .add_vcn_cidr_details import AddVcnCidrDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
+from .amd_milan_bm_launch_instance_platform_config import AmdMilanBmLaunchInstancePlatformConfig
+from .amd_milan_bm_platform_config import AmdMilanBmPlatformConfig
 from .app_catalog_listing import AppCatalogListing
 from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
 from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
@@ -202,6 +204,7 @@ from .instance_agent_features import InstanceAgentFeatures
 from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetails
 from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
+from .instance_configuration_amd_milan_bm_launch_instance_platform_config import InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
 from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
 from .instance_configuration_availability_config import InstanceConfigurationAvailabilityConfig
@@ -216,6 +219,7 @@ from .instance_configuration_instance_source_via_image_details import InstanceCo
 from .instance_configuration_iscsi_attach_volume_details import InstanceConfigurationIscsiAttachVolumeDetails
 from .instance_configuration_launch_instance_agent_config_details import InstanceConfigurationLaunchInstanceAgentConfigDetails
 from .instance_configuration_launch_instance_details import InstanceConfigurationLaunchInstanceDetails
+from .instance_configuration_launch_instance_platform_config import InstanceConfigurationLaunchInstancePlatformConfig
 from .instance_configuration_launch_instance_shape_config_details import InstanceConfigurationLaunchInstanceShapeConfigDetails
 from .instance_configuration_launch_options import InstanceConfigurationLaunchOptions
 from .instance_configuration_paravirtualized_attach_volume_details import InstanceConfigurationParavirtualizedAttachVolumeDetails
@@ -242,6 +246,7 @@ from .ipv6 import Ipv6
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_availability_config_details import LaunchInstanceAvailabilityConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
+from .launch_instance_platform_config import LaunchInstancePlatformConfig
 from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
@@ -252,6 +257,7 @@ from .network_security_group import NetworkSecurityGroup
 from .network_security_group_vnic import NetworkSecurityGroupVnic
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
+from .platform_config import PlatformConfig
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .public_ip import PublicIp
@@ -370,6 +376,8 @@ core_type_mapping = {
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
     "AddVcnCidrDetails": AddVcnCidrDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
+    "AmdMilanBmLaunchInstancePlatformConfig": AmdMilanBmLaunchInstancePlatformConfig,
+    "AmdMilanBmPlatformConfig": AmdMilanBmPlatformConfig,
     "AppCatalogListing": AppCatalogListing,
     "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
     "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
@@ -562,6 +570,7 @@ core_type_mapping = {
     "InstanceAgentPluginConfigDetails": InstanceAgentPluginConfigDetails,
     "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
+    "InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig": InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
     "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
     "InstanceConfigurationAvailabilityConfig": InstanceConfigurationAvailabilityConfig,
@@ -576,6 +585,7 @@ core_type_mapping = {
     "InstanceConfigurationIscsiAttachVolumeDetails": InstanceConfigurationIscsiAttachVolumeDetails,
     "InstanceConfigurationLaunchInstanceAgentConfigDetails": InstanceConfigurationLaunchInstanceAgentConfigDetails,
     "InstanceConfigurationLaunchInstanceDetails": InstanceConfigurationLaunchInstanceDetails,
+    "InstanceConfigurationLaunchInstancePlatformConfig": InstanceConfigurationLaunchInstancePlatformConfig,
     "InstanceConfigurationLaunchInstanceShapeConfigDetails": InstanceConfigurationLaunchInstanceShapeConfigDetails,
     "InstanceConfigurationLaunchOptions": InstanceConfigurationLaunchOptions,
     "InstanceConfigurationParavirtualizedAttachVolumeDetails": InstanceConfigurationParavirtualizedAttachVolumeDetails,
@@ -602,6 +612,7 @@ core_type_mapping = {
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceAvailabilityConfigDetails": LaunchInstanceAvailabilityConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
+    "LaunchInstancePlatformConfig": LaunchInstancePlatformConfig,
     "LaunchInstanceShapeConfigDetails": LaunchInstanceShapeConfigDetails,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
@@ -612,6 +623,7 @@ core_type_mapping = {
     "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
+    "PlatformConfig": PlatformConfig,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "PublicIp": PublicIp,

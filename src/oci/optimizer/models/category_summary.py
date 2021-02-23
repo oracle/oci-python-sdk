@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CategorySummary(object):
     """
     The metadata associated with the category summary.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a CategorySummary.
@@ -188,7 +186,7 @@ class CategorySummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this CategorySummary.
-        The name assigned to the category.
+        The name assigned to the category. Avoid entering confidential information.
 
 
         :return: The name of this CategorySummary.
@@ -200,7 +198,7 @@ class CategorySummary(object):
     def name(self, name):
         """
         Sets the name of this CategorySummary.
-        The name assigned to the category.
+        The name assigned to the category. Avoid entering confidential information.
 
 
         :param name: The name of this CategorySummary.
@@ -212,7 +210,7 @@ class CategorySummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this CategorySummary.
-        Text describing the category.
+        Text describing the category. Avoid entering confidential information.
 
 
         :return: The description of this CategorySummary.
@@ -224,7 +222,7 @@ class CategorySummary(object):
     def description(self, description):
         """
         Sets the description of this CategorySummary.
-        Text describing the category.
+        Text describing the category. Avoid entering confidential information.
 
 
         :param description: The description of this CategorySummary.

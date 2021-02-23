@@ -20,9 +20,9 @@ class Subnet(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVCNs.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Subnet.
@@ -391,7 +391,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Subnet.
@@ -417,7 +417,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Subnet.
@@ -493,7 +493,7 @@ class Subnet(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this Subnet.
@@ -511,7 +511,7 @@ class Subnet(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this Subnet.
@@ -719,7 +719,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The subnet_domain_name of this Subnet.
@@ -739,7 +739,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param subnet_domain_name: The subnet_domain_name of this Subnet.

@@ -23,6 +23,11 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
             The value to assign to the destination_type property of this ExportImageViaObjectStorageTupleDetails.
         :type destination_type: str
 
+        :param export_format:
+            The value to assign to the export_format property of this ExportImageViaObjectStorageTupleDetails.
+            Allowed values for this property are: "QCOW2", "VMDK", "OCI", "VHD", "VDI"
+        :type export_format: str
+
         :param bucket_name:
             The value to assign to the bucket_name property of this ExportImageViaObjectStorageTupleDetails.
         :type bucket_name: str
@@ -38,6 +43,7 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
         """
         self.swagger_types = {
             'destination_type': 'str',
+            'export_format': 'str',
             'bucket_name': 'str',
             'namespace_name': 'str',
             'object_name': 'str'
@@ -45,12 +51,14 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
 
         self.attribute_map = {
             'destination_type': 'destinationType',
+            'export_format': 'exportFormat',
             'bucket_name': 'bucketName',
             'namespace_name': 'namespaceName',
             'object_name': 'objectName'
         }
 
         self._destination_type = None
+        self._export_format = None
         self._bucket_name = None
         self._namespace_name = None
         self._object_name = None

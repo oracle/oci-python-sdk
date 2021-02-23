@@ -40,7 +40,7 @@ class ChangeRouteTableCompartmentDetails(object):
         The `OCID`__ of the compartment to move the
         route table to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeRouteTableCompartmentDetails.
@@ -55,7 +55,7 @@ class ChangeRouteTableCompartmentDetails(object):
         The `OCID`__ of the compartment to move the
         route table to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeRouteTableCompartmentDetails.

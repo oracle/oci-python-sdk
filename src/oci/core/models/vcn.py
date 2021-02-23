@@ -17,8 +17,8 @@ class Vcn(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Vcn.
@@ -394,7 +394,7 @@ class Vcn(object):
 
         Example: `vcn1`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Vcn.
@@ -420,7 +420,7 @@ class Vcn(object):
 
         Example: `vcn1`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Vcn.
@@ -498,7 +498,7 @@ class Vcn(object):
         `IPv6 Addresses`__.
         Example: `2001:0db8:0123::/48`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this Vcn.
@@ -518,7 +518,7 @@ class Vcn(object):
         `IPv6 Addresses`__.
         Example: `2001:0db8:0123::/48`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this Vcn.
@@ -636,7 +636,7 @@ class Vcn(object):
 
         Example: `vcn1.oraclevcn.com`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The vcn_domain_name of this Vcn.
@@ -656,7 +656,7 @@ class Vcn(object):
 
         Example: `vcn1.oraclevcn.com`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param vcn_domain_name: The vcn_domain_name of this Vcn.

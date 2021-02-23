@@ -157,7 +157,7 @@ class UpdateLocalPeeringGatewayDetails(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this UpdateLocalPeeringGatewayDetails.
@@ -174,7 +174,7 @@ class UpdateLocalPeeringGatewayDetails(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this UpdateLocalPeeringGatewayDetails.
