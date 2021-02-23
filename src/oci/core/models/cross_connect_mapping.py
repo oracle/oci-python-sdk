@@ -256,7 +256,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::1/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -281,7 +281,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::1/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param customer_bgp_peering_ipv6: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -305,7 +305,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::2/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -329,7 +329,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::2/64`
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param oracle_bgp_peering_ipv6: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.

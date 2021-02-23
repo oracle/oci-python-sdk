@@ -231,7 +231,7 @@ class CreateCpeDetails(object):
           * :func:`get_tunnel_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cpe_device_shape_id of this CreateCpeDetails.
@@ -256,7 +256,7 @@ class CreateCpeDetails(object):
           * :func:`get_tunnel_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cpe_device_shape_id: The cpe_device_shape_id of this CreateCpeDetails.

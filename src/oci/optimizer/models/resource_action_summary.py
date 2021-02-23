@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class ResourceActionSummary(object):
     """
     The metadata associated with the resource action summary.
-
-    **Caution:** Avoid using any confidential information when you use the API to supply string values.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ResourceActionSummary.

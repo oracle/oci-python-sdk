@@ -38,6 +38,10 @@ class BulkApplyRecommendationsDetails(object):
             The value to assign to the resource_action_ids property of this BulkApplyRecommendationsDetails.
         :type resource_action_ids: list[str]
 
+        :param actions:
+            The value to assign to the actions property of this BulkApplyRecommendationsDetails.
+        :type actions: list[oci.optimizer.models.BulkApplyResourceAction]
+
         :param status:
             The value to assign to the status property of this BulkApplyRecommendationsDetails.
             Allowed values for this property are: "PENDING", "DISMISSED", "POSTPONED", "IMPLEMENTED"
@@ -50,25 +54,30 @@ class BulkApplyRecommendationsDetails(object):
         """
         self.swagger_types = {
             'resource_action_ids': 'list[str]',
+            'actions': 'list[BulkApplyResourceAction]',
             'status': 'str',
             'time_status_end': 'datetime'
         }
 
         self.attribute_map = {
             'resource_action_ids': 'resourceActionIds',
+            'actions': 'actions',
             'status': 'status',
             'time_status_end': 'timeStatusEnd'
         }
 
         self._resource_action_ids = None
+        self._actions = None
         self._status = None
         self._time_status_end = None
 
     @property
     def resource_action_ids(self):
         """
-        **[Required]** Gets the resource_action_ids of this BulkApplyRecommendationsDetails.
+        Gets the resource_action_ids of this BulkApplyRecommendationsDetails.
         The unique OCIDs of the resource actions that recommendations are applied to.
+
+        This field is deprecated.
 
 
         :return: The resource_action_ids of this BulkApplyRecommendationsDetails.
@@ -82,11 +91,37 @@ class BulkApplyRecommendationsDetails(object):
         Sets the resource_action_ids of this BulkApplyRecommendationsDetails.
         The unique OCIDs of the resource actions that recommendations are applied to.
 
+        This field is deprecated.
+
 
         :param resource_action_ids: The resource_action_ids of this BulkApplyRecommendationsDetails.
         :type: list[str]
         """
         self._resource_action_ids = resource_action_ids
+
+    @property
+    def actions(self):
+        """
+        Gets the actions of this BulkApplyRecommendationsDetails.
+        The unique resource actions that recommendations are applied to.
+
+
+        :return: The actions of this BulkApplyRecommendationsDetails.
+        :rtype: list[oci.optimizer.models.BulkApplyResourceAction]
+        """
+        return self._actions
+
+    @actions.setter
+    def actions(self, actions):
+        """
+        Sets the actions of this BulkApplyRecommendationsDetails.
+        The unique resource actions that recommendations are applied to.
+
+
+        :param actions: The actions of this BulkApplyRecommendationsDetails.
+        :type: list[oci.optimizer.models.BulkApplyResourceAction]
+        """
+        self._actions = actions
 
     @property
     def status(self):

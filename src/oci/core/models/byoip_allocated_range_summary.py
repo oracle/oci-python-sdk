@@ -70,7 +70,7 @@ class ByoipAllocatedRangeSummary(object):
         Gets the public_ip_pool_id of this ByoipAllocatedRangeSummary.
         The `OCID`__ of the IP pool containing the CIDR block.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this ByoipAllocatedRangeSummary.
@@ -84,7 +84,7 @@ class ByoipAllocatedRangeSummary(object):
         Sets the public_ip_pool_id of this ByoipAllocatedRangeSummary.
         The `OCID`__ of the IP pool containing the CIDR block.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this ByoipAllocatedRangeSummary.

@@ -209,7 +209,7 @@ class SecurityRule(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The destination of this SecurityRule.
@@ -238,7 +238,7 @@ class SecurityRule(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param destination: The destination of this SecurityRule.
@@ -495,7 +495,7 @@ class SecurityRule(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The source of this SecurityRule.
@@ -524,7 +524,7 @@ class SecurityRule(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param source: The source of this SecurityRule.

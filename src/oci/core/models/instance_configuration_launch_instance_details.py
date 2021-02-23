@@ -89,6 +89,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the shape_config property of this InstanceConfigurationLaunchInstanceDetails.
         :type shape_config: oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
 
+        :param platform_config:
+            The value to assign to the platform_config property of this InstanceConfigurationLaunchInstanceDetails.
+        :type platform_config: oci.core.models.InstanceConfigurationLaunchInstancePlatformConfig
+
         :param source_details:
             The value to assign to the source_details property of this InstanceConfigurationLaunchInstanceDetails.
         :type source_details: oci.core.models.InstanceConfigurationInstanceSourceDetails
@@ -146,6 +150,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'metadata': 'dict(str, str)',
             'shape': 'str',
             'shape_config': 'InstanceConfigurationLaunchInstanceShapeConfigDetails',
+            'platform_config': 'InstanceConfigurationLaunchInstancePlatformConfig',
             'source_details': 'InstanceConfigurationInstanceSourceDetails',
             'fault_domain': 'str',
             'dedicated_vm_host_id': 'str',
@@ -170,6 +175,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'metadata': 'metadata',
             'shape': 'shape',
             'shape_config': 'shapeConfig',
+            'platform_config': 'platformConfig',
             'source_details': 'sourceDetails',
             'fault_domain': 'faultDomain',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
@@ -193,6 +199,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._metadata = None
         self._shape = None
         self._shape_config = None
+        self._platform_config = None
         self._source_details = None
         self._fault_domain = None
         self._dedicated_vm_host_id = None
@@ -659,6 +666,26 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
+
+    @property
+    def platform_config(self):
+        """
+        Gets the platform_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The platform_config of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: oci.core.models.InstanceConfigurationLaunchInstancePlatformConfig
+        """
+        return self._platform_config
+
+    @platform_config.setter
+    def platform_config(self, platform_config):
+        """
+        Sets the platform_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param platform_config: The platform_config of this InstanceConfigurationLaunchInstanceDetails.
+        :type: oci.core.models.InstanceConfigurationLaunchInstancePlatformConfig
+        """
+        self._platform_config = platform_config
 
     @property
     def source_details(self):

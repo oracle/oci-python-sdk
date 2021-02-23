@@ -21,6 +21,26 @@ class ExportImageDetails(object):
     when specifying the Object Storage URL.
     """
 
+    #: A constant which can be used with the export_format property of a ExportImageDetails.
+    #: This constant has a value of "QCOW2"
+    EXPORT_FORMAT_QCOW2 = "QCOW2"
+
+    #: A constant which can be used with the export_format property of a ExportImageDetails.
+    #: This constant has a value of "VMDK"
+    EXPORT_FORMAT_VMDK = "VMDK"
+
+    #: A constant which can be used with the export_format property of a ExportImageDetails.
+    #: This constant has a value of "OCI"
+    EXPORT_FORMAT_OCI = "OCI"
+
+    #: A constant which can be used with the export_format property of a ExportImageDetails.
+    #: This constant has a value of "VHD"
+    EXPORT_FORMAT_VHD = "VHD"
+
+    #: A constant which can be used with the export_format property of a ExportImageDetails.
+    #: This constant has a value of "VDI"
+    EXPORT_FORMAT_VDI = "VDI"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExportImageDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,16 +55,24 @@ class ExportImageDetails(object):
             The value to assign to the destination_type property of this ExportImageDetails.
         :type destination_type: str
 
+        :param export_format:
+            The value to assign to the export_format property of this ExportImageDetails.
+            Allowed values for this property are: "QCOW2", "VMDK", "OCI", "VHD", "VDI"
+        :type export_format: str
+
         """
         self.swagger_types = {
-            'destination_type': 'str'
+            'destination_type': 'str',
+            'export_format': 'str'
         }
 
         self.attribute_map = {
-            'destination_type': 'destinationType'
+            'destination_type': 'destinationType',
+            'export_format': 'exportFormat'
         }
 
         self._destination_type = None
+        self._export_format = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -87,6 +115,38 @@ class ExportImageDetails(object):
         :type: str
         """
         self._destination_type = destination_type
+
+    @property
+    def export_format(self):
+        """
+        Gets the export_format of this ExportImageDetails.
+        The format of the image to be exported. The default value is \"OCI\".
+
+        Allowed values for this property are: "QCOW2", "VMDK", "OCI", "VHD", "VDI"
+
+
+        :return: The export_format of this ExportImageDetails.
+        :rtype: str
+        """
+        return self._export_format
+
+    @export_format.setter
+    def export_format(self, export_format):
+        """
+        Sets the export_format of this ExportImageDetails.
+        The format of the image to be exported. The default value is \"OCI\".
+
+
+        :param export_format: The export_format of this ExportImageDetails.
+        :type: str
+        """
+        allowed_values = ["QCOW2", "VMDK", "OCI", "VHD", "VDI"]
+        if not value_allowed_none_or_none_sentinel(export_format, allowed_values):
+            raise ValueError(
+                "Invalid value for `export_format`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._export_format = export_format
 
     def __repr__(self):
         return formatted_flat_dict(self)

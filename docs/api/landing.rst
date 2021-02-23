@@ -10,6 +10,7 @@ API Reference
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
 * :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
+* :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
@@ -120,6 +121,7 @@ API Reference
     announcements_service
     apigateway
     application_migration
+    artifacts
     audit
     autoscaling
     bds

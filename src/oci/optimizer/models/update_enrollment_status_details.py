@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateEnrollmentStatusDetails(object):
     """
     The request object for updating the enrollment status details.
-
-    **Caution:** Avoid using any confidential information when you use the API to supply string values.
     """
 
     #: A constant which can be used with the status property of a UpdateEnrollmentStatusDetails.

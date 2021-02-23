@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class Action(object):
     """
     Details about the recommended action.
-
-    **Caution:** Avoid using any confidential information when you use the API to supply string values.
     """
 
     #: A constant which can be used with the type property of a Action.

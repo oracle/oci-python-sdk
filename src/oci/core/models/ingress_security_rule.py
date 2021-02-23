@@ -195,7 +195,7 @@ class IngressSecurityRule(object):
             setting up a security list rule for traffic coming from a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The source of this IngressSecurityRule.
@@ -220,7 +220,7 @@ class IngressSecurityRule(object):
             setting up a security list rule for traffic coming from a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param source: The source of this IngressSecurityRule.

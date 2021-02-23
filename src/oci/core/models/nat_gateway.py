@@ -21,8 +21,8 @@ class NatGateway(object):
     policies to give users access, see `Getting Started with
     Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/NATgateway.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/NATgateway.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a NatGateway.
@@ -140,7 +140,7 @@ class NatGateway(object):
         The `OCID`__ of the compartment that contains
         the NAT gateway.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this NatGateway.
@@ -155,7 +155,7 @@ class NatGateway(object):
         The `OCID`__ of the compartment that contains
         the NAT gateway.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this NatGateway.
@@ -264,7 +264,7 @@ class NatGateway(object):
         The `OCID`__ of the
         NAT gateway.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this NatGateway.
@@ -279,7 +279,7 @@ class NatGateway(object):
         The `OCID`__ of the
         NAT gateway.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this NatGateway.
@@ -408,7 +408,7 @@ class NatGateway(object):
         The `OCID`__ of the VCN the NAT gateway
         belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this NatGateway.
@@ -423,7 +423,7 @@ class NatGateway(object):
         The `OCID`__ of the VCN the NAT gateway
         belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this NatGateway.
@@ -437,7 +437,7 @@ class NatGateway(object):
         Gets the public_ip_id of this NatGateway.
         The `OCID`__ of the public IP address associated with the NAT gateway.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_id of this NatGateway.
@@ -451,7 +451,7 @@ class NatGateway(object):
         Sets the public_ip_id of this NatGateway.
         The `OCID`__ of the public IP address associated with the NAT gateway.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_id: The public_ip_id of this NatGateway.

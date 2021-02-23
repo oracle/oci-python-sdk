@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class Recommendation(object):
     """
     The metadata associated with the recommendation.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the importance property of a Recommendation.

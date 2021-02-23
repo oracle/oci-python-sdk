@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateProfileDetails(object):
     """
     Details for creating a profile.
-
-    **Caution:** Avoid using any confidential information when you use the API to supply string values.
     """
 
     def __init__(self, **kwargs):
@@ -44,6 +42,14 @@ class CreateProfileDetails(object):
             The value to assign to the levels_configuration property of this CreateProfileDetails.
         :type levels_configuration: oci.optimizer.models.LevelsConfiguration
 
+        :param target_compartments:
+            The value to assign to the target_compartments property of this CreateProfileDetails.
+        :type target_compartments: oci.optimizer.models.TargetCompartments
+
+        :param target_tags:
+            The value to assign to the target_tags property of this CreateProfileDetails.
+        :type target_tags: oci.optimizer.models.TargetTags
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -51,7 +57,9 @@ class CreateProfileDetails(object):
             'description': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'levels_configuration': 'LevelsConfiguration'
+            'levels_configuration': 'LevelsConfiguration',
+            'target_compartments': 'TargetCompartments',
+            'target_tags': 'TargetTags'
         }
 
         self.attribute_map = {
@@ -60,7 +68,9 @@ class CreateProfileDetails(object):
             'description': 'description',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'levels_configuration': 'levelsConfiguration'
+            'levels_configuration': 'levelsConfiguration',
+            'target_compartments': 'targetCompartments',
+            'target_tags': 'targetTags'
         }
 
         self._compartment_id = None
@@ -69,6 +79,8 @@ class CreateProfileDetails(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._levels_configuration = None
+        self._target_compartments = None
+        self._target_tags = None
 
     @property
     def compartment_id(self):
@@ -98,7 +110,7 @@ class CreateProfileDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateProfileDetails.
-        The name assigned to the profile.
+        The name assigned to the profile. Avoid entering confidential information.
 
 
         :return: The name of this CreateProfileDetails.
@@ -110,7 +122,7 @@ class CreateProfileDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateProfileDetails.
-        The name assigned to the profile.
+        The name assigned to the profile. Avoid entering confidential information.
 
 
         :param name: The name of this CreateProfileDetails.
@@ -122,7 +134,7 @@ class CreateProfileDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this CreateProfileDetails.
-        Text describing the profile.
+        Text describing the profile. Avoid entering confidential information.
 
 
         :return: The description of this CreateProfileDetails.
@@ -134,7 +146,7 @@ class CreateProfileDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateProfileDetails.
-        Text describing the profile.
+        Text describing the profile. Avoid entering confidential information.
 
 
         :param description: The description of this CreateProfileDetails.
@@ -229,6 +241,46 @@ class CreateProfileDetails(object):
         :type: oci.optimizer.models.LevelsConfiguration
         """
         self._levels_configuration = levels_configuration
+
+    @property
+    def target_compartments(self):
+        """
+        Gets the target_compartments of this CreateProfileDetails.
+
+        :return: The target_compartments of this CreateProfileDetails.
+        :rtype: oci.optimizer.models.TargetCompartments
+        """
+        return self._target_compartments
+
+    @target_compartments.setter
+    def target_compartments(self, target_compartments):
+        """
+        Sets the target_compartments of this CreateProfileDetails.
+
+        :param target_compartments: The target_compartments of this CreateProfileDetails.
+        :type: oci.optimizer.models.TargetCompartments
+        """
+        self._target_compartments = target_compartments
+
+    @property
+    def target_tags(self):
+        """
+        Gets the target_tags of this CreateProfileDetails.
+
+        :return: The target_tags of this CreateProfileDetails.
+        :rtype: oci.optimizer.models.TargetTags
+        """
+        return self._target_tags
+
+    @target_tags.setter
+    def target_tags(self, target_tags):
+        """
+        Sets the target_tags of this CreateProfileDetails.
+
+        :param target_tags: The target_tags of this CreateProfileDetails.
+        :type: oci.optimizer.models.TargetTags
+        """
+        self._target_tags = target_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

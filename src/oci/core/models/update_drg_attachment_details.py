@@ -77,8 +77,8 @@ class UpdateDrgAttachmentDetails(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :return: The route_table_id of this UpdateDrgAttachmentDetails.
@@ -97,8 +97,8 @@ class UpdateDrgAttachmentDetails(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :param route_table_id: The route_table_id of this UpdateDrgAttachmentDetails.

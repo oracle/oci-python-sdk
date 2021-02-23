@@ -20,6 +20,7 @@ Optimizer
 
     oci.optimizer.models.Action
     oci.optimizer.models.BulkApplyRecommendationsDetails
+    oci.optimizer.models.BulkApplyResourceAction
     oci.optimizer.models.Category
     oci.optimizer.models.CategoryCollection
     oci.optimizer.models.CategorySummary
@@ -37,13 +38,20 @@ Optimizer
     oci.optimizer.models.Recommendation
     oci.optimizer.models.RecommendationCollection
     oci.optimizer.models.RecommendationCount
+    oci.optimizer.models.RecommendationStrategyCollection
+    oci.optimizer.models.RecommendationStrategySummary
     oci.optimizer.models.RecommendationSummary
     oci.optimizer.models.ResourceAction
     oci.optimizer.models.ResourceActionCollection
     oci.optimizer.models.ResourceActionSummary
     oci.optimizer.models.ResourceCount
+    oci.optimizer.models.Strategy
+    oci.optimizer.models.StrategyParameter
     oci.optimizer.models.SupportedLevel
     oci.optimizer.models.SupportedLevels
+    oci.optimizer.models.TargetCompartments
+    oci.optimizer.models.TargetTag
+    oci.optimizer.models.TargetTags
     oci.optimizer.models.UpdateEnrollmentStatusDetails
     oci.optimizer.models.UpdateProfileDetails
     oci.optimizer.models.UpdateRecommendationDetails
