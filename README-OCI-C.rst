@@ -30,11 +30,13 @@ There are two files you will need to modify:
 
 1. `setup.py <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-sdk/browse/setup.py#32-39>`_:
 Change the dependency version in the `requires` section. In order to be compatible with Python 2, please update the
-`cryptography` version to 2.8.
+`cryptography` version to 3.2.1.
 
 2. Optional but recommended for development and tests `requirements.txt <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-sdk/browse/requirements.txt#5,8>`_:
 Update the dependency version for the package you wish to modify. In order to be compatible with Python 2, please
-set `cryptography` version to 2.8 and `pyopenSSL` version to 18.0.0.
+set `cryptography` version to 3.2.1.
+
+This is the PR where we've upgraded `cryptography` https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-sdk/pull-requests/2639/overview
 
 
 Running Tests
