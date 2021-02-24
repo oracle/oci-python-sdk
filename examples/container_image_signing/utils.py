@@ -97,7 +97,9 @@ def get_and_verify_image_signature_metadata(artifacts_client, config, compartmen
     :param trusted_keys: List of OCIDs of the kmsKeyId used to sign the container image.
     :return: Boolean to indicate if any of the signatures of the container image is verified
     """
-    return get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id, compartment_id_in_subtree, repository_name, image_digest, trusted_keys, "")
+    return get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id,
+                                                          compartment_id_in_subtree, repository_name, image_digest,
+                                                          trusted_keys, None)
 
 
 def get_and_verify_image_signature_metadata_helper(artifacts_client, config, compartment_id, compartment_id_in_subtree,
@@ -205,19 +207,22 @@ def verify_signatures(config, container_image_signature_summary):
     region = config.get("region")
 
     for signature_summary in container_image_signature_summary:
-        vault_crypto_client = build_vault_crypto_client(config, signature_summary.kms_key_id, region)
-        algo = mapping_verify_data_details_signing_algorithm.get(signature_summary.signing_algorithm)
-        verified_data = verify_signature(
-            vault_crypto_client,
-            signature_summary.message,
-            signature_summary.signature,
-            signature_summary.kms_key_id,
-            signature_summary.kms_key_version_id,
-            algo
-        )
+        if signature_summary is not None:
+            vault_crypto_client = build_vault_crypto_client(config, signature_summary.kms_key_id, region)
+            algo = mapping_verify_data_details_signing_algorithm.get(signature_summary.signing_algorithm)
+            if algo is None:
+                raise Exception("The verify data details signing algorithm is not valid. Please check.")
+            verified_data = verify_signature(
+                vault_crypto_client,
+                signature_summary.message,
+                signature_summary.signature,
+                signature_summary.kms_key_id,
+                signature_summary.kms_key_version_id,
+                algo
+            )
+            if verified_data.is_signature_valid:
+                return True
 
-        if verified_data.is_signature_valid:
-            return True
     return False
 
 
