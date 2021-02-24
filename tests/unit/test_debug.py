@@ -15,27 +15,26 @@ def test_client_call_success(capfd, config):
 
     resout, _ = capfd.readouterr()
 
-    assert 'user-agent: Oracle-PythonSDK/' in resout
-    assert 'opc-client-info: Oracle-PythonSDK/' in resout
-    assert 'opc-request-id: ' in resout
-    assert '200 OK' in resout
-    assert 'example_extra_user_agent_text' in resout
+    assert "'user-agent': 'Oracle-PythonSDK" in resout
+    assert "'opc-client-info': 'Oracle-PythonSDK/" in resout
+    assert "'opc-request-id': " in resout
+    assert "'reason': 'OK'" in resout
+    assert "'status_code': 200" in resout
+    assert "example_extra_user_agent_text" in resout
 
 
 def test_client_disable_log(capfd, config):
-    config["log_requests"] = True
+    config["log_requests"] = False
     logging.basicConfig()
     config["additional_user_agent"] = 'example_extra_user_agent_text'
     identity = oci.identity.IdentityClient(config)
-    logger = logging.getLogger('oci.base_client.{}'.format(id(identity.base_client)))
-    logger.disabled = True
-    oci.base_client.is_http_log_enabled(False)
     response = identity.list_policies(config["tenancy"])
 
     assert response.status == 200
     resout, _ = capfd.readouterr()
-    assert 'user-agent: Oracle-PythonSDK/' not in resout
-    assert 'opc-client-info: Oracle-PythonSDK/' not in resout
-    assert 'opc-request-id: ' not in resout
-    assert '200 OK' not in resout
-    assert 'example_extra_user_agent_text' not in resout
+    assert "'user-agent': 'Oracle-PythonSDK" not in resout
+    assert "'opc-client-info': 'Oracle-PythonSDK/" not in resout
+    assert "'opc-request-id': " not in resout
+    assert "'reason': 'OK'" not in resout
+    assert "'status_code': 200" not in resout
+    assert "example_extra_user_agent_text" not in resout
