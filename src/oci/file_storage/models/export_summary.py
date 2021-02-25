@@ -90,7 +90,9 @@ class ExportSummary(object):
     def export_set_id(self):
         """
         **[Required]** Gets the export_set_id of this ExportSummary.
-        The OCID of this export's export set.
+        The `OCID`__ of this export's export set.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_set_id of this ExportSummary.
@@ -102,7 +104,9 @@ class ExportSummary(object):
     def export_set_id(self, export_set_id):
         """
         Sets the export_set_id of this ExportSummary.
-        The OCID of this export's export set.
+        The `OCID`__ of this export's export set.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param export_set_id: The export_set_id of this ExportSummary.
@@ -114,7 +118,9 @@ class ExportSummary(object):
     def file_system_id(self):
         """
         **[Required]** Gets the file_system_id of this ExportSummary.
-        The OCID of this export's file system.
+        The `OCID`__ of this export's file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this ExportSummary.
@@ -126,7 +132,9 @@ class ExportSummary(object):
     def file_system_id(self, file_system_id):
         """
         Sets the file_system_id of this ExportSummary.
-        The OCID of this export's file system.
+        The `OCID`__ of this export's file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this ExportSummary.
@@ -138,7 +146,9 @@ class ExportSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ExportSummary.
-        The OCID of this export.
+        The `OCID`__ of this export.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExportSummary.
@@ -150,7 +160,9 @@ class ExportSummary(object):
     def id(self, id):
         """
         Sets the id of this ExportSummary.
-        The OCID of this export.
+        The `OCID`__ of this export.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExportSummary.

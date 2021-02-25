@@ -45,7 +45,7 @@ class Target(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this Target.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "REST_OPERATOR", "TASK_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -119,6 +119,14 @@ class Target(Operator):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_property: str
 
+        :param schema_drift_config:
+            The value to assign to the schema_drift_config property of this Target.
+        :type schema_drift_config: oci.data_integration.models.SchemaDriftConfig
+
+        :param fixed_data_shape:
+            The value to assign to the fixed_data_shape property of this Target.
+        :type fixed_data_shape: oci.data_integration.models.Shape
+
         :param write_operation_config:
             The value to assign to the write_operation_config property of this Target.
         :type write_operation_config: oci.data_integration.models.WriteOperationConfig
@@ -143,6 +151,8 @@ class Target(Operator):
             'is_copy_fields': 'bool',
             'is_predefined_shape': 'bool',
             'data_property': 'str',
+            'schema_drift_config': 'SchemaDriftConfig',
+            'fixed_data_shape': 'Shape',
             'write_operation_config': 'WriteOperationConfig'
         }
 
@@ -165,6 +175,8 @@ class Target(Operator):
             'is_copy_fields': 'isCopyFields',
             'is_predefined_shape': 'isPredefinedShape',
             'data_property': 'dataProperty',
+            'schema_drift_config': 'schemaDriftConfig',
+            'fixed_data_shape': 'fixedDataShape',
             'write_operation_config': 'writeOperationConfig'
         }
 
@@ -186,6 +198,8 @@ class Target(Operator):
         self._is_copy_fields = None
         self._is_predefined_shape = None
         self._data_property = None
+        self._schema_drift_config = None
+        self._fixed_data_shape = None
         self._write_operation_config = None
         self._model_type = 'TARGET_OPERATOR'
 
@@ -310,6 +324,46 @@ class Target(Operator):
         if not value_allowed_none_or_none_sentinel(data_property, allowed_values):
             data_property = 'UNKNOWN_ENUM_VALUE'
         self._data_property = data_property
+
+    @property
+    def schema_drift_config(self):
+        """
+        Gets the schema_drift_config of this Target.
+
+        :return: The schema_drift_config of this Target.
+        :rtype: oci.data_integration.models.SchemaDriftConfig
+        """
+        return self._schema_drift_config
+
+    @schema_drift_config.setter
+    def schema_drift_config(self, schema_drift_config):
+        """
+        Sets the schema_drift_config of this Target.
+
+        :param schema_drift_config: The schema_drift_config of this Target.
+        :type: oci.data_integration.models.SchemaDriftConfig
+        """
+        self._schema_drift_config = schema_drift_config
+
+    @property
+    def fixed_data_shape(self):
+        """
+        Gets the fixed_data_shape of this Target.
+
+        :return: The fixed_data_shape of this Target.
+        :rtype: oci.data_integration.models.Shape
+        """
+        return self._fixed_data_shape
+
+    @fixed_data_shape.setter
+    def fixed_data_shape(self, fixed_data_shape):
+        """
+        Sets the fixed_data_shape of this Target.
+
+        :param fixed_data_shape: The fixed_data_shape of this Target.
+        :type: oci.data_integration.models.Shape
+        """
+        self._fixed_data_shape = fixed_data_shape
 
     @property
     def write_operation_config(self):

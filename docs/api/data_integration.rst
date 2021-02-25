@@ -21,9 +21,11 @@ Data Integration
     oci.data_integration.models.AbstractDataOperationConfig
     oci.data_integration.models.AbstractField
     oci.data_integration.models.AbstractFormatAttribute
+    oci.data_integration.models.AbstractFrequencyDetails
     oci.data_integration.models.AbstractReadAttribute
     oci.data_integration.models.AbstractWriteAttribute
     oci.data_integration.models.Aggregator
+    oci.data_integration.models.AggregatorSummary
     oci.data_integration.models.Application
     oci.data_integration.models.ApplicationDetails
     oci.data_integration.models.ApplicationSummary
@@ -35,6 +37,7 @@ Data Integration
     oci.data_integration.models.ChildReferenceDetail
     oci.data_integration.models.CompositeFieldMap
     oci.data_integration.models.CompositeType
+    oci.data_integration.models.Compression
     oci.data_integration.models.ConditionalInputLink
     oci.data_integration.models.ConfigDefinition
     oci.data_integration.models.ConfigParameterDefinition
@@ -96,17 +99,22 @@ Data Integration
     oci.data_integration.models.CreateExternalPublicationValidationDetails
     oci.data_integration.models.CreateFolderDetails
     oci.data_integration.models.CreatePatchDetails
+    oci.data_integration.models.CreatePipelineDetails
+    oci.data_integration.models.CreatePipelineValidationDetails
     oci.data_integration.models.CreateProjectDetails
     oci.data_integration.models.CreateSourceApplicationInfo
     oci.data_integration.models.CreateTaskDetails
     oci.data_integration.models.CreateTaskFromDataLoaderTask
     oci.data_integration.models.CreateTaskFromIntegrationTask
+    oci.data_integration.models.CreateTaskFromPipelineTask
     oci.data_integration.models.CreateTaskRunDetails
     oci.data_integration.models.CreateTaskValidationDetails
     oci.data_integration.models.CreateTaskValidationFromDataLoaderTask
     oci.data_integration.models.CreateTaskValidationFromIntegrationTask
+    oci.data_integration.models.CreateTaskValidationFromPipelineTask
     oci.data_integration.models.CreateWorkspaceDetails
     oci.data_integration.models.CsvFormatAttribute
+    oci.data_integration.models.DailyFrequencyDetails
     oci.data_integration.models.DataAsset
     oci.data_integration.models.DataAssetFromAdwcDetails
     oci.data_integration.models.DataAssetFromAtpDetails
@@ -156,6 +164,7 @@ Data Integration
     oci.data_integration.models.DynamicProxyField
     oci.data_integration.models.DynamicType
     oci.data_integration.models.DynamicTypeHandler
+    oci.data_integration.models.EndOperator
     oci.data_integration.models.EnrichedEntity
     oci.data_integration.models.EntityShape
     oci.data_integration.models.EntityShapeFromFile
@@ -178,9 +187,11 @@ Data Integration
     oci.data_integration.models.FolderSummary
     oci.data_integration.models.FolderSummaryCollection
     oci.data_integration.models.ForeignKey
+    oci.data_integration.models.HourlyFrequencyDetails
     oci.data_integration.models.InputField
     oci.data_integration.models.InputLink
     oci.data_integration.models.InputPort
+    oci.data_integration.models.Intersect
     oci.data_integration.models.JavaType
     oci.data_integration.models.Join
     oci.data_integration.models.Joiner
@@ -189,12 +200,17 @@ Data Integration
     oci.data_integration.models.KeyAttribute
     oci.data_integration.models.KeyRange
     oci.data_integration.models.KeyRangePartitionConfig
+    oci.data_integration.models.LastRunDetails
     oci.data_integration.models.MacroField
+    oci.data_integration.models.MergeOperator
     oci.data_integration.models.Message
+    oci.data_integration.models.Minus
+    oci.data_integration.models.MonthlyFrequencyDetails
     oci.data_integration.models.NameListRule
     oci.data_integration.models.NamePatternRule
     oci.data_integration.models.NativeShapeField
     oci.data_integration.models.ObjectMetadata
+    oci.data_integration.models.OciVaultSecretConfig
     oci.data_integration.models.Operator
     oci.data_integration.models.OracleAdwcWriteAttribute
     oci.data_integration.models.OracleAdwcWriteAttributes
@@ -217,6 +233,12 @@ Data Integration
     oci.data_integration.models.PatchObjectMetadata
     oci.data_integration.models.PatchSummary
     oci.data_integration.models.PatchSummaryCollection
+    oci.data_integration.models.Pipeline
+    oci.data_integration.models.PipelineSummary
+    oci.data_integration.models.PipelineSummaryCollection
+    oci.data_integration.models.PipelineValidation
+    oci.data_integration.models.PipelineValidationSummary
+    oci.data_integration.models.PipelineValidationSummaryCollection
     oci.data_integration.models.PrimaryKey
     oci.data_integration.models.Project
     oci.data_integration.models.ProjectDetails
@@ -228,6 +250,8 @@ Data Integration
     oci.data_integration.models.PublishedObject
     oci.data_integration.models.PublishedObjectFromDataLoaderTask
     oci.data_integration.models.PublishedObjectFromIntegrationTask
+    oci.data_integration.models.PublishedObjectFromPipelineTask
+    oci.data_integration.models.PublishedObjectFromPipelineTaskSummary
     oci.data_integration.models.PublishedObjectSummary
     oci.data_integration.models.PublishedObjectSummaryCollection
     oci.data_integration.models.PublishedObjectSummaryFromDataLoaderTask
@@ -245,10 +269,14 @@ Data Integration
     oci.data_integration.models.RootObject
     oci.data_integration.models.RuleBasedFieldMap
     oci.data_integration.models.RuleTypeConfig
+    oci.data_integration.models.Schedule
     oci.data_integration.models.Schema
+    oci.data_integration.models.SchemaDriftConfig
     oci.data_integration.models.SchemaSummary
     oci.data_integration.models.SchemaSummaryCollection
+    oci.data_integration.models.SecretConfig
     oci.data_integration.models.Select
+    oci.data_integration.models.SensitiveAttribute
     oci.data_integration.models.Shape
     oci.data_integration.models.ShapeField
     oci.data_integration.models.Sort
@@ -258,29 +286,36 @@ Data Integration
     oci.data_integration.models.SortOper
     oci.data_integration.models.Source
     oci.data_integration.models.SourceApplicationInfo
+    oci.data_integration.models.StartOperator
     oci.data_integration.models.StructuredType
     oci.data_integration.models.Target
     oci.data_integration.models.Task
     oci.data_integration.models.TaskFromDataLoaderTaskDetails
     oci.data_integration.models.TaskFromIntegrationTaskDetails
+    oci.data_integration.models.TaskFromPipelineTaskDetails
+    oci.data_integration.models.TaskOperator
     oci.data_integration.models.TaskRun
     oci.data_integration.models.TaskRunDetails
     oci.data_integration.models.TaskRunLogSummary
     oci.data_integration.models.TaskRunSummary
     oci.data_integration.models.TaskRunSummaryCollection
+    oci.data_integration.models.TaskSchedule
     oci.data_integration.models.TaskSummary
     oci.data_integration.models.TaskSummaryCollection
     oci.data_integration.models.TaskSummaryFromDataLoaderTask
     oci.data_integration.models.TaskSummaryFromIntegrationTask
+    oci.data_integration.models.TaskSummaryFromPipelineTask
     oci.data_integration.models.TaskValidation
     oci.data_integration.models.TaskValidationSummary
     oci.data_integration.models.TaskValidationSummaryCollection
+    oci.data_integration.models.Time
     oci.data_integration.models.TypeLibrary
     oci.data_integration.models.TypeListRule
     oci.data_integration.models.TypeSystem
     oci.data_integration.models.TypedNamePatternRule
     oci.data_integration.models.TypedObject
     oci.data_integration.models.UIProperties
+    oci.data_integration.models.Union
     oci.data_integration.models.UniqueKey
     oci.data_integration.models.UpdateApplicationDetails
     oci.data_integration.models.UpdateConnectionDetails
@@ -300,14 +335,17 @@ Data Integration
     oci.data_integration.models.UpdateDataFlowDetails
     oci.data_integration.models.UpdateExternalPublicationDetails
     oci.data_integration.models.UpdateFolderDetails
+    oci.data_integration.models.UpdatePipelineDetails
     oci.data_integration.models.UpdateProjectDetails
     oci.data_integration.models.UpdateReferenceDetails
     oci.data_integration.models.UpdateTaskDetails
     oci.data_integration.models.UpdateTaskFromDataLoaderTask
     oci.data_integration.models.UpdateTaskFromIntegrationTask
+    oci.data_integration.models.UpdateTaskFromPipelineTask
     oci.data_integration.models.UpdateTaskRunDetails
     oci.data_integration.models.UpdateWorkspaceDetails
     oci.data_integration.models.ValidationMessage
+    oci.data_integration.models.Variable
     oci.data_integration.models.WorkRequest
     oci.data_integration.models.WorkRequestError
     oci.data_integration.models.WorkRequestLogEntry

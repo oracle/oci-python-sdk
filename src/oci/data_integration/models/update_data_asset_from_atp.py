@@ -76,6 +76,14 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
             The value to assign to the credential_file_content property of this UpdateDataAssetFromAtp.
         :type credential_file_content: str
 
+        :param wallet_secret:
+            The value to assign to the wallet_secret property of this UpdateDataAssetFromAtp.
+        :type wallet_secret: oci.data_integration.models.SensitiveAttribute
+
+        :param wallet_password_secret:
+            The value to assign to the wallet_password_secret property of this UpdateDataAssetFromAtp.
+        :type wallet_password_secret: oci.data_integration.models.SensitiveAttribute
+
         :param default_connection:
             The value to assign to the default_connection property of this UpdateDataAssetFromAtp.
         :type default_connection: oci.data_integration.models.UpdateConnectionFromAtp
@@ -96,6 +104,8 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
             'service_name': 'str',
             'driver_class': 'str',
             'credential_file_content': 'str',
+            'wallet_secret': 'SensitiveAttribute',
+            'wallet_password_secret': 'SensitiveAttribute',
             'default_connection': 'UpdateConnectionFromAtp'
         }
 
@@ -114,6 +124,8 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
             'service_name': 'serviceName',
             'driver_class': 'driverClass',
             'credential_file_content': 'credentialFileContent',
+            'wallet_secret': 'walletSecret',
+            'wallet_password_secret': 'walletPasswordSecret',
             'default_connection': 'defaultConnection'
         }
 
@@ -131,6 +143,8 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
         self._service_name = None
         self._driver_class = None
         self._credential_file_content = None
+        self._wallet_secret = None
+        self._wallet_password_secret = None
         self._default_connection = None
         self._model_type = 'ORACLE_ATP_DATA_ASSET'
 
@@ -205,6 +219,46 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
         :type: str
         """
         self._credential_file_content = credential_file_content
+
+    @property
+    def wallet_secret(self):
+        """
+        Gets the wallet_secret of this UpdateDataAssetFromAtp.
+
+        :return: The wallet_secret of this UpdateDataAssetFromAtp.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._wallet_secret
+
+    @wallet_secret.setter
+    def wallet_secret(self, wallet_secret):
+        """
+        Sets the wallet_secret of this UpdateDataAssetFromAtp.
+
+        :param wallet_secret: The wallet_secret of this UpdateDataAssetFromAtp.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._wallet_secret = wallet_secret
+
+    @property
+    def wallet_password_secret(self):
+        """
+        Gets the wallet_password_secret of this UpdateDataAssetFromAtp.
+
+        :return: The wallet_password_secret of this UpdateDataAssetFromAtp.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._wallet_password_secret
+
+    @wallet_password_secret.setter
+    def wallet_password_secret(self, wallet_password_secret):
+        """
+        Sets the wallet_password_secret of this UpdateDataAssetFromAtp.
+
+        :param wallet_password_secret: The wallet_password_secret of this UpdateDataAssetFromAtp.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._wallet_password_secret = wallet_password_secret
 
     @property
     def default_connection(self):

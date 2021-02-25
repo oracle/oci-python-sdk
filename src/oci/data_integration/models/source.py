@@ -21,7 +21,7 @@ class Source(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this Source.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "REST_OPERATOR", "TASK_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -89,6 +89,14 @@ class Source(Operator):
             The value to assign to the is_predefined_shape property of this Source.
         :type is_predefined_shape: bool
 
+        :param schema_drift_config:
+            The value to assign to the schema_drift_config property of this Source.
+        :type schema_drift_config: oci.data_integration.models.SchemaDriftConfig
+
+        :param fixed_data_shape:
+            The value to assign to the fixed_data_shape property of this Source.
+        :type fixed_data_shape: oci.data_integration.models.Shape
+
         :param read_operation_config:
             The value to assign to the read_operation_config property of this Source.
         :type read_operation_config: oci.data_integration.models.ReadOperationConfig
@@ -112,6 +120,8 @@ class Source(Operator):
             'is_read_access': 'bool',
             'is_copy_fields': 'bool',
             'is_predefined_shape': 'bool',
+            'schema_drift_config': 'SchemaDriftConfig',
+            'fixed_data_shape': 'Shape',
             'read_operation_config': 'ReadOperationConfig'
         }
 
@@ -133,6 +143,8 @@ class Source(Operator):
             'is_read_access': 'isReadAccess',
             'is_copy_fields': 'isCopyFields',
             'is_predefined_shape': 'isPredefinedShape',
+            'schema_drift_config': 'schemaDriftConfig',
+            'fixed_data_shape': 'fixedDataShape',
             'read_operation_config': 'readOperationConfig'
         }
 
@@ -153,6 +165,8 @@ class Source(Operator):
         self._is_read_access = None
         self._is_copy_fields = None
         self._is_predefined_shape = None
+        self._schema_drift_config = None
+        self._fixed_data_shape = None
         self._read_operation_config = None
         self._model_type = 'SOURCE_OPERATOR'
 
@@ -247,6 +261,46 @@ class Source(Operator):
         :type: bool
         """
         self._is_predefined_shape = is_predefined_shape
+
+    @property
+    def schema_drift_config(self):
+        """
+        Gets the schema_drift_config of this Source.
+
+        :return: The schema_drift_config of this Source.
+        :rtype: oci.data_integration.models.SchemaDriftConfig
+        """
+        return self._schema_drift_config
+
+    @schema_drift_config.setter
+    def schema_drift_config(self, schema_drift_config):
+        """
+        Sets the schema_drift_config of this Source.
+
+        :param schema_drift_config: The schema_drift_config of this Source.
+        :type: oci.data_integration.models.SchemaDriftConfig
+        """
+        self._schema_drift_config = schema_drift_config
+
+    @property
+    def fixed_data_shape(self):
+        """
+        Gets the fixed_data_shape of this Source.
+
+        :return: The fixed_data_shape of this Source.
+        :rtype: oci.data_integration.models.Shape
+        """
+        return self._fixed_data_shape
+
+    @fixed_data_shape.setter
+    def fixed_data_shape(self, fixed_data_shape):
+        """
+        Sets the fixed_data_shape of this Source.
+
+        :param fixed_data_shape: The fixed_data_shape of this Source.
+        :type: oci.data_integration.models.Shape
+        """
+        self._fixed_data_shape = fixed_data_shape
 
     @property
     def read_operation_config(self):

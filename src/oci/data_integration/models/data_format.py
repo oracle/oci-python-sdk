@@ -52,19 +52,26 @@ class DataFormat(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
+        :param compression_config:
+            The value to assign to the compression_config property of this DataFormat.
+        :type compression_config: oci.data_integration.models.Compression
+
         """
         self.swagger_types = {
             'format_attribute': 'AbstractFormatAttribute',
-            'type': 'str'
+            'type': 'str',
+            'compression_config': 'Compression'
         }
 
         self.attribute_map = {
             'format_attribute': 'formatAttribute',
-            'type': 'type'
+            'type': 'type',
+            'compression_config': 'compressionConfig'
         }
 
         self._format_attribute = None
         self._type = None
+        self._compression_config = None
 
     @property
     def format_attribute(self):
@@ -115,6 +122,26 @@ class DataFormat(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def compression_config(self):
+        """
+        Gets the compression_config of this DataFormat.
+
+        :return: The compression_config of this DataFormat.
+        :rtype: oci.data_integration.models.Compression
+        """
+        return self._compression_config
+
+    @compression_config.setter
+    def compression_config(self, compression_config):
+        """
+        Sets the compression_config of this DataFormat.
+
+        :param compression_config: The compression_config of this DataFormat.
+        :type: oci.data_integration.models.Compression
+        """
+        self._compression_config = compression_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -93,7 +93,9 @@ class FileStorageClient(object):
 
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ChangeFileSystemCompartmentDetails change_file_system_compartment_details: (required)
             Details for changing the compartment.
@@ -183,7 +185,9 @@ class FileStorageClient(object):
 
 
         :param str mount_target_id: (required)
-            The OCID of the mount target.
+            The `OCID`__ of the mount target.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ChangeMountTargetCompartmentDetails change_mount_target_compartment_details: (required)
             Details for changing the compartment.
@@ -370,14 +374,15 @@ class FileStorageClient(object):
 
         All Oracle Cloud Infrastructure resources, including
         file systems, get an Oracle-assigned, unique ID called an Oracle
-        Cloud Identifier (OCID).  When you create a resource, you can
-        find its OCID in the response. You can also retrieve a
-        resource's OCID by using a List API operation on that resource
+        Cloud Identifier (`OCID`__).
+        When you create a resource, you can find its OCID in the response.
+        You can also retrieve a resource's OCID by using a List API operation on that resource
         type or by viewing the resource in the Console.
 
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param oci.file_storage.models.CreateFileSystemDetails create_file_system_details: (required)
@@ -482,13 +487,14 @@ class FileStorageClient(object):
 
         All Oracle Cloud Infrastructure Services resources, including
         mount targets, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier (OCID).  When you create a resource,
-        you can find its OCID in the response. You can also retrieve a
-        resource's OCID by using a List API operation on that resource
+        Oracle Cloud Identifier (`OCID`__).
+        When you create a resource, you can find its OCID in the response.
+        You can also retrieve a resource's OCID by using a List API operation on that resource
         type, or by viewing the resource in the Console.
 
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param oci.file_storage.models.CreateMountTargetDetails create_mount_target_details: (required)
@@ -647,7 +653,9 @@ class FileStorageClient(object):
 
 
         :param str export_id: (required)
-            The OCID of the export.
+            The `OCID`__ of the export.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -732,7 +740,9 @@ class FileStorageClient(object):
 
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -816,7 +826,9 @@ class FileStorageClient(object):
 
 
         :param str mount_target_id: (required)
-            The OCID of the mount target.
+            The `OCID`__ of the mount target.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -899,7 +911,9 @@ class FileStorageClient(object):
 
 
         :param str snapshot_id: (required)
-            The OCID of the snapshot.
+            The `OCID`__ of the snapshot.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -982,7 +996,9 @@ class FileStorageClient(object):
 
 
         :param str export_id: (required)
-            The OCID of the export.
+            The `OCID`__ of the export.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1058,7 +1074,9 @@ class FileStorageClient(object):
 
 
         :param str export_set_id: (required)
-            The OCID of the export set.
+            The `OCID`__ of the export set.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1134,7 +1152,9 @@ class FileStorageClient(object):
 
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1210,7 +1230,9 @@ class FileStorageClient(object):
 
 
         :param str mount_target_id: (required)
-            The OCID of the mount target.
+            The `OCID`__ of the mount target.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1286,7 +1308,9 @@ class FileStorageClient(object):
 
 
         :param str snapshot_id: (required)
-            The OCID of the snapshot.
+            The `OCID`__ of the snapshot.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1362,7 +1386,9 @@ class FileStorageClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (required)
             The name of the availability domain.
@@ -1402,8 +1428,10 @@ class FileStorageClient(object):
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str id: (optional)
-            Filter results by OCID. Must be an OCID of the correct type for
+            Filter results by `OCID`__. Must be an OCID of the correct type for
             the resouce type.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to sort by. You can provide either value, but not both.
@@ -1527,7 +1555,9 @@ class FileStorageClient(object):
 
 
         :param str compartment_id: (optional)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -1551,10 +1581,14 @@ class FileStorageClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str export_set_id: (optional)
-            The OCID of the export set.
+            The `OCID`__ of the export set.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str file_system_id: (optional)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             Filter results by the specified lifecycle state. Must be a valid
@@ -1563,8 +1597,10 @@ class FileStorageClient(object):
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str id: (optional)
-            Filter results by OCID. Must be an OCID of the correct type for
+            Filter results by `OCID`__. Must be an OCID of the correct type for
             the resouce type.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to sort by. You can provide either value, but not both.
@@ -1688,7 +1724,9 @@ class FileStorageClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (required)
             The name of the availability domain.
@@ -1728,8 +1766,22 @@ class FileStorageClient(object):
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str id: (optional)
-            Filter results by OCID. Must be an OCID of the correct type for
+            Filter results by `OCID`__. Must be an OCID of the correct type for
             the resouce type.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str source_snapshot_id: (optional)
+            The `OCID`__ of the snapshot used to create a cloned file system. See `Cloning a File System`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+        :param str parent_file_system_id: (optional)
+            The `OCID`__ of the file system that contains the source snapshot of a cloned file system. See `Cloning a File System`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
 
         :param str sort_by: (optional)
             The field to sort by. You can provide either value, but not both.
@@ -1775,6 +1827,8 @@ class FileStorageClient(object):
             "display_name",
             "lifecycle_state",
             "id",
+            "source_snapshot_id",
+            "parent_file_system_id",
             "sort_by",
             "sort_order",
             "opc_request_id"
@@ -1813,6 +1867,8 @@ class FileStorageClient(object):
             "displayName": kwargs.get("display_name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "id": kwargs.get("id", missing),
+            "sourceSnapshotId": kwargs.get("source_snapshot_id", missing),
+            "parentFileSystemId": kwargs.get("parent_file_system_id", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing)
         }
@@ -1851,7 +1907,9 @@ class FileStorageClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (required)
             The name of the availability domain.
@@ -1885,7 +1943,9 @@ class FileStorageClient(object):
             Example: `My resource`
 
         :param str export_set_id: (optional)
-            The OCID of the export set.
+            The `OCID`__ of the export set.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             Filter results by the specified lifecycle state. Must be a valid
@@ -1894,8 +1954,10 @@ class FileStorageClient(object):
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str id: (optional)
-            Filter results by OCID. Must be an OCID of the correct type for
+            Filter results by `OCID`__. Must be an OCID of the correct type for
             the resouce type.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to sort by. You can choose either value, but not both.
@@ -2019,7 +2081,9 @@ class FileStorageClient(object):
 
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2049,8 +2113,10 @@ class FileStorageClient(object):
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str id: (optional)
-            Filter results by OCID. Must be an OCID of the correct type for
+            Filter results by `OCID`__. Must be an OCID of the correct type for
             the resouce type.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc', where 'asc' is
@@ -2152,7 +2218,9 @@ class FileStorageClient(object):
 
 
         :param str export_id: (required)
-            The OCID of the export.
+            The `OCID`__ of the export.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateExportDetails update_export_details: (required)
             Details object for updating an export.
@@ -2242,7 +2310,9 @@ class FileStorageClient(object):
 
 
         :param str export_set_id: (required)
-            The OCID of the export set.
+            The `OCID`__ of the export set.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateExportSetDetails update_export_set_details: (required)
             Details object for updating an export set.
@@ -2333,7 +2403,9 @@ class FileStorageClient(object):
 
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateFileSystemDetails update_file_system_details: (required)
             Details object for updating a file system.
@@ -2423,7 +2495,9 @@ class FileStorageClient(object):
 
 
         :param str mount_target_id: (required)
-            The OCID of the mount target.
+            The `OCID`__ of the mount target.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateMountTargetDetails update_mount_target_details: (required)
             Details object for updating a mount target.
@@ -2513,7 +2587,9 @@ class FileStorageClient(object):
 
 
         :param str snapshot_id: (required)
-            The OCID of the snapshot.
+            The `OCID`__ of the snapshot.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateSnapshotDetails update_snapshot_details: (required)
             Details object for updating a snapshot.

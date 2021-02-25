@@ -21,11 +21,16 @@ class UpdateTaskDetails(object):
     #: This constant has a value of "DATA_LOADER_TASK"
     MODEL_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
 
+    #: A constant which can be used with the model_type property of a UpdateTaskDetails.
+    #: This constant has a value of "PIPELINE_TASK"
+    MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateTaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.UpdateTaskFromPipelineTask`
         * :class:`~oci.data_integration.models.UpdateTaskFromDataLoaderTask`
         * :class:`~oci.data_integration.models.UpdateTaskFromIntegrationTask`
 
@@ -33,7 +38,7 @@ class UpdateTaskDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateTaskDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
         :type model_type: str
 
         :param key:
@@ -153,6 +158,9 @@ class UpdateTaskDetails(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'PIPELINE_TASK':
+            return 'UpdateTaskFromPipelineTask'
+
         if type == 'DATA_LOADER_TASK':
             return 'UpdateTaskFromDataLoaderTask'
 
@@ -167,7 +175,7 @@ class UpdateTaskDetails(object):
         **[Required]** Gets the model_type of this UpdateTaskDetails.
         The type of the task.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
 
 
         :return: The model_type of this UpdateTaskDetails.
@@ -185,7 +193,7 @@ class UpdateTaskDetails(object):
         :param model_type: The model_type of this UpdateTaskDetails.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

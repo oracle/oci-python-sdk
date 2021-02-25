@@ -21,19 +21,24 @@ class CreateTaskValidationDetails(object):
     #: This constant has a value of "DATA_LOADER_TASK"
     MODEL_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
 
+    #: A constant which can be used with the model_type property of a CreateTaskValidationDetails.
+    #: This constant has a value of "PIPELINE_TASK"
+    MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTaskValidationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_integration.models.CreateTaskValidationFromDataLoaderTask`
+        * :class:`~oci.data_integration.models.CreateTaskValidationFromPipelineTask`
         * :class:`~oci.data_integration.models.CreateTaskValidationFromIntegrationTask`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this CreateTaskValidationDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
         :type model_type: str
 
         :param key:
@@ -156,6 +161,9 @@ class CreateTaskValidationDetails(object):
         if type == 'DATA_LOADER_TASK':
             return 'CreateTaskValidationFromDataLoaderTask'
 
+        if type == 'PIPELINE_TASK':
+            return 'CreateTaskValidationFromPipelineTask'
+
         if type == 'INTEGRATION_TASK':
             return 'CreateTaskValidationFromIntegrationTask'
         else:
@@ -167,7 +175,7 @@ class CreateTaskValidationDetails(object):
         Gets the model_type of this CreateTaskValidationDetails.
         The type of the task.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
 
 
         :return: The model_type of this CreateTaskValidationDetails.
@@ -185,7 +193,7 @@ class CreateTaskValidationDetails(object):
         :param model_type: The model_type of this CreateTaskValidationDetails.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

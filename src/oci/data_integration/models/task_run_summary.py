@@ -49,6 +49,10 @@ class TaskRunSummary(object):
     #: This constant has a value of "DATA_LOADER_TASK"
     TASK_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
 
+    #: A constant which can be used with the task_type property of a TaskRunSummary.
+    #: This constant has a value of "PIPELINE_TASK"
+    TASK_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TaskRunSummary object with values from keyword arguments.
@@ -114,7 +118,7 @@ class TaskRunSummary(object):
 
         :param task_type:
             The value to assign to the task_type property of this TaskRunSummary.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
@@ -529,7 +533,7 @@ class TaskRunSummary(object):
         Gets the task_type of this TaskRunSummary.
         The type of the task for the run.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -548,7 +552,7 @@ class TaskRunSummary(object):
         :param task_type: The task_type of this TaskRunSummary.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type

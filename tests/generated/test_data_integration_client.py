@@ -531,6 +531,88 @@ def test_create_patch(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreatePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreatePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreatePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_pipeline(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_pipeline_details=request.pop(util.camelize('CreatePipelineDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreatePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipeline',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_pipeline_validation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreatePipelineValidation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreatePipelineValidation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreatePipelineValidation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_pipeline_validation(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_pipeline_validation_details=request.pop(util.camelize('CreatePipelineValidationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreatePipelineValidation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineValidation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_create_project(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'CreateProject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1143,6 +1225,88 @@ def test_delete_patch(testing_service_client):
             result,
             service_error,
             'delete_patch',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeletePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeletePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeletePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pipeline(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                pipeline_key=request.pop(util.camelize('pipelineKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeletePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pipeline',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_pipeline_validation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeletePipelineValidation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeletePipelineValidation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeletePipelineValidation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pipeline_validation(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                pipeline_validation_key=request.pop(util.camelize('pipelineValidationKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeletePipelineValidation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pipeline_validation',
             True,
             False
         )
@@ -1887,6 +2051,88 @@ def test_get_patch(testing_service_client):
             result,
             service_error,
             'patch',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetPipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetPipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetPipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_pipeline(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                pipeline_key=request.pop(util.camelize('pipelineKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetPipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipeline',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_pipeline_validation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetPipelineValidation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetPipelineValidation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetPipelineValidation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_pipeline_validation(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                pipeline_validation_key=request.pop(util.camelize('pipelineValidationKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetPipelineValidation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineValidation',
             False,
             False
         )
@@ -3068,6 +3314,126 @@ def test_list_patches(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_pipeline_validations(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListPipelineValidations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListPipelineValidations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListPipelineValidations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_pipeline_validations(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pipeline_validations(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pipeline_validations(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListPipelineValidations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineValidationSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_pipelines(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListPipelines'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListPipelines')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListPipelines')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_pipelines(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pipelines(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pipelines(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListPipelines',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_list_projects(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'ListProjects'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4136,6 +4502,48 @@ def test_update_folder(testing_service_client):
             result,
             service_error,
             'folder',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdatePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdatePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdatePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_pipeline(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                pipeline_key=request.pop(util.camelize('pipelineKey')),
+                update_pipeline_details=request.pop(util.camelize('UpdatePipelineDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdatePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipeline',
             False,
             False
         )

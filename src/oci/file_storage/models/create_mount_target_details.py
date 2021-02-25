@@ -121,7 +121,9 @@ class CreateMountTargetDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateMountTargetDetails.
-        The OCID of the compartment in which to create the mount target.
+        The `OCID`__ of the compartment in which to create the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateMountTargetDetails.
@@ -133,7 +135,9 @@ class CreateMountTargetDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateMountTargetDetails.
-        The OCID of the compartment in which to create the mount target.
+        The `OCID`__ of the compartment in which to create the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateMountTargetDetails.
@@ -261,7 +265,9 @@ class CreateMountTargetDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreateMountTargetDetails.
-        The OCID of the subnet in which to create the mount target.
+        The `OCID`__ of the subnet in which to create the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateMountTargetDetails.
@@ -273,7 +279,9 @@ class CreateMountTargetDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateMountTargetDetails.
-        The OCID of the subnet in which to create the mount target.
+        The `OCID`__ of the subnet in which to create the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateMountTargetDetails.
