@@ -26,6 +26,10 @@ class ConfigParameterValue(object):
             The value to assign to the int_value property of this ConfigParameterValue.
         :type int_value: int
 
+        :param object_value:
+            The value to assign to the object_value property of this ConfigParameterValue.
+        :type object_value: object
+
         :param ref_value:
             The value to assign to the ref_value property of this ConfigParameterValue.
         :type ref_value: object
@@ -38,6 +42,7 @@ class ConfigParameterValue(object):
         self.swagger_types = {
             'string_value': 'str',
             'int_value': 'int',
+            'object_value': 'object',
             'ref_value': 'object',
             'parameter_value': 'str'
         }
@@ -45,12 +50,14 @@ class ConfigParameterValue(object):
         self.attribute_map = {
             'string_value': 'stringValue',
             'int_value': 'intValue',
+            'object_value': 'objectValue',
             'ref_value': 'refValue',
             'parameter_value': 'parameterValue'
         }
 
         self._string_value = None
         self._int_value = None
+        self._object_value = None
         self._ref_value = None
         self._parameter_value = None
 
@@ -101,6 +108,30 @@ class ConfigParameterValue(object):
         :type: int
         """
         self._int_value = int_value
+
+    @property
+    def object_value(self):
+        """
+        Gets the object_value of this ConfigParameterValue.
+        An object value of the parameter.
+
+
+        :return: The object_value of this ConfigParameterValue.
+        :rtype: object
+        """
+        return self._object_value
+
+    @object_value.setter
+    def object_value(self, object_value):
+        """
+        Sets the object_value of this ConfigParameterValue.
+        An object value of the parameter.
+
+
+        :param object_value: The object_value of this ConfigParameterValue.
+        :type: object
+        """
+        self._object_value = object_value
 
     @property
     def ref_value(self):

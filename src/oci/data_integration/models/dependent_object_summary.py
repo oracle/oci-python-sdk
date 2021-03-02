@@ -46,6 +46,10 @@ class DependentObjectSummary(object):
             The value to assign to the aggregator_key property of this DependentObjectSummary.
         :type aggregator_key: str
 
+        :param aggregator:
+            The value to assign to the aggregator property of this DependentObjectSummary.
+        :type aggregator: oci.data_integration.models.AggregatorSummary
+
         :param identifier_path:
             The value to assign to the identifier_path property of this DependentObjectSummary.
         :type identifier_path: str
@@ -75,6 +79,7 @@ class DependentObjectSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'aggregator_key': 'str',
+            'aggregator': 'AggregatorSummary',
             'identifier_path': 'str',
             'info_fields': 'dict(str, str)',
             'registry_version': 'int',
@@ -90,6 +95,7 @@ class DependentObjectSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'aggregator_key': 'aggregatorKey',
+            'aggregator': 'aggregator',
             'identifier_path': 'identifierPath',
             'info_fields': 'infoFields',
             'registry_version': 'registryVersion',
@@ -104,6 +110,7 @@ class DependentObjectSummary(object):
         self._time_created = None
         self._time_updated = None
         self._aggregator_key = None
+        self._aggregator = None
         self._identifier_path = None
         self._info_fields = None
         self._registry_version = None
@@ -277,6 +284,26 @@ class DependentObjectSummary(object):
         :type: str
         """
         self._aggregator_key = aggregator_key
+
+    @property
+    def aggregator(self):
+        """
+        Gets the aggregator of this DependentObjectSummary.
+
+        :return: The aggregator of this DependentObjectSummary.
+        :rtype: oci.data_integration.models.AggregatorSummary
+        """
+        return self._aggregator
+
+    @aggregator.setter
+    def aggregator(self, aggregator):
+        """
+        Sets the aggregator of this DependentObjectSummary.
+
+        :param aggregator: The aggregator of this DependentObjectSummary.
+        :type: oci.data_integration.models.AggregatorSummary
+        """
+        self._aggregator = aggregator
 
     @property
     def identifier_path(self):

@@ -21,7 +21,7 @@ class TaskFromIntegrationTaskDetails(Task):
 
         :param model_type:
             The value to assign to the model_type property of this TaskFromIntegrationTaskDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
         :type model_type: str
 
         :param key:

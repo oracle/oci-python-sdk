@@ -21,6 +21,7 @@ from .mount_target import MountTarget
 from .mount_target_summary import MountTargetSummary
 from .snapshot import Snapshot
 from .snapshot_summary import SnapshotSummary
+from .source_details import SourceDetails
 from .update_export_details import UpdateExportDetails
 from .update_export_set_details import UpdateExportSetDetails
 from .update_file_system_details import UpdateFileSystemDetails
@@ -46,6 +47,7 @@ file_storage_type_mapping = {
     "MountTargetSummary": MountTargetSummary,
     "Snapshot": Snapshot,
     "SnapshotSummary": SnapshotSummary,
+    "SourceDetails": SourceDetails,
     "UpdateExportDetails": UpdateExportDetails,
     "UpdateExportSetDetails": UpdateExportSetDetails,
     "UpdateFileSystemDetails": UpdateFileSystemDetails,

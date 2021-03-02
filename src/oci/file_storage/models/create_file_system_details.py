@@ -42,6 +42,10 @@ class CreateFileSystemDetails(object):
             The value to assign to the kms_key_id property of this CreateFileSystemDetails.
         :type kms_key_id: str
 
+        :param source_snapshot_id:
+            The value to assign to the source_snapshot_id property of this CreateFileSystemDetails.
+        :type source_snapshot_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -49,7 +53,8 @@ class CreateFileSystemDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'source_snapshot_id': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class CreateFileSystemDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'source_snapshot_id': 'sourceSnapshotId'
         }
 
         self._availability_domain = None
@@ -67,6 +73,7 @@ class CreateFileSystemDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._source_snapshot_id = None
 
     @property
     def availability_domain(self):
@@ -100,7 +107,9 @@ class CreateFileSystemDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateFileSystemDetails.
-        The OCID of the compartment to create the file system in.
+        The `OCID`__ of the compartment to create the file system in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateFileSystemDetails.
@@ -112,7 +121,9 @@ class CreateFileSystemDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateFileSystemDetails.
-        The OCID of the compartment to create the file system in.
+        The `OCID`__ of the compartment to create the file system in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateFileSystemDetails.
@@ -220,7 +231,9 @@ class CreateFileSystemDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CreateFileSystemDetails.
-        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+        The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this CreateFileSystemDetails.
@@ -232,13 +245,47 @@ class CreateFileSystemDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CreateFileSystemDetails.
-        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+        The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this CreateFileSystemDetails.
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def source_snapshot_id(self):
+        """
+        Gets the source_snapshot_id of this CreateFileSystemDetails.
+        The `OCID`__ of the snapshot used to create a cloned file system.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :return: The source_snapshot_id of this CreateFileSystemDetails.
+        :rtype: str
+        """
+        return self._source_snapshot_id
+
+    @source_snapshot_id.setter
+    def source_snapshot_id(self, source_snapshot_id):
+        """
+        Sets the source_snapshot_id of this CreateFileSystemDetails.
+        The `OCID`__ of the snapshot used to create a cloned file system.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :param source_snapshot_id: The source_snapshot_id of this CreateFileSystemDetails.
+        :type: str
+        """
+        self._source_snapshot_id = source_snapshot_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

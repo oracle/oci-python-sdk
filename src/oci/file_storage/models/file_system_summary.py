@@ -76,6 +76,22 @@ class FileSystemSummary(object):
             The value to assign to the kms_key_id property of this FileSystemSummary.
         :type kms_key_id: str
 
+        :param source_details:
+            The value to assign to the source_details property of this FileSystemSummary.
+        :type source_details: oci.file_storage.models.SourceDetails
+
+        :param is_clone_parent:
+            The value to assign to the is_clone_parent property of this FileSystemSummary.
+        :type is_clone_parent: bool
+
+        :param is_hydrated:
+            The value to assign to the is_hydrated property of this FileSystemSummary.
+        :type is_hydrated: bool
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this FileSystemSummary.
+        :type lifecycle_details: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -87,7 +103,11 @@ class FileSystemSummary(object):
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'source_details': 'SourceDetails',
+            'is_clone_parent': 'bool',
+            'is_hydrated': 'bool',
+            'lifecycle_details': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +120,11 @@ class FileSystemSummary(object):
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'source_details': 'sourceDetails',
+            'is_clone_parent': 'isCloneParent',
+            'is_hydrated': 'isHydrated',
+            'lifecycle_details': 'lifecycleDetails'
         }
 
         self._availability_domain = None
@@ -113,6 +137,10 @@ class FileSystemSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._source_details = None
+        self._is_clone_parent = None
+        self._is_hydrated = None
+        self._lifecycle_details = None
 
     @property
     def availability_domain(self):
@@ -178,7 +206,9 @@ class FileSystemSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this FileSystemSummary.
-        The OCID of the compartment that contains the file system.
+        The `OCID`__ of the compartment that contains the file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FileSystemSummary.
@@ -190,7 +220,9 @@ class FileSystemSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this FileSystemSummary.
-        The OCID of the compartment that contains the file system.
+        The `OCID`__ of the compartment that contains the file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FileSystemSummary.
@@ -232,7 +264,9 @@ class FileSystemSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this FileSystemSummary.
-        The OCID of the file system.
+        The `OCID`__ of the file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FileSystemSummary.
@@ -244,7 +278,9 @@ class FileSystemSummary(object):
     def id(self, id):
         """
         Sets the id of this FileSystemSummary.
-        The OCID of the file system.
+        The `OCID`__ of the file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FileSystemSummary.
@@ -386,7 +422,9 @@ class FileSystemSummary(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this FileSystemSummary.
-        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+        The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this FileSystemSummary.
@@ -398,13 +436,123 @@ class FileSystemSummary(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this FileSystemSummary.
-        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+        The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this FileSystemSummary.
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this FileSystemSummary.
+
+        :return: The source_details of this FileSystemSummary.
+        :rtype: oci.file_storage.models.SourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this FileSystemSummary.
+
+        :param source_details: The source_details of this FileSystemSummary.
+        :type: oci.file_storage.models.SourceDetails
+        """
+        self._source_details = source_details
+
+    @property
+    def is_clone_parent(self):
+        """
+        Gets the is_clone_parent of this FileSystemSummary.
+        Specifies whether the file system has been cloned.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :return: The is_clone_parent of this FileSystemSummary.
+        :rtype: bool
+        """
+        return self._is_clone_parent
+
+    @is_clone_parent.setter
+    def is_clone_parent(self, is_clone_parent):
+        """
+        Sets the is_clone_parent of this FileSystemSummary.
+        Specifies whether the file system has been cloned.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :param is_clone_parent: The is_clone_parent of this FileSystemSummary.
+        :type: bool
+        """
+        self._is_clone_parent = is_clone_parent
+
+    @property
+    def is_hydrated(self):
+        """
+        Gets the is_hydrated of this FileSystemSummary.
+        Specifies whether the data has finished copying from the source to the clone.
+        Hydration can take up to several hours to complete depending on the size of the source.
+        The source and clone remain available during hydration, but there may be some performance impact.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration
+
+
+        :return: The is_hydrated of this FileSystemSummary.
+        :rtype: bool
+        """
+        return self._is_hydrated
+
+    @is_hydrated.setter
+    def is_hydrated(self, is_hydrated):
+        """
+        Sets the is_hydrated of this FileSystemSummary.
+        Specifies whether the data has finished copying from the source to the clone.
+        Hydration can take up to several hours to complete depending on the size of the source.
+        The source and clone remain available during hydration, but there may be some performance impact.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration
+
+
+        :param is_hydrated: The is_hydrated of this FileSystemSummary.
+        :type: bool
+        """
+        self._is_hydrated = is_hydrated
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this FileSystemSummary.
+        Additional information about the current 'lifecycleState'.
+
+
+        :return: The lifecycle_details of this FileSystemSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this FileSystemSummary.
+        Additional information about the current 'lifecycleState'.
+
+
+        :param lifecycle_details: The lifecycle_details of this FileSystemSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

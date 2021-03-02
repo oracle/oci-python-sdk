@@ -7,9 +7,11 @@ from __future__ import absolute_import
 from .abstract_data_operation_config import AbstractDataOperationConfig
 from .abstract_field import AbstractField
 from .abstract_format_attribute import AbstractFormatAttribute
+from .abstract_frequency_details import AbstractFrequencyDetails
 from .abstract_read_attribute import AbstractReadAttribute
 from .abstract_write_attribute import AbstractWriteAttribute
 from .aggregator import Aggregator
+from .aggregator_summary import AggregatorSummary
 from .application import Application
 from .application_details import ApplicationDetails
 from .application_summary import ApplicationSummary
@@ -21,6 +23,7 @@ from .child_reference import ChildReference
 from .child_reference_detail import ChildReferenceDetail
 from .composite_field_map import CompositeFieldMap
 from .composite_type import CompositeType
+from .compression import Compression
 from .conditional_input_link import ConditionalInputLink
 from .config_definition import ConfigDefinition
 from .config_parameter_definition import ConfigParameterDefinition
@@ -82,17 +85,22 @@ from .create_external_publication_details import CreateExternalPublicationDetail
 from .create_external_publication_validation_details import CreateExternalPublicationValidationDetails
 from .create_folder_details import CreateFolderDetails
 from .create_patch_details import CreatePatchDetails
+from .create_pipeline_details import CreatePipelineDetails
+from .create_pipeline_validation_details import CreatePipelineValidationDetails
 from .create_project_details import CreateProjectDetails
 from .create_source_application_info import CreateSourceApplicationInfo
 from .create_task_details import CreateTaskDetails
 from .create_task_from_data_loader_task import CreateTaskFromDataLoaderTask
 from .create_task_from_integration_task import CreateTaskFromIntegrationTask
+from .create_task_from_pipeline_task import CreateTaskFromPipelineTask
 from .create_task_run_details import CreateTaskRunDetails
 from .create_task_validation_details import CreateTaskValidationDetails
 from .create_task_validation_from_data_loader_task import CreateTaskValidationFromDataLoaderTask
 from .create_task_validation_from_integration_task import CreateTaskValidationFromIntegrationTask
+from .create_task_validation_from_pipeline_task import CreateTaskValidationFromPipelineTask
 from .create_workspace_details import CreateWorkspaceDetails
 from .csv_format_attribute import CsvFormatAttribute
+from .daily_frequency_details import DailyFrequencyDetails
 from .data_asset import DataAsset
 from .data_asset_from_adwc_details import DataAssetFromAdwcDetails
 from .data_asset_from_atp_details import DataAssetFromAtpDetails
@@ -142,6 +150,7 @@ from .dynamic_input_field import DynamicInputField
 from .dynamic_proxy_field import DynamicProxyField
 from .dynamic_type import DynamicType
 from .dynamic_type_handler import DynamicTypeHandler
+from .end_operator import EndOperator
 from .enriched_entity import EnrichedEntity
 from .entity_shape import EntityShape
 from .entity_shape_from_file import EntityShapeFromFile
@@ -164,9 +173,11 @@ from .folder_details import FolderDetails
 from .folder_summary import FolderSummary
 from .folder_summary_collection import FolderSummaryCollection
 from .foreign_key import ForeignKey
+from .hourly_frequency_details import HourlyFrequencyDetails
 from .input_field import InputField
 from .input_link import InputLink
 from .input_port import InputPort
+from .intersect import Intersect
 from .java_type import JavaType
 from .join import Join
 from .joiner import Joiner
@@ -175,12 +186,17 @@ from .key import Key
 from .key_attribute import KeyAttribute
 from .key_range import KeyRange
 from .key_range_partition_config import KeyRangePartitionConfig
+from .last_run_details import LastRunDetails
 from .macro_field import MacroField
+from .merge_operator import MergeOperator
 from .message import Message
+from .minus import Minus
+from .monthly_frequency_details import MonthlyFrequencyDetails
 from .name_list_rule import NameListRule
 from .name_pattern_rule import NamePatternRule
 from .native_shape_field import NativeShapeField
 from .object_metadata import ObjectMetadata
+from .oci_vault_secret_config import OciVaultSecretConfig
 from .operator import Operator
 from .oracle_adwc_write_attribute import OracleAdwcWriteAttribute
 from .oracle_adwc_write_attributes import OracleAdwcWriteAttributes
@@ -203,6 +219,12 @@ from .patch_change_summary_collection import PatchChangeSummaryCollection
 from .patch_object_metadata import PatchObjectMetadata
 from .patch_summary import PatchSummary
 from .patch_summary_collection import PatchSummaryCollection
+from .pipeline import Pipeline
+from .pipeline_summary import PipelineSummary
+from .pipeline_summary_collection import PipelineSummaryCollection
+from .pipeline_validation import PipelineValidation
+from .pipeline_validation_summary import PipelineValidationSummary
+from .pipeline_validation_summary_collection import PipelineValidationSummaryCollection
 from .primary_key import PrimaryKey
 from .project import Project
 from .project_details import ProjectDetails
@@ -214,6 +236,8 @@ from .proxy_field import ProxyField
 from .published_object import PublishedObject
 from .published_object_from_data_loader_task import PublishedObjectFromDataLoaderTask
 from .published_object_from_integration_task import PublishedObjectFromIntegrationTask
+from .published_object_from_pipeline_task import PublishedObjectFromPipelineTask
+from .published_object_from_pipeline_task_summary import PublishedObjectFromPipelineTaskSummary
 from .published_object_summary import PublishedObjectSummary
 from .published_object_summary_collection import PublishedObjectSummaryCollection
 from .published_object_summary_from_data_loader_task import PublishedObjectSummaryFromDataLoaderTask
@@ -231,10 +255,14 @@ from .resource_configuration import ResourceConfiguration
 from .root_object import RootObject
 from .rule_based_field_map import RuleBasedFieldMap
 from .rule_type_config import RuleTypeConfig
+from .schedule import Schedule
 from .schema import Schema
+from .schema_drift_config import SchemaDriftConfig
 from .schema_summary import SchemaSummary
 from .schema_summary_collection import SchemaSummaryCollection
+from .secret_config import SecretConfig
 from .select import Select
+from .sensitive_attribute import SensitiveAttribute
 from .shape import Shape
 from .shape_field import ShapeField
 from .sort import Sort
@@ -244,29 +272,36 @@ from .sort_key_rule import SortKeyRule
 from .sort_oper import SortOper
 from .source import Source
 from .source_application_info import SourceApplicationInfo
+from .start_operator import StartOperator
 from .structured_type import StructuredType
 from .target import Target
 from .task import Task
 from .task_from_data_loader_task_details import TaskFromDataLoaderTaskDetails
 from .task_from_integration_task_details import TaskFromIntegrationTaskDetails
+from .task_from_pipeline_task_details import TaskFromPipelineTaskDetails
+from .task_operator import TaskOperator
 from .task_run import TaskRun
 from .task_run_details import TaskRunDetails
 from .task_run_log_summary import TaskRunLogSummary
 from .task_run_summary import TaskRunSummary
 from .task_run_summary_collection import TaskRunSummaryCollection
+from .task_schedule import TaskSchedule
 from .task_summary import TaskSummary
 from .task_summary_collection import TaskSummaryCollection
 from .task_summary_from_data_loader_task import TaskSummaryFromDataLoaderTask
 from .task_summary_from_integration_task import TaskSummaryFromIntegrationTask
+from .task_summary_from_pipeline_task import TaskSummaryFromPipelineTask
 from .task_validation import TaskValidation
 from .task_validation_summary import TaskValidationSummary
 from .task_validation_summary_collection import TaskValidationSummaryCollection
+from .time import Time
 from .type_library import TypeLibrary
 from .type_list_rule import TypeListRule
 from .type_system import TypeSystem
 from .typed_name_pattern_rule import TypedNamePatternRule
 from .typed_object import TypedObject
 from .ui_properties import UIProperties
+from .union import Union
 from .unique_key import UniqueKey
 from .update_application_details import UpdateApplicationDetails
 from .update_connection_details import UpdateConnectionDetails
@@ -286,14 +321,17 @@ from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
 from .update_data_flow_details import UpdateDataFlowDetails
 from .update_external_publication_details import UpdateExternalPublicationDetails
 from .update_folder_details import UpdateFolderDetails
+from .update_pipeline_details import UpdatePipelineDetails
 from .update_project_details import UpdateProjectDetails
 from .update_reference_details import UpdateReferenceDetails
 from .update_task_details import UpdateTaskDetails
 from .update_task_from_data_loader_task import UpdateTaskFromDataLoaderTask
 from .update_task_from_integration_task import UpdateTaskFromIntegrationTask
+from .update_task_from_pipeline_task import UpdateTaskFromPipelineTask
 from .update_task_run_details import UpdateTaskRunDetails
 from .update_workspace_details import UpdateWorkspaceDetails
 from .validation_message import ValidationMessage
+from .variable import Variable
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -308,9 +346,11 @@ data_integration_type_mapping = {
     "AbstractDataOperationConfig": AbstractDataOperationConfig,
     "AbstractField": AbstractField,
     "AbstractFormatAttribute": AbstractFormatAttribute,
+    "AbstractFrequencyDetails": AbstractFrequencyDetails,
     "AbstractReadAttribute": AbstractReadAttribute,
     "AbstractWriteAttribute": AbstractWriteAttribute,
     "Aggregator": Aggregator,
+    "AggregatorSummary": AggregatorSummary,
     "Application": Application,
     "ApplicationDetails": ApplicationDetails,
     "ApplicationSummary": ApplicationSummary,
@@ -322,6 +362,7 @@ data_integration_type_mapping = {
     "ChildReferenceDetail": ChildReferenceDetail,
     "CompositeFieldMap": CompositeFieldMap,
     "CompositeType": CompositeType,
+    "Compression": Compression,
     "ConditionalInputLink": ConditionalInputLink,
     "ConfigDefinition": ConfigDefinition,
     "ConfigParameterDefinition": ConfigParameterDefinition,
@@ -383,17 +424,22 @@ data_integration_type_mapping = {
     "CreateExternalPublicationValidationDetails": CreateExternalPublicationValidationDetails,
     "CreateFolderDetails": CreateFolderDetails,
     "CreatePatchDetails": CreatePatchDetails,
+    "CreatePipelineDetails": CreatePipelineDetails,
+    "CreatePipelineValidationDetails": CreatePipelineValidationDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "CreateSourceApplicationInfo": CreateSourceApplicationInfo,
     "CreateTaskDetails": CreateTaskDetails,
     "CreateTaskFromDataLoaderTask": CreateTaskFromDataLoaderTask,
     "CreateTaskFromIntegrationTask": CreateTaskFromIntegrationTask,
+    "CreateTaskFromPipelineTask": CreateTaskFromPipelineTask,
     "CreateTaskRunDetails": CreateTaskRunDetails,
     "CreateTaskValidationDetails": CreateTaskValidationDetails,
     "CreateTaskValidationFromDataLoaderTask": CreateTaskValidationFromDataLoaderTask,
     "CreateTaskValidationFromIntegrationTask": CreateTaskValidationFromIntegrationTask,
+    "CreateTaskValidationFromPipelineTask": CreateTaskValidationFromPipelineTask,
     "CreateWorkspaceDetails": CreateWorkspaceDetails,
     "CsvFormatAttribute": CsvFormatAttribute,
+    "DailyFrequencyDetails": DailyFrequencyDetails,
     "DataAsset": DataAsset,
     "DataAssetFromAdwcDetails": DataAssetFromAdwcDetails,
     "DataAssetFromAtpDetails": DataAssetFromAtpDetails,
@@ -443,6 +489,7 @@ data_integration_type_mapping = {
     "DynamicProxyField": DynamicProxyField,
     "DynamicType": DynamicType,
     "DynamicTypeHandler": DynamicTypeHandler,
+    "EndOperator": EndOperator,
     "EnrichedEntity": EnrichedEntity,
     "EntityShape": EntityShape,
     "EntityShapeFromFile": EntityShapeFromFile,
@@ -465,9 +512,11 @@ data_integration_type_mapping = {
     "FolderSummary": FolderSummary,
     "FolderSummaryCollection": FolderSummaryCollection,
     "ForeignKey": ForeignKey,
+    "HourlyFrequencyDetails": HourlyFrequencyDetails,
     "InputField": InputField,
     "InputLink": InputLink,
     "InputPort": InputPort,
+    "Intersect": Intersect,
     "JavaType": JavaType,
     "Join": Join,
     "Joiner": Joiner,
@@ -476,12 +525,17 @@ data_integration_type_mapping = {
     "KeyAttribute": KeyAttribute,
     "KeyRange": KeyRange,
     "KeyRangePartitionConfig": KeyRangePartitionConfig,
+    "LastRunDetails": LastRunDetails,
     "MacroField": MacroField,
+    "MergeOperator": MergeOperator,
     "Message": Message,
+    "Minus": Minus,
+    "MonthlyFrequencyDetails": MonthlyFrequencyDetails,
     "NameListRule": NameListRule,
     "NamePatternRule": NamePatternRule,
     "NativeShapeField": NativeShapeField,
     "ObjectMetadata": ObjectMetadata,
+    "OciVaultSecretConfig": OciVaultSecretConfig,
     "Operator": Operator,
     "OracleAdwcWriteAttribute": OracleAdwcWriteAttribute,
     "OracleAdwcWriteAttributes": OracleAdwcWriteAttributes,
@@ -504,6 +558,12 @@ data_integration_type_mapping = {
     "PatchObjectMetadata": PatchObjectMetadata,
     "PatchSummary": PatchSummary,
     "PatchSummaryCollection": PatchSummaryCollection,
+    "Pipeline": Pipeline,
+    "PipelineSummary": PipelineSummary,
+    "PipelineSummaryCollection": PipelineSummaryCollection,
+    "PipelineValidation": PipelineValidation,
+    "PipelineValidationSummary": PipelineValidationSummary,
+    "PipelineValidationSummaryCollection": PipelineValidationSummaryCollection,
     "PrimaryKey": PrimaryKey,
     "Project": Project,
     "ProjectDetails": ProjectDetails,
@@ -515,6 +575,8 @@ data_integration_type_mapping = {
     "PublishedObject": PublishedObject,
     "PublishedObjectFromDataLoaderTask": PublishedObjectFromDataLoaderTask,
     "PublishedObjectFromIntegrationTask": PublishedObjectFromIntegrationTask,
+    "PublishedObjectFromPipelineTask": PublishedObjectFromPipelineTask,
+    "PublishedObjectFromPipelineTaskSummary": PublishedObjectFromPipelineTaskSummary,
     "PublishedObjectSummary": PublishedObjectSummary,
     "PublishedObjectSummaryCollection": PublishedObjectSummaryCollection,
     "PublishedObjectSummaryFromDataLoaderTask": PublishedObjectSummaryFromDataLoaderTask,
@@ -532,10 +594,14 @@ data_integration_type_mapping = {
     "RootObject": RootObject,
     "RuleBasedFieldMap": RuleBasedFieldMap,
     "RuleTypeConfig": RuleTypeConfig,
+    "Schedule": Schedule,
     "Schema": Schema,
+    "SchemaDriftConfig": SchemaDriftConfig,
     "SchemaSummary": SchemaSummary,
     "SchemaSummaryCollection": SchemaSummaryCollection,
+    "SecretConfig": SecretConfig,
     "Select": Select,
+    "SensitiveAttribute": SensitiveAttribute,
     "Shape": Shape,
     "ShapeField": ShapeField,
     "Sort": Sort,
@@ -545,29 +611,36 @@ data_integration_type_mapping = {
     "SortOper": SortOper,
     "Source": Source,
     "SourceApplicationInfo": SourceApplicationInfo,
+    "StartOperator": StartOperator,
     "StructuredType": StructuredType,
     "Target": Target,
     "Task": Task,
     "TaskFromDataLoaderTaskDetails": TaskFromDataLoaderTaskDetails,
     "TaskFromIntegrationTaskDetails": TaskFromIntegrationTaskDetails,
+    "TaskFromPipelineTaskDetails": TaskFromPipelineTaskDetails,
+    "TaskOperator": TaskOperator,
     "TaskRun": TaskRun,
     "TaskRunDetails": TaskRunDetails,
     "TaskRunLogSummary": TaskRunLogSummary,
     "TaskRunSummary": TaskRunSummary,
     "TaskRunSummaryCollection": TaskRunSummaryCollection,
+    "TaskSchedule": TaskSchedule,
     "TaskSummary": TaskSummary,
     "TaskSummaryCollection": TaskSummaryCollection,
     "TaskSummaryFromDataLoaderTask": TaskSummaryFromDataLoaderTask,
     "TaskSummaryFromIntegrationTask": TaskSummaryFromIntegrationTask,
+    "TaskSummaryFromPipelineTask": TaskSummaryFromPipelineTask,
     "TaskValidation": TaskValidation,
     "TaskValidationSummary": TaskValidationSummary,
     "TaskValidationSummaryCollection": TaskValidationSummaryCollection,
+    "Time": Time,
     "TypeLibrary": TypeLibrary,
     "TypeListRule": TypeListRule,
     "TypeSystem": TypeSystem,
     "TypedNamePatternRule": TypedNamePatternRule,
     "TypedObject": TypedObject,
     "UIProperties": UIProperties,
+    "Union": Union,
     "UniqueKey": UniqueKey,
     "UpdateApplicationDetails": UpdateApplicationDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
@@ -587,14 +660,17 @@ data_integration_type_mapping = {
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
     "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,
     "UpdateFolderDetails": UpdateFolderDetails,
+    "UpdatePipelineDetails": UpdatePipelineDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateReferenceDetails": UpdateReferenceDetails,
     "UpdateTaskDetails": UpdateTaskDetails,
     "UpdateTaskFromDataLoaderTask": UpdateTaskFromDataLoaderTask,
     "UpdateTaskFromIntegrationTask": UpdateTaskFromIntegrationTask,
+    "UpdateTaskFromPipelineTask": UpdateTaskFromPipelineTask,
     "UpdateTaskRunDetails": UpdateTaskRunDetails,
     "UpdateWorkspaceDetails": UpdateWorkspaceDetails,
     "ValidationMessage": ValidationMessage,
+    "Variable": Variable,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

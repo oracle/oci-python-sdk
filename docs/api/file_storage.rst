@@ -35,6 +35,7 @@ File Storage
     oci.file_storage.models.MountTargetSummary
     oci.file_storage.models.Snapshot
     oci.file_storage.models.SnapshotSummary
+    oci.file_storage.models.SourceDetails
     oci.file_storage.models.UpdateExportDetails
     oci.file_storage.models.UpdateExportSetDetails
     oci.file_storage.models.UpdateFileSystemDetails

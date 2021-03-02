@@ -1590,7 +1590,11 @@ class ShowOCIData(object):
 
                     if 'vnic_details' in vnic:
                         if 'display_name' in vnic['vnic_details']:
-                            val = {'id': vnic['vnic_id'], 'desc': vnic['vnic_details']['display_name'] + str(comp_text), 'details': vnic['vnic_details']}
+                            val = {
+                                'id': vnic['vnic_id'],
+                                'desc': vnic['vnic_details']['display_name'] + str(comp_text),
+                                'details': vnic['vnic_details']
+                            }
                             if 'ip_addresses' in vnic['vnic_details']:
                                 val['ip_addresses'] = vnic['vnic_details']['ip_addresses']
                             vnicdata.append(val)
@@ -2162,6 +2166,7 @@ class ShowOCIData(object):
 
             for dbs in list_autos:
                 freemsg = ",  FreeTier" if dbs['is_free_tier'] else ""
+                freesum = "Free " if dbs['is_free_tier'] else ""
                 value = {'id': str(dbs['id']),
                          'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type'] + freemsg),
                          'display_name': dbs['display_name'],
@@ -2175,11 +2180,11 @@ class ShowOCIData(object):
                          'service_console_url': str(dbs['service_console_url']),
                          'time_created': str(dbs['time_created'])[0:16],
                          'connection_strings': str(dbs['connection_strings']),
-                         'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
-                         'sum_info_stopped': "Stopped Autonomous Database " + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
-                         'sum_info_count': "Autonomous Database " + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
+                         'sum_info': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
+                         'sum_info_stopped': "Stopped Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
+                         'sum_info_count': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
                          'sum_count': str(dbs['sum_count']),
-                         'sum_info_storage': "Autonomous Database (TB)",
+                         'sum_info_storage': "Autonomous Database " + freesum + "(TB)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
                          'whitelisted_ips': dbs['whitelisted_ips'],
                          'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],

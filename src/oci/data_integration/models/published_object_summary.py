@@ -21,11 +21,16 @@ class PublishedObjectSummary(object):
     #: This constant has a value of "DATA_LOADER_TASK"
     MODEL_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
 
+    #: A constant which can be used with the model_type property of a PublishedObjectSummary.
+    #: This constant has a value of "PIPELINE_TASK"
+    MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PublishedObjectSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.PublishedObjectFromPipelineTaskSummary`
         * :class:`~oci.data_integration.models.PublishedObjectSummaryFromIntegrationTask`
         * :class:`~oci.data_integration.models.PublishedObjectSummaryFromDataLoaderTask`
 
@@ -33,7 +38,7 @@ class PublishedObjectSummary(object):
 
         :param model_type:
             The value to assign to the model_type property of this PublishedObjectSummary.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -119,6 +124,9 @@ class PublishedObjectSummary(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'PIPELINE_TASK':
+            return 'PublishedObjectFromPipelineTaskSummary'
+
         if type == 'INTEGRATION_TASK':
             return 'PublishedObjectSummaryFromIntegrationTask'
 
@@ -133,7 +141,7 @@ class PublishedObjectSummary(object):
         **[Required]** Gets the model_type of this PublishedObjectSummary.
         The type of the published object.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -152,7 +160,7 @@ class PublishedObjectSummary(object):
         :param model_type: The model_type of this PublishedObjectSummary.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

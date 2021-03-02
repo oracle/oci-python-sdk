@@ -56,6 +56,18 @@ class SnapshotSummary(object):
             The value to assign to the time_created property of this SnapshotSummary.
         :type time_created: datetime
 
+        :param provenance_id:
+            The value to assign to the provenance_id property of this SnapshotSummary.
+        :type provenance_id: str
+
+        :param is_clone_source:
+            The value to assign to the is_clone_source property of this SnapshotSummary.
+        :type is_clone_source: bool
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this SnapshotSummary.
+        :type lifecycle_details: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SnapshotSummary.
         :type freeform_tags: dict(str, str)
@@ -71,6 +83,9 @@ class SnapshotSummary(object):
             'lifecycle_state': 'str',
             'name': 'str',
             'time_created': 'datetime',
+            'provenance_id': 'str',
+            'is_clone_source': 'bool',
+            'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -81,6 +96,9 @@ class SnapshotSummary(object):
             'lifecycle_state': 'lifecycleState',
             'name': 'name',
             'time_created': 'timeCreated',
+            'provenance_id': 'provenanceId',
+            'is_clone_source': 'isCloneSource',
+            'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -90,6 +108,9 @@ class SnapshotSummary(object):
         self._lifecycle_state = None
         self._name = None
         self._time_created = None
+        self._provenance_id = None
+        self._is_clone_source = None
+        self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -97,8 +118,9 @@ class SnapshotSummary(object):
     def file_system_id(self):
         """
         **[Required]** Gets the file_system_id of this SnapshotSummary.
-        The OCID of the file system from which the
-        snapshot was created.
+        The `OCID`__ of the file system from which the snapshot was created.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this SnapshotSummary.
@@ -110,8 +132,9 @@ class SnapshotSummary(object):
     def file_system_id(self, file_system_id):
         """
         Sets the file_system_id of this SnapshotSummary.
-        The OCID of the file system from which the
-        snapshot was created.
+        The `OCID`__ of the file system from which the snapshot was created.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this SnapshotSummary.
@@ -123,7 +146,9 @@ class SnapshotSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SnapshotSummary.
-        The OCID of the snapshot.
+        The `OCID`__ of the snapshot.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SnapshotSummary.
@@ -135,7 +160,9 @@ class SnapshotSummary(object):
     def id(self, id):
         """
         Sets the id of this SnapshotSummary.
-        The OCID of the snapshot.
+        The `OCID`__ of the snapshot.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SnapshotSummary.
@@ -238,6 +265,96 @@ class SnapshotSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def provenance_id(self):
+        """
+        Gets the provenance_id of this SnapshotSummary.
+        An `OCID`__ identifying the parent from which this snapshot was cloned.
+        If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value.
+        If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :return: The provenance_id of this SnapshotSummary.
+        :rtype: str
+        """
+        return self._provenance_id
+
+    @provenance_id.setter
+    def provenance_id(self, provenance_id):
+        """
+        Sets the provenance_id of this SnapshotSummary.
+        An `OCID`__ identifying the parent from which this snapshot was cloned.
+        If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value.
+        If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :param provenance_id: The provenance_id of this SnapshotSummary.
+        :type: str
+        """
+        self._provenance_id = provenance_id
+
+    @property
+    def is_clone_source(self):
+        """
+        Gets the is_clone_source of this SnapshotSummary.
+        Specifies whether the snapshot has been cloned.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :return: The is_clone_source of this SnapshotSummary.
+        :rtype: bool
+        """
+        return self._is_clone_source
+
+    @is_clone_source.setter
+    def is_clone_source(self, is_clone_source):
+        """
+        Sets the is_clone_source of this SnapshotSummary.
+        Specifies whether the snapshot has been cloned.
+        See `Cloning a File System`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+
+
+        :param is_clone_source: The is_clone_source of this SnapshotSummary.
+        :type: bool
+        """
+        self._is_clone_source = is_clone_source
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this SnapshotSummary.
+        Additional information about the current 'lifecycleState'.
+
+
+        :return: The lifecycle_details of this SnapshotSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this SnapshotSummary.
+        Additional information about the current 'lifecycleState'.
+
+
+        :param lifecycle_details: The lifecycle_details of this SnapshotSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def freeform_tags(self):

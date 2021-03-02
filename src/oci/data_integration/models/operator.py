@@ -45,25 +45,68 @@ class Operator(object):
     #: This constant has a value of "SORT_OPERATOR"
     MODEL_TYPE_SORT_OPERATOR = "SORT_OPERATOR"
 
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "UNION_OPERATOR"
+    MODEL_TYPE_UNION_OPERATOR = "UNION_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "INTERSECT_OPERATOR"
+    MODEL_TYPE_INTERSECT_OPERATOR = "INTERSECT_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "MINUS_OPERATOR"
+    MODEL_TYPE_MINUS_OPERATOR = "MINUS_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "MERGE_OPERATOR"
+    MODEL_TYPE_MERGE_OPERATOR = "MERGE_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "START_OPERATOR"
+    MODEL_TYPE_START_OPERATOR = "START_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "END_OPERATOR"
+    MODEL_TYPE_END_OPERATOR = "END_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "PIPELINE_OPERATOR"
+    MODEL_TYPE_PIPELINE_OPERATOR = "PIPELINE_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "REST_OPERATOR"
+    MODEL_TYPE_REST_OPERATOR = "REST_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "TASK_OPERATOR"
+    MODEL_TYPE_TASK_OPERATOR = "TASK_OPERATOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Operator object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.data_integration.models.Target`
         * :class:`~oci.data_integration.models.Joiner`
-        * :class:`~oci.data_integration.models.Distinct`
-        * :class:`~oci.data_integration.models.Filter`
+        * :class:`~oci.data_integration.models.TaskOperator`
         * :class:`~oci.data_integration.models.Aggregator`
         * :class:`~oci.data_integration.models.SortOper`
         * :class:`~oci.data_integration.models.Projection`
+        * :class:`~oci.data_integration.models.EndOperator`
         * :class:`~oci.data_integration.models.Source`
+        * :class:`~oci.data_integration.models.Union`
+        * :class:`~oci.data_integration.models.Intersect`
+        * :class:`~oci.data_integration.models.Target`
+        * :class:`~oci.data_integration.models.Distinct`
+        * :class:`~oci.data_integration.models.Filter`
+        * :class:`~oci.data_integration.models.StartOperator`
+        * :class:`~oci.data_integration.models.MergeOperator`
+        * :class:`~oci.data_integration.models.Minus`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this Operator.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "REST_OPERATOR", "TASK_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -170,17 +213,11 @@ class Operator(object):
         """
         type = object_dictionary['modelType']
 
-        if type == 'TARGET_OPERATOR':
-            return 'Target'
-
         if type == 'JOINER_OPERATOR':
             return 'Joiner'
 
-        if type == 'DISTINCT_OPERATOR':
-            return 'Distinct'
-
-        if type == 'FILTER_OPERATOR':
-            return 'Filter'
+        if type == 'TASK_OPERATOR':
+            return 'TaskOperator'
 
         if type == 'AGGREGATOR_OPERATOR':
             return 'Aggregator'
@@ -191,8 +228,35 @@ class Operator(object):
         if type == 'PROJECTION_OPERATOR':
             return 'Projection'
 
+        if type == 'END_OPERATOR':
+            return 'EndOperator'
+
         if type == 'SOURCE_OPERATOR':
             return 'Source'
+
+        if type == 'UNION_OPERATOR':
+            return 'Union'
+
+        if type == 'INTERSECT_OPERATOR':
+            return 'Intersect'
+
+        if type == 'TARGET_OPERATOR':
+            return 'Target'
+
+        if type == 'DISTINCT_OPERATOR':
+            return 'Distinct'
+
+        if type == 'FILTER_OPERATOR':
+            return 'Filter'
+
+        if type == 'START_OPERATOR':
+            return 'StartOperator'
+
+        if type == 'MERGE_OPERATOR':
+            return 'MergeOperator'
+
+        if type == 'MINUS_OPERATOR':
+            return 'Minus'
         else:
             return 'Operator'
 
@@ -202,7 +266,7 @@ class Operator(object):
         **[Required]** Gets the model_type of this Operator.
         The model type of the operator.
 
-        Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "REST_OPERATOR", "TASK_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -221,7 +285,7 @@ class Operator(object):
         :param model_type: The model_type of this Operator.
         :type: str
         """
-        allowed_values = ["SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR"]
+        allowed_values = ["SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "REST_OPERATOR", "TASK_OPERATOR"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

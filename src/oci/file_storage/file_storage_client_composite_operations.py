@@ -181,7 +181,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str export_id: (required)
-            The OCID of the export.
+            The `OCID`__ of the export.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.Export.lifecycle_state`
@@ -228,7 +230,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.FileSystem.lifecycle_state`
@@ -275,7 +279,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str mount_target_id: (required)
-            The OCID of the mount target.
+            The `OCID`__ of the mount target.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.MountTarget.lifecycle_state`
@@ -322,7 +328,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str snapshot_id: (required)
-            The OCID of the snapshot.
+            The `OCID`__ of the snapshot.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.Snapshot.lifecycle_state`
@@ -369,7 +377,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str export_id: (required)
-            The OCID of the export.
+            The `OCID`__ of the export.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateExportDetails update_export_details: (required)
             Details object for updating an export.
@@ -410,7 +420,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str export_set_id: (required)
-            The OCID of the export set.
+            The `OCID`__ of the export set.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateExportSetDetails update_export_set_details: (required)
             Details object for updating an export set.
@@ -451,7 +463,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str file_system_id: (required)
-            The OCID of the file system.
+            The `OCID`__ of the file system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateFileSystemDetails update_file_system_details: (required)
             Details object for updating a file system.
@@ -492,7 +506,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str mount_target_id: (required)
-            The OCID of the mount target.
+            The `OCID`__ of the mount target.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateMountTargetDetails update_mount_target_details: (required)
             Details object for updating a mount target.
@@ -533,7 +549,9 @@ class FileStorageClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str snapshot_id: (required)
-            The OCID of the snapshot.
+            The `OCID`__ of the snapshot.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateSnapshotDetails update_snapshot_details: (required)
             Details object for updating a snapshot.

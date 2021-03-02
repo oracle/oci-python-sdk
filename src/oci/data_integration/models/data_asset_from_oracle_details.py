@@ -100,6 +100,14 @@ class DataAssetFromOracleDetails(DataAsset):
             The value to assign to the credential_file_content property of this DataAssetFromOracleDetails.
         :type credential_file_content: str
 
+        :param wallet_secret:
+            The value to assign to the wallet_secret property of this DataAssetFromOracleDetails.
+        :type wallet_secret: oci.data_integration.models.SensitiveAttribute
+
+        :param wallet_password_secret:
+            The value to assign to the wallet_password_secret property of this DataAssetFromOracleDetails.
+        :type wallet_password_secret: oci.data_integration.models.SensitiveAttribute
+
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetFromOracleDetails.
         :type default_connection: oci.data_integration.models.ConnectionFromOracleDetails
@@ -126,6 +134,8 @@ class DataAssetFromOracleDetails(DataAsset):
             'driver_class': 'str',
             'sid': 'str',
             'credential_file_content': 'str',
+            'wallet_secret': 'SensitiveAttribute',
+            'wallet_password_secret': 'SensitiveAttribute',
             'default_connection': 'ConnectionFromOracleDetails'
         }
 
@@ -150,6 +160,8 @@ class DataAssetFromOracleDetails(DataAsset):
             'driver_class': 'driverClass',
             'sid': 'sid',
             'credential_file_content': 'credentialFileContent',
+            'wallet_secret': 'walletSecret',
+            'wallet_password_secret': 'walletPasswordSecret',
             'default_connection': 'defaultConnection'
         }
 
@@ -173,6 +185,8 @@ class DataAssetFromOracleDetails(DataAsset):
         self._driver_class = None
         self._sid = None
         self._credential_file_content = None
+        self._wallet_secret = None
+        self._wallet_password_secret = None
         self._default_connection = None
         self._model_type = 'ORACLE_DATA_ASSET'
 
@@ -319,6 +333,46 @@ class DataAssetFromOracleDetails(DataAsset):
         :type: str
         """
         self._credential_file_content = credential_file_content
+
+    @property
+    def wallet_secret(self):
+        """
+        Gets the wallet_secret of this DataAssetFromOracleDetails.
+
+        :return: The wallet_secret of this DataAssetFromOracleDetails.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._wallet_secret
+
+    @wallet_secret.setter
+    def wallet_secret(self, wallet_secret):
+        """
+        Sets the wallet_secret of this DataAssetFromOracleDetails.
+
+        :param wallet_secret: The wallet_secret of this DataAssetFromOracleDetails.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._wallet_secret = wallet_secret
+
+    @property
+    def wallet_password_secret(self):
+        """
+        Gets the wallet_password_secret of this DataAssetFromOracleDetails.
+
+        :return: The wallet_password_secret of this DataAssetFromOracleDetails.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._wallet_password_secret
+
+    @wallet_password_secret.setter
+    def wallet_password_secret(self, wallet_password_secret):
+        """
+        Sets the wallet_password_secret of this DataAssetFromOracleDetails.
+
+        :param wallet_password_secret: The wallet_password_secret of this DataAssetFromOracleDetails.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._wallet_password_secret = wallet_password_secret
 
     @property
     def default_connection(self):

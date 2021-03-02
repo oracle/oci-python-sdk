@@ -17,27 +17,18 @@ class Key(object):
     #: This constant has a value of "FOREIGN_KEY"
     MODEL_TYPE_FOREIGN_KEY = "FOREIGN_KEY"
 
-    #: A constant which can be used with the model_type property of a Key.
-    #: This constant has a value of "PRIMARY_KEY"
-    MODEL_TYPE_PRIMARY_KEY = "PRIMARY_KEY"
-
-    #: A constant which can be used with the model_type property of a Key.
-    #: This constant has a value of "UNIQUE_KEY"
-    MODEL_TYPE_UNIQUE_KEY = "UNIQUE_KEY"
-
     def __init__(self, **kwargs):
         """
         Initializes a new Key object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.data_integration.models.UniqueKey`
         * :class:`~oci.data_integration.models.ForeignKey`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this Key.
-            Allowed values for this property are: "FOREIGN_KEY", "PRIMARY_KEY", "UNIQUE_KEY"
+            Allowed values for this property are: "FOREIGN_KEY"
         :type model_type: str
 
         """
@@ -59,9 +50,6 @@ class Key(object):
         """
         type = object_dictionary['modelType']
 
-        if type == 'UNIQUE_KEY':
-            return 'UniqueKey'
-
         if type == 'FOREIGN_KEY':
             return 'ForeignKey'
         else:
@@ -73,7 +61,7 @@ class Key(object):
         **[Required]** Gets the model_type of this Key.
         The key type.
 
-        Allowed values for this property are: "FOREIGN_KEY", "PRIMARY_KEY", "UNIQUE_KEY"
+        Allowed values for this property are: "FOREIGN_KEY"
 
 
         :return: The model_type of this Key.
@@ -91,7 +79,7 @@ class Key(object):
         :param model_type: The model_type of this Key.
         :type: str
         """
-        allowed_values = ["FOREIGN_KEY", "PRIMARY_KEY", "UNIQUE_KEY"]
+        allowed_values = ["FOREIGN_KEY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"
