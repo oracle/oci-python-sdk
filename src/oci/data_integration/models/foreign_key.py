@@ -21,7 +21,8 @@ class ForeignKey(Key):
 
         :param model_type:
             The value to assign to the model_type property of this ForeignKey.
-            Allowed values for this property are: "FOREIGN_KEY", "PRIMARY_KEY", "UNIQUE_KEY"
+            Allowed values for this property are: "FOREIGN_KEY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         :param key:

@@ -1,0 +1,11 @@
+PublishedObjectFromPipelineTaskSummary
+======================================
+
+.. currentmodule:: oci.data_integration.models
+
+.. autoclass:: PublishedObjectFromPipelineTaskSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

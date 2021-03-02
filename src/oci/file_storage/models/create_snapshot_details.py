@@ -58,7 +58,9 @@ class CreateSnapshotDetails(object):
     def file_system_id(self):
         """
         **[Required]** Gets the file_system_id of this CreateSnapshotDetails.
-        The OCID of the file system to take a snapshot of.
+        The `OCID`__ of the file system to take a snapshot of.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this CreateSnapshotDetails.
@@ -70,7 +72,9 @@ class CreateSnapshotDetails(object):
     def file_system_id(self, file_system_id):
         """
         Sets the file_system_id of this CreateSnapshotDetails.
-        The OCID of the file system to take a snapshot of.
+        The `OCID`__ of the file system to take a snapshot of.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this CreateSnapshotDetails.

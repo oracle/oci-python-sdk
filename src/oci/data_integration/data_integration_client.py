@@ -1186,6 +1186,184 @@ class DataIntegrationClient(object):
                 body=create_patch_details,
                 response_type="Patch")
 
+    def create_pipeline(self, workspace_id, create_pipeline_details, **kwargs):
+        """
+        Creates a new pipeline in a project or folder ready for performing task orchestration.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param oci.data_integration.models.CreatePipelineDetails create_pipeline_details: (required)
+            The details needed to create a new pipeline.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Pipeline`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_pipeline.py.html>`__ to see an example of how to use create_pipeline API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelines"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_pipeline_details,
+                response_type="Pipeline")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_pipeline_details,
+                response_type="Pipeline")
+
+    def create_pipeline_validation(self, workspace_id, create_pipeline_validation_details, **kwargs):
+        """
+        Accepts the data flow definition in the request payload and creates a pipeline validation.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param oci.data_integration.models.CreatePipelineValidationDetails create_pipeline_validation_details: (required)
+            The information needed to create the data flow validation for the pipeline object.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PipelineValidation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_pipeline_validation.py.html>`__ to see an example of how to use create_pipeline_validation API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelineValidations"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_pipeline_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_pipeline_validation_details,
+                response_type="PipelineValidation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_pipeline_validation_details,
+                response_type="PipelineValidation")
+
     def create_project(self, workspace_id, create_project_details, **kwargs):
         """
         Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
@@ -2456,6 +2634,178 @@ class DataIntegrationClient(object):
             "workspaceId": workspace_id,
             "applicationKey": application_key,
             "patchKey": patch_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_pipeline(self, workspace_id, pipeline_key, **kwargs):
+        """
+        Removes a pipeline from a project or folder using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str pipeline_key: (required)
+            The pipeline key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_pipeline.py.html>`__ to see an example of how to use delete_pipeline API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "pipelineKey": pipeline_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_pipeline_validation(self, workspace_id, pipeline_validation_key, **kwargs):
+        """
+        Removes a pipeline validation using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str pipeline_validation_key: (required)
+            The key of the pipeline validation.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_pipeline_validation.py.html>`__ to see an example of how to use delete_pipeline_validation API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelineValidations/{pipelineValidationKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_pipeline_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "pipelineValidationKey": pipeline_validation_key
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -4014,6 +4364,168 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="Patch")
 
+    def get_pipeline(self, workspace_id, pipeline_key, **kwargs):
+        """
+        Retrieves a pipeline using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str pipeline_key: (required)
+            The pipeline key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Pipeline`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_pipeline.py.html>`__ to see an example of how to use get_pipeline API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "pipelineKey": pipeline_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Pipeline")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Pipeline")
+
+    def get_pipeline_validation(self, workspace_id, pipeline_validation_key, **kwargs):
+        """
+        Retrieves a pipeline validation using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str pipeline_validation_key: (required)
+            The key of the pipeline validation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PipelineValidation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_pipeline_validation.py.html>`__ to see an example of how to use get_pipeline_validation API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelineValidations/{pipelineValidationKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_pipeline_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "pipelineValidationKey": pipeline_validation_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PipelineValidation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PipelineValidation")
+
     def get_project(self, workspace_id, project_key, **kwargs):
         """
         Retrieves a project using the specified identifier.
@@ -4377,6 +4889,9 @@ class DataIntegrationClient(object):
             you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param str expand_references: (optional)
+            Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4397,7 +4912,8 @@ class DataIntegrationClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "expand_references"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4414,6 +4930,11 @@ class DataIntegrationClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "expandReferences": kwargs.get("expand_references", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -4432,6 +4953,7 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Task")
         else:
@@ -4439,6 +4961,7 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Task")
 
@@ -5379,6 +5902,12 @@ class DataIntegrationClient(object):
             you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param list[str] name_list: (optional)
+            Used to filter by the name of the object.
+
+        :param bool is_pattern: (optional)
+            This parameter can be used to specify whether entity search type is pattern search or not.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5406,7 +5935,9 @@ class DataIntegrationClient(object):
             "fields",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "name_list",
+            "is_pattern"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5446,7 +5977,9 @@ class DataIntegrationClient(object):
             "limit": kwargs.get("limit", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "nameList": self.base_client.generate_collection_format_param(kwargs.get("name_list", missing), 'multi'),
+            "isPattern": kwargs.get("is_pattern", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -6643,6 +7176,296 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="PatchSummaryCollection")
 
+    def list_pipeline_validations(self, workspace_id, **kwargs):
+        """
+        Retrieves a list of pipeline validations within the specified workspace.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str key: (optional)
+            Used to filter by the key of the object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param str identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PipelineValidationSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_pipeline_validations.py.html>`__ to see an example of how to use list_pipeline_validations API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelineValidations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "key",
+            "name",
+            "identifier",
+            "fields",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_pipeline_validations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "key": kwargs.get("key", missing),
+            "name": kwargs.get("name", missing),
+            "identifier": kwargs.get("identifier", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PipelineValidationSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PipelineValidationSummaryCollection")
+
+    def list_pipelines(self, workspace_id, **kwargs):
+        """
+        Retrieves a list of pipelines in a project or folder from within a workspace, the query parameter specifies the project or folder.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str aggregator_key: (optional)
+            Used to filter by the project or the folder object.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PipelineSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_pipelines.py.html>`__ to see an example of how to use list_pipelines API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelines"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "aggregator_key",
+            "fields",
+            "name",
+            "identifier",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_pipelines got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "aggregatorKey": kwargs.get("aggregator_key", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PipelineSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PipelineSummaryCollection")
+
     def list_projects(self, workspace_id, **kwargs):
         """
         Retrieves a lists of projects in a workspace and provides options to filter the list.
@@ -7120,6 +7943,9 @@ class DataIntegrationClient(object):
             you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param list[str] name_list: (optional)
+            Used to filter by the name of the object.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7146,7 +7972,8 @@ class DataIntegrationClient(object):
             "sort_by",
             "sort_order",
             "name",
-            "opc_request_id"
+            "opc_request_id",
+            "name_list"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7185,7 +8012,8 @@ class DataIntegrationClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "schemaResourceName": schema_resource_name,
-            "name": kwargs.get("name", missing)
+            "name": kwargs.get("name", missing),
+            "nameList": self.base_client.generate_collection_format_param(kwargs.get("name_list", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -7367,6 +8195,9 @@ class DataIntegrationClient(object):
             you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param str aggregator_key: (optional)
+            Used to filter by the project or the folder object.
+
         :param list[str] fields: (optional)
             Specifies the fields to get for an object.
 
@@ -7417,6 +8248,7 @@ class DataIntegrationClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
+            "aggregator_key",
             "fields",
             "name",
             "identifier",
@@ -7456,6 +8288,7 @@ class DataIntegrationClient(object):
                 )
 
         query_params = {
+            "aggregatorKey": kwargs.get("aggregator_key", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "name": kwargs.get("name", missing),
             "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
@@ -8058,6 +8891,9 @@ class DataIntegrationClient(object):
             you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param str workspace_id: (optional)
+            DIS workspace id
+
         :param str work_request_status: (optional)
             The work request status.
 
@@ -8104,6 +8940,7 @@ class DataIntegrationClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
+            "workspace_id",
             "work_request_status",
             "page",
             "limit",
@@ -8138,6 +8975,7 @@ class DataIntegrationClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "workspaceId": kwargs.get("workspace_id", missing),
             "workRequestStatus": kwargs.get("work_request_status", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
@@ -9061,6 +9899,99 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 body=update_folder_details,
                 response_type="Folder")
+
+    def update_pipeline(self, workspace_id, pipeline_key, update_pipeline_details, **kwargs):
+        """
+        Updates a specific pipeline.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str pipeline_key: (required)
+            The pipeline key.
+
+        :param oci.data_integration.models.UpdatePipelineDetails update_pipeline_details: (required)
+            The details needed to updated a pipeline.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Pipeline`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_pipeline.py.html>`__ to see an example of how to use update_pipeline API.
+        """
+        resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "pipelineKey": pipeline_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_pipeline_details,
+                response_type="Pipeline")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_pipeline_details,
+                response_type="Pipeline")
 
     def update_project(self, workspace_id, project_key, update_project_details, **kwargs):
         """

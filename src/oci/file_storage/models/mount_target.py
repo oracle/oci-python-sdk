@@ -177,7 +177,9 @@ class MountTarget(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MountTarget.
-        The OCID of the compartment that contains the mount target.
+        The `OCID`__ of the compartment that contains the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MountTarget.
@@ -189,7 +191,9 @@ class MountTarget(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MountTarget.
-        The OCID of the compartment that contains the mount target.
+        The `OCID`__ of the compartment that contains the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MountTarget.
@@ -231,9 +235,11 @@ class MountTarget(object):
     def export_set_id(self):
         """
         Gets the export_set_id of this MountTarget.
-        The OCID of the associated export set. Controls what file
+        The `OCID`__ of the associated export set. Controls what file
         systems will be exported through Network File System (NFS) protocol on this
         mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_set_id of this MountTarget.
@@ -245,9 +251,11 @@ class MountTarget(object):
     def export_set_id(self, export_set_id):
         """
         Sets the export_set_id of this MountTarget.
-        The OCID of the associated export set. Controls what file
+        The `OCID`__ of the associated export set. Controls what file
         systems will be exported through Network File System (NFS) protocol on this
         mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param export_set_id: The export_set_id of this MountTarget.
@@ -259,7 +267,9 @@ class MountTarget(object):
     def id(self):
         """
         **[Required]** Gets the id of this MountTarget.
-        The OCID of the mount target.
+        The `OCID`__ of the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MountTarget.
@@ -271,7 +281,9 @@ class MountTarget(object):
     def id(self, id):
         """
         Sets the id of this MountTarget.
-        The OCID of the mount target.
+        The `OCID`__ of the mount target.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MountTarget.
@@ -361,7 +373,9 @@ class MountTarget(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this MountTarget.
-        The OCID of the subnet the mount target is in.
+        The `OCID`__ of the subnet the mount target is in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this MountTarget.
@@ -373,7 +387,9 @@ class MountTarget(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this MountTarget.
-        The OCID of the subnet the mount target is in.
+        The `OCID`__ of the subnet the mount target is in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this MountTarget.

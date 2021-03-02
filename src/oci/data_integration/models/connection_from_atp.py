@@ -84,6 +84,10 @@ class ConnectionFromAtp(Connection):
             The value to assign to the password property of this ConnectionFromAtp.
         :type password: str
 
+        :param password_secret:
+            The value to assign to the password_secret property of this ConnectionFromAtp.
+        :type password_secret: oci.data_integration.models.SensitiveAttribute
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -101,7 +105,8 @@ class ConnectionFromAtp(Connection):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'username': 'str',
-            'password': 'str'
+            'password': 'str',
+            'password_secret': 'SensitiveAttribute'
         }
 
         self.attribute_map = {
@@ -120,7 +125,8 @@ class ConnectionFromAtp(Connection):
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'username': 'username',
-            'password': 'password'
+            'password': 'password',
+            'password_secret': 'passwordSecret'
         }
 
         self._model_type = None
@@ -139,6 +145,7 @@ class ConnectionFromAtp(Connection):
         self._key_map = None
         self._username = None
         self._password = None
+        self._password_secret = None
         self._model_type = 'ORACLE_ATP_CONNECTION'
 
     @property
@@ -188,6 +195,26 @@ class ConnectionFromAtp(Connection):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret(self):
+        """
+        Gets the password_secret of this ConnectionFromAtp.
+
+        :return: The password_secret of this ConnectionFromAtp.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._password_secret
+
+    @password_secret.setter
+    def password_secret(self, password_secret):
+        """
+        Sets the password_secret of this ConnectionFromAtp.
+
+        :param password_secret: The password_secret of this ConnectionFromAtp.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._password_secret = password_secret
 
     def __repr__(self):
         return formatted_flat_dict(self)

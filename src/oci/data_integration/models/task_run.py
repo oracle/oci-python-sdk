@@ -41,6 +41,22 @@ class TaskRun(object):
     #: This constant has a value of "ERROR"
     STATUS_ERROR = "ERROR"
 
+    #: A constant which can be used with the expected_duration_unit property of a TaskRun.
+    #: This constant has a value of "SECONDS"
+    EXPECTED_DURATION_UNIT_SECONDS = "SECONDS"
+
+    #: A constant which can be used with the expected_duration_unit property of a TaskRun.
+    #: This constant has a value of "MINUTES"
+    EXPECTED_DURATION_UNIT_MINUTES = "MINUTES"
+
+    #: A constant which can be used with the expected_duration_unit property of a TaskRun.
+    #: This constant has a value of "HOURS"
+    EXPECTED_DURATION_UNIT_HOURS = "HOURS"
+
+    #: A constant which can be used with the expected_duration_unit property of a TaskRun.
+    #: This constant has a value of "DAYS"
+    EXPECTED_DURATION_UNIT_DAYS = "DAYS"
+
     #: A constant which can be used with the task_type property of a TaskRun.
     #: This constant has a value of "INTEGRATION_TASK"
     TASK_TYPE_INTEGRATION_TASK = "INTEGRATION_TASK"
@@ -48,6 +64,10 @@ class TaskRun(object):
     #: A constant which can be used with the task_type property of a TaskRun.
     #: This constant has a value of "DATA_LOADER_TASK"
     TASK_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
+
+    #: A constant which can be used with the task_type property of a TaskRun.
+    #: This constant has a value of "PIPELINE_TASK"
+    TASK_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
 
     def __init__(self, **kwargs):
         """
@@ -116,6 +136,40 @@ class TaskRun(object):
             The value to assign to the error_message property of this TaskRun.
         :type error_message: str
 
+        :param expected_duration:
+            The value to assign to the expected_duration property of this TaskRun.
+        :type expected_duration: float
+
+        :param expected_duration_unit:
+            The value to assign to the expected_duration_unit property of this TaskRun.
+            Allowed values for this property are: "SECONDS", "MINUTES", "HOURS", "DAYS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type expected_duration_unit: str
+
+        :param task_key:
+            The value to assign to the task_key property of this TaskRun.
+        :type task_key: str
+
+        :param retry_attempt:
+            The value to assign to the retry_attempt property of this TaskRun.
+        :type retry_attempt: int
+
+        :param task_schedule:
+            The value to assign to the task_schedule property of this TaskRun.
+        :type task_schedule: oci.data_integration.models.TaskSchedule
+
+        :param metrics:
+            The value to assign to the metrics property of this TaskRun.
+        :type metrics: dict(str, float)
+
+        :param execution_errors:
+            The value to assign to the execution_errors property of this TaskRun.
+        :type execution_errors: list[str]
+
+        :param termination_errors:
+            The value to assign to the termination_errors property of this TaskRun.
+        :type termination_errors: list[str]
+
         :param opc_request_id:
             The value to assign to the opc_request_id property of this TaskRun.
         :type opc_request_id: str
@@ -126,7 +180,7 @@ class TaskRun(object):
 
         :param task_type:
             The value to assign to the task_type property of this TaskRun.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
@@ -159,6 +213,14 @@ class TaskRun(object):
             'records_written': 'int',
             'bytes_processed': 'int',
             'error_message': 'str',
+            'expected_duration': 'float',
+            'expected_duration_unit': 'str',
+            'task_key': 'str',
+            'retry_attempt': 'int',
+            'task_schedule': 'TaskSchedule',
+            'metrics': 'dict(str, float)',
+            'execution_errors': 'list[str]',
+            'termination_errors': 'list[str]',
             'opc_request_id': 'str',
             'object_status': 'int',
             'task_type': 'str',
@@ -183,6 +245,14 @@ class TaskRun(object):
             'records_written': 'recordsWritten',
             'bytes_processed': 'bytesProcessed',
             'error_message': 'errorMessage',
+            'expected_duration': 'expectedDuration',
+            'expected_duration_unit': 'expectedDurationUnit',
+            'task_key': 'taskKey',
+            'retry_attempt': 'retryAttempt',
+            'task_schedule': 'taskSchedule',
+            'metrics': 'metrics',
+            'execution_errors': 'executionErrors',
+            'termination_errors': 'terminationErrors',
             'opc_request_id': 'opcRequestId',
             'object_status': 'objectStatus',
             'task_type': 'taskType',
@@ -206,6 +276,14 @@ class TaskRun(object):
         self._records_written = None
         self._bytes_processed = None
         self._error_message = None
+        self._expected_duration = None
+        self._expected_duration_unit = None
+        self._task_key = None
+        self._retry_attempt = None
+        self._task_schedule = None
+        self._metrics = None
+        self._execution_errors = None
+        self._termination_errors = None
         self._opc_request_id = None
         self._object_status = None
         self._task_type = None
@@ -572,6 +650,200 @@ class TaskRun(object):
         self._error_message = error_message
 
     @property
+    def expected_duration(self):
+        """
+        Gets the expected_duration of this TaskRun.
+        The expected duration for the task run.
+
+
+        :return: The expected_duration of this TaskRun.
+        :rtype: float
+        """
+        return self._expected_duration
+
+    @expected_duration.setter
+    def expected_duration(self, expected_duration):
+        """
+        Sets the expected_duration of this TaskRun.
+        The expected duration for the task run.
+
+
+        :param expected_duration: The expected_duration of this TaskRun.
+        :type: float
+        """
+        self._expected_duration = expected_duration
+
+    @property
+    def expected_duration_unit(self):
+        """
+        Gets the expected_duration_unit of this TaskRun.
+        The expected duration unit of measure.
+
+        Allowed values for this property are: "SECONDS", "MINUTES", "HOURS", "DAYS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The expected_duration_unit of this TaskRun.
+        :rtype: str
+        """
+        return self._expected_duration_unit
+
+    @expected_duration_unit.setter
+    def expected_duration_unit(self, expected_duration_unit):
+        """
+        Sets the expected_duration_unit of this TaskRun.
+        The expected duration unit of measure.
+
+
+        :param expected_duration_unit: The expected_duration_unit of this TaskRun.
+        :type: str
+        """
+        allowed_values = ["SECONDS", "MINUTES", "HOURS", "DAYS"]
+        if not value_allowed_none_or_none_sentinel(expected_duration_unit, allowed_values):
+            expected_duration_unit = 'UNKNOWN_ENUM_VALUE'
+        self._expected_duration_unit = expected_duration_unit
+
+    @property
+    def task_key(self):
+        """
+        Gets the task_key of this TaskRun.
+        Task Key of the task for which TaskRun is being created. If not specified, the AggregatorKey in RegistryMetadata will be assumed to be the TaskKey
+
+
+        :return: The task_key of this TaskRun.
+        :rtype: str
+        """
+        return self._task_key
+
+    @task_key.setter
+    def task_key(self, task_key):
+        """
+        Sets the task_key of this TaskRun.
+        Task Key of the task for which TaskRun is being created. If not specified, the AggregatorKey in RegistryMetadata will be assumed to be the TaskKey
+
+
+        :param task_key: The task_key of this TaskRun.
+        :type: str
+        """
+        self._task_key = task_key
+
+    @property
+    def retry_attempt(self):
+        """
+        Gets the retry_attempt of this TaskRun.
+        Holds the particular attempt number.
+
+
+        :return: The retry_attempt of this TaskRun.
+        :rtype: int
+        """
+        return self._retry_attempt
+
+    @retry_attempt.setter
+    def retry_attempt(self, retry_attempt):
+        """
+        Sets the retry_attempt of this TaskRun.
+        Holds the particular attempt number.
+
+
+        :param retry_attempt: The retry_attempt of this TaskRun.
+        :type: int
+        """
+        self._retry_attempt = retry_attempt
+
+    @property
+    def task_schedule(self):
+        """
+        Gets the task_schedule of this TaskRun.
+
+        :return: The task_schedule of this TaskRun.
+        :rtype: oci.data_integration.models.TaskSchedule
+        """
+        return self._task_schedule
+
+    @task_schedule.setter
+    def task_schedule(self, task_schedule):
+        """
+        Sets the task_schedule of this TaskRun.
+
+        :param task_schedule: The task_schedule of this TaskRun.
+        :type: oci.data_integration.models.TaskSchedule
+        """
+        self._task_schedule = task_schedule
+
+    @property
+    def metrics(self):
+        """
+        Gets the metrics of this TaskRun.
+        A map of metrics for the run.
+
+
+        :return: The metrics of this TaskRun.
+        :rtype: dict(str, float)
+        """
+        return self._metrics
+
+    @metrics.setter
+    def metrics(self, metrics):
+        """
+        Sets the metrics of this TaskRun.
+        A map of metrics for the run.
+
+
+        :param metrics: The metrics of this TaskRun.
+        :type: dict(str, float)
+        """
+        self._metrics = metrics
+
+    @property
+    def execution_errors(self):
+        """
+        Gets the execution_errors of this TaskRun.
+        An array of execution errors from the run.
+
+
+        :return: The execution_errors of this TaskRun.
+        :rtype: list[str]
+        """
+        return self._execution_errors
+
+    @execution_errors.setter
+    def execution_errors(self, execution_errors):
+        """
+        Sets the execution_errors of this TaskRun.
+        An array of execution errors from the run.
+
+
+        :param execution_errors: The execution_errors of this TaskRun.
+        :type: list[str]
+        """
+        self._execution_errors = execution_errors
+
+    @property
+    def termination_errors(self):
+        """
+        Gets the termination_errors of this TaskRun.
+        An array of termination errors from the run.
+
+
+        :return: The termination_errors of this TaskRun.
+        :rtype: list[str]
+        """
+        return self._termination_errors
+
+    @termination_errors.setter
+    def termination_errors(self, termination_errors):
+        """
+        Sets the termination_errors of this TaskRun.
+        An array of termination errors from the run.
+
+
+        :param termination_errors: The termination_errors of this TaskRun.
+        :type: list[str]
+        """
+        self._termination_errors = termination_errors
+
+    @property
     def opc_request_id(self):
         """
         Gets the opc_request_id of this TaskRun.
@@ -625,7 +897,7 @@ class TaskRun(object):
         Gets the task_type of this TaskRun.
         The type of task run.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -644,7 +916,7 @@ class TaskRun(object):
         :param task_type: The task_type of this TaskRun.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type

@@ -21,6 +21,10 @@ class CreateTaskDetails(object):
     #: This constant has a value of "DATA_LOADER_TASK"
     MODEL_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
 
+    #: A constant which can be used with the model_type property of a CreateTaskDetails.
+    #: This constant has a value of "PIPELINE_TASK"
+    MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -28,12 +32,13 @@ class CreateTaskDetails(object):
 
         * :class:`~oci.data_integration.models.CreateTaskFromIntegrationTask`
         * :class:`~oci.data_integration.models.CreateTaskFromDataLoaderTask`
+        * :class:`~oci.data_integration.models.CreateTaskFromPipelineTask`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this CreateTaskDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
         :type model_type: str
 
         :param key:
@@ -151,6 +156,9 @@ class CreateTaskDetails(object):
 
         if type == 'DATA_LOADER_TASK':
             return 'CreateTaskFromDataLoaderTask'
+
+        if type == 'PIPELINE_TASK':
+            return 'CreateTaskFromPipelineTask'
         else:
             return 'CreateTaskDetails'
 
@@ -160,7 +168,7 @@ class CreateTaskDetails(object):
         **[Required]** Gets the model_type of this CreateTaskDetails.
         The type of the task.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK"
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
 
 
         :return: The model_type of this CreateTaskDetails.
@@ -178,7 +186,7 @@ class CreateTaskDetails(object):
         :param model_type: The model_type of this CreateTaskDetails.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

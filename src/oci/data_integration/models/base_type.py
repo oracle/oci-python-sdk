@@ -37,6 +37,10 @@ class BaseType(object):
     #: This constant has a value of "COMPOSITE_TYPE"
     MODEL_TYPE_COMPOSITE_TYPE = "COMPOSITE_TYPE"
 
+    #: A constant which can be used with the model_type property of a BaseType.
+    #: This constant has a value of "DERIVED_TYPE"
+    MODEL_TYPE_DERIVED_TYPE = "DERIVED_TYPE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BaseType object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -53,7 +57,7 @@ class BaseType(object):
 
         :param model_type:
             The value to assign to the model_type property of this BaseType.
-            Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -144,7 +148,7 @@ class BaseType(object):
         **[Required]** Gets the model_type of this BaseType.
         The property which disciminates the subtypes.
 
-        Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -163,7 +167,7 @@ class BaseType(object):
         :param model_type: The model_type of this BaseType.
         :type: str
         """
-        allowed_values = ["DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE"]
+        allowed_values = ["DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

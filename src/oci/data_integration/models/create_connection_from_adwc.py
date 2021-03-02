@@ -68,6 +68,10 @@ class CreateConnectionFromAdwc(CreateConnectionDetails):
             The value to assign to the password property of this CreateConnectionFromAdwc.
         :type password: str
 
+        :param password_secret:
+            The value to assign to the password_secret property of this CreateConnectionFromAdwc.
+        :type password_secret: oci.data_integration.models.SensitiveAttribute
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -81,7 +85,8 @@ class CreateConnectionFromAdwc(CreateConnectionDetails):
             'connection_properties': 'list[ConnectionProperty]',
             'registry_metadata': 'RegistryMetadata',
             'username': 'str',
-            'password': 'str'
+            'password': 'str',
+            'password_secret': 'SensitiveAttribute'
         }
 
         self.attribute_map = {
@@ -96,7 +101,8 @@ class CreateConnectionFromAdwc(CreateConnectionDetails):
             'connection_properties': 'connectionProperties',
             'registry_metadata': 'registryMetadata',
             'username': 'username',
-            'password': 'password'
+            'password': 'password',
+            'password_secret': 'passwordSecret'
         }
 
         self._model_type = None
@@ -111,6 +117,7 @@ class CreateConnectionFromAdwc(CreateConnectionDetails):
         self._registry_metadata = None
         self._username = None
         self._password = None
+        self._password_secret = None
         self._model_type = 'ORACLE_ADWC_CONNECTION'
 
     @property
@@ -160,6 +167,26 @@ class CreateConnectionFromAdwc(CreateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret(self):
+        """
+        Gets the password_secret of this CreateConnectionFromAdwc.
+
+        :return: The password_secret of this CreateConnectionFromAdwc.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._password_secret
+
+    @password_secret.setter
+    def password_secret(self, password_secret):
+        """
+        Sets the password_secret of this CreateConnectionFromAdwc.
+
+        :param password_secret: The password_secret of this CreateConnectionFromAdwc.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._password_secret = password_secret
 
     def __repr__(self):
         return formatted_flat_dict(self)

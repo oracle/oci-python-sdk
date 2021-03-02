@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.02.30 - 21.02.30
+=====================
+* Added Created for database componenets
+* Added internal fqdn to compute and CSV
+
+=====================
 21.01.21 - 21.01.21
 =====================
 * Added SGW transit route

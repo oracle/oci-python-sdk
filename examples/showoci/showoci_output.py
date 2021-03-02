@@ -900,6 +900,7 @@ class ShowOCIOutput(object):
                 print("")
 
                 print(self.taba + "ExaCS   : " + dbs['name'])
+                print(self.tabs + "Created : " + dbs['time_created'][0:16])
                 print(self.tabs + "AD      : " + dbs['availability_domain'])
 
                 if 'compute_count' in dbs:
@@ -1025,6 +1026,7 @@ class ShowOCIOutput(object):
     def __print_database_db_system_details(self, dbs):
         try:
             print(self.taba + "DBaaS   : " + dbs['name'] + " - " + dbs['version'])
+            print(self.tabs + "Created : " + dbs['time_created'][0:16])
             print(self.tabs + "AD      : " + dbs['availability_domain'])
 
             if 'cpu_core_count' in dbs:
@@ -1832,6 +1834,9 @@ class ShowOCIOutput(object):
                         if 'nsg_names' in vnic['details']:
                             if vnic['details']['nsg_names']:
                                 print(self.tabs2 + "     : SecGrp: " + vnic['details']['nsg_names'])
+                        if 'internal_fqdn' in vnic['details']:
+                            if vnic['details']['internal_fqdn']:
+                                print(self.tabs2 + "     : Int FQDN     : " + vnic['details']['internal_fqdn'])
                         if 'ip_addresses' in vnic:
                             print(self.tabs2 + "     : IP Addresses : " + str(', '.join(x['ip_address'] for x in vnic['ip_addresses'])))
 
@@ -3619,6 +3624,7 @@ class ShowOCICSV(object):
                         'public_ips': str(', '.join(x['details']['public_ip'] for x in instance['vnic'])),
                         'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
                         'security_groups': str(', '.join(x['details']['nsg_names'] for x in instance['vnic'])),
+                        'internal_fqdn': str(', '.join(x['details']['internal_fqdn'] for x in instance['vnic'])),
                         'time_created': instance['time_created'][0:16],
                         'boot_volume': "",
                         'boot_volume_size_gb': "",

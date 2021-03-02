@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.32.0 - 2021-03-02
+====================
+
+Added
+-----
+* Support for pipelines, pipeline tasks, and favorites in the Data Integration service
+* Support for publishing tasks to OCI Data Flow in the Data Integration service
+* Support for clones in the File Storage service
+
+Breaking
+--------
+* Changed model `UniqueKey` in the Dataintegration service to not inherit from Key.
+* Changed model `PrimaryKey` in the Dataintegration service to inherit from `UniqueKey`.
+* Removed enum values `PRIMARY_KEY` and `UNIQUE_KEY` in property `model_type` from model `key` in the Dataintegration service.
+
+====================
 2.31.2 - 2021-02-23
 ====================
 

@@ -85,6 +85,10 @@ class ConnectionSummaryFromOracle(ConnectionSummary):
             The value to assign to the password property of this ConnectionSummaryFromOracle.
         :type password: str
 
+        :param password_secret:
+            The value to assign to the password_secret property of this ConnectionSummaryFromOracle.
+        :type password_secret: oci.data_integration.models.SensitiveAttribute
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -102,7 +106,8 @@ class ConnectionSummaryFromOracle(ConnectionSummary):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'username': 'str',
-            'password': 'str'
+            'password': 'str',
+            'password_secret': 'SensitiveAttribute'
         }
 
         self.attribute_map = {
@@ -121,7 +126,8 @@ class ConnectionSummaryFromOracle(ConnectionSummary):
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'username': 'username',
-            'password': 'password'
+            'password': 'password',
+            'password_secret': 'passwordSecret'
         }
 
         self._model_type = None
@@ -140,6 +146,7 @@ class ConnectionSummaryFromOracle(ConnectionSummary):
         self._key_map = None
         self._username = None
         self._password = None
+        self._password_secret = None
         self._model_type = 'ORACLEDB_CONNECTION'
 
     @property
@@ -189,6 +196,26 @@ class ConnectionSummaryFromOracle(ConnectionSummary):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret(self):
+        """
+        Gets the password_secret of this ConnectionSummaryFromOracle.
+
+        :return: The password_secret of this ConnectionSummaryFromOracle.
+        :rtype: oci.data_integration.models.SensitiveAttribute
+        """
+        return self._password_secret
+
+    @password_secret.setter
+    def password_secret(self, password_secret):
+        """
+        Sets the password_secret of this ConnectionSummaryFromOracle.
+
+        :param password_secret: The password_secret of this ConnectionSummaryFromOracle.
+        :type: oci.data_integration.models.SensitiveAttribute
+        """
+        self._password_secret = password_secret
 
     def __repr__(self):
         return formatted_flat_dict(self)
