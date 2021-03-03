@@ -7,6 +7,7 @@
 from ..exceptions import ServiceError
 from . import retry_checkers
 from . import retry_sleep_utils
+from .retry_utils import should_record_body_position_for_retry, record_body_position_for_retry, rewind_body_for_retry
 
 import time
 
@@ -267,13 +268,27 @@ class ExponentialBackoffRetryStrategyBase(object):
         should_retry = True
         attempt = 0
         start_time = time.time()
+        _should_record_body_position_for_retry = should_record_body_position_for_retry(func_ref, **func_kwargs)
+        _is_body_retryable = True
         while should_retry:
             try:
+                # File-like body should be treated differently while retrying
+                if _should_record_body_position_for_retry:
+                    # Attempt to save current position for file-like body
+                    _is_body_retryable, body_position = record_body_position_for_retry(func_kwargs.get('body'))
                 return func_ref(*func_args, **func_kwargs)
             except Exception as e:
                 attempt += 1
-                if self.checkers.should_retry(exception=e, current_attempt=attempt, total_time_elapsed=(time.time() - start_time)):
+                if _is_body_retryable and self.checkers.should_retry(exception=e, current_attempt=attempt,
+                                                                     total_time_elapsed=(time.time() - start_time)):
                     self.do_sleep(attempt, e)
+
+                    # If the body has to be rewound, then attempt to rewind
+                    if _should_record_body_position_for_retry and _is_body_retryable:
+                        # rewind_body_for_retry returns True if rewind was successful, False otherwise
+                        # If the body should have been rewound but we were not able to, then raise
+                        if not rewind_body_for_retry(func_kwargs.get('body'), body_position):
+                            raise
                 else:
                     raise
 
