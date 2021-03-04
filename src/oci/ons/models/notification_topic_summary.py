@@ -38,6 +38,10 @@ class NotificationTopicSummary(object):
             The value to assign to the topic_id property of this NotificationTopicSummary.
         :type topic_id: str
 
+        :param short_topic_id:
+            The value to assign to the short_topic_id property of this NotificationTopicSummary.
+        :type short_topic_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this NotificationTopicSummary.
         :type compartment_id: str
@@ -76,6 +80,7 @@ class NotificationTopicSummary(object):
         self.swagger_types = {
             'name': 'str',
             'topic_id': 'str',
+            'short_topic_id': 'str',
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'description': 'str',
@@ -89,6 +94,7 @@ class NotificationTopicSummary(object):
         self.attribute_map = {
             'name': 'name',
             'topic_id': 'topicId',
+            'short_topic_id': 'shortTopicId',
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'description': 'description',
@@ -101,6 +107,7 @@ class NotificationTopicSummary(object):
 
         self._name = None
         self._topic_id = None
+        self._short_topic_id = None
         self._compartment_id = None
         self._lifecycle_state = None
         self._description = None
@@ -161,6 +168,30 @@ class NotificationTopicSummary(object):
         :type: str
         """
         self._topic_id = topic_id
+
+    @property
+    def short_topic_id(self):
+        """
+        Gets the short_topic_id of this NotificationTopicSummary.
+        A unique short topic Id. This is used only for SMS subscriptions.
+
+
+        :return: The short_topic_id of this NotificationTopicSummary.
+        :rtype: str
+        """
+        return self._short_topic_id
+
+    @short_topic_id.setter
+    def short_topic_id(self, short_topic_id):
+        """
+        Sets the short_topic_id of this NotificationTopicSummary.
+        A unique short topic Id. This is used only for SMS subscriptions.
+
+
+        :param short_topic_id: The short_topic_id of this NotificationTopicSummary.
+        :type: str
+        """
+        self._short_topic_id = short_topic_id
 
     @property
     def compartment_id(self):

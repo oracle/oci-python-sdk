@@ -381,9 +381,10 @@ class NotificationDataPlaneClient(object):
               * `CUSTOM_HTTPS`
               * `EMAIL`
               * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+              * `ORACLE_FUNCTIONS`
               * `PAGERDUTY`
               * `SLACK`
-              * `ORACLE_FUNCTIONS`
+              * `SMS`
 
             For information about subscription protocols, see
             `To create a subscription`__.
@@ -548,7 +549,7 @@ class NotificationDataPlaneClient(object):
 
     def get_unsubscription(self, id, token, protocol, **kwargs):
         """
-        Gets the unsubscription details for the specified subscription.
+        Unsubscribes the subscription from the topic.
 
         Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
@@ -568,9 +569,10 @@ class NotificationDataPlaneClient(object):
               * `CUSTOM_HTTPS`
               * `EMAIL`
               * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+              * `ORACLE_FUNCTIONS`
               * `PAGERDUTY`
               * `SLACK`
-              * `ORACLE_FUNCTIONS`
+              * `SMS`
 
             For information about subscription protocols, see
             `To create a subscription`__.
@@ -764,7 +766,7 @@ class NotificationDataPlaneClient(object):
         Message delivery rate limit per endpoint: 60 messages per minute for HTTP-based protocols, 10 messages per minute for the `EMAIL` protocol.
         HTTP-based protocols use URL endpoints that begin with \"http:\" or \"https:\".
 
-        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60 per topic.
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60 per topic. (This TPM limit represents messages per minute.)
 
         For more information about publishing messages, see `Publishing Messages`__.
         For steps to request a limit increase, see `Requesting a Service Limit Increase`__.
@@ -786,7 +788,13 @@ class NotificationDataPlaneClient(object):
             particular request, please provide the request ID.
 
         :param str message_type: (optional)
+            **Deprecated.**
+            Support for JSON is deprecated.
+            You can send a JSON payload even when transmitting the payload as a raw string.
+            Configure your receiving system to read the raw payload as JSON format.
+
             Type of message body in the request.
+            For `messageType` of JSON, a default key-value pair is required. Example: `{\"default\": \"Alarm breached\", \"Email\": \"Alarm breached: <url>\"}.`
 
             Allowed values are: "JSON", "RAW_TEXT"
 

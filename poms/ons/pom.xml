@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.pic.ons</groupId>
         <artifactId>ons-gateway-spec</artifactId>
-        <version>2.1.245</version>
+        <version>2.1.839</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

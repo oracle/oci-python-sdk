@@ -43,6 +43,10 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/apm_traces/pom.xml</module>
+    <module>poms/apm_control_plane/pom.xml</module>
+    <module>poms/golden_gate/pom.xml</module>
+    <module>poms/apm_synthetics/pom.xml</module>
     <module>poms/artifacts/pom.xml</module>
     <module>poms/database_management/pom.xml</module>
     <module>poms/rover/pom.xml</module>

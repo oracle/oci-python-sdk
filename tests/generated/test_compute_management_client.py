@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_attach_instance_pool_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AttachInstancePoolInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'AttachInstancePoolInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AttachInstancePoolInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.attach_instance_pool_instance(
+                instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                attach_instance_pool_instance_details=request.pop(util.camelize('AttachInstancePoolInstanceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AttachInstancePoolInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'instancePoolInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_attach_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AttachLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -358,6 +399,47 @@ def test_delete_instance_configuration(testing_service_client):
 
 
 # IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_detach_instance_pool_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DetachInstancePoolInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'DetachInstancePoolInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DetachInstancePoolInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.detach_instance_pool_instance(
+                instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                detach_instance_pool_instance_details=request.pop(util.camelize('DetachInstancePoolInstanceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DetachInstancePoolInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'detach_instance_pool_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_detach_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DetachLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -513,6 +595,47 @@ def test_get_instance_pool(testing_service_client):
             result,
             service_error,
             'instancePool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_get_instance_pool_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetInstancePoolInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'GetInstancePoolInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetInstancePoolInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_instance_pool_instance(
+                instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                instance_id=request.pop(util.camelize('instanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetInstancePoolInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'instancePoolInstance',
             False,
             False
         )
