@@ -51,9 +51,9 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A short error code that defines the error, meant for programmatic parsing. See `API Errors`__.
+        A short error code that defines the error, which is meant for programmatic parsing. See `API Errors`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
+        __ https://docs.cloud.oracle.com/Content/General/References/apierrors.htm
 
 
         :return: The code of this WorkRequestError.
@@ -65,9 +65,9 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A short error code that defines the error, meant for programmatic parsing. See `API Errors`__.
+        A short error code that defines the error, which is meant for programmatic parsing. See `API Errors`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
+        __ https://docs.cloud.oracle.com/Content/General/References/apierrors.htm
 
 
         :param code: The code of this WorkRequestError.

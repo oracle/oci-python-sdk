@@ -58,7 +58,7 @@ class UpdateModelDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateModelDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
          Example: `My Model`
 
 
@@ -71,7 +71,7 @@ class UpdateModelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateModelDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
          Example: `My Model`
 
 
@@ -84,7 +84,7 @@ class UpdateModelDetails(object):
     def description(self):
         """
         Gets the description of this UpdateModelDetails.
-        A short blurb describing the model.
+        A short description of the model.
 
 
         :return: The description of this UpdateModelDetails.
@@ -96,7 +96,7 @@ class UpdateModelDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateModelDetails.
-        A short blurb describing the model.
+        A short description of the model.
 
 
         :param description: The description of this UpdateModelDetails.
