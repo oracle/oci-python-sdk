@@ -141,9 +141,10 @@ class CreateSubscriptionDetails(object):
           * `CUSTOM_HTTPS`
           * `EMAIL`
           * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+          * `ORACLE_FUNCTIONS`
           * `PAGERDUTY`
           * `SLACK`
-          * `ORACLE_FUNCTIONS`
+          * `SMS`
 
         For information about subscription protocols, see
         `To create a subscription`__.
@@ -166,9 +167,10 @@ class CreateSubscriptionDetails(object):
           * `CUSTOM_HTTPS`
           * `EMAIL`
           * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+          * `ORACLE_FUNCTIONS`
           * `PAGERDUTY`
           * `SLACK`
-          * `ORACLE_FUNCTIONS`
+          * `SMS`
 
         For information about subscription protocols, see
         `To create a subscription`__.

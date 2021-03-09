@@ -178,6 +178,16 @@ class SubscriptionSummary(object):
         """
         **[Required]** Gets the protocol of this SubscriptionSummary.
         The protocol used for the subscription.
+
+        Allowed values:
+          * `CUSTOM_HTTPS`
+          * `EMAIL`
+          * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+          * `ORACLE_FUNCTIONS`
+          * `PAGERDUTY`
+          * `SLACK`
+          * `SMS`
+
         For information about subscription protocols, see
         `To create a subscription`__.
 
@@ -194,6 +204,16 @@ class SubscriptionSummary(object):
         """
         Sets the protocol of this SubscriptionSummary.
         The protocol used for the subscription.
+
+        Allowed values:
+          * `CUSTOM_HTTPS`
+          * `EMAIL`
+          * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+          * `ORACLE_FUNCTIONS`
+          * `PAGERDUTY`
+          * `SLACK`
+          * `SMS`
+
         For information about subscription protocols, see
         `To create a subscription`__.
 

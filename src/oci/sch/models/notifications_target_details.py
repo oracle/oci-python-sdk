@@ -28,19 +28,26 @@ class NotificationsTargetDetails(TargetDetails):
             The value to assign to the topic_id property of this NotificationsTargetDetails.
         :type topic_id: str
 
+        :param enable_formatted_messaging:
+            The value to assign to the enable_formatted_messaging property of this NotificationsTargetDetails.
+        :type enable_formatted_messaging: bool
+
         """
         self.swagger_types = {
             'kind': 'str',
-            'topic_id': 'str'
+            'topic_id': 'str',
+            'enable_formatted_messaging': 'bool'
         }
 
         self.attribute_map = {
             'kind': 'kind',
-            'topic_id': 'topicId'
+            'topic_id': 'topicId',
+            'enable_formatted_messaging': 'enableFormattedMessaging'
         }
 
         self._kind = None
         self._topic_id = None
+        self._enable_formatted_messaging = None
         self._kind = 'notifications'
 
     @property
@@ -70,6 +77,34 @@ class NotificationsTargetDetails(TargetDetails):
         :type: str
         """
         self._topic_id = topic_id
+
+    @property
+    def enable_formatted_messaging(self):
+        """
+        Gets the enable_formatted_messaging of this NotificationsTargetDetails.
+        Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+
+        Example: `true`
+
+
+        :return: The enable_formatted_messaging of this NotificationsTargetDetails.
+        :rtype: bool
+        """
+        return self._enable_formatted_messaging
+
+    @enable_formatted_messaging.setter
+    def enable_formatted_messaging(self, enable_formatted_messaging):
+        """
+        Sets the enable_formatted_messaging of this NotificationsTargetDetails.
+        Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+
+        Example: `true`
+
+
+        :param enable_formatted_messaging: The enable_formatted_messaging of this NotificationsTargetDetails.
+        :type: bool
+        """
+        self._enable_formatted_messaging = enable_formatted_messaging
 
     def __repr__(self):
         return formatted_flat_dict(self)

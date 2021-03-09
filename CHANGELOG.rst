@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.32.1 - 2020-03-09
+====================
+
+Added
+-----
+* Support for the Application Performance Monitoring service
+* Support for the Golden Gate service
+* Support for SMS subscriptions in the Notifications service
+* Support for friendly-formatted messages in the Service Connector Hub service
+* Support for attaching and detaching instances to instance pools in the Autoscaling service
+
+====================
 2.32.0 - 2021-03-02
 ====================
 
