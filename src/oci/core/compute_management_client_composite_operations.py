@@ -27,6 +27,89 @@ class ComputeManagementClientCompositeOperations(object):
         self.client = client
         self._work_request_client = work_request_client if work_request_client else oci.work_requests.WorkRequestClient(self.client._config, **self.client._kwargs)
 
+    def attach_instance_pool_instance_and_wait_for_work_request(self, instance_pool_id, attach_instance_pool_instance_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeManagementClient.attach_instance_pool_instance` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str instance_pool_id: (required)
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.AttachInstancePoolInstanceDetails attach_instance_pool_instance_details: (required)
+            Attach an instance to a pool
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.attach_instance_pool_instance`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.attach_instance_pool_instance(instance_pool_id, attach_instance_pool_instance_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def attach_instance_pool_instance_and_wait_for_state(self, instance_pool_id, attach_instance_pool_instance_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeManagementClient.attach_instance_pool_instance` and waits for the :py:class:`~oci.core.models.InstancePoolInstance` acted upon
+        to enter the given state(s).
+
+        :param str instance_pool_id: (required)
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.AttachInstancePoolInstanceDetails attach_instance_pool_instance_details: (required)
+            Attach an instance to a pool
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePoolInstance.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.attach_instance_pool_instance`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.attach_instance_pool_instance(instance_pool_id, attach_instance_pool_instance_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_instance_pool_instance(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def attach_load_balancer_and_wait_for_state(self, instance_pool_id, attach_load_balancer_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.core.ComputeManagementClient.attach_load_balancer` and waits for the :py:class:`~oci.core.models.InstancePool` acted upon
@@ -178,6 +261,46 @@ class ComputeManagementClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def detach_instance_pool_instance_and_wait_for_work_request(self, instance_pool_id, detach_instance_pool_instance_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeManagementClient.detach_instance_pool_instance` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str instance_pool_id: (required)
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.DetachInstancePoolInstanceDetails detach_instance_pool_instance_details: (required)
+            Instance being detached
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.detach_instance_pool_instance`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.detach_instance_pool_instance(instance_pool_id, detach_instance_pool_instance_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

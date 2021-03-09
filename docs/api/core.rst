@@ -42,6 +42,7 @@ Core Services
     oci.core.models.AttachBootVolumeDetails
     oci.core.models.AttachEmulatedVolumeDetails
     oci.core.models.AttachIScsiVolumeDetails
+    oci.core.models.AttachInstancePoolInstanceDetails
     oci.core.models.AttachLoadBalancerDetails
     oci.core.models.AttachParavirtualizedVolumeDetails
     oci.core.models.AttachServiceDeterminedVolumeDetails
@@ -180,6 +181,7 @@ Core Services
     oci.core.models.DedicatedVmHostShapeSummary
     oci.core.models.DedicatedVmHostSummary
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
+    oci.core.models.DetachInstancePoolInstanceDetails
     oci.core.models.DetachLoadBalancerDetails
     oci.core.models.Device
     oci.core.models.DhcpDnsOption
@@ -251,6 +253,7 @@ Core Services
     oci.core.models.InstanceCredentials
     oci.core.models.InstanceOptions
     oci.core.models.InstancePool
+    oci.core.models.InstancePoolInstance
     oci.core.models.InstancePoolInstanceLoadBalancerBackend
     oci.core.models.InstancePoolLoadBalancerAttachment
     oci.core.models.InstancePoolPlacementConfiguration

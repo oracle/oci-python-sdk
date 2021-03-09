@@ -9,6 +9,10 @@ API Reference
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
+* :doc:`Apm Domain <apm_control_plane/client/oci.apm_control_plane.ApmDomainClient>`
+* :doc:`Apm Synthetic <apm_synthetics/client/oci.apm_synthetics.ApmSyntheticClient>`
+* :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`
+* :doc:`Trace <apm_traces/client/oci.apm_traces.TraceClient>`
 * :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
@@ -47,6 +51,7 @@ API Reference
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
+* :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
@@ -120,6 +125,9 @@ API Reference
     analytics
     announcements_service
     apigateway
+    apm_control_plane
+    apm_synthetics
+    apm_traces
     application_migration
     artifacts
     audit
@@ -145,6 +153,7 @@ API Reference
     events
     file_storage
     functions
+    golden_gate
     healthchecks
     identity
     integration

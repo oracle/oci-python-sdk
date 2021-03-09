@@ -22,6 +22,7 @@ from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
 from .attach_emulated_volume_details import AttachEmulatedVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
+from .attach_instance_pool_instance_details import AttachInstancePoolInstanceDetails
 from .attach_load_balancer_details import AttachLoadBalancerDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
 from .attach_service_determined_volume_details import AttachServiceDeterminedVolumeDetails
@@ -160,6 +161,7 @@ from .dedicated_vm_host_instance_summary import DedicatedVmHostInstanceSummary
 from .dedicated_vm_host_shape_summary import DedicatedVmHostShapeSummary
 from .dedicated_vm_host_summary import DedicatedVmHostSummary
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
+from .detach_instance_pool_instance_details import DetachInstancePoolInstanceDetails
 from .detach_load_balancer_details import DetachLoadBalancerDetails
 from .device import Device
 from .dhcp_dns_option import DhcpDnsOption
@@ -231,6 +233,7 @@ from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
 from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
+from .instance_pool_instance import InstancePoolInstance
 from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
 from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
@@ -388,6 +391,7 @@ core_type_mapping = {
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
     "AttachEmulatedVolumeDetails": AttachEmulatedVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
+    "AttachInstancePoolInstanceDetails": AttachInstancePoolInstanceDetails,
     "AttachLoadBalancerDetails": AttachLoadBalancerDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
     "AttachServiceDeterminedVolumeDetails": AttachServiceDeterminedVolumeDetails,
@@ -526,6 +530,7 @@ core_type_mapping = {
     "DedicatedVmHostShapeSummary": DedicatedVmHostShapeSummary,
     "DedicatedVmHostSummary": DedicatedVmHostSummary,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
+    "DetachInstancePoolInstanceDetails": DetachInstancePoolInstanceDetails,
     "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
     "Device": Device,
     "DhcpDnsOption": DhcpDnsOption,
@@ -597,6 +602,7 @@ core_type_mapping = {
     "InstanceCredentials": InstanceCredentials,
     "InstanceOptions": InstanceOptions,
     "InstancePool": InstancePool,
+    "InstancePoolInstance": InstancePoolInstance,
     "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
     "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
