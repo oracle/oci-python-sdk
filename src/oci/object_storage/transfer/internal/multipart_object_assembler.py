@@ -535,6 +535,8 @@ class MultipartObjectAssembler:
         pool = Pool(processes=self.parallel_process_count)
         pool.map(lambda part_tuple: self._upload_part(part_num=part_tuple[0] + 1, part=part_tuple[1], **kwargs),
                  enumerate(self.manifest["parts"]))
+        pool.close()
+        pool.join()
 
     def upload_stream(self, stream_ref, **kwargs):
 
