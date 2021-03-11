@@ -74,7 +74,7 @@ class CreateModelDetails(object):
         **[Required]** Gets the compartment_id of this CreateModelDetails.
         The `OCID`__ of the compartment to create the model in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateModelDetails.
@@ -88,7 +88,7 @@ class CreateModelDetails(object):
         Sets the compartment_id of this CreateModelDetails.
         The `OCID`__ of the compartment to create the model in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateModelDetails.
@@ -102,7 +102,7 @@ class CreateModelDetails(object):
         **[Required]** Gets the project_id of this CreateModelDetails.
         The `OCID`__ of the project to associate with the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this CreateModelDetails.
@@ -116,7 +116,7 @@ class CreateModelDetails(object):
         Sets the project_id of this CreateModelDetails.
         The `OCID`__ of the project to associate with the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this CreateModelDetails.
@@ -128,7 +128,7 @@ class CreateModelDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateModelDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
         Example: `My Model`
 
 
@@ -141,7 +141,7 @@ class CreateModelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateModelDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
         Example: `My Model`
 
 
@@ -154,7 +154,7 @@ class CreateModelDetails(object):
     def description(self):
         """
         Gets the description of this CreateModelDetails.
-        A short blurb describing the model.
+        A short description of the model.
 
 
         :return: The description of this CreateModelDetails.
@@ -166,7 +166,7 @@ class CreateModelDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateModelDetails.
-        A short blurb describing the model.
+        A short description of the model.
 
 
         :param description: The description of this CreateModelDetails.

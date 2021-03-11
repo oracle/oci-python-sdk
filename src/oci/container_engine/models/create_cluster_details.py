@@ -26,6 +26,10 @@ class CreateClusterDetails(object):
             The value to assign to the compartment_id property of this CreateClusterDetails.
         :type compartment_id: str
 
+        :param endpoint_config:
+            The value to assign to the endpoint_config property of this CreateClusterDetails.
+        :type endpoint_config: oci.container_engine.models.CreateClusterEndpointConfigDetails
+
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateClusterDetails.
         :type vcn_id: str
@@ -46,6 +50,7 @@ class CreateClusterDetails(object):
         self.swagger_types = {
             'name': 'str',
             'compartment_id': 'str',
+            'endpoint_config': 'CreateClusterEndpointConfigDetails',
             'vcn_id': 'str',
             'kubernetes_version': 'str',
             'kms_key_id': 'str',
@@ -55,6 +60,7 @@ class CreateClusterDetails(object):
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
+            'endpoint_config': 'endpointConfig',
             'vcn_id': 'vcnId',
             'kubernetes_version': 'kubernetesVersion',
             'kms_key_id': 'kmsKeyId',
@@ -63,6 +69,7 @@ class CreateClusterDetails(object):
 
         self._name = None
         self._compartment_id = None
+        self._endpoint_config = None
         self._vcn_id = None
         self._kubernetes_version = None
         self._kms_key_id = None
@@ -115,6 +122,30 @@ class CreateClusterDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def endpoint_config(self):
+        """
+        Gets the endpoint_config of this CreateClusterDetails.
+        The network configuration for access to the Cluster control plane.
+
+
+        :return: The endpoint_config of this CreateClusterDetails.
+        :rtype: oci.container_engine.models.CreateClusterEndpointConfigDetails
+        """
+        return self._endpoint_config
+
+    @endpoint_config.setter
+    def endpoint_config(self, endpoint_config):
+        """
+        Sets the endpoint_config of this CreateClusterDetails.
+        The network configuration for access to the Cluster control plane.
+
+
+        :param endpoint_config: The endpoint_config of this CreateClusterDetails.
+        :type: oci.container_engine.models.CreateClusterEndpointConfigDetails
+        """
+        self._endpoint_config = endpoint_config
 
     @property
     def vcn_id(self):

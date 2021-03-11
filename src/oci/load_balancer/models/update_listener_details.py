@@ -38,6 +38,10 @@ class UpdateListenerDetails(object):
             The value to assign to the path_route_set_name property of this UpdateListenerDetails.
         :type path_route_set_name: str
 
+        :param routing_policy_name:
+            The value to assign to the routing_policy_name property of this UpdateListenerDetails.
+        :type routing_policy_name: str
+
         :param ssl_configuration:
             The value to assign to the ssl_configuration property of this UpdateListenerDetails.
         :type ssl_configuration: oci.load_balancer.models.SSLConfigurationDetails
@@ -57,6 +61,7 @@ class UpdateListenerDetails(object):
             'protocol': 'str',
             'hostname_names': 'list[str]',
             'path_route_set_name': 'str',
+            'routing_policy_name': 'str',
             'ssl_configuration': 'SSLConfigurationDetails',
             'connection_configuration': 'ConnectionConfiguration',
             'rule_set_names': 'list[str]'
@@ -68,6 +73,7 @@ class UpdateListenerDetails(object):
             'protocol': 'protocol',
             'hostname_names': 'hostnameNames',
             'path_route_set_name': 'pathRouteSetName',
+            'routing_policy_name': 'routingPolicyName',
             'ssl_configuration': 'sslConfiguration',
             'connection_configuration': 'connectionConfiguration',
             'rule_set_names': 'ruleSetNames'
@@ -78,6 +84,7 @@ class UpdateListenerDetails(object):
         self._protocol = None
         self._hostname_names = None
         self._path_route_set_name = None
+        self._routing_policy_name = None
         self._ssl_configuration = None
         self._connection_configuration = None
         self._rule_set_names = None
@@ -198,6 +205,8 @@ class UpdateListenerDetails(object):
     def path_route_set_name(self):
         """
         Gets the path_route_set_name of this UpdateListenerDetails.
+        Deprecated. Please use `routingPolicies` instead.
+
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
@@ -213,6 +222,8 @@ class UpdateListenerDetails(object):
     def path_route_set_name(self, path_route_set_name):
         """
         Sets the path_route_set_name of this UpdateListenerDetails.
+        Deprecated. Please use `routingPolicies` instead.
+
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
@@ -223,6 +234,34 @@ class UpdateListenerDetails(object):
         :type: str
         """
         self._path_route_set_name = path_route_set_name
+
+    @property
+    def routing_policy_name(self):
+        """
+        Gets the routing_policy_name of this UpdateListenerDetails.
+        The name of the routing policy applied to this listener's traffic.
+
+        Example: `example_routing_policy`
+
+
+        :return: The routing_policy_name of this UpdateListenerDetails.
+        :rtype: str
+        """
+        return self._routing_policy_name
+
+    @routing_policy_name.setter
+    def routing_policy_name(self, routing_policy_name):
+        """
+        Sets the routing_policy_name of this UpdateListenerDetails.
+        The name of the routing policy applied to this listener's traffic.
+
+        Example: `example_routing_policy`
+
+
+        :param routing_policy_name: The routing_policy_name of this UpdateListenerDetails.
+        :type: str
+        """
+        self._routing_policy_name = routing_policy_name
 
     @property
     def ssl_configuration(self):

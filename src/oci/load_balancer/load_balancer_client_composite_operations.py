@@ -367,6 +367,49 @@ class LoadBalancerClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_routing_policy_and_wait_for_state(self, create_routing_policy_details, load_balancer_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_routing_policy` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.load_balancer.models.CreateRoutingPolicyDetails create_routing_policy_details: (required)
+            The details of the routing policy rules to add.
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer to add the routing policy rule list to.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.create_routing_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_routing_policy(create_routing_policy_details, load_balancer_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_rule_set_and_wait_for_state(self, load_balancer_id, create_rule_set_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.create_rule_set` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
@@ -800,6 +843,59 @@ class LoadBalancerClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_path_route_set(load_balancer_id, path_route_set_name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_routing_policy_and_wait_for_state(self, load_balancer_id, routing_policy_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.delete_routing_policy` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the routing policy to delete.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str routing_policy_name: (required)
+            The name of the routing policy to delete.
+
+            Example: `example_routing_policy`
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.delete_routing_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_routing_policy(load_balancer_id, routing_policy_name, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -1335,6 +1431,54 @@ class LoadBalancerClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_path_route_set(update_path_route_set_details, load_balancer_id, path_route_set_name, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_routing_policy_and_wait_for_state(self, update_routing_policy_details, load_balancer_id, routing_policy_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_routing_policy` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.load_balancer.models.UpdateRoutingPolicyDetails update_routing_policy_details: (required)
+            The configuration details needed to update a routing policy.
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer associated with the routing policy to update.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str routing_policy_name: (required)
+            The name of the routing policy to update.
+
+            Example: `example_routing_policy_name`
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.update_routing_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_routing_policy(update_routing_policy_details, load_balancer_id, routing_policy_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 

@@ -56,6 +56,10 @@ class CreateListenerDetails(object):
             The value to assign to the name property of this CreateListenerDetails.
         :type name: str
 
+        :param routing_policy_name:
+            The value to assign to the routing_policy_name property of this CreateListenerDetails.
+        :type routing_policy_name: str
+
         :param rule_set_names:
             The value to assign to the rule_set_names property of this CreateListenerDetails.
         :type rule_set_names: list[str]
@@ -70,6 +74,7 @@ class CreateListenerDetails(object):
             'ssl_configuration': 'SSLConfigurationDetails',
             'connection_configuration': 'ConnectionConfiguration',
             'name': 'str',
+            'routing_policy_name': 'str',
             'rule_set_names': 'list[str]'
         }
 
@@ -82,6 +87,7 @@ class CreateListenerDetails(object):
             'ssl_configuration': 'sslConfiguration',
             'connection_configuration': 'connectionConfiguration',
             'name': 'name',
+            'routing_policy_name': 'routingPolicyName',
             'rule_set_names': 'ruleSetNames'
         }
 
@@ -93,6 +99,7 @@ class CreateListenerDetails(object):
         self._ssl_configuration = None
         self._connection_configuration = None
         self._name = None
+        self._routing_policy_name = None
         self._rule_set_names = None
 
     @property
@@ -211,6 +218,8 @@ class CreateListenerDetails(object):
     def path_route_set_name(self):
         """
         Gets the path_route_set_name of this CreateListenerDetails.
+        Deprecated. Please use `routingPolicies` instead.
+
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
@@ -226,6 +235,8 @@ class CreateListenerDetails(object):
     def path_route_set_name(self, path_route_set_name):
         """
         Sets the path_route_set_name of this CreateListenerDetails.
+        Deprecated. Please use `routingPolicies` instead.
+
         The name of the set of path-based routing rules, :class:`PathRouteSet`,
         applied to this listener's traffic.
 
@@ -306,6 +317,34 @@ class CreateListenerDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def routing_policy_name(self):
+        """
+        Gets the routing_policy_name of this CreateListenerDetails.
+        The name of the routing policy applied to this listener's traffic.
+
+        Example: `example_routing_policy`
+
+
+        :return: The routing_policy_name of this CreateListenerDetails.
+        :rtype: str
+        """
+        return self._routing_policy_name
+
+    @routing_policy_name.setter
+    def routing_policy_name(self, routing_policy_name):
+        """
+        Sets the routing_policy_name of this CreateListenerDetails.
+        The name of the routing policy applied to this listener's traffic.
+
+        Example: `example_routing_policy`
+
+
+        :param routing_policy_name: The routing_policy_name of this CreateListenerDetails.
+        :type: str
+        """
+        self._routing_policy_name = routing_policy_name
 
     @property
     def rule_set_names(self):

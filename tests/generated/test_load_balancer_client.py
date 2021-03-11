@@ -362,6 +362,47 @@ def test_create_path_route_set(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_create_routing_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'CreateRoutingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'CreateRoutingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='CreateRoutingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.create_routing_policy(
+                create_routing_policy_details=request.pop(util.camelize('CreateRoutingPolicyDetails')),
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'CreateRoutingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_routing_policy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_create_rule_set(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'CreateRuleSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -725,6 +766,47 @@ def test_delete_path_route_set(testing_service_client):
             result,
             service_error,
             'delete_path_route_set',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_delete_routing_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'DeleteRoutingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'DeleteRoutingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='DeleteRoutingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.delete_routing_policy(
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                routing_policy_name=request.pop(util.camelize('routingPolicyName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'DeleteRoutingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_routing_policy',
             True,
             False
         )
@@ -1176,6 +1258,47 @@ def test_get_path_route_set(testing_service_client):
             result,
             service_error,
             'pathRouteSet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_get_routing_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'GetRoutingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'GetRoutingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='GetRoutingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.get_routing_policy(
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                routing_policy_name=request.pop(util.camelize('routingPolicyName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'GetRoutingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'routingPolicy',
             False,
             False
         )
@@ -1786,6 +1909,66 @@ def test_list_protocols(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_list_routing_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'ListRoutingPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'ListRoutingPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='ListRoutingPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.list_routing_policies(
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_routing_policies(
+                    load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_routing_policies(
+                        load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'ListRoutingPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'routingPolicy',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_rule_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListRuleSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2356,6 +2539,48 @@ def test_update_path_route_set(testing_service_client):
             result,
             service_error,
             'update_path_route_set',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_update_routing_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'UpdateRoutingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'UpdateRoutingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='UpdateRoutingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.update_routing_policy(
+                update_routing_policy_details=request.pop(util.camelize('UpdateRoutingPolicyDetails')),
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                routing_policy_name=request.pop(util.camelize('routingPolicyName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'UpdateRoutingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_routing_policy',
             False,
             False
         )

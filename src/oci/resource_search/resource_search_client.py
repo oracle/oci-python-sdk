@@ -79,7 +79,7 @@ class ResourceSearchClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180409',
-            'service_endpoint_template': 'https://query.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://query.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("resource_search", config, signer, resource_search_type_mapping, **base_client_init_kwargs)
@@ -246,7 +246,7 @@ class ResourceSearchClient(object):
 
 
         :param oci.resource_search.models.SearchDetails search_details: (required)
-            Request parameters that describe query criteria.
+            Request parameters that describe query criteria. For more information, see :func:`search_details`.
 
         :param int limit: (optional)
             The maximum number of items to return. The value must be between 1 and 1000.

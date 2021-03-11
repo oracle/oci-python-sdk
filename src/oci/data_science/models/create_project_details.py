@@ -65,7 +65,7 @@ class CreateProjectDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateProjectDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateProjectDetails.
@@ -77,7 +77,7 @@ class CreateProjectDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateProjectDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateProjectDetails.
@@ -89,7 +89,7 @@ class CreateProjectDetails(object):
     def description(self):
         """
         Gets the description of this CreateProjectDetails.
-        A short blurb describing the project.
+        A short description of the project.
 
 
         :return: The description of this CreateProjectDetails.
@@ -101,7 +101,7 @@ class CreateProjectDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateProjectDetails.
-        A short blurb describing the project.
+        A short description of the project.
 
 
         :param description: The description of this CreateProjectDetails.
@@ -115,7 +115,7 @@ class CreateProjectDetails(object):
         **[Required]** Gets the compartment_id of this CreateProjectDetails.
         The `OCID`__ of the compartment to create the project in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateProjectDetails.
@@ -129,7 +129,7 @@ class CreateProjectDetails(object):
         Sets the compartment_id of this CreateProjectDetails.
         The `OCID`__ of the compartment to create the project in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateProjectDetails.
