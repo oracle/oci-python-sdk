@@ -21,7 +21,7 @@ This topic describes how to install, configure, and use the Oracle Cloud Infrast
 The Python SDK requires:
 
 * Python version 3.6+
-* `OpenSSL`_ version 1.0.1 or later. The Python SDK uses the `Cryptography.io`_ library which requires `OpenSSL`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
+* `OpenSSL`_ version 1.0.2 or later. The Python SDK uses the `Cryptography.io`_ library which requires `OpenSSL`_. For details on all Cryptography.io prerequisites, see `Cryptography.io Installation`_.
 
 In addition, all Oracle Cloud Infrastructure SDKs require:
 
@@ -41,7 +41,7 @@ In addition, all Oracle Cloud Infrastructure SDKs require:
  Downloading and Installing the SDK
 ====================================
 
-You can install the Python SDK through the Python Package Index (PyPI), or alternatively through GitHub.
+You can install the Python SDK through the Python Package Index (PyPI), GitHub, OCI Resource Manager or yum on Oracle Linux.
 
 Set up a virtual environment
 -----------------------------
@@ -85,6 +85,45 @@ To install from GitHub:
 
       If you're unable to install the whl file, make sure pip is up to date.
       Use ``pip install -U pip`` and then try to install the whl file again.
+
+Offline Installation
+--------------------
+
+To install the Python SDK in an environment which does not allow internet connection, you can use the OCI CLI offline install files to install the Python SDK in offline mode. Here are the steps:
+
+1. Go to the `CLI releases page <https://github.com/oracle/oci-cli/releases>`_
+2. To install the latest SDK version, go to the latest release. If you want to install a particular SDK version, follow the below steps:
+    a. Find that version in the `SDK changelog <https://github.com/oracle/oci-python-sdk/blob/master/CHANGELOG.rst>`_.
+    b. Note at the date this version was released.
+    c. Check the `CLI changelog <https://github.com/oracle/oci-cli/blob/master/CHANGELOG.rst>`_ and find the CLI version released on the same date as the SDK version you want to install.
+    d. Go to the `CLI releases page <https://github.com/oracle/oci-cli/releases>`_ and select that CLI version.
+3. Go to the "Assets" area.
+4. Download the .zip file for your Operating System.
+5. Copy the .zip file to the environment in which you want to install the SDK.
+6. Unzip the .zip file. This should create a new directory called "oci-cli-installation".
+7. Use the following command to install the SDK::
+
+    pip3 install oci --find-links ./oci-cli-installation/cli-deps --no-index
+
+  .. note::
+
+      If you have any issues executing the above steps, please see common installation issues here https://github.com/oracle/oci-cli/blob/master/COMMON_ISSUES.rst or create a Github issue and we will look into it.
+
+Installing with Resource Manager
+--------------------------------
+
+You can use `Resource Manager <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#Overview_of_Resource_Manager>`_
+to `install the Oracle Cloud Development Kit on a Compute instance in your compartment <https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/devtools.htm#devtools>`_.
+The Oracle Cloud Development Kit includes the SDK for Python, along with other Oracle development tools.
+
+Installing with yum
+-------------------
+
+If you're using Oracle Linux 7, you can use yum to install the OCI SDK for Python.
+
+The following example shows how to use yum to install the OCI SDK for Python 3.6::
+
+    sudo yum install python36-oci-sdk.x86_64
 
 
 =====================
