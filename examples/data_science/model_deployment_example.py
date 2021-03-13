@@ -37,6 +37,7 @@ This script covers:
     + deleting a model deployment
 For other use cases: see details in the documentation https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/data_science.html
 """
+
 import oci
 import oci.data_science as data_science
 from oci.signer import Signer
@@ -49,30 +50,31 @@ import requests
 
 # --- Set up
 # TODO: Change the below variables to prepare for model deployment activities
-config_file = <config file> # '~/.oci/config'
+config_file = ""  # <config file>, for example '~/.oci/config'
 
 # TODO: Change the compartment id and project id
-compartment_id = <compartment ocid>
-project_id = <project ocid>
+compartment_id = ""  # <compartment ocid>
+project_id = ""  # <project ocid>
 
 # TODO: Change configuration details for deploying a model
 deployment_name = "my_deployment"
-model_id = <model ocid>
+model_id = ""  # <model ocid>
 instance_shape_name = "VM.Standard2.1"
 instance_count = 1
 bandwidth_mbps = 10
 # this is an option to set up logs for a model deployment. If no logs, setting log-related variables to an empty string
-access_log_id = <access log ocid>
-predict_log_id = <predict log ocid>
-log_group_id = <log group ocid>
+access_log_id = ""  # <access log ocid>
+predict_log_id = ""  # <predict log ocid>
+log_group_id = ""  # <log group ocid>
 
 # TODO: Set the input to make a prediction using the newly created model deployment
-input_body = <input json format>
+input_body = ""  # <input json format>
 
 # TODO: Change the variables for updating model deployment
-new_deployment_name = "my_new_model_deployment" # new name of the model deployment
-new_instance_shape_name = <new instance shape name to update a model deployment>
-new_model_id = <new model ocid if you want to update a deployment with new model>
+new_deployment_name = "my_new_model_deployment"  # new name of the model deployment
+new_instance_shape_name = ""  # <new instance shape name to update a model deployment>
+new_model_id = ""  # <new model ocid if you want to update a deployment with new model>
+
 
 class ModelDeployment:
     def __init__(self, config_file, compartment_id, project_id):
@@ -85,11 +87,11 @@ class ModelDeployment:
         try:
             print("*** Setting up data science client....")
             """
-            Using resource principal, a user can take the identity of the resource (for example notebook session) and 
+            Using resource principal, a user can take the identity of the resource (for example notebook session) and
                the notebook session has to be authorized to create a model deployment.
                auth = Signer.get_resource_principals_signer()
                data_science_client = DataScienceClient({}, signer=auth)
-            Or using the OCI configuration file and API key as below: 
+            Or using the OCI configuration file and API key as below:
             """
             # read oci_config file
             self.oci_config = oci.config.from_file(self.config_file, "DEFAULT")
@@ -97,22 +99,21 @@ class ModelDeployment:
             print("Setting up a data science client succeeded!")
             self.data_science_composite_client = data_science.DataScienceClientCompositeOperations(self.data_science_client)
             print("Setting up a data science composite client succeeded!")
-            self.auth = Signer(tenancy=self.oci_config['tenancy'], user=self.oci_config['user'], fingerprint=self.oci_config['fingerprint'],
-                          private_key_file_location=self.oci_config['key_file'], pass_phrase=self.oci_config['pass_phrase'])
+            self.auth = Signer(tenancy=self.oci_config['tenancy'], user=self.oci_config['user'], fingerprint=self.oci_config['fingerprint'], private_key_file_location=self.oci_config['key_file'], pass_phrase=self.oci_config['pass_phrase'])
         except Exception as e:
             print("Setting up a data science client failed!!!")
             raise e
 
-    def create_model_deployment(self, deployment_name, instance_shape_name, instance_count, bandwidth_mbps, model_id, log_group_id = None, access_log_id = None, predict_log_id = None):
+    def create_model_deployment(self, deployment_name, instance_shape_name, instance_count, bandwidth_mbps, model_id, log_group_id=None, access_log_id=None, predict_log_id=None):
         # -- Create a model deployment
-        print ("------------------------------------")
-        print ("*** Creating a model deployment ...")
+        print("------------------------------------")
+        print("*** Creating a model deployment ...")
         try:
             self.deployment_name = deployment_name
-            self.instance_configuration = InstanceConfiguration() # model deployment instance configuration
+            self.instance_configuration = InstanceConfiguration()  # model deployment instance configuration
             self.instance_configuration.instance_shape_name = instance_shape_name
 
-            self.scaling_policy = FixedSizeScalingPolicy() # the fixed size scaling policy for model deployment
+            self.scaling_policy = FixedSizeScalingPolicy()  # the fixed size scaling policy for model deployment
             self.scaling_policy.instance_count = instance_count
             self.model_id = model_id
             self.bandwidth_mbps = bandwidth_mbps
@@ -142,58 +143,56 @@ class ModelDeployment:
             print("Creating a model deployment failed!!!")
             raise e
 
-    def get_model_deployment_info (self):
-        #-- Get the model deployment info
+    def get_model_deployment_info(self):
+        # -- Get the model deployment info
         print("------------------------------------")
         print("*** Getting the model deployment details ... ")
         try:
             model_deployment = self.data_science_client.get_model_deployment(model_deployment_id=self.model_deployment_id)
-            print (model_deployment.data)
+            print(model_deployment.data)
             self.model_deployment_url = model_deployment.data.model_deployment_url
         except Exception as e:
             print("The model deployment has not created. Should run create_model_deployment method first!")
             raise e
 
     def make_prediction(self, input_body):
-        #-- Make predictions
+        # -- Make predictions
         print("------------------------------------")
         print("*** Making prediction ...")
         try:
             if self.model_deployment_url is None:
                 self.get_model_deployment_info()
-            prediction = requests.post(self.model_deployment_url+"/predict", data=json.dumps(input_body), auth=self.auth) # make a prediction request
+            prediction = requests.post(self.model_deployment_url + "/predict", data=json.dumps(input_body), auth=self.auth)  # make a prediction request
             if prediction.status_code == 200:
-                print (prediction.json())
+                print(prediction.json())
             else:
-                print ("Making predictions failed!!!")
+                print("Making predictions failed!!!")
         except Exception as e:
-            print ("Making predictions failed!!!")
+            print("Making predictions failed!!!")
             raise e
 
     def deactivate_model_deployment(self):
-        #-- Deactivate a model deployment
+        # -- Deactivate a model deployment
         print("------------------------------------")
         print("*** Deactivating the model deployment ...")
         try:
             deactivate_model_deployment_response = self.data_science_composite_client.deactivate_model_deployment_and_wait_for_state(model_deployment_id=self.model_deployment_id, wait_for_states=["SUCCEEDED", "FAILED"])
             if deactivate_model_deployment_response.data.status == "SUCCEEDED":
-                print ("Deactivating the model deployment succeeded, model_deployment_id = ", self.model_deployment_id)
+                print("Deactivating the model deployment succeeded, model_deployment_id = ", self.model_deployment_id)
                 self.active = False
             else:
-                print ("Deactivating the model deployment failed!!!")
+                print("Deactivating the model deployment failed!!!")
         except Exception as e:
-            print ("Deactivating the model deployment failed!!!")
+            print("Deactivating the model deployment failed!!!")
             raise e
 
     def activate_model_deployment(self):
-        #-- Activate a model deployment
+        # -- Activate a model deployment
         print("------------------------------------")
         print("*** Activating the model deployment ...")
         try:
-            if self.active == False:
-                activate_model_deployment_response = self.data_science_composite_client.activate_model_deployment_and_wait_for_state(
-                    model_deployment_id=self.model_deployment_id,
-                    wait_for_states=["SUCCEEDED", "FAILED"])
+            if not self.active:
+                activate_model_deployment_response = self.data_science_composite_client.activate_model_deployment_and_wait_for_state(model_deployment_id=self.model_deployment_id, wait_for_states=["SUCCEEDED", "FAILED"])
                 if activate_model_deployment_response.data.status == "SUCCEEDED":
                     print("Activating the model deployment succeeded, model_deployment_id = ", self.model_deployment_id)
                     self.active = True
@@ -203,8 +202,8 @@ class ModelDeployment:
             print("Activating the model deployment failed!!!")
             raise e
 
-    def update_model_deployment (self, new_deployment_name, new_instance_shape_name, new_model_id, log_group_id = None, access_log_id = None, predict_log_id = None):
-        #-- Update a model deployment with changing display name, instance shape name, and model_id when the model deployment is active
+    def update_model_deployment(self, new_deployment_name, new_instance_shape_name, new_model_id, log_group_id=None, access_log_id=None, predict_log_id=None):
+        # -- Update a model deployment with changing display name, instance shape name, and model_id when the model deployment is active
         print("------------------------------------")
         print("*** Updating the model deployment ... ")
         self.model_deployment_name = new_deployment_name
@@ -228,23 +227,23 @@ class ModelDeployment:
             raise e
 
     def delete_model_deployoment(self):
-        #-- Delete the model deployment
+        # -- Delete the model deployment
         print("------------------------------------")
         print("*** Deleting the model deployment ... ")
         try:
             delete_model_deployment_response = self.data_science_composite_client.delete_model_deployment_and_wait_for_state(model_deployment_id=self.model_deployment_id, wait_for_states=["SUCCEEDED", "FAILED"])
             if delete_model_deployment_response.data.status == "SUCCEEDED":
-                print ("Deleting the model deployment succeeded, model_deployment_id = ", self.model_deployment_id)
+                print("Deleting the model deployment succeeded, model_deployment_id = ", self.model_deployment_id)
                 self.model_deployment_id = None
                 self.model_deployment_name = None
                 self.model_deployment_url = None
             else:
-                print ("Deleting the model deployment failed!!! ")
+                print("Deleting the model deployment failed!!! ")
         except Exception as e:
-            print ("Deleting the model deployment failed!!!")
+            print("Deleting the model deployment failed!!!")
             raise e
 
-    def create_logging(self, log_group_id, access_log_id, predict_log_id, is_create = True):
+    def create_logging(self, log_group_id, access_log_id, predict_log_id, is_create=True):
         try:
             access_log_details = LogDetails()
             access_log_details.log_id = access_log_id
@@ -254,7 +253,7 @@ class ModelDeployment:
             predict_log_details.log_id = predict_log_id
             predict_log_details.log_group_id = log_group_id
 
-            if is_create == True:
+            if is_create:
                 category_log_details = CategoryLogDetails()
                 category_log_details.access = access_log_details
                 category_log_details.predict = predict_log_details
@@ -265,8 +264,9 @@ class ModelDeployment:
                 update_category_log_details.predict = predict_log_details
                 return update_category_log_details
         except Exception as e:
-            print ("Creating logs failed!!!")
+            print("Creating logs failed!!!")
             raise e
+
 
 if __name__ == "__main__":
     """
@@ -274,22 +274,17 @@ if __name__ == "__main__":
     A user can select the methods to run.
     """
     try:
-        md = ModelDeployment(config_file, compartment_id, project_id) # initialize a model deployment
-        md.create_model_deployment(deployment_name, instance_shape_name, instance_count, bandwidth_mbps, model_id, log_group_id, access_log_id, predict_log_id) # create a model deployment
-        
-        md.get_model_deployment_info() # get a model deployment
-        md.make_prediction(input_body) # make a prediction using a newly created model deployment
-        md.deactivate_model_deployment() # deactivate a model deployment
-        md.activate_model_deployment() # activate a model deployment
-        md.update_model_deployment(new_deployment_name, new_instance_shape_name, new_model_id, log_group_id, access_log_id, predict_log_id) # update a model deployment configurations
-        md.delete_model_deployoment() # delete a model deployment
+        md = ModelDeployment(config_file, compartment_id, project_id)  # initialize a model deployment
+        md.create_model_deployment(deployment_name, instance_shape_name, instance_count, bandwidth_mbps, model_id, log_group_id, access_log_id, predict_log_id)  # create a model deployment
+
+        md.get_model_deployment_info()  # get a model deployment
+        md.make_prediction(input_body)  # make a prediction using a newly created model deployment
+        md.deactivate_model_deployment()  # deactivate a model deployment
+        md.activate_model_deployment()  # activate a model deployment
+        md.update_model_deployment(new_deployment_name, new_instance_shape_name, new_model_id, log_group_id, access_log_id, predict_log_id)  # update a model deployment configurations
+        md.delete_model_deployoment()  # delete a model deployment
     except Exception as e:
         print("ERROR: ", e)
         if md.model_deployment_id is not None:
-            print ("*** Starting clean up ... ")
+            print("*** Starting clean up ... ")
             md.delete_model_deployoment()
-
-
-
-
-
