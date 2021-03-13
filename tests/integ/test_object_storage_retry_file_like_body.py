@@ -134,6 +134,7 @@ def test_put_object_with_retry_file(object_storage, namespace, bucket):
     object_storage.delete_object(namespace, bucket, object_name)
 
 
+@pytest.mark.skip("Temporarily disable retries in upload manager")
 def test_put_object_with_retry_multipart(object_storage, namespace, bucket):
     test_retry = TestRetry()
     large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
@@ -174,6 +175,7 @@ def test_put_object_with_retry_multipart(object_storage, namespace, bucket):
     object_storage.delete_object(namespace, bucket, object_name)
 
 
+@pytest.mark.skip("Temporarily disable retries in upload manager")
 def test_put_object_with_retry_file_multipart_stream(object_storage, namespace, bucket):
     test_retry = TestRetry()
     b = b'0123456789abcdefg'
