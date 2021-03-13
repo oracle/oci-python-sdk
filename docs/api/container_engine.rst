@@ -22,11 +22,13 @@ Container Engine
     oci.container_engine.models.AdmissionControllerOptions
     oci.container_engine.models.Cluster
     oci.container_engine.models.ClusterCreateOptions
+    oci.container_engine.models.ClusterEndpointConfig
     oci.container_engine.models.ClusterEndpoints
     oci.container_engine.models.ClusterMetadata
     oci.container_engine.models.ClusterOptions
     oci.container_engine.models.ClusterSummary
     oci.container_engine.models.CreateClusterDetails
+    oci.container_engine.models.CreateClusterEndpointConfigDetails
     oci.container_engine.models.CreateClusterKubeconfigContentDetails
     oci.container_engine.models.CreateNodePoolDetails
     oci.container_engine.models.CreateNodePoolNodeConfigDetails
@@ -46,6 +48,7 @@ Container Engine
     oci.container_engine.models.NodeSourceViaImageDetails
     oci.container_engine.models.NodeSourceViaImageOption
     oci.container_engine.models.UpdateClusterDetails
+    oci.container_engine.models.UpdateClusterEndpointConfigDetails
     oci.container_engine.models.UpdateClusterOptionsDetails
     oci.container_engine.models.UpdateNodePoolDetails
     oci.container_engine.models.UpdateNodePoolNodeConfigDetails

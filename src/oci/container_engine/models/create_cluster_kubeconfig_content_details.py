@@ -13,6 +13,18 @@ class CreateClusterKubeconfigContentDetails(object):
     The properties that define a request to create a cluster kubeconfig.
     """
 
+    #: A constant which can be used with the endpoint property of a CreateClusterKubeconfigContentDetails.
+    #: This constant has a value of "LEGACY_KUBERNETES"
+    ENDPOINT_LEGACY_KUBERNETES = "LEGACY_KUBERNETES"
+
+    #: A constant which can be used with the endpoint property of a CreateClusterKubeconfigContentDetails.
+    #: This constant has a value of "PUBLIC_ENDPOINT"
+    ENDPOINT_PUBLIC_ENDPOINT = "PUBLIC_ENDPOINT"
+
+    #: A constant which can be used with the endpoint property of a CreateClusterKubeconfigContentDetails.
+    #: This constant has a value of "PRIVATE_ENDPOINT"
+    ENDPOINT_PRIVATE_ENDPOINT = "PRIVATE_ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateClusterKubeconfigContentDetails object with values from keyword arguments.
@@ -26,19 +38,27 @@ class CreateClusterKubeconfigContentDetails(object):
             The value to assign to the expiration property of this CreateClusterKubeconfigContentDetails.
         :type expiration: int
 
+        :param endpoint:
+            The value to assign to the endpoint property of this CreateClusterKubeconfigContentDetails.
+            Allowed values for this property are: "LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT"
+        :type endpoint: str
+
         """
         self.swagger_types = {
             'token_version': 'str',
-            'expiration': 'int'
+            'expiration': 'int',
+            'endpoint': 'str'
         }
 
         self.attribute_map = {
             'token_version': 'tokenVersion',
-            'expiration': 'expiration'
+            'expiration': 'expiration',
+            'endpoint': 'endpoint'
         }
 
         self._token_version = None
         self._expiration = None
+        self._endpoint = None
 
     @property
     def token_version(self):
@@ -87,6 +107,38 @@ class CreateClusterKubeconfigContentDetails(object):
         :type: int
         """
         self._expiration = expiration
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this CreateClusterKubeconfigContentDetails.
+        The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+
+        Allowed values for this property are: "LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT"
+
+
+        :return: The endpoint of this CreateClusterKubeconfigContentDetails.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this CreateClusterKubeconfigContentDetails.
+        The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
+
+
+        :param endpoint: The endpoint of this CreateClusterKubeconfigContentDetails.
+        :type: str
+        """
+        allowed_values = ["LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT"]
+        if not value_allowed_none_or_none_sentinel(endpoint, allowed_values):
+            raise ValueError(
+                "Invalid value for `endpoint`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._endpoint = endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

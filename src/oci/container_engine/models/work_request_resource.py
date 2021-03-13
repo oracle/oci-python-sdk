@@ -37,6 +37,18 @@ class WorkRequestResource(object):
     #: This constant has a value of "FAILED"
     ACTION_TYPE_FAILED = "FAILED"
 
+    #: A constant which can be used with the action_type property of a WorkRequestResource.
+    #: This constant has a value of "CANCELED_CREATE"
+    ACTION_TYPE_CANCELED_CREATE = "CANCELED_CREATE"
+
+    #: A constant which can be used with the action_type property of a WorkRequestResource.
+    #: This constant has a value of "CANCELED_UPDATE"
+    ACTION_TYPE_CANCELED_UPDATE = "CANCELED_UPDATE"
+
+    #: A constant which can be used with the action_type property of a WorkRequestResource.
+    #: This constant has a value of "CANCELED_DELETE"
+    ACTION_TYPE_CANCELED_DELETE = "CANCELED_DELETE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestResource object with values from keyword arguments.
@@ -44,7 +56,7 @@ class WorkRequestResource(object):
 
         :param action_type:
             The value to assign to the action_type property of this WorkRequestResource.
-            Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "FAILED", "CANCELED_CREATE", "CANCELED_UPDATE", "CANCELED_DELETE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_type: str
 
@@ -86,7 +98,7 @@ class WorkRequestResource(object):
         Gets the action_type of this WorkRequestResource.
         The way in which this resource was affected by the work tracked by the work request.
 
-        Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "FAILED", "CANCELED_CREATE", "CANCELED_UPDATE", "CANCELED_DELETE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -105,7 +117,7 @@ class WorkRequestResource(object):
         :param action_type: The action_type of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "FAILED"]
+        allowed_values = ["CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", "FAILED", "CANCELED_CREATE", "CANCELED_UPDATE", "CANCELED_DELETE"]
         if not value_allowed_none_or_none_sentinel(action_type, allowed_values):
             action_type = 'UNKNOWN_ENUM_VALUE'
         self._action_type = action_type

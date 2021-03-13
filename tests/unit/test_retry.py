@@ -2,6 +2,11 @@
 # Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+try:
+    import unittest.mock as mock
+except ImportError:
+    import mock
+
 from oci._vendor.requests.exceptions import Timeout
 from oci._vendor.requests.exceptions import ConnectionError as RequestsConnectionError
 
@@ -9,6 +14,12 @@ import oci
 import oci.retry
 import pytest
 import time
+
+from oci.exceptions import ServiceError
+from oci.retry import RetryStrategyBuilder
+from oci.retry.retry_utils import should_record_body_position_for_retry, record_body_position_for_retry, \
+    rewind_body_for_retry
+import tests.util
 
 
 def test_limit_retry_checker():
@@ -206,3 +217,156 @@ class MakeRetryingCall(object):
             return True
         else:
             raise self.exception_to_throw
+
+
+# -------------------- Test retries for file-like bodies --------------------
+class FileLikeBody:
+    def __init__(self,
+                 no_read=None,
+                 no_seek=None,
+                 bad_seek=None,
+                 no_tell=None,
+                 bad_tell=None):
+        if not no_read:
+            self.read = mock.Mock()
+
+        if not no_seek:
+            if bad_seek:
+                mock_seek = mock.Mock()
+                mock_seek.side_effect = IOError
+                self.seek = mock_seek
+            else:
+                mock_seek = mock.Mock()
+                self.seek = mock_seek
+
+        if not no_tell:
+            if bad_tell:
+                mock_tell = mock.Mock()
+                mock_tell.side_effect = OSError
+                self.tell = mock_tell
+            else:
+                mock_tell = mock.Mock()
+                mock_tell.return_value = 5
+                self.tell = mock_tell
+
+
+# A class to simulate sending file-like bodies with retry
+class MockClient:
+    def __init__(self):
+        self.attempts = 0
+        self.retry_strategy = RetryStrategyBuilder(max_attempts=2,
+                                                   service_error_check=True,
+                                                   service_error_retry_on_any_5xx=True,
+                                                   max_attempts_check=True).get_retry_strategy()
+        self.body_position = None
+
+    # This method throws ServiceError on the first attempt, forcing retries
+    def call_api(self, body):
+        self.attempts += 1
+        if self.attempts <= 1:
+            if getattr(body, 'seek', None) and getattr(body, 'tell', None):
+                # Pretend that we're sending the body
+                try:
+                    body.seek(100)
+                    current_position = body.tell()
+                    assert current_position == 100
+                except (IOError, OSError):
+                    pass
+            # Fail on first attempt
+            raise ServiceError(500, "blah", {}, "blah")
+
+        self.body_position = body.tell()
+
+
+def test_failed_retries_for_binary_files():
+    test_file = tests.util.get_resource_path('test_image.png')
+
+    # In order to force code the file-like body code path, mock the method in retrying_call as call_api
+    mock_client = MockClient()
+    # Put an object
+    with open(test_file, 'rb') as file:
+        mock_client.retry_strategy.make_retrying_call(mock_client.call_api, body=file)
+
+    # On the second attempt, make sure that the body is rewound
+    assert mock_client.attempts == 2
+    assert mock_client.body_position == 0
+
+
+def test_failed_retries_for_text_files():
+    test_file = tests.util.get_resource_path('config')
+
+    # In order to force code the file-like body code path, mock the method in retrying_call as call_api
+    mock_client = MockClient()
+    # Put an object
+    with open(test_file, 'r') as file:
+        mock_client.retry_strategy.make_retrying_call(mock_client.call_api, body=file)
+
+    # On the second attempt, make sure that the body is rewound
+    assert mock_client.attempts == 2
+    assert mock_client.body_position == 0
+
+
+# File-like bodies which cannot be rewound should not be retried
+def test_failed_retries_for_bad_bodies():
+    no_tell_body = FileLikeBody(no_tell=True)
+    no_seek_body = FileLikeBody(no_seek=True)
+    bad_tell_body = FileLikeBody(bad_tell=True)
+    bad_seek_body = FileLikeBody(bad_seek=True)
+
+    # In order to force code the file-like body code path, mock the method in retrying_call as call_api
+    for body in (no_tell_body, no_seek_body, bad_tell_body, bad_seek_body):
+        mock_client = MockClient()
+        with pytest.raises(ServiceError):
+            mock_client.retry_strategy.make_retrying_call(mock_client.call_api, body=body)
+        assert mock_client.attempts == 1
+
+
+# -------------------- Test retry utils --------------------
+def test_should_record_body_position_for_retry():
+    mock_client = mock.Mock()
+    mock_client.__name__ = "BaseClient"
+    mock_client.mock_method = mock.Mock()
+    mock_client.mock_method.__name__ = "call_api"
+    mock_body = mock.Mock()
+    mock_body.read = mock.Mock()
+
+    # Happy case, the func_ref is call_api and the func_kwargs have a body with attribute 'read'
+    assert should_record_body_position_for_retry(mock_client.mock_method, body=mock_body)
+
+    # Body does not have "read" attribute
+    assert not should_record_body_position_for_retry(mock_client.mock_method, body='12345')
+
+    # pass body but the method name is different
+    mock_client.mock_method.__name__ = "a_different_method"
+    assert not should_record_body_position_for_retry(mock_client.mock_method, body=mock_body)
+
+
+def test_record_body_position_for_retry():
+    # Happy case, the body supports tell and there is no error
+    is_body_retryable, body_position = record_body_position_for_retry(body=FileLikeBody())
+    assert is_body_retryable
+    assert body_position == 5
+
+    # Case when the body does not support tell, we should not retry
+    is_body_retryable, body_position = record_body_position_for_retry(body=FileLikeBody(no_tell=True))
+    assert not is_body_retryable
+    assert not body_position
+
+    # Case when tell raises error, we should not retry
+    is_body_retryable, body_position = record_body_position_for_retry(body=FileLikeBody(bad_tell=True))
+    assert not is_body_retryable
+    assert not body_position
+
+
+def test_rewind_body_for_retry():
+    # Happy case, the body supports seek and there is no error
+    should_retry = rewind_body_for_retry(body=FileLikeBody(), body_position=5)
+    assert should_retry
+
+    # Case when the body does not support seek, we should not retry
+    should_retry = rewind_body_for_retry(body=FileLikeBody(no_seek=True), body_position=5)
+    assert not should_retry
+
+    # Case when seek raises error, we should not retry
+    should_retry = rewind_body_for_retry(body=FileLikeBody(bad_seek=True), body_position=5)
+    assert not should_retry

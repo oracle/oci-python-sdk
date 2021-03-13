@@ -21,6 +21,14 @@ class UpdateOceInstanceDetails(object):
     #: This constant has a value of "BYOL"
     INSTANCE_LICENSE_TYPE_BYOL = "BYOL"
 
+    #: A constant which can be used with the instance_usage_type property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "PRIMARY"
+    INSTANCE_USAGE_TYPE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the instance_usage_type property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "NONPRIMARY"
+    INSTANCE_USAGE_TYPE_NONPRIMARY = "NONPRIMARY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateOceInstanceDetails object with values from keyword arguments.
@@ -39,6 +47,11 @@ class UpdateOceInstanceDetails(object):
             Allowed values for this property are: "NEW", "BYOL"
         :type instance_license_type: str
 
+        :param instance_usage_type:
+            The value to assign to the instance_usage_type property of this UpdateOceInstanceDetails.
+            Allowed values for this property are: "PRIMARY", "NONPRIMARY"
+        :type instance_usage_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -52,6 +65,7 @@ class UpdateOceInstanceDetails(object):
             'description': 'str',
             'waf_primary_domain': 'str',
             'instance_license_type': 'str',
+            'instance_usage_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -60,6 +74,7 @@ class UpdateOceInstanceDetails(object):
             'description': 'description',
             'waf_primary_domain': 'wafPrimaryDomain',
             'instance_license_type': 'instanceLicenseType',
+            'instance_usage_type': 'instanceUsageType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -67,6 +82,7 @@ class UpdateOceInstanceDetails(object):
         self._description = None
         self._waf_primary_domain = None
         self._instance_license_type = None
+        self._instance_usage_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -149,6 +165,38 @@ class UpdateOceInstanceDetails(object):
                 .format(allowed_values)
             )
         self._instance_license_type = instance_license_type
+
+    @property
+    def instance_usage_type(self):
+        """
+        Gets the instance_usage_type of this UpdateOceInstanceDetails.
+        Instance type based on its usage
+
+        Allowed values for this property are: "PRIMARY", "NONPRIMARY"
+
+
+        :return: The instance_usage_type of this UpdateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._instance_usage_type
+
+    @instance_usage_type.setter
+    def instance_usage_type(self, instance_usage_type):
+        """
+        Sets the instance_usage_type of this UpdateOceInstanceDetails.
+        Instance type based on its usage
+
+
+        :param instance_usage_type: The instance_usage_type of this UpdateOceInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "NONPRIMARY"]
+        if not value_allowed_none_or_none_sentinel(instance_usage_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `instance_usage_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._instance_usage_type = instance_usage_type
 
     @property
     def freeform_tags(self):

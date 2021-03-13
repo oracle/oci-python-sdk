@@ -138,6 +138,10 @@ class LoadBalancer(object):
             The value to assign to the rule_sets property of this LoadBalancer.
         :type rule_sets: dict(str, RuleSet)
 
+        :param routing_policies:
+            The value to assign to the routing_policies property of this LoadBalancer.
+        :type routing_policies: dict(str, RoutingPolicy)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -160,7 +164,8 @@ class LoadBalancer(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'rule_sets': 'dict(str, RuleSet)'
+            'rule_sets': 'dict(str, RuleSet)',
+            'routing_policies': 'dict(str, RoutingPolicy)'
         }
 
         self.attribute_map = {
@@ -184,7 +189,8 @@ class LoadBalancer(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'rule_sets': 'ruleSets'
+            'rule_sets': 'ruleSets',
+            'routing_policies': 'routingPolicies'
         }
 
         self._id = None
@@ -208,6 +214,7 @@ class LoadBalancer(object):
         self._defined_tags = None
         self._system_tags = None
         self._rule_sets = None
+        self._routing_policies = None
 
     @property
     def id(self):
@@ -800,6 +807,26 @@ class LoadBalancer(object):
         :type: dict(str, RuleSet)
         """
         self._rule_sets = rule_sets
+
+    @property
+    def routing_policies(self):
+        """
+        Gets the routing_policies of this LoadBalancer.
+
+        :return: The routing_policies of this LoadBalancer.
+        :rtype: dict(str, RoutingPolicy)
+        """
+        return self._routing_policies
+
+    @routing_policies.setter
+    def routing_policies(self, routing_policies):
+        """
+        Sets the routing_policies of this LoadBalancer.
+
+        :param routing_policies: The routing_policies of this LoadBalancer.
+        :type: dict(str, RoutingPolicy)
+        """
+        self._routing_policies = routing_policies
 
     def __repr__(self):
         return formatted_flat_dict(self)
