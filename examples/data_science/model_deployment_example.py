@@ -50,30 +50,30 @@ import requests
 
 # --- Set up
 # TODO: Change the below variables to prepare for model deployment activities
-config_file = ""  # <config file>, for example '~/.oci/config'
+config_file = "<config file>"  # '~/.oci/config'
 
 # TODO: Change the compartment id and project id
-compartment_id = ""  # <compartment ocid>
-project_id = ""  # <project ocid>
+compartment_id = "<compartment ocid>"
+project_id = "<project ocid>"
 
 # TODO: Change configuration details for deploying a model
 deployment_name = "my_deployment"
-model_id = ""  # <model ocid>
+model_id = "<model ocid>"
 instance_shape_name = "VM.Standard2.1"
 instance_count = 1
 bandwidth_mbps = 10
 # this is an option to set up logs for a model deployment. If no logs, setting log-related variables to an empty string
-access_log_id = ""  # <access log ocid>
-predict_log_id = ""  # <predict log ocid>
-log_group_id = ""  # <log group ocid>
+access_log_id = "<access log ocid>"
+predict_log_id = "<predict log ocid>"
+log_group_id = "<log group ocid>"
 
 # TODO: Set the input to make a prediction using the newly created model deployment
-input_body = ""  # <input json format>
+input_body = "<input json format>"
 
 # TODO: Change the variables for updating model deployment
 new_deployment_name = "my_new_model_deployment"  # new name of the model deployment
-new_instance_shape_name = ""  # <new instance shape name to update a model deployment>
-new_model_id = ""  # <new model ocid if you want to update a deployment with new model>
+new_instance_shape_name = "<new instance shape name to update a model deployment>"
+new_model_id = "<new model ocid if you want to update a deployment with new model>"
 
 
 class ModelDeployment:
