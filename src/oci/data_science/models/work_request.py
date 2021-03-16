@@ -30,6 +30,26 @@ class WorkRequest(object):
     OPERATION_TYPE_NOTEBOOK_SESSION_DEACTIVATE = "NOTEBOOK_SESSION_DEACTIVATE"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODEL_DEPLOYMENT_CREATE"
+    OPERATION_TYPE_MODEL_DEPLOYMENT_CREATE = "MODEL_DEPLOYMENT_CREATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODEL_DEPLOYMENT_DELETE"
+    OPERATION_TYPE_MODEL_DEPLOYMENT_DELETE = "MODEL_DEPLOYMENT_DELETE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODEL_DEPLOYMENT_ACTIVATE"
+    OPERATION_TYPE_MODEL_DEPLOYMENT_ACTIVATE = "MODEL_DEPLOYMENT_ACTIVATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODEL_DEPLOYMENT_DEACTIVATE"
+    OPERATION_TYPE_MODEL_DEPLOYMENT_DEACTIVATE = "MODEL_DEPLOYMENT_DEACTIVATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODEL_DEPLOYMENT_UPDATE"
+    OPERATION_TYPE_MODEL_DEPLOYMENT_UPDATE = "MODEL_DEPLOYMENT_UPDATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "PROJECT_DELETE"
     OPERATION_TYPE_PROJECT_DELETE = "PROJECT_DELETE"
 
@@ -72,7 +92,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "MODEL_DEPLOYMENT_CREATE", "MODEL_DEPLOYMENT_DELETE", "MODEL_DEPLOYMENT_ACTIVATE", "MODEL_DEPLOYMENT_DEACTIVATE", "MODEL_DEPLOYMENT_UPDATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -147,7 +167,7 @@ class WorkRequest(object):
         **[Required]** Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequest.
@@ -161,7 +181,7 @@ class WorkRequest(object):
         Sets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequest.
@@ -175,7 +195,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The type of work the work request is doing.
 
-        Allowed values for this property are: "NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "MODEL_DEPLOYMENT_CREATE", "MODEL_DEPLOYMENT_DELETE", "MODEL_DEPLOYMENT_ACTIVATE", "MODEL_DEPLOYMENT_DEACTIVATE", "MODEL_DEPLOYMENT_UPDATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -194,7 +214,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL"]
+        allowed_values = ["NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "MODEL_DEPLOYMENT_CREATE", "MODEL_DEPLOYMENT_DELETE", "MODEL_DEPLOYMENT_ACTIVATE", "MODEL_DEPLOYMENT_DEACTIVATE", "MODEL_DEPLOYMENT_UPDATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -235,7 +255,7 @@ class WorkRequest(object):
         **[Required]** Gets the compartment_id of this WorkRequest.
         The `OCID`__ of the work request's compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -249,7 +269,7 @@ class WorkRequest(object):
         Sets the compartment_id of this WorkRequest.
         The `OCID`__ of the work request's compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -309,7 +329,7 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        The time the work request was accepted, in the timestamp format defined by `RFC3339`__.
+        The time the work request was accepted in the timestamp format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -323,7 +343,7 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        The time the work request was accepted, in the timestamp format defined by `RFC3339`__.
+        The time the work request was accepted in the timestamp format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -337,7 +357,7 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        The time the work request was started, in the timestamp format defined by `RFC3339`__.
+        The time the work request was started in the timestamp format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -351,7 +371,7 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        The time the work request was started, in the timestamp format defined by `RFC3339`__.
+        The time the work request was started in the timestamp format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -365,7 +385,7 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The time the work request was finished, in the timestamp format defined by `RFC3339`__.
+        The time the work request was finished in the timestamp format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -379,7 +399,7 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The time the work request was finished, in the timestamp format defined by `RFC3339`__.
+        The time the work request was finished in the timestamp format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 

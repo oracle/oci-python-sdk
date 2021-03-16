@@ -17,8 +17,6 @@ class AddHttpRequestHeaderRule(Rule):
     *  If a matching header already exists in the request, the system removes all of its occurrences, and then adds the
     new header.
 
-    * If a customer adds empty value, it has the same effect as dropping that header.
-
     *  The system does not distinquish between underscore and dash characters in headers. That is, it treats
     `example_header_name` and `example-header-name` as identical. Oracle recommends that you do not rely on underscore
     or dash characters to uniquely distinguish header names.
@@ -93,7 +91,9 @@ class AddHttpRequestHeaderRule(Rule):
     def value(self):
         """
         **[Required]** Gets the value of this AddHttpRequestHeaderRule.
-        A header value that conforms to RFC 7230.
+        A header value that conforms to RFC 7230. With the following exceptions:
+        *  value cannot contain `$`
+        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
         Example: `example_value`
 
@@ -107,7 +107,9 @@ class AddHttpRequestHeaderRule(Rule):
     def value(self, value):
         """
         Sets the value of this AddHttpRequestHeaderRule.
-        A header value that conforms to RFC 7230.
+        A header value that conforms to RFC 7230. With the following exceptions:
+        *  value cannot contain `$`
+        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
         Example: `example_value`
 

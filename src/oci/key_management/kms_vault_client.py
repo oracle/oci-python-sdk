@@ -882,9 +882,6 @@ class KmsVaultClient(object):
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
 
-        # Disable the retry_strategy to work around data corruption issue temporarily
-        if retry_strategy:
-            retry_strategy = None
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)

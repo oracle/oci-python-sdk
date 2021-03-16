@@ -18,6 +18,7 @@ Load Balancer
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.load_balancer.models.Action
     oci.load_balancer.models.AddHttpRequestHeaderRule
     oci.load_balancer.models.AddHttpResponseHeaderRule
     oci.load_balancer.models.AllowRule
@@ -39,10 +40,12 @@ Load Balancer
     oci.load_balancer.models.CreateListenerDetails
     oci.load_balancer.models.CreateLoadBalancerDetails
     oci.load_balancer.models.CreatePathRouteSetDetails
+    oci.load_balancer.models.CreateRoutingPolicyDetails
     oci.load_balancer.models.CreateRuleSetDetails
     oci.load_balancer.models.CreateSSLCipherSuiteDetails
     oci.load_balancer.models.ExtendHttpRequestHeaderValueRule
     oci.load_balancer.models.ExtendHttpResponseHeaderValueRule
+    oci.load_balancer.models.ForwardToBackendSet
     oci.load_balancer.models.HealthCheckResult
     oci.load_balancer.models.HealthChecker
     oci.load_balancer.models.HealthCheckerDetails
@@ -70,6 +73,9 @@ Load Balancer
     oci.load_balancer.models.RemoveHttpRequestHeaderRule
     oci.load_balancer.models.RemoveHttpResponseHeaderRule
     oci.load_balancer.models.ReservedIP
+    oci.load_balancer.models.RoutingPolicy
+    oci.load_balancer.models.RoutingPolicyDetails
+    oci.load_balancer.models.RoutingRule
     oci.load_balancer.models.Rule
     oci.load_balancer.models.RuleCondition
     oci.load_balancer.models.RuleSet
@@ -92,6 +98,7 @@ Load Balancer
     oci.load_balancer.models.UpdateLoadBalancerShapeDetails
     oci.load_balancer.models.UpdateNetworkSecurityGroupsDetails
     oci.load_balancer.models.UpdatePathRouteSetDetails
+    oci.load_balancer.models.UpdateRoutingPolicyDetails
     oci.load_balancer.models.UpdateRuleSetDetails
     oci.load_balancer.models.UpdateSSLCipherSuiteDetails
     oci.load_balancer.models.WorkRequest

@@ -58,7 +58,7 @@ class UpdateProjectDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateProjectDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateProjectDetails.
@@ -70,7 +70,7 @@ class UpdateProjectDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateProjectDetails.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateProjectDetails.
@@ -82,7 +82,7 @@ class UpdateProjectDetails(object):
     def description(self):
         """
         Gets the description of this UpdateProjectDetails.
-        A short blurb describing the project.
+        A short description of the project.
 
 
         :return: The description of this UpdateProjectDetails.
@@ -94,7 +94,7 @@ class UpdateProjectDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateProjectDetails.
-        A short blurb describing the project.
+        A short description of the project.
 
 
         :param description: The description of this UpdateProjectDetails.
