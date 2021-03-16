@@ -22,22 +22,36 @@ class ClusterEndpoints(object):
             The value to assign to the kubernetes property of this ClusterEndpoints.
         :type kubernetes: str
 
+        :param public_endpoint:
+            The value to assign to the public_endpoint property of this ClusterEndpoints.
+        :type public_endpoint: str
+
+        :param private_endpoint:
+            The value to assign to the private_endpoint property of this ClusterEndpoints.
+        :type private_endpoint: str
+
         """
         self.swagger_types = {
-            'kubernetes': 'str'
+            'kubernetes': 'str',
+            'public_endpoint': 'str',
+            'private_endpoint': 'str'
         }
 
         self.attribute_map = {
-            'kubernetes': 'kubernetes'
+            'kubernetes': 'kubernetes',
+            'public_endpoint': 'publicEndpoint',
+            'private_endpoint': 'privateEndpoint'
         }
 
         self._kubernetes = None
+        self._public_endpoint = None
+        self._private_endpoint = None
 
     @property
     def kubernetes(self):
         """
         Gets the kubernetes of this ClusterEndpoints.
-        The Kubernetes API server endpoint.
+        The non-native networking Kubernetes API server endpoint.
 
 
         :return: The kubernetes of this ClusterEndpoints.
@@ -49,13 +63,61 @@ class ClusterEndpoints(object):
     def kubernetes(self, kubernetes):
         """
         Sets the kubernetes of this ClusterEndpoints.
-        The Kubernetes API server endpoint.
+        The non-native networking Kubernetes API server endpoint.
 
 
         :param kubernetes: The kubernetes of this ClusterEndpoints.
         :type: str
         """
         self._kubernetes = kubernetes
+
+    @property
+    def public_endpoint(self):
+        """
+        Gets the public_endpoint of this ClusterEndpoints.
+        The public native networking Kubernetes API server endpoint, if one was requested.
+
+
+        :return: The public_endpoint of this ClusterEndpoints.
+        :rtype: str
+        """
+        return self._public_endpoint
+
+    @public_endpoint.setter
+    def public_endpoint(self, public_endpoint):
+        """
+        Sets the public_endpoint of this ClusterEndpoints.
+        The public native networking Kubernetes API server endpoint, if one was requested.
+
+
+        :param public_endpoint: The public_endpoint of this ClusterEndpoints.
+        :type: str
+        """
+        self._public_endpoint = public_endpoint
+
+    @property
+    def private_endpoint(self):
+        """
+        Gets the private_endpoint of this ClusterEndpoints.
+        The private native networking Kubernetes API server endpoint.
+
+
+        :return: The private_endpoint of this ClusterEndpoints.
+        :rtype: str
+        """
+        return self._private_endpoint
+
+    @private_endpoint.setter
+    def private_endpoint(self, private_endpoint):
+        """
+        Sets the private_endpoint of this ClusterEndpoints.
+        The private native networking Kubernetes API server endpoint.
+
+
+        :param private_endpoint: The private_endpoint of this ClusterEndpoints.
+        :type: str
+        """
+        self._private_endpoint = private_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

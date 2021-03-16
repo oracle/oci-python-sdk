@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceIpAddressCondition(RuleCondition):
     """
-    An access control rule condition that requires a match on the specified source IP address or address range.
+    A rule condition that checks client source IP against specified IP address or address range.
     """
 
     def __init__(self, **kwargs):

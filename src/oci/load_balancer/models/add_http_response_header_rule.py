@@ -93,6 +93,9 @@ class AddHttpResponseHeaderRule(Rule):
         """
         **[Required]** Gets the value of this AddHttpResponseHeaderRule.
         A header value that conforms to RFC 7230.
+        With the following exceptions:
+        *  value cannot contain `$`
+        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
         Example: `example_value`
 
@@ -107,6 +110,9 @@ class AddHttpResponseHeaderRule(Rule):
         """
         Sets the value of this AddHttpResponseHeaderRule.
         A header value that conforms to RFC 7230.
+        With the following exceptions:
+        *  value cannot contain `$`
+        *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
 
         Example: `example_value`
 

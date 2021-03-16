@@ -22,7 +22,7 @@ from oci.fips import is_fips_mode
 
 READ_BUFFER_SIZE = 8 * 1024
 DEFAULT_PARALLEL_PROCESS_COUNT = 3
-DEFAULT_MAX_RETRIES = 3
+DEFAULT_MAX_RETRIES = 5
 SSEC_PARAM_NAMES = [
     'opc_sse_customer_algorithm',
     'opc_sse_customer_key',

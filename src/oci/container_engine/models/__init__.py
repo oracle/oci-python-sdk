@@ -8,11 +8,13 @@ from .add_on_options import AddOnOptions
 from .admission_controller_options import AdmissionControllerOptions
 from .cluster import Cluster
 from .cluster_create_options import ClusterCreateOptions
+from .cluster_endpoint_config import ClusterEndpointConfig
 from .cluster_endpoints import ClusterEndpoints
 from .cluster_metadata import ClusterMetadata
 from .cluster_options import ClusterOptions
 from .cluster_summary import ClusterSummary
 from .create_cluster_details import CreateClusterDetails
+from .create_cluster_endpoint_config_details import CreateClusterEndpointConfigDetails
 from .create_cluster_kubeconfig_content_details import CreateClusterKubeconfigContentDetails
 from .create_node_pool_details import CreateNodePoolDetails
 from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetails
@@ -32,6 +34,7 @@ from .node_source_option import NodeSourceOption
 from .node_source_via_image_details import NodeSourceViaImageDetails
 from .node_source_via_image_option import NodeSourceViaImageOption
 from .update_cluster_details import UpdateClusterDetails
+from .update_cluster_endpoint_config_details import UpdateClusterEndpointConfigDetails
 from .update_cluster_options_details import UpdateClusterOptionsDetails
 from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
@@ -48,11 +51,13 @@ container_engine_type_mapping = {
     "AdmissionControllerOptions": AdmissionControllerOptions,
     "Cluster": Cluster,
     "ClusterCreateOptions": ClusterCreateOptions,
+    "ClusterEndpointConfig": ClusterEndpointConfig,
     "ClusterEndpoints": ClusterEndpoints,
     "ClusterMetadata": ClusterMetadata,
     "ClusterOptions": ClusterOptions,
     "ClusterSummary": ClusterSummary,
     "CreateClusterDetails": CreateClusterDetails,
+    "CreateClusterEndpointConfigDetails": CreateClusterEndpointConfigDetails,
     "CreateClusterKubeconfigContentDetails": CreateClusterKubeconfigContentDetails,
     "CreateNodePoolDetails": CreateNodePoolDetails,
     "CreateNodePoolNodeConfigDetails": CreateNodePoolNodeConfigDetails,
@@ -72,6 +77,7 @@ container_engine_type_mapping = {
     "NodeSourceViaImageDetails": NodeSourceViaImageDetails,
     "NodeSourceViaImageOption": NodeSourceViaImageOption,
     "UpdateClusterDetails": UpdateClusterDetails,
+    "UpdateClusterEndpointConfigDetails": UpdateClusterEndpointConfigDetails,
     "UpdateClusterOptionsDetails": UpdateClusterOptionsDetails,
     "UpdateNodePoolDetails": UpdateNodePoolDetails,
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,

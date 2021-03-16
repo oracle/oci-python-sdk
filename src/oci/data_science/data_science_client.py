@@ -93,17 +93,17 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -171,6 +171,90 @@ class DataScienceClient(object):
                 header_params=header_params,
                 response_type="Model")
 
+    def activate_model_deployment(self, model_deployment_id, **kwargs):
+        """
+        Activates the model deployment.
+
+
+        :param str model_deployment_id: (required)
+            The `OCID`__ of the model deployment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource is updated or deleted only if the `etag` you
+            provide matches the resource's current `etag` value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model_deployment.py.html>`__ to see an example of how to use activate_model_deployment API.
+        """
+        resource_path = "/modelDeployments/{modelDeploymentId}/actions/activate"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "activate_model_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "modelDeploymentId": model_deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def activate_notebook_session(self, notebook_session_id, **kwargs):
         """
         Activates the notebook session.
@@ -179,17 +263,17 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -263,17 +347,17 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -347,7 +431,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelCompartmentDetails change_model_compartment_details: (required)
             Details for changing the compartment of a model.
@@ -356,11 +440,11 @@ class DataScienceClient(object):
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -435,6 +519,102 @@ class DataScienceClient(object):
                 header_params=header_params,
                 body=change_model_compartment_details)
 
+    def change_model_deployment_compartment(self, model_deployment_id, change_model_deployment_compartment_details, **kwargs):
+        """
+        Moves a model deployment into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+
+
+        :param str model_deployment_id: (required)
+            The `OCID`__ of the model deployment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.data_science.models.ChangeModelDeploymentCompartmentDetails change_model_deployment_compartment_details: (required)
+            Details for changing the compartment of a model deployment.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource is updated or deleted only if the `etag` you
+            provide matches the resource's current `etag` value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_deployment_compartment.py.html>`__ to see an example of how to use change_model_deployment_compartment API.
+        """
+        resource_path = "/modelDeployments/{modelDeploymentId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_model_deployment_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "modelDeploymentId": model_deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_model_deployment_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_model_deployment_compartment_details)
+
     def change_notebook_session_compartment(self, notebook_session_id, change_notebook_session_compartment_details, **kwargs):
         """
         Moves a notebook session resource into a different compartment.
@@ -443,7 +623,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeNotebookSessionCompartmentDetails change_notebook_session_compartment_details: (required)
             Details for changing the compartment of a notebook session.
@@ -452,11 +632,11 @@ class DataScienceClient(object):
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -539,7 +719,7 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeProjectCompartmentDetails change_project_compartment_details: (required)
             Details for changing the compartment of a project.
@@ -548,11 +728,11 @@ class DataScienceClient(object):
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -636,7 +816,7 @@ class DataScienceClient(object):
             Details for creating a new model.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -707,7 +887,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param stream model_artifact: (required)
             The model artifact to upload.
@@ -716,7 +896,7 @@ class DataScienceClient(object):
             The content length of the body.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -792,9 +972,6 @@ class DataScienceClient(object):
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
 
-        # Disable the retry_strategy to work around data corruption issue temporarily
-        if retry_strategy:
-            retry_strategy = None
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
                 self.base_client.add_opc_retry_token_if_needed(header_params)
@@ -815,6 +992,78 @@ class DataScienceClient(object):
                 body=model_artifact,
                 enforce_content_headers=False)
 
+    def create_model_deployment(self, create_model_deployment_details, **kwargs):
+        """
+        Creates a new model deployment.
+
+
+        :param oci.data_science.models.CreateModelDeploymentDetails create_model_deployment_details: (required)
+            Details for creating a new model deployment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_science.models.ModelDeployment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_deployment.py.html>`__ to see an example of how to use create_model_deployment API.
+        """
+        resource_path = "/modelDeployments"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_model_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_model_deployment_details,
+                response_type="ModelDeployment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_model_deployment_details,
+                response_type="ModelDeployment")
+
     def create_model_provenance(self, model_id, create_model_provenance_details, **kwargs):
         """
         Creates provenance information for the specified model.
@@ -823,13 +1072,13 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.CreateModelProvenanceDetails create_model_provenance_details: (required)
             Provenance information for specified model.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -913,7 +1162,7 @@ class DataScienceClient(object):
             Details for creating a new notebook session.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -985,7 +1234,7 @@ class DataScienceClient(object):
             Details for creating a new project.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -1056,17 +1305,17 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1134,6 +1383,90 @@ class DataScienceClient(object):
                 header_params=header_params,
                 response_type="Model")
 
+    def deactivate_model_deployment(self, model_deployment_id, **kwargs):
+        """
+        Deactivates the model deployment.
+
+
+        :param str model_deployment_id: (required)
+            The `OCID`__ of the model deployment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource is updated or deleted only if the `etag` you
+            provide matches the resource's current `etag` value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model_deployment.py.html>`__ to see an example of how to use deactivate_model_deployment API.
+        """
+        resource_path = "/modelDeployments/{modelDeploymentId}/actions/deactivate"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "deactivate_model_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "modelDeploymentId": model_deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def deactivate_notebook_session(self, notebook_session_id, **kwargs):
         """
         Deactivates the notebook session.
@@ -1142,17 +1475,17 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1226,17 +1559,17 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1302,25 +1635,109 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
-    def delete_notebook_session(self, notebook_session_id, **kwargs):
+    def delete_model_deployment(self, model_deployment_id, **kwargs):
         """
-        Deletes the specified notebook session. Any unsaved work in this notebook session will be lost.
+        Deletes the specified model deployment. Any unsaved work in this model deployment is lost.
 
 
-        :param str notebook_session_id: (required)
-            The `OCID`__ of the notebook session.
+        :param str model_deployment_id: (required)
+            The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_deployment.py.html>`__ to see an example of how to use delete_model_deployment API.
+        """
+        resource_path = "/modelDeployments/{modelDeploymentId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_model_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "modelDeploymentId": model_deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_notebook_session(self, notebook_session_id, **kwargs):
+        """
+        Deletes the specified notebook session. Any unsaved work in this notebook session are lost.
+
+
+        :param str notebook_session_id: (required)
+            The `OCID`__ of the notebook session.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource is updated or deleted only if the `etag` you
+            provide matches the resource's current `etag` value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1388,23 +1805,23 @@ class DataScienceClient(object):
 
     def delete_project(self, project_id, **kwargs):
         """
-        Deletes the specified project. This operation will fail unless all associated resources (such as notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
+        Deletes the specified project. This operation fails unless all associated resources (notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
 
 
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1478,10 +1895,10 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1555,10 +1972,10 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param str range: (optional)
             Optional byte range to fetch, as described in `RFC 7233`__, section 2.1.
@@ -1632,6 +2049,83 @@ class DataScienceClient(object):
                 header_params=header_params,
                 response_type="stream")
 
+    def get_model_deployment(self, model_deployment_id, **kwargs):
+        """
+        Retrieves the model deployment for the specified `modelDeploymentId`.
+
+
+        :param str model_deployment_id: (required)
+            The `OCID`__ of the model deployment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_science.models.ModelDeployment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_deployment.py.html>`__ to see an example of how to use get_model_deployment API.
+        """
+        resource_path = "/modelDeployments/{modelDeploymentId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_model_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "modelDeploymentId": model_deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ModelDeployment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ModelDeployment")
+
     def get_model_provenance(self, model_id, **kwargs):
         """
         Gets provenance information for specified model.
@@ -1640,10 +2134,10 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1717,10 +2211,10 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1794,10 +2288,10 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1871,10 +2365,10 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1948,10 +2442,10 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2015,6 +2509,266 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def list_model_deployment_shapes(self, compartment_id, **kwargs):
+        """
+        Lists the valid model deployment shapes.
+
+
+        :param str compartment_id: (required)
+            <b>Filter</b> results by the `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+            See `List Pagination`__.
+
+            Example: `500`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_science.models.ModelDeploymentShapeSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployment_shapes.py.html>`__ to see an example of how to use list_model_deployment_shapes API.
+        """
+        resource_path = "/modelDeploymentShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_model_deployment_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ModelDeploymentShapeSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ModelDeploymentShapeSummary]")
+
+    def list_model_deployments(self, compartment_id, **kwargs):
+        """
+        Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+
+
+        :param str compartment_id: (required)
+            <b>Filter</b> results by the `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str id: (optional)
+            <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str project_id: (optional)
+            <b>Filter</b> results by the `OCID`__ of the project.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str display_name: (optional)
+            <b>Filter</b> results by its user-friendly name.
+
+        :param str lifecycle_state: (optional)
+            <b>Filter</b> results by the specified lifecycle state. Must be a valid
+            state for the resource type.
+
+            Allowed values are: "CREATING", "ACTIVE", "DELETING", "FAILED", "INACTIVE", "UPDATING", "DELETED", "NEEDS_ATTENTION"
+
+        :param str created_by: (optional)
+            <b>Filter</b> results by the `OCID`__ of the user who created the resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page,
+            or items to return in a paginated \"List\" call.
+            1 is the minimum, 1000 is the maximum.
+            See `List Pagination`__.
+
+            Example: `500`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response
+            header from the previous \"List\" call.
+
+            See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field.
+            By default, when you sort by `timeCreated`, results are shown
+            in descending order. When you sort by `displayName`, results are
+            shown in ascending order. Sort order for the `displayName` field is case sensitive.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_science.models.ModelDeploymentSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployments.py.html>`__ to see an example of how to use list_model_deployments API.
+        """
+        resource_path = "/modelDeployments"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "id",
+            "project_id",
+            "display_name",
+            "lifecycle_state",
+            "created_by",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_model_deployments got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "FAILED", "INACTIVE", "UPDATING", "DELETED", "NEEDS_ATTENTION"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "id": kwargs.get("id", missing),
+            "projectId": kwargs.get("project_id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "createdBy": kwargs.get("created_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ModelDeploymentSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ModelDeploymentSummary]")
+
     def list_models(self, compartment_id, **kwargs):
         """
         Lists models in the specified compartment.
@@ -2023,17 +2777,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -2047,7 +2801,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2057,7 +2811,7 @@ class DataScienceClient(object):
 
             Example: `500`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -2065,7 +2819,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -2074,13 +2828,13 @@ class DataScienceClient(object):
 
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field.
-            By default, when you sort by `timeCreated`, results are shown
-            in descending order. All other fields default to ascending order. Sort order for `displayName` field is case sensitive.
+            By default, when you sort by `timeCreated`, the results are shown
+            in descending order. All other fields default to ascending order. Sort order for the `displayName` field is case sensitive.
 
             Allowed values are: "timeCreated", "displayName", "lifecycleState"
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2188,10 +2942,10 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2201,7 +2955,7 @@ class DataScienceClient(object):
 
             Example: `500`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -2209,7 +2963,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2276,23 +3030,23 @@ class DataScienceClient(object):
 
     def list_notebook_sessions(self, compartment_id, **kwargs):
         """
-        Lists notebook sessions in the specified compartment.
+        Lists the notebook sessions in the specified compartment.
 
 
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -2306,7 +3060,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2316,7 +3070,7 @@ class DataScienceClient(object):
 
             Example: `500`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -2324,7 +3078,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -2333,14 +3087,14 @@ class DataScienceClient(object):
 
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field.
-            By default, when you sort by `timeCreated`, results are shown
+            By default, when you sort by `timeCreated`, the results are shown
             in descending order. When you sort by `displayName`, results are
-            shown in ascending order. Sort order for `displayName` field is case sensitive.
+            shown in ascending order. Sort order for the `displayName` field is case sensitive.
 
             Allowed values are: "timeCreated", "displayName"
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2448,12 +3202,12 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -2467,7 +3221,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2477,7 +3231,7 @@ class DataScienceClient(object):
 
             Example: `500`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -2485,7 +3239,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -2494,14 +3248,14 @@ class DataScienceClient(object):
 
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field.
-            By default, when you sort by `timeCreated`, results are shown
-            in descending order. When you sort by `displayName`, results are
-            shown in ascending order. Sort order for `displayName` field is case sensitive.
+            By default, when you sort by `timeCreated`, the results are shown
+            in descending order. When you sort by `displayName`, the results are
+            shown in ascending order. Sort order for the `displayName` field is case sensitive.
 
             Allowed values are: "timeCreated", "displayName"
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2607,10 +3361,10 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2684,10 +3438,10 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2761,17 +3515,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str operation_type: (optional)
             <b>Filter</b> results by the type of the operation associated with the work request.
 
-            Allowed values are: "NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL"
+            Allowed values are: "NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "MODEL_DEPLOYMENT_CREATE", "MODEL_DEPLOYMENT_DELETE", "MODEL_DEPLOYMENT_ACTIVATE", "MODEL_DEPLOYMENT_DEACTIVATE", "MODEL_DEPLOYMENT_UPDATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL"
 
         :param str status: (optional)
             <b>Filter</b> results by work request status.
@@ -2786,7 +3540,7 @@ class DataScienceClient(object):
 
             Example: `500`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -2794,7 +3548,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -2802,12 +3556,12 @@ class DataScienceClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order.
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, the results are shown in descending order. All other fields default to ascending order.
 
             Allowed values are: "operationType", "status", "timeAccepted"
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2844,7 +3598,7 @@ class DataScienceClient(object):
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'operation_type' in kwargs:
-            operation_type_allowed_values = ["NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL"]
+            operation_type_allowed_values = ["NOTEBOOK_SESSION_CREATE", "NOTEBOOK_SESSION_DELETE", "NOTEBOOK_SESSION_ACTIVATE", "NOTEBOOK_SESSION_DEACTIVATE", "MODEL_DEPLOYMENT_CREATE", "MODEL_DEPLOYMENT_DELETE", "MODEL_DEPLOYMENT_ACTIVATE", "MODEL_DEPLOYMENT_DEACTIVATE", "MODEL_DEPLOYMENT_UPDATE", "PROJECT_DELETE", "WORKREQUEST_CANCEL"]
             if kwargs['operation_type'] not in operation_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `operation_type`, must be one of {0}".format(operation_type_allowed_values)
@@ -2918,7 +3672,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelDetails update_model_details: (required)
             Details for updating a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
@@ -2927,11 +3681,11 @@ class DataScienceClient(object):
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3001,27 +3755,121 @@ class DataScienceClient(object):
                 body=update_model_details,
                 response_type="Model")
 
-    def update_model_provenance(self, model_id, update_model_provenance_details, **kwargs):
+    def update_model_deployment(self, model_deployment_id, update_model_deployment_details, **kwargs):
         """
-        Updates provenance information for the specified model.
+        Updates the properties of a model deployment. You can update the `displayName`.
+        When the model deployment is in the ACTIVE lifecycle state, you can update `modelDeploymentConfigurationDetails` and  change `instanceShapeName` and `modelId`. Any update to
+        `bandwidthMbps` or `instanceCount` can be done when the model deployment is in the INACTIVE lifecycle state. Changes to the `bandwidthMbps` or `instanceCount` will take effect
+        the next time the `ActivateModelDeployment` action is invoked on the model deployment resource.
 
 
-        :param str model_id: (required)
-            The `OCID`__ of the model.
+        :param str model_deployment_id: (required)
+            The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param oci.data_science.models.UpdateModelProvenanceDetails update_model_provenance_details: (required)
-            Provenance information for the specified model.
-
-        :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+        :param oci.data_science.models.UpdateModelDeploymentDetails update_model_deployment_details: (required)
+            Details for updating a model deployment. You can update `modelDeploymentConfigurationDetails` and change `instanceShapeName` and `modelId` when the model deployment is in
+            the ACTIVE lifecycle state. The `bandwidthMbps` or `instanceCount` can only be updated while the model deployment is in the `INACTIVE` state. Changes to the `bandwidthMbps`
+            or `instanceCount` will take effect the next time the `ActivateModelDeployment` action is invoked on the model deployment resource.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
+            provide matches the resource's current `etag` value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_deployment.py.html>`__ to see an example of how to use update_model_deployment API.
+        """
+        resource_path = "/modelDeployments/{modelDeploymentId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_model_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "modelDeploymentId": model_deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_model_deployment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_model_deployment_details)
+
+    def update_model_provenance(self, model_id, update_model_provenance_details, **kwargs):
+        """
+        Updates the provenance information for the specified model.
+
+
+        :param str model_id: (required)
+            The `OCID`__ of the model.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.data_science.models.UpdateModelProvenanceDetails update_model_provenance_details: (required)
+            Provenance information for the specified model.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param obj retry_strategy: (optional)
@@ -3096,27 +3944,27 @@ class DataScienceClient(object):
         """
         Updates the properties of a notebook session. You can update the `displayName`, `freeformTags`, and `definedTags` properties.
         When the notebook session is in the INACTIVE lifecycle state, you can update `notebookSessionConfigurationDetails` and change `shape`, `subnetId`, and `blockStorageSizeInGBs`.
-        Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
+        Changes to the `notebookSessionConfigurationDetails` take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
 
 
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateNotebookSessionDetails update_notebook_session_details: (required)
             Details for updating a notebook session. `notebookSessionConfigurationDetails` can only be updated while the notebook session is in the `INACTIVE` state.
-            Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
+            Changes to the `notebookSessionConfigurationDetails` take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3194,7 +4042,7 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateProjectDetails update_project_details: (required)
             Details for updating a project. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
@@ -3203,11 +4051,11 @@ class DataScienceClient(object):
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the `etag` you
+            The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

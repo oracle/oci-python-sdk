@@ -109,7 +109,7 @@ class Project(object):
         **[Required]** Gets the id of this Project.
         The `OCID`__ of the project.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Project.
@@ -123,7 +123,7 @@ class Project(object):
         Sets the id of this Project.
         The `OCID`__ of the project.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Project.
@@ -135,7 +135,7 @@ class Project(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Project.
-        The date and time the resource was created, in the timestamp format defined by `RFC3339`__.
+        The date and time the resource was created in the timestamp format defined by `RFC3339`__.
         Example: 2019-08-25T21:10:29.41Z
 
         __ https://tools.ietf.org/html/rfc3339
@@ -150,7 +150,7 @@ class Project(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Project.
-        The date and time the resource was created, in the timestamp format defined by `RFC3339`__.
+        The date and time the resource was created in the timestamp format defined by `RFC3339`__.
         Example: 2019-08-25T21:10:29.41Z
 
         __ https://tools.ietf.org/html/rfc3339
@@ -165,7 +165,7 @@ class Project(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Project.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 
 
         :return: The display_name of this Project.
@@ -177,7 +177,7 @@ class Project(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Project.
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information.
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Project.
@@ -189,7 +189,7 @@ class Project(object):
     def description(self):
         """
         Gets the description of this Project.
-        A short blurb describing the project.
+        A short description of the project.
 
 
         :return: The description of this Project.
@@ -201,7 +201,7 @@ class Project(object):
     def description(self, description):
         """
         Sets the description of this Project.
-        A short blurb describing the project.
+        A short description of the project.
 
 
         :param description: The description of this Project.
@@ -215,7 +215,7 @@ class Project(object):
         **[Required]** Gets the compartment_id of this Project.
         The `OCID`__ of the project's compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Project.
@@ -229,7 +229,7 @@ class Project(object):
         Sets the compartment_id of this Project.
         The `OCID`__ of the project's compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Project.
@@ -243,7 +243,7 @@ class Project(object):
         **[Required]** Gets the created_by of this Project.
         The `OCID`__ of the user who created this project.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this Project.
@@ -257,7 +257,7 @@ class Project(object):
         Sets the created_by of this Project.
         The `OCID`__ of the user who created this project.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this Project.

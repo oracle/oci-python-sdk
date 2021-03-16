@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .action import Action
 from .add_http_request_header_rule import AddHttpRequestHeaderRule
 from .add_http_response_header_rule import AddHttpResponseHeaderRule
 from .allow_rule import AllowRule
@@ -25,10 +26,12 @@ from .create_hostname_details import CreateHostnameDetails
 from .create_listener_details import CreateListenerDetails
 from .create_load_balancer_details import CreateLoadBalancerDetails
 from .create_path_route_set_details import CreatePathRouteSetDetails
+from .create_routing_policy_details import CreateRoutingPolicyDetails
 from .create_rule_set_details import CreateRuleSetDetails
 from .create_ssl_cipher_suite_details import CreateSSLCipherSuiteDetails
 from .extend_http_request_header_value_rule import ExtendHttpRequestHeaderValueRule
 from .extend_http_response_header_value_rule import ExtendHttpResponseHeaderValueRule
+from .forward_to_backend_set import ForwardToBackendSet
 from .health_check_result import HealthCheckResult
 from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
@@ -56,6 +59,9 @@ from .redirect_uri import RedirectUri
 from .remove_http_request_header_rule import RemoveHttpRequestHeaderRule
 from .remove_http_response_header_rule import RemoveHttpResponseHeaderRule
 from .reserved_ip import ReservedIP
+from .routing_policy import RoutingPolicy
+from .routing_policy_details import RoutingPolicyDetails
+from .routing_rule import RoutingRule
 from .rule import Rule
 from .rule_condition import RuleCondition
 from .rule_set import RuleSet
@@ -78,6 +84,7 @@ from .update_load_balancer_details import UpdateLoadBalancerDetails
 from .update_load_balancer_shape_details import UpdateLoadBalancerShapeDetails
 from .update_network_security_groups_details import UpdateNetworkSecurityGroupsDetails
 from .update_path_route_set_details import UpdatePathRouteSetDetails
+from .update_routing_policy_details import UpdateRoutingPolicyDetails
 from .update_rule_set_details import UpdateRuleSetDetails
 from .update_ssl_cipher_suite_details import UpdateSSLCipherSuiteDetails
 from .work_request import WorkRequest
@@ -85,6 +92,7 @@ from .work_request_error import WorkRequestError
 
 # Maps type names to classes for load_balancer services.
 load_balancer_type_mapping = {
+    "Action": Action,
     "AddHttpRequestHeaderRule": AddHttpRequestHeaderRule,
     "AddHttpResponseHeaderRule": AddHttpResponseHeaderRule,
     "AllowRule": AllowRule,
@@ -106,10 +114,12 @@ load_balancer_type_mapping = {
     "CreateListenerDetails": CreateListenerDetails,
     "CreateLoadBalancerDetails": CreateLoadBalancerDetails,
     "CreatePathRouteSetDetails": CreatePathRouteSetDetails,
+    "CreateRoutingPolicyDetails": CreateRoutingPolicyDetails,
     "CreateRuleSetDetails": CreateRuleSetDetails,
     "CreateSSLCipherSuiteDetails": CreateSSLCipherSuiteDetails,
     "ExtendHttpRequestHeaderValueRule": ExtendHttpRequestHeaderValueRule,
     "ExtendHttpResponseHeaderValueRule": ExtendHttpResponseHeaderValueRule,
+    "ForwardToBackendSet": ForwardToBackendSet,
     "HealthCheckResult": HealthCheckResult,
     "HealthChecker": HealthChecker,
     "HealthCheckerDetails": HealthCheckerDetails,
@@ -137,6 +147,9 @@ load_balancer_type_mapping = {
     "RemoveHttpRequestHeaderRule": RemoveHttpRequestHeaderRule,
     "RemoveHttpResponseHeaderRule": RemoveHttpResponseHeaderRule,
     "ReservedIP": ReservedIP,
+    "RoutingPolicy": RoutingPolicy,
+    "RoutingPolicyDetails": RoutingPolicyDetails,
+    "RoutingRule": RoutingRule,
     "Rule": Rule,
     "RuleCondition": RuleCondition,
     "RuleSet": RuleSet,
@@ -159,6 +172,7 @@ load_balancer_type_mapping = {
     "UpdateLoadBalancerShapeDetails": UpdateLoadBalancerShapeDetails,
     "UpdateNetworkSecurityGroupsDetails": UpdateNetworkSecurityGroupsDetails,
     "UpdatePathRouteSetDetails": UpdatePathRouteSetDetails,
+    "UpdateRoutingPolicyDetails": UpdateRoutingPolicyDetails,
     "UpdateRuleSetDetails": UpdateRuleSetDetails,
     "UpdateSSLCipherSuiteDetails": UpdateSSLCipherSuiteDetails,
     "WorkRequest": WorkRequest,

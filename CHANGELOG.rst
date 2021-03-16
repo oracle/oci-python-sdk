@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.33.0 - 2020-03-16
+====================
+
+Added
+-----
+* Support for routing policies and HTTP2 listener protocols in the Load Balancing service
+* Support for model deployments in the Data Science service
+* Support for private clusters in the Container Engine for Kubernetes service
+* Support for updating an instance's usage type in the Content and Experience service
+
+Breaking
+--------
+* Retries are now enabled on all operations performing binary data upload, except upload manager. The SDK used to explicitly override retry configuration on binary upload operations because of potential data corruption issue (https://github.com/oracle/oci-python-sdk/issues/203).
+
+====================
 2.32.1 - 2020-03-09
 ====================
 
