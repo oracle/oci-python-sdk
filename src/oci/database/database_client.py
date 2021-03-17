@@ -11,7 +11,7 @@ from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
-from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME, extract_service_endpoint
 from .models import database_type_mapping
 missing = Sentinel("Missing")
 
@@ -86,6 +86,12 @@ class DatabaseClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self._config = config
         self._kwargs = kwargs
+
+    def get_service_endpoint(self):
+        """
+        Get the http service_endpoint for the server.
+        """
+        return extract_service_endpoint(self.base_client.endpoint)
 
     def activate_exadata_infrastructure(self, exadata_infrastructure_id, activate_exadata_infrastructure_details, **kwargs):
         """
