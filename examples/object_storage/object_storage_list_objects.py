@@ -200,7 +200,7 @@ def main():
             object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         # retrieve namespace from object storage
-        source_namespace = object_storage_client.get_namespace().data
+        source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
     except Exception as e:
         print("\nError connecting to Object Storage - " + str(e))
@@ -227,7 +227,7 @@ def main():
     next_starts_with = None
 
     while True:
-        response = object_storage_client.list_objects(source_namespace, source_bucket, start=next_starts_with, prefix=source_prefix, fields='size')
+        response = object_storage_client.list_objects(source_namespace, source_bucket, start=next_starts_with, prefix=source_prefix, fields='size', retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
         next_starts_with = response.data.next_start_with
 
         for object_file in response.data.objects:

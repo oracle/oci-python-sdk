@@ -10,7 +10,7 @@
 # Supports Python 3
 ##########################################################################
 # Info:
-#    List all dbsystems including maintenance in Tenancy
+#    List all dbsystems and exadatas including maintenance in Tenancy
 #
 # Connectivity:
 #    Option 1 - User Authentication
@@ -19,23 +19,27 @@
 #          Allow group ListDBSystemGroup to inspect compartments in tenancy
 #          Allow group ListDBSystemGroup to inspect tenancies in tenancy
 #          Allow group ListDBSystemGroup to inspect db-systems in tenancy
+#          Allow group ListDBSystemGroup to inspect infrastructures in tenancy
 #
 #    Option 2 - Instance Principle
 #       Compute instance part of DynListDBSystemGroup dynamic group with policy rules:
 #          Allow dynamic group DynListDBSystemGroup to inspect compartments in tenancy
 #          Allow dynamic group DynListDBSystemGroup to inspect tenancies in tenancy
 #          Allow dynamic group DynListDBSystemGroup to inspect db-systems in tenancy
+#          Allow dynamic group DynListDBSystemGroup to inspect exadata-infrastructures in tenancy
 #
 ##########################################################################
 # Modules Included:
 # - oci.identity.IdentityClient
 #
 # APIs Used:
-# - IdentityClient.list_compartments         - Policy COMPARTMENT_INSPECT
-# - IdentityClient.get_tenancy               - Policy TENANCY_INSPECT
-# - IdentityClient.list_region_subscriptions - Policy TENANCY_INSPECT
-# - DatabaseClient.list_db_systems           - Policy DB_SYSTEM_INSPECT
-# - DatabaseClient.get_maintenance_run       - Policy DB_SYSTEM_INSPECT
+# - IdentityClient.list_compartments                  - Policy COMPARTMENT_INSPECT
+# - IdentityClient.get_tenancy                        - Policy TENANCY_INSPECT
+# - IdentityClient.list_region_subscriptions          - Policy TENANCY_INSPECT
+# - DatabaseClient.list_db_systems                    - Policy DB_SYSTEM_INSPECT
+# - DatabaseClient.get_maintenance_run                - Policy DB_SYSTEM_INSPECT
+# - DatabaseClient.list_cloud_exadata_infrastructures - Policy EXADATA_INFRASTRUCTURES_INSPECT
+# - DatabaseClient.list_cloud_vm_clusters             - Policy EXADATA_INFRASTRUCTURES_INSPECT
 ##########################################################################
 # Application Command line parameters
 #
@@ -193,13 +197,15 @@ cmd = parser.parse_args()
 # Start print time info
 start_time = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 print_header("Running DB Systems Extract")
-print("Written By Adi Zohar, June 2020")
+print("Written By Adi Zohar, June 2020, Updated March 2021")
 print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
 # Identity extract compartments
 config, signer = create_signer(cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
 compartments = []
+data = []
+warnings = 0
 tenancy = None
 try:
     print("\nConnecting to Identity Service...")
@@ -286,10 +292,216 @@ def load_database_maintatance_windows(maintenance_window):
         raise RuntimeError("\nError handling Maintenance Window - " + str(e))
 
 
+##########################################################################
+# load_database_dbsystem
+##########################################################################
+def load_database_dbsystem(database_client, region_name, compartment):
+    try:
+        global warnings
+        global data
+
+        print("    Compartment " + (str(compartment.name) + "... ").ljust(35), end="")
+        cnt = 0
+
+        list_db_systems = []
+        try:
+            list_db_systems = oci.pagination.list_call_get_all_results(
+                database_client.list_db_systems,
+                compartment.id,
+                sort_by="DISPLAYNAME"
+            ).data
+
+        except oci.exceptions.ServiceError as e:
+            if check_service_error(e.code):
+                warnings += 1
+                print("Warnings ")
+                return
+            raise
+
+        # loop on the db systems
+        # dbs = oci.database.models.DbSystemSummary
+        for dbs in list_db_systems:
+            if dbs.lifecycle_state == oci.database.models.DbSystemSummary.LIFECYCLE_STATE_TERMINATED or \
+                    dbs.lifecycle_state == "MIGRATED":
+                continue
+
+            value = {
+                'region_name': region_name,
+                'compartment_name': str(compartment.name),
+                'compartment_id': str(compartment.id),
+                'id': str(dbs.id),
+                'display_name': str(dbs.display_name),
+                'shape': str(dbs.shape),
+                'lifecycle_state': str(dbs.lifecycle_state),
+                'data_storage_size_in_gbs': "" if dbs.data_storage_size_in_gbs is None else str(dbs.data_storage_size_in_gbs),
+                'availability_domain': str(dbs.availability_domain),
+                'cpu_core_count': str(dbs.cpu_core_count),
+                'node_count': ("" if dbs.node_count is None else str(dbs.node_count)),
+                'version': str(dbs.version),
+                'hostname': str(dbs.hostname),
+                'domain': str(dbs.domain),
+                'data_storage_percentage': str(dbs.data_storage_percentage),
+                'data_subnet_id': str(dbs.subnet_id),
+                'backup_subnet_id': str(dbs.backup_subnet_id),
+                'scan_dns_record_id': "" if dbs.scan_dns_record_id is None else str(dbs.scan_dns_record_id),
+                'listener_port': str(dbs.listener_port),
+                'cluster_name': "" if dbs.cluster_name is None else str(dbs.cluster_name),
+                'database_edition': str(dbs.database_edition),
+                'time_created': str(dbs.time_created),
+                'storage_management': "",
+                'sparse_diskgroup': str(dbs.sparse_diskgroup),
+                'reco_storage_size_in_gb': str(dbs.reco_storage_size_in_gb),
+                'last_maintenance_run': load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                'next_maintenance_run': load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                'maintenance_window': load_database_maintatance_windows(dbs.maintenance_window),
+                'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags
+            }
+
+            # storage_management
+            if dbs.db_system_options:
+                if dbs.db_system_options.storage_management:
+                    value['storage_management'] = dbs.db_system_options.storage_management
+
+            # license model
+            if dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_LICENSE_INCLUDED:
+                value['license_model'] = "INCL"
+            elif dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
+                value['license_model'] = "BYOL"
+            else:
+                value['license_model'] = str(dbs.license_model)
+
+            # Edition
+            if dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION:
+                value['database_edition_short'] = "EE"
+            elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE:
+                value['database_edition_short'] = "XP"
+            elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE:
+                value['database_edition_short'] = "HP"
+            elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_STANDARD_EDITION:
+                value['database_edition_short'] = "SE"
+            else:
+                value['database_edition_short'] = dbs.database_edition
+
+            # add the data
+            cnt += 1
+            data.append(value)
+
+        # print dbsystems for the compartment
+        if cnt == 0:
+            print("(-)")
+        else:
+            print("(" + str(cnt) + " DBSystems)")
+
+    except Exception as e:
+        raise RuntimeError("\nError extracting DBSystems in load_database_dbsystem - " + str(e))
+
+
+##########################################################################
+# load_database_exadata_infrastructure
+##########################################################################
+def load_database_exadata_infrastructure(database_client, region_name, compartment):
+    try:
+        global warnings
+        global data
+
+        print("    Compartment " + (str(compartment.name) + "... ").ljust(35), end="")
+        cnt = 0
+
+        list_exadata = []
+        try:
+            list_exadata = oci.pagination.list_call_get_all_results(
+                database_client.list_cloud_exadata_infrastructures,
+                compartment.id,
+                sort_by="DISPLAYNAME"
+            ).data
+
+        except oci.exceptions.ServiceError as e:
+            if check_service_error(e.code):
+                warnings += 1
+                print("Warnings ")
+                return
+            raise
+
+        # loop on the exadatas
+        # dbs = oci.database.models.CloudExadataInfrastructureSummary
+        for dbs in list_exadata:
+            if (dbs.lifecycle_state == oci.database.models.CloudExadataInfrastructureSummary.LIFECYCLE_STATE_TERMINATED or
+                    dbs.lifecycle_state == oci.database.models.CloudExadataInfrastructureSummary.LIFECYCLE_STATE_TERMINATING):
+                continue
+
+            # Read VMCluster
+            vms = database_client.list_cloud_vm_clusters(
+                compartment.id,
+                cloud_exadata_infrastructure_id=dbs.id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # arr = oci.database.models.CloudVmClusterSummary
+            for arr in vms:
+                if (arr.lifecycle_state == oci.database.models.CloudVmClusterSummary.LIFECYCLE_STATE_TERMINATED or
+                        arr.lifecycle_state == oci.database.models.CloudVmClusterSummary.LIFECYCLE_STATE_TERMINATING):
+                    continue
+
+                value = {
+                    'region_name': region_name,
+                    'compartment_name': str(compartment.name),
+                    'compartment_id': str(compartment.id),
+                    'id': str(dbs.id),
+                    'display_name': str(dbs.display_name),
+                    'shape': str(dbs.shape),
+                    'lifecycle_state': str(dbs.lifecycle_state),
+                    'data_storage_size_in_gbs': "" if arr.storage_size_in_gbs is None else str(arr.storage_size_in_gbs),
+                    'availability_domain': str(dbs.availability_domain),
+                    'cpu_core_count': str(arr.cpu_core_count),
+                    'node_count': ("" if arr.node_count is None else str(arr.node_count)),
+                    'version': "XP",
+                    'hostname': str(arr.hostname),
+                    'domain': str(arr.domain),
+                    'data_storage_percentage': str(arr.data_storage_percentage),
+                    'data_subnet_id': str(arr.subnet_id),
+                    'backup_subnet_id': str(arr.backup_subnet_id),
+                    'scan_dns_record_id': "" if arr.scan_dns_record_id is None else str(arr.scan_dns_record_id),
+                    'listener_port': str(arr.listener_port),
+                    'cluster_name': "" if arr.cluster_name is None else str(arr.cluster_name),
+                    'database_edition': "XP",
+                    'time_created': str(dbs.time_created),
+                    'storage_management': "",
+                    'sparse_diskgroup': str(arr.is_sparse_diskgroup_enabled),
+                    'reco_storage_size_in_gb': "",
+                    'last_maintenance_run': load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                    'next_maintenance_run': load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                    'maintenance_window': load_database_maintatance_windows(dbs.maintenance_window),
+                    'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                    'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags
+                }
+
+                # license model
+                if arr.license_model == oci.database.models.CloudVmClusterSummary.LICENSE_MODEL_LICENSE_INCLUDED:
+                    value['license_model'] = "INCL"
+                elif arr.license_model == oci.database.models.CloudVmClusterSummary.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
+                    value['license_model'] = "BYOL"
+                else:
+                    value['license_model'] = str(arr.license_model)
+
+                # add the data
+                cnt += 1
+                data.append(value)
+
+        # print exadata for the compartment
+        if cnt == 0:
+            print("(-)")
+        else:
+            print("(" + str(cnt) + " Exadatas)")
+
+    except Exception as e:
+        raise RuntimeError("\nError extracting Exadata in load_database_exadata_infrastructure - " + str(e))
+
+
 ############################################
 # Loop on all regions
 ############################################
-print("\nLoading DBSystems...")
+print("\nLoading DBSystems and Exadatas...")
 data = []
 warnings = 0
 for region_name in [str(es.region_name) for es in regions]:
@@ -306,112 +518,28 @@ for region_name in [str(es.region_name) for es in regions]:
         database_client.base_client.session.proxies = {'https': cmd.proxy}
 
     ############################################
-    # Loop on all compartments
+    # Loop on all compartments for Exadata
     ############################################
-    try:
-        for compartment in compartments:
+    print("  Running on Exadata Infrastructure...")
+    for compartment in compartments:
 
-            # skip non active compartments
-            if compartment.id != tenancy.id and compartment.lifecycle_state != oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
-                continue
+        # skip non active compartments
+        if compartment.id != tenancy.id and compartment.lifecycle_state != oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
+            continue
 
-            print("    Compartment " + (str(compartment.name) + "... ").ljust(35), end="")
-            cnt = 0
+        load_database_exadata_infrastructure(database_client, region_name, compartment)
 
-            ############################################
-            # Retrieve DBSystems
-            ############################################
-            list_db_systems = []
-            try:
-                list_db_systems = oci.pagination.list_call_get_all_results(
-                    database_client.list_db_systems,
-                    compartment.id,
-                    sort_by="DISPLAYNAME"
-                ).data
+    ############################################
+    # Loop on all compartments for DBSystems
+    ############################################
+    print("  Running on DBSystems...")
+    for compartment in compartments:
 
-            except oci.exceptions.ServiceError as e:
-                if check_service_error(e.code):
-                    warnings += 1
-                    print("Warnings ")
-                    continue
-                raise
+        # skip non active compartments
+        if compartment.id != tenancy.id and compartment.lifecycle_state != oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
+            continue
 
-            # loop on the db systems
-            # dbs = oci.database.models.DbSystemSummary
-            for dbs in list_db_systems:
-                if dbs.lifecycle_state == oci.database.models.DbSystemSummary.LIFECYCLE_STATE_TERMINATED:
-                    continue
-
-                value = {
-                    'region_name': region_name,
-                    'compartment_name': str(compartment.name),
-                    'compartment_id': str(compartment.id),
-                    'id': str(dbs.id),
-                    'display_name': str(dbs.display_name),
-                    'shape': str(dbs.shape),
-                    'lifecycle_state': str(dbs.lifecycle_state),
-                    'data_storage_size_in_gbs': "" if dbs.data_storage_size_in_gbs is None else str(dbs.data_storage_size_in_gbs),
-                    'availability_domain': str(dbs.availability_domain),
-                    'cpu_core_count': str(dbs.cpu_core_count),
-                    'node_count': ("" if dbs.node_count is None else str(dbs.node_count)),
-                    'version': str(dbs.version),
-                    'hostname': str(dbs.hostname),
-                    'domain': str(dbs.domain),
-                    'data_storage_percentage': str(dbs.data_storage_percentage),
-                    'data_subnet_id': str(dbs.subnet_id),
-                    'backup_subnet_id': str(dbs.backup_subnet_id),
-                    'scan_dns_record_id': "" if dbs.scan_dns_record_id is None else str(dbs.scan_dns_record_id),
-                    'listener_port': str(dbs.listener_port),
-                    'cluster_name': "" if dbs.cluster_name is None else str(dbs.cluster_name),
-                    'database_edition': str(dbs.database_edition),
-                    'time_created': str(dbs.time_created),
-                    'storage_management': "",
-                    'sparse_diskgroup': str(dbs.sparse_diskgroup),
-                    'reco_storage_size_in_gb': str(dbs.reco_storage_size_in_gb),
-                    'last_maintenance_run': load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
-                    'next_maintenance_run': load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
-                    'maintenance_window': load_database_maintatance_windows(dbs.maintenance_window),
-                    'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
-                    'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags
-                }
-
-                # storage_management
-                if dbs.db_system_options:
-                    if dbs.db_system_options.storage_management:
-                        value['storage_management'] = dbs.db_system_options.storage_management
-
-                # license model
-                if dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_LICENSE_INCLUDED:
-                    value['license_model'] = "INCL"
-                elif dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
-                    value['license_model'] = "BYOL"
-                else:
-                    value['license_model'] = str(dbs.license_model)
-
-                # Edition
-                if dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION:
-                    value['database_edition_short'] = "EE"
-                elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE:
-                    value['database_edition_short'] = "XP"
-                elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE:
-                    value['database_edition_short'] = "HP"
-                elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_STANDARD_EDITION:
-                    value['database_edition_short'] = "SE"
-                else:
-                    value['database_edition_short'] = dbs.database_edition
-
-                # add the data
-                cnt += 1
-                data.append(value)
-
-            # print dbsystems for the compartment
-            if cnt == 0:
-                print("(-)")
-            else:
-                print("(" + str(cnt) + " DBSystems)")
-
-    except Exception as e:
-        raise RuntimeError("\nError extracting DBSystems - " + str(e))
+        load_database_dbsystem(database_client, region_name, compartment)
 
 ############################################
 # Print Output as JSON

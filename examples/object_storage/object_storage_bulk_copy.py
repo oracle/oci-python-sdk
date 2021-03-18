@@ -288,7 +288,7 @@ def load_dest_bucket_to_mem(object_storage_client_dest, destination_namespace, d
 
     next_starts_with = None
     while True:
-        response = object_storage_client_dest.list_objects(destination_namespace, destination_bucket, start=next_starts_with, prefix=source_prefix, fields="md5")
+        response = object_storage_client_dest.list_objects(destination_namespace, destination_bucket, start=next_starts_with, prefix=source_prefix, fields="md5", retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
         next_starts_with = response.data.next_start_with
 
         if loaded_page % 100 == 0 and loaded_page > 0:
@@ -316,7 +316,7 @@ def add_objects_to_queue(ns, bucket):
     skipped = 0
     next_starts_with = None
     while True:
-        response = object_storage_client.list_objects(ns, bucket, start=next_starts_with, prefix=source_prefix)
+        response = object_storage_client.list_objects(ns, bucket, start=next_starts_with, prefix=source_prefix, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
         next_starts_with = response.data.next_start_with
 
         for object_ in response.data.objects:
@@ -451,7 +451,7 @@ def connect_to_object_storage():
 
         # retrieve namespace from object storage
         if not source_namespace:
-            source_namespace = object_storage_client.get_namespace().data
+            source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
         print("Succeed.")
 
     except Exception as e:
@@ -469,7 +469,7 @@ def connect_to_object_storage():
 
         # retrieve namespace from object storage
         if not destination_namespace:
-            destination_namespace = object_storage_client_dest.get_namespace().data
+            destination_namespace = object_storage_client_dest.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
         print("Succeed.")
 
     except Exception as e:
