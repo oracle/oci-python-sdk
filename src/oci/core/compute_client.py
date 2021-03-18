@@ -249,7 +249,7 @@ class ComputeClient(object):
         For more information about secondary VNICs, see
         `Virtual Network Interface Cards (VNICs)`__.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
 
 
         :param oci.core.models.AttachVnicDetails attach_vnic_details: (required)
@@ -475,6 +475,107 @@ class ComputeClient(object):
                 header_params=header_params,
                 body=capture_console_history_details,
                 response_type="ConsoleHistory")
+
+    def change_compute_capacity_reservation_compartment(self, capacity_reservation_id, change_compute_capacity_reservation_compartment_details, **kwargs):
+        """
+        Moves a compute capacity reservation into a different compartment. For information about
+        moving resources between compartments, see
+        `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+
+
+        :param str capacity_reservation_id: (required)
+            The OCID of the compute capacity reservation.
+
+        :param oci.core.models.ChangeComputeCapacityReservationCompartmentDetails change_compute_capacity_reservation_compartment_details: (required)
+            The configuration details for the move operation.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_compute_capacity_reservation_compartment.py.html>`__ to see an example of how to use change_compute_capacity_reservation_compartment API.
+        """
+        resource_path = "/computeCapacityReservations/{capacityReservationId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_compute_capacity_reservation_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "capacityReservationId": capacity_reservation_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_compute_capacity_reservation_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_compute_capacity_reservation_compartment_details)
 
     def change_compute_image_capability_schema_compartment(self, compute_image_capability_schema_id, change_compute_image_capability_schema_compartment_details, **kwargs):
         """
@@ -790,7 +891,9 @@ class ComputeClient(object):
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
             Request to change the compartment of a given instance.
@@ -951,6 +1054,91 @@ class ComputeClient(object):
                 header_params=header_params,
                 body=create_app_catalog_subscription_details,
                 response_type="AppCatalogSubscription")
+
+    def create_compute_capacity_reservation(self, create_compute_capacity_reservation_details, **kwargs):
+        """
+        Creates a new compute capacity reservation in the specified compartment and availability domain.
+        Compute capacity reservations let you reserve instances in a compartment.
+        When you launch an instance using this reservation, you are assured that you have enough space for your instance,
+        and you won't get out of capacity errors.
+        For more information, see `Reserved Capacity`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
+
+
+        :param oci.core.models.CreateComputeCapacityReservationDetails create_compute_capacity_reservation_details: (required)
+            Details for creating a new compute capacity reservation.
+
+            **Caution:** Avoid using any confidential information when you use the API to supply string values.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ComputeCapacityReservation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_compute_capacity_reservation.py.html>`__ to see an example of how to use create_compute_capacity_reservation API.
+        """
+        resource_path = "/computeCapacityReservations"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_compute_capacity_reservation_details,
+                response_type="ComputeCapacityReservation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_compute_capacity_reservation_details,
+                response_type="ComputeCapacityReservation")
 
     def create_compute_image_capability_schema(self, create_compute_image_capability_schema_details, **kwargs):
         """
@@ -1131,10 +1319,10 @@ class ComputeClient(object):
         It does not have to be unique, and you can change it. See :func:`update_image`.
         Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm
 
 
         :param oci.core.models.CreateImageDetails create_image_details: (required)
@@ -1211,7 +1399,7 @@ class ComputeClient(object):
 
         For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm
 
 
         :param oci.core.models.CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
@@ -1291,7 +1479,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_version: (required)
             Listing Resource Version.
@@ -1347,6 +1535,87 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
+                header_params=header_params)
+
+    def delete_compute_capacity_reservation(self, capacity_reservation_id, **kwargs):
+        """
+        Deletes the specified compute capacity reservation.
+
+
+        :param str capacity_reservation_id: (required)
+            The OCID of the compute capacity reservation.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_compute_capacity_reservation.py.html>`__ to see an example of how to use delete_compute_capacity_reservation API.
+        """
+        resource_path = "/computeCapacityReservations/{capacityReservationId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "capacityReservationId": capacity_reservation_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
                 header_params=header_params)
 
     def delete_compute_image_capability_schema(self, compute_image_capability_schema_id, **kwargs):
@@ -1819,7 +2088,7 @@ class ComputeClient(object):
         deleting the VNIC causes that route rule to blackhole and the traffic
         will be dropped.
 
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param str vnic_attachment_id: (required)
@@ -1983,10 +2252,10 @@ class ComputeClient(object):
         See `Object Storage URLs`__ and `Using Pre-Authenticated Requests`__
         for constructing URLs for image import/export.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm#Let4
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :param str image_id: (required)
@@ -2351,6 +2620,82 @@ class ComputeClient(object):
                 header_params=header_params,
                 response_type="BootVolumeAttachment")
 
+    def get_compute_capacity_reservation(self, capacity_reservation_id, **kwargs):
+        """
+        Gets information about the specified compute capacity reservation.
+
+
+        :param str capacity_reservation_id: (required)
+            The OCID of the compute capacity reservation.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ComputeCapacityReservation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_compute_capacity_reservation.py.html>`__ to see an example of how to use get_compute_capacity_reservation API.
+        """
+        resource_path = "/computeCapacityReservations/{capacityReservationId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "capacityReservationId": capacity_reservation_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ComputeCapacityReservation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ComputeCapacityReservation")
+
     def get_compute_global_image_capability_schema(self, compute_global_image_capability_schema_id, **kwargs):
         """
         Gets the specified Compute Global Image Capability Schema
@@ -2359,7 +2704,7 @@ class ComputeClient(object):
         :param str compute_global_image_capability_schema_id: (required)
             The `OCID`__ of the compute global image capability schema
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2427,7 +2772,7 @@ class ComputeClient(object):
         :param str compute_global_image_capability_schema_id: (required)
             The `OCID`__ of the compute global image capability schema
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_global_image_capability_schema_version_name: (required)
             The name of the compute global image capability schema version
@@ -2958,7 +3303,9 @@ class ComputeClient(object):
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3223,7 +3570,9 @@ class ComputeClient(object):
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3314,12 +3663,14 @@ class ComputeClient(object):
         For more information about managing instance lifecycle states, see
         `Stopping and Starting an Instance`__.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the instance.
@@ -3455,10 +3806,10 @@ class ComputeClient(object):
         with the signature. To get the image ID for the LaunchInstance operation, call
         :func:`get_app_catalog_listing_resource_version`.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
 
 
         :param oci.core.models.LaunchInstanceDetails launch_instance_details: (required)
@@ -3755,7 +4106,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -3888,7 +4239,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -3977,6 +4328,457 @@ class ComputeClient(object):
                 header_params=header_params,
                 response_type="list[BootVolumeAttachment]")
 
+    def list_compute_capacity_reservation_instance_shapes(self, compartment_id, **kwargs):
+        """
+        Lists the shapes that can be reserved within the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str availability_domain: (optional)
+            The name of the availability domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ComputeCapacityReservationInstanceShapeSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_compute_capacity_reservation_instance_shapes.py.html>`__ to see an example of how to use list_compute_capacity_reservation_instance_shapes API.
+        """
+        resource_path = "/computeCapacityReservationInstanceShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "availability_domain",
+            "opc_request_id",
+            "limit",
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_compute_capacity_reservation_instance_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ComputeCapacityReservationInstanceShapeSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ComputeCapacityReservationInstanceShapeSummary]")
+
+    def list_compute_capacity_reservation_instances(self, capacity_reservation_id, **kwargs):
+        """
+        Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
+
+
+        :param str capacity_reservation_id: (required)
+            The OCID of the compute capacity reservation.
+
+        :param str availability_domain: (optional)
+            The name of the availability domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CapacityReservationInstanceSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_compute_capacity_reservation_instances.py.html>`__ to see an example of how to use list_compute_capacity_reservation_instances API.
+        """
+        resource_path = "/computeCapacityReservations/{capacityReservationId}/instances"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "availability_domain",
+            "compartment_id",
+            "opc_request_id",
+            "limit",
+            "page",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_compute_capacity_reservation_instances got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "capacityReservationId": capacity_reservation_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/x-json-stream",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CapacityReservationInstanceSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CapacityReservationInstanceSummary]")
+
+    def list_compute_capacity_reservations(self, compartment_id, **kwargs):
+        """
+        Lists the compute capacity reservations that match the specified criteria and compartment.
+
+        You can limit the list by specifying a compute capacity reservation display name
+        (the list will include all the identically-named compute capacity reservations in the compartment).
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str availability_domain: (optional)
+            The name of the availability domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.
+
+            Allowed values are: "ACTIVE", "CREATING", "UPDATING", "MOVING", "DELETED", "DELETING"
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ComputeCapacityReservationSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_compute_capacity_reservations.py.html>`__ to see an example of how to use list_compute_capacity_reservations API.
+        """
+        resource_path = "/computeCapacityReservations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "availability_domain",
+            "lifecycle_state",
+            "display_name",
+            "limit",
+            "page",
+            "opc_request_id",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_compute_capacity_reservations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "UPDATING", "MOVING", "DELETED", "DELETING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": compartment_id,
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/x-json-stream",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ComputeCapacityReservationSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ComputeCapacityReservationSummary]")
+
     def list_compute_global_image_capability_schema_versions(self, compute_global_image_capability_schema_id, **kwargs):
         """
         Lists Compute Global Image Capability Schema versions in the specified compartment.
@@ -3985,7 +4787,7 @@ class ComputeClient(object):
         :param str compute_global_image_capability_schema_id: (required)
             The `OCID`__ of the compute global image capability schema
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -4382,7 +5184,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -4532,7 +5334,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -4637,7 +5439,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str dedicated_vm_host_id: (required)
             The OCID of the dedicated VM host.
@@ -4788,7 +5590,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -4896,7 +5698,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -5162,14 +5964,14 @@ class ComputeClient(object):
 
         The order of images returned may change when new images are released.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/images.htm
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5328,13 +6130,13 @@ class ComputeClient(object):
 
         For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -5423,7 +6225,9 @@ class ComputeClient(object):
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_available: (optional)
             A filter to return only available devices or only used devices.
@@ -5575,12 +6379,15 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
+
+        :param str capacity_reservation_id: (optional)
+            The OCID of the compute capacity reservation.
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5646,6 +6453,7 @@ class ComputeClient(object):
         expected_kwargs = [
             "retry_strategy",
             "availability_domain",
+            "capacity_reservation_id",
             "display_name",
             "limit",
             "page",
@@ -5681,6 +6489,7 @@ class ComputeClient(object):
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
+            "capacityReservationId": kwargs.get("capacity_reservation_id", missing),
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
             "limit": kwargs.get("limit", missing),
@@ -5725,7 +6534,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -5827,7 +6636,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -5934,7 +6743,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -6112,7 +6921,9 @@ class ComputeClient(object):
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6192,6 +7003,95 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params)
+
+    def update_compute_capacity_reservation(self, capacity_reservation_id, update_compute_capacity_reservation_details, **kwargs):
+        """
+        Updates the display name, defined tag, and freeform tag fields for the specified compute capacity reservation.
+        Fields that are not provided in the request will not be updated. Avoid entering confidential information.
+
+        The update also modifies the reservation configurations of the specified compute capacity reservation.
+
+
+        :param str capacity_reservation_id: (required)
+            The OCID of the compute capacity reservation.
+
+        :param oci.core.models.UpdateComputeCapacityReservationDetails update_compute_capacity_reservation_details: (required)
+            Update compute capacity reservation details.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_compute_capacity_reservation.py.html>`__ to see an example of how to use update_compute_capacity_reservation API.
+        """
+        resource_path = "/computeCapacityReservations/{capacityReservationId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "capacityReservationId": capacity_reservation_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_compute_capacity_reservation_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_compute_capacity_reservation_details)
 
     def update_compute_image_capability_schema(self, compute_image_capability_schema_id, update_compute_image_capability_schema_details, **kwargs):
         """
@@ -6564,7 +7464,9 @@ class ComputeClient(object):
 
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields

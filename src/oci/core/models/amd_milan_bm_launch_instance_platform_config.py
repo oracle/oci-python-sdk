@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AmdMilanBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
     """
-    The platform configuration used when launching a bare metal instance specific to the AMD Milan platform.
+    The platform configuration used when launching a bare metal instance with an E4 shape
+    (the AMD Milan platform).
     """
 
     #: A constant which can be used with the numa_nodes_per_socket property of a AmdMilanBmLaunchInstancePlatformConfig.
@@ -64,7 +65,7 @@ class AmdMilanBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
     def numa_nodes_per_socket(self):
         """
         Gets the numa_nodes_per_socket of this AmdMilanBmLaunchInstancePlatformConfig.
-        The number of NUMA nodes per socket.
+        The number of NUMA nodes per socket (NPS).
 
         Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4"
 
@@ -78,7 +79,7 @@ class AmdMilanBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
     def numa_nodes_per_socket(self, numa_nodes_per_socket):
         """
         Sets the numa_nodes_per_socket of this AmdMilanBmLaunchInstancePlatformConfig.
-        The number of NUMA nodes per socket.
+        The number of NUMA nodes per socket (NPS).
 
 
         :param numa_nodes_per_socket: The numa_nodes_per_socket of this AmdMilanBmLaunchInstancePlatformConfig.

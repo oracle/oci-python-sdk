@@ -14,8 +14,8 @@ class Shape(object):
     For more information, see `Overview of the Compute Service`__ and
     `Compute Shapes`__.
 
-    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
-    __ https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm
     """
 
     def __init__(self, **kwargs):

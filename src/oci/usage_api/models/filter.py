@@ -32,7 +32,8 @@ class Filter(object):
 
         :param operator:
             The value to assign to the operator property of this Filter.
-            Allowed values for this property are: "AND", "NOT", "OR"
+            Allowed values for this property are: "AND", "NOT", "OR", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operator: str
 
         :param dimensions:
@@ -73,7 +74,8 @@ class Filter(object):
         Gets the operator of this Filter.
         The filter operator. Example: 'AND', 'OR', 'NOT'.
 
-        Allowed values for this property are: "AND", "NOT", "OR"
+        Allowed values for this property are: "AND", "NOT", "OR", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The operator of this Filter.
@@ -93,10 +95,7 @@ class Filter(object):
         """
         allowed_values = ["AND", "NOT", "OR"]
         if not value_allowed_none_or_none_sentinel(operator, allowed_values):
-            raise ValueError(
-                "Invalid value for `operator`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            operator = 'UNKNOWN_ENUM_VALUE'
         self._operator = operator
 
     @property

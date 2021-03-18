@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    A description of workrequest status.
+    A description of work request status.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -217,10 +217,7 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used.
+        The OCID of the compartment that contains the work request.
 
 
         :return: The compartment_id of this WorkRequest.
@@ -232,10 +229,7 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used.
+        The OCID of the compartment that contains the work request.
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

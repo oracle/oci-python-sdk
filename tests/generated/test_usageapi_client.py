@@ -34,6 +34,186 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_create_query(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'CreateQuery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'CreateQuery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='CreateQuery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.create_query(
+                create_query_details=request.pop(util.camelize('CreateQueryDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'CreateQuery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'query',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_delete_query(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'DeleteQuery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'DeleteQuery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='DeleteQuery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.delete_query(
+                query_id=request.pop(util.camelize('queryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'DeleteQuery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_query',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_get_query(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'GetQuery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'GetQuery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='GetQuery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.get_query(
+                query_id=request.pop(util.camelize('queryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'GetQuery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'query',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_list_queries(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'ListQueries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'ListQueries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='ListQueries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.list_queries(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_queries(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_queries(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'ListQueries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'queryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
 def test_request_summarized_configurations(testing_service_client):
     if not testing_service_client.is_api_enabled('usage_api', 'RequestSummarizedConfigurations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -130,4 +310,45 @@ def test_request_summarized_usages(testing_service_client):
             'usageAggregation',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_update_query(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'UpdateQuery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'UpdateQuery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='UpdateQuery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.update_query(
+                update_query_details=request.pop(util.camelize('UpdateQueryDetails')),
+                query_id=request.pop(util.camelize('queryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'UpdateQuery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'query',
+            False,
+            False
         )

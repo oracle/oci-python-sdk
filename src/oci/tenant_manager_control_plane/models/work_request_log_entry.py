@@ -68,7 +68,7 @@ class WorkRequestLogEntry(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written. An RFC3339 formatted datetime string.
+        The time the log message was written. An RFC3339-formatted date and time string.
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -80,7 +80,7 @@ class WorkRequestLogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written. An RFC3339 formatted datetime string.
+        The time the log message was written. An RFC3339-formatted date and time string.
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

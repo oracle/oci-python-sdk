@@ -77,7 +77,7 @@ class UpdateBootVolumeDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateBootVolumeDetails.
@@ -94,7 +94,7 @@ class UpdateBootVolumeDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateBootVolumeDetails.
@@ -137,7 +137,7 @@ class UpdateBootVolumeDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateBootVolumeDetails.
@@ -154,7 +154,7 @@ class UpdateBootVolumeDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateBootVolumeDetails.
@@ -200,7 +200,7 @@ class UpdateBootVolumeDetails(object):
 
           * `20`: Represents Higher Performance option.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
         :return: The vpus_per_gb of this UpdateBootVolumeDetails.
@@ -222,7 +222,7 @@ class UpdateBootVolumeDetails(object):
 
           * `20`: Represents Higher Performance option.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
         :param vpus_per_gb: The vpus_per_gb of this UpdateBootVolumeDetails.

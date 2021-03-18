@@ -208,7 +208,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LocalPeeringGateway.
@@ -225,7 +225,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LocalPeeringGateway.
@@ -268,7 +268,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LocalPeeringGateway.
@@ -285,7 +285,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LocalPeeringGateway.
@@ -571,7 +571,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the vcn_id of this LocalPeeringGateway.
         The `OCID`__ of the VCN that uses the LPG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this LocalPeeringGateway.
@@ -585,7 +585,7 @@ class LocalPeeringGateway(object):
         Sets the vcn_id of this LocalPeeringGateway.
         The `OCID`__ of the VCN that uses the LPG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this LocalPeeringGateway.

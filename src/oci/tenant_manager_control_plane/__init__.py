@@ -5,6 +5,10 @@
 from __future__ import absolute_import
 
 
+from .domain_client import DomainClient
+from .domain_client_composite_operations import DomainClientCompositeOperations
+from .domain_governance_client import DomainGovernanceClient
+from .domain_governance_client_composite_operations import DomainGovernanceClientCompositeOperations
 from .link_client import LinkClient
 from .link_client_composite_operations import LinkClientCompositeOperations
 from .recipient_invitation_client import RecipientInvitationClient
@@ -15,4 +19,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["LinkClient", "LinkClientCompositeOperations", "RecipientInvitationClient", "RecipientInvitationClientCompositeOperations", "SenderInvitationClient", "SenderInvitationClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["DomainClient", "DomainClientCompositeOperations", "DomainGovernanceClient", "DomainGovernanceClientCompositeOperations", "LinkClient", "LinkClientCompositeOperations", "RecipientInvitationClient", "RecipientInvitationClientCompositeOperations", "SenderInvitationClient", "SenderInvitationClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

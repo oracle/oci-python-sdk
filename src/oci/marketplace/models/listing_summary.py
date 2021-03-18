@@ -33,6 +33,18 @@ class ListingSummary(object):
     #: This constant has a value of "PAYGO"
     PRICING_TYPES_PAYGO = "PAYGO"
 
+    #: A constant which can be used with the listing_type property of a ListingSummary.
+    #: This constant has a value of "COMMUNITY"
+    LISTING_TYPE_COMMUNITY = "COMMUNITY"
+
+    #: A constant which can be used with the listing_type property of a ListingSummary.
+    #: This constant has a value of "PARTNER"
+    LISTING_TYPE_PARTNER = "PARTNER"
+
+    #: A constant which can be used with the listing_type property of a ListingSummary.
+    #: This constant has a value of "PRIVATE"
+    LISTING_TYPE_PRIVATE = "PRIVATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ListingSummary object with values from keyword arguments.
@@ -86,6 +98,16 @@ class ListingSummary(object):
             The value to assign to the publisher property of this ListingSummary.
         :type publisher: oci.marketplace.models.PublisherSummary
 
+        :param supported_operating_systems:
+            The value to assign to the supported_operating_systems property of this ListingSummary.
+        :type supported_operating_systems: list[oci.marketplace.models.OperatingSystem]
+
+        :param listing_type:
+            The value to assign to the listing_type property of this ListingSummary.
+            Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type listing_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -98,7 +120,9 @@ class ListingSummary(object):
             'regions': 'list[Region]',
             'is_featured': 'bool',
             'categories': 'list[str]',
-            'publisher': 'PublisherSummary'
+            'publisher': 'PublisherSummary',
+            'supported_operating_systems': 'list[OperatingSystem]',
+            'listing_type': 'str'
         }
 
         self.attribute_map = {
@@ -112,7 +136,9 @@ class ListingSummary(object):
             'regions': 'regions',
             'is_featured': 'isFeatured',
             'categories': 'categories',
-            'publisher': 'publisher'
+            'publisher': 'publisher',
+            'supported_operating_systems': 'supportedOperatingSystems',
+            'listing_type': 'listingType'
         }
 
         self._id = None
@@ -126,6 +152,8 @@ class ListingSummary(object):
         self._is_featured = None
         self._categories = None
         self._publisher = None
+        self._supported_operating_systems = None
+        self._listing_type = None
 
     @property
     def id(self):
@@ -394,6 +422,60 @@ class ListingSummary(object):
         :type: oci.marketplace.models.PublisherSummary
         """
         self._publisher = publisher
+
+    @property
+    def supported_operating_systems(self):
+        """
+        Gets the supported_operating_systems of this ListingSummary.
+        List of operating systems supported.
+
+
+        :return: The supported_operating_systems of this ListingSummary.
+        :rtype: list[oci.marketplace.models.OperatingSystem]
+        """
+        return self._supported_operating_systems
+
+    @supported_operating_systems.setter
+    def supported_operating_systems(self, supported_operating_systems):
+        """
+        Sets the supported_operating_systems of this ListingSummary.
+        List of operating systems supported.
+
+
+        :param supported_operating_systems: The supported_operating_systems of this ListingSummary.
+        :type: list[oci.marketplace.models.OperatingSystem]
+        """
+        self._supported_operating_systems = supported_operating_systems
+
+    @property
+    def listing_type(self):
+        """
+        Gets the listing_type of this ListingSummary.
+        In which catalog the listing should exist.
+
+        Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The listing_type of this ListingSummary.
+        :rtype: str
+        """
+        return self._listing_type
+
+    @listing_type.setter
+    def listing_type(self, listing_type):
+        """
+        Sets the listing_type of this ListingSummary.
+        In which catalog the listing should exist.
+
+
+        :param listing_type: The listing_type of this ListingSummary.
+        :type: str
+        """
+        allowed_values = ["COMMUNITY", "PARTNER", "PRIVATE"]
+        if not value_allowed_none_or_none_sentinel(listing_type, allowed_values):
+            listing_type = 'UNKNOWN_ENUM_VALUE'
+        self._listing_type = listing_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

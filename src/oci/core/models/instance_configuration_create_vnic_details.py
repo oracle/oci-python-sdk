@@ -13,7 +13,7 @@ class InstanceConfigurationCreateVnicDetails(object):
     Contains the properties of the VNIC for an instance configuration. See :class:`CreateVnicDetails`
     and `Instance Configurations`__ for more information.
 
-    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm#config
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config
     """
 
     def __init__(self, **kwargs):
@@ -127,7 +127,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstanceConfigurationCreateVnicDetails.
@@ -144,7 +144,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstanceConfigurationCreateVnicDetails.
@@ -187,7 +187,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstanceConfigurationCreateVnicDetails.
@@ -204,7 +204,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstanceConfigurationCreateVnicDetails.

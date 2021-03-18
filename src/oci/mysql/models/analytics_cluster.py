@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyticsCluster(object):
     """
+    DEPRECATED -- please use HeatWave API instead.
     An Analytics Cluster is a database accelerator for a DB System.
     """
 

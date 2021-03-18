@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_change_publication_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'ChangePublicationCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ChangePublicationCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ChangePublicationCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.change_publication_compartment(
+                publication_id=request.pop(util.camelize('publicationId')),
+                change_publication_compartment_details=request.pop(util.camelize('ChangePublicationCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'ChangePublicationCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_publication_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
 def test_create_accepted_agreement(testing_service_client):
     if not testing_service_client.is_api_enabled('marketplace', 'CreateAcceptedAgreement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -74,6 +115,46 @@ def test_create_accepted_agreement(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_create_publication(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'CreatePublication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'CreatePublication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='CreatePublication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.create_publication(
+                create_publication_details=request.pop(util.camelize('CreatePublicationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'CreatePublication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publication',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
 def test_delete_accepted_agreement(testing_service_client):
     if not testing_service_client.is_api_enabled('marketplace', 'DeleteAcceptedAgreement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,6 +189,46 @@ def test_delete_accepted_agreement(testing_service_client):
             result,
             service_error,
             'delete_accepted_agreement',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_delete_publication(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'DeletePublication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'DeletePublication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='DeletePublication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.delete_publication(
+                publication_id=request.pop(util.camelize('publicationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'DeletePublication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_publication',
             True,
             False
         )
@@ -271,6 +392,87 @@ def test_get_package(testing_service_client):
             result,
             service_error,
             'listingPackage',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_get_publication(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'GetPublication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'GetPublication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='GetPublication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.get_publication(
+                publication_id=request.pop(util.camelize('publicationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'GetPublication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publication',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_get_publication_package(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'GetPublicationPackage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'GetPublicationPackage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='GetPublicationPackage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.get_publication_package(
+                publication_id=request.pop(util.camelize('publicationId')),
+                package_version=request.pop(util.camelize('packageVersion')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'GetPublicationPackage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicationPackage',
             False,
             False
         )
@@ -574,6 +776,129 @@ def test_list_packages(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_list_publication_packages(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'ListPublicationPackages'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListPublicationPackages')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListPublicationPackages')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.list_publication_packages(
+                publication_id=request.pop(util.camelize('publicationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_publication_packages(
+                    publication_id=request.pop(util.camelize('publicationId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_publication_packages(
+                        publication_id=request.pop(util.camelize('publicationId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'ListPublicationPackages',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicationPackageSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_list_publications(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'ListPublications'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListPublications')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListPublications')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.list_publications(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                listing_type=request.pop(util.camelize('listingType')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_publications(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    listing_type=request.pop(util.camelize('listingType')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_publications(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        listing_type=request.pop(util.camelize('listingType')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'ListPublications',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicationSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
 def test_list_publishers(testing_service_client):
     if not testing_service_client.is_api_enabled('marketplace', 'ListPublishers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -832,6 +1157,47 @@ def test_update_accepted_agreement(testing_service_client):
             result,
             service_error,
             'acceptedAgreement',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_update_publication(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'UpdatePublication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'UpdatePublication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='UpdatePublication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.update_publication(
+                publication_id=request.pop(util.camelize('publicationId')),
+                update_publication_details=request.pop(util.camelize('UpdatePublicationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'UpdatePublication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publication',
             False,
             False
         )

@@ -1,0 +1,159 @@
+# coding: utf-8
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
+
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
+
+
+@init_model_state_from_kwargs
+class CustomTable(object):
+    """
+    saved custom table.
+    """
+
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CustomTable object with values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param id:
+            The value to assign to the id property of this CustomTable.
+        :type id: str
+
+        :param user_id:
+            The value to assign to the user_id property of this CustomTable.
+        :type user_id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CustomTable.
+        :type compartment_id: str
+
+        :param saved_custom_table:
+            The value to assign to the saved_custom_table property of this CustomTable.
+        :type saved_custom_table: oci.usage_api.models.SavedCustomTable
+
+        """
+        self.swagger_types = {
+            'id': 'str',
+            'user_id': 'str',
+            'compartment_id': 'str',
+            'saved_custom_table': 'SavedCustomTable'
+        }
+
+        self.attribute_map = {
+            'id': 'id',
+            'user_id': 'userId',
+            'compartment_id': 'compartmentId',
+            'saved_custom_table': 'savedCustomTable'
+        }
+
+        self._id = None
+        self._user_id = None
+        self._compartment_id = None
+        self._saved_custom_table = None
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this CustomTable.
+        The ocid of custom table.
+
+
+        :return: The id of this CustomTable.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this CustomTable.
+        The ocid of custom table.
+
+
+        :param id: The id of this CustomTable.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def user_id(self):
+        """
+        Gets the user_id of this CustomTable.
+        The user ocid of custom table.
+
+
+        :return: The user_id of this CustomTable.
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """
+        Sets the user_id of this CustomTable.
+        The user ocid of custom table.
+
+
+        :param user_id: The user_id of this CustomTable.
+        :type: str
+        """
+        self._user_id = user_id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this CustomTable.
+        The compartment ocid of custom table.
+
+
+        :return: The compartment_id of this CustomTable.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this CustomTable.
+        The compartment ocid of custom table.
+
+
+        :param compartment_id: The compartment_id of this CustomTable.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def saved_custom_table(self):
+        """
+        Gets the saved_custom_table of this CustomTable.
+
+        :return: The saved_custom_table of this CustomTable.
+        :rtype: oci.usage_api.models.SavedCustomTable
+        """
+        return self._saved_custom_table
+
+    @saved_custom_table.setter
+    def saved_custom_table(self, saved_custom_table):
+        """
+        Sets the saved_custom_table of this CustomTable.
+
+        :param saved_custom_table: The saved_custom_table of this CustomTable.
+        :type: oci.usage_api.models.SavedCustomTable
+        """
+        self._saved_custom_table = saved_custom_table
+
+    def __repr__(self):
+        return formatted_flat_dict(self)
+
+    def __eq__(self, other):
+        if other is None:
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not self == other

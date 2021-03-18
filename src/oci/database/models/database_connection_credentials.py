@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseConnectionCredentials(object):
     """
-    Credentials used to connect to the database.
+    Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
     """
 
     #: A constant which can be used with the credential_type property of a DatabaseConnectionCredentials.

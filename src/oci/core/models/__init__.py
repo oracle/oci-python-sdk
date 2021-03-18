@@ -44,11 +44,13 @@ from .byoip_allocated_range_summary import ByoipAllocatedRangeSummary
 from .byoip_range import ByoipRange
 from .byoip_range_collection import ByoipRangeCollection
 from .byoip_range_summary import ByoipRangeSummary
+from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
 from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
+from .change_compute_capacity_reservation_compartment_details import ChangeComputeCapacityReservationCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
@@ -82,6 +84,9 @@ from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmen
 from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
+from .compute_capacity_reservation import ComputeCapacityReservation
+from .compute_capacity_reservation_instance_shape_summary import ComputeCapacityReservationInstanceShapeSummary
+from .compute_capacity_reservation_summary import ComputeCapacityReservationSummary
 from .compute_global_image_capability_schema import ComputeGlobalImageCapabilitySchema
 from .compute_global_image_capability_schema_summary import ComputeGlobalImageCapabilitySchemaSummary
 from .compute_global_image_capability_schema_version import ComputeGlobalImageCapabilitySchemaVersion
@@ -106,6 +111,7 @@ from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_byoip_range_details import CreateByoipRangeDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
+from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
@@ -239,6 +245,9 @@ from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAtta
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
 from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
 from .instance_pool_summary import InstancePoolSummary
+from .instance_reservation_config import InstanceReservationConfig
+from .instance_reservation_config_details import InstanceReservationConfigDetails
+from .instance_reservation_shape_config_details import InstanceReservationShapeConfigDetails
 from .instance_shape_config import InstanceShapeConfig
 from .instance_source_details import InstanceSourceDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
@@ -295,6 +304,7 @@ from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
 from .update_byoip_range_details import UpdateByoipRangeDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
+from .update_compute_capacity_reservation_details import UpdateComputeCapacityReservationDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -413,11 +423,13 @@ core_type_mapping = {
     "ByoipRange": ByoipRange,
     "ByoipRangeCollection": ByoipRangeCollection,
     "ByoipRangeSummary": ByoipRangeSummary,
+    "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
     "ChangeByoipRangeCompartmentDetails": ChangeByoipRangeCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
+    "ChangeComputeCapacityReservationCompartmentDetails": ChangeComputeCapacityReservationCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
@@ -451,6 +463,9 @@ core_type_mapping = {
     "ClusterNetwork": ClusterNetwork,
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
+    "ComputeCapacityReservation": ComputeCapacityReservation,
+    "ComputeCapacityReservationInstanceShapeSummary": ComputeCapacityReservationInstanceShapeSummary,
+    "ComputeCapacityReservationSummary": ComputeCapacityReservationSummary,
     "ComputeGlobalImageCapabilitySchema": ComputeGlobalImageCapabilitySchema,
     "ComputeGlobalImageCapabilitySchemaSummary": ComputeGlobalImageCapabilitySchemaSummary,
     "ComputeGlobalImageCapabilitySchemaVersion": ComputeGlobalImageCapabilitySchemaVersion,
@@ -475,6 +490,7 @@ core_type_mapping = {
     "CreateByoipRangeDetails": CreateByoipRangeDetails,
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
+    "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
@@ -608,6 +624,9 @@ core_type_mapping = {
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
     "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
     "InstancePoolSummary": InstancePoolSummary,
+    "InstanceReservationConfig": InstanceReservationConfig,
+    "InstanceReservationConfigDetails": InstanceReservationConfigDetails,
+    "InstanceReservationShapeConfigDetails": InstanceReservationShapeConfigDetails,
     "InstanceShapeConfig": InstanceShapeConfig,
     "InstanceSourceDetails": InstanceSourceDetails,
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
@@ -664,6 +683,7 @@ core_type_mapping = {
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
     "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
+    "UpdateComputeCapacityReservationDetails": UpdateComputeCapacityReservationDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
