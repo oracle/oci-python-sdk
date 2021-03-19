@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
+* :doc:`Announcements Preferences <announcements_service/client/oci.announcements_service.AnnouncementsPreferencesClient>`
 * :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
@@ -74,6 +75,7 @@ API Reference
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
+* :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
 * :doc:`Nosql <nosql/client/oci.nosql.NosqlClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
@@ -95,6 +97,8 @@ API Reference
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
+* :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
+* :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
@@ -169,6 +173,7 @@ API Reference
     marketplace
     monitoring
     mysql
+    network_load_balancer
     nosql
     object_storage
     oce

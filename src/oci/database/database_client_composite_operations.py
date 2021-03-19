@@ -38,7 +38,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
-            The activation details for the Exadata infrastructure.
+            The activation details for the Exadata infrastructure and the additional storage servers requested.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -78,7 +78,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
-            The activation details for the Exadata infrastructure.
+            The activation details for the Exadata infrastructure and the additional storage servers requested.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadataInfrastructure.lifecycle_state`
@@ -525,8 +525,8 @@ class DatabaseClientCompositeOperations(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
@@ -1368,7 +1368,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1405,7 +1405,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
@@ -3808,8 +3808,8 @@ class DatabaseClientCompositeOperations(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -3850,8 +3850,8 @@ class DatabaseClientCompositeOperations(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbSystem.lifecycle_state`

@@ -88,7 +88,7 @@ class ComputeImageCapabilitySchemaSummary(object):
         **[Required]** Gets the id of this ComputeImageCapabilitySchemaSummary.
         The compute image capability schema `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeImageCapabilitySchemaSummary.
@@ -102,7 +102,7 @@ class ComputeImageCapabilitySchemaSummary(object):
         Sets the id of this ComputeImageCapabilitySchemaSummary.
         The compute image capability schema `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeImageCapabilitySchemaSummary.
@@ -247,7 +247,7 @@ class ComputeImageCapabilitySchemaSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ComputeImageCapabilitySchemaSummary.
@@ -264,7 +264,7 @@ class ComputeImageCapabilitySchemaSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ComputeImageCapabilitySchemaSummary.
@@ -281,7 +281,7 @@ class ComputeImageCapabilitySchemaSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ComputeImageCapabilitySchemaSummary.
@@ -298,7 +298,7 @@ class ComputeImageCapabilitySchemaSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ComputeImageCapabilitySchemaSummary.

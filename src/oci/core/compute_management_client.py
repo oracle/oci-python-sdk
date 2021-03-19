@@ -99,13 +99,17 @@ class ComputeManagementClient(object):
 
     def attach_instance_pool_instance(self, instance_pool_id, attach_instance_pool_instance_details, **kwargs):
         """
-        Attach an instance to the instance pool.
+        Attaches an instance to an instance pool. For information about the prerequisites
+        that an instance must meet before you can attach it to a pool, see
+        `Attaching an Instance to an Instance Pool`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance
 
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachInstancePoolInstanceDetails attach_instance_pool_instance_details: (required)
             Attach an instance to a pool
@@ -193,7 +197,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
@@ -513,7 +517,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeInstancePoolCompartmentDetails change_instance_pool_compartment_details: (required)
             Request to change the compartment of given instance pool.
@@ -898,13 +902,13 @@ class ComputeManagementClient(object):
 
     def detach_instance_pool_instance(self, instance_pool_id, detach_instance_pool_instance_details, **kwargs):
         """
-        Detach instance from the instance pool.
+        Detaches an instance from an instance pool.
 
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachInstancePoolInstanceDetails detach_instance_pool_instance_details: (required)
             Instance being detached
@@ -990,7 +994,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
@@ -1219,7 +1223,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1281,16 +1285,18 @@ class ComputeManagementClient(object):
 
     def get_instance_pool_instance(self, instance_pool_id, instance_id, **kwargs):
         """
-        Gets the instance pool instance
+        Gets information about an instance that belongs to an instance pool.
 
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (required)
-            The OCID of the instance.
+            The `OCID`__ of the instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1359,7 +1365,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_pool_load_balancer_attachment_id: (required)
             The OCID of the load balancer attachment.
@@ -1523,7 +1529,7 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cluster_network_id: (required)
             The `OCID`__ of the cluster network.
@@ -1667,7 +1673,7 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -1809,7 +1815,7 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -1931,12 +1937,12 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2075,7 +2081,7 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2218,7 +2224,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2312,7 +2318,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2403,7 +2409,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2494,7 +2500,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2671,7 +2677,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -2938,7 +2944,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration

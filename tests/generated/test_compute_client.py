@@ -234,6 +234,47 @@ def test_capture_console_history(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_change_compute_capacity_reservation_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeComputeCapacityReservationCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ChangeComputeCapacityReservationCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeComputeCapacityReservationCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.change_compute_capacity_reservation_compartment(
+                capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                change_compute_capacity_reservation_compartment_details=request.pop(util.camelize('ChangeComputeCapacityReservationCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeComputeCapacityReservationCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_compute_capacity_reservation_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
 def test_change_compute_image_capability_schema_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeComputeImageCapabilitySchemaCompartment'):
@@ -438,6 +479,46 @@ def test_create_app_catalog_subscription(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_create_compute_capacity_reservation(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateComputeCapacityReservation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'CreateComputeCapacityReservation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateComputeCapacityReservation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.create_compute_capacity_reservation(
+                create_compute_capacity_reservation_details=request.pop(util.camelize('CreateComputeCapacityReservationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateComputeCapacityReservation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeCapacityReservation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
 def test_create_compute_image_capability_schema(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateComputeImageCapabilitySchema'):
@@ -635,6 +716,46 @@ def test_delete_app_catalog_subscription(testing_service_client):
             result,
             service_error,
             'delete_app_catalog_subscription',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_delete_compute_capacity_reservation(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteComputeCapacityReservation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'DeleteComputeCapacityReservation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteComputeCapacityReservation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_compute_capacity_reservation(
+                capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteComputeCapacityReservation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_compute_capacity_reservation',
             True,
             False
         )
@@ -1158,6 +1279,46 @@ def test_get_boot_volume_attachment(testing_service_client):
             result,
             service_error,
             'bootVolumeAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_get_compute_capacity_reservation(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetComputeCapacityReservation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'GetComputeCapacityReservation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetComputeCapacityReservation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.get_compute_capacity_reservation(
+                capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetComputeCapacityReservation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeCapacityReservation',
             False,
             False
         )
@@ -2001,6 +2162,186 @@ def test_list_boot_volume_attachments(testing_service_client):
             result,
             service_error,
             'bootVolumeAttachment',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_list_compute_capacity_reservation_instance_shapes(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListComputeCapacityReservationInstanceShapes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListComputeCapacityReservationInstanceShapes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListComputeCapacityReservationInstanceShapes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_compute_capacity_reservation_instance_shapes(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_compute_capacity_reservation_instance_shapes(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_compute_capacity_reservation_instance_shapes(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListComputeCapacityReservationInstanceShapes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeCapacityReservationInstanceShapeSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_list_compute_capacity_reservation_instances(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListComputeCapacityReservationInstances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListComputeCapacityReservationInstances')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListComputeCapacityReservationInstances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_compute_capacity_reservation_instances(
+                capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_compute_capacity_reservation_instances(
+                    capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_compute_capacity_reservation_instances(
+                        capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListComputeCapacityReservationInstances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'capacityReservationInstanceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_list_compute_capacity_reservations(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListComputeCapacityReservations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListComputeCapacityReservations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListComputeCapacityReservations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_compute_capacity_reservations(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_compute_capacity_reservations(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_compute_capacity_reservations(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListComputeCapacityReservations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeCapacityReservationSummary',
             False,
             True
         )
@@ -3040,6 +3381,47 @@ def test_terminate_instance(testing_service_client):
             service_error,
             'terminate_instance',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_update_compute_capacity_reservation(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateComputeCapacityReservation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'UpdateComputeCapacityReservation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateComputeCapacityReservation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.update_compute_capacity_reservation(
+                capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                update_compute_capacity_reservation_details=request.pop(util.camelize('UpdateComputeCapacityReservationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateComputeCapacityReservation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_compute_capacity_reservation',
+            False,
             False
         )
 

@@ -13,6 +13,38 @@ class BaseAnnouncement(object):
     Incident information that forms the basis of an announcement. Avoid entering confidential information.
     """
 
+    #: A constant which can be used with the time_one_type property of a BaseAnnouncement.
+    #: This constant has a value of "ACTION_REQUIRED_BY"
+    TIME_ONE_TYPE_ACTION_REQUIRED_BY = "ACTION_REQUIRED_BY"
+
+    #: A constant which can be used with the time_one_type property of a BaseAnnouncement.
+    #: This constant has a value of "NEW_START_TIME"
+    TIME_ONE_TYPE_NEW_START_TIME = "NEW_START_TIME"
+
+    #: A constant which can be used with the time_one_type property of a BaseAnnouncement.
+    #: This constant has a value of "ORIGINAL_END_TIME"
+    TIME_ONE_TYPE_ORIGINAL_END_TIME = "ORIGINAL_END_TIME"
+
+    #: A constant which can be used with the time_one_type property of a BaseAnnouncement.
+    #: This constant has a value of "REPORT_DATE"
+    TIME_ONE_TYPE_REPORT_DATE = "REPORT_DATE"
+
+    #: A constant which can be used with the time_one_type property of a BaseAnnouncement.
+    #: This constant has a value of "START_TIME"
+    TIME_ONE_TYPE_START_TIME = "START_TIME"
+
+    #: A constant which can be used with the time_one_type property of a BaseAnnouncement.
+    #: This constant has a value of "TIME_DETECTED"
+    TIME_ONE_TYPE_TIME_DETECTED = "TIME_DETECTED"
+
+    #: A constant which can be used with the time_two_type property of a BaseAnnouncement.
+    #: This constant has a value of "END_TIME"
+    TIME_TWO_TYPE_END_TIME = "END_TIME"
+
+    #: A constant which can be used with the time_two_type property of a BaseAnnouncement.
+    #: This constant has a value of "NEW_END_TIME"
+    TIME_TWO_TYPE_NEW_END_TIME = "NEW_END_TIME"
+
     #: A constant which can be used with the announcement_type property of a BaseAnnouncement.
     #: This constant has a value of "ACTION_RECOMMENDED"
     ANNOUNCEMENT_TYPE_ACTION_RECOMMENDED = "ACTION_RECOMMENDED"
@@ -107,6 +139,11 @@ class BaseAnnouncement(object):
             The value to assign to the time_one_title property of this BaseAnnouncement.
         :type time_one_title: str
 
+        :param time_one_type:
+            The value to assign to the time_one_type property of this BaseAnnouncement.
+            Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"
+        :type time_one_type: str
+
         :param time_one_value:
             The value to assign to the time_one_value property of this BaseAnnouncement.
         :type time_one_value: datetime
@@ -114,6 +151,11 @@ class BaseAnnouncement(object):
         :param time_two_title:
             The value to assign to the time_two_title property of this BaseAnnouncement.
         :type time_two_title: str
+
+        :param time_two_type:
+            The value to assign to the time_two_type property of this BaseAnnouncement.
+            Allowed values for this property are: "END_TIME", "NEW_END_TIME"
+        :type time_two_type: str
 
         :param time_two_value:
             The value to assign to the time_two_value property of this BaseAnnouncement.
@@ -156,8 +198,10 @@ class BaseAnnouncement(object):
             'reference_ticket_number': 'str',
             'summary': 'str',
             'time_one_title': 'str',
+            'time_one_type': 'str',
             'time_one_value': 'datetime',
             'time_two_title': 'str',
+            'time_two_type': 'str',
             'time_two_value': 'datetime',
             'services': 'list[str]',
             'affected_regions': 'list[str]',
@@ -174,8 +218,10 @@ class BaseAnnouncement(object):
             'reference_ticket_number': 'referenceTicketNumber',
             'summary': 'summary',
             'time_one_title': 'timeOneTitle',
+            'time_one_type': 'timeOneType',
             'time_one_value': 'timeOneValue',
             'time_two_title': 'timeTwoTitle',
+            'time_two_type': 'timeTwoType',
             'time_two_value': 'timeTwoValue',
             'services': 'services',
             'affected_regions': 'affectedRegions',
@@ -191,8 +237,10 @@ class BaseAnnouncement(object):
         self._reference_ticket_number = None
         self._summary = None
         self._time_one_title = None
+        self._time_one_type = None
         self._time_one_value = None
         self._time_two_title = None
+        self._time_two_type = None
         self._time_two_value = None
         self._services = None
         self._affected_regions = None
@@ -246,7 +294,7 @@ class BaseAnnouncement(object):
     def type(self):
         """
         **[Required]** Gets the type of this BaseAnnouncement.
-        The entity type.
+        The entity type, which is either an announcement or the summary representation of an announcement.
 
 
         :return: The type of this BaseAnnouncement.
@@ -258,7 +306,7 @@ class BaseAnnouncement(object):
     def type(self, type):
         """
         Sets the type of this BaseAnnouncement.
-        The entity type.
+        The entity type, which is either an announcement or the summary representation of an announcement.
 
 
         :param type: The type of this BaseAnnouncement.
@@ -343,11 +391,45 @@ class BaseAnnouncement(object):
         self._time_one_title = time_one_title
 
     @property
+    def time_one_type(self):
+        """
+        Gets the time_one_type of this BaseAnnouncement.
+        The type of a time associated with an initial time value. If the `timeOneTitle` attribute is present, then the `timeOneTitle` attribute contains a label of `timeOneType` in English.
+        Example: `START_TIME`
+
+        Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"
+
+
+        :return: The time_one_type of this BaseAnnouncement.
+        :rtype: str
+        """
+        return self._time_one_type
+
+    @time_one_type.setter
+    def time_one_type(self, time_one_type):
+        """
+        Sets the time_one_type of this BaseAnnouncement.
+        The type of a time associated with an initial time value. If the `timeOneTitle` attribute is present, then the `timeOneTitle` attribute contains a label of `timeOneType` in English.
+        Example: `START_TIME`
+
+
+        :param time_one_type: The time_one_type of this BaseAnnouncement.
+        :type: str
+        """
+        allowed_values = ["ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"]
+        if not value_allowed_none_or_none_sentinel(time_one_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `time_one_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._time_one_type = time_one_type
+
+    @property
     def time_one_value(self):
         """
         Gets the time_one_value of this BaseAnnouncement.
-        The actual value of the first time value for the event. Typically, this is the time an event started, but the meaning
-        can vary, depending on the announcement type.
+        The actual value of the first time value for the event. Typically, this denotes the time an event started, but the meaning
+        can vary, depending on the announcement type. The `timeOneType` attribute describes the meaning.
 
 
         :return: The time_one_value of this BaseAnnouncement.
@@ -359,8 +441,8 @@ class BaseAnnouncement(object):
     def time_one_value(self, time_one_value):
         """
         Sets the time_one_value of this BaseAnnouncement.
-        The actual value of the first time value for the event. Typically, this is the time an event started, but the meaning
-        can vary, depending on the announcement type.
+        The actual value of the first time value for the event. Typically, this denotes the time an event started, but the meaning
+        can vary, depending on the announcement type. The `timeOneType` attribute describes the meaning.
 
 
         :param time_one_value: The time_one_value of this BaseAnnouncement.
@@ -395,11 +477,45 @@ class BaseAnnouncement(object):
         self._time_two_title = time_two_title
 
     @property
+    def time_two_type(self):
+        """
+        Gets the time_two_type of this BaseAnnouncement.
+        The type of a time associated with second time value. If the `timeTwoTitle` attribute is present, then the `timeTwoTitle` attribute contains a label of `timeTwoType` in English.
+        Example: `END_TIME`
+
+        Allowed values for this property are: "END_TIME", "NEW_END_TIME"
+
+
+        :return: The time_two_type of this BaseAnnouncement.
+        :rtype: str
+        """
+        return self._time_two_type
+
+    @time_two_type.setter
+    def time_two_type(self, time_two_type):
+        """
+        Sets the time_two_type of this BaseAnnouncement.
+        The type of a time associated with second time value. If the `timeTwoTitle` attribute is present, then the `timeTwoTitle` attribute contains a label of `timeTwoType` in English.
+        Example: `END_TIME`
+
+
+        :param time_two_type: The time_two_type of this BaseAnnouncement.
+        :type: str
+        """
+        allowed_values = ["END_TIME", "NEW_END_TIME"]
+        if not value_allowed_none_or_none_sentinel(time_two_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `time_two_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._time_two_type = time_two_type
+
+    @property
     def time_two_value(self):
         """
         Gets the time_two_value of this BaseAnnouncement.
-        The actual value of the second time value. Typically, this is the time an event ended, but the meaning
-        can vary, depending on the announcement type.
+        The actual value of the second time value. Typically, this denotes the time an event ended, but the meaning
+        can vary, depending on the announcement type. The `timeTwoType` attribute describes the meaning.
 
 
         :return: The time_two_value of this BaseAnnouncement.
@@ -411,8 +527,8 @@ class BaseAnnouncement(object):
     def time_two_value(self, time_two_value):
         """
         Sets the time_two_value of this BaseAnnouncement.
-        The actual value of the second time value. Typically, this is the time an event ended, but the meaning
-        can vary, depending on the announcement type.
+        The actual value of the second time value. Typically, this denotes the time an event ended, but the meaning
+        can vary, depending on the announcement type. The `timeTwoType` attribute describes the meaning.
 
 
         :param time_two_value: The time_two_value of this BaseAnnouncement.

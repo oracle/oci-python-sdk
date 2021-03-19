@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class LinkClient(object):
     """
-    A description of the TenantManager API
+    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
     """
 
     def __init__(self, config, **kwargs):
@@ -274,7 +274,7 @@ class LinkClient(object):
             The maximum number of items to return.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 

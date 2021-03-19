@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class SenderInvitationClient(object):
     """
-    A description of the TenantManager API
+    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
     """
 
     def __init__(self, config, **kwargs):
@@ -107,8 +107,8 @@ class SenderInvitationClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            A token that uniquely identifies a request, so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -186,15 +186,15 @@ class SenderInvitationClient(object):
 
     def create_sender_invitation(self, create_sender_invitation_details, **kwargs):
         """
-        Creates a sender invitation and asynchronously sends the invitation to recipient.
+        Creates a sender invitation and asynchronously sends the invitation to the recipient.
 
 
         :param oci.tenant_manager_control_plane.models.CreateSenderInvitationDetails create_sender_invitation_details: (required)
             Parameters for sender invitation creation.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            A token that uniquely identifies a request, so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -369,12 +369,15 @@ class SenderInvitationClient(object):
             The maximum number of items to return.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order can be provided.
+            * The default order for timeCreated is descending.
+            * The default order for displayName is ascending.
+            * If no value is specified, timeCreated is the default.
 
             Allowed values are: "timeCreated", "displayName"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 

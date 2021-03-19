@@ -21,6 +21,18 @@ class Listing(object):
     #: This constant has a value of "IMAGE"
     PACKAGE_TYPE_IMAGE = "IMAGE"
 
+    #: A constant which can be used with the listing_type property of a Listing.
+    #: This constant has a value of "COMMUNITY"
+    LISTING_TYPE_COMMUNITY = "COMMUNITY"
+
+    #: A constant which can be used with the listing_type property of a Listing.
+    #: This constant has a value of "PARTNER"
+    LISTING_TYPE_PARTNER = "PARTNER"
+
+    #: A constant which can be used with the listing_type property of a Listing.
+    #: This constant has a value of "PRIVATE"
+    LISTING_TYPE_PRIVATE = "PRIVATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Listing object with values from keyword arguments.
@@ -136,6 +148,16 @@ class Listing(object):
             The value to assign to the is_featured property of this Listing.
         :type is_featured: bool
 
+        :param listing_type:
+            The value to assign to the listing_type property of this Listing.
+            Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type listing_type: str
+
+        :param supported_operating_systems:
+            The value to assign to the supported_operating_systems property of this Listing.
+        :type supported_operating_systems: list[oci.marketplace.models.OperatingSystem]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -164,7 +186,9 @@ class Listing(object):
             'package_type': 'str',
             'default_package_version': 'str',
             'links': 'list[Link]',
-            'is_featured': 'bool'
+            'is_featured': 'bool',
+            'listing_type': 'str',
+            'supported_operating_systems': 'list[OperatingSystem]'
         }
 
         self.attribute_map = {
@@ -194,7 +218,9 @@ class Listing(object):
             'package_type': 'packageType',
             'default_package_version': 'defaultPackageVersion',
             'links': 'links',
-            'is_featured': 'isFeatured'
+            'is_featured': 'isFeatured',
+            'listing_type': 'listingType',
+            'supported_operating_systems': 'supportedOperatingSystems'
         }
 
         self._id = None
@@ -224,6 +250,8 @@ class Listing(object):
         self._default_package_version = None
         self._links = None
         self._is_featured = None
+        self._listing_type = None
+        self._supported_operating_systems = None
 
     @property
     def id(self):
@@ -866,6 +894,60 @@ class Listing(object):
         :type: bool
         """
         self._is_featured = is_featured
+
+    @property
+    def listing_type(self):
+        """
+        Gets the listing_type of this Listing.
+        In which catalog the listing should exist.
+
+        Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The listing_type of this Listing.
+        :rtype: str
+        """
+        return self._listing_type
+
+    @listing_type.setter
+    def listing_type(self, listing_type):
+        """
+        Sets the listing_type of this Listing.
+        In which catalog the listing should exist.
+
+
+        :param listing_type: The listing_type of this Listing.
+        :type: str
+        """
+        allowed_values = ["COMMUNITY", "PARTNER", "PRIVATE"]
+        if not value_allowed_none_or_none_sentinel(listing_type, allowed_values):
+            listing_type = 'UNKNOWN_ENUM_VALUE'
+        self._listing_type = listing_type
+
+    @property
+    def supported_operating_systems(self):
+        """
+        Gets the supported_operating_systems of this Listing.
+        List of operating systems supported.
+
+
+        :return: The supported_operating_systems of this Listing.
+        :rtype: list[oci.marketplace.models.OperatingSystem]
+        """
+        return self._supported_operating_systems
+
+    @supported_operating_systems.setter
+    def supported_operating_systems(self, supported_operating_systems):
+        """
+        Sets the supported_operating_systems of this Listing.
+        List of operating systems supported.
+
+
+        :param supported_operating_systems: The supported_operating_systems of this Listing.
+        :type: list[oci.marketplace.models.OperatingSystem]
+        """
+        self._supported_operating_systems = supported_operating_systems
 
     def __repr__(self):
         return formatted_flat_dict(self)

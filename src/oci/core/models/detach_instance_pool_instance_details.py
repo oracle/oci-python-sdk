@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetachInstancePoolInstanceDetails(object):
     """
-    Detach an instance from the pool.
+    An instance that is to be detached from an instance pool.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,9 @@ class DetachInstancePoolInstanceDetails(object):
     def instance_id(self):
         """
         **[Required]** Gets the instance_id of this DetachInstancePoolInstanceDetails.
-        The instance ocid to detach.
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this DetachInstancePoolInstanceDetails.
@@ -63,7 +65,9 @@ class DetachInstancePoolInstanceDetails(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this DetachInstancePoolInstanceDetails.
-        The instance ocid to detach.
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this DetachInstancePoolInstanceDetails.
@@ -75,7 +79,9 @@ class DetachInstancePoolInstanceDetails(object):
     def is_decrement_size(self):
         """
         Gets the is_decrement_size of this DetachInstancePoolInstanceDetails.
-        Decrement the size of the instance pool during detachment.
+        Whether to decrease the size of the instance pool when the instance is detached. If `true`, the
+        pool size is decreased. If `false`, the pool will provision a new, replacement instance
+        using the pool's instance configuration as a template. Default is `true`.
 
 
         :return: The is_decrement_size of this DetachInstancePoolInstanceDetails.
@@ -87,7 +93,9 @@ class DetachInstancePoolInstanceDetails(object):
     def is_decrement_size(self, is_decrement_size):
         """
         Sets the is_decrement_size of this DetachInstancePoolInstanceDetails.
-        Decrement the size of the instance pool during detachment.
+        Whether to decrease the size of the instance pool when the instance is detached. If `true`, the
+        pool size is decreased. If `false`, the pool will provision a new, replacement instance
+        using the pool's instance configuration as a template. Default is `true`.
 
 
         :param is_decrement_size: The is_decrement_size of this DetachInstancePoolInstanceDetails.
@@ -99,7 +107,8 @@ class DetachInstancePoolInstanceDetails(object):
     def is_auto_terminate(self):
         """
         Gets the is_auto_terminate of this DetachInstancePoolInstanceDetails.
-        Terminate the instance after it has been detached.
+        Whether to permanently terminate (delete) the instance and its attached boot volume
+        when detaching it from the instance pool. Default is `false`.
 
 
         :return: The is_auto_terminate of this DetachInstancePoolInstanceDetails.
@@ -111,7 +120,8 @@ class DetachInstancePoolInstanceDetails(object):
     def is_auto_terminate(self, is_auto_terminate):
         """
         Sets the is_auto_terminate of this DetachInstancePoolInstanceDetails.
-        Terminate the instance after it has been detached.
+        Whether to permanently terminate (delete) the instance and its attached boot volume
+        when detaching it from the instance pool. Default is `false`.
 
 
         :param is_auto_terminate: The is_auto_terminate of this DetachInstancePoolInstanceDetails.

@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class WorkRequestClient(object):
     """
-    A description of the TenantManager API
+    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
     """
 
     def __init__(self, config, **kwargs):
@@ -166,16 +166,13 @@ class WorkRequestClient(object):
                 header_params=header_params,
                 response_type="WorkRequest")
 
-    def list_work_request_errors(self, work_request_id, compartment_id, **kwargs):
+    def list_work_request_errors(self, work_request_id, **kwargs):
         """
         Return a (paginated) list of errors for a given work request.
 
 
         :param str work_request_id: (required)
             The ID of the asynchronous request.
-
-        :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -187,7 +184,7 @@ class WorkRequestClient(object):
             The maximum number of items to return.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -239,7 +236,6 @@ class WorkRequestClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
             "sortOrder": kwargs.get("sort_order", missing)
@@ -275,16 +271,13 @@ class WorkRequestClient(object):
                 header_params=header_params,
                 response_type="WorkRequestErrorCollection")
 
-    def list_work_request_logs(self, work_request_id, compartment_id, **kwargs):
+    def list_work_request_logs(self, work_request_id, **kwargs):
         """
         Return a (paginated) list of logs for a given work request.
 
 
         :param str work_request_id: (required)
             The ID of the asynchronous request.
-
-        :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -296,7 +289,7 @@ class WorkRequestClient(object):
             The maximum number of items to return.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -348,7 +341,6 @@ class WorkRequestClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
             "sortOrder": kwargs.get("sort_order", missing)
@@ -402,7 +394,7 @@ class WorkRequestClient(object):
             The maximum number of items to return.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 

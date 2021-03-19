@@ -30,22 +30,29 @@ class AffectedResource(object):
             The value to assign to the region property of this AffectedResource.
         :type region: str
 
+        :param additional_properties:
+            The value to assign to the additional_properties property of this AffectedResource.
+        :type additional_properties: list[oci.announcements_service.models.ModelProperty]
+
         """
         self.swagger_types = {
             'resource_id': 'str',
             'resource_name': 'str',
-            'region': 'str'
+            'region': 'str',
+            'additional_properties': 'list[ModelProperty]'
         }
 
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
-            'region': 'region'
+            'region': 'region',
+            'additional_properties': 'additionalProperties'
         }
 
         self._resource_id = None
         self._resource_name = None
         self._region = None
+        self._additional_properties = None
 
     @property
     def resource_id(self):
@@ -118,6 +125,30 @@ class AffectedResource(object):
         :type: str
         """
         self._region = region
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this AffectedResource.
+        Additional properties associated with the resource.
+
+
+        :return: The additional_properties of this AffectedResource.
+        :rtype: list[oci.announcements_service.models.ModelProperty]
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this AffectedResource.
+        Additional properties associated with the resource.
+
+
+        :param additional_properties: The additional_properties of this AffectedResource.
+        :type: list[oci.announcements_service.models.ModelProperty]
+        """
+        self._additional_properties = additional_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

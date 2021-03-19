@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstancePoolInstance(object):
     """
-    Instance data along with the lifecycleState of instance to instance pool attachment.
+    Information about an instance that belongs to an instance pool.
     """
 
     #: A constant which can be used with the lifecycle_state property of a InstancePoolInstance.
@@ -135,7 +135,9 @@ class InstancePoolInstance(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstancePoolInstance.
-        The OCID of the instance.
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstancePoolInstance.
@@ -147,7 +149,9 @@ class InstancePoolInstance(object):
     def id(self, id):
         """
         Sets the id of this InstancePoolInstance.
-        The OCID of the instance.
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstancePoolInstance.
@@ -159,7 +163,9 @@ class InstancePoolInstance(object):
     def instance_pool_id(self):
         """
         **[Required]** Gets the instance_pool_id of this InstancePoolInstance.
-        The OCID of the instance pool.
+        The `OCID`__ of the instance pool.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_pool_id of this InstancePoolInstance.
@@ -171,7 +177,9 @@ class InstancePoolInstance(object):
     def instance_pool_id(self, instance_pool_id):
         """
         Sets the instance_pool_id of this InstancePoolInstance.
-        The OCID of the instance pool.
+        The `OCID`__ of the instance pool.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_pool_id: The instance_pool_id of this InstancePoolInstance.
@@ -207,7 +215,7 @@ class InstancePoolInstance(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this InstancePoolInstance.
-        the lifecycle state of the instance in the instance pool
+        The attachment state of the instance in relation to the instance pool.
 
         Allowed values for this property are: "ATTACHING", "ACTIVE", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -222,7 +230,7 @@ class InstancePoolInstance(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this InstancePoolInstance.
-        the lifecycle state of the instance in the instance pool
+        The attachment state of the instance in relation to the instance pool.
 
 
         :param lifecycle_state: The lifecycle_state of this InstancePoolInstance.
@@ -237,7 +245,10 @@ class InstancePoolInstance(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstancePoolInstance.
-        The OCID of the compartment that contains the instance.
+        The `OCID`__ of the compartment that contains the
+        instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstancePoolInstance.
@@ -249,7 +260,10 @@ class InstancePoolInstance(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstancePoolInstance.
-        The OCID of the compartment that contains the instance.
+        The `OCID`__ of the compartment that contains the
+        instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstancePoolInstance.
@@ -309,7 +323,10 @@ class InstancePoolInstance(object):
     def instance_configuration_id(self):
         """
         **[Required]** Gets the instance_configuration_id of this InstancePoolInstance.
-        The OCID of the instance configuration used to create the instance.
+        The `OCID`__ of the instance configuration
+        used to create the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_configuration_id of this InstancePoolInstance.
@@ -321,7 +338,10 @@ class InstancePoolInstance(object):
     def instance_configuration_id(self, instance_configuration_id):
         """
         Sets the instance_configuration_id of this InstancePoolInstance.
-        The OCID of the instance configuration used to create the instance.
+        The `OCID`__ of the instance configuration
+        used to create the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_configuration_id: The instance_configuration_id of this InstancePoolInstance.
@@ -357,10 +377,8 @@ class InstancePoolInstance(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this InstancePoolInstance.
-        The shape of an instance. The shape determines the number of CPUs, amount of memory,
+        The shape of the instance. The shape determines the number of CPUs, amount of memory,
         and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling :func:`list_shapes`.
 
 
         :return: The shape of this InstancePoolInstance.
@@ -372,10 +390,8 @@ class InstancePoolInstance(object):
     def shape(self, shape):
         """
         Sets the shape of this InstancePoolInstance.
-        The shape of an instance. The shape determines the number of CPUs, amount of memory,
+        The shape of the instance. The shape determines the number of CPUs, amount of memory,
         and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling :func:`list_shapes`.
 
 
         :param shape: The shape of this InstancePoolInstance.
@@ -387,7 +403,7 @@ class InstancePoolInstance(object):
     def state(self):
         """
         **[Required]** Gets the state of this InstancePoolInstance.
-        The lifecycleState of the underlying instance. Refer lifecycleState in :class:`Instance`
+        The lifecycle state of the instance. Refer to `lifecycleState` in the :class:`Instance` resource.
 
 
         :return: The state of this InstancePoolInstance.
@@ -399,7 +415,7 @@ class InstancePoolInstance(object):
     def state(self, state):
         """
         Sets the state of this InstancePoolInstance.
-        The lifecycleState of the underlying instance. Refer lifecycleState in :class:`Instance`
+        The lifecycle state of the instance. Refer to `lifecycleState` in the :class:`Instance` resource.
 
 
         :param state: The state of this InstancePoolInstance.
@@ -441,7 +457,7 @@ class InstancePoolInstance(object):
     def load_balancer_backends(self):
         """
         Gets the load_balancer_backends of this InstancePoolInstance.
-        The load balancer backends that are configured for the instance pool instance.
+        The load balancer backends that are configured for the instance.
 
 
         :return: The load_balancer_backends of this InstancePoolInstance.
@@ -453,7 +469,7 @@ class InstancePoolInstance(object):
     def load_balancer_backends(self, load_balancer_backends):
         """
         Sets the load_balancer_backends of this InstancePoolInstance.
-        The load balancer backends that are configured for the instance pool instance.
+        The load balancer backends that are configured for the instance.
 
 
         :param load_balancer_backends: The load_balancer_backends of this InstancePoolInstance.

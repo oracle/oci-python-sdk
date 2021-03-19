@@ -35,7 +35,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachInstancePoolInstanceDetails attach_instance_pool_instance_details: (required)
             Attach an instance to a pool
@@ -75,7 +75,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachInstancePoolInstanceDetails attach_instance_pool_instance_details: (required)
             Attach an instance to a pool
@@ -118,7 +118,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
@@ -272,7 +272,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachInstancePoolInstanceDetails detach_instance_pool_instance_details: (required)
             Instance being detached
@@ -312,7 +312,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
@@ -393,7 +393,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -433,7 +433,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -473,7 +473,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -513,7 +513,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -590,7 +590,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -682,7 +682,7 @@ class ComputeManagementClientCompositeOperations(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration

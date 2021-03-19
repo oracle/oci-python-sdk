@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExternalContainerDatabaseDetails(object):
     """
-    Details for updating an external container database.
+    Details for updating an external container database. This API is not currently supported.
     """
 
     def __init__(self, **kwargs):

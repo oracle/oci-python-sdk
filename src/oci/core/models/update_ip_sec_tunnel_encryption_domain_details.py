@@ -10,8 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateIPSecTunnelEncryptionDomainDetails(object):
     """
-    Request to enable a multi-encryption domain policy on the VPNaaS tunnel.
-    The cross product of oracleTrafficSelector and cpeTrafficSelector can't be more than 50.
+    Request to update a multi-encryption domain policy on the VPNaaS tunnel.
+    There can't be more than 50 security associations in use at one time. See `Encryption domain for policy-based
+    tunnels`__ for more.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/ipsecencryptiondomains.htm#spi_policy_based_tunnel
     """
 
     def __init__(self, **kwargs):

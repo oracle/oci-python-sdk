@@ -91,6 +91,102 @@ class MarketplaceClient(object):
         """
         return extract_service_endpoint(self.base_client.endpoint)
 
+    def change_publication_compartment(self, publication_id, change_publication_compartment_details, **kwargs):
+        """
+        Changes the compartment of the Publication
+
+
+        :param str publication_id: (required)
+            The unique identifier for the listing.
+
+        :param oci.marketplace.models.ChangePublicationCompartmentDetails change_publication_compartment_details: (required)
+            Request to change the compartment of a given Publication.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
+            risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
+            then a retry of the original creation request might be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to
+            the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+            deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/change_publication_compartment.py.html>`__ to see an example of how to use change_publication_compartment API.
+        """
+        resource_path = "/publications/{publicationId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_publication_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicationId": publication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_publication_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_publication_compartment_details)
+
     def create_accepted_agreement(self, create_accepted_agreement_details, **kwargs):
         """
         Accepts a terms of use agreement for a specific package version of a listing. You must accept all
@@ -167,6 +263,82 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 body=create_accepted_agreement_details,
                 response_type="AcceptedAgreement")
+
+    def create_publication(self, create_publication_details, **kwargs):
+        """
+        Creates a publication of the given type with an optional default package
+
+
+        :param oci.marketplace.models.CreatePublicationDetails create_publication_details: (required)
+            Details of Publication to be created including optional default package.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
+            risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
+            then a retry of the original creation request might be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.marketplace.models.Publication`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_publication.py.html>`__ to see an example of how to use create_publication API.
+        """
+        resource_path = "/publications"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_publication_details,
+                response_type="Publication")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_publication_details,
+                response_type="Publication")
 
     def delete_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
@@ -260,6 +432,87 @@ class MarketplaceClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
+                header_params=header_params)
+
+    def delete_publication(self, publication_id, **kwargs):
+        """
+        Deletes a Publication. This will also remove the associated Listing from Marketplace.
+
+
+        :param str publication_id: (required)
+            The unique identifier for the listing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to
+            the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+            deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_publication.py.html>`__ to see an example of how to use delete_publication API.
+        """
+        resource_path = "/publications/{publicationId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicationId": publication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
                 header_params=header_params)
 
     def get_accepted_agreement(self, accepted_agreement_id, **kwargs):
@@ -651,6 +904,162 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 response_type="ListingPackage")
 
+    def get_publication(self, publication_id, **kwargs):
+        """
+        Get details of a publication
+
+
+        :param str publication_id: (required)
+            The unique identifier for the listing.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.marketplace.models.Publication`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication.py.html>`__ to see an example of how to use get_publication API.
+        """
+        resource_path = "/publications/{publicationId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicationId": publication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Publication")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Publication")
+
+    def get_publication_package(self, publication_id, package_version, **kwargs):
+        """
+        Gets the details of a specific package within a given Publication
+
+
+        :param str publication_id: (required)
+            The unique identifier for the listing.
+
+        :param str package_version: (required)
+            The version of the package. Package versions are unique within a listing.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.marketplace.models.PublicationPackage`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication_package.py.html>`__ to see an example of how to use get_publication_package API.
+        """
+        resource_path = "/publications/{publicationId}/packages/{packageVersion}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_publication_package got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicationId": publication_id,
+            "packageVersion": package_version
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PublicationPackage")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PublicationPackage")
+
     def list_accepted_agreements(self, compartment_id, **kwargs):
         """
         Lists the terms of use agreements that have been accepted in the specified compartment.
@@ -1039,6 +1448,14 @@ class MarketplaceClient(object):
         :param bool is_featured: (optional)
             Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
 
+        :param list[str] listing_types: (optional)
+            The type of the listing
+
+            Allowed values are: "COMMUNITY", "PARTNER", "PRIVATE"
+
+        :param list[str] operating_systems: (optional)
+            OS of the listing.
+
         :param str compartment_id: (optional)
             The unique identifier for the compartment.
 
@@ -1074,6 +1491,8 @@ class MarketplaceClient(object):
             "category",
             "pricing",
             "is_featured",
+            "listing_types",
+            "operating_systems",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1103,6 +1522,14 @@ class MarketplaceClient(object):
                         "Invalid value for `pricing`, must be one of {0}".format(pricing_allowed_values)
                     )
 
+        if 'listing_types' in kwargs:
+            listing_types_allowed_values = ["COMMUNITY", "PARTNER", "PRIVATE"]
+            for listing_types_item in kwargs['listing_types']:
+                if listing_types_item not in listing_types_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `listing_types`, must be one of {0}".format(listing_types_allowed_values)
+                    )
+
         query_params = {
             "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
             "listingId": kwargs.get("listing_id", missing),
@@ -1115,6 +1542,8 @@ class MarketplaceClient(object):
             "category": self.base_client.generate_collection_format_param(kwargs.get("category", missing), 'multi'),
             "pricing": self.base_client.generate_collection_format_param(kwargs.get("pricing", missing), 'multi'),
             "isFeatured": kwargs.get("is_featured", missing),
+            "listingTypes": self.base_client.generate_collection_format_param(kwargs.get("listing_types", missing), 'multi'),
+            "operatingSystems": self.base_client.generate_collection_format_param(kwargs.get("operating_systems", missing), 'multi'),
             "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -1301,6 +1730,276 @@ class MarketplaceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[ListingPackageSummary]")
+
+    def list_publication_packages(self, publication_id, **kwargs):
+        """
+        Lists the packages in the given Publication
+
+
+        :param str publication_id: (required)
+            The unique identifier for the listing.
+
+        :param str package_version: (optional)
+            The version of the package. Package versions are unique within a listing.
+
+        :param str package_type: (optional)
+            A filter to return only packages that match the given package type exactly.
+
+        :param str sort_by: (optional)
+            The field to use to sort listed results. You can only specify one field to sort by.
+            `TIMERELEASED` displays results in descending order by default.
+            You can change your preference by specifying a different sort order.
+
+            Allowed values are: "TIMERELEASED"
+
+        :param str sort_order: (optional)
+            The sort order to use, either `ASC` or `DESC`.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.marketplace.models.PublicationPackageSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publication_packages.py.html>`__ to see an example of how to use list_publication_packages API.
+        """
+        resource_path = "/publications/{publicationId}/packages"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "package_version",
+            "package_type",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_publication_packages got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicationId": publication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMERELEASED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "packageVersion": kwargs.get("package_version", missing),
+            "packageType": kwargs.get("package_type", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PublicationPackageSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PublicationPackageSummary]")
+
+    def list_publications(self, compartment_id, listing_type, **kwargs):
+        """
+        Lists the publications in the given compartment
+
+
+        :param str compartment_id: (required)
+            The unique identifier for the compartment.
+
+        :param str listing_type: (required)
+            The type of the listing
+
+            Allowed values are: "COMMUNITY", "PARTNER", "PRIVATE"
+
+        :param list[str] name: (optional)
+            The name of the listing.
+
+        :param str publication_id: (optional)
+            The unique identifier for the listing.
+
+        :param list[str] operating_systems: (optional)
+            OS of the listing.
+
+        :param str sort_by: (optional)
+            The field to use to sort listed results. You can only specify one field to sort by.
+            `TIMERELEASED` displays results in descending order by default.
+            You can change your preference by specifying a different sort order.
+
+            Allowed values are: "TIMERELEASED"
+
+        :param str sort_order: (optional)
+            The sort order to use, either `ASC` or `DESC`.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.marketplace.models.PublicationSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publications.py.html>`__ to see an example of how to use list_publications API.
+        """
+        resource_path = "/publications"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "name",
+            "publication_id",
+            "operating_systems",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_publications got unknown kwargs: {!r}".format(extra_kwargs))
+
+        listing_type_allowed_values = ["COMMUNITY", "PARTNER", "PRIVATE"]
+        if listing_type not in listing_type_allowed_values:
+            raise ValueError(
+                "Invalid value for `listing_type`, must be one of {0}".format(listing_type_allowed_values)
+            )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMERELEASED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
+            "listingType": listing_type,
+            "publicationId": kwargs.get("publication_id", missing),
+            "operatingSystems": self.base_client.generate_collection_format_param(kwargs.get("operating_systems", missing), 'multi'),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PublicationSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PublicationSummary]")
 
     def list_publishers(self, **kwargs):
         """
@@ -1733,3 +2432,101 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 body=update_accepted_agreement_details,
                 response_type="AcceptedAgreement")
+
+    def update_publication(self, publication_id, update_publication_details, **kwargs):
+        """
+        Updates details of an existing Publication
+
+
+        :param str publication_id: (required)
+            The unique identifier for the listing.
+
+        :param oci.marketplace.models.UpdatePublicationDetails update_publication_details: (required)
+            Details of the Publication which needs to be updated
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
+            risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been deleted and purged from the system,
+            then a retry of the original creation request might be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to
+            the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or
+            deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.marketplace.models.Publication`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_publication.py.html>`__ to see an example of how to use update_publication API.
+        """
+        resource_path = "/publications/{publicationId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "publicationId": publication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_publication_details,
+                response_type="Publication")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_publication_details,
+                response_type="Publication")

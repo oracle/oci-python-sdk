@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeSourceDetails(object):
     """
-    VolumeSourceDetails model.
+    Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+    This is an optional field. If not specified or set to null, the new Block volume will be empty.
+    When specified, the new Block volume will contain data from the source volume or backup.
     """
 
     def __init__(self, **kwargs):

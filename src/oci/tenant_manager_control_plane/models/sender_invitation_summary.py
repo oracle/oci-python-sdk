@@ -217,7 +217,7 @@ class SenderInvitationSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this SenderInvitationSummary.
-        A user-created name to describe the invitation.
+        A user-created name to describe the invitation. Avoid entering confidential information.
 
 
         :return: The display_name of this SenderInvitationSummary.
@@ -229,7 +229,7 @@ class SenderInvitationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SenderInvitationSummary.
-        A user-created name to describe the invitation.
+        A user-created name to describe the invitation. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this SenderInvitationSummary.

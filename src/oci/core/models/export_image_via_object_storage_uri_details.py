@@ -59,8 +59,8 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
         and `Using Pre-Authenticated Requests`__
         for constructing URLs for image import/export.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :return: The destination_uri of this ExportImageViaObjectStorageUriDetails.
@@ -77,8 +77,8 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
         and `Using Pre-Authenticated Requests`__
         for constructing URLs for image import/export.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :param destination_uri: The destination_uri of this ExportImageViaObjectStorageUriDetails.

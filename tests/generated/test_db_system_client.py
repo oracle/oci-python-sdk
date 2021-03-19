@@ -75,6 +75,47 @@ def test_add_analytics_cluster(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_add_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'AddHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'AddHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='AddHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.add_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                add_heat_wave_cluster_details=request.pop(util.camelize('AddHeatWaveClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'AddHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'heatWaveCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_create_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'CreateDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -195,6 +236,46 @@ def test_delete_db_system(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_delete_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'DeleteHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'DeleteHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='DeleteHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.delete_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'DeleteHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_heat_wave_cluster',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_generate_analytics_cluster_memory_estimate(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'GenerateAnalyticsClusterMemoryEstimate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -229,6 +310,46 @@ def test_generate_analytics_cluster_memory_estimate(testing_service_client):
             result,
             service_error,
             'analyticsClusterMemoryEstimate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_generate_heat_wave_cluster_memory_estimate(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'GenerateHeatWaveClusterMemoryEstimate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'GenerateHeatWaveClusterMemoryEstimate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='GenerateHeatWaveClusterMemoryEstimate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.generate_heat_wave_cluster_memory_estimate(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'GenerateHeatWaveClusterMemoryEstimate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'heatWaveClusterMemoryEstimate',
             False,
             False
         )
@@ -349,6 +470,86 @@ def test_get_db_system(testing_service_client):
             result,
             service_error,
             'dbSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_get_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'GetHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'GetHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='GetHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.get_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'GetHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'heatWaveCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_get_heat_wave_cluster_memory_estimate(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'GetHeatWaveClusterMemoryEstimate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'GetHeatWaveClusterMemoryEstimate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='GetHeatWaveClusterMemoryEstimate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.get_heat_wave_cluster_memory_estimate(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'GetHeatWaveClusterMemoryEstimate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'heatWaveClusterMemoryEstimate',
             False,
             False
         )
@@ -496,6 +697,46 @@ def test_restart_db_system(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_restart_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'RestartHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'RestartHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='RestartHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.restart_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'RestartHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'restart_heat_wave_cluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_start_analytics_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'StartAnalyticsCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -570,6 +811,46 @@ def test_start_db_system(testing_service_client):
             result,
             service_error,
             'start_db_system',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_start_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'StartHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'StartHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='StartHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.start_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'StartHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'start_heat_wave_cluster',
             False,
             False
         )
@@ -657,6 +938,46 @@ def test_stop_db_system(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_stop_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'StopHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'StopHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='StopHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.stop_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'StopHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stop_heat_wave_cluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_update_analytics_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'UpdateAnalyticsCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -733,6 +1054,47 @@ def test_update_db_system(testing_service_client):
             result,
             service_error,
             'update_db_system',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_update_heat_wave_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'UpdateHeatWaveCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_system'), 'UpdateHeatWaveCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='UpdateHeatWaveCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
+            response = client.update_heat_wave_cluster(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                update_heat_wave_cluster_details=request.pop(util.camelize('UpdateHeatWaveClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'UpdateHeatWaveCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_heat_wave_cluster',
             False,
             False
         )

@@ -18,6 +18,10 @@ class UpdateInstanceDetails(object):
         Initializes a new UpdateInstanceDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this UpdateInstanceDetails.
+        :type capacity_reservation_id: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -68,6 +72,7 @@ class UpdateInstanceDetails(object):
 
         """
         self.swagger_types = {
+            'capacity_reservation_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -83,6 +88,7 @@ class UpdateInstanceDetails(object):
         }
 
         self.attribute_map = {
+            'capacity_reservation_id': 'capacityReservationId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -97,6 +103,7 @@ class UpdateInstanceDetails(object):
             'availability_config': 'availabilityConfig'
         }
 
+        self._capacity_reservation_id = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -111,6 +118,38 @@ class UpdateInstanceDetails(object):
         self._availability_config = None
 
     @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this UpdateInstanceDetails.
+        The OCID of the compute capacity reservation this instance is launched under.
+        You can remove the instance from a reservation by specifying an empty string as input for this field.
+        For more information, see `Capacity Reservations`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+
+
+        :return: The capacity_reservation_id of this UpdateInstanceDetails.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this UpdateInstanceDetails.
+        The OCID of the compute capacity reservation this instance is launched under.
+        You can remove the instance from a reservation by specifying an empty string as input for this field.
+        For more information, see `Capacity Reservations`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this UpdateInstanceDetails.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
+
+    @property
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateInstanceDetails.
@@ -119,7 +158,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateInstanceDetails.
@@ -136,7 +175,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateInstanceDetails.
@@ -183,7 +222,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateInstanceDetails.
@@ -200,7 +239,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateInstanceDetails.

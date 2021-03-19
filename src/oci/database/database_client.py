@@ -104,7 +104,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
-            The activation details for the Exadata infrastructure.
+            The activation details for the Exadata infrastructure and the additional storage servers requested.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1109,8 +1109,8 @@ class DatabaseClient(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
@@ -2540,7 +2540,7 @@ class DatabaseClient(object):
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8749,8 +8749,8 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
@@ -9131,8 +9131,8 @@ class DatabaseClient(object):
         The :func:`get_cloud_vm_cluster_iorm_config` API is used for this operation with Exadata systems using the
         new resource model.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
@@ -10127,8 +10127,8 @@ class DatabaseClient(object):
         Use the :func:`create_cloud_exadata_infrastructure` and :func:`create_cloud_vm_cluster` APIs to provision a new Exadata Cloud Service instance.
 
         __ https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
@@ -10138,8 +10138,8 @@ class DatabaseClient(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -13661,8 +13661,8 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str compartment_id: (required)
@@ -14880,7 +14880,7 @@ class DatabaseClient(object):
         :param str target_resource_type: (optional)
             The type of the target resource.
 
-            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"
+            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE"
 
         :param str maintenance_type: (optional)
             The maintenance type.
@@ -14949,7 +14949,7 @@ class DatabaseClient(object):
                 "list_maintenance_runs got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'target_resource_type' in kwargs:
-            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"]
+            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)
@@ -15482,7 +15482,7 @@ class DatabaseClient(object):
         Migrates the Exadata DB system to the new `Exadata resource model`__.
         All related resources will be migrated.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
 
         :param str db_system_id: (required)
@@ -17441,8 +17441,8 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
@@ -18625,8 +18625,8 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
@@ -18809,8 +18809,8 @@ class DatabaseClient(object):
         The :func:`update_cloud_vm_cluster_iorm_config` API is used for Exadata systems using the
         new resource model.
 
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)

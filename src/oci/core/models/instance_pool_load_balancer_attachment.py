@@ -99,7 +99,7 @@ class InstancePoolLoadBalancerAttachment(object):
         **[Required]** Gets the id of this InstancePoolLoadBalancerAttachment.
         The `OCID`__ of the load balancer attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstancePoolLoadBalancerAttachment.
@@ -113,7 +113,7 @@ class InstancePoolLoadBalancerAttachment(object):
         Sets the id of this InstancePoolLoadBalancerAttachment.
         The `OCID`__ of the load balancer attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstancePoolLoadBalancerAttachment.
@@ -127,7 +127,7 @@ class InstancePoolLoadBalancerAttachment(object):
         **[Required]** Gets the instance_pool_id of this InstancePoolLoadBalancerAttachment.
         The `OCID`__ of the instance pool of the load balancer attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_pool_id of this InstancePoolLoadBalancerAttachment.
@@ -141,7 +141,7 @@ class InstancePoolLoadBalancerAttachment(object):
         Sets the instance_pool_id of this InstancePoolLoadBalancerAttachment.
         The `OCID`__ of the instance pool of the load balancer attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_pool_id: The instance_pool_id of this InstancePoolLoadBalancerAttachment.
@@ -155,7 +155,7 @@ class InstancePoolLoadBalancerAttachment(object):
         **[Required]** Gets the load_balancer_id of this InstancePoolLoadBalancerAttachment.
         The `OCID`__ of the load balancer attached to the instance pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this InstancePoolLoadBalancerAttachment.
@@ -169,7 +169,7 @@ class InstancePoolLoadBalancerAttachment(object):
         Sets the load_balancer_id of this InstancePoolLoadBalancerAttachment.
         The `OCID`__ of the load balancer attached to the instance pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this InstancePoolLoadBalancerAttachment.
