@@ -1284,11 +1284,15 @@ class ShowOCIData(object):
                     volume_group = " - Group " + bv['volume_group_name']
 
                 value = {
+                    'id': bv['id'],
                     'sum_info': 'Compute - Block Storage (GB)',
                     'sum_size_gb': bv['size_in_gbs'],
+                    'size': bv['size_in_gbs'],
                     'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " (" + bv['vpus_per_gb'] + " vpus) " + bv['backup_policy'] + volume_group + comp_text),
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'vpus_per_gb': bv['vpus_per_gb'],
+                    'volume_group_name': bv['volume_group_name'],
+                    'compartment_name': bv['compartment_name'],
                     'is_hydrated': bv['is_hydrated'],
                     'time_created': bv['time_created'],
                     'display_name': bv['display_name'],
@@ -1322,6 +1326,7 @@ class ShowOCIData(object):
                     volume_group = " - Group " + bv['volume_group_name']
 
                 value = {
+                    'id': bv['id'],
                     'sum_info': 'Compute - Block Storage (GB)',
                     'sum_size_gb': bv['size_in_gbs'],
                     'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " (" + bv['vpus_per_gb'] + " vpus) " + bv['backup_policy'] + volume_group + comp_text),
@@ -1331,6 +1336,7 @@ class ShowOCIData(object):
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'display_name': bv['display_name'],
                     'vpus_per_gb': bv['vpus_per_gb'],
+                    'volume_group_name': bv['volume_group_name'],
                     'is_hydrated': bv['is_hydrated'],
                     'size': str(bv['size_in_gbs']),
                     'defined_tags': bv['defined_tags'],
@@ -1392,7 +1398,7 @@ class ShowOCIData(object):
 
                 # loop on vol attached to check if exist
                 for att in volattc:
-                    if att['volume_id'] == vol['id']:
+                    if att['volume_id'] == vol['id'] and att['lifecycle_state'] == 'ATTACHED':
                         found = True
                         break
 
@@ -1405,6 +1411,14 @@ class ShowOCIData(object):
                         volume_group = " - Group " + vol['volume_group_name']
 
                     value = {
+                        'id': vol['id'],
+                        'display_name': vol['display_name'],
+                        'availability_domain': vol['availability_domain'],
+                        'size': vol['size_in_gbs'],
+                        'backup_policy': vol['backup_policy'],
+                        'compartment_name': compartment['name'],
+                        'volume_group_name': vol['volume_group_name'],
+                        'vpus_per_gb': vol['vpus_per_gb'],
                         'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
                         'desc': ((str(vol['size_in_gbs']) + "GB").ljust(7) + " - " + str(vol['display_name']).ljust(20)[0:19] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
@@ -1446,6 +1460,14 @@ class ShowOCIData(object):
                         volume_group = " - Group " + vol['volume_group_name']
 
                     value = {
+                        'id': vol['id'],
+                        'display_name': vol['display_name'],
+                        'availability_domain': vol['availability_domain'],
+                        'size': vol['size_in_gbs'],
+                        'backup_policy': vol['backup_policy'],
+                        'vpus_per_gb': vol['vpus_per_gb'],
+                        'compartment_name': compartment['name'],
+                        'volume_group_name': vol['volume_group_name'],
                         'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
                         'desc': ((str(vol['size_in_gbs']) + "GB").ljust(7) + " - " + str(vol['display_name']).ljust(26)[0:25] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
@@ -2056,7 +2078,9 @@ class ShowOCIData(object):
                         'sum_size_gb': vm['storage_size_in_gbs'],
                         'patches': self.__get_database_db_patches(vm['patches']),
                         'db_homes': self.__get_database_db_homes(vm['db_homes']),
-                        'db_nodes': self.__get_database_db_nodes(vm['db_nodes'])
+                        'db_nodes': self.__get_database_db_nodes(vm['db_nodes']),
+                        'zone_id': vm['zone_id'],
+                        'scan_dns_name': vm['scan_dns_name']
                     }
                     value['vm_clusters'].append(valvm)
 
@@ -2103,12 +2127,13 @@ class ShowOCIData(object):
                          'backup_subnet_id': dbs['backup_subnet_id'],
                          'scan_dns': dbs['scan_dns_record_id'],
                          'scan_ips': dbs['scan_ips'],
-                         'scan_dns_name': dbs['hostname'] + "-scan." + dbs['domain'],
                          'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
                          'reco_storage_size_in_gb': dbs['reco_storage_size_in_gb'],
                          'sparse_diskgroup': dbs['sparse_diskgroup'],
                          'storage_management': dbs['storage_management'],
                          'vip_ips': dbs['vip_ips'],
+                         'zone_id': dbs['zone_id'],
+                         'scan_dns_name': dbs['scan_dns_name'],
                          'compartment_name': dbs['compartment_name'],
                          'compartment_id': dbs['compartment_id'],
                          'cluster_name': dbs['cluster_name'],
@@ -2289,6 +2314,58 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # __get_database_goldengate
+    ##########################################################################
+    def __get_database_goldengate(self, region_name, compartment):
+
+        return_data = {}
+        data = []
+        try:
+            data = self.__get_database_goldengate_deployments(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['gg_deployments'] = data
+
+            data = self.__get_database_goldengate_db_registration(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['gg_db_registration'] = data
+
+            return return_data
+
+        except Exception as e:
+            self.__print_error("__get_database_goldengate", e)
+            return return_data
+
+    ##########################################################################
+    # __get_database_gg_deployments
+    ##########################################################################
+    def __get_database_goldengate_deployments(self, region_name, compartment):
+
+        data = []
+        try:
+            database_gg_deployments = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_GG_DEPLOYMENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return database_gg_deployments
+
+        except Exception as e:
+            self.__print_error("__get_database_goldengate_deployments", e)
+            return data
+
+    ##########################################################################
+    # __get_database_gg_db_registration
+    ##########################################################################
+    def __get_database_goldengate_db_registration(self, region_name, compartment):
+
+        data = []
+        try:
+            database_gg_db_registrations = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_GG_DB_REGISTRATION, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return database_gg_db_registrations
+
+        except Exception as e:
+            self.__print_error("__get_database_goldengate_db_registration", e)
+            return data
+
+    ##########################################################################
     # Database
     ##########################################################################
     def __get_database_main(self, region_name, compartment):
@@ -2325,6 +2402,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['software_images'] = data
+
+            data = self.__get_database_goldengate(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['goldengate'] = data
 
             return return_data
 
