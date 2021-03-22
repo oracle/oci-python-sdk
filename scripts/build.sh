@@ -34,6 +34,9 @@ pip install -e .
 SDK_VERSION=$(tail -1 src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
 
+# Disable expect 100 continue feature for integ tests.
+export OCI_PYSDK_USING_EXPECT_HEADER=FALSE
+
 echo Building Docs
 pip install -r docs/requirements.txt
 find . -name \*.py |xargs sed -i "s#https://docs\.cloud\.oracle\.com/en-us/iaas/tools/python-sdk-examples/latest/#https://docs\.cloud\.oracle\.com/en-us/iaas/tools/python-sdk-examples/$SDK_VERSION/#g"

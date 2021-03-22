@@ -132,7 +132,7 @@ If that line is not updated then requests will not raise an error on an incomple
 
 This commit is also important for dealing with older versions of Python: https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/python-sdk/commits/9490e78a47f2a9c95fcfd4df946621b004e61bde
 
-This confluence page gives more details about vendoring: https://confluence.oci.oraclecorp.com/display/~nvu/Python+SDK+Vendoring
+This confluence page gives more details about vendoring: https://confluence.oci.oraclecorp.com/display/DEX/Python+SDK+Vendoring
 
 Shared Keys
 -----------
