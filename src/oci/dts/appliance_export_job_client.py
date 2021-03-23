@@ -11,7 +11,7 @@ from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
-from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME, extract_service_endpoint
+from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
 from .models import dts_type_mapping
 missing = Sentinel("Missing")
 
@@ -84,12 +84,6 @@ class ApplianceExportJobClient(object):
         }
         self.base_client = BaseClient("appliance_export_job", config, signer, dts_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
-
-    def get_service_endpoint(self):
-        """
-        Get the http service_endpoint for the server.
-        """
-        return extract_service_endpoint(self.base_client.endpoint)
 
     def change_appliance_export_job_compartment(self, appliance_export_job_id, change_appliance_export_job_compartment_details, **kwargs):
         """

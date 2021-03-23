@@ -28,7 +28,7 @@ from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
 from .version import __version__
-from .util import NONE_SENTINEL, Sentinel
+from .util import NONE_SENTINEL, Sentinel, extract_service_endpoint
 missing = Sentinel("Missing")
 APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
@@ -183,6 +183,9 @@ class BaseClient(object):
             self._endpoint = '{}{}'.format(endpoint, self._base_path)
         else:
             self._endpoint = endpoint
+
+    def get_endpoint(self):
+        return extract_service_endpoint(self._endpoint)
 
     def set_region(self, region):
         if self.regional_client:
