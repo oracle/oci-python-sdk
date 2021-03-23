@@ -1232,6 +1232,35 @@ class ShowOCIOutput(object):
             self.__print_error("__print_database_mysql", e)
 
     ##########################################################################
+    # print database goldengate
+    ##########################################################################
+
+    def __print_database_goldengate(self, goldengates):
+        try:
+            if 'gg_deployments' in goldengates:
+                for db in goldengates['gg_deployments']:
+                    print(self.taba + "GG      : " + db['display_name'] + " - " + db['description'] + " (" + db['lifecycle_state'] + ") - " + db['license_model'])
+                    print(self.tabs + "OCPU    : " + db['cpu_core_count'] + ", Auto Scale: " + db['is_auto_scaling_enabled'] + ", Is Latest Version: " + db['is_latest_version'])
+                    print(self.tabs + "Created : " + db['time_created'][0:16] + ", Updated: " + db['time_updated'][0:16])
+                    print(self.tabs + "Subnet  : " + db['subnet_name'])
+                    print(self.tabs + "IPs     : Private: " + db['private_ip_address'] + ", Public: " + db['public_ip_address'])
+                    print(self.tabs + "FQDN    : " + db['fqdn'])
+                    print(self.tabs + "URL     : " + db['deployment_url'])
+                    print("")
+
+            if 'gg_db_registration' in goldengates:
+                for db in goldengates['gg_db_registration']:
+                    print(self.taba + "DB Reg  : " + db['display_name'] + " - " + db['description'] + " (" + db['lifecycle_state'] + ")")
+                    print(self.tabs + "Created : " + db['time_created'][0:16] + ", Updated: " + db['time_updated'][0:16])
+                    if db['subnet_name']:
+                        print(self.tabs + "Subnet  : " + db['subnet_name'])
+                    print(self.tabs + "FQDN    : " + db['fqdn'])
+                    print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_goldengate", e)
+
+    ##########################################################################
     # database
     ##########################################################################
 
@@ -1259,6 +1288,11 @@ class ShowOCIOutput(object):
             if 'mysql' in list_databases:
                 self.print_header("MYSQL databases", 2)
                 self.__print_database_mysql(list_databases['mysql'])
+                print("")
+
+            if 'goldengate' in list_databases:
+                self.print_header("Golden Gate", 2)
+                self.__print_database_goldengate(list_databases['goldengate'])
                 print("")
 
             if 'nosql' in list_databases:
@@ -1605,8 +1639,7 @@ class ShowOCIOutput(object):
                     print(
                         self.taba + val['name'] + ", (" + val['feature_set'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print(self.tabs + "Desc : " + val['description'])
-                    print(self.tabs + "Email: " + val['email_notification'] + ", License: " + str(val['license_type']) + ", Capacity: " + val[
-                        'capacity_type'] + ":" + val['capacity_value'])
+                    print(self.tabs + "Email: " + val['email_notification'] + ", License: " + str(val['license_type']) + ", Capacity: " + val['capacity_type'] + ":" + val['capacity_value'] + ", End Point: " + val['network_endpoint_details'])
                     print(self.tabs + "URL  : " + val['service_url'])
                     print("")
 
@@ -2359,6 +2392,9 @@ class ShowOCISummary(object):
             if 'mysql' in list_databases:
                 self.__summary_database_mysql(list_databases['mysql'])
 
+            if 'goldengate' in list_databases:
+                self.__summary_database_goldengate(list_databases['goldengate'])
+
         except Exception as e:
             self.__print_error("__summary_database_main", e)
 
@@ -2441,13 +2477,12 @@ class ShowOCISummary(object):
         try:
             for mysql in mysqls:
 
-                self.summary_global_list.append({'type': 'Total OCPUs - Mysql Database', 'size': float(mysql['shape_ocpu'])})
-
                 # add db to summary
                 if mysql['lifecycle_state'] == 'STOPPED':
                     self.summary_global_list.append({'type': 'Stopped ' + mysql['sum_info'], 'size': 1})
                 else:
                     self.summary_global_list.append({'type': mysql['sum_info'], 'size': 1})
+                    self.summary_global_list.append({'type': 'Total OCPUs - Mysql Database', 'size': float(mysql['shape_ocpu'])})
 
                 if mysql['data_storage_size_in_gbs'] is not None:
                     if mysql['data_storage_size_in_gbs'] != 'None' and mysql['data_storage_size_in_gbs'] != "":
@@ -2455,6 +2490,26 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_database_mysql", e)
+
+    ##########################################################################
+    # __summary_database_goldengate
+    ##########################################################################
+    def __summary_database_goldengate(self, goldengates):
+
+        try:
+            if 'gg_deployments' in goldengates:
+                for gg in goldengates['gg_deployments']:
+
+                    # add db to summary
+                    if gg['lifecycle_state'] == 'STOPPED':
+                        self.summary_global_list.append({'type': 'Stopped ' + gg['sum_info'] + " (Count)", 'size': 1})
+                    else:
+                        self.summary_global_list.append({'type': 'Total OCPUs - Goldengate', 'size': float(gg['cpu_core_count'])})
+                        self.summary_global_list.append({'type': gg['sum_info'] + " OCPUs", 'size': float(gg['cpu_core_count'])})
+                        self.summary_global_list.append({'type': gg['sum_info'] + " (Count)", 'size': 1})
+
+        except Exception as e:
+            self.__print_error("__summary_database_goldengate", e)
 
     ##########################################################################
     # print self.__summary_core_compute_shape
@@ -2777,6 +2832,7 @@ class ShowOCICSV(object):
     csv_identity_users = []
     csv_identity_policies = []
     csv_compute = []
+    csv_block_volumes = []
     csv_db_system = []
     csv_db_autonomous = []
     csv_database = []
@@ -2790,6 +2846,7 @@ class ShowOCICSV(object):
     csv_load_balancer_bs = []
     csv_limits = []
     start_time = ""
+    csv_add_date_field = True
 
     ############################################
     # Init
@@ -2801,8 +2858,8 @@ class ShowOCICSV(object):
     ##########################################################################
     # generate_csv
     ##########################################################################
-    def generate_csv(self, data, csv_file_header):
-
+    def generate_csv(self, data, csv_file_header, add_date_field=True):
+        self.csv_add_date_field = add_date_field
         self.csv_file_header = csv_file_header
         try:
             for d in data:
@@ -2827,6 +2884,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
             self.__export_to_csv_file("compute", self.csv_compute)
+            self.__export_to_csv_file("block_boot_volumes", self.csv_block_volumes)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
             self.__export_to_csv_file("network_security_list", self.csv_network_security_list)
@@ -2869,7 +2927,11 @@ class ShowOCICSV(object):
             file_name = self.csv_file_header + "_" + file_subject + ".csv"
 
             # add start_date to each dictionary
-            result = [dict(item, extract_date=self.start_time) for item in data]
+            result = []
+            if self.csv_add_date_field:
+                result = [dict(item, extract_date=self.start_time) for item in data]
+            else:
+                result = [dict(item) for item in data]
 
             # generate fields
             fields = [key for key in result[0].keys()]
@@ -3672,6 +3734,85 @@ class ShowOCICSV(object):
             self.__print_error("__csv_core_compute_instances", e)
 
     ##########################################################################
+    # csv compute block volumes
+    ##########################################################################
+    def __csv_core_compute_block_volumes(self, region_name, instances):
+
+        try:
+            if len(instances) == 0:
+                return
+
+            for instance in instances:
+
+                # Add boot Volumes
+                if 'boot_volume' in instance:
+                    for bv in instance['boot_volume']:
+                        data = {
+                            'region_name': region_name,
+                            'availability_domain': instance['availability_domain'],
+                            'compartment_name': bv['compartment_name'],
+                            'id': bv['id'],
+                            'display_name': bv['display_name'],
+                            'size': bv['size'],
+                            'backup_policy': bv['backup_policy'],
+                            'vpus_per_gb': bv['vpus_per_gb'],
+                            'volume_group_name': bv['volume_group_name'],
+                            'instance_name': instance['display_name'],
+                            'instance_id': instance['id']
+                        }
+                        self.csv_block_volumes.append(data)
+
+                # Add block Volumes
+                if 'block_volume' in instance:
+                    for bv in instance['block_volume']:
+                        data = {
+                            'region_name': region_name,
+                            'availability_domain': instance['availability_domain'],
+                            'compartment_name': bv['compartment_name'],
+                            'id': bv['id'],
+                            'display_name': bv['display_name'],
+                            'size': bv['size'],
+                            'backup_policy': bv['backup_policy'],
+                            'vpus_per_gb': bv['vpus_per_gb'],
+                            'volume_group_name': bv['volume_group_name'],
+                            'instance_name': instance['display_name'],
+                            'instance_id': instance['id']
+                        }
+                        self.csv_block_volumes.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_compute_block_volumes", e)
+
+    ##########################################################################
+    # csv compute block volumes
+    ##########################################################################
+    def __csv_core_compute_block_not_attached(self, region_name, blocks):
+
+        try:
+            if len(blocks) == 0:
+                return
+
+            for bv in blocks:
+
+                data = {
+                    'region_name': region_name,
+                    'availability_domain': bv['availability_domain'],
+                    'compartment_name': bv['compartment_name'],
+                    'id': bv['id'],
+                    'display_name': bv['display_name'],
+                    'size': bv['size'],
+                    'backup_policy': bv['backup_policy'],
+                    'vpus_per_gb': bv['vpus_per_gb'],
+                    'volume_group_name': bv['volume_group_name'],
+                    'instance_name': '',
+                    'instance_id': ''
+                }
+                self.csv_block_volumes.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_compute_block_volumes", e)
+
+    ##########################################################################
     # csv Compute
     ##########################################################################
     def __csv_core_compute_main(self, region_name, data):
@@ -3682,6 +3823,13 @@ class ShowOCICSV(object):
 
             if 'instances' in data:
                 self.__csv_core_compute_instances(region_name, data['instances'])
+                self.__csv_core_compute_block_volumes(region_name, data['instances'])
+
+            if 'boot_not_attached' in data:
+                self.__csv_core_compute_block_not_attached(region_name, data['boot_not_attached'])
+
+            if 'volume_not_attached' in data:
+                self.__csv_core_compute_block_not_attached(region_name, data['volume_not_attached'])
 
         except Exception as e:
             self.__print_error("__csv_core_compute_main", e)

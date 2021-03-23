@@ -26,6 +26,10 @@ class ShapeSummary(object):
     #: This constant has a value of "ANALYTICSCLUSTER"
     IS_SUPPORTED_FOR_ANALYTICSCLUSTER = "ANALYTICSCLUSTER"
 
+    #: A constant which can be used with the is_supported_for property of a ShapeSummary.
+    #: This constant has a value of "HEATWAVECLUSTER"
+    IS_SUPPORTED_FOR_HEATWAVECLUSTER = "HEATWAVECLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ShapeSummary object with values from keyword arguments.
@@ -45,7 +49,7 @@ class ShapeSummary(object):
 
         :param is_supported_for:
             The value to assign to the is_supported_for property of this ShapeSummary.
-            Allowed values for items in this list are: "DBSYSTEM", "ANALYTICSCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "DBSYSTEM", "ANALYTICSCLUSTER", "HEATWAVECLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type is_supported_for: list[str]
 
@@ -147,7 +151,7 @@ class ShapeSummary(object):
         Gets the is_supported_for of this ShapeSummary.
         What service features the shape is supported for.
 
-        Allowed values for items in this list are: "DBSYSTEM", "ANALYTICSCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "DBSYSTEM", "ANALYTICSCLUSTER", "HEATWAVECLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -166,7 +170,7 @@ class ShapeSummary(object):
         :param is_supported_for: The is_supported_for of this ShapeSummary.
         :type: list[str]
         """
-        allowed_values = ["DBSYSTEM", "ANALYTICSCLUSTER"]
+        allowed_values = ["DBSYSTEM", "ANALYTICSCLUSTER", "HEATWAVECLUSTER"]
         if is_supported_for:
             is_supported_for[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in is_supported_for]
         self._is_supported_for = is_supported_for

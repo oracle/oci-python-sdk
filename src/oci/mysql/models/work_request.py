@@ -65,6 +65,34 @@ class WorkRequest(object):
     #: This constant has a value of "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"
     OPERATION_TYPE_GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE = "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ADD_HEATWAVE_CLUSTER"
+    OPERATION_TYPE_ADD_HEATWAVE_CLUSTER = "ADD_HEATWAVE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_HEATWAVE_CLUSTER"
+    OPERATION_TYPE_UPDATE_HEATWAVE_CLUSTER = "UPDATE_HEATWAVE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_HEATWAVE_CLUSTER"
+    OPERATION_TYPE_DELETE_HEATWAVE_CLUSTER = "DELETE_HEATWAVE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "START_HEATWAVE_CLUSTER"
+    OPERATION_TYPE_START_HEATWAVE_CLUSTER = "START_HEATWAVE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "STOP_HEATWAVE_CLUSTER"
+    OPERATION_TYPE_STOP_HEATWAVE_CLUSTER = "STOP_HEATWAVE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "RESTART_HEATWAVE_CLUSTER"
+    OPERATION_TYPE_RESTART_HEATWAVE_CLUSTER = "RESTART_HEATWAVE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE"
+    OPERATION_TYPE_GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE = "GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -100,7 +128,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", "ADD_HEATWAVE_CLUSTER", "UPDATE_HEATWAVE_CLUSTER", "DELETE_HEATWAVE_CLUSTER", "START_HEATWAVE_CLUSTER", "STOP_HEATWAVE_CLUSTER", "RESTART_HEATWAVE_CLUSTER", "GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -199,7 +227,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         the original operation ID requested
 
-        Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", "ADD_HEATWAVE_CLUSTER", "UPDATE_HEATWAVE_CLUSTER", "DELETE_HEATWAVE_CLUSTER", "START_HEATWAVE_CLUSTER", "STOP_HEATWAVE_CLUSTER", "RESTART_HEATWAVE_CLUSTER", "GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -218,7 +246,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"]
+        allowed_values = ["CREATE_DBSYSTEM", "UPDATE_DBSYSTEM", "DELETE_DBSYSTEM", "START_DBSYSTEM", "STOP_DBSYSTEM", "RESTART_DBSYSTEM", "ADD_ANALYTICS_CLUSTER", "UPDATE_ANALYTICS_CLUSTER", "DELETE_ANALYTICS_CLUSTER", "START_ANALYTICS_CLUSTER", "STOP_ANALYTICS_CLUSTER", "RESTART_ANALYTICS_CLUSTER", "GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE", "ADD_HEATWAVE_CLUSTER", "UPDATE_HEATWAVE_CLUSTER", "DELETE_HEATWAVE_CLUSTER", "START_HEATWAVE_CLUSTER", "STOP_HEATWAVE_CLUSTER", "RESTART_HEATWAVE_CLUSTER", "GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

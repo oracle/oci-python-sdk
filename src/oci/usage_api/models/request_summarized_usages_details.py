@@ -59,6 +59,10 @@ class RequestSummarizedUsagesDetails(object):
             Allowed values for this property are: "HOURLY", "DAILY", "MONTHLY", "TOTAL"
         :type granularity: str
 
+        :param is_aggregate_by_time:
+            The value to assign to the is_aggregate_by_time property of this RequestSummarizedUsagesDetails.
+        :type is_aggregate_by_time: bool
+
         :param query_type:
             The value to assign to the query_type property of this RequestSummarizedUsagesDetails.
             Allowed values for this property are: "USAGE", "COST"
@@ -67,6 +71,10 @@ class RequestSummarizedUsagesDetails(object):
         :param group_by:
             The value to assign to the group_by property of this RequestSummarizedUsagesDetails.
         :type group_by: list[str]
+
+        :param group_by_tag:
+            The value to assign to the group_by_tag property of this RequestSummarizedUsagesDetails.
+        :type group_by_tag: list[oci.usage_api.models.Tag]
 
         :param compartment_depth:
             The value to assign to the compartment_depth property of this RequestSummarizedUsagesDetails.
@@ -82,8 +90,10 @@ class RequestSummarizedUsagesDetails(object):
             'time_usage_started': 'datetime',
             'time_usage_ended': 'datetime',
             'granularity': 'str',
+            'is_aggregate_by_time': 'bool',
             'query_type': 'str',
             'group_by': 'list[str]',
+            'group_by_tag': 'list[Tag]',
             'compartment_depth': 'float',
             'filter': 'Filter'
         }
@@ -93,8 +103,10 @@ class RequestSummarizedUsagesDetails(object):
             'time_usage_started': 'timeUsageStarted',
             'time_usage_ended': 'timeUsageEnded',
             'granularity': 'granularity',
+            'is_aggregate_by_time': 'isAggregateByTime',
             'query_type': 'queryType',
             'group_by': 'groupBy',
+            'group_by_tag': 'groupByTag',
             'compartment_depth': 'compartmentDepth',
             'filter': 'filter'
         }
@@ -103,8 +115,10 @@ class RequestSummarizedUsagesDetails(object):
         self._time_usage_started = None
         self._time_usage_ended = None
         self._granularity = None
+        self._is_aggregate_by_time = None
         self._query_type = None
         self._group_by = None
+        self._group_by_tag = None
         self._compartment_depth = None
         self._filter = None
 
@@ -221,10 +235,34 @@ class RequestSummarizedUsagesDetails(object):
         self._granularity = granularity
 
     @property
+    def is_aggregate_by_time(self):
+        """
+        Gets the is_aggregate_by_time of this RequestSummarizedUsagesDetails.
+        is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period
+
+
+        :return: The is_aggregate_by_time of this RequestSummarizedUsagesDetails.
+        :rtype: bool
+        """
+        return self._is_aggregate_by_time
+
+    @is_aggregate_by_time.setter
+    def is_aggregate_by_time(self, is_aggregate_by_time):
+        """
+        Sets the is_aggregate_by_time of this RequestSummarizedUsagesDetails.
+        is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period
+
+
+        :param is_aggregate_by_time: The is_aggregate_by_time of this RequestSummarizedUsagesDetails.
+        :type: bool
+        """
+        self._is_aggregate_by_time = is_aggregate_by_time
+
+    @property
     def query_type(self):
         """
         Gets the query_type of this RequestSummarizedUsagesDetails.
-        The query usage type.
+        The query usage type. COST by default if it is missing
         Usage - Query the usage data.
         Cost - Query the cost/billing data.
 
@@ -240,7 +278,7 @@ class RequestSummarizedUsagesDetails(object):
     def query_type(self, query_type):
         """
         Sets the query_type of this RequestSummarizedUsagesDetails.
-        The query usage type.
+        The query usage type. COST by default if it is missing
         Usage - Query the usage data.
         Cost - Query the cost/billing data.
 
@@ -262,7 +300,9 @@ class RequestSummarizedUsagesDetails(object):
         Gets the group_by of this RequestSummarizedUsagesDetails.
         Aggregate the result by.
         example:
-          `[\"service\"]`
+          `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
+            \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
+            \"resourceId\", \"tenantId\", \"tenantName\"]`
 
 
         :return: The group_by of this RequestSummarizedUsagesDetails.
@@ -276,13 +316,43 @@ class RequestSummarizedUsagesDetails(object):
         Sets the group_by of this RequestSummarizedUsagesDetails.
         Aggregate the result by.
         example:
-          `[\"service\"]`
+          `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
+            \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
+            \"resourceId\", \"tenantId\", \"tenantName\"]`
 
 
         :param group_by: The group_by of this RequestSummarizedUsagesDetails.
         :type: list[str]
         """
         self._group_by = group_by
+
+    @property
+    def group_by_tag(self):
+        """
+        Gets the group_by_tag of this RequestSummarizedUsagesDetails.
+        GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
+        example:
+          `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
+
+
+        :return: The group_by_tag of this RequestSummarizedUsagesDetails.
+        :rtype: list[oci.usage_api.models.Tag]
+        """
+        return self._group_by_tag
+
+    @group_by_tag.setter
+    def group_by_tag(self, group_by_tag):
+        """
+        Sets the group_by_tag of this RequestSummarizedUsagesDetails.
+        GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
+        example:
+          `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
+
+
+        :param group_by_tag: The group_by_tag of this RequestSummarizedUsagesDetails.
+        :type: list[oci.usage_api.models.Tag]
+        """
+        self._group_by_tag = group_by_tag
 
     @property
     def compartment_depth(self):

@@ -88,7 +88,7 @@ class InstancePoolPlacementConfiguration(object):
         **[Required]** Gets the primary_subnet_id of this InstancePoolPlacementConfiguration.
         The `OCID`__ of the primary subnet to place instances.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_subnet_id of this InstancePoolPlacementConfiguration.
@@ -102,7 +102,7 @@ class InstancePoolPlacementConfiguration(object):
         Sets the primary_subnet_id of this InstancePoolPlacementConfiguration.
         The `OCID`__ of the primary subnet to place instances.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_subnet_id: The primary_subnet_id of this InstancePoolPlacementConfiguration.

@@ -68,7 +68,7 @@ class DedicatedVmHostShapeSummary(object):
     def dedicated_vm_host_shape(self):
         """
         **[Required]** Gets the dedicated_vm_host_shape of this DedicatedVmHostShapeSummary.
-        The name of the dedicated vm host shape. You can enumerate all available shapes by calling
+        The name of the dedicated VM host shape. You can enumerate all available shapes by calling
         :class:`DedicatedVmHostShapes`.
 
 
@@ -81,7 +81,7 @@ class DedicatedVmHostShapeSummary(object):
     def dedicated_vm_host_shape(self, dedicated_vm_host_shape):
         """
         Sets the dedicated_vm_host_shape of this DedicatedVmHostShapeSummary.
-        The name of the dedicated vm host shape. You can enumerate all available shapes by calling
+        The name of the dedicated VM host shape. You can enumerate all available shapes by calling
         :class:`DedicatedVmHostShapes`.
 
 

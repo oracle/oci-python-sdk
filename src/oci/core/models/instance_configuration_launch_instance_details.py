@@ -49,6 +49,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the availability_domain property of this InstanceConfigurationLaunchInstanceDetails.
         :type availability_domain: str
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this InstanceConfigurationLaunchInstanceDetails.
+        :type capacity_reservation_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this InstanceConfigurationLaunchInstanceDetails.
         :type compartment_id: str
@@ -140,6 +144,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'capacity_reservation_id': 'str',
             'compartment_id': 'str',
             'create_vnic_details': 'InstanceConfigurationCreateVnicDetails',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -165,6 +170,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'capacity_reservation_id': 'capacityReservationId',
             'compartment_id': 'compartmentId',
             'create_vnic_details': 'createVnicDetails',
             'defined_tags': 'definedTags',
@@ -189,6 +195,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         }
 
         self._availability_domain = None
+        self._capacity_reservation_id = None
         self._compartment_id = None
         self._create_vnic_details = None
         self._defined_tags = None
@@ -238,6 +245,30 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this InstanceConfigurationLaunchInstanceDetails.
+        The OCID of the compute capacity reservation this instance is launched under.
+
+
+        :return: The capacity_reservation_id of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this InstanceConfigurationLaunchInstanceDetails.
+        The OCID of the compute capacity reservation this instance is launched under.
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def compartment_id(self):
@@ -292,7 +323,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstanceConfigurationLaunchInstanceDetails.
@@ -309,7 +340,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstanceConfigurationLaunchInstanceDetails.
@@ -394,7 +425,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstanceConfigurationLaunchInstanceDetails.
@@ -411,7 +442,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstanceConfigurationLaunchInstanceDetails.
@@ -448,7 +479,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this InstanceConfigurationLaunchInstanceDetails.
@@ -485,7 +516,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this InstanceConfigurationLaunchInstanceDetails.

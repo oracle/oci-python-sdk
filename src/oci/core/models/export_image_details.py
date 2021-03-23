@@ -120,7 +120,16 @@ class ExportImageDetails(object):
     def export_format(self):
         """
         Gets the export_format of this ExportImageDetails.
-        The format of the image to be exported. The default value is \"OCI\".
+        The format to export the image to. The default value is `OCI`.
+
+        The following image formats are available:
+
+        - `OCI` - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+        Use this format to export a custom image that you want to import into other tenancies or regions.
+        - `QCOW2` - QEMU Copy On Write (.qcow2)
+        - `VDI` - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+        - `VHD` - Virtual Hard Disk (.vhd) for Hyper-V
+        - `VMDK` - Virtual Machine Disk (.vmdk)
 
         Allowed values for this property are: "QCOW2", "VMDK", "OCI", "VHD", "VDI"
 
@@ -134,7 +143,16 @@ class ExportImageDetails(object):
     def export_format(self, export_format):
         """
         Sets the export_format of this ExportImageDetails.
-        The format of the image to be exported. The default value is \"OCI\".
+        The format to export the image to. The default value is `OCI`.
+
+        The following image formats are available:
+
+        - `OCI` - Oracle Cloud Infrastructure file with a QCOW2 image and Oracle Cloud Infrastructure metadata (.oci).
+        Use this format to export a custom image that you want to import into other tenancies or regions.
+        - `QCOW2` - QEMU Copy On Write (.qcow2)
+        - `VDI` - Virtual Disk Image (.vdi) for Oracle VM VirtualBox
+        - `VHD` - Virtual Hard Disk (.vhd) for Hyper-V
+        - `VMDK` - Virtual Machine Disk (.vmdk)
 
 
         :param export_format: The export_format of this ExportImageDetails.

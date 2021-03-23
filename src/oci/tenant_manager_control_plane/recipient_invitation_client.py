@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class RecipientInvitationClient(object):
     """
-    A description of the TenantManager API
+    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
     """
 
     def __init__(self, config, **kwargs):
@@ -101,8 +101,8 @@ class RecipientInvitationClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            A token that uniquely identifies a request, so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -269,8 +269,8 @@ class RecipientInvitationClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            A token that uniquely identifies a request, so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.

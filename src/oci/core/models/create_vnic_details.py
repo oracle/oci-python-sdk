@@ -126,7 +126,7 @@ class CreateVnicDetails(object):
 
         Example: `false`
 
-        If you specify a `vlanId`, the `assignPublicIp` is required to be set to false. See
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
         :class:`Vlan`.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
@@ -163,7 +163,7 @@ class CreateVnicDetails(object):
 
         Example: `false`
 
-        If you specify a `vlanId`, the `assignPublicIp` is required to be set to false. See
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
         :class:`Vlan`.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
@@ -184,7 +184,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVnicDetails.
@@ -201,7 +201,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVnicDetails.
@@ -244,7 +244,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVnicDetails.
@@ -261,7 +261,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVnicDetails.
@@ -294,8 +294,8 @@ class CreateVnicDetails(object):
 
         Example: `bminstance-1`
 
-        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. vnics on a Vlan
-        can not be assigned a hostname  See :class:`Vlan`.
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN
+        can not be assigned a hostname. See :class:`Vlan`.
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
@@ -332,8 +332,8 @@ class CreateVnicDetails(object):
 
         Example: `bminstance-1`
 
-        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. vnics on a Vlan
-        can not be assigned a hostname  See :class:`Vlan`.
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN
+        can not be assigned a hostname. See :class:`Vlan`.
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123

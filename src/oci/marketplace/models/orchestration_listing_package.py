@@ -48,6 +48,10 @@ class OrchestrationListingPackage(ListingPackage):
             The value to assign to the time_created property of this OrchestrationListingPackage.
         :type time_created: datetime
 
+        :param operating_system:
+            The value to assign to the operating_system property of this OrchestrationListingPackage.
+        :type operating_system: oci.marketplace.models.OperatingSystem
+
         :param resource_link:
             The value to assign to the resource_link property of this OrchestrationListingPackage.
         :type resource_link: str
@@ -69,6 +73,7 @@ class OrchestrationListingPackage(ListingPackage):
             'pricing': 'PricingModel',
             'resource_id': 'str',
             'time_created': 'datetime',
+            'operating_system': 'OperatingSystem',
             'resource_link': 'str',
             'variables': 'list[OrchestrationVariable]',
             'regions': 'list[Region]'
@@ -82,6 +87,7 @@ class OrchestrationListingPackage(ListingPackage):
             'pricing': 'pricing',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
+            'operating_system': 'operatingSystem',
             'resource_link': 'resourceLink',
             'variables': 'variables',
             'regions': 'regions'
@@ -94,6 +100,7 @@ class OrchestrationListingPackage(ListingPackage):
         self._pricing = None
         self._resource_id = None
         self._time_created = None
+        self._operating_system = None
         self._resource_link = None
         self._variables = None
         self._regions = None

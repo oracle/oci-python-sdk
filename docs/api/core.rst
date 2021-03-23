@@ -64,11 +64,13 @@ Core Services
     oci.core.models.ByoipRange
     oci.core.models.ByoipRangeCollection
     oci.core.models.ByoipRangeSummary
+    oci.core.models.CapacityReservationInstanceSummary
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
     oci.core.models.ChangeByoipRangeCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
+    oci.core.models.ChangeComputeCapacityReservationCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
@@ -102,6 +104,9 @@ Core Services
     oci.core.models.ClusterNetwork
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
+    oci.core.models.ComputeCapacityReservation
+    oci.core.models.ComputeCapacityReservationInstanceShapeSummary
+    oci.core.models.ComputeCapacityReservationSummary
     oci.core.models.ComputeGlobalImageCapabilitySchema
     oci.core.models.ComputeGlobalImageCapabilitySchemaSummary
     oci.core.models.ComputeGlobalImageCapabilitySchemaVersion
@@ -126,6 +131,7 @@ Core Services
     oci.core.models.CreateByoipRangeDetails
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
+    oci.core.models.CreateComputeCapacityReservationDetails
     oci.core.models.CreateComputeImageCapabilitySchemaDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
@@ -259,6 +265,9 @@ Core Services
     oci.core.models.InstancePoolPlacementConfiguration
     oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
     oci.core.models.InstancePoolSummary
+    oci.core.models.InstanceReservationConfig
+    oci.core.models.InstanceReservationConfigDetails
+    oci.core.models.InstanceReservationShapeConfigDetails
     oci.core.models.InstanceShapeConfig
     oci.core.models.InstanceSourceDetails
     oci.core.models.InstanceSourceViaBootVolumeDetails
@@ -315,6 +324,7 @@ Core Services
     oci.core.models.UpdateBootVolumeKmsKeyDetails
     oci.core.models.UpdateByoipRangeDetails
     oci.core.models.UpdateClusterNetworkDetails
+    oci.core.models.UpdateComputeCapacityReservationDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails

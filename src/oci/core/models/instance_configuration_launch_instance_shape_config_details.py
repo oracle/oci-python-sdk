@@ -17,13 +17,8 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
     the entire parameter is not provided, the instance is created with the default
     configuration values for the `shape` that you specify.
 
-    Each shape only supports certain configurable values. If the values that you provid are not valid for the
+    Each shape only supports certain configurable values. If the values that you provide are not valid for the
     specified `shape`, an error is returned.
-
-    For more information about customizing the resources that are allocated to a flexible shapes, see
-    `Flexible Shapes`__.
-
-    __ https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm#flexible
     """
 
     def __init__(self, **kwargs):

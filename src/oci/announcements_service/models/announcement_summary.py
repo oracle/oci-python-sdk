@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnouncementSummary(BaseAnnouncement):
     """
-    Summary representation of an announcement.
+    A summary representation of an announcement.
     """
 
     def __init__(self, **kwargs):
@@ -39,6 +39,12 @@ class AnnouncementSummary(BaseAnnouncement):
             The value to assign to the time_one_title property of this AnnouncementSummary.
         :type time_one_title: str
 
+        :param time_one_type:
+            The value to assign to the time_one_type property of this AnnouncementSummary.
+            Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type time_one_type: str
+
         :param time_one_value:
             The value to assign to the time_one_value property of this AnnouncementSummary.
         :type time_one_value: datetime
@@ -46,6 +52,12 @@ class AnnouncementSummary(BaseAnnouncement):
         :param time_two_title:
             The value to assign to the time_two_title property of this AnnouncementSummary.
         :type time_two_title: str
+
+        :param time_two_type:
+            The value to assign to the time_two_type property of this AnnouncementSummary.
+            Allowed values for this property are: "END_TIME", "NEW_END_TIME", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type time_two_type: str
 
         :param time_two_value:
             The value to assign to the time_two_value property of this AnnouncementSummary.
@@ -90,8 +102,10 @@ class AnnouncementSummary(BaseAnnouncement):
             'reference_ticket_number': 'str',
             'summary': 'str',
             'time_one_title': 'str',
+            'time_one_type': 'str',
             'time_one_value': 'datetime',
             'time_two_title': 'str',
+            'time_two_type': 'str',
             'time_two_value': 'datetime',
             'services': 'list[str]',
             'affected_regions': 'list[str]',
@@ -108,8 +122,10 @@ class AnnouncementSummary(BaseAnnouncement):
             'reference_ticket_number': 'referenceTicketNumber',
             'summary': 'summary',
             'time_one_title': 'timeOneTitle',
+            'time_one_type': 'timeOneType',
             'time_one_value': 'timeOneValue',
             'time_two_title': 'timeTwoTitle',
+            'time_two_type': 'timeTwoType',
             'time_two_value': 'timeTwoValue',
             'services': 'services',
             'affected_regions': 'affectedRegions',
@@ -125,8 +141,10 @@ class AnnouncementSummary(BaseAnnouncement):
         self._reference_ticket_number = None
         self._summary = None
         self._time_one_title = None
+        self._time_one_type = None
         self._time_one_value = None
         self._time_two_title = None
+        self._time_two_type = None
         self._time_two_value = None
         self._services = None
         self._affected_regions = None

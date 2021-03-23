@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .add_analytics_cluster_details import AddAnalyticsClusterDetails
+from .add_heat_wave_cluster_details import AddHeatWaveClusterDetails
 from .analytics_cluster import AnalyticsCluster
 from .analytics_cluster_memory_estimate import AnalyticsClusterMemoryEstimate
 from .analytics_cluster_node import AnalyticsClusterNode
@@ -46,6 +47,12 @@ from .db_system_source_from_backup import DbSystemSourceFromBackup
 from .db_system_source_from_none import DbSystemSourceFromNone
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
 from .db_system_summary import DbSystemSummary
+from .heat_wave_cluster import HeatWaveCluster
+from .heat_wave_cluster_memory_estimate import HeatWaveClusterMemoryEstimate
+from .heat_wave_cluster_schema_memory_estimate import HeatWaveClusterSchemaMemoryEstimate
+from .heat_wave_cluster_summary import HeatWaveClusterSummary
+from .heat_wave_cluster_table_memory_estimate import HeatWaveClusterTableMemoryEstimate
+from .heat_wave_node import HeatWaveNode
 from .maintenance_details import MaintenanceDetails
 from .pem_ca_certificate import PemCaCertificate
 from .restart_db_system_details import RestartDbSystemDetails
@@ -61,6 +68,7 @@ from .update_channel_target_details import UpdateChannelTargetDetails
 from .update_channel_target_from_db_system_details import UpdateChannelTargetFromDbSystemDetails
 from .update_configuration_details import UpdateConfigurationDetails
 from .update_db_system_details import UpdateDbSystemDetails
+from .update_heat_wave_cluster_details import UpdateHeatWaveClusterDetails
 from .update_maintenance_details import UpdateMaintenanceDetails
 from .version import Version
 from .version_summary import VersionSummary
@@ -73,6 +81,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for mysql services.
 mysql_type_mapping = {
     "AddAnalyticsClusterDetails": AddAnalyticsClusterDetails,
+    "AddHeatWaveClusterDetails": AddHeatWaveClusterDetails,
     "AnalyticsCluster": AnalyticsCluster,
     "AnalyticsClusterMemoryEstimate": AnalyticsClusterMemoryEstimate,
     "AnalyticsClusterNode": AnalyticsClusterNode,
@@ -114,6 +123,12 @@ mysql_type_mapping = {
     "DbSystemSourceFromNone": DbSystemSourceFromNone,
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,
     "DbSystemSummary": DbSystemSummary,
+    "HeatWaveCluster": HeatWaveCluster,
+    "HeatWaveClusterMemoryEstimate": HeatWaveClusterMemoryEstimate,
+    "HeatWaveClusterSchemaMemoryEstimate": HeatWaveClusterSchemaMemoryEstimate,
+    "HeatWaveClusterSummary": HeatWaveClusterSummary,
+    "HeatWaveClusterTableMemoryEstimate": HeatWaveClusterTableMemoryEstimate,
+    "HeatWaveNode": HeatWaveNode,
     "MaintenanceDetails": MaintenanceDetails,
     "PemCaCertificate": PemCaCertificate,
     "RestartDbSystemDetails": RestartDbSystemDetails,
@@ -129,6 +144,7 @@ mysql_type_mapping = {
     "UpdateChannelTargetFromDbSystemDetails": UpdateChannelTargetFromDbSystemDetails,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
+    "UpdateHeatWaveClusterDetails": UpdateHeatWaveClusterDetails,
     "UpdateMaintenanceDetails": UpdateMaintenanceDetails,
     "Version": Version,
     "VersionSummary": VersionSummary,

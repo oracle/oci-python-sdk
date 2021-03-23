@@ -10,11 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstancePool(object):
     """
-    An instance pool is a group of instances within the same region that are created based off of the same
-    instance configuration. For more information about instance pools and instance configurations, see
+    An instance pool is a set of instances within the same region that are managed as a group.
+    For more information about instance pools and instance configurations, see
     `Managing Compute Instances`__.
 
-    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a InstancePool.
@@ -147,7 +147,7 @@ class InstancePool(object):
         **[Required]** Gets the id of this InstancePool.
         The `OCID`__ of the instance pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstancePool.
@@ -161,7 +161,7 @@ class InstancePool(object):
         Sets the id of this InstancePool.
         The `OCID`__ of the instance pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstancePool.
@@ -176,7 +176,7 @@ class InstancePool(object):
         The `OCID`__ of the compartment containing the instance
         pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstancePool.
@@ -191,7 +191,7 @@ class InstancePool(object):
         The `OCID`__ of the compartment containing the instance
         pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstancePool.
@@ -208,7 +208,7 @@ class InstancePool(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstancePool.
@@ -225,7 +225,7 @@ class InstancePool(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstancePool.
@@ -266,7 +266,7 @@ class InstancePool(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstancePool.
@@ -283,7 +283,7 @@ class InstancePool(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstancePool.
@@ -298,7 +298,7 @@ class InstancePool(object):
         The `OCID`__ of the instance configuration associated
         with the instance pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_configuration_id of this InstancePool.
@@ -313,7 +313,7 @@ class InstancePool(object):
         The `OCID`__ of the instance configuration associated
         with the instance pool.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_configuration_id: The instance_configuration_id of this InstancePool.

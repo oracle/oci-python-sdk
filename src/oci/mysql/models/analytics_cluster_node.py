@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyticsClusterNode(object):
     """
+    DEPRECATED -- please use HeatWave API instead.
     An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
     """
 

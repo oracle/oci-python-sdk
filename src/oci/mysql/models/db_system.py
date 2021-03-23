@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class DbSystem(object):
     """
     A DB System is the core logical unit of MySQL Database Service.
-    # NOTE: definitions/DbSystemSnapshot is a snapshot version of DbSystem which is stored during backup. Any
-    # addition/deletion of properties should also consider snapshot's definition
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbSystem.
@@ -75,6 +73,14 @@ class DbSystem(object):
         :param analytics_cluster:
             The value to assign to the analytics_cluster property of this DbSystem.
         :type analytics_cluster: oci.mysql.models.AnalyticsClusterSummary
+
+        :param is_heat_wave_cluster_attached:
+            The value to assign to the is_heat_wave_cluster_attached property of this DbSystem.
+        :type is_heat_wave_cluster_attached: bool
+
+        :param heat_wave_cluster:
+            The value to assign to the heat_wave_cluster property of this DbSystem.
+        :type heat_wave_cluster: oci.mysql.models.HeatWaveClusterSummary
 
         :param availability_domain:
             The value to assign to the availability_domain property of this DbSystem.
@@ -171,6 +177,8 @@ class DbSystem(object):
             'subnet_id': 'str',
             'is_analytics_cluster_attached': 'bool',
             'analytics_cluster': 'AnalyticsClusterSummary',
+            'is_heat_wave_cluster_attached': 'bool',
+            'heat_wave_cluster': 'HeatWaveClusterSummary',
             'availability_domain': 'str',
             'fault_domain': 'str',
             'shape_name': 'str',
@@ -202,6 +210,8 @@ class DbSystem(object):
             'subnet_id': 'subnetId',
             'is_analytics_cluster_attached': 'isAnalyticsClusterAttached',
             'analytics_cluster': 'analyticsCluster',
+            'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
+            'heat_wave_cluster': 'heatWaveCluster',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'shape_name': 'shapeName',
@@ -232,6 +242,8 @@ class DbSystem(object):
         self._subnet_id = None
         self._is_analytics_cluster_attached = None
         self._analytics_cluster = None
+        self._is_heat_wave_cluster_attached = None
+        self._heat_wave_cluster = None
         self._availability_domain = None
         self._fault_domain = None
         self._shape_name = None
@@ -378,6 +390,7 @@ class DbSystem(object):
     def is_analytics_cluster_attached(self):
         """
         Gets the is_analytics_cluster_attached of this DbSystem.
+        DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
         If the DB System has an Analytics Cluster attached.
 
 
@@ -390,6 +403,7 @@ class DbSystem(object):
     def is_analytics_cluster_attached(self, is_analytics_cluster_attached):
         """
         Sets the is_analytics_cluster_attached of this DbSystem.
+        DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
         If the DB System has an Analytics Cluster attached.
 
 
@@ -417,6 +431,50 @@ class DbSystem(object):
         :type: oci.mysql.models.AnalyticsClusterSummary
         """
         self._analytics_cluster = analytics_cluster
+
+    @property
+    def is_heat_wave_cluster_attached(self):
+        """
+        Gets the is_heat_wave_cluster_attached of this DbSystem.
+        If the DB System has a HeatWave Cluster attached.
+
+
+        :return: The is_heat_wave_cluster_attached of this DbSystem.
+        :rtype: bool
+        """
+        return self._is_heat_wave_cluster_attached
+
+    @is_heat_wave_cluster_attached.setter
+    def is_heat_wave_cluster_attached(self, is_heat_wave_cluster_attached):
+        """
+        Sets the is_heat_wave_cluster_attached of this DbSystem.
+        If the DB System has a HeatWave Cluster attached.
+
+
+        :param is_heat_wave_cluster_attached: The is_heat_wave_cluster_attached of this DbSystem.
+        :type: bool
+        """
+        self._is_heat_wave_cluster_attached = is_heat_wave_cluster_attached
+
+    @property
+    def heat_wave_cluster(self):
+        """
+        Gets the heat_wave_cluster of this DbSystem.
+
+        :return: The heat_wave_cluster of this DbSystem.
+        :rtype: oci.mysql.models.HeatWaveClusterSummary
+        """
+        return self._heat_wave_cluster
+
+    @heat_wave_cluster.setter
+    def heat_wave_cluster(self, heat_wave_cluster):
+        """
+        Sets the heat_wave_cluster of this DbSystem.
+
+        :param heat_wave_cluster: The heat_wave_cluster of this DbSystem.
+        :type: oci.mysql.models.HeatWaveClusterSummary
+        """
+        self._heat_wave_cluster = heat_wave_cluster
 
     @property
     def availability_domain(self):

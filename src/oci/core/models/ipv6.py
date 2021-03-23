@@ -176,7 +176,7 @@ class Ipv6(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Ipv6.
@@ -193,7 +193,7 @@ class Ipv6(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Ipv6.
@@ -236,7 +236,7 @@ class Ipv6(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Ipv6.
@@ -253,7 +253,7 @@ class Ipv6(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Ipv6.
@@ -500,7 +500,7 @@ class Ipv6(object):
     @property
     def vnic_id(self):
         """
-        Gets the vnic_id of this Ipv6.
+        **[Required]** Gets the vnic_id of this Ipv6.
         The `OCID`__ of the VNIC the IPv6 is assigned to.
         The VNIC and IPv6 must be in the same subnet.
 

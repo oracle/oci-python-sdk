@@ -9,7 +9,14 @@ from .announcement import Announcement
 from .announcement_summary import AnnouncementSummary
 from .announcement_user_status_details import AnnouncementUserStatusDetails
 from .announcements_collection import AnnouncementsCollection
+from .announcements_preferences import AnnouncementsPreferences
+from .announcements_preferences_summary import AnnouncementsPreferencesSummary
 from .base_announcement import BaseAnnouncement
+from .base_announcements_preferences import BaseAnnouncementsPreferences
+from .base_create_announcements_preferences_details import BaseCreateAnnouncementsPreferencesDetails
+from .create_announcements_preferences_details import CreateAnnouncementsPreferencesDetails
+from .model_property import ModelProperty
+from .update_announcements_preferences_details import UpdateAnnouncementsPreferencesDetails
 
 # Maps type names to classes for announcements_service services.
 announcements_service_type_mapping = {
@@ -18,5 +25,12 @@ announcements_service_type_mapping = {
     "AnnouncementSummary": AnnouncementSummary,
     "AnnouncementUserStatusDetails": AnnouncementUserStatusDetails,
     "AnnouncementsCollection": AnnouncementsCollection,
-    "BaseAnnouncement": BaseAnnouncement
+    "AnnouncementsPreferences": AnnouncementsPreferences,
+    "AnnouncementsPreferencesSummary": AnnouncementsPreferencesSummary,
+    "BaseAnnouncement": BaseAnnouncement,
+    "BaseAnnouncementsPreferences": BaseAnnouncementsPreferences,
+    "BaseCreateAnnouncementsPreferencesDetails": BaseCreateAnnouncementsPreferencesDetails,
+    "CreateAnnouncementsPreferencesDetails": CreateAnnouncementsPreferencesDetails,
+    "ModelProperty": ModelProperty,
+    "UpdateAnnouncementsPreferencesDetails": UpdateAnnouncementsPreferencesDetails
 }

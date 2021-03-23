@@ -241,7 +241,7 @@ def add_objects_to_queue(ns, source_bucket):
     count = 0
     next_starts_with = None
     while True:
-        response = object_storage_client.list_objects(ns, source_bucket, start=next_starts_with, prefix=source_prefix)
+        response = object_storage_client.list_objects(ns, source_bucket, start=next_starts_with, prefix=source_prefix, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
         next_starts_with = response.data.next_start_with
 
         for object_ in response.data.objects:
@@ -287,7 +287,7 @@ def connect_to_object_storage():
             object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         # retrieve namespace from object storage
-        source_namespace = object_storage_client.get_namespace().data
+        source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
         print("Succeed.")
 
     except Exception as e:
