@@ -122,10 +122,19 @@ __ https://docs.cloud.oracle.com/Content/knownissues.htm
 __ https://github.com/oracle/oci-python-sdk
 
 =======
+Survey
+=======
+
+Are you a Developer using the OCI SDK? If so, please fill out our survey to help us make the OCI SDK better for you.
+Click `here`__ for the survey page.
+
+__ https://oracle.questionpro.com/t/APeMlZka26?custom3=pypi
+
+=======
 License
 =======
 
-Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 See `LICENSE`__ for more details.
