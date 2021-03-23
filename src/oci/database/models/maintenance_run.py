@@ -69,6 +69,10 @@ class MaintenanceRun(object):
     #: This constant has a value of "EXACC_INFRASTRUCTURE"
     TARGET_RESOURCE_TYPE_EXACC_INFRASTRUCTURE = "EXACC_INFRASTRUCTURE"
 
+    #: A constant which can be used with the target_resource_type property of a MaintenanceRun.
+    #: This constant has a value of "AUTONOMOUS_DATABASE"
+    TARGET_RESOURCE_TYPE_AUTONOMOUS_DATABASE = "AUTONOMOUS_DATABASE"
+
     #: A constant which can be used with the maintenance_type property of a MaintenanceRun.
     #: This constant has a value of "PLANNED"
     MAINTENANCE_TYPE_PLANNED = "PLANNED"
@@ -88,6 +92,14 @@ class MaintenanceRun(object):
     #: A constant which can be used with the maintenance_subtype property of a MaintenanceRun.
     #: This constant has a value of "CRITICAL"
     MAINTENANCE_SUBTYPE_CRITICAL = "CRITICAL"
+
+    #: A constant which can be used with the maintenance_subtype property of a MaintenanceRun.
+    #: This constant has a value of "INFRASTRUCTURE"
+    MAINTENANCE_SUBTYPE_INFRASTRUCTURE = "INFRASTRUCTURE"
+
+    #: A constant which can be used with the maintenance_subtype property of a MaintenanceRun.
+    #: This constant has a value of "DATABASE"
+    MAINTENANCE_SUBTYPE_DATABASE = "DATABASE"
 
     #: A constant which can be used with the maintenance_subtype property of a MaintenanceRun.
     #: This constant has a value of "ONEOFF"
@@ -138,7 +150,7 @@ class MaintenanceRun(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this MaintenanceRun.
-            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
@@ -158,7 +170,7 @@ class MaintenanceRun(object):
 
         :param maintenance_subtype:
             The value to assign to the maintenance_subtype property of this MaintenanceRun.
-            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_subtype: str
 
@@ -319,7 +331,7 @@ class MaintenanceRun(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this MaintenanceRun.
-        The current state of the maintenance run.
+        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
 
         Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -334,7 +346,7 @@ class MaintenanceRun(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this MaintenanceRun.
-        The current state of the maintenance run.
+        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
 
 
         :param lifecycle_state: The lifecycle_state of this MaintenanceRun.
@@ -447,7 +459,7 @@ class MaintenanceRun(object):
         Gets the target_resource_type of this MaintenanceRun.
         The type of the target resource on which the maintenance run occurs.
 
-        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -466,7 +478,7 @@ class MaintenanceRun(object):
         :param target_resource_type: The target_resource_type of this MaintenanceRun.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"]
+        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type
@@ -555,7 +567,7 @@ class MaintenanceRun(object):
         Gets the maintenance_subtype of this MaintenanceRun.
         Maintenance sub-type.
 
-        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -574,7 +586,7 @@ class MaintenanceRun(object):
         :param maintenance_subtype: The maintenance_subtype of this MaintenanceRun.
         :type: str
         """
-        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "ONEOFF"]
+        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF"]
         if not value_allowed_none_or_none_sentinel(maintenance_subtype, allowed_values):
             maintenance_subtype = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_subtype = maintenance_subtype

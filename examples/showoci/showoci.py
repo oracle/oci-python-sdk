@@ -67,6 +67,7 @@
 # - oci.cloud_guard.CloudGuardClient
 # - oci.logging.LoggingManagementClient
 # - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
+# - oci.golden_gate.GoldenGateClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
@@ -79,7 +80,6 @@
 # - oci.os_management.OsManagementClient
 # - oci.log_analytics.LogAnalyticsClient
 # - oci.tenant_manager_control_plane.LinkClient
-# - oci.cims.IncidentClient
 
 ##########################################################################
 from __future__ import print_function
@@ -92,7 +92,7 @@ import sys
 import argparse
 import datetime
 
-version = "21.03.02"
+version = "21.03.23"
 
 ##########################################################################
 # check OCI version
@@ -215,7 +215,7 @@ def execute_extract():
         # if print to CSV
         ############################################
         if cmd.csv:
-            csv.generate_csv(extracted_data, cmd.csv)
+            csv.generate_csv(extracted_data, cmd.csv, not cmd.csv_nodate)
 
     ############################################
     # print completion
@@ -310,6 +310,7 @@ def set_parser_arguments():
     parser.add_argument('-tenantid', default="", dest='tenantid', help='Override confile file tenancy_id')
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File (~/.oci/config)")
     parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
+    parser.add_argument('-csv_nodate', action='store_true', default=False, dest='csv_nodate', help='Do not add date field to the csv')
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
     parser.add_argument('-js', action='store_true', default=False, dest='joutscr', help="Output to screen (JSON format)")
     parser.add_argument('-sjf', type=argparse.FileType('w'), dest='sjoutfile', help="Output to screen (nice format) and JSON File")

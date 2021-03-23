@@ -47,7 +47,15 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
     def credential_name(self):
         """
         **[Required]** Gets the credential_name of this DatabaseConnectionCredentailsByName.
-        The name of the credential information that used to connect to the database.
+        The name of the credential information that used to connect to the database. The name should be in \"x.y\" format, where
+        the length of \"x\" has a maximum of 64 characters, and length of \"y\" has a maximum of 199 characters.
+        The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
+        the \".\" character that separates the \"x\" and \"y\" portions of the name.
+        *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
+        that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
+        using the name.
+
+        For example: inventorydb.abc112233445566778899
 
 
         :return: The credential_name of this DatabaseConnectionCredentailsByName.
@@ -59,7 +67,15 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
     def credential_name(self, credential_name):
         """
         Sets the credential_name of this DatabaseConnectionCredentailsByName.
-        The name of the credential information that used to connect to the database.
+        The name of the credential information that used to connect to the database. The name should be in \"x.y\" format, where
+        the length of \"x\" has a maximum of 64 characters, and length of \"y\" has a maximum of 199 characters.
+        The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
+        the \".\" character that separates the \"x\" and \"y\" portions of the name.
+        *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
+        that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
+        using the name.
+
+        For example: inventorydb.abc112233445566778899
 
 
         :param credential_name: The credential_name of this DatabaseConnectionCredentailsByName.

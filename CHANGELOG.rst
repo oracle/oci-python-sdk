@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.34.0 - 2021-03-23
+====================
+
+Added
+-----
+* Support for the Network Load Balancing service
+* Support for maintenance runs on autonomous databases in the Database service
+* Support for announcement preferences in the Announcements service
+* Support for domain claiming in the Organizations service
+* Support for saved reports in the Usage service
+* Support for the HeatWave in-memory analytics accelerator in the MySQL Database service
+* Support for community applications in the Marketplace service
+* Support for capacity reservations in the Compute service
+
+Breaking
+--------
+* Parameter `vnic_id` changed from optional to required in model `CreateIpv6Details` in the core services
+* Parameter `vnic_id` changed from optional to required in model `Ipv6` in the core services
+* Value of Enum attribute `operator` in Usage API service defaults to `UNKNOWN_ENUM_VALUE` when it receives an invalid value. In the earlier versions, this raises a `ValueError`
+
+====================
 2.33.0 - 2020-03-16
 ====================
 

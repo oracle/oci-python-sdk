@@ -1,0 +1,11 @@
+ReservedIP
+==========
+
+.. currentmodule:: oci.network_load_balancer.models
+
+.. autoclass:: ReservedIP
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

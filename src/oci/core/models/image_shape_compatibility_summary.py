@@ -60,7 +60,7 @@ class ImageShapeCompatibilitySummary(object):
         **[Required]** Gets the image_id of this ImageShapeCompatibilitySummary.
         The image `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The image_id of this ImageShapeCompatibilitySummary.
@@ -74,7 +74,7 @@ class ImageShapeCompatibilitySummary(object):
         Sets the image_id of this ImageShapeCompatibilitySummary.
         The image `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param image_id: The image_id of this ImageShapeCompatibilitySummary.

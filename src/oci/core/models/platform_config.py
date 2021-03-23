@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PlatformConfig(object):
     """
-    The platform configuration for the instance. The type of platform configuration is
-    determined by the `type`.
+    The platform configuration for the instance.
     """
 
     #: A constant which can be used with the type property of a PlatformConfig.
@@ -62,7 +61,7 @@ class PlatformConfig(object):
         """
         **[Required]** Gets the type of this PlatformConfig.
         The type of platform being configured. The only supported
-        `type` is `AMD_MILAN_BM`
+        `type` is `AMD_MILAN_BM`.
 
         Allowed values for this property are: "AMD_MILAN_BM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -78,7 +77,7 @@ class PlatformConfig(object):
         """
         Sets the type of this PlatformConfig.
         The type of platform being configured. The only supported
-        `type` is `AMD_MILAN_BM`
+        `type` is `AMD_MILAN_BM`.
 
 
         :param type: The type of this PlatformConfig.

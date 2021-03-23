@@ -114,8 +114,8 @@ class CopyBootVolumeBackupDetails(object):
         `Overview of Key Management`__ and
         `Using Keys`__.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :return: The kms_key_id of this CopyBootVolumeBackupDetails.
@@ -136,8 +136,8 @@ class CopyBootVolumeBackupDetails(object):
         `Overview of Key Management`__ and
         `Using Keys`__.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :param kms_key_id: The kms_key_id of this CopyBootVolumeBackupDetails.

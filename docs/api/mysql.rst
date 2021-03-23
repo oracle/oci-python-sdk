@@ -27,6 +27,7 @@ Mysql
     :template: autosummary/model_class.rst
 
     oci.mysql.models.AddAnalyticsClusterDetails
+    oci.mysql.models.AddHeatWaveClusterDetails
     oci.mysql.models.AnalyticsCluster
     oci.mysql.models.AnalyticsClusterMemoryEstimate
     oci.mysql.models.AnalyticsClusterNode
@@ -68,6 +69,12 @@ Mysql
     oci.mysql.models.DbSystemSourceFromNone
     oci.mysql.models.DbSystemSourceImportFromUrl
     oci.mysql.models.DbSystemSummary
+    oci.mysql.models.HeatWaveCluster
+    oci.mysql.models.HeatWaveClusterMemoryEstimate
+    oci.mysql.models.HeatWaveClusterSchemaMemoryEstimate
+    oci.mysql.models.HeatWaveClusterSummary
+    oci.mysql.models.HeatWaveClusterTableMemoryEstimate
+    oci.mysql.models.HeatWaveNode
     oci.mysql.models.MaintenanceDetails
     oci.mysql.models.PemCaCertificate
     oci.mysql.models.RestartDbSystemDetails
@@ -83,6 +90,7 @@ Mysql
     oci.mysql.models.UpdateChannelTargetFromDbSystemDetails
     oci.mysql.models.UpdateConfigurationDetails
     oci.mysql.models.UpdateDbSystemDetails
+    oci.mysql.models.UpdateHeatWaveClusterDetails
     oci.mysql.models.UpdateMaintenanceDetails
     oci.mysql.models.Version
     oci.mysql.models.VersionSummary

@@ -12,9 +12,9 @@ class InstanceConfigurationLaunchInstancePlatformConfig(object):
     """
     The platform configuration requested for the instance.
 
-    If the parameter is provided, the instance is created with the platform configured as specified. If some
-    properties are missing or the entire parameter is not provided, the instance is created
-    with the default configuration values for the `shape` that you specify.
+    If you provide the parameter, the instance is created with the platform configuration that you specify.
+    For any values that you omit, the instance uses the default configuration values for the `shape` that you
+    specify. If you don't provide the parameter, the default values for the `shape` are used.
 
     Each shape only supports certain configurable values. If the values that you provide are not valid for the
     specified `shape`, an error is returned.
@@ -68,7 +68,7 @@ class InstanceConfigurationLaunchInstancePlatformConfig(object):
         """
         **[Required]** Gets the type of this InstanceConfigurationLaunchInstancePlatformConfig.
         The type of platform being configured. The only supported
-        `type` is `AMD_MILAN_BM`
+        `type` is `AMD_MILAN_BM`.
 
         Allowed values for this property are: "AMD_MILAN_BM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -84,7 +84,7 @@ class InstanceConfigurationLaunchInstancePlatformConfig(object):
         """
         Sets the type of this InstanceConfigurationLaunchInstancePlatformConfig.
         The type of platform being configured. The only supported
-        `type` is `AMD_MILAN_BM`
+        `type` is `AMD_MILAN_BM`.
 
 
         :param type: The type of this InstanceConfigurationLaunchInstancePlatformConfig.

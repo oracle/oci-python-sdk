@@ -134,7 +134,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.25.1"
+    oci_compatible_version = "2.32.1"
 
     ##########################################################################
     # Global Constants
@@ -232,6 +232,8 @@ class ShowOCIService(object):
     C_DATABASE_NOSQL = "nosql"
     C_DATABASE_MYSQL = "mysql"
     C_DATABASE_SOFTWARE_IMAGES = "database_software_images"
+    C_DATABASE_GG_DEPLOYMENTS = "gg_deployments"
+    C_DATABASE_GG_DB_REGISTRATION = "gg_db_registration"
 
     # container
     C_CONTAINER = "container"
@@ -5972,6 +5974,7 @@ class ShowOCIService(object):
     # class oci.core.VirtualNetworkClient(config, **kwargs)
     # class oci.nosql.NosqlClient(config, **kwargs)
     # class oci.mysql.DbSystemClient
+    # class oci.golden_gate.GoldenGateClient
     ##########################################################################
     def __load_database_main(self):
 
@@ -5995,6 +5998,10 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 mysql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                gg_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
@@ -6005,6 +6012,8 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_MYSQL)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_SOFTWARE_IMAGES)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_GG_DB_REGISTRATION)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_GG_DEPLOYMENTS)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -6016,6 +6025,8 @@ class ShowOCIService(object):
             db[self.C_DATABASE_NOSQL] += self.__load_database_nosql(nosql_client, compartments)
             db[self.C_DATABASE_MYSQL] += self.__load_database_mysql(mysql_client, compartments)
             db[self.C_DATABASE_SOFTWARE_IMAGES] += self.__load_database_software_images(database_client, compartments)
+            db[self.C_DATABASE_GG_DEPLOYMENTS] += self.__load_database_gg_deployments(gg_client, compartments)
+            db[self.C_DATABASE_GG_DB_REGISTRATION] += self.__load_database_gg_db_registration(gg_client, compartments)
 
             print("")
 
@@ -6256,7 +6267,9 @@ class ShowOCIService(object):
                     'db_nodes': self.__load_database_dbsystems_dbnodes(database_client, virtual_network, compartment, arr.id, exa=True),
                     'region_name': str(self.config['region']),
                     'scan_ips': [],
-                    'vip_ips': []
+                    'vip_ips': [],
+                    'scan_dns_name': str(arr.scan_dns_name),
+                    'zone_id': str(arr.zone_id)
                 }
 
                 # Skip the patches, there is an issue with the api for the vm cluster
@@ -6426,7 +6439,9 @@ class ShowOCIService(object):
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
                              'patches': self.__load_database_dbsystems_patches(database_client, dbs.id),
                              'db_nodes': self.__load_database_dbsystems_dbnodes(database_client, virtual_network, compartment, dbs.id),
-                             'db_homes': self.__load_database_dbsystems_dbhomes(database_client, virtual_network, compartment, dbs.id)
+                             'db_homes': self.__load_database_dbsystems_dbhomes(database_client, virtual_network, compartment, dbs.id),
+                             'scan_dns_name': "" if dbs.scan_dns_name is None else str(dbs.scan_dns_name),
+                             'zone_id': str(dbs.zone_id),
                              }
 
                     # get shape
@@ -7222,7 +7237,7 @@ class ShowOCIService(object):
                              'display_name': str(array.display_name),
                              'database_version': str(array.database_version),
                              'lifecycle_state': str(array.lifecycle_state),
-                             'lifecycle_details': str(array.lifecycle_details),
+                             'lifecycle_details': str(array.lifecycle_details) if array.lifecycle_details else "",
                              'time_created': str(array.time_created),
                              'image_type': str(array.image_type),
                              'image_shape_family': str(array.image_shape_family),
@@ -7252,6 +7267,180 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_software_images", e)
+            return data
+
+    ##########################################################################
+    # __load_database_gg_deployments
+    ##########################################################################
+    def __load_database_gg_deployments(self, gg_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Golden Gate Deployments")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                gg_deployments = []
+                try:
+                    gg_deployments = oci.pagination.list_call_get_all_results(
+                        gg_client.list_deployments,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        print("e - " + str(e))
+                        return data
+
+                # loop on auto
+                # array = oci.golden_gate.models.DeploymentSummary
+                for array in gg_deployments:
+                    if array.lifecycle_state == 'TERMINATED' or array.lifecycle_state == 'FAILED' or array.lifecycle_state == 'DELETED':
+                        continue
+
+                    value = {'id': str(array.id),
+                             'display_name': str(array.display_name),
+                             'description': str(array.description),
+                             'time_created': str(array.time_created),
+                             'time_updated': str(array.time_updated),
+                             'lifecycle_state': str(array.lifecycle_state),
+                             'lifecycle_details': str(array.lifecycle_details) if array.lifecycle_details else "",
+                             'subnet_id': str(array.subnet_id) if array.subnet_id else "",
+                             'subnet_name': self.get_network_subnet(str(array.subnet_id), True),
+                             'license_model': "BYOL" if array.license_model == "BRING_YOUR_OWN_LICENSE" else "INCL",
+                             'fqdn': str(array.fqdn),
+                             'cpu_core_count': str(array.cpu_core_count),
+                             'is_auto_scaling_enabled': str(array.is_auto_scaling_enabled),
+                             'is_public': str(array.is_public),
+                             'public_ip_address': str(array.public_ip_address),
+                             'private_ip_address': str(array.private_ip_address),
+                             'deployment_url': str(array.deployment_url),
+                             'is_latest_version': str(array.is_latest_version),
+                             'deployment_type': str(array.deployment_type),
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'sum_info': "Golden Gate - " + "BYOL" if array.license_model == "BRING_YOUR_OWN_LICENSE" else "INCL",
+                             'sum_size_gb': str(array.cpu_core_count),
+                             'system_tags': [] if array.system_tags is None else array.system_tags,
+                             'defined_tags': [] if array.defined_tags is None else array.defined_tags,
+                             'freeform_tags': [] if array.freeform_tags is None else array.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_gg_deployments", e)
+            return data
+
+    ##########################################################################
+    # __load_database_gg_db_registration
+    ##########################################################################
+    def __load_database_gg_db_registration(self, gg_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Golden Gate DB Registration")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                db_registrations = []
+                try:
+                    db_registrations = oci.pagination.list_call_get_all_results(
+                        gg_client.list_database_registrations,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        print("e - " + str(e))
+                        return data
+
+                # loop on auto
+                # array = oci.golden_gate.models.DatabaseRegistrationSummary(*
+                for array in db_registrations:
+                    if array.lifecycle_state == 'TERMINATED' or array.lifecycle_state == 'FAILED' or array.lifecycle_state == 'DELETED':
+                        continue
+
+                    value = {'id': str(array.id),
+                             'display_name': str(array.display_name),
+                             'description': str(array.description),
+                             'time_created': str(array.time_created),
+                             'time_updated': str(array.time_updated),
+                             'lifecycle_state': str(array.lifecycle_state),
+                             'lifecycle_details': str(array.lifecycle_details),
+                             'subnet_id': str(array.subnet_id),
+                             'subnet_name': self.get_network_subnet(str(array.subnet_id), True),
+                             'fqdn': str(array.fqdn),
+                             'database_id': str(array.database_id),
+                             'username': str(array.username),
+                             'connection_string': str(array.connection_string),
+                             'alias_name': str(array.alias_name),
+                             'secret_id': str(array.secret_id),
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'system_tags': [] if array.system_tags is None else array.system_tags,
+                             'defined_tags': [] if array.defined_tags is None else array.defined_tags,
+                             'freeform_tags': [] if array.freeform_tags is None else array.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_gg_deployments", e)
             return data
 
     ##########################################################################
@@ -9444,11 +9633,19 @@ class ShowOCIService(object):
                                'capacity_value': str(oac.capacity.capacity_value),
                                'email_notification': str(oac.email_notification),
                                'service_url': str(oac.service_url),
+                               'vanity_url': "",
                                'sum_info': "PaaS OAC Native " + ("BYOL" if 'BRING' in oac.license_type else "INCL"),
                                'sum_size_gb': str(oac.capacity.capacity_value),
+                               'network_endpoint_details': str(oac.network_endpoint_details.network_endpoint_type),
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
+
+                        # Fetch main OAC object for Vanity URL - TBD once customer create Vanity URL
+                        # try:
+                        #    oac_main = oac_client.get_analytics_instance(oac.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                        # except oci.exceptions.ServiceError as e:
+                        #    pass
 
                         # add the data
                         cnt += 1

@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAnalyticsClusterDetails(object):
     """
+    DEPRECATED -- please use HeatWave API instead.
     Details about the Analytics Cluster properties to be updated.
     """
 

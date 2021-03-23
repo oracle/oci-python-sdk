@@ -39,7 +39,7 @@ class ChangeVolumeCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeVolumeCompartmentDetails.
         The `OCID`__ of the compartment to move the volume to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeVolumeCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeVolumeCompartmentDetails(object):
         Sets the compartment_id of this ChangeVolumeCompartmentDetails.
         The `OCID`__ of the compartment to move the volume to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeVolumeCompartmentDetails.

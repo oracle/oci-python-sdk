@@ -22,8 +22,8 @@ class Instance(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the launch_mode property of a Instance.
@@ -86,6 +86,10 @@ class Instance(object):
         :param availability_domain:
             The value to assign to the availability_domain property of this Instance.
         :type availability_domain: str
+
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this Instance.
+        :type capacity_reservation_id: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this Instance.
@@ -194,6 +198,7 @@ class Instance(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'capacity_reservation_id': 'str',
             'compartment_id': 'str',
             'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -223,6 +228,7 @@ class Instance(object):
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'capacity_reservation_id': 'capacityReservationId',
             'compartment_id': 'compartmentId',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
@@ -251,6 +257,7 @@ class Instance(object):
         }
 
         self._availability_domain = None
+        self._capacity_reservation_id = None
         self._compartment_id = None
         self._dedicated_vm_host_id = None
         self._defined_tags = None
@@ -304,6 +311,38 @@ class Instance(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this Instance.
+        The OCID of the compute capacity reservation this instance is launched under.
+        When this field contains an empty string or is null, the instance is not currently in a capacity reservation.
+        For more information, see `Capacity Reservations`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+
+
+        :return: The capacity_reservation_id of this Instance.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this Instance.
+        The OCID of the compute capacity reservation this instance is launched under.
+        When this field contains an empty string or is null, the instance is not currently in a capacity reservation.
+        For more information, see `Capacity Reservations`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this Instance.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def compartment_id(self):
@@ -362,7 +401,7 @@ class Instance(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Instance.
@@ -379,7 +418,7 @@ class Instance(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Instance.
@@ -502,7 +541,7 @@ class Instance(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Instance.
@@ -519,7 +558,7 @@ class Instance(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Instance.
@@ -602,7 +641,7 @@ class Instance(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this Instance.
@@ -637,7 +676,7 @@ class Instance(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this Instance.

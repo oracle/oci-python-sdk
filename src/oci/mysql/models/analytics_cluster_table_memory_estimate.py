@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyticsClusterTableMemoryEstimate(object):
     """
+    DEPRECATED -- please use HeatWave API instead.
     Estimated memory footprint for a MySQL user table
     when loaded to the Analytics Cluster memory.
     """

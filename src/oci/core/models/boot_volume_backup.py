@@ -21,8 +21,8 @@ class BootVolumeBackup(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumebackups.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a BootVolumeBackup.
@@ -267,7 +267,7 @@ class BootVolumeBackup(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this BootVolumeBackup.
@@ -284,7 +284,7 @@ class BootVolumeBackup(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this BootVolumeBackup.
@@ -389,7 +389,7 @@ class BootVolumeBackup(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this BootVolumeBackup.
@@ -406,7 +406,7 @@ class BootVolumeBackup(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this BootVolumeBackup.
@@ -471,8 +471,8 @@ class BootVolumeBackup(object):
         `Overview of Key Management`__ and
         `Using Keys`__.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :return: The kms_key_id of this BootVolumeBackup.
@@ -489,8 +489,8 @@ class BootVolumeBackup(object):
         `Overview of Key Management`__ and
         `Using Keys`__.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :param kms_key_id: The kms_key_id of this BootVolumeBackup.

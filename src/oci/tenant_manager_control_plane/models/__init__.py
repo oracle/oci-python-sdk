@@ -4,7 +4,15 @@
 
 from __future__ import absolute_import
 
+from .create_domain_details import CreateDomainDetails
+from .create_domain_governance_details import CreateDomainGovernanceDetails
 from .create_sender_invitation_details import CreateSenderInvitationDetails
+from .domain import Domain
+from .domain_collection import DomainCollection
+from .domain_governance import DomainGovernance
+from .domain_governance_collection import DomainGovernanceCollection
+from .domain_governance_summary import DomainGovernanceSummary
+from .domain_summary import DomainSummary
 from .link import Link
 from .link_collection import LinkCollection
 from .link_summary import LinkSummary
@@ -14,6 +22,8 @@ from .recipient_invitation_summary import RecipientInvitationSummary
 from .sender_invitation import SenderInvitation
 from .sender_invitation_collection import SenderInvitationCollection
 from .sender_invitation_summary import SenderInvitationSummary
+from .update_domain_details import UpdateDomainDetails
+from .update_domain_governance_details import UpdateDomainGovernanceDetails
 from .update_recipient_invitation_details import UpdateRecipientInvitationDetails
 from .update_sender_invitation_details import UpdateSenderInvitationDetails
 from .work_request import WorkRequest
@@ -27,7 +37,15 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for tenant_manager_control_plane services.
 tenant_manager_control_plane_type_mapping = {
+    "CreateDomainDetails": CreateDomainDetails,
+    "CreateDomainGovernanceDetails": CreateDomainGovernanceDetails,
     "CreateSenderInvitationDetails": CreateSenderInvitationDetails,
+    "Domain": Domain,
+    "DomainCollection": DomainCollection,
+    "DomainGovernance": DomainGovernance,
+    "DomainGovernanceCollection": DomainGovernanceCollection,
+    "DomainGovernanceSummary": DomainGovernanceSummary,
+    "DomainSummary": DomainSummary,
     "Link": Link,
     "LinkCollection": LinkCollection,
     "LinkSummary": LinkSummary,
@@ -37,6 +55,8 @@ tenant_manager_control_plane_type_mapping = {
     "SenderInvitation": SenderInvitation,
     "SenderInvitationCollection": SenderInvitationCollection,
     "SenderInvitationSummary": SenderInvitationSummary,
+    "UpdateDomainDetails": UpdateDomainDetails,
+    "UpdateDomainGovernanceDetails": UpdateDomainGovernanceDetails,
     "UpdateRecipientInvitationDetails": UpdateRecipientInvitationDetails,
     "UpdateSenderInvitationDetails": UpdateSenderInvitationDetails,
     "WorkRequest": WorkRequest,

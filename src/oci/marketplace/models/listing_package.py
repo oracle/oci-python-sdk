@@ -61,6 +61,10 @@ class ListingPackage(object):
             The value to assign to the time_created property of this ListingPackage.
         :type time_created: datetime
 
+        :param operating_system:
+            The value to assign to the operating_system property of this ListingPackage.
+        :type operating_system: oci.marketplace.models.OperatingSystem
+
         """
         self.swagger_types = {
             'description': 'str',
@@ -69,7 +73,8 @@ class ListingPackage(object):
             'package_type': 'str',
             'pricing': 'PricingModel',
             'resource_id': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'operating_system': 'OperatingSystem'
         }
 
         self.attribute_map = {
@@ -79,7 +84,8 @@ class ListingPackage(object):
             'package_type': 'packageType',
             'pricing': 'pricing',
             'resource_id': 'resourceId',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'operating_system': 'operatingSystem'
         }
 
         self._description = None
@@ -89,6 +95,7 @@ class ListingPackage(object):
         self._pricing = None
         self._resource_id = None
         self._time_created = None
+        self._operating_system = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -285,6 +292,26 @@ class ListingPackage(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def operating_system(self):
+        """
+        Gets the operating_system of this ListingPackage.
+
+        :return: The operating_system of this ListingPackage.
+        :rtype: oci.marketplace.models.OperatingSystem
+        """
+        return self._operating_system
+
+    @operating_system.setter
+    def operating_system(self, operating_system):
+        """
+        Sets the operating_system of this ListingPackage.
+
+        :param operating_system: The operating_system of this ListingPackage.
+        :type: oci.marketplace.models.OperatingSystem
+        """
+        self._operating_system = operating_system
 
     def __repr__(self):
         return formatted_flat_dict(self)

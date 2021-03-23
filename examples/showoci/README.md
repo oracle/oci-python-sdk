@@ -50,6 +50,7 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.cloud_guard.CloudGuardClient
 - oci.logging.LoggingManagementClient
 - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
+- oci.golden_gate.GoldenGateClient
 
 
 ** DISCLAIMER – This is not an official Oracle application

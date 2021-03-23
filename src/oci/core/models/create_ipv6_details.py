@@ -77,7 +77,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateIpv6Details.
@@ -94,7 +94,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateIpv6Details.
@@ -137,7 +137,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateIpv6Details.
@@ -154,7 +154,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateIpv6Details.
@@ -237,7 +237,7 @@ class CreateIpv6Details(object):
     @property
     def vnic_id(self):
         """
-        Gets the vnic_id of this CreateIpv6Details.
+        **[Required]** Gets the vnic_id of this CreateIpv6Details.
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 

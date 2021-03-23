@@ -48,6 +48,10 @@ class ImageListingPackage(ListingPackage):
             The value to assign to the time_created property of this ImageListingPackage.
         :type time_created: datetime
 
+        :param operating_system:
+            The value to assign to the operating_system property of this ImageListingPackage.
+        :type operating_system: oci.marketplace.models.OperatingSystem
+
         :param app_catalog_listing_id:
             The value to assign to the app_catalog_listing_id property of this ImageListingPackage.
         :type app_catalog_listing_id: str
@@ -73,6 +77,7 @@ class ImageListingPackage(ListingPackage):
             'pricing': 'PricingModel',
             'resource_id': 'str',
             'time_created': 'datetime',
+            'operating_system': 'OperatingSystem',
             'app_catalog_listing_id': 'str',
             'app_catalog_listing_resource_version': 'str',
             'image_id': 'str',
@@ -87,6 +92,7 @@ class ImageListingPackage(ListingPackage):
             'pricing': 'pricing',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
+            'operating_system': 'operatingSystem',
             'app_catalog_listing_id': 'appCatalogListingId',
             'app_catalog_listing_resource_version': 'appCatalogListingResourceVersion',
             'image_id': 'imageId',
@@ -100,6 +106,7 @@ class ImageListingPackage(ListingPackage):
         self._pricing = None
         self._resource_id = None
         self._time_created = None
+        self._operating_system = None
         self._app_catalog_listing_id = None
         self._app_catalog_listing_resource_version = None
         self._image_id = None

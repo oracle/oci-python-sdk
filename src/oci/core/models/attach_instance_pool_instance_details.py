@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AttachInstancePoolInstanceDetails(object):
     """
-    Contains an instance and availability domain information for attaching an instance to the pool.
+    An instance that is to be attached to an instance pool.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,9 @@ class AttachInstancePoolInstanceDetails(object):
     def instance_id(self):
         """
         **[Required]** Gets the instance_id of this AttachInstancePoolInstanceDetails.
-        the instance ocid to attach.
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this AttachInstancePoolInstanceDetails.
@@ -49,7 +51,9 @@ class AttachInstancePoolInstanceDetails(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this AttachInstancePoolInstanceDetails.
-        the instance ocid to attach.
+        The `OCID`__ of the instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this AttachInstancePoolInstanceDetails.

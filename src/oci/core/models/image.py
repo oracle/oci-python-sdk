@@ -20,8 +20,8 @@ class Image(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the launch_mode property of a Image.
@@ -63,6 +63,14 @@ class Image(object):
     #: A constant which can be used with the lifecycle_state property of a Image.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the listing_type property of a Image.
+    #: This constant has a value of "COMMUNITY"
+    LISTING_TYPE_COMMUNITY = "COMMUNITY"
+
+    #: A constant which can be used with the listing_type property of a Image.
+    #: This constant has a value of "NONE"
+    LISTING_TYPE_NONE = "NONE"
 
     def __init__(self, **kwargs):
         """
@@ -125,6 +133,12 @@ class Image(object):
             The value to assign to the agent_features property of this Image.
         :type agent_features: oci.core.models.InstanceAgentFeatures
 
+        :param listing_type:
+            The value to assign to the listing_type property of this Image.
+            Allowed values for this property are: "COMMUNITY", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type listing_type: str
+
         :param size_in_mbs:
             The value to assign to the size_in_mbs property of this Image.
         :type size_in_mbs: int
@@ -148,6 +162,7 @@ class Image(object):
             'operating_system': 'str',
             'operating_system_version': 'str',
             'agent_features': 'InstanceAgentFeatures',
+            'listing_type': 'str',
             'size_in_mbs': 'int',
             'time_created': 'datetime'
         }
@@ -166,6 +181,7 @@ class Image(object):
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
             'agent_features': 'agentFeatures',
+            'listing_type': 'listingType',
             'size_in_mbs': 'sizeInMBs',
             'time_created': 'timeCreated'
         }
@@ -183,6 +199,7 @@ class Image(object):
         self._operating_system = None
         self._operating_system_version = None
         self._agent_features = None
+        self._listing_type = None
         self._size_in_mbs = None
         self._time_created = None
 
@@ -273,7 +290,7 @@ class Image(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Image.
@@ -290,7 +307,7 @@ class Image(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Image.
@@ -341,7 +358,7 @@ class Image(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Image.
@@ -358,7 +375,7 @@ class Image(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Image.
@@ -551,10 +568,40 @@ class Image(object):
         self._agent_features = agent_features
 
     @property
+    def listing_type(self):
+        """
+        Gets the listing_type of this Image.
+        The listing type of the image. The default value is \"NONE\".
+
+        Allowed values for this property are: "COMMUNITY", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The listing_type of this Image.
+        :rtype: str
+        """
+        return self._listing_type
+
+    @listing_type.setter
+    def listing_type(self, listing_type):
+        """
+        Sets the listing_type of this Image.
+        The listing type of the image. The default value is \"NONE\".
+
+
+        :param listing_type: The listing_type of this Image.
+        :type: str
+        """
+        allowed_values = ["COMMUNITY", "NONE"]
+        if not value_allowed_none_or_none_sentinel(listing_type, allowed_values):
+            listing_type = 'UNKNOWN_ENUM_VALUE'
+        self._listing_type = listing_type
+
+    @property
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this Image.
-        The boot volume size for an instance launched from this image, (1 MB = 1048576 bytes).
+        The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes).
         Note this is not the same as the size of the image when it was exported or the actual size of the image.
 
         Example: `47694`
@@ -569,7 +616,7 @@ class Image(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this Image.
-        The boot volume size for an instance launched from this image, (1 MB = 1048576 bytes).
+        The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes).
         Note this is not the same as the size of the image when it was exported or the actual size of the image.
 
         Example: `47694`
