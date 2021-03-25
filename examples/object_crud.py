@@ -78,7 +78,7 @@ create_par_details.time_expires = par_ttl.isoformat()
 par = object_storage.create_preauthenticated_request(namespace_name=namespace, bucket_name=bucket_name,
                                                      create_preauthenticated_request_details=create_par_details)
 
-# Get Object using thr Pre-Authenticated Request
+# Get Object using the Pre-Authenticated Request
 par_request_url = object_storage.base_client.get_endpoint() + par.data.access_uri
 
 http = urllib3.PoolManager()
