@@ -133,7 +133,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def id(self):
         """
         Gets the id of this LogAnalyticsConfigWorkRequest.
-        workrequest id
+        The workrequest unique identifier.
 
 
         :return: The id of this LogAnalyticsConfigWorkRequest.
@@ -145,7 +145,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def id(self, id):
         """
         Sets the id of this LogAnalyticsConfigWorkRequest.
-        workrequest id
+        The workrequest unique identifier.
 
 
         :param id: The id of this LogAnalyticsConfigWorkRequest.
@@ -157,7 +157,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this LogAnalyticsConfigWorkRequest.
-        compartment id
+        The compartment unique identifier.
 
 
         :return: The compartment_id of this LogAnalyticsConfigWorkRequest.
@@ -169,7 +169,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this LogAnalyticsConfigWorkRequest.
-        compartment id
+        The compartment unique identifier.
 
 
         :param compartment_id: The compartment_id of this LogAnalyticsConfigWorkRequest.
@@ -181,7 +181,9 @@ class LogAnalyticsConfigWorkRequest(object):
     def operation_type(self):
         """
         Gets the operation_type of this LogAnalyticsConfigWorkRequest.
-        operation type
+        The operation type.  There are two classes of operations, association operations and
+        lookup operations.  Associations may be created or deleted, and lookup operations include
+        append, update and delete.
 
         Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -196,7 +198,9 @@ class LogAnalyticsConfigWorkRequest(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this LogAnalyticsConfigWorkRequest.
-        operation type
+        The operation type.  There are two classes of operations, association operations and
+        lookup operations.  Associations may be created or deleted, and lookup operations include
+        append, update and delete.
 
 
         :param operation_type: The operation_type of this LogAnalyticsConfigWorkRequest.
@@ -211,7 +215,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def payload(self):
         """
         Gets the payload of this LogAnalyticsConfigWorkRequest.
-        list of log group summary objects
+        The list of config work request responses.
 
 
         :return: The payload of this LogAnalyticsConfigWorkRequest.
@@ -223,7 +227,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def payload(self, payload):
         """
         Sets the payload of this LogAnalyticsConfigWorkRequest.
-        list of log group summary objects
+        The list of config work request responses.
 
 
         :param payload: The payload of this LogAnalyticsConfigWorkRequest.
@@ -235,7 +239,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def percent_complete(self):
         """
         Gets the percent_complete of this LogAnalyticsConfigWorkRequest.
-        percentage complete
+        The completion percentage.
 
 
         :return: The percent_complete of this LogAnalyticsConfigWorkRequest.
@@ -247,7 +251,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this LogAnalyticsConfigWorkRequest.
-        percentage complete
+        The completion percentage.
 
 
         :param percent_complete: The percent_complete of this LogAnalyticsConfigWorkRequest.
@@ -259,7 +263,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this LogAnalyticsConfigWorkRequest.
-        when the work request was started
+        The time at which the work request was started.
 
 
         :return: The time_started of this LogAnalyticsConfigWorkRequest.
@@ -271,7 +275,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this LogAnalyticsConfigWorkRequest.
-        when the work request was started
+        The time at which the work request was started.
 
 
         :param time_started: The time_started of this LogAnalyticsConfigWorkRequest.
@@ -283,7 +287,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def time_accepted(self):
         """
         Gets the time_accepted of this LogAnalyticsConfigWorkRequest.
-        when the work request was accepted
+        The time at which the work request was accepted.
 
 
         :return: The time_accepted of this LogAnalyticsConfigWorkRequest.
@@ -295,7 +299,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this LogAnalyticsConfigWorkRequest.
-        when the work request was accepted
+        The time at which the work request was accepted.
 
 
         :param time_accepted: The time_accepted of this LogAnalyticsConfigWorkRequest.
@@ -307,7 +311,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this LogAnalyticsConfigWorkRequest.
-        when the work request finished
+        The time at which the work request was finished.
 
 
         :return: The time_finished of this LogAnalyticsConfigWorkRequest.
@@ -319,7 +323,7 @@ class LogAnalyticsConfigWorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this LogAnalyticsConfigWorkRequest.
-        when the work request finished
+        The time at which the work request was finished.
 
 
         :param time_finished: The time_finished of this LogAnalyticsConfigWorkRequest.
@@ -331,7 +335,8 @@ class LogAnalyticsConfigWorkRequest(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this LogAnalyticsConfigWorkRequest.
-        status
+        The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+        or FAILED
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -346,7 +351,8 @@ class LogAnalyticsConfigWorkRequest(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this LogAnalyticsConfigWorkRequest.
-        status
+        The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+        or FAILED
 
 
         :param lifecycle_state: The lifecycle_state of this LogAnalyticsConfigWorkRequest.

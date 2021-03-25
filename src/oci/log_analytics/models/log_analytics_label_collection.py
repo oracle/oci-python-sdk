@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogAnalyticsLabelCollection(object):
     """
-    LogAnalytics Label Collection
+    A collection of LogAnalytics Labels.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class LogAnalyticsLabelCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsLabelCollection.
-        Array of log analytics label summary.
+        An array of log analytics label summaries.
 
 
         :return: The items of this LogAnalyticsLabelCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsLabelCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsLabelCollection.
-        Array of log analytics label summary.
+        An array of log analytics label summaries.
 
 
         :param items: The items of this LogAnalyticsLabelCollection.

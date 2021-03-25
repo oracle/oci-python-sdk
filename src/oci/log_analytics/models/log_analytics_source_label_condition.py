@@ -156,7 +156,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def message(self):
         """
         Gets the message of this LogAnalyticsSourceLabelCondition.
-        message
+        The message.
 
 
         :return: The message of this LogAnalyticsSourceLabelCondition.
@@ -168,7 +168,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def message(self, message):
         """
         Sets the message of this LogAnalyticsSourceLabelCondition.
-        message
+        The message.
 
 
         :param message: The message of this LogAnalyticsSourceLabelCondition.
@@ -180,7 +180,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_visible(self):
         """
         Gets the is_visible of this LogAnalyticsSourceLabelCondition.
-        visible flag
+        A flag indicating whether or not the label condition is visible.
 
 
         :return: The is_visible of this LogAnalyticsSourceLabelCondition.
@@ -192,7 +192,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_visible(self, is_visible):
         """
         Sets the is_visible of this LogAnalyticsSourceLabelCondition.
-        visible flag
+        A flag indicating whether or not the label condition is visible.
 
 
         :param is_visible: The is_visible of this LogAnalyticsSourceLabelCondition.
@@ -204,7 +204,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def block_condition_field(self):
         """
         Gets the block_condition_field of this LogAnalyticsSourceLabelCondition.
-        block condition field
+        The block condition field.
 
 
         :return: The block_condition_field of this LogAnalyticsSourceLabelCondition.
@@ -216,7 +216,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def block_condition_field(self, block_condition_field):
         """
         Sets the block_condition_field of this LogAnalyticsSourceLabelCondition.
-        block condition field
+        The block condition field.
 
 
         :param block_condition_field: The block_condition_field of this LogAnalyticsSourceLabelCondition.
@@ -228,7 +228,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def block_condition_operator(self):
         """
         Gets the block_condition_operator of this LogAnalyticsSourceLabelCondition.
-        block condition operator
+        The block condition operator.
 
 
         :return: The block_condition_operator of this LogAnalyticsSourceLabelCondition.
@@ -240,7 +240,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def block_condition_operator(self, block_condition_operator):
         """
         Sets the block_condition_operator of this LogAnalyticsSourceLabelCondition.
-        block condition operator
+        The block condition operator.
 
 
         :param block_condition_operator: The block_condition_operator of this LogAnalyticsSourceLabelCondition.
@@ -252,7 +252,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def block_condition_value(self):
         """
         Gets the block_condition_value of this LogAnalyticsSourceLabelCondition.
-        block condition value
+        The block condition value.
 
 
         :return: The block_condition_value of this LogAnalyticsSourceLabelCondition.
@@ -264,7 +264,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def block_condition_value(self, block_condition_value):
         """
         Sets the block_condition_value of this LogAnalyticsSourceLabelCondition.
-        block condition value
+        The block condition value.
 
 
         :param block_condition_value: The block_condition_value of this LogAnalyticsSourceLabelCondition.
@@ -276,7 +276,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_value(self):
         """
         Gets the label_condition_value of this LogAnalyticsSourceLabelCondition.
-        condition value
+        The condition value.
 
 
         :return: The label_condition_value of this LogAnalyticsSourceLabelCondition.
@@ -288,7 +288,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_value(self, label_condition_value):
         """
         Sets the label_condition_value of this LogAnalyticsSourceLabelCondition.
-        condition value
+        The condition value.
 
 
         :param label_condition_value: The label_condition_value of this LogAnalyticsSourceLabelCondition.
@@ -300,7 +300,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_values(self):
         """
         Gets the label_condition_values of this LogAnalyticsSourceLabelCondition.
-        list of condition values
+        A list of condition values.
 
 
         :return: The label_condition_values of this LogAnalyticsSourceLabelCondition.
@@ -312,7 +312,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_values(self, label_condition_values):
         """
         Sets the label_condition_values of this LogAnalyticsSourceLabelCondition.
-        list of condition values
+        A list of condition values.
 
 
         :param label_condition_values: The label_condition_values of this LogAnalyticsSourceLabelCondition.
@@ -324,7 +324,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def content_example(self):
         """
         Gets the content_example of this LogAnalyticsSourceLabelCondition.
-        content example
+        The content example.
 
 
         :return: The content_example of this LogAnalyticsSourceLabelCondition.
@@ -336,7 +336,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def content_example(self, content_example):
         """
         Sets the content_example of this LogAnalyticsSourceLabelCondition.
-        content example
+        The content example.
 
 
         :param content_example: The content_example of this LogAnalyticsSourceLabelCondition.
@@ -348,7 +348,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsSourceLabelCondition.
-        enabled
+        A flag inidcating whether or not the condition is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsSourceLabelCondition.
@@ -360,7 +360,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsSourceLabelCondition.
-        enabled
+        A flag inidcating whether or not the condition is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsSourceLabelCondition.
@@ -372,7 +372,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def field_name(self):
         """
         Gets the field_name of this LogAnalyticsSourceLabelCondition.
-        field internal name
+        The internal field name.
 
 
         :return: The field_name of this LogAnalyticsSourceLabelCondition.
@@ -384,7 +384,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this LogAnalyticsSourceLabelCondition.
-        field internal name
+        The internal field name.
 
 
         :param field_name: The field_name of this LogAnalyticsSourceLabelCondition.
@@ -396,7 +396,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_id(self):
         """
         Gets the label_condition_id of this LogAnalyticsSourceLabelCondition.
-        Id
+        The unique identifier of the condition.
 
 
         :return: The label_condition_id of this LogAnalyticsSourceLabelCondition.
@@ -408,7 +408,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_id(self, label_condition_id):
         """
         Sets the label_condition_id of this LogAnalyticsSourceLabelCondition.
-        Id
+        The unique identifier of the condition.
 
 
         :param label_condition_id: The label_condition_id of this LogAnalyticsSourceLabelCondition.
@@ -420,7 +420,8 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSourceLabelCondition.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSourceLabelCondition.
@@ -432,7 +433,8 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSourceLabelCondition.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSourceLabelCondition.
@@ -444,7 +446,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_operator(self):
         """
         Gets the label_condition_operator of this LogAnalyticsSourceLabelCondition.
-        operator
+        The condition operator.
 
 
         :return: The label_condition_operator of this LogAnalyticsSourceLabelCondition.
@@ -456,7 +458,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_condition_operator(self, label_condition_operator):
         """
         Sets the label_condition_operator of this LogAnalyticsSourceLabelCondition.
-        operator
+        The condition operator.
 
 
         :param label_condition_operator: The label_condition_operator of this LogAnalyticsSourceLabelCondition.
@@ -468,7 +470,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSourceLabelCondition.
-        source Id
+        The unique identifier of the source.
 
 
         :return: The source_id of this LogAnalyticsSourceLabelCondition.
@@ -480,7 +482,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSourceLabelCondition.
-        source Id
+        The unique identifier of the source.
 
 
         :param source_id: The source_id of this LogAnalyticsSourceLabelCondition.
@@ -492,7 +494,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_display_name(self):
         """
         Gets the label_display_name of this LogAnalyticsSourceLabelCondition.
-        label display name
+        The label display name.
 
 
         :return: The label_display_name of this LogAnalyticsSourceLabelCondition.
@@ -504,7 +506,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_display_name(self, label_display_name):
         """
         Sets the label_display_name of this LogAnalyticsSourceLabelCondition.
-        label display name
+        The label display name.
 
 
         :param label_display_name: The label_display_name of this LogAnalyticsSourceLabelCondition.
@@ -516,7 +518,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def storage_field(self):
         """
         Gets the storage_field of this LogAnalyticsSourceLabelCondition.
-        label storage field
+        The label storage field.
 
 
         :return: The storage_field of this LogAnalyticsSourceLabelCondition.
@@ -528,7 +530,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def storage_field(self, storage_field):
         """
         Sets the storage_field of this LogAnalyticsSourceLabelCondition.
-        label storage field
+        The label storage field.
 
 
         :param storage_field: The storage_field of this LogAnalyticsSourceLabelCondition.
@@ -540,7 +542,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_name(self):
         """
         Gets the label_name of this LogAnalyticsSourceLabelCondition.
-        label name
+        The label name.
 
 
         :return: The label_name of this LogAnalyticsSourceLabelCondition.
@@ -552,7 +554,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def label_name(self, label_name):
         """
         Sets the label_name of this LogAnalyticsSourceLabelCondition.
-        label name
+        The label name.
 
 
         :param label_name: The label_name of this LogAnalyticsSourceLabelCondition.
@@ -564,7 +566,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_inline_label_existing_in_database(self):
         """
         Gets the is_inline_label_existing_in_database of this LogAnalyticsSourceLabelCondition.
-        inline label exists in DB flag
+        A flag indicating whether or not the inline label exists in the database.
 
 
         :return: The is_inline_label_existing_in_database of this LogAnalyticsSourceLabelCondition.
@@ -576,7 +578,7 @@ class LogAnalyticsSourceLabelCondition(object):
     def is_inline_label_existing_in_database(self, is_inline_label_existing_in_database):
         """
         Sets the is_inline_label_existing_in_database of this LogAnalyticsSourceLabelCondition.
-        inline label exists in DB flag
+        A flag indicating whether or not the inline label exists in the database.
 
 
         :param is_inline_label_existing_in_database: The is_inline_label_existing_in_database of this LogAnalyticsSourceLabelCondition.

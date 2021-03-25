@@ -58,7 +58,7 @@ class UsageStatusItem(object):
     def data_type(self):
         """
         Gets the data_type of this UsageStatusItem.
-        data type
+        The field data type.
 
 
         :return: The data_type of this UsageStatusItem.
@@ -70,7 +70,7 @@ class UsageStatusItem(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this UsageStatusItem.
-        data type
+        The field data type.
 
 
         :param data_type: The data_type of this UsageStatusItem.
@@ -82,7 +82,7 @@ class UsageStatusItem(object):
     def is_multi_valued(self):
         """
         Gets the is_multi_valued of this UsageStatusItem.
-        is the field multi valued
+        A flag indicating whether or not the field is multi-valued.
 
 
         :return: The is_multi_valued of this UsageStatusItem.
@@ -94,7 +94,7 @@ class UsageStatusItem(object):
     def is_multi_valued(self, is_multi_valued):
         """
         Sets the is_multi_valued of this UsageStatusItem.
-        is the field multi valued
+        A flag indicating whether or not the field is multi-valued.
 
 
         :param is_multi_valued: The is_multi_valued of this UsageStatusItem.
@@ -106,7 +106,7 @@ class UsageStatusItem(object):
     def current_usage(self):
         """
         Gets the current_usage of this UsageStatusItem.
-        current usage
+        The current usage of the field.
 
 
         :return: The current_usage of this UsageStatusItem.
@@ -118,7 +118,7 @@ class UsageStatusItem(object):
     def current_usage(self, current_usage):
         """
         Sets the current_usage of this UsageStatusItem.
-        current usage
+        The current usage of the field.
 
 
         :param current_usage: The current_usage of this UsageStatusItem.
@@ -130,7 +130,7 @@ class UsageStatusItem(object):
     def max_available(self):
         """
         Gets the max_available of this UsageStatusItem.
-        maximum available
+        The maximum availability of the field.
 
 
         :return: The max_available of this UsageStatusItem.
@@ -142,7 +142,7 @@ class UsageStatusItem(object):
     def max_available(self, max_available):
         """
         Sets the max_available of this UsageStatusItem.
-        maximum available
+        The maximum availability of the field.
 
 
         :param max_available: The max_available of this UsageStatusItem.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogAnalyticsLogGroupSummary(object):
     """
-    Summary of an Log-Analytics log group.
+    Summary of a Log-Analytics log group.
     """
 
     def __init__(self, **kwargs):

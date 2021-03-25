@@ -13,6 +13,14 @@ class LogAnalyticsSourceFunction(object):
     LogAnalyticsSourceFunction
     """
 
+    #: A constant which can be used with the function_name property of a LogAnalyticsSourceFunction.
+    #: This constant has a value of "GEOLOCATION"
+    FUNCTION_NAME_GEOLOCATION = "GEOLOCATION"
+
+    #: A constant which can be used with the function_name property of a LogAnalyticsSourceFunction.
+    #: This constant has a value of "LOOKUP"
+    FUNCTION_NAME_LOOKUP = "LOOKUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsSourceFunction object with values from keyword arguments.
@@ -29,6 +37,20 @@ class LogAnalyticsSourceFunction(object):
         :param function:
             The value to assign to the function property of this LogAnalyticsSourceFunction.
         :type function: oci.log_analytics.models.LogAnalyticsMetaFunction
+
+        :param function_name:
+            The value to assign to the function_name property of this LogAnalyticsSourceFunction.
+            Allowed values for this property are: "GEOLOCATION", "LOOKUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type function_name: str
+
+        :param function_reference:
+            The value to assign to the function_reference property of this LogAnalyticsSourceFunction.
+        :type function_reference: str
+
+        :param source_reference:
+            The value to assign to the source_reference property of this LogAnalyticsSourceFunction.
+        :type source_reference: str
 
         :param function_id:
             The value to assign to the function_id property of this LogAnalyticsSourceFunction.
@@ -71,6 +93,9 @@ class LogAnalyticsSourceFunction(object):
             'arguments': 'list[LogAnalyticsMetaFunctionArgument]',
             'is_enabled': 'bool',
             'function': 'LogAnalyticsMetaFunction',
+            'function_name': 'str',
+            'function_reference': 'str',
+            'source_reference': 'str',
             'function_id': 'int',
             'order': 'int',
             'is_system': 'bool',
@@ -86,6 +111,9 @@ class LogAnalyticsSourceFunction(object):
             'arguments': 'arguments',
             'is_enabled': 'isEnabled',
             'function': 'function',
+            'function_name': 'functionName',
+            'function_reference': 'functionReference',
+            'source_reference': 'sourceReference',
             'function_id': 'functionId',
             'order': 'order',
             'is_system': 'isSystem',
@@ -100,6 +128,9 @@ class LogAnalyticsSourceFunction(object):
         self._arguments = None
         self._is_enabled = None
         self._function = None
+        self._function_name = None
+        self._function_reference = None
+        self._source_reference = None
         self._function_id = None
         self._order = None
         self._is_system = None
@@ -114,7 +145,7 @@ class LogAnalyticsSourceFunction(object):
     def arguments(self):
         """
         Gets the arguments of this LogAnalyticsSourceFunction.
-        argument
+        The function argument.
 
 
         :return: The arguments of this LogAnalyticsSourceFunction.
@@ -126,7 +157,7 @@ class LogAnalyticsSourceFunction(object):
     def arguments(self, arguments):
         """
         Sets the arguments of this LogAnalyticsSourceFunction.
-        argument
+        The function argument.
 
 
         :param arguments: The arguments of this LogAnalyticsSourceFunction.
@@ -138,7 +169,7 @@ class LogAnalyticsSourceFunction(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsSourceFunction.
-        enabled flag
+        A flag inidcating whether or not the source function is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsSourceFunction.
@@ -150,7 +181,7 @@ class LogAnalyticsSourceFunction(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsSourceFunction.
-        enabled flag
+        A flag inidcating whether or not the source function is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsSourceFunction.
@@ -179,10 +210,88 @@ class LogAnalyticsSourceFunction(object):
         self._function = function
 
     @property
+    def function_name(self):
+        """
+        Gets the function_name of this LogAnalyticsSourceFunction.
+        The source function name
+
+        Allowed values for this property are: "GEOLOCATION", "LOOKUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The function_name of this LogAnalyticsSourceFunction.
+        :rtype: str
+        """
+        return self._function_name
+
+    @function_name.setter
+    def function_name(self, function_name):
+        """
+        Sets the function_name of this LogAnalyticsSourceFunction.
+        The source function name
+
+
+        :param function_name: The function_name of this LogAnalyticsSourceFunction.
+        :type: str
+        """
+        allowed_values = ["GEOLOCATION", "LOOKUP"]
+        if not value_allowed_none_or_none_sentinel(function_name, allowed_values):
+            function_name = 'UNKNOWN_ENUM_VALUE'
+        self._function_name = function_name
+
+    @property
+    def function_reference(self):
+        """
+        Gets the function_reference of this LogAnalyticsSourceFunction.
+        The source function unique identifier as a string.
+
+
+        :return: The function_reference of this LogAnalyticsSourceFunction.
+        :rtype: str
+        """
+        return self._function_reference
+
+    @function_reference.setter
+    def function_reference(self, function_reference):
+        """
+        Sets the function_reference of this LogAnalyticsSourceFunction.
+        The source function unique identifier as a string.
+
+
+        :param function_reference: The function_reference of this LogAnalyticsSourceFunction.
+        :type: str
+        """
+        self._function_reference = function_reference
+
+    @property
+    def source_reference(self):
+        """
+        Gets the source_reference of this LogAnalyticsSourceFunction.
+        The source unique identifier as a string.
+
+
+        :return: The source_reference of this LogAnalyticsSourceFunction.
+        :rtype: str
+        """
+        return self._source_reference
+
+    @source_reference.setter
+    def source_reference(self, source_reference):
+        """
+        Sets the source_reference of this LogAnalyticsSourceFunction.
+        The source unique identifier as a string.
+
+
+        :param source_reference: The source_reference of this LogAnalyticsSourceFunction.
+        :type: str
+        """
+        self._source_reference = source_reference
+
+    @property
     def function_id(self):
         """
         Gets the function_id of this LogAnalyticsSourceFunction.
-        source function Id
+        The source function unique identifier.
 
 
         :return: The function_id of this LogAnalyticsSourceFunction.
@@ -194,7 +303,7 @@ class LogAnalyticsSourceFunction(object):
     def function_id(self, function_id):
         """
         Sets the function_id of this LogAnalyticsSourceFunction.
-        source function Id
+        The source function unique identifier.
 
 
         :param function_id: The function_id of this LogAnalyticsSourceFunction.
@@ -206,7 +315,7 @@ class LogAnalyticsSourceFunction(object):
     def order(self):
         """
         Gets the order of this LogAnalyticsSourceFunction.
-        source function order
+        The source function order.
 
 
         :return: The order of this LogAnalyticsSourceFunction.
@@ -218,7 +327,7 @@ class LogAnalyticsSourceFunction(object):
     def order(self, order):
         """
         Sets the order of this LogAnalyticsSourceFunction.
-        source function order
+        The source function order.
 
 
         :param order: The order of this LogAnalyticsSourceFunction.
@@ -230,7 +339,8 @@ class LogAnalyticsSourceFunction(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSourceFunction.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSourceFunction.
@@ -242,7 +352,8 @@ class LogAnalyticsSourceFunction(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSourceFunction.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSourceFunction.
@@ -254,7 +365,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_column(self):
         """
         Gets the lookup_column of this LogAnalyticsSourceFunction.
-        column
+        The lookup column.
 
 
         :return: The lookup_column of this LogAnalyticsSourceFunction.
@@ -266,7 +377,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_column(self, lookup_column):
         """
         Sets the lookup_column of this LogAnalyticsSourceFunction.
-        column
+        The lookup column.
 
 
         :param lookup_column: The lookup_column of this LogAnalyticsSourceFunction.
@@ -278,7 +389,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_column_position(self):
         """
         Gets the lookup_column_position of this LogAnalyticsSourceFunction.
-        column position
+        The lookup column position.
 
 
         :return: The lookup_column_position of this LogAnalyticsSourceFunction.
@@ -290,7 +401,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_column_position(self, lookup_column_position):
         """
         Sets the lookup_column_position of this LogAnalyticsSourceFunction.
-        column position
+        The lookup column position.
 
 
         :param lookup_column_position: The lookup_column_position of this LogAnalyticsSourceFunction.
@@ -302,7 +413,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_display_name(self):
         """
         Gets the lookup_display_name of this LogAnalyticsSourceFunction.
-        lookup display name
+        The lookup display name.
 
 
         :return: The lookup_display_name of this LogAnalyticsSourceFunction.
@@ -314,7 +425,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_display_name(self, lookup_display_name):
         """
         Sets the lookup_display_name of this LogAnalyticsSourceFunction.
-        lookup display name
+        The lookup display name.
 
 
         :param lookup_display_name: The lookup_display_name of this LogAnalyticsSourceFunction.
@@ -326,7 +437,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_mode(self):
         """
         Gets the lookup_mode of this LogAnalyticsSourceFunction.
-        lookup mode
+        The lookup  mode.
 
 
         :return: The lookup_mode of this LogAnalyticsSourceFunction.
@@ -338,7 +449,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_mode(self, lookup_mode):
         """
         Sets the lookup_mode of this LogAnalyticsSourceFunction.
-        lookup mode
+        The lookup  mode.
 
 
         :param lookup_mode: The lookup_mode of this LogAnalyticsSourceFunction.
@@ -350,7 +461,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_table(self):
         """
         Gets the lookup_table of this LogAnalyticsSourceFunction.
-        lookup table
+        The lookup table.
 
 
         :return: The lookup_table of this LogAnalyticsSourceFunction.
@@ -362,7 +473,7 @@ class LogAnalyticsSourceFunction(object):
     def lookup_table(self, lookup_table):
         """
         Sets the lookup_table of this LogAnalyticsSourceFunction.
-        lookup table
+        The lookup table.
 
 
         :param lookup_table: The lookup_table of this LogAnalyticsSourceFunction.
@@ -374,7 +485,7 @@ class LogAnalyticsSourceFunction(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSourceFunction.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsSourceFunction.
@@ -386,7 +497,7 @@ class LogAnalyticsSourceFunction(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSourceFunction.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsSourceFunction.

@@ -167,7 +167,7 @@ class LogAnalyticsAssociation(object):
     def failure_message(self):
         """
         Gets the failure_message of this LogAnalyticsAssociation.
-        failure message
+        The failure message.
 
 
         :return: The failure_message of this LogAnalyticsAssociation.
@@ -179,7 +179,7 @@ class LogAnalyticsAssociation(object):
     def failure_message(self, failure_message):
         """
         Sets the failure_message of this LogAnalyticsAssociation.
-        failure message
+        The failure message.
 
 
         :param failure_message: The failure_message of this LogAnalyticsAssociation.
@@ -191,7 +191,7 @@ class LogAnalyticsAssociation(object):
     def agent_id(self):
         """
         Gets the agent_id of this LogAnalyticsAssociation.
-        Lama Idf
+        The agent unique identifier.
 
 
         :return: The agent_id of this LogAnalyticsAssociation.
@@ -203,7 +203,7 @@ class LogAnalyticsAssociation(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this LogAnalyticsAssociation.
-        Lama Idf
+        The agent unique identifier.
 
 
         :param agent_id: The agent_id of this LogAnalyticsAssociation.
@@ -215,7 +215,7 @@ class LogAnalyticsAssociation(object):
     def time_last_attempted(self):
         """
         Gets the time_last_attempted of this LogAnalyticsAssociation.
-        last attempt date
+        The last attempt date.
 
 
         :return: The time_last_attempted of this LogAnalyticsAssociation.
@@ -227,7 +227,7 @@ class LogAnalyticsAssociation(object):
     def time_last_attempted(self, time_last_attempted):
         """
         Sets the time_last_attempted of this LogAnalyticsAssociation.
-        last attempt date
+        The last attempt date.
 
 
         :param time_last_attempted: The time_last_attempted of this LogAnalyticsAssociation.
@@ -239,7 +239,8 @@ class LogAnalyticsAssociation(object):
     def retry_count(self):
         """
         Gets the retry_count of this LogAnalyticsAssociation.
-        retry count
+        The number of times the association will be attempted
+        before failing.
 
 
         :return: The retry_count of this LogAnalyticsAssociation.
@@ -251,7 +252,8 @@ class LogAnalyticsAssociation(object):
     def retry_count(self, retry_count):
         """
         Sets the retry_count of this LogAnalyticsAssociation.
-        retry count
+        The number of times the association will be attempted
+        before failing.
 
 
         :param retry_count: The retry_count of this LogAnalyticsAssociation.
@@ -263,7 +265,7 @@ class LogAnalyticsAssociation(object):
     def source_name(self):
         """
         Gets the source_name of this LogAnalyticsAssociation.
-        source name
+        The source name.
 
 
         :return: The source_name of this LogAnalyticsAssociation.
@@ -275,7 +277,7 @@ class LogAnalyticsAssociation(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this LogAnalyticsAssociation.
-        source name
+        The source name.
 
 
         :param source_name: The source_name of this LogAnalyticsAssociation.
@@ -287,7 +289,7 @@ class LogAnalyticsAssociation(object):
     def source_display_name(self):
         """
         Gets the source_display_name of this LogAnalyticsAssociation.
-        source display name
+        The source display name.
 
 
         :return: The source_display_name of this LogAnalyticsAssociation.
@@ -299,7 +301,7 @@ class LogAnalyticsAssociation(object):
     def source_display_name(self, source_display_name):
         """
         Sets the source_display_name of this LogAnalyticsAssociation.
-        source display name
+        The source display name.
 
 
         :param source_display_name: The source_display_name of this LogAnalyticsAssociation.
@@ -311,7 +313,7 @@ class LogAnalyticsAssociation(object):
     def source_type_name(self):
         """
         Gets the source_type_name of this LogAnalyticsAssociation.
-        source type internal name
+        The source type internal name.
 
 
         :return: The source_type_name of this LogAnalyticsAssociation.
@@ -323,7 +325,7 @@ class LogAnalyticsAssociation(object):
     def source_type_name(self, source_type_name):
         """
         Sets the source_type_name of this LogAnalyticsAssociation.
-        source type internal name
+        The source type internal name.
 
 
         :param source_type_name: The source_type_name of this LogAnalyticsAssociation.
@@ -335,7 +337,8 @@ class LogAnalyticsAssociation(object):
     def life_cycle_state(self):
         """
         Gets the life_cycle_state of this LogAnalyticsAssociation.
-        lifeCycleState
+        The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+        or FAILED.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -350,7 +353,8 @@ class LogAnalyticsAssociation(object):
     def life_cycle_state(self, life_cycle_state):
         """
         Sets the life_cycle_state of this LogAnalyticsAssociation.
-        lifeCycleState
+        The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
+        or FAILED.
 
 
         :param life_cycle_state: The life_cycle_state of this LogAnalyticsAssociation.
@@ -365,7 +369,7 @@ class LogAnalyticsAssociation(object):
     def entity_id(self):
         """
         Gets the entity_id of this LogAnalyticsAssociation.
-        entity GUID
+        The entity unique identifier.
 
 
         :return: The entity_id of this LogAnalyticsAssociation.
@@ -377,7 +381,7 @@ class LogAnalyticsAssociation(object):
     def entity_id(self, entity_id):
         """
         Sets the entity_id of this LogAnalyticsAssociation.
-        entity GUID
+        The entity unique identifier.
 
 
         :param entity_id: The entity_id of this LogAnalyticsAssociation.
@@ -389,7 +393,7 @@ class LogAnalyticsAssociation(object):
     def entity_name(self):
         """
         Gets the entity_name of this LogAnalyticsAssociation.
-        entity name
+        The entity name.
 
 
         :return: The entity_name of this LogAnalyticsAssociation.
@@ -401,7 +405,7 @@ class LogAnalyticsAssociation(object):
     def entity_name(self, entity_name):
         """
         Sets the entity_name of this LogAnalyticsAssociation.
-        entity name
+        The entity name.
 
 
         :param entity_name: The entity_name of this LogAnalyticsAssociation.
@@ -413,7 +417,7 @@ class LogAnalyticsAssociation(object):
     def entity_type_name(self):
         """
         Gets the entity_type_name of this LogAnalyticsAssociation.
-        entity type internal name
+        The entity type internal name.
 
 
         :return: The entity_type_name of this LogAnalyticsAssociation.
@@ -425,7 +429,7 @@ class LogAnalyticsAssociation(object):
     def entity_type_name(self, entity_type_name):
         """
         Sets the entity_type_name of this LogAnalyticsAssociation.
-        entity type internal name
+        The entity type internal name.
 
 
         :param entity_type_name: The entity_type_name of this LogAnalyticsAssociation.
@@ -437,7 +441,7 @@ class LogAnalyticsAssociation(object):
     def host(self):
         """
         Gets the host of this LogAnalyticsAssociation.
-        host name
+        The host name.
 
 
         :return: The host of this LogAnalyticsAssociation.
@@ -449,7 +453,7 @@ class LogAnalyticsAssociation(object):
     def host(self, host):
         """
         Sets the host of this LogAnalyticsAssociation.
-        host name
+        The host name.
 
 
         :param host: The host of this LogAnalyticsAssociation.
@@ -461,7 +465,7 @@ class LogAnalyticsAssociation(object):
     def agent_entity_name(self):
         """
         Gets the agent_entity_name of this LogAnalyticsAssociation.
-        Agent entity name
+        The name of the entity which contains the agent.
 
 
         :return: The agent_entity_name of this LogAnalyticsAssociation.
@@ -473,7 +477,7 @@ class LogAnalyticsAssociation(object):
     def agent_entity_name(self, agent_entity_name):
         """
         Sets the agent_entity_name of this LogAnalyticsAssociation.
-        Agent entity name
+        The name of the entity which contains the agent.
 
 
         :param agent_entity_name: The agent_entity_name of this LogAnalyticsAssociation.
@@ -485,7 +489,7 @@ class LogAnalyticsAssociation(object):
     def entity_type_display_name(self):
         """
         Gets the entity_type_display_name of this LogAnalyticsAssociation.
-        entity type display name
+        The entity type display name.
 
 
         :return: The entity_type_display_name of this LogAnalyticsAssociation.
@@ -497,7 +501,7 @@ class LogAnalyticsAssociation(object):
     def entity_type_display_name(self, entity_type_display_name):
         """
         Sets the entity_type_display_name of this LogAnalyticsAssociation.
-        entity type display name
+        The entity type display name.
 
 
         :param entity_type_display_name: The entity_type_display_name of this LogAnalyticsAssociation.
@@ -509,7 +513,7 @@ class LogAnalyticsAssociation(object):
     def log_group_id(self):
         """
         Gets the log_group_id of this LogAnalyticsAssociation.
-        log group ocid
+        The log group unique identifier.
 
 
         :return: The log_group_id of this LogAnalyticsAssociation.
@@ -521,7 +525,7 @@ class LogAnalyticsAssociation(object):
     def log_group_id(self, log_group_id):
         """
         Sets the log_group_id of this LogAnalyticsAssociation.
-        log group ocid
+        The log group unique identifier.
 
 
         :param log_group_id: The log_group_id of this LogAnalyticsAssociation.
@@ -533,7 +537,7 @@ class LogAnalyticsAssociation(object):
     def log_group_name(self):
         """
         Gets the log_group_name of this LogAnalyticsAssociation.
-        log group name
+        The log group name.
 
 
         :return: The log_group_name of this LogAnalyticsAssociation.
@@ -545,7 +549,7 @@ class LogAnalyticsAssociation(object):
     def log_group_name(self, log_group_name):
         """
         Sets the log_group_name of this LogAnalyticsAssociation.
-        log group name
+        The log group name.
 
 
         :param log_group_name: The log_group_name of this LogAnalyticsAssociation.
@@ -557,7 +561,7 @@ class LogAnalyticsAssociation(object):
     def log_group_compartment(self):
         """
         Gets the log_group_compartment of this LogAnalyticsAssociation.
-        log group compartment
+        The log group compartment.
 
 
         :return: The log_group_compartment of this LogAnalyticsAssociation.
@@ -569,7 +573,7 @@ class LogAnalyticsAssociation(object):
     def log_group_compartment(self, log_group_compartment):
         """
         Sets the log_group_compartment of this LogAnalyticsAssociation.
-        log group compartment
+        The log group compartment.
 
 
         :param log_group_compartment: The log_group_compartment of this LogAnalyticsAssociation.

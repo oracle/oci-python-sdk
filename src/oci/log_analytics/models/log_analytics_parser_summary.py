@@ -29,6 +29,10 @@ class LogAnalyticsParserSummary(object):
     #: This constant has a value of "ODL"
     TYPE_ODL = "ODL"
 
+    #: A constant which can be used with the type property of a LogAnalyticsParserSummary.
+    #: This constant has a value of "DELIMITED"
+    TYPE_DELIMITED = "DELIMITED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsParserSummary object with values from keyword arguments.
@@ -142,9 +146,17 @@ class LogAnalyticsParserSummary(object):
             The value to assign to the should_tokenize_original_text property of this LogAnalyticsParserSummary.
         :type should_tokenize_original_text: bool
 
+        :param field_delimiter:
+            The value to assign to the field_delimiter property of this LogAnalyticsParserSummary.
+        :type field_delimiter: str
+
+        :param field_qualifier:
+            The value to assign to the field_qualifier property of this LogAnalyticsParserSummary.
+        :type field_qualifier: str
+
         :param type:
             The value to assign to the type property of this LogAnalyticsParserSummary.
-            Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", "DELIMITED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -181,6 +193,8 @@ class LogAnalyticsParserSummary(object):
             'sources_count': 'int',
             'sources': 'list[LogAnalyticsSource]',
             'should_tokenize_original_text': 'bool',
+            'field_delimiter': 'str',
+            'field_qualifier': 'str',
             'type': 'str',
             'is_user_deleted': 'bool'
         }
@@ -213,6 +227,8 @@ class LogAnalyticsParserSummary(object):
             'sources_count': 'sourcesCount',
             'sources': 'sources',
             'should_tokenize_original_text': 'shouldTokenizeOriginalText',
+            'field_delimiter': 'fieldDelimiter',
+            'field_qualifier': 'fieldQualifier',
             'type': 'type',
             'is_user_deleted': 'isUserDeleted'
         }
@@ -244,6 +260,8 @@ class LogAnalyticsParserSummary(object):
         self._sources_count = None
         self._sources = None
         self._should_tokenize_original_text = None
+        self._field_delimiter = None
+        self._field_qualifier = None
         self._type = None
         self._is_user_deleted = None
 
@@ -251,7 +269,7 @@ class LogAnalyticsParserSummary(object):
     def content(self):
         """
         Gets the content of this LogAnalyticsParserSummary.
-        content
+        The content.
 
 
         :return: The content of this LogAnalyticsParserSummary.
@@ -263,7 +281,7 @@ class LogAnalyticsParserSummary(object):
     def content(self, content):
         """
         Sets the content of this LogAnalyticsParserSummary.
-        content
+        The content.
 
 
         :param content: The content of this LogAnalyticsParserSummary.
@@ -275,7 +293,7 @@ class LogAnalyticsParserSummary(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsParserSummary.
-        description
+        The parser description.
 
 
         :return: The description of this LogAnalyticsParserSummary.
@@ -287,7 +305,7 @@ class LogAnalyticsParserSummary(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsParserSummary.
-        description
+        The parser description.
 
 
         :param description: The description of this LogAnalyticsParserSummary.
@@ -299,7 +317,7 @@ class LogAnalyticsParserSummary(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsParserSummary.
-        display name
+        The parser display name.
 
 
         :return: The display_name of this LogAnalyticsParserSummary.
@@ -311,7 +329,7 @@ class LogAnalyticsParserSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsParserSummary.
-        display name
+        The parser display name.
 
 
         :param display_name: The display_name of this LogAnalyticsParserSummary.
@@ -323,7 +341,7 @@ class LogAnalyticsParserSummary(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsParserSummary.
-        edit version
+        The parser edit version.
 
 
         :return: The edit_version of this LogAnalyticsParserSummary.
@@ -335,7 +353,7 @@ class LogAnalyticsParserSummary(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsParserSummary.
-        edit version
+        The parser edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsParserSummary.
@@ -347,7 +365,7 @@ class LogAnalyticsParserSummary(object):
     def encoding(self):
         """
         Gets the encoding of this LogAnalyticsParserSummary.
-        encoding
+        The encoding.
 
 
         :return: The encoding of this LogAnalyticsParserSummary.
@@ -359,7 +377,7 @@ class LogAnalyticsParserSummary(object):
     def encoding(self, encoding):
         """
         Sets the encoding of this LogAnalyticsParserSummary.
-        encoding
+        The encoding.
 
 
         :param encoding: The encoding of this LogAnalyticsParserSummary.
@@ -371,7 +389,7 @@ class LogAnalyticsParserSummary(object):
     def example_content(self):
         """
         Gets the example_content of this LogAnalyticsParserSummary.
-        example content
+        The example content.
 
 
         :return: The example_content of this LogAnalyticsParserSummary.
@@ -383,7 +401,7 @@ class LogAnalyticsParserSummary(object):
     def example_content(self, example_content):
         """
         Sets the example_content of this LogAnalyticsParserSummary.
-        example content
+        The example content.
 
 
         :param example_content: The example_content of this LogAnalyticsParserSummary.
@@ -395,7 +413,7 @@ class LogAnalyticsParserSummary(object):
     def field_maps(self):
         """
         Gets the field_maps of this LogAnalyticsParserSummary.
-        fields Maps
+        The parser fields.
 
 
         :return: The field_maps of this LogAnalyticsParserSummary.
@@ -407,7 +425,7 @@ class LogAnalyticsParserSummary(object):
     def field_maps(self, field_maps):
         """
         Sets the field_maps of this LogAnalyticsParserSummary.
-        fields Maps
+        The parser fields.
 
 
         :param field_maps: The field_maps of this LogAnalyticsParserSummary.
@@ -419,7 +437,7 @@ class LogAnalyticsParserSummary(object):
     def footer_content(self):
         """
         Gets the footer_content of this LogAnalyticsParserSummary.
-        footer regular expression
+        The footer regular expression.
 
 
         :return: The footer_content of this LogAnalyticsParserSummary.
@@ -431,7 +449,7 @@ class LogAnalyticsParserSummary(object):
     def footer_content(self, footer_content):
         """
         Sets the footer_content of this LogAnalyticsParserSummary.
-        footer regular expression
+        The footer regular expression.
 
 
         :param footer_content: The footer_content of this LogAnalyticsParserSummary.
@@ -443,7 +461,7 @@ class LogAnalyticsParserSummary(object):
     def header_content(self):
         """
         Gets the header_content of this LogAnalyticsParserSummary.
-        header content
+        The header content.
 
 
         :return: The header_content of this LogAnalyticsParserSummary.
@@ -455,7 +473,7 @@ class LogAnalyticsParserSummary(object):
     def header_content(self, header_content):
         """
         Sets the header_content of this LogAnalyticsParserSummary.
-        header content
+        The header content.
 
 
         :param header_content: The header_content of this LogAnalyticsParserSummary.
@@ -467,7 +485,7 @@ class LogAnalyticsParserSummary(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsParserSummary.
-        Name
+        The parser name.
 
 
         :return: The name of this LogAnalyticsParserSummary.
@@ -479,7 +497,7 @@ class LogAnalyticsParserSummary(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsParserSummary.
-        Name
+        The parser name.
 
 
         :param name: The name of this LogAnalyticsParserSummary.
@@ -491,7 +509,7 @@ class LogAnalyticsParserSummary(object):
     def is_default(self):
         """
         Gets the is_default of this LogAnalyticsParserSummary.
-        is default flag
+        A flag indicating if this is a default parser.
 
 
         :return: The is_default of this LogAnalyticsParserSummary.
@@ -503,7 +521,7 @@ class LogAnalyticsParserSummary(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this LogAnalyticsParserSummary.
-        is default flag
+        A flag indicating if this is a default parser.
 
 
         :param is_default: The is_default of this LogAnalyticsParserSummary.
@@ -515,7 +533,7 @@ class LogAnalyticsParserSummary(object):
     def is_single_line_content(self):
         """
         Gets the is_single_line_content of this LogAnalyticsParserSummary.
-        is single line content
+        A flag indicating if this is a single line content parser.
 
 
         :return: The is_single_line_content of this LogAnalyticsParserSummary.
@@ -527,7 +545,7 @@ class LogAnalyticsParserSummary(object):
     def is_single_line_content(self, is_single_line_content):
         """
         Sets the is_single_line_content of this LogAnalyticsParserSummary.
-        is single line content
+        A flag indicating if this is a single line content parser.
 
 
         :param is_single_line_content: The is_single_line_content of this LogAnalyticsParserSummary.
@@ -539,7 +557,8 @@ class LogAnalyticsParserSummary(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsParserSummary.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsParserSummary.
@@ -551,7 +570,8 @@ class LogAnalyticsParserSummary(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsParserSummary.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsParserSummary.
@@ -563,7 +583,7 @@ class LogAnalyticsParserSummary(object):
     def language(self):
         """
         Gets the language of this LogAnalyticsParserSummary.
-        language
+        The language.
 
 
         :return: The language of this LogAnalyticsParserSummary.
@@ -575,7 +595,7 @@ class LogAnalyticsParserSummary(object):
     def language(self, language):
         """
         Sets the language of this LogAnalyticsParserSummary.
-        language
+        The language.
 
 
         :param language: The language of this LogAnalyticsParserSummary.
@@ -587,7 +607,7 @@ class LogAnalyticsParserSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this LogAnalyticsParserSummary.
-        last updated date
+        The last updated date.
 
 
         :return: The time_updated of this LogAnalyticsParserSummary.
@@ -599,7 +619,7 @@ class LogAnalyticsParserSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this LogAnalyticsParserSummary.
-        last updated date
+        The last updated date.
 
 
         :param time_updated: The time_updated of this LogAnalyticsParserSummary.
@@ -611,7 +631,7 @@ class LogAnalyticsParserSummary(object):
     def log_type_test_request_version(self):
         """
         Gets the log_type_test_request_version of this LogAnalyticsParserSummary.
-        log type test request version
+        The log type test request version.
 
 
         :return: The log_type_test_request_version of this LogAnalyticsParserSummary.
@@ -623,7 +643,7 @@ class LogAnalyticsParserSummary(object):
     def log_type_test_request_version(self, log_type_test_request_version):
         """
         Sets the log_type_test_request_version of this LogAnalyticsParserSummary.
-        log type test request version
+        The log type test request version.
 
 
         :param log_type_test_request_version: The log_type_test_request_version of this LogAnalyticsParserSummary.
@@ -635,7 +655,7 @@ class LogAnalyticsParserSummary(object):
     def mapped_parsers(self):
         """
         Gets the mapped_parsers of this LogAnalyticsParserSummary.
-        mapped parser list
+        The mapped parser list.
 
 
         :return: The mapped_parsers of this LogAnalyticsParserSummary.
@@ -647,7 +667,7 @@ class LogAnalyticsParserSummary(object):
     def mapped_parsers(self, mapped_parsers):
         """
         Sets the mapped_parsers of this LogAnalyticsParserSummary.
-        mapped parser list
+        The mapped parser list.
 
 
         :param mapped_parsers: The mapped_parsers of this LogAnalyticsParserSummary.
@@ -659,7 +679,7 @@ class LogAnalyticsParserSummary(object):
     def parser_ignoreline_characters(self):
         """
         Gets the parser_ignoreline_characters of this LogAnalyticsParserSummary.
-        parser ignore line characters
+        The line characters for the parser to ignore.
 
 
         :return: The parser_ignoreline_characters of this LogAnalyticsParserSummary.
@@ -671,7 +691,7 @@ class LogAnalyticsParserSummary(object):
     def parser_ignoreline_characters(self, parser_ignoreline_characters):
         """
         Sets the parser_ignoreline_characters of this LogAnalyticsParserSummary.
-        parser ignore line characters
+        The line characters for the parser to ignore.
 
 
         :param parser_ignoreline_characters: The parser_ignoreline_characters of this LogAnalyticsParserSummary.
@@ -683,7 +703,7 @@ class LogAnalyticsParserSummary(object):
     def is_hidden(self):
         """
         Gets the is_hidden of this LogAnalyticsParserSummary.
-        is hidden flag
+        A flag indicating if the parser is hidden or not.
 
 
         :return: The is_hidden of this LogAnalyticsParserSummary.
@@ -695,7 +715,7 @@ class LogAnalyticsParserSummary(object):
     def is_hidden(self, is_hidden):
         """
         Sets the is_hidden of this LogAnalyticsParserSummary.
-        is hidden flag
+        A flag indicating if the parser is hidden or not.
 
 
         :param is_hidden: The is_hidden of this LogAnalyticsParserSummary.
@@ -707,7 +727,7 @@ class LogAnalyticsParserSummary(object):
     def parser_sequence(self):
         """
         Gets the parser_sequence of this LogAnalyticsParserSummary.
-        sequence
+        The parser sequence.
 
 
         :return: The parser_sequence of this LogAnalyticsParserSummary.
@@ -719,7 +739,7 @@ class LogAnalyticsParserSummary(object):
     def parser_sequence(self, parser_sequence):
         """
         Sets the parser_sequence of this LogAnalyticsParserSummary.
-        sequence
+        The parser sequence.
 
 
         :param parser_sequence: The parser_sequence of this LogAnalyticsParserSummary.
@@ -731,7 +751,7 @@ class LogAnalyticsParserSummary(object):
     def parser_timezone(self):
         """
         Gets the parser_timezone of this LogAnalyticsParserSummary.
-        time zone
+        The time zone.
 
 
         :return: The parser_timezone of this LogAnalyticsParserSummary.
@@ -743,7 +763,7 @@ class LogAnalyticsParserSummary(object):
     def parser_timezone(self, parser_timezone):
         """
         Sets the parser_timezone of this LogAnalyticsParserSummary.
-        time zone
+        The time zone.
 
 
         :param parser_timezone: The parser_timezone of this LogAnalyticsParserSummary.
@@ -775,7 +795,7 @@ class LogAnalyticsParserSummary(object):
     def is_parser_written_once(self):
         """
         Gets the is_parser_written_once of this LogAnalyticsParserSummary.
-        write once
+        A flag indicating whther or not the parser is write once.
 
 
         :return: The is_parser_written_once of this LogAnalyticsParserSummary.
@@ -787,7 +807,7 @@ class LogAnalyticsParserSummary(object):
     def is_parser_written_once(self, is_parser_written_once):
         """
         Sets the is_parser_written_once of this LogAnalyticsParserSummary.
-        write once
+        A flag indicating whther or not the parser is write once.
 
 
         :param is_parser_written_once: The is_parser_written_once of this LogAnalyticsParserSummary.
@@ -799,7 +819,7 @@ class LogAnalyticsParserSummary(object):
     def parser_functions(self):
         """
         Gets the parser_functions of this LogAnalyticsParserSummary.
-        plugin instance list
+        The parser function list.
 
 
         :return: The parser_functions of this LogAnalyticsParserSummary.
@@ -811,7 +831,7 @@ class LogAnalyticsParserSummary(object):
     def parser_functions(self, parser_functions):
         """
         Sets the parser_functions of this LogAnalyticsParserSummary.
-        plugin instance list
+        The parser function list.
 
 
         :param parser_functions: The parser_functions of this LogAnalyticsParserSummary.
@@ -823,7 +843,7 @@ class LogAnalyticsParserSummary(object):
     def sources_count(self):
         """
         Gets the sources_count of this LogAnalyticsParserSummary.
-        sources using this parser
+        The number of sources using this parser.
 
 
         :return: The sources_count of this LogAnalyticsParserSummary.
@@ -835,7 +855,7 @@ class LogAnalyticsParserSummary(object):
     def sources_count(self, sources_count):
         """
         Sets the sources_count of this LogAnalyticsParserSummary.
-        sources using this parser
+        The number of sources using this parser.
 
 
         :param sources_count: The sources_count of this LogAnalyticsParserSummary.
@@ -847,7 +867,7 @@ class LogAnalyticsParserSummary(object):
     def sources(self):
         """
         Gets the sources of this LogAnalyticsParserSummary.
-        sources using list
+        The list of sources using this parser.
 
 
         :return: The sources of this LogAnalyticsParserSummary.
@@ -859,7 +879,7 @@ class LogAnalyticsParserSummary(object):
     def sources(self, sources):
         """
         Sets the sources of this LogAnalyticsParserSummary.
-        sources using list
+        The list of sources using this parser.
 
 
         :param sources: The sources of this LogAnalyticsParserSummary.
@@ -871,7 +891,7 @@ class LogAnalyticsParserSummary(object):
     def should_tokenize_original_text(self):
         """
         Gets the should_tokenize_original_text of this LogAnalyticsParserSummary.
-        tokenize original text
+        A flag indicating whether or not to tokenize the original text.
 
 
         :return: The should_tokenize_original_text of this LogAnalyticsParserSummary.
@@ -883,7 +903,7 @@ class LogAnalyticsParserSummary(object):
     def should_tokenize_original_text(self, should_tokenize_original_text):
         """
         Sets the should_tokenize_original_text of this LogAnalyticsParserSummary.
-        tokenize original text
+        A flag indicating whether or not to tokenize the original text.
 
 
         :param should_tokenize_original_text: The should_tokenize_original_text of this LogAnalyticsParserSummary.
@@ -892,12 +912,60 @@ class LogAnalyticsParserSummary(object):
         self._should_tokenize_original_text = should_tokenize_original_text
 
     @property
+    def field_delimiter(self):
+        """
+        Gets the field_delimiter of this LogAnalyticsParserSummary.
+        The parser field delimiter.
+
+
+        :return: The field_delimiter of this LogAnalyticsParserSummary.
+        :rtype: str
+        """
+        return self._field_delimiter
+
+    @field_delimiter.setter
+    def field_delimiter(self, field_delimiter):
+        """
+        Sets the field_delimiter of this LogAnalyticsParserSummary.
+        The parser field delimiter.
+
+
+        :param field_delimiter: The field_delimiter of this LogAnalyticsParserSummary.
+        :type: str
+        """
+        self._field_delimiter = field_delimiter
+
+    @property
+    def field_qualifier(self):
+        """
+        Gets the field_qualifier of this LogAnalyticsParserSummary.
+        The parser field qualifier.
+
+
+        :return: The field_qualifier of this LogAnalyticsParserSummary.
+        :rtype: str
+        """
+        return self._field_qualifier
+
+    @field_qualifier.setter
+    def field_qualifier(self, field_qualifier):
+        """
+        Sets the field_qualifier of this LogAnalyticsParserSummary.
+        The parser field qualifier.
+
+
+        :param field_qualifier: The field_qualifier of this LogAnalyticsParserSummary.
+        :type: str
+        """
+        self._field_qualifier = field_qualifier
+
+    @property
     def type(self):
         """
         Gets the type of this LogAnalyticsParserSummary.
-        type
+        The parser type.  Default value is REGEX.
 
-        Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", "DELIMITED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -910,13 +978,13 @@ class LogAnalyticsParserSummary(object):
     def type(self, type):
         """
         Sets the type of this LogAnalyticsParserSummary.
-        type
+        The parser type.  Default value is REGEX.
 
 
         :param type: The type of this LogAnalyticsParserSummary.
         :type: str
         """
-        allowed_values = ["XML", "JSON", "REGEX", "ODL"]
+        allowed_values = ["XML", "JSON", "REGEX", "ODL", "DELIMITED"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -925,7 +993,7 @@ class LogAnalyticsParserSummary(object):
     def is_user_deleted(self):
         """
         Gets the is_user_deleted of this LogAnalyticsParserSummary.
-        user deleted flag
+        A flag indicating whether or not the parser has been deleted.
 
 
         :return: The is_user_deleted of this LogAnalyticsParserSummary.
@@ -937,7 +1005,7 @@ class LogAnalyticsParserSummary(object):
     def is_user_deleted(self, is_user_deleted):
         """
         Sets the is_user_deleted of this LogAnalyticsParserSummary.
-        user deleted flag
+        A flag indicating whether or not the parser has been deleted.
 
 
         :param is_user_deleted: The is_user_deleted of this LogAnalyticsParserSummary.

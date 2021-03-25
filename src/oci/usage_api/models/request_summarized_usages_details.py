@@ -63,6 +63,10 @@ class RequestSummarizedUsagesDetails(object):
             The value to assign to the is_aggregate_by_time property of this RequestSummarizedUsagesDetails.
         :type is_aggregate_by_time: bool
 
+        :param forecast:
+            The value to assign to the forecast property of this RequestSummarizedUsagesDetails.
+        :type forecast: oci.usage_api.models.Forecast
+
         :param query_type:
             The value to assign to the query_type property of this RequestSummarizedUsagesDetails.
             Allowed values for this property are: "USAGE", "COST"
@@ -91,6 +95,7 @@ class RequestSummarizedUsagesDetails(object):
             'time_usage_ended': 'datetime',
             'granularity': 'str',
             'is_aggregate_by_time': 'bool',
+            'forecast': 'Forecast',
             'query_type': 'str',
             'group_by': 'list[str]',
             'group_by_tag': 'list[Tag]',
@@ -104,6 +109,7 @@ class RequestSummarizedUsagesDetails(object):
             'time_usage_ended': 'timeUsageEnded',
             'granularity': 'granularity',
             'is_aggregate_by_time': 'isAggregateByTime',
+            'forecast': 'forecast',
             'query_type': 'queryType',
             'group_by': 'groupBy',
             'group_by_tag': 'groupByTag',
@@ -116,6 +122,7 @@ class RequestSummarizedUsagesDetails(object):
         self._time_usage_ended = None
         self._granularity = None
         self._is_aggregate_by_time = None
+        self._forecast = None
         self._query_type = None
         self._group_by = None
         self._group_by_tag = None
@@ -126,7 +133,7 @@ class RequestSummarizedUsagesDetails(object):
     def tenant_id(self):
         """
         **[Required]** Gets the tenant_id of this RequestSummarizedUsagesDetails.
-        Tenant ID
+        Tenant ID.
 
 
         :return: The tenant_id of this RequestSummarizedUsagesDetails.
@@ -138,7 +145,7 @@ class RequestSummarizedUsagesDetails(object):
     def tenant_id(self, tenant_id):
         """
         Sets the tenant_id of this RequestSummarizedUsagesDetails.
-        Tenant ID
+        Tenant ID.
 
 
         :param tenant_id: The tenant_id of this RequestSummarizedUsagesDetails.
@@ -257,6 +264,26 @@ class RequestSummarizedUsagesDetails(object):
         :type: bool
         """
         self._is_aggregate_by_time = is_aggregate_by_time
+
+    @property
+    def forecast(self):
+        """
+        Gets the forecast of this RequestSummarizedUsagesDetails.
+
+        :return: The forecast of this RequestSummarizedUsagesDetails.
+        :rtype: oci.usage_api.models.Forecast
+        """
+        return self._forecast
+
+    @forecast.setter
+    def forecast(self, forecast):
+        """
+        Sets the forecast of this RequestSummarizedUsagesDetails.
+
+        :param forecast: The forecast of this RequestSummarizedUsagesDetails.
+        :type: oci.usage_api.models.Forecast
+        """
+        self._forecast = forecast
 
     @property
     def query_type(self):

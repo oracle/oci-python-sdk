@@ -58,7 +58,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def meta_plugin_parameters(self):
         """
         Gets the meta_plugin_parameters of this LogAnalyticsParserMetaPlugin.
-        parameter list
+        An array of plugin parameters.
 
 
         :return: The meta_plugin_parameters of this LogAnalyticsParserMetaPlugin.
@@ -70,7 +70,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def meta_plugin_parameters(self, meta_plugin_parameters):
         """
         Sets the meta_plugin_parameters of this LogAnalyticsParserMetaPlugin.
-        parameter list
+        An array of plugin parameters.
 
 
         :param meta_plugin_parameters: The meta_plugin_parameters of this LogAnalyticsParserMetaPlugin.
@@ -82,7 +82,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsParserMetaPlugin.
-        plugin description
+        The plugin description.
 
 
         :return: The description of this LogAnalyticsParserMetaPlugin.
@@ -94,7 +94,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsParserMetaPlugin.
-        plugin description
+        The plugin description.
 
 
         :param description: The description of this LogAnalyticsParserMetaPlugin.
@@ -106,7 +106,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsParserMetaPlugin.
-        plugin display name
+        The plugin display name.
 
 
         :return: The display_name of this LogAnalyticsParserMetaPlugin.
@@ -118,7 +118,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsParserMetaPlugin.
-        plugin display name
+        The plugin display name.
 
 
         :param display_name: The display_name of this LogAnalyticsParserMetaPlugin.
@@ -130,7 +130,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsParserMetaPlugin.
-        plugin internal name
+        The plugin internal name.
 
 
         :return: The name of this LogAnalyticsParserMetaPlugin.
@@ -142,7 +142,7 @@ class LogAnalyticsParserMetaPlugin(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsParserMetaPlugin.
-        plugin internal name
+        The plugin internal name.
 
 
         :param name: The name of this LogAnalyticsParserMetaPlugin.

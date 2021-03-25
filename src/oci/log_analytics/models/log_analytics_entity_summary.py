@@ -84,6 +84,10 @@ class LogAnalyticsEntitySummary(object):
             The value to assign to the source_id property of this LogAnalyticsEntitySummary.
         :type source_id: str
 
+        :param creation_source:
+            The value to assign to the creation_source property of this LogAnalyticsEntitySummary.
+        :type creation_source: oci.log_analytics.models.CreationSource
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LogAnalyticsEntitySummary.
         :type freeform_tags: dict(str, str)
@@ -108,6 +112,7 @@ class LogAnalyticsEntitySummary(object):
             'time_updated': 'datetime',
             'are_logs_collected': 'bool',
             'source_id': 'str',
+            'creation_source': 'CreationSource',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -127,6 +132,7 @@ class LogAnalyticsEntitySummary(object):
             'time_updated': 'timeUpdated',
             'are_logs_collected': 'areLogsCollected',
             'source_id': 'sourceId',
+            'creation_source': 'creationSource',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -145,6 +151,7 @@ class LogAnalyticsEntitySummary(object):
         self._time_updated = None
         self._are_logs_collected = None
         self._source_id = None
+        self._creation_source = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -497,6 +504,26 @@ class LogAnalyticsEntitySummary(object):
         :type: str
         """
         self._source_id = source_id
+
+    @property
+    def creation_source(self):
+        """
+        Gets the creation_source of this LogAnalyticsEntitySummary.
+
+        :return: The creation_source of this LogAnalyticsEntitySummary.
+        :rtype: oci.log_analytics.models.CreationSource
+        """
+        return self._creation_source
+
+    @creation_source.setter
+    def creation_source(self, creation_source):
+        """
+        Sets the creation_source of this LogAnalyticsEntitySummary.
+
+        :param creation_source: The creation_source of this LogAnalyticsEntitySummary.
+        :type: oci.log_analytics.models.CreationSource
+        """
+        self._creation_source = creation_source
 
     @property
     def freeform_tags(self):

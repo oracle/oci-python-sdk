@@ -37,7 +37,7 @@ class LogAnalyticsSourceCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsSourceCollection.
-        list of sources
+        An array of sources.
 
 
         :return: The items of this LogAnalyticsSourceCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsSourceCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsSourceCollection.
-        list of sources
+        An array of sources.
 
 
         :param items: The items of this LogAnalyticsSourceCollection.

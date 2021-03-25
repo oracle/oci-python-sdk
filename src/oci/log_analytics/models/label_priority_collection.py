@@ -37,7 +37,7 @@ class LabelPriorityCollection(object):
     def items(self):
         """
         Gets the items of this LabelPriorityCollection.
-        list of tag priorities
+        An array of label priorities.
 
 
         :return: The items of this LabelPriorityCollection.
@@ -49,7 +49,7 @@ class LabelPriorityCollection(object):
     def items(self, items):
         """
         Sets the items of this LabelPriorityCollection.
-        list of tag priorities
+        An array of label priorities.
 
 
         :param items: The items of this LabelPriorityCollection.

@@ -86,7 +86,7 @@ class LogAnalyticsMetaSourceType(object):
     def built_in_parser_name(self):
         """
         Gets the built_in_parser_name of this LogAnalyticsMetaSourceType.
-        built in parser name
+        The built in parser name.
 
 
         :return: The built_in_parser_name of this LogAnalyticsMetaSourceType.
@@ -98,7 +98,7 @@ class LogAnalyticsMetaSourceType(object):
     def built_in_parser_name(self, built_in_parser_name):
         """
         Sets the built_in_parser_name of this LogAnalyticsMetaSourceType.
-        built in parser name
+        The built in parser name.
 
 
         :param built_in_parser_name: The built_in_parser_name of this LogAnalyticsMetaSourceType.
@@ -110,7 +110,7 @@ class LogAnalyticsMetaSourceType(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsMetaSourceType.
-        type description
+        The source type description.
 
 
         :return: The description of this LogAnalyticsMetaSourceType.
@@ -122,7 +122,7 @@ class LogAnalyticsMetaSourceType(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsMetaSourceType.
-        type description
+        The source type description.
 
 
         :param description: The description of this LogAnalyticsMetaSourceType.
@@ -134,7 +134,7 @@ class LogAnalyticsMetaSourceType(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsMetaSourceType.
-        display name
+        The source type display name.
 
 
         :return: The display_name of this LogAnalyticsMetaSourceType.
@@ -146,7 +146,7 @@ class LogAnalyticsMetaSourceType(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsMetaSourceType.
-        display name
+        The source type display name.
 
 
         :param display_name: The display_name of this LogAnalyticsMetaSourceType.
@@ -158,7 +158,7 @@ class LogAnalyticsMetaSourceType(object):
     def entity_display_name(self):
         """
         Gets the entity_display_name of this LogAnalyticsMetaSourceType.
-        entity display name
+        The entity display name.
 
 
         :return: The entity_display_name of this LogAnalyticsMetaSourceType.
@@ -170,7 +170,7 @@ class LogAnalyticsMetaSourceType(object):
     def entity_display_name(self, entity_display_name):
         """
         Sets the entity_display_name of this LogAnalyticsMetaSourceType.
-        entity display name
+        The entity display name.
 
 
         :param entity_display_name: The entity_display_name of this LogAnalyticsMetaSourceType.
@@ -182,7 +182,7 @@ class LogAnalyticsMetaSourceType(object):
     def entity_name(self):
         """
         Gets the entity_name of this LogAnalyticsMetaSourceType.
-        entity name
+        The entity internal name.
 
 
         :return: The entity_name of this LogAnalyticsMetaSourceType.
@@ -194,7 +194,7 @@ class LogAnalyticsMetaSourceType(object):
     def entity_name(self, entity_name):
         """
         Sets the entity_name of this LogAnalyticsMetaSourceType.
-        entity name
+        The entity internal name.
 
 
         :param entity_name: The entity_name of this LogAnalyticsMetaSourceType.
@@ -206,7 +206,7 @@ class LogAnalyticsMetaSourceType(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsMetaSourceType.
-        source type name
+        The source type name.
 
 
         :return: The name of this LogAnalyticsMetaSourceType.
@@ -218,7 +218,7 @@ class LogAnalyticsMetaSourceType(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsMetaSourceType.
-        source type name
+        The source type name.
 
 
         :param name: The name of this LogAnalyticsMetaSourceType.
@@ -230,7 +230,7 @@ class LogAnalyticsMetaSourceType(object):
     def maximum_exclude_pattern(self):
         """
         Gets the maximum_exclude_pattern of this LogAnalyticsMetaSourceType.
-        maximum exclude pattern
+        The maximum exclude pattern.
 
 
         :return: The maximum_exclude_pattern of this LogAnalyticsMetaSourceType.
@@ -242,7 +242,7 @@ class LogAnalyticsMetaSourceType(object):
     def maximum_exclude_pattern(self, maximum_exclude_pattern):
         """
         Sets the maximum_exclude_pattern of this LogAnalyticsMetaSourceType.
-        maximum exclude pattern
+        The maximum exclude pattern.
 
 
         :param maximum_exclude_pattern: The maximum_exclude_pattern of this LogAnalyticsMetaSourceType.
@@ -254,7 +254,7 @@ class LogAnalyticsMetaSourceType(object):
     def maximum_include_pattern(self):
         """
         Gets the maximum_include_pattern of this LogAnalyticsMetaSourceType.
-        maximum include pattern
+        The maximum include pattern.
 
 
         :return: The maximum_include_pattern of this LogAnalyticsMetaSourceType.
@@ -266,7 +266,7 @@ class LogAnalyticsMetaSourceType(object):
     def maximum_include_pattern(self, maximum_include_pattern):
         """
         Sets the maximum_include_pattern of this LogAnalyticsMetaSourceType.
-        maximum include pattern
+        The maximum include pattern.
 
 
         :param maximum_include_pattern: The maximum_include_pattern of this LogAnalyticsMetaSourceType.

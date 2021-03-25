@@ -14,11 +14,16 @@ from .add_entity_association_details import AddEntityAssociationDetails
 from .add_fields_command_descriptor import AddFieldsCommandDescriptor
 from .archiving_configuration import ArchivingConfiguration
 from .argument import Argument
+from .associable_entity import AssociableEntity
+from .associable_entity_collection import AssociableEntityCollection
 from .association_summary_report import AssociationSummaryReport
+from .auto_association_collection import AutoAssociationCollection
+from .auto_association_state import AutoAssociationState
 from .auto_lookups import AutoLookups
 from .bottom_command_descriptor import BottomCommandDescriptor
 from .bucket_command_descriptor import BucketCommandDescriptor
 from .bucket_range import BucketRange
+from .change_log_analytics_em_bridge_compartment_details import ChangeLogAnalyticsEmBridgeCompartmentDetails
 from .change_log_analytics_entity_compartment_details import ChangeLogAnalyticsEntityCompartmentDetails
 from .change_log_analytics_log_group_compartment_details import ChangeLogAnalyticsLogGroupCompartmentDetails
 from .change_log_analytics_object_collection_rule_compartment_details import ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
@@ -37,6 +42,7 @@ from .column_name import ColumnName
 from .column_name_collection import ColumnNameCollection
 from .command_descriptor import CommandDescriptor
 from .create_acceleration_task_details import CreateAccelerationTaskDetails
+from .create_log_analytics_em_bridge_details import CreateLogAnalyticsEmBridgeDetails
 from .create_log_analytics_entity_details import CreateLogAnalyticsEntityDetails
 from .create_log_analytics_entity_type_details import CreateLogAnalyticsEntityTypeDetails
 from .create_log_analytics_log_group_details import CreateLogAnalyticsLogGroupDetails
@@ -44,14 +50,19 @@ from .create_log_analytics_object_collection_rule_details import CreateLogAnalyt
 from .create_scheduled_task_details import CreateScheduledTaskDetails
 from .create_standard_task_details import CreateStandardTaskDetails
 from .create_view_command_descriptor import CreateViewCommandDescriptor
+from .creation_source import CreationSource
 from .cron_schedule import CronSchedule
 from .delete_command_descriptor import DeleteCommandDescriptor
 from .delete_log_analytics_association import DeleteLogAnalyticsAssociation
 from .delete_log_analytics_association_details import DeleteLogAnalyticsAssociationDetails
 from .delta_command_descriptor import DeltaCommandDescriptor
 from .demo_mode_command_descriptor import DemoModeCommandDescriptor
+from .disable_auto_association_detail import DisableAutoAssociationDetail
+from .disable_auto_association_details import DisableAutoAssociationDetails
 from .distinct_command_descriptor import DistinctCommandDescriptor
 from .efd_regex_result import EfdRegexResult
+from .enable_auto_association_detail import EnableAutoAssociationDetail
+from .enable_auto_association_details import EnableAutoAssociationDetails
 from .entity_type_property import EntityTypeProperty
 from .error_details import ErrorDetails
 from .estimate_purge_data_size_details import EstimatePurgeDataSizeDetails
@@ -63,6 +74,8 @@ from .estimate_release_data_size_result import EstimateReleaseDataSizeResult
 from .eval_command_descriptor import EvalCommandDescriptor
 from .event_stats_command_descriptor import EventStatsCommandDescriptor
 from .event_type import EventType
+from .event_type_collection import EventTypeCollection
+from .event_type_details import EventTypeDetails
 from .export_content import ExportContent
 from .export_details import ExportDetails
 from .extended_fields_validation_result import ExtendedFieldsValidationResult
@@ -107,6 +120,10 @@ from .log_analytics_config_work_request import LogAnalyticsConfigWorkRequest
 from .log_analytics_config_work_request_collection import LogAnalyticsConfigWorkRequestCollection
 from .log_analytics_config_work_request_payload import LogAnalyticsConfigWorkRequestPayload
 from .log_analytics_config_work_request_summary import LogAnalyticsConfigWorkRequestSummary
+from .log_analytics_em_bridge import LogAnalyticsEmBridge
+from .log_analytics_em_bridge_collection import LogAnalyticsEmBridgeCollection
+from .log_analytics_em_bridge_summary import LogAnalyticsEmBridgeSummary
+from .log_analytics_em_bridge_summary_report import LogAnalyticsEmBridgeSummaryReport
 from .log_analytics_entity import LogAnalyticsEntity
 from .log_analytics_entity_collection import LogAnalyticsEntityCollection
 from .log_analytics_entity_summary import LogAnalyticsEntitySummary
@@ -172,8 +189,10 @@ from .log_analytics_source_summary import LogAnalyticsSourceSummary
 from .log_analytics_warning import LogAnalyticsWarning
 from .log_analytics_warning_collection import LogAnalyticsWarningCollection
 from .log_group_summary_report import LogGroupSummaryReport
+from .log_set_collection import LogSetCollection
 from .lookup_command_descriptor import LookupCommandDescriptor
 from .lookup_field import LookupField
+from .lookup_summary_report import LookupSummaryReport
 from .macro_command_descriptor import MacroCommandDescriptor
 from .map_command_descriptor import MapCommandDescriptor
 from .match_info import MatchInfo
@@ -243,6 +262,7 @@ from .timezone_collection import TimezoneCollection
 from .top_command_descriptor import TopCommandDescriptor
 from .trend_column import TrendColumn
 from .ui_parser_test_metadata import UiParserTestMetadata
+from .update_log_analytics_em_bridge_details import UpdateLogAnalyticsEmBridgeDetails
 from .update_log_analytics_entity_details import UpdateLogAnalyticsEntityDetails
 from .update_log_analytics_entity_type_details import UpdateLogAnalyticsEntityTypeDetails
 from .update_log_analytics_log_group_details import UpdateLogAnalyticsLogGroupDetails
@@ -291,11 +311,16 @@ log_analytics_type_mapping = {
     "AddFieldsCommandDescriptor": AddFieldsCommandDescriptor,
     "ArchivingConfiguration": ArchivingConfiguration,
     "Argument": Argument,
+    "AssociableEntity": AssociableEntity,
+    "AssociableEntityCollection": AssociableEntityCollection,
     "AssociationSummaryReport": AssociationSummaryReport,
+    "AutoAssociationCollection": AutoAssociationCollection,
+    "AutoAssociationState": AutoAssociationState,
     "AutoLookups": AutoLookups,
     "BottomCommandDescriptor": BottomCommandDescriptor,
     "BucketCommandDescriptor": BucketCommandDescriptor,
     "BucketRange": BucketRange,
+    "ChangeLogAnalyticsEmBridgeCompartmentDetails": ChangeLogAnalyticsEmBridgeCompartmentDetails,
     "ChangeLogAnalyticsEntityCompartmentDetails": ChangeLogAnalyticsEntityCompartmentDetails,
     "ChangeLogAnalyticsLogGroupCompartmentDetails": ChangeLogAnalyticsLogGroupCompartmentDetails,
     "ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails": ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails,
@@ -314,6 +339,7 @@ log_analytics_type_mapping = {
     "ColumnNameCollection": ColumnNameCollection,
     "CommandDescriptor": CommandDescriptor,
     "CreateAccelerationTaskDetails": CreateAccelerationTaskDetails,
+    "CreateLogAnalyticsEmBridgeDetails": CreateLogAnalyticsEmBridgeDetails,
     "CreateLogAnalyticsEntityDetails": CreateLogAnalyticsEntityDetails,
     "CreateLogAnalyticsEntityTypeDetails": CreateLogAnalyticsEntityTypeDetails,
     "CreateLogAnalyticsLogGroupDetails": CreateLogAnalyticsLogGroupDetails,
@@ -321,14 +347,19 @@ log_analytics_type_mapping = {
     "CreateScheduledTaskDetails": CreateScheduledTaskDetails,
     "CreateStandardTaskDetails": CreateStandardTaskDetails,
     "CreateViewCommandDescriptor": CreateViewCommandDescriptor,
+    "CreationSource": CreationSource,
     "CronSchedule": CronSchedule,
     "DeleteCommandDescriptor": DeleteCommandDescriptor,
     "DeleteLogAnalyticsAssociation": DeleteLogAnalyticsAssociation,
     "DeleteLogAnalyticsAssociationDetails": DeleteLogAnalyticsAssociationDetails,
     "DeltaCommandDescriptor": DeltaCommandDescriptor,
     "DemoModeCommandDescriptor": DemoModeCommandDescriptor,
+    "DisableAutoAssociationDetail": DisableAutoAssociationDetail,
+    "DisableAutoAssociationDetails": DisableAutoAssociationDetails,
     "DistinctCommandDescriptor": DistinctCommandDescriptor,
     "EfdRegexResult": EfdRegexResult,
+    "EnableAutoAssociationDetail": EnableAutoAssociationDetail,
+    "EnableAutoAssociationDetails": EnableAutoAssociationDetails,
     "EntityTypeProperty": EntityTypeProperty,
     "ErrorDetails": ErrorDetails,
     "EstimatePurgeDataSizeDetails": EstimatePurgeDataSizeDetails,
@@ -340,6 +371,8 @@ log_analytics_type_mapping = {
     "EvalCommandDescriptor": EvalCommandDescriptor,
     "EventStatsCommandDescriptor": EventStatsCommandDescriptor,
     "EventType": EventType,
+    "EventTypeCollection": EventTypeCollection,
+    "EventTypeDetails": EventTypeDetails,
     "ExportContent": ExportContent,
     "ExportDetails": ExportDetails,
     "ExtendedFieldsValidationResult": ExtendedFieldsValidationResult,
@@ -384,6 +417,10 @@ log_analytics_type_mapping = {
     "LogAnalyticsConfigWorkRequestCollection": LogAnalyticsConfigWorkRequestCollection,
     "LogAnalyticsConfigWorkRequestPayload": LogAnalyticsConfigWorkRequestPayload,
     "LogAnalyticsConfigWorkRequestSummary": LogAnalyticsConfigWorkRequestSummary,
+    "LogAnalyticsEmBridge": LogAnalyticsEmBridge,
+    "LogAnalyticsEmBridgeCollection": LogAnalyticsEmBridgeCollection,
+    "LogAnalyticsEmBridgeSummary": LogAnalyticsEmBridgeSummary,
+    "LogAnalyticsEmBridgeSummaryReport": LogAnalyticsEmBridgeSummaryReport,
     "LogAnalyticsEntity": LogAnalyticsEntity,
     "LogAnalyticsEntityCollection": LogAnalyticsEntityCollection,
     "LogAnalyticsEntitySummary": LogAnalyticsEntitySummary,
@@ -449,8 +486,10 @@ log_analytics_type_mapping = {
     "LogAnalyticsWarning": LogAnalyticsWarning,
     "LogAnalyticsWarningCollection": LogAnalyticsWarningCollection,
     "LogGroupSummaryReport": LogGroupSummaryReport,
+    "LogSetCollection": LogSetCollection,
     "LookupCommandDescriptor": LookupCommandDescriptor,
     "LookupField": LookupField,
+    "LookupSummaryReport": LookupSummaryReport,
     "MacroCommandDescriptor": MacroCommandDescriptor,
     "MapCommandDescriptor": MapCommandDescriptor,
     "MatchInfo": MatchInfo,
@@ -520,6 +559,7 @@ log_analytics_type_mapping = {
     "TopCommandDescriptor": TopCommandDescriptor,
     "TrendColumn": TrendColumn,
     "UiParserTestMetadata": UiParserTestMetadata,
+    "UpdateLogAnalyticsEmBridgeDetails": UpdateLogAnalyticsEmBridgeDetails,
     "UpdateLogAnalyticsEntityDetails": UpdateLogAnalyticsEntityDetails,
     "UpdateLogAnalyticsEntityTypeDetails": UpdateLogAnalyticsEntityTypeDetails,
     "UpdateLogAnalyticsLogGroupDetails": UpdateLogAnalyticsLogGroupDetails,

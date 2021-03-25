@@ -44,7 +44,7 @@ class AutoLookups(object):
     def canonical_link(self):
         """
         Gets the canonical_link of this AutoLookups.
-        canonical link
+        The canonical link.
 
 
         :return: The canonical_link of this AutoLookups.
@@ -56,7 +56,7 @@ class AutoLookups(object):
     def canonical_link(self, canonical_link):
         """
         Sets the canonical_link of this AutoLookups.
-        canonical link
+        The canonical link.
 
 
         :param canonical_link: The canonical_link of this AutoLookups.
@@ -68,7 +68,7 @@ class AutoLookups(object):
     def total_count(self):
         """
         Gets the total_count of this AutoLookups.
-        total count
+        The total count.
 
 
         :return: The total_count of this AutoLookups.
@@ -80,7 +80,7 @@ class AutoLookups(object):
     def total_count(self, total_count):
         """
         Sets the total_count of this AutoLookups.
-        total count
+        The total count.
 
 
         :param total_count: The total_count of this AutoLookups.

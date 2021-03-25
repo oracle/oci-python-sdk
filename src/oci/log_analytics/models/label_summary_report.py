@@ -44,7 +44,7 @@ class LabelSummaryReport(object):
     def non_oob_count(self):
         """
         Gets the non_oob_count of this LabelSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) labels.
 
 
         :return: The non_oob_count of this LabelSummaryReport.
@@ -56,7 +56,7 @@ class LabelSummaryReport(object):
     def non_oob_count(self, non_oob_count):
         """
         Sets the non_oob_count of this LabelSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) labels.
 
 
         :param non_oob_count: The non_oob_count of this LabelSummaryReport.
@@ -68,7 +68,7 @@ class LabelSummaryReport(object):
     def oob_count(self):
         """
         Gets the oob_count of this LabelSummaryReport.
-        out-of-the-box count
+        The count of built in labels.
 
 
         :return: The oob_count of this LabelSummaryReport.
@@ -80,7 +80,7 @@ class LabelSummaryReport(object):
     def oob_count(self, oob_count):
         """
         Sets the oob_count of this LabelSummaryReport.
-        out-of-the-box count
+        The count of built in labels.
 
 
         :param oob_count: The oob_count of this LabelSummaryReport.

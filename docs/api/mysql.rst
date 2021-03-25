@@ -63,6 +63,7 @@ Mysql
     oci.mysql.models.CreateMaintenanceDetails
     oci.mysql.models.DbSystem
     oci.mysql.models.DbSystemEndpoint
+    oci.mysql.models.DbSystemPlacement
     oci.mysql.models.DbSystemSnapshot
     oci.mysql.models.DbSystemSource
     oci.mysql.models.DbSystemSourceFromBackup

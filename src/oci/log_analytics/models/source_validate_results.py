@@ -37,7 +37,7 @@ class SourceValidateResults(object):
     def items(self):
         """
         Gets the items of this SourceValidateResults.
-        items
+        An arrya of source validation details.
 
 
         :return: The items of this SourceValidateResults.
@@ -49,7 +49,7 @@ class SourceValidateResults(object):
     def items(self, items):
         """
         Sets the items of this SourceValidateResults.
-        items
+        An arrya of source validation details.
 
 
         :param items: The items of this SourceValidateResults.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeleteLogAnalyticsAssociationDetails(object):
     """
-    DeleteLogAnalyticsAssociationDetails
+    The information required to delete a list of associations.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this DeleteLogAnalyticsAssociationDetails.
-        compartmentId
+        The compartment ID
 
 
         :return: The compartment_id of this DeleteLogAnalyticsAssociationDetails.
@@ -56,7 +56,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DeleteLogAnalyticsAssociationDetails.
-        compartmentId
+        The compartment ID
 
 
         :param compartment_id: The compartment_id of this DeleteLogAnalyticsAssociationDetails.
@@ -68,7 +68,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
     def items(self):
         """
         Gets the items of this DeleteLogAnalyticsAssociationDetails.
-        list of rule entity association details
+        The information required to delete an association.
 
 
         :return: The items of this DeleteLogAnalyticsAssociationDetails.
@@ -80,7 +80,7 @@ class DeleteLogAnalyticsAssociationDetails(object):
     def items(self, items):
         """
         Sets the items of this DeleteLogAnalyticsAssociationDetails.
-        list of rule entity association details
+        The information required to delete an association.
 
 
         :param items: The items of this DeleteLogAnalyticsAssociationDetails.

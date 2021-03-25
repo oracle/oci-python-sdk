@@ -104,7 +104,7 @@ class SignedData(object):
     def key_id(self):
         """
         **[Required]** Gets the key_id of this SignedData.
-        The OCID of the key used to sign the message
+        The OCID of the key used to sign the message.
 
 
         :return: The key_id of this SignedData.
@@ -116,7 +116,7 @@ class SignedData(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this SignedData.
-        The OCID of the key used to sign the message
+        The OCID of the key used to sign the message.
 
 
         :param key_id: The key_id of this SignedData.
@@ -128,7 +128,7 @@ class SignedData(object):
     def key_version_id(self):
         """
         **[Required]** Gets the key_version_id of this SignedData.
-        The OCID of the keyVersion used to sign the message
+        The OCID of the key version used to sign the message.
 
 
         :return: The key_version_id of this SignedData.
@@ -140,7 +140,7 @@ class SignedData(object):
     def key_version_id(self, key_version_id):
         """
         Sets the key_version_id of this SignedData.
-        The OCID of the keyVersion used to sign the message
+        The OCID of the key version used to sign the message.
 
 
         :param key_version_id: The key_version_id of this SignedData.
@@ -152,7 +152,7 @@ class SignedData(object):
     def signature(self):
         """
         **[Required]** Gets the signature of this SignedData.
-        The Base64-encoded binary data object denoting the cryptographic signature that was generated for the message or message digest.
+        The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
 
 
         :return: The signature of this SignedData.
@@ -164,7 +164,7 @@ class SignedData(object):
     def signature(self, signature):
         """
         Sets the signature of this SignedData.
-        The Base64-encoded binary data object denoting the cryptographic signature that was generated for the message or message digest.
+        The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
 
 
         :param signature: The signature of this SignedData.
@@ -176,12 +176,12 @@ class SignedData(object):
     def signing_algorithm(self):
         """
         **[Required]** Gets the signing_algorithm of this SignedData.
-        The algorithm to be used for signing the message or message digest
-        For RSA keys, there are two supported Signature Schemes: PKCS1 and PSS along with
-        different Hashing algorithms.
+        The algorithm to use to sign the message or message digest.
+        For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+        different hashing algorithms.
         For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
-        In case of passing digest for signing, make sure the same hashing algorithm is
-        specified as used for created for digest.
+        When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+        as used when creating the message digest.
 
         Allowed values for this property are: "SHA_224_RSA_PKCS_PSS", "SHA_256_RSA_PKCS_PSS", "SHA_384_RSA_PKCS_PSS", "SHA_512_RSA_PKCS_PSS", "SHA_224_RSA_PKCS1_V1_5", "SHA_256_RSA_PKCS1_V1_5", "SHA_384_RSA_PKCS1_V1_5", "SHA_512_RSA_PKCS1_V1_5", "ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -196,12 +196,12 @@ class SignedData(object):
     def signing_algorithm(self, signing_algorithm):
         """
         Sets the signing_algorithm of this SignedData.
-        The algorithm to be used for signing the message or message digest
-        For RSA keys, there are two supported Signature Schemes: PKCS1 and PSS along with
-        different Hashing algorithms.
+        The algorithm to use to sign the message or message digest.
+        For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+        different hashing algorithms.
         For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
-        In case of passing digest for signing, make sure the same hashing algorithm is
-        specified as used for created for digest.
+        When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+        as used when creating the message digest.
 
 
         :param signing_algorithm: The signing_algorithm of this SignedData.

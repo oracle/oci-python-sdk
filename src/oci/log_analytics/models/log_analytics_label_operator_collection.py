@@ -37,7 +37,7 @@ class LogAnalyticsLabelOperatorCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsLabelOperatorCollection.
-        list of label operators
+        An array of of label operators.
 
 
         :return: The items of this LogAnalyticsLabelOperatorCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsLabelOperatorCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsLabelOperatorCollection.
-        list of label operators
+        An array of of label operators.
 
 
         :param items: The items of this LogAnalyticsLabelOperatorCollection.

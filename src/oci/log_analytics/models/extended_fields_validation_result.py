@@ -37,7 +37,7 @@ class ExtendedFieldsValidationResult(object):
     def items(self):
         """
         Gets the items of this ExtendedFieldsValidationResult.
-        items
+        The regular expression evaluation result of an extended field definition.
 
 
         :return: The items of this ExtendedFieldsValidationResult.
@@ -49,7 +49,7 @@ class ExtendedFieldsValidationResult(object):
     def items(self, items):
         """
         Sets the items of this ExtendedFieldsValidationResult.
-        items
+        The regular expression evaluation result of an extended field definition.
 
 
         :param items: The items of this ExtendedFieldsValidationResult.

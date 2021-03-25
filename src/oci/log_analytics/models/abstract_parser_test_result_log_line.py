@@ -44,7 +44,7 @@ class AbstractParserTestResultLogLine(object):
     def original_log_line(self):
         """
         Gets the original_log_line of this AbstractParserTestResultLogLine.
-        original log line
+        The original log line.
 
 
         :return: The original_log_line of this AbstractParserTestResultLogLine.
@@ -56,7 +56,7 @@ class AbstractParserTestResultLogLine(object):
     def original_log_line(self, original_log_line):
         """
         Sets the original_log_line of this AbstractParserTestResultLogLine.
-        original log line
+        The original log line.
 
 
         :param original_log_line: The original_log_line of this AbstractParserTestResultLogLine.
@@ -68,7 +68,7 @@ class AbstractParserTestResultLogLine(object):
     def pre_processed_log_line(self):
         """
         Gets the pre_processed_log_line of this AbstractParserTestResultLogLine.
-        pre-processed log line
+        The pre-processed log line.
 
 
         :return: The pre_processed_log_line of this AbstractParserTestResultLogLine.
@@ -80,7 +80,7 @@ class AbstractParserTestResultLogLine(object):
     def pre_processed_log_line(self, pre_processed_log_line):
         """
         Sets the pre_processed_log_line of this AbstractParserTestResultLogLine.
-        pre-processed log line
+        The pre-processed log line.
 
 
         :param pre_processed_log_line: The pre_processed_log_line of this AbstractParserTestResultLogLine.

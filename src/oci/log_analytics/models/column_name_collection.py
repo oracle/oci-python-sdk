@@ -37,7 +37,7 @@ class ColumnNameCollection(object):
     def items(self):
         """
         Gets the items of this ColumnNameCollection.
-        list of column names
+        A list of SQL query column names.
 
 
         :return: The items of this ColumnNameCollection.
@@ -49,7 +49,7 @@ class ColumnNameCollection(object):
     def items(self, items):
         """
         Sets the items of this ColumnNameCollection.
-        list of column names
+        A list of SQL query column names.
 
 
         :param items: The items of this ColumnNameCollection.

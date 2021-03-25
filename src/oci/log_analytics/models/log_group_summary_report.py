@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogGroupSummaryReport(object):
     """
-    LogGroupSummaryReport
+    A LogAnalytics Log Group summary report.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class LogGroupSummaryReport(object):
     def count(self):
         """
         Gets the count of this LogGroupSummaryReport.
-        log group count
+        The log group count.
 
 
         :return: The count of this LogGroupSummaryReport.
@@ -49,7 +49,7 @@ class LogGroupSummaryReport(object):
     def count(self, count):
         """
         Sets the count of this LogGroupSummaryReport.
-        log group count
+        The log group count.
 
 
         :param count: The count of this LogGroupSummaryReport.

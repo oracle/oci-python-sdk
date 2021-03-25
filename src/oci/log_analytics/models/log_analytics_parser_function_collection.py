@@ -37,7 +37,7 @@ class LogAnalyticsParserFunctionCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsParserFunctionCollection.
-        meta pre-process pagination list
+        An array of parser function.
 
 
         :return: The items of this LogAnalyticsParserFunctionCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsParserFunctionCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsParserFunctionCollection.
-        meta pre-process pagination list
+        An array of parser function.
 
 
         :param items: The items of this LogAnalyticsParserFunctionCollection.

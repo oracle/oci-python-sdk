@@ -120,7 +120,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_id(self):
         """
         Gets the parser_function_id of this LogAnalyticsParserFunction.
-        plugin instance Id
+        The parser function unique identifier.
 
 
         :return: The parser_function_id of this LogAnalyticsParserFunction.
@@ -132,7 +132,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_id(self, parser_function_id):
         """
         Sets the parser_function_id of this LogAnalyticsParserFunction.
-        plugin instance Id
+        The parser function unique identifier.
 
 
         :param parser_function_id: The parser_function_id of this LogAnalyticsParserFunction.
@@ -144,7 +144,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_name(self):
         """
         Gets the parser_function_name of this LogAnalyticsParserFunction.
-        plugin instance internal name
+        The parser function internal name.
 
 
         :return: The parser_function_name of this LogAnalyticsParserFunction.
@@ -156,7 +156,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_name(self, parser_function_name):
         """
         Sets the parser_function_name of this LogAnalyticsParserFunction.
-        plugin instance internal name
+        The parser function internal name.
 
 
         :param parser_function_name: The parser_function_name of this LogAnalyticsParserFunction.
@@ -168,7 +168,7 @@ class LogAnalyticsParserFunction(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsParserFunction.
-        is enabled flag
+        A flag inidcating whether or not the parser function is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsParserFunction.
@@ -180,7 +180,7 @@ class LogAnalyticsParserFunction(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsParserFunction.
-        is enabled flag
+        A flag inidcating whether or not the parser function is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsParserFunction.
@@ -192,7 +192,8 @@ class LogAnalyticsParserFunction(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsParserFunction.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsParserFunction.
@@ -204,7 +205,8 @@ class LogAnalyticsParserFunction(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsParserFunction.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsParserFunction.
@@ -216,7 +218,7 @@ class LogAnalyticsParserFunction(object):
     def parser_id(self):
         """
         Gets the parser_id of this LogAnalyticsParserFunction.
-        parser Id
+        The associated parser unique identifier.
 
 
         :return: The parser_id of this LogAnalyticsParserFunction.
@@ -228,7 +230,7 @@ class LogAnalyticsParserFunction(object):
     def parser_id(self, parser_id):
         """
         Sets the parser_id of this LogAnalyticsParserFunction.
-        parser Id
+        The associated parser unique identifier.
 
 
         :param parser_id: The parser_id of this LogAnalyticsParserFunction.
@@ -240,7 +242,7 @@ class LogAnalyticsParserFunction(object):
     def parser_name(self):
         """
         Gets the parser_name of this LogAnalyticsParserFunction.
-        parser internal name
+        The associated parser internal name.
 
 
         :return: The parser_name of this LogAnalyticsParserFunction.
@@ -252,7 +254,7 @@ class LogAnalyticsParserFunction(object):
     def parser_name(self, parser_name):
         """
         Sets the parser_name of this LogAnalyticsParserFunction.
-        parser internal name
+        The associated parser internal name.
 
 
         :param parser_name: The parser_name of this LogAnalyticsParserFunction.
@@ -264,7 +266,7 @@ class LogAnalyticsParserFunction(object):
     def parser_meta_plugin_name(self):
         """
         Gets the parser_meta_plugin_name of this LogAnalyticsParserFunction.
-        plugin type internal name
+        The plugin internal name.
 
 
         :return: The parser_meta_plugin_name of this LogAnalyticsParserFunction.
@@ -276,7 +278,7 @@ class LogAnalyticsParserFunction(object):
     def parser_meta_plugin_name(self, parser_meta_plugin_name):
         """
         Sets the parser_meta_plugin_name of this LogAnalyticsParserFunction.
-        plugin type internal name
+        The plugin internal name.
 
 
         :param parser_meta_plugin_name: The parser_meta_plugin_name of this LogAnalyticsParserFunction.
@@ -288,7 +290,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_priority(self):
         """
         Gets the parser_function_priority of this LogAnalyticsParserFunction.
-        priority
+        The parser function priority.
 
 
         :return: The parser_function_priority of this LogAnalyticsParserFunction.
@@ -300,7 +302,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_priority(self, parser_function_priority):
         """
         Sets the parser_function_priority of this LogAnalyticsParserFunction.
-        priority
+        The parser function priority.
 
 
         :param parser_function_priority: The parser_function_priority of this LogAnalyticsParserFunction.
@@ -312,7 +314,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_parameters(self):
         """
         Gets the parser_function_parameters of this LogAnalyticsParserFunction.
-        parameter map list
+        The parser function parameter list.
 
 
         :return: The parser_function_parameters of this LogAnalyticsParserFunction.
@@ -324,7 +326,7 @@ class LogAnalyticsParserFunction(object):
     def parser_function_parameters(self, parser_function_parameters):
         """
         Sets the parser_function_parameters of this LogAnalyticsParserFunction.
-        parameter map list
+        The parser function parameter list.
 
 
         :param parser_function_parameters: The parser_function_parameters of this LogAnalyticsParserFunction.

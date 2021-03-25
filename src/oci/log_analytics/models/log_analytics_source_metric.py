@@ -58,7 +58,7 @@ class LogAnalyticsSourceMetric(object):
     def is_metric_source_enabled(self):
         """
         Gets the is_metric_source_enabled of this LogAnalyticsSourceMetric.
-        is enabled flag
+        A flag specifying whether or not the metric source is enabled.
 
 
         :return: The is_metric_source_enabled of this LogAnalyticsSourceMetric.
@@ -70,7 +70,7 @@ class LogAnalyticsSourceMetric(object):
     def is_metric_source_enabled(self, is_metric_source_enabled):
         """
         Sets the is_metric_source_enabled of this LogAnalyticsSourceMetric.
-        is enabled flag
+        A flag specifying whether or not the metric source is enabled.
 
 
         :param is_metric_source_enabled: The is_metric_source_enabled of this LogAnalyticsSourceMetric.
@@ -82,7 +82,7 @@ class LogAnalyticsSourceMetric(object):
     def metric_name(self):
         """
         Gets the metric_name of this LogAnalyticsSourceMetric.
-        metric name
+        The metric name.
 
 
         :return: The metric_name of this LogAnalyticsSourceMetric.
@@ -94,7 +94,7 @@ class LogAnalyticsSourceMetric(object):
     def metric_name(self, metric_name):
         """
         Sets the metric_name of this LogAnalyticsSourceMetric.
-        metric name
+        The metric name.
 
 
         :param metric_name: The metric_name of this LogAnalyticsSourceMetric.
@@ -106,7 +106,7 @@ class LogAnalyticsSourceMetric(object):
     def source_name(self):
         """
         Gets the source_name of this LogAnalyticsSourceMetric.
-        source internal name
+        The source internal name.
 
 
         :return: The source_name of this LogAnalyticsSourceMetric.
@@ -118,7 +118,7 @@ class LogAnalyticsSourceMetric(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this LogAnalyticsSourceMetric.
-        source internal name
+        The source internal name.
 
 
         :param source_name: The source_name of this LogAnalyticsSourceMetric.
@@ -130,7 +130,7 @@ class LogAnalyticsSourceMetric(object):
     def entity_type(self):
         """
         Gets the entity_type of this LogAnalyticsSourceMetric.
-        entity type
+        The entity type.
 
 
         :return: The entity_type of this LogAnalyticsSourceMetric.
@@ -142,7 +142,7 @@ class LogAnalyticsSourceMetric(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this LogAnalyticsSourceMetric.
-        entity type
+        The entity type.
 
 
         :param entity_type: The entity_type of this LogAnalyticsSourceMetric.

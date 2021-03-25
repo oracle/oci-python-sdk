@@ -37,7 +37,7 @@ class LogAnalyticsConfigWorkRequestCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsConfigWorkRequestCollection.
-        list of workrequest responses
+        A list of workrequest responses.
 
 
         :return: The items of this LogAnalyticsConfigWorkRequestCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsConfigWorkRequestCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsConfigWorkRequestCollection.
-        list of workrequest responses
+        A list of workrequest responses.
 
 
         :param items: The items of this LogAnalyticsConfigWorkRequestCollection.

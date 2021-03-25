@@ -31,8 +31,10 @@ Key Management
     oci.key_management.models.ChangeVaultCompartmentDetails
     oci.key_management.models.CreateKeyDetails
     oci.key_management.models.CreateVaultDetails
+    oci.key_management.models.CreateVaultReplicaDetails
     oci.key_management.models.DecryptDataDetails
     oci.key_management.models.DecryptedData
+    oci.key_management.models.DeleteVaultReplicaDetails
     oci.key_management.models.EncryptDataDetails
     oci.key_management.models.EncryptedData
     oci.key_management.models.ExportKeyDetails
@@ -42,10 +44,14 @@ Key Management
     oci.key_management.models.ImportKeyDetails
     oci.key_management.models.ImportKeyVersionDetails
     oci.key_management.models.Key
+    oci.key_management.models.KeyReplicaDetails
     oci.key_management.models.KeyShape
     oci.key_management.models.KeySummary
     oci.key_management.models.KeyVersion
+    oci.key_management.models.KeyVersionReplicaDetails
     oci.key_management.models.KeyVersionSummary
+    oci.key_management.models.ReplicaDetails
+    oci.key_management.models.ReplicationStatusDetails
     oci.key_management.models.RestoreKeyFromObjectStoreDetails
     oci.key_management.models.RestoreVaultFromObjectStoreDetails
     oci.key_management.models.ScheduleKeyDeletionDetails
@@ -56,6 +62,8 @@ Key Management
     oci.key_management.models.UpdateKeyDetails
     oci.key_management.models.UpdateVaultDetails
     oci.key_management.models.Vault
+    oci.key_management.models.VaultReplicaDetails
+    oci.key_management.models.VaultReplicaSummary
     oci.key_management.models.VaultSummary
     oci.key_management.models.VaultUsage
     oci.key_management.models.VerifiedData

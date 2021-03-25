@@ -79,7 +79,7 @@ class AbstractParserTestResultLogEntry(object):
     def extra_info_attributes(self):
         """
         Gets the extra_info_attributes of this AbstractParserTestResultLogEntry.
-        extra info attributes
+        Extra information attributes.
 
 
         :return: The extra_info_attributes of this AbstractParserTestResultLogEntry.
@@ -91,7 +91,7 @@ class AbstractParserTestResultLogEntry(object):
     def extra_info_attributes(self, extra_info_attributes):
         """
         Sets the extra_info_attributes of this AbstractParserTestResultLogEntry.
-        extra info attributes
+        Extra information attributes.
 
 
         :param extra_info_attributes: The extra_info_attributes of this AbstractParserTestResultLogEntry.
@@ -103,7 +103,7 @@ class AbstractParserTestResultLogEntry(object):
     def field_name_value_map(self):
         """
         Gets the field_name_value_map of this AbstractParserTestResultLogEntry.
-        field name value map
+        The field name value map.
 
 
         :return: The field_name_value_map of this AbstractParserTestResultLogEntry.
@@ -115,7 +115,7 @@ class AbstractParserTestResultLogEntry(object):
     def field_name_value_map(self, field_name_value_map):
         """
         Sets the field_name_value_map of this AbstractParserTestResultLogEntry.
-        field name value map
+        The field name value map.
 
 
         :param field_name_value_map: The field_name_value_map of this AbstractParserTestResultLogEntry.
@@ -127,7 +127,7 @@ class AbstractParserTestResultLogEntry(object):
     def field_position_value_map(self):
         """
         Gets the field_position_value_map of this AbstractParserTestResultLogEntry.
-        field position value map
+        The field position value map.
 
 
         :return: The field_position_value_map of this AbstractParserTestResultLogEntry.
@@ -139,7 +139,7 @@ class AbstractParserTestResultLogEntry(object):
     def field_position_value_map(self, field_position_value_map):
         """
         Sets the field_position_value_map of this AbstractParserTestResultLogEntry.
-        field position value map
+        The field position value map.
 
 
         :param field_position_value_map: The field_position_value_map of this AbstractParserTestResultLogEntry.
@@ -151,7 +151,7 @@ class AbstractParserTestResultLogEntry(object):
     def fields(self):
         """
         Gets the fields of this AbstractParserTestResultLogEntry.
-        fields
+        The parser fields.
 
 
         :return: The fields of this AbstractParserTestResultLogEntry.
@@ -163,7 +163,7 @@ class AbstractParserTestResultLogEntry(object):
     def fields(self, fields):
         """
         Sets the fields of this AbstractParserTestResultLogEntry.
-        fields
+        The parser fields.
 
 
         :param fields: The fields of this AbstractParserTestResultLogEntry.
@@ -175,7 +175,7 @@ class AbstractParserTestResultLogEntry(object):
     def log_entry(self):
         """
         Gets the log_entry of this AbstractParserTestResultLogEntry.
-        log entry
+        The log entry.
 
 
         :return: The log_entry of this AbstractParserTestResultLogEntry.
@@ -187,7 +187,7 @@ class AbstractParserTestResultLogEntry(object):
     def log_entry(self, log_entry):
         """
         Sets the log_entry of this AbstractParserTestResultLogEntry.
-        log entry
+        The log entry.
 
 
         :param log_entry: The log_entry of this AbstractParserTestResultLogEntry.
@@ -199,7 +199,7 @@ class AbstractParserTestResultLogEntry(object):
     def match_status(self):
         """
         Gets the match_status of this AbstractParserTestResultLogEntry.
-        match status
+        The match status.
 
 
         :return: The match_status of this AbstractParserTestResultLogEntry.
@@ -211,7 +211,7 @@ class AbstractParserTestResultLogEntry(object):
     def match_status(self, match_status):
         """
         Sets the match_status of this AbstractParserTestResultLogEntry.
-        match status
+        The match status.
 
 
         :param match_status: The match_status of this AbstractParserTestResultLogEntry.
@@ -223,7 +223,7 @@ class AbstractParserTestResultLogEntry(object):
     def match_status_description(self):
         """
         Gets the match_status_description of this AbstractParserTestResultLogEntry.
-        match status description
+        The match status description.
 
 
         :return: The match_status_description of this AbstractParserTestResultLogEntry.
@@ -235,7 +235,7 @@ class AbstractParserTestResultLogEntry(object):
     def match_status_description(self, match_status_description):
         """
         Sets the match_status_description of this AbstractParserTestResultLogEntry.
-        match status description
+        The match status description.
 
 
         :param match_status_description: The match_status_description of this AbstractParserTestResultLogEntry.

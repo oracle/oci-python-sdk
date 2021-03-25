@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpsertLogAnalyticsAssociationDetails(object):
     """
-    UpsertLogAnalyticsAssociationDetails
+    The required information to update or create a list of associations.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpsertLogAnalyticsAssociationDetails.
-        compartmentId
+        The compartment ID
 
 
         :return: The compartment_id of this UpsertLogAnalyticsAssociationDetails.
@@ -56,7 +56,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpsertLogAnalyticsAssociationDetails.
-        compartmentId
+        The compartment ID
 
 
         :param compartment_id: The compartment_id of this UpsertLogAnalyticsAssociationDetails.
@@ -68,7 +68,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
     def items(self):
         """
         Gets the items of this UpsertLogAnalyticsAssociationDetails.
-        list of rule entity association details
+        The information required to create or update an association.
 
 
         :return: The items of this UpsertLogAnalyticsAssociationDetails.
@@ -80,7 +80,7 @@ class UpsertLogAnalyticsAssociationDetails(object):
     def items(self, items):
         """
         Sets the items of this UpsertLogAnalyticsAssociationDetails.
-        list of rule entity association details
+        The information required to create or update an association.
 
 
         :param items: The items of this UpsertLogAnalyticsAssociationDetails.

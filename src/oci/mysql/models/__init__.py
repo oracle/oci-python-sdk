@@ -41,6 +41,7 @@ from .create_db_system_source_import_from_url_details import CreateDbSystemSourc
 from .create_maintenance_details import CreateMaintenanceDetails
 from .db_system import DbSystem
 from .db_system_endpoint import DbSystemEndpoint
+from .db_system_placement import DbSystemPlacement
 from .db_system_snapshot import DbSystemSnapshot
 from .db_system_source import DbSystemSource
 from .db_system_source_from_backup import DbSystemSourceFromBackup
@@ -117,6 +118,7 @@ mysql_type_mapping = {
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
     "DbSystem": DbSystem,
     "DbSystemEndpoint": DbSystemEndpoint,
+    "DbSystemPlacement": DbSystemPlacement,
     "DbSystemSnapshot": DbSystemSnapshot,
     "DbSystemSource": DbSystemSource,
     "DbSystemSourceFromBackup": DbSystemSourceFromBackup,

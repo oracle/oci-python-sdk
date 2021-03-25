@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LabelPriority(object):
     """
-    Label Priority
+    The label priority.
     """
 
     #: A constant which can be used with the priority property of a LabelPriority.
@@ -55,7 +55,7 @@ class LabelPriority(object):
     def priority(self):
         """
         Gets the priority of this LabelPriority.
-        tag priority
+        The label priority. Default value is NONE.
 
         Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -70,7 +70,7 @@ class LabelPriority(object):
     def priority(self, priority):
         """
         Sets the priority of this LabelPriority.
-        tag priority
+        The label priority. Default value is NONE.
 
 
         :param priority: The priority of this LabelPriority.

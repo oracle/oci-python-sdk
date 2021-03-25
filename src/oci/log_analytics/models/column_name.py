@@ -37,7 +37,7 @@ class ColumnName(object):
     def name(self):
         """
         Gets the name of this ColumnName.
-        column name
+        The column name from a SQL query.
 
 
         :return: The name of this ColumnName.
@@ -49,7 +49,7 @@ class ColumnName(object):
     def name(self, name):
         """
         Sets the name of this ColumnName.
-        column name
+        The column name from a SQL query.
 
 
         :param name: The name of this ColumnName.
