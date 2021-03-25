@@ -3,9 +3,13 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import filecmp
+from datetime import datetime, timedelta
+
+from oci._vendor import urllib3
+import pytz
 import oci
 from oci.object_storage.models import CreateBucketDetails
-
+from oci.object_storage.models import CreatePreauthenticatedRequestDetails
 
 config = oci.config.from_file()
 compartment_id = config["tenancy"]
@@ -15,6 +19,7 @@ namespace = object_storage.get_namespace().data
 bucket_name = "python-sdk-example-bucket"
 object_name = "python-sdk-example-object"
 my_data = b"Hello, World!"
+par_name = "python-sdk-example-par"
 
 print("Creating a new bucket {!r} in compartment {!r}".format(
     bucket_name, compartment_id))
@@ -59,6 +64,31 @@ with open('example_file_retrieved', 'wb') as f:
         f.write(chunk)
 
 print('Uploaded and downloaded files are the same: {}'.format(filecmp.cmp('example_file', 'example_file_retrieved')))
+
+# Creating a Pre-Authenticated Request
+par_ttl = (datetime.utcnow() + timedelta(hours=24)).replace(tzinfo=pytz.UTC)
+
+create_par_details = CreatePreauthenticatedRequestDetails()
+create_par_details.name = par_name
+create_par_details.object_name = object_name
+create_par_details.access_type = CreatePreauthenticatedRequestDetails.ACCESS_TYPE_OBJECT_READ
+create_par_details.time_expires = par_ttl.isoformat()
+
+par = object_storage.create_preauthenticated_request(namespace_name=namespace, bucket_name=bucket_name,
+                                                     create_preauthenticated_request_details=create_par_details)
+print("Pre-authenticated request: {}".format(par))
+
+# Get Object using thr Pre-Authenticated Request
+par_request_url = object_storage.base_client.get_endpoint() + par.data.access_uri
+print("\nPAR url:{}".format(par_request_url))
+
+http = urllib3.PoolManager()
+par_obj = http.request('GET', par_request_url).data.decode('utf-8')
+
+print("\nCheck object from PAR is same or not: {}".format(my_data == bytes(par_obj,'utf-8')))
+
+# Delete Pre-Authenticated Request
+object_storage.delete_preauthenticated_request(namespace_name=namespace, bucket_name=bucket_name, par_id=par.data.id)
 
 print("Deleting object {}".format(object_name))
 object_storage.delete_object(namespace, bucket_name, object_name)
