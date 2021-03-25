@@ -5,9 +5,10 @@
 import filecmp
 from datetime import datetime, timedelta
 
-from oci._vendor import urllib3
 import pytz
+
 import oci
+from oci._vendor import urllib3
 from oci.object_storage.models import CreateBucketDetails
 from oci.object_storage.models import CreatePreauthenticatedRequestDetails
 
@@ -76,16 +77,13 @@ create_par_details.time_expires = par_ttl.isoformat()
 
 par = object_storage.create_preauthenticated_request(namespace_name=namespace, bucket_name=bucket_name,
                                                      create_preauthenticated_request_details=create_par_details)
-print("Pre-authenticated request: {}".format(par))
 
 # Get Object using thr Pre-Authenticated Request
 par_request_url = object_storage.base_client.get_endpoint() + par.data.access_uri
-print("\nPAR url:{}".format(par_request_url))
 
 http = urllib3.PoolManager()
 par_obj = http.request('GET', par_request_url).data.decode('utf-8')
-
-print("\nCheck object from PAR is same or not: {}".format(my_data == bytes(par_obj,'utf-8')))
+print("Check object from PAR is same or not: {}".format(my_data == bytes(par_obj, 'utf-8')))
 
 # Delete Pre-Authenticated Request
 object_storage.delete_preauthenticated_request(namespace_name=namespace, bucket_name=bucket_name, par_id=par.data.id)
