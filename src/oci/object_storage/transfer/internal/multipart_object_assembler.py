@@ -426,9 +426,9 @@ class MultipartObjectAssembler:
             retry_strategy = kwargs['retry_strategy']
 
         if "opc_md5" not in part:
-            # Disable the retry_strategy to work around data corruption issue temporarily
-            retry_strategy = None
 
+            # A call to _upload_part_call can be retried because it reads the same data into the
+            # body as BufferedPartReader every time before calling put_object, using the kwargs "offset" and "size"
             if retry_strategy:
                 response = retry_strategy.make_retrying_call(
                     self._upload_part_call,
@@ -444,8 +444,7 @@ class MultipartObjectAssembler:
                     new_kwargs=new_kwargs
                 )
             else:
-                # Disable the retry_strategy to work around data corruption issue temporarily
-                remaining_tries = 1
+                remaining_tries = self.max_retries
                 while remaining_tries > 0:
                     try:
                         response = self._upload_part_call(self.object_storage_client,
@@ -482,6 +481,8 @@ class MultipartObjectAssembler:
             if 'opc_client_request_id' in kwargs:
                 new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
 
+            # A call to upload_part can be retried because we've already read() the data and retrying the
+            # request with same data part_bytes
             remaining_tries = self.max_retries
             while remaining_tries > 0:
                 try:
