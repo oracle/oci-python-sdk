@@ -226,7 +226,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def label_conditions(self):
         """
         Gets the label_conditions of this UpsertLogAnalyticsSourceDetails.
-        source label conditions
+        An array of source label conditions.
 
 
         :return: The label_conditions of this UpsertLogAnalyticsSourceDetails.
@@ -238,7 +238,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def label_conditions(self, label_conditions):
         """
         Sets the label_conditions of this UpsertLogAnalyticsSourceDetails.
-        source label conditions
+        An array of source label conditions.
 
 
         :param label_conditions: The label_conditions of this UpsertLogAnalyticsSourceDetails.
@@ -250,7 +250,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def data_filter_definitions(self):
         """
         Gets the data_filter_definitions of this UpsertLogAnalyticsSourceDetails.
-        data filter definitions
+        An array of data filter definitions.
 
 
         :return: The data_filter_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -262,7 +262,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def data_filter_definitions(self, data_filter_definitions):
         """
         Sets the data_filter_definitions of this UpsertLogAnalyticsSourceDetails.
-        data filter definitions
+        An array of data filter definitions.
 
 
         :param data_filter_definitions: The data_filter_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -274,7 +274,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def database_credential(self):
         """
         Gets the database_credential of this UpsertLogAnalyticsSourceDetails.
-        DB credential name
+        The database credential name.
 
 
         :return: The database_credential of this UpsertLogAnalyticsSourceDetails.
@@ -286,7 +286,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def database_credential(self, database_credential):
         """
         Sets the database_credential of this UpsertLogAnalyticsSourceDetails.
-        DB credential name
+        The database credential name.
 
 
         :param database_credential: The database_credential of this UpsertLogAnalyticsSourceDetails.
@@ -298,7 +298,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def extended_field_definitions(self):
         """
         Gets the extended_field_definitions of this UpsertLogAnalyticsSourceDetails.
-        extended field definition
+        An array of extended field definitions.
 
 
         :return: The extended_field_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -310,7 +310,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def extended_field_definitions(self, extended_field_definitions):
         """
         Sets the extended_field_definitions of this UpsertLogAnalyticsSourceDetails.
-        extended field definition
+        An array of extended field definitions.
 
 
         :param extended_field_definitions: The extended_field_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -322,7 +322,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_for_cloud(self):
         """
         Gets the is_for_cloud of this UpsertLogAnalyticsSourceDetails.
-        is for cloud flag
+        A flag indicating whether or not this is a cloud source.
 
 
         :return: The is_for_cloud of this UpsertLogAnalyticsSourceDetails.
@@ -334,7 +334,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_for_cloud(self, is_for_cloud):
         """
         Sets the is_for_cloud of this UpsertLogAnalyticsSourceDetails.
-        is for cloud flag
+        A flag indicating whether or not this is a cloud source.
 
 
         :param is_for_cloud: The is_for_cloud of this UpsertLogAnalyticsSourceDetails.
@@ -346,7 +346,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def labels(self):
         """
         Gets the labels of this UpsertLogAnalyticsSourceDetails.
-        labels
+        An array of labels.
 
 
         :return: The labels of this UpsertLogAnalyticsSourceDetails.
@@ -358,7 +358,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def labels(self, labels):
         """
         Sets the labels of this UpsertLogAnalyticsSourceDetails.
-        labels
+        An array of labels.
 
 
         :param labels: The labels of this UpsertLogAnalyticsSourceDetails.
@@ -370,7 +370,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def metric_definitions(self):
         """
         Gets the metric_definitions of this UpsertLogAnalyticsSourceDetails.
-        metric definitions
+        An array of metric definitions.
 
 
         :return: The metric_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -382,7 +382,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def metric_definitions(self, metric_definitions):
         """
         Sets the metric_definitions of this UpsertLogAnalyticsSourceDetails.
-        metric definitions
+        An array of metric definitions.
 
 
         :param metric_definitions: The metric_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -394,7 +394,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def metrics(self):
         """
         Gets the metrics of this UpsertLogAnalyticsSourceDetails.
-        metric source map
+        An array of metrics.
 
 
         :return: The metrics of this UpsertLogAnalyticsSourceDetails.
@@ -406,7 +406,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this UpsertLogAnalyticsSourceDetails.
-        metric source map
+        An array of metrics.
 
 
         :param metrics: The metrics of this UpsertLogAnalyticsSourceDetails.
@@ -418,7 +418,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def oob_parsers(self):
         """
         Gets the oob_parsers of this UpsertLogAnalyticsSourceDetails.
-        out-of-the-box source parser list
+        An array of built in source parsers.
 
 
         :return: The oob_parsers of this UpsertLogAnalyticsSourceDetails.
@@ -430,7 +430,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def oob_parsers(self, oob_parsers):
         """
         Sets the oob_parsers of this UpsertLogAnalyticsSourceDetails.
-        out-of-the-box source parser list
+        An array of built in source parsers.
 
 
         :param oob_parsers: The oob_parsers of this UpsertLogAnalyticsSourceDetails.
@@ -442,7 +442,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def parameters(self):
         """
         Gets the parameters of this UpsertLogAnalyticsSourceDetails.
-        parameters
+        An array of parameters.
 
 
         :return: The parameters of this UpsertLogAnalyticsSourceDetails.
@@ -454,7 +454,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this UpsertLogAnalyticsSourceDetails.
-        parameters
+        An array of parameters.
 
 
         :param parameters: The parameters of this UpsertLogAnalyticsSourceDetails.
@@ -466,7 +466,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def patterns(self):
         """
         Gets the patterns of this UpsertLogAnalyticsSourceDetails.
-        patterns
+        An array of patterns.
 
 
         :return: The patterns of this UpsertLogAnalyticsSourceDetails.
@@ -478,7 +478,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def patterns(self, patterns):
         """
         Sets the patterns of this UpsertLogAnalyticsSourceDetails.
-        patterns
+        An array of patterns.
 
 
         :param patterns: The patterns of this UpsertLogAnalyticsSourceDetails.
@@ -490,7 +490,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def description(self):
         """
         Gets the description of this UpsertLogAnalyticsSourceDetails.
-        description
+        The source description.
 
 
         :return: The description of this UpsertLogAnalyticsSourceDetails.
@@ -502,7 +502,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def description(self, description):
         """
         Sets the description of this UpsertLogAnalyticsSourceDetails.
-        description
+        The source description.
 
 
         :param description: The description of this UpsertLogAnalyticsSourceDetails.
@@ -514,7 +514,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpsertLogAnalyticsSourceDetails.
-        display name
+        The source display name.
 
 
         :return: The display_name of this UpsertLogAnalyticsSourceDetails.
@@ -526,7 +526,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpsertLogAnalyticsSourceDetails.
-        display name
+        The source display name.
 
 
         :param display_name: The display_name of this UpsertLogAnalyticsSourceDetails.
@@ -538,7 +538,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def edit_version(self):
         """
         Gets the edit_version of this UpsertLogAnalyticsSourceDetails.
-        source edit version
+        The source edit version.
 
 
         :return: The edit_version of this UpsertLogAnalyticsSourceDetails.
@@ -550,7 +550,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this UpsertLogAnalyticsSourceDetails.
-        source edit version
+        The source edit version.
 
 
         :param edit_version: The edit_version of this UpsertLogAnalyticsSourceDetails.
@@ -562,7 +562,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def functions(self):
         """
         Gets the functions of this UpsertLogAnalyticsSourceDetails.
-        source functions
+        An array of source functions.
 
 
         :return: The functions of this UpsertLogAnalyticsSourceDetails.
@@ -574,7 +574,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def functions(self, functions):
         """
         Sets the functions of this UpsertLogAnalyticsSourceDetails.
-        source functions
+        An array of source functions.
 
 
         :param functions: The functions of this UpsertLogAnalyticsSourceDetails.
@@ -586,7 +586,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def source_id(self):
         """
         Gets the source_id of this UpsertLogAnalyticsSourceDetails.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this UpsertLogAnalyticsSourceDetails.
@@ -598,7 +598,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this UpsertLogAnalyticsSourceDetails.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this UpsertLogAnalyticsSourceDetails.
@@ -610,7 +610,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def name(self):
         """
         Gets the name of this UpsertLogAnalyticsSourceDetails.
-        source internal name
+        The source internal name.
 
 
         :return: The name of this UpsertLogAnalyticsSourceDetails.
@@ -622,7 +622,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def name(self, name):
         """
         Sets the name of this UpsertLogAnalyticsSourceDetails.
-        source internal name
+        The source internal name.
 
 
         :param name: The name of this UpsertLogAnalyticsSourceDetails.
@@ -634,7 +634,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_secure_content(self):
         """
         Gets the is_secure_content of this UpsertLogAnalyticsSourceDetails.
-        is secure content flag
+        A flag indicating whether or not the source content is secure.
 
 
         :return: The is_secure_content of this UpsertLogAnalyticsSourceDetails.
@@ -646,7 +646,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_secure_content(self, is_secure_content):
         """
         Sets the is_secure_content of this UpsertLogAnalyticsSourceDetails.
-        is secure content flag
+        A flag indicating whether or not the source content is secure.
 
 
         :param is_secure_content: The is_secure_content of this UpsertLogAnalyticsSourceDetails.
@@ -658,7 +658,8 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_system(self):
         """
         Gets the is_system of this UpsertLogAnalyticsSourceDetails.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this UpsertLogAnalyticsSourceDetails.
@@ -670,7 +671,8 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this UpsertLogAnalyticsSourceDetails.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this UpsertLogAnalyticsSourceDetails.
@@ -682,7 +684,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def parsers(self):
         """
         Gets the parsers of this UpsertLogAnalyticsSourceDetails.
-        parser list
+        An array of parser.
 
 
         :return: The parsers of this UpsertLogAnalyticsSourceDetails.
@@ -694,7 +696,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def parsers(self, parsers):
         """
         Sets the parsers of this UpsertLogAnalyticsSourceDetails.
-        parser list
+        An array of parser.
 
 
         :param parsers: The parsers of this UpsertLogAnalyticsSourceDetails.
@@ -706,7 +708,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def rule_id(self):
         """
         Gets the rule_id of this UpsertLogAnalyticsSourceDetails.
-        rule Id
+        The rule unique identifier.
 
 
         :return: The rule_id of this UpsertLogAnalyticsSourceDetails.
@@ -718,7 +720,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def rule_id(self, rule_id):
         """
         Sets the rule_id of this UpsertLogAnalyticsSourceDetails.
-        rule Id
+        The rule unique identifier.
 
 
         :param rule_id: The rule_id of this UpsertLogAnalyticsSourceDetails.
@@ -730,7 +732,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def type_name(self):
         """
         Gets the type_name of this UpsertLogAnalyticsSourceDetails.
-        source type internal name
+        The source type internal name.
 
 
         :return: The type_name of this UpsertLogAnalyticsSourceDetails.
@@ -742,7 +744,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def type_name(self, type_name):
         """
         Sets the type_name of this UpsertLogAnalyticsSourceDetails.
-        source type internal name
+        The source type internal name.
 
 
         :param type_name: The type_name of this UpsertLogAnalyticsSourceDetails.
@@ -754,7 +756,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def warning_config(self):
         """
         Gets the warning_config of this UpsertLogAnalyticsSourceDetails.
-        source warning configuration
+        The source warning configuration.
 
 
         :return: The warning_config of this UpsertLogAnalyticsSourceDetails.
@@ -766,7 +768,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def warning_config(self, warning_config):
         """
         Sets the warning_config of this UpsertLogAnalyticsSourceDetails.
-        source warning configuration
+        The source warning configuration.
 
 
         :param warning_config: The warning_config of this UpsertLogAnalyticsSourceDetails.
@@ -778,7 +780,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def metadata_fields(self):
         """
         Gets the metadata_fields of this UpsertLogAnalyticsSourceDetails.
-        source metadata fields
+        An array of source metadata fields.
 
 
         :return: The metadata_fields of this UpsertLogAnalyticsSourceDetails.
@@ -790,7 +792,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def metadata_fields(self, metadata_fields):
         """
         Sets the metadata_fields of this UpsertLogAnalyticsSourceDetails.
-        source metadata fields
+        An array of source metadata fields.
 
 
         :param metadata_fields: The metadata_fields of this UpsertLogAnalyticsSourceDetails.
@@ -802,7 +804,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def label_definitions(self):
         """
         Gets the label_definitions of this UpsertLogAnalyticsSourceDetails.
-        tags
+        An array of labels.
 
 
         :return: The label_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -814,7 +816,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def label_definitions(self, label_definitions):
         """
         Sets the label_definitions of this UpsertLogAnalyticsSourceDetails.
-        tags
+        An array of labels.
 
 
         :param label_definitions: The label_definitions of this UpsertLogAnalyticsSourceDetails.
@@ -826,7 +828,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def entity_types(self):
         """
         Gets the entity_types of this UpsertLogAnalyticsSourceDetails.
-        entity types
+        An array of entity types.
 
 
         :return: The entity_types of this UpsertLogAnalyticsSourceDetails.
@@ -838,7 +840,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def entity_types(self, entity_types):
         """
         Sets the entity_types of this UpsertLogAnalyticsSourceDetails.
-        entity types
+        An array of entity types.
 
 
         :param entity_types: The entity_types of this UpsertLogAnalyticsSourceDetails.
@@ -850,7 +852,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_timezone_override(self):
         """
         Gets the is_timezone_override of this UpsertLogAnalyticsSourceDetails.
-        time zone override
+        A flag indicating whether or not the source has a time zone override.
 
 
         :return: The is_timezone_override of this UpsertLogAnalyticsSourceDetails.
@@ -862,7 +864,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def is_timezone_override(self, is_timezone_override):
         """
         Sets the is_timezone_override of this UpsertLogAnalyticsSourceDetails.
-        time zone override
+        A flag indicating whether or not the source has a time zone override.
 
 
         :param is_timezone_override: The is_timezone_override of this UpsertLogAnalyticsSourceDetails.
@@ -874,7 +876,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def user_parsers(self):
         """
         Gets the user_parsers of this UpsertLogAnalyticsSourceDetails.
-        source parser list
+        An array of custom parsers.
 
 
         :return: The user_parsers of this UpsertLogAnalyticsSourceDetails.
@@ -886,7 +888,7 @@ class UpsertLogAnalyticsSourceDetails(object):
     def user_parsers(self, user_parsers):
         """
         Sets the user_parsers of this UpsertLogAnalyticsSourceDetails.
-        source parser list
+        An array of custom parsers.
 
 
         :param user_parsers: The user_parsers of this UpsertLogAnalyticsSourceDetails.

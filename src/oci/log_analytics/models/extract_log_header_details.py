@@ -44,7 +44,7 @@ class ExtractLogHeaderDetails(object):
     def log_key(self):
         """
         Gets the log_key of this ExtractLogHeaderDetails.
-        key
+        The log key.
 
 
         :return: The log_key of this ExtractLogHeaderDetails.
@@ -56,7 +56,7 @@ class ExtractLogHeaderDetails(object):
     def log_key(self, log_key):
         """
         Sets the log_key of this ExtractLogHeaderDetails.
-        key
+        The log key.
 
 
         :param log_key: The log_key of this ExtractLogHeaderDetails.
@@ -68,7 +68,7 @@ class ExtractLogHeaderDetails(object):
     def header_values(self):
         """
         Gets the header_values of this ExtractLogHeaderDetails.
-        log header values
+        The log header values.
 
 
         :return: The header_values of this ExtractLogHeaderDetails.
@@ -80,7 +80,7 @@ class ExtractLogHeaderDetails(object):
     def header_values(self, header_values):
         """
         Sets the header_values of this ExtractLogHeaderDetails.
-        log header values
+        The log header values.
 
 
         :param header_values: The header_values of this ExtractLogHeaderDetails.

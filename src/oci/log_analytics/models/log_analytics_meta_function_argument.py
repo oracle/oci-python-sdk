@@ -70,6 +70,10 @@ class LogAnalyticsMetaFunctionArgument(object):
             The value to assign to the argument_value property of this LogAnalyticsMetaFunctionArgument.
         :type argument_value: str
 
+        :param argument_reference:
+            The value to assign to the argument_reference property of this LogAnalyticsMetaFunctionArgument.
+        :type argument_reference: str
+
         """
         self.swagger_types = {
             'is_override_output_fields': 'bool',
@@ -84,7 +88,8 @@ class LogAnalyticsMetaFunctionArgument(object):
             'argument_id': 'int',
             'argument_lookup_column': 'str',
             'argument_lookup_column_position': 'int',
-            'argument_value': 'str'
+            'argument_value': 'str',
+            'argument_reference': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class LogAnalyticsMetaFunctionArgument(object):
             'argument_id': 'argumentId',
             'argument_lookup_column': 'argumentLookupColumn',
             'argument_lookup_column_position': 'argumentLookupColumnPosition',
-            'argument_value': 'argumentValue'
+            'argument_value': 'argumentValue',
+            'argument_reference': 'argumentReference'
         }
 
         self._is_override_output_fields = None
@@ -116,12 +122,13 @@ class LogAnalyticsMetaFunctionArgument(object):
         self._argument_lookup_column = None
         self._argument_lookup_column_position = None
         self._argument_value = None
+        self._argument_reference = None
 
     @property
     def is_override_output_fields(self):
         """
         Gets the is_override_output_fields of this LogAnalyticsMetaFunctionArgument.
-        override output fields
+        The override output fields.
 
 
         :return: The is_override_output_fields of this LogAnalyticsMetaFunctionArgument.
@@ -133,7 +140,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def is_override_output_fields(self, is_override_output_fields):
         """
         Sets the is_override_output_fields of this LogAnalyticsMetaFunctionArgument.
-        override output fields
+        The override output fields.
 
 
         :param is_override_output_fields: The is_override_output_fields of this LogAnalyticsMetaFunctionArgument.
@@ -145,7 +152,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_display_name(self):
         """
         Gets the argument_display_name of this LogAnalyticsMetaFunctionArgument.
-        argument display name
+        The argument display name.
 
 
         :return: The argument_display_name of this LogAnalyticsMetaFunctionArgument.
@@ -157,7 +164,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_display_name(self, argument_display_name):
         """
         Sets the argument_display_name of this LogAnalyticsMetaFunctionArgument.
-        argument display name
+        The argument display name.
 
 
         :param argument_display_name: The argument_display_name of this LogAnalyticsMetaFunctionArgument.
@@ -169,7 +176,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_example(self):
         """
         Gets the argument_example of this LogAnalyticsMetaFunctionArgument.
-        argument example
+        The argument example.
 
 
         :return: The argument_example of this LogAnalyticsMetaFunctionArgument.
@@ -181,7 +188,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_example(self, argument_example):
         """
         Sets the argument_example of this LogAnalyticsMetaFunctionArgument.
-        argument example
+        The argument example.
 
 
         :param argument_example: The argument_example of this LogAnalyticsMetaFunctionArgument.
@@ -193,7 +200,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_service(self):
         """
         Gets the argument_service of this LogAnalyticsMetaFunctionArgument.
-        argument service
+        The argument service.
 
 
         :return: The argument_service of this LogAnalyticsMetaFunctionArgument.
@@ -205,7 +212,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_service(self, argument_service):
         """
         Sets the argument_service of this LogAnalyticsMetaFunctionArgument.
-        argument service
+        The argument service.
 
 
         :param argument_service: The argument_service of this LogAnalyticsMetaFunctionArgument.
@@ -217,7 +224,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_data_type(self):
         """
         Gets the argument_data_type of this LogAnalyticsMetaFunctionArgument.
-        argument data type
+        The argument data type.
 
 
         :return: The argument_data_type of this LogAnalyticsMetaFunctionArgument.
@@ -229,7 +236,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_data_type(self, argument_data_type):
         """
         Sets the argument_data_type of this LogAnalyticsMetaFunctionArgument.
-        argument data type
+        The argument data type.
 
 
         :param argument_data_type: The argument_data_type of this LogAnalyticsMetaFunctionArgument.
@@ -241,7 +248,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_description(self):
         """
         Gets the argument_description of this LogAnalyticsMetaFunctionArgument.
-        argument description
+        The argument description.
 
 
         :return: The argument_description of this LogAnalyticsMetaFunctionArgument.
@@ -253,7 +260,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_description(self, argument_description):
         """
         Sets the argument_description of this LogAnalyticsMetaFunctionArgument.
-        argument description
+        The argument description.
 
 
         :param argument_description: The argument_description of this LogAnalyticsMetaFunctionArgument.
@@ -265,7 +272,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_name(self):
         """
         Gets the argument_name of this LogAnalyticsMetaFunctionArgument.
-        argument name
+        The argument name.
 
 
         :return: The argument_name of this LogAnalyticsMetaFunctionArgument.
@@ -277,7 +284,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_name(self, argument_name):
         """
         Sets the argument_name of this LogAnalyticsMetaFunctionArgument.
-        argument name
+        The argument name.
 
 
         :param argument_name: The argument_name of this LogAnalyticsMetaFunctionArgument.
@@ -289,7 +296,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_order(self):
         """
         Gets the argument_order of this LogAnalyticsMetaFunctionArgument.
-        argument order
+        The argument order.
 
 
         :return: The argument_order of this LogAnalyticsMetaFunctionArgument.
@@ -301,7 +308,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_order(self, argument_order):
         """
         Sets the argument_order of this LogAnalyticsMetaFunctionArgument.
-        argument order
+        The argument order.
 
 
         :param argument_order: The argument_order of this LogAnalyticsMetaFunctionArgument.
@@ -313,7 +320,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_type(self):
         """
         Gets the argument_type of this LogAnalyticsMetaFunctionArgument.
-        argument type
+        The argument type.
 
 
         :return: The argument_type of this LogAnalyticsMetaFunctionArgument.
@@ -325,7 +332,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_type(self, argument_type):
         """
         Sets the argument_type of this LogAnalyticsMetaFunctionArgument.
-        argument type
+        The argument type.
 
 
         :param argument_type: The argument_type of this LogAnalyticsMetaFunctionArgument.
@@ -337,7 +344,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_id(self):
         """
         Gets the argument_id of this LogAnalyticsMetaFunctionArgument.
-        meta function id
+        The argument unique identifier.
 
 
         :return: The argument_id of this LogAnalyticsMetaFunctionArgument.
@@ -349,7 +356,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_id(self, argument_id):
         """
         Sets the argument_id of this LogAnalyticsMetaFunctionArgument.
-        meta function id
+        The argument unique identifier.
 
 
         :param argument_id: The argument_id of this LogAnalyticsMetaFunctionArgument.
@@ -361,7 +368,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_lookup_column(self):
         """
         Gets the argument_lookup_column of this LogAnalyticsMetaFunctionArgument.
-        column
+        The lookup column.
 
 
         :return: The argument_lookup_column of this LogAnalyticsMetaFunctionArgument.
@@ -373,7 +380,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_lookup_column(self, argument_lookup_column):
         """
         Sets the argument_lookup_column of this LogAnalyticsMetaFunctionArgument.
-        column
+        The lookup column.
 
 
         :param argument_lookup_column: The argument_lookup_column of this LogAnalyticsMetaFunctionArgument.
@@ -385,7 +392,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_lookup_column_position(self):
         """
         Gets the argument_lookup_column_position of this LogAnalyticsMetaFunctionArgument.
-        column position
+        The lookup column position.
 
 
         :return: The argument_lookup_column_position of this LogAnalyticsMetaFunctionArgument.
@@ -397,7 +404,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_lookup_column_position(self, argument_lookup_column_position):
         """
         Sets the argument_lookup_column_position of this LogAnalyticsMetaFunctionArgument.
-        column position
+        The lookup column position.
 
 
         :param argument_lookup_column_position: The argument_lookup_column_position of this LogAnalyticsMetaFunctionArgument.
@@ -409,7 +416,7 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_value(self):
         """
         Gets the argument_value of this LogAnalyticsMetaFunctionArgument.
-        value
+        The argument value.
 
 
         :return: The argument_value of this LogAnalyticsMetaFunctionArgument.
@@ -421,13 +428,37 @@ class LogAnalyticsMetaFunctionArgument(object):
     def argument_value(self, argument_value):
         """
         Sets the argument_value of this LogAnalyticsMetaFunctionArgument.
-        value
+        The argument value.
 
 
         :param argument_value: The argument_value of this LogAnalyticsMetaFunctionArgument.
         :type: str
         """
         self._argument_value = argument_value
+
+    @property
+    def argument_reference(self):
+        """
+        Gets the argument_reference of this LogAnalyticsMetaFunctionArgument.
+        The argument unique identifier as a string.
+
+
+        :return: The argument_reference of this LogAnalyticsMetaFunctionArgument.
+        :rtype: str
+        """
+        return self._argument_reference
+
+    @argument_reference.setter
+    def argument_reference(self, argument_reference):
+        """
+        Sets the argument_reference of this LogAnalyticsMetaFunctionArgument.
+        The argument unique identifier as a string.
+
+
+        :param argument_reference: The argument_reference of this LogAnalyticsMetaFunctionArgument.
+        :type: str
+        """
+        self._argument_reference = argument_reference
 
     def __repr__(self):
         return formatted_flat_dict(self)

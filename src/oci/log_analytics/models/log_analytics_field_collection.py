@@ -37,7 +37,7 @@ class LogAnalyticsFieldCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsFieldCollection.
-        list of fields
+        An array of fields.
 
 
         :return: The items of this LogAnalyticsFieldCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsFieldCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsFieldCollection.
-        list of fields
+        An array of fields.
 
 
         :param items: The items of this LogAnalyticsFieldCollection.

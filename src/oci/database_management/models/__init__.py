@@ -6,19 +6,27 @@ from __future__ import absolute_import
 
 from .activity_time_series_metrics import ActivityTimeSeriesMetrics
 from .add_managed_database_to_managed_database_group_details import AddManagedDatabaseToManagedDatabaseGroupDetails
+from .allowed_parameter_value import AllowedParameterValue
+from .change_database_parameter_details import ChangeDatabaseParameterDetails
+from .change_database_parameters_details import ChangeDatabaseParametersDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
 from .child_database import ChildDatabase
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
+from .database_credentials import DatabaseCredentials
 from .database_fleet_health_metrics import DatabaseFleetHealthMetrics
 from .database_home_metric_definition import DatabaseHomeMetricDefinition
 from .database_home_metrics import DatabaseHomeMetrics
 from .database_io_aggregate_metrics import DatabaseIOAggregateMetrics
+from .database_parameter_summary import DatabaseParameterSummary
+from .database_parameter_update_status import DatabaseParameterUpdateStatus
+from .database_parameters_collection import DatabaseParametersCollection
 from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
 from .database_usage_metrics import DatabaseUsageMetrics
+from .datafile import Datafile
 from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
@@ -48,26 +56,39 @@ from .object_storage_job_execution_result_details import ObjectStorageJobExecuti
 from .object_storage_job_execution_result_location import ObjectStorageJobExecutionResultLocation
 from .parent_group import ParentGroup
 from .remove_managed_database_from_managed_database_group_details import RemoveManagedDatabaseFromManagedDatabaseGroupDetails
+from .reset_database_parameters_details import ResetDatabaseParametersDetails
 from .sql_job import SqlJob
+from .tablespace import Tablespace
+from .tablespace_collection import TablespaceCollection
+from .tablespace_summary import TablespaceSummary
+from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
 
 # Maps type names to classes for database_management services.
 database_management_type_mapping = {
     "ActivityTimeSeriesMetrics": ActivityTimeSeriesMetrics,
     "AddManagedDatabaseToManagedDatabaseGroupDetails": AddManagedDatabaseToManagedDatabaseGroupDetails,
+    "AllowedParameterValue": AllowedParameterValue,
+    "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
+    "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
     "ChildDatabase": ChildDatabase,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
+    "DatabaseCredentials": DatabaseCredentials,
     "DatabaseFleetHealthMetrics": DatabaseFleetHealthMetrics,
     "DatabaseHomeMetricDefinition": DatabaseHomeMetricDefinition,
     "DatabaseHomeMetrics": DatabaseHomeMetrics,
     "DatabaseIOAggregateMetrics": DatabaseIOAggregateMetrics,
+    "DatabaseParameterSummary": DatabaseParameterSummary,
+    "DatabaseParameterUpdateStatus": DatabaseParameterUpdateStatus,
+    "DatabaseParametersCollection": DatabaseParametersCollection,
     "DatabaseStorageAggregateMetrics": DatabaseStorageAggregateMetrics,
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
     "DatabaseUsageMetrics": DatabaseUsageMetrics,
+    "Datafile": Datafile,
     "FleetMetricDefinition": FleetMetricDefinition,
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
@@ -97,6 +118,11 @@ database_management_type_mapping = {
     "ObjectStorageJobExecutionResultLocation": ObjectStorageJobExecutionResultLocation,
     "ParentGroup": ParentGroup,
     "RemoveManagedDatabaseFromManagedDatabaseGroupDetails": RemoveManagedDatabaseFromManagedDatabaseGroupDetails,
+    "ResetDatabaseParametersDetails": ResetDatabaseParametersDetails,
     "SqlJob": SqlJob,
+    "Tablespace": Tablespace,
+    "TablespaceCollection": TablespaceCollection,
+    "TablespaceSummary": TablespaceSummary,
+    "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails
 }

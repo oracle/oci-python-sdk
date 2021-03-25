@@ -106,7 +106,7 @@ class LogAnalyticsPatternFilter(object):
     def agent_version(self):
         """
         Gets the agent_version of this LogAnalyticsPatternFilter.
-        agent version
+        The agent version.
 
 
         :return: The agent_version of this LogAnalyticsPatternFilter.
@@ -118,7 +118,7 @@ class LogAnalyticsPatternFilter(object):
     def agent_version(self, agent_version):
         """
         Sets the agent_version of this LogAnalyticsPatternFilter.
-        agent version
+        The agent version.
 
 
         :param agent_version: The agent_version of this LogAnalyticsPatternFilter.
@@ -130,7 +130,8 @@ class LogAnalyticsPatternFilter(object):
     def is_in_use(self):
         """
         Gets the is_in_use of this LogAnalyticsPatternFilter.
-        is in use flag
+        A flag indicating whether or not the pattern filter is currently
+        in use.
 
 
         :return: The is_in_use of this LogAnalyticsPatternFilter.
@@ -142,7 +143,8 @@ class LogAnalyticsPatternFilter(object):
     def is_in_use(self, is_in_use):
         """
         Sets the is_in_use of this LogAnalyticsPatternFilter.
-        is in use flag
+        A flag indicating whether or not the pattern filter is currently
+        in use.
 
 
         :param is_in_use: The is_in_use of this LogAnalyticsPatternFilter.
@@ -154,7 +156,7 @@ class LogAnalyticsPatternFilter(object):
     def operating_system(self):
         """
         Gets the operating_system of this LogAnalyticsPatternFilter.
-        operating system
+        The operating system.
 
 
         :return: The operating_system of this LogAnalyticsPatternFilter.
@@ -166,7 +168,7 @@ class LogAnalyticsPatternFilter(object):
     def operating_system(self, operating_system):
         """
         Sets the operating_system of this LogAnalyticsPatternFilter.
-        operating system
+        The operating system.
 
 
         :param operating_system: The operating_system of this LogAnalyticsPatternFilter.
@@ -178,7 +180,7 @@ class LogAnalyticsPatternFilter(object):
     def pattern_id(self):
         """
         Gets the pattern_id of this LogAnalyticsPatternFilter.
-        pattern Id
+        The pattern unique identifier.
 
 
         :return: The pattern_id of this LogAnalyticsPatternFilter.
@@ -190,7 +192,7 @@ class LogAnalyticsPatternFilter(object):
     def pattern_id(self, pattern_id):
         """
         Sets the pattern_id of this LogAnalyticsPatternFilter.
-        pattern Id
+        The pattern unique identifier.
 
 
         :param pattern_id: The pattern_id of this LogAnalyticsPatternFilter.
@@ -202,7 +204,7 @@ class LogAnalyticsPatternFilter(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsPatternFilter.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsPatternFilter.
@@ -214,7 +216,7 @@ class LogAnalyticsPatternFilter(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsPatternFilter.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsPatternFilter.
@@ -226,7 +228,7 @@ class LogAnalyticsPatternFilter(object):
     def version(self):
         """
         Gets the version of this LogAnalyticsPatternFilter.
-        version
+        The pattern filter version.
 
 
         :return: The version of this LogAnalyticsPatternFilter.
@@ -238,7 +240,7 @@ class LogAnalyticsPatternFilter(object):
     def version(self, version):
         """
         Sets the version of this LogAnalyticsPatternFilter.
-        version
+        The pattern filter version.
 
 
         :param version: The version of this LogAnalyticsPatternFilter.

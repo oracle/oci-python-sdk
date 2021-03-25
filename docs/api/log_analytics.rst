@@ -28,11 +28,16 @@ Log Analytics
     oci.log_analytics.models.AddFieldsCommandDescriptor
     oci.log_analytics.models.ArchivingConfiguration
     oci.log_analytics.models.Argument
+    oci.log_analytics.models.AssociableEntity
+    oci.log_analytics.models.AssociableEntityCollection
     oci.log_analytics.models.AssociationSummaryReport
+    oci.log_analytics.models.AutoAssociationCollection
+    oci.log_analytics.models.AutoAssociationState
     oci.log_analytics.models.AutoLookups
     oci.log_analytics.models.BottomCommandDescriptor
     oci.log_analytics.models.BucketCommandDescriptor
     oci.log_analytics.models.BucketRange
+    oci.log_analytics.models.ChangeLogAnalyticsEmBridgeCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsEntityCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsLogGroupCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
@@ -51,6 +56,7 @@ Log Analytics
     oci.log_analytics.models.ColumnNameCollection
     oci.log_analytics.models.CommandDescriptor
     oci.log_analytics.models.CreateAccelerationTaskDetails
+    oci.log_analytics.models.CreateLogAnalyticsEmBridgeDetails
     oci.log_analytics.models.CreateLogAnalyticsEntityDetails
     oci.log_analytics.models.CreateLogAnalyticsEntityTypeDetails
     oci.log_analytics.models.CreateLogAnalyticsLogGroupDetails
@@ -58,14 +64,19 @@ Log Analytics
     oci.log_analytics.models.CreateScheduledTaskDetails
     oci.log_analytics.models.CreateStandardTaskDetails
     oci.log_analytics.models.CreateViewCommandDescriptor
+    oci.log_analytics.models.CreationSource
     oci.log_analytics.models.CronSchedule
     oci.log_analytics.models.DeleteCommandDescriptor
     oci.log_analytics.models.DeleteLogAnalyticsAssociation
     oci.log_analytics.models.DeleteLogAnalyticsAssociationDetails
     oci.log_analytics.models.DeltaCommandDescriptor
     oci.log_analytics.models.DemoModeCommandDescriptor
+    oci.log_analytics.models.DisableAutoAssociationDetail
+    oci.log_analytics.models.DisableAutoAssociationDetails
     oci.log_analytics.models.DistinctCommandDescriptor
     oci.log_analytics.models.EfdRegexResult
+    oci.log_analytics.models.EnableAutoAssociationDetail
+    oci.log_analytics.models.EnableAutoAssociationDetails
     oci.log_analytics.models.EntityTypeProperty
     oci.log_analytics.models.ErrorDetails
     oci.log_analytics.models.EstimatePurgeDataSizeDetails
@@ -77,6 +88,8 @@ Log Analytics
     oci.log_analytics.models.EvalCommandDescriptor
     oci.log_analytics.models.EventStatsCommandDescriptor
     oci.log_analytics.models.EventType
+    oci.log_analytics.models.EventTypeCollection
+    oci.log_analytics.models.EventTypeDetails
     oci.log_analytics.models.ExportContent
     oci.log_analytics.models.ExportDetails
     oci.log_analytics.models.ExtendedFieldsValidationResult
@@ -121,6 +134,10 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestCollection
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestPayload
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestSummary
+    oci.log_analytics.models.LogAnalyticsEmBridge
+    oci.log_analytics.models.LogAnalyticsEmBridgeCollection
+    oci.log_analytics.models.LogAnalyticsEmBridgeSummary
+    oci.log_analytics.models.LogAnalyticsEmBridgeSummaryReport
     oci.log_analytics.models.LogAnalyticsEntity
     oci.log_analytics.models.LogAnalyticsEntityCollection
     oci.log_analytics.models.LogAnalyticsEntitySummary
@@ -186,8 +203,10 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsWarning
     oci.log_analytics.models.LogAnalyticsWarningCollection
     oci.log_analytics.models.LogGroupSummaryReport
+    oci.log_analytics.models.LogSetCollection
     oci.log_analytics.models.LookupCommandDescriptor
     oci.log_analytics.models.LookupField
+    oci.log_analytics.models.LookupSummaryReport
     oci.log_analytics.models.MacroCommandDescriptor
     oci.log_analytics.models.MapCommandDescriptor
     oci.log_analytics.models.MatchInfo
@@ -257,6 +276,7 @@ Log Analytics
     oci.log_analytics.models.TopCommandDescriptor
     oci.log_analytics.models.TrendColumn
     oci.log_analytics.models.UiParserTestMetadata
+    oci.log_analytics.models.UpdateLogAnalyticsEmBridgeDetails
     oci.log_analytics.models.UpdateLogAnalyticsEntityDetails
     oci.log_analytics.models.UpdateLogAnalyticsEntityTypeDetails
     oci.log_analytics.models.UpdateLogAnalyticsLogGroupDetails

@@ -122,6 +122,14 @@ class Vault(object):
             The value to assign to the wrappingkey_id property of this Vault.
         :type wrappingkey_id: str
 
+        :param replica_details:
+            The value to assign to the replica_details property of this Vault.
+        :type replica_details: oci.key_management.models.VaultReplicaDetails
+
+        :param is_primary:
+            The value to assign to the is_primary property of this Vault.
+        :type is_primary: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -136,7 +144,9 @@ class Vault(object):
             'time_of_deletion': 'datetime',
             'vault_type': 'str',
             'restored_from_vault_id': 'str',
-            'wrappingkey_id': 'str'
+            'wrappingkey_id': 'str',
+            'replica_details': 'VaultReplicaDetails',
+            'is_primary': 'bool'
         }
 
         self.attribute_map = {
@@ -152,7 +162,9 @@ class Vault(object):
             'time_of_deletion': 'timeOfDeletion',
             'vault_type': 'vaultType',
             'restored_from_vault_id': 'restoredFromVaultId',
-            'wrappingkey_id': 'wrappingkeyId'
+            'wrappingkey_id': 'wrappingkeyId',
+            'replica_details': 'replicaDetails',
+            'is_primary': 'isPrimary'
         }
 
         self._compartment_id = None
@@ -168,6 +180,8 @@ class Vault(object):
         self._vault_type = None
         self._restored_from_vault_id = None
         self._wrappingkey_id = None
+        self._replica_details = None
+        self._is_primary = None
 
     @property
     def compartment_id(self):
@@ -546,6 +560,46 @@ class Vault(object):
         :type: str
         """
         self._wrappingkey_id = wrappingkey_id
+
+    @property
+    def replica_details(self):
+        """
+        Gets the replica_details of this Vault.
+
+        :return: The replica_details of this Vault.
+        :rtype: oci.key_management.models.VaultReplicaDetails
+        """
+        return self._replica_details
+
+    @replica_details.setter
+    def replica_details(self, replica_details):
+        """
+        Sets the replica_details of this Vault.
+
+        :param replica_details: The replica_details of this Vault.
+        :type: oci.key_management.models.VaultReplicaDetails
+        """
+        self._replica_details = replica_details
+
+    @property
+    def is_primary(self):
+        """
+        Gets the is_primary of this Vault.
+
+        :return: The is_primary of this Vault.
+        :rtype: bool
+        """
+        return self._is_primary
+
+    @is_primary.setter
+    def is_primary(self, is_primary):
+        """
+        Sets the is_primary of this Vault.
+
+        :param is_primary: The is_primary of this Vault.
+        :type: bool
+        """
+        self._is_primary = is_primary
 
     def __repr__(self):
         return formatted_flat_dict(self)

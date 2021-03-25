@@ -37,7 +37,7 @@ class LabelNames(object):
     def label_names(self):
         """
         Gets the label_names of this LabelNames.
-        string list
+        An array of label names.
 
 
         :return: The label_names of this LabelNames.
@@ -49,7 +49,7 @@ class LabelNames(object):
     def label_names(self, label_names):
         """
         Sets the label_names of this LabelNames.
-        string list
+        An array of label names.
 
 
         :param label_names: The label_names of this LabelNames.

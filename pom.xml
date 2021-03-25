@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/vulnerability_scanning/pom.xml</module>
     <module>poms/network_load_balancer/pom.xml</module>
     <module>poms/apm_traces/pom.xml</module>
     <module>poms/apm_control_plane/pom.xml</module>

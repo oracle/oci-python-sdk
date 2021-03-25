@@ -79,7 +79,7 @@ class LogAnalyticsParserFilter(object):
     def id(self):
         """
         Gets the id of this LogAnalyticsParserFilter.
-        id
+        The parser filter unique identifier.
 
 
         :return: The id of this LogAnalyticsParserFilter.
@@ -91,7 +91,7 @@ class LogAnalyticsParserFilter(object):
     def id(self, id):
         """
         Sets the id of this LogAnalyticsParserFilter.
-        id
+        The parser filter unique identifier.
 
 
         :param id: The id of this LogAnalyticsParserFilter.
@@ -123,7 +123,7 @@ class LogAnalyticsParserFilter(object):
     def agent_version(self):
         """
         Gets the agent_version of this LogAnalyticsParserFilter.
-        agent version
+        The agent version.
 
 
         :return: The agent_version of this LogAnalyticsParserFilter.
@@ -135,7 +135,7 @@ class LogAnalyticsParserFilter(object):
     def agent_version(self, agent_version):
         """
         Sets the agent_version of this LogAnalyticsParserFilter.
-        agent version
+        The agent version.
 
 
         :param agent_version: The agent_version of this LogAnalyticsParserFilter.
@@ -147,7 +147,7 @@ class LogAnalyticsParserFilter(object):
     def is_in_use(self):
         """
         Gets the is_in_use of this LogAnalyticsParserFilter.
-        is in use flag
+        A flag idicating whether or not hte filter is currently being used.
 
 
         :return: The is_in_use of this LogAnalyticsParserFilter.
@@ -159,7 +159,7 @@ class LogAnalyticsParserFilter(object):
     def is_in_use(self, is_in_use):
         """
         Sets the is_in_use of this LogAnalyticsParserFilter.
-        is in use flag
+        A flag idicating whether or not hte filter is currently being used.
 
 
         :param is_in_use: The is_in_use of this LogAnalyticsParserFilter.
@@ -171,7 +171,7 @@ class LogAnalyticsParserFilter(object):
     def operating_system(self):
         """
         Gets the operating_system of this LogAnalyticsParserFilter.
-        operating system
+        The operating system.
 
 
         :return: The operating_system of this LogAnalyticsParserFilter.
@@ -183,7 +183,7 @@ class LogAnalyticsParserFilter(object):
     def operating_system(self, operating_system):
         """
         Sets the operating_system of this LogAnalyticsParserFilter.
-        operating system
+        The operating system.
 
 
         :param operating_system: The operating_system of this LogAnalyticsParserFilter.
@@ -195,7 +195,7 @@ class LogAnalyticsParserFilter(object):
     def parser_id(self):
         """
         Gets the parser_id of this LogAnalyticsParserFilter.
-        parser Id
+        The parser unique identifier.
 
 
         :return: The parser_id of this LogAnalyticsParserFilter.
@@ -207,7 +207,7 @@ class LogAnalyticsParserFilter(object):
     def parser_id(self, parser_id):
         """
         Sets the parser_id of this LogAnalyticsParserFilter.
-        parser Id
+        The parser unique identifier.
 
 
         :param parser_id: The parser_id of this LogAnalyticsParserFilter.
@@ -219,7 +219,7 @@ class LogAnalyticsParserFilter(object):
     def version(self):
         """
         Gets the version of this LogAnalyticsParserFilter.
-        version
+        The version.
 
 
         :return: The version of this LogAnalyticsParserFilter.
@@ -231,7 +231,7 @@ class LogAnalyticsParserFilter(object):
     def version(self, version):
         """
         Sets the version of this LogAnalyticsParserFilter.
-        version
+        The version.
 
 
         :param version: The version of this LogAnalyticsParserFilter.

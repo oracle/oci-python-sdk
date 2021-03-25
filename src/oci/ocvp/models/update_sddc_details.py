@@ -64,6 +64,14 @@ class UpdateSddcDetails(object):
             The value to assign to the nsx_edge_uplink2_vlan_id property of this UpdateSddcDetails.
         :type nsx_edge_uplink2_vlan_id: str
 
+        :param replication_vlan_id:
+            The value to assign to the replication_vlan_id property of this UpdateSddcDetails.
+        :type replication_vlan_id: str
+
+        :param provisioning_vlan_id:
+            The value to assign to the provisioning_vlan_id property of this UpdateSddcDetails.
+        :type provisioning_vlan_id: str
+
         :param hcx_vlan_id:
             The value to assign to the hcx_vlan_id property of this UpdateSddcDetails.
         :type hcx_vlan_id: str
@@ -88,6 +96,8 @@ class UpdateSddcDetails(object):
             'nsx_edge_v_tep_vlan_id': 'str',
             'nsx_edge_uplink1_vlan_id': 'str',
             'nsx_edge_uplink2_vlan_id': 'str',
+            'replication_vlan_id': 'str',
+            'provisioning_vlan_id': 'str',
             'hcx_vlan_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -104,6 +114,8 @@ class UpdateSddcDetails(object):
             'nsx_edge_v_tep_vlan_id': 'nsxEdgeVTepVlanId',
             'nsx_edge_uplink1_vlan_id': 'nsxEdgeUplink1VlanId',
             'nsx_edge_uplink2_vlan_id': 'nsxEdgeUplink2VlanId',
+            'replication_vlan_id': 'replicationVlanId',
+            'provisioning_vlan_id': 'provisioningVlanId',
             'hcx_vlan_id': 'hcxVlanId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -119,6 +131,8 @@ class UpdateSddcDetails(object):
         self._nsx_edge_v_tep_vlan_id = None
         self._nsx_edge_uplink1_vlan_id = None
         self._nsx_edge_uplink2_vlan_id = None
+        self._replication_vlan_id = None
+        self._provisioning_vlan_id = None
         self._hcx_vlan_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -161,8 +175,7 @@ class UpdateSddcDetails(object):
         install on any new ESXi hosts that you add to this SDDC in the future.
 
         For the list of versions supported by the Oracle Cloud VMware Solution, see
-        :func:`
-        _list_supported_vmware_software_versions`).
+        :func:`list_supported_vmware_software_versions`).
 
 
         :return: The vmware_software_version of this UpdateSddcDetails.
@@ -178,8 +191,7 @@ class UpdateSddcDetails(object):
         install on any new ESXi hosts that you add to this SDDC in the future.
 
         For the list of versions supported by the Oracle Cloud VMware Solution, see
-        :func:`
-        _list_supported_vmware_software_versions`).
+        :func:`list_supported_vmware_software_versions`).
 
 
         :param vmware_software_version: The vmware_software_version of this UpdateSddcDetails.
@@ -404,6 +416,8 @@ class UpdateSddcDetails(object):
         The `OCID`__ of the VLAN to use for
         the NSX Edge Uplink 2 component of the VMware environment when adding new ESXi hosts to the SDDC.
 
+        **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
@@ -419,6 +433,8 @@ class UpdateSddcDetails(object):
         The `OCID`__ of the VLAN to use for
         the NSX Edge Uplink 2 component of the VMware environment when adding new ESXi hosts to the SDDC.
 
+        **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
@@ -428,10 +444,73 @@ class UpdateSddcDetails(object):
         self._nsx_edge_uplink2_vlan_id = nsx_edge_uplink2_vlan_id
 
     @property
+    def replication_vlan_id(self):
+        """
+        Gets the replication_vlan_id of this UpdateSddcDetails.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the vSphere Replication component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The replication_vlan_id of this UpdateSddcDetails.
+        :rtype: str
+        """
+        return self._replication_vlan_id
+
+    @replication_vlan_id.setter
+    def replication_vlan_id(self, replication_vlan_id):
+        """
+        Sets the replication_vlan_id of this UpdateSddcDetails.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the vSphere Replication component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param replication_vlan_id: The replication_vlan_id of this UpdateSddcDetails.
+        :type: str
+        """
+        self._replication_vlan_id = replication_vlan_id
+
+    @property
+    def provisioning_vlan_id(self):
+        """
+        Gets the provisioning_vlan_id of this UpdateSddcDetails.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the Provisioning component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The provisioning_vlan_id of this UpdateSddcDetails.
+        :rtype: str
+        """
+        return self._provisioning_vlan_id
+
+    @provisioning_vlan_id.setter
+    def provisioning_vlan_id(self, provisioning_vlan_id):
+        """
+        Sets the provisioning_vlan_id of this UpdateSddcDetails.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the Provisioning component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param provisioning_vlan_id: The provisioning_vlan_id of this UpdateSddcDetails.
+        :type: str
+        """
+        self._provisioning_vlan_id = provisioning_vlan_id
+
+    @property
     def hcx_vlan_id(self):
         """
         Gets the hcx_vlan_id of this UpdateSddcDetails.
-        This id is editable only when hcxEnabled is true
+        The `OCID`__ of the VLAN to use for the HCX
+        component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when `isHcxEnabled` is true.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The hcx_vlan_id of this UpdateSddcDetails.
@@ -443,7 +522,10 @@ class UpdateSddcDetails(object):
     def hcx_vlan_id(self, hcx_vlan_id):
         """
         Sets the hcx_vlan_id of this UpdateSddcDetails.
-        This id is editable only when hcxEnabled is true
+        The `OCID`__ of the VLAN to use for the HCX
+        component of the VMware environment when adding new ESXi hosts to the SDDC. This value can be updated only when `isHcxEnabled` is true.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param hcx_vlan_id: The hcx_vlan_id of this UpdateSddcDetails.

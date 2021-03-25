@@ -163,7 +163,7 @@ class LogAnalyticsSourcePattern(object):
     def converted_text(self):
         """
         Gets the converted_text of this LogAnalyticsSourcePattern.
-        converted text
+        The converted text.
 
 
         :return: The converted_text of this LogAnalyticsSourcePattern.
@@ -175,7 +175,7 @@ class LogAnalyticsSourcePattern(object):
     def converted_text(self, converted_text):
         """
         Sets the converted_text of this LogAnalyticsSourcePattern.
-        converted text
+        The converted text.
 
 
         :param converted_text: The converted_text of this LogAnalyticsSourcePattern.
@@ -187,7 +187,7 @@ class LogAnalyticsSourcePattern(object):
     def db_parser_id(self):
         """
         Gets the db_parser_id of this LogAnalyticsSourcePattern.
-        parser Id
+        The parser unique identifier.
 
 
         :return: The db_parser_id of this LogAnalyticsSourcePattern.
@@ -199,7 +199,7 @@ class LogAnalyticsSourcePattern(object):
     def db_parser_id(self, db_parser_id):
         """
         Sets the db_parser_id of this LogAnalyticsSourcePattern.
-        parser Id
+        The parser unique identifier.
 
 
         :param db_parser_id: The db_parser_id of this LogAnalyticsSourcePattern.
@@ -211,7 +211,7 @@ class LogAnalyticsSourcePattern(object):
     def db_pattern_date_time_columns(self):
         """
         Gets the db_pattern_date_time_columns of this LogAnalyticsSourcePattern.
-        date time columns
+        The date time columns.
 
 
         :return: The db_pattern_date_time_columns of this LogAnalyticsSourcePattern.
@@ -223,7 +223,7 @@ class LogAnalyticsSourcePattern(object):
     def db_pattern_date_time_columns(self, db_pattern_date_time_columns):
         """
         Sets the db_pattern_date_time_columns of this LogAnalyticsSourcePattern.
-        date time columns
+        The date time columns.
 
 
         :param db_pattern_date_time_columns: The db_pattern_date_time_columns of this LogAnalyticsSourcePattern.
@@ -235,7 +235,7 @@ class LogAnalyticsSourcePattern(object):
     def db_pattern_date_time_field(self):
         """
         Gets the db_pattern_date_time_field of this LogAnalyticsSourcePattern.
-        date time field
+        The date time field.
 
 
         :return: The db_pattern_date_time_field of this LogAnalyticsSourcePattern.
@@ -247,7 +247,7 @@ class LogAnalyticsSourcePattern(object):
     def db_pattern_date_time_field(self, db_pattern_date_time_field):
         """
         Sets the db_pattern_date_time_field of this LogAnalyticsSourcePattern.
-        date time field
+        The date time field.
 
 
         :param db_pattern_date_time_field: The db_pattern_date_time_field of this LogAnalyticsSourcePattern.
@@ -259,7 +259,7 @@ class LogAnalyticsSourcePattern(object):
     def db_pattern_sequence_column(self):
         """
         Gets the db_pattern_sequence_column of this LogAnalyticsSourcePattern.
-        sequence column
+        The sequence column.
 
 
         :return: The db_pattern_sequence_column of this LogAnalyticsSourcePattern.
@@ -271,7 +271,7 @@ class LogAnalyticsSourcePattern(object):
     def db_pattern_sequence_column(self, db_pattern_sequence_column):
         """
         Sets the db_pattern_sequence_column of this LogAnalyticsSourcePattern.
-        sequence column
+        The sequence column.
 
 
         :param db_pattern_sequence_column: The db_pattern_sequence_column of this LogAnalyticsSourcePattern.
@@ -283,7 +283,7 @@ class LogAnalyticsSourcePattern(object):
     def fields(self):
         """
         Gets the fields of this LogAnalyticsSourcePattern.
-        field list
+        The parser field list.
 
 
         :return: The fields of this LogAnalyticsSourcePattern.
@@ -295,7 +295,7 @@ class LogAnalyticsSourcePattern(object):
     def fields(self, fields):
         """
         Sets the fields of this LogAnalyticsSourcePattern.
-        field list
+        The parser field list.
 
 
         :param fields: The fields of this LogAnalyticsSourcePattern.
@@ -307,7 +307,7 @@ class LogAnalyticsSourcePattern(object):
     def is_include(self):
         """
         Gets the is_include of this LogAnalyticsSourcePattern.
-        is include flag
+        A flag indicating if this is source pattern is included.
 
 
         :return: The is_include of this LogAnalyticsSourcePattern.
@@ -319,7 +319,7 @@ class LogAnalyticsSourcePattern(object):
     def is_include(self, is_include):
         """
         Sets the is_include of this LogAnalyticsSourcePattern.
-        is include flag
+        A flag indicating if this is source pattern is included.
 
 
         :param is_include: The is_include of this LogAnalyticsSourcePattern.
@@ -331,7 +331,7 @@ class LogAnalyticsSourcePattern(object):
     def is_default(self):
         """
         Gets the is_default of this LogAnalyticsSourcePattern.
-        is default flag
+        A flag indicating if this is the default source pattern.
 
 
         :return: The is_default of this LogAnalyticsSourcePattern.
@@ -343,7 +343,7 @@ class LogAnalyticsSourcePattern(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this LogAnalyticsSourcePattern.
-        is default flag
+        A flag indicating if this is the default source pattern.
 
 
         :param is_default: The is_default of this LogAnalyticsSourcePattern.
@@ -375,7 +375,7 @@ class LogAnalyticsSourcePattern(object):
     def alias(self):
         """
         Gets the alias of this LogAnalyticsSourcePattern.
-        alias
+        The source pattern alias.
 
 
         :return: The alias of this LogAnalyticsSourcePattern.
@@ -387,7 +387,7 @@ class LogAnalyticsSourcePattern(object):
     def alias(self, alias):
         """
         Sets the alias of this LogAnalyticsSourcePattern.
-        alias
+        The source pattern alias.
 
 
         :param alias: The alias of this LogAnalyticsSourcePattern.
@@ -399,7 +399,7 @@ class LogAnalyticsSourcePattern(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsSourcePattern.
-        description
+        The source pattern description.
 
 
         :return: The description of this LogAnalyticsSourcePattern.
@@ -411,7 +411,7 @@ class LogAnalyticsSourcePattern(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsSourcePattern.
-        description
+        The source pattern description.
 
 
         :param description: The description of this LogAnalyticsSourcePattern.
@@ -423,7 +423,7 @@ class LogAnalyticsSourcePattern(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsSourcePattern.
-        is enabled flag
+        A flag inidcating whether or not the source pattern is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsSourcePattern.
@@ -435,7 +435,7 @@ class LogAnalyticsSourcePattern(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsSourcePattern.
-        is enabled flag
+        A flag inidcating whether or not the source pattern is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsSourcePattern.
@@ -447,7 +447,7 @@ class LogAnalyticsSourcePattern(object):
     def pattern_id(self):
         """
         Gets the pattern_id of this LogAnalyticsSourcePattern.
-        pattern Id
+        The source pattern unique identifier.
 
 
         :return: The pattern_id of this LogAnalyticsSourcePattern.
@@ -459,7 +459,7 @@ class LogAnalyticsSourcePattern(object):
     def pattern_id(self, pattern_id):
         """
         Sets the pattern_id of this LogAnalyticsSourcePattern.
-        pattern Id
+        The source pattern unique identifier.
 
 
         :param pattern_id: The pattern_id of this LogAnalyticsSourcePattern.
@@ -471,7 +471,8 @@ class LogAnalyticsSourcePattern(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSourcePattern.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSourcePattern.
@@ -483,7 +484,8 @@ class LogAnalyticsSourcePattern(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSourcePattern.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSourcePattern.
@@ -495,7 +497,7 @@ class LogAnalyticsSourcePattern(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSourcePattern.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsSourcePattern.
@@ -507,7 +509,7 @@ class LogAnalyticsSourcePattern(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSourcePattern.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsSourcePattern.
@@ -519,7 +521,8 @@ class LogAnalyticsSourcePattern(object):
     def is_agent_warning_suppressed(self):
         """
         Gets the is_agent_warning_suppressed of this LogAnalyticsSourcePattern.
-        suppress agent warning
+        A flag indicating whether or not agent warnings are suppressed for
+        this source pattern.
 
 
         :return: The is_agent_warning_suppressed of this LogAnalyticsSourcePattern.
@@ -531,7 +534,8 @@ class LogAnalyticsSourcePattern(object):
     def is_agent_warning_suppressed(self, is_agent_warning_suppressed):
         """
         Sets the is_agent_warning_suppressed of this LogAnalyticsSourcePattern.
-        suppress agent warning
+        A flag indicating whether or not agent warnings are suppressed for
+        this source pattern.
 
 
         :param is_agent_warning_suppressed: The is_agent_warning_suppressed of this LogAnalyticsSourcePattern.
@@ -543,7 +547,7 @@ class LogAnalyticsSourcePattern(object):
     def pattern_text(self):
         """
         Gets the pattern_text of this LogAnalyticsSourcePattern.
-        pattern text
+        The pattern text.
 
 
         :return: The pattern_text of this LogAnalyticsSourcePattern.
@@ -555,7 +559,7 @@ class LogAnalyticsSourcePattern(object):
     def pattern_text(self, pattern_text):
         """
         Sets the pattern_text of this LogAnalyticsSourcePattern.
-        pattern text
+        The pattern text.
 
 
         :param pattern_text: The pattern_text of this LogAnalyticsSourcePattern.
@@ -567,7 +571,7 @@ class LogAnalyticsSourcePattern(object):
     def pattern_type(self):
         """
         Gets the pattern_type of this LogAnalyticsSourcePattern.
-        pattern type
+        The pattern type.
 
 
         :return: The pattern_type of this LogAnalyticsSourcePattern.
@@ -579,7 +583,7 @@ class LogAnalyticsSourcePattern(object):
     def pattern_type(self, pattern_type):
         """
         Sets the pattern_type of this LogAnalyticsSourcePattern.
-        pattern type
+        The pattern type.
 
 
         :param pattern_type: The pattern_type of this LogAnalyticsSourcePattern.
@@ -591,7 +595,7 @@ class LogAnalyticsSourcePattern(object):
     def entity_type(self):
         """
         Gets the entity_type of this LogAnalyticsSourcePattern.
-        source entity types
+        The source entity type.
 
 
         :return: The entity_type of this LogAnalyticsSourcePattern.
@@ -603,7 +607,7 @@ class LogAnalyticsSourcePattern(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this LogAnalyticsSourcePattern.
-        source entity types
+        The source entity type.
 
 
         :param entity_type: The entity_type of this LogAnalyticsSourcePattern.

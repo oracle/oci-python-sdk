@@ -282,7 +282,7 @@ class LogAnalyticsSource(object):
     def label_conditions(self):
         """
         Gets the label_conditions of this LogAnalyticsSource.
-        alert conditions
+        The label alert conditions.
 
 
         :return: The label_conditions of this LogAnalyticsSource.
@@ -294,7 +294,7 @@ class LogAnalyticsSource(object):
     def label_conditions(self, label_conditions):
         """
         Sets the label_conditions of this LogAnalyticsSource.
-        alert conditions
+        The label alert conditions.
 
 
         :param label_conditions: The label_conditions of this LogAnalyticsSource.
@@ -306,7 +306,7 @@ class LogAnalyticsSource(object):
     def association_count(self):
         """
         Gets the association_count of this LogAnalyticsSource.
-        association count
+        The association count.
 
 
         :return: The association_count of this LogAnalyticsSource.
@@ -318,7 +318,7 @@ class LogAnalyticsSource(object):
     def association_count(self, association_count):
         """
         Sets the association_count of this LogAnalyticsSource.
-        association count
+        The association count.
 
 
         :param association_count: The association_count of this LogAnalyticsSource.
@@ -330,7 +330,7 @@ class LogAnalyticsSource(object):
     def association_entity(self):
         """
         Gets the association_entity of this LogAnalyticsSource.
-        association entity
+        The association entities.
 
 
         :return: The association_entity of this LogAnalyticsSource.
@@ -342,7 +342,7 @@ class LogAnalyticsSource(object):
     def association_entity(self, association_entity):
         """
         Sets the association_entity of this LogAnalyticsSource.
-        association entity
+        The association entities.
 
 
         :param association_entity: The association_entity of this LogAnalyticsSource.
@@ -354,7 +354,7 @@ class LogAnalyticsSource(object):
     def data_filter_definitions(self):
         """
         Gets the data_filter_definitions of this LogAnalyticsSource.
-        data filter definitions
+        The data filter definitions.
 
 
         :return: The data_filter_definitions of this LogAnalyticsSource.
@@ -366,7 +366,7 @@ class LogAnalyticsSource(object):
     def data_filter_definitions(self, data_filter_definitions):
         """
         Sets the data_filter_definitions of this LogAnalyticsSource.
-        data filter definitions
+        The data filter definitions.
 
 
         :param data_filter_definitions: The data_filter_definitions of this LogAnalyticsSource.
@@ -378,7 +378,7 @@ class LogAnalyticsSource(object):
     def database_credential(self):
         """
         Gets the database_credential of this LogAnalyticsSource.
-        DB credential
+        The database credential.
 
 
         :return: The database_credential of this LogAnalyticsSource.
@@ -390,7 +390,7 @@ class LogAnalyticsSource(object):
     def database_credential(self, database_credential):
         """
         Sets the database_credential of this LogAnalyticsSource.
-        DB credential
+        The database credential.
 
 
         :param database_credential: The database_credential of this LogAnalyticsSource.
@@ -402,7 +402,7 @@ class LogAnalyticsSource(object):
     def extended_field_definitions(self):
         """
         Gets the extended_field_definitions of this LogAnalyticsSource.
-        extended field definition
+        The extended field definitions.
 
 
         :return: The extended_field_definitions of this LogAnalyticsSource.
@@ -414,7 +414,7 @@ class LogAnalyticsSource(object):
     def extended_field_definitions(self, extended_field_definitions):
         """
         Sets the extended_field_definitions of this LogAnalyticsSource.
-        extended field definition
+        The extended field definitions.
 
 
         :param extended_field_definitions: The extended_field_definitions of this LogAnalyticsSource.
@@ -426,7 +426,7 @@ class LogAnalyticsSource(object):
     def is_for_cloud(self):
         """
         Gets the is_for_cloud of this LogAnalyticsSource.
-        is for cloud flag
+        A flag indicating whether or not this is a cloud source.
 
 
         :return: The is_for_cloud of this LogAnalyticsSource.
@@ -438,7 +438,7 @@ class LogAnalyticsSource(object):
     def is_for_cloud(self, is_for_cloud):
         """
         Sets the is_for_cloud of this LogAnalyticsSource.
-        is for cloud flag
+        A flag indicating whether or not this is a cloud source.
 
 
         :param is_for_cloud: The is_for_cloud of this LogAnalyticsSource.
@@ -450,7 +450,7 @@ class LogAnalyticsSource(object):
     def labels(self):
         """
         Gets the labels of this LogAnalyticsSource.
-        labels
+        The labels associated with the source.
 
 
         :return: The labels of this LogAnalyticsSource.
@@ -462,7 +462,7 @@ class LogAnalyticsSource(object):
     def labels(self, labels):
         """
         Sets the labels of this LogAnalyticsSource.
-        labels
+        The labels associated with the source.
 
 
         :param labels: The labels of this LogAnalyticsSource.
@@ -474,7 +474,7 @@ class LogAnalyticsSource(object):
     def metric_definitions(self):
         """
         Gets the metric_definitions of this LogAnalyticsSource.
-        metric definitions
+        The metric definitions.
 
 
         :return: The metric_definitions of this LogAnalyticsSource.
@@ -486,7 +486,7 @@ class LogAnalyticsSource(object):
     def metric_definitions(self, metric_definitions):
         """
         Sets the metric_definitions of this LogAnalyticsSource.
-        metric definitions
+        The metric definitions.
 
 
         :param metric_definitions: The metric_definitions of this LogAnalyticsSource.
@@ -498,7 +498,7 @@ class LogAnalyticsSource(object):
     def metrics(self):
         """
         Gets the metrics of this LogAnalyticsSource.
-        metric source map
+        The metric source map.
 
 
         :return: The metrics of this LogAnalyticsSource.
@@ -510,7 +510,7 @@ class LogAnalyticsSource(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this LogAnalyticsSource.
-        metric source map
+        The metric source map.
 
 
         :param metrics: The metrics of this LogAnalyticsSource.
@@ -522,7 +522,7 @@ class LogAnalyticsSource(object):
     def oob_parsers(self):
         """
         Gets the oob_parsers of this LogAnalyticsSource.
-        out-of-the-box source parser list
+        The built in parsers associated with source.
 
 
         :return: The oob_parsers of this LogAnalyticsSource.
@@ -534,7 +534,7 @@ class LogAnalyticsSource(object):
     def oob_parsers(self, oob_parsers):
         """
         Sets the oob_parsers of this LogAnalyticsSource.
-        out-of-the-box source parser list
+        The built in parsers associated with source.
 
 
         :param oob_parsers: The oob_parsers of this LogAnalyticsSource.
@@ -546,7 +546,7 @@ class LogAnalyticsSource(object):
     def parameters(self):
         """
         Gets the parameters of this LogAnalyticsSource.
-        parameters
+        The source parameters.
 
 
         :return: The parameters of this LogAnalyticsSource.
@@ -558,7 +558,7 @@ class LogAnalyticsSource(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this LogAnalyticsSource.
-        parameters
+        The source parameters.
 
 
         :param parameters: The parameters of this LogAnalyticsSource.
@@ -570,7 +570,7 @@ class LogAnalyticsSource(object):
     def pattern_count(self):
         """
         Gets the pattern_count of this LogAnalyticsSource.
-        pattern count
+        The pattern count.
 
 
         :return: The pattern_count of this LogAnalyticsSource.
@@ -582,7 +582,7 @@ class LogAnalyticsSource(object):
     def pattern_count(self, pattern_count):
         """
         Sets the pattern_count of this LogAnalyticsSource.
-        pattern count
+        The pattern count.
 
 
         :param pattern_count: The pattern_count of this LogAnalyticsSource.
@@ -594,7 +594,7 @@ class LogAnalyticsSource(object):
     def patterns(self):
         """
         Gets the patterns of this LogAnalyticsSource.
-        patterns
+        The source patterns.
 
 
         :return: The patterns of this LogAnalyticsSource.
@@ -606,7 +606,7 @@ class LogAnalyticsSource(object):
     def patterns(self, patterns):
         """
         Sets the patterns of this LogAnalyticsSource.
-        patterns
+        The source patterns.
 
 
         :param patterns: The patterns of this LogAnalyticsSource.
@@ -618,7 +618,7 @@ class LogAnalyticsSource(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsSource.
-        description
+        The source description.
 
 
         :return: The description of this LogAnalyticsSource.
@@ -630,7 +630,7 @@ class LogAnalyticsSource(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsSource.
-        description
+        The source description.
 
 
         :param description: The description of this LogAnalyticsSource.
@@ -642,7 +642,7 @@ class LogAnalyticsSource(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsSource.
-        display name
+        The source display name.
 
 
         :return: The display_name of this LogAnalyticsSource.
@@ -654,7 +654,7 @@ class LogAnalyticsSource(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsSource.
-        display name
+        The source display name.
 
 
         :param display_name: The display_name of this LogAnalyticsSource.
@@ -666,7 +666,7 @@ class LogAnalyticsSource(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsSource.
-        source edit version
+        The source edit version.
 
 
         :return: The edit_version of this LogAnalyticsSource.
@@ -678,7 +678,7 @@ class LogAnalyticsSource(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsSource.
-        source edit version
+        The source edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsSource.
@@ -690,7 +690,7 @@ class LogAnalyticsSource(object):
     def functions(self):
         """
         Gets the functions of this LogAnalyticsSource.
-        source functions
+        The source functions.
 
 
         :return: The functions of this LogAnalyticsSource.
@@ -702,7 +702,7 @@ class LogAnalyticsSource(object):
     def functions(self, functions):
         """
         Sets the functions of this LogAnalyticsSource.
-        source functions
+        The source functions.
 
 
         :param functions: The functions of this LogAnalyticsSource.
@@ -714,7 +714,7 @@ class LogAnalyticsSource(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSource.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsSource.
@@ -726,7 +726,7 @@ class LogAnalyticsSource(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSource.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsSource.
@@ -738,7 +738,7 @@ class LogAnalyticsSource(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsSource.
-        source internal name
+        The source internal name.
 
 
         :return: The name of this LogAnalyticsSource.
@@ -750,7 +750,7 @@ class LogAnalyticsSource(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsSource.
-        source internal name
+        The source internal name.
 
 
         :param name: The name of this LogAnalyticsSource.
@@ -762,7 +762,7 @@ class LogAnalyticsSource(object):
     def is_secure_content(self):
         """
         Gets the is_secure_content of this LogAnalyticsSource.
-        is secure content flag
+        A flag indicating whether or not the source content is secure.
 
 
         :return: The is_secure_content of this LogAnalyticsSource.
@@ -774,7 +774,7 @@ class LogAnalyticsSource(object):
     def is_secure_content(self, is_secure_content):
         """
         Sets the is_secure_content of this LogAnalyticsSource.
-        is secure content flag
+        A flag indicating whether or not the source content is secure.
 
 
         :param is_secure_content: The is_secure_content of this LogAnalyticsSource.
@@ -786,7 +786,8 @@ class LogAnalyticsSource(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSource.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSource.
@@ -798,7 +799,8 @@ class LogAnalyticsSource(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSource.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSource.
@@ -810,7 +812,7 @@ class LogAnalyticsSource(object):
     def parsers(self):
         """
         Gets the parsers of this LogAnalyticsSource.
-        parser list
+        The list of parsers used by the source.
 
 
         :return: The parsers of this LogAnalyticsSource.
@@ -822,7 +824,7 @@ class LogAnalyticsSource(object):
     def parsers(self, parsers):
         """
         Sets the parsers of this LogAnalyticsSource.
-        parser list
+        The list of parsers used by the source.
 
 
         :param parsers: The parsers of this LogAnalyticsSource.
@@ -834,7 +836,7 @@ class LogAnalyticsSource(object):
     def is_auto_association_enabled(self):
         """
         Gets the is_auto_association_enabled of this LogAnalyticsSource.
-        rule auto association enabled flag
+        A flag indicating whether or not the source is marked for auto-association.
 
 
         :return: The is_auto_association_enabled of this LogAnalyticsSource.
@@ -846,7 +848,7 @@ class LogAnalyticsSource(object):
     def is_auto_association_enabled(self, is_auto_association_enabled):
         """
         Sets the is_auto_association_enabled of this LogAnalyticsSource.
-        rule auto association enabled flag
+        A flag indicating whether or not the source is marked for auto-association.
 
 
         :param is_auto_association_enabled: The is_auto_association_enabled of this LogAnalyticsSource.
@@ -858,7 +860,7 @@ class LogAnalyticsSource(object):
     def is_auto_association_override(self):
         """
         Gets the is_auto_association_override of this LogAnalyticsSource.
-        rule auto association override
+        A flag indicating whether or not the auto-association state should be overriden.
 
 
         :return: The is_auto_association_override of this LogAnalyticsSource.
@@ -870,7 +872,7 @@ class LogAnalyticsSource(object):
     def is_auto_association_override(self, is_auto_association_override):
         """
         Sets the is_auto_association_override of this LogAnalyticsSource.
-        rule auto association override
+        A flag indicating whether or not the auto-association state should be overriden.
 
 
         :param is_auto_association_override: The is_auto_association_override of this LogAnalyticsSource.
@@ -882,7 +884,7 @@ class LogAnalyticsSource(object):
     def rule_id(self):
         """
         Gets the rule_id of this LogAnalyticsSource.
-        rule Id
+        The rule unique identifier.
 
 
         :return: The rule_id of this LogAnalyticsSource.
@@ -894,7 +896,7 @@ class LogAnalyticsSource(object):
     def rule_id(self, rule_id):
         """
         Sets the rule_id of this LogAnalyticsSource.
-        rule Id
+        The rule unique identifier.
 
 
         :param rule_id: The rule_id of this LogAnalyticsSource.
@@ -906,7 +908,7 @@ class LogAnalyticsSource(object):
     def type_name(self):
         """
         Gets the type_name of this LogAnalyticsSource.
-        source type internal name
+        The source type internal name.
 
 
         :return: The type_name of this LogAnalyticsSource.
@@ -918,7 +920,7 @@ class LogAnalyticsSource(object):
     def type_name(self, type_name):
         """
         Sets the type_name of this LogAnalyticsSource.
-        source type internal name
+        The source type internal name.
 
 
         :param type_name: The type_name of this LogAnalyticsSource.
@@ -930,7 +932,7 @@ class LogAnalyticsSource(object):
     def type_display_name(self):
         """
         Gets the type_display_name of this LogAnalyticsSource.
-        source type name
+        The source type name.
 
 
         :return: The type_display_name of this LogAnalyticsSource.
@@ -942,7 +944,7 @@ class LogAnalyticsSource(object):
     def type_display_name(self, type_display_name):
         """
         Sets the type_display_name of this LogAnalyticsSource.
-        source type name
+        The source type name.
 
 
         :param type_display_name: The type_display_name of this LogAnalyticsSource.
@@ -954,7 +956,7 @@ class LogAnalyticsSource(object):
     def warning_config(self):
         """
         Gets the warning_config of this LogAnalyticsSource.
-        source warning configuration
+        The source warning configuration.
 
 
         :return: The warning_config of this LogAnalyticsSource.
@@ -966,7 +968,7 @@ class LogAnalyticsSource(object):
     def warning_config(self, warning_config):
         """
         Sets the warning_config of this LogAnalyticsSource.
-        source warning configuration
+        The source warning configuration.
 
 
         :param warning_config: The warning_config of this LogAnalyticsSource.
@@ -978,7 +980,7 @@ class LogAnalyticsSource(object):
     def metadata_fields(self):
         """
         Gets the metadata_fields of this LogAnalyticsSource.
-        source metadata fields
+        The source metadata fields.
 
 
         :return: The metadata_fields of this LogAnalyticsSource.
@@ -990,7 +992,7 @@ class LogAnalyticsSource(object):
     def metadata_fields(self, metadata_fields):
         """
         Sets the metadata_fields of this LogAnalyticsSource.
-        source metadata fields
+        The source metadata fields.
 
 
         :param metadata_fields: The metadata_fields of this LogAnalyticsSource.
@@ -1002,7 +1004,7 @@ class LogAnalyticsSource(object):
     def label_definitions(self):
         """
         Gets the label_definitions of this LogAnalyticsSource.
-        tags
+        The labls used by the source.
 
 
         :return: The label_definitions of this LogAnalyticsSource.
@@ -1014,7 +1016,7 @@ class LogAnalyticsSource(object):
     def label_definitions(self, label_definitions):
         """
         Sets the label_definitions of this LogAnalyticsSource.
-        tags
+        The labls used by the source.
 
 
         :param label_definitions: The label_definitions of this LogAnalyticsSource.
@@ -1026,7 +1028,7 @@ class LogAnalyticsSource(object):
     def entity_types(self):
         """
         Gets the entity_types of this LogAnalyticsSource.
-        Entity types
+        The entity types.
 
 
         :return: The entity_types of this LogAnalyticsSource.
@@ -1038,7 +1040,7 @@ class LogAnalyticsSource(object):
     def entity_types(self, entity_types):
         """
         Sets the entity_types of this LogAnalyticsSource.
-        Entity types
+        The entity types.
 
 
         :param entity_types: The entity_types of this LogAnalyticsSource.
@@ -1050,7 +1052,7 @@ class LogAnalyticsSource(object):
     def is_timezone_override(self):
         """
         Gets the is_timezone_override of this LogAnalyticsSource.
-        time zone override
+        A flag indicating whether or not the source has a time zone override.
 
 
         :return: The is_timezone_override of this LogAnalyticsSource.
@@ -1062,7 +1064,7 @@ class LogAnalyticsSource(object):
     def is_timezone_override(self, is_timezone_override):
         """
         Sets the is_timezone_override of this LogAnalyticsSource.
-        time zone override
+        A flag indicating whether or not the source has a time zone override.
 
 
         :param is_timezone_override: The is_timezone_override of this LogAnalyticsSource.
@@ -1074,7 +1076,7 @@ class LogAnalyticsSource(object):
     def user_parsers(self):
         """
         Gets the user_parsers of this LogAnalyticsSource.
-        source parser list
+        An array of custom parsers.
 
 
         :return: The user_parsers of this LogAnalyticsSource.
@@ -1086,7 +1088,7 @@ class LogAnalyticsSource(object):
     def user_parsers(self, user_parsers):
         """
         Sets the user_parsers of this LogAnalyticsSource.
-        source parser list
+        An array of custom parsers.
 
 
         :param user_parsers: The user_parsers of this LogAnalyticsSource.
@@ -1098,7 +1100,7 @@ class LogAnalyticsSource(object):
     def time_updated(self):
         """
         Gets the time_updated of this LogAnalyticsSource.
-        timeUpdated
+        The last updated date.
 
 
         :return: The time_updated of this LogAnalyticsSource.
@@ -1110,7 +1112,7 @@ class LogAnalyticsSource(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this LogAnalyticsSource.
-        timeUpdated
+        The last updated date.
 
 
         :param time_updated: The time_updated of this LogAnalyticsSource.

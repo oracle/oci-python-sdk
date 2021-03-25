@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class SddcClient(object):
     """
-    Use this API to manage the Oracle Cloud VMware Solution.
+    Use this API to manage your [Oracle Cloud VMware Solution](/iaas/Content/VMware/Concepts/ocvsoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -192,10 +192,14 @@ class SddcClient(object):
 
     def create_sddc(self, create_sddc_details, **kwargs):
         """
-        Creates a software-defined data center (SDDC).
+        Creates an Oracle Cloud VMware Solution software-defined data center (SDDC).
 
         Use the :class:`WorkRequest` operations to track the
         creation of the SDDC.
+
+        **Important:** You must configure the SDDC's networking resources with the security rules detailed in `Security Rules for Oracle Cloud VMware Solution SDDCs`__. Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm
 
 
         :param oci.ocvp.models.CreateSddcDetails create_sddc_details: (required)

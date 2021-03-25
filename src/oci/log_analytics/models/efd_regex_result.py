@@ -100,7 +100,7 @@ class EfdRegexResult(object):
     def base_field_name(self):
         """
         Gets the base_field_name of this EfdRegexResult.
-        baseFieldName
+        The base field name.
 
 
         :return: The base_field_name of this EfdRegexResult.
@@ -112,7 +112,7 @@ class EfdRegexResult(object):
     def base_field_name(self, base_field_name):
         """
         Sets the base_field_name of this EfdRegexResult.
-        baseFieldName
+        The base field name.
 
 
         :param base_field_name: The base_field_name of this EfdRegexResult.
@@ -124,7 +124,7 @@ class EfdRegexResult(object):
     def id(self):
         """
         Gets the id of this EfdRegexResult.
-        id
+        the unique identifier.
 
 
         :return: The id of this EfdRegexResult.
@@ -136,7 +136,7 @@ class EfdRegexResult(object):
     def id(self, id):
         """
         Sets the id of this EfdRegexResult.
-        id
+        the unique identifier.
 
 
         :param id: The id of this EfdRegexResult.
@@ -168,7 +168,7 @@ class EfdRegexResult(object):
     def parsed_field_count(self):
         """
         Gets the parsed_field_count of this EfdRegexResult.
-        parsedFieldCount
+        The parsed field count.
 
 
         :return: The parsed_field_count of this EfdRegexResult.
@@ -180,7 +180,7 @@ class EfdRegexResult(object):
     def parsed_field_count(self, parsed_field_count):
         """
         Sets the parsed_field_count of this EfdRegexResult.
-        parsedFieldCount
+        The parsed field count.
 
 
         :param parsed_field_count: The parsed_field_count of this EfdRegexResult.
@@ -192,7 +192,7 @@ class EfdRegexResult(object):
     def parsed_fields(self):
         """
         Gets the parsed_fields of this EfdRegexResult.
-        parsedFields
+        The parsed fields.
 
 
         :return: The parsed_fields of this EfdRegexResult.
@@ -204,7 +204,7 @@ class EfdRegexResult(object):
     def parsed_fields(self, parsed_fields):
         """
         Sets the parsed_fields of this EfdRegexResult.
-        parsedFields
+        The parsed fields.
 
 
         :param parsed_fields: The parsed_fields of this EfdRegexResult.
@@ -216,7 +216,7 @@ class EfdRegexResult(object):
     def regex(self):
         """
         Gets the regex of this EfdRegexResult.
-        regex
+        The regular expression.
 
 
         :return: The regex of this EfdRegexResult.
@@ -228,7 +228,7 @@ class EfdRegexResult(object):
     def regex(self, regex):
         """
         Sets the regex of this EfdRegexResult.
-        regex
+        The regular expression.
 
 
         :param regex: The regex of this EfdRegexResult.
@@ -240,7 +240,7 @@ class EfdRegexResult(object):
     def status(self):
         """
         Gets the status of this EfdRegexResult.
-        status
+        The status.
 
 
         :return: The status of this EfdRegexResult.
@@ -252,7 +252,7 @@ class EfdRegexResult(object):
     def status(self, status):
         """
         Sets the status of this EfdRegexResult.
-        status
+        The status.
 
 
         :param status: The status of this EfdRegexResult.
@@ -264,7 +264,7 @@ class EfdRegexResult(object):
     def status_description(self):
         """
         Gets the status_description of this EfdRegexResult.
-        statusDescription
+        The Status description.
 
 
         :return: The status_description of this EfdRegexResult.
@@ -276,7 +276,7 @@ class EfdRegexResult(object):
     def status_description(self, status_description):
         """
         Sets the status_description of this EfdRegexResult.
-        statusDescription
+        The Status description.
 
 
         :param status_description: The status_description of this EfdRegexResult.
@@ -288,7 +288,7 @@ class EfdRegexResult(object):
     def is_valid_regex_syntax(self):
         """
         Gets the is_valid_regex_syntax of this EfdRegexResult.
-        isValidRegexSyntax
+        A flag indicating whether or not the regular expression is valid.
 
 
         :return: The is_valid_regex_syntax of this EfdRegexResult.
@@ -300,7 +300,7 @@ class EfdRegexResult(object):
     def is_valid_regex_syntax(self, is_valid_regex_syntax):
         """
         Sets the is_valid_regex_syntax of this EfdRegexResult.
-        isValidRegexSyntax
+        A flag indicating whether or not the regular expression is valid.
 
 
         :param is_valid_regex_syntax: The is_valid_regex_syntax of this EfdRegexResult.
@@ -312,7 +312,7 @@ class EfdRegexResult(object):
     def violations(self):
         """
         Gets the violations of this EfdRegexResult.
-        violations
+        The list of violations (if any).
 
 
         :return: The violations of this EfdRegexResult.
@@ -324,7 +324,7 @@ class EfdRegexResult(object):
     def violations(self, violations):
         """
         Sets the violations of this EfdRegexResult.
-        violations
+        The list of violations (if any).
 
 
         :param violations: The violations of this EfdRegexResult.

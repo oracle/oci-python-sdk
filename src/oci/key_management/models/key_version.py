@@ -110,6 +110,14 @@ class KeyVersion(object):
             The value to assign to the restored_from_key_version_id property of this KeyVersion.
         :type restored_from_key_version_id: str
 
+        :param replica_details:
+            The value to assign to the replica_details property of this KeyVersion.
+        :type replica_details: oci.key_management.models.KeyVersionReplicaDetails
+
+        :param is_primary:
+            The value to assign to the is_primary property of this KeyVersion.
+        :type is_primary: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -121,7 +129,9 @@ class KeyVersion(object):
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
             'vault_id': 'str',
-            'restored_from_key_version_id': 'str'
+            'restored_from_key_version_id': 'str',
+            'replica_details': 'KeyVersionReplicaDetails',
+            'is_primary': 'bool'
         }
 
         self.attribute_map = {
@@ -134,7 +144,9 @@ class KeyVersion(object):
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
             'vault_id': 'vaultId',
-            'restored_from_key_version_id': 'restoredFromKeyVersionId'
+            'restored_from_key_version_id': 'restoredFromKeyVersionId',
+            'replica_details': 'replicaDetails',
+            'is_primary': 'isPrimary'
         }
 
         self._compartment_id = None
@@ -147,6 +159,8 @@ class KeyVersion(object):
         self._time_of_deletion = None
         self._vault_id = None
         self._restored_from_key_version_id = None
+        self._replica_details = None
+        self._is_primary = None
 
     @property
     def compartment_id(self):
@@ -224,7 +238,7 @@ class KeyVersion(object):
     def public_key(self):
         """
         Gets the public_key of this KeyVersion.
-        The public key in PEM format which will be populated only in case of RSA and ECDSA keys.
+        The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
 
 
         :return: The public_key of this KeyVersion.
@@ -236,7 +250,7 @@ class KeyVersion(object):
     def public_key(self, public_key):
         """
         Sets the public_key of this KeyVersion.
-        The public key in PEM format which will be populated only in case of RSA and ECDSA keys.
+        The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
 
 
         :param public_key: The public_key of this KeyVersion.
@@ -421,6 +435,46 @@ class KeyVersion(object):
         :type: str
         """
         self._restored_from_key_version_id = restored_from_key_version_id
+
+    @property
+    def replica_details(self):
+        """
+        Gets the replica_details of this KeyVersion.
+
+        :return: The replica_details of this KeyVersion.
+        :rtype: oci.key_management.models.KeyVersionReplicaDetails
+        """
+        return self._replica_details
+
+    @replica_details.setter
+    def replica_details(self, replica_details):
+        """
+        Sets the replica_details of this KeyVersion.
+
+        :param replica_details: The replica_details of this KeyVersion.
+        :type: oci.key_management.models.KeyVersionReplicaDetails
+        """
+        self._replica_details = replica_details
+
+    @property
+    def is_primary(self):
+        """
+        Gets the is_primary of this KeyVersion.
+
+        :return: The is_primary of this KeyVersion.
+        :rtype: bool
+        """
+        return self._is_primary
+
+    @is_primary.setter
+    def is_primary(self, is_primary):
+        """
+        Sets the is_primary of this KeyVersion.
+
+        :param is_primary: The is_primary of this KeyVersion.
+        :type: bool
+        """
+        self._is_primary = is_primary
 
     def __repr__(self):
         return formatted_flat_dict(self)

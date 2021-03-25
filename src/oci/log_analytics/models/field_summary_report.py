@@ -51,7 +51,7 @@ class FieldSummaryReport(object):
     def non_oob_count(self):
         """
         Gets the non_oob_count of this FieldSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) fields.
 
 
         :return: The non_oob_count of this FieldSummaryReport.
@@ -63,7 +63,7 @@ class FieldSummaryReport(object):
     def non_oob_count(self, non_oob_count):
         """
         Sets the non_oob_count of this FieldSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) fields.
 
 
         :param non_oob_count: The non_oob_count of this FieldSummaryReport.
@@ -75,7 +75,7 @@ class FieldSummaryReport(object):
     def oob_count(self):
         """
         Gets the oob_count of this FieldSummaryReport.
-        out-of-the-box count
+        The count of built in fields.
 
 
         :return: The oob_count of this FieldSummaryReport.
@@ -87,7 +87,7 @@ class FieldSummaryReport(object):
     def oob_count(self, oob_count):
         """
         Sets the oob_count of this FieldSummaryReport.
-        out-of-the-box count
+        The count of built in fields.
 
 
         :param oob_count: The oob_count of this FieldSummaryReport.
@@ -99,7 +99,7 @@ class FieldSummaryReport(object):
     def usage_details(self):
         """
         Gets the usage_details of this FieldSummaryReport.
-        usage detail
+        Field usage detailss
 
 
         :return: The usage_details of this FieldSummaryReport.
@@ -111,7 +111,7 @@ class FieldSummaryReport(object):
     def usage_details(self, usage_details):
         """
         Sets the usage_details of this FieldSummaryReport.
-        usage detail
+        Field usage detailss
 
 
         :param usage_details: The usage_details of this FieldSummaryReport.

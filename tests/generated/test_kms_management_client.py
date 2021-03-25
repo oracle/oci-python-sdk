@@ -437,6 +437,46 @@ def test_get_key_version(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_get_replication_status(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'GetReplicationStatus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'GetReplicationStatus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='GetReplicationStatus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "GetReplicationStatus")
+            client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_replication_status(
+                replication_id=request.pop(util.camelize('replicationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'GetReplicationStatus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationStatusDetails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
 def test_get_wrapping_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'GetWrappingKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

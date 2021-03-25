@@ -58,7 +58,7 @@ class LogAnalyticsConfigWorkRequestPayload(object):
     def source_name(self):
         """
         Gets the source_name of this LogAnalyticsConfigWorkRequestPayload.
-        sourceName
+        The source name.
 
 
         :return: The source_name of this LogAnalyticsConfigWorkRequestPayload.
@@ -70,7 +70,7 @@ class LogAnalyticsConfigWorkRequestPayload(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this LogAnalyticsConfigWorkRequestPayload.
-        sourceName
+        The source name.
 
 
         :param source_name: The source_name of this LogAnalyticsConfigWorkRequestPayload.
@@ -82,7 +82,7 @@ class LogAnalyticsConfigWorkRequestPayload(object):
     def entity_id(self):
         """
         Gets the entity_id of this LogAnalyticsConfigWorkRequestPayload.
-        entityId
+        The entity unique identifier.
 
 
         :return: The entity_id of this LogAnalyticsConfigWorkRequestPayload.
@@ -94,7 +94,7 @@ class LogAnalyticsConfigWorkRequestPayload(object):
     def entity_id(self, entity_id):
         """
         Sets the entity_id of this LogAnalyticsConfigWorkRequestPayload.
-        entityId
+        The entity unique identifier.
 
 
         :param entity_id: The entity_id of this LogAnalyticsConfigWorkRequestPayload.
@@ -106,7 +106,7 @@ class LogAnalyticsConfigWorkRequestPayload(object):
     def lookup_reference(self):
         """
         Gets the lookup_reference of this LogAnalyticsConfigWorkRequestPayload.
-        lookupReference
+        The lookup reference as an integer.
 
 
         :return: The lookup_reference of this LogAnalyticsConfigWorkRequestPayload.
@@ -118,7 +118,7 @@ class LogAnalyticsConfigWorkRequestPayload(object):
     def lookup_reference(self, lookup_reference):
         """
         Sets the lookup_reference of this LogAnalyticsConfigWorkRequestPayload.
-        lookupReference
+        The lookup reference as an integer.
 
 
         :param lookup_reference: The lookup_reference of this LogAnalyticsConfigWorkRequestPayload.

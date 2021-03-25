@@ -119,7 +119,7 @@ class LogAnalyticsExtendedField(object):
     def extended_field_definition_id(self):
         """
         Gets the extended_field_definition_id of this LogAnalyticsExtendedField.
-        Id
+        The extended field unique identifier.
 
 
         :return: The extended_field_definition_id of this LogAnalyticsExtendedField.
@@ -131,7 +131,7 @@ class LogAnalyticsExtendedField(object):
     def extended_field_definition_id(self, extended_field_definition_id):
         """
         Sets the extended_field_definition_id of this LogAnalyticsExtendedField.
-        Id
+        The extended field unique identifier.
 
 
         :param extended_field_definition_id: The extended_field_definition_id of this LogAnalyticsExtendedField.
@@ -143,7 +143,7 @@ class LogAnalyticsExtendedField(object):
     def field_name(self):
         """
         Gets the field_name of this LogAnalyticsExtendedField.
-        new field internal name
+        The field internal name
 
 
         :return: The field_name of this LogAnalyticsExtendedField.
@@ -155,7 +155,7 @@ class LogAnalyticsExtendedField(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this LogAnalyticsExtendedField.
-        new field internal name
+        The field internal name
 
 
         :param field_name: The field_name of this LogAnalyticsExtendedField.
@@ -167,7 +167,7 @@ class LogAnalyticsExtendedField(object):
     def field_display_name(self):
         """
         Gets the field_display_name of this LogAnalyticsExtendedField.
-        new field internal display name
+        The field internal display name.
 
 
         :return: The field_display_name of this LogAnalyticsExtendedField.
@@ -179,7 +179,7 @@ class LogAnalyticsExtendedField(object):
     def field_display_name(self, field_display_name):
         """
         Sets the field_display_name of this LogAnalyticsExtendedField.
-        new field internal display name
+        The field internal display name.
 
 
         :param field_display_name: The field_display_name of this LogAnalyticsExtendedField.
@@ -191,7 +191,7 @@ class LogAnalyticsExtendedField(object):
     def saved_regular_expression_name(self):
         """
         Gets the saved_regular_expression_name of this LogAnalyticsExtendedField.
-        saved regular expression internal name
+        The saved regular expression name.
 
 
         :return: The saved_regular_expression_name of this LogAnalyticsExtendedField.
@@ -203,7 +203,7 @@ class LogAnalyticsExtendedField(object):
     def saved_regular_expression_name(self, saved_regular_expression_name):
         """
         Sets the saved_regular_expression_name of this LogAnalyticsExtendedField.
-        saved regular expression internal name
+        The saved regular expression name.
 
 
         :param saved_regular_expression_name: The saved_regular_expression_name of this LogAnalyticsExtendedField.
@@ -215,7 +215,7 @@ class LogAnalyticsExtendedField(object):
     def extended_field_id(self):
         """
         Gets the extended_field_id of this LogAnalyticsExtendedField.
-        extended field Id
+        The extended field unique identifier.
 
 
         :return: The extended_field_id of this LogAnalyticsExtendedField.
@@ -227,7 +227,7 @@ class LogAnalyticsExtendedField(object):
     def extended_field_id(self, extended_field_id):
         """
         Sets the extended_field_id of this LogAnalyticsExtendedField.
-        extended field Id
+        The extended field unique identifier.
 
 
         :param extended_field_id: The extended_field_id of this LogAnalyticsExtendedField.

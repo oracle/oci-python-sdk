@@ -65,7 +65,7 @@ class LogAnalyticsSourceMetadataField(object):
     def field_name(self):
         """
         Gets the field_name of this LogAnalyticsSourceMetadataField.
-        field internal name
+        The field internal name.
 
 
         :return: The field_name of this LogAnalyticsSourceMetadataField.
@@ -77,7 +77,7 @@ class LogAnalyticsSourceMetadataField(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this LogAnalyticsSourceMetadataField.
-        field internal name
+        The field internal name.
 
 
         :param field_name: The field_name of this LogAnalyticsSourceMetadataField.
@@ -89,7 +89,7 @@ class LogAnalyticsSourceMetadataField(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsSourceMetadataField.
-        is enabled flag
+        A flag inidcating whether or not the source metadata field is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsSourceMetadataField.
@@ -101,7 +101,7 @@ class LogAnalyticsSourceMetadataField(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsSourceMetadataField.
-        is enabled flag
+        A flag inidcating whether or not the source metadata field is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsSourceMetadataField.
@@ -113,7 +113,8 @@ class LogAnalyticsSourceMetadataField(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSourceMetadataField.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSourceMetadataField.
@@ -125,7 +126,8 @@ class LogAnalyticsSourceMetadataField(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSourceMetadataField.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSourceMetadataField.
@@ -137,7 +139,7 @@ class LogAnalyticsSourceMetadataField(object):
     def key(self):
         """
         Gets the key of this LogAnalyticsSourceMetadataField.
-        key
+        The key.
 
 
         :return: The key of this LogAnalyticsSourceMetadataField.
@@ -149,7 +151,7 @@ class LogAnalyticsSourceMetadataField(object):
     def key(self, key):
         """
         Sets the key of this LogAnalyticsSourceMetadataField.
-        key
+        The key.
 
 
         :param key: The key of this LogAnalyticsSourceMetadataField.
@@ -161,7 +163,7 @@ class LogAnalyticsSourceMetadataField(object):
     def source_name(self):
         """
         Gets the source_name of this LogAnalyticsSourceMetadataField.
-        source internal name
+        The source internal name.
 
 
         :return: The source_name of this LogAnalyticsSourceMetadataField.
@@ -173,7 +175,7 @@ class LogAnalyticsSourceMetadataField(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this LogAnalyticsSourceMetadataField.
-        source internal name
+        The source internal name.
 
 
         :param source_name: The source_name of this LogAnalyticsSourceMetadataField.

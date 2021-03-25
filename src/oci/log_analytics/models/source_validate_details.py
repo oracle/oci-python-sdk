@@ -44,7 +44,7 @@ class SourceValidateDetails(object):
     def key(self):
         """
         Gets the key of this SourceValidateDetails.
-        key
+        The key.
 
 
         :return: The key of this SourceValidateDetails.
@@ -56,7 +56,7 @@ class SourceValidateDetails(object):
     def key(self, key):
         """
         Sets the key of this SourceValidateDetails.
-        key
+        The key.
 
 
         :param key: The key of this SourceValidateDetails.
@@ -68,7 +68,7 @@ class SourceValidateDetails(object):
     def value(self):
         """
         Gets the value of this SourceValidateDetails.
-        value
+        The value.
 
 
         :return: The value of this SourceValidateDetails.
@@ -80,7 +80,7 @@ class SourceValidateDetails(object):
     def value(self, value):
         """
         Sets the value of this SourceValidateDetails.
-        value
+        The value.
 
 
         :param value: The value of this SourceValidateDetails.

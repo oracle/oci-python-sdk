@@ -79,7 +79,7 @@ class LookupField(object):
     def common_field_name(self):
         """
         Gets the common_field_name of this LookupField.
-        common field name
+        The common field name.
 
 
         :return: The common_field_name of this LookupField.
@@ -91,7 +91,7 @@ class LookupField(object):
     def common_field_name(self, common_field_name):
         """
         Sets the common_field_name of this LookupField.
-        common field name
+        The common field name.
 
 
         :param common_field_name: The common_field_name of this LookupField.
@@ -103,7 +103,7 @@ class LookupField(object):
     def default_match_value(self):
         """
         Gets the default_match_value of this LookupField.
-        default match value
+        The default match value.
 
 
         :return: The default_match_value of this LookupField.
@@ -115,7 +115,7 @@ class LookupField(object):
     def default_match_value(self, default_match_value):
         """
         Sets the default_match_value of this LookupField.
-        default match value
+        The default match value.
 
 
         :param default_match_value: The default_match_value of this LookupField.
@@ -127,7 +127,7 @@ class LookupField(object):
     def display_name(self):
         """
         Gets the display_name of this LookupField.
-        display name
+        The field display name.
 
 
         :return: The display_name of this LookupField.
@@ -139,7 +139,7 @@ class LookupField(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LookupField.
-        display name
+        The field display name.
 
 
         :param display_name: The display_name of this LookupField.
@@ -151,7 +151,7 @@ class LookupField(object):
     def is_common_field(self):
         """
         Gets the is_common_field of this LookupField.
-        is common field
+        A flag indicating whether or not the lookup field is a common field.
 
 
         :return: The is_common_field of this LookupField.
@@ -163,7 +163,7 @@ class LookupField(object):
     def is_common_field(self, is_common_field):
         """
         Sets the is_common_field of this LookupField.
-        is common field
+        A flag indicating whether or not the lookup field is a common field.
 
 
         :param is_common_field: The is_common_field of this LookupField.
@@ -175,7 +175,7 @@ class LookupField(object):
     def match_operator(self):
         """
         Gets the match_operator of this LookupField.
-        match operator
+        The match operator.
 
 
         :return: The match_operator of this LookupField.
@@ -187,7 +187,7 @@ class LookupField(object):
     def match_operator(self, match_operator):
         """
         Sets the match_operator of this LookupField.
-        match operator
+        The match operator.
 
 
         :param match_operator: The match_operator of this LookupField.
@@ -199,7 +199,7 @@ class LookupField(object):
     def name(self):
         """
         Gets the name of this LookupField.
-        name
+        The field name.
 
 
         :return: The name of this LookupField.
@@ -211,7 +211,7 @@ class LookupField(object):
     def name(self, name):
         """
         Sets the name of this LookupField.
-        name
+        The field name.
 
 
         :param name: The name of this LookupField.
@@ -223,7 +223,7 @@ class LookupField(object):
     def position(self):
         """
         Gets the position of this LookupField.
-        position
+        THe field position.
 
 
         :return: The position of this LookupField.
@@ -235,7 +235,7 @@ class LookupField(object):
     def position(self, position):
         """
         Sets the position of this LookupField.
-        position
+        THe field position.
 
 
         :param position: The position of this LookupField.

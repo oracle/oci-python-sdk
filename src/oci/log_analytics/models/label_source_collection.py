@@ -37,7 +37,7 @@ class LabelSourceCollection(object):
     def items(self):
         """
         Gets the items of this LabelSourceCollection.
-        list of fields
+        An array labels.
 
 
         :return: The items of this LabelSourceCollection.
@@ -49,7 +49,7 @@ class LabelSourceCollection(object):
     def items(self, items):
         """
         Sets the items of this LabelSourceCollection.
-        list of fields
+        An array labels.
 
 
         :param items: The items of this LabelSourceCollection.

@@ -79,7 +79,7 @@ class LabelSourceSummary(object):
     def source_display_name(self):
         """
         Gets the source_display_name of this LabelSourceSummary.
-        display name
+        The source display name.
 
 
         :return: The source_display_name of this LabelSourceSummary.
@@ -91,7 +91,7 @@ class LabelSourceSummary(object):
     def source_display_name(self, source_display_name):
         """
         Sets the source_display_name of this LabelSourceSummary.
-        display name
+        The source display name.
 
 
         :param source_display_name: The source_display_name of this LabelSourceSummary.
@@ -103,7 +103,7 @@ class LabelSourceSummary(object):
     def source_name(self):
         """
         Gets the source_name of this LabelSourceSummary.
-        source internal name
+        The source internal name.
 
 
         :return: The source_name of this LabelSourceSummary.
@@ -115,7 +115,7 @@ class LabelSourceSummary(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this LabelSourceSummary.
-        source internal name
+        The source internal name.
 
 
         :param source_name: The source_name of this LabelSourceSummary.
@@ -127,7 +127,7 @@ class LabelSourceSummary(object):
     def source_id(self):
         """
         Gets the source_id of this LabelSourceSummary.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LabelSourceSummary.
@@ -139,7 +139,7 @@ class LabelSourceSummary(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LabelSourceSummary.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LabelSourceSummary.
@@ -151,7 +151,7 @@ class LabelSourceSummary(object):
     def label_operator_name(self):
         """
         Gets the label_operator_name of this LabelSourceSummary.
-        label Operator
+        The label operator.
 
 
         :return: The label_operator_name of this LabelSourceSummary.
@@ -163,7 +163,7 @@ class LabelSourceSummary(object):
     def label_operator_name(self, label_operator_name):
         """
         Sets the label_operator_name of this LabelSourceSummary.
-        label Operator
+        The label operator.
 
 
         :param label_operator_name: The label_operator_name of this LabelSourceSummary.
@@ -175,7 +175,7 @@ class LabelSourceSummary(object):
     def label_condition(self):
         """
         Gets the label_condition of this LabelSourceSummary.
-        label Condition
+        The label condition.
 
 
         :return: The label_condition of this LabelSourceSummary.
@@ -187,7 +187,7 @@ class LabelSourceSummary(object):
     def label_condition(self, label_condition):
         """
         Sets the label_condition of this LabelSourceSummary.
-        label Condition
+        The label condition.
 
 
         :param label_condition: The label_condition of this LabelSourceSummary.
@@ -199,7 +199,7 @@ class LabelSourceSummary(object):
     def label_field_displayname(self):
         """
         Gets the label_field_displayname of this LabelSourceSummary.
-        label Field Display Name
+        The label field display name.
 
 
         :return: The label_field_displayname of this LabelSourceSummary.
@@ -211,7 +211,7 @@ class LabelSourceSummary(object):
     def label_field_displayname(self, label_field_displayname):
         """
         Sets the label_field_displayname of this LabelSourceSummary.
-        label Field Display Name
+        The label field display name.
 
 
         :param label_field_displayname: The label_field_displayname of this LabelSourceSummary.
@@ -223,7 +223,7 @@ class LabelSourceSummary(object):
     def label_field_name(self):
         """
         Gets the label_field_name of this LabelSourceSummary.
-        label Field name
+        The label field name.
 
 
         :return: The label_field_name of this LabelSourceSummary.
@@ -235,7 +235,7 @@ class LabelSourceSummary(object):
     def label_field_name(self, label_field_name):
         """
         Sets the label_field_name of this LabelSourceSummary.
-        label Field name
+        The label field name.
 
 
         :param label_field_name: The label_field_name of this LabelSourceSummary.

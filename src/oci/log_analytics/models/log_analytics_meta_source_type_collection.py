@@ -37,7 +37,7 @@ class LogAnalyticsMetaSourceTypeCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsMetaSourceTypeCollection.
-        list of tag priorities
+        An array of meta source types.
 
 
         :return: The items of this LogAnalyticsMetaSourceTypeCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsMetaSourceTypeCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsMetaSourceTypeCollection.
-        list of tag priorities
+        An array of meta source types.
 
 
         :param items: The items of this LogAnalyticsMetaSourceTypeCollection.

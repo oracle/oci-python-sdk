@@ -44,7 +44,7 @@ class ExtractLogHeaderResults(object):
     def json_paths(self):
         """
         Gets the json_paths of this ExtractLogHeaderResults.
-        log header json paths
+        The log header json paths.
 
 
         :return: The json_paths of this ExtractLogHeaderResults.
@@ -56,7 +56,7 @@ class ExtractLogHeaderResults(object):
     def json_paths(self, json_paths):
         """
         Sets the json_paths of this ExtractLogHeaderResults.
-        log header json paths
+        The log header json paths.
 
 
         :param json_paths: The json_paths of this ExtractLogHeaderResults.
@@ -68,7 +68,7 @@ class ExtractLogHeaderResults(object):
     def xml_paths(self):
         """
         Gets the xml_paths of this ExtractLogHeaderResults.
-        log field or header values
+        The log field or log header values.
 
 
         :return: The xml_paths of this ExtractLogHeaderResults.
@@ -80,7 +80,7 @@ class ExtractLogHeaderResults(object):
     def xml_paths(self, xml_paths):
         """
         Sets the xml_paths of this ExtractLogHeaderResults.
-        log field or header values
+        The log field or log header values.
 
 
         :param xml_paths: The xml_paths of this ExtractLogHeaderResults.

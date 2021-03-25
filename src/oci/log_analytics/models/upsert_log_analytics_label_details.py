@@ -133,7 +133,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def aliases(self):
         """
         Gets the aliases of this UpsertLogAnalyticsLabelDetails.
-        alias list
+        The alias list.
 
 
         :return: The aliases of this UpsertLogAnalyticsLabelDetails.
@@ -145,7 +145,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def aliases(self, aliases):
         """
         Sets the aliases of this UpsertLogAnalyticsLabelDetails.
-        alias list
+        The alias list.
 
 
         :param aliases: The aliases of this UpsertLogAnalyticsLabelDetails.
@@ -181,7 +181,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def description(self):
         """
         Gets the description of this UpsertLogAnalyticsLabelDetails.
-        description
+        The label description.
 
 
         :return: The description of this UpsertLogAnalyticsLabelDetails.
@@ -193,7 +193,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def description(self, description):
         """
         Sets the description of this UpsertLogAnalyticsLabelDetails.
-        description
+        The label description.
 
 
         :param description: The description of this UpsertLogAnalyticsLabelDetails.
@@ -205,7 +205,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpsertLogAnalyticsLabelDetails.
-        display name
+        The label display name.
 
 
         :return: The display_name of this UpsertLogAnalyticsLabelDetails.
@@ -217,7 +217,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpsertLogAnalyticsLabelDetails.
-        display name
+        The label display name.
 
 
         :param display_name: The display_name of this UpsertLogAnalyticsLabelDetails.
@@ -229,7 +229,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def edit_version(self):
         """
         Gets the edit_version of this UpsertLogAnalyticsLabelDetails.
-        edit version
+        The edit version.
 
 
         :return: The edit_version of this UpsertLogAnalyticsLabelDetails.
@@ -241,7 +241,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this UpsertLogAnalyticsLabelDetails.
-        edit version
+        The edit version.
 
 
         :param edit_version: The edit_version of this UpsertLogAnalyticsLabelDetails.
@@ -253,7 +253,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def impact(self):
         """
         Gets the impact of this UpsertLogAnalyticsLabelDetails.
-        impact
+        The label impact.
 
 
         :return: The impact of this UpsertLogAnalyticsLabelDetails.
@@ -265,7 +265,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def impact(self, impact):
         """
         Sets the impact of this UpsertLogAnalyticsLabelDetails.
-        impact
+        The label impact.
 
 
         :param impact: The impact of this UpsertLogAnalyticsLabelDetails.
@@ -277,7 +277,8 @@ class UpsertLogAnalyticsLabelDetails(object):
     def is_system(self):
         """
         Gets the is_system of this UpsertLogAnalyticsLabelDetails.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined label.  A value of true denotes a built in label.
 
 
         :return: The is_system of this UpsertLogAnalyticsLabelDetails.
@@ -289,7 +290,8 @@ class UpsertLogAnalyticsLabelDetails(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this UpsertLogAnalyticsLabelDetails.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined label.  A value of true denotes a built in label.
 
 
         :param is_system: The is_system of this UpsertLogAnalyticsLabelDetails.
@@ -301,7 +303,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def name(self):
         """
         Gets the name of this UpsertLogAnalyticsLabelDetails.
-        label identifier
+        The label name.
 
 
         :return: The name of this UpsertLogAnalyticsLabelDetails.
@@ -313,7 +315,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def name(self, name):
         """
         Sets the name of this UpsertLogAnalyticsLabelDetails.
-        label identifier
+        The label name.
 
 
         :param name: The name of this UpsertLogAnalyticsLabelDetails.
@@ -325,7 +327,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def priority(self):
         """
         Gets the priority of this UpsertLogAnalyticsLabelDetails.
-        Valid values are (NONE, LOW, HIGH). NONE is default.
+        The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
 
         Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH"
 
@@ -339,7 +341,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def priority(self, priority):
         """
         Sets the priority of this UpsertLogAnalyticsLabelDetails.
-        Valid values are (NONE, LOW, HIGH). NONE is default.
+        The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
 
 
         :param priority: The priority of this UpsertLogAnalyticsLabelDetails.
@@ -357,7 +359,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def recommendation(self):
         """
         Gets the recommendation of this UpsertLogAnalyticsLabelDetails.
-        tag recommendation
+        The label recommendation.
 
 
         :return: The recommendation of this UpsertLogAnalyticsLabelDetails.
@@ -369,7 +371,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this UpsertLogAnalyticsLabelDetails.
-        tag recommendation
+        The label recommendation.
 
 
         :param recommendation: The recommendation of this UpsertLogAnalyticsLabelDetails.
@@ -381,7 +383,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def type(self):
         """
         Gets the type of this UpsertLogAnalyticsLabelDetails.
-        Valid values are (INFO, PROBLEM). INFO is default.
+        The label type. Valid values are (INFO, PROBLEM). INFO is default.
 
         Allowed values for this property are: "INFO", "PROBLEM"
 
@@ -395,7 +397,7 @@ class UpsertLogAnalyticsLabelDetails(object):
     def type(self, type):
         """
         Sets the type of this UpsertLogAnalyticsLabelDetails.
-        Valid values are (INFO, PROBLEM). INFO is default.
+        The label type. Valid values are (INFO, PROBLEM). INFO is default.
 
 
         :param type: The type of this UpsertLogAnalyticsLabelDetails.

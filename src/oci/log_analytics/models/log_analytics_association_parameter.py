@@ -103,7 +103,7 @@ class LogAnalyticsAssociationParameter(object):
     def agent_id(self):
         """
         Gets the agent_id of this LogAnalyticsAssociationParameter.
-        agent guid
+        The agent unique identifier.
 
 
         :return: The agent_id of this LogAnalyticsAssociationParameter.
@@ -115,7 +115,7 @@ class LogAnalyticsAssociationParameter(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this LogAnalyticsAssociationParameter.
-        agent guid
+        The agent unique identifier.
 
 
         :param agent_id: The agent_id of this LogAnalyticsAssociationParameter.
@@ -127,7 +127,7 @@ class LogAnalyticsAssociationParameter(object):
     def entity_type(self):
         """
         Gets the entity_type of this LogAnalyticsAssociationParameter.
-        entity type
+        The entity type.
 
 
         :return: The entity_type of this LogAnalyticsAssociationParameter.
@@ -139,7 +139,7 @@ class LogAnalyticsAssociationParameter(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this LogAnalyticsAssociationParameter.
-        entity type
+        The entity type.
 
 
         :param entity_type: The entity_type of this LogAnalyticsAssociationParameter.
@@ -151,7 +151,7 @@ class LogAnalyticsAssociationParameter(object):
     def entity_id(self):
         """
         Gets the entity_id of this LogAnalyticsAssociationParameter.
-        entity guid
+        The entity unique identifier.
 
 
         :return: The entity_id of this LogAnalyticsAssociationParameter.
@@ -163,7 +163,7 @@ class LogAnalyticsAssociationParameter(object):
     def entity_id(self, entity_id):
         """
         Sets the entity_id of this LogAnalyticsAssociationParameter.
-        entity guid
+        The entity unique identifier.
 
 
         :param entity_id: The entity_id of this LogAnalyticsAssociationParameter.
@@ -175,7 +175,7 @@ class LogAnalyticsAssociationParameter(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsAssociationParameter.
-        source name
+        The source name.
 
 
         :return: The source_id of this LogAnalyticsAssociationParameter.
@@ -187,7 +187,7 @@ class LogAnalyticsAssociationParameter(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsAssociationParameter.
-        source name
+        The source name.
 
 
         :param source_id: The source_id of this LogAnalyticsAssociationParameter.
@@ -199,7 +199,7 @@ class LogAnalyticsAssociationParameter(object):
     def source_display_name(self):
         """
         Gets the source_display_name of this LogAnalyticsAssociationParameter.
-        source display name
+        The source display name.
 
 
         :return: The source_display_name of this LogAnalyticsAssociationParameter.
@@ -211,7 +211,7 @@ class LogAnalyticsAssociationParameter(object):
     def source_display_name(self, source_display_name):
         """
         Sets the source_display_name of this LogAnalyticsAssociationParameter.
-        source display name
+        The source display name.
 
 
         :param source_display_name: The source_display_name of this LogAnalyticsAssociationParameter.
@@ -223,7 +223,7 @@ class LogAnalyticsAssociationParameter(object):
     def source_type(self):
         """
         Gets the source_type of this LogAnalyticsAssociationParameter.
-        source type
+        The source type.
 
 
         :return: The source_type of this LogAnalyticsAssociationParameter.
@@ -235,7 +235,7 @@ class LogAnalyticsAssociationParameter(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this LogAnalyticsAssociationParameter.
-        source type
+        The source type.
 
 
         :param source_type: The source_type of this LogAnalyticsAssociationParameter.
@@ -247,7 +247,7 @@ class LogAnalyticsAssociationParameter(object):
     def status(self):
         """
         Gets the status of this LogAnalyticsAssociationParameter.
-        status
+        The status.  Either FAILED or SUCCEEDED.
 
         Allowed values for this property are: "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -262,7 +262,7 @@ class LogAnalyticsAssociationParameter(object):
     def status(self, status):
         """
         Sets the status of this LogAnalyticsAssociationParameter.
-        status
+        The status.  Either FAILED or SUCCEEDED.
 
 
         :param status: The status of this LogAnalyticsAssociationParameter.
@@ -277,7 +277,7 @@ class LogAnalyticsAssociationParameter(object):
     def missing_properties(self):
         """
         Gets the missing_properties of this LogAnalyticsAssociationParameter.
-        missingProperties
+        A list of missing properties.
 
 
         :return: The missing_properties of this LogAnalyticsAssociationParameter.
@@ -289,7 +289,7 @@ class LogAnalyticsAssociationParameter(object):
     def missing_properties(self, missing_properties):
         """
         Sets the missing_properties of this LogAnalyticsAssociationParameter.
-        missingProperties
+        A list of missing properties.
 
 
         :param missing_properties: The missing_properties of this LogAnalyticsAssociationParameter.
@@ -301,7 +301,7 @@ class LogAnalyticsAssociationParameter(object):
     def required_properties(self):
         """
         Gets the required_properties of this LogAnalyticsAssociationParameter.
-        requiredProperties
+        A list of requried properties.
 
 
         :return: The required_properties of this LogAnalyticsAssociationParameter.
@@ -313,7 +313,7 @@ class LogAnalyticsAssociationParameter(object):
     def required_properties(self, required_properties):
         """
         Sets the required_properties of this LogAnalyticsAssociationParameter.
-        requiredProperties
+        A list of requried properties.
 
 
         :param required_properties: The required_properties of this LogAnalyticsAssociationParameter.

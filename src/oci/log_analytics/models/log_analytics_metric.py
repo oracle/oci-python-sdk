@@ -221,7 +221,7 @@ class LogAnalyticsMetric(object):
     def aggregation_field(self):
         """
         Gets the aggregation_field of this LogAnalyticsMetric.
-        aggregation field
+        The aggregation field.
 
 
         :return: The aggregation_field of this LogAnalyticsMetric.
@@ -233,7 +233,7 @@ class LogAnalyticsMetric(object):
     def aggregation_field(self, aggregation_field):
         """
         Sets the aggregation_field of this LogAnalyticsMetric.
-        aggregation field
+        The aggregation field.
 
 
         :param aggregation_field: The aggregation_field of this LogAnalyticsMetric.
@@ -245,7 +245,7 @@ class LogAnalyticsMetric(object):
     def bucket_metadata(self):
         """
         Gets the bucket_metadata of this LogAnalyticsMetric.
-        bucket metadata
+        The bucket metadata.
 
 
         :return: The bucket_metadata of this LogAnalyticsMetric.
@@ -257,7 +257,7 @@ class LogAnalyticsMetric(object):
     def bucket_metadata(self, bucket_metadata):
         """
         Sets the bucket_metadata of this LogAnalyticsMetric.
-        bucket metadata
+        The bucket metadata.
 
 
         :param bucket_metadata: The bucket_metadata of this LogAnalyticsMetric.
@@ -269,7 +269,7 @@ class LogAnalyticsMetric(object):
     def clock_period(self):
         """
         Gets the clock_period of this LogAnalyticsMetric.
-        clock period
+        The clock period.
 
 
         :return: The clock_period of this LogAnalyticsMetric.
@@ -281,7 +281,7 @@ class LogAnalyticsMetric(object):
     def clock_period(self, clock_period):
         """
         Sets the clock_period of this LogAnalyticsMetric.
-        clock period
+        The clock period.
 
 
         :param clock_period: The clock_period of this LogAnalyticsMetric.
@@ -293,7 +293,7 @@ class LogAnalyticsMetric(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsMetric.
-        description
+        The metric description.
 
 
         :return: The description of this LogAnalyticsMetric.
@@ -305,7 +305,7 @@ class LogAnalyticsMetric(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsMetric.
-        description
+        The metric description.
 
 
         :param description: The description of this LogAnalyticsMetric.
@@ -317,7 +317,7 @@ class LogAnalyticsMetric(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsMetric.
-        edit version
+        The metric edit version.
 
 
         :return: The edit_version of this LogAnalyticsMetric.
@@ -329,7 +329,7 @@ class LogAnalyticsMetric(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsMetric.
-        edit version
+        The metric edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsMetric.
@@ -341,7 +341,7 @@ class LogAnalyticsMetric(object):
     def field_name(self):
         """
         Gets the field_name of this LogAnalyticsMetric.
-        field name
+        The field name.
 
 
         :return: The field_name of this LogAnalyticsMetric.
@@ -353,7 +353,7 @@ class LogAnalyticsMetric(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this LogAnalyticsMetric.
-        field name
+        The field name.
 
 
         :param field_name: The field_name of this LogAnalyticsMetric.
@@ -365,7 +365,7 @@ class LogAnalyticsMetric(object):
     def field_values(self):
         """
         Gets the field_values of this LogAnalyticsMetric.
-        field value array
+        The field values.
 
 
         :return: The field_values of this LogAnalyticsMetric.
@@ -377,7 +377,7 @@ class LogAnalyticsMetric(object):
     def field_values(self, field_values):
         """
         Sets the field_values of this LogAnalyticsMetric.
-        field value array
+        The field values.
 
 
         :param field_values: The field_values of this LogAnalyticsMetric.
@@ -389,7 +389,7 @@ class LogAnalyticsMetric(object):
     def grouping_field(self):
         """
         Gets the grouping_field of this LogAnalyticsMetric.
-        grouping fields
+        The grouping fields.
 
 
         :return: The grouping_field of this LogAnalyticsMetric.
@@ -401,7 +401,7 @@ class LogAnalyticsMetric(object):
     def grouping_field(self, grouping_field):
         """
         Sets the grouping_field of this LogAnalyticsMetric.
-        grouping fields
+        The grouping fields.
 
 
         :param grouping_field: The grouping_field of this LogAnalyticsMetric.
@@ -413,7 +413,7 @@ class LogAnalyticsMetric(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsMetric.
-        is enabled flag
+        A flag inidcating whether or not the metric is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsMetric.
@@ -425,7 +425,7 @@ class LogAnalyticsMetric(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsMetric.
-        is enabled flag
+        A flag inidcating whether or not the metric is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsMetric.
@@ -437,7 +437,8 @@ class LogAnalyticsMetric(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsMetric.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsMetric.
@@ -449,7 +450,8 @@ class LogAnalyticsMetric(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsMetric.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsMetric.
@@ -461,7 +463,7 @@ class LogAnalyticsMetric(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsMetric.
-        metric display name
+        The metric display name.
 
 
         :return: The display_name of this LogAnalyticsMetric.
@@ -473,7 +475,7 @@ class LogAnalyticsMetric(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsMetric.
-        metric display name
+        The metric display name.
 
 
         :param display_name: The display_name of this LogAnalyticsMetric.
@@ -485,7 +487,7 @@ class LogAnalyticsMetric(object):
     def metric_reference(self):
         """
         Gets the metric_reference of this LogAnalyticsMetric.
-        metric Id
+        The metric unique identifier.
 
 
         :return: The metric_reference of this LogAnalyticsMetric.
@@ -497,7 +499,7 @@ class LogAnalyticsMetric(object):
     def metric_reference(self, metric_reference):
         """
         Sets the metric_reference of this LogAnalyticsMetric.
-        metric Id
+        The metric unique identifier.
 
 
         :param metric_reference: The metric_reference of this LogAnalyticsMetric.
@@ -509,7 +511,7 @@ class LogAnalyticsMetric(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsMetric.
-        name
+        The metric name.
 
 
         :return: The name of this LogAnalyticsMetric.
@@ -521,7 +523,7 @@ class LogAnalyticsMetric(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsMetric.
-        name
+        The metric name.
 
 
         :param name: The name of this LogAnalyticsMetric.
@@ -533,7 +535,8 @@ class LogAnalyticsMetric(object):
     def metric_type(self):
         """
         Gets the metric_type of this LogAnalyticsMetric.
-        metric type
+        The metric type, specifying the type of aggreation to perform.  Default value
+        is COUNT.
 
         Allowed values for this property are: "COUNT", "SUM", "AVERAGE", "COUNT_DISTRIBUTION", "SUM_DISTRIBUTION", "AVERAGE_DISTRIBUTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -548,7 +551,8 @@ class LogAnalyticsMetric(object):
     def metric_type(self, metric_type):
         """
         Sets the metric_type of this LogAnalyticsMetric.
-        metric type
+        The metric type, specifying the type of aggreation to perform.  Default value
+        is COUNT.
 
 
         :param metric_type: The metric_type of this LogAnalyticsMetric.
@@ -563,7 +567,7 @@ class LogAnalyticsMetric(object):
     def is_metric_source_enabled(self):
         """
         Gets the is_metric_source_enabled of this LogAnalyticsMetric.
-        is metric source map enabled flag
+        A flag specifying whether or not the metric source is enabled.
 
 
         :return: The is_metric_source_enabled of this LogAnalyticsMetric.
@@ -575,7 +579,7 @@ class LogAnalyticsMetric(object):
     def is_metric_source_enabled(self, is_metric_source_enabled):
         """
         Sets the is_metric_source_enabled of this LogAnalyticsMetric.
-        is metric source map enabled flag
+        A flag specifying whether or not the metric source is enabled.
 
 
         :param is_metric_source_enabled: The is_metric_source_enabled of this LogAnalyticsMetric.
@@ -587,7 +591,7 @@ class LogAnalyticsMetric(object):
     def operator(self):
         """
         Gets the operator of this LogAnalyticsMetric.
-        operator
+        The metric operator.
 
         Allowed values for this property are: "CONTAINS_IGNORE_CASE", "IN_IGNORE_CASE", "EQUAL_IGNORE_CASE", "NOT_NULL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -602,7 +606,7 @@ class LogAnalyticsMetric(object):
     def operator(self, operator):
         """
         Sets the operator of this LogAnalyticsMetric.
-        operator
+        The metric operator.
 
 
         :param operator: The operator of this LogAnalyticsMetric.
@@ -617,7 +621,7 @@ class LogAnalyticsMetric(object):
     def sources(self):
         """
         Gets the sources of this LogAnalyticsMetric.
-        sources
+        The metric sources.
 
 
         :return: The sources of this LogAnalyticsMetric.
@@ -629,7 +633,7 @@ class LogAnalyticsMetric(object):
     def sources(self, sources):
         """
         Sets the sources of this LogAnalyticsMetric.
-        sources
+        The metric sources.
 
 
         :param sources: The sources of this LogAnalyticsMetric.
@@ -641,7 +645,7 @@ class LogAnalyticsMetric(object):
     def entity_type(self):
         """
         Gets the entity_type of this LogAnalyticsMetric.
-        entity type
+        The entity type.
 
 
         :return: The entity_type of this LogAnalyticsMetric.
@@ -653,7 +657,7 @@ class LogAnalyticsMetric(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this LogAnalyticsMetric.
-        entity type
+        The entity type.
 
 
         :param entity_type: The entity_type of this LogAnalyticsMetric.
@@ -665,7 +669,7 @@ class LogAnalyticsMetric(object):
     def time_updated(self):
         """
         Gets the time_updated of this LogAnalyticsMetric.
-        last updated date
+        The last updated date.
 
 
         :return: The time_updated of this LogAnalyticsMetric.
@@ -677,7 +681,7 @@ class LogAnalyticsMetric(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this LogAnalyticsMetric.
-        last updated date
+        The last updated date.
 
 
         :param time_updated: The time_updated of this LogAnalyticsMetric.
@@ -689,7 +693,7 @@ class LogAnalyticsMetric(object):
     def unit_type(self):
         """
         Gets the unit_type of this LogAnalyticsMetric.
-        unit type
+        The unit type.
 
 
         :return: The unit_type of this LogAnalyticsMetric.
@@ -701,7 +705,7 @@ class LogAnalyticsMetric(object):
     def unit_type(self, unit_type):
         """
         Sets the unit_type of this LogAnalyticsMetric.
-        unit type
+        The unit type.
 
 
         :param unit_type: The unit_type of this LogAnalyticsMetric.
@@ -713,7 +717,7 @@ class LogAnalyticsMetric(object):
     def is_user_customized(self):
         """
         Gets the is_user_customized of this LogAnalyticsMetric.
-        user customized
+        A flag specifying whether or not this is a custom (user defined) metric.
 
 
         :return: The is_user_customized of this LogAnalyticsMetric.
@@ -725,7 +729,7 @@ class LogAnalyticsMetric(object):
     def is_user_customized(self, is_user_customized):
         """
         Sets the is_user_customized of this LogAnalyticsMetric.
-        user customized
+        A flag specifying whether or not this is a custom (user defined) metric.
 
 
         :param is_user_customized: The is_user_customized of this LogAnalyticsMetric.

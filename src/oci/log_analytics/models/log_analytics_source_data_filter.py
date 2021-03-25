@@ -146,7 +146,7 @@ class LogAnalyticsSourceDataFilter(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsSourceDataFilter.
-        description
+        The filter description.
 
 
         :return: The description of this LogAnalyticsSourceDataFilter.
@@ -158,7 +158,7 @@ class LogAnalyticsSourceDataFilter(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsSourceDataFilter.
-        description
+        The filter description.
 
 
         :param description: The description of this LogAnalyticsSourceDataFilter.
@@ -170,7 +170,7 @@ class LogAnalyticsSourceDataFilter(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsSourceDataFilter.
-        display name
+        The filter display name.
 
 
         :return: The display_name of this LogAnalyticsSourceDataFilter.
@@ -182,7 +182,7 @@ class LogAnalyticsSourceDataFilter(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsSourceDataFilter.
-        display name
+        The filter display name.
 
 
         :param display_name: The display_name of this LogAnalyticsSourceDataFilter.
@@ -194,7 +194,7 @@ class LogAnalyticsSourceDataFilter(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsSourceDataFilter.
-        edit version
+        The filter edit version.
 
 
         :return: The edit_version of this LogAnalyticsSourceDataFilter.
@@ -206,7 +206,7 @@ class LogAnalyticsSourceDataFilter(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsSourceDataFilter.
-        edit version
+        The filter edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsSourceDataFilter.
@@ -218,7 +218,7 @@ class LogAnalyticsSourceDataFilter(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsSourceDataFilter.
-        enabled
+        A flag inidcating whether or not the filter is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsSourceDataFilter.
@@ -230,7 +230,7 @@ class LogAnalyticsSourceDataFilter(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsSourceDataFilter.
-        enabled
+        A flag inidcating whether or not the filter is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsSourceDataFilter.
@@ -242,7 +242,7 @@ class LogAnalyticsSourceDataFilter(object):
     def field_name(self):
         """
         Gets the field_name of this LogAnalyticsSourceDataFilter.
-        field internal name
+        The field internal name.
 
 
         :return: The field_name of this LogAnalyticsSourceDataFilter.
@@ -254,7 +254,7 @@ class LogAnalyticsSourceDataFilter(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this LogAnalyticsSourceDataFilter.
-        field internal name
+        The field internal name.
 
 
         :param field_name: The field_name of this LogAnalyticsSourceDataFilter.
@@ -266,7 +266,7 @@ class LogAnalyticsSourceDataFilter(object):
     def hash_type(self):
         """
         Gets the hash_type of this LogAnalyticsSourceDataFilter.
-        hash type
+        The hash type.
 
 
         :return: The hash_type of this LogAnalyticsSourceDataFilter.
@@ -278,7 +278,7 @@ class LogAnalyticsSourceDataFilter(object):
     def hash_type(self, hash_type):
         """
         Sets the hash_type of this LogAnalyticsSourceDataFilter.
-        hash type
+        The hash type.
 
 
         :param hash_type: The hash_type of this LogAnalyticsSourceDataFilter.
@@ -290,7 +290,7 @@ class LogAnalyticsSourceDataFilter(object):
     def data_filter_id(self):
         """
         Gets the data_filter_id of this LogAnalyticsSourceDataFilter.
-        filter Id
+        The filter unique identifier.
 
 
         :return: The data_filter_id of this LogAnalyticsSourceDataFilter.
@@ -302,7 +302,7 @@ class LogAnalyticsSourceDataFilter(object):
     def data_filter_id(self, data_filter_id):
         """
         Sets the data_filter_id of this LogAnalyticsSourceDataFilter.
-        filter Id
+        The filter unique identifier.
 
 
         :param data_filter_id: The data_filter_id of this LogAnalyticsSourceDataFilter.
@@ -314,7 +314,8 @@ class LogAnalyticsSourceDataFilter(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSourceDataFilter.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSourceDataFilter.
@@ -326,7 +327,8 @@ class LogAnalyticsSourceDataFilter(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSourceDataFilter.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSourceDataFilter.
@@ -338,7 +340,7 @@ class LogAnalyticsSourceDataFilter(object):
     def match_regular_expression(self):
         """
         Gets the match_regular_expression of this LogAnalyticsSourceDataFilter.
-        regular expression match
+        The regular expression for matching.
 
 
         :return: The match_regular_expression of this LogAnalyticsSourceDataFilter.
@@ -350,7 +352,7 @@ class LogAnalyticsSourceDataFilter(object):
     def match_regular_expression(self, match_regular_expression):
         """
         Sets the match_regular_expression of this LogAnalyticsSourceDataFilter.
-        regular expression match
+        The regular expression for matching.
 
 
         :param match_regular_expression: The match_regular_expression of this LogAnalyticsSourceDataFilter.
@@ -362,7 +364,7 @@ class LogAnalyticsSourceDataFilter(object):
     def order(self):
         """
         Gets the order of this LogAnalyticsSourceDataFilter.
-        order
+        The filter order.
 
 
         :return: The order of this LogAnalyticsSourceDataFilter.
@@ -374,7 +376,7 @@ class LogAnalyticsSourceDataFilter(object):
     def order(self, order):
         """
         Sets the order of this LogAnalyticsSourceDataFilter.
-        order
+        The filter order.
 
 
         :param order: The order of this LogAnalyticsSourceDataFilter.
@@ -386,7 +388,7 @@ class LogAnalyticsSourceDataFilter(object):
     def path(self):
         """
         Gets the path of this LogAnalyticsSourceDataFilter.
-        path
+        The filter path.
 
 
         :return: The path of this LogAnalyticsSourceDataFilter.
@@ -398,7 +400,7 @@ class LogAnalyticsSourceDataFilter(object):
     def path(self, path):
         """
         Sets the path of this LogAnalyticsSourceDataFilter.
-        path
+        The filter path.
 
 
         :param path: The path of this LogAnalyticsSourceDataFilter.
@@ -410,7 +412,7 @@ class LogAnalyticsSourceDataFilter(object):
     def replacement_string(self):
         """
         Gets the replacement_string of this LogAnalyticsSourceDataFilter.
-        replacement string
+        The replacement string.
 
 
         :return: The replacement_string of this LogAnalyticsSourceDataFilter.
@@ -422,7 +424,7 @@ class LogAnalyticsSourceDataFilter(object):
     def replacement_string(self, replacement_string):
         """
         Sets the replacement_string of this LogAnalyticsSourceDataFilter.
-        replacement string
+        The replacement string.
 
 
         :param replacement_string: The replacement_string of this LogAnalyticsSourceDataFilter.
@@ -434,7 +436,7 @@ class LogAnalyticsSourceDataFilter(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSourceDataFilter.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsSourceDataFilter.
@@ -446,7 +448,7 @@ class LogAnalyticsSourceDataFilter(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSourceDataFilter.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsSourceDataFilter.
@@ -458,7 +460,7 @@ class LogAnalyticsSourceDataFilter(object):
     def filter_type(self):
         """
         Gets the filter_type of this LogAnalyticsSourceDataFilter.
-        filterType
+        The filter type.
 
         Allowed values for this property are: "MASK", "HASH_MASK", "DROP_LOG_ENTRY", "DROP_STRING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -473,7 +475,7 @@ class LogAnalyticsSourceDataFilter(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this LogAnalyticsSourceDataFilter.
-        filterType
+        The filter type.
 
 
         :param filter_type: The filter_type of this LogAnalyticsSourceDataFilter.

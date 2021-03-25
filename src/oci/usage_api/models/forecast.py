@@ -10,22 +10,23 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Forecast(object):
     """
-    Forcast configuration of usage/cost.
+    Forecast configuration of usage/cost.
     """
 
-    #: A constant which can be used with the forcast_type property of a Forecast.
+    #: A constant which can be used with the forecast_type property of a Forecast.
     #: This constant has a value of "BASIC"
-    FORCAST_TYPE_BASIC = "BASIC"
+    FORECAST_TYPE_BASIC = "BASIC"
 
     def __init__(self, **kwargs):
         """
         Initializes a new Forecast object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param forcast_type:
-            The value to assign to the forcast_type property of this Forecast.
-            Allowed values for this property are: "BASIC"
-        :type forcast_type: str
+        :param forecast_type:
+            The value to assign to the forecast_type property of this Forecast.
+            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type forecast_type: str
 
         :param time_forecast_started:
             The value to assign to the time_forecast_started property of this Forecast.
@@ -37,58 +38,56 @@ class Forecast(object):
 
         """
         self.swagger_types = {
-            'forcast_type': 'str',
+            'forecast_type': 'str',
             'time_forecast_started': 'datetime',
             'time_forecast_ended': 'datetime'
         }
 
         self.attribute_map = {
-            'forcast_type': 'forcastType',
+            'forecast_type': 'forecastType',
             'time_forecast_started': 'timeForecastStarted',
             'time_forecast_ended': 'timeForecastEnded'
         }
 
-        self._forcast_type = None
+        self._forecast_type = None
         self._time_forecast_started = None
         self._time_forecast_ended = None
 
     @property
-    def forcast_type(self):
+    def forecast_type(self):
         """
-        Gets the forcast_type of this Forecast.
+        Gets the forecast_type of this Forecast.
         BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
 
-        Allowed values for this property are: "BASIC"
+        Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The forcast_type of this Forecast.
+        :return: The forecast_type of this Forecast.
         :rtype: str
         """
-        return self._forcast_type
+        return self._forecast_type
 
-    @forcast_type.setter
-    def forcast_type(self, forcast_type):
+    @forecast_type.setter
+    def forecast_type(self, forecast_type):
         """
-        Sets the forcast_type of this Forecast.
+        Sets the forecast_type of this Forecast.
         BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
 
 
-        :param forcast_type: The forcast_type of this Forecast.
+        :param forecast_type: The forecast_type of this Forecast.
         :type: str
         """
         allowed_values = ["BASIC"]
-        if not value_allowed_none_or_none_sentinel(forcast_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `forcast_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._forcast_type = forcast_type
+        if not value_allowed_none_or_none_sentinel(forecast_type, allowed_values):
+            forecast_type = 'UNKNOWN_ENUM_VALUE'
+        self._forecast_type = forecast_type
 
     @property
     def time_forecast_started(self):
         """
-        **[Required]** Gets the time_forecast_started of this Forecast.
-        forecast start time.
+        Gets the time_forecast_started of this Forecast.
+        forecast start time. Will default to UTC-1 if not specified
 
 
         :return: The time_forecast_started of this Forecast.
@@ -100,7 +99,7 @@ class Forecast(object):
     def time_forecast_started(self, time_forecast_started):
         """
         Sets the time_forecast_started of this Forecast.
-        forecast start time.
+        forecast start time. Will default to UTC-1 if not specified
 
 
         :param time_forecast_started: The time_forecast_started of this Forecast.
