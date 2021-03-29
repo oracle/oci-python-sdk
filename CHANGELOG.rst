@@ -4,12 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.34.1 - TBD
+2.35.0 - 2020-03-30
 ====================
 
 Added
 -----
-* TBD
+* Support for the Vulnerability Scanning service
+* Support for vSphere 7.0 in the VMware Solution service
+* Support for forecasting in the Usage service
+* Support for viewing, searching, and modifying parameters for on-premise Oracle databases in the Database Management service
+* Support for listing tablespaces of managed databases in the Database Management service
+* Support for cross-regional replication of keys in the Key Management service
+* Support for highly-available database systems in the MySQL Database service
+* Support for Oracle Enterprise Manager bridges, source auto-association, source event type mappings, and plugins to upload data in the Logging Analytics service
+
+Breaking
+--------
+* Name of Enum attribute "forcast_type" in Usage API service renamed to "forecast_type"
+* Value of Enum attribute "forecast_type" in Usage API service defaults to UNKNOWN_ENUM_VALUE when it receives an invalid value. In the earlier versions, this raises a ValueError
+* Retries are now enabled in Upload Manager. The SDK used to explicitly override retry configuration on binary upload operations because of potential data corruption issue (https://github.com/oracle/oci-python-sdk/issues/203).
 
 ====================
 2.34.0 - 2021-03-23
