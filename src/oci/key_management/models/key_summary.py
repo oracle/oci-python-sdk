@@ -444,7 +444,7 @@ class KeySummary(object):
     def algorithm(self):
         """
         Gets the algorithm of this KeySummary.
-        The algorithm used by a key's key versions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt data.
 
         Allowed values for this property are: "AES", "RSA", "ECDSA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -459,7 +459,7 @@ class KeySummary(object):
     def algorithm(self, algorithm):
         """
         Sets the algorithm of this KeySummary.
-        The algorithm used by a key's key versions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt data.
 
 
         :param algorithm: The algorithm of this KeySummary.

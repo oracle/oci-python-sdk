@@ -149,7 +149,7 @@ class LogAnalyticsLabel(object):
     def aliases(self):
         """
         Gets the aliases of this LogAnalyticsLabel.
-        alias list
+        An array of label aliases.
 
 
         :return: The aliases of this LogAnalyticsLabel.
@@ -161,7 +161,7 @@ class LogAnalyticsLabel(object):
     def aliases(self, aliases):
         """
         Sets the aliases of this LogAnalyticsLabel.
-        alias list
+        An array of label aliases.
 
 
         :param aliases: The aliases of this LogAnalyticsLabel.
@@ -173,7 +173,7 @@ class LogAnalyticsLabel(object):
     def count_usage_in_source(self):
         """
         Gets the count_usage_in_source of this LogAnalyticsLabel.
-        count usage in source
+        The source usage count for this label.
 
 
         :return: The count_usage_in_source of this LogAnalyticsLabel.
@@ -185,7 +185,7 @@ class LogAnalyticsLabel(object):
     def count_usage_in_source(self, count_usage_in_source):
         """
         Sets the count_usage_in_source of this LogAnalyticsLabel.
-        count usage in source
+        The source usage count for this label.
 
 
         :param count_usage_in_source: The count_usage_in_source of this LogAnalyticsLabel.
@@ -197,7 +197,7 @@ class LogAnalyticsLabel(object):
     def suggest_type(self):
         """
         Gets the suggest_type of this LogAnalyticsLabel.
-        suggest type
+        The type of suggestion for label usage.
 
 
         :return: The suggest_type of this LogAnalyticsLabel.
@@ -209,7 +209,7 @@ class LogAnalyticsLabel(object):
     def suggest_type(self, suggest_type):
         """
         Sets the suggest_type of this LogAnalyticsLabel.
-        suggest type
+        The type of suggestion for label usage.
 
 
         :param suggest_type: The suggest_type of this LogAnalyticsLabel.
@@ -221,7 +221,7 @@ class LogAnalyticsLabel(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsLabel.
-        description
+        The label description.
 
 
         :return: The description of this LogAnalyticsLabel.
@@ -233,7 +233,7 @@ class LogAnalyticsLabel(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsLabel.
-        description
+        The label description.
 
 
         :param description: The description of this LogAnalyticsLabel.
@@ -245,7 +245,7 @@ class LogAnalyticsLabel(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsLabel.
-        display name
+        The label display name.
 
 
         :return: The display_name of this LogAnalyticsLabel.
@@ -257,7 +257,7 @@ class LogAnalyticsLabel(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsLabel.
-        display name
+        The label display name.
 
 
         :param display_name: The display_name of this LogAnalyticsLabel.
@@ -269,7 +269,7 @@ class LogAnalyticsLabel(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsLabel.
-        edit version
+        The label edit version.
 
 
         :return: The edit_version of this LogAnalyticsLabel.
@@ -281,7 +281,7 @@ class LogAnalyticsLabel(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsLabel.
-        edit version
+        The label edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsLabel.
@@ -293,7 +293,7 @@ class LogAnalyticsLabel(object):
     def impact(self):
         """
         Gets the impact of this LogAnalyticsLabel.
-        impact
+        The label impact.
 
 
         :return: The impact of this LogAnalyticsLabel.
@@ -305,7 +305,7 @@ class LogAnalyticsLabel(object):
     def impact(self, impact):
         """
         Sets the impact of this LogAnalyticsLabel.
-        impact
+        The label impact.
 
 
         :param impact: The impact of this LogAnalyticsLabel.
@@ -317,7 +317,8 @@ class LogAnalyticsLabel(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsLabel.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined label.  A value of true denotes a built in label.
 
 
         :return: The is_system of this LogAnalyticsLabel.
@@ -329,7 +330,8 @@ class LogAnalyticsLabel(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsLabel.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined label.  A value of true denotes a built in label.
 
 
         :param is_system: The is_system of this LogAnalyticsLabel.
@@ -341,7 +343,7 @@ class LogAnalyticsLabel(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsLabel.
-        label identifier
+        The label name.
 
 
         :return: The name of this LogAnalyticsLabel.
@@ -353,7 +355,7 @@ class LogAnalyticsLabel(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsLabel.
-        label identifier
+        The label name.
 
 
         :param name: The name of this LogAnalyticsLabel.
@@ -365,7 +367,7 @@ class LogAnalyticsLabel(object):
     def priority(self):
         """
         Gets the priority of this LogAnalyticsLabel.
-        Valid values are (NONE, LOW, HIGH). NONE is default.
+        The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
 
         Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -380,7 +382,7 @@ class LogAnalyticsLabel(object):
     def priority(self, priority):
         """
         Sets the priority of this LogAnalyticsLabel.
-        Valid values are (NONE, LOW, HIGH). NONE is default.
+        The label priority. Valid values are (NONE, LOW, HIGH). NONE is default.
 
 
         :param priority: The priority of this LogAnalyticsLabel.
@@ -395,7 +397,7 @@ class LogAnalyticsLabel(object):
     def recommendation(self):
         """
         Gets the recommendation of this LogAnalyticsLabel.
-        tag recommendation
+        The label recommendation.
 
 
         :return: The recommendation of this LogAnalyticsLabel.
@@ -407,7 +409,7 @@ class LogAnalyticsLabel(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this LogAnalyticsLabel.
-        tag recommendation
+        The label recommendation.
 
 
         :param recommendation: The recommendation of this LogAnalyticsLabel.
@@ -419,7 +421,7 @@ class LogAnalyticsLabel(object):
     def type(self):
         """
         Gets the type of this LogAnalyticsLabel.
-        Valid values are (INFO, PROBLEM). INFO is default.
+        The label type. Valid values are (INFO, PROBLEM). INFO is default.
 
         Allowed values for this property are: "INFO", "PROBLEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -434,7 +436,7 @@ class LogAnalyticsLabel(object):
     def type(self, type):
         """
         Sets the type of this LogAnalyticsLabel.
-        Valid values are (INFO, PROBLEM). INFO is default.
+        The label type. Valid values are (INFO, PROBLEM). INFO is default.
 
 
         :param type: The type of this LogAnalyticsLabel.
@@ -449,7 +451,7 @@ class LogAnalyticsLabel(object):
     def is_user_deleted(self):
         """
         Gets the is_user_deleted of this LogAnalyticsLabel.
-        user deleted flag
+        A flag indicating whether or not the label has been deleted.
 
 
         :return: The is_user_deleted of this LogAnalyticsLabel.
@@ -461,7 +463,7 @@ class LogAnalyticsLabel(object):
     def is_user_deleted(self, is_user_deleted):
         """
         Sets the is_user_deleted of this LogAnalyticsLabel.
-        user deleted flag
+        A flag indicating whether or not the label has been deleted.
 
 
         :param is_user_deleted: The is_user_deleted of this LogAnalyticsLabel.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogAnalyticsLogGroupSummaryCollection(object):
     """
-    LogAnalyticsLogGroupSummaryCollection
+    A collection of Log-Analytics log groups.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class LogAnalyticsLogGroupSummaryCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsLogGroupSummaryCollection.
-        list of log group summary objects
+        An array of log group summary objects.
 
 
         :return: The items of this LogAnalyticsLogGroupSummaryCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsLogGroupSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsLogGroupSummaryCollection.
-        list of log group summary objects
+        An array of log group summary objects.
 
 
         :param items: The items of this LogAnalyticsLogGroupSummaryCollection.

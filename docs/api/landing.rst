@@ -105,6 +105,7 @@ API Reference
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
+* :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
@@ -192,6 +193,7 @@ API Reference
     tenant_manager_control_plane
     usage_api
     vault
+    vulnerability_scanning
     waas
     work_requests
     config

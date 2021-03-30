@@ -9,6 +9,9 @@
 .. warning::
     Potential data corruption with Python SDK on binary upload in versions 2.8.0 and below, for more information please see :ref:`Known Issues<known-issues>` section.
 
+.. important::
+    Are you a Developer using the OCI SDK? If so, please fill out our survey to help us make the OCI SDK better for you. Click `here <https://oracle.questionpro.com/a/TakeSurvey?tt=Xn%2BscaEu0/4%3D&custom3=OracleCloudInfrastructure>`_ for the survey page.
+
 Oracle Cloud Infrastructure Python SDK - |OciSdkVersion|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

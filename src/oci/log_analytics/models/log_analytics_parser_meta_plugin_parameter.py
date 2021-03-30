@@ -72,7 +72,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsParserMetaPluginParameter.
-        parameter description
+        The parameter description.
 
 
         :return: The description of this LogAnalyticsParserMetaPluginParameter.
@@ -84,7 +84,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsParserMetaPluginParameter.
-        parameter description
+        The parameter description.
 
 
         :param description: The description of this LogAnalyticsParserMetaPluginParameter.
@@ -96,7 +96,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsParserMetaPluginParameter.
-        parameter internal name
+        The parameter internal name.
 
 
         :return: The name of this LogAnalyticsParserMetaPluginParameter.
@@ -108,7 +108,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsParserMetaPluginParameter.
-        parameter internal name
+        The parameter internal name.
 
 
         :param name: The name of this LogAnalyticsParserMetaPluginParameter.
@@ -120,7 +120,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def is_mandatory(self):
         """
         Gets the is_mandatory of this LogAnalyticsParserMetaPluginParameter.
-        is mandatory flag
+        A flag indicating whether or not the parameter is mandatory.
 
 
         :return: The is_mandatory of this LogAnalyticsParserMetaPluginParameter.
@@ -132,7 +132,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def is_mandatory(self, is_mandatory):
         """
         Sets the is_mandatory of this LogAnalyticsParserMetaPluginParameter.
-        is mandatory flag
+        A flag indicating whether or not the parameter is mandatory.
 
 
         :param is_mandatory: The is_mandatory of this LogAnalyticsParserMetaPluginParameter.
@@ -144,7 +144,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def is_repeatable(self):
         """
         Gets the is_repeatable of this LogAnalyticsParserMetaPluginParameter.
-        is repeatable flag
+        A flag indicating whether or not the parameter is repeatable.
 
 
         :return: The is_repeatable of this LogAnalyticsParserMetaPluginParameter.
@@ -156,7 +156,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def is_repeatable(self, is_repeatable):
         """
         Sets the is_repeatable of this LogAnalyticsParserMetaPluginParameter.
-        is repeatable flag
+        A flag indicating whether or not the parameter is repeatable.
 
 
         :param is_repeatable: The is_repeatable of this LogAnalyticsParserMetaPluginParameter.
@@ -168,7 +168,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def plugin_name(self):
         """
         Gets the plugin_name of this LogAnalyticsParserMetaPluginParameter.
-        plugin internal name
+        The plugin internal name.
 
 
         :return: The plugin_name of this LogAnalyticsParserMetaPluginParameter.
@@ -180,7 +180,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def plugin_name(self, plugin_name):
         """
         Sets the plugin_name of this LogAnalyticsParserMetaPluginParameter.
-        plugin internal name
+        The plugin internal name.
 
 
         :param plugin_name: The plugin_name of this LogAnalyticsParserMetaPluginParameter.
@@ -192,7 +192,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def type(self):
         """
         Gets the type of this LogAnalyticsParserMetaPluginParameter.
-        parameter type
+        The parameter type.
 
 
         :return: The type of this LogAnalyticsParserMetaPluginParameter.
@@ -204,7 +204,7 @@ class LogAnalyticsParserMetaPluginParameter(object):
     def type(self, type):
         """
         Sets the type of this LogAnalyticsParserMetaPluginParameter.
-        parameter type
+        The parameter type.
 
 
         :param type: The type of this LogAnalyticsParserMetaPluginParameter.

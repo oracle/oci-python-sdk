@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class WorkRequestClient(object):
     """
-    Use this API to manage the Oracle Cloud VMware Solution.
+    Use this API to manage your [Oracle Cloud VMware Solution](/iaas/Content/VMware/Concepts/ocvsoverview.htm).
     """
 
     def __init__(self, config, **kwargs):

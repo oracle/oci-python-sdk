@@ -37,7 +37,7 @@ class LogAnalyticsAssociatedEntityCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsAssociatedEntityCollection.
-        list of entities
+        A list of entities.
 
 
         :return: The items of this LogAnalyticsAssociatedEntityCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsAssociatedEntityCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsAssociatedEntityCollection.
-        list of entities
+        A list of entities.
 
 
         :param items: The items of this LogAnalyticsAssociatedEntityCollection.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogAnalyticsAssociationCollection(object):
     """
-    LogAnalyticsAssociationCollection
+    A collection of associations.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class LogAnalyticsAssociationCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsAssociationCollection.
-        list of rule entity association details
+        An array of associations.
 
 
         :return: The items of this LogAnalyticsAssociationCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsAssociationCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsAssociationCollection.
-        list of rule entity association details
+        An array of associations.
 
 
         :param items: The items of this LogAnalyticsAssociationCollection.

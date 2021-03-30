@@ -58,7 +58,7 @@ class LogAnalyticsLabelDefinition(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsLabelDefinition.
-        edit version
+        The edit version.
 
 
         :return: The edit_version of this LogAnalyticsLabelDefinition.
@@ -70,7 +70,7 @@ class LogAnalyticsLabelDefinition(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsLabelDefinition.
-        edit version
+        The edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsLabelDefinition.
@@ -82,7 +82,8 @@ class LogAnalyticsLabelDefinition(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsLabelDefinition.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsLabelDefinition.
@@ -94,7 +95,8 @@ class LogAnalyticsLabelDefinition(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsLabelDefinition.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsLabelDefinition.
@@ -106,7 +108,7 @@ class LogAnalyticsLabelDefinition(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsLabelDefinition.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsLabelDefinition.
@@ -118,7 +120,7 @@ class LogAnalyticsLabelDefinition(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsLabelDefinition.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsLabelDefinition.
@@ -130,7 +132,7 @@ class LogAnalyticsLabelDefinition(object):
     def label_name(self):
         """
         Gets the label_name of this LogAnalyticsLabelDefinition.
-        label name
+        The label name.
 
 
         :return: The label_name of this LogAnalyticsLabelDefinition.
@@ -142,7 +144,7 @@ class LogAnalyticsLabelDefinition(object):
     def label_name(self, label_name):
         """
         Sets the label_name of this LogAnalyticsLabelDefinition.
-        label name
+        The label name.
 
 
         :param label_name: The label_name of this LogAnalyticsLabelDefinition.

@@ -30,6 +30,10 @@ class CreateDbSystemDetails(object):
             The value to assign to the compartment_id property of this CreateDbSystemDetails.
         :type compartment_id: str
 
+        :param is_highly_available:
+            The value to assign to the is_highly_available property of this CreateDbSystemDetails.
+        :type is_highly_available: bool
+
         :param availability_domain:
             The value to assign to the availability_domain property of this CreateDbSystemDetails.
         :type availability_domain: str
@@ -107,6 +111,7 @@ class CreateDbSystemDetails(object):
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
+            'is_highly_available': 'bool',
             'availability_domain': 'str',
             'fault_domain': 'str',
             'configuration_id': 'str',
@@ -131,6 +136,7 @@ class CreateDbSystemDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
+            'is_highly_available': 'isHighlyAvailable',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'configuration_id': 'configurationId',
@@ -154,6 +160,7 @@ class CreateDbSystemDetails(object):
         self._display_name = None
         self._description = None
         self._compartment_id = None
+        self._is_highly_available = None
         self._availability_domain = None
         self._fault_domain = None
         self._configuration_id = None
@@ -246,10 +253,52 @@ class CreateDbSystemDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def is_highly_available(self):
+        """
+        Gets the is_highly_available of this CreateDbSystemDetails.
+        Specifies if the DB System is highly available.
+
+        When creating a DB System with High Availability, three instances
+        are created and placed according to your region- and
+        subnet-type. The secondaries are placed automatically in the other
+        two availability or fault domains.  You can choose the preferred
+        location of your primary instance, only.
+
+
+        :return: The is_highly_available of this CreateDbSystemDetails.
+        :rtype: bool
+        """
+        return self._is_highly_available
+
+    @is_highly_available.setter
+    def is_highly_available(self, is_highly_available):
+        """
+        Sets the is_highly_available of this CreateDbSystemDetails.
+        Specifies if the DB System is highly available.
+
+        When creating a DB System with High Availability, three instances
+        are created and placed according to your region- and
+        subnet-type. The secondaries are placed automatically in the other
+        two availability or fault domains.  You can choose the preferred
+        location of your primary instance, only.
+
+
+        :param is_highly_available: The is_highly_available of this CreateDbSystemDetails.
+        :type: bool
+        """
+        self._is_highly_available = is_highly_available
+
+    @property
     def availability_domain(self):
         """
         Gets the availability_domain of this CreateDbSystemDetails.
-        The Availability Domain where the primary instance should be located.
+        The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+        and the MySQL instance in that domain is promoted to the primary instance.
+        This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the availability domain in which the DB System is placed.
 
 
         :return: The availability_domain of this CreateDbSystemDetails.
@@ -261,7 +310,13 @@ class CreateDbSystemDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateDbSystemDetails.
-        The Availability Domain where the primary instance should be located.
+        The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+        and the MySQL instance in that domain is promoted to the primary instance.
+        This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the availability domain in which the DB System is placed.
 
 
         :param availability_domain: The availability_domain of this CreateDbSystemDetails.
@@ -273,7 +328,13 @@ class CreateDbSystemDetails(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this CreateDbSystemDetails.
-        The name of the Fault Domain the DB System is located in.
+        The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+        and the MySQL instance in that domain is promoted to the primary instance.
+        This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the fault domain in which the DB System is placed.
 
 
         :return: The fault_domain of this CreateDbSystemDetails.
@@ -285,7 +346,13 @@ class CreateDbSystemDetails(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this CreateDbSystemDetails.
-        The name of the Fault Domain the DB System is located in.
+        The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+        and the MySQL instance in that domain is promoted to the primary instance.
+        This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the fault domain in which the DB System is placed.
 
 
         :param fault_domain: The fault_domain of this CreateDbSystemDetails.

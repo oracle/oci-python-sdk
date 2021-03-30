@@ -58,7 +58,7 @@ class LogAnalyticsSourceEntityType(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSourceEntityType.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsSourceEntityType.
@@ -70,7 +70,7 @@ class LogAnalyticsSourceEntityType(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSourceEntityType.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsSourceEntityType.
@@ -82,7 +82,7 @@ class LogAnalyticsSourceEntityType(object):
     def entity_type(self):
         """
         Gets the entity_type of this LogAnalyticsSourceEntityType.
-        Entity type
+        The entity type.
 
 
         :return: The entity_type of this LogAnalyticsSourceEntityType.
@@ -94,7 +94,7 @@ class LogAnalyticsSourceEntityType(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this LogAnalyticsSourceEntityType.
-        Entity type
+        The entity type.
 
 
         :param entity_type: The entity_type of this LogAnalyticsSourceEntityType.
@@ -106,7 +106,7 @@ class LogAnalyticsSourceEntityType(object):
     def entity_type_category(self):
         """
         Gets the entity_type_category of this LogAnalyticsSourceEntityType.
-        type category
+        The type category.
 
 
         :return: The entity_type_category of this LogAnalyticsSourceEntityType.
@@ -118,7 +118,7 @@ class LogAnalyticsSourceEntityType(object):
     def entity_type_category(self, entity_type_category):
         """
         Sets the entity_type_category of this LogAnalyticsSourceEntityType.
-        type category
+        The type category.
 
 
         :param entity_type_category: The entity_type_category of this LogAnalyticsSourceEntityType.
@@ -130,7 +130,7 @@ class LogAnalyticsSourceEntityType(object):
     def entity_type_display_name(self):
         """
         Gets the entity_type_display_name of this LogAnalyticsSourceEntityType.
-        Entity type display name
+        The entity type display name.
 
 
         :return: The entity_type_display_name of this LogAnalyticsSourceEntityType.
@@ -142,7 +142,7 @@ class LogAnalyticsSourceEntityType(object):
     def entity_type_display_name(self, entity_type_display_name):
         """
         Sets the entity_type_display_name of this LogAnalyticsSourceEntityType.
-        Entity type display name
+        The entity type display name.
 
 
         :param entity_type_display_name: The entity_type_display_name of this LogAnalyticsSourceEntityType.

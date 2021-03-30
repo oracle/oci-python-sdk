@@ -79,7 +79,7 @@ class DeleteLogAnalyticsAssociation(object):
     def agent_id(self):
         """
         Gets the agent_id of this DeleteLogAnalyticsAssociation.
-        Lama Idf
+        The agent unique identifier.
 
 
         :return: The agent_id of this DeleteLogAnalyticsAssociation.
@@ -91,7 +91,7 @@ class DeleteLogAnalyticsAssociation(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this DeleteLogAnalyticsAssociation.
-        Lama Idf
+        The agent unique identifier.
 
 
         :param agent_id: The agent_id of this DeleteLogAnalyticsAssociation.
@@ -103,7 +103,7 @@ class DeleteLogAnalyticsAssociation(object):
     def source_name(self):
         """
         Gets the source_name of this DeleteLogAnalyticsAssociation.
-        source name
+        The source name.
 
 
         :return: The source_name of this DeleteLogAnalyticsAssociation.
@@ -115,7 +115,7 @@ class DeleteLogAnalyticsAssociation(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this DeleteLogAnalyticsAssociation.
-        source name
+        The source name.
 
 
         :param source_name: The source_name of this DeleteLogAnalyticsAssociation.
@@ -127,7 +127,7 @@ class DeleteLogAnalyticsAssociation(object):
     def source_type_name(self):
         """
         Gets the source_type_name of this DeleteLogAnalyticsAssociation.
-        source type internal name
+        The source type internal name.
 
 
         :return: The source_type_name of this DeleteLogAnalyticsAssociation.
@@ -139,7 +139,7 @@ class DeleteLogAnalyticsAssociation(object):
     def source_type_name(self, source_type_name):
         """
         Sets the source_type_name of this DeleteLogAnalyticsAssociation.
-        source type internal name
+        The source type internal name.
 
 
         :param source_type_name: The source_type_name of this DeleteLogAnalyticsAssociation.
@@ -151,7 +151,7 @@ class DeleteLogAnalyticsAssociation(object):
     def entity_id(self):
         """
         Gets the entity_id of this DeleteLogAnalyticsAssociation.
-        entity GUID
+        The entity unique identifier.
 
 
         :return: The entity_id of this DeleteLogAnalyticsAssociation.
@@ -163,7 +163,7 @@ class DeleteLogAnalyticsAssociation(object):
     def entity_id(self, entity_id):
         """
         Sets the entity_id of this DeleteLogAnalyticsAssociation.
-        entity GUID
+        The entity unique identifier.
 
 
         :param entity_id: The entity_id of this DeleteLogAnalyticsAssociation.
@@ -175,7 +175,7 @@ class DeleteLogAnalyticsAssociation(object):
     def entity_type_name(self):
         """
         Gets the entity_type_name of this DeleteLogAnalyticsAssociation.
-        entity type internal name
+        The entity type internal name.
 
 
         :return: The entity_type_name of this DeleteLogAnalyticsAssociation.
@@ -187,7 +187,7 @@ class DeleteLogAnalyticsAssociation(object):
     def entity_type_name(self, entity_type_name):
         """
         Sets the entity_type_name of this DeleteLogAnalyticsAssociation.
-        entity type internal name
+        The entity type internal name.
 
 
         :param entity_type_name: The entity_type_name of this DeleteLogAnalyticsAssociation.
@@ -199,7 +199,7 @@ class DeleteLogAnalyticsAssociation(object):
     def host(self):
         """
         Gets the host of this DeleteLogAnalyticsAssociation.
-        host name
+        The host name.
 
 
         :return: The host of this DeleteLogAnalyticsAssociation.
@@ -211,7 +211,7 @@ class DeleteLogAnalyticsAssociation(object):
     def host(self, host):
         """
         Sets the host of this DeleteLogAnalyticsAssociation.
-        host name
+        The host name.
 
 
         :param host: The host of this DeleteLogAnalyticsAssociation.
@@ -223,7 +223,7 @@ class DeleteLogAnalyticsAssociation(object):
     def log_group_id(self):
         """
         Gets the log_group_id of this DeleteLogAnalyticsAssociation.
-        log group ocid
+        The log group unique identifier.
 
 
         :return: The log_group_id of this DeleteLogAnalyticsAssociation.
@@ -235,7 +235,7 @@ class DeleteLogAnalyticsAssociation(object):
     def log_group_id(self, log_group_id):
         """
         Sets the log_group_id of this DeleteLogAnalyticsAssociation.
-        log group ocid
+        The log group unique identifier.
 
 
         :param log_group_id: The log_group_id of this DeleteLogAnalyticsAssociation.

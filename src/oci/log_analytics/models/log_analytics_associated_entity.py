@@ -72,7 +72,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_id(self):
         """
         Gets the entity_id of this LogAnalyticsAssociatedEntity.
-        entity guid
+        The entity unique identifier.
 
 
         :return: The entity_id of this LogAnalyticsAssociatedEntity.
@@ -84,7 +84,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_id(self, entity_id):
         """
         Sets the entity_id of this LogAnalyticsAssociatedEntity.
-        entity guid
+        The entity unique identifier.
 
 
         :param entity_id: The entity_id of this LogAnalyticsAssociatedEntity.
@@ -96,7 +96,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_name(self):
         """
         Gets the entity_name of this LogAnalyticsAssociatedEntity.
-        entity name
+        The entity name.
 
 
         :return: The entity_name of this LogAnalyticsAssociatedEntity.
@@ -108,7 +108,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_name(self, entity_name):
         """
         Sets the entity_name of this LogAnalyticsAssociatedEntity.
-        entity name
+        The entity name.
 
 
         :param entity_name: The entity_name of this LogAnalyticsAssociatedEntity.
@@ -120,7 +120,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_type(self):
         """
         Gets the entity_type of this LogAnalyticsAssociatedEntity.
-        entity type
+        The entity type.
 
 
         :return: The entity_type of this LogAnalyticsAssociatedEntity.
@@ -132,7 +132,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this LogAnalyticsAssociatedEntity.
-        entity type
+        The entity type.
 
 
         :param entity_type: The entity_type of this LogAnalyticsAssociatedEntity.
@@ -144,7 +144,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_type_display_name(self):
         """
         Gets the entity_type_display_name of this LogAnalyticsAssociatedEntity.
-        entity type display name
+        The entity type display name.
 
 
         :return: The entity_type_display_name of this LogAnalyticsAssociatedEntity.
@@ -156,7 +156,7 @@ class LogAnalyticsAssociatedEntity(object):
     def entity_type_display_name(self, entity_type_display_name):
         """
         Sets the entity_type_display_name of this LogAnalyticsAssociatedEntity.
-        entity type display name
+        The entity type display name.
 
 
         :param entity_type_display_name: The entity_type_display_name of this LogAnalyticsAssociatedEntity.
@@ -168,7 +168,7 @@ class LogAnalyticsAssociatedEntity(object):
     def on_host(self):
         """
         Gets the on_host of this LogAnalyticsAssociatedEntity.
-        on host
+        The host associated with the entity.
 
 
         :return: The on_host of this LogAnalyticsAssociatedEntity.
@@ -180,7 +180,7 @@ class LogAnalyticsAssociatedEntity(object):
     def on_host(self, on_host):
         """
         Sets the on_host of this LogAnalyticsAssociatedEntity.
-        on host
+        The host associated with the entity.
 
 
         :param on_host: The on_host of this LogAnalyticsAssociatedEntity.
@@ -192,7 +192,7 @@ class LogAnalyticsAssociatedEntity(object):
     def association_count(self):
         """
         Gets the association_count of this LogAnalyticsAssociatedEntity.
-        associationCount
+        The association count for the entity.
 
 
         :return: The association_count of this LogAnalyticsAssociatedEntity.
@@ -204,7 +204,7 @@ class LogAnalyticsAssociatedEntity(object):
     def association_count(self, association_count):
         """
         Sets the association_count of this LogAnalyticsAssociatedEntity.
-        associationCount
+        The association count for the entity.
 
 
         :param association_count: The association_count of this LogAnalyticsAssociatedEntity.

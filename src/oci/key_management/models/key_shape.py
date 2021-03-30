@@ -109,10 +109,10 @@ class KeyShape(object):
     def length(self):
         """
         **[Required]** Gets the length of this KeyShape.
-        The length of the key in bytes, expressed as an integer. Values supported:
-          - AES: 16, 24 or 32
-          - RSA: 256, 384 or 512
-          - ECDSA: 32, 48, 66
+        The length of the key in bytes, expressed as an integer. Supported values include the following:
+          - AES: 16, 24, or 32
+          - RSA: 256, 384, or 512
+          - ECDSA: 32, 48, or 66
 
 
         :return: The length of this KeyShape.
@@ -124,10 +124,10 @@ class KeyShape(object):
     def length(self, length):
         """
         Sets the length of this KeyShape.
-        The length of the key in bytes, expressed as an integer. Values supported:
-          - AES: 16, 24 or 32
-          - RSA: 256, 384 or 512
-          - ECDSA: 32, 48, 66
+        The length of the key in bytes, expressed as an integer. Supported values include the following:
+          - AES: 16, 24, or 32
+          - RSA: 256, 384, or 512
+          - ECDSA: 32, 48, or 66
 
 
         :param length: The length of this KeyShape.
@@ -139,7 +139,7 @@ class KeyShape(object):
     def curve_id(self):
         """
         Gets the curve_id of this KeyShape.
-        Supported curve Ids for ECDSA keys
+        Supported curve IDs for ECDSA keys.
 
         Allowed values for this property are: "NIST_P256", "NIST_P384", "NIST_P521", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -154,7 +154,7 @@ class KeyShape(object):
     def curve_id(self, curve_id):
         """
         Sets the curve_id of this KeyShape.
-        Supported curve Ids for ECDSA keys
+        Supported curve IDs for ECDSA keys.
 
 
         :param curve_id: The curve_id of this KeyShape.

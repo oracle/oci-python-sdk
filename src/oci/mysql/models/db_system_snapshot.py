@@ -86,6 +86,10 @@ class DbSystemSnapshot(object):
             The value to assign to the port_x property of this DbSystemSnapshot.
         :type port_x: int
 
+        :param is_highly_available:
+            The value to assign to the is_highly_available property of this DbSystemSnapshot.
+        :type is_highly_available: bool
+
         :param endpoints:
             The value to assign to the endpoints property of this DbSystemSnapshot.
         :type endpoints: list[oci.mysql.models.DbSystemEndpoint]
@@ -121,6 +125,7 @@ class DbSystemSnapshot(object):
             'ip_address': 'str',
             'port': 'int',
             'port_x': 'int',
+            'is_highly_available': 'bool',
             'endpoints': 'list[DbSystemEndpoint]',
             'maintenance': 'MaintenanceDetails',
             'freeform_tags': 'dict(str, str)',
@@ -145,6 +150,7 @@ class DbSystemSnapshot(object):
             'ip_address': 'ipAddress',
             'port': 'port',
             'port_x': 'portX',
+            'is_highly_available': 'isHighlyAvailable',
             'endpoints': 'endpoints',
             'maintenance': 'maintenance',
             'freeform_tags': 'freeformTags',
@@ -168,6 +174,7 @@ class DbSystemSnapshot(object):
         self._ip_address = None
         self._port = None
         self._port_x = None
+        self._is_highly_available = None
         self._endpoints = None
         self._maintenance = None
         self._freeform_tags = None
@@ -596,6 +603,32 @@ class DbSystemSnapshot(object):
         :type: int
         """
         self._port_x = port_x
+
+    @property
+    def is_highly_available(self):
+        """
+        Gets the is_highly_available of this DbSystemSnapshot.
+        If the policy is to enable high availability of the instance, by
+        maintaining secondary/failover capacity as necessary.
+
+
+        :return: The is_highly_available of this DbSystemSnapshot.
+        :rtype: bool
+        """
+        return self._is_highly_available
+
+    @is_highly_available.setter
+    def is_highly_available(self, is_highly_available):
+        """
+        Sets the is_highly_available of this DbSystemSnapshot.
+        If the policy is to enable high availability of the instance, by
+        maintaining secondary/failover capacity as necessary.
+
+
+        :param is_highly_available: The is_highly_available of this DbSystemSnapshot.
+        :type: bool
+        """
+        self._is_highly_available = is_highly_available
 
     @property
     def endpoints(self):

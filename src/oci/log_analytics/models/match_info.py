@@ -51,7 +51,7 @@ class MatchInfo(object):
     def matching_log_entry_end_index(self):
         """
         Gets the matching_log_entry_end_index of this MatchInfo.
-        matchingLogEntryEndIndex
+        The end index of the matching log entry.
 
 
         :return: The matching_log_entry_end_index of this MatchInfo.
@@ -63,7 +63,7 @@ class MatchInfo(object):
     def matching_log_entry_end_index(self, matching_log_entry_end_index):
         """
         Sets the matching_log_entry_end_index of this MatchInfo.
-        matchingLogEntryEndIndex
+        The end index of the matching log entry.
 
 
         :param matching_log_entry_end_index: The matching_log_entry_end_index of this MatchInfo.
@@ -75,7 +75,7 @@ class MatchInfo(object):
     def regex_score(self):
         """
         Gets the regex_score of this MatchInfo.
-        regexScore
+        The regular expression score.
 
 
         :return: The regex_score of this MatchInfo.
@@ -87,7 +87,7 @@ class MatchInfo(object):
     def regex_score(self, regex_score):
         """
         Sets the regex_score of this MatchInfo.
-        regexScore
+        The regular expression score.
 
 
         :param regex_score: The regex_score of this MatchInfo.
@@ -99,7 +99,7 @@ class MatchInfo(object):
     def step_count(self):
         """
         Gets the step_count of this MatchInfo.
-        stepCount
+        The step count.
 
 
         :return: The step_count of this MatchInfo.
@@ -111,7 +111,7 @@ class MatchInfo(object):
     def step_count(self, step_count):
         """
         Sets the step_count of this MatchInfo.
-        stepCount
+        The step count.
 
 
         :param step_count: The step_count of this MatchInfo.

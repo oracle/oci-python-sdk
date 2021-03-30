@@ -65,7 +65,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def data_type(self):
         """
         Gets the data_type of this UpsertLogAnalyticsFieldDetails.
-        data type
+        The data type.
 
 
         :return: The data_type of this UpsertLogAnalyticsFieldDetails.
@@ -77,7 +77,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this UpsertLogAnalyticsFieldDetails.
-        data type
+        The data type.
 
 
         :param data_type: The data_type of this UpsertLogAnalyticsFieldDetails.
@@ -89,7 +89,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def is_multi_valued(self):
         """
         Gets the is_multi_valued of this UpsertLogAnalyticsFieldDetails.
-        is multi-valued flag
+        A flag indicating whether or not the field is multi-valued.
 
 
         :return: The is_multi_valued of this UpsertLogAnalyticsFieldDetails.
@@ -101,7 +101,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def is_multi_valued(self, is_multi_valued):
         """
         Sets the is_multi_valued of this UpsertLogAnalyticsFieldDetails.
-        is multi-valued flag
+        A flag indicating whether or not the field is multi-valued.
 
 
         :param is_multi_valued: The is_multi_valued of this UpsertLogAnalyticsFieldDetails.
@@ -113,7 +113,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def description(self):
         """
         Gets the description of this UpsertLogAnalyticsFieldDetails.
-        description
+        The field description.
 
 
         :return: The description of this UpsertLogAnalyticsFieldDetails.
@@ -125,7 +125,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def description(self, description):
         """
         Sets the description of this UpsertLogAnalyticsFieldDetails.
-        description
+        The field description.
 
 
         :param description: The description of this UpsertLogAnalyticsFieldDetails.
@@ -137,7 +137,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpsertLogAnalyticsFieldDetails.
-        display name
+        The field display name.
 
 
         :return: The display_name of this UpsertLogAnalyticsFieldDetails.
@@ -149,7 +149,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpsertLogAnalyticsFieldDetails.
-        display name
+        The field display name.
 
 
         :param display_name: The display_name of this UpsertLogAnalyticsFieldDetails.
@@ -161,7 +161,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def name(self):
         """
         Gets the name of this UpsertLogAnalyticsFieldDetails.
-        internal name
+        The field internal name.
 
 
         :return: The name of this UpsertLogAnalyticsFieldDetails.
@@ -173,7 +173,7 @@ class UpsertLogAnalyticsFieldDetails(object):
     def name(self, name):
         """
         Sets the name of this UpsertLogAnalyticsFieldDetails.
-        internal name
+        The field internal name.
 
 
         :param name: The name of this UpsertLogAnalyticsFieldDetails.

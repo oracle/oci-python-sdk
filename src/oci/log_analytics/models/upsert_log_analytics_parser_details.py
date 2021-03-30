@@ -29,6 +29,10 @@ class UpsertLogAnalyticsParserDetails(object):
     #: This constant has a value of "ODL"
     TYPE_ODL = "ODL"
 
+    #: A constant which can be used with the type property of a UpsertLogAnalyticsParserDetails.
+    #: This constant has a value of "DELIMITED"
+    TYPE_DELIMITED = "DELIMITED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpsertLogAnalyticsParserDetails object with values from keyword arguments.
@@ -118,9 +122,17 @@ class UpsertLogAnalyticsParserDetails(object):
             The value to assign to the should_tokenize_original_text property of this UpsertLogAnalyticsParserDetails.
         :type should_tokenize_original_text: bool
 
+        :param field_delimiter:
+            The value to assign to the field_delimiter property of this UpsertLogAnalyticsParserDetails.
+        :type field_delimiter: str
+
+        :param field_qualifier:
+            The value to assign to the field_qualifier property of this UpsertLogAnalyticsParserDetails.
+        :type field_qualifier: str
+
         :param type:
             The value to assign to the type property of this UpsertLogAnalyticsParserDetails.
-            Allowed values for this property are: "XML", "JSON", "REGEX", "ODL"
+            Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", "DELIMITED"
         :type type: str
 
         """
@@ -146,6 +158,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'is_parser_written_once': 'bool',
             'parser_functions': 'list[LogAnalyticsParserFunction]',
             'should_tokenize_original_text': 'bool',
+            'field_delimiter': 'str',
+            'field_qualifier': 'str',
             'type': 'str'
         }
 
@@ -171,6 +185,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'is_parser_written_once': 'isParserWrittenOnce',
             'parser_functions': 'parserFunctions',
             'should_tokenize_original_text': 'shouldTokenizeOriginalText',
+            'field_delimiter': 'fieldDelimiter',
+            'field_qualifier': 'fieldQualifier',
             'type': 'type'
         }
 
@@ -195,13 +211,15 @@ class UpsertLogAnalyticsParserDetails(object):
         self._is_parser_written_once = None
         self._parser_functions = None
         self._should_tokenize_original_text = None
+        self._field_delimiter = None
+        self._field_qualifier = None
         self._type = None
 
     @property
     def content(self):
         """
         Gets the content of this UpsertLogAnalyticsParserDetails.
-        content
+        The content.
 
 
         :return: The content of this UpsertLogAnalyticsParserDetails.
@@ -213,7 +231,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def content(self, content):
         """
         Sets the content of this UpsertLogAnalyticsParserDetails.
-        content
+        The content.
 
 
         :param content: The content of this UpsertLogAnalyticsParserDetails.
@@ -225,7 +243,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def description(self):
         """
         Gets the description of this UpsertLogAnalyticsParserDetails.
-        description
+        The parser description.
 
 
         :return: The description of this UpsertLogAnalyticsParserDetails.
@@ -237,7 +255,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def description(self, description):
         """
         Sets the description of this UpsertLogAnalyticsParserDetails.
-        description
+        The parser description.
 
 
         :param description: The description of this UpsertLogAnalyticsParserDetails.
@@ -249,7 +267,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpsertLogAnalyticsParserDetails.
-        display name
+        The parser display name.
 
 
         :return: The display_name of this UpsertLogAnalyticsParserDetails.
@@ -261,7 +279,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpsertLogAnalyticsParserDetails.
-        display name
+        The parser display name.
 
 
         :param display_name: The display_name of this UpsertLogAnalyticsParserDetails.
@@ -273,7 +291,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def edit_version(self):
         """
         Gets the edit_version of this UpsertLogAnalyticsParserDetails.
-        edit version
+        The parser edit version.
 
 
         :return: The edit_version of this UpsertLogAnalyticsParserDetails.
@@ -285,7 +303,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this UpsertLogAnalyticsParserDetails.
-        edit version
+        The parser edit version.
 
 
         :param edit_version: The edit_version of this UpsertLogAnalyticsParserDetails.
@@ -297,7 +315,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def encoding(self):
         """
         Gets the encoding of this UpsertLogAnalyticsParserDetails.
-        encoding
+        The encoding.
 
 
         :return: The encoding of this UpsertLogAnalyticsParserDetails.
@@ -309,7 +327,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def encoding(self, encoding):
         """
         Sets the encoding of this UpsertLogAnalyticsParserDetails.
-        encoding
+        The encoding.
 
 
         :param encoding: The encoding of this UpsertLogAnalyticsParserDetails.
@@ -321,7 +339,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def example_content(self):
         """
         Gets the example_content of this UpsertLogAnalyticsParserDetails.
-        example content
+        Example content.
 
 
         :return: The example_content of this UpsertLogAnalyticsParserDetails.
@@ -333,7 +351,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def example_content(self, example_content):
         """
         Sets the example_content of this UpsertLogAnalyticsParserDetails.
-        example content
+        Example content.
 
 
         :param example_content: The example_content of this UpsertLogAnalyticsParserDetails.
@@ -345,7 +363,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def field_maps(self):
         """
         Gets the field_maps of this UpsertLogAnalyticsParserDetails.
-        fields Maps
+        The parser fields.
 
 
         :return: The field_maps of this UpsertLogAnalyticsParserDetails.
@@ -357,7 +375,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def field_maps(self, field_maps):
         """
         Sets the field_maps of this UpsertLogAnalyticsParserDetails.
-        fields Maps
+        The parser fields.
 
 
         :param field_maps: The field_maps of this UpsertLogAnalyticsParserDetails.
@@ -369,7 +387,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def footer_content(self):
         """
         Gets the footer_content of this UpsertLogAnalyticsParserDetails.
-        footer regular expression
+        The footer regular expression.
 
 
         :return: The footer_content of this UpsertLogAnalyticsParserDetails.
@@ -381,7 +399,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def footer_content(self, footer_content):
         """
         Sets the footer_content of this UpsertLogAnalyticsParserDetails.
-        footer regular expression
+        The footer regular expression.
 
 
         :param footer_content: The footer_content of this UpsertLogAnalyticsParserDetails.
@@ -393,7 +411,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def header_content(self):
         """
         Gets the header_content of this UpsertLogAnalyticsParserDetails.
-        header content
+        The header content.
 
 
         :return: The header_content of this UpsertLogAnalyticsParserDetails.
@@ -405,7 +423,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def header_content(self, header_content):
         """
         Sets the header_content of this UpsertLogAnalyticsParserDetails.
-        header content
+        The header content.
 
 
         :param header_content: The header_content of this UpsertLogAnalyticsParserDetails.
@@ -417,7 +435,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def name(self):
         """
         Gets the name of this UpsertLogAnalyticsParserDetails.
-        Name
+        The parser internal name.
 
 
         :return: The name of this UpsertLogAnalyticsParserDetails.
@@ -429,7 +447,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def name(self, name):
         """
         Sets the name of this UpsertLogAnalyticsParserDetails.
-        Name
+        The parser internal name.
 
 
         :param name: The name of this UpsertLogAnalyticsParserDetails.
@@ -441,7 +459,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_default(self):
         """
         Gets the is_default of this UpsertLogAnalyticsParserDetails.
-        is default flag
+        A flag indicating if this is a default parser.
 
 
         :return: The is_default of this UpsertLogAnalyticsParserDetails.
@@ -453,7 +471,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this UpsertLogAnalyticsParserDetails.
-        is default flag
+        A flag indicating if this is a default parser.
 
 
         :param is_default: The is_default of this UpsertLogAnalyticsParserDetails.
@@ -465,7 +483,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_single_line_content(self):
         """
         Gets the is_single_line_content of this UpsertLogAnalyticsParserDetails.
-        is single line content
+        A flag indicating if this is a single line content parser.
 
 
         :return: The is_single_line_content of this UpsertLogAnalyticsParserDetails.
@@ -477,7 +495,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_single_line_content(self, is_single_line_content):
         """
         Sets the is_single_line_content of this UpsertLogAnalyticsParserDetails.
-        is single line content
+        A flag indicating if this is a single line content parser.
 
 
         :param is_single_line_content: The is_single_line_content of this UpsertLogAnalyticsParserDetails.
@@ -489,7 +507,8 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_system(self):
         """
         Gets the is_system of this UpsertLogAnalyticsParserDetails.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this UpsertLogAnalyticsParserDetails.
@@ -501,7 +520,8 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this UpsertLogAnalyticsParserDetails.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this UpsertLogAnalyticsParserDetails.
@@ -513,7 +533,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def language(self):
         """
         Gets the language of this UpsertLogAnalyticsParserDetails.
-        language
+        The language.
 
 
         :return: The language of this UpsertLogAnalyticsParserDetails.
@@ -525,7 +545,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def language(self, language):
         """
         Sets the language of this UpsertLogAnalyticsParserDetails.
-        language
+        The language.
 
 
         :param language: The language of this UpsertLogAnalyticsParserDetails.
@@ -537,7 +557,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def log_type_test_request_version(self):
         """
         Gets the log_type_test_request_version of this UpsertLogAnalyticsParserDetails.
-        log type test request version
+        The log type test request version.
 
 
         :return: The log_type_test_request_version of this UpsertLogAnalyticsParserDetails.
@@ -549,7 +569,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def log_type_test_request_version(self, log_type_test_request_version):
         """
         Sets the log_type_test_request_version of this UpsertLogAnalyticsParserDetails.
-        log type test request version
+        The log type test request version.
 
 
         :param log_type_test_request_version: The log_type_test_request_version of this UpsertLogAnalyticsParserDetails.
@@ -561,7 +581,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_ignoreline_characters(self):
         """
         Gets the parser_ignoreline_characters of this UpsertLogAnalyticsParserDetails.
-        parser ignore line characters
+        The line characters for the parser to ignore.
 
 
         :return: The parser_ignoreline_characters of this UpsertLogAnalyticsParserDetails.
@@ -573,7 +593,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_ignoreline_characters(self, parser_ignoreline_characters):
         """
         Sets the parser_ignoreline_characters of this UpsertLogAnalyticsParserDetails.
-        parser ignore line characters
+        The line characters for the parser to ignore.
 
 
         :param parser_ignoreline_characters: The parser_ignoreline_characters of this UpsertLogAnalyticsParserDetails.
@@ -585,7 +605,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_sequence(self):
         """
         Gets the parser_sequence of this UpsertLogAnalyticsParserDetails.
-        sequence
+        The parser sequence.
 
 
         :return: The parser_sequence of this UpsertLogAnalyticsParserDetails.
@@ -597,7 +617,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_sequence(self, parser_sequence):
         """
         Sets the parser_sequence of this UpsertLogAnalyticsParserDetails.
-        sequence
+        The parser sequence.
 
 
         :param parser_sequence: The parser_sequence of this UpsertLogAnalyticsParserDetails.
@@ -609,7 +629,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_timezone(self):
         """
         Gets the parser_timezone of this UpsertLogAnalyticsParserDetails.
-        time zone
+        The time zone.
 
 
         :return: The parser_timezone of this UpsertLogAnalyticsParserDetails.
@@ -621,7 +641,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_timezone(self, parser_timezone):
         """
         Sets the parser_timezone of this UpsertLogAnalyticsParserDetails.
-        time zone
+        The time zone.
 
 
         :param parser_timezone: The parser_timezone of this UpsertLogAnalyticsParserDetails.
@@ -633,7 +653,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_parser_written_once(self):
         """
         Gets the is_parser_written_once of this UpsertLogAnalyticsParserDetails.
-        write once
+        A flag indicating whther or not the parser is write once.
 
 
         :return: The is_parser_written_once of this UpsertLogAnalyticsParserDetails.
@@ -645,7 +665,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def is_parser_written_once(self, is_parser_written_once):
         """
         Sets the is_parser_written_once of this UpsertLogAnalyticsParserDetails.
-        write once
+        A flag indicating whther or not the parser is write once.
 
 
         :param is_parser_written_once: The is_parser_written_once of this UpsertLogAnalyticsParserDetails.
@@ -657,7 +677,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_functions(self):
         """
         Gets the parser_functions of this UpsertLogAnalyticsParserDetails.
-        plugin instance list
+        The parser function list.
 
 
         :return: The parser_functions of this UpsertLogAnalyticsParserDetails.
@@ -669,7 +689,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def parser_functions(self, parser_functions):
         """
         Sets the parser_functions of this UpsertLogAnalyticsParserDetails.
-        plugin instance list
+        The parser function list.
 
 
         :param parser_functions: The parser_functions of this UpsertLogAnalyticsParserDetails.
@@ -681,7 +701,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def should_tokenize_original_text(self):
         """
         Gets the should_tokenize_original_text of this UpsertLogAnalyticsParserDetails.
-        tokenize original text
+        A flag indicating whether or not to tokenize the original text.
 
 
         :return: The should_tokenize_original_text of this UpsertLogAnalyticsParserDetails.
@@ -693,7 +713,7 @@ class UpsertLogAnalyticsParserDetails(object):
     def should_tokenize_original_text(self, should_tokenize_original_text):
         """
         Sets the should_tokenize_original_text of this UpsertLogAnalyticsParserDetails.
-        tokenize original text
+        A flag indicating whether or not to tokenize the original text.
 
 
         :param should_tokenize_original_text: The should_tokenize_original_text of this UpsertLogAnalyticsParserDetails.
@@ -702,12 +722,60 @@ class UpsertLogAnalyticsParserDetails(object):
         self._should_tokenize_original_text = should_tokenize_original_text
 
     @property
+    def field_delimiter(self):
+        """
+        Gets the field_delimiter of this UpsertLogAnalyticsParserDetails.
+        The parser field delimiter.
+
+
+        :return: The field_delimiter of this UpsertLogAnalyticsParserDetails.
+        :rtype: str
+        """
+        return self._field_delimiter
+
+    @field_delimiter.setter
+    def field_delimiter(self, field_delimiter):
+        """
+        Sets the field_delimiter of this UpsertLogAnalyticsParserDetails.
+        The parser field delimiter.
+
+
+        :param field_delimiter: The field_delimiter of this UpsertLogAnalyticsParserDetails.
+        :type: str
+        """
+        self._field_delimiter = field_delimiter
+
+    @property
+    def field_qualifier(self):
+        """
+        Gets the field_qualifier of this UpsertLogAnalyticsParserDetails.
+        The parser field qualifier.
+
+
+        :return: The field_qualifier of this UpsertLogAnalyticsParserDetails.
+        :rtype: str
+        """
+        return self._field_qualifier
+
+    @field_qualifier.setter
+    def field_qualifier(self, field_qualifier):
+        """
+        Sets the field_qualifier of this UpsertLogAnalyticsParserDetails.
+        The parser field qualifier.
+
+
+        :param field_qualifier: The field_qualifier of this UpsertLogAnalyticsParserDetails.
+        :type: str
+        """
+        self._field_qualifier = field_qualifier
+
+    @property
     def type(self):
         """
         Gets the type of this UpsertLogAnalyticsParserDetails.
-        type
+        The parser type.  Default value is REGEX.
 
-        Allowed values for this property are: "XML", "JSON", "REGEX", "ODL"
+        Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", "DELIMITED"
 
 
         :return: The type of this UpsertLogAnalyticsParserDetails.
@@ -719,13 +787,13 @@ class UpsertLogAnalyticsParserDetails(object):
     def type(self, type):
         """
         Sets the type of this UpsertLogAnalyticsParserDetails.
-        type
+        The parser type.  Default value is REGEX.
 
 
         :param type: The type of this UpsertLogAnalyticsParserDetails.
         :type: str
         """
-        allowed_values = ["XML", "JSON", "REGEX", "ODL"]
+        allowed_values = ["XML", "JSON", "REGEX", "ODL", "DELIMITED"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

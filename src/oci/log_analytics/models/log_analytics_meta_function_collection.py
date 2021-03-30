@@ -37,7 +37,7 @@ class LogAnalyticsMetaFunctionCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsMetaFunctionCollection.
-        list of meta functions
+        An array of meta functions.
 
 
         :return: The items of this LogAnalyticsMetaFunctionCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsMetaFunctionCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsMetaFunctionCollection.
-        list of meta functions
+        An array of meta functions.
 
 
         :param items: The items of this LogAnalyticsMetaFunctionCollection.

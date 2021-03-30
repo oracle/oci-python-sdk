@@ -65,7 +65,7 @@ class RegexMatchResult(object):
     def matched_log_entry_end_index(self):
         """
         Gets the matched_log_entry_end_index of this RegexMatchResult.
-        matchedLogEntryEndIndex
+        The matched log entry end index.
 
 
         :return: The matched_log_entry_end_index of this RegexMatchResult.
@@ -77,7 +77,7 @@ class RegexMatchResult(object):
     def matched_log_entry_end_index(self, matched_log_entry_end_index):
         """
         Sets the matched_log_entry_end_index of this RegexMatchResult.
-        matchedLogEntryEndIndex
+        The matched log entry end index.
 
 
         :param matched_log_entry_end_index: The matched_log_entry_end_index of this RegexMatchResult.
@@ -89,7 +89,7 @@ class RegexMatchResult(object):
     def regex_score(self):
         """
         Gets the regex_score of this RegexMatchResult.
-        regexScore
+        The regular expression score.
 
 
         :return: The regex_score of this RegexMatchResult.
@@ -101,7 +101,7 @@ class RegexMatchResult(object):
     def regex_score(self, regex_score):
         """
         Sets the regex_score of this RegexMatchResult.
-        regexScore
+        The regular expression score.
 
 
         :param regex_score: The regex_score of this RegexMatchResult.
@@ -113,7 +113,7 @@ class RegexMatchResult(object):
     def regex_steps_info(self):
         """
         Gets the regex_steps_info of this RegexMatchResult.
-        regexStepsInfo
+        The regular expression steps information.
 
 
         :return: The regex_steps_info of this RegexMatchResult.
@@ -125,7 +125,7 @@ class RegexMatchResult(object):
     def regex_steps_info(self, regex_steps_info):
         """
         Sets the regex_steps_info of this RegexMatchResult.
-        regexStepsInfo
+        The regular expression steps information.
 
 
         :param regex_steps_info: The regex_steps_info of this RegexMatchResult.
@@ -137,7 +137,7 @@ class RegexMatchResult(object):
     def step_count(self):
         """
         Gets the step_count of this RegexMatchResult.
-        stepCount
+        The regular expression step count.
 
 
         :return: The step_count of this RegexMatchResult.
@@ -149,7 +149,7 @@ class RegexMatchResult(object):
     def step_count(self, step_count):
         """
         Sets the step_count of this RegexMatchResult.
-        stepCount
+        The regular expression step count.
 
 
         :param step_count: The step_count of this RegexMatchResult.
@@ -161,7 +161,7 @@ class RegexMatchResult(object):
     def sub_regexes_match_info(self):
         """
         Gets the sub_regexes_match_info of this RegexMatchResult.
-        subRegexesMatchInfo
+        The regular expression match information.
 
 
         :return: The sub_regexes_match_info of this RegexMatchResult.
@@ -173,7 +173,7 @@ class RegexMatchResult(object):
     def sub_regexes_match_info(self, sub_regexes_match_info):
         """
         Sets the sub_regexes_match_info of this RegexMatchResult.
-        subRegexesMatchInfo
+        The regular expression match information.
 
 
         :param sub_regexes_match_info: The sub_regexes_match_info of this RegexMatchResult.

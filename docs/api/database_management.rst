@@ -20,19 +20,27 @@ Database Management
 
     oci.database_management.models.ActivityTimeSeriesMetrics
     oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails
+    oci.database_management.models.AllowedParameterValue
+    oci.database_management.models.ChangeDatabaseParameterDetails
+    oci.database_management.models.ChangeDatabaseParametersDetails
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
     oci.database_management.models.ChildDatabase
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
+    oci.database_management.models.DatabaseCredentials
     oci.database_management.models.DatabaseFleetHealthMetrics
     oci.database_management.models.DatabaseHomeMetricDefinition
     oci.database_management.models.DatabaseHomeMetrics
     oci.database_management.models.DatabaseIOAggregateMetrics
+    oci.database_management.models.DatabaseParameterSummary
+    oci.database_management.models.DatabaseParameterUpdateStatus
+    oci.database_management.models.DatabaseParametersCollection
     oci.database_management.models.DatabaseStorageAggregateMetrics
     oci.database_management.models.DatabaseTimeAggregateMetrics
     oci.database_management.models.DatabaseUsageMetrics
+    oci.database_management.models.Datafile
     oci.database_management.models.FleetMetricDefinition
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
@@ -62,5 +70,10 @@ Database Management
     oci.database_management.models.ObjectStorageJobExecutionResultLocation
     oci.database_management.models.ParentGroup
     oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails
+    oci.database_management.models.ResetDatabaseParametersDetails
     oci.database_management.models.SqlJob
+    oci.database_management.models.Tablespace
+    oci.database_management.models.TablespaceCollection
+    oci.database_management.models.TablespaceSummary
+    oci.database_management.models.UpdateDatabaseParametersResult
     oci.database_management.models.UpdateManagedDatabaseGroupDetails

@@ -126,6 +126,10 @@ class UsageSummary(object):
             The value to assign to the overage property of this UsageSummary.
         :type overage: str
 
+        :param is_forecast:
+            The value to assign to the is_forecast property of this UsageSummary.
+        :type is_forecast: bool
+
         :param tags:
             The value to assign to the tags property of this UsageSummary.
         :type tags: list[oci.usage_api.models.Tag]
@@ -159,6 +163,7 @@ class UsageSummary(object):
             'currency': 'str',
             'subscription_id': 'str',
             'overage': 'str',
+            'is_forecast': 'bool',
             'tags': 'list[Tag]'
         }
 
@@ -190,6 +195,7 @@ class UsageSummary(object):
             'currency': 'currency',
             'subscription_id': 'subscriptionId',
             'overage': 'overage',
+            'is_forecast': 'isForecast',
             'tags': 'tags'
         }
 
@@ -220,6 +226,7 @@ class UsageSummary(object):
         self._currency = None
         self._subscription_id = None
         self._overage = None
+        self._is_forecast = None
         self._tags = None
 
     @property
@@ -869,6 +876,30 @@ class UsageSummary(object):
         :type: str
         """
         self._overage = overage
+
+    @property
+    def is_forecast(self):
+        """
+        Gets the is_forecast of this UsageSummary.
+        is forecasted data
+
+
+        :return: The is_forecast of this UsageSummary.
+        :rtype: bool
+        """
+        return self._is_forecast
+
+    @is_forecast.setter
+    def is_forecast(self, is_forecast):
+        """
+        Sets the is_forecast of this UsageSummary.
+        is forecasted data
+
+
+        :param is_forecast: The is_forecast of this UsageSummary.
+        :type: bool
+        """
+        self._is_forecast = is_forecast
 
     @property
     def tags(self):

@@ -145,7 +145,7 @@ class LogAnalyticsLookup(object):
     def active_edit_version(self):
         """
         Gets the active_edit_version of this LogAnalyticsLookup.
-        active edit version
+        The active edit version.
 
 
         :return: The active_edit_version of this LogAnalyticsLookup.
@@ -157,7 +157,7 @@ class LogAnalyticsLookup(object):
     def active_edit_version(self, active_edit_version):
         """
         Sets the active_edit_version of this LogAnalyticsLookup.
-        active edit version
+        The active edit version.
 
 
         :param active_edit_version: The active_edit_version of this LogAnalyticsLookup.
@@ -169,7 +169,7 @@ class LogAnalyticsLookup(object):
     def canonical_link(self):
         """
         Gets the canonical_link of this LogAnalyticsLookup.
-        canonical link
+        The canonical link.
 
 
         :return: The canonical_link of this LogAnalyticsLookup.
@@ -181,7 +181,7 @@ class LogAnalyticsLookup(object):
     def canonical_link(self, canonical_link):
         """
         Sets the canonical_link of this LogAnalyticsLookup.
-        canonical link
+        The canonical link.
 
 
         :param canonical_link: The canonical_link of this LogAnalyticsLookup.
@@ -193,7 +193,7 @@ class LogAnalyticsLookup(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsLookup.
-        description
+        The lookup description.
 
 
         :return: The description of this LogAnalyticsLookup.
@@ -205,7 +205,7 @@ class LogAnalyticsLookup(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsLookup.
-        description
+        The lookup description.
 
 
         :param description: The description of this LogAnalyticsLookup.
@@ -217,7 +217,7 @@ class LogAnalyticsLookup(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsLookup.
-        edit version
+        The edit version.
 
 
         :return: The edit_version of this LogAnalyticsLookup.
@@ -229,7 +229,7 @@ class LogAnalyticsLookup(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsLookup.
-        edit version
+        The edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsLookup.
@@ -241,7 +241,7 @@ class LogAnalyticsLookup(object):
     def fields(self):
         """
         Gets the fields of this LogAnalyticsLookup.
-        fields
+        The lookup fields.
 
 
         :return: The fields of this LogAnalyticsLookup.
@@ -253,7 +253,7 @@ class LogAnalyticsLookup(object):
     def fields(self, fields):
         """
         Sets the fields of this LogAnalyticsLookup.
-        fields
+        The lookup fields.
 
 
         :param fields: The fields of this LogAnalyticsLookup.
@@ -343,7 +343,7 @@ class LogAnalyticsLookup(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsLookup.
-        iname
+        The lookup name.
 
 
         :return: The name of this LogAnalyticsLookup.
@@ -355,7 +355,7 @@ class LogAnalyticsLookup(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsLookup.
-        iname
+        The lookup name.
 
 
         :param name: The name of this LogAnalyticsLookup.
@@ -367,7 +367,8 @@ class LogAnalyticsLookup(object):
     def is_built_in(self):
         """
         Gets the is_built_in of this LogAnalyticsLookup.
-        is built in
+        A flag indicating if the lookup is custom (user-defined) or
+        built in.
 
 
         :return: The is_built_in of this LogAnalyticsLookup.
@@ -379,7 +380,8 @@ class LogAnalyticsLookup(object):
     def is_built_in(self, is_built_in):
         """
         Sets the is_built_in of this LogAnalyticsLookup.
-        is built in
+        A flag indicating if the lookup is custom (user-defined) or
+        built in.
 
 
         :param is_built_in: The is_built_in of this LogAnalyticsLookup.
@@ -391,7 +393,8 @@ class LogAnalyticsLookup(object):
     def is_hidden(self):
         """
         Gets the is_hidden of this LogAnalyticsLookup.
-        is hidden
+        A flag indicating if the lookup is hidden or not.  A hidden lookup will
+        not be returned in list operations by default.
 
 
         :return: The is_hidden of this LogAnalyticsLookup.
@@ -403,7 +406,8 @@ class LogAnalyticsLookup(object):
     def is_hidden(self, is_hidden):
         """
         Sets the is_hidden of this LogAnalyticsLookup.
-        is hidden
+        A flag indicating if the lookup is hidden or not.  A hidden lookup will
+        not be returned in list operations by default.
 
 
         :param is_hidden: The is_hidden of this LogAnalyticsLookup.
@@ -415,7 +419,7 @@ class LogAnalyticsLookup(object):
     def lookup_display_name(self):
         """
         Gets the lookup_display_name of this LogAnalyticsLookup.
-        name
+        The lookup display name.
 
 
         :return: The lookup_display_name of this LogAnalyticsLookup.
@@ -427,7 +431,7 @@ class LogAnalyticsLookup(object):
     def lookup_display_name(self, lookup_display_name):
         """
         Sets the lookup_display_name of this LogAnalyticsLookup.
-        name
+        The lookup display name.
 
 
         :param lookup_display_name: The lookup_display_name of this LogAnalyticsLookup.
@@ -479,7 +483,7 @@ class LogAnalyticsLookup(object):
     def time_updated(self):
         """
         Gets the time_updated of this LogAnalyticsLookup.
-        last updated date
+        The last updated date.
 
 
         :return: The time_updated of this LogAnalyticsLookup.
@@ -491,7 +495,7 @@ class LogAnalyticsLookup(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this LogAnalyticsLookup.
-        last updated date
+        The last updated date.
 
 
         :param time_updated: The time_updated of this LogAnalyticsLookup.

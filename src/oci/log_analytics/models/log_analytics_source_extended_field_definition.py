@@ -162,7 +162,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def display_regular_expression(self):
         """
         Gets the display_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
-        display regular expression
+        The regular expression.
 
 
         :return: The display_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -174,7 +174,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def display_regular_expression(self, display_regular_expression):
         """
         Sets the display_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
-        display regular expression
+        The regular expression.
 
 
         :param display_regular_expression: The display_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -186,7 +186,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def extended_fields(self):
         """
         Gets the extended_fields of this LogAnalyticsSourceExtendedFieldDefinition.
-        extended fields
+        An array of extended fields.
 
 
         :return: The extended_fields of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -198,7 +198,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def extended_fields(self, extended_fields):
         """
         Sets the extended_fields of this LogAnalyticsSourceExtendedFieldDefinition.
-        extended fields
+        An array of extended fields.
 
 
         :param extended_fields: The extended_fields of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -210,7 +210,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def base_field_name(self):
         """
         Gets the base_field_name of this LogAnalyticsSourceExtendedFieldDefinition.
-        base field internal name
+        The base field internal name.
 
 
         :return: The base_field_name of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -222,7 +222,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def base_field_name(self, base_field_name):
         """
         Sets the base_field_name of this LogAnalyticsSourceExtendedFieldDefinition.
-        base field internal name
+        The base field internal name.
 
 
         :param base_field_name: The base_field_name of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -234,7 +234,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def base_field_log_text(self):
         """
         Gets the base_field_log_text of this LogAnalyticsSourceExtendedFieldDefinition.
-        base field log text
+        The base field log text.
 
 
         :return: The base_field_log_text of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -246,7 +246,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def base_field_log_text(self, base_field_log_text):
         """
         Sets the base_field_log_text of this LogAnalyticsSourceExtendedFieldDefinition.
-        base field log text
+        The base field log text.
 
 
         :param base_field_log_text: The base_field_log_text of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -258,7 +258,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_data_type(self):
         """
         Gets the condition_data_type of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional data type
+        The conditional data type.
 
 
         :return: The condition_data_type of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -270,7 +270,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_data_type(self, condition_data_type):
         """
         Sets the condition_data_type of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional data type
+        The conditional data type.
 
 
         :param condition_data_type: The condition_data_type of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -282,7 +282,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_field(self):
         """
         Gets the condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional field
+        The onditional field.
 
 
         :return: The condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -294,7 +294,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_field(self, condition_field):
         """
         Sets the condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional field
+        The onditional field.
 
 
         :param condition_field: The condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -306,7 +306,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_operator(self):
         """
         Gets the condition_operator of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional operator
+        The conditional operator.
 
 
         :return: The condition_operator of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -318,7 +318,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_operator(self, condition_operator):
         """
         Sets the condition_operator of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional operator
+        The conditional operator.
 
 
         :param condition_operator: The condition_operator of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -330,7 +330,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_value(self):
         """
         Gets the condition_value of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional value
+        The conditional value.
 
 
         :return: The condition_value of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -342,7 +342,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_value(self, condition_value):
         """
         Sets the condition_value of this LogAnalyticsSourceExtendedFieldDefinition.
-        conditional value
+        The conditional value.
 
 
         :param condition_value: The condition_value of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -354,7 +354,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def converted_regular_expression(self):
         """
         Gets the converted_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
-        converted regular expression
+        The converted regular expression.
 
 
         :return: The converted_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -366,7 +366,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def converted_regular_expression(self, converted_regular_expression):
         """
         Sets the converted_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
-        converted regular expression
+        The converted regular expression.
 
 
         :param converted_regular_expression: The converted_regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -378,7 +378,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this LogAnalyticsSourceExtendedFieldDefinition.
-        enabled
+        A flag inidcating whether or not the extended definition is enabled.
 
 
         :return: The is_enabled of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -390,7 +390,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this LogAnalyticsSourceExtendedFieldDefinition.
-        enabled
+        A flag inidcating whether or not the extended definition is enabled.
 
 
         :param is_enabled: The is_enabled of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -402,7 +402,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def extended_field_definition_id(self):
         """
         Gets the extended_field_definition_id of this LogAnalyticsSourceExtendedFieldDefinition.
-        id
+        The extended field definition unique identifier.
 
 
         :return: The extended_field_definition_id of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -414,7 +414,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def extended_field_definition_id(self, extended_field_definition_id):
         """
         Sets the extended_field_definition_id of this LogAnalyticsSourceExtendedFieldDefinition.
-        id
+        The extended field definition unique identifier.
 
 
         :param extended_field_definition_id: The extended_field_definition_id of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -426,7 +426,8 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsSourceExtendedFieldDefinition.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -438,7 +439,8 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsSourceExtendedFieldDefinition.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -450,7 +452,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def regular_expression(self):
         """
         Gets the regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
-        regular expression
+        The regular expression.
 
 
         :return: The regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -462,7 +464,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def regular_expression(self, regular_expression):
         """
         Sets the regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
-        regular expression
+        The regular expression.
 
 
         :param regular_expression: The regular_expression of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -474,7 +476,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsSourceExtendedFieldDefinition.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -486,7 +488,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsSourceExtendedFieldDefinition.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -498,7 +500,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def time_updated(self):
         """
         Gets the time_updated of this LogAnalyticsSourceExtendedFieldDefinition.
-        last updated date
+        The last updated date.
 
 
         :return: The time_updated of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -510,7 +512,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this LogAnalyticsSourceExtendedFieldDefinition.
-        last updated date
+        The last updated date.
 
 
         :param time_updated: The time_updated of this LogAnalyticsSourceExtendedFieldDefinition.

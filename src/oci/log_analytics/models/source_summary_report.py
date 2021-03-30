@@ -51,7 +51,7 @@ class SourceSummaryReport(object):
     def non_oob_count(self):
         """
         Gets the non_oob_count of this SourceSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) sources.
 
 
         :return: The non_oob_count of this SourceSummaryReport.
@@ -63,7 +63,7 @@ class SourceSummaryReport(object):
     def non_oob_count(self, non_oob_count):
         """
         Sets the non_oob_count of this SourceSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) sources.
 
 
         :param non_oob_count: The non_oob_count of this SourceSummaryReport.
@@ -75,7 +75,7 @@ class SourceSummaryReport(object):
     def auto_association_source_count(self):
         """
         Gets the auto_association_source_count of this SourceSummaryReport.
-        count of sources set to auto-associate
+        The count of sources set to auto-associate.
 
 
         :return: The auto_association_source_count of this SourceSummaryReport.
@@ -87,7 +87,7 @@ class SourceSummaryReport(object):
     def auto_association_source_count(self, auto_association_source_count):
         """
         Sets the auto_association_source_count of this SourceSummaryReport.
-        count of sources set to auto-associate
+        The count of sources set to auto-associate.
 
 
         :param auto_association_source_count: The auto_association_source_count of this SourceSummaryReport.
@@ -99,7 +99,7 @@ class SourceSummaryReport(object):
     def oob_count(self):
         """
         Gets the oob_count of this SourceSummaryReport.
-        out-of-the-box count
+        The count of built in sources.
 
 
         :return: The oob_count of this SourceSummaryReport.
@@ -111,7 +111,7 @@ class SourceSummaryReport(object):
     def oob_count(self, oob_count):
         """
         Sets the oob_count of this SourceSummaryReport.
-        out-of-the-box count
+        The count of built in sources.
 
 
         :param oob_count: The oob_count of this SourceSummaryReport.

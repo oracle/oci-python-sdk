@@ -93,7 +93,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def created_parser_names(self):
         """
         Gets the created_parser_names of this LogAnalyticsImportCustomChangeList.
-        createdParserNames
+        An array of created parser names.
 
 
         :return: The created_parser_names of this LogAnalyticsImportCustomChangeList.
@@ -105,7 +105,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def created_parser_names(self, created_parser_names):
         """
         Sets the created_parser_names of this LogAnalyticsImportCustomChangeList.
-        createdParserNames
+        An array of created parser names.
 
 
         :param created_parser_names: The created_parser_names of this LogAnalyticsImportCustomChangeList.
@@ -117,7 +117,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def updated_parser_names(self):
         """
         Gets the updated_parser_names of this LogAnalyticsImportCustomChangeList.
-        updatedParserNames
+        An array of updated parser names.
 
 
         :return: The updated_parser_names of this LogAnalyticsImportCustomChangeList.
@@ -129,7 +129,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def updated_parser_names(self, updated_parser_names):
         """
         Sets the updated_parser_names of this LogAnalyticsImportCustomChangeList.
-        updatedParserNames
+        An array of updated parser names.
 
 
         :param updated_parser_names: The updated_parser_names of this LogAnalyticsImportCustomChangeList.
@@ -141,7 +141,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def created_source_names(self):
         """
         Gets the created_source_names of this LogAnalyticsImportCustomChangeList.
-        createdSourceNames
+        An array of created source names.
 
 
         :return: The created_source_names of this LogAnalyticsImportCustomChangeList.
@@ -153,7 +153,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def created_source_names(self, created_source_names):
         """
         Sets the created_source_names of this LogAnalyticsImportCustomChangeList.
-        createdSourceNames
+        An array of created source names.
 
 
         :param created_source_names: The created_source_names of this LogAnalyticsImportCustomChangeList.
@@ -165,7 +165,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def updated_source_names(self):
         """
         Gets the updated_source_names of this LogAnalyticsImportCustomChangeList.
-        updatedSourceNames
+        An array of updated source names.
 
 
         :return: The updated_source_names of this LogAnalyticsImportCustomChangeList.
@@ -177,7 +177,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def updated_source_names(self, updated_source_names):
         """
         Sets the updated_source_names of this LogAnalyticsImportCustomChangeList.
-        updatedSourceNames
+        An array of updated source names.
 
 
         :param updated_source_names: The updated_source_names of this LogAnalyticsImportCustomChangeList.
@@ -189,7 +189,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def created_field_display_names(self):
         """
         Gets the created_field_display_names of this LogAnalyticsImportCustomChangeList.
-        createdFieldDisplayNames
+        An array of created field display names.
 
 
         :return: The created_field_display_names of this LogAnalyticsImportCustomChangeList.
@@ -201,7 +201,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def created_field_display_names(self, created_field_display_names):
         """
         Sets the created_field_display_names of this LogAnalyticsImportCustomChangeList.
-        createdFieldDisplayNames
+        An array of created field display names.
 
 
         :param created_field_display_names: The created_field_display_names of this LogAnalyticsImportCustomChangeList.
@@ -213,7 +213,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def updated_field_display_names(self):
         """
         Gets the updated_field_display_names of this LogAnalyticsImportCustomChangeList.
-        updatedFieldDisplayNames
+        An array of updated field display names.
 
 
         :return: The updated_field_display_names of this LogAnalyticsImportCustomChangeList.
@@ -225,7 +225,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def updated_field_display_names(self, updated_field_display_names):
         """
         Sets the updated_field_display_names of this LogAnalyticsImportCustomChangeList.
-        updatedFieldDisplayNames
+        An array of updated field display names.
 
 
         :param updated_field_display_names: The updated_field_display_names of this LogAnalyticsImportCustomChangeList.
@@ -237,7 +237,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def conflict_parser_names(self):
         """
         Gets the conflict_parser_names of this LogAnalyticsImportCustomChangeList.
-        conflictParserNames
+        A list of parser names with conflicts.
 
 
         :return: The conflict_parser_names of this LogAnalyticsImportCustomChangeList.
@@ -249,7 +249,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def conflict_parser_names(self, conflict_parser_names):
         """
         Sets the conflict_parser_names of this LogAnalyticsImportCustomChangeList.
-        conflictParserNames
+        A list of parser names with conflicts.
 
 
         :param conflict_parser_names: The conflict_parser_names of this LogAnalyticsImportCustomChangeList.
@@ -261,7 +261,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def conflict_source_names(self):
         """
         Gets the conflict_source_names of this LogAnalyticsImportCustomChangeList.
-        conflictSourceNames
+        A list of source names with conflicts.
 
 
         :return: The conflict_source_names of this LogAnalyticsImportCustomChangeList.
@@ -273,7 +273,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def conflict_source_names(self, conflict_source_names):
         """
         Sets the conflict_source_names of this LogAnalyticsImportCustomChangeList.
-        conflictSourceNames
+        A list of source names with conflicts.
 
 
         :param conflict_source_names: The conflict_source_names of this LogAnalyticsImportCustomChangeList.
@@ -285,7 +285,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def conflict_field_display_names(self):
         """
         Gets the conflict_field_display_names of this LogAnalyticsImportCustomChangeList.
-        conflictFieldDisplayNames
+        A list of field display names with conflicts.
 
 
         :return: The conflict_field_display_names of this LogAnalyticsImportCustomChangeList.
@@ -297,7 +297,7 @@ class LogAnalyticsImportCustomChangeList(object):
     def conflict_field_display_names(self, conflict_field_display_names):
         """
         Sets the conflict_field_display_names of this LogAnalyticsImportCustomChangeList.
-        conflictFieldDisplayNames
+        A list of field display names with conflicts.
 
 
         :param conflict_field_display_names: The conflict_field_display_names of this LogAnalyticsImportCustomChangeList.

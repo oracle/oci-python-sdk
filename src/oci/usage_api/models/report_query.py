@@ -104,6 +104,10 @@ class ReportQuery(object):
             The value to assign to the is_aggregate_by_time property of this ReportQuery.
         :type is_aggregate_by_time: bool
 
+        :param forecast:
+            The value to assign to the forecast property of this ReportQuery.
+        :type forecast: oci.usage_api.models.Forecast
+
         :param query_type:
             The value to assign to the query_type property of this ReportQuery.
             Allowed values for this property are: "USAGE", "COST", 'UNKNOWN_ENUM_VALUE'.
@@ -139,6 +143,7 @@ class ReportQuery(object):
             'time_usage_ended': 'datetime',
             'granularity': 'str',
             'is_aggregate_by_time': 'bool',
+            'forecast': 'Forecast',
             'query_type': 'str',
             'group_by': 'list[str]',
             'group_by_tag': 'list[Tag]',
@@ -153,6 +158,7 @@ class ReportQuery(object):
             'time_usage_ended': 'timeUsageEnded',
             'granularity': 'granularity',
             'is_aggregate_by_time': 'isAggregateByTime',
+            'forecast': 'forecast',
             'query_type': 'queryType',
             'group_by': 'groupBy',
             'group_by_tag': 'groupByTag',
@@ -166,6 +172,7 @@ class ReportQuery(object):
         self._time_usage_ended = None
         self._granularity = None
         self._is_aggregate_by_time = None
+        self._forecast = None
         self._query_type = None
         self._group_by = None
         self._group_by_tag = None
@@ -308,6 +315,26 @@ class ReportQuery(object):
         self._is_aggregate_by_time = is_aggregate_by_time
 
     @property
+    def forecast(self):
+        """
+        Gets the forecast of this ReportQuery.
+
+        :return: The forecast of this ReportQuery.
+        :rtype: oci.usage_api.models.Forecast
+        """
+        return self._forecast
+
+    @forecast.setter
+    def forecast(self, forecast):
+        """
+        Sets the forecast of this ReportQuery.
+
+        :param forecast: The forecast of this ReportQuery.
+        :type: oci.usage_api.models.Forecast
+        """
+        self._forecast = forecast
+
+    @property
     def query_type(self):
         """
         Gets the query_type of this ReportQuery.
@@ -377,8 +404,8 @@ class ReportQuery(object):
     def group_by_tag(self):
         """
         Gets the group_by_tag of this ReportQuery.
-        GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
-        example:
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list.
+        For example:
           `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
 
 
@@ -391,8 +418,8 @@ class ReportQuery(object):
     def group_by_tag(self, group_by_tag):
         """
         Sets the group_by_tag of this ReportQuery.
-        GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
-        example:
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list.
+        For example:
           `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
 
 

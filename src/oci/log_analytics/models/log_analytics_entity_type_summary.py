@@ -21,6 +21,10 @@ class LogAnalyticsEntityTypeSummary(object):
     #: This constant has a value of "NON_CLOUD"
     CLOUD_TYPE_NON_CLOUD = "NON_CLOUD"
 
+    #: A constant which can be used with the cloud_type property of a LogAnalyticsEntityTypeSummary.
+    #: This constant has a value of "ALL"
+    CLOUD_TYPE_ALL = "ALL"
+
     #: A constant which can be used with the lifecycle_state property of a LogAnalyticsEntityTypeSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -28,6 +32,18 @@ class LogAnalyticsEntityTypeSummary(object):
     #: A constant which can be used with the lifecycle_state property of a LogAnalyticsEntityTypeSummary.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the management_agent_eligibility_status property of a LogAnalyticsEntityTypeSummary.
+    #: This constant has a value of "ELIGIBLE"
+    MANAGEMENT_AGENT_ELIGIBILITY_STATUS_ELIGIBLE = "ELIGIBLE"
+
+    #: A constant which can be used with the management_agent_eligibility_status property of a LogAnalyticsEntityTypeSummary.
+    #: This constant has a value of "INELIGIBLE"
+    MANAGEMENT_AGENT_ELIGIBILITY_STATUS_INELIGIBLE = "INELIGIBLE"
+
+    #: A constant which can be used with the management_agent_eligibility_status property of a LogAnalyticsEntityTypeSummary.
+    #: This constant has a value of "UNKNOWN"
+    MANAGEMENT_AGENT_ELIGIBILITY_STATUS_UNKNOWN = "UNKNOWN"
 
     def __init__(self, **kwargs):
         """
@@ -48,7 +64,7 @@ class LogAnalyticsEntityTypeSummary(object):
 
         :param cloud_type:
             The value to assign to the cloud_type property of this LogAnalyticsEntityTypeSummary.
-            Allowed values for this property are: "CLOUD", "NON_CLOUD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CLOUD", "NON_CLOUD", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cloud_type: str
 
@@ -66,6 +82,12 @@ class LogAnalyticsEntityTypeSummary(object):
             The value to assign to the time_updated property of this LogAnalyticsEntityTypeSummary.
         :type time_updated: datetime
 
+        :param management_agent_eligibility_status:
+            The value to assign to the management_agent_eligibility_status property of this LogAnalyticsEntityTypeSummary.
+            Allowed values for this property are: "ELIGIBLE", "INELIGIBLE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type management_agent_eligibility_status: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -74,7 +96,8 @@ class LogAnalyticsEntityTypeSummary(object):
             'cloud_type': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'management_agent_eligibility_status': 'str'
         }
 
         self.attribute_map = {
@@ -84,7 +107,8 @@ class LogAnalyticsEntityTypeSummary(object):
             'cloud_type': 'cloudType',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'management_agent_eligibility_status': 'managementAgentEligibilityStatus'
         }
 
         self._name = None
@@ -94,6 +118,7 @@ class LogAnalyticsEntityTypeSummary(object):
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
+        self._management_agent_eligibility_status = None
 
     @property
     def name(self):
@@ -173,7 +198,7 @@ class LogAnalyticsEntityTypeSummary(object):
         **[Required]** Gets the cloud_type of this LogAnalyticsEntityTypeSummary.
         Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
 
-        Allowed values for this property are: "CLOUD", "NON_CLOUD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CLOUD", "NON_CLOUD", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -192,7 +217,7 @@ class LogAnalyticsEntityTypeSummary(object):
         :param cloud_type: The cloud_type of this LogAnalyticsEntityTypeSummary.
         :type: str
         """
-        allowed_values = ["CLOUD", "NON_CLOUD"]
+        allowed_values = ["CLOUD", "NON_CLOUD", "ALL"]
         if not value_allowed_none_or_none_sentinel(cloud_type, allowed_values):
             cloud_type = 'UNKNOWN_ENUM_VALUE'
         self._cloud_type = cloud_type
@@ -274,6 +299,36 @@ class LogAnalyticsEntityTypeSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def management_agent_eligibility_status(self):
+        """
+        Gets the management_agent_eligibility_status of this LogAnalyticsEntityTypeSummary.
+        This field indicates whether logs for entities of this type can be collected using a management agent.
+
+        Allowed values for this property are: "ELIGIBLE", "INELIGIBLE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The management_agent_eligibility_status of this LogAnalyticsEntityTypeSummary.
+        :rtype: str
+        """
+        return self._management_agent_eligibility_status
+
+    @management_agent_eligibility_status.setter
+    def management_agent_eligibility_status(self, management_agent_eligibility_status):
+        """
+        Sets the management_agent_eligibility_status of this LogAnalyticsEntityTypeSummary.
+        This field indicates whether logs for entities of this type can be collected using a management agent.
+
+
+        :param management_agent_eligibility_status: The management_agent_eligibility_status of this LogAnalyticsEntityTypeSummary.
+        :type: str
+        """
+        allowed_values = ["ELIGIBLE", "INELIGIBLE", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(management_agent_eligibility_status, allowed_values):
+            management_agent_eligibility_status = 'UNKNOWN_ENUM_VALUE'
+        self._management_agent_eligibility_status = management_agent_eligibility_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,6 +10,10 @@ import pytz
 from oci._vendor import six
 import os
 from oci.exceptions import InvalidConfig
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE_NAME = 'instance_principal'
 DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE = 'delegation_token_with_instance_principal'
@@ -195,3 +199,17 @@ def get_authentication_type_from_config(config):
             raise InvalidConfig("The authentication type {} requires config values for the keys {}".format(DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE, DELEGATION_TOKEN_FILE_FIELD_NAME))
     else:
         raise InvalidConfig("The authentication type {} is not supported".format(auth_type))
+
+
+def extract_service_endpoint(endpoint_with_base_path):
+    """
+    Takes a Service Endpoint with base-path embedded and extracts the Service Endpoint from it.
+
+    :param str endpoint_with_base_path:
+    Service Endpoint with base-path embedded
+
+    :return: The Service Endpoint without base-path.
+    :rtype: str
+    """
+    parsed_endpoint = urlparse(endpoint_with_base_path)
+    return parsed_endpoint.scheme + r'://' + parsed_endpoint.netloc

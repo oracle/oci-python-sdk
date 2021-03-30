@@ -37,7 +37,7 @@ class LogAnalyticsSourceExtendedFieldDefinitionCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsSourceExtendedFieldDefinitionCollection.
-        list of extended field definitions
+        An array of extended field definitions.
 
 
         :return: The items of this LogAnalyticsSourceExtendedFieldDefinitionCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsSourceExtendedFieldDefinitionCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsSourceExtendedFieldDefinitionCollection.
-        list of extended field definitions
+        An array of extended field definitions.
 
 
         :param items: The items of this LogAnalyticsSourceExtendedFieldDefinitionCollection.

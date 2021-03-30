@@ -65,7 +65,7 @@ class LogAnalyticsParameter(object):
     def default_value(self):
         """
         Gets the default_value of this LogAnalyticsParameter.
-        default value
+        The default value of the parameter.
 
 
         :return: The default_value of this LogAnalyticsParameter.
@@ -77,7 +77,7 @@ class LogAnalyticsParameter(object):
     def default_value(self, default_value):
         """
         Sets the default_value of this LogAnalyticsParameter.
-        default value
+        The default value of the parameter.
 
 
         :param default_value: The default_value of this LogAnalyticsParameter.
@@ -89,7 +89,7 @@ class LogAnalyticsParameter(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsParameter.
-        description
+        The parameter description.
 
 
         :return: The description of this LogAnalyticsParameter.
@@ -101,7 +101,7 @@ class LogAnalyticsParameter(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsParameter.
-        description
+        The parameter description.
 
 
         :param description: The description of this LogAnalyticsParameter.
@@ -113,7 +113,7 @@ class LogAnalyticsParameter(object):
     def is_active(self):
         """
         Gets the is_active of this LogAnalyticsParameter.
-        is active flag
+        A flag indicating whether or not the parameter is active.
 
 
         :return: The is_active of this LogAnalyticsParameter.
@@ -125,7 +125,7 @@ class LogAnalyticsParameter(object):
     def is_active(self, is_active):
         """
         Sets the is_active of this LogAnalyticsParameter.
-        is active flag
+        A flag indicating whether or not the parameter is active.
 
 
         :param is_active: The is_active of this LogAnalyticsParameter.
@@ -137,7 +137,7 @@ class LogAnalyticsParameter(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsParameter.
-        parameter name
+        The parameter name.
 
 
         :return: The name of this LogAnalyticsParameter.
@@ -149,7 +149,7 @@ class LogAnalyticsParameter(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsParameter.
-        parameter name
+        The parameter name.
 
 
         :param name: The name of this LogAnalyticsParameter.
@@ -161,7 +161,7 @@ class LogAnalyticsParameter(object):
     def source_id(self):
         """
         Gets the source_id of this LogAnalyticsParameter.
-        source Id
+        The source unique identifier.
 
 
         :return: The source_id of this LogAnalyticsParameter.
@@ -173,7 +173,7 @@ class LogAnalyticsParameter(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this LogAnalyticsParameter.
-        source Id
+        The source unique identifier.
 
 
         :param source_id: The source_id of this LogAnalyticsParameter.

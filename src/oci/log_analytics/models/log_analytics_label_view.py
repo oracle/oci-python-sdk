@@ -153,7 +153,7 @@ class LogAnalyticsLabelView(object):
     def aliases(self):
         """
         Gets the aliases of this LogAnalyticsLabelView.
-        alias list
+        An arrya of label aliases.
 
 
         :return: The aliases of this LogAnalyticsLabelView.
@@ -165,7 +165,7 @@ class LogAnalyticsLabelView(object):
     def aliases(self, aliases):
         """
         Sets the aliases of this LogAnalyticsLabelView.
-        alias list
+        An arrya of label aliases.
 
 
         :param aliases: The aliases of this LogAnalyticsLabelView.
@@ -177,7 +177,7 @@ class LogAnalyticsLabelView(object):
     def count_usage_in_alert_rule(self):
         """
         Gets the count_usage_in_alert_rule of this LogAnalyticsLabelView.
-        alert rule usage count
+        The label alert rule usage count.
 
 
         :return: The count_usage_in_alert_rule of this LogAnalyticsLabelView.
@@ -189,7 +189,7 @@ class LogAnalyticsLabelView(object):
     def count_usage_in_alert_rule(self, count_usage_in_alert_rule):
         """
         Sets the count_usage_in_alert_rule of this LogAnalyticsLabelView.
-        alert rule usage count
+        The label alert rule usage count.
 
 
         :param count_usage_in_alert_rule: The count_usage_in_alert_rule of this LogAnalyticsLabelView.
@@ -201,7 +201,7 @@ class LogAnalyticsLabelView(object):
     def count_usage_in_source(self):
         """
         Gets the count_usage_in_source of this LogAnalyticsLabelView.
-        source usage count
+        The label source usage count.
 
 
         :return: The count_usage_in_source of this LogAnalyticsLabelView.
@@ -213,7 +213,7 @@ class LogAnalyticsLabelView(object):
     def count_usage_in_source(self, count_usage_in_source):
         """
         Sets the count_usage_in_source of this LogAnalyticsLabelView.
-        source usage count
+        The label source usage count.
 
 
         :param count_usage_in_source: The count_usage_in_source of this LogAnalyticsLabelView.
@@ -225,7 +225,7 @@ class LogAnalyticsLabelView(object):
     def id(self):
         """
         Gets the id of this LogAnalyticsLabelView.
-        id
+        The label unique identifier.
 
 
         :return: The id of this LogAnalyticsLabelView.
@@ -237,7 +237,7 @@ class LogAnalyticsLabelView(object):
     def id(self, id):
         """
         Sets the id of this LogAnalyticsLabelView.
-        id
+        The label unique identifier.
 
 
         :param id: The id of this LogAnalyticsLabelView.
@@ -249,7 +249,7 @@ class LogAnalyticsLabelView(object):
     def suggest_type(self):
         """
         Gets the suggest_type of this LogAnalyticsLabelView.
-        suggest type
+        The label suggestion type.
 
 
         :return: The suggest_type of this LogAnalyticsLabelView.
@@ -261,7 +261,7 @@ class LogAnalyticsLabelView(object):
     def suggest_type(self, suggest_type):
         """
         Sets the suggest_type of this LogAnalyticsLabelView.
-        suggest type
+        The label suggestion type.
 
 
         :param suggest_type: The suggest_type of this LogAnalyticsLabelView.
@@ -273,7 +273,7 @@ class LogAnalyticsLabelView(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsLabelView.
-        label description
+        The label description.
 
 
         :return: The description of this LogAnalyticsLabelView.
@@ -285,7 +285,7 @@ class LogAnalyticsLabelView(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsLabelView.
-        label description
+        The label description.
 
 
         :param description: The description of this LogAnalyticsLabelView.
@@ -297,7 +297,7 @@ class LogAnalyticsLabelView(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsLabelView.
-        label display name
+        The label display name.
 
 
         :return: The display_name of this LogAnalyticsLabelView.
@@ -309,7 +309,7 @@ class LogAnalyticsLabelView(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsLabelView.
-        label display name
+        The label display name.
 
 
         :param display_name: The display_name of this LogAnalyticsLabelView.
@@ -321,7 +321,7 @@ class LogAnalyticsLabelView(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsLabelView.
-        tag edit version
+        The label edit version.
 
 
         :return: The edit_version of this LogAnalyticsLabelView.
@@ -333,7 +333,7 @@ class LogAnalyticsLabelView(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsLabelView.
-        tag edit version
+        The label edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsLabelView.
@@ -345,7 +345,7 @@ class LogAnalyticsLabelView(object):
     def impact(self):
         """
         Gets the impact of this LogAnalyticsLabelView.
-        label impact
+        The label impact.
 
 
         :return: The impact of this LogAnalyticsLabelView.
@@ -357,7 +357,7 @@ class LogAnalyticsLabelView(object):
     def impact(self, impact):
         """
         Sets the impact of this LogAnalyticsLabelView.
-        label impact
+        The label impact.
 
 
         :param impact: The impact of this LogAnalyticsLabelView.
@@ -369,7 +369,8 @@ class LogAnalyticsLabelView(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsLabelView.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsLabelView.
@@ -381,7 +382,8 @@ class LogAnalyticsLabelView(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsLabelView.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsLabelView.
@@ -393,7 +395,7 @@ class LogAnalyticsLabelView(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsLabelView.
-        label name
+        The label name.
 
 
         :return: The name of this LogAnalyticsLabelView.
@@ -405,7 +407,7 @@ class LogAnalyticsLabelView(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsLabelView.
-        label name
+        The label name.
 
 
         :param name: The name of this LogAnalyticsLabelView.
@@ -417,7 +419,7 @@ class LogAnalyticsLabelView(object):
     def priority(self):
         """
         Gets the priority of this LogAnalyticsLabelView.
-        priority
+        The label priority.  Default value is NONE.
 
         Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -432,7 +434,7 @@ class LogAnalyticsLabelView(object):
     def priority(self, priority):
         """
         Sets the priority of this LogAnalyticsLabelView.
-        priority
+        The label priority.  Default value is NONE.
 
 
         :param priority: The priority of this LogAnalyticsLabelView.
@@ -447,7 +449,7 @@ class LogAnalyticsLabelView(object):
     def recommendation(self):
         """
         Gets the recommendation of this LogAnalyticsLabelView.
-        recommendation
+        The label recommendation.
 
 
         :return: The recommendation of this LogAnalyticsLabelView.
@@ -459,7 +461,7 @@ class LogAnalyticsLabelView(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this LogAnalyticsLabelView.
-        recommendation
+        The label recommendation.
 
 
         :param recommendation: The recommendation of this LogAnalyticsLabelView.
@@ -471,7 +473,7 @@ class LogAnalyticsLabelView(object):
     def type(self):
         """
         Gets the type of this LogAnalyticsLabelView.
-        type
+        The label type.
 
 
         :return: The type of this LogAnalyticsLabelView.
@@ -483,7 +485,7 @@ class LogAnalyticsLabelView(object):
     def type(self, type):
         """
         Sets the type of this LogAnalyticsLabelView.
-        type
+        The label type.
 
 
         :param type: The type of this LogAnalyticsLabelView.
@@ -495,7 +497,7 @@ class LogAnalyticsLabelView(object):
     def is_user_deleted(self):
         """
         Gets the is_user_deleted of this LogAnalyticsLabelView.
-        user deleted flag
+        A flag indicating whether or not the label has been deleted.
 
 
         :return: The is_user_deleted of this LogAnalyticsLabelView.
@@ -507,7 +509,7 @@ class LogAnalyticsLabelView(object):
     def is_user_deleted(self, is_user_deleted):
         """
         Sets the is_user_deleted of this LogAnalyticsLabelView.
-        user deleted flag
+        A flag indicating whether or not the label has been deleted.
 
 
         :param is_user_deleted: The is_user_deleted of this LogAnalyticsLabelView.

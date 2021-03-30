@@ -75,7 +75,7 @@ class Violation(object):
     def indexes(self):
         """
         Gets the indexes of this Violation.
-        indexes
+        The indices associated with regular expression violations.
 
 
         :return: The indexes of this Violation.
@@ -87,7 +87,7 @@ class Violation(object):
     def indexes(self, indexes):
         """
         Sets the indexes of this Violation.
-        indexes
+        The indices associated with regular expression violations.
 
 
         :param indexes: The indexes of this Violation.
@@ -99,7 +99,7 @@ class Violation(object):
     def rule_description(self):
         """
         Gets the rule_description of this Violation.
-        ruleDescription
+        The rule description.
 
 
         :return: The rule_description of this Violation.
@@ -111,7 +111,7 @@ class Violation(object):
     def rule_description(self, rule_description):
         """
         Sets the rule_description of this Violation.
-        ruleDescription
+        The rule description.
 
 
         :param rule_description: The rule_description of this Violation.
@@ -123,7 +123,7 @@ class Violation(object):
     def rule_name(self):
         """
         Gets the rule_name of this Violation.
-        ruleName
+        The rule name.
 
 
         :return: The rule_name of this Violation.
@@ -135,7 +135,7 @@ class Violation(object):
     def rule_name(self, rule_name):
         """
         Sets the rule_name of this Violation.
-        ruleName
+        The rule name.
 
 
         :param rule_name: The rule_name of this Violation.
@@ -147,7 +147,7 @@ class Violation(object):
     def rule_remediation(self):
         """
         Gets the rule_remediation of this Violation.
-        ruleRemediation
+        The rule remediation.
 
 
         :return: The rule_remediation of this Violation.
@@ -159,7 +159,7 @@ class Violation(object):
     def rule_remediation(self, rule_remediation):
         """
         Sets the rule_remediation of this Violation.
-        ruleRemediation
+        The rule remediation.
 
 
         :param rule_remediation: The rule_remediation of this Violation.
@@ -171,7 +171,7 @@ class Violation(object):
     def rule_type(self):
         """
         Gets the rule_type of this Violation.
-        ruleType
+        The rule type.  Either WARN or ERROR.
 
         Allowed values for this property are: "WARN", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -186,7 +186,7 @@ class Violation(object):
     def rule_type(self, rule_type):
         """
         Sets the rule_type of this Violation.
-        ruleType
+        The rule type.  Either WARN or ERROR.
 
 
         :param rule_type: The rule_type of this Violation.
