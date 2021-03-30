@@ -138,23 +138,26 @@ Execute
 ```
 $ ./usage2adw.py  
 
-usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-d FILEDATE] [-p PROXY] [-su] [-sc] [-sr] [-ip] [-du DUSER] [-dp DPASS] [-dn DNAME] [--version]
+usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-ts TAGSPECIAL]
+                    [-d FILEDATE] [-p PROXY] [-su] [-sc] [-sr] [-ip]
+                    [-du DUSER] [-dp DPASS] [-dn DNAME] [--version]
 
 optional arguments:
-  -h, --help   show this help message and exit
-  -c CONFIG    Config File
-  -t PROFILE   Config file section to use (tenancy profile)
-  -f FILEID    File Id to load
-  -d FILEDATE  Minimum File Date to load (i.e. yyyy-mm-dd)
-  -p PROXY     Set Proxy (i.e. www-proxy-server.com:80)
-  -su          Skip Load Usage Files
-  -sc          Skip Load Cost Files
-  -sr          Skip Public Rate API
-  -ip          Use Instance Principals for Authentication
-  -du DUSER    ADB User
-  -dp DPASS    ADB Password
-  -dn DNAME    ADB Name
-  --version    show program's version number and exit
+  -h, --help      show this help message and exit
+  -c CONFIG       Config File
+  -t PROFILE      Config file section to use (tenancy profile)
+  -f FILEID       File Id to load
+  -ts TAGSPECIAL  tag special key to load the data to TAG_SPECIAL column
+  -d FILEDATE     Minimum File Date to load (i.e. yyyy-mm-dd)
+  -p PROXY        Set Proxy (i.e. www-proxy-server.com:80)
+  -su             Skip Load Usage Files
+  -sc             Skip Load Cost Files
+  -sr             Skip Public Rate API
+  -ip             Use Instance Principals for Authentication
+  -du DUSER       ADB User
+  -dp DPASS       ADB Password
+  -dn DNAME       ADB Name
+  --version       show program's version number and exit
 ```
 
 ## Below example of execution
