@@ -185,7 +185,7 @@ class DecryptDataDetails(object):
     def key_version_id(self):
         """
         Gets the key_version_id of this DecryptDataDetails.
-        The OCID of the keyVersion used to encrypt the ciphertext.
+        The OCID of the key version used to encrypt the ciphertext.
 
 
         :return: The key_version_id of this DecryptDataDetails.
@@ -197,7 +197,7 @@ class DecryptDataDetails(object):
     def key_version_id(self, key_version_id):
         """
         Sets the key_version_id of this DecryptDataDetails.
-        The OCID of the keyVersion used to encrypt the ciphertext.
+        The OCID of the key version used to encrypt the ciphertext.
 
 
         :param key_version_id: The key_version_id of this DecryptDataDetails.
@@ -209,9 +209,12 @@ class DecryptDataDetails(object):
     def encryption_algorithm(self):
         """
         Gets the encryption_algorithm of this DecryptDataDetails.
-        Encryption algorithm to be used while encrypting/decrypting data using a customer key
-        AES_256_GCM is the supported value AES keys and uses GCM mode of operation
-        RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+        The encryption algorithm to use to encrypt or decrypt data with a customer-managed key.
+        `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+        that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the
+        key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+        `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+        and uses OAEP.
 
         Allowed values for this property are: "AES_256_GCM", "RSA_OAEP_SHA_1", "RSA_OAEP_SHA_256"
 
@@ -225,9 +228,12 @@ class DecryptDataDetails(object):
     def encryption_algorithm(self, encryption_algorithm):
         """
         Sets the encryption_algorithm of this DecryptDataDetails.
-        Encryption algorithm to be used while encrypting/decrypting data using a customer key
-        AES_256_GCM is the supported value AES keys and uses GCM mode of operation
-        RSA_OAEP_SHA_1 and RSA_OAEP_SHA_256 are supported for RSA keys and use OAEP padding.
+        The encryption algorithm to use to encrypt or decrypt data with a customer-managed key.
+        `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and
+        that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the
+        key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP).
+        `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash
+        and uses OAEP.
 
 
         :param encryption_algorithm: The encryption_algorithm of this DecryptDataDetails.

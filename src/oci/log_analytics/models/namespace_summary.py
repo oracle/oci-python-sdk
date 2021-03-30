@@ -30,22 +30,29 @@ class NamespaceSummary(object):
             The value to assign to the is_onboarded property of this NamespaceSummary.
         :type is_onboarded: bool
 
+        :param is_log_set_enabled:
+            The value to assign to the is_log_set_enabled property of this NamespaceSummary.
+        :type is_log_set_enabled: bool
+
         """
         self.swagger_types = {
             'namespace_name': 'str',
             'compartment_id': 'str',
-            'is_onboarded': 'bool'
+            'is_onboarded': 'bool',
+            'is_log_set_enabled': 'bool'
         }
 
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'compartment_id': 'compartmentId',
-            'is_onboarded': 'isOnboarded'
+            'is_onboarded': 'isOnboarded',
+            'is_log_set_enabled': 'isLogSetEnabled'
         }
 
         self._namespace_name = None
         self._compartment_id = None
         self._is_onboarded = None
+        self._is_log_set_enabled = None
 
     @property
     def namespace_name(self):
@@ -118,6 +125,30 @@ class NamespaceSummary(object):
         :type: bool
         """
         self._is_onboarded = is_onboarded
+
+    @property
+    def is_log_set_enabled(self):
+        """
+        Gets the is_log_set_enabled of this NamespaceSummary.
+        This indicates if the log set feature is enabled for the tenancy
+
+
+        :return: The is_log_set_enabled of this NamespaceSummary.
+        :rtype: bool
+        """
+        return self._is_log_set_enabled
+
+    @is_log_set_enabled.setter
+    def is_log_set_enabled(self, is_log_set_enabled):
+        """
+        Sets the is_log_set_enabled of this NamespaceSummary.
+        This indicates if the log set feature is enabled for the tenancy
+
+
+        :param is_log_set_enabled: The is_log_set_enabled of this NamespaceSummary.
+        :type: bool
+        """
+        self._is_log_set_enabled = is_log_set_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

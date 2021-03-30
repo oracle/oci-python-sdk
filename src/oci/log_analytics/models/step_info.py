@@ -51,7 +51,7 @@ class StepInfo(object):
     def input_sequence_current_match(self):
         """
         Gets the input_sequence_current_match of this StepInfo.
-        inputSequenceCurrentMatch
+        The currnet input sequence match.
 
 
         :return: The input_sequence_current_match of this StepInfo.
@@ -63,7 +63,7 @@ class StepInfo(object):
     def input_sequence_current_match(self, input_sequence_current_match):
         """
         Sets the input_sequence_current_match of this StepInfo.
-        inputSequenceCurrentMatch
+        The currnet input sequence match.
 
 
         :param input_sequence_current_match: The input_sequence_current_match of this StepInfo.
@@ -75,7 +75,7 @@ class StepInfo(object):
     def regex_engine_class_name(self):
         """
         Gets the regex_engine_class_name of this StepInfo.
-        regexEngineClassName
+        The regular expression engine class name.
 
 
         :return: The regex_engine_class_name of this StepInfo.
@@ -87,7 +87,7 @@ class StepInfo(object):
     def regex_engine_class_name(self, regex_engine_class_name):
         """
         Sets the regex_engine_class_name of this StepInfo.
-        regexEngineClassName
+        The regular expression engine class name.
 
 
         :param regex_engine_class_name: The regex_engine_class_name of this StepInfo.
@@ -99,7 +99,7 @@ class StepInfo(object):
     def step_count(self):
         """
         Gets the step_count of this StepInfo.
-        stepCount
+        The step count.
 
 
         :return: The step_count of this StepInfo.
@@ -111,7 +111,7 @@ class StepInfo(object):
     def step_count(self, step_count):
         """
         Sets the step_count of this StepInfo.
-        stepCount
+        The step count.
 
 
         :param step_count: The step_count of this StepInfo.

@@ -65,7 +65,7 @@ class ParserTestResult(object):
     def additional_info(self):
         """
         Gets the additional_info of this ParserTestResult.
-        additional info
+        Additional information for the test result.
 
 
         :return: The additional_info of this ParserTestResult.
@@ -77,7 +77,7 @@ class ParserTestResult(object):
     def additional_info(self, additional_info):
         """
         Sets the additional_info of this ParserTestResult.
-        additional info
+        Additional information for the test result.
 
 
         :param additional_info: The additional_info of this ParserTestResult.
@@ -89,7 +89,7 @@ class ParserTestResult(object):
     def entries(self):
         """
         Gets the entries of this ParserTestResult.
-        entries
+        The test result log entries.
 
 
         :return: The entries of this ParserTestResult.
@@ -101,7 +101,7 @@ class ParserTestResult(object):
     def entries(self, entries):
         """
         Sets the entries of this ParserTestResult.
-        entries
+        The test result log entries.
 
 
         :param entries: The entries of this ParserTestResult.
@@ -113,7 +113,7 @@ class ParserTestResult(object):
     def example_content(self):
         """
         Gets the example_content of this ParserTestResult.
-        example content
+        The example content.
 
 
         :return: The example_content of this ParserTestResult.
@@ -125,7 +125,7 @@ class ParserTestResult(object):
     def example_content(self, example_content):
         """
         Sets the example_content of this ParserTestResult.
-        example content
+        The example content.
 
 
         :param example_content: The example_content of this ParserTestResult.
@@ -137,7 +137,7 @@ class ParserTestResult(object):
     def lines(self):
         """
         Gets the lines of this ParserTestResult.
-        lines
+        The test result log lines.
 
 
         :return: The lines of this ParserTestResult.
@@ -149,7 +149,7 @@ class ParserTestResult(object):
     def lines(self, lines):
         """
         Sets the lines of this ParserTestResult.
-        lines
+        The test result log lines.
 
 
         :param lines: The lines of this ParserTestResult.
@@ -161,7 +161,7 @@ class ParserTestResult(object):
     def named_capture_groups(self):
         """
         Gets the named_capture_groups of this ParserTestResult.
-        named capture groups
+        The named capture groups.
 
 
         :return: The named_capture_groups of this ParserTestResult.
@@ -173,7 +173,7 @@ class ParserTestResult(object):
     def named_capture_groups(self, named_capture_groups):
         """
         Sets the named_capture_groups of this ParserTestResult.
-        named capture groups
+        The named capture groups.
 
 
         :param named_capture_groups: The named_capture_groups of this ParserTestResult.

@@ -44,7 +44,7 @@ class Indexes(object):
     def end_index(self):
         """
         Gets the end_index of this Indexes.
-        endIndex
+        The end index.
 
 
         :return: The end_index of this Indexes.
@@ -56,7 +56,7 @@ class Indexes(object):
     def end_index(self, end_index):
         """
         Sets the end_index of this Indexes.
-        endIndex
+        The end index.
 
 
         :param end_index: The end_index of this Indexes.
@@ -68,7 +68,7 @@ class Indexes(object):
     def start_index(self):
         """
         Gets the start_index of this Indexes.
-        startIndex
+        The start index.
 
 
         :return: The start_index of this Indexes.
@@ -80,7 +80,7 @@ class Indexes(object):
     def start_index(self, start_index):
         """
         Sets the start_index of this Indexes.
-        startIndex
+        The start index.
 
 
         :param start_index: The start_index of this Indexes.

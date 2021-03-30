@@ -65,7 +65,7 @@ class LogAnalyticsImportCustomContent(object):
     def parser_names(self):
         """
         Gets the parser_names of this LogAnalyticsImportCustomContent.
-        parserNames
+        The parser names.
 
 
         :return: The parser_names of this LogAnalyticsImportCustomContent.
@@ -77,7 +77,7 @@ class LogAnalyticsImportCustomContent(object):
     def parser_names(self, parser_names):
         """
         Sets the parser_names of this LogAnalyticsImportCustomContent.
-        parserNames
+        The parser names.
 
 
         :param parser_names: The parser_names of this LogAnalyticsImportCustomContent.
@@ -89,7 +89,7 @@ class LogAnalyticsImportCustomContent(object):
     def source_names(self):
         """
         Gets the source_names of this LogAnalyticsImportCustomContent.
-        sourceNames
+        The source names.
 
 
         :return: The source_names of this LogAnalyticsImportCustomContent.
@@ -101,7 +101,7 @@ class LogAnalyticsImportCustomContent(object):
     def source_names(self, source_names):
         """
         Sets the source_names of this LogAnalyticsImportCustomContent.
-        sourceNames
+        The source names.
 
 
         :param source_names: The source_names of this LogAnalyticsImportCustomContent.
@@ -113,7 +113,7 @@ class LogAnalyticsImportCustomContent(object):
     def field_names(self):
         """
         Gets the field_names of this LogAnalyticsImportCustomContent.
-        fieldNames
+        The field names.
 
 
         :return: The field_names of this LogAnalyticsImportCustomContent.
@@ -125,7 +125,7 @@ class LogAnalyticsImportCustomContent(object):
     def field_names(self, field_names):
         """
         Sets the field_names of this LogAnalyticsImportCustomContent.
-        fieldNames
+        The field names.
 
 
         :param field_names: The field_names of this LogAnalyticsImportCustomContent.
@@ -157,7 +157,7 @@ class LogAnalyticsImportCustomContent(object):
     def content_name(self):
         """
         Gets the content_name of this LogAnalyticsImportCustomContent.
-        contentName
+        The content name.
 
 
         :return: The content_name of this LogAnalyticsImportCustomContent.
@@ -169,7 +169,7 @@ class LogAnalyticsImportCustomContent(object):
     def content_name(self, content_name):
         """
         Sets the content_name of this LogAnalyticsImportCustomContent.
-        contentName
+        The content name.
 
 
         :param content_name: The content_name of this LogAnalyticsImportCustomContent.

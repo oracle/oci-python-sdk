@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExportContent(object):
     """
-    ExportContent
+    The content to export.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class ExportContent(object):
     def field_names(self):
         """
         Gets the field_names of this ExportContent.
-        fieldNames
+        The field names.
 
 
         :return: The field_names of this ExportContent.
@@ -63,7 +63,7 @@ class ExportContent(object):
     def field_names(self, field_names):
         """
         Sets the field_names of this ExportContent.
-        fieldNames
+        The field names.
 
 
         :param field_names: The field_names of this ExportContent.
@@ -75,7 +75,7 @@ class ExportContent(object):
     def parser_names(self):
         """
         Gets the parser_names of this ExportContent.
-        parserNames
+        The parser names.
 
 
         :return: The parser_names of this ExportContent.
@@ -87,7 +87,7 @@ class ExportContent(object):
     def parser_names(self, parser_names):
         """
         Sets the parser_names of this ExportContent.
-        parserNames
+        The parser names.
 
 
         :param parser_names: The parser_names of this ExportContent.
@@ -99,7 +99,7 @@ class ExportContent(object):
     def source_names(self):
         """
         Gets the source_names of this ExportContent.
-        sourceNames
+        The source names.
 
 
         :return: The source_names of this ExportContent.
@@ -111,7 +111,7 @@ class ExportContent(object):
     def source_names(self, source_names):
         """
         Sets the source_names of this ExportContent.
-        sourceNames
+        The source names.
 
 
         :param source_names: The source_names of this ExportContent.

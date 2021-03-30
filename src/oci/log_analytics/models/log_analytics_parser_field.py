@@ -120,7 +120,7 @@ class LogAnalyticsParserField(object):
     def parser_field_id(self):
         """
         Gets the parser_field_id of this LogAnalyticsParserField.
-        parser field map Id
+        The parser field unique identifier.
 
 
         :return: The parser_field_id of this LogAnalyticsParserField.
@@ -132,7 +132,7 @@ class LogAnalyticsParserField(object):
     def parser_field_id(self, parser_field_id):
         """
         Sets the parser_field_id of this LogAnalyticsParserField.
-        parser field map Id
+        The parser field unique identifier.
 
 
         :param parser_field_id: The parser_field_id of this LogAnalyticsParserField.
@@ -144,7 +144,7 @@ class LogAnalyticsParserField(object):
     def parser_field_expression(self):
         """
         Gets the parser_field_expression of this LogAnalyticsParserField.
-        field expression
+        the parser field expression.
 
 
         :return: The parser_field_expression of this LogAnalyticsParserField.
@@ -156,7 +156,7 @@ class LogAnalyticsParserField(object):
     def parser_field_expression(self, parser_field_expression):
         """
         Sets the parser_field_expression of this LogAnalyticsParserField.
-        field expression
+        the parser field expression.
 
 
         :param parser_field_expression: The parser_field_expression of this LogAnalyticsParserField.
@@ -168,7 +168,7 @@ class LogAnalyticsParserField(object):
     def parser_field_name(self):
         """
         Gets the parser_field_name of this LogAnalyticsParserField.
-        field internal name
+        The parser field internal name.
 
 
         :return: The parser_field_name of this LogAnalyticsParserField.
@@ -180,7 +180,7 @@ class LogAnalyticsParserField(object):
     def parser_field_name(self, parser_field_name):
         """
         Sets the parser_field_name of this LogAnalyticsParserField.
-        field internal name
+        The parser field internal name.
 
 
         :param parser_field_name: The parser_field_name of this LogAnalyticsParserField.
@@ -192,7 +192,7 @@ class LogAnalyticsParserField(object):
     def storage_field_name(self):
         """
         Gets the storage_field_name of this LogAnalyticsParserField.
-        internal name
+        The storage field name.
 
 
         :return: The storage_field_name of this LogAnalyticsParserField.
@@ -204,7 +204,7 @@ class LogAnalyticsParserField(object):
     def storage_field_name(self, storage_field_name):
         """
         Sets the storage_field_name of this LogAnalyticsParserField.
-        internal name
+        The storage field name.
 
 
         :param storage_field_name: The storage_field_name of this LogAnalyticsParserField.
@@ -216,7 +216,7 @@ class LogAnalyticsParserField(object):
     def parser_field_integrator_name(self):
         """
         Gets the parser_field_integrator_name of this LogAnalyticsParserField.
-        integrator name
+        The integrator name.
 
 
         :return: The parser_field_integrator_name of this LogAnalyticsParserField.
@@ -228,7 +228,7 @@ class LogAnalyticsParserField(object):
     def parser_field_integrator_name(self, parser_field_integrator_name):
         """
         Sets the parser_field_integrator_name of this LogAnalyticsParserField.
-        integrator name
+        The integrator name.
 
 
         :param parser_field_integrator_name: The parser_field_integrator_name of this LogAnalyticsParserField.
@@ -240,7 +240,7 @@ class LogAnalyticsParserField(object):
     def parser_name(self):
         """
         Gets the parser_name of this LogAnalyticsParserField.
-        parser internal name
+        The parser internal name.
 
 
         :return: The parser_name of this LogAnalyticsParserField.
@@ -252,7 +252,7 @@ class LogAnalyticsParserField(object):
     def parser_name(self, parser_name):
         """
         Sets the parser_name of this LogAnalyticsParserField.
-        parser internal name
+        The parser internal name.
 
 
         :param parser_name: The parser_name of this LogAnalyticsParserField.
@@ -264,7 +264,7 @@ class LogAnalyticsParserField(object):
     def parser_field_sequence(self):
         """
         Gets the parser_field_sequence of this LogAnalyticsParserField.
-        sequence
+        The parser field sequence.
 
 
         :return: The parser_field_sequence of this LogAnalyticsParserField.
@@ -276,7 +276,7 @@ class LogAnalyticsParserField(object):
     def parser_field_sequence(self, parser_field_sequence):
         """
         Sets the parser_field_sequence of this LogAnalyticsParserField.
-        sequence
+        The parser field sequence.
 
 
         :param parser_field_sequence: The parser_field_sequence of this LogAnalyticsParserField.
@@ -308,7 +308,7 @@ class LogAnalyticsParserField(object):
     def structured_column_info(self):
         """
         Gets the structured_column_info of this LogAnalyticsParserField.
-        structured column information
+        The structured column information.
 
 
         :return: The structured_column_info of this LogAnalyticsParserField.
@@ -320,7 +320,7 @@ class LogAnalyticsParserField(object):
     def structured_column_info(self, structured_column_info):
         """
         Sets the structured_column_info of this LogAnalyticsParserField.
-        structured column information
+        The structured column information.
 
 
         :param structured_column_info: The structured_column_info of this LogAnalyticsParserField.

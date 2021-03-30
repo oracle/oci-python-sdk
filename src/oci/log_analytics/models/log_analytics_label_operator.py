@@ -44,7 +44,7 @@ class LogAnalyticsLabelOperator(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsLabelOperator.
-        operator display name
+        The operator display name.
 
 
         :return: The display_name of this LogAnalyticsLabelOperator.
@@ -56,7 +56,7 @@ class LogAnalyticsLabelOperator(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsLabelOperator.
-        operator display name
+        The operator display name.
 
 
         :param display_name: The display_name of this LogAnalyticsLabelOperator.
@@ -68,7 +68,7 @@ class LogAnalyticsLabelOperator(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsLabelOperator.
-        operator internal name
+        The operator internal name.
 
 
         :return: The name of this LogAnalyticsLabelOperator.
@@ -80,7 +80,7 @@ class LogAnalyticsLabelOperator(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsLabelOperator.
-        operator internal name
+        The operator internal name.
 
 
         :param name: The name of this LogAnalyticsLabelOperator.

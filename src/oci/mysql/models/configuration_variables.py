@@ -57,6 +57,26 @@ class ConfigurationVariables(object):
     #: This constant has a value of "SERIALIZABLE"
     TRANSACTION_ISOLATION_SERIALIZABLE = "SERIALIZABLE"
 
+    #: A constant which can be used with the group_replication_consistency property of a ConfigurationVariables.
+    #: This constant has a value of "EVENTUAL"
+    GROUP_REPLICATION_CONSISTENCY_EVENTUAL = "EVENTUAL"
+
+    #: A constant which can be used with the group_replication_consistency property of a ConfigurationVariables.
+    #: This constant has a value of "BEFORE_ON_PRIMARY_FAILOVER"
+    GROUP_REPLICATION_CONSISTENCY_BEFORE_ON_PRIMARY_FAILOVER = "BEFORE_ON_PRIMARY_FAILOVER"
+
+    #: A constant which can be used with the group_replication_consistency property of a ConfigurationVariables.
+    #: This constant has a value of "BEFORE"
+    GROUP_REPLICATION_CONSISTENCY_BEFORE = "BEFORE"
+
+    #: A constant which can be used with the group_replication_consistency property of a ConfigurationVariables.
+    #: This constant has a value of "AFTER"
+    GROUP_REPLICATION_CONSISTENCY_AFTER = "AFTER"
+
+    #: A constant which can be used with the group_replication_consistency property of a ConfigurationVariables.
+    #: This constant has a value of "BEFORE_AND_AFTER"
+    GROUP_REPLICATION_CONSISTENCY_BEFORE_AND_AFTER = "BEFORE_AND_AFTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConfigurationVariables object with values from keyword arguments.
@@ -95,6 +115,12 @@ class ConfigurationVariables(object):
         :param foreign_key_checks:
             The value to assign to the foreign_key_checks property of this ConfigurationVariables.
         :type foreign_key_checks: bool
+
+        :param group_replication_consistency:
+            The value to assign to the group_replication_consistency property of this ConfigurationVariables.
+            Allowed values for this property are: "EVENTUAL", "BEFORE_ON_PRIMARY_FAILOVER", "BEFORE", "AFTER", "BEFORE_AND_AFTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type group_replication_consistency: str
 
         :param innodb_ft_enable_stopword:
             The value to assign to the innodb_ft_enable_stopword property of this ConfigurationVariables.
@@ -277,6 +303,7 @@ class ConfigurationVariables(object):
             'mandatory_roles': 'str',
             'autocommit': 'bool',
             'foreign_key_checks': 'bool',
+            'group_replication_consistency': 'str',
             'innodb_ft_enable_stopword': 'bool',
             'local_infile': 'bool',
             'mysql_firewall_mode': 'bool',
@@ -330,6 +357,7 @@ class ConfigurationVariables(object):
             'mandatory_roles': 'mandatoryRoles',
             'autocommit': 'autocommit',
             'foreign_key_checks': 'foreignKeyChecks',
+            'group_replication_consistency': 'groupReplicationConsistency',
             'innodb_ft_enable_stopword': 'innodbFtEnableStopword',
             'local_infile': 'localInfile',
             'mysql_firewall_mode': 'mysqlFirewallMode',
@@ -382,6 +410,7 @@ class ConfigurationVariables(object):
         self._mandatory_roles = None
         self._autocommit = None
         self._foreign_key_checks = None
+        self._group_replication_consistency = None
         self._innodb_ft_enable_stopword = None
         self._local_infile = None
         self._mysql_firewall_mode = None
@@ -611,6 +640,92 @@ class ConfigurationVariables(object):
         :type: bool
         """
         self._foreign_key_checks = foreign_key_checks
+
+    @property
+    def group_replication_consistency(self):
+        """
+        Gets the group_replication_consistency of this ConfigurationVariables.
+        - EVENTUAL:
+            Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+            A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+            could be externalized on one member before the others. This also means that in the event of a primary failover,
+            the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+            RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+        - BEFORE_ON_PRIMARY_FAILOVER:
+            New RO or RW transactions with a newly elected primary that is applying backlog from the old
+            primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+            intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+            clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+            but does depend on the size of the backlog.
+        - BEFORE:
+            A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+            transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+            latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+            used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        - AFTER:
+            A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+            This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+            a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+            applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+            reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+            by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+            provided by BEFORE_ON_PRIMARY_FAILOVER.
+        - BEFORE_AND_AFTER:
+            A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+            applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+            This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+
+        Allowed values for this property are: "EVENTUAL", "BEFORE_ON_PRIMARY_FAILOVER", "BEFORE", "AFTER", "BEFORE_AND_AFTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The group_replication_consistency of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._group_replication_consistency
+
+    @group_replication_consistency.setter
+    def group_replication_consistency(self, group_replication_consistency):
+        """
+        Sets the group_replication_consistency of this ConfigurationVariables.
+        - EVENTUAL:
+            Both RO and RW transactions do not wait for preceding transactions to be applied before executing.
+            A RW transaction does not wait for other members to apply a transaction. This means that a transaction
+            could be externalized on one member before the others. This also means that in the event of a primary failover,
+            the new primary can accept new RO and RW transactions before the previous primary transactions are all applied.
+            RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+        - BEFORE_ON_PRIMARY_FAILOVER:
+            New RO or RW transactions with a newly elected primary that is applying backlog from the old
+            primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens,
+            intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that
+            clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal,
+            but does depend on the size of the backlog.
+        - BEFORE:
+            A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding
+            transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the
+            latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is
+            used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        - AFTER:
+            A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions.
+            This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or
+            a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that
+            applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent
+            reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction,
+            by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees
+            provided by BEFORE_ON_PRIMARY_FAILOVER.
+        - BEFORE_AND_AFTER:
+            A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been
+            applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place.
+            This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+
+
+        :param group_replication_consistency: The group_replication_consistency of this ConfigurationVariables.
+        :type: str
+        """
+        allowed_values = ["EVENTUAL", "BEFORE_ON_PRIMARY_FAILOVER", "BEFORE", "AFTER", "BEFORE_AND_AFTER"]
+        if not value_allowed_none_or_none_sentinel(group_replication_consistency, allowed_values):
+            group_replication_consistency = 'UNKNOWN_ENUM_VALUE'
+        self._group_replication_consistency = group_replication_consistency
 
     @property
     def innodb_ft_enable_stopword(self):

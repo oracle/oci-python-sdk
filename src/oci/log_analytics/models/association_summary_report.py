@@ -37,7 +37,7 @@ class AssociationSummaryReport(object):
     def association_count(self):
         """
         Gets the association_count of this AssociationSummaryReport.
-        association count
+        The association count.
 
 
         :return: The association_count of this AssociationSummaryReport.
@@ -49,7 +49,7 @@ class AssociationSummaryReport(object):
     def association_count(self, association_count):
         """
         Sets the association_count of this AssociationSummaryReport.
-        association count
+        The association count.
 
 
         :param association_count: The association_count of this AssociationSummaryReport.

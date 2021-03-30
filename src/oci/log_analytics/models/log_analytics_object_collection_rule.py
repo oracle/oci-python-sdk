@@ -548,7 +548,7 @@ class LogAnalyticsObjectCollectionRule(object):
         """
         Gets the overrides of this LogAnalyticsObjectCollectionRule.
         Use this to override some property values which are defined at bucket level to the scope of object.
-        Supported propeties for override are, logSourceName, charEncoding.
+        Supported propeties for override are: logSourceName, charEncoding, entityId.
         Supported matchType for override are \"contains\".
 
 
@@ -562,7 +562,7 @@ class LogAnalyticsObjectCollectionRule(object):
         """
         Sets the overrides of this LogAnalyticsObjectCollectionRule.
         Use this to override some property values which are defined at bucket level to the scope of object.
-        Supported propeties for override are, logSourceName, charEncoding.
+        Supported propeties for override are: logSourceName, charEncoding, entityId.
         Supported matchType for override are \"contains\".
 
 

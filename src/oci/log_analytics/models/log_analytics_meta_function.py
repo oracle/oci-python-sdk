@@ -79,7 +79,7 @@ class LogAnalyticsMetaFunction(object):
     def meta_function_argument(self):
         """
         Gets the meta_function_argument of this LogAnalyticsMetaFunction.
-        meta function argument object
+        An array of meta function arguments.
 
 
         :return: The meta_function_argument of this LogAnalyticsMetaFunction.
@@ -91,7 +91,7 @@ class LogAnalyticsMetaFunction(object):
     def meta_function_argument(self, meta_function_argument):
         """
         Sets the meta_function_argument of this LogAnalyticsMetaFunction.
-        meta function argument object
+        An array of meta function arguments.
 
 
         :param meta_function_argument: The meta_function_argument of this LogAnalyticsMetaFunction.
@@ -103,7 +103,7 @@ class LogAnalyticsMetaFunction(object):
     def component(self):
         """
         Gets the component of this LogAnalyticsMetaFunction.
-        component
+        The component.
 
 
         :return: The component of this LogAnalyticsMetaFunction.
@@ -115,7 +115,7 @@ class LogAnalyticsMetaFunction(object):
     def component(self, component):
         """
         Sets the component of this LogAnalyticsMetaFunction.
-        component
+        The component.
 
 
         :param component: The component of this LogAnalyticsMetaFunction.
@@ -127,7 +127,7 @@ class LogAnalyticsMetaFunction(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsMetaFunction.
-        description
+        The description.
 
 
         :return: The description of this LogAnalyticsMetaFunction.
@@ -139,7 +139,7 @@ class LogAnalyticsMetaFunction(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsMetaFunction.
-        description
+        The description.
 
 
         :param description: The description of this LogAnalyticsMetaFunction.
@@ -151,7 +151,7 @@ class LogAnalyticsMetaFunction(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsMetaFunction.
-        edit version
+        The edit version.
 
 
         :return: The edit_version of this LogAnalyticsMetaFunction.
@@ -163,7 +163,7 @@ class LogAnalyticsMetaFunction(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsMetaFunction.
-        edit version
+        The edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsMetaFunction.
@@ -175,7 +175,7 @@ class LogAnalyticsMetaFunction(object):
     def meta_function_id(self):
         """
         Gets the meta_function_id of this LogAnalyticsMetaFunction.
-        meta function Id
+        The meta function unique identifier.
 
 
         :return: The meta_function_id of this LogAnalyticsMetaFunction.
@@ -187,7 +187,7 @@ class LogAnalyticsMetaFunction(object):
     def meta_function_id(self, meta_function_id):
         """
         Sets the meta_function_id of this LogAnalyticsMetaFunction.
-        meta function Id
+        The meta function unique identifier.
 
 
         :param meta_function_id: The meta_function_id of this LogAnalyticsMetaFunction.
@@ -199,7 +199,7 @@ class LogAnalyticsMetaFunction(object):
     def java_class_name(self):
         """
         Gets the java_class_name of this LogAnalyticsMetaFunction.
-        java class name
+        The java class name.
 
 
         :return: The java_class_name of this LogAnalyticsMetaFunction.
@@ -211,7 +211,7 @@ class LogAnalyticsMetaFunction(object):
     def java_class_name(self, java_class_name):
         """
         Sets the java_class_name of this LogAnalyticsMetaFunction.
-        java class name
+        The java class name.
 
 
         :param java_class_name: The java_class_name of this LogAnalyticsMetaFunction.
@@ -223,7 +223,7 @@ class LogAnalyticsMetaFunction(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsMetaFunction.
-        meta function name
+        The meta function name.
 
 
         :return: The name of this LogAnalyticsMetaFunction.
@@ -235,7 +235,7 @@ class LogAnalyticsMetaFunction(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsMetaFunction.
-        meta function name
+        The meta function name.
 
 
         :param name: The name of this LogAnalyticsMetaFunction.

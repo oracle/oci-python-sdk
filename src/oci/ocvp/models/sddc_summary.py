@@ -245,8 +245,7 @@ class SddcSummary(object):
         **[Required]** Gets the vmware_software_version of this SddcSummary.
         In general, this is a specific version of bundled VMware software supported by
         Oracle Cloud VMware Solution (see
-        :func:`
-        _list_supported_vmware_software_versions`).
+        :func:`list_supported_vmware_software_versions`).
 
         This attribute is not guaranteed to reflect the version of
         software currently installed on the ESXi hosts in the SDDC. The purpose
@@ -271,8 +270,7 @@ class SddcSummary(object):
         Sets the vmware_software_version of this SddcSummary.
         In general, this is a specific version of bundled VMware software supported by
         Oracle Cloud VMware Solution (see
-        :func:`
-        _list_supported_vmware_software_versions`).
+        :func:`list_supported_vmware_software_versions`).
 
         This attribute is not guaranteed to reflect the version of
         software currently installed on the ESXi hosts in the SDDC. The purpose

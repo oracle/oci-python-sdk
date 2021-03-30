@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeLogAnalyticsLogGroupCompartmentDetails(object):
     """
-    The information to be updated.
+    The information required to change a log group compartment.
     """
 
     def __init__(self, **kwargs):

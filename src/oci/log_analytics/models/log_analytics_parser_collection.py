@@ -37,7 +37,7 @@ class LogAnalyticsParserCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsParserCollection.
-        list of parsers
+        An array of parsers.
 
 
         :return: The items of this LogAnalyticsParserCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsParserCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsParserCollection.
-        list of parsers
+        An array of parsers.
 
 
         :param items: The items of this LogAnalyticsParserCollection.

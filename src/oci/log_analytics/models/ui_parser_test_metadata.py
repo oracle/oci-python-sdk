@@ -51,7 +51,7 @@ class UiParserTestMetadata(object):
     def last_modified_time(self):
         """
         Gets the last_modified_time of this UiParserTestMetadata.
-        Last modified time
+        The last modified time.
 
 
         :return: The last_modified_time of this UiParserTestMetadata.
@@ -63,7 +63,7 @@ class UiParserTestMetadata(object):
     def last_modified_time(self, last_modified_time):
         """
         Sets the last_modified_time of this UiParserTestMetadata.
-        Last modified time
+        The last modified time.
 
 
         :param last_modified_time: The last_modified_time of this UiParserTestMetadata.
@@ -75,7 +75,7 @@ class UiParserTestMetadata(object):
     def log_file_name(self):
         """
         Gets the log_file_name of this UiParserTestMetadata.
-        Name of log file
+        The log file name.
 
 
         :return: The log_file_name of this UiParserTestMetadata.
@@ -87,7 +87,7 @@ class UiParserTestMetadata(object):
     def log_file_name(self, log_file_name):
         """
         Sets the log_file_name of this UiParserTestMetadata.
-        Name of log file
+        The log file name.
 
 
         :param log_file_name: The log_file_name of this UiParserTestMetadata.
@@ -99,7 +99,7 @@ class UiParserTestMetadata(object):
     def time_zone(self):
         """
         Gets the time_zone of this UiParserTestMetadata.
-        timeZone
+        The time zone.
 
 
         :return: The time_zone of this UiParserTestMetadata.
@@ -111,7 +111,7 @@ class UiParserTestMetadata(object):
     def time_zone(self, time_zone):
         """
         Sets the time_zone of this UiParserTestMetadata.
-        timeZone
+        The time zone.
 
 
         :param time_zone: The time_zone of this UiParserTestMetadata.

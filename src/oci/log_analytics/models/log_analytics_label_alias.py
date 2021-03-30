@@ -90,7 +90,7 @@ class LogAnalyticsLabelAlias(object):
     def alias(self):
         """
         Gets the alias of this LogAnalyticsLabelAlias.
-        alias
+        The alias.
 
 
         :return: The alias of this LogAnalyticsLabelAlias.
@@ -102,7 +102,7 @@ class LogAnalyticsLabelAlias(object):
     def alias(self, alias):
         """
         Sets the alias of this LogAnalyticsLabelAlias.
-        alias
+        The alias.
 
 
         :param alias: The alias of this LogAnalyticsLabelAlias.
@@ -114,7 +114,7 @@ class LogAnalyticsLabelAlias(object):
     def alias_display_name(self):
         """
         Gets the alias_display_name of this LogAnalyticsLabelAlias.
-        alias display name
+        The alias display name.
 
 
         :return: The alias_display_name of this LogAnalyticsLabelAlias.
@@ -126,7 +126,7 @@ class LogAnalyticsLabelAlias(object):
     def alias_display_name(self, alias_display_name):
         """
         Sets the alias_display_name of this LogAnalyticsLabelAlias.
-        alias display name
+        The alias display name.
 
 
         :param alias_display_name: The alias_display_name of this LogAnalyticsLabelAlias.
@@ -138,7 +138,8 @@ class LogAnalyticsLabelAlias(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsLabelAlias.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsLabelAlias.
@@ -150,7 +151,8 @@ class LogAnalyticsLabelAlias(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsLabelAlias.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsLabelAlias.
@@ -162,7 +164,7 @@ class LogAnalyticsLabelAlias(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsLabelAlias.
-        label display name
+        The label display name.
 
 
         :return: The display_name of this LogAnalyticsLabelAlias.
@@ -174,7 +176,7 @@ class LogAnalyticsLabelAlias(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsLabelAlias.
-        label display name
+        The label display name.
 
 
         :param display_name: The display_name of this LogAnalyticsLabelAlias.
@@ -186,7 +188,7 @@ class LogAnalyticsLabelAlias(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsLabelAlias.
-        label name
+        The label name.
 
 
         :return: The name of this LogAnalyticsLabelAlias.
@@ -198,7 +200,7 @@ class LogAnalyticsLabelAlias(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsLabelAlias.
-        label name
+        The label name.
 
 
         :param name: The name of this LogAnalyticsLabelAlias.
@@ -210,7 +212,7 @@ class LogAnalyticsLabelAlias(object):
     def priority(self):
         """
         Gets the priority of this LogAnalyticsLabelAlias.
-        priority
+        The label priority. Default value is NONE.
 
         Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -225,7 +227,7 @@ class LogAnalyticsLabelAlias(object):
     def priority(self, priority):
         """
         Sets the priority of this LogAnalyticsLabelAlias.
-        priority
+        The label priority. Default value is NONE.
 
 
         :param priority: The priority of this LogAnalyticsLabelAlias.

@@ -37,7 +37,7 @@ class ExtractLogFieldResults(object):
     def paths(self):
         """
         Gets the paths of this ExtractLogFieldResults.
-        log field path values
+        The log field path values.
 
 
         :return: The paths of this ExtractLogFieldResults.
@@ -49,7 +49,7 @@ class ExtractLogFieldResults(object):
     def paths(self, paths):
         """
         Sets the paths of this ExtractLogFieldResults.
-        log field path values
+        The log field path values.
 
 
         :param paths: The paths of this ExtractLogFieldResults.

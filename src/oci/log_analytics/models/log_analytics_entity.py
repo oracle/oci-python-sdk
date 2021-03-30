@@ -76,6 +76,10 @@ class LogAnalyticsEntity(object):
             The value to assign to the properties property of this LogAnalyticsEntity.
         :type properties: dict(str, str)
 
+        :param creation_source:
+            The value to assign to the creation_source property of this LogAnalyticsEntity.
+        :type creation_source: oci.log_analytics.models.CreationSource
+
         :param time_created:
             The value to assign to the time_created property of this LogAnalyticsEntity.
         :type time_created: datetime
@@ -122,6 +126,7 @@ class LogAnalyticsEntity(object):
             'management_agent_compartment_id': 'str',
             'timezone_region': 'str',
             'properties': 'dict(str, str)',
+            'creation_source': 'CreationSource',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'are_logs_collected': 'bool',
@@ -145,6 +150,7 @@ class LogAnalyticsEntity(object):
             'management_agent_compartment_id': 'managementAgentCompartmentId',
             'timezone_region': 'timezoneRegion',
             'properties': 'properties',
+            'creation_source': 'creationSource',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'are_logs_collected': 'areLogsCollected',
@@ -167,6 +173,7 @@ class LogAnalyticsEntity(object):
         self._management_agent_compartment_id = None
         self._timezone_region = None
         self._properties = None
+        self._creation_source = None
         self._time_created = None
         self._time_updated = None
         self._are_logs_collected = None
@@ -475,6 +482,26 @@ class LogAnalyticsEntity(object):
         :type: dict(str, str)
         """
         self._properties = properties
+
+    @property
+    def creation_source(self):
+        """
+        Gets the creation_source of this LogAnalyticsEntity.
+
+        :return: The creation_source of this LogAnalyticsEntity.
+        :rtype: oci.log_analytics.models.CreationSource
+        """
+        return self._creation_source
+
+    @creation_source.setter
+    def creation_source(self, creation_source):
+        """
+        Sets the creation_source of this LogAnalyticsEntity.
+
+        :param creation_source: The creation_source of this LogAnalyticsEntity.
+        :type: oci.log_analytics.models.CreationSource
+        """
+        self._creation_source = creation_source
 
     @property
     def time_created(self):

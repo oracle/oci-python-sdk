@@ -134,6 +134,14 @@ class Key(object):
             The value to assign to the restored_from_key_id property of this Key.
         :type restored_from_key_id: str
 
+        :param replica_details:
+            The value to assign to the replica_details property of this Key.
+        :type replica_details: oci.key_management.models.KeyReplicaDetails
+
+        :param is_primary:
+            The value to assign to the is_primary property of this Key.
+        :type is_primary: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -148,7 +156,9 @@ class Key(object):
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
             'vault_id': 'str',
-            'restored_from_key_id': 'str'
+            'restored_from_key_id': 'str',
+            'replica_details': 'KeyReplicaDetails',
+            'is_primary': 'bool'
         }
 
         self.attribute_map = {
@@ -164,7 +174,9 @@ class Key(object):
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
             'vault_id': 'vaultId',
-            'restored_from_key_id': 'restoredFromKeyId'
+            'restored_from_key_id': 'restoredFromKeyId',
+            'replica_details': 'replicaDetails',
+            'is_primary': 'isPrimary'
         }
 
         self._compartment_id = None
@@ -180,6 +192,8 @@ class Key(object):
         self._time_of_deletion = None
         self._vault_id = None
         self._restored_from_key_id = None
+        self._replica_details = None
+        self._is_primary = None
 
     @property
     def compartment_id(self):
@@ -548,6 +562,46 @@ class Key(object):
         :type: str
         """
         self._restored_from_key_id = restored_from_key_id
+
+    @property
+    def replica_details(self):
+        """
+        Gets the replica_details of this Key.
+
+        :return: The replica_details of this Key.
+        :rtype: oci.key_management.models.KeyReplicaDetails
+        """
+        return self._replica_details
+
+    @replica_details.setter
+    def replica_details(self, replica_details):
+        """
+        Sets the replica_details of this Key.
+
+        :param replica_details: The replica_details of this Key.
+        :type: oci.key_management.models.KeyReplicaDetails
+        """
+        self._replica_details = replica_details
+
+    @property
+    def is_primary(self):
+        """
+        Gets the is_primary of this Key.
+
+        :return: The is_primary of this Key.
+        :rtype: bool
+        """
+        return self._is_primary
+
+    @is_primary.setter
+    def is_primary(self, is_primary):
+        """
+        Sets the is_primary of this Key.
+
+        :param is_primary: The is_primary of this Key.
+        :type: bool
+        """
+        self._is_primary = is_primary
 
     def __repr__(self):
         return formatted_flat_dict(self)

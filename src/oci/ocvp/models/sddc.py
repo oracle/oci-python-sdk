@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Sddc(object):
     """
-    A software-defined data center (SDDC) contains the resources required for a
+    An `Oracle Cloud VMware Solution`__ software-defined data center (SDDC) contains the resources required for a
     functional VMware environment. Instances in an SDDC
     (see :class:`EsxiHost`) run in a virtual cloud network (VCN)
     and are preconfigured with VMware and storage. Use the vCenter utility to manage
@@ -19,6 +19,8 @@ class Sddc(object):
     The SDDC uses a single management subnet for provisioning the SDDC. It also uses a
     set of VLANs for various components of the VMware environment (vSphere, vMotion,
     vSAN, and so on). See the Core Services API for information about VCN subnets and VLANs.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Sddc.
@@ -158,6 +160,14 @@ class Sddc(object):
             The value to assign to the nsx_edge_uplink2_vlan_id property of this Sddc.
         :type nsx_edge_uplink2_vlan_id: str
 
+        :param replication_vlan_id:
+            The value to assign to the replication_vlan_id property of this Sddc.
+        :type replication_vlan_id: str
+
+        :param provisioning_vlan_id:
+            The value to assign to the provisioning_vlan_id property of this Sddc.
+        :type provisioning_vlan_id: str
+
         :param hcx_private_ip_id:
             The value to assign to the hcx_private_ip_id property of this Sddc.
         :type hcx_private_ip_id: str
@@ -233,6 +243,8 @@ class Sddc(object):
             'nsx_edge_v_tep_vlan_id': 'str',
             'nsx_edge_uplink1_vlan_id': 'str',
             'nsx_edge_uplink2_vlan_id': 'str',
+            'replication_vlan_id': 'str',
+            'provisioning_vlan_id': 'str',
             'hcx_private_ip_id': 'str',
             'hcx_fqdn': 'str',
             'hcx_initial_password': 'str',
@@ -274,6 +286,8 @@ class Sddc(object):
             'nsx_edge_v_tep_vlan_id': 'nsxEdgeVTepVlanId',
             'nsx_edge_uplink1_vlan_id': 'nsxEdgeUplink1VlanId',
             'nsx_edge_uplink2_vlan_id': 'nsxEdgeUplink2VlanId',
+            'replication_vlan_id': 'replicationVlanId',
+            'provisioning_vlan_id': 'provisioningVlanId',
             'hcx_private_ip_id': 'hcxPrivateIpId',
             'hcx_fqdn': 'hcxFqdn',
             'hcx_initial_password': 'hcxInitialPassword',
@@ -314,6 +328,8 @@ class Sddc(object):
         self._nsx_edge_v_tep_vlan_id = None
         self._nsx_edge_uplink1_vlan_id = None
         self._nsx_edge_uplink2_vlan_id = None
+        self._replication_vlan_id = None
+        self._provisioning_vlan_id = None
         self._hcx_private_ip_id = None
         self._hcx_fqdn = None
         self._hcx_initial_password = None
@@ -448,8 +464,7 @@ class Sddc(object):
         **[Required]** Gets the vmware_software_version of this Sddc.
         In general, this is a specific version of bundled VMware software supported by
         Oracle Cloud VMware Solution (see
-        :func:`
-        _list_supported_vmware_software_versions`).
+        :func:`list_supported_vmware_software_versions`).
 
         This attribute is not guaranteed to reflect the version of
         software currently installed on the ESXi hosts in the SDDC. The purpose
@@ -474,8 +489,7 @@ class Sddc(object):
         Sets the vmware_software_version of this Sddc.
         In general, this is a specific version of bundled VMware software supported by
         Oracle Cloud VMware Solution (see
-        :func:`
-        _list_supported_vmware_software_versions`).
+        :func:`list_supported_vmware_software_versions`).
 
         This attribute is not guaranteed to reflect the version of
         software currently installed on the ESXi hosts in the SDDC. The purpose
@@ -552,7 +566,7 @@ class Sddc(object):
     def vcenter_fqdn(self):
         """
         **[Required]** Gets the vcenter_fqdn of this Sddc.
-        FQDN for vCenter
+        The FQDN for vCenter.
 
         Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 
@@ -566,7 +580,7 @@ class Sddc(object):
     def vcenter_fqdn(self, vcenter_fqdn):
         """
         Sets the vcenter_fqdn of this Sddc.
-        FQDN for vCenter
+        The FQDN for vCenter.
 
         Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 
@@ -580,7 +594,7 @@ class Sddc(object):
     def nsx_manager_fqdn(self):
         """
         **[Required]** Gets the nsx_manager_fqdn of this Sddc.
-        FQDN for NSX Manager
+        The FQDN for NSX Manager.
 
         Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 
@@ -594,7 +608,7 @@ class Sddc(object):
     def nsx_manager_fqdn(self, nsx_manager_fqdn):
         """
         Sets the nsx_manager_fqdn of this Sddc.
-        FQDN for NSX Manager
+        The FQDN for NSX Manager.
 
         Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 
@@ -1301,10 +1315,74 @@ class Sddc(object):
         self._nsx_edge_uplink2_vlan_id = nsx_edge_uplink2_vlan_id
 
     @property
+    def replication_vlan_id(self):
+        """
+        Gets the replication_vlan_id of this Sddc.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the vSphere Replication component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The replication_vlan_id of this Sddc.
+        :rtype: str
+        """
+        return self._replication_vlan_id
+
+    @replication_vlan_id.setter
+    def replication_vlan_id(self, replication_vlan_id):
+        """
+        Sets the replication_vlan_id of this Sddc.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the vSphere Replication component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param replication_vlan_id: The replication_vlan_id of this Sddc.
+        :type: str
+        """
+        self._replication_vlan_id = replication_vlan_id
+
+    @property
+    def provisioning_vlan_id(self):
+        """
+        Gets the provisioning_vlan_id of this Sddc.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the Provisioning component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The provisioning_vlan_id of this Sddc.
+        :rtype: str
+        """
+        return self._provisioning_vlan_id
+
+    @provisioning_vlan_id.setter
+    def provisioning_vlan_id(self, provisioning_vlan_id):
+        """
+        Sets the provisioning_vlan_id of this Sddc.
+        The `OCID`__ of the VLAN used by the SDDC
+        for the Provisioning component of the VMware environment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param provisioning_vlan_id: The provisioning_vlan_id of this Sddc.
+        :type: str
+        """
+        self._provisioning_vlan_id = provisioning_vlan_id
+
+    @property
     def hcx_private_ip_id(self):
         """
         Gets the hcx_private_ip_id of this Sddc.
-        HCX Private IP
+        The `OCID`__ of the `PrivateIp` object that is
+        the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the
+        Core Services API.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The hcx_private_ip_id of this Sddc.
@@ -1316,7 +1394,11 @@ class Sddc(object):
     def hcx_private_ip_id(self, hcx_private_ip_id):
         """
         Sets the hcx_private_ip_id of this Sddc.
-        HCX Private IP
+        The `OCID`__ of the `PrivateIp` object that is
+        the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the
+        Core Services API.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param hcx_private_ip_id: The hcx_private_ip_id of this Sddc.
@@ -1328,7 +1410,9 @@ class Sddc(object):
     def hcx_fqdn(self):
         """
         Gets the hcx_fqdn of this Sddc.
-        HCX Fully Qualified Domain Name
+        The FQDN for HCX Manager.
+
+        Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 
 
         :return: The hcx_fqdn of this Sddc.
@@ -1340,7 +1424,9 @@ class Sddc(object):
     def hcx_fqdn(self, hcx_fqdn):
         """
         Sets the hcx_fqdn of this Sddc.
-        HCX Fully Qualified Domain Name
+        The FQDN for HCX Manager.
+
+        Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 
 
         :param hcx_fqdn: The hcx_fqdn of this Sddc.
@@ -1352,7 +1438,8 @@ class Sddc(object):
     def hcx_initial_password(self):
         """
         Gets the hcx_initial_password of this Sddc.
-        HCX initial password
+        The SDDC includes an administrator username and initial password for HCX Manager. Make sure
+        to change this initial HCX Manager password to a different value.
 
 
         :return: The hcx_initial_password of this Sddc.
@@ -1364,7 +1451,8 @@ class Sddc(object):
     def hcx_initial_password(self, hcx_initial_password):
         """
         Sets the hcx_initial_password of this Sddc.
-        HCX initial password
+        The SDDC includes an administrator username and initial password for HCX Manager. Make sure
+        to change this initial HCX Manager password to a different value.
 
 
         :param hcx_initial_password: The hcx_initial_password of this Sddc.
@@ -1376,7 +1464,21 @@ class Sddc(object):
     def hcx_vlan_id(self):
         """
         Gets the hcx_vlan_id of this Sddc.
-        HCX vlan id
+        The `OCID`__ of the VLAN used by the SDDC
+        for the HCX component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the HCX VLAN
+        currently used by the ESXi hosts in the SDDC. The purpose
+        of this attribute is to show the HCX VLAN that the Oracle
+        Cloud VMware Solution will use for any new ESXi hosts that you *add to this
+        SDDC in the future* with :func:`create_esxi_host`.
+
+        Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
+        for the HCX component of the VMware environment, you
+        should use :func:`update_sddc` to update the SDDC's
+        `hcxVlanId` with that new VLAN's OCID.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The hcx_vlan_id of this Sddc.
@@ -1388,7 +1490,21 @@ class Sddc(object):
     def hcx_vlan_id(self, hcx_vlan_id):
         """
         Sets the hcx_vlan_id of this Sddc.
-        HCX vlan id
+        The `OCID`__ of the VLAN used by the SDDC
+        for the HCX component of the VMware environment.
+
+        This attribute is not guaranteed to reflect the HCX VLAN
+        currently used by the ESXi hosts in the SDDC. The purpose
+        of this attribute is to show the HCX VLAN that the Oracle
+        Cloud VMware Solution will use for any new ESXi hosts that you *add to this
+        SDDC in the future* with :func:`create_esxi_host`.
+
+        Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN
+        for the HCX component of the VMware environment, you
+        should use :func:`update_sddc` to update the SDDC's
+        `hcxVlanId` with that new VLAN's OCID.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param hcx_vlan_id: The hcx_vlan_id of this Sddc.
@@ -1400,7 +1516,7 @@ class Sddc(object):
     def is_hcx_enabled(self):
         """
         Gets the is_hcx_enabled of this Sddc.
-        HCX enabled or not
+        Indicates whether HCX is enabled for this SDDC.
 
 
         :return: The is_hcx_enabled of this Sddc.
@@ -1412,7 +1528,7 @@ class Sddc(object):
     def is_hcx_enabled(self, is_hcx_enabled):
         """
         Sets the is_hcx_enabled of this Sddc.
-        HCX enabled or not
+        Indicates whether HCX is enabled for this SDDC.
 
 
         :param is_hcx_enabled: The is_hcx_enabled of this Sddc.
@@ -1424,7 +1540,8 @@ class Sddc(object):
     def hcx_on_prem_key(self):
         """
         Gets the hcx_on_prem_key of this Sddc.
-        HCX on-premise license key
+        The activation key to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+        Your implementation might need more than one activation key. To obtain additional keys, contact Oracle Support.
 
 
         :return: The hcx_on_prem_key of this Sddc.
@@ -1436,7 +1553,8 @@ class Sddc(object):
     def hcx_on_prem_key(self, hcx_on_prem_key):
         """
         Sets the hcx_on_prem_key of this Sddc.
-        HCX on-premise license key
+        The activation key to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+        Your implementation might need more than one activation key. To obtain additional keys, contact Oracle Support.
 
 
         :param hcx_on_prem_key: The hcx_on_prem_key of this Sddc.

@@ -126,7 +126,7 @@ class VerifyDataDetails(object):
     def key_id(self):
         """
         **[Required]** Gets the key_id of this VerifyDataDetails.
-        The OCID of the key used to sign the message
+        The OCID of the key used to sign the message.
 
 
         :return: The key_id of this VerifyDataDetails.
@@ -138,7 +138,7 @@ class VerifyDataDetails(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this VerifyDataDetails.
-        The OCID of the key used to sign the message
+        The OCID of the key used to sign the message.
 
 
         :param key_id: The key_id of this VerifyDataDetails.
@@ -150,7 +150,7 @@ class VerifyDataDetails(object):
     def key_version_id(self):
         """
         **[Required]** Gets the key_version_id of this VerifyDataDetails.
-        The OCID of the keyVersion used to sign the message
+        The OCID of the key version used to sign the message.
 
 
         :return: The key_version_id of this VerifyDataDetails.
@@ -162,7 +162,7 @@ class VerifyDataDetails(object):
     def key_version_id(self, key_version_id):
         """
         Sets the key_version_id of this VerifyDataDetails.
-        The OCID of the keyVersion used to sign the message
+        The OCID of the key version used to sign the message.
 
 
         :param key_version_id: The key_version_id of this VerifyDataDetails.
@@ -174,7 +174,7 @@ class VerifyDataDetails(object):
     def signature(self):
         """
         **[Required]** Gets the signature of this VerifyDataDetails.
-        The Base64-encoded binary data object denoting the cryptographic signature that was generated for the message.
+        The base64-encoded binary data object denoting the cryptographic signature generated for the message.
 
 
         :return: The signature of this VerifyDataDetails.
@@ -186,7 +186,7 @@ class VerifyDataDetails(object):
     def signature(self, signature):
         """
         Sets the signature of this VerifyDataDetails.
-        The Base64-encoded binary data object denoting the cryptographic signature that was generated for the message.
+        The base64-encoded binary data object denoting the cryptographic signature generated for the message.
 
 
         :param signature: The signature of this VerifyDataDetails.
@@ -198,7 +198,8 @@ class VerifyDataDetails(object):
     def message_type(self):
         """
         Gets the message_type of this VerifyDataDetails.
-        Denotes whether the value of the message parameter is a raw message or a message digest. The default value, RAW, indicates a message. To indicate a message digest, enter DIGEST.
+        Denotes whether the value of the message parameter is a raw message or a message digest.
+        The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
 
         Allowed values for this property are: "RAW", "DIGEST"
 
@@ -212,7 +213,8 @@ class VerifyDataDetails(object):
     def message_type(self, message_type):
         """
         Sets the message_type of this VerifyDataDetails.
-        Denotes whether the value of the message parameter is a raw message or a message digest. The default value, RAW, indicates a message. To indicate a message digest, enter DIGEST.
+        Denotes whether the value of the message parameter is a raw message or a message digest.
+        The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
 
 
         :param message_type: The message_type of this VerifyDataDetails.
@@ -230,7 +232,7 @@ class VerifyDataDetails(object):
     def message(self):
         """
         **[Required]** Gets the message of this VerifyDataDetails.
-        The Base64-encoded binary data object denoting the message or message digest to be signed. Message can be upto 4096 size in bytes. To sign a larger message, provide the message digest.
+        The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
 
 
         :return: The message of this VerifyDataDetails.
@@ -242,7 +244,7 @@ class VerifyDataDetails(object):
     def message(self, message):
         """
         Sets the message of this VerifyDataDetails.
-        The Base64-encoded binary data object denoting the message or message digest to be signed. Message can be upto 4096 size in bytes. To sign a larger message, provide the message digest.
+        The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
 
 
         :param message: The message of this VerifyDataDetails.
@@ -254,12 +256,12 @@ class VerifyDataDetails(object):
     def signing_algorithm(self):
         """
         **[Required]** Gets the signing_algorithm of this VerifyDataDetails.
-        The algorithm to be used for signing the message or message digest
-        For RSA keys, there are two supported Signature Schemes: PKCS1 and PSS along with
-        different Hashing algorithms.
+        The algorithm to use to sign the message or message digest.
+        For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+        different hashing algorithms.
         For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
-        In case of passing digest for signing, make sure the same hashing algorithm is
-        specified as used for created for digest.
+        When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+        as used when creating the message digest.
 
         Allowed values for this property are: "SHA_224_RSA_PKCS_PSS", "SHA_256_RSA_PKCS_PSS", "SHA_384_RSA_PKCS_PSS", "SHA_512_RSA_PKCS_PSS", "SHA_224_RSA_PKCS1_V1_5", "SHA_256_RSA_PKCS1_V1_5", "SHA_384_RSA_PKCS1_V1_5", "SHA_512_RSA_PKCS1_V1_5", "ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512"
 
@@ -273,12 +275,12 @@ class VerifyDataDetails(object):
     def signing_algorithm(self, signing_algorithm):
         """
         Sets the signing_algorithm of this VerifyDataDetails.
-        The algorithm to be used for signing the message or message digest
-        For RSA keys, there are two supported Signature Schemes: PKCS1 and PSS along with
-        different Hashing algorithms.
+        The algorithm to use to sign the message or message digest.
+        For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with
+        different hashing algorithms.
         For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms.
-        In case of passing digest for signing, make sure the same hashing algorithm is
-        specified as used for created for digest.
+        When you pass a message digest for signing, ensure that you specify the same hashing algorithm
+        as used when creating the message digest.
 
 
         :param signing_algorithm: The signing_algorithm of this VerifyDataDetails.

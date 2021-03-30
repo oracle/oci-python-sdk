@@ -65,7 +65,7 @@ class StatusSummary(object):
     def chunks_processed(self):
         """
         Gets the chunks_processed of this StatusSummary.
-        chunks processed
+        The number of chunks processed.
 
 
         :return: The chunks_processed of this StatusSummary.
@@ -77,7 +77,7 @@ class StatusSummary(object):
     def chunks_processed(self, chunks_processed):
         """
         Sets the chunks_processed of this StatusSummary.
-        chunks processed
+        The number of chunks processed.
 
 
         :param chunks_processed: The chunks_processed of this StatusSummary.
@@ -89,7 +89,7 @@ class StatusSummary(object):
     def failure_details(self):
         """
         Gets the failure_details of this StatusSummary.
-        failure details
+        The failure details, if any.
 
 
         :return: The failure_details of this StatusSummary.
@@ -101,7 +101,7 @@ class StatusSummary(object):
     def failure_details(self, failure_details):
         """
         Sets the failure_details of this StatusSummary.
-        failure details
+        The failure details, if any.
 
 
         :param failure_details: The failure_details of this StatusSummary.
@@ -113,7 +113,7 @@ class StatusSummary(object):
     def filename(self):
         """
         Gets the filename of this StatusSummary.
-        filename
+        The filename.
 
 
         :return: The filename of this StatusSummary.
@@ -125,7 +125,7 @@ class StatusSummary(object):
     def filename(self, filename):
         """
         Sets the filename of this StatusSummary.
-        filename
+        The filename.
 
 
         :param filename: The filename of this StatusSummary.
@@ -137,7 +137,7 @@ class StatusSummary(object):
     def status(self):
         """
         Gets the status of this StatusSummary.
-        status
+        The status.
 
 
         :return: The status of this StatusSummary.
@@ -149,7 +149,7 @@ class StatusSummary(object):
     def status(self, status):
         """
         Sets the status of this StatusSummary.
-        status
+        The status.
 
 
         :param status: The status of this StatusSummary.
@@ -161,7 +161,7 @@ class StatusSummary(object):
     def total_chunks(self):
         """
         Gets the total_chunks of this StatusSummary.
-        total chunks
+        The total number of chunks.
 
 
         :return: The total_chunks of this StatusSummary.
@@ -173,7 +173,7 @@ class StatusSummary(object):
     def total_chunks(self, total_chunks):
         """
         Sets the total_chunks of this StatusSummary.
-        total chunks
+        The total number of chunks.
 
 
         :param total_chunks: The total_chunks of this StatusSummary.

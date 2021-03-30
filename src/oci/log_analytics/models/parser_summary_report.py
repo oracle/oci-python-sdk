@@ -44,7 +44,7 @@ class ParserSummaryReport(object):
     def non_oob_count(self):
         """
         Gets the non_oob_count of this ParserSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) parsers.
 
 
         :return: The non_oob_count of this ParserSummaryReport.
@@ -56,7 +56,7 @@ class ParserSummaryReport(object):
     def non_oob_count(self, non_oob_count):
         """
         Sets the non_oob_count of this ParserSummaryReport.
-        non out-of-the-box count
+        The count of custom (user defined) parsers.
 
 
         :param non_oob_count: The non_oob_count of this ParserSummaryReport.
@@ -68,7 +68,7 @@ class ParserSummaryReport(object):
     def oob_count(self):
         """
         Gets the oob_count of this ParserSummaryReport.
-        out-of-the-box count
+        The count of built in parsers.
 
 
         :return: The oob_count of this ParserSummaryReport.
@@ -80,7 +80,7 @@ class ParserSummaryReport(object):
     def oob_count(self, oob_count):
         """
         Sets the oob_count of this ParserSummaryReport.
-        out-of-the-box count
+        The count of built in parsers.
 
 
         :param oob_count: The oob_count of this ParserSummaryReport.

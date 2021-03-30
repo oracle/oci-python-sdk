@@ -203,7 +203,7 @@ class LogAnalyticsField(object):
     def data_type(self):
         """
         Gets the data_type of this LogAnalyticsField.
-        data type
+        The field data type.
 
 
         :return: The data_type of this LogAnalyticsField.
@@ -215,7 +215,7 @@ class LogAnalyticsField(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this LogAnalyticsField.
-        data type
+        The field data type.
 
 
         :param data_type: The data_type of this LogAnalyticsField.
@@ -227,7 +227,7 @@ class LogAnalyticsField(object):
     def regular_expression(self):
         """
         Gets the regular_expression of this LogAnalyticsField.
-        default regular expression
+        The field default regular expression.
 
 
         :return: The regular_expression of this LogAnalyticsField.
@@ -239,7 +239,7 @@ class LogAnalyticsField(object):
     def regular_expression(self, regular_expression):
         """
         Sets the regular_expression of this LogAnalyticsField.
-        default regular expression
+        The field default regular expression.
 
 
         :param regular_expression: The regular_expression of this LogAnalyticsField.
@@ -251,7 +251,7 @@ class LogAnalyticsField(object):
     def description(self):
         """
         Gets the description of this LogAnalyticsField.
-        description
+        The field description.
 
 
         :return: The description of this LogAnalyticsField.
@@ -263,7 +263,7 @@ class LogAnalyticsField(object):
     def description(self, description):
         """
         Sets the description of this LogAnalyticsField.
-        description
+        The field description.
 
 
         :param description: The description of this LogAnalyticsField.
@@ -275,7 +275,7 @@ class LogAnalyticsField(object):
     def display_name(self):
         """
         Gets the display_name of this LogAnalyticsField.
-        display name
+        The field display name.
 
 
         :return: The display_name of this LogAnalyticsField.
@@ -287,7 +287,7 @@ class LogAnalyticsField(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogAnalyticsField.
-        display name
+        The field display name.
 
 
         :param display_name: The display_name of this LogAnalyticsField.
@@ -299,7 +299,7 @@ class LogAnalyticsField(object):
     def edit_version(self):
         """
         Gets the edit_version of this LogAnalyticsField.
-        edit version
+        The field edit version.
 
 
         :return: The edit_version of this LogAnalyticsField.
@@ -311,7 +311,7 @@ class LogAnalyticsField(object):
     def edit_version(self, edit_version):
         """
         Sets the edit_version of this LogAnalyticsField.
-        edit version
+        The field edit version.
 
 
         :param edit_version: The edit_version of this LogAnalyticsField.
@@ -323,7 +323,7 @@ class LogAnalyticsField(object):
     def facet_priority(self):
         """
         Gets the facet_priority of this LogAnalyticsField.
-        facet priority
+        The facet priority.
 
 
         :return: The facet_priority of this LogAnalyticsField.
@@ -335,7 +335,7 @@ class LogAnalyticsField(object):
     def facet_priority(self, facet_priority):
         """
         Sets the facet_priority of this LogAnalyticsField.
-        facet priority
+        The facet priority.
 
 
         :param facet_priority: The facet_priority of this LogAnalyticsField.
@@ -347,7 +347,7 @@ class LogAnalyticsField(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsField.
-        internal name
+        The field internal name.
 
 
         :return: The name of this LogAnalyticsField.
@@ -359,7 +359,7 @@ class LogAnalyticsField(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsField.
-        internal name
+        The field internal name.
 
 
         :param name: The name of this LogAnalyticsField.
@@ -371,7 +371,7 @@ class LogAnalyticsField(object):
     def is_facet_eligible(self):
         """
         Gets the is_facet_eligible of this LogAnalyticsField.
-        is facet eligible flag
+        A flag inidcating whether or not the facet is elibigle for use.
 
 
         :return: The is_facet_eligible of this LogAnalyticsField.
@@ -383,7 +383,7 @@ class LogAnalyticsField(object):
     def is_facet_eligible(self, is_facet_eligible):
         """
         Sets the is_facet_eligible of this LogAnalyticsField.
-        is facet eligible flag
+        A flag inidcating whether or not the facet is elibigle for use.
 
 
         :param is_facet_eligible: The is_facet_eligible of this LogAnalyticsField.
@@ -395,7 +395,7 @@ class LogAnalyticsField(object):
     def is_high_cardinality(self):
         """
         Gets the is_high_cardinality of this LogAnalyticsField.
-        is high cardinality flag
+        A flag inidcating whether or not the cardinality of the field is high.
 
 
         :return: The is_high_cardinality of this LogAnalyticsField.
@@ -407,7 +407,7 @@ class LogAnalyticsField(object):
     def is_high_cardinality(self, is_high_cardinality):
         """
         Sets the is_high_cardinality of this LogAnalyticsField.
-        is high cardinality flag
+        A flag inidcating whether or not the cardinality of the field is high.
 
 
         :param is_high_cardinality: The is_high_cardinality of this LogAnalyticsField.
@@ -419,7 +419,7 @@ class LogAnalyticsField(object):
     def is_large_data(self):
         """
         Gets the is_large_data of this LogAnalyticsField.
-        is larget data flag
+        A flag inidcating whether or not the field is a large data field.
 
 
         :return: The is_large_data of this LogAnalyticsField.
@@ -431,7 +431,7 @@ class LogAnalyticsField(object):
     def is_large_data(self, is_large_data):
         """
         Sets the is_large_data of this LogAnalyticsField.
-        is larget data flag
+        A flag inidcating whether or not the field is a large data field.
 
 
         :param is_large_data: The is_large_data of this LogAnalyticsField.
@@ -443,7 +443,7 @@ class LogAnalyticsField(object):
     def is_multi_valued(self):
         """
         Gets the is_multi_valued of this LogAnalyticsField.
-        is multi-valued flag
+        A flag indicating whether or not the field is multi-valued.
 
 
         :return: The is_multi_valued of this LogAnalyticsField.
@@ -455,7 +455,7 @@ class LogAnalyticsField(object):
     def is_multi_valued(self, is_multi_valued):
         """
         Sets the is_multi_valued of this LogAnalyticsField.
-        is multi-valued flag
+        A flag indicating whether or not the field is multi-valued.
 
 
         :param is_multi_valued: The is_multi_valued of this LogAnalyticsField.
@@ -467,7 +467,7 @@ class LogAnalyticsField(object):
     def is_primary(self):
         """
         Gets the is_primary of this LogAnalyticsField.
-        is primary flag
+        A flag inidcating whether or not this is a primary field.
 
 
         :return: The is_primary of this LogAnalyticsField.
@@ -479,7 +479,7 @@ class LogAnalyticsField(object):
     def is_primary(self, is_primary):
         """
         Sets the is_primary of this LogAnalyticsField.
-        is primary flag
+        A flag inidcating whether or not this is a primary field.
 
 
         :param is_primary: The is_primary of this LogAnalyticsField.
@@ -491,7 +491,8 @@ class LogAnalyticsField(object):
     def is_system(self):
         """
         Gets the is_system of this LogAnalyticsField.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :return: The is_system of this LogAnalyticsField.
@@ -503,7 +504,8 @@ class LogAnalyticsField(object):
     def is_system(self, is_system):
         """
         Sets the is_system of this LogAnalyticsField.
-        is system flag
+        The system flag.  A value of false denotes a custom, or user
+        defined object.  A value of true denotes a built in object.
 
 
         :param is_system: The is_system of this LogAnalyticsField.
@@ -515,7 +517,7 @@ class LogAnalyticsField(object):
     def is_summarizable(self):
         """
         Gets the is_summarizable of this LogAnalyticsField.
-        is summarizable flag
+        A flag inidcating whether or not the field can be summarized.
 
 
         :return: The is_summarizable of this LogAnalyticsField.
@@ -527,7 +529,7 @@ class LogAnalyticsField(object):
     def is_summarizable(self, is_summarizable):
         """
         Sets the is_summarizable of this LogAnalyticsField.
-        is summarizable flag
+        A flag inidcating whether or not the field can be summarized.
 
 
         :param is_summarizable: The is_summarizable of this LogAnalyticsField.
@@ -539,7 +541,7 @@ class LogAnalyticsField(object):
     def mapped_value(self):
         """
         Gets the mapped_value of this LogAnalyticsField.
-        mappable
+        The mapped value.
 
 
         :return: The mapped_value of this LogAnalyticsField.
@@ -551,7 +553,7 @@ class LogAnalyticsField(object):
     def mapped_value(self, mapped_value):
         """
         Sets the mapped_value of this LogAnalyticsField.
-        mappable
+        The mapped value.
 
 
         :param mapped_value: The mapped_value of this LogAnalyticsField.
@@ -563,7 +565,7 @@ class LogAnalyticsField(object):
     def is_metric_key_eligible(self):
         """
         Gets the is_metric_key_eligible of this LogAnalyticsField.
-        metric key eligible
+        A flag inidcating whether or not the field is metric key eligible.
 
 
         :return: The is_metric_key_eligible of this LogAnalyticsField.
@@ -575,7 +577,7 @@ class LogAnalyticsField(object):
     def is_metric_key_eligible(self, is_metric_key_eligible):
         """
         Sets the is_metric_key_eligible of this LogAnalyticsField.
-        metric key eligible
+        A flag inidcating whether or not the field is metric key eligible.
 
 
         :param is_metric_key_eligible: The is_metric_key_eligible of this LogAnalyticsField.
@@ -587,7 +589,7 @@ class LogAnalyticsField(object):
     def is_metric_value_eligible(self):
         """
         Gets the is_metric_value_eligible of this LogAnalyticsField.
-        metric value eligible
+        A flag inidcating whether or not the field is metric value eligible.
 
 
         :return: The is_metric_value_eligible of this LogAnalyticsField.
@@ -599,7 +601,7 @@ class LogAnalyticsField(object):
     def is_metric_value_eligible(self, is_metric_value_eligible):
         """
         Sets the is_metric_value_eligible of this LogAnalyticsField.
-        metric value eligible
+        A flag inidcating whether or not the field is metric value eligible.
 
 
         :param is_metric_value_eligible: The is_metric_value_eligible of this LogAnalyticsField.
@@ -611,7 +613,7 @@ class LogAnalyticsField(object):
     def range_facet_eligible(self):
         """
         Gets the range_facet_eligible of this LogAnalyticsField.
-        range facet eligible
+        A flag inidcating whether or not the field is range facet eligible.
 
 
         :return: The range_facet_eligible of this LogAnalyticsField.
@@ -623,7 +625,7 @@ class LogAnalyticsField(object):
     def range_facet_eligible(self, range_facet_eligible):
         """
         Sets the range_facet_eligible of this LogAnalyticsField.
-        range facet eligible
+        A flag inidcating whether or not the field is range facet eligible.
 
 
         :param range_facet_eligible: The range_facet_eligible of this LogAnalyticsField.
@@ -635,7 +637,7 @@ class LogAnalyticsField(object):
     def is_table_eligible(self):
         """
         Gets the is_table_eligible of this LogAnalyticsField.
-        table eligible
+        A flag inidcating whether or not the field is table eligible.
 
 
         :return: The is_table_eligible of this LogAnalyticsField.
@@ -647,7 +649,7 @@ class LogAnalyticsField(object):
     def is_table_eligible(self, is_table_eligible):
         """
         Sets the is_table_eligible of this LogAnalyticsField.
-        table eligible
+        A flag inidcating whether or not the field is table eligible.
 
 
         :param is_table_eligible: The is_table_eligible of this LogAnalyticsField.
@@ -659,7 +661,7 @@ class LogAnalyticsField(object):
     def unit_type(self):
         """
         Gets the unit_type of this LogAnalyticsField.
-        unit type
+        The field unit type.
 
 
         :return: The unit_type of this LogAnalyticsField.
@@ -671,7 +673,7 @@ class LogAnalyticsField(object):
     def unit_type(self, unit_type):
         """
         Sets the unit_type of this LogAnalyticsField.
-        unit type
+        The field unit type.
 
 
         :param unit_type: The unit_type of this LogAnalyticsField.

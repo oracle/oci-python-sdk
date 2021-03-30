@@ -37,7 +37,7 @@ class LogAnalyticsAssociationParameterCollection(object):
     def items(self):
         """
         Gets the items of this LogAnalyticsAssociationParameterCollection.
-        list of entities
+        A list of association parameters.
 
 
         :return: The items of this LogAnalyticsAssociationParameterCollection.
@@ -49,7 +49,7 @@ class LogAnalyticsAssociationParameterCollection(object):
     def items(self, items):
         """
         Sets the items of this LogAnalyticsAssociationParameterCollection.
-        list of entities
+        A list of association parameters.
 
 
         :param items: The items of this LogAnalyticsAssociationParameterCollection.
