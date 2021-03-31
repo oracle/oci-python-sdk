@@ -252,6 +252,14 @@ class ShowOCIData(object):
                             data['load_balancer'] = value
                             has_data = True
 
+                # run on Network Load Balancer
+                if self.service.flags.read_load_balancer:
+                    value = self.__get_load_balancer_network_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['network_load_balancer'] = value
+                            has_data = True
+
                 # run on Resource Management
                 if self.service.flags.read_resource_management:
                     value = self.__get_resource_management_main(region_name, compartment)
@@ -2579,18 +2587,18 @@ class ShowOCIData(object):
 
         try:
             h = health_checker
-            if str(h['protocol']) == "TCP":
+            if str(h['protocol']) == "TCP" or str(h['protocol']) == "UDP":
                 if line == 1:
-                    return ("TCP, interval(ms)=" + str(h['interval_in_millis']) + ", " +
+                    return (h['protocol'] + ", interval(ms)=" + str(h['interval_in_millis']) + ", " +
                             "Timeout(ms)=" + str(h['timeout_in_millis']) + ", " +
                             "retries=" + str(h['retries']))
                 if line == 2:
                     return str(h['port']) + "/" + h['protocol']
 
             # if HTTP
-            if str(h['protocol']) == "HTTP":
+            if str(h['protocol']) == "HTTP" or str(h['protocol']) == "HTTPS":
                 if line == 1:
-                    return ("HTTP, interval(ms)=" + str(h['interval_in_millis']) + ", " +
+                    return (h['protocol'] + ", interval(ms)=" + str(h['interval_in_millis']) + ", " +
                             "Timeout(ms)=" + str(h['timeout_in_millis']) + ", " +
                             "retries=" + str(h['retries']))
                 if line == 2:
@@ -2635,7 +2643,6 @@ class ShowOCIData(object):
     ##########################################################################
     # print load balancer config
     ##########################################################################
-
     def __get_load_balancer_details(self, load_balance_obj):
         data = {}
         try:
@@ -2710,6 +2717,95 @@ class ShowOCIData(object):
                 dataval = {'sum_info': "Load Balancer " + str(load_balance_obj['shape_name']),
                            'details': self.__get_load_balancer_details(load_balance_obj),
                            'backendset': self.__get_load_balancer_backendset(load_balance_obj['id'])}
+                data.append(dataval)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_load_balancer_main", e)
+            return data
+
+    ##########################################################################
+    # get load balancer backedset network
+    ##########################################################################
+    def __get_load_balancer_backendset_network(self, load_balancer_id):
+
+        data = []
+        try:
+
+            backendsets = self.service.search_multi_items(self.service.C_LB, self.service.C_LB_NETWORK_BACKEND_SETS, 'load_balancer_id', load_balancer_id)
+
+            for bs in backendsets:
+                dataval = bs
+                dataval['status'] = bs['status'].ljust(4)[0:4]
+                dataval['status_full'] = bs['status']
+
+                # Health Checker
+                datahealth = bs['health_checker']
+                datahealth['desc1'] = self.__get_load_balancer_bs_healthchecker(bs['health_checker'], 1)
+                datahealth['desc2'] = self.__get_load_balancer_bs_healthchecker(bs['health_checker'], 2)
+                dataval['health_check'] = datahealth
+
+                data.append(dataval)
+
+            # return the data
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_load_balancer_backendset_network", e)
+            return data
+
+    ##########################################################################
+    # print load balancer config
+    ##########################################################################
+    def __get_load_balancer_network_details(self, load_balance_obj):
+        data = {}
+        try:
+            lb = load_balance_obj
+            data['id'] = str(lb['id'])
+            data['name'] = str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + ("(Private)" if lb['is_private'] else "(Public)")
+            data['status'] = lb['status']
+            data['display_name'] = lb['display_name']
+            data['is_private'] = lb['is_private']
+            data['ips'] = lb['ip_addresses']
+            data['nsg_ids'] = lb['nsg_ids']
+            data['nsg_names'] = lb['nsg_names']
+            data['compartment_name'] = lb['compartment_name']
+            data['compartment_id'] = lb['compartment_id']
+            data['subnet_id'] = lb['subnet_id']
+            data['subnet_name'] = lb['subnet_name']
+            data['defined_tags'] = lb['defined_tags']
+            data['freeform_tags'] = lb['freeform_tags']
+
+            # listeners
+            datalis = []
+            for lo in lb['listeners']:
+                value = {
+                    'port': str(lo['port']) + "/" + str(lo['protocol']),
+                    'default_backend_set_name': str(lo['default_backend_set_name']),
+                    'desc': (lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - BS: " + str(lo['default_backend_set_name']))
+                }
+                datalis.append(value)
+            data['listeners'] = datalis
+
+            return data
+        except Exception as e:
+            self.__print_error("__get_load_balancer_network_details", e)
+            return data
+
+    ##########################################################################
+    # Network Load Balancer
+    ##########################################################################
+    def __get_load_balancer_network_main(self, region_name, compartment):
+
+        data = []
+        try:
+            load_balancers = self.service.search_multi_items(self.service.C_LB, self.service.C_LB_NETWORK_LOAD_BALANCERS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for load_balance_obj in load_balancers:
+                dataval = {'sum_info': "Network Load Balancer",
+                           'details': self.__get_load_balancer_network_details(load_balance_obj),
+                           'backendset': self.__get_load_balancer_backendset_network(load_balance_obj['id'])}
                 data.append(dataval)
 
             return data
