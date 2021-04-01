@@ -16,9 +16,12 @@ from .cluster_summary import ClusterSummary
 from .create_cluster_details import CreateClusterDetails
 from .create_cluster_endpoint_config_details import CreateClusterEndpointConfigDetails
 from .create_cluster_kubeconfig_content_details import CreateClusterKubeconfigContentDetails
+from .create_image_policy_config_details import CreateImagePolicyConfigDetails
 from .create_node_pool_details import CreateNodePoolDetails
 from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetails
 from .create_node_shape_config_details import CreateNodeShapeConfigDetails
+from .image_policy_config import ImagePolicyConfig
+from .key_details import KeyDetails
 from .key_value import KeyValue
 from .kubernetes_network_config import KubernetesNetworkConfig
 from .node import Node
@@ -36,6 +39,7 @@ from .node_source_via_image_option import NodeSourceViaImageOption
 from .update_cluster_details import UpdateClusterDetails
 from .update_cluster_endpoint_config_details import UpdateClusterEndpointConfigDetails
 from .update_cluster_options_details import UpdateClusterOptionsDetails
+from .update_image_policy_config_details import UpdateImagePolicyConfigDetails
 from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
 from .update_node_shape_config_details import UpdateNodeShapeConfigDetails
@@ -59,9 +63,12 @@ container_engine_type_mapping = {
     "CreateClusterDetails": CreateClusterDetails,
     "CreateClusterEndpointConfigDetails": CreateClusterEndpointConfigDetails,
     "CreateClusterKubeconfigContentDetails": CreateClusterKubeconfigContentDetails,
+    "CreateImagePolicyConfigDetails": CreateImagePolicyConfigDetails,
     "CreateNodePoolDetails": CreateNodePoolDetails,
     "CreateNodePoolNodeConfigDetails": CreateNodePoolNodeConfigDetails,
     "CreateNodeShapeConfigDetails": CreateNodeShapeConfigDetails,
+    "ImagePolicyConfig": ImagePolicyConfig,
+    "KeyDetails": KeyDetails,
     "KeyValue": KeyValue,
     "KubernetesNetworkConfig": KubernetesNetworkConfig,
     "Node": Node,
@@ -79,6 +86,7 @@ container_engine_type_mapping = {
     "UpdateClusterDetails": UpdateClusterDetails,
     "UpdateClusterEndpointConfigDetails": UpdateClusterEndpointConfigDetails,
     "UpdateClusterOptionsDetails": UpdateClusterOptionsDetails,
+    "UpdateImagePolicyConfigDetails": UpdateImagePolicyConfigDetails,
     "UpdateNodePoolDetails": UpdateNodePoolDetails,
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,
     "UpdateNodeShapeConfigDetails": UpdateNodeShapeConfigDetails,

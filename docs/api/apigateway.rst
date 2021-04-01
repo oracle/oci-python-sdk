@@ -55,6 +55,7 @@ Apigateway
     oci.apigateway.models.CreateCertificateDetails
     oci.apigateway.models.CreateDeploymentDetails
     oci.apigateway.models.CreateGatewayDetails
+    oci.apigateway.models.CreateSdkDetails
     oci.apigateway.models.CustomAuthenticationPolicy
     oci.apigateway.models.Deployment
     oci.apigateway.models.DeploymentCollection
@@ -85,6 +86,14 @@ Apigateway
     oci.apigateway.models.RenameQueryParameterPolicy
     oci.apigateway.models.RenameQueryParameterPolicyItem
     oci.apigateway.models.RouteAuthorizationPolicy
+    oci.apigateway.models.Sdk
+    oci.apigateway.models.SdkCollection
+    oci.apigateway.models.SdkLanguageOptionalParameters
+    oci.apigateway.models.SdkLanguageOptionalParametersAllowedValue
+    oci.apigateway.models.SdkLanguageTypeCollection
+    oci.apigateway.models.SdkLanguageTypeSummary
+    oci.apigateway.models.SdkLanguageTypes
+    oci.apigateway.models.SdkSummary
     oci.apigateway.models.SetHeaderPolicy
     oci.apigateway.models.SetHeaderPolicyItem
     oci.apigateway.models.SetQueryParameterPolicy
@@ -96,6 +105,7 @@ Apigateway
     oci.apigateway.models.UpdateCertificateDetails
     oci.apigateway.models.UpdateDeploymentDetails
     oci.apigateway.models.UpdateGatewayDetails
+    oci.apigateway.models.UpdateSdkDetails
     oci.apigateway.models.WorkRequest
     oci.apigateway.models.WorkRequestCollection
     oci.apigateway.models.WorkRequestError

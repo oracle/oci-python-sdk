@@ -1082,6 +1082,46 @@ def test_delete_volume_kms_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_get_block_volume_replica(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetBlockVolumeReplica'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetBlockVolumeReplica')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetBlockVolumeReplica')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_block_volume_replica(
+                block_volume_replica_id=request.pop(util.camelize('blockVolumeReplicaId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetBlockVolumeReplica',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'blockVolumeReplica',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1196,6 +1236,46 @@ def test_get_boot_volume_kms_key(testing_service_client):
             result,
             service_error,
             'bootVolumeKmsKey',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_get_boot_volume_replica(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetBootVolumeReplica'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetBootVolumeReplica')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetBootVolumeReplica')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_boot_volume_replica(
+                boot_volume_replica_id=request.pop(util.camelize('bootVolumeReplicaId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetBootVolumeReplica',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'bootVolumeReplica',
             False,
             False
         )
@@ -1542,6 +1622,69 @@ def test_get_volume_kms_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_list_block_volume_replicas(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListBlockVolumeReplicas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListBlockVolumeReplicas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBlockVolumeReplicas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_block_volume_replicas(
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_block_volume_replicas(
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_block_volume_replicas(
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListBlockVolumeReplicas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'blockVolumeReplica',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_boot_volume_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListBootVolumeBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1596,6 +1739,69 @@ def test_list_boot_volume_backups(testing_service_client):
             result,
             service_error,
             'bootVolumeBackup',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_list_boot_volume_replicas(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListBootVolumeReplicas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListBootVolumeReplicas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBootVolumeReplicas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_boot_volume_replicas(
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_boot_volume_replicas(
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_boot_volume_replicas(
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListBootVolumeReplicas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'bootVolumeReplica',
             False,
             True
         )

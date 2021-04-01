@@ -61,6 +61,10 @@ class DatabaseSoftwareImage(object):
     #: This constant has a value of "EXADATA_SHAPE"
     IMAGE_SHAPE_FAMILY_EXADATA_SHAPE = "EXADATA_SHAPE"
 
+    #: A constant which can be used with the image_shape_family property of a DatabaseSoftwareImage.
+    #: This constant has a value of "EXACC_SHAPE"
+    IMAGE_SHAPE_FAMILY_EXACC_SHAPE = "EXACC_SHAPE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseSoftwareImage object with values from keyword arguments.
@@ -104,7 +108,7 @@ class DatabaseSoftwareImage(object):
 
         :param image_shape_family:
             The value to assign to the image_shape_family property of this DatabaseSoftwareImage.
-            Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type image_shape_family: str
 
@@ -417,7 +421,7 @@ class DatabaseSoftwareImage(object):
         **[Required]** Gets the image_shape_family of this DatabaseSoftwareImage.
         To what shape the image is meant for.
 
-        Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -436,7 +440,7 @@ class DatabaseSoftwareImage(object):
         :param image_shape_family: The image_shape_family of this DatabaseSoftwareImage.
         :type: str
         """
-        allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE"]
+        allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"]
         if not value_allowed_none_or_none_sentinel(image_shape_family, allowed_values):
             image_shape_family = 'UNKNOWN_ENUM_VALUE'
         self._image_shape_family = image_shape_family
