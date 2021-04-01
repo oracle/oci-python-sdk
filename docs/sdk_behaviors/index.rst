@@ -8,6 +8,7 @@ This section describes SDK-specific behaviors:
 * :doc:`Parallel operations </parallel-ops>`
 * :doc:`Passing explicit null/None values </pass-explicit-null>`
 * :doc:`Retries </sdk_behaviors/retries>`
+* :doc:`Calculating stream content length </sdk_behaviors/calculate_content_length>`
 
 .. toctree::
     :hidden:
@@ -17,3 +18,4 @@ This section describes SDK-specific behaviors:
     /parallel-ops
     /pass-explicit-null
     retries
+    calculate_content_length

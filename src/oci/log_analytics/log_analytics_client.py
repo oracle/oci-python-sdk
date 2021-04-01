@@ -12,6 +12,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from .models import log_analytics_type_mapping
 missing = Sentinel("Missing")
 
@@ -324,6 +325,13 @@ class LogAnalyticsClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -337,6 +345,7 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "is_force",
             "char_encoding",
             "opc_retry_token",
@@ -387,6 +396,12 @@ class LogAnalyticsClient(object):
             if hasattr(append_lookup_file_body, 'fileno') and hasattr(append_lookup_file_body, 'name') and append_lookup_file_body.name != '<stdin>':
                 if requests.utils.super_len(append_lookup_file_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(append_lookup_file_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(append_lookup_file_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                append_lookup_file_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -6891,6 +6906,13 @@ class LogAnalyticsClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsImportCustomContent`
         :rtype: :class:`~oci.response.Response`
@@ -6904,6 +6926,7 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "is_overwrite",
             "opc_retry_token",
             "opc_request_id"
@@ -6949,6 +6972,12 @@ class LogAnalyticsClient(object):
             if hasattr(import_custom_content_file_body, 'fileno') and hasattr(import_custom_content_file_body, 'name') and import_custom_content_file_body.name != '<stdin>':
                 if requests.utils.super_len(import_custom_content_file_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(import_custom_content_file_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(import_custom_content_file_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                import_custom_content_file_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13569,6 +13598,13 @@ class LogAnalyticsClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookup`
         :rtype: :class:`~oci.response.Response`
@@ -13582,6 +13618,7 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "name",
             "description",
             "char_encoding",
@@ -13640,6 +13677,12 @@ class LogAnalyticsClient(object):
             if hasattr(register_lookup_content_file_body, 'fileno') and hasattr(register_lookup_content_file_body, 'name') and register_lookup_content_file_body.name != '<stdin>':
                 if requests.utils.super_len(register_lookup_content_file_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(register_lookup_content_file_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(register_lookup_content_file_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                register_lookup_content_file_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15166,6 +15209,13 @@ class LogAnalyticsClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -15179,6 +15229,7 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "is_force",
             "char_encoding",
             "opc_retry_token",
@@ -15229,6 +15280,12 @@ class LogAnalyticsClient(object):
             if hasattr(update_lookup_file_body, 'fileno') and hasattr(update_lookup_file_body, 'name') and update_lookup_file_body.name != '<stdin>':
                 if requests.utils.super_len(update_lookup_file_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(update_lookup_file_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(update_lookup_file_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                update_lookup_file_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15484,6 +15541,13 @@ class LogAnalyticsClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -15497,6 +15561,7 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "opc_request_id",
             "log_set",
             "payload_type",
@@ -15554,6 +15619,12 @@ class LogAnalyticsClient(object):
             if hasattr(upload_log_events_file_details, 'fileno') and hasattr(upload_log_events_file_details, 'name') and upload_log_events_file_details.name != '<stdin>':
                 if requests.utils.super_len(upload_log_events_file_details) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(upload_log_events_file_details):
+                calculated_obj = back_up_body_calculate_stream_content_length(upload_log_events_file_details, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                upload_log_events_file_details = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15653,6 +15724,13 @@ class LogAnalyticsClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Upload`
         :rtype: :class:`~oci.response.Response`
@@ -15666,6 +15744,7 @@ class LogAnalyticsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "entity_id",
             "timezone",
             "char_encoding",
@@ -15731,6 +15810,12 @@ class LogAnalyticsClient(object):
             if hasattr(upload_log_file_body, 'fileno') and hasattr(upload_log_file_body, 'name') and upload_log_file_body.name != '<stdin>':
                 if requests.utils.super_len(upload_log_file_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(upload_log_file_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(upload_log_file_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                upload_log_file_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
