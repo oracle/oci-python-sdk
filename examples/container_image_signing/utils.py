@@ -8,15 +8,16 @@ import json
 import base64
 import logging
 
-from src.oci.artifacts.models.create_container_image_signature_details import CreateContainerImageSignatureDetails
-from src.oci.key_management.models.sign_data_details import SignDataDetails
-from src.oci.key_management.kms_crypto_client import KmsCryptoClient
-from src.oci.key_management.models.verify_data_details import VerifyDataDetails
+from oci.regions import REALMS, REGION_REALMS
+from oci.artifacts.models.create_container_image_signature_details import CreateContainerImageSignatureDetails
+from oci.key_management.models.sign_data_details import SignDataDetails
+from oci.key_management.kms_crypto_client import KmsCryptoClient
+from oci.key_management.models.verify_data_details import VerifyDataDetails
 
 
 def sign_and_upload_container_image_signature_metadata(artifacts_client, config, key_id, key_version_id, signing_algorithm,
-                                                       compartment_id, image_id, repo_path,
-                                                       digest, description, metadata):
+                                                       compartment_id, image_id,
+                                                       description, metadata):
     """
     SignAndUploadContainerImageSignatureMetadata calls KMS to sign the message then calls OCIR to upload the returned signature
 
@@ -52,18 +53,23 @@ def sign_and_upload_container_image_signature_metadata(artifacts_client, config,
     # Create KMS client
     kms_crypto_client = build_vault_crypto_client(config, key_id, region)
 
+    # Get container image metadata
+    logging.info("Obtaining container image metadata by the image ID")
+    container_image = get_container_image_metadata(artifacts_client, image_id)
+    logging.info("Container image metadata: %s", container_image)
+
     # Generate message
     message = {
         "description": description,
-        "digest": digest,
-        "key_id": key_id,
-        "key_version_id": key_version_id,
+        "imageDigest": container_image.digest,
+        "kmsKeyId": key_id,
+        "kmsKeyVersionId": key_version_id,
         "metadata": metadata,
         "region": region,
-        "repo_path": repo_path,
-        "signing_algorithm": signing_algorithm
+        "repositoryName": container_image.repository_name,
+        "signingAlgorithm": signing_algorithm
     }
-    json_string = json.dumps(message)
+    json_string = json.dumps(message, separators=(',', ':'))
     encoded_json = base64.b64encode(json_string.encode()).decode()
 
     # Sign image digest
@@ -118,6 +124,8 @@ def get_and_verify_image_signature_metadata_helper(artifacts_client, config, com
 
     # Filter out the keys
     container_image_signature_summaries = filter_item_by_trusted_keys(signature_collection.items, trusted_keys)
+    if len(container_image_signature_summaries) == 0:
+        raise Exception("No signature in the image was signed by the supplied trusted keys")
     logging.info("Filtered out %d signatures by the trusted keys",
                  len(signature_collection.items) - len(container_image_signature_summaries))
 
@@ -151,11 +159,10 @@ def upload_signature_metadata(artifacts_client, compartment_id, image_id, key_id
         image_id=image_id,
         kms_key_id=key_id,
         kms_key_version_id=key_version_id,
-        signing_algorithm=signing_algorithm,
         message=message,
-        signature=signature
+        signature=signature,
+        signing_algorithm=signing_algorithm
     )
-
     response = artifacts_client.create_container_image_signature(signature_details)
     if response.status != 200:
         raise Exception("Failed to upload the signature to OCI Registry. Status code: %d", response.status)
@@ -168,7 +175,9 @@ def build_vault_crypto_client(config, key_id, region):
     if len(split_list) < 4:
         raise Exception("Failed to split key ocid. Please check the kms_key_id is correct.")
     vault_ext = split_list[3]
-    crypto_endpoint = "https://" + vault_ext + "-crypto.kms." + region + ".oraclecloud.com"
+    realm_name = REGION_REALMS.get(region)
+    second_level_domain = REALMS.get(realm_name)
+    crypto_endpoint = "https://" + vault_ext + "-crypto.kms." + region + "." + second_level_domain
 
     kms_crypto_client = KmsCryptoClient(config, crypto_endpoint)
     return kms_crypto_client
@@ -236,6 +245,11 @@ def verify_signature(kms_crypto_client, message, signature, key_id, key_version_
     )
     response = kms_crypto_client.verify(verify_data_details)
     return response.data
+
+
+def get_container_image_metadata(artifacts_client, image_id):
+    container_image = artifacts_client.get_container_image(image_id)
+    return container_image.data
 
 
 mapping_create_container_image_signature_details_signing_algorithm = {
