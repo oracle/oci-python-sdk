@@ -4,12 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.35.1 - TBD
+2.35.1 - 2020-03-30
 ====================
 
 Added
 -----
-* TBD
+* Support for scheduling the suspension and resumption of compute instance pools based on predefined schedules in the Autoscaling service
+* Support for database software images for Cloud@Customer in the Database service
+* Support for OCIC IDCS authorization details in the Application Migration service
+* Support for cross-region asynchronous volume replication in the Block Storage service
+* Support for SDK generation in the API Gateway service
+* Support for container image signing in the Registry service
+* Support for cluster features as a part of the Container Engine for Kubernetes service
+* Support for filtering dedicated virtual machine hosts by remaining memory and OCPUs in the Compute service
+* Support for read/write-any object from buckets using pre-authenticated requests in the Object Storage service
+* Support for restricting pre-authenticated requests by prefix in the Object Storage service
+* Support for route filtering on public virtual circuits in the Virtual Networking service
+* Support for calculating content length of a non-resettable stream for binary uploads. A non-resettable stream will be buffered into memory to calculate the content length. A buffer_limit may be passed into the request to provide a buffer limit. The default buffer limit is 100 MiB. More documentation can be found here: https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/index.html
 
 ====================
 2.35.0 - 2020-03-30
