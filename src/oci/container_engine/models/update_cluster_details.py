@@ -30,22 +30,29 @@ class UpdateClusterDetails(object):
             The value to assign to the options property of this UpdateClusterDetails.
         :type options: oci.container_engine.models.UpdateClusterOptionsDetails
 
+        :param image_policy_config:
+            The value to assign to the image_policy_config property of this UpdateClusterDetails.
+        :type image_policy_config: oci.container_engine.models.UpdateImagePolicyConfigDetails
+
         """
         self.swagger_types = {
             'name': 'str',
             'kubernetes_version': 'str',
-            'options': 'UpdateClusterOptionsDetails'
+            'options': 'UpdateClusterOptionsDetails',
+            'image_policy_config': 'UpdateImagePolicyConfigDetails'
         }
 
         self.attribute_map = {
             'name': 'name',
             'kubernetes_version': 'kubernetesVersion',
-            'options': 'options'
+            'options': 'options',
+            'image_policy_config': 'imagePolicyConfig'
         }
 
         self._name = None
         self._kubernetes_version = None
         self._options = None
+        self._image_policy_config = None
 
     @property
     def name(self):
@@ -114,6 +121,34 @@ class UpdateClusterDetails(object):
         :type: oci.container_engine.models.UpdateClusterOptionsDetails
         """
         self._options = options
+
+    @property
+    def image_policy_config(self):
+        """
+        Gets the image_policy_config of this UpdateClusterDetails.
+        The image verification policy for signature validation. Once a policy is created and enabled with
+        one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
+        attached to the policy.
+
+
+        :return: The image_policy_config of this UpdateClusterDetails.
+        :rtype: oci.container_engine.models.UpdateImagePolicyConfigDetails
+        """
+        return self._image_policy_config
+
+    @image_policy_config.setter
+    def image_policy_config(self, image_policy_config):
+        """
+        Sets the image_policy_config of this UpdateClusterDetails.
+        The image verification policy for signature validation. Once a policy is created and enabled with
+        one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
+        attached to the policy.
+
+
+        :param image_policy_config: The image_policy_config of this UpdateClusterDetails.
+        :type: oci.container_engine.models.UpdateImagePolicyConfigDetails
+        """
+        self._image_policy_config = image_policy_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

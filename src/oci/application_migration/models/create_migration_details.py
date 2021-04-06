@@ -281,7 +281,7 @@ class CreateMigrationDetails(object):
         """
         Gets the pre_created_target_database_type of this CreateMigrationDetails.
         The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-        Infrastrure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
+        Infrastructure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
 
         Allowed values for this property are: "DATABASE_SYSTEM", "NOT_SET"
 
@@ -296,7 +296,7 @@ class CreateMigrationDetails(object):
         """
         Sets the pre_created_target_database_type of this CreateMigrationDetails.
         The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
-        Infrastrure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
+        Infrastructure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
 
 
         :param pre_created_target_database_type: The pre_created_target_database_type of this CreateMigrationDetails.

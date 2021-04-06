@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Resource(object):
     """
-    A resource that is managed by an autoscaling configuration. The only supported type is \"instancePool.\"
+    A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
 
     Each instance pool can have one autoscaling configuration.
     """

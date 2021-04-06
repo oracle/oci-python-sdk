@@ -12,6 +12,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from .models import key_management_type_mapping
 missing = Sentinel("Missing")
 
@@ -1742,6 +1743,13 @@ class KmsManagementClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
@@ -1755,6 +1763,7 @@ class KmsManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "content_length",
             "if_match",
             "content_md5",
@@ -1790,6 +1799,12 @@ class KmsManagementClient(object):
             if hasattr(restore_key_from_file_details, 'fileno') and hasattr(restore_key_from_file_details, 'name') and restore_key_from_file_details.name != '<stdin>':
                 if requests.utils.super_len(restore_key_from_file_details) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(restore_key_from_file_details):
+                calculated_obj = back_up_body_calculate_stream_content_length(restore_key_from_file_details, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                restore_key_from_file_details = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):

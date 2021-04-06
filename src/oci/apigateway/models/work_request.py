@@ -65,6 +65,14 @@ class WorkRequest(object):
     #: This constant has a value of "VALIDATE_API"
     OPERATION_TYPE_VALIDATE_API = "VALIDATE_API"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_SDK"
+    OPERATION_TYPE_CREATE_SDK = "CREATE_SDK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_SDK"
+    OPERATION_TYPE_DELETE_SDK = "DELETE_SDK"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -100,7 +108,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_GATEWAY", "UPDATE_GATEWAY", "DELETE_GATEWAY", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_CERTIFICATE", "UPDATE_CERTIFICATE", "DELETE_CERTIFICATE", "CREATE_API", "UPDATE_API", "DELETE_API", "VALIDATE_API", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_GATEWAY", "UPDATE_GATEWAY", "DELETE_GATEWAY", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_CERTIFICATE", "UPDATE_CERTIFICATE", "DELETE_CERTIFICATE", "CREATE_API", "UPDATE_API", "DELETE_API", "VALIDATE_API", "CREATE_SDK", "DELETE_SDK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -203,7 +211,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The type of the work request.
 
-        Allowed values for this property are: "CREATE_GATEWAY", "UPDATE_GATEWAY", "DELETE_GATEWAY", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_CERTIFICATE", "UPDATE_CERTIFICATE", "DELETE_CERTIFICATE", "CREATE_API", "UPDATE_API", "DELETE_API", "VALIDATE_API", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_GATEWAY", "UPDATE_GATEWAY", "DELETE_GATEWAY", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_CERTIFICATE", "UPDATE_CERTIFICATE", "DELETE_CERTIFICATE", "CREATE_API", "UPDATE_API", "DELETE_API", "VALIDATE_API", "CREATE_SDK", "DELETE_SDK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -222,7 +230,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_GATEWAY", "UPDATE_GATEWAY", "DELETE_GATEWAY", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_CERTIFICATE", "UPDATE_CERTIFICATE", "DELETE_CERTIFICATE", "CREATE_API", "UPDATE_API", "DELETE_API", "VALIDATE_API"]
+        allowed_values = ["CREATE_GATEWAY", "UPDATE_GATEWAY", "DELETE_GATEWAY", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_CERTIFICATE", "UPDATE_CERTIFICATE", "DELETE_CERTIFICATE", "CREATE_API", "UPDATE_API", "DELETE_API", "VALIDATE_API", "CREATE_SDK", "DELETE_SDK"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

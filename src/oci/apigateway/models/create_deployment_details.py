@@ -200,7 +200,7 @@ class CreateDeploymentDetails(object):
     @property
     def specification(self):
         """
-        **[Required]** Gets the specification of this CreateDeploymentDetails.
+        Gets the specification of this CreateDeploymentDetails.
 
         :return: The specification of this CreateDeploymentDetails.
         :rtype: oci.apigateway.models.ApiSpecification

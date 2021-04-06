@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExecutionSchedule(object):
     """
-    Specifies the execution schedule for a policy.
+    An execution schedule for an autoscaling policy.
     """
 
     #: A constant which can be used with the timezone property of a ExecutionSchedule.
@@ -67,7 +67,7 @@ class ExecutionSchedule(object):
     def type(self):
         """
         **[Required]** Gets the type of this ExecutionSchedule.
-        The type of ExecutionSchedule.
+        The type of execution schedule.
 
 
         :return: The type of this ExecutionSchedule.
@@ -79,7 +79,7 @@ class ExecutionSchedule(object):
     def type(self, type):
         """
         Sets the type of this ExecutionSchedule.
-        The type of ExecutionSchedule.
+        The type of execution schedule.
 
 
         :param type: The type of this ExecutionSchedule.
@@ -91,7 +91,7 @@ class ExecutionSchedule(object):
     def timezone(self):
         """
         **[Required]** Gets the timezone of this ExecutionSchedule.
-        Specifies the time zone the schedule is in.
+        The time zone for the execution schedule.
 
         Allowed values for this property are: "UTC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -106,7 +106,7 @@ class ExecutionSchedule(object):
     def timezone(self, timezone):
         """
         Sets the timezone of this ExecutionSchedule.
-        Specifies the time zone the schedule is in.
+        The time zone for the execution schedule.
 
 
         :param timezone: The timezone of this ExecutionSchedule.

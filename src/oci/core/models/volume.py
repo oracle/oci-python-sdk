@@ -128,6 +128,10 @@ class Volume(object):
             The value to assign to the auto_tuned_vpus_per_gb property of this Volume.
         :type auto_tuned_vpus_per_gb: int
 
+        :param block_volume_replicas:
+            The value to assign to the block_volume_replicas property of this Volume.
+        :type block_volume_replicas: list[oci.core.models.BlockVolumeReplicaInfo]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -147,7 +151,8 @@ class Volume(object):
             'time_created': 'datetime',
             'volume_group_id': 'str',
             'is_auto_tune_enabled': 'bool',
-            'auto_tuned_vpus_per_gb': 'int'
+            'auto_tuned_vpus_per_gb': 'int',
+            'block_volume_replicas': 'list[BlockVolumeReplicaInfo]'
         }
 
         self.attribute_map = {
@@ -168,7 +173,8 @@ class Volume(object):
             'time_created': 'timeCreated',
             'volume_group_id': 'volumeGroupId',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
-            'auto_tuned_vpus_per_gb': 'autoTunedVpusPerGB'
+            'auto_tuned_vpus_per_gb': 'autoTunedVpusPerGB',
+            'block_volume_replicas': 'blockVolumeReplicas'
         }
 
         self._availability_domain = None
@@ -189,6 +195,7 @@ class Volume(object):
         self._volume_group_id = None
         self._is_auto_tune_enabled = None
         self._auto_tuned_vpus_per_gb = None
+        self._block_volume_replicas = None
 
     @property
     def availability_domain(self):
@@ -681,6 +688,30 @@ class Volume(object):
         :type: int
         """
         self._auto_tuned_vpus_per_gb = auto_tuned_vpus_per_gb
+
+    @property
+    def block_volume_replicas(self):
+        """
+        Gets the block_volume_replicas of this Volume.
+        The list of block volume replicas of this volume.
+
+
+        :return: The block_volume_replicas of this Volume.
+        :rtype: list[oci.core.models.BlockVolumeReplicaInfo]
+        """
+        return self._block_volume_replicas
+
+    @block_volume_replicas.setter
+    def block_volume_replicas(self, block_volume_replicas):
+        """
+        Sets the block_volume_replicas of this Volume.
+        The list of block volume replicas of this volume.
+
+
+        :param block_volume_replicas: The block_volume_replicas of this Volume.
+        :type: list[oci.core.models.BlockVolumeReplicaInfo]
+        """
+        self._block_volume_replicas = block_volume_replicas
 
     def __repr__(self):
         return formatted_flat_dict(self)

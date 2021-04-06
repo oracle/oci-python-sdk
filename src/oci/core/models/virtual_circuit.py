@@ -54,6 +54,22 @@ class VirtualCircuit(object):
     #: This constant has a value of "DOWN"
     BGP_SESSION_STATE_DOWN = "DOWN"
 
+    #: A constant which can be used with the routing_policy property of a VirtualCircuit.
+    #: This constant has a value of "ORACLE_SERVICE_NETWORK"
+    ROUTING_POLICY_ORACLE_SERVICE_NETWORK = "ORACLE_SERVICE_NETWORK"
+
+    #: A constant which can be used with the routing_policy property of a VirtualCircuit.
+    #: This constant has a value of "REGIONAL"
+    ROUTING_POLICY_REGIONAL = "REGIONAL"
+
+    #: A constant which can be used with the routing_policy property of a VirtualCircuit.
+    #: This constant has a value of "MARKET_LEVEL"
+    ROUTING_POLICY_MARKET_LEVEL = "MARKET_LEVEL"
+
+    #: A constant which can be used with the routing_policy property of a VirtualCircuit.
+    #: This constant has a value of "GLOBAL"
+    ROUTING_POLICY_GLOBAL = "GLOBAL"
+
     #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
     #: This constant has a value of "PENDING_PROVIDER"
     LIFECYCLE_STATE_PENDING_PROVIDER = "PENDING_PROVIDER"
@@ -142,6 +158,12 @@ class VirtualCircuit(object):
         :param cross_connect_mappings:
             The value to assign to the cross_connect_mappings property of this VirtualCircuit.
         :type cross_connect_mappings: list[oci.core.models.CrossConnectMapping]
+
+        :param routing_policy:
+            The value to assign to the routing_policy property of this VirtualCircuit.
+            Allowed values for items in this list are: "ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type routing_policy: list[str]
 
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this VirtualCircuit.
@@ -238,6 +260,7 @@ class VirtualCircuit(object):
             'bgp_session_state': 'str',
             'compartment_id': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
+            'routing_policy': 'list[str]',
             'customer_bgp_asn': 'int',
             'customer_asn': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -266,6 +289,7 @@ class VirtualCircuit(object):
             'bgp_session_state': 'bgpSessionState',
             'compartment_id': 'compartmentId',
             'cross_connect_mappings': 'crossConnectMappings',
+            'routing_policy': 'routingPolicy',
             'customer_bgp_asn': 'customerBgpAsn',
             'customer_asn': 'customerAsn',
             'defined_tags': 'definedTags',
@@ -293,6 +317,7 @@ class VirtualCircuit(object):
         self._bgp_session_state = None
         self._compartment_id = None
         self._cross_connect_mappings = None
+        self._routing_policy = None
         self._customer_bgp_asn = None
         self._customer_asn = None
         self._defined_tags = None
@@ -459,6 +484,46 @@ class VirtualCircuit(object):
         :type: list[oci.core.models.CrossConnectMapping]
         """
         self._cross_connect_mappings = cross_connect_mappings
+
+    @property
+    def routing_policy(self):
+        """
+        Gets the routing_policy of this VirtualCircuit.
+        The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit.
+        Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`.
+        See `Route Filtering`__ for details.
+        By default, routing information is shared for all routes in the same market.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+
+        Allowed values for items in this list are: "ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The routing_policy of this VirtualCircuit.
+        :rtype: list[str]
+        """
+        return self._routing_policy
+
+    @routing_policy.setter
+    def routing_policy(self, routing_policy):
+        """
+        Sets the routing_policy of this VirtualCircuit.
+        The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit.
+        Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`.
+        See `Route Filtering`__ for details.
+        By default, routing information is shared for all routes in the same market.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+
+
+        :param routing_policy: The routing_policy of this VirtualCircuit.
+        :type: list[str]
+        """
+        allowed_values = ["ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL"]
+        if routing_policy:
+            routing_policy[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in routing_policy]
+        self._routing_policy = routing_policy
 
     @property
     def customer_bgp_asn(self):

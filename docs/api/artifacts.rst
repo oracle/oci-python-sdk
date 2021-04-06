@@ -23,12 +23,16 @@ Artifacts
     oci.artifacts.models.ContainerImage
     oci.artifacts.models.ContainerImageCollection
     oci.artifacts.models.ContainerImageLayer
+    oci.artifacts.models.ContainerImageSignature
+    oci.artifacts.models.ContainerImageSignatureCollection
+    oci.artifacts.models.ContainerImageSignatureSummary
     oci.artifacts.models.ContainerImageSummary
     oci.artifacts.models.ContainerRepository
     oci.artifacts.models.ContainerRepositoryCollection
     oci.artifacts.models.ContainerRepositoryReadme
     oci.artifacts.models.ContainerRepositorySummary
     oci.artifacts.models.ContainerVersion
+    oci.artifacts.models.CreateContainerImageSignatureDetails
     oci.artifacts.models.CreateContainerRepositoryDetails
     oci.artifacts.models.RemoveContainerVersionDetails
     oci.artifacts.models.RestoreContainerImageDetails

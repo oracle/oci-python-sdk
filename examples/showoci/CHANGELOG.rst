@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.03.30 - 21.03.30
+=====================
+* Added Network load Balancer
+* Amended Announcement to show all announcements.
+
+=====================
 21.03.23 - 21.03.23
 =====================
 * Added Golden Gate Service to the database area

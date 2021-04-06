@@ -25,6 +25,10 @@ class SourceSummary(object):
     #: This constant has a value of "OCC"
     TYPE_OCC = "OCC"
 
+    #: A constant which can be used with the type property of a SourceSummary.
+    #: This constant has a value of "OCIC_IDCS"
+    TYPE_OCIC_IDCS = "OCIC_IDCS"
+
     #: A constant which can be used with the lifecycle_state property of a SourceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -60,7 +64,7 @@ class SourceSummary(object):
 
         :param type:
             The value to assign to the type property of this SourceSummary.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -170,7 +174,7 @@ class SourceSummary(object):
         Gets the type of this SourceSummary.
         The type of source environment.
 
-        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -189,7 +193,7 @@ class SourceSummary(object):
         :param type: The type of this SourceSummary.
         :type: str
         """
-        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC"]
+        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

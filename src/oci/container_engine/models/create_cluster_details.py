@@ -46,6 +46,10 @@ class CreateClusterDetails(object):
             The value to assign to the options property of this CreateClusterDetails.
         :type options: oci.container_engine.models.ClusterCreateOptions
 
+        :param image_policy_config:
+            The value to assign to the image_policy_config property of this CreateClusterDetails.
+        :type image_policy_config: oci.container_engine.models.CreateImagePolicyConfigDetails
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -54,7 +58,8 @@ class CreateClusterDetails(object):
             'vcn_id': 'str',
             'kubernetes_version': 'str',
             'kms_key_id': 'str',
-            'options': 'ClusterCreateOptions'
+            'options': 'ClusterCreateOptions',
+            'image_policy_config': 'CreateImagePolicyConfigDetails'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class CreateClusterDetails(object):
             'vcn_id': 'vcnId',
             'kubernetes_version': 'kubernetesVersion',
             'kms_key_id': 'kmsKeyId',
-            'options': 'options'
+            'options': 'options',
+            'image_policy_config': 'imagePolicyConfig'
         }
 
         self._name = None
@@ -74,6 +80,7 @@ class CreateClusterDetails(object):
         self._kubernetes_version = None
         self._kms_key_id = None
         self._options = None
+        self._image_policy_config = None
 
     @property
     def name(self):
@@ -244,6 +251,34 @@ class CreateClusterDetails(object):
         :type: oci.container_engine.models.ClusterCreateOptions
         """
         self._options = options
+
+    @property
+    def image_policy_config(self):
+        """
+        Gets the image_policy_config of this CreateClusterDetails.
+        The image verification policy for signature validation. Once a policy is created and enabled with
+        one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
+        attached to the policy.
+
+
+        :return: The image_policy_config of this CreateClusterDetails.
+        :rtype: oci.container_engine.models.CreateImagePolicyConfigDetails
+        """
+        return self._image_policy_config
+
+    @image_policy_config.setter
+    def image_policy_config(self, image_policy_config):
+        """
+        Sets the image_policy_config of this CreateClusterDetails.
+        The image verification policy for signature validation. Once a policy is created and enabled with
+        one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
+        attached to the policy.
+
+
+        :param image_policy_config: The image_policy_config of this CreateClusterDetails.
+        :type: oci.container_engine.models.CreateImagePolicyConfigDetails
+        """
+        self._image_policy_config = image_policy_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

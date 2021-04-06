@@ -51,6 +51,7 @@ db_db_name=`grep "^DATABASE_NAME" $CREDFILE | awk -F= '{ print $2 }'`
 db_app_password=`grep "^DATABASE_PASS" $CREDFILE | awk -F= '{ print $2 }'`
 db_admin_password=`grep "^DATABASE_ADMIN" $CREDFILE| awk -F= '{ print $2 }'`
 extract_from_date=`grep "^EXTRACT_DATE" $CREDFILE | awk -F= '{ print $2 }'`
+extract_tag_special_key=`grep "^TAG_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
 
 ###########################################
 # Extract Wallet from wallet.zip
@@ -164,10 +165,10 @@ echo "###############################################################" | tee -a 
 echo "# Running Initial usage2adw.py extract" | tee -a $LOG
 echo "###############################################################" | tee -a $LOG
 echo "   Command line: " | tee -a $LOG
-echo "   python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date}" | tee -a $LOG
+echo "   python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date}" -ts "${extract_tag_special_key}" | tee -a $LOG
 echo "" | tee -a $LOG | tee -a $LOG
 cd $APPDIR
-python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date} | tee -a $LOG
+python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date} -ts "${extract_tag_special_key}" | tee -a $LOG
 echo "" | tee -a $LOG
 
 echo "############################################################################################" | tee -a $LOG

@@ -12,6 +12,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from .models import object_storage_type_mapping
 missing = Sentinel("Missing")
 
@@ -4108,6 +4109,13 @@ class ObjectStorageClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -4121,6 +4129,7 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "content_length",
             "if_match",
             "if_none_match",
@@ -4192,6 +4201,12 @@ class ObjectStorageClient(object):
             if hasattr(put_object_body, 'fileno') and hasattr(put_object_body, 'name') and put_object_body.name != '<stdin>':
                 if requests.utils.super_len(put_object_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(put_object_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(put_object_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                put_object_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -5125,6 +5140,13 @@ class ObjectStorageClient(object):
             is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -5138,6 +5160,7 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "buffer_limit",
             "content_length",
             "opc_client_request_id",
             "if_match",
@@ -5199,6 +5222,12 @@ class ObjectStorageClient(object):
             if hasattr(upload_part_body, 'fileno') and hasattr(upload_part_body, 'name') and upload_part_body.name != '<stdin>':
                 if requests.utils.super_len(upload_part_body) == 0:
                     header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(upload_part_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(upload_part_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                upload_part_body = calculated_obj["byte_content"]
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):

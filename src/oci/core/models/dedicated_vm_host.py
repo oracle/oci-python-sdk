@@ -93,6 +93,14 @@ class DedicatedVmHost(object):
             The value to assign to the remaining_ocpus property of this DedicatedVmHost.
         :type remaining_ocpus: float
 
+        :param total_memory_in_gbs:
+            The value to assign to the total_memory_in_gbs property of this DedicatedVmHost.
+        :type total_memory_in_gbs: float
+
+        :param remaining_memory_in_gbs:
+            The value to assign to the remaining_memory_in_gbs property of this DedicatedVmHost.
+        :type remaining_memory_in_gbs: float
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -106,7 +114,9 @@ class DedicatedVmHost(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'total_ocpus': 'float',
-            'remaining_ocpus': 'float'
+            'remaining_ocpus': 'float',
+            'total_memory_in_gbs': 'float',
+            'remaining_memory_in_gbs': 'float'
         }
 
         self.attribute_map = {
@@ -121,7 +131,9 @@ class DedicatedVmHost(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'total_ocpus': 'totalOcpus',
-            'remaining_ocpus': 'remainingOcpus'
+            'remaining_ocpus': 'remainingOcpus',
+            'total_memory_in_gbs': 'totalMemoryInGBs',
+            'remaining_memory_in_gbs': 'remainingMemoryInGBs'
         }
 
         self._availability_domain = None
@@ -136,6 +148,8 @@ class DedicatedVmHost(object):
         self._time_created = None
         self._total_ocpus = None
         self._remaining_ocpus = None
+        self._total_memory_in_gbs = None
+        self._remaining_memory_in_gbs = None
 
     @property
     def availability_domain(self):
@@ -496,6 +510,54 @@ class DedicatedVmHost(object):
         :type: float
         """
         self._remaining_ocpus = remaining_ocpus
+
+    @property
+    def total_memory_in_gbs(self):
+        """
+        Gets the total_memory_in_gbs of this DedicatedVmHost.
+        The total memory of the dedicated VM host, in GBs.
+
+
+        :return: The total_memory_in_gbs of this DedicatedVmHost.
+        :rtype: float
+        """
+        return self._total_memory_in_gbs
+
+    @total_memory_in_gbs.setter
+    def total_memory_in_gbs(self, total_memory_in_gbs):
+        """
+        Sets the total_memory_in_gbs of this DedicatedVmHost.
+        The total memory of the dedicated VM host, in GBs.
+
+
+        :param total_memory_in_gbs: The total_memory_in_gbs of this DedicatedVmHost.
+        :type: float
+        """
+        self._total_memory_in_gbs = total_memory_in_gbs
+
+    @property
+    def remaining_memory_in_gbs(self):
+        """
+        Gets the remaining_memory_in_gbs of this DedicatedVmHost.
+        The remaining memory of the dedicated VM host, in GBs.
+
+
+        :return: The remaining_memory_in_gbs of this DedicatedVmHost.
+        :rtype: float
+        """
+        return self._remaining_memory_in_gbs
+
+    @remaining_memory_in_gbs.setter
+    def remaining_memory_in_gbs(self, remaining_memory_in_gbs):
+        """
+        Sets the remaining_memory_in_gbs of this DedicatedVmHost.
+        The remaining memory of the dedicated VM host, in GBs.
+
+
+        :param remaining_memory_in_gbs: The remaining_memory_in_gbs of this DedicatedVmHost.
+        :type: float
+        """
+        self._remaining_memory_in_gbs = remaining_memory_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

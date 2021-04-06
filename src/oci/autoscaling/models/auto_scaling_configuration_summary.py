@@ -173,8 +173,11 @@ class AutoScalingConfigurationSummary(object):
     def cool_down_in_seconds(self):
         """
         Gets the cool_down_in_seconds of this AutoScalingConfigurationSummary.
-        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
-        before rescaling. The minimum value is 300 seconds, which is also the default.
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+        The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which
+        is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
 
 
         :return: The cool_down_in_seconds of this AutoScalingConfigurationSummary.
@@ -186,8 +189,11 @@ class AutoScalingConfigurationSummary(object):
     def cool_down_in_seconds(self, cool_down_in_seconds):
         """
         Sets the cool_down_in_seconds of this AutoScalingConfigurationSummary.
-        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
-        before rescaling. The minimum value is 300 seconds, which is also the default.
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+        The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which
+        is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
 
 
         :param cool_down_in_seconds: The cool_down_in_seconds of this AutoScalingConfigurationSummary.
@@ -311,7 +317,7 @@ class AutoScalingConfigurationSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AutoScalingConfigurationSummary.
-        The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -325,7 +331,7 @@ class AutoScalingConfigurationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutoScalingConfigurationSummary.
-        The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 

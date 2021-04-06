@@ -20,6 +20,7 @@ from .oac_discovery_details import OacDiscoveryDetails
 from .occ_authorization_details import OccAuthorizationDetails
 from .occ_source_details import OccSourceDetails
 from .ocic_authorization_details import OcicAuthorizationDetails
+from .ocic_authorization_token_details import OcicAuthorizationTokenDetails
 from .ocic_source_details import OcicSourceDetails
 from .oic_discovery_details import OicDiscoveryDetails
 from .pcs_discovery_details import PcsDiscoveryDetails
@@ -56,6 +57,7 @@ application_migration_type_mapping = {
     "OccAuthorizationDetails": OccAuthorizationDetails,
     "OccSourceDetails": OccSourceDetails,
     "OcicAuthorizationDetails": OcicAuthorizationDetails,
+    "OcicAuthorizationTokenDetails": OcicAuthorizationTokenDetails,
     "OcicSourceDetails": OcicSourceDetails,
     "OicDiscoveryDetails": OicDiscoveryDetails,
     "PcsDiscoveryDetails": PcsDiscoveryDetails,

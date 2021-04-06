@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.04.04 - 2021-04-04
+=====================
+* Added option to specify one Tag Key to extract the data to TAG_SPECIAL column , use -ts
+* Added the Tag Special to filter and reports.
+* Fixed filter by Tag Data Bug
+
+=====================
 20.12.03 - 2020-12-03
 =====================
 * Added Pagination call to the list_objects

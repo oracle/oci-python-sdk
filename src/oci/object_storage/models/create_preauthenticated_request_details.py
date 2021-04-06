@@ -29,6 +29,14 @@ class CreatePreauthenticatedRequestDetails(object):
     #: This constant has a value of "AnyObjectWrite"
     ACCESS_TYPE_ANY_OBJECT_WRITE = "AnyObjectWrite"
 
+    #: A constant which can be used with the access_type property of a CreatePreauthenticatedRequestDetails.
+    #: This constant has a value of "AnyObjectRead"
+    ACCESS_TYPE_ANY_OBJECT_READ = "AnyObjectRead"
+
+    #: A constant which can be used with the access_type property of a CreatePreauthenticatedRequestDetails.
+    #: This constant has a value of "AnyObjectReadWrite"
+    ACCESS_TYPE_ANY_OBJECT_READ_WRITE = "AnyObjectReadWrite"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreatePreauthenticatedRequestDetails object with values from keyword arguments.
@@ -38,13 +46,17 @@ class CreatePreauthenticatedRequestDetails(object):
             The value to assign to the name property of this CreatePreauthenticatedRequestDetails.
         :type name: str
 
+        :param bucket_listing_action:
+            The value to assign to the bucket_listing_action property of this CreatePreauthenticatedRequestDetails.
+        :type bucket_listing_action: str
+
         :param object_name:
             The value to assign to the object_name property of this CreatePreauthenticatedRequestDetails.
         :type object_name: str
 
         :param access_type:
             The value to assign to the access_type property of this CreatePreauthenticatedRequestDetails.
-            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"
+            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite"
         :type access_type: str
 
         :param time_expires:
@@ -54,6 +66,7 @@ class CreatePreauthenticatedRequestDetails(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'bucket_listing_action': 'str',
             'object_name': 'str',
             'access_type': 'str',
             'time_expires': 'datetime'
@@ -61,12 +74,14 @@ class CreatePreauthenticatedRequestDetails(object):
 
         self.attribute_map = {
             'name': 'name',
+            'bucket_listing_action': 'bucketListingAction',
             'object_name': 'objectName',
             'access_type': 'accessType',
             'time_expires': 'timeExpires'
         }
 
         self._name = None
+        self._bucket_listing_action = None
         self._object_name = None
         self._access_type = None
         self._time_expires = None
@@ -98,11 +113,41 @@ class CreatePreauthenticatedRequestDetails(object):
         self._name = name
 
     @property
+    def bucket_listing_action(self):
+        """
+        Gets the bucket_listing_action of this CreatePreauthenticatedRequestDetails.
+        Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+        Deny: Prevents the user from performing a list operation.
+        ListObjects: Authorizes the user to perform a list operation.
+
+
+        :return: The bucket_listing_action of this CreatePreauthenticatedRequestDetails.
+        :rtype: str
+        """
+        return self._bucket_listing_action
+
+    @bucket_listing_action.setter
+    def bucket_listing_action(self, bucket_listing_action):
+        """
+        Sets the bucket_listing_action of this CreatePreauthenticatedRequestDetails.
+        Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+        Deny: Prevents the user from performing a list operation.
+        ListObjects: Authorizes the user to perform a list operation.
+
+
+        :param bucket_listing_action: The bucket_listing_action of this CreatePreauthenticatedRequestDetails.
+        :type: str
+        """
+        self._bucket_listing_action = bucket_listing_action
+
+    @property
     def object_name(self):
         """
         Gets the object_name of this CreatePreauthenticatedRequestDetails.
         The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
-        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
+        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket
+        if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request
+        grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
 
 
         :return: The object_name of this CreatePreauthenticatedRequestDetails.
@@ -115,7 +160,9 @@ class CreatePreauthenticatedRequestDetails(object):
         """
         Sets the object_name of this CreatePreauthenticatedRequestDetails.
         The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
-        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
+        information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket
+        if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request
+        grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
 
 
         :param object_name: The object_name of this CreatePreauthenticatedRequestDetails.
@@ -129,7 +176,7 @@ class CreatePreauthenticatedRequestDetails(object):
         **[Required]** Gets the access_type of this CreatePreauthenticatedRequestDetails.
         The operation that can be performed on this resource.
 
-        Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"
+        Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite"
 
 
         :return: The access_type of this CreatePreauthenticatedRequestDetails.
@@ -147,7 +194,7 @@ class CreatePreauthenticatedRequestDetails(object):
         :param access_type: The access_type of this CreatePreauthenticatedRequestDetails.
         :type: str
         """
-        allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"]
+        allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite"]
         if not value_allowed_none_or_none_sentinel(access_type, allowed_values):
             raise ValueError(
                 "Invalid value for `access_type`, must be None or one of {0}"

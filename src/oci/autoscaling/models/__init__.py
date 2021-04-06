@@ -22,6 +22,8 @@ from .execution_schedule import ExecutionSchedule
 from .instance_pool_resource import InstancePoolResource
 from .metric import Metric
 from .resource import Resource
+from .resource_action import ResourceAction
+from .resource_power_action import ResourcePowerAction
 from .scheduled_policy import ScheduledPolicy
 from .threshold import Threshold
 from .threshold_policy import ThresholdPolicy
@@ -51,6 +53,8 @@ autoscaling_type_mapping = {
     "InstancePoolResource": InstancePoolResource,
     "Metric": Metric,
     "Resource": Resource,
+    "ResourceAction": ResourceAction,
+    "ResourcePowerAction": ResourcePowerAction,
     "ScheduledPolicy": ScheduledPolicy,
     "Threshold": Threshold,
     "ThresholdPolicy": ThresholdPolicy,

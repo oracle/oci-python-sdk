@@ -134,7 +134,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.32.1"
+    oci_compatible_version = "2.34.0"
 
     ##########################################################################
     # Global Constants
@@ -204,6 +204,8 @@ class ShowOCIService(object):
     C_LB = 'loadbalancer'
     C_LB_LOAD_BALANCERS = 'load_balancers'
     C_LB_BACKEND_SETS = 'backend_sets'
+    C_LB_NETWORK_LOAD_BALANCERS = 'network_load_balancers'
+    C_LB_NETWORK_BACKEND_SETS = 'network_lb_backend_sets'
 
     # Load Balancer Identifiers
     C_OS = 'objectstorage'
@@ -4839,7 +4841,7 @@ class ShowOCIService(object):
     # OCI Classes used:
     #
     # class oci.load_balancer.LoadBalancerClient(config, **kwargs)
-    #
+    # class oci.network_load_balancer.NetworkLoadBalancerClient(self.config, signer=self.signer)
     ##########################################################################
     def __load_load_balancer_main(self):
 
@@ -4851,12 +4853,19 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 load_balancer.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # NetworkLoadBalancerClient
+            network_load_balancer = oci.network_load_balancer.NetworkLoadBalancerClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                network_load_balancer.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key to the network if not exists
             self.__initialize_data_key(self.C_LB, self.C_LB_LOAD_BALANCERS)
             self.__initialize_data_key(self.C_LB, self.C_LB_BACKEND_SETS)
+            self.__initialize_data_key(self.C_LB, self.C_LB_NETWORK_LOAD_BALANCERS)
+            self.__initialize_data_key(self.C_LB, self.C_LB_NETWORK_BACKEND_SETS)
 
             # reference to compute
             lb = self.data[self.C_LB]
@@ -4864,6 +4873,8 @@ class ShowOCIService(object):
             # append the data
             lb[self.C_LB_LOAD_BALANCERS] += self.__load_load_balancers(load_balancer, compartments)
             lb[self.C_LB_BACKEND_SETS] += self.__load_load_balancer_backendset(load_balancer)
+            lb[self.C_LB_NETWORK_LOAD_BALANCERS] += self.__load_load_balancers_network(network_load_balancer, compartments)
+            lb[self.C_LB_NETWORK_BACKEND_SETS] += self.__load_load_balancer_backendset_network(network_load_balancer)
             print("")
 
         except oci.exceptions.RequestException:
@@ -5027,6 +5038,117 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_load_balancers", e)
+            return data
+
+    ##########################################################################
+    # data load network load balancers
+    ##########################################################################
+    def __load_load_balancers_network(self, network_load_balancer, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Network Load Balancers")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                network_load_balancers = []
+                try:
+                    network_load_balancers = oci.pagination.list_call_get_all_results(
+                        network_load_balancer.list_network_load_balancers,
+                        compartment['id'],
+                        sort_by="displayName",
+                        lifecycle_state=oci.network_load_balancer.models.NetworkLoadBalancerSummary.LIFECYCLE_STATE_ACTIVE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # loop on array
+                # arr = oci.network_load_balancer.models.NetworkLoadBalancerSummary
+                for arr in network_load_balancers:
+
+                    # get LB health
+                    status = ""
+                    try:
+                        status = network_load_balancer.get_network_load_balancer_health(arr.id).data.status
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            pass
+                        else:
+                            raise
+
+                    # add the rest
+                    val = {'id': str(arr.id),
+                           'shape_name': "Network Load Balancer",
+                           'display_name': str(arr.display_name),
+                           'lifecycle_state': str(arr.lifecycle_state),
+                           'lifecycle_details': str(arr.lifecycle_details),
+                           'time_created': str(arr.time_created),
+                           'time_updated': str(arr.time_updated),
+                           'is_private': str(arr.is_private),
+                           'is_preserve_source_destination': str(arr.is_preserve_source_destination),
+                           'subnet_id': str(arr.subnet_id),
+                           'subnet_name': "" if arr.subnet_id is None else self.get_network_subnet(arr.subnet_id, True),
+                           'status': str(status),
+                           'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'nsg_ids': [],
+                           'nsg_names': "",
+                           'system_tags': [] if arr.system_tags is None else arr.system_tags,
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # network_security_group_ids
+                    if arr.network_security_group_ids:
+                        val['nsg_ids'] = [str(a) for a in arr.network_security_group_ids]
+                        val['nsg_names'] = self.__load_core_network_get_nsg_names(arr.network_security_group_ids)
+
+                    # listeners
+                    datalis = []
+                    for listener in arr.listeners:
+                        lo = arr.listeners[listener]
+                        value = {
+                            'id': str(listener),
+                            'name': str(lo.name),
+                            'port': "ALL" if str(lo.port) == "0" else str(lo.port),
+                            'protocol': str(lo.protocol),
+                            'default_backend_set_name': str(lo.default_backend_set_name)
+                        }
+
+                        # add data
+                        datalis.append(value)
+
+                    val['listeners'] = datalis
+
+                    # Add data
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_network_load_balancers", e)
             return data
 
     ##########################################################################
@@ -5265,6 +5387,139 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_load_balancer_backendset", e)
+            return data
+
+    ##########################################################################
+    # __load_network_load_balancer_backendset
+    ##########################################################################
+    def __load_load_balancer_backendset_network(self, network_load_balancer):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Network LB Backend Sets")
+
+            # get the load balancers for this regions
+            region_name = str(self.config['region'])
+            load_balancers = self.search_multi_items(self.C_LB, self.C_LB_NETWORK_LOAD_BALANCERS, 'region_name', region_name)
+
+            # loop on all load balancers
+            for lb in load_balancers:
+                load_balancer_id = lb['id']
+                region_name = lb['region_name']
+
+                ############################
+                # get backend set and status
+                ############################
+                backend_sets = []
+                try:
+                    backend_sets = network_load_balancer.list_backend_sets(load_balancer_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        self.__load_print_auth_warning("b", False)
+                        continue
+                        time.sleep(1)
+
+                # print next load balancer
+                print("L", end="")
+
+                # loop on backendsets
+                if backend_sets:
+                    for bs in backend_sets.items:
+
+                        ############################
+                        # get status
+                        ############################
+                        status = ""
+                        try:
+                            status = network_load_balancer.get_backend_set_health(load_balancer_id, bs.name).data.status
+                        except oci.exceptions.ServiceError as e:
+                            if self.__check_service_error(e.code):
+                                pass
+                            else:
+                                self.__load_print_auth_warning("s", False)
+                                status = "-"
+                                time.sleep(1)
+
+                        # copy load balancer info
+                        dataval = {'load_balancer_id': load_balancer_id,
+                                   'compartment_name': lb['compartment_name'],
+                                   'compartment_id': lb['compartment_id'],
+                                   'region_name': lb['region_name'],
+                                   'name': str(bs.name),
+                                   'policy': str(bs.policy),
+                                   'status': str(status),
+                                   'desc': str(bs.name) + " - " + str(bs.policy)
+                                   }
+
+                        ############################
+                        # list of backends
+                        ############################
+                        databck = []
+                        for backend in bs.backends:
+                            bh_status = ""
+
+                            # Check Status
+                            try:
+                                bh_status = network_load_balancer.get_backend_health(load_balancer_id, bs.name, backend.name).data.status
+                            except oci.exceptions.ServiceError as e:
+                                if self.__check_service_error(e.code):
+                                    pass
+                                else:
+                                    self.__load_print_auth_warning("h", False)
+                                    bh_status = "-"
+                                    time.sleep(1)
+
+                            # add details
+                            bval = {'name': str(backend.name),
+                                    'ip_address': str(backend.ip_address),
+                                    'status': str(bh_status),
+                                    'target_id': str(backend.target_id),
+                                    'port': "ALL" if str(backend.port) == "0" else str(backend.port),
+                                    'weight': str(backend.weight),
+                                    'is_backup': str(backend.is_backup),
+                                    'is_drain': str(backend.is_drain),
+                                    'is_offline': str(backend.is_offline),
+                                    'desc': (str(bh_status).ljust(4)[0:4] + " - " + str(backend.ip_address) + ":" + ("ALL" if str(backend.port) == "0" else str(backend.port)) + " - Backup=" + ("Y" if backend.is_backup else "N") + ", " + "Drain=" + ("Y" if backend.is_drain else "N") + ", " + "Offline=" + ("Y" if backend.is_offline else "N") + ", " + "Weight=" + str(backend.weight))
+                                    }
+                            databck.append(bval)
+                        dataval['backends'] = databck
+
+                        # Health Checker
+                        h = bs.health_checker
+                        datahealth = {'protocol': str(h.protocol),
+                                      'interval_in_millis': str(h.interval_in_millis),
+                                      'timeout_in_millis': str(h.timeout_in_millis),
+                                      'retries': str(h.retries),
+                                      'port': str(h.port),
+                                      'return_code': str(h.return_code),
+                                      'request_data': str(h.request_data),
+                                      'response_data': str(h.response_data),
+                                      'response_body_regex': str(h.response_body_regex),
+                                      'url_path': str(h.url_path)}
+                        dataval['health_checker'] = datahealth
+
+                        # add data
+                        data.append(dataval)
+
+                        cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_network_load_balancer_backendset", e)
             return data
 
     ##########################################################################
@@ -5982,23 +6237,23 @@ class ShowOCIService(object):
             print("Database...")
 
             # LoadBalancerClient
-            database_client = oci.database.DatabaseClient(self.config, signer=self.signer)
+            database_client = oci.database.DatabaseClient(self.config, signer=self.signer, timeout=1)
             if self.flags.proxy:
                 database_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=1)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
-            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer)
+            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer, timeout=1)
             if self.flags.proxy:
                 nosql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer)
+            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer, timeout=1)
             if self.flags.proxy:
                 mysql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer)
+            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer, timeout=1)
             if self.flags.proxy:
                 gg_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -7287,10 +7542,7 @@ class ShowOCIService(object):
 
                 # skip managed paas compartment
                 if self.__if_managed_paas_compartment(compartment['name']):
-                    print(".", end="")
                     continue
-
-                print(".", end="")
 
                 gg_deployments = []
                 try:
@@ -7303,11 +7555,13 @@ class ShowOCIService(object):
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning("a", False)
                         continue
                     else:
                         print("e - " + str(e))
                         return data
+
+                print(".", end="")
 
                 # loop on auto
                 # array = oci.golden_gate.models.DeploymentSummary
@@ -7370,17 +7624,14 @@ class ShowOCIService(object):
 
         try:
 
-            self.__load_print_status("Golden Gate DB Registration")
+            self.__load_print_status("Golden Gate DB Reg.")
 
             # loop on all compartments
             for compartment in compartments:
 
                 # skip managed paas compartment
                 if self.__if_managed_paas_compartment(compartment['name']):
-                    print(".", end="")
                     continue
-
-                print(".", end="")
 
                 db_registrations = []
                 try:
@@ -7393,11 +7644,13 @@ class ShowOCIService(object):
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning("a", False)
                         continue
                     else:
                         print("e - " + str(e))
                         return data
+
+                print(".", end="")
 
                 # loop on auto
                 # array = oci.golden_gate.models.DatabaseRegistrationSummary(*
@@ -9792,7 +10045,11 @@ class ShowOCIService(object):
 
             announcements = []
             try:
-                announcements = announcement_client.list_announcements(tenancy_id, lifecycle_state=oci.announcements_service.models.AnnouncementSummary.LIFECYCLE_STATE_ACTIVE, sort_by="timeCreated").data
+                announcements = oci.pagination.list_call_get_all_results(
+                    announcement_client.list_announcements,
+                    tenancy_id,
+                    sort_by="timeCreated"
+                ).data
 
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
@@ -9806,9 +10063,10 @@ class ShowOCIService(object):
 
                 # oci.announcements_service.models.AnnouncementsCollection
                 # oci.announcements_service.models.AnnouncementSummary
-                for ann in announcements.items:
+                for ann in announcements:
                     val = {'id': str(ann.id),
                            'type': str(ann.type),
+                           'lifecycle_state': str(ann.lifecycle_state),
                            'reference_ticket_number': str(ann.reference_ticket_number),
                            'summary': str(ann.summary),
                            'time_one_title': str(ann.time_one_title),

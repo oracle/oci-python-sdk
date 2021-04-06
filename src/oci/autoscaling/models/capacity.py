@@ -51,7 +51,10 @@ class Capacity(object):
     def max(self):
         """
         Gets the max of this Capacity.
-        The maximum number of instances the instance pool is allowed to increase to (scale out).
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
+        to increase to (scale out).
+
+        For a schedule-based autoscaling policy, this value is not used.
 
 
         :return: The max of this Capacity.
@@ -63,7 +66,10 @@ class Capacity(object):
     def max(self, max):
         """
         Sets the max of this Capacity.
-        The maximum number of instances the instance pool is allowed to increase to (scale out).
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
+        to increase to (scale out).
+
+        For a schedule-based autoscaling policy, this value is not used.
 
 
         :param max: The max of this Capacity.
@@ -75,7 +81,10 @@ class Capacity(object):
     def min(self):
         """
         Gets the min of this Capacity.
-        The minimum number of instances the instance pool is allowed to decrease to (scale in).
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
+        to decrease to (scale in).
+
+        For a schedule-based autoscaling policy, this value is not used.
 
 
         :return: The min of this Capacity.
@@ -87,7 +96,10 @@ class Capacity(object):
     def min(self, min):
         """
         Sets the min of this Capacity.
-        The minimum number of instances the instance pool is allowed to decrease to (scale in).
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
+        to decrease to (scale in).
+
+        For a schedule-based autoscaling policy, this value is not used.
 
 
         :param min: The min of this Capacity.
@@ -99,9 +111,13 @@ class Capacity(object):
     def initial(self):
         """
         Gets the initial of this Capacity.
-        The initial number of instances to launch in the instance pool immediately after autoscaling is
-        enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this
-        initial number to a number that is based on the limits that you set.
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
+        immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of
+        instances is automatically adjusted from this initial number to a number that is based on the limits that
+        you set.
+
+        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule
+        that's defined in the autoscaling policy.
 
 
         :return: The initial of this Capacity.
@@ -113,9 +129,13 @@ class Capacity(object):
     def initial(self, initial):
         """
         Sets the initial of this Capacity.
-        The initial number of instances to launch in the instance pool immediately after autoscaling is
-        enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this
-        initial number to a number that is based on the limits that you set.
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
+        immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of
+        instances is automatically adjusted from this initial number to a number that is based on the limits that
+        you set.
+
+        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule
+        that's defined in the autoscaling policy.
 
 
         :param initial: The initial of this Capacity.

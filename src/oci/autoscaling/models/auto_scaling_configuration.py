@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalingConfiguration(object):
     """
-    An autoscaling configuration allows you to dynamically scale the resources in a Compute instance pool.
+    An autoscaling configuration lets you dynamically scale the resources in a Compute instance pool.
     For more information, see `Autoscaling`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
@@ -265,8 +265,11 @@ class AutoScalingConfiguration(object):
     def cool_down_in_seconds(self):
         """
         Gets the cool_down_in_seconds of this AutoScalingConfiguration.
-        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
-        before rescaling. The minimum value is 300 seconds, which is also the default.
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+        The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which
+        is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
 
 
         :return: The cool_down_in_seconds of this AutoScalingConfiguration.
@@ -278,8 +281,11 @@ class AutoScalingConfiguration(object):
     def cool_down_in_seconds(self, cool_down_in_seconds):
         """
         Sets the cool_down_in_seconds of this AutoScalingConfiguration.
-        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
-        before rescaling. The minimum value is 300 seconds, which is also the default.
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions.
+        The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which
+        is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
 
 
         :param cool_down_in_seconds: The cool_down_in_seconds of this AutoScalingConfiguration.
@@ -338,8 +344,6 @@ class AutoScalingConfiguration(object):
         Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
         trigger autoscaling actions and the actions to take.
 
-        Each autoscaling configuration can have one autoscaling policy.
-
 
         :return: The policies of this AutoScalingConfiguration.
         :rtype: list[oci.autoscaling.models.AutoScalingPolicy]
@@ -353,8 +357,6 @@ class AutoScalingConfiguration(object):
         Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
         trigger autoscaling actions and the actions to take.
 
-        Each autoscaling configuration can have one autoscaling policy.
-
 
         :param policies: The policies of this AutoScalingConfiguration.
         :type: list[oci.autoscaling.models.AutoScalingPolicy]
@@ -365,7 +367,7 @@ class AutoScalingConfiguration(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AutoScalingConfiguration.
-        The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -379,7 +381,7 @@ class AutoScalingConfiguration(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutoScalingConfiguration.
-        The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 

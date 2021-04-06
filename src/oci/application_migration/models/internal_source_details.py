@@ -21,7 +21,7 @@ class InternalSourceDetails(SourceDetails):
 
         :param type:
             The value to assign to the type property of this InternalSourceDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
         :type type: str
 
         :param account_name:
