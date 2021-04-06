@@ -76,7 +76,8 @@ else
           --ignore=tests/integ/test_composite_operations.py \
           --ignore=tests/integ/test_virtualnetwork.py \
           --ignore=tests/integ/test_launch_instance_tutorial.py \
-          tests/unit tests/integ -s
+          tests/unit tests/integ -s >> build_output.txt 2>&1
+
 fi
 
 exit
