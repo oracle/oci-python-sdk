@@ -23,6 +23,14 @@ class PreauthenticatedRequest(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the bucket_listing_action property of a PreauthenticatedRequest.
+    #: This constant has a value of "Deny"
+    BUCKET_LISTING_ACTION_DENY = "Deny"
+
+    #: A constant which can be used with the bucket_listing_action property of a PreauthenticatedRequest.
+    #: This constant has a value of "ListObjects"
+    BUCKET_LISTING_ACTION_LIST_OBJECTS = "ListObjects"
+
     #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
     #: This constant has a value of "ObjectRead"
     ACCESS_TYPE_OBJECT_READ = "ObjectRead"
@@ -38,6 +46,14 @@ class PreauthenticatedRequest(object):
     #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
     #: This constant has a value of "AnyObjectWrite"
     ACCESS_TYPE_ANY_OBJECT_WRITE = "AnyObjectWrite"
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
+    #: This constant has a value of "AnyObjectRead"
+    ACCESS_TYPE_ANY_OBJECT_READ = "AnyObjectRead"
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequest.
+    #: This constant has a value of "AnyObjectReadWrite"
+    ACCESS_TYPE_ANY_OBJECT_READ_WRITE = "AnyObjectReadWrite"
 
     def __init__(self, **kwargs):
         """
@@ -60,9 +76,15 @@ class PreauthenticatedRequest(object):
             The value to assign to the object_name property of this PreauthenticatedRequest.
         :type object_name: str
 
+        :param bucket_listing_action:
+            The value to assign to the bucket_listing_action property of this PreauthenticatedRequest.
+            Allowed values for this property are: "Deny", "ListObjects", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bucket_listing_action: str
+
         :param access_type:
             The value to assign to the access_type property of this PreauthenticatedRequest.
-            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type access_type: str
 
@@ -80,6 +102,7 @@ class PreauthenticatedRequest(object):
             'name': 'str',
             'access_uri': 'str',
             'object_name': 'str',
+            'bucket_listing_action': 'str',
             'access_type': 'str',
             'time_expires': 'datetime',
             'time_created': 'datetime'
@@ -90,6 +113,7 @@ class PreauthenticatedRequest(object):
             'name': 'name',
             'access_uri': 'accessUri',
             'object_name': 'objectName',
+            'bucket_listing_action': 'bucketListingAction',
             'access_type': 'accessType',
             'time_expires': 'timeExpires',
             'time_created': 'timeCreated'
@@ -99,6 +123,7 @@ class PreauthenticatedRequest(object):
         self._name = None
         self._access_uri = None
         self._object_name = None
+        self._bucket_listing_action = None
         self._access_type = None
         self._time_expires = None
         self._time_created = None
@@ -204,12 +229,46 @@ class PreauthenticatedRequest(object):
         self._object_name = object_name
 
     @property
+    def bucket_listing_action(self):
+        """
+        Gets the bucket_listing_action of this PreauthenticatedRequest.
+        Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+        Deny: Prevents the user from performing a list operation.
+        ListObjects: Authorizes the user to perform a list operation.
+
+        Allowed values for this property are: "Deny", "ListObjects", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bucket_listing_action of this PreauthenticatedRequest.
+        :rtype: str
+        """
+        return self._bucket_listing_action
+
+    @bucket_listing_action.setter
+    def bucket_listing_action(self, bucket_listing_action):
+        """
+        Sets the bucket_listing_action of this PreauthenticatedRequest.
+        Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+        Deny: Prevents the user from performing a list operation.
+        ListObjects: Authorizes the user to perform a list operation.
+
+
+        :param bucket_listing_action: The bucket_listing_action of this PreauthenticatedRequest.
+        :type: str
+        """
+        allowed_values = ["Deny", "ListObjects"]
+        if not value_allowed_none_or_none_sentinel(bucket_listing_action, allowed_values):
+            bucket_listing_action = 'UNKNOWN_ENUM_VALUE'
+        self._bucket_listing_action = bucket_listing_action
+
+    @property
     def access_type(self):
         """
         **[Required]** Gets the access_type of this PreauthenticatedRequest.
         The operation that can be performed on this resource.
 
-        Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -228,7 +287,7 @@ class PreauthenticatedRequest(object):
         :param access_type: The access_type of this PreauthenticatedRequest.
         :type: str
         """
-        allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"]
+        allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite"]
         if not value_allowed_none_or_none_sentinel(access_type, allowed_values):
             access_type = 'UNKNOWN_ENUM_VALUE'
         self._access_type = access_type

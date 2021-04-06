@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OccAuthorizationDetails(AuthorizationDetails):
     """
-    Credentials to access Oracle Cloud @ Customer, which is the source environment from which you want to migrate the application.
+    Credentials to access Oracle Cloud@Customer, which is the source environment from which you want to migrate the application.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class OccAuthorizationDetails(AuthorizationDetails):
 
         :param type:
             The value to assign to the type property of this OccAuthorizationDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
         :type type: str
 
         :param username:
@@ -54,7 +54,7 @@ class OccAuthorizationDetails(AuthorizationDetails):
     def username(self):
         """
         **[Required]** Gets the username of this OccAuthorizationDetails.
-        User with Compute Operations role in Oracle Cloud @ Customer.
+        User with Compute Operations role in Oracle Cloud@Customer.
 
 
         :return: The username of this OccAuthorizationDetails.
@@ -66,7 +66,7 @@ class OccAuthorizationDetails(AuthorizationDetails):
     def username(self, username):
         """
         Sets the username of this OccAuthorizationDetails.
-        User with Compute Operations role in Oracle Cloud @ Customer.
+        User with Compute Operations role in Oracle Cloud@Customer.
 
 
         :param username: The username of this OccAuthorizationDetails.

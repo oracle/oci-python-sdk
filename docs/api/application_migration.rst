@@ -34,6 +34,7 @@ Application Migration
     oci.application_migration.models.OccAuthorizationDetails
     oci.application_migration.models.OccSourceDetails
     oci.application_migration.models.OcicAuthorizationDetails
+    oci.application_migration.models.OcicAuthorizationTokenDetails
     oci.application_migration.models.OcicSourceDetails
     oci.application_migration.models.OicDiscoveryDetails
     oci.application_migration.models.PcsDiscoveryDetails

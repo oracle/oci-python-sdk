@@ -29,14 +29,21 @@ from .attach_service_determined_volume_details import AttachServiceDeterminedVol
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .bgp_session_info import BgpSessionInfo
+from .block_volume_replica import BlockVolumeReplica
+from .block_volume_replica_details import BlockVolumeReplicaDetails
+from .block_volume_replica_info import BlockVolumeReplicaInfo
 from .boolean_image_capability_schema_descriptor import BooleanImageCapabilitySchemaDescriptor
 from .boot_volume import BootVolume
 from .boot_volume_attachment import BootVolumeAttachment
 from .boot_volume_backup import BootVolumeBackup
 from .boot_volume_kms_key import BootVolumeKmsKey
+from .boot_volume_replica import BootVolumeReplica
+from .boot_volume_replica_details import BootVolumeReplicaDetails
+from .boot_volume_replica_info import BootVolumeReplicaInfo
 from .boot_volume_source_details import BootVolumeSourceDetails
 from .boot_volume_source_from_boot_volume_backup_details import BootVolumeSourceFromBootVolumeBackupDetails
 from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBootVolumeDetails
+from .boot_volume_source_from_boot_volume_replica_details import BootVolumeSourceFromBootVolumeReplicaDetails
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
 from .byoip_allocated_range_collection import ByoipAllocatedRangeCollection
@@ -378,6 +385,7 @@ from .volume_group_source_from_volume_group_details import VolumeGroupSourceFrom
 from .volume_group_source_from_volumes_details import VolumeGroupSourceFromVolumesDetails
 from .volume_kms_key import VolumeKmsKey
 from .volume_source_details import VolumeSourceDetails
+from .volume_source_from_block_volume_replica_details import VolumeSourceFromBlockVolumeReplicaDetails
 from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
 from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
@@ -408,14 +416,21 @@ core_type_mapping = {
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "BgpSessionInfo": BgpSessionInfo,
+    "BlockVolumeReplica": BlockVolumeReplica,
+    "BlockVolumeReplicaDetails": BlockVolumeReplicaDetails,
+    "BlockVolumeReplicaInfo": BlockVolumeReplicaInfo,
     "BooleanImageCapabilitySchemaDescriptor": BooleanImageCapabilitySchemaDescriptor,
     "BootVolume": BootVolume,
     "BootVolumeAttachment": BootVolumeAttachment,
     "BootVolumeBackup": BootVolumeBackup,
     "BootVolumeKmsKey": BootVolumeKmsKey,
+    "BootVolumeReplica": BootVolumeReplica,
+    "BootVolumeReplicaDetails": BootVolumeReplicaDetails,
+    "BootVolumeReplicaInfo": BootVolumeReplicaInfo,
     "BootVolumeSourceDetails": BootVolumeSourceDetails,
     "BootVolumeSourceFromBootVolumeBackupDetails": BootVolumeSourceFromBootVolumeBackupDetails,
     "BootVolumeSourceFromBootVolumeDetails": BootVolumeSourceFromBootVolumeDetails,
+    "BootVolumeSourceFromBootVolumeReplicaDetails": BootVolumeSourceFromBootVolumeReplicaDetails,
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
     "ByoipAllocatedRangeCollection": ByoipAllocatedRangeCollection,
@@ -757,6 +772,7 @@ core_type_mapping = {
     "VolumeGroupSourceFromVolumesDetails": VolumeGroupSourceFromVolumesDetails,
     "VolumeKmsKey": VolumeKmsKey,
     "VolumeSourceDetails": VolumeSourceDetails,
+    "VolumeSourceFromBlockVolumeReplicaDetails": VolumeSourceFromBlockVolumeReplicaDetails,
     "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
     "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails
 }

@@ -35,6 +35,7 @@ from .create_api_details import CreateApiDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_gateway_details import CreateGatewayDetails
+from .create_sdk_details import CreateSdkDetails
 from .custom_authentication_policy import CustomAuthenticationPolicy
 from .deployment import Deployment
 from .deployment_collection import DeploymentCollection
@@ -65,6 +66,14 @@ from .rename_header_policy_item import RenameHeaderPolicyItem
 from .rename_query_parameter_policy import RenameQueryParameterPolicy
 from .rename_query_parameter_policy_item import RenameQueryParameterPolicyItem
 from .route_authorization_policy import RouteAuthorizationPolicy
+from .sdk import Sdk
+from .sdk_collection import SdkCollection
+from .sdk_language_optional_parameters import SdkLanguageOptionalParameters
+from .sdk_language_optional_parameters_allowed_value import SdkLanguageOptionalParametersAllowedValue
+from .sdk_language_type_collection import SdkLanguageTypeCollection
+from .sdk_language_type_summary import SdkLanguageTypeSummary
+from .sdk_language_types import SdkLanguageTypes
+from .sdk_summary import SdkSummary
 from .set_header_policy import SetHeaderPolicy
 from .set_header_policy_item import SetHeaderPolicyItem
 from .set_query_parameter_policy import SetQueryParameterPolicy
@@ -76,6 +85,7 @@ from .update_api_details import UpdateApiDetails
 from .update_certificate_details import UpdateCertificateDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_gateway_details import UpdateGatewayDetails
+from .update_sdk_details import UpdateSdkDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -118,6 +128,7 @@ apigateway_type_mapping = {
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateGatewayDetails": CreateGatewayDetails,
+    "CreateSdkDetails": CreateSdkDetails,
     "CustomAuthenticationPolicy": CustomAuthenticationPolicy,
     "Deployment": Deployment,
     "DeploymentCollection": DeploymentCollection,
@@ -148,6 +159,14 @@ apigateway_type_mapping = {
     "RenameQueryParameterPolicy": RenameQueryParameterPolicy,
     "RenameQueryParameterPolicyItem": RenameQueryParameterPolicyItem,
     "RouteAuthorizationPolicy": RouteAuthorizationPolicy,
+    "Sdk": Sdk,
+    "SdkCollection": SdkCollection,
+    "SdkLanguageOptionalParameters": SdkLanguageOptionalParameters,
+    "SdkLanguageOptionalParametersAllowedValue": SdkLanguageOptionalParametersAllowedValue,
+    "SdkLanguageTypeCollection": SdkLanguageTypeCollection,
+    "SdkLanguageTypeSummary": SdkLanguageTypeSummary,
+    "SdkLanguageTypes": SdkLanguageTypes,
+    "SdkSummary": SdkSummary,
     "SetHeaderPolicy": SetHeaderPolicy,
     "SetHeaderPolicyItem": SetHeaderPolicyItem,
     "SetQueryParameterPolicy": SetQueryParameterPolicy,
@@ -159,6 +178,7 @@ apigateway_type_mapping = {
     "UpdateCertificateDetails": UpdateCertificateDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateGatewayDetails": UpdateGatewayDetails,
+    "UpdateSdkDetails": UpdateSdkDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

@@ -68,6 +68,7 @@
 # - oci.logging.LoggingManagementClient
 # - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
 # - oci.golden_gate.GoldenGateClient
+# - oci.network_load_balancer.NetworkLoadBalancerClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient

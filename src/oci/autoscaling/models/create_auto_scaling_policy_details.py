@@ -10,12 +10,14 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutoScalingPolicyDetails(object):
     """
-    Creation details for an autoscaling policy.
+    Creation details for an autoscaling policy. You can create the following types of autoscaling policies:
 
-    Each autoscaling configuration can have one autoscaling policy.
-
-    In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+    - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
+    - **Threshold-based:** An autoscaling action is triggered when a performance metric meets
     or exceeds a threshold.
+
+    An autoscaling configuration can either have multiple schedule-based autoscaling policies, or one
+    threshold-based autoscaling policy.
     """
 
     def __init__(self, **kwargs):
@@ -83,7 +85,7 @@ class CreateAutoScalingPolicyDetails(object):
     @property
     def capacity(self):
         """
-        **[Required]** Gets the capacity of this CreateAutoScalingPolicyDetails.
+        Gets the capacity of this CreateAutoScalingPolicyDetails.
         The capacity requirements of the autoscaling policy.
 
 
@@ -156,7 +158,7 @@ class CreateAutoScalingPolicyDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this CreateAutoScalingPolicyDetails.
-        Boolean field indicating whether this policy is enabled or not.
+        Whether the autoscaling policy is enabled.
 
 
         :return: The is_enabled of this CreateAutoScalingPolicyDetails.
@@ -168,7 +170,7 @@ class CreateAutoScalingPolicyDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this CreateAutoScalingPolicyDetails.
-        Boolean field indicating whether this policy is enabled or not.
+        Whether the autoscaling policy is enabled.
 
 
         :param is_enabled: The is_enabled of this CreateAutoScalingPolicyDetails.

@@ -130,7 +130,7 @@ class AutoScalingPolicySummary(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this AutoScalingPolicySummary.
-        Boolean field indicated whether this policy is enabled or not.
+        Whether the autoscaling policy is enabled.
 
 
         :return: The is_enabled of this AutoScalingPolicySummary.
@@ -142,7 +142,7 @@ class AutoScalingPolicySummary(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AutoScalingPolicySummary.
-        Boolean field indicated whether this policy is enabled or not.
+        Whether the autoscaling policy is enabled.
 
 
         :param is_enabled: The is_enabled of this AutoScalingPolicySummary.

@@ -96,6 +96,10 @@ class Cluster(object):
             The value to assign to the available_kubernetes_upgrades property of this Cluster.
         :type available_kubernetes_upgrades: list[str]
 
+        :param image_policy_config:
+            The value to assign to the image_policy_config property of this Cluster.
+        :type image_policy_config: oci.container_engine.models.ImagePolicyConfig
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -110,7 +114,8 @@ class Cluster(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'endpoints': 'ClusterEndpoints',
-            'available_kubernetes_upgrades': 'list[str]'
+            'available_kubernetes_upgrades': 'list[str]',
+            'image_policy_config': 'ImagePolicyConfig'
         }
 
         self.attribute_map = {
@@ -126,7 +131,8 @@ class Cluster(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'endpoints': 'endpoints',
-            'available_kubernetes_upgrades': 'availableKubernetesUpgrades'
+            'available_kubernetes_upgrades': 'availableKubernetesUpgrades',
+            'image_policy_config': 'imagePolicyConfig'
         }
 
         self._id = None
@@ -142,6 +148,7 @@ class Cluster(object):
         self._lifecycle_details = None
         self._endpoints = None
         self._available_kubernetes_upgrades = None
+        self._image_policy_config = None
 
     @property
     def id(self):
@@ -460,6 +467,30 @@ class Cluster(object):
         :type: list[str]
         """
         self._available_kubernetes_upgrades = available_kubernetes_upgrades
+
+    @property
+    def image_policy_config(self):
+        """
+        Gets the image_policy_config of this Cluster.
+        The image verification policy for signature validation.
+
+
+        :return: The image_policy_config of this Cluster.
+        :rtype: oci.container_engine.models.ImagePolicyConfig
+        """
+        return self._image_policy_config
+
+    @image_policy_config.setter
+    def image_policy_config(self, image_policy_config):
+        """
+        Sets the image_policy_config of this Cluster.
+        The image verification policy for signature validation.
+
+
+        :param image_policy_config: The image_policy_config of this Cluster.
+        :type: oci.container_engine.models.ImagePolicyConfig
+        """
+        self._image_policy_config = image_policy_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

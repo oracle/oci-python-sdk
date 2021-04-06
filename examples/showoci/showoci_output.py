@@ -808,6 +808,37 @@ class ShowOCIOutput(object):
             self.__print_error("__print_load_balancer_details", e)
 
     ##########################################################################
+    # print network_load balancer config
+    ##########################################################################
+
+    def __print_load_balancer_network_details(self, load_balance_obj):
+        try:
+            lb = load_balance_obj
+            print(self.taba + "Name       : " + lb['name'])
+            print(self.tabs + "Status     : " + lb['status'])
+            print(self.tabs + "Subnet     : " + lb['subnet_name'])
+
+            if 'nsg_names' in lb:
+                if lb['nsg_names']:
+                    print(self.tabs + "SecGrp     : " + lb['nsg_names'])
+
+            # ip_addresses
+            if 'ips' in lb:
+                for ip in lb['ips']:
+                    print(self.tabs + "IP         : " + ip)
+
+            # listeners
+            if 'listeners' in lb:
+                if not lb['listeners']:
+                    print(self.tabs + "Listener   : None")
+                for listener in lb['listeners']:
+                    print(self.tabs + "Listener   : " + listener['desc'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_load_balancer_network_details", e)
+
+    ##########################################################################
     # Load Balancer
     ##########################################################################
 
@@ -829,6 +860,29 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_load_balancer_main", e)
+
+    ##########################################################################
+    # Network Load Balancer
+    ##########################################################################
+
+    def __print_load_balancer_network_main(self, load_balancers):
+        try:
+
+            if len(load_balancers) == 0:
+                return
+            self.print_header("Network Load Balancers", 2)
+
+            for load_balance_obj in load_balancers:
+                if 'details' in load_balance_obj:
+                    self.__print_load_balancer_network_details(load_balance_obj['details'])
+
+                if 'backendset' in load_balance_obj:
+                    self.__print_load_balancer_backendset(load_balance_obj['backendset'])
+
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_load_balancer_network_main", e)
 
     ##########################################################################
     # print file systems mount targets
@@ -1442,9 +1496,11 @@ class ShowOCIOutput(object):
             self.print_header("Announcements", 2)
 
             for ann in announcements:
-                print(self.taba + ann['summary'][0:100] + " (" + ann['reference_ticket_number'] + ") - " + ann['announcement_type'] + ", " + ann['time_one_value'][0:16])
-                print(self.tabs + "Regions  : " + ann['affected_regions'])
-                print(self.tabs + "Services : " + ann['services'])
+                print(self.taba + ann['summary'][0:100] + " (" + ann['reference_ticket_number'] + ") - " + ann['announcement_type'] + ", Start Time: " + ann['time_one_value'][0:16] + ", Time Created: " + ann['time_created'][0:16] + " (" + ann['lifecycle_state'] + ")")
+                if ann['affected_regions']:
+                    print(self.tabs + "Regions  : " + ann['affected_regions'])
+                if ann['services']:
+                    print(self.tabs + "Services : " + ann['services'])
                 print("")
 
         except Exception as e:
@@ -2112,6 +2168,8 @@ class ShowOCIOutput(object):
                     self.__print_file_storage_main(cdata['file_storage'])
                 if 'load_balancer' in cdata:
                     self.__print_load_balancer_main(cdata['load_balancer'])
+                if 'network_load_balancer' in cdata:
+                    self.__print_load_balancer_network_main(cdata['network_load_balancer'])
                 if 'email' in cdata:
                     self.__print_email_main(cdata['email'])
                 if 'resource_management' in cdata:
@@ -2778,6 +2836,8 @@ class ShowOCISummary(object):
                     self.__summary_file_storage_main(cdata['file_storage'])
                 if 'load_balancer' in cdata:
                     self.__summary_load_balancer_main(cdata['load_balancer'])
+                if 'network_load_balancer' in cdata:
+                    self.__summary_load_balancer_main(cdata['network_load_balancer'])
                 if 'paas_services' in cdata:
                     self.__summary_paas_services_main(cdata['paas_services'])
                 if 'security' in cdata:

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CronExecutionSchedule(ExecutionSchedule):
     """
-    Specifies the execution schedule of CRON type.
+    An autoscaling execution schedule that uses a cron expression.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,15 @@ class CronExecutionSchedule(ExecutionSchedule):
     def expression(self):
         """
         **[Required]** Gets the expression of this CronExecutionSchedule.
-        The value representing the execution schedule, as defined by cron format.
+        A cron expression that represents the time at which to execute the autoscaling policy.
+
+        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+
+        You can use special characters that are supported with the Quartz cron implementation.
+
+        You must specify `0` as the value for seconds.
+
+        Example: `0 15 10 ? * *`
 
 
         :return: The expression of this CronExecutionSchedule.
@@ -66,7 +74,15 @@ class CronExecutionSchedule(ExecutionSchedule):
     def expression(self, expression):
         """
         Sets the expression of this CronExecutionSchedule.
-        The value representing the execution schedule, as defined by cron format.
+        A cron expression that represents the time at which to execute the autoscaling policy.
+
+        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+
+        You can use special characters that are supported with the Quartz cron implementation.
+
+        You must specify `0` as the value for seconds.
+
+        Example: `0 15 10 ? * *`
 
 
         :param expression: The expression of this CronExecutionSchedule.

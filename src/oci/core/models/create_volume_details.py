@@ -70,6 +70,10 @@ class CreateVolumeDetails(object):
             The value to assign to the is_auto_tune_enabled property of this CreateVolumeDetails.
         :type is_auto_tune_enabled: bool
 
+        :param block_volume_replicas:
+            The value to assign to the block_volume_replicas property of this CreateVolumeDetails.
+        :type block_volume_replicas: list[oci.core.models.BlockVolumeReplicaDetails]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -84,7 +88,8 @@ class CreateVolumeDetails(object):
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
             'volume_backup_id': 'str',
-            'is_auto_tune_enabled': 'bool'
+            'is_auto_tune_enabled': 'bool',
+            'block_volume_replicas': 'list[BlockVolumeReplicaDetails]'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class CreateVolumeDetails(object):
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
             'volume_backup_id': 'volumeBackupId',
-            'is_auto_tune_enabled': 'isAutoTuneEnabled'
+            'is_auto_tune_enabled': 'isAutoTuneEnabled',
+            'block_volume_replicas': 'blockVolumeReplicas'
         }
 
         self._availability_domain = None
@@ -116,6 +122,7 @@ class CreateVolumeDetails(object):
         self._source_details = None
         self._volume_backup_id = None
         self._is_auto_tune_enabled = None
+        self._block_volume_replicas = None
 
     @property
     def availability_domain(self):
@@ -484,6 +491,32 @@ class CreateVolumeDetails(object):
         :type: bool
         """
         self._is_auto_tune_enabled = is_auto_tune_enabled
+
+    @property
+    def block_volume_replicas(self):
+        """
+        Gets the block_volume_replicas of this CreateVolumeDetails.
+        The list of block volume replicas to be enabled for this volume
+        in the specified destination availability domains.
+
+
+        :return: The block_volume_replicas of this CreateVolumeDetails.
+        :rtype: list[oci.core.models.BlockVolumeReplicaDetails]
+        """
+        return self._block_volume_replicas
+
+    @block_volume_replicas.setter
+    def block_volume_replicas(self, block_volume_replicas):
+        """
+        Sets the block_volume_replicas of this CreateVolumeDetails.
+        The list of block volume replicas to be enabled for this volume
+        in the specified destination availability domains.
+
+
+        :param block_volume_replicas: The block_volume_replicas of this CreateVolumeDetails.
+        :type: list[oci.core.models.BlockVolumeReplicaDetails]
+        """
+        self._block_volume_replicas = block_volume_replicas
 
     def __repr__(self):
         return formatted_flat_dict(self)

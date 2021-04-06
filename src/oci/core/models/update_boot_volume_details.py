@@ -42,6 +42,10 @@ class UpdateBootVolumeDetails(object):
             The value to assign to the is_auto_tune_enabled property of this UpdateBootVolumeDetails.
         :type is_auto_tune_enabled: bool
 
+        :param boot_volume_replicas:
+            The value to assign to the boot_volume_replicas property of this UpdateBootVolumeDetails.
+        :type boot_volume_replicas: list[oci.core.models.BootVolumeReplicaDetails]
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -49,7 +53,8 @@ class UpdateBootVolumeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'size_in_gbs': 'int',
             'vpus_per_gb': 'int',
-            'is_auto_tune_enabled': 'bool'
+            'is_auto_tune_enabled': 'bool',
+            'boot_volume_replicas': 'list[BootVolumeReplicaDetails]'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class UpdateBootVolumeDetails(object):
             'freeform_tags': 'freeformTags',
             'size_in_gbs': 'sizeInGBs',
             'vpus_per_gb': 'vpusPerGB',
-            'is_auto_tune_enabled': 'isAutoTuneEnabled'
+            'is_auto_tune_enabled': 'isAutoTuneEnabled',
+            'boot_volume_replicas': 'bootVolumeReplicas'
         }
 
         self._defined_tags = None
@@ -67,6 +73,7 @@ class UpdateBootVolumeDetails(object):
         self._size_in_gbs = None
         self._vpus_per_gb = None
         self._is_auto_tune_enabled = None
+        self._boot_volume_replicas = None
 
     @property
     def defined_tags(self):
@@ -253,6 +260,32 @@ class UpdateBootVolumeDetails(object):
         :type: bool
         """
         self._is_auto_tune_enabled = is_auto_tune_enabled
+
+    @property
+    def boot_volume_replicas(self):
+        """
+        Gets the boot_volume_replicas of this UpdateBootVolumeDetails.
+        The list of boot volume replicas that this boot volume will be updated to have
+        in the specified destination availability domains.
+
+
+        :return: The boot_volume_replicas of this UpdateBootVolumeDetails.
+        :rtype: list[oci.core.models.BootVolumeReplicaDetails]
+        """
+        return self._boot_volume_replicas
+
+    @boot_volume_replicas.setter
+    def boot_volume_replicas(self, boot_volume_replicas):
+        """
+        Sets the boot_volume_replicas of this UpdateBootVolumeDetails.
+        The list of boot volume replicas that this boot volume will be updated to have
+        in the specified destination availability domains.
+
+
+        :param boot_volume_replicas: The boot_volume_replicas of this UpdateBootVolumeDetails.
+        :type: list[oci.core.models.BootVolumeReplicaDetails]
+        """
+        self._boot_volume_replicas = boot_volume_replicas
 
     def __repr__(self):
         return formatted_flat_dict(self)

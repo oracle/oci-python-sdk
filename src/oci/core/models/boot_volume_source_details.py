@@ -20,6 +20,7 @@ class BootVolumeSourceDetails(object):
 
         * :class:`~oci.core.models.BootVolumeSourceFromBootVolumeBackupDetails`
         * :class:`~oci.core.models.BootVolumeSourceFromBootVolumeDetails`
+        * :class:`~oci.core.models.BootVolumeSourceFromBootVolumeReplicaDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -51,6 +52,9 @@ class BootVolumeSourceDetails(object):
 
         if type == 'bootVolume':
             return 'BootVolumeSourceFromBootVolumeDetails'
+
+        if type == 'bootVolumeReplica':
+            return 'BootVolumeSourceFromBootVolumeReplicaDetails'
         else:
             return 'BootVolumeSourceDetails'
 

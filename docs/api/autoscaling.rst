@@ -36,6 +36,8 @@ Autoscaling
     oci.autoscaling.models.InstancePoolResource
     oci.autoscaling.models.Metric
     oci.autoscaling.models.Resource
+    oci.autoscaling.models.ResourceAction
+    oci.autoscaling.models.ResourcePowerAction
     oci.autoscaling.models.ScheduledPolicy
     oci.autoscaling.models.Threshold
     oci.autoscaling.models.ThresholdPolicy

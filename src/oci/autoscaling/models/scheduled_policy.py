@@ -47,6 +47,10 @@ class ScheduledPolicy(AutoScalingPolicy):
             The value to assign to the execution_schedule property of this ScheduledPolicy.
         :type execution_schedule: oci.autoscaling.models.ExecutionSchedule
 
+        :param resource_action:
+            The value to assign to the resource_action property of this ScheduledPolicy.
+        :type resource_action: oci.autoscaling.models.ResourceAction
+
         """
         self.swagger_types = {
             'capacity': 'Capacity',
@@ -55,7 +59,8 @@ class ScheduledPolicy(AutoScalingPolicy):
             'policy_type': 'str',
             'time_created': 'datetime',
             'is_enabled': 'bool',
-            'execution_schedule': 'ExecutionSchedule'
+            'execution_schedule': 'ExecutionSchedule',
+            'resource_action': 'ResourceAction'
         }
 
         self.attribute_map = {
@@ -65,7 +70,8 @@ class ScheduledPolicy(AutoScalingPolicy):
             'policy_type': 'policyType',
             'time_created': 'timeCreated',
             'is_enabled': 'isEnabled',
-            'execution_schedule': 'executionSchedule'
+            'execution_schedule': 'executionSchedule',
+            'resource_action': 'resourceAction'
         }
 
         self._capacity = None
@@ -75,12 +81,15 @@ class ScheduledPolicy(AutoScalingPolicy):
         self._time_created = None
         self._is_enabled = None
         self._execution_schedule = None
+        self._resource_action = None
         self._policy_type = 'scheduled'
 
     @property
     def execution_schedule(self):
         """
         **[Required]** Gets the execution_schedule of this ScheduledPolicy.
+        The schedule for executing the autoscaling policy.
+
 
         :return: The execution_schedule of this ScheduledPolicy.
         :rtype: oci.autoscaling.models.ExecutionSchedule
@@ -91,11 +100,33 @@ class ScheduledPolicy(AutoScalingPolicy):
     def execution_schedule(self, execution_schedule):
         """
         Sets the execution_schedule of this ScheduledPolicy.
+        The schedule for executing the autoscaling policy.
+
 
         :param execution_schedule: The execution_schedule of this ScheduledPolicy.
         :type: oci.autoscaling.models.ExecutionSchedule
         """
         self._execution_schedule = execution_schedule
+
+    @property
+    def resource_action(self):
+        """
+        Gets the resource_action of this ScheduledPolicy.
+
+        :return: The resource_action of this ScheduledPolicy.
+        :rtype: oci.autoscaling.models.ResourceAction
+        """
+        return self._resource_action
+
+    @resource_action.setter
+    def resource_action(self, resource_action):
+        """
+        Sets the resource_action of this ScheduledPolicy.
+
+        :param resource_action: The resource_action of this ScheduledPolicy.
+        :type: oci.autoscaling.models.ResourceAction
+        """
+        self._resource_action = resource_action
 
     def __repr__(self):
         return formatted_flat_dict(self)

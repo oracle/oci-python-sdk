@@ -12537,7 +12537,7 @@ class DatabaseClient(object):
         :param str image_shape_family: (optional)
             A filter to return only resources that match the given image shape family exactly.
 
-            Allowed values are: "VM_BM_SHAPE", "EXADATA_SHAPE"
+            Allowed values are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"
 
         :param bool is_upgrade_supported: (optional)
             If provided, filters the results to the set of database versions which are supported for Upgrade.
@@ -12606,7 +12606,7 @@ class DatabaseClient(object):
                 )
 
         if 'image_shape_family' in kwargs:
-            image_shape_family_allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE"]
+            image_shape_family_allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"]
             if kwargs['image_shape_family'] not in image_shape_family_allowed_values:
                 raise ValueError(
                     "Invalid value for `image_shape_family`, must be one of {0}".format(image_shape_family_allowed_values)

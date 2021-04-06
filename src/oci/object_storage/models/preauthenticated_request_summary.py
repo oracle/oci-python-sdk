@@ -29,6 +29,14 @@ class PreauthenticatedRequestSummary(object):
     #: This constant has a value of "AnyObjectWrite"
     ACCESS_TYPE_ANY_OBJECT_WRITE = "AnyObjectWrite"
 
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequestSummary.
+    #: This constant has a value of "AnyObjectRead"
+    ACCESS_TYPE_ANY_OBJECT_READ = "AnyObjectRead"
+
+    #: A constant which can be used with the access_type property of a PreauthenticatedRequestSummary.
+    #: This constant has a value of "AnyObjectReadWrite"
+    ACCESS_TYPE_ANY_OBJECT_READ_WRITE = "AnyObjectReadWrite"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PreauthenticatedRequestSummary object with values from keyword arguments.
@@ -46,9 +54,13 @@ class PreauthenticatedRequestSummary(object):
             The value to assign to the object_name property of this PreauthenticatedRequestSummary.
         :type object_name: str
 
+        :param bucket_listing_action:
+            The value to assign to the bucket_listing_action property of this PreauthenticatedRequestSummary.
+        :type bucket_listing_action: str
+
         :param access_type:
             The value to assign to the access_type property of this PreauthenticatedRequestSummary.
-            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type access_type: str
 
@@ -65,6 +77,7 @@ class PreauthenticatedRequestSummary(object):
             'id': 'str',
             'name': 'str',
             'object_name': 'str',
+            'bucket_listing_action': 'str',
             'access_type': 'str',
             'time_expires': 'datetime',
             'time_created': 'datetime'
@@ -74,6 +87,7 @@ class PreauthenticatedRequestSummary(object):
             'id': 'id',
             'name': 'name',
             'object_name': 'objectName',
+            'bucket_listing_action': 'bucketListingAction',
             'access_type': 'accessType',
             'time_expires': 'timeExpires',
             'time_created': 'timeCreated'
@@ -82,6 +96,7 @@ class PreauthenticatedRequestSummary(object):
         self._id = None
         self._name = None
         self._object_name = None
+        self._bucket_listing_action = None
         self._access_type = None
         self._time_expires = None
         self._time_created = None
@@ -161,12 +176,40 @@ class PreauthenticatedRequestSummary(object):
         self._object_name = object_name
 
     @property
+    def bucket_listing_action(self):
+        """
+        Gets the bucket_listing_action of this PreauthenticatedRequestSummary.
+        Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+        Deny: Prevents the user from performing a list operation.
+        ListObjects: Authorizes the user to perform a list operation.
+
+
+        :return: The bucket_listing_action of this PreauthenticatedRequestSummary.
+        :rtype: str
+        """
+        return self._bucket_listing_action
+
+    @bucket_listing_action.setter
+    def bucket_listing_action(self, bucket_listing_action):
+        """
+        Sets the bucket_listing_action of this PreauthenticatedRequestSummary.
+        Specifies whether a list operation is allowed on a PAR with accessType \"AnyObjectRead\" or \"AnyObjectReadWrite\".
+        Deny: Prevents the user from performing a list operation.
+        ListObjects: Authorizes the user to perform a list operation.
+
+
+        :param bucket_listing_action: The bucket_listing_action of this PreauthenticatedRequestSummary.
+        :type: str
+        """
+        self._bucket_listing_action = bucket_listing_action
+
+    @property
     def access_type(self):
         """
         **[Required]** Gets the access_type of this PreauthenticatedRequestSummary.
         The operation that can be performed on this resource.
 
-        Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -185,7 +228,7 @@ class PreauthenticatedRequestSummary(object):
         :param access_type: The access_type of this PreauthenticatedRequestSummary.
         :type: str
         """
-        allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite"]
+        allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite"]
         if not value_allowed_none_or_none_sentinel(access_type, allowed_values):
             access_type = 'UNKNOWN_ENUM_VALUE'
         self._access_type = access_type

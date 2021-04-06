@@ -70,7 +70,7 @@ import requests
 import time
 
 
-version = "20.12.03"
+version = "21.04.04"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -208,6 +208,7 @@ def set_parser_arguments():
     parser.add_argument('-c', type=argparse.FileType('r'), dest='config', help="Config File")
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-f', default="", dest='fileid', help='File Id to load')
+    parser.add_argument('-ts', default="", dest='tagspecial', help='tag special key to load the data to TAG_SPECIAL column')
     parser.add_argument('-d', default="", dest='filedate', help='Minimum File Date to load (i.e. yyyy-mm-dd)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-su', action='store_true', default=False, dest='skip_usage', help='Skip Load Usage Files')
@@ -291,6 +292,17 @@ def check_database_table_structure_usage(connection):
         if val == 0:
             print("   Column TENANT_ID does not exist in the table OCI_USAGE, adding...")
             sql = "alter table OCI_USAGE add (TENANT_ID VARCHAR2(100))"
+            cursor.execute(sql)
+
+        # check if TAG_SPECIAL columns exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAG_SPECIAL'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns not exist, create it
+        if val == 0:
+            print("   Column TAG_SPECIAL does not exist in the table OCI_USAGE, adding...")
+            sql = "alter table OCI_USAGE add (TAG_SPECIAL VARCHAR2(4000))"
             cursor.execute(sql)
 
         # check if OCI_USAGE_TAG_KEYS table exist, if not create
@@ -514,14 +526,14 @@ def update_price_list(connection):
 ##########################################################################
 # update_cost_reference
 ##########################################################################
-def update_cost_reference(connection):
+def update_cost_reference(connection, tag_special_key, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
 
         print("\nMerging statistics into OCI_COST_REFERENCE...")
 
-        # run merge to oci_update_stats
+        # run merge to OCI_COST_REFERENCE
         sql = "merge into OCI_COST_REFERENCE a "
         sql += "using "
         sql += "( "
@@ -543,6 +555,8 @@ def update_cost_reference(connection):
         sql += "        union all "
         sql += "        select distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST "
         sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST "
+        sql += "        union all "
         sql += "        select distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  "
         sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
         sql += "    ) where ref_name is not null "
@@ -554,6 +568,26 @@ def update_cost_reference(connection):
         cursor.execute(sql)
         connection.commit()
         print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
+        if tag_special_key:
+
+            # run merge to OCI_COST_REFERENCE for the tag special key
+            print("   Handling Tag Special Key '" + tag_special_key + "'")
+
+            sql = "merge into OCI_COST_REFERENCE a "
+            sql += "using "
+            sql += "( "
+            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY' as REF_TYPE, :tag_special_key as ref_name from DUAL "
+            sql += ") b "
+            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
+            sql += "when matched then update set a.ref_name = b.ref_name  "
+            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
         cursor.close()
 
     except cx_Oracle.DatabaseError as e:
@@ -804,6 +838,17 @@ def check_database_table_structure_cost(connection):
             sql = "alter table OCI_COST add (TENANT_ID VARCHAR2(100))"
             cursor.execute(sql)
 
+        # check if TAG_SPECIAL column exist in OCI_COST table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TAG_SPECIAL'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if column not exist, create it
+        if val == 0:
+            print("   Column TAG_SPECIAL does not exist in the table OCI_COST, adding...")
+            sql = "alter table OCI_COST add (TAG_SPECIAL VARCHAR2(4000))"
+            cursor.execute(sql)
+
         # check if OCI_COST_TAG_KEYS table exist, if not create
         sql = "select count(*) from user_tables where table_name = 'OCI_COST_TAG_KEYS'"
         cursor.execute(sql)
@@ -1039,13 +1084,14 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
             sql += "COST_OVERAGE_FLAG,"
             sql += "IS_CORRECTION, "
             sql += "TAGS_DATA, "
-            sql += "TENANT_ID "
+            sql += "TENANT_ID, "
+            sql += "TAG_SPECIAL "
             sql += ") VALUES ("
             sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5,  "
             sql += ":6, :7, :8, :9, :10, "
             sql += ":11, to_number(:12), to_number(:13) ,:14, :15, "
             sql += ":16, to_number(:17), to_number(:18), to_number(:19), to_number(:20), "
-            sql += ":21, :22, :23, :24, :25, :26"
+            sql += ":21, :22, :23, :24, :25, :26, :27"
             sql += ") "
 
             # insert bulk to database
@@ -1064,6 +1110,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                         compartment_path = c['path']
 
                 # Handle Tags up to 4000 chars with # seperator
+                tag_special = ""
                 tags_data = ""
                 for (key, value) in row.items():
                     if 'tags' in key and len(value) > 0:
@@ -1071,6 +1118,12 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                         # remove # and = from the tags keys and value
                         keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
                         valueadj = str(value).replace("#", "").replace("=", "")
+
+                        # if tagspecial
+                        if cmd.tagspecial:
+                            if keyadj == cmd.tagspecial:
+                                if len(valueadj) < 4000:
+                                    tag_special = valueadj
 
                         # check if length < 4000 to avoid overflow database column
                         if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
@@ -1185,7 +1238,8 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                     cost_overageFlag,
                     lineItem_isCorrection,
                     tags_data,
-                    lineItem_tenantId[-6:]
+                    lineItem_tenantId[-6:],
+                    tag_special
                 )
                 data.append(row_data)
                 num_rows += 1
@@ -1287,11 +1341,11 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             # sql statement
             sql = "INSERT INTO OCI_USAGE (TENANT_NAME, FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
             sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID "
+            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID, TAG_SPECIAL "
             sql += ") VALUES ("
             sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
             sql += ":7, :8, :9, :10, :11, :12, "
-            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19 "
+            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19, :20 "
             sql += ") "
 
             # Adjust the batch size to meet memory and performance requirements
@@ -1315,12 +1369,19 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
 
                 # Handle Tags up to 3500 chars with # seperator
                 tags_data = ""
+                tag_special = ""
                 for (key, value) in row.items():
                     if 'tags' in key and len(value) > 0:
 
                         # remove # and = from the tags keys and value
                         keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
                         valueadj = str(value).replace("#", "").replace("=", "")
+
+                        # if tagspecial
+                        if cmd.tagspecial:
+                            if keyadj == cmd.tagspecial:
+                                if len(valueadj) < 4000:
+                                    tag_special = valueadj
 
                         # check if length < 3500 to avoid overflow database column
                         if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 3500:
@@ -1367,7 +1428,8 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                     usage_consumedQuantityMeasure,
                     lineItem_isCorrection,
                     tags_data,
-                    lineItem_tenantId[-6:]
+                    lineItem_tenantId[-6:],
+                    tag_special
                 )
                 data.append(row_data)
                 num_rows += 1
@@ -1571,8 +1633,8 @@ def main_process():
             update_usage_stats(connection)
         if cost_num > 0:
             update_cost_stats(connection)
-            update_cost_reference(connection)
             update_price_list(connection)
+            update_cost_reference(connection, cmd.tagspecial, tenancy.name)
             if not cmd.skip_rate:
                 update_public_rates(connection, tenancy.name)
             update_tenant_id_if_null(connection, tenancy.name, short_tenant_id)

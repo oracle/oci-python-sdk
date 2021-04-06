@@ -15,6 +15,11 @@ class AutoScalingPolicy(object):
     An autoscaling policy is part of an autoscaling configuration. For more information, see
     `Autoscaling`__.
 
+    You can create the following types of autoscaling policies:
+
+    - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
+    - **Threshold-based:** An autoscaling action is triggered when a performance metric meets or exceeds a threshold.
+
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
     """
 
@@ -97,7 +102,7 @@ class AutoScalingPolicy(object):
     @property
     def capacity(self):
         """
-        **[Required]** Gets the capacity of this AutoScalingPolicy.
+        Gets the capacity of this AutoScalingPolicy.
         The capacity requirements of the autoscaling policy.
 
 
@@ -222,7 +227,7 @@ class AutoScalingPolicy(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this AutoScalingPolicy.
-        Boolean field indicating whether this policy is enabled or not.
+        Whether the autoscaling policy is enabled.
 
 
         :return: The is_enabled of this AutoScalingPolicy.
@@ -234,7 +239,7 @@ class AutoScalingPolicy(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AutoScalingPolicy.
-        Boolean field indicating whether this policy is enabled or not.
+        Whether the autoscaling policy is enabled.
 
 
         :param is_enabled: The is_enabled of this AutoScalingPolicy.

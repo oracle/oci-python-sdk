@@ -23,6 +23,10 @@ class CreateDatabaseSoftwareImageDetails(object):
     #: This constant has a value of "EXADATA_SHAPE"
     IMAGE_SHAPE_FAMILY_EXADATA_SHAPE = "EXADATA_SHAPE"
 
+    #: A constant which can be used with the image_shape_family property of a CreateDatabaseSoftwareImageDetails.
+    #: This constant has a value of "EXACC_SHAPE"
+    IMAGE_SHAPE_FAMILY_EXACC_SHAPE = "EXACC_SHAPE"
+
     #: A constant which can be used with the image_type property of a CreateDatabaseSoftwareImageDetails.
     #: This constant has a value of "GRID_IMAGE"
     IMAGE_TYPE_GRID_IMAGE = "GRID_IMAGE"
@@ -50,7 +54,7 @@ class CreateDatabaseSoftwareImageDetails(object):
 
         :param image_shape_family:
             The value to assign to the image_shape_family property of this CreateDatabaseSoftwareImageDetails.
-            Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE"
+            Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"
         :type image_shape_family: str
 
         :param image_type:
@@ -198,7 +202,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         Gets the image_shape_family of this CreateDatabaseSoftwareImageDetails.
         To what shape the image is meant for.
 
-        Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE"
+        Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"
 
 
         :return: The image_shape_family of this CreateDatabaseSoftwareImageDetails.
@@ -216,7 +220,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         :param image_shape_family: The image_shape_family of this CreateDatabaseSoftwareImageDetails.
         :type: str
         """
-        allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE"]
+        allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"]
         if not value_allowed_none_or_none_sentinel(image_shape_family, allowed_values):
             raise ValueError(
                 "Invalid value for `image_shape_family`, must be None or one of {0}"

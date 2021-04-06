@@ -2,9 +2,11 @@
 # Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+from __future__ import absolute_import
 import base64
 import datetime
 import json
+import logging
 import os.path
 import pytz
 from oci._vendor import six
@@ -15,10 +17,14 @@ try:
 except ImportError:
     from urlparse import urlparse
 
+logger = logging.getLogger(__name__)
 INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE_NAME = 'instance_principal'
 DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE = 'delegation_token_with_instance_principal'
 DELEGATION_TOKEN_FILE_FIELD_NAME = 'delegation_token_file'
 AUTHENTICATION_TYPE_FIELD_NAME = 'authentication_type'
+MEBIBYTE = 1024 * 1024
+DEFAULT_BUFFER_SIZE = 100 * MEBIBYTE
+DEFAULT_PART_SIZE = 128 * MEBIBYTE
 
 try:
     # PY3+
@@ -213,3 +219,39 @@ def extract_service_endpoint(endpoint_with_base_path):
     """
     parsed_endpoint = urlparse(endpoint_with_base_path)
     return parsed_endpoint.scheme + r'://' + parsed_endpoint.netloc
+
+
+def back_up_body_calculate_stream_content_length(stream, buffer_limit=DEFAULT_BUFFER_SIZE):
+    # Note: Need to read in chunks, older version of Python will fail to read more than 2GB at once.
+    # We pull data in chunks (128MB at a time) from the stream until there is no more
+    logger.warning("Reading stream to calculate content-length. Process may freeze for very big streams. Consider passing in content length for big objects")
+    try:
+        keep_reading = True
+        part_size = DEFAULT_PART_SIZE
+        content_length = 0
+        content = ""
+        byte_content = b''
+        while keep_reading:
+            if hasattr(stream, 'buffer'):
+                content = stream.buffer.read(part_size)
+            elif hasattr(stream, 'read'):
+                content = stream.read(part_size)
+            else:
+                raise TypeError("Stream object does not contain a 'read' property. Cannot auto calculate content length, please pass in content length")
+            if len(content) == 0:
+                keep_reading = False
+            byte_content += content
+            content_length += len(content)
+            if (buffer_limit and content_length > buffer_limit):
+                raise BufferError("Stream size is greater than the buffer_limit, please pass in a bigger buffer_limit or pass in content length to the request")
+        return {"content_length": content_length, "byte_content": byte_content}
+    except(IOError, OSError):
+        raise TypeError("Stream object's content length cannot be calculated, please pass in content length")
+
+
+# This helper function checks if an object can have it's content length auto-calculated by the Request library
+def is_content_length_calculable_by_req_util(o):
+    if hasattr(o, '__len__') or hasattr(o, 'len') or hasattr(o, 'fileno') or hasattr(o, 'tell'):
+        return True
+    logger.warning("Request did not contain content-length and stream object does not contain fileno or tell property. Stream object will be read to calculate content-length")
+    return False

@@ -21,7 +21,7 @@ class OcicSourceDetails(SourceDetails):
 
         :param type:
             The value to assign to the type property of this OcicSourceDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
         :type type: str
 
         :param region:
@@ -78,7 +78,7 @@ class OcicSourceDetails(SourceDetails):
     def compute_account(self):
         """
         **[Required]** Gets the compute_account of this OcicSourceDetails.
-        If you are using a Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+        If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
         For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
         then enter 567890123.
 
@@ -94,7 +94,7 @@ class OcicSourceDetails(SourceDetails):
     def compute_account(self, compute_account):
         """
         Sets the compute_account of this OcicSourceDetails.
-        If you are using a Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+        If you are using an Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
         For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
         then enter 567890123.
 

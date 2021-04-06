@@ -21,7 +21,7 @@ class OcicAuthorizationDetails(AuthorizationDetails):
 
         :param type:
             The value to assign to the type property of this OcicAuthorizationDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
         :type type: str
 
         :param username:

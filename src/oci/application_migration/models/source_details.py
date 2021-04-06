@@ -18,7 +18,7 @@ class SourceDetails(object):
     Specify `INTERNAL_COMPUTE` if you have a traditional Oracle Cloud Infrastructure - Classic account and you want to migrate Oracle
     Process Cloud Service or Oracle Integration Cloud Service applications.
 
-    Specify `OCC` if you have an Oracle Cloud @ Customer account.
+    Specify `OCC` if you want to migrate applications from Oracle Cloud@Customer.
     """
 
     #: A constant which can be used with the type property of a SourceDetails.
@@ -33,6 +33,10 @@ class SourceDetails(object):
     #: This constant has a value of "OCC"
     TYPE_OCC = "OCC"
 
+    #: A constant which can be used with the type property of a SourceDetails.
+    #: This constant has a value of "OCIC_IDCS"
+    TYPE_OCIC_IDCS = "OCIC_IDCS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -46,7 +50,7 @@ class SourceDetails(object):
 
         :param type:
             The value to assign to the type property of this SourceDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -86,7 +90,7 @@ class SourceDetails(object):
         **[Required]** Gets the type of this SourceDetails.
         The type of source environment.
 
-        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -105,7 +109,7 @@ class SourceDetails(object):
         :param type: The type of this SourceDetails.
         :type: str
         """
-        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC"]
+        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

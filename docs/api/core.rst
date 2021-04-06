@@ -49,14 +49,21 @@ Core Services
     oci.core.models.AttachVnicDetails
     oci.core.models.AttachVolumeDetails
     oci.core.models.BgpSessionInfo
+    oci.core.models.BlockVolumeReplica
+    oci.core.models.BlockVolumeReplicaDetails
+    oci.core.models.BlockVolumeReplicaInfo
     oci.core.models.BooleanImageCapabilitySchemaDescriptor
     oci.core.models.BootVolume
     oci.core.models.BootVolumeAttachment
     oci.core.models.BootVolumeBackup
     oci.core.models.BootVolumeKmsKey
+    oci.core.models.BootVolumeReplica
+    oci.core.models.BootVolumeReplicaDetails
+    oci.core.models.BootVolumeReplicaInfo
     oci.core.models.BootVolumeSourceDetails
     oci.core.models.BootVolumeSourceFromBootVolumeBackupDetails
     oci.core.models.BootVolumeSourceFromBootVolumeDetails
+    oci.core.models.BootVolumeSourceFromBootVolumeReplicaDetails
     oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails
     oci.core.models.ByoipAllocatedRangeCollection
@@ -398,5 +405,6 @@ Core Services
     oci.core.models.VolumeGroupSourceFromVolumesDetails
     oci.core.models.VolumeKmsKey
     oci.core.models.VolumeSourceDetails
+    oci.core.models.VolumeSourceFromBlockVolumeReplicaDetails
     oci.core.models.VolumeSourceFromVolumeBackupDetails
     oci.core.models.VolumeSourceFromVolumeDetails

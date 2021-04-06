@@ -5754,6 +5754,12 @@ class ComputeClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param float remaining_memory_in_gbs_greater_than_or_equal_to: (optional)
+            The remaining memory of the dedicated VM host, in GBs.
+
+        :param float remaining_ocpus_greater_than_or_equal_to: (optional)
+            The available OCPUs of the dedicated VM host.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5782,7 +5788,9 @@ class ComputeClient(object):
             "page",
             "opc_request_id",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "remaining_memory_in_gbs_greater_than_or_equal_to",
+            "remaining_ocpus_greater_than_or_equal_to"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5819,7 +5827,9 @@ class ComputeClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "remainingMemoryInGBsGreaterThanOrEqualTo": kwargs.get("remaining_memory_in_gbs_greater_than_or_equal_to", missing),
+            "remainingOcpusGreaterThanOrEqualTo": kwargs.get("remaining_ocpus_greater_than_or_equal_to", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
