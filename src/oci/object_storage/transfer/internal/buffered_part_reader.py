@@ -4,9 +4,16 @@
 
 import io
 
+# Currently Python HTTP client sends data to the server in blocksize
+# of 8192 bytes. This causes a lot of reads and execution of CPU bound
+# code between sends. This hampers the advantages of parallel threads
+# and hence throughput for multipart uploads drops beyond 3-4 threads.
+# Adding a force read size of 64KB
+FORCED_READ_SIZE = 64 * 1024  # 64KB
+
 
 class BufferedPartReader(io.IOBase):
-    def __init__(self, file_object, start, size):
+    def __init__(self, file_object, start, size, forced_read_size=FORCED_READ_SIZE):
         """
         Build an object that will act like a BufferedReader object,
         but constrained to a predetermined part of the file_object.
@@ -20,6 +27,7 @@ class BufferedPartReader(io.IOBase):
         self.file = file_object
         self.bytes_read = 0
         self.start = start
+        self.forced_read_size = forced_read_size
 
         # Seek to the end of the file to see how many bytes remain
         # from the start of the part.
@@ -53,7 +61,7 @@ class BufferedPartReader(io.IOBase):
         """
         return self.file.tell() - self.start
 
-    def read(self, n):
+    def read(self, n=-1):
         """
         Read data from the part, but make the end of the part look like
         the end of file has been reached.
@@ -61,7 +69,8 @@ class BufferedPartReader(io.IOBase):
         :param n: Bytes to read
         :return: Memoryview of the bytes read from the part
         """
-        buf = bytearray(n)
+        # Use bytearray of forced_read_size for any n less than forced_read_size
+        buf = bytearray(n) if n == -1 or n == 0 or n > self.forced_read_size else bytearray(self.forced_read_size)
         read = 0
         if self.bytes_read < self.size:
             read = self.file.readinto(buf)
