@@ -31,6 +31,8 @@ Ocvp
     oci.ocvp.models.Sddc
     oci.ocvp.models.SddcCollection
     oci.ocvp.models.SddcSummary
+    oci.ocvp.models.SupportedSkuSummary
+    oci.ocvp.models.SupportedSkuSummaryCollection
     oci.ocvp.models.SupportedVmwareSoftwareVersionCollection
     oci.ocvp.models.SupportedVmwareSoftwareVersionSummary
     oci.ocvp.models.UpdateEsxiHostDetails

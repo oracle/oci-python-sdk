@@ -54,6 +54,14 @@ class VirtualCircuit(object):
     #: This constant has a value of "DOWN"
     BGP_SESSION_STATE_DOWN = "DOWN"
 
+    #: A constant which can be used with the bgp_ipv6_session_state property of a VirtualCircuit.
+    #: This constant has a value of "UP"
+    BGP_IPV6_SESSION_STATE_UP = "UP"
+
+    #: A constant which can be used with the bgp_ipv6_session_state property of a VirtualCircuit.
+    #: This constant has a value of "DOWN"
+    BGP_IPV6_SESSION_STATE_DOWN = "DOWN"
+
     #: A constant which can be used with the routing_policy property of a VirtualCircuit.
     #: This constant has a value of "ORACLE_SERVICE_NETWORK"
     ROUTING_POLICY_ORACLE_SERVICE_NETWORK = "ORACLE_SERVICE_NETWORK"
@@ -150,6 +158,12 @@ class VirtualCircuit(object):
             Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type bgp_session_state: str
+
+        :param bgp_ipv6_session_state:
+            The value to assign to the bgp_ipv6_session_state property of this VirtualCircuit.
+            Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bgp_ipv6_session_state: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this VirtualCircuit.
@@ -258,6 +272,7 @@ class VirtualCircuit(object):
             'bandwidth_shape_name': 'str',
             'bgp_management': 'str',
             'bgp_session_state': 'str',
+            'bgp_ipv6_session_state': 'str',
             'compartment_id': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
             'routing_policy': 'list[str]',
@@ -287,6 +302,7 @@ class VirtualCircuit(object):
             'bandwidth_shape_name': 'bandwidthShapeName',
             'bgp_management': 'bgpManagement',
             'bgp_session_state': 'bgpSessionState',
+            'bgp_ipv6_session_state': 'bgpIpv6SessionState',
             'compartment_id': 'compartmentId',
             'cross_connect_mappings': 'crossConnectMappings',
             'routing_policy': 'routingPolicy',
@@ -315,6 +331,7 @@ class VirtualCircuit(object):
         self._bandwidth_shape_name = None
         self._bgp_management = None
         self._bgp_session_state = None
+        self._bgp_ipv6_session_state = None
         self._compartment_id = None
         self._cross_connect_mappings = None
         self._routing_policy = None
@@ -407,7 +424,7 @@ class VirtualCircuit(object):
     def bgp_session_state(self):
         """
         Gets the bgp_session_state of this VirtualCircuit.
-        The state of the BGP session associated with the virtual circuit.
+        The state of the Ipv4 BGP session associated with the virtual circuit.
 
         Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -422,7 +439,7 @@ class VirtualCircuit(object):
     def bgp_session_state(self, bgp_session_state):
         """
         Sets the bgp_session_state of this VirtualCircuit.
-        The state of the BGP session associated with the virtual circuit.
+        The state of the Ipv4 BGP session associated with the virtual circuit.
 
 
         :param bgp_session_state: The bgp_session_state of this VirtualCircuit.
@@ -432,6 +449,36 @@ class VirtualCircuit(object):
         if not value_allowed_none_or_none_sentinel(bgp_session_state, allowed_values):
             bgp_session_state = 'UNKNOWN_ENUM_VALUE'
         self._bgp_session_state = bgp_session_state
+
+    @property
+    def bgp_ipv6_session_state(self):
+        """
+        Gets the bgp_ipv6_session_state of this VirtualCircuit.
+        The state of the Ipv6 BGP session associated with the virtual circuit.
+
+        Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bgp_ipv6_session_state of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._bgp_ipv6_session_state
+
+    @bgp_ipv6_session_state.setter
+    def bgp_ipv6_session_state(self, bgp_ipv6_session_state):
+        """
+        Sets the bgp_ipv6_session_state of this VirtualCircuit.
+        The state of the Ipv6 BGP session associated with the virtual circuit.
+
+
+        :param bgp_ipv6_session_state: The bgp_ipv6_session_state of this VirtualCircuit.
+        :type: str
+        """
+        allowed_values = ["UP", "DOWN"]
+        if not value_allowed_none_or_none_sentinel(bgp_ipv6_session_state, allowed_values):
+            bgp_ipv6_session_state = 'UNKNOWN_ENUM_VALUE'
+        self._bgp_ipv6_session_state = bgp_ipv6_session_state
 
     @property
     def compartment_id(self):

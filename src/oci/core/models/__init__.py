@@ -4,6 +4,10 @@
 
 from __future__ import absolute_import
 
+from .add_drg_route_distribution_statement_details import AddDrgRouteDistributionStatementDetails
+from .add_drg_route_distribution_statements_details import AddDrgRouteDistributionStatementsDetails
+from .add_drg_route_rule_details import AddDrgRouteRuleDetails
+from .add_drg_route_rules_details import AddDrgRouteRulesDetails
 from .add_image_shape_compatibility_entry_details import AddImageShapeCompatibilityEntryDetails
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
 from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
@@ -127,6 +131,8 @@ from .create_dedicated_vm_host_details import CreateDedicatedVmHostDetails
 from .create_dhcp_details import CreateDhcpDetails
 from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
+from .create_drg_route_distribution_details import CreateDrgRouteDistributionDetails
+from .create_drg_route_table_details import CreateDrgRouteTableDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_ip_sec_connection_tunnel_details import CreateIPSecConnectionTunnelDetails
 from .create_ip_sec_tunnel_bgp_session_details import CreateIPSecTunnelBgpSessionDetails
@@ -166,6 +172,8 @@ from .cross_connect import CrossConnect
 from .cross_connect_group import CrossConnectGroup
 from .cross_connect_location import CrossConnectLocation
 from .cross_connect_mapping import CrossConnectMapping
+from .cross_connect_mapping_details import CrossConnectMappingDetails
+from .cross_connect_mapping_details_collection import CrossConnectMappingDetailsCollection
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
 from .dedicated_vm_host import DedicatedVmHost
@@ -173,6 +181,7 @@ from .dedicated_vm_host_instance_shape_summary import DedicatedVmHostInstanceSha
 from .dedicated_vm_host_instance_summary import DedicatedVmHostInstanceSummary
 from .dedicated_vm_host_shape_summary import DedicatedVmHostShapeSummary
 from .dedicated_vm_host_summary import DedicatedVmHostSummary
+from .default_drg_route_tables import DefaultDrgRouteTables
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
 from .detach_instance_pool_instance_details import DetachInstancePoolInstanceDetails
 from .detach_load_balancer_details import DetachLoadBalancerDetails
@@ -183,7 +192,18 @@ from .dhcp_options import DhcpOptions
 from .dhcp_search_domain_option import DhcpSearchDomainOption
 from .drg import Drg
 from .drg_attachment import DrgAttachment
+from .drg_attachment_id_drg_route_distribution_match_criteria import DrgAttachmentIdDrgRouteDistributionMatchCriteria
+from .drg_attachment_info import DrgAttachmentInfo
+from .drg_attachment_network_create_details import DrgAttachmentNetworkCreateDetails
+from .drg_attachment_network_details import DrgAttachmentNetworkDetails
+from .drg_attachment_network_update_details import DrgAttachmentNetworkUpdateDetails
+from .drg_attachment_type_drg_route_distribution_match_criteria import DrgAttachmentTypeDrgRouteDistributionMatchCriteria
 from .drg_redundancy_status import DrgRedundancyStatus
+from .drg_route_distribution import DrgRouteDistribution
+from .drg_route_distribution_match_criteria import DrgRouteDistributionMatchCriteria
+from .drg_route_distribution_statement import DrgRouteDistributionStatement
+from .drg_route_rule import DrgRouteRule
+from .drg_route_table import DrgRouteTable
 from .egress_security_rule import EgressSecurityRule
 from .emulated_volume_attachment import EmulatedVolumeAttachment
 from .encryption_domain_config import EncryptionDomainConfig
@@ -261,6 +281,7 @@ from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolume
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
 from .internet_gateway import InternetGateway
+from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmentNetworkDetails
 from .ipv6 import Ipv6
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_availability_config_details import LaunchInstanceAvailabilityConfigDetails
@@ -274,16 +295,22 @@ from .modify_vcn_cidr_details import ModifyVcnCidrDetails
 from .nat_gateway import NatGateway
 from .network_security_group import NetworkSecurityGroup
 from .network_security_group_vnic import NetworkSecurityGroupVnic
+from .networking_topology import NetworkingTopology
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .platform_config import PlatformConfig
 from .port_range import PortRange
+from .preemptible_instance_config_details import PreemptibleInstanceConfigDetails
+from .preemption_action import PreemptionAction
 from .private_ip import PrivateIp
 from .public_ip import PublicIp
 from .public_ip_pool import PublicIpPool
 from .public_ip_pool_collection import PublicIpPoolCollection
 from .public_ip_pool_summary import PublicIpPoolSummary
 from .remote_peering_connection import RemotePeeringConnection
+from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
+from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDistributionStatementsDetails
+from .remove_drg_route_rules_details import RemoveDrgRouteRulesDetails
 from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
 from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDetails
 from .remove_vcn_cidr_details import RemoveVcnCidrDetails
@@ -302,6 +329,13 @@ from .shape_networking_bandwidth_options import ShapeNetworkingBandwidthOptions
 from .shape_ocpu_options import ShapeOcpuOptions
 from .subnet import Subnet
 from .tcp_options import TcpOptions
+from .terminate_preemption_action import TerminatePreemptionAction
+from .topology import Topology
+from .topology_associated_with_entity_relationship import TopologyAssociatedWithEntityRelationship
+from .topology_contains_entity_relationship import TopologyContainsEntityRelationship
+from .topology_entity_relationship import TopologyEntityRelationship
+from .topology_routes_to_entity_relationship import TopologyRoutesToEntityRelationship
+from .topology_routes_to_relationship_details import TopologyRoutesToRelationshipDetails
 from .tunnel_config import TunnelConfig
 from .tunnel_cpe_device_config import TunnelCpeDeviceConfig
 from .tunnel_status import TunnelStatus
@@ -321,6 +355,12 @@ from .update_dedicated_vm_host_details import UpdateDedicatedVmHostDetails
 from .update_dhcp_details import UpdateDhcpDetails
 from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
+from .update_drg_route_distribution_details import UpdateDrgRouteDistributionDetails
+from .update_drg_route_distribution_statement_details import UpdateDrgRouteDistributionStatementDetails
+from .update_drg_route_distribution_statements_details import UpdateDrgRouteDistributionStatementsDetails
+from .update_drg_route_rule_details import UpdateDrgRouteRuleDetails
+from .update_drg_route_rules_details import UpdateDrgRouteRulesDetails
+from .update_drg_route_table_details import UpdateDrgRouteTableDetails
 from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
 from .update_ip_sec_connection_tunnel_details import UpdateIPSecConnectionTunnelDetails
 from .update_ip_sec_connection_tunnel_shared_secret_details import UpdateIPSecConnectionTunnelSharedSecretDetails
@@ -363,10 +403,16 @@ from .update_volume_group_backup_details import UpdateVolumeGroupBackupDetails
 from .update_volume_group_details import UpdateVolumeGroupDetails
 from .update_volume_kms_key_details import UpdateVolumeKmsKeyDetails
 from .updated_network_security_group_security_rules import UpdatedNetworkSecurityGroupSecurityRules
+from .upgrade_status import UpgradeStatus
 from .vcn import Vcn
 from .vcn_dns_resolver_association import VcnDnsResolverAssociation
+from .vcn_drg_attachment_network_create_details import VcnDrgAttachmentNetworkCreateDetails
+from .vcn_drg_attachment_network_details import VcnDrgAttachmentNetworkDetails
+from .vcn_drg_attachment_network_update_details import VcnDrgAttachmentNetworkUpdateDetails
+from .vcn_topology import VcnTopology
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
+from .virtual_circuit_drg_attachment_network_details import VirtualCircuitDrgAttachmentNetworkDetails
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
 from .vlan import Vlan
 from .vnic import Vnic
@@ -391,6 +437,10 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AddDrgRouteDistributionStatementDetails": AddDrgRouteDistributionStatementDetails,
+    "AddDrgRouteDistributionStatementsDetails": AddDrgRouteDistributionStatementsDetails,
+    "AddDrgRouteRuleDetails": AddDrgRouteRuleDetails,
+    "AddDrgRouteRulesDetails": AddDrgRouteRulesDetails,
     "AddImageShapeCompatibilityEntryDetails": AddImageShapeCompatibilityEntryDetails,
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
     "AddPublicIpPoolCapacityDetails": AddPublicIpPoolCapacityDetails,
@@ -514,6 +564,8 @@ core_type_mapping = {
     "CreateDhcpDetails": CreateDhcpDetails,
     "CreateDrgAttachmentDetails": CreateDrgAttachmentDetails,
     "CreateDrgDetails": CreateDrgDetails,
+    "CreateDrgRouteDistributionDetails": CreateDrgRouteDistributionDetails,
+    "CreateDrgRouteTableDetails": CreateDrgRouteTableDetails,
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
     "CreateIPSecConnectionTunnelDetails": CreateIPSecConnectionTunnelDetails,
     "CreateIPSecTunnelBgpSessionDetails": CreateIPSecTunnelBgpSessionDetails,
@@ -553,6 +605,8 @@ core_type_mapping = {
     "CrossConnectGroup": CrossConnectGroup,
     "CrossConnectLocation": CrossConnectLocation,
     "CrossConnectMapping": CrossConnectMapping,
+    "CrossConnectMappingDetails": CrossConnectMappingDetails,
+    "CrossConnectMappingDetailsCollection": CrossConnectMappingDetailsCollection,
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
     "DedicatedVmHost": DedicatedVmHost,
@@ -560,6 +614,7 @@ core_type_mapping = {
     "DedicatedVmHostInstanceSummary": DedicatedVmHostInstanceSummary,
     "DedicatedVmHostShapeSummary": DedicatedVmHostShapeSummary,
     "DedicatedVmHostSummary": DedicatedVmHostSummary,
+    "DefaultDrgRouteTables": DefaultDrgRouteTables,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
     "DetachInstancePoolInstanceDetails": DetachInstancePoolInstanceDetails,
     "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
@@ -570,7 +625,18 @@ core_type_mapping = {
     "DhcpSearchDomainOption": DhcpSearchDomainOption,
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
+    "DrgAttachmentIdDrgRouteDistributionMatchCriteria": DrgAttachmentIdDrgRouteDistributionMatchCriteria,
+    "DrgAttachmentInfo": DrgAttachmentInfo,
+    "DrgAttachmentNetworkCreateDetails": DrgAttachmentNetworkCreateDetails,
+    "DrgAttachmentNetworkDetails": DrgAttachmentNetworkDetails,
+    "DrgAttachmentNetworkUpdateDetails": DrgAttachmentNetworkUpdateDetails,
+    "DrgAttachmentTypeDrgRouteDistributionMatchCriteria": DrgAttachmentTypeDrgRouteDistributionMatchCriteria,
     "DrgRedundancyStatus": DrgRedundancyStatus,
+    "DrgRouteDistribution": DrgRouteDistribution,
+    "DrgRouteDistributionMatchCriteria": DrgRouteDistributionMatchCriteria,
+    "DrgRouteDistributionStatement": DrgRouteDistributionStatement,
+    "DrgRouteRule": DrgRouteRule,
+    "DrgRouteTable": DrgRouteTable,
     "EgressSecurityRule": EgressSecurityRule,
     "EmulatedVolumeAttachment": EmulatedVolumeAttachment,
     "EncryptionDomainConfig": EncryptionDomainConfig,
@@ -648,6 +714,7 @@ core_type_mapping = {
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
     "InternetGateway": InternetGateway,
+    "IpsecTunnelDrgAttachmentNetworkDetails": IpsecTunnelDrgAttachmentNetworkDetails,
     "Ipv6": Ipv6,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceAvailabilityConfigDetails": LaunchInstanceAvailabilityConfigDetails,
@@ -661,16 +728,22 @@ core_type_mapping = {
     "NatGateway": NatGateway,
     "NetworkSecurityGroup": NetworkSecurityGroup,
     "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
+    "NetworkingTopology": NetworkingTopology,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PlatformConfig": PlatformConfig,
     "PortRange": PortRange,
+    "PreemptibleInstanceConfigDetails": PreemptibleInstanceConfigDetails,
+    "PreemptionAction": PreemptionAction,
     "PrivateIp": PrivateIp,
     "PublicIp": PublicIp,
     "PublicIpPool": PublicIpPool,
     "PublicIpPoolCollection": PublicIpPoolCollection,
     "PublicIpPoolSummary": PublicIpPoolSummary,
     "RemotePeeringConnection": RemotePeeringConnection,
+    "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
+    "RemoveDrgRouteDistributionStatementsDetails": RemoveDrgRouteDistributionStatementsDetails,
+    "RemoveDrgRouteRulesDetails": RemoveDrgRouteRulesDetails,
     "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
     "RemovePublicIpPoolCapacityDetails": RemovePublicIpPoolCapacityDetails,
     "RemoveVcnCidrDetails": RemoveVcnCidrDetails,
@@ -689,6 +762,13 @@ core_type_mapping = {
     "ShapeOcpuOptions": ShapeOcpuOptions,
     "Subnet": Subnet,
     "TcpOptions": TcpOptions,
+    "TerminatePreemptionAction": TerminatePreemptionAction,
+    "Topology": Topology,
+    "TopologyAssociatedWithEntityRelationship": TopologyAssociatedWithEntityRelationship,
+    "TopologyContainsEntityRelationship": TopologyContainsEntityRelationship,
+    "TopologyEntityRelationship": TopologyEntityRelationship,
+    "TopologyRoutesToEntityRelationship": TopologyRoutesToEntityRelationship,
+    "TopologyRoutesToRelationshipDetails": TopologyRoutesToRelationshipDetails,
     "TunnelConfig": TunnelConfig,
     "TunnelCpeDeviceConfig": TunnelCpeDeviceConfig,
     "TunnelStatus": TunnelStatus,
@@ -708,6 +788,12 @@ core_type_mapping = {
     "UpdateDhcpDetails": UpdateDhcpDetails,
     "UpdateDrgAttachmentDetails": UpdateDrgAttachmentDetails,
     "UpdateDrgDetails": UpdateDrgDetails,
+    "UpdateDrgRouteDistributionDetails": UpdateDrgRouteDistributionDetails,
+    "UpdateDrgRouteDistributionStatementDetails": UpdateDrgRouteDistributionStatementDetails,
+    "UpdateDrgRouteDistributionStatementsDetails": UpdateDrgRouteDistributionStatementsDetails,
+    "UpdateDrgRouteRuleDetails": UpdateDrgRouteRuleDetails,
+    "UpdateDrgRouteRulesDetails": UpdateDrgRouteRulesDetails,
+    "UpdateDrgRouteTableDetails": UpdateDrgRouteTableDetails,
     "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
     "UpdateIPSecConnectionTunnelDetails": UpdateIPSecConnectionTunnelDetails,
     "UpdateIPSecConnectionTunnelSharedSecretDetails": UpdateIPSecConnectionTunnelSharedSecretDetails,
@@ -750,10 +836,16 @@ core_type_mapping = {
     "UpdateVolumeGroupDetails": UpdateVolumeGroupDetails,
     "UpdateVolumeKmsKeyDetails": UpdateVolumeKmsKeyDetails,
     "UpdatedNetworkSecurityGroupSecurityRules": UpdatedNetworkSecurityGroupSecurityRules,
+    "UpgradeStatus": UpgradeStatus,
     "Vcn": Vcn,
     "VcnDnsResolverAssociation": VcnDnsResolverAssociation,
+    "VcnDrgAttachmentNetworkCreateDetails": VcnDrgAttachmentNetworkCreateDetails,
+    "VcnDrgAttachmentNetworkDetails": VcnDrgAttachmentNetworkDetails,
+    "VcnDrgAttachmentNetworkUpdateDetails": VcnDrgAttachmentNetworkUpdateDetails,
+    "VcnTopology": VcnTopology,
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
+    "VirtualCircuitDrgAttachmentNetworkDetails": VirtualCircuitDrgAttachmentNetworkDetails,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,
     "Vlan": Vlan,
     "Vnic": Vnic,

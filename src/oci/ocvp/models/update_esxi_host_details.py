@@ -13,6 +13,22 @@ class UpdateEsxiHostDetails(object):
     The ESXi host information to be updated.
     """
 
+    #: A constant which can be used with the next_sku property of a UpdateEsxiHostDetails.
+    #: This constant has a value of "HOUR"
+    NEXT_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the next_sku property of a UpdateEsxiHostDetails.
+    #: This constant has a value of "MONTH"
+    NEXT_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the next_sku property of a UpdateEsxiHostDetails.
+    #: This constant has a value of "ONE_YEAR"
+    NEXT_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the next_sku property of a UpdateEsxiHostDetails.
+    #: This constant has a value of "THREE_YEARS"
+    NEXT_SKU_THREE_YEARS = "THREE_YEARS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateEsxiHostDetails object with values from keyword arguments.
@@ -21,6 +37,11 @@ class UpdateEsxiHostDetails(object):
         :param display_name:
             The value to assign to the display_name property of this UpdateEsxiHostDetails.
         :type display_name: str
+
+        :param next_sku:
+            The value to assign to the next_sku property of this UpdateEsxiHostDetails.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+        :type next_sku: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateEsxiHostDetails.
@@ -33,17 +54,20 @@ class UpdateEsxiHostDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'next_sku': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'next_sku': 'nextSku',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._next_sku = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -76,6 +100,40 @@ class UpdateEsxiHostDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def next_sku(self):
+        """
+        Gets the next_sku of this UpdateEsxiHostDetails.
+        Billing option to switch to once existing billing cycle ends.
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+
+
+        :return: The next_sku of this UpdateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._next_sku
+
+    @next_sku.setter
+    def next_sku(self, next_sku):
+        """
+        Sets the next_sku of this UpdateEsxiHostDetails.
+        Billing option to switch to once existing billing cycle ends.
+        :func:`list_supported_skus`.
+
+
+        :param next_sku: The next_sku of this UpdateEsxiHostDetails.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(next_sku, allowed_values):
+            raise ValueError(
+                "Invalid value for `next_sku`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._next_sku = next_sku
 
     @property
     def freeform_tags(self):

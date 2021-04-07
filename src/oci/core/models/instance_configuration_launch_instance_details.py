@@ -141,6 +141,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the availability_config property of this InstanceConfigurationLaunchInstanceDetails.
         :type availability_config: oci.core.models.InstanceConfigurationAvailabilityConfig
 
+        :param preemptible_instance_config:
+            The value to assign to the preemptible_instance_config property of this InstanceConfigurationLaunchInstanceDetails.
+        :type preemptible_instance_config: oci.core.models.PreemptibleInstanceConfigDetails
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -165,7 +169,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'is_pv_encryption_in_transit_enabled': 'bool',
             'preferred_maintenance_action': 'str',
             'instance_options': 'InstanceConfigurationInstanceOptions',
-            'availability_config': 'InstanceConfigurationAvailabilityConfig'
+            'availability_config': 'InstanceConfigurationAvailabilityConfig',
+            'preemptible_instance_config': 'PreemptibleInstanceConfigDetails'
         }
 
         self.attribute_map = {
@@ -191,7 +196,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'preferred_maintenance_action': 'preferredMaintenanceAction',
             'instance_options': 'instanceOptions',
-            'availability_config': 'availabilityConfig'
+            'availability_config': 'availabilityConfig',
+            'preemptible_instance_config': 'preemptibleInstanceConfig'
         }
 
         self._availability_domain = None
@@ -217,6 +223,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._preferred_maintenance_action = None
         self._instance_options = None
         self._availability_config = None
+        self._preemptible_instance_config = None
 
     @property
     def availability_domain(self):
@@ -823,7 +830,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         """
         Gets the launch_mode of this InstanceConfigurationLaunchInstanceDetails.
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -842,7 +849,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         """
         Sets the launch_mode of this InstanceConfigurationLaunchInstanceDetails.
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -993,6 +1000,26 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: oci.core.models.InstanceConfigurationAvailabilityConfig
         """
         self._availability_config = availability_config
+
+    @property
+    def preemptible_instance_config(self):
+        """
+        Gets the preemptible_instance_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The preemptible_instance_config of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: oci.core.models.PreemptibleInstanceConfigDetails
+        """
+        return self._preemptible_instance_config
+
+    @preemptible_instance_config.setter
+    def preemptible_instance_config(self, preemptible_instance_config):
+        """
+        Sets the preemptible_instance_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param preemptible_instance_config: The preemptible_instance_config of this InstanceConfigurationLaunchInstanceDetails.
+        :type: oci.core.models.PreemptibleInstanceConfigDetails
+        """
+        self._preemptible_instance_config = preemptible_instance_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

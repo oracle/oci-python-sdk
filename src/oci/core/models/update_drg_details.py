@@ -22,6 +22,10 @@ class UpdateDrgDetails(object):
             The value to assign to the defined_tags property of this UpdateDrgDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param default_drg_route_tables:
+            The value to assign to the default_drg_route_tables property of this UpdateDrgDetails.
+        :type default_drg_route_tables: oci.core.models.DefaultDrgRouteTables
+
         :param display_name:
             The value to assign to the display_name property of this UpdateDrgDetails.
         :type display_name: str
@@ -33,17 +37,20 @@ class UpdateDrgDetails(object):
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
+            'default_drg_route_tables': 'DefaultDrgRouteTables',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
+            'default_drg_route_tables': 'defaultDrgRouteTables',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
 
         self._defined_tags = None
+        self._default_drg_route_tables = None
         self._display_name = None
         self._freeform_tags = None
 
@@ -80,6 +87,26 @@ class UpdateDrgDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def default_drg_route_tables(self):
+        """
+        Gets the default_drg_route_tables of this UpdateDrgDetails.
+
+        :return: The default_drg_route_tables of this UpdateDrgDetails.
+        :rtype: oci.core.models.DefaultDrgRouteTables
+        """
+        return self._default_drg_route_tables
+
+    @default_drg_route_tables.setter
+    def default_drg_route_tables(self, default_drg_route_tables):
+        """
+        Sets the default_drg_route_tables of this UpdateDrgDetails.
+
+        :param default_drg_route_tables: The default_drg_route_tables of this UpdateDrgDetails.
+        :type: oci.core.models.DefaultDrgRouteTables
+        """
+        self._default_drg_route_tables = default_drg_route_tables
 
     @property
     def display_name(self):

@@ -20,6 +20,18 @@ class LaunchInstanceShapeConfigDetails(object):
     specified `shape`, an error is returned.
     """
 
+    #: A constant which can be used with the baseline_ocpu_utilization property of a LaunchInstanceShapeConfigDetails.
+    #: This constant has a value of "BASELINE_1_8"
+    BASELINE_OCPU_UTILIZATION_BASELINE_1_8 = "BASELINE_1_8"
+
+    #: A constant which can be used with the baseline_ocpu_utilization property of a LaunchInstanceShapeConfigDetails.
+    #: This constant has a value of "BASELINE_1_2"
+    BASELINE_OCPU_UTILIZATION_BASELINE_1_2 = "BASELINE_1_2"
+
+    #: A constant which can be used with the baseline_ocpu_utilization property of a LaunchInstanceShapeConfigDetails.
+    #: This constant has a value of "BASELINE_1_1"
+    BASELINE_OCPU_UTILIZATION_BASELINE_1_1 = "BASELINE_1_1"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchInstanceShapeConfigDetails object with values from keyword arguments.
@@ -33,19 +45,27 @@ class LaunchInstanceShapeConfigDetails(object):
             The value to assign to the memory_in_gbs property of this LaunchInstanceShapeConfigDetails.
         :type memory_in_gbs: float
 
+        :param baseline_ocpu_utilization:
+            The value to assign to the baseline_ocpu_utilization property of this LaunchInstanceShapeConfigDetails.
+            Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"
+        :type baseline_ocpu_utilization: str
+
         """
         self.swagger_types = {
             'ocpus': 'float',
-            'memory_in_gbs': 'float'
+            'memory_in_gbs': 'float',
+            'baseline_ocpu_utilization': 'str'
         }
 
         self.attribute_map = {
             'ocpus': 'ocpus',
-            'memory_in_gbs': 'memoryInGBs'
+            'memory_in_gbs': 'memoryInGBs',
+            'baseline_ocpu_utilization': 'baselineOcpuUtilization'
         }
 
         self._ocpus = None
         self._memory_in_gbs = None
+        self._baseline_ocpu_utilization = None
 
     @property
     def ocpus(self):
@@ -94,6 +114,50 @@ class LaunchInstanceShapeConfigDetails(object):
         :type: float
         """
         self._memory_in_gbs = memory_in_gbs
+
+    @property
+    def baseline_ocpu_utilization(self):
+        """
+        Gets the baseline_ocpu_utilization of this LaunchInstanceShapeConfigDetails.
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+        non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+
+        Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"
+
+
+        :return: The baseline_ocpu_utilization of this LaunchInstanceShapeConfigDetails.
+        :rtype: str
+        """
+        return self._baseline_ocpu_utilization
+
+    @baseline_ocpu_utilization.setter
+    def baseline_ocpu_utilization(self, baseline_ocpu_utilization):
+        """
+        Sets the baseline_ocpu_utilization of this LaunchInstanceShapeConfigDetails.
+        The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+        non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
+        - `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+
+
+        :param baseline_ocpu_utilization: The baseline_ocpu_utilization of this LaunchInstanceShapeConfigDetails.
+        :type: str
+        """
+        allowed_values = ["BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"]
+        if not value_allowed_none_or_none_sentinel(baseline_ocpu_utilization, allowed_values):
+            raise ValueError(
+                "Invalid value for `baseline_ocpu_utilization`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._baseline_ocpu_utilization = baseline_ocpu_utilization
 
     def __repr__(self):
         return formatted_flat_dict(self)

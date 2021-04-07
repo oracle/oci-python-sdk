@@ -30,10 +30,6 @@ class CreateVcnDetails(object):
             The value to assign to the compartment_id property of this CreateVcnDetails.
         :type compartment_id: str
 
-        :param ipv6_cidr_block:
-            The value to assign to the ipv6_cidr_block property of this CreateVcnDetails.
-        :type ipv6_cidr_block: str
-
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateVcnDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -59,7 +55,6 @@ class CreateVcnDetails(object):
             'cidr_block': 'str',
             'cidr_blocks': 'list[str]',
             'compartment_id': 'str',
-            'ipv6_cidr_block': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'dns_label': 'str',
@@ -71,7 +66,6 @@ class CreateVcnDetails(object):
             'cidr_block': 'cidrBlock',
             'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
-            'ipv6_cidr_block': 'ipv6CidrBlock',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
@@ -82,7 +76,6 @@ class CreateVcnDetails(object):
         self._cidr_block = None
         self._cidr_blocks = None
         self._compartment_id = None
-        self._ipv6_cidr_block = None
         self._defined_tags = None
         self._display_name = None
         self._dns_label = None
@@ -172,74 +165,6 @@ class CreateVcnDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
-
-    @property
-    def ipv6_cidr_block(self):
-        """
-        Gets the ipv6_cidr_block of this CreateVcnDetails.
-        If you enable IPv6 for the VCN (see `isIpv6Enabled`), you may optionally provide an IPv6
-        /48 CIDR block from the supported ranges (see `IPv6 Addresses`__.
-        The addresses in this block will be considered private and cannot be accessed
-        from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-
-        If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /48 CIDR block.
-
-        Regardless of whether you or Oracle assigns the `ipv6CidrBlock`,
-        Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-        (see the `ipv6PublicCidrBlock` of the :class:`Vcn` object). If you do
-        not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-        IP address space (`ipv6CidrBlock` in the `Vcn` object) and the public IP addreses space
-        (`ipv6PublicCidrBlock` in the `Vcn` object). This means that a given VNIC might use the same
-        IPv6 IP address for both private and public (internet) communication. You control whether
-        an IPv6 address can be used for internet communication by using the `isInternetAccessAllowed`
-        attribute in the :class:`Ipv6` object.
-
-        For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
-
-        Example: `2001:0db8:0123::/48`
-
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-
-
-        :return: The ipv6_cidr_block of this CreateVcnDetails.
-        :rtype: str
-        """
-        return self._ipv6_cidr_block
-
-    @ipv6_cidr_block.setter
-    def ipv6_cidr_block(self, ipv6_cidr_block):
-        """
-        Sets the ipv6_cidr_block of this CreateVcnDetails.
-        If you enable IPv6 for the VCN (see `isIpv6Enabled`), you may optionally provide an IPv6
-        /48 CIDR block from the supported ranges (see `IPv6 Addresses`__.
-        The addresses in this block will be considered private and cannot be accessed
-        from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-
-        If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /48 CIDR block.
-
-        Regardless of whether you or Oracle assigns the `ipv6CidrBlock`,
-        Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-        (see the `ipv6PublicCidrBlock` of the :class:`Vcn` object). If you do
-        not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-        IP address space (`ipv6CidrBlock` in the `Vcn` object) and the public IP addreses space
-        (`ipv6PublicCidrBlock` in the `Vcn` object). This means that a given VNIC might use the same
-        IPv6 IP address for both private and public (internet) communication. You control whether
-        an IPv6 address can be used for internet communication by using the `isInternetAccessAllowed`
-        attribute in the :class:`Ipv6` object.
-
-        For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
-
-        Example: `2001:0db8:0123::/48`
-
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-
-
-        :param ipv6_cidr_block: The ipv6_cidr_block of this CreateVcnDetails.
-        :type: str
-        """
-        self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
     def defined_tags(self):
@@ -396,6 +321,7 @@ class CreateVcnDetails(object):
         """
         Gets the is_ipv6_enabled of this CreateVcnDetails.
         Whether IPv6 is enabled for the VCN. Default is `false`. You cannot change this later.
+        If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
         Example: `true`
@@ -413,6 +339,7 @@ class CreateVcnDetails(object):
         """
         Sets the is_ipv6_enabled of this CreateVcnDetails.
         Whether IPv6 is enabled for the VCN. Default is `false`. You cannot change this later.
+        If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
         Example: `true`

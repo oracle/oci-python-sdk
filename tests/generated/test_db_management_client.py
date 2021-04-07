@@ -358,6 +358,48 @@ def test_delete_managed_database_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_cluster_cache_metric(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetClusterCacheMetric'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetClusterCacheMetric')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetClusterCacheMetric')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_cluster_cache_metric(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetClusterCacheMetric',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'clusterCacheMetric',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_get_database_fleet_health_metrics(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'GetDatabaseFleetHealthMetrics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

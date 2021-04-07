@@ -82,7 +82,7 @@ class Origin(object):
     def http_port(self):
         """
         Gets the http_port of this Origin.
-        The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`.
+        The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
 
 
         :return: The http_port of this Origin.
@@ -94,7 +94,7 @@ class Origin(object):
     def http_port(self, http_port):
         """
         Sets the http_port of this Origin.
-        The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`.
+        The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
 
 
         :param http_port: The http_port of this Origin.
@@ -106,7 +106,7 @@ class Origin(object):
     def https_port(self):
         """
         Gets the https_port of this Origin.
-        The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`.
+        The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
 
 
         :return: The https_port of this Origin.
@@ -118,7 +118,7 @@ class Origin(object):
     def https_port(self, https_port):
         """
         Sets the https_port of this Origin.
-        The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`.
+        The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
 
 
         :param https_port: The https_port of this Origin.

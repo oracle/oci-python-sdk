@@ -134,7 +134,7 @@
       <dependency>
         <groupId>com.oracle.pic.functions</groupId>
         <artifactId>fn-api-spec</artifactId>
-        <version>1.2.3</version>
+        <version>1.3.6</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

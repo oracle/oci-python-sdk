@@ -67,19 +67,11 @@ class Ipv6(object):
             The value to assign to the ip_address property of this Ipv6.
         :type ip_address: str
 
-        :param is_internet_access_allowed:
-            The value to assign to the is_internet_access_allowed property of this Ipv6.
-        :type is_internet_access_allowed: bool
-
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Ipv6.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
-
-        :param public_ip_address:
-            The value to assign to the public_ip_address property of this Ipv6.
-        :type public_ip_address: str
 
         :param subnet_id:
             The value to assign to the subnet_id property of this Ipv6.
@@ -101,9 +93,7 @@ class Ipv6(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'ip_address': 'str',
-            'is_internet_access_allowed': 'bool',
             'lifecycle_state': 'str',
-            'public_ip_address': 'str',
             'subnet_id': 'str',
             'time_created': 'datetime',
             'vnic_id': 'str'
@@ -116,9 +106,7 @@ class Ipv6(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'ip_address': 'ipAddress',
-            'is_internet_access_allowed': 'isInternetAccessAllowed',
             'lifecycle_state': 'lifecycleState',
-            'public_ip_address': 'publicIpAddress',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId'
@@ -130,9 +118,7 @@ class Ipv6(object):
         self._freeform_tags = None
         self._id = None
         self._ip_address = None
-        self._is_internet_access_allowed = None
         self._lifecycle_state = None
-        self._public_ip_address = None
         self._subnet_id = None
         self._time_created = None
         self._vnic_id = None
@@ -293,9 +279,8 @@ class Ipv6(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this Ipv6.
-        The IPv6 address of the `IPv6` object. The address is within the private IPv6 CIDR block
-        of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the :class:`Subnet`
-        object.
+        The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet
+        (see the `ipv6CidrBlock` attribute for the :class:`Subnet` object.
 
         Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 
@@ -309,9 +294,8 @@ class Ipv6(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this Ipv6.
-        The IPv6 address of the `IPv6` object. The address is within the private IPv6 CIDR block
-        of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the :class:`Subnet`
-        object.
+        The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet
+        (see the `ipv6CidrBlock` attribute for the :class:`Subnet` object.
 
         Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 
@@ -320,38 +304,6 @@ class Ipv6(object):
         :type: str
         """
         self._ip_address = ip_address
-
-    @property
-    def is_internet_access_allowed(self):
-        """
-        Gets the is_internet_access_allowed of this Ipv6.
-        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
-        IPv6 uses its public IP address for internet communication.
-
-        Example: `true`
-
-
-        :return: The is_internet_access_allowed of this Ipv6.
-        :rtype: bool
-        """
-        return self._is_internet_access_allowed
-
-    @is_internet_access_allowed.setter
-    def is_internet_access_allowed(self, is_internet_access_allowed):
-        """
-        Sets the is_internet_access_allowed of this Ipv6.
-        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
-        IPv6 uses its public IP address for internet communication.
-
-        Example: `true`
-
-
-        :param is_internet_access_allowed: The is_internet_access_allowed of this Ipv6.
-        :type: bool
-        """
-        self._is_internet_access_allowed = is_internet_access_allowed
 
     @property
     def lifecycle_state(self):
@@ -382,60 +334,6 @@ class Ipv6(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
-
-    @property
-    def public_ip_address(self):
-        """
-        Gets the public_ip_address of this Ipv6.
-        The IPv6 address to be used for internet communication. The address is within the public
-        IPv6 CIDR block of the VNIC's subnet (see the `ipv6PublicCidrBlock` attribute for the
-        :class:`Subnet` object).
-
-        If your organization did NOT assign a custom IPv6 CIDR to the VCN for the private address
-        space, Oracle provides the IPv6 CIDR and uses that same CIDR for the private and public
-        address space. Therefore the `publicIpAddress` would be the same as the `ipAddress`.
-
-        If your organization assigned a custom IPv6 CIDR to the VCN for the private address space,
-        the right 80 bits of the IPv6 public IP (the subnet and address bits) are the same as for
-        the `ipAddress`. But the left 48 bits are from the public IPv6 CIDR that Oracle assigned
-        to the VCN.
-
-        This is null if the IPv6 is created with `isInternetAccessAllowed` set to `false`.
-
-        Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
-
-
-        :return: The public_ip_address of this Ipv6.
-        :rtype: str
-        """
-        return self._public_ip_address
-
-    @public_ip_address.setter
-    def public_ip_address(self, public_ip_address):
-        """
-        Sets the public_ip_address of this Ipv6.
-        The IPv6 address to be used for internet communication. The address is within the public
-        IPv6 CIDR block of the VNIC's subnet (see the `ipv6PublicCidrBlock` attribute for the
-        :class:`Subnet` object).
-
-        If your organization did NOT assign a custom IPv6 CIDR to the VCN for the private address
-        space, Oracle provides the IPv6 CIDR and uses that same CIDR for the private and public
-        address space. Therefore the `publicIpAddress` would be the same as the `ipAddress`.
-
-        If your organization assigned a custom IPv6 CIDR to the VCN for the private address space,
-        the right 80 bits of the IPv6 public IP (the subnet and address bits) are the same as for
-        the `ipAddress`. But the left 48 bits are from the public IPv6 CIDR that Oracle assigned
-        to the VCN.
-
-        This is null if the IPv6 is created with `isInternetAccessAllowed` set to `false`.
-
-        Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
-
-
-        :param public_ip_address: The public_ip_address of this Ipv6.
-        :type: str
-        """
-        self._public_ip_address = public_ip_address
 
     @property
     def subnet_id(self):

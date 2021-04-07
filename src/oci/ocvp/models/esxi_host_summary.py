@@ -37,6 +37,38 @@ class EsxiHostSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the current_sku property of a EsxiHostSummary.
+    #: This constant has a value of "HOUR"
+    CURRENT_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the current_sku property of a EsxiHostSummary.
+    #: This constant has a value of "MONTH"
+    CURRENT_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the current_sku property of a EsxiHostSummary.
+    #: This constant has a value of "ONE_YEAR"
+    CURRENT_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the current_sku property of a EsxiHostSummary.
+    #: This constant has a value of "THREE_YEARS"
+    CURRENT_SKU_THREE_YEARS = "THREE_YEARS"
+
+    #: A constant which can be used with the next_sku property of a EsxiHostSummary.
+    #: This constant has a value of "HOUR"
+    NEXT_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the next_sku property of a EsxiHostSummary.
+    #: This constant has a value of "MONTH"
+    NEXT_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the next_sku property of a EsxiHostSummary.
+    #: This constant has a value of "ONE_YEAR"
+    NEXT_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the next_sku property of a EsxiHostSummary.
+    #: This constant has a value of "THREE_YEARS"
+    NEXT_SKU_THREE_YEARS = "THREE_YEARS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EsxiHostSummary object with values from keyword arguments.
@@ -76,6 +108,22 @@ class EsxiHostSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param current_sku:
+            The value to assign to the current_sku property of this EsxiHostSummary.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type current_sku: str
+
+        :param next_sku:
+            The value to assign to the next_sku property of this EsxiHostSummary.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type next_sku: str
+
+        :param billing_contract_end_date:
+            The value to assign to the billing_contract_end_date property of this EsxiHostSummary.
+        :type billing_contract_end_date: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHostSummary.
         :type freeform_tags: dict(str, str)
@@ -94,6 +142,9 @@ class EsxiHostSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'current_sku': 'str',
+            'next_sku': 'str',
+            'billing_contract_end_date': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -107,6 +158,9 @@ class EsxiHostSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'current_sku': 'currentSku',
+            'next_sku': 'nextSku',
+            'billing_contract_end_date': 'billingContractEndDate',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -119,6 +173,9 @@ class EsxiHostSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._current_sku = None
+        self._next_sku = None
+        self._billing_contract_end_date = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -361,6 +418,98 @@ class EsxiHostSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def current_sku(self):
+        """
+        **[Required]** Gets the current_sku of this EsxiHostSummary.
+        Billing option selected during SDDC creation.
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The current_sku of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._current_sku
+
+    @current_sku.setter
+    def current_sku(self, current_sku):
+        """
+        Sets the current_sku of this EsxiHostSummary.
+        Billing option selected during SDDC creation.
+        :func:`list_supported_skus`.
+
+
+        :param current_sku: The current_sku of this EsxiHostSummary.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(current_sku, allowed_values):
+            current_sku = 'UNKNOWN_ENUM_VALUE'
+        self._current_sku = current_sku
+
+    @property
+    def next_sku(self):
+        """
+        **[Required]** Gets the next_sku of this EsxiHostSummary.
+        Billing option to switch to once existing billing cycle ends.
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The next_sku of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._next_sku
+
+    @next_sku.setter
+    def next_sku(self, next_sku):
+        """
+        Sets the next_sku of this EsxiHostSummary.
+        Billing option to switch to once existing billing cycle ends.
+        :func:`list_supported_skus`.
+
+
+        :param next_sku: The next_sku of this EsxiHostSummary.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(next_sku, allowed_values):
+            next_sku = 'UNKNOWN_ENUM_VALUE'
+        self._next_sku = next_sku
+
+    @property
+    def billing_contract_end_date(self):
+        """
+        **[Required]** Gets the billing_contract_end_date of this EsxiHostSummary.
+        Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
+        after this contractEndDate
+        Example: `2016-08-25T21:10:29.600Z`
+
+
+        :return: The billing_contract_end_date of this EsxiHostSummary.
+        :rtype: datetime
+        """
+        return self._billing_contract_end_date
+
+    @billing_contract_end_date.setter
+    def billing_contract_end_date(self, billing_contract_end_date):
+        """
+        Sets the billing_contract_end_date of this EsxiHostSummary.
+        Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
+        after this contractEndDate
+        Example: `2016-08-25T21:10:29.600Z`
+
+
+        :param billing_contract_end_date: The billing_contract_end_date of this EsxiHostSummary.
+        :type: datetime
+        """
+        self._billing_contract_end_date = billing_contract_end_date
 
     @property
     def freeform_tags(self):

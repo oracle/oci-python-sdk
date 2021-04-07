@@ -104,6 +104,10 @@ class BootVolumeReplica(object):
             The value to assign to the image_id property of this BootVolumeReplica.
         :type image_id: str
 
+        :param total_data_transferred_in_gbs:
+            The value to assign to the total_data_transferred_in_gbs property of this BootVolumeReplica.
+        :type total_data_transferred_in_gbs: int
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -117,7 +121,8 @@ class BootVolumeReplica(object):
             'time_created': 'datetime',
             'time_last_synced': 'datetime',
             'boot_volume_id': 'str',
-            'image_id': 'str'
+            'image_id': 'str',
+            'total_data_transferred_in_gbs': 'int'
         }
 
         self.attribute_map = {
@@ -132,7 +137,8 @@ class BootVolumeReplica(object):
             'time_created': 'timeCreated',
             'time_last_synced': 'timeLastSynced',
             'boot_volume_id': 'bootVolumeId',
-            'image_id': 'imageId'
+            'image_id': 'imageId',
+            'total_data_transferred_in_gbs': 'totalDataTransferredInGBs'
         }
 
         self._availability_domain = None
@@ -147,6 +153,7 @@ class BootVolumeReplica(object):
         self._time_last_synced = None
         self._boot_volume_id = None
         self._image_id = None
+        self._total_data_transferred_in_gbs = None
 
     @property
     def availability_domain(self):
@@ -479,6 +486,30 @@ class BootVolumeReplica(object):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def total_data_transferred_in_gbs(self):
+        """
+        Gets the total_data_transferred_in_gbs of this BootVolumeReplica.
+        The total size of the data transferred from the source boot volume to the boot volume replica, in GBs.
+
+
+        :return: The total_data_transferred_in_gbs of this BootVolumeReplica.
+        :rtype: int
+        """
+        return self._total_data_transferred_in_gbs
+
+    @total_data_transferred_in_gbs.setter
+    def total_data_transferred_in_gbs(self, total_data_transferred_in_gbs):
+        """
+        Sets the total_data_transferred_in_gbs of this BootVolumeReplica.
+        The total size of the data transferred from the source boot volume to the boot volume replica, in GBs.
+
+
+        :param total_data_transferred_in_gbs: The total_data_transferred_in_gbs of this BootVolumeReplica.
+        :type: int
+        """
+        self._total_data_transferred_in_gbs = total_data_transferred_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

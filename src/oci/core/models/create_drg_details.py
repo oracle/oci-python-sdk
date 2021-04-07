@@ -58,7 +58,9 @@ class CreateDrgDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDrgDetails.
-        The OCID of the compartment to contain the DRG.
+        The `OCID`__ of the compartment to contain the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDrgDetails.
@@ -70,7 +72,9 @@ class CreateDrgDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDrgDetails.
-        The OCID of the compartment to contain the DRG.
+        The `OCID`__ of the compartment to contain the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDrgDetails.

@@ -38,6 +38,10 @@ class UpdateFunctionDetails(object):
             The value to assign to the timeout_in_seconds property of this UpdateFunctionDetails.
         :type timeout_in_seconds: int
 
+        :param trace_config:
+            The value to assign to the trace_config property of this UpdateFunctionDetails.
+        :type trace_config: oci.functions.models.FunctionTraceConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateFunctionDetails.
         :type freeform_tags: dict(str, str)
@@ -53,6 +57,7 @@ class UpdateFunctionDetails(object):
             'memory_in_mbs': 'int',
             'config': 'dict(str, str)',
             'timeout_in_seconds': 'int',
+            'trace_config': 'FunctionTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -63,6 +68,7 @@ class UpdateFunctionDetails(object):
             'memory_in_mbs': 'memoryInMBs',
             'config': 'config',
             'timeout_in_seconds': 'timeoutInSeconds',
+            'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -72,6 +78,7 @@ class UpdateFunctionDetails(object):
         self._memory_in_mbs = None
         self._config = None
         self._timeout_in_seconds = None
+        self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -212,6 +219,26 @@ class UpdateFunctionDetails(object):
         :type: int
         """
         self._timeout_in_seconds = timeout_in_seconds
+
+    @property
+    def trace_config(self):
+        """
+        Gets the trace_config of this UpdateFunctionDetails.
+
+        :return: The trace_config of this UpdateFunctionDetails.
+        :rtype: oci.functions.models.FunctionTraceConfig
+        """
+        return self._trace_config
+
+    @trace_config.setter
+    def trace_config(self, trace_config):
+        """
+        Sets the trace_config of this UpdateFunctionDetails.
+
+        :param trace_config: The trace_config of this UpdateFunctionDetails.
+        :type: oci.functions.models.FunctionTraceConfig
+        """
+        self._trace_config = trace_config
 
     @property
     def freeform_tags(self):

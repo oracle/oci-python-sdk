@@ -33,6 +33,128 @@ def vcr_fixture(request):
             yield
 
 
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_add_drg_route_distribution_statements(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddDrgRouteDistributionStatements'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddDrgRouteDistributionStatements')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddDrgRouteDistributionStatements')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_drg_route_distribution_statements(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                add_drg_route_distribution_statements_details=request.pop(util.camelize('AddDrgRouteDistributionStatementsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddDrgRouteDistributionStatements',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistributionStatement',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_add_drg_route_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddDrgRouteRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddDrgRouteRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddDrgRouteRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_drg_route_rules(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                add_drg_route_rules_details=request.pop(util.camelize('AddDrgRouteRulesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddDrgRouteRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_add_ipv6_vcn_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddIpv6VcnCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddIpv6VcnCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddIpv6VcnCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_ipv6_vcn_cidr(
+                vcn_id=request.pop(util.camelize('vcnId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddIpv6VcnCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_ipv6_vcn_cidr',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_add_network_security_group_security_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AddNetworkSecurityGroupSecurityRules'):
@@ -1542,6 +1664,86 @@ def test_create_drg_attachment(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_create_drg_route_distribution(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateDrgRouteDistribution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreateDrgRouteDistribution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateDrgRouteDistribution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_drg_route_distribution(
+                create_drg_route_distribution_details=request.pop(util.camelize('CreateDrgRouteDistributionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateDrgRouteDistribution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistribution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_create_drg_route_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateDrgRouteTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreateDrgRouteTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateDrgRouteTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_drg_route_table(
+                create_drg_route_table_details=request.pop(util.camelize('CreateDrgRouteTableDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateDrgRouteTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteTable',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_create_internet_gateway(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateInternetGateway'):
@@ -2502,6 +2704,86 @@ def test_delete_drg_attachment(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_delete_drg_route_distribution(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteDrgRouteDistribution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeleteDrgRouteDistribution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteDrgRouteDistribution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_drg_route_distribution(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteDrgRouteDistribution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_drg_route_distribution',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_delete_drg_route_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteDrgRouteTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeleteDrgRouteTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteDrgRouteTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_drg_route_table(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteDrgRouteTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_drg_route_table',
+            True,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_delete_internet_gateway(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteInternetGateway'):
@@ -3223,6 +3505,66 @@ def test_detach_service_id(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_get_all_drg_attachments(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetAllDrgAttachments'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetAllDrgAttachments')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetAllDrgAttachments')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_all_drg_attachments(
+                drg_id=request.pop(util.camelize('drgId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.get_all_drg_attachments(
+                    drg_id=request.pop(util.camelize('drgId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.get_all_drg_attachments(
+                        drg_id=request.pop(util.camelize('drgId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetAllDrgAttachments',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgAttachmentInfo',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
 def test_get_byoip_range(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetByoipRange'):
@@ -3698,6 +4040,86 @@ def test_get_drg_redundancy_status(testing_service_client):
             result,
             service_error,
             'drgRedundancyStatus',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_get_drg_route_distribution(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetDrgRouteDistribution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetDrgRouteDistribution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetDrgRouteDistribution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_drg_route_distribution(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetDrgRouteDistribution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistribution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_get_drg_route_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetDrgRouteTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetDrgRouteTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetDrgRouteTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_drg_route_table(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetDrgRouteTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteTable',
             False,
             False
         )
@@ -4226,6 +4648,46 @@ def test_get_network_security_group(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VCNCP" opsJiraProject="VN"
+def test_get_networking_topology(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetNetworkingTopology'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetNetworkingTopology')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetNetworkingTopology')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_networking_topology(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetNetworkingTopology',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkingTopology',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_get_private_ip(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetPrivateIp'):
@@ -4748,6 +5210,46 @@ def test_get_tunnel_cpe_device_config_content(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_get_upgrade_status(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetUpgradeStatus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetUpgradeStatus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetUpgradeStatus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_upgrade_status(
+                drg_id=request.pop(util.camelize('drgId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetUpgradeStatus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upgradeStatus',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_get_vcn(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVcn'):
@@ -4823,6 +5325,47 @@ def test_get_vcn_dns_resolver_association(testing_service_client):
             result,
             service_error,
             'vcnDnsResolverAssociation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VCNCP" opsJiraProject="VN"
+def test_get_vcn_topology(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetVcnTopology'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetVcnTopology')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVcnTopology')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_vcn_topology(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                vcn_id=request.pop(util.camelize('vcnId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetVcnTopology',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vcnTopology',
             False,
             False
         )
@@ -5345,6 +5888,46 @@ def test_list_cross_connect_locations(testing_service_client):
 
 
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_list_cross_connect_mappings(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListCrossConnectMappings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListCrossConnectMappings')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListCrossConnectMappings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_cross_connect_mappings(
+                virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListCrossConnectMappings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'crossConnectMappingDetailsCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_list_cross_connects(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListCrossConnects'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5579,6 +6162,246 @@ def test_list_drg_attachments(testing_service_client):
             result,
             service_error,
             'drgAttachment',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_list_drg_route_distribution_statements(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDrgRouteDistributionStatements'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListDrgRouteDistributionStatements')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDrgRouteDistributionStatements')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_drg_route_distribution_statements(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_drg_route_distribution_statements(
+                    drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_drg_route_distribution_statements(
+                        drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDrgRouteDistributionStatements',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistributionStatement',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_list_drg_route_distributions(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDrgRouteDistributions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListDrgRouteDistributions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDrgRouteDistributions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_drg_route_distributions(
+                drg_id=request.pop(util.camelize('drgId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_drg_route_distributions(
+                    drg_id=request.pop(util.camelize('drgId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_drg_route_distributions(
+                        drg_id=request.pop(util.camelize('drgId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDrgRouteDistributions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistribution',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_list_drg_route_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDrgRouteRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListDrgRouteRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDrgRouteRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_drg_route_rules(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_drg_route_rules(
+                    drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_drg_route_rules(
+                        drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDrgRouteRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteRule',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_list_drg_route_tables(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDrgRouteTables'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListDrgRouteTables')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDrgRouteTables')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_drg_route_tables(
+                drg_id=request.pop(util.camelize('drgId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_drg_route_tables(
+                    drg_id=request.pop(util.camelize('drgId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_drg_route_tables(
+                        drg_id=request.pop(util.camelize('drgId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDrgRouteTables',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteTable',
             False,
             True
         )
@@ -7162,6 +7985,168 @@ def test_modify_vcn_cidr(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_remove_drg_route_distribution_statements(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveDrgRouteDistributionStatements'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveDrgRouteDistributionStatements')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveDrgRouteDistributionStatements')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_drg_route_distribution_statements(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                remove_drg_route_distribution_statements_details=request.pop(util.camelize('RemoveDrgRouteDistributionStatementsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveDrgRouteDistributionStatements',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_drg_route_distribution_statements',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_remove_drg_route_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveDrgRouteRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveDrgRouteRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveDrgRouteRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_drg_route_rules(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                remove_drg_route_rules_details=request.pop(util.camelize('RemoveDrgRouteRulesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveDrgRouteRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_drg_route_rules',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_remove_export_drg_route_distribution(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveExportDrgRouteDistribution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveExportDrgRouteDistribution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveExportDrgRouteDistribution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_export_drg_route_distribution(
+                drg_attachment_id=request.pop(util.camelize('drgAttachmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveExportDrgRouteDistribution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_remove_import_drg_route_distribution(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveImportDrgRouteDistribution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveImportDrgRouteDistribution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveImportDrgRouteDistribution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_import_drg_route_distribution(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveImportDrgRouteDistribution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteTable',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_remove_network_security_group_security_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'RemoveNetworkSecurityGroupSecurityRules'):
@@ -7567,6 +8552,170 @@ def test_update_drg_attachment(testing_service_client):
             result,
             service_error,
             'drgAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_update_drg_route_distribution(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateDrgRouteDistribution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateDrgRouteDistribution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateDrgRouteDistribution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_drg_route_distribution(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                update_drg_route_distribution_details=request.pop(util.camelize('UpdateDrgRouteDistributionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateDrgRouteDistribution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistribution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_update_drg_route_distribution_statements(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateDrgRouteDistributionStatements'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateDrgRouteDistributionStatements')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateDrgRouteDistributionStatements')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_drg_route_distribution_statements(
+                drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                update_drg_route_distribution_statements_details=request.pop(util.camelize('UpdateDrgRouteDistributionStatementsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateDrgRouteDistributionStatements',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteDistributionStatement',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_update_drg_route_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateDrgRouteRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateDrgRouteRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateDrgRouteRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_drg_route_rules(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                update_drg_route_rules_details=request.pop(util.camelize('UpdateDrgRouteRulesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateDrgRouteRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_update_drg_route_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateDrgRouteTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateDrgRouteTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateDrgRouteTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_drg_route_table(
+                drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                update_drg_route_table_details=request.pop(util.camelize('UpdateDrgRouteTableDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateDrgRouteTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRouteTable',
             False,
             False
         )
@@ -8472,6 +9621,46 @@ def test_update_vnic(testing_service_client):
             result,
             service_error,
             'vnic',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
+def test_upgrade_drg(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpgradeDrg'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpgradeDrg')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpgradeDrg')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.upgrade_drg(
+                drg_id=request.pop(util.camelize('drgId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpgradeDrg',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upgrade_drg',
             False,
             False
         )

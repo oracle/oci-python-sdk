@@ -56,6 +56,14 @@ class LimitDefinitionSummary(object):
             The value to assign to the is_resource_availability_supported property of this LimitDefinitionSummary.
         :type is_resource_availability_supported: bool
 
+        :param is_deprecated:
+            The value to assign to the is_deprecated property of this LimitDefinitionSummary.
+        :type is_deprecated: bool
+
+        :param is_eligible_for_limit_increase:
+            The value to assign to the is_eligible_for_limit_increase property of this LimitDefinitionSummary.
+        :type is_eligible_for_limit_increase: bool
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -63,7 +71,9 @@ class LimitDefinitionSummary(object):
             'description': 'str',
             'scope_type': 'str',
             'are_quotas_supported': 'bool',
-            'is_resource_availability_supported': 'bool'
+            'is_resource_availability_supported': 'bool',
+            'is_deprecated': 'bool',
+            'is_eligible_for_limit_increase': 'bool'
         }
 
         self.attribute_map = {
@@ -72,7 +82,9 @@ class LimitDefinitionSummary(object):
             'description': 'description',
             'scope_type': 'scopeType',
             'are_quotas_supported': 'areQuotasSupported',
-            'is_resource_availability_supported': 'isResourceAvailabilitySupported'
+            'is_resource_availability_supported': 'isResourceAvailabilitySupported',
+            'is_deprecated': 'isDeprecated',
+            'is_eligible_for_limit_increase': 'isEligibleForLimitIncrease'
         }
 
         self._name = None
@@ -81,6 +93,8 @@ class LimitDefinitionSummary(object):
         self._scope_type = None
         self._are_quotas_supported = None
         self._is_resource_availability_supported = None
+        self._is_deprecated = None
+        self._is_eligible_for_limit_increase = None
 
     @property
     def name(self):
@@ -233,6 +247,54 @@ class LimitDefinitionSummary(object):
         :type: bool
         """
         self._is_resource_availability_supported = is_resource_availability_supported
+
+    @property
+    def is_deprecated(self):
+        """
+        Gets the is_deprecated of this LimitDefinitionSummary.
+        Indicates if the limit has been deprecated.
+
+
+        :return: The is_deprecated of this LimitDefinitionSummary.
+        :rtype: bool
+        """
+        return self._is_deprecated
+
+    @is_deprecated.setter
+    def is_deprecated(self, is_deprecated):
+        """
+        Sets the is_deprecated of this LimitDefinitionSummary.
+        Indicates if the limit has been deprecated.
+
+
+        :param is_deprecated: The is_deprecated of this LimitDefinitionSummary.
+        :type: bool
+        """
+        self._is_deprecated = is_deprecated
+
+    @property
+    def is_eligible_for_limit_increase(self):
+        """
+        Gets the is_eligible_for_limit_increase of this LimitDefinitionSummary.
+        Indicates if the customer can request a limit increase for this resource.
+
+
+        :return: The is_eligible_for_limit_increase of this LimitDefinitionSummary.
+        :rtype: bool
+        """
+        return self._is_eligible_for_limit_increase
+
+    @is_eligible_for_limit_increase.setter
+    def is_eligible_for_limit_increase(self, is_eligible_for_limit_increase):
+        """
+        Sets the is_eligible_for_limit_increase of this LimitDefinitionSummary.
+        Indicates if the customer can request a limit increase for this resource.
+
+
+        :param is_eligible_for_limit_increase: The is_eligible_for_limit_increase of this LimitDefinitionSummary.
+        :type: bool
+        """
+        self._is_eligible_for_limit_increase = is_eligible_for_limit_increase
 
     def __repr__(self):
         return formatted_flat_dict(self)

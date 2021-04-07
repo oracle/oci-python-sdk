@@ -217,7 +217,9 @@ class CreateIPSecConnectionDetails(object):
     def drg_id(self):
         """
         **[Required]** Gets the drg_id of this CreateIPSecConnectionDetails.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateIPSecConnectionDetails.
@@ -229,7 +231,9 @@ class CreateIPSecConnectionDetails(object):
     def drg_id(self, drg_id):
         """
         Sets the drg_id of this CreateIPSecConnectionDetails.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateIPSecConnectionDetails.

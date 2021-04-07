@@ -348,7 +348,9 @@ class RouteTable(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this RouteTable.
-        The OCID of the VCN the route table list belongs to.
+        The `OCID`__ of the VCN the route table list belongs to.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this RouteTable.
@@ -360,7 +362,9 @@ class RouteTable(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this RouteTable.
-        The OCID of the VCN the route table list belongs to.
+        The `OCID`__ of the VCN the route table list belongs to.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this RouteTable.

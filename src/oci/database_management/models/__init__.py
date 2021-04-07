@@ -12,6 +12,7 @@ from .change_database_parameters_details import ChangeDatabaseParametersDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
 from .child_database import ChildDatabase
+from .cluster_cache_metric import ClusterCacheMetric
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
@@ -20,6 +21,7 @@ from .database_fleet_health_metrics import DatabaseFleetHealthMetrics
 from .database_home_metric_definition import DatabaseHomeMetricDefinition
 from .database_home_metrics import DatabaseHomeMetrics
 from .database_io_aggregate_metrics import DatabaseIOAggregateMetrics
+from .database_instance_home_metrics_definition import DatabaseInstanceHomeMetricsDefinition
 from .database_parameter_summary import DatabaseParameterSummary
 from .database_parameter_update_status import DatabaseParameterUpdateStatus
 from .database_parameters_collection import DatabaseParametersCollection
@@ -31,6 +33,7 @@ from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
 from .fleet_summary import FleetSummary
+from .instance_details import InstanceDetails
 from .job import Job
 from .job_collection import JobCollection
 from .job_database import JobDatabase
@@ -55,12 +58,15 @@ from .metric_dimension_definition import MetricDimensionDefinition
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
 from .object_storage_job_execution_result_location import ObjectStorageJobExecutionResultLocation
 from .parent_group import ParentGroup
+from .pdb_status_details import PdbStatusDetails
 from .remove_managed_database_from_managed_database_group_details import RemoveManagedDatabaseFromManagedDatabaseGroupDetails
 from .reset_database_parameters_details import ResetDatabaseParametersDetails
 from .sql_job import SqlJob
 from .tablespace import Tablespace
 from .tablespace_collection import TablespaceCollection
 from .tablespace_summary import TablespaceSummary
+from .time_series_metric_data_point import TimeSeriesMetricDataPoint
+from .time_series_metric_definition import TimeSeriesMetricDefinition
 from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
 
@@ -74,6 +80,7 @@ database_management_type_mapping = {
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
     "ChildDatabase": ChildDatabase,
+    "ClusterCacheMetric": ClusterCacheMetric,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
@@ -82,6 +89,7 @@ database_management_type_mapping = {
     "DatabaseHomeMetricDefinition": DatabaseHomeMetricDefinition,
     "DatabaseHomeMetrics": DatabaseHomeMetrics,
     "DatabaseIOAggregateMetrics": DatabaseIOAggregateMetrics,
+    "DatabaseInstanceHomeMetricsDefinition": DatabaseInstanceHomeMetricsDefinition,
     "DatabaseParameterSummary": DatabaseParameterSummary,
     "DatabaseParameterUpdateStatus": DatabaseParameterUpdateStatus,
     "DatabaseParametersCollection": DatabaseParametersCollection,
@@ -93,6 +101,7 @@ database_management_type_mapping = {
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
     "FleetSummary": FleetSummary,
+    "InstanceDetails": InstanceDetails,
     "Job": Job,
     "JobCollection": JobCollection,
     "JobDatabase": JobDatabase,
@@ -117,12 +126,15 @@ database_management_type_mapping = {
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
     "ObjectStorageJobExecutionResultLocation": ObjectStorageJobExecutionResultLocation,
     "ParentGroup": ParentGroup,
+    "PdbStatusDetails": PdbStatusDetails,
     "RemoveManagedDatabaseFromManagedDatabaseGroupDetails": RemoveManagedDatabaseFromManagedDatabaseGroupDetails,
     "ResetDatabaseParametersDetails": ResetDatabaseParametersDetails,
     "SqlJob": SqlJob,
     "Tablespace": Tablespace,
     "TablespaceCollection": TablespaceCollection,
     "TablespaceSummary": TablespaceSummary,
+    "TimeSeriesMetricDataPoint": TimeSeriesMetricDataPoint,
+    "TimeSeriesMetricDefinition": TimeSeriesMetricDefinition,
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails
 }

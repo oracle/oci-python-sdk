@@ -22,16 +22,23 @@ class ApiSpecificationRouteResponsePolicies(object):
             The value to assign to the header_transformations property of this ApiSpecificationRouteResponsePolicies.
         :type header_transformations: oci.apigateway.models.HeaderTransformationPolicy
 
+        :param response_cache_store:
+            The value to assign to the response_cache_store property of this ApiSpecificationRouteResponsePolicies.
+        :type response_cache_store: oci.apigateway.models.ResponseCacheStorePolicy
+
         """
         self.swagger_types = {
-            'header_transformations': 'HeaderTransformationPolicy'
+            'header_transformations': 'HeaderTransformationPolicy',
+            'response_cache_store': 'ResponseCacheStorePolicy'
         }
 
         self.attribute_map = {
-            'header_transformations': 'headerTransformations'
+            'header_transformations': 'headerTransformations',
+            'response_cache_store': 'responseCacheStore'
         }
 
         self._header_transformations = None
+        self._response_cache_store = None
 
     @property
     def header_transformations(self):
@@ -52,6 +59,26 @@ class ApiSpecificationRouteResponsePolicies(object):
         :type: oci.apigateway.models.HeaderTransformationPolicy
         """
         self._header_transformations = header_transformations
+
+    @property
+    def response_cache_store(self):
+        """
+        Gets the response_cache_store of this ApiSpecificationRouteResponsePolicies.
+
+        :return: The response_cache_store of this ApiSpecificationRouteResponsePolicies.
+        :rtype: oci.apigateway.models.ResponseCacheStorePolicy
+        """
+        return self._response_cache_store
+
+    @response_cache_store.setter
+    def response_cache_store(self, response_cache_store):
+        """
+        Sets the response_cache_store of this ApiSpecificationRouteResponsePolicies.
+
+        :param response_cache_store: The response_cache_store of this ApiSpecificationRouteResponsePolicies.
+        :type: oci.apigateway.models.ResponseCacheStorePolicy
+        """
+        self._response_cache_store = response_cache_store
 
     def __repr__(self):
         return formatted_flat_dict(self)

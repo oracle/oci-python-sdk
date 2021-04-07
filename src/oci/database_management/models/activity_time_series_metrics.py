@@ -38,13 +38,18 @@ class ActivityTimeSeriesMetrics(object):
             The value to assign to the cpu_count property of this ActivityTimeSeriesMetrics.
         :type cpu_count: oci.database_management.models.MetricDataPoint
 
+        :param cluster:
+            The value to assign to the cluster property of this ActivityTimeSeriesMetrics.
+        :type cluster: oci.database_management.models.MetricDataPoint
+
         """
         self.swagger_types = {
             'timestamp': 'datetime',
             'cpu_time': 'MetricDataPoint',
             'wait_time': 'MetricDataPoint',
             'user_io_time': 'MetricDataPoint',
-            'cpu_count': 'MetricDataPoint'
+            'cpu_count': 'MetricDataPoint',
+            'cluster': 'MetricDataPoint'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class ActivityTimeSeriesMetrics(object):
             'cpu_time': 'cpuTime',
             'wait_time': 'waitTime',
             'user_io_time': 'userIoTime',
-            'cpu_count': 'cpuCount'
+            'cpu_count': 'cpuCount',
+            'cluster': 'cluster'
         }
 
         self._timestamp = None
@@ -60,6 +66,7 @@ class ActivityTimeSeriesMetrics(object):
         self._wait_time = None
         self._user_io_time = None
         self._cpu_count = None
+        self._cluster = None
 
     @property
     def timestamp(self):
@@ -164,6 +171,26 @@ class ActivityTimeSeriesMetrics(object):
         :type: oci.database_management.models.MetricDataPoint
         """
         self._cpu_count = cpu_count
+
+    @property
+    def cluster(self):
+        """
+        Gets the cluster of this ActivityTimeSeriesMetrics.
+
+        :return: The cluster of this ActivityTimeSeriesMetrics.
+        :rtype: oci.database_management.models.MetricDataPoint
+        """
+        return self._cluster
+
+    @cluster.setter
+    def cluster(self, cluster):
+        """
+        Sets the cluster of this ActivityTimeSeriesMetrics.
+
+        :param cluster: The cluster of this ActivityTimeSeriesMetrics.
+        :type: oci.database_management.models.MetricDataPoint
+        """
+        self._cluster = cluster
 
     def __repr__(self):
         return formatted_flat_dict(self)

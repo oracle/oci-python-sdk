@@ -46,6 +46,10 @@ class UpdateSubnetDetails(object):
             The value to assign to the cidr_block property of this UpdateSubnetDetails.
         :type cidr_block: str
 
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this UpdateSubnetDetails.
+        :type ipv6_cidr_block: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -54,7 +58,8 @@ class UpdateSubnetDetails(object):
             'freeform_tags': 'dict(str, str)',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
-            'cidr_block': 'str'
+            'cidr_block': 'str',
+            'ipv6_cidr_block': 'str'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class UpdateSubnetDetails(object):
             'freeform_tags': 'freeformTags',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
-            'cidr_block': 'cidrBlock'
+            'cidr_block': 'cidrBlock',
+            'ipv6_cidr_block': 'ipv6CidrBlock'
         }
 
         self._defined_tags = None
@@ -74,6 +80,7 @@ class UpdateSubnetDetails(object):
         self._route_table_id = None
         self._security_list_ids = None
         self._cidr_block = None
+        self._ipv6_cidr_block = None
 
     @property
     def defined_tags(self):
@@ -290,6 +297,52 @@ class UpdateSubnetDetails(object):
         :type: str
         """
         self._cidr_block = cidr_block
+
+    @property
+    def ipv6_cidr_block(self):
+        """
+        Gets the ipv6_cidr_block of this UpdateSubnetDetails.
+        This is the IPv6 CIDR block for the subnet's IP address space.
+        The subnet size is always /64.
+        See `IPv6 Addresses`__.
+        The provided CIDR must maintain the following rules -
+
+        a. The IPv6 CIDR block is valid and correctly formatted.
+        b. The IPv6 CIDR is within the parent VCN IPv6 range.
+        c. Once added the IPv6 CIDR block cannot me removed or modified
+
+        Example: `2001:0db8:0123:1111::/64`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+
+
+        :return: The ipv6_cidr_block of this UpdateSubnetDetails.
+        :rtype: str
+        """
+        return self._ipv6_cidr_block
+
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
+        """
+        Sets the ipv6_cidr_block of this UpdateSubnetDetails.
+        This is the IPv6 CIDR block for the subnet's IP address space.
+        The subnet size is always /64.
+        See `IPv6 Addresses`__.
+        The provided CIDR must maintain the following rules -
+
+        a. The IPv6 CIDR block is valid and correctly formatted.
+        b. The IPv6 CIDR is within the parent VCN IPv6 range.
+        c. Once added the IPv6 CIDR block cannot me removed or modified
+
+        Example: `2001:0db8:0123:1111::/64`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+
+
+        :param ipv6_cidr_block: The ipv6_cidr_block of this UpdateSubnetDetails.
+        :type: str
+        """
+        self._ipv6_cidr_block = ipv6_cidr_block
 
     def __repr__(self):
         return formatted_flat_dict(self)

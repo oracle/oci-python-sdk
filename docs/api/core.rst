@@ -24,6 +24,10 @@ Core Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.core.models.AddDrgRouteDistributionStatementDetails
+    oci.core.models.AddDrgRouteDistributionStatementsDetails
+    oci.core.models.AddDrgRouteRuleDetails
+    oci.core.models.AddDrgRouteRulesDetails
     oci.core.models.AddImageShapeCompatibilityEntryDetails
     oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.AddPublicIpPoolCapacityDetails
@@ -147,6 +151,8 @@ Core Services
     oci.core.models.CreateDhcpDetails
     oci.core.models.CreateDrgAttachmentDetails
     oci.core.models.CreateDrgDetails
+    oci.core.models.CreateDrgRouteDistributionDetails
+    oci.core.models.CreateDrgRouteTableDetails
     oci.core.models.CreateIPSecConnectionDetails
     oci.core.models.CreateIPSecConnectionTunnelDetails
     oci.core.models.CreateIPSecTunnelBgpSessionDetails
@@ -186,6 +192,8 @@ Core Services
     oci.core.models.CrossConnectGroup
     oci.core.models.CrossConnectLocation
     oci.core.models.CrossConnectMapping
+    oci.core.models.CrossConnectMappingDetails
+    oci.core.models.CrossConnectMappingDetailsCollection
     oci.core.models.CrossConnectPortSpeedShape
     oci.core.models.CrossConnectStatus
     oci.core.models.DedicatedVmHost
@@ -193,6 +201,7 @@ Core Services
     oci.core.models.DedicatedVmHostInstanceSummary
     oci.core.models.DedicatedVmHostShapeSummary
     oci.core.models.DedicatedVmHostSummary
+    oci.core.models.DefaultDrgRouteTables
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
     oci.core.models.DetachInstancePoolInstanceDetails
     oci.core.models.DetachLoadBalancerDetails
@@ -203,7 +212,18 @@ Core Services
     oci.core.models.DhcpSearchDomainOption
     oci.core.models.Drg
     oci.core.models.DrgAttachment
+    oci.core.models.DrgAttachmentIdDrgRouteDistributionMatchCriteria
+    oci.core.models.DrgAttachmentInfo
+    oci.core.models.DrgAttachmentNetworkCreateDetails
+    oci.core.models.DrgAttachmentNetworkDetails
+    oci.core.models.DrgAttachmentNetworkUpdateDetails
+    oci.core.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria
     oci.core.models.DrgRedundancyStatus
+    oci.core.models.DrgRouteDistribution
+    oci.core.models.DrgRouteDistributionMatchCriteria
+    oci.core.models.DrgRouteDistributionStatement
+    oci.core.models.DrgRouteRule
+    oci.core.models.DrgRouteTable
     oci.core.models.EgressSecurityRule
     oci.core.models.EmulatedVolumeAttachment
     oci.core.models.EncryptionDomainConfig
@@ -281,6 +301,7 @@ Core Services
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
     oci.core.models.InternetGateway
+    oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.core.models.Ipv6
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceAvailabilityConfigDetails
@@ -294,16 +315,22 @@ Core Services
     oci.core.models.NatGateway
     oci.core.models.NetworkSecurityGroup
     oci.core.models.NetworkSecurityGroupVnic
+    oci.core.models.NetworkingTopology
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
     oci.core.models.PlatformConfig
     oci.core.models.PortRange
+    oci.core.models.PreemptibleInstanceConfigDetails
+    oci.core.models.PreemptionAction
     oci.core.models.PrivateIp
     oci.core.models.PublicIp
     oci.core.models.PublicIpPool
     oci.core.models.PublicIpPoolCollection
     oci.core.models.PublicIpPoolSummary
     oci.core.models.RemotePeeringConnection
+    oci.core.models.RemotePeeringConnectionDrgAttachmentNetworkDetails
+    oci.core.models.RemoveDrgRouteDistributionStatementsDetails
+    oci.core.models.RemoveDrgRouteRulesDetails
     oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.RemovePublicIpPoolCapacityDetails
     oci.core.models.RemoveVcnCidrDetails
@@ -322,6 +349,13 @@ Core Services
     oci.core.models.ShapeOcpuOptions
     oci.core.models.Subnet
     oci.core.models.TcpOptions
+    oci.core.models.TerminatePreemptionAction
+    oci.core.models.Topology
+    oci.core.models.TopologyAssociatedWithEntityRelationship
+    oci.core.models.TopologyContainsEntityRelationship
+    oci.core.models.TopologyEntityRelationship
+    oci.core.models.TopologyRoutesToEntityRelationship
+    oci.core.models.TopologyRoutesToRelationshipDetails
     oci.core.models.TunnelConfig
     oci.core.models.TunnelCpeDeviceConfig
     oci.core.models.TunnelStatus
@@ -341,6 +375,12 @@ Core Services
     oci.core.models.UpdateDhcpDetails
     oci.core.models.UpdateDrgAttachmentDetails
     oci.core.models.UpdateDrgDetails
+    oci.core.models.UpdateDrgRouteDistributionDetails
+    oci.core.models.UpdateDrgRouteDistributionStatementDetails
+    oci.core.models.UpdateDrgRouteDistributionStatementsDetails
+    oci.core.models.UpdateDrgRouteRuleDetails
+    oci.core.models.UpdateDrgRouteRulesDetails
+    oci.core.models.UpdateDrgRouteTableDetails
     oci.core.models.UpdateIPSecConnectionDetails
     oci.core.models.UpdateIPSecConnectionTunnelDetails
     oci.core.models.UpdateIPSecConnectionTunnelSharedSecretDetails
@@ -383,10 +423,16 @@ Core Services
     oci.core.models.UpdateVolumeGroupDetails
     oci.core.models.UpdateVolumeKmsKeyDetails
     oci.core.models.UpdatedNetworkSecurityGroupSecurityRules
+    oci.core.models.UpgradeStatus
     oci.core.models.Vcn
     oci.core.models.VcnDnsResolverAssociation
+    oci.core.models.VcnDrgAttachmentNetworkCreateDetails
+    oci.core.models.VcnDrgAttachmentNetworkDetails
+    oci.core.models.VcnDrgAttachmentNetworkUpdateDetails
+    oci.core.models.VcnTopology
     oci.core.models.VirtualCircuit
     oci.core.models.VirtualCircuitBandwidthShape
+    oci.core.models.VirtualCircuitDrgAttachmentNetworkDetails
     oci.core.models.VirtualCircuitPublicPrefix
     oci.core.models.Vlan
     oci.core.models.Vnic

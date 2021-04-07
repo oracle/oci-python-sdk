@@ -18,6 +18,10 @@ class SqlSearchSummary(object):
         Initializes a new SqlSearchSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this SqlSearchSummary.
+        :type id: str
+
         :param database_id:
             The value to assign to the database_id property of this SqlSearchSummary.
         :type database_id: str
@@ -44,6 +48,7 @@ class SqlSearchSummary(object):
 
         """
         self.swagger_types = {
+            'id': 'str',
             'database_id': 'str',
             'compartment_id': 'str',
             'database_name': 'str',
@@ -53,6 +58,7 @@ class SqlSearchSummary(object):
         }
 
         self.attribute_map = {
+            'id': 'id',
             'database_id': 'databaseId',
             'compartment_id': 'compartmentId',
             'database_name': 'databaseName',
@@ -61,12 +67,41 @@ class SqlSearchSummary(object):
             'database_version': 'databaseVersion'
         }
 
+        self._id = None
         self._database_id = None
         self._compartment_id = None
         self._database_name = None
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this SqlSearchSummary.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this SqlSearchSummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this SqlSearchSummary.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this SqlSearchSummary.
+        :type: str
+        """
+        self._id = id
 
     @property
     def database_id(self):

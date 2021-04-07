@@ -13,6 +13,8 @@ from .esxi_host_summary import EsxiHostSummary
 from .sddc import Sddc
 from .sddc_collection import SddcCollection
 from .sddc_summary import SddcSummary
+from .supported_sku_summary import SupportedSkuSummary
+from .supported_sku_summary_collection import SupportedSkuSummaryCollection
 from .supported_vmware_software_version_collection import SupportedVmwareSoftwareVersionCollection
 from .supported_vmware_software_version_summary import SupportedVmwareSoftwareVersionSummary
 from .update_esxi_host_details import UpdateEsxiHostDetails
@@ -36,6 +38,8 @@ ocvp_type_mapping = {
     "Sddc": Sddc,
     "SddcCollection": SddcCollection,
     "SddcSummary": SddcSummary,
+    "SupportedSkuSummary": SupportedSkuSummary,
+    "SupportedSkuSummaryCollection": SupportedSkuSummaryCollection,
     "SupportedVmwareSoftwareVersionCollection": SupportedVmwareSoftwareVersionCollection,
     "SupportedVmwareSoftwareVersionSummary": SupportedVmwareSoftwareVersionSummary,
     "UpdateEsxiHostDetails": UpdateEsxiHostDetails,

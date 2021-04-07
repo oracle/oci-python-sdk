@@ -38,6 +38,10 @@ class CreateApplicationDetails(object):
             The value to assign to the syslog_url property of this CreateApplicationDetails.
         :type syslog_url: str
 
+        :param trace_config:
+            The value to assign to the trace_config property of this CreateApplicationDetails.
+        :type trace_config: oci.functions.models.ApplicationTraceConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateApplicationDetails.
         :type freeform_tags: dict(str, str)
@@ -53,6 +57,7 @@ class CreateApplicationDetails(object):
             'config': 'dict(str, str)',
             'subnet_ids': 'list[str]',
             'syslog_url': 'str',
+            'trace_config': 'ApplicationTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -63,6 +68,7 @@ class CreateApplicationDetails(object):
             'config': 'config',
             'subnet_ids': 'subnetIds',
             'syslog_url': 'syslogUrl',
+            'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -72,6 +78,7 @@ class CreateApplicationDetails(object):
         self._config = None
         self._subnet_ids = None
         self._syslog_url = None
+        self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -216,6 +223,26 @@ class CreateApplicationDetails(object):
         :type: str
         """
         self._syslog_url = syslog_url
+
+    @property
+    def trace_config(self):
+        """
+        Gets the trace_config of this CreateApplicationDetails.
+
+        :return: The trace_config of this CreateApplicationDetails.
+        :rtype: oci.functions.models.ApplicationTraceConfig
+        """
+        return self._trace_config
+
+    @trace_config.setter
+    def trace_config(self, trace_config):
+        """
+        Sets the trace_config of this CreateApplicationDetails.
+
+        :param trace_config: The trace_config of this CreateApplicationDetails.
+        :type: oci.functions.models.ApplicationTraceConfig
+        """
+        self._trace_config = trace_config
 
     @property
     def freeform_tags(self):

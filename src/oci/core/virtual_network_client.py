@@ -91,6 +91,262 @@ class VirtualNetworkClient(object):
         self._config = config
         self._kwargs = kwargs
 
+    def add_drg_route_distribution_statements(self, drg_route_distribution_id, add_drg_route_distribution_statements_details, **kwargs):
+        """
+        Adds one or more route distribution statements to the specified route distribution.
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.AddDrgRouteDistributionStatementsDetails add_drg_route_distribution_statements_details: (required)
+            Request with one or more route distribution statements to be inserted into the route distribution.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistributionStatement`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_drg_route_distribution_statements.py.html>`__ to see an example of how to use add_drg_route_distribution_statements API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/addDrgRouteDistributionStatements"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_drg_route_distribution_statements_details,
+                response_type="list[DrgRouteDistributionStatement]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_drg_route_distribution_statements_details,
+                response_type="list[DrgRouteDistributionStatement]")
+
+    def add_drg_route_rules(self, drg_route_table_id, add_drg_route_rules_details, **kwargs):
+        """
+        Adds one or more static route rules to the specified DRG route table.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.AddDrgRouteRulesDetails add_drg_route_rules_details: (required)
+            Request for one or more route rules to be inserted into the DRG route table.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteRule`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_drg_route_rules.py.html>`__ to see an example of how to use add_drg_route_rules API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}/actions/addDrgRouteRules"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_drg_route_rules_details,
+                response_type="list[DrgRouteRule]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_drg_route_rules_details,
+                response_type="list[DrgRouteRule]")
+
+    def add_ipv6_vcn_cidr(self, vcn_id, **kwargs):
+        """
+        Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
+        Once added the IPv6 CIDR block cannot be removed or modified.
+
+
+        :param str vcn_id: (required)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_ipv6_vcn_cidr.py.html>`__ to see an example of how to use add_ipv6_vcn_cidr API.
+        """
+        resource_path = "/vcns/{vcnId}/actions/addIpv6Cidr"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_ipv6_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vcnId": vcn_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def add_network_security_group_security_rules(self, network_security_group_id, add_network_security_group_security_rules_details, **kwargs):
         """
         Adds one or more security rules to the specified network security group.
@@ -544,7 +800,9 @@ class VirtualNetworkClient(object):
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails bulk_add_virtual_circuit_public_prefixes_details: (required)
             Request with publix prefixes to be added to the virtual circuit
@@ -616,10 +874,12 @@ class VirtualNetworkClient(object):
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails bulk_delete_virtual_circuit_public_prefixes_details: (required)
-            Request with publix prefixes to be deleted from the virtual circuit
+            Request with public prefixes to be deleted from the virtual circuit.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -785,7 +1045,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cpe_id: (required)
-            The OCID of the CPE.
+            The `OCID`__ of the CPE.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeCpeCompartmentDetails change_cpe_compartment_details: (required)
             Request to change the compartment of a CPE.
@@ -879,7 +1141,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_id: (required)
-            The OCID of the cross-connect.
+            The `OCID`__ of the cross-connect.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeCrossConnectCompartmentDetails change_cross_connect_compartment_details: (required)
             Request to change the compartment of a Cross Connect.
@@ -973,7 +1237,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_group_id: (required)
-            The OCID of the cross-connect group.
+            The `OCID`__ of the cross-connect group.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeCrossConnectGroupCompartmentDetails change_cross_connect_group_compartment_details: (required)
             Request to change the compartment of a Cross Connect Group.
@@ -1067,7 +1333,9 @@ class VirtualNetworkClient(object):
 
 
         :param str dhcp_id: (required)
-            The OCID for the set of DHCP options.
+            The `OCID`__ for the set of DHCP options.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeDhcpOptionsCompartmentDetails change_dhcp_options_compartment_details: (required)
             Request to change the compartment of a set of DHCP Options.
@@ -1161,7 +1429,9 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The OCID of the DRG.
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeDrgCompartmentDetails change_drg_compartment_details: (required)
             Request to change the compartment of a DRG.
@@ -1255,7 +1525,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ig_id: (required)
-            The OCID of the internet gateway.
+            The `OCID`__ of the internet gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeInternetGatewayCompartmentDetails change_internet_gateway_compartment_details: (required)
             Request to change the compartment of an internet gateway.
@@ -1349,10 +1621,12 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeIPSecConnectionCompartmentDetails change_ip_sec_connection_compartment_details: (required)
-            Request to change the compartment of a Ipsec Connection.
+            Request to change the compartment of a IPSec connection.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1443,7 +1717,9 @@ class VirtualNetworkClient(object):
 
 
         :param str local_peering_gateway_id: (required)
-            The OCID of the local peering gateway.
+            The `OCID`__ of the local peering gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeLocalPeeringGatewayCompartmentDetails change_local_peering_gateway_compartment_details: (required)
             Request to change the compartment of a given local peering gateway.
@@ -1731,7 +2007,9 @@ class VirtualNetworkClient(object):
 
 
         :param str public_ip_id: (required)
-            The OCID of the public IP.
+            The `OCID`__ of the public IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangePublicIpCompartmentDetails change_public_ip_compartment_details: (required)
             Request to change the compartment of a Public IP.
@@ -1921,10 +2199,12 @@ class VirtualNetworkClient(object):
 
 
         :param str remote_peering_connection_id: (required)
-            The OCID of the remote peering connection (RPC).
+            The `OCID`__ of the remote peering connection (RPC).
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeRemotePeeringConnectionCompartmentDetails change_remote_peering_connection_compartment_details: (required)
-            Request to change the compartment of a Remote Peering Connection.
+            Request to change the compartment of a remote peering connection.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -2015,7 +2295,9 @@ class VirtualNetworkClient(object):
 
 
         :param str rt_id: (required)
-            The OCID of the route table.
+            The `OCID`__ of the route table.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeRouteTableCompartmentDetails change_route_table_compartment_details: (required)
             Request to change the compartment of a given route table.
@@ -2109,7 +2391,9 @@ class VirtualNetworkClient(object):
 
 
         :param str security_list_id: (required)
-            The OCID of the security list.
+            The `OCID`__ of the security list.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeSecurityListCompartmentDetails change_security_list_compartment_details: (required)
             Request to change the compartment of a given security list.
@@ -2299,7 +2583,9 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The OCID of the subnet.
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeSubnetCompartmentDetails change_subnet_compartment_details: (required)
             Request to change the compartment of a given subnet.
@@ -2489,7 +2775,9 @@ class VirtualNetworkClient(object):
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeVirtualCircuitCompartmentDetails change_virtual_circuit_compartment_details: (required)
             Request to change the compartment of a virtual circuit.
@@ -2691,7 +2979,9 @@ class VirtualNetworkClient(object):
 
 
         :param str local_peering_gateway_id: (required)
-            The OCID of the local peering gateway.
+            The `OCID`__ of the local peering gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ConnectLocalPeeringGatewaysDetails connect_local_peering_gateways_details: (required)
             Details regarding the local peering gateway to connect.
@@ -2769,7 +3059,9 @@ class VirtualNetworkClient(object):
 
 
         :param str remote_peering_connection_id: (required)
-            The OCID of the remote peering connection (RPC).
+            The `OCID`__ of the remote peering connection (RPC).
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ConnectRemotePeeringConnectionsDetails connect_remote_peering_connections_details: (required)
             Details to connect peering connection with peering connection from remote region
@@ -2914,7 +3206,7 @@ class VirtualNetworkClient(object):
         Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
         more information, see `IPSec VPNs`__.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want
         the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
         connection or other Networking Service components. If you're not sure which compartment to
         use, put the CPE in the same compartment as the DRG. For more information about
@@ -2928,6 +3220,7 @@ class VirtualNetworkClient(object):
         be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm
@@ -3009,7 +3302,7 @@ class VirtualNetworkClient(object):
         and request to have the physical cable installed. For more information, see
         `FastConnect Overview`__.
 
-        For the purposes of access control, you must provide the OCID of the
+        For the purposes of access control, you must provide the `OCID`__ of the
         compartment where you want the cross-connect to reside. If you're
         not sure which compartment to use, put the cross-connect in the
         same compartment with your VCN. For more information about
@@ -3022,6 +3315,7 @@ class VirtualNetworkClient(object):
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -3098,7 +3392,7 @@ class VirtualNetworkClient(object):
         FastConnect. For more information, see
         `FastConnect Overview`__.
 
-        For the purposes of access control, you must provide the OCID of the
+        For the purposes of access control, you must provide the `OCID`__ of the
         compartment where you want the cross-connect group to reside. If you're
         not sure which compartment to use, put the cross-connect group in the
         same compartment with your VCN. For more information about
@@ -3111,6 +3405,7 @@ class VirtualNetworkClient(object):
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -3186,7 +3481,7 @@ class VirtualNetworkClient(object):
         Creates a new set of DHCP options for the specified VCN. For more information, see
         :class:`DhcpOptions`.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the set of
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the set of
         DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
         subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
         of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
@@ -3196,6 +3491,7 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -3354,18 +3650,19 @@ class VirtualNetworkClient(object):
 
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
-        Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
-        and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
-        information about DRGs, see
+        Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
+        at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
+        object with its own `OCID`__. For more information about DRGs, see
         `Dynamic Routing Gateways (DRGs)`__.
 
         You may optionally specify a *display name* for the attachment, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        For the purposes of access control, the DRG attachment is automatically placed into the same compartment
-        as the VCN. For more information about compartments and access control, see
+        For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
+        For more information about compartments and access control, see
         `Overview of the IAM Service`__.
 
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
 
@@ -3436,17 +3733,162 @@ class VirtualNetworkClient(object):
                 body=create_drg_attachment_details,
                 response_type="DrgAttachment")
 
+    def create_drg_route_distribution(self, create_drg_route_distribution_details, **kwargs):
+        """
+        Creates a new route distribution for the specified DRG.
+        Assign the route distribution as an import distribution to a DRG route table using the `UpdateDrgRouteTable` or `CreateDrgRouteTable` operations.
+        Assign the route distribution as an export distribution to a DRG attachment
+        using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+
+
+        :param oci.core.models.CreateDrgRouteDistributionDetails create_drg_route_distribution_details: (required)
+            Details for creating a route distribution.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteDistribution`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg_route_distribution.py.html>`__ to see an example of how to use create_drg_route_distribution API.
+        """
+        resource_path = "/drgRouteDistributions"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_route_distribution_details,
+                response_type="DrgRouteDistribution")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_route_distribution_details,
+                response_type="DrgRouteDistribution")
+
+    def create_drg_route_table(self, create_drg_route_table_details, **kwargs):
+        """
+        Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
+        using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+
+
+        :param oci.core.models.CreateDrgRouteTableDetails create_drg_route_table_details: (required)
+            Details for creating a DRG route table.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg_route_table.py.html>`__ to see an example of how to use create_drg_route_table API.
+        """
+        resource_path = "/drgRouteTables"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_route_table_details,
+                response_type="DrgRouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_drg_route_table_details,
+                response_type="DrgRouteTable")
+
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
         Creates a new internet gateway for the specified VCN. For more information, see
         `Access to the Internet`__.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the Internet
         Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
         other Networking Service components. If you're not sure which compartment to use, put the Internet
         Gateway in the same compartment with the VCN. For more information about compartments and access control, see
-        `Overview of the IAM Service`__. For information about OCIDs, see
-        `Resource Identifiers`__.
+        `Overview of the IAM Service`__.
 
         You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
         does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -3461,8 +3903,8 @@ class VirtualNetworkClient(object):
         the gateway without changing the route rule.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreateInternetGatewayDetails create_internet_gateway_details: (required)
@@ -3542,13 +3984,12 @@ class VirtualNetworkClient(object):
         the static routes. For more information, see the important note in
         :class:`IPSecConnection`.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
         as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
         use, put the IPSec connection in the same compartment as the DRG. For more information about
         compartments and access control, see
         `Overview of the IAM Service`__.
-        For information about OCIDs, see `Resource Identifiers`__.
 
         You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -3564,8 +4005,8 @@ class VirtualNetworkClient(object):
         `Configuring Your On-Premises Router for an IPSec VPN`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm
 
 
@@ -4993,7 +5434,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cpe_id: (required)
-            The OCID of the CPE.
+            The `OCID`__ of the CPE.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5069,7 +5512,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_id: (required)
-            The OCID of the cross-connect.
+            The `OCID`__ of the cross-connect.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5146,7 +5591,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_group_id: (required)
-            The OCID of the cross-connect group.
+            The `OCID`__ of the cross-connect group.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5225,7 +5672,9 @@ class VirtualNetworkClient(object):
 
 
         :param str dhcp_id: (required)
-            The OCID for the set of DHCP options.
+            The `OCID`__ for the set of DHCP options.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5303,7 +5752,9 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The OCID of the DRG.
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5374,13 +5825,15 @@ class VirtualNetworkClient(object):
 
     def delete_drg_attachment(self, drg_attachment_id, **kwargs):
         """
-        Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
-        operation. The attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
+        Detaches a DRG from a network resource by deleting the corresponding `DrgAttachment` resource. This is an asynchronous
+        operation. The attachment's `lifecycleState` will temporarily change to DETACHING until the attachment
         is completely removed.
 
 
         :param str drg_attachment_id: (required)
-            The OCID of the DRG attachment.
+            The `OCID`__ of the DRG attachment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5449,6 +5902,162 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_drg_route_distribution(self, drg_route_distribution_id, **kwargs):
+        """
+        Deletes the specified route distribution. You can't delete a route distribution currently in use by a DRG attachment or DRG route table.
+
+        Remove the DRG route distribution from a DRG attachment or DRG route table by using the \"RemoveExportDrgRouteDistribution\" or \"RemoveImportDrgRouteDistribution' operations.
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg_route_distribution.py.html>`__ to see an example of how to use delete_drg_route_distribution API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_drg_route_table(self, drg_route_table_id, **kwargs):
+        """
+        Deletes the specified DRG route table. There must not be any DRG attachments assigned.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg_route_table.py.html>`__ to see an example of how to use delete_drg_route_table API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
         Deletes the specified internet gateway. The internet gateway does not have to be disabled, but
@@ -5459,7 +6068,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ig_id: (required)
-            The OCID of the internet gateway.
+            The `OCID`__ of the internet gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5541,7 +6152,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5612,8 +6225,10 @@ class VirtualNetworkClient(object):
 
     def delete_ipv6(self, ipv6_id, **kwargs):
         """
-        Unassigns and deletes the specified IPv6. You must specify the object's OCID.
+        Unassigns and deletes the specified IPv6. You must specify the object's `OCID`__.
         The IPv6 address is returned to the subnet's pool of available addresses.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str ipv6_id: (required)
@@ -5703,7 +6318,9 @@ class VirtualNetworkClient(object):
 
 
         :param str local_peering_gateway_id: (required)
-            The OCID of the local peering gateway.
+            The `OCID`__ of the local peering gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5954,7 +6571,9 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The OCID of the private IP.
+            The `OCID`__ of the private IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6043,7 +6662,9 @@ class VirtualNetworkClient(object):
 
 
         :param str public_ip_id: (required)
-            The OCID of the public IP.
+            The `OCID`__ of the public IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6208,7 +6829,9 @@ class VirtualNetworkClient(object):
 
 
         :param str remote_peering_connection_id: (required)
-            The OCID of the remote peering connection (RPC).
+            The `OCID`__ of the remote peering connection (RPC).
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6287,7 +6910,9 @@ class VirtualNetworkClient(object):
 
 
         :param str rt_id: (required)
-            The OCID of the route table.
+            The `OCID`__ of the route table.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6366,7 +6991,9 @@ class VirtualNetworkClient(object):
 
 
         :param str security_list_id: (required)
-            The OCID of the security list.
+            The `OCID`__ of the security list.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6521,7 +7148,9 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The OCID of the subnet.
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6679,7 +7308,9 @@ class VirtualNetworkClient(object):
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6926,6 +7557,129 @@ class VirtualNetworkClient(object):
                 body=detach_service_details,
                 response_type="ServiceGateway")
 
+    def get_all_drg_attachments(self, drg_id, **kwargs):
+        """
+        Returns a complete list of DRG attachments that belong to a particular DRG.
+
+
+        :param str drg_id: (required)
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str attachment_type: (optional)
+            The type for the network resource attached to the DRG.
+
+            Allowed values are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "ALL"
+
+        :param bool is_cross_tenancy: (optional)
+            Whether the DRG attachment lives in a different tenancy than the DRG.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgAttachmentInfo`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_all_drg_attachments.py.html>`__ to see an example of how to use get_all_drg_attachments API.
+        """
+        resource_path = "/drgs/{drgId}/actions/getAllDrgAttachments"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "attachment_type",
+            "is_cross_tenancy"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_all_drg_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgId": drg_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attachment_type' in kwargs:
+            attachment_type_allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "ALL"]
+            if kwargs['attachment_type'] not in attachment_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `attachment_type`, must be one of {0}".format(attachment_type_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "attachmentType": kwargs.get("attachment_type", missing),
+            "isCrossTenancy": kwargs.get("is_cross_tenancy", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgAttachmentInfo]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgAttachmentInfo]")
+
     def get_byoip_range(self, byoip_range_id, **kwargs):
         """
         Gets the `ByoipRange` resource. You must specify the `OCID`__.
@@ -7012,7 +7766,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cpe_id: (required)
-            The OCID of the CPE.
+            The `OCID`__ of the CPE.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7095,7 +7851,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cpe_id: (required)
-            The OCID of the CPE.
+            The `OCID`__ of the CPE.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -7257,7 +8015,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_id: (required)
-            The OCID of the cross-connect.
+            The `OCID`__ of the cross-connect.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7323,7 +8083,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_group_id: (required)
-            The OCID of the cross-connect group.
+            The `OCID`__ of the cross-connect group.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7389,7 +8151,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_id: (required)
-            The OCID of the cross-connect.
+            The `OCID`__ of the cross-connect.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7455,7 +8219,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_id: (required)
-            The OCID of the cross-connect.
+            The `OCID`__ of the cross-connect.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7521,7 +8287,9 @@ class VirtualNetworkClient(object):
 
 
         :param str dhcp_id: (required)
-            The OCID for the set of DHCP options.
+            The `OCID`__ for the set of DHCP options.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7587,7 +8355,9 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The OCID of the DRG.
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7649,11 +8419,13 @@ class VirtualNetworkClient(object):
 
     def get_drg_attachment(self, drg_attachment_id, **kwargs):
         """
-        Gets the information for the specified `DrgAttachment`.
+        Gets the `DrgAttachment` resource.
 
 
         :param str drg_attachment_id: (required)
-            The OCID of the DRG attachment.
+            The `OCID`__ of the DRG attachment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7722,7 +8494,9 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The OCID of the DRG.
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -7792,6 +8566,142 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="DrgRedundancyStatus")
 
+    def get_drg_route_distribution(self, drg_route_distribution_id, **kwargs):
+        """
+        Gets the specified route distribution's information.
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteDistribution`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_route_distribution.py.html>`__ to see an example of how to use get_drg_route_distribution API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgRouteDistribution")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgRouteDistribution")
+
+    def get_drg_route_table(self, drg_route_table_id, **kwargs):
+        """
+        Gets the specified DRG route table's information.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_route_table.py.html>`__ to see an example of how to use get_drg_route_table API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgRouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgRouteTable")
+
     def get_fast_connect_provider_service(self, provider_service_id, **kwargs):
         """
         Gets the specified provider service.
@@ -7801,7 +8711,9 @@ class VirtualNetworkClient(object):
 
 
         :param str provider_service_id: (required)
-            The OCID of the provider service.
+            The `OCID`__ of the provider service.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7868,7 +8780,9 @@ class VirtualNetworkClient(object):
 
 
         :param str provider_service_id: (required)
-            The OCID of the provider service.
+            The `OCID`__ of the provider service.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str provider_service_key_name: (required)
             The provider service key that the provider gives you when you set up a virtual circuit connection
@@ -7941,7 +8855,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ig_id: (required)
-            The OCID of the internet gateway.
+            The `OCID`__ of the internet gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8009,7 +8925,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8078,7 +8996,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8145,7 +9065,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8213,7 +9135,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -8286,7 +9210,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -8376,7 +9302,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -8448,10 +9376,12 @@ class VirtualNetworkClient(object):
 
     def get_ipv6(self, ipv6_id, **kwargs):
         """
-        Gets the specified IPv6. You must specify the object's OCID.
+        Gets the specified IPv6. You must specify the object's `OCID`__.
         Alternatively, you can get the object by using
         :func:`list_ipv6s`
         with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet OCID.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str ipv6_id: (required)
@@ -8533,7 +9463,9 @@ class VirtualNetworkClient(object):
 
 
         :param str local_peering_gateway_id: (required)
-            The OCID of the local peering gateway.
+            The `OCID`__ of the local peering gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8735,6 +9667,122 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="NetworkSecurityGroup")
 
+    def get_networking_topology(self, compartment_id, **kwargs):
+        """
+        Gets a virtual networking topology for the current region.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str access_level: (optional)
+            Valid values are `ANY` and `ACCESSIBLE`. The default is `ANY`.
+            Setting this to `ACCESSIBLE` returns only compartments for which a
+            user has INSPECT permissions, either directly or indirectly (permissions can be on a
+            resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
+            indirect INSPECT permissions.
+
+            When set to `ANY` permissions are not checked.
+
+            Allowed values are: "ANY", "ACCESSIBLE"
+
+        :param bool query_compartment_subtree: (optional)
+            When set to true, the hierarchy of compartments is traversed
+            and the specified compartment and its subcompartments are
+            inspected depending on the the setting of `accessLevel`.
+            Default is false.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_none_match: (optional)
+            For querying if there is a cached value on the server. The If-None-Match HTTP request header
+            makes the request conditional. For GET and HEAD methods, the server will send back the requested
+            resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+            For other methods, the request will be processed only if the eventually existing resource's
+            ETag doesn't match any of the values listed.
+
+        :param str cache_control: (optional)
+            The Cache-Control HTTP header holds directives (instructions)
+            for caching in both requests and responses.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NetworkingTopology`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_networking_topology.py.html>`__ to see an example of how to use get_networking_topology API.
+        """
+        resource_path = "/networkingTopology"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "access_level",
+            "query_compartment_subtree",
+            "opc_request_id",
+            "if_none_match",
+            "cache_control"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_networking_topology got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["ANY", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "accessLevel": kwargs.get("access_level", missing),
+            "queryCompartmentSubtree": kwargs.get("query_compartment_subtree", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "cache-control": kwargs.get("cache_control", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="NetworkingTopology")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="NetworkingTopology")
+
     def get_private_ip(self, private_ip_id, **kwargs):
         """
         Gets the specified private IP. You must specify the object's OCID.
@@ -8744,7 +9792,9 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The OCID of the private IP.
+            The `OCID`__ of the private IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8820,7 +9870,9 @@ class VirtualNetworkClient(object):
 
 
         :param str public_ip_id: (required)
-            The OCID of the public IP.
+            The `OCID`__ of the public IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9092,7 +10144,9 @@ class VirtualNetworkClient(object):
 
 
         :param str remote_peering_connection_id: (required)
-            The OCID of the remote peering connection (RPC).
+            The `OCID`__ of the remote peering connection (RPC).
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9158,7 +10212,9 @@ class VirtualNetworkClient(object):
 
 
         :param str rt_id: (required)
-            The OCID of the route table.
+            The `OCID`__ of the route table.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9224,7 +10280,9 @@ class VirtualNetworkClient(object):
 
 
         :param str security_list_id: (required)
-            The OCID of the security list.
+            The `OCID`__ of the security list.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9426,7 +10484,9 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The OCID of the subnet.
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9496,7 +10556,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -9595,7 +10657,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -9670,6 +10734,84 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="stream")
+
+    def get_upgrade_status(self, drg_id, **kwargs):
+        """
+        Returns the DRG upgrade status. The status can be not updated, in progress, or updated. Also indicates how much of the upgrade is completed.
+
+
+        :param str drg_id: (required)
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.UpgradeStatus`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_upgrade_status.py.html>`__ to see an example of how to use get_upgrade_status API.
+        """
+        resource_path = "/drgs/{drgId}/actions/upgradeStatus"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_upgrade_status got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgId": drg_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UpgradeStatus")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UpgradeStatus")
 
     def get_vcn(self, vcn_id, **kwargs):
         """
@@ -9817,13 +10959,137 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="VcnDnsResolverAssociation")
 
+    def get_vcn_topology(self, compartment_id, vcn_id, **kwargs):
+        """
+        Gets a virtual network topology for a given VCN.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str vcn_id: (required)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str access_level: (optional)
+            Valid values are `ANY` and `ACCESSIBLE`. The default is `ANY`.
+            Setting this to `ACCESSIBLE` returns only compartments for which a
+            user has INSPECT permissions, either directly or indirectly (permissions can be on a
+            resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
+            indirect INSPECT permissions.
+
+            When set to `ANY` permissions are not checked.
+
+            Allowed values are: "ANY", "ACCESSIBLE"
+
+        :param bool query_compartment_subtree: (optional)
+            When set to true, the hierarchy of compartments is traversed
+            and the specified compartment and its subcompartments are
+            inspected depending on the the setting of `accessLevel`.
+            Default is false.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_none_match: (optional)
+            For querying if there is a cached value on the server. The If-None-Match HTTP request header
+            makes the request conditional. For GET and HEAD methods, the server will send back the requested
+            resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+            For other methods, the request will be processed only if the eventually existing resource's
+            ETag doesn't match any of the values listed.
+
+        :param str cache_control: (optional)
+            The Cache-Control HTTP header holds directives (instructions)
+            for caching in both requests and responses.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VcnTopology`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vcn_topology.py.html>`__ to see an example of how to use get_vcn_topology API.
+        """
+        resource_path = "/vcnTopology"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "access_level",
+            "query_compartment_subtree",
+            "opc_request_id",
+            "if_none_match",
+            "cache_control"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_vcn_topology got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["ANY", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "accessLevel": kwargs.get("access_level", missing),
+            "queryCompartmentSubtree": kwargs.get("query_compartment_subtree", missing),
+            "vcnId": vcn_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "cache-control": kwargs.get("cache_control", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="VcnTopology")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="VcnTopology")
+
     def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
         Gets the specified virtual circuit's information.
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9970,7 +11236,9 @@ class VirtualNetworkClient(object):
 
 
         :param str vnic_id: (required)
-            The OCID of the VNIC.
+            The `OCID`__ of the VNIC.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -10337,13 +11605,15 @@ class VirtualNetworkClient(object):
 
         If you want to generate CPE configuration content for one of the returned CPE device types,
         ensure that the :class:`Cpe` object's `cpeDeviceShapeId` attribute is set
-        to the CPE device type's OCID (returned by this operation).
+        to the CPE device type's `OCID`__ (returned by this operation).
 
         For information about generating CPE configuration content, see these operations:
 
           * :func:`get_cpe_device_config_content`
           * :func:`get_ipsec_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config_content`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param int limit: (optional)
@@ -10743,10 +12013,91 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[CrossConnectLocation]")
 
+    def list_cross_connect_mappings(self, virtual_circuit_id, **kwargs):
+        """
+        Lists the Cross Connect mapping Details for the specified
+        virtual circuit.
+
+
+        :param str virtual_circuit_id: (required)
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectMappingDetailsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connect_mappings.py.html>`__ to see an example of how to use list_cross_connect_mappings API.
+        """
+        resource_path = "/virtualCircuits/{virtualCircuitId}/crossConnectMappings"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cross_connect_mappings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "virtualCircuitId": virtual_circuit_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnectMappingDetailsCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CrossConnectMappingDetailsCollection")
+
     def list_cross_connects(self, compartment_id, **kwargs):
         """
         Lists the cross-connects in the specified compartment. You can filter the list
-        by specifying the OCID of a cross-connect group.
+        by specifying the `OCID`__ of a cross-connect group.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (required)
@@ -10755,7 +12106,9 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cross_connect_group_id: (optional)
-            The OCID of the cross-connect group.
+            The `OCID`__ of the cross-connect group.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11133,8 +12486,12 @@ class VirtualNetworkClient(object):
 
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
-        Lists the `DrgAttachment` objects for the specified compartment. You can filter the
-        results by VCN or DRG.
+        Lists the `DrgAttachment` resource for the specified compartment. You can filter the
+        results by DRG, attached network, attachment type, DRG route table or
+        VCN route table.
+
+        The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
+        but you may request to list ALL attachments of ALL types.
 
 
         :param str compartment_id: (required)
@@ -11148,7 +12505,9 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
-            The OCID of the DRG.
+            The `OCID`__ of the DRG.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11165,6 +12524,48 @@ class VirtualNetworkClient(object):
             `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str network_id: (optional)
+            The `OCID`__ of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str attachment_type: (optional)
+            The type for the network resource attached to the DRG.
+
+            Allowed values are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "ALL"
+
+        :param str drg_route_table_id: (optional)
+            The `OCID`__ of the DRG route table assigned to the DRG attachment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle
+            state. The value is case insensitive.
+
+            Allowed values are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11189,19 +12590,61 @@ class VirtualNetworkClient(object):
             "vcn_id",
             "drg_id",
             "limit",
-            "page"
+            "page",
+            "network_id",
+            "attachment_type",
+            "drg_route_table_id",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_drg_attachments got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'attachment_type' in kwargs:
+            attachment_type_allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "ALL"]
+            if kwargs['attachment_type'] not in attachment_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `attachment_type`, must be one of {0}".format(attachment_type_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "vcnId": kwargs.get("vcn_id", missing),
             "drgId": kwargs.get("drg_id", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "networkId": kwargs.get("network_id", missing),
+            "attachmentType": kwargs.get("attachment_type", missing),
+            "drgRouteTableId": kwargs.get("drg_route_table_id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -11229,6 +12672,540 @@ class VirtualNetworkClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[DrgAttachment]")
+
+    def list_drg_route_distribution_statements(self, drg_route_distribution_id, **kwargs):
+        """
+        Lists the statements for the specified route distribution.
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_by: (optional)
+            The field to sort by.
+
+            Allowed values are: "TIMECREATED"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistributionStatement`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_distribution_statements.py.html>`__ to see an example of how to use list_drg_route_distribution_statements API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/drgRouteDistributionStatements"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteDistributionStatement]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteDistributionStatement]")
+
+    def list_drg_route_distributions(self, drg_id, **kwargs):
+        """
+        Lists the route distributions in the specified DRG.
+
+        To retrieve the statements in a distribution, use the
+        ListDrgRouteDistributionStatements operation.
+
+
+        :param str drg_id: (required)
+            The `OCID`__ of the DRG.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter that only returns resources that match the specified lifecycle
+            state. The value is case insensitive.
+
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistribution`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_distributions.py.html>`__ to see an example of how to use list_drg_route_distributions API.
+        """
+        resource_path = "/drgRouteDistributions"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_drg_route_distributions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "drgId": drg_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteDistribution]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteDistribution]")
+
+    def list_drg_route_rules(self, drg_route_table_id, **kwargs):
+        """
+        Lists the route rules in the specified DRG route table.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str route_type: (optional)
+            Static routes are specified through the DRG route table API.
+            Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
+
+            Allowed values are: "STATIC", "DYNAMIC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteRule`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_rules.py.html>`__ to see an example of how to use list_drg_route_rules API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}/drgRouteRules"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "route_type"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'route_type' in kwargs:
+            route_type_allowed_values = ["STATIC", "DYNAMIC"]
+            if kwargs['route_type'] not in route_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `route_type`, must be one of {0}".format(route_type_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "routeType": kwargs.get("route_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteRule]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteRule]")
+
+    def list_drg_route_tables(self, drg_id, **kwargs):
+        """
+        Lists the DRG route tables for the specified DRG.
+
+        Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
+
+
+        :param str drg_id: (required)
+            The `OCID`__ of the DRG.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the given display name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by availability domain if the scope of the resource type is within a
+            single availability domain. If you call one of these \"List\" operations without specifying
+            an availability domain, the resources are grouped by availability domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str import_drg_route_distribution_id: (optional)
+            The `OCID`__ of the import route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str lifecycle_state: (optional)
+            A filter that only returns matches for the specified lifecycle
+            state. The value is case insensitive.
+
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteTable`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_tables.py.html>`__ to see an example of how to use list_drg_route_tables API.
+        """
+        resource_path = "/drgRouteTables"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "display_name",
+            "sort_by",
+            "sort_order",
+            "import_drg_route_distribution_id",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_drg_route_tables got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "drgId": drg_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "importDrgRouteDistributionId": kwargs.get("import_drg_route_distribution_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteTable]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DrgRouteTable]")
 
     def list_drgs(self, compartment_id, **kwargs):
         """
@@ -11322,10 +13299,11 @@ class VirtualNetworkClient(object):
         information so you can specify your desired provider and service
         offering when you create a virtual circuit.
 
-        For the compartment ID, provide the OCID of your tenancy (the root compartment).
+        For the compartment ID, provide the `OCID`__ of your tenancy (the root compartment).
 
         For more information, see `FastConnect Overview`__.
 
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
@@ -11421,7 +13399,9 @@ class VirtualNetworkClient(object):
 
 
         :param str provider_service_id: (required)
-            The OCID of the provider service.
+            The `OCID`__ of the provider service.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11666,7 +13646,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11767,10 +13749,14 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
-            The OCID of the DRG.
+            The `OCID`__ of the DRG.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cpe_id: (optional)
-            The OCID of the CPE.
+            The `OCID`__ of the CPE.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11885,7 +13871,9 @@ class VirtualNetworkClient(object):
             Example: `10.0.3.3`
 
         :param str subnet_id: (optional)
-            The OCID of the subnet.
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vnic_id: (optional)
             The OCID of the VNIC.
@@ -12663,7 +14651,9 @@ class VirtualNetworkClient(object):
             Example: `10.0.3.3`
 
         :param str subnet_id: (optional)
-            The OCID of the subnet.
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vnic_id: (optional)
             The OCID of the VNIC.
@@ -13044,7 +15034,9 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
-            The OCID of the DRG.
+            The `OCID`__ of the DRG.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -14037,7 +16029,9 @@ class VirtualNetworkClient(object):
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str verification_state: (optional)
             A filter to only return resources that match the given verification
@@ -14527,6 +16521,319 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=modify_vcn_cidr_details)
 
+    def remove_drg_route_distribution_statements(self, drg_route_distribution_id, remove_drg_route_distribution_statements_details, **kwargs):
+        """
+        Removes one or more route distribution statements from the specified route distribution's map.
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.RemoveDrgRouteDistributionStatementsDetails remove_drg_route_distribution_statements_details: (required)
+            Request with one or more route distribution statements to remove from the route distribution.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_drg_route_distribution_statements.py.html>`__ to see an example of how to use remove_drg_route_distribution_statements API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/removeDrgRouteDistributionStatements"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_drg_route_distribution_statements_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_drg_route_distribution_statements_details)
+
+    def remove_drg_route_rules(self, drg_route_table_id, remove_drg_route_rules_details, **kwargs):
+        """
+        Removes one or more route rules from the specified DRG route table.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.RemoveDrgRouteRulesDetails remove_drg_route_rules_details: (required)
+            Request to remove one or more route rules in the DRG route table.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_drg_route_rules.py.html>`__ to see an example of how to use remove_drg_route_rules API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}/actions/removeDrgRouteRules"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_drg_route_rules_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_drg_route_rules_details)
+
+    def remove_export_drg_route_distribution(self, drg_attachment_id, **kwargs):
+        """
+        Removes the export route distribution from the DRG attachment so no routes are advertised to it.
+
+
+        :param str drg_attachment_id: (required)
+            The `OCID`__ of the DRG attachment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_export_drg_route_distribution.py.html>`__ to see an example of how to use remove_export_drg_route_distribution API.
+        """
+        resource_path = "/drgAttachments/{drgAttachmentId}/actions/removeExportDrgRouteDistribution"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_export_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgAttachmentId": drg_attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgAttachment")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgAttachment")
+
+    def remove_import_drg_route_distribution(self, drg_route_table_id, **kwargs):
+        """
+        Removes the import route distribution from the DRG route table so no routes are imported
+        into it.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_import_drg_route_distribution.py.html>`__ to see an example of how to use remove_import_drg_route_distribution API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}/actions/removeImportDrgRouteDistribution"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_import_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgRouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DrgRouteTable")
+
     def remove_network_security_group_security_rules(self, network_security_group_id, remove_network_security_group_security_rules_details, **kwargs):
         """
         Removes one or more security rules from the specified network security group.
@@ -14893,7 +17200,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cpe_id: (required)
-            The OCID of the CPE.
+            The `OCID`__ of the CPE.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateCpeDetails update_cpe_details: (required)
             Details object for updating a CPE.
@@ -14975,7 +17284,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_id: (required)
-            The OCID of the cross-connect.
+            The `OCID`__ of the cross-connect.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateCrossConnectDetails update_cross_connect_details: (required)
             Update CrossConnect fields.
@@ -15058,7 +17369,9 @@ class VirtualNetworkClient(object):
 
 
         :param str cross_connect_group_id: (required)
-            The OCID of the cross-connect group.
+            The `OCID`__ of the cross-connect group.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
             Update CrossConnectGroup fields
@@ -15143,7 +17456,9 @@ class VirtualNetworkClient(object):
 
 
         :param str dhcp_id: (required)
-            The OCID for the set of DHCP options.
+            The `OCID`__ for the set of DHCP options.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateDhcpDetails update_dhcp_details: (required)
             Request object for updating a set of DHCP options.
@@ -15225,7 +17540,9 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The OCID of the DRG.
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateDrgDetails update_drg_details: (required)
             Details object for updating a DRG.
@@ -15303,12 +17620,14 @@ class VirtualNetworkClient(object):
 
     def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
         """
-        Updates the display name for the specified `DrgAttachment`.
+        Updates the display name and routing information for the specified `DrgAttachment`.
         Avoid entering confidential information.
 
 
         :param str drg_attachment_id: (required)
-            The OCID of the DRG attachment.
+            The `OCID`__ of the DRG attachment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateDrgAttachmentDetails update_drg_attachment_details: (required)
             Details object for updating a `DrgAttachment`.
@@ -15384,6 +17703,320 @@ class VirtualNetworkClient(object):
                 body=update_drg_attachment_details,
                 response_type="DrgAttachment")
 
+    def update_drg_route_distribution(self, drg_route_distribution_id, update_drg_route_distribution_details, **kwargs):
+        """
+        Updates the specified route distribution
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.UpdateDrgRouteDistributionDetails update_drg_route_distribution_details: (required)
+            Details object for updating a route distribution
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteDistribution`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_distribution.py.html>`__ to see an example of how to use update_drg_route_distribution API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_distribution_details,
+                response_type="DrgRouteDistribution")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_distribution_details,
+                response_type="DrgRouteDistribution")
+
+    def update_drg_route_distribution_statements(self, drg_route_distribution_id, update_drg_route_distribution_statements_details, **kwargs):
+        """
+        Updates one or more route distribution statements in the specified route distribution.
+
+
+        :param str drg_route_distribution_id: (required)
+            The `OCID`__ of the route distribution.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.UpdateDrgRouteDistributionStatementsDetails update_drg_route_distribution_statements_details: (required)
+            Request to update one or more route distribution statements in the route distribution.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistributionStatement`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_distribution_statements.py.html>`__ to see an example of how to use update_drg_route_distribution_statements API.
+        """
+        resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/updateDrgRouteDistributionStatements"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteDistributionId": drg_route_distribution_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_distribution_statements_details,
+                response_type="list[DrgRouteDistributionStatement]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_distribution_statements_details,
+                response_type="list[DrgRouteDistributionStatement]")
+
+    def update_drg_route_rules(self, drg_route_table_id, update_drg_route_rules_details, **kwargs):
+        """
+        Updates one or more route rules in the specified DRG route table.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.UpdateDrgRouteRulesDetails update_drg_route_rules_details: (required)
+            Request to update one or more route rules in the DRG route table.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteRule`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_rules.py.html>`__ to see an example of how to use update_drg_route_rules API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}/actions/updateDrgRouteRules"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_rules_details,
+                response_type="list[DrgRouteRule]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_rules_details,
+                response_type="list[DrgRouteRule]")
+
+    def update_drg_route_table(self, drg_route_table_id, update_drg_route_table_details, **kwargs):
+        """
+        Updates the specified DRG route table.
+
+
+        :param str drg_route_table_id: (required)
+            The `OCID`__ of the DRG route table.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.UpdateDrgRouteTableDetails update_drg_route_table_details: (required)
+            Details object used to updating a DRG route table.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_table.py.html>`__ to see an example of how to use update_drg_route_table API.
+        """
+        resource_path = "/drgRouteTables/{drgRouteTableId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgRouteTableId": drg_route_table_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_table_details,
+                response_type="DrgRouteTable")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drg_route_table_details,
+                response_type="DrgRouteTable")
+
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
         Updates the specified internet gateway. You can disable/enable it, or change its display name
@@ -15394,7 +18027,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ig_id: (required)
-            The OCID of the internet gateway.
+            The `OCID`__ of the internet gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInternetGatewayDetails update_internet_gateway_details: (required)
             Details for updating the internet gateway.
@@ -15479,7 +18114,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
             Details object for updating a IPSec connection.
@@ -15572,7 +18209,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -15668,7 +18307,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -15852,7 +18493,9 @@ class VirtualNetworkClient(object):
 
 
         :param str local_peering_gateway_id: (required)
-            The OCID of the local peering gateway.
+            The `OCID`__ of the local peering gateway.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
             Details object for updating a local peering gateway.
@@ -16199,7 +18842,9 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The OCID of the private IP.
+            The `OCID`__ of the private IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePrivateIpDetails update_private_ip_details: (required)
             Private IP details.
@@ -16321,7 +18966,9 @@ class VirtualNetworkClient(object):
 
 
         :param str public_ip_id: (required)
-            The OCID of the public IP.
+            The `OCID`__ of the public IP.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePublicIpDetails update_public_ip_details: (required)
             Public IP details.
@@ -16493,7 +19140,9 @@ class VirtualNetworkClient(object):
 
 
         :param str remote_peering_connection_id: (required)
-            The OCID of the remote peering connection (RPC).
+            The `OCID`__ of the remote peering connection (RPC).
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateRemotePeeringConnectionDetails update_remote_peering_connection_details: (required)
             Request to the update the peering connection to remote region
@@ -16578,7 +19227,9 @@ class VirtualNetworkClient(object):
 
 
         :param str rt_id: (required)
-            The OCID of the route table.
+            The `OCID`__ of the route table.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateRouteTableDetails update_route_table_details: (required)
             Details object for updating a route table.
@@ -16664,7 +19315,9 @@ class VirtualNetworkClient(object):
 
 
         :param str security_list_id: (required)
-            The OCID of the security list.
+            The `OCID`__ of the security list.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateSecurityListDetails update_security_list_details: (required)
             Updated details for the security list.
@@ -16831,7 +19484,9 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The OCID of the subnet.
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateSubnetDetails update_subnet_details: (required)
             Details object for updating a subnet.
@@ -16915,7 +19570,9 @@ class VirtualNetworkClient(object):
 
 
         :param str ipsc_id: (required)
-            The OCID of the IPSec connection.
+            The `OCID`__ of the IPSec connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -17129,7 +19786,9 @@ class VirtualNetworkClient(object):
 
 
         :param str virtual_circuit_id: (required)
-            The OCID of the virtual circuit.
+            The `OCID`__ of the virtual circuit.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
             Update VirtualCircuit fields.
@@ -17302,7 +19961,9 @@ class VirtualNetworkClient(object):
 
 
         :param str vnic_id: (required)
-            The OCID of the VNIC.
+            The `OCID`__ of the VNIC.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVnicDetails update_vnic_details: (required)
             Details object for updating a VNIC.
@@ -17377,6 +20038,94 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_vnic_details,
                 response_type="Vnic")
+
+    def upgrade_drg(self, drg_id, **kwargs):
+        """
+        Upgrades the DRG. After upgrade, you can control routing inside your DRG
+        via DRG attachments, route distributions, and DRG route tables.
+
+
+        :param str drg_id: (required)
+            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/upgrade_drg.py.html>`__ to see an example of how to use upgrade_drg API.
+        """
+        resource_path = "/drgs/{drgId}/actions/upgrade"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "upgrade_drg got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "drgId": drg_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def validate_byoip_range(self, byoip_range_id, **kwargs):
         """
