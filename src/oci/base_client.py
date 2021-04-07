@@ -9,7 +9,6 @@ import platform
 import pytz
 import random
 import os
-import pprint
 import re
 import string
 import uuid
@@ -62,6 +61,13 @@ def build_user_agent(extra=""):
 
 def utc_now():
     return " " + str(datetime.utcnow()) + ": "
+
+
+def is_http_log_enabled(is_enabled):
+    if is_enabled:
+        six.moves.http_client.HTTPConnection.debuglevel = 1
+    else:
+        six.moves.http_client.HTTPConnection.debuglevel = 0
 
 
 def _sanitize_headers_for_requests(headers):
@@ -269,7 +275,10 @@ class BaseClient(object):
                     else:
                         raise
         else:
+            start = timer()
             response = self.request(request)
+            end = timer()
+            self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
             return response
 
     def generate_collection_format_param(self, param_value, collection_format_type):
@@ -359,13 +368,6 @@ class BaseClient(object):
             stream = True
 
         try:
-            # Print request data if DEBUG
-            if self.debug:
-                print("Sending request......\n{}\n".format(
-                    pprint.pformat({"method": request.method, "url": request.url, "header": request.header_params,
-                                    "body": request.body, "query_params": request.query_params,
-                                    "response_type": request.response_type,
-                                    "enforce_content_headers": request.enforce_content_headers}, indent=2)))
             start = timer()
             response = self.session.request(
                 request.method,
@@ -377,11 +379,6 @@ class BaseClient(object):
                 stream=stream,
                 timeout=self.timeout)
             end = timer()
-            # Print response data if DEBUG
-            if self.debug:
-                print("Receiving response......\n{}\n".format(pprint.pformat(
-                    {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
-                     "reason": response.reason}, indent=2)))
             if request.header_params[constants.HEADER_REQUEST_ID]:
                 self.logger.debug(utc_now() + 'time elapsed for request {}: {}'.format(request.header_params[constants.HEADER_REQUEST_ID], str(end - start)))
             if response and hasattr(response, 'elapsed'):
@@ -393,9 +390,6 @@ class BaseClient(object):
 
         response_type = request.response_type
         self.logger.debug(utc_now() + "Response status: %s" % str(response.status_code))
-        # Without this check, oce/kubeconfig tests break in CLI
-        if not stream and response_type and response.content:
-            self.logger.debug(utc_now() + 'Response size: ' + str(len(response.content)))
 
         if not 200 <= response.status_code <= 299:
             self.raise_service_error(request, response)
@@ -630,9 +624,7 @@ class BaseClient(object):
             return {k: self.__deserialize(v, sub_kls)
                     for k, v in data.items()}
 
-        # This is a work around for enums not being present
-        # in the type mappings.
-        # See OraclePythonSdkCodegen removeEnumsFromModelGeneration().
+        # Enums are not present in type mappings, and they are strings, so we need to call  __deserialize_primitive()
         if cls in self.type_mappings:
             cls = self.type_mappings[cls]
         else:
