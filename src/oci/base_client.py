@@ -161,10 +161,10 @@ class BaseClient(object):
         if get_config_value_or_default(config, "log_requests"):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)
-            self.debug = True
+            is_http_log_enabled(True)
         else:
             self.logger.disabled = True
-            self.debug = False
+            is_http_log_enabled(False)
 
         self.skip_deserialization = kwargs.get('skip_deserialization')
 
@@ -321,8 +321,7 @@ class BaseClient(object):
             #   List: "collectionFormat": ["val1", "val2", "val3"]
             #   Dict: "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "definedTagsExists": { "tag3": True, "tag4": True }
             if isinstance(v, bool):
-                # Python capitalizes boolean values in the query parameters.  This is counter to spec and should be
-                # lower case.
+                # Python capitalizes boolean values in the query parameters.
                 processed_query_params[k] = 'true' if v else 'false'
             elif not isinstance(v, dict) and not isinstance(v, list):
                 processed_query_params[k] = self.to_path_value(v)
