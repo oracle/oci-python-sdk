@@ -119,7 +119,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
         - Timeouts from the requests library (we will always retry on these)
         - ConnectionErrors from the requests library (we will always retry on these)
         - Built-in ConnectionErrors from Python 3
-        - Service errors where the status is 500 or above (i.e. a server-side error)
+        - Service errors where the status is 500 or above (i.e. a server-side error, except 501)
         - Service errors where a status (e.g. 429) and, optionally, the code meet a given criteria
 
     The last item is configurable via dictionary where the key is some numeric status representing a HTTP status and the value
@@ -135,14 +135,15 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
             500: []
         }
 
-    If no configuration is provided, then the default for service errors is to retry on HTTP 429's and 5xx's without any code checks. If a
-    specific 5xx code (e.g. 500, 502) is provided in the dictionary then it takes precedence over the option to retry on any 500. For example
-    it is possible to retry on only 502s (either by status or by status and matching some code ) by disabling the general "retry on any 5xx"
+    If no configuration is provided, then the default for service errors is to retry on HTTP 409/IncorrectState, 429's and 5xx's (except 501) without any
+    code checks. If a specific 5xx code (e.g. 500, 502) is provided in the dictionary, then it takes precedence over the option to retry on any 500, for example,
+    it is possible to retry on only 502s (either by status or by status and matching some code) by disabling the general "retry on any 5xx"
     configuration and placing an entry for 502 in the dictionary
     """
 
     RETRYABLE_STATUSES_AND_CODES = {
         -1: [],
+        409: ['IncorrectState'],
         429: []
     }
 
@@ -167,7 +168,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
                     return True
                 else:
                     return exception.code in codes
-            elif self.retry_any_5xx and exception.status >= 500:
+            elif self.retry_any_5xx and exception.status >= 500 and exception.status != 501:
                 return True
         else:
             # This is inside a try block because ConnectionError exists in Python 3 and not in Python 2

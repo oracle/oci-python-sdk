@@ -38,7 +38,7 @@ def test_limit_retry_checker():
 def test_service_error_checker_timeouts():
     checker = oci.retry.retry_checkers.TimeoutConnectionAndServiceErrorRetryChecker()
     assert checker.retry_any_5xx
-    assert checker.service_error_retry_config == {-1: [], 429: []}
+    assert checker.service_error_retry_config == {-1: [], 409: ['IncorrectState'], 429: []}
 
     assert checker.should_retry(exception=Timeout())
     assert checker.should_retry(exception=RequestsConnectionError())
@@ -53,9 +53,11 @@ def test_service_error_checker_timeouts():
 
     service_error_429 = oci.exceptions.ServiceError(429, 'TooManyRequests', {}, None)
     service_error_500 = oci.exceptions.ServiceError(500, 'SomeCode', {}, None)
+    service_error_501 = oci.exceptions.ServiceError(501, 'SomeCode', {}, None)
     service_error_502 = oci.exceptions.ServiceError(502, 'SomeCode', {}, None)
     assert checker.should_retry(exception=service_error_429)
     assert checker.should_retry(exception=service_error_500)
+    assert not checker.should_retry(exception=service_error_501)
     assert checker.should_retry(exception=service_error_502)
 
     checker = oci.retry.retry_checkers.TimeoutConnectionAndServiceErrorRetryChecker(
