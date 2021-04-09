@@ -251,7 +251,7 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
-        Note that IPv6 addressing is currently supported only in certain regions. See
+        IPv6 addressing is supported for all commercial and government regions. See
         `IPv6 Addresses`__.
 
         Example: `2001:db8::1/64`
@@ -276,7 +276,7 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
-        Note that IPv6 addressing is currently supported only in certain regions. See
+        IPv6 addressing is supported for all commercial and government regions. See
         `IPv6 Addresses`__.
 
         Example: `2001:db8::1/64`

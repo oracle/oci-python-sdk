@@ -320,7 +320,7 @@ class CreateVcnDetails(object):
     def is_ipv6_enabled(self):
         """
         Gets the is_ipv6_enabled of this CreateVcnDetails.
-        Whether IPv6 is enabled for the VCN. Default is `false`. You cannot change this later.
+        Whether IPv6 is enabled for the VCN. Default is `false`.
         If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
@@ -338,7 +338,7 @@ class CreateVcnDetails(object):
     def is_ipv6_enabled(self, is_ipv6_enabled):
         """
         Sets the is_ipv6_enabled of this CreateVcnDetails.
-        Whether IPv6 is enabled for the VCN. Default is `false`. You cannot change this later.
+        Whether IPv6 is enabled for the VCN. Default is `false`.
         If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 

@@ -54,6 +54,10 @@ class CreateSubnetDetails(object):
             The value to assign to the ipv6_cidr_block property of this CreateSubnetDetails.
         :type ipv6_cidr_block: str
 
+        :param prohibit_internet_ingress:
+            The value to assign to the prohibit_internet_ingress property of this CreateSubnetDetails.
+        :type prohibit_internet_ingress: bool
+
         :param prohibit_public_ip_on_vnic:
             The value to assign to the prohibit_public_ip_on_vnic property of this CreateSubnetDetails.
         :type prohibit_public_ip_on_vnic: bool
@@ -81,6 +85,7 @@ class CreateSubnetDetails(object):
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'ipv6_cidr_block': 'str',
+            'prohibit_internet_ingress': 'bool',
             'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
@@ -97,6 +102,7 @@ class CreateSubnetDetails(object):
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
             'ipv6_cidr_block': 'ipv6CidrBlock',
+            'prohibit_internet_ingress': 'prohibitInternetIngress',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
@@ -112,6 +118,7 @@ class CreateSubnetDetails(object):
         self._dns_label = None
         self._freeform_tags = None
         self._ipv6_cidr_block = None
+        self._prohibit_internet_ingress = None
         self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
@@ -438,6 +445,46 @@ class CreateSubnetDetails(object):
         self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
+    def prohibit_internet_ingress(self):
+        """
+        Gets the prohibit_internet_ingress of this CreateSubnetDetails.
+        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+
+        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+
+        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4
+        behavior in this subnet. Only one or the other flag should be specified.
+
+        Example: `true`
+
+
+        :return: The prohibit_internet_ingress of this CreateSubnetDetails.
+        :rtype: bool
+        """
+        return self._prohibit_internet_ingress
+
+    @prohibit_internet_ingress.setter
+    def prohibit_internet_ingress(self, prohibit_internet_ingress):
+        """
+        Sets the prohibit_internet_ingress of this CreateSubnetDetails.
+        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+
+        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+
+        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4
+        behavior in this subnet. Only one or the other flag should be specified.
+
+        Example: `true`
+
+
+        :param prohibit_internet_ingress: The prohibit_internet_ingress of this CreateSubnetDetails.
+        :type: bool
+        """
+        self._prohibit_internet_ingress = prohibit_internet_ingress
+
+    @property
     def prohibit_public_ip_on_vnic(self):
         """
         Gets the prohibit_public_ip_on_vnic of this CreateSubnetDetails.
@@ -450,7 +497,7 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
-        If you intend to use a an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
         specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
@@ -474,7 +521,7 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
-        If you intend to use a an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
         specify ingress internet traffic behavior of the subnet.
 
         Example: `true`

@@ -374,8 +374,8 @@ class CreateIPSecConnectionDetails(object):
         tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
         For more information, see the important note in :class:`IPSecConnection`.
 
-        The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-        in certain regions. See `IPv6 Addresses`__.
+        The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+        See `IPv6 Addresses`__.
 
         Example: `10.0.1.0/24`
 
@@ -402,8 +402,8 @@ class CreateIPSecConnectionDetails(object):
         tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
         For more information, see the important note in :class:`IPSecConnection`.
 
-        The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-        in certain regions. See `IPv6 Addresses`__.
+        The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+        See `IPv6 Addresses`__.
 
         Example: `10.0.1.0/24`
 
