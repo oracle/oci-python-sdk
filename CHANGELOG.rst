@@ -4,12 +4,54 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.35.2 - TBD
+2.36.0 - 2020-04-13
 ====================
 
 Added
 -----
-* TBD
+* Support for the Database Migration service
+* Support for the Networking Topology service
+* Support for getting the id of peered VCNs on local peering gateways in the Networking service
+* Support for burstable instances in the Compute service
+* Support for preemptible instances in the Compute service
+* Support for fractional resource usage and availability in the Limits service
+* Support for streaming analytics in the Service Connector Hub service
+* Support for flexible routing inside DRGs to enable packet flow between any two attachments in the Networking service
+* Support for routing policy to customize dynamic import/export of routes in the Networking service
+* Support for IPv6, including on FastConnect and IPsec resources, in the Networking service
+* Support for request validation policies in the API Gateway service
+* Support for RESP-compliant (e.g. REDIS) response caches, and for configuring response caching per-route in the API Gateway service
+* Support for flexible billing in the VMWare Solution service
+* Support for new DNS format for the Web Application Acceleration and Security service
+* Support for configuring APM tracing on applications and functions in the Functions service
+* Support for Enterprise Manager external databases and Management Agent Service managed external databases and hosts in the Operations Insights service
+* Support for getting cluster cache metrics for RAC CDB managed databases in the Database Management service
+
+Breaking changes
+----
+* Removed response codes `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307` and `444` from attribute `block_response_code` in model `AddressRateLimiting` in the Web Application Acceleration and Security Service
+* `VcnId` was made optional in CreateDrgAttachmentDetails model under Core services.
+* The property `IsInternetAccessAllowed` was removed from CreateIpv6Details model under Core services.
+* The property `Ipv6CidrBlock` was removed from CreateVcnDetails model under Core services.
+* The property `PublicIpAddress` and `IsInternetAccessAllowed` were removed from Ipv6 model under Core services.
+* Required property `PeerId` was added to LocalPeeringGateway model under Core services.
+* The property `Ipv6PublicCidrBlock` was removed from Subnet model under Core services.
+* The property `Ipv6PublicCidrBlock` was replaced by `Ipv6CidrBlocks` in Vcn model in Core services.
+* Required property `CurrentSku` was added under CreateEsxiHostDetails under Ocvp service.
+* Required property `InitialSku` was added under CreateSddcDetails under Ocvp service.
+* Required properties `BillingContractEndDate`, `NextSku` & `CurrentSku` were added under EsxiHost under Ocvp service.
+* Required properties `BillingContractEndDate`, `NextSku` & `CurrentSku` were added under EsxiHostSummary under Ocvp service.
+* Required property `InitialSku` was added under Sddc under Ocvp service.
+* Required property `Id` was added under DatabaseDetails under Opsi service.
+* `compartment_id` and `database_id` are now optional in operation `ingest_sql_bucket` under Opsi service.
+* `compartment_id` and `database_id` are now optional in operation `ingest_sql_plan_lines` under Opsi service.
+* `compartment_id` and `database_id` are now optional in operation `ingest_sql_text` under Opsi service.
+* `compartment_id` is now optional in operation `list_database_insights` under Opsi service.
+* `database_id` is now optional in operation `list_sql_plans` under Opsi service.
+* `database_id` is now optional in operation `summarize_sql_response_time_distributions` under Opsi service.
+* `database_id` is now optional in operation `summarize_sql_statistics_time_series_by_plan` under Opsi service.
+* `database_id` is now optional in operation `summarize_sql_plan_insights` under Opsi service.
+* Value of attribute `model_type` in model `ConnectionDetails` in Data Integration service defaults to UNKNOWN_ENUM_VALUE when it receives an invalid value. In the earlier versions, this raises a ValueError
 
 ====================
 2.35.1 - 2020-04-06
