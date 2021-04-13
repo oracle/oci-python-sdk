@@ -38,6 +38,10 @@ class ApplicationSummary(object):
             The value to assign to the subnet_ids property of this ApplicationSummary.
         :type subnet_ids: list[str]
 
+        :param trace_config:
+            The value to assign to the trace_config property of this ApplicationSummary.
+        :type trace_config: oci.functions.models.ApplicationTraceConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ApplicationSummary.
         :type freeform_tags: dict(str, str)
@@ -61,6 +65,7 @@ class ApplicationSummary(object):
             'display_name': 'str',
             'lifecycle_state': 'str',
             'subnet_ids': 'list[str]',
+            'trace_config': 'ApplicationTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
@@ -73,6 +78,7 @@ class ApplicationSummary(object):
             'display_name': 'displayName',
             'lifecycle_state': 'lifecycleState',
             'subnet_ids': 'subnetIds',
+            'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'time_created': 'timeCreated',
@@ -84,6 +90,7 @@ class ApplicationSummary(object):
         self._display_name = None
         self._lifecycle_state = None
         self._subnet_ids = None
+        self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
         self._time_created = None
@@ -216,6 +223,26 @@ class ApplicationSummary(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def trace_config(self):
+        """
+        Gets the trace_config of this ApplicationSummary.
+
+        :return: The trace_config of this ApplicationSummary.
+        :rtype: oci.functions.models.ApplicationTraceConfig
+        """
+        return self._trace_config
+
+    @trace_config.setter
+    def trace_config(self, trace_config):
+        """
+        Sets the trace_config of this ApplicationSummary.
+
+        :param trace_config: The trace_config of this ApplicationSummary.
+        :type: oci.functions.models.ApplicationTraceConfig
+        """
+        self._trace_config = trace_config
 
     @property
     def freeform_tags(self):

@@ -20,7 +20,9 @@ Sch
 
     oci.sch.models.ChangeServiceConnectorCompartmentDetails
     oci.sch.models.CreateServiceConnectorDetails
+    oci.sch.models.FunctionTaskDetails
     oci.sch.models.FunctionsTargetDetails
+    oci.sch.models.LatestStreamingCursor
     oci.sch.models.LogRuleTaskDetails
     oci.sch.models.LogSource
     oci.sch.models.LoggingAnalyticsTargetDetails
@@ -32,9 +34,12 @@ Sch
     oci.sch.models.ServiceConnectorCollection
     oci.sch.models.ServiceConnectorSummary
     oci.sch.models.SourceDetails
+    oci.sch.models.StreamingCursorDetails
+    oci.sch.models.StreamingSourceDetails
     oci.sch.models.StreamingTargetDetails
     oci.sch.models.TargetDetails
     oci.sch.models.TaskDetails
+    oci.sch.models.TrimHorizonStreamingCursor
     oci.sch.models.UpdateServiceConnectorDetails
     oci.sch.models.WorkRequest
     oci.sch.models.WorkRequestCollection

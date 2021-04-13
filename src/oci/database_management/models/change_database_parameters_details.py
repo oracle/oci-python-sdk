@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDatabaseParametersDetails(object):
     """
-    The details required to change database parameters' values.
+    The details required to change database parameter values.
     """
 
     #: A constant which can be used with the scope property of a ChangeDatabaseParametersDetails.

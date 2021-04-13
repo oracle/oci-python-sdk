@@ -182,7 +182,7 @@ class DbManagementClient(object):
 
     def change_database_parameters(self, managed_database_id, change_database_parameters_details, **kwargs):
         """
-        Changes database parameters' values. There are two kinds of database
+        Changes database parameter values. There are two kinds of database
         parameters:
 
         - Dynamic parameters: They can be changed for the current Oracle
@@ -203,7 +203,7 @@ class DbManagementClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeDatabaseParametersDetails change_database_parameters_details: (required)
-            The details required to change database parameters' values.
+            The details required to change database parameter values.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -810,6 +810,101 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def get_cluster_cache_metric(self, managed_database_id, start_time, end_time, **kwargs):
+        """
+        Gets the metrics related to cluster cache for the Oracle
+        Real Application Clusters (Oracle RAC) database specified
+        by managedDatabaseId.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str start_time: (required)
+            The start time for the time range to retrieve the health metrics of a Managed Database
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str end_time: (required)
+            The end time for the time range to retrieve the health metrics of a Managed Database
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ClusterCacheMetric`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_cluster_cache_metric.py.html>`__ to see an example of how to use get_cluster_cache_metric API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/clusterCacheMetrics"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_cluster_cache_metric got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "startTime": start_time,
+            "endTime": end_time
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ClusterCacheMetric")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ClusterCacheMetric")
 
     def get_database_fleet_health_metrics(self, compare_baseline_time, compare_target_time, **kwargs):
         """
@@ -2473,7 +2568,7 @@ class DbManagementClient(object):
 
     def reset_database_parameters(self, managed_database_id, reset_database_parameters_details, **kwargs):
         """
-        Resets database parameters' values to their default or startup values.
+        Resets database parameter values to their default or startup values.
 
 
         :param str managed_database_id: (required)

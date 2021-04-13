@@ -21,7 +21,7 @@ class LogRuleTaskDetails(TaskDetails):
 
         :param kind:
             The value to assign to the kind property of this LogRuleTaskDetails.
-            Allowed values for this property are: "logRule"
+            Allowed values for this property are: "function", "logRule"
         :type kind: str
 
         :param condition:

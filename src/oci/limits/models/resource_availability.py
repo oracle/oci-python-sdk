@@ -27,25 +27,47 @@ class ResourceAvailability(object):
             The value to assign to the available property of this ResourceAvailability.
         :type available: int
 
+        :param fractional_usage:
+            The value to assign to the fractional_usage property of this ResourceAvailability.
+        :type fractional_usage: float
+
+        :param fractional_availability:
+            The value to assign to the fractional_availability property of this ResourceAvailability.
+        :type fractional_availability: float
+
+        :param effective_quota_value:
+            The value to assign to the effective_quota_value property of this ResourceAvailability.
+        :type effective_quota_value: float
+
         """
         self.swagger_types = {
             'used': 'int',
-            'available': 'int'
+            'available': 'int',
+            'fractional_usage': 'float',
+            'fractional_availability': 'float',
+            'effective_quota_value': 'float'
         }
 
         self.attribute_map = {
             'used': 'used',
-            'available': 'available'
+            'available': 'available',
+            'fractional_usage': 'fractionalUsage',
+            'fractional_availability': 'fractionalAvailability',
+            'effective_quota_value': 'effectiveQuotaValue'
         }
 
         self._used = None
         self._available = None
+        self._fractional_usage = None
+        self._fractional_availability = None
+        self._effective_quota_value = None
 
     @property
     def used(self):
         """
         Gets the used of this ResourceAvailability.
-        The current usage in the given compartment.
+        The current usage in the given compartment. Because we have introduced resources with fractional counts,
+        the field will round up to the nearest integer.
 
 
         :return: The used of this ResourceAvailability.
@@ -57,7 +79,8 @@ class ResourceAvailability(object):
     def used(self, used):
         """
         Sets the used of this ResourceAvailability.
-        The current usage in the given compartment.
+        The current usage in the given compartment. Because we have introduced resources with fractional counts,
+        the field will round up to the nearest integer.
 
 
         :param used: The used of this ResourceAvailability.
@@ -69,7 +92,8 @@ class ResourceAvailability(object):
     def available(self):
         """
         Gets the available of this ResourceAvailability.
-        The count of available resources.
+        The count of available resources. Because we have introduced resources with fractional counts,
+        the field will round down to the nearest integer.
 
 
         :return: The available of this ResourceAvailability.
@@ -81,13 +105,88 @@ class ResourceAvailability(object):
     def available(self, available):
         """
         Sets the available of this ResourceAvailability.
-        The count of available resources.
+        The count of available resources. Because we have introduced resources with fractional counts,
+        the field will round down to the nearest integer.
 
 
         :param available: The available of this ResourceAvailability.
         :type: int
         """
         self._available = available
+
+    @property
+    def fractional_usage(self):
+        """
+        Gets the fractional_usage of this ResourceAvailability.
+        The current most accurate usage in the given compartment.
+
+
+        :return: The fractional_usage of this ResourceAvailability.
+        :rtype: float
+        """
+        return self._fractional_usage
+
+    @fractional_usage.setter
+    def fractional_usage(self, fractional_usage):
+        """
+        Sets the fractional_usage of this ResourceAvailability.
+        The current most accurate usage in the given compartment.
+
+
+        :param fractional_usage: The fractional_usage of this ResourceAvailability.
+        :type: float
+        """
+        self._fractional_usage = fractional_usage
+
+    @property
+    def fractional_availability(self):
+        """
+        Gets the fractional_availability of this ResourceAvailability.
+        The most accurate count of available resources.
+
+
+        :return: The fractional_availability of this ResourceAvailability.
+        :rtype: float
+        """
+        return self._fractional_availability
+
+    @fractional_availability.setter
+    def fractional_availability(self, fractional_availability):
+        """
+        Sets the fractional_availability of this ResourceAvailability.
+        The most accurate count of available resources.
+
+
+        :param fractional_availability: The fractional_availability of this ResourceAvailability.
+        :type: float
+        """
+        self._fractional_availability = fractional_availability
+
+    @property
+    def effective_quota_value(self):
+        """
+        Gets the effective_quota_value of this ResourceAvailability.
+        The effective quota value for given compartment. This field is only present if there is a
+        current quota policy affecting the current resource in the target region or availability domain.
+
+
+        :return: The effective_quota_value of this ResourceAvailability.
+        :rtype: float
+        """
+        return self._effective_quota_value
+
+    @effective_quota_value.setter
+    def effective_quota_value(self, effective_quota_value):
+        """
+        Sets the effective_quota_value of this ResourceAvailability.
+        The effective quota value for given compartment. This field is only present if there is a
+        current quota policy affecting the current resource in the target region or availability domain.
+
+
+        :param effective_quota_value: The effective_quota_value of this ResourceAvailability.
+        :type: float
+        """
+        self._effective_quota_value = effective_quota_value
 
     def __repr__(self):
         return formatted_flat_dict(self)

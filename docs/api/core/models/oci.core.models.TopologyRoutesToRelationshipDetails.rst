@@ -1,0 +1,11 @@
+TopologyRoutesToRelationshipDetails
+===================================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: TopologyRoutesToRelationshipDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

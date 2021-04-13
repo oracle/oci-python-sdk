@@ -26,6 +26,14 @@ class CreateIPSecTunnelBgpSessionDetails(object):
             The value to assign to the customer_interface_ip property of this CreateIPSecTunnelBgpSessionDetails.
         :type customer_interface_ip: str
 
+        :param oracle_interface_ipv6:
+            The value to assign to the oracle_interface_ipv6 property of this CreateIPSecTunnelBgpSessionDetails.
+        :type oracle_interface_ipv6: str
+
+        :param customer_interface_ipv6:
+            The value to assign to the customer_interface_ipv6 property of this CreateIPSecTunnelBgpSessionDetails.
+        :type customer_interface_ipv6: str
+
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this CreateIPSecTunnelBgpSessionDetails.
         :type customer_bgp_asn: str
@@ -34,17 +42,23 @@ class CreateIPSecTunnelBgpSessionDetails(object):
         self.swagger_types = {
             'oracle_interface_ip': 'str',
             'customer_interface_ip': 'str',
+            'oracle_interface_ipv6': 'str',
+            'customer_interface_ipv6': 'str',
             'customer_bgp_asn': 'str'
         }
 
         self.attribute_map = {
             'oracle_interface_ip': 'oracleInterfaceIp',
             'customer_interface_ip': 'customerInterfaceIp',
+            'oracle_interface_ipv6': 'oracleInterfaceIpv6',
+            'customer_interface_ipv6': 'customerInterfaceIpv6',
             'customer_bgp_asn': 'customerBgpAsn'
         }
 
         self._oracle_interface_ip = None
         self._customer_interface_ip = None
+        self._oracle_interface_ipv6 = None
+        self._customer_interface_ipv6 = None
         self._customer_bgp_asn = None
 
     @property
@@ -138,6 +152,98 @@ class CreateIPSecTunnelBgpSessionDetails(object):
         :type: str
         """
         self._customer_interface_ip = customer_interface_ip
+
+    @property
+    def oracle_interface_ipv6(self):
+        """
+        Gets the oracle_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :return: The oracle_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        :rtype: str
+        """
+        return self._oracle_interface_ipv6
+
+    @oracle_interface_ipv6.setter
+    def oracle_interface_ipv6(self, oracle_interface_ipv6):
+        """
+        Sets the oracle_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :param oracle_interface_ipv6: The oracle_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        :type: str
+        """
+        self._oracle_interface_ipv6 = oracle_interface_ipv6
+
+    @property
+    def customer_interface_ipv6(self):
+        """
+        Gets the customer_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :return: The customer_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        :rtype: str
+        """
+        return self._customer_interface_ipv6
+
+    @customer_interface_ipv6.setter
+    def customer_interface_ipv6(self, customer_interface_ipv6):
+        """
+        Sets the customer_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :param customer_interface_ipv6: The customer_interface_ipv6 of this CreateIPSecTunnelBgpSessionDetails.
+        :type: str
+        """
+        self._customer_interface_ipv6 = customer_interface_ipv6
 
     @property
     def customer_bgp_asn(self):

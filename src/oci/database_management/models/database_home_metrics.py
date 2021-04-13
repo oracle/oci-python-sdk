@@ -22,16 +22,23 @@ class DatabaseHomeMetrics(object):
             The value to assign to the database_home_metrics property of this DatabaseHomeMetrics.
         :type database_home_metrics: oci.database_management.models.DatabaseHomeMetricDefinition
 
+        :param database_instance_home_metrics:
+            The value to assign to the database_instance_home_metrics property of this DatabaseHomeMetrics.
+        :type database_instance_home_metrics: list[oci.database_management.models.DatabaseInstanceHomeMetricsDefinition]
+
         """
         self.swagger_types = {
-            'database_home_metrics': 'DatabaseHomeMetricDefinition'
+            'database_home_metrics': 'DatabaseHomeMetricDefinition',
+            'database_instance_home_metrics': 'list[DatabaseInstanceHomeMetricsDefinition]'
         }
 
         self.attribute_map = {
-            'database_home_metrics': 'databaseHomeMetrics'
+            'database_home_metrics': 'databaseHomeMetrics',
+            'database_instance_home_metrics': 'databaseInstanceHomeMetrics'
         }
 
         self._database_home_metrics = None
+        self._database_instance_home_metrics = None
 
     @property
     def database_home_metrics(self):
@@ -52,6 +59,30 @@ class DatabaseHomeMetrics(object):
         :type: oci.database_management.models.DatabaseHomeMetricDefinition
         """
         self._database_home_metrics = database_home_metrics
+
+    @property
+    def database_instance_home_metrics(self):
+        """
+        Gets the database_instance_home_metrics of this DatabaseHomeMetrics.
+        The metrics for the RAC database instances.
+
+
+        :return: The database_instance_home_metrics of this DatabaseHomeMetrics.
+        :rtype: list[oci.database_management.models.DatabaseInstanceHomeMetricsDefinition]
+        """
+        return self._database_instance_home_metrics
+
+    @database_instance_home_metrics.setter
+    def database_instance_home_metrics(self, database_instance_home_metrics):
+        """
+        Sets the database_instance_home_metrics of this DatabaseHomeMetrics.
+        The metrics for the RAC database instances.
+
+
+        :param database_instance_home_metrics: The database_instance_home_metrics of this DatabaseHomeMetrics.
+        :type: list[oci.database_management.models.DatabaseInstanceHomeMetricsDefinition]
+        """
+        self._database_instance_home_metrics = database_instance_home_metrics
 
     def __repr__(self):
         return formatted_flat_dict(self)

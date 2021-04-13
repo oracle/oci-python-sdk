@@ -113,6 +113,10 @@ class LocalPeeringGateway(object):
             The value to assign to the peering_status_details property of this LocalPeeringGateway.
         :type peering_status_details: str
 
+        :param peer_id:
+            The value to assign to the peer_id property of this LocalPeeringGateway.
+        :type peer_id: str
+
         :param route_table_id:
             The value to assign to the route_table_id property of this LocalPeeringGateway.
         :type route_table_id: str
@@ -138,6 +142,7 @@ class LocalPeeringGateway(object):
             'peer_advertised_cidr_details': 'list[str]',
             'peering_status': 'str',
             'peering_status_details': 'str',
+            'peer_id': 'str',
             'route_table_id': 'str',
             'time_created': 'datetime',
             'vcn_id': 'str'
@@ -155,6 +160,7 @@ class LocalPeeringGateway(object):
             'peer_advertised_cidr_details': 'peerAdvertisedCidrDetails',
             'peering_status': 'peeringStatus',
             'peering_status_details': 'peeringStatusDetails',
+            'peer_id': 'peerId',
             'route_table_id': 'routeTableId',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
@@ -171,6 +177,7 @@ class LocalPeeringGateway(object):
         self._peer_advertised_cidr_details = None
         self._peering_status = None
         self._peering_status_details = None
+        self._peer_id = None
         self._route_table_id = None
         self._time_created = None
         self._vcn_id = None
@@ -498,6 +505,34 @@ class LocalPeeringGateway(object):
         :type: str
         """
         self._peering_status_details = peering_status_details
+
+    @property
+    def peer_id(self):
+        """
+        **[Required]** Gets the peer_id of this LocalPeeringGateway.
+        The `OCID`__ of the peered LPG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_id of this LocalPeeringGateway.
+        :rtype: str
+        """
+        return self._peer_id
+
+    @peer_id.setter
+    def peer_id(self, peer_id):
+        """
+        Sets the peer_id of this LocalPeeringGateway.
+        The `OCID`__ of the peered LPG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_id: The peer_id of this LocalPeeringGateway.
+        :type: str
+        """
+        self._peer_id = peer_id
 
     @property
     def route_table_id(self):

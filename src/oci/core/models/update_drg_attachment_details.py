@@ -22,6 +22,26 @@ class UpdateDrgAttachmentDetails(object):
             The value to assign to the display_name property of this UpdateDrgAttachmentDetails.
         :type display_name: str
 
+        :param drg_route_table_id:
+            The value to assign to the drg_route_table_id property of this UpdateDrgAttachmentDetails.
+        :type drg_route_table_id: str
+
+        :param network_details:
+            The value to assign to the network_details property of this UpdateDrgAttachmentDetails.
+        :type network_details: oci.core.models.DrgAttachmentNetworkUpdateDetails
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateDrgAttachmentDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateDrgAttachmentDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param export_drg_route_distribution_id:
+            The value to assign to the export_drg_route_distribution_id property of this UpdateDrgAttachmentDetails.
+        :type export_drg_route_distribution_id: str
+
         :param route_table_id:
             The value to assign to the route_table_id property of this UpdateDrgAttachmentDetails.
         :type route_table_id: str
@@ -29,15 +49,30 @@ class UpdateDrgAttachmentDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'drg_route_table_id': 'str',
+            'network_details': 'DrgAttachmentNetworkUpdateDetails',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
+            'export_drg_route_distribution_id': 'str',
             'route_table_id': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'drg_route_table_id': 'drgRouteTableId',
+            'network_details': 'networkDetails',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
+            'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
             'route_table_id': 'routeTableId'
         }
 
         self._display_name = None
+        self._drg_route_table_id = None
+        self._network_details = None
+        self._defined_tags = None
+        self._freeform_tags = None
+        self._export_drg_route_distribution_id = None
         self._route_table_id = None
 
     @property
@@ -67,16 +102,175 @@ class UpdateDrgAttachmentDetails(object):
         self._display_name = display_name
 
     @property
+    def drg_route_table_id(self):
+        """
+        Gets the drg_route_table_id of this UpdateDrgAttachmentDetails.
+        The `OCID`__ of the DRG route table that is assigned to this attachment.
+
+        The DRG route table manages traffic inside the DRG.
+
+        You can't remove a DRG route table from a DRG attachment, but you can reassign which
+        DRG route table it uses.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The drg_route_table_id of this UpdateDrgAttachmentDetails.
+        :rtype: str
+        """
+        return self._drg_route_table_id
+
+    @drg_route_table_id.setter
+    def drg_route_table_id(self, drg_route_table_id):
+        """
+        Sets the drg_route_table_id of this UpdateDrgAttachmentDetails.
+        The `OCID`__ of the DRG route table that is assigned to this attachment.
+
+        The DRG route table manages traffic inside the DRG.
+
+        You can't remove a DRG route table from a DRG attachment, but you can reassign which
+        DRG route table it uses.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param drg_route_table_id: The drg_route_table_id of this UpdateDrgAttachmentDetails.
+        :type: str
+        """
+        self._drg_route_table_id = drg_route_table_id
+
+    @property
+    def network_details(self):
+        """
+        Gets the network_details of this UpdateDrgAttachmentDetails.
+
+        :return: The network_details of this UpdateDrgAttachmentDetails.
+        :rtype: oci.core.models.DrgAttachmentNetworkUpdateDetails
+        """
+        return self._network_details
+
+    @network_details.setter
+    def network_details(self, network_details):
+        """
+        Sets the network_details of this UpdateDrgAttachmentDetails.
+
+        :param network_details: The network_details of this UpdateDrgAttachmentDetails.
+        :type: oci.core.models.DrgAttachmentNetworkUpdateDetails
+        """
+        self._network_details = network_details
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateDrgAttachmentDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this UpdateDrgAttachmentDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateDrgAttachmentDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this UpdateDrgAttachmentDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdateDrgAttachmentDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this UpdateDrgAttachmentDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdateDrgAttachmentDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this UpdateDrgAttachmentDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def export_drg_route_distribution_id(self):
+        """
+        Gets the export_drg_route_distribution_id of this UpdateDrgAttachmentDetails.
+        The `OCID`__ of the export route distribution used to specify how routes in the assigned DRG route table
+        are advertised out through the attachment.
+        If this value is null, no routes are advertised through this attachment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The export_drg_route_distribution_id of this UpdateDrgAttachmentDetails.
+        :rtype: str
+        """
+        return self._export_drg_route_distribution_id
+
+    @export_drg_route_distribution_id.setter
+    def export_drg_route_distribution_id(self, export_drg_route_distribution_id):
+        """
+        Sets the export_drg_route_distribution_id of this UpdateDrgAttachmentDetails.
+        The `OCID`__ of the export route distribution used to specify how routes in the assigned DRG route table
+        are advertised out through the attachment.
+        If this value is null, no routes are advertised through this attachment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param export_drg_route_distribution_id: The export_drg_route_distribution_id of this UpdateDrgAttachmentDetails.
+        :type: str
+        """
+        self._export_drg_route_distribution_id = export_drg_route_distribution_id
+
+    @property
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateDrgAttachmentDetails.
-        The OCID of the route table the DRG attachment will use.
+        This is the `OCID`__ of the route table that is used to route the traffic as it enters a VCN through this attachment.
 
         For information about why you would associate a route table with a DRG attachment, see:
 
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
@@ -90,13 +284,14 @@ class UpdateDrgAttachmentDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateDrgAttachmentDetails.
-        The OCID of the route table the DRG attachment will use.
+        This is the `OCID`__ of the route table that is used to route the traffic as it enters a VCN through this attachment.
 
         For information about why you would associate a route table with a DRG attachment, see:
 
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 

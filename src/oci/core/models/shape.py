@@ -18,10 +18,32 @@ class Shape(object):
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm
     """
 
+    #: A constant which can be used with the baseline_ocpu_utilizations property of a Shape.
+    #: This constant has a value of "BASELINE_1_8"
+    BASELINE_OCPU_UTILIZATIONS_BASELINE_1_8 = "BASELINE_1_8"
+
+    #: A constant which can be used with the baseline_ocpu_utilizations property of a Shape.
+    #: This constant has a value of "BASELINE_1_2"
+    BASELINE_OCPU_UTILIZATIONS_BASELINE_1_2 = "BASELINE_1_2"
+
+    #: A constant which can be used with the baseline_ocpu_utilizations property of a Shape.
+    #: This constant has a value of "BASELINE_1_1"
+    BASELINE_OCPU_UTILIZATIONS_BASELINE_1_1 = "BASELINE_1_1"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Shape object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param baseline_ocpu_utilizations:
+            The value to assign to the baseline_ocpu_utilizations property of this Shape.
+            Allowed values for items in this list are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type baseline_ocpu_utilizations: list[str]
+
+        :param min_total_baseline_ocpus_required:
+            The value to assign to the min_total_baseline_ocpus_required property of this Shape.
+        :type min_total_baseline_ocpus_required: float
 
         :param shape:
             The value to assign to the shape property of this Shape.
@@ -85,6 +107,8 @@ class Shape(object):
 
         """
         self.swagger_types = {
+            'baseline_ocpu_utilizations': 'list[str]',
+            'min_total_baseline_ocpus_required': 'float',
             'shape': 'str',
             'processor_description': 'str',
             'ocpus': 'float',
@@ -103,6 +127,8 @@ class Shape(object):
         }
 
         self.attribute_map = {
+            'baseline_ocpu_utilizations': 'baselineOcpuUtilizations',
+            'min_total_baseline_ocpus_required': 'minTotalBaselineOcpusRequired',
             'shape': 'shape',
             'processor_description': 'processorDescription',
             'ocpus': 'ocpus',
@@ -120,6 +146,8 @@ class Shape(object):
             'max_vnic_attachment_options': 'maxVnicAttachmentOptions'
         }
 
+        self._baseline_ocpu_utilizations = None
+        self._min_total_baseline_ocpus_required = None
         self._shape = None
         self._processor_description = None
         self._ocpus = None
@@ -135,6 +163,62 @@ class Shape(object):
         self._memory_options = None
         self._networking_bandwidth_options = None
         self._max_vnic_attachment_options = None
+
+    @property
+    def baseline_ocpu_utilizations(self):
+        """
+        Gets the baseline_ocpu_utilizations of this Shape.
+        For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+
+        Allowed values for items in this list are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The baseline_ocpu_utilizations of this Shape.
+        :rtype: list[str]
+        """
+        return self._baseline_ocpu_utilizations
+
+    @baseline_ocpu_utilizations.setter
+    def baseline_ocpu_utilizations(self, baseline_ocpu_utilizations):
+        """
+        Sets the baseline_ocpu_utilizations of this Shape.
+        For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+
+
+        :param baseline_ocpu_utilizations: The baseline_ocpu_utilizations of this Shape.
+        :type: list[str]
+        """
+        allowed_values = ["BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"]
+        if baseline_ocpu_utilizations:
+            baseline_ocpu_utilizations[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in baseline_ocpu_utilizations]
+        self._baseline_ocpu_utilizations = baseline_ocpu_utilizations
+
+    @property
+    def min_total_baseline_ocpus_required(self):
+        """
+        Gets the min_total_baseline_ocpus_required of this Shape.
+        For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+        baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+
+
+        :return: The min_total_baseline_ocpus_required of this Shape.
+        :rtype: float
+        """
+        return self._min_total_baseline_ocpus_required
+
+    @min_total_baseline_ocpus_required.setter
+    def min_total_baseline_ocpus_required(self, min_total_baseline_ocpus_required):
+        """
+        Sets the min_total_baseline_ocpus_required of this Shape.
+        For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+        baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+
+
+        :param min_total_baseline_ocpus_required: The min_total_baseline_ocpus_required of this Shape.
+        :type: float
+        """
+        self._min_total_baseline_ocpus_required = min_total_baseline_ocpus_required
 
     @property
     def shape(self):

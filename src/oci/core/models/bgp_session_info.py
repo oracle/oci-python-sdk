@@ -21,6 +21,14 @@ class BgpSessionInfo(object):
     #: This constant has a value of "DOWN"
     BGP_STATE_DOWN = "DOWN"
 
+    #: A constant which can be used with the bgp_ipv6_state property of a BgpSessionInfo.
+    #: This constant has a value of "UP"
+    BGP_IPV6_STATE_UP = "UP"
+
+    #: A constant which can be used with the bgp_ipv6_state property of a BgpSessionInfo.
+    #: This constant has a value of "DOWN"
+    BGP_IPV6_STATE_DOWN = "DOWN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BgpSessionInfo object with values from keyword arguments.
@@ -33,6 +41,14 @@ class BgpSessionInfo(object):
         :param customer_interface_ip:
             The value to assign to the customer_interface_ip property of this BgpSessionInfo.
         :type customer_interface_ip: str
+
+        :param oracle_interface_ipv6:
+            The value to assign to the oracle_interface_ipv6 property of this BgpSessionInfo.
+        :type oracle_interface_ipv6: str
+
+        :param customer_interface_ipv6:
+            The value to assign to the customer_interface_ipv6 property of this BgpSessionInfo.
+        :type customer_interface_ipv6: str
 
         :param oracle_bgp_asn:
             The value to assign to the oracle_bgp_asn property of this BgpSessionInfo.
@@ -48,28 +64,43 @@ class BgpSessionInfo(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type bgp_state: str
 
+        :param bgp_ipv6_state:
+            The value to assign to the bgp_ipv6_state property of this BgpSessionInfo.
+            Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bgp_ipv6_state: str
+
         """
         self.swagger_types = {
             'oracle_interface_ip': 'str',
             'customer_interface_ip': 'str',
+            'oracle_interface_ipv6': 'str',
+            'customer_interface_ipv6': 'str',
             'oracle_bgp_asn': 'str',
             'customer_bgp_asn': 'str',
-            'bgp_state': 'str'
+            'bgp_state': 'str',
+            'bgp_ipv6_state': 'str'
         }
 
         self.attribute_map = {
             'oracle_interface_ip': 'oracleInterfaceIp',
             'customer_interface_ip': 'customerInterfaceIp',
+            'oracle_interface_ipv6': 'oracleInterfaceIpv6',
+            'customer_interface_ipv6': 'customerInterfaceIpv6',
             'oracle_bgp_asn': 'oracleBgpAsn',
             'customer_bgp_asn': 'customerBgpAsn',
-            'bgp_state': 'bgpState'
+            'bgp_state': 'bgpState',
+            'bgp_ipv6_state': 'bgpIpv6State'
         }
 
         self._oracle_interface_ip = None
         self._customer_interface_ip = None
+        self._oracle_interface_ipv6 = None
+        self._customer_interface_ipv6 = None
         self._oracle_bgp_asn = None
         self._customer_bgp_asn = None
         self._bgp_state = None
+        self._bgp_ipv6_state = None
 
     @property
     def oracle_interface_ip(self):
@@ -164,6 +195,98 @@ class BgpSessionInfo(object):
         self._customer_interface_ip = customer_interface_ip
 
     @property
+    def oracle_interface_ipv6(self):
+        """
+        Gets the oracle_interface_ipv6 of this BgpSessionInfo.
+        The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :return: The oracle_interface_ipv6 of this BgpSessionInfo.
+        :rtype: str
+        """
+        return self._oracle_interface_ipv6
+
+    @oracle_interface_ipv6.setter
+    def oracle_interface_ipv6(self, oracle_interface_ipv6):
+        """
+        Sets the oracle_interface_ipv6 of this BgpSessionInfo.
+        The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :param oracle_interface_ipv6: The oracle_interface_ipv6 of this BgpSessionInfo.
+        :type: str
+        """
+        self._oracle_interface_ipv6 = oracle_interface_ipv6
+
+    @property
+    def customer_interface_ipv6(self):
+        """
+        Gets the customer_interface_ipv6 of this BgpSessionInfo.
+        The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :return: The customer_interface_ipv6 of this BgpSessionInfo.
+        :rtype: str
+        """
+        return self._customer_interface_ipv6
+
+    @customer_interface_ipv6.setter
+    def customer_interface_ipv6(self, customer_interface_ipv6):
+        """
+        Sets the customer_interface_ipv6 of this BgpSessionInfo.
+        The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP`
+        (see :class:`IPSecConnectionTunnel`), this IP address
+        is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP
+        address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+
+
+        :param customer_interface_ipv6: The customer_interface_ipv6 of this BgpSessionInfo.
+        :type: str
+        """
+        self._customer_interface_ipv6 = customer_interface_ipv6
+
+    @property
     def oracle_bgp_asn(self):
         """
         Gets the oracle_bgp_asn of this BgpSessionInfo.
@@ -254,6 +377,36 @@ class BgpSessionInfo(object):
         if not value_allowed_none_or_none_sentinel(bgp_state, allowed_values):
             bgp_state = 'UNKNOWN_ENUM_VALUE'
         self._bgp_state = bgp_state
+
+    @property
+    def bgp_ipv6_state(self):
+        """
+        Gets the bgp_ipv6_state of this BgpSessionInfo.
+        The state of the BGP IPv6 session.
+
+        Allowed values for this property are: "UP", "DOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bgp_ipv6_state of this BgpSessionInfo.
+        :rtype: str
+        """
+        return self._bgp_ipv6_state
+
+    @bgp_ipv6_state.setter
+    def bgp_ipv6_state(self, bgp_ipv6_state):
+        """
+        Sets the bgp_ipv6_state of this BgpSessionInfo.
+        The state of the BGP IPv6 session.
+
+
+        :param bgp_ipv6_state: The bgp_ipv6_state of this BgpSessionInfo.
+        :type: str
+        """
+        allowed_values = ["UP", "DOWN"]
+        if not value_allowed_none_or_none_sentinel(bgp_ipv6_state, allowed_values):
+            bgp_ipv6_state = 'UNKNOWN_ENUM_VALUE'
+        self._bgp_ipv6_state = bgp_ipv6_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -21,6 +21,22 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
     #: This constant has a value of "STORAGE"
     RESOURCE_METRIC_STORAGE = "STORAGE"
 
+    #: A constant which can be used with the resource_metric property of a SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
+    #: This constant has a value of "IO"
+    RESOURCE_METRIC_IO = "IO"
+
+    #: A constant which can be used with the resource_metric property of a SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
+    #: This constant has a value of "MEMORY"
+    RESOURCE_METRIC_MEMORY = "MEMORY"
+
+    #: A constant which can be used with the resource_metric property of a SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
+    #: This constant has a value of "MEMORY_PGA"
+    RESOURCE_METRIC_MEMORY_PGA = "MEMORY_PGA"
+
+    #: A constant which can be used with the resource_metric property of a SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
+    #: This constant has a value of "MEMORY_SGA"
+    RESOURCE_METRIC_MEMORY_SGA = "MEMORY_SGA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SummarizeDatabaseInsightResourceUtilizationInsightAggregation object with values from keyword arguments.
@@ -36,7 +52,7 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
 
         :param resource_metric:
             The value to assign to the resource_metric property of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-            Allowed values for this property are: "CPU", "STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CPU", "STORAGE", "IO", "MEMORY", "MEMORY_PGA", "MEMORY_SGA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_metric: str
 
@@ -123,9 +139,9 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
     def resource_metric(self):
         """
         **[Required]** Gets the resource_metric of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        Defines the type of resource metric (CPU, STORAGE)
+        Defines the type of resource metric (example: CPU, STORAGE)
 
-        Allowed values for this property are: "CPU", "STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CPU", "STORAGE", "IO", "MEMORY", "MEMORY_PGA", "MEMORY_SGA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -138,13 +154,13 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
     def resource_metric(self, resource_metric):
         """
         Sets the resource_metric of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
-        Defines the type of resource metric (CPU, STORAGE)
+        Defines the type of resource metric (example: CPU, STORAGE)
 
 
         :param resource_metric: The resource_metric of this SummarizeDatabaseInsightResourceUtilizationInsightAggregation.
         :type: str
         """
-        allowed_values = ["CPU", "STORAGE"]
+        allowed_values = ["CPU", "STORAGE", "IO", "MEMORY", "MEMORY_PGA", "MEMORY_SGA"]
         if not value_allowed_none_or_none_sentinel(resource_metric, allowed_values):
             resource_metric = 'UNKNOWN_ENUM_VALUE'
         self._resource_metric = resource_metric

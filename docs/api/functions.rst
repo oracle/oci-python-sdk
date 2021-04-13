@@ -22,10 +22,12 @@ Functions
 
     oci.functions.models.Application
     oci.functions.models.ApplicationSummary
+    oci.functions.models.ApplicationTraceConfig
     oci.functions.models.ChangeApplicationCompartmentDetails
     oci.functions.models.CreateApplicationDetails
     oci.functions.models.CreateFunctionDetails
     oci.functions.models.Function
     oci.functions.models.FunctionSummary
+    oci.functions.models.FunctionTraceConfig
     oci.functions.models.UpdateApplicationDetails
     oci.functions.models.UpdateFunctionDetails

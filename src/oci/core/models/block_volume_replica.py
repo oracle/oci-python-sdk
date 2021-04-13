@@ -100,6 +100,10 @@ class BlockVolumeReplica(object):
             The value to assign to the block_volume_id property of this BlockVolumeReplica.
         :type block_volume_id: str
 
+        :param total_data_transferred_in_gbs:
+            The value to assign to the total_data_transferred_in_gbs property of this BlockVolumeReplica.
+        :type total_data_transferred_in_gbs: int
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -112,7 +116,8 @@ class BlockVolumeReplica(object):
             'size_in_gbs': 'int',
             'time_created': 'datetime',
             'time_last_synced': 'datetime',
-            'block_volume_id': 'str'
+            'block_volume_id': 'str',
+            'total_data_transferred_in_gbs': 'int'
         }
 
         self.attribute_map = {
@@ -126,7 +131,8 @@ class BlockVolumeReplica(object):
             'size_in_gbs': 'sizeInGBs',
             'time_created': 'timeCreated',
             'time_last_synced': 'timeLastSynced',
-            'block_volume_id': 'blockVolumeId'
+            'block_volume_id': 'blockVolumeId',
+            'total_data_transferred_in_gbs': 'totalDataTransferredInGBs'
         }
 
         self._availability_domain = None
@@ -140,6 +146,7 @@ class BlockVolumeReplica(object):
         self._time_created = None
         self._time_last_synced = None
         self._block_volume_id = None
+        self._total_data_transferred_in_gbs = None
 
     @property
     def availability_domain(self):
@@ -448,6 +455,30 @@ class BlockVolumeReplica(object):
         :type: str
         """
         self._block_volume_id = block_volume_id
+
+    @property
+    def total_data_transferred_in_gbs(self):
+        """
+        Gets the total_data_transferred_in_gbs of this BlockVolumeReplica.
+        The total size of the data transferred from the source block volume to the block volume replica, in GBs.
+
+
+        :return: The total_data_transferred_in_gbs of this BlockVolumeReplica.
+        :rtype: int
+        """
+        return self._total_data_transferred_in_gbs
+
+    @total_data_transferred_in_gbs.setter
+    def total_data_transferred_in_gbs(self, total_data_transferred_in_gbs):
+        """
+        Sets the total_data_transferred_in_gbs of this BlockVolumeReplica.
+        The total size of the data transferred from the source block volume to the block volume replica, in GBs.
+
+
+        :param total_data_transferred_in_gbs: The total_data_transferred_in_gbs of this BlockVolumeReplica.
+        :type: int
+        """
+        self._total_data_transferred_in_gbs = total_data_transferred_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

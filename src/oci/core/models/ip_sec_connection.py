@@ -273,7 +273,9 @@ class IPSecConnection(object):
     def drg_id(self):
         """
         **[Required]** Gets the drg_id of this IPSecConnection.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this IPSecConnection.
@@ -285,7 +287,9 @@ class IPSecConnection(object):
     def drg_id(self, drg_id):
         """
         Sets the drg_id of this IPSecConnection.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this IPSecConnection.
@@ -331,7 +335,9 @@ class IPSecConnection(object):
     def id(self):
         """
         **[Required]** Gets the id of this IPSecConnection.
-        The IPSec connection's Oracle ID (OCID).
+        The IPSec connection's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this IPSecConnection.
@@ -343,7 +349,9 @@ class IPSecConnection(object):
     def id(self, id):
         """
         Sets the id of this IPSecConnection.
-        The IPSec connection's Oracle ID (OCID).
+        The IPSec connection's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this IPSecConnection.
@@ -477,8 +485,8 @@ class IPSecConnection(object):
         you must provide at least one valid static route. If you configure both
         tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
 
-        The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-        in certain regions. See `IPv6 Addresses`__.
+        The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+        See `IPv6 Addresses`__.
 
         Example: `10.0.1.0/24`
 
@@ -504,8 +512,8 @@ class IPSecConnection(object):
         you must provide at least one valid static route. If you configure both
         tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
 
-        The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-        in certain regions. See `IPv6 Addresses`__.
+        The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+        See `IPv6 Addresses`__.
 
         Example: `10.0.1.0/24`
 

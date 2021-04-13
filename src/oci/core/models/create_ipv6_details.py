@@ -34,10 +34,6 @@ class CreateIpv6Details(object):
             The value to assign to the ip_address property of this CreateIpv6Details.
         :type ip_address: str
 
-        :param is_internet_access_allowed:
-            The value to assign to the is_internet_access_allowed property of this CreateIpv6Details.
-        :type is_internet_access_allowed: bool
-
         :param vnic_id:
             The value to assign to the vnic_id property of this CreateIpv6Details.
         :type vnic_id: str
@@ -48,7 +44,6 @@ class CreateIpv6Details(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'ip_address': 'str',
-            'is_internet_access_allowed': 'bool',
             'vnic_id': 'str'
         }
 
@@ -57,7 +52,6 @@ class CreateIpv6Details(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'ip_address': 'ipAddress',
-            'is_internet_access_allowed': 'isInternetAccessAllowed',
             'vnic_id': 'vnicId'
         }
 
@@ -65,7 +59,6 @@ class CreateIpv6Details(object):
         self._display_name = None
         self._freeform_tags = None
         self._ip_address = None
-        self._is_internet_access_allowed = None
         self._vnic_id = None
 
     @property
@@ -195,44 +188,6 @@ class CreateIpv6Details(object):
         :type: str
         """
         self._ip_address = ip_address
-
-    @property
-    def is_internet_access_allowed(self):
-        """
-        Gets the is_internet_access_allowed of this CreateIpv6Details.
-        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
-        IPv6 uses its public IP address for internet communication.
-
-        If `isInternetAccessAllowed` is set to `false`, the resulting `publicIpAddress` attribute
-        for the Ipv6 is null.
-
-        Example: `true`
-
-
-        :return: The is_internet_access_allowed of this CreateIpv6Details.
-        :rtype: bool
-        """
-        return self._is_internet_access_allowed
-
-    @is_internet_access_allowed.setter
-    def is_internet_access_allowed(self, is_internet_access_allowed):
-        """
-        Sets the is_internet_access_allowed of this CreateIpv6Details.
-        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
-        IPv6 uses its public IP address for internet communication.
-
-        If `isInternetAccessAllowed` is set to `false`, the resulting `publicIpAddress` attribute
-        for the Ipv6 is null.
-
-        Example: `true`
-
-
-        :param is_internet_access_allowed: The is_internet_access_allowed of this CreateIpv6Details.
-        :type: bool
-        """
-        self._is_internet_access_allowed = is_internet_access_allowed
 
     @property
     def vnic_id(self):

@@ -34,25 +34,32 @@ class DatabaseTimeAggregateMetrics(object):
             The value to assign to the user_io_time property of this DatabaseTimeAggregateMetrics.
         :type user_io_time: oci.database_management.models.MetricDataPoint
 
+        :param cluster:
+            The value to assign to the cluster property of this DatabaseTimeAggregateMetrics.
+        :type cluster: oci.database_management.models.MetricDataPoint
+
         """
         self.swagger_types = {
             'cpu_count': 'MetricDataPoint',
             'cpu_time': 'MetricDataPoint',
             'wait_time': 'MetricDataPoint',
-            'user_io_time': 'MetricDataPoint'
+            'user_io_time': 'MetricDataPoint',
+            'cluster': 'MetricDataPoint'
         }
 
         self.attribute_map = {
             'cpu_count': 'cpuCount',
             'cpu_time': 'cpuTime',
             'wait_time': 'waitTime',
-            'user_io_time': 'userIoTime'
+            'user_io_time': 'userIoTime',
+            'cluster': 'cluster'
         }
 
         self._cpu_count = None
         self._cpu_time = None
         self._wait_time = None
         self._user_io_time = None
+        self._cluster = None
 
     @property
     def cpu_count(self):
@@ -133,6 +140,26 @@ class DatabaseTimeAggregateMetrics(object):
         :type: oci.database_management.models.MetricDataPoint
         """
         self._user_io_time = user_io_time
+
+    @property
+    def cluster(self):
+        """
+        Gets the cluster of this DatabaseTimeAggregateMetrics.
+
+        :return: The cluster of this DatabaseTimeAggregateMetrics.
+        :rtype: oci.database_management.models.MetricDataPoint
+        """
+        return self._cluster
+
+    @cluster.setter
+    def cluster(self, cluster):
+        """
+        Sets the cluster of this DatabaseTimeAggregateMetrics.
+
+        :param cluster: The cluster of this DatabaseTimeAggregateMetrics.
+        :type: oci.database_management.models.MetricDataPoint
+        """
+        self._cluster = cluster
 
     def __repr__(self):
         return formatted_flat_dict(self)

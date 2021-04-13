@@ -149,6 +149,10 @@ class Instance(object):
             The value to assign to the availability_config property of this Instance.
         :type availability_config: oci.core.models.InstanceAvailabilityConfig
 
+        :param preemptible_instance_config:
+            The value to assign to the preemptible_instance_config property of this Instance.
+        :type preemptible_instance_config: oci.core.models.PreemptibleInstanceConfigDetails
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Instance.
             Allowed values for this property are: "MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -213,6 +217,7 @@ class Instance(object):
             'launch_options': 'LaunchOptions',
             'instance_options': 'InstanceOptions',
             'availability_config': 'InstanceAvailabilityConfig',
+            'preemptible_instance_config': 'PreemptibleInstanceConfigDetails',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, str)',
             'region': 'str',
@@ -243,6 +248,7 @@ class Instance(object):
             'launch_options': 'launchOptions',
             'instance_options': 'instanceOptions',
             'availability_config': 'availabilityConfig',
+            'preemptible_instance_config': 'preemptibleInstanceConfig',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
             'region': 'region',
@@ -272,6 +278,7 @@ class Instance(object):
         self._launch_options = None
         self._instance_options = None
         self._availability_config = None
+        self._preemptible_instance_config = None
         self._lifecycle_state = None
         self._metadata = None
         self._region = None
@@ -689,7 +696,7 @@ class Instance(object):
         """
         Gets the launch_mode of this Instance.
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -708,7 +715,7 @@ class Instance(object):
         """
         Sets the launch_mode of this Instance.
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -781,6 +788,26 @@ class Instance(object):
         :type: oci.core.models.InstanceAvailabilityConfig
         """
         self._availability_config = availability_config
+
+    @property
+    def preemptible_instance_config(self):
+        """
+        Gets the preemptible_instance_config of this Instance.
+
+        :return: The preemptible_instance_config of this Instance.
+        :rtype: oci.core.models.PreemptibleInstanceConfigDetails
+        """
+        return self._preemptible_instance_config
+
+    @preemptible_instance_config.setter
+    def preemptible_instance_config(self, preemptible_instance_config):
+        """
+        Sets the preemptible_instance_config of this Instance.
+
+        :param preemptible_instance_config: The preemptible_instance_config of this Instance.
+        :type: oci.core.models.PreemptibleInstanceConfigDetails
+        """
+        self._preemptible_instance_config = preemptible_instance_config
 
     @property
     def lifecycle_state(self):

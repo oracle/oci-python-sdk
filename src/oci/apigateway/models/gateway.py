@@ -105,6 +105,10 @@ class Gateway(object):
             The value to assign to the ip_addresses property of this Gateway.
         :type ip_addresses: list[oci.apigateway.models.IpAddress]
 
+        :param response_cache_details:
+            The value to assign to the response_cache_details property of this Gateway.
+        :type response_cache_details: oci.apigateway.models.ResponseCacheDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Gateway.
         :type freeform_tags: dict(str, str)
@@ -127,6 +131,7 @@ class Gateway(object):
             'hostname': 'str',
             'certificate_id': 'str',
             'ip_addresses': 'list[IpAddress]',
+            'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -144,6 +149,7 @@ class Gateway(object):
             'hostname': 'hostname',
             'certificate_id': 'certificateId',
             'ip_addresses': 'ipAddresses',
+            'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -160,6 +166,7 @@ class Gateway(object):
         self._hostname = None
         self._certificate_id = None
         self._ip_addresses = None
+        self._response_cache_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -498,6 +505,26 @@ class Gateway(object):
         :type: list[oci.apigateway.models.IpAddress]
         """
         self._ip_addresses = ip_addresses
+
+    @property
+    def response_cache_details(self):
+        """
+        Gets the response_cache_details of this Gateway.
+
+        :return: The response_cache_details of this Gateway.
+        :rtype: oci.apigateway.models.ResponseCacheDetails
+        """
+        return self._response_cache_details
+
+    @response_cache_details.setter
+    def response_cache_details(self, response_cache_details):
+        """
+        Sets the response_cache_details of this Gateway.
+
+        :param response_cache_details: The response_cache_details of this Gateway.
+        :type: oci.apigateway.models.ResponseCacheDetails
+        """
+        self._response_cache_details = response_cache_details
 
     @property
     def freeform_tags(self):

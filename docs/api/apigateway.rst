@@ -43,6 +43,7 @@ Apigateway
     oci.apigateway.models.ApiValidations
     oci.apigateway.models.AuthenticationOnlyRouteAuthorizationPolicy
     oci.apigateway.models.AuthenticationPolicy
+    oci.apigateway.models.BodyValidationRequestPolicy
     oci.apigateway.models.Certificate
     oci.apigateway.models.CertificateCollection
     oci.apigateway.models.CertificateSummary
@@ -50,6 +51,7 @@ Apigateway
     oci.apigateway.models.ChangeCertificateCompartmentDetails
     oci.apigateway.models.ChangeDeploymentCompartmentDetails
     oci.apigateway.models.ChangeGatewayCompartmentDetails
+    oci.apigateway.models.ContentValidation
     oci.apigateway.models.CorsPolicy
     oci.apigateway.models.CreateApiDetails
     oci.apigateway.models.CreateCertificateDetails
@@ -61,30 +63,43 @@ Apigateway
     oci.apigateway.models.DeploymentCollection
     oci.apigateway.models.DeploymentSummary
     oci.apigateway.models.ExecutionLogPolicy
+    oci.apigateway.models.ExternalRespCache
     oci.apigateway.models.FilterHeaderPolicy
     oci.apigateway.models.FilterHeaderPolicyItem
     oci.apigateway.models.FilterQueryParameterPolicy
     oci.apigateway.models.FilterQueryParameterPolicyItem
+    oci.apigateway.models.FixedTTLResponseCacheStorePolicy
     oci.apigateway.models.Gateway
     oci.apigateway.models.GatewayCollection
     oci.apigateway.models.GatewaySummary
     oci.apigateway.models.HTTPBackend
     oci.apigateway.models.HeaderFieldSpecification
     oci.apigateway.models.HeaderTransformationPolicy
+    oci.apigateway.models.HeaderValidationItem
+    oci.apigateway.models.HeaderValidationRequestPolicy
     oci.apigateway.models.IpAddress
     oci.apigateway.models.JsonWebKey
     oci.apigateway.models.JsonWebTokenClaim
     oci.apigateway.models.JwtAuthenticationPolicy
+    oci.apigateway.models.NoCache
+    oci.apigateway.models.NoContentValidation
     oci.apigateway.models.OracleFunctionBackend
     oci.apigateway.models.PemEncodedPublicKey
     oci.apigateway.models.PublicKeySet
     oci.apigateway.models.QueryParameterTransformationPolicy
+    oci.apigateway.models.QueryParameterValidationItem
+    oci.apigateway.models.QueryParameterValidationRequestPolicy
     oci.apigateway.models.RateLimitingPolicy
     oci.apigateway.models.RemoteJsonWebKeySet
     oci.apigateway.models.RenameHeaderPolicy
     oci.apigateway.models.RenameHeaderPolicyItem
     oci.apigateway.models.RenameQueryParameterPolicy
     oci.apigateway.models.RenameQueryParameterPolicyItem
+    oci.apigateway.models.RequestParameterValidation
+    oci.apigateway.models.ResponseCacheDetails
+    oci.apigateway.models.ResponseCacheLookupPolicy
+    oci.apigateway.models.ResponseCacheRespServer
+    oci.apigateway.models.ResponseCacheStorePolicy
     oci.apigateway.models.RouteAuthorizationPolicy
     oci.apigateway.models.Sdk
     oci.apigateway.models.SdkCollection
@@ -98,6 +113,7 @@ Apigateway
     oci.apigateway.models.SetHeaderPolicyItem
     oci.apigateway.models.SetQueryParameterPolicy
     oci.apigateway.models.SetQueryParameterPolicyItem
+    oci.apigateway.models.SimpleLookupPolicy
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
@@ -106,6 +122,7 @@ Apigateway
     oci.apigateway.models.UpdateDeploymentDetails
     oci.apigateway.models.UpdateGatewayDetails
     oci.apigateway.models.UpdateSdkDetails
+    oci.apigateway.models.ValidationRequestPolicy
     oci.apigateway.models.WorkRequest
     oci.apigateway.models.WorkRequestCollection
     oci.apigateway.models.WorkRequestError
