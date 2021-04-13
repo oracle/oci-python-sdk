@@ -18,6 +18,10 @@ class DatabaseDetails(object):
         Initializes a new DatabaseDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this DatabaseDetails.
+        :type id: str
+
         :param database_id:
             The value to assign to the database_id property of this DatabaseDetails.
         :type database_id: str
@@ -38,28 +42,66 @@ class DatabaseDetails(object):
             The value to assign to the database_version property of this DatabaseDetails.
         :type database_version: str
 
+        :param instances:
+            The value to assign to the instances property of this DatabaseDetails.
+        :type instances: list[oci.opsi.models.HostInstanceMap]
+
         """
         self.swagger_types = {
+            'id': 'str',
             'database_id': 'str',
             'database_name': 'str',
             'database_display_name': 'str',
             'database_type': 'str',
-            'database_version': 'str'
+            'database_version': 'str',
+            'instances': 'list[HostInstanceMap]'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'database_id': 'databaseId',
             'database_name': 'databaseName',
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
-            'database_version': 'databaseVersion'
+            'database_version': 'databaseVersion',
+            'instances': 'instances'
         }
 
+        self._id = None
         self._database_id = None
         self._database_name = None
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+        self._instances = None
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this DatabaseDetails.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this DatabaseDetails.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this DatabaseDetails.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this DatabaseDetails.
+        :type: str
+        """
+        self._id = id
 
     @property
     def database_id(self):
@@ -184,6 +226,30 @@ class DatabaseDetails(object):
         :type: str
         """
         self._database_version = database_version
+
+    @property
+    def instances(self):
+        """
+        Gets the instances of this DatabaseDetails.
+        Array of hostname and instance name.
+
+
+        :return: The instances of this DatabaseDetails.
+        :rtype: list[oci.opsi.models.HostInstanceMap]
+        """
+        return self._instances
+
+    @instances.setter
+    def instances(self, instances):
+        """
+        Sets the instances of this DatabaseDetails.
+        Array of hostname and instance name.
+
+
+        :param instances: The instances of this DatabaseDetails.
+        :type: list[oci.opsi.models.HostInstanceMap]
+        """
+        self._instances = instances
 
     def __repr__(self):
         return formatted_flat_dict(self)

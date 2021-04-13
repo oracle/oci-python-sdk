@@ -26,6 +26,7 @@ Database Management
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
     oci.database_management.models.ChildDatabase
+    oci.database_management.models.ClusterCacheMetric
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
@@ -34,6 +35,7 @@ Database Management
     oci.database_management.models.DatabaseHomeMetricDefinition
     oci.database_management.models.DatabaseHomeMetrics
     oci.database_management.models.DatabaseIOAggregateMetrics
+    oci.database_management.models.DatabaseInstanceHomeMetricsDefinition
     oci.database_management.models.DatabaseParameterSummary
     oci.database_management.models.DatabaseParameterUpdateStatus
     oci.database_management.models.DatabaseParametersCollection
@@ -45,6 +47,7 @@ Database Management
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
     oci.database_management.models.FleetSummary
+    oci.database_management.models.InstanceDetails
     oci.database_management.models.Job
     oci.database_management.models.JobCollection
     oci.database_management.models.JobDatabase
@@ -69,11 +72,14 @@ Database Management
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
     oci.database_management.models.ObjectStorageJobExecutionResultLocation
     oci.database_management.models.ParentGroup
+    oci.database_management.models.PdbStatusDetails
     oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails
     oci.database_management.models.ResetDatabaseParametersDetails
     oci.database_management.models.SqlJob
     oci.database_management.models.Tablespace
     oci.database_management.models.TablespaceCollection
     oci.database_management.models.TablespaceSummary
+    oci.database_management.models.TimeSeriesMetricDataPoint
+    oci.database_management.models.TimeSeriesMetricDefinition
     oci.database_management.models.UpdateDatabaseParametersResult
     oci.database_management.models.UpdateManagedDatabaseGroupDetails

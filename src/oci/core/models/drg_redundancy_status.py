@@ -81,7 +81,9 @@ class DrgRedundancyStatus(object):
     def id(self):
         """
         Gets the id of this DrgRedundancyStatus.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DrgRedundancyStatus.
@@ -93,7 +95,9 @@ class DrgRedundancyStatus(object):
     def id(self, id):
         """
         Sets the id of this DrgRedundancyStatus.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DrgRedundancyStatus.

@@ -22,18 +22,23 @@ class SourceDetails(object):
     #: This constant has a value of "logging"
     KIND_LOGGING = "logging"
 
+    #: A constant which can be used with the kind property of a SourceDetails.
+    #: This constant has a value of "streaming"
+    KIND_STREAMING = "streaming"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.sch.models.LoggingSourceDetails`
+        * :class:`~oci.sch.models.StreamingSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param kind:
             The value to assign to the kind property of this SourceDetails.
-            Allowed values for this property are: "logging", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "logging", "streaming", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -58,6 +63,9 @@ class SourceDetails(object):
 
         if type == 'logging':
             return 'LoggingSourceDetails'
+
+        if type == 'streaming':
+            return 'StreamingSourceDetails'
         else:
             return 'SourceDetails'
 
@@ -67,7 +75,7 @@ class SourceDetails(object):
         **[Required]** Gets the kind of this SourceDetails.
         The type descriminator.
 
-        Allowed values for this property are: "logging", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "logging", "streaming", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -86,7 +94,7 @@ class SourceDetails(object):
         :param kind: The kind of this SourceDetails.
         :type: str
         """
-        allowed_values = ["logging"]
+        allowed_values = ["logging", "streaming"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

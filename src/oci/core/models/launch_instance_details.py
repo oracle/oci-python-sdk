@@ -83,6 +83,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the availability_config property of this LaunchInstanceDetails.
         :type availability_config: oci.core.models.LaunchInstanceAvailabilityConfigDetails
 
+        :param preemptible_instance_config:
+            The value to assign to the preemptible_instance_config property of this LaunchInstanceDetails.
+        :type preemptible_instance_config: oci.core.models.PreemptibleInstanceConfigDetails
+
         :param metadata:
             The value to assign to the metadata property of this LaunchInstanceDetails.
         :type metadata: dict(str, str)
@@ -133,6 +137,7 @@ class LaunchInstanceDetails(object):
             'launch_options': 'LaunchOptions',
             'instance_options': 'InstanceOptions',
             'availability_config': 'LaunchInstanceAvailabilityConfigDetails',
+            'preemptible_instance_config': 'PreemptibleInstanceConfigDetails',
             'metadata': 'dict(str, str)',
             'agent_config': 'LaunchInstanceAgentConfigDetails',
             'shape': 'str',
@@ -160,6 +165,7 @@ class LaunchInstanceDetails(object):
             'launch_options': 'launchOptions',
             'instance_options': 'instanceOptions',
             'availability_config': 'availabilityConfig',
+            'preemptible_instance_config': 'preemptibleInstanceConfig',
             'metadata': 'metadata',
             'agent_config': 'agentConfig',
             'shape': 'shape',
@@ -186,6 +192,7 @@ class LaunchInstanceDetails(object):
         self._launch_options = None
         self._instance_options = None
         self._availability_config = None
+        self._preemptible_instance_config = None
         self._metadata = None
         self._agent_config = None
         self._shape = None
@@ -696,6 +703,26 @@ class LaunchInstanceDetails(object):
         :type: oci.core.models.LaunchInstanceAvailabilityConfigDetails
         """
         self._availability_config = availability_config
+
+    @property
+    def preemptible_instance_config(self):
+        """
+        Gets the preemptible_instance_config of this LaunchInstanceDetails.
+
+        :return: The preemptible_instance_config of this LaunchInstanceDetails.
+        :rtype: oci.core.models.PreemptibleInstanceConfigDetails
+        """
+        return self._preemptible_instance_config
+
+    @preemptible_instance_config.setter
+    def preemptible_instance_config(self, preemptible_instance_config):
+        """
+        Sets the preemptible_instance_config of this LaunchInstanceDetails.
+
+        :param preemptible_instance_config: The preemptible_instance_config of this LaunchInstanceDetails.
+        :type: oci.core.models.PreemptibleInstanceConfigDetails
+        """
+        self._preemptible_instance_config = preemptible_instance_config
 
     @property
     def metadata(self):

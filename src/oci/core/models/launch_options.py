@@ -146,9 +146,9 @@ class LaunchOptions(object):
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data
-        volumes on Oracle-provided images.
+        volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
-        storage volumes on Oracle-provided images.
+        storage volumes on platform images.
 
         Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -168,9 +168,9 @@ class LaunchOptions(object):
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data
-        volumes on Oracle-provided images.
+        volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
-        storage volumes on Oracle-provided images.
+        storage volumes on platform images.
 
 
         :param boot_volume_type: The boot_volume_type of this LaunchOptions.
@@ -189,7 +189,7 @@ class LaunchOptions(object):
         * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating
         systems that boot using MBR style bootloaders.
         * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the
-        default for Oracle-provided images.
+        default for platform images.
 
         Allowed values for this property are: "BIOS", "UEFI_64", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -208,7 +208,7 @@ class LaunchOptions(object):
         * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating
         systems that boot using MBR style bootloaders.
         * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the
-        default for Oracle-provided images.
+        default for platform images.
 
 
         :param firmware: The firmware of this LaunchOptions.
@@ -266,9 +266,9 @@ class LaunchOptions(object):
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data
-        volumes on Oracle-provided images.
+        volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
-        storage volumes on Oracle-provided images.
+        storage volumes on platform images.
 
         Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -288,9 +288,9 @@ class LaunchOptions(object):
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data
-        volumes on Oracle-provided images.
+        volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
-        storage volumes on Oracle-provided images.
+        storage volumes on platform images.
 
 
         :param remote_data_volume_type: The remote_data_volume_type of this LaunchOptions.

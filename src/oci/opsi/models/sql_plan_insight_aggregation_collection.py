@@ -22,6 +22,10 @@ class SqlPlanInsightAggregationCollection(object):
             The value to assign to the sql_identifier property of this SqlPlanInsightAggregationCollection.
         :type sql_identifier: str
 
+        :param id:
+            The value to assign to the id property of this SqlPlanInsightAggregationCollection.
+        :type id: str
+
         :param database_id:
             The value to assign to the database_id property of this SqlPlanInsightAggregationCollection.
         :type database_id: str
@@ -45,6 +49,7 @@ class SqlPlanInsightAggregationCollection(object):
         """
         self.swagger_types = {
             'sql_identifier': 'str',
+            'id': 'str',
             'database_id': 'str',
             'time_interval_start': 'datetime',
             'time_interval_end': 'datetime',
@@ -54,6 +59,7 @@ class SqlPlanInsightAggregationCollection(object):
 
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
+            'id': 'id',
             'database_id': 'databaseId',
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -62,6 +68,7 @@ class SqlPlanInsightAggregationCollection(object):
         }
 
         self._sql_identifier = None
+        self._id = None
         self._database_id = None
         self._time_interval_start = None
         self._time_interval_end = None
@@ -91,6 +98,34 @@ class SqlPlanInsightAggregationCollection(object):
         :type: str
         """
         self._sql_identifier = sql_identifier
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this SqlPlanInsightAggregationCollection.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this SqlPlanInsightAggregationCollection.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this SqlPlanInsightAggregationCollection.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this SqlPlanInsightAggregationCollection.
+        :type: str
+        """
+        self._id = id
 
     @property
     def database_id(self):

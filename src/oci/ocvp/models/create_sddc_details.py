@@ -13,6 +13,22 @@ class CreateSddcDetails(object):
     Details of the SDDC.
     """
 
+    #: A constant which can be used with the initial_sku property of a CreateSddcDetails.
+    #: This constant has a value of "HOUR"
+    INITIAL_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the initial_sku property of a CreateSddcDetails.
+    #: This constant has a value of "MONTH"
+    INITIAL_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the initial_sku property of a CreateSddcDetails.
+    #: This constant has a value of "ONE_YEAR"
+    INITIAL_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the initial_sku property of a CreateSddcDetails.
+    #: This constant has a value of "THREE_YEARS"
+    INITIAL_SKU_THREE_YEARS = "THREE_YEARS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSddcDetails object with values from keyword arguments.
@@ -41,6 +57,11 @@ class CreateSddcDetails(object):
         :param esxi_hosts_count:
             The value to assign to the esxi_hosts_count property of this CreateSddcDetails.
         :type esxi_hosts_count: int
+
+        :param initial_sku:
+            The value to assign to the initial_sku property of this CreateSddcDetails.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+        :type initial_sku: str
 
         :param is_hcx_enabled:
             The value to assign to the is_hcx_enabled property of this CreateSddcDetails.
@@ -114,6 +135,7 @@ class CreateSddcDetails(object):
             'compartment_id': 'str',
             'instance_display_name_prefix': 'str',
             'esxi_hosts_count': 'int',
+            'initial_sku': 'str',
             'is_hcx_enabled': 'bool',
             'hcx_vlan_id': 'str',
             'ssh_authorized_keys': 'str',
@@ -139,6 +161,7 @@ class CreateSddcDetails(object):
             'compartment_id': 'compartmentId',
             'instance_display_name_prefix': 'instanceDisplayNamePrefix',
             'esxi_hosts_count': 'esxiHostsCount',
+            'initial_sku': 'initialSku',
             'is_hcx_enabled': 'isHcxEnabled',
             'hcx_vlan_id': 'hcxVlanId',
             'ssh_authorized_keys': 'sshAuthorizedKeys',
@@ -163,6 +186,7 @@ class CreateSddcDetails(object):
         self._compartment_id = None
         self._instance_display_name_prefix = None
         self._esxi_hosts_count = None
+        self._initial_sku = None
         self._is_hcx_enabled = None
         self._hcx_vlan_id = None
         self._ssh_authorized_keys = None
@@ -355,6 +379,40 @@ class CreateSddcDetails(object):
         :type: int
         """
         self._esxi_hosts_count = esxi_hosts_count
+
+    @property
+    def initial_sku(self):
+        """
+        **[Required]** Gets the initial_sku of this CreateSddcDetails.
+        Billing option selected during SDDC creation
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+
+
+        :return: The initial_sku of this CreateSddcDetails.
+        :rtype: str
+        """
+        return self._initial_sku
+
+    @initial_sku.setter
+    def initial_sku(self, initial_sku):
+        """
+        Sets the initial_sku of this CreateSddcDetails.
+        Billing option selected during SDDC creation
+        :func:`list_supported_skus`.
+
+
+        :param initial_sku: The initial_sku of this CreateSddcDetails.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(initial_sku, allowed_values):
+            raise ValueError(
+                "Invalid value for `initial_sku`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._initial_sku = initial_sku
 
     @property
     def is_hcx_enabled(self):

@@ -72,7 +72,7 @@ class UpdateLaunchOptions(object):
         Emulation type for the boot volume.
         * `ISCSI` - ISCSI attached block storage device.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
-        storage volumes on Oracle-provided plaform images.
+        storage volumes on platform images.
 
         Before you change the boot volume attachment type, detach all block volumes and VNICs except for
         the boot volume and the primary VNIC.
@@ -98,7 +98,7 @@ class UpdateLaunchOptions(object):
         Emulation type for the boot volume.
         * `ISCSI` - ISCSI attached block storage device.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
-        storage volumes on Oracle-provided plaform images.
+        storage volumes on platform images.
 
         Before you change the boot volume attachment type, detach all block volumes and VNICs except for
         the boot volume and the primary VNIC.

@@ -26,6 +26,10 @@ class UpdateGatewayDetails(object):
             The value to assign to the certificate_id property of this UpdateGatewayDetails.
         :type certificate_id: str
 
+        :param response_cache_details:
+            The value to assign to the response_cache_details property of this UpdateGatewayDetails.
+        :type response_cache_details: oci.apigateway.models.ResponseCacheDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateGatewayDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +42,7 @@ class UpdateGatewayDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'certificate_id': 'str',
+            'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +50,14 @@ class UpdateGatewayDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'certificate_id': 'certificateId',
+            'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._certificate_id = None
+        self._response_cache_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -111,6 +118,26 @@ class UpdateGatewayDetails(object):
         :type: str
         """
         self._certificate_id = certificate_id
+
+    @property
+    def response_cache_details(self):
+        """
+        Gets the response_cache_details of this UpdateGatewayDetails.
+
+        :return: The response_cache_details of this UpdateGatewayDetails.
+        :rtype: oci.apigateway.models.ResponseCacheDetails
+        """
+        return self._response_cache_details
+
+    @response_cache_details.setter
+    def response_cache_details(self, response_cache_details):
+        """
+        Sets the response_cache_details of this UpdateGatewayDetails.
+
+        :param response_cache_details: The response_cache_details of this UpdateGatewayDetails.
+        :type: oci.apigateway.models.ResponseCacheDetails
+        """
+        self._response_cache_details = response_cache_details
 
     @property
     def freeform_tags(self):

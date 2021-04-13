@@ -22,6 +22,10 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
             The value to assign to the sql_identifier property of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
         :type sql_identifier: str
 
+        :param id:
+            The value to assign to the id property of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
+        :type id: str
+
         :param database_id:
             The value to assign to the database_id property of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
         :type database_id: str
@@ -49,6 +53,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         """
         self.swagger_types = {
             'sql_identifier': 'str',
+            'id': 'str',
             'database_id': 'str',
             'time_interval_start': 'datetime',
             'time_interval_end': 'datetime',
@@ -59,6 +64,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
 
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
+            'id': 'id',
             'database_id': 'databaseId',
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -68,6 +74,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         }
 
         self._sql_identifier = None
+        self._id = None
         self._database_id = None
         self._time_interval_start = None
         self._time_interval_end = None
@@ -98,6 +105,34 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         :type: str
         """
         self._sql_identifier = sql_identifier
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
+        The `OCID`__ of the database insight resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param id: The id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
+        :type: str
+        """
+        self._id = id
 
     @property
     def database_id(self):

@@ -5966,13 +5966,14 @@ class ComputeClient(object):
 
     def list_images(self, compartment_id, **kwargs):
         """
-        Lists the available images in the specified compartment, including both
-        `Oracle-provided images`__ and
+        Lists the available images in the specified compartment, including
+        `platform images`__ and
         `custom images`__ that have
-        been created. The list of images returned is ordered to first show all
-        Oracle-provided images, then all custom images.
+        been created.
 
-        The order of images returned may change when new images are released.
+        The list of images that's returned is ordered to first show all
+        platform images, then all custom images. The order of images might
+        change when new images are released.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm

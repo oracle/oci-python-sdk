@@ -39,6 +39,7 @@ API Reference
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
+* :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
 * :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
@@ -152,6 +153,7 @@ API Reference
     data_science
     database
     database_management
+    database_migration
     dns
     dts
     email

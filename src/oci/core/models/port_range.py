@@ -44,7 +44,7 @@ class PortRange(object):
     def max(self):
         """
         **[Required]** Gets the max of this PortRange.
-        The maximum port number. Must not be lower than the minimum port number. To specify
+        The maximum port number, which must not be less than the minimum port number. To specify
         a single port number, set both the min and max to the same value.
 
 
@@ -57,7 +57,7 @@ class PortRange(object):
     def max(self, max):
         """
         Sets the max of this PortRange.
-        The maximum port number. Must not be lower than the minimum port number. To specify
+        The maximum port number, which must not be less than the minimum port number. To specify
         a single port number, set both the min and max to the same value.
 
 
@@ -70,7 +70,7 @@ class PortRange(object):
     def min(self):
         """
         **[Required]** Gets the min of this PortRange.
-        The minimum port number. Must not be greater than the maximum port number.
+        The minimum port number, which must not be greater than the maximum port number.
 
 
         :return: The min of this PortRange.
@@ -82,7 +82,7 @@ class PortRange(object):
     def min(self, min):
         """
         Sets the min of this PortRange.
-        The minimum port number. Must not be greater than the maximum port number.
+        The minimum port number, which must not be greater than the maximum port number.
 
 
         :param min: The min of this PortRange.

@@ -10,8 +10,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrgAttachment(object):
     """
-    A link between a DRG and VCN. For more information, see
-    `Overview of the Networking Service`__.
+    A DRG attachment serves as a link between a DRG and a network resource. A DRG can be attached to a VCN,
+    IPSec tunnel, remote peering connection, or virtual circuit.
+
+    For more information, see `Overview of the Networking Service`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
     """
@@ -63,6 +65,22 @@ class DrgAttachment(object):
             The value to assign to the time_created property of this DrgAttachment.
         :type time_created: datetime
 
+        :param drg_route_table_id:
+            The value to assign to the drg_route_table_id property of this DrgAttachment.
+        :type drg_route_table_id: str
+
+        :param network_details:
+            The value to assign to the network_details property of this DrgAttachment.
+        :type network_details: oci.core.models.DrgAttachmentNetworkDetails
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this DrgAttachment.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this DrgAttachment.
+        :type freeform_tags: dict(str, str)
+
         :param route_table_id:
             The value to assign to the route_table_id property of this DrgAttachment.
         :type route_table_id: str
@@ -70,6 +88,14 @@ class DrgAttachment(object):
         :param vcn_id:
             The value to assign to the vcn_id property of this DrgAttachment.
         :type vcn_id: str
+
+        :param export_drg_route_distribution_id:
+            The value to assign to the export_drg_route_distribution_id property of this DrgAttachment.
+        :type export_drg_route_distribution_id: str
+
+        :param is_cross_tenancy:
+            The value to assign to the is_cross_tenancy property of this DrgAttachment.
+        :type is_cross_tenancy: bool
 
         """
         self.swagger_types = {
@@ -79,8 +105,14 @@ class DrgAttachment(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
+            'drg_route_table_id': 'str',
+            'network_details': 'DrgAttachmentNetworkDetails',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
             'route_table_id': 'str',
-            'vcn_id': 'str'
+            'vcn_id': 'str',
+            'export_drg_route_distribution_id': 'str',
+            'is_cross_tenancy': 'bool'
         }
 
         self.attribute_map = {
@@ -90,8 +122,14 @@ class DrgAttachment(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
+            'drg_route_table_id': 'drgRouteTableId',
+            'network_details': 'networkDetails',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
             'route_table_id': 'routeTableId',
-            'vcn_id': 'vcnId'
+            'vcn_id': 'vcnId',
+            'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
+            'is_cross_tenancy': 'isCrossTenancy'
         }
 
         self._compartment_id = None
@@ -100,14 +138,22 @@ class DrgAttachment(object):
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
+        self._drg_route_table_id = None
+        self._network_details = None
+        self._defined_tags = None
+        self._freeform_tags = None
         self._route_table_id = None
         self._vcn_id = None
+        self._export_drg_route_distribution_id = None
+        self._is_cross_tenancy = None
 
     @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DrgAttachment.
-        The OCID of the compartment containing the DRG attachment.
+        The `OCID`__ of the compartment containing the DRG attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DrgAttachment.
@@ -119,7 +165,9 @@ class DrgAttachment(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DrgAttachment.
-        The OCID of the compartment containing the DRG attachment.
+        The `OCID`__ of the compartment containing the DRG attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DrgAttachment.
@@ -157,7 +205,9 @@ class DrgAttachment(object):
     def drg_id(self):
         """
         **[Required]** Gets the drg_id of this DrgAttachment.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this DrgAttachment.
@@ -169,7 +219,9 @@ class DrgAttachment(object):
     def drg_id(self, drg_id):
         """
         Sets the drg_id of this DrgAttachment.
-        The OCID of the DRG.
+        The `OCID`__ of the DRG.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this DrgAttachment.
@@ -181,7 +233,9 @@ class DrgAttachment(object):
     def id(self):
         """
         **[Required]** Gets the id of this DrgAttachment.
-        The DRG attachment's Oracle ID (OCID).
+        The DRG attachment's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DrgAttachment.
@@ -193,7 +247,9 @@ class DrgAttachment(object):
     def id(self, id):
         """
         Sets the id of this DrgAttachment.
-        The DRG attachment's Oracle ID (OCID).
+        The DRG attachment's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DrgAttachment.
@@ -264,6 +320,126 @@ class DrgAttachment(object):
         self._time_created = time_created
 
     @property
+    def drg_route_table_id(self):
+        """
+        Gets the drg_route_table_id of this DrgAttachment.
+        The `OCID`__ of the DRG route table that is assigned to this attachment.
+
+        The DRG route table manages traffic inside the DRG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The drg_route_table_id of this DrgAttachment.
+        :rtype: str
+        """
+        return self._drg_route_table_id
+
+    @drg_route_table_id.setter
+    def drg_route_table_id(self, drg_route_table_id):
+        """
+        Sets the drg_route_table_id of this DrgAttachment.
+        The `OCID`__ of the DRG route table that is assigned to this attachment.
+
+        The DRG route table manages traffic inside the DRG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param drg_route_table_id: The drg_route_table_id of this DrgAttachment.
+        :type: str
+        """
+        self._drg_route_table_id = drg_route_table_id
+
+    @property
+    def network_details(self):
+        """
+        Gets the network_details of this DrgAttachment.
+
+        :return: The network_details of this DrgAttachment.
+        :rtype: oci.core.models.DrgAttachmentNetworkDetails
+        """
+        return self._network_details
+
+    @network_details.setter
+    def network_details(self, network_details):
+        """
+        Sets the network_details of this DrgAttachment.
+
+        :param network_details: The network_details of this DrgAttachment.
+        :type: oci.core.models.DrgAttachmentNetworkDetails
+        """
+        self._network_details = network_details
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this DrgAttachment.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this DrgAttachment.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this DrgAttachment.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this DrgAttachment.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this DrgAttachment.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this DrgAttachment.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this DrgAttachment.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this DrgAttachment.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def route_table_id(self):
         """
         Gets the route_table_id of this DrgAttachment.
@@ -274,8 +450,11 @@ class DrgAttachment(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
+        This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this DrgAttachment.
@@ -294,8 +473,11 @@ class DrgAttachment(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
+        This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this DrgAttachment.
@@ -306,8 +488,12 @@ class DrgAttachment(object):
     @property
     def vcn_id(self):
         """
-        **[Required]** Gets the vcn_id of this DrgAttachment.
-        The OCID of the VCN.
+        Gets the vcn_id of this DrgAttachment.
+        The `OCID`__ of the VCN.
+        This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DrgAttachment.
@@ -319,13 +505,77 @@ class DrgAttachment(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this DrgAttachment.
-        The OCID of the VCN.
+        The `OCID`__ of the VCN.
+        This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DrgAttachment.
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def export_drg_route_distribution_id(self):
+        """
+        Gets the export_drg_route_distribution_id of this DrgAttachment.
+        The `OCID`__ of the export route distribution used to specify how routes in the assigned DRG route table
+        are advertised to the attachment.
+        If this value is null, no routes are advertised through this attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The export_drg_route_distribution_id of this DrgAttachment.
+        :rtype: str
+        """
+        return self._export_drg_route_distribution_id
+
+    @export_drg_route_distribution_id.setter
+    def export_drg_route_distribution_id(self, export_drg_route_distribution_id):
+        """
+        Sets the export_drg_route_distribution_id of this DrgAttachment.
+        The `OCID`__ of the export route distribution used to specify how routes in the assigned DRG route table
+        are advertised to the attachment.
+        If this value is null, no routes are advertised through this attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param export_drg_route_distribution_id: The export_drg_route_distribution_id of this DrgAttachment.
+        :type: str
+        """
+        self._export_drg_route_distribution_id = export_drg_route_distribution_id
+
+    @property
+    def is_cross_tenancy(self):
+        """
+        Gets the is_cross_tenancy of this DrgAttachment.
+        Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
+
+        Example: `false`
+
+
+        :return: The is_cross_tenancy of this DrgAttachment.
+        :rtype: bool
+        """
+        return self._is_cross_tenancy
+
+    @is_cross_tenancy.setter
+    def is_cross_tenancy(self, is_cross_tenancy):
+        """
+        Sets the is_cross_tenancy of this DrgAttachment.
+        Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.
+
+        Example: `false`
+
+
+        :param is_cross_tenancy: The is_cross_tenancy of this DrgAttachment.
+        :type: bool
+        """
+        self._is_cross_tenancy = is_cross_tenancy
 
     def __repr__(self):
         return formatted_flat_dict(self)

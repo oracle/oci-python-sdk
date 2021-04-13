@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResetDatabaseParametersDetails(object):
     """
-    The details required to reset database parameters' values.
+    The details required to reset database parameter values.
     """
 
     #: A constant which can be used with the scope property of a ResetDatabaseParametersDetails.
@@ -86,12 +86,13 @@ class ResetDatabaseParametersDetails(object):
         **[Required]** Gets the scope of this ResetDatabaseParametersDetails.
         The clause used to specify when the parameter change takes effect.
 
-        Use `MEMORY` to make the change in memory and affect it immediately.
-        Use `SPFILE` to make the change in the server parameter file. The
-        change takes effect when the database is next shut down and started
-        up again. Use `BOTH` to make the change in memory and in the server
-        parameter file. The change takes effect immediately and persists
-        after the database is shut down and started up again.
+        Use `MEMORY` to make the change in memory and ensure that it takes
+        effect immediately. Use `SPFILE` to make the change in the server
+        parameter file. The change takes effect when the database is next
+        shut down and started up again. Use `BOTH` to make the change in
+        memory and in the server parameter file. The change takes effect
+        immediately and persists after the database is shut down and
+        started up again.
 
         Allowed values for this property are: "MEMORY", "SPFILE", "BOTH"
 
@@ -107,12 +108,13 @@ class ResetDatabaseParametersDetails(object):
         Sets the scope of this ResetDatabaseParametersDetails.
         The clause used to specify when the parameter change takes effect.
 
-        Use `MEMORY` to make the change in memory and affect it immediately.
-        Use `SPFILE` to make the change in the server parameter file. The
-        change takes effect when the database is next shut down and started
-        up again. Use `BOTH` to make the change in memory and in the server
-        parameter file. The change takes effect immediately and persists
-        after the database is shut down and started up again.
+        Use `MEMORY` to make the change in memory and ensure that it takes
+        effect immediately. Use `SPFILE` to make the change in the server
+        parameter file. The change takes effect when the database is next
+        shut down and started up again. Use `BOTH` to make the change in
+        memory and in the server parameter file. The change takes effect
+        immediately and persists after the database is shut down and
+        started up again.
 
 
         :param scope: The scope of this ResetDatabaseParametersDetails.

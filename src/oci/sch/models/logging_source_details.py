@@ -21,7 +21,7 @@ class LoggingSourceDetails(SourceDetails):
 
         :param kind:
             The value to assign to the kind property of this LoggingSourceDetails.
-            Allowed values for this property are: "logging"
+            Allowed values for this property are: "logging", "streaming"
         :type kind: str
 
         :param log_sources:

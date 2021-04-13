@@ -84,6 +84,10 @@ class FunctionSummary(object):
             The value to assign to the timeout_in_seconds property of this FunctionSummary.
         :type timeout_in_seconds: int
 
+        :param trace_config:
+            The value to assign to the trace_config property of this FunctionSummary.
+        :type trace_config: oci.functions.models.FunctionTraceConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this FunctionSummary.
         :type freeform_tags: dict(str, str)
@@ -115,6 +119,7 @@ class FunctionSummary(object):
             'image_digest': 'str',
             'memory_in_mbs': 'int',
             'timeout_in_seconds': 'int',
+            'trace_config': 'FunctionTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'invoke_endpoint': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -132,6 +137,7 @@ class FunctionSummary(object):
             'image_digest': 'imageDigest',
             'memory_in_mbs': 'memoryInMBs',
             'timeout_in_seconds': 'timeoutInSeconds',
+            'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'invoke_endpoint': 'invokeEndpoint',
             'defined_tags': 'definedTags',
@@ -148,6 +154,7 @@ class FunctionSummary(object):
         self._image_digest = None
         self._memory_in_mbs = None
         self._timeout_in_seconds = None
+        self._trace_config = None
         self._freeform_tags = None
         self._invoke_endpoint = None
         self._defined_tags = None
@@ -387,6 +394,26 @@ class FunctionSummary(object):
         :type: int
         """
         self._timeout_in_seconds = timeout_in_seconds
+
+    @property
+    def trace_config(self):
+        """
+        Gets the trace_config of this FunctionSummary.
+
+        :return: The trace_config of this FunctionSummary.
+        :rtype: oci.functions.models.FunctionTraceConfig
+        """
+        return self._trace_config
+
+    @trace_config.setter
+    def trace_config(self, trace_config):
+        """
+        Sets the trace_config of this FunctionSummary.
+
+        :param trace_config: The trace_config of this FunctionSummary.
+        :type: oci.functions.models.FunctionTraceConfig
+        """
+        self._trace_config = trace_config
 
     @property
     def freeform_tags(self):

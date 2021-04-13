@@ -23,6 +23,22 @@ class Sddc(object):
     __ https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
     """
 
+    #: A constant which can be used with the initial_sku property of a Sddc.
+    #: This constant has a value of "HOUR"
+    INITIAL_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the initial_sku property of a Sddc.
+    #: This constant has a value of "MONTH"
+    INITIAL_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the initial_sku property of a Sddc.
+    #: This constant has a value of "ONE_YEAR"
+    INITIAL_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the initial_sku property of a Sddc.
+    #: This constant has a value of "THREE_YEARS"
+    INITIAL_SKU_THREE_YEARS = "THREE_YEARS"
+
     #: A constant which can be used with the lifecycle_state property of a Sddc.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -79,6 +95,12 @@ class Sddc(object):
         :param esxi_hosts_count:
             The value to assign to the esxi_hosts_count property of this Sddc.
         :type esxi_hosts_count: int
+
+        :param initial_sku:
+            The value to assign to the initial_sku property of this Sddc.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type initial_sku: str
 
         :param vcenter_fqdn:
             The value to assign to the vcenter_fqdn property of this Sddc.
@@ -223,6 +245,7 @@ class Sddc(object):
             'vmware_software_version': 'str',
             'compartment_id': 'str',
             'esxi_hosts_count': 'int',
+            'initial_sku': 'str',
             'vcenter_fqdn': 'str',
             'nsx_manager_fqdn': 'str',
             'vcenter_private_ip_id': 'str',
@@ -266,6 +289,7 @@ class Sddc(object):
             'vmware_software_version': 'vmwareSoftwareVersion',
             'compartment_id': 'compartmentId',
             'esxi_hosts_count': 'esxiHostsCount',
+            'initial_sku': 'initialSku',
             'vcenter_fqdn': 'vcenterFqdn',
             'nsx_manager_fqdn': 'nsxManagerFqdn',
             'vcenter_private_ip_id': 'vcenterPrivateIpId',
@@ -308,6 +332,7 @@ class Sddc(object):
         self._vmware_software_version = None
         self._compartment_id = None
         self._esxi_hosts_count = None
+        self._initial_sku = None
         self._vcenter_fqdn = None
         self._nsx_manager_fqdn = None
         self._vcenter_private_ip_id = None
@@ -561,6 +586,38 @@ class Sddc(object):
         :type: int
         """
         self._esxi_hosts_count = esxi_hosts_count
+
+    @property
+    def initial_sku(self):
+        """
+        **[Required]** Gets the initial_sku of this Sddc.
+        Billing option selected during SDDC creation
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The initial_sku of this Sddc.
+        :rtype: str
+        """
+        return self._initial_sku
+
+    @initial_sku.setter
+    def initial_sku(self, initial_sku):
+        """
+        Sets the initial_sku of this Sddc.
+        Billing option selected during SDDC creation
+        :func:`list_supported_skus`.
+
+
+        :param initial_sku: The initial_sku of this Sddc.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(initial_sku, allowed_values):
+            initial_sku = 'UNKNOWN_ENUM_VALUE'
+        self._initial_sku = initial_sku
 
     @property
     def vcenter_fqdn(self):

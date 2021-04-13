@@ -13,6 +13,38 @@ class CreateEsxiHostDetails(object):
     Details of the ESXi host to add to the SDDC.
     """
 
+    #: A constant which can be used with the current_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "HOUR"
+    CURRENT_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the current_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "MONTH"
+    CURRENT_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the current_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "ONE_YEAR"
+    CURRENT_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the current_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "THREE_YEARS"
+    CURRENT_SKU_THREE_YEARS = "THREE_YEARS"
+
+    #: A constant which can be used with the next_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "HOUR"
+    NEXT_SKU_HOUR = "HOUR"
+
+    #: A constant which can be used with the next_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "MONTH"
+    NEXT_SKU_MONTH = "MONTH"
+
+    #: A constant which can be used with the next_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "ONE_YEAR"
+    NEXT_SKU_ONE_YEAR = "ONE_YEAR"
+
+    #: A constant which can be used with the next_sku property of a CreateEsxiHostDetails.
+    #: This constant has a value of "THREE_YEARS"
+    NEXT_SKU_THREE_YEARS = "THREE_YEARS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateEsxiHostDetails object with values from keyword arguments.
@@ -26,6 +58,16 @@ class CreateEsxiHostDetails(object):
             The value to assign to the display_name property of this CreateEsxiHostDetails.
         :type display_name: str
 
+        :param current_sku:
+            The value to assign to the current_sku property of this CreateEsxiHostDetails.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+        :type current_sku: str
+
+        :param next_sku:
+            The value to assign to the next_sku property of this CreateEsxiHostDetails.
+            Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+        :type next_sku: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateEsxiHostDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +80,8 @@ class CreateEsxiHostDetails(object):
         self.swagger_types = {
             'sddc_id': 'str',
             'display_name': 'str',
+            'current_sku': 'str',
+            'next_sku': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +89,16 @@ class CreateEsxiHostDetails(object):
         self.attribute_map = {
             'sddc_id': 'sddcId',
             'display_name': 'displayName',
+            'current_sku': 'currentSku',
+            'next_sku': 'nextSku',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._sddc_id = None
         self._display_name = None
+        self._current_sku = None
+        self._next_sku = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -123,6 +171,76 @@ class CreateEsxiHostDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def current_sku(self):
+        """
+        **[Required]** Gets the current_sku of this CreateEsxiHostDetails.
+        Billing option selected during SDDC creation.
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+
+
+        :return: The current_sku of this CreateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._current_sku
+
+    @current_sku.setter
+    def current_sku(self, current_sku):
+        """
+        Sets the current_sku of this CreateEsxiHostDetails.
+        Billing option selected during SDDC creation.
+        :func:`list_supported_skus`.
+
+
+        :param current_sku: The current_sku of this CreateEsxiHostDetails.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(current_sku, allowed_values):
+            raise ValueError(
+                "Invalid value for `current_sku`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._current_sku = current_sku
+
+    @property
+    def next_sku(self):
+        """
+        Gets the next_sku of this CreateEsxiHostDetails.
+        Billing option to switch to once existing billing cycle ends.
+        If nextSku is null or empty, currentSku will be used to continue with next billing term.
+        :func:`list_supported_skus`.
+
+        Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
+
+
+        :return: The next_sku of this CreateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._next_sku
+
+    @next_sku.setter
+    def next_sku(self, next_sku):
+        """
+        Sets the next_sku of this CreateEsxiHostDetails.
+        Billing option to switch to once existing billing cycle ends.
+        If nextSku is null or empty, currentSku will be used to continue with next billing term.
+        :func:`list_supported_skus`.
+
+
+        :param next_sku: The next_sku of this CreateEsxiHostDetails.
+        :type: str
+        """
+        allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
+        if not value_allowed_none_or_none_sentinel(next_sku, allowed_values):
+            raise ValueError(
+                "Invalid value for `next_sku`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._next_sku = next_sku
 
     @property
     def freeform_tags(self):

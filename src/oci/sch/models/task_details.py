@@ -19,6 +19,10 @@ class TaskDetails(object):
     """
 
     #: A constant which can be used with the kind property of a TaskDetails.
+    #: This constant has a value of "function"
+    KIND_FUNCTION = "function"
+
+    #: A constant which can be used with the kind property of a TaskDetails.
     #: This constant has a value of "logRule"
     KIND_LOG_RULE = "logRule"
 
@@ -27,13 +31,14 @@ class TaskDetails(object):
         Initializes a new TaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.sch.models.FunctionTaskDetails`
         * :class:`~oci.sch.models.LogRuleTaskDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param kind:
             The value to assign to the kind property of this TaskDetails.
-            Allowed values for this property are: "logRule", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "function", "logRule", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -56,6 +61,9 @@ class TaskDetails(object):
         """
         type = object_dictionary['kind']
 
+        if type == 'function':
+            return 'FunctionTaskDetails'
+
         if type == 'logRule':
             return 'LogRuleTaskDetails'
         else:
@@ -67,7 +75,7 @@ class TaskDetails(object):
         **[Required]** Gets the kind of this TaskDetails.
         The type descriminator.
 
-        Allowed values for this property are: "logRule", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "function", "logRule", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -86,7 +94,7 @@ class TaskDetails(object):
         :param kind: The kind of this TaskDetails.
         :type: str
         """
-        allowed_values = ["logRule"]
+        allowed_values = ["function", "logRule"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

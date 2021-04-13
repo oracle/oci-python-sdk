@@ -113,6 +113,14 @@ class Certificate(object):
             The value to assign to the time_created property of this Certificate.
         :type time_created: datetime
 
+        :param is_trust_verification_disabled:
+            The value to assign to the is_trust_verification_disabled property of this Certificate.
+        :type is_trust_verification_disabled: bool
+
+        :param certificate_data:
+            The value to assign to the certificate_data property of this Certificate.
+        :type certificate_data: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -131,7 +139,9 @@ class Certificate(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'is_trust_verification_disabled': 'bool',
+            'certificate_data': 'str'
         }
 
         self.attribute_map = {
@@ -151,7 +161,9 @@ class Certificate(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'is_trust_verification_disabled': 'isTrustVerificationDisabled',
+            'certificate_data': 'certificateData'
         }
 
         self._id = None
@@ -171,6 +183,8 @@ class Certificate(object):
         self._defined_tags = None
         self._lifecycle_state = None
         self._time_created = None
+        self._is_trust_verification_disabled = None
+        self._certificate_data = None
 
     @property
     def id(self):
@@ -597,6 +611,56 @@ class Certificate(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_trust_verification_disabled(self):
+        """
+        Gets the is_trust_verification_disabled of this Certificate.
+        This indicates whether trust verification was disabled during the creation of SSL certificate.
+        If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
+
+
+        :return: The is_trust_verification_disabled of this Certificate.
+        :rtype: bool
+        """
+        return self._is_trust_verification_disabled
+
+    @is_trust_verification_disabled.setter
+    def is_trust_verification_disabled(self, is_trust_verification_disabled):
+        """
+        Sets the is_trust_verification_disabled of this Certificate.
+        This indicates whether trust verification was disabled during the creation of SSL certificate.
+        If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
+
+
+        :param is_trust_verification_disabled: The is_trust_verification_disabled of this Certificate.
+        :type: bool
+        """
+        self._is_trust_verification_disabled = is_trust_verification_disabled
+
+    @property
+    def certificate_data(self):
+        """
+        Gets the certificate_data of this Certificate.
+        The data of the SSL certificate.
+
+
+        :return: The certificate_data of this Certificate.
+        :rtype: str
+        """
+        return self._certificate_data
+
+    @certificate_data.setter
+    def certificate_data(self, certificate_data):
+        """
+        Sets the certificate_data of this Certificate.
+        The data of the SSL certificate.
+
+
+        :param certificate_data: The certificate_data of this Certificate.
+        :type: str
+        """
+        self._certificate_data = certificate_data
 
     def __repr__(self):
         return formatted_flat_dict(self)

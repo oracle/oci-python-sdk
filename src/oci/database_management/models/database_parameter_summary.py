@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseParameterSummary(object):
     """
-    The details of a database parameter.
+    A summary of the database parameter.
     """
 
     #: A constant which can be used with the type property of a DatabaseParameterSummary.

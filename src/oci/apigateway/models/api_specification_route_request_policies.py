@@ -26,6 +26,18 @@ class ApiSpecificationRouteRequestPolicies(object):
             The value to assign to the cors property of this ApiSpecificationRouteRequestPolicies.
         :type cors: oci.apigateway.models.CorsPolicy
 
+        :param query_parameter_validations:
+            The value to assign to the query_parameter_validations property of this ApiSpecificationRouteRequestPolicies.
+        :type query_parameter_validations: oci.apigateway.models.QueryParameterValidationRequestPolicy
+
+        :param header_validations:
+            The value to assign to the header_validations property of this ApiSpecificationRouteRequestPolicies.
+        :type header_validations: oci.apigateway.models.HeaderValidationRequestPolicy
+
+        :param body_validation:
+            The value to assign to the body_validation property of this ApiSpecificationRouteRequestPolicies.
+        :type body_validation: oci.apigateway.models.BodyValidationRequestPolicy
+
         :param header_transformations:
             The value to assign to the header_transformations property of this ApiSpecificationRouteRequestPolicies.
         :type header_transformations: oci.apigateway.models.HeaderTransformationPolicy
@@ -34,25 +46,41 @@ class ApiSpecificationRouteRequestPolicies(object):
             The value to assign to the query_parameter_transformations property of this ApiSpecificationRouteRequestPolicies.
         :type query_parameter_transformations: oci.apigateway.models.QueryParameterTransformationPolicy
 
+        :param response_cache_lookup:
+            The value to assign to the response_cache_lookup property of this ApiSpecificationRouteRequestPolicies.
+        :type response_cache_lookup: oci.apigateway.models.ResponseCacheLookupPolicy
+
         """
         self.swagger_types = {
             'authorization': 'RouteAuthorizationPolicy',
             'cors': 'CorsPolicy',
+            'query_parameter_validations': 'QueryParameterValidationRequestPolicy',
+            'header_validations': 'HeaderValidationRequestPolicy',
+            'body_validation': 'BodyValidationRequestPolicy',
             'header_transformations': 'HeaderTransformationPolicy',
-            'query_parameter_transformations': 'QueryParameterTransformationPolicy'
+            'query_parameter_transformations': 'QueryParameterTransformationPolicy',
+            'response_cache_lookup': 'ResponseCacheLookupPolicy'
         }
 
         self.attribute_map = {
             'authorization': 'authorization',
             'cors': 'cors',
+            'query_parameter_validations': 'queryParameterValidations',
+            'header_validations': 'headerValidations',
+            'body_validation': 'bodyValidation',
             'header_transformations': 'headerTransformations',
-            'query_parameter_transformations': 'queryParameterTransformations'
+            'query_parameter_transformations': 'queryParameterTransformations',
+            'response_cache_lookup': 'responseCacheLookup'
         }
 
         self._authorization = None
         self._cors = None
+        self._query_parameter_validations = None
+        self._header_validations = None
+        self._body_validation = None
         self._header_transformations = None
         self._query_parameter_transformations = None
+        self._response_cache_lookup = None
 
     @property
     def authorization(self):
@@ -95,6 +123,66 @@ class ApiSpecificationRouteRequestPolicies(object):
         self._cors = cors
 
     @property
+    def query_parameter_validations(self):
+        """
+        Gets the query_parameter_validations of this ApiSpecificationRouteRequestPolicies.
+
+        :return: The query_parameter_validations of this ApiSpecificationRouteRequestPolicies.
+        :rtype: oci.apigateway.models.QueryParameterValidationRequestPolicy
+        """
+        return self._query_parameter_validations
+
+    @query_parameter_validations.setter
+    def query_parameter_validations(self, query_parameter_validations):
+        """
+        Sets the query_parameter_validations of this ApiSpecificationRouteRequestPolicies.
+
+        :param query_parameter_validations: The query_parameter_validations of this ApiSpecificationRouteRequestPolicies.
+        :type: oci.apigateway.models.QueryParameterValidationRequestPolicy
+        """
+        self._query_parameter_validations = query_parameter_validations
+
+    @property
+    def header_validations(self):
+        """
+        Gets the header_validations of this ApiSpecificationRouteRequestPolicies.
+
+        :return: The header_validations of this ApiSpecificationRouteRequestPolicies.
+        :rtype: oci.apigateway.models.HeaderValidationRequestPolicy
+        """
+        return self._header_validations
+
+    @header_validations.setter
+    def header_validations(self, header_validations):
+        """
+        Sets the header_validations of this ApiSpecificationRouteRequestPolicies.
+
+        :param header_validations: The header_validations of this ApiSpecificationRouteRequestPolicies.
+        :type: oci.apigateway.models.HeaderValidationRequestPolicy
+        """
+        self._header_validations = header_validations
+
+    @property
+    def body_validation(self):
+        """
+        Gets the body_validation of this ApiSpecificationRouteRequestPolicies.
+
+        :return: The body_validation of this ApiSpecificationRouteRequestPolicies.
+        :rtype: oci.apigateway.models.BodyValidationRequestPolicy
+        """
+        return self._body_validation
+
+    @body_validation.setter
+    def body_validation(self, body_validation):
+        """
+        Sets the body_validation of this ApiSpecificationRouteRequestPolicies.
+
+        :param body_validation: The body_validation of this ApiSpecificationRouteRequestPolicies.
+        :type: oci.apigateway.models.BodyValidationRequestPolicy
+        """
+        self._body_validation = body_validation
+
+    @property
     def header_transformations(self):
         """
         Gets the header_transformations of this ApiSpecificationRouteRequestPolicies.
@@ -133,6 +221,26 @@ class ApiSpecificationRouteRequestPolicies(object):
         :type: oci.apigateway.models.QueryParameterTransformationPolicy
         """
         self._query_parameter_transformations = query_parameter_transformations
+
+    @property
+    def response_cache_lookup(self):
+        """
+        Gets the response_cache_lookup of this ApiSpecificationRouteRequestPolicies.
+
+        :return: The response_cache_lookup of this ApiSpecificationRouteRequestPolicies.
+        :rtype: oci.apigateway.models.ResponseCacheLookupPolicy
+        """
+        return self._response_cache_lookup
+
+    @response_cache_lookup.setter
+    def response_cache_lookup(self, response_cache_lookup):
+        """
+        Sets the response_cache_lookup of this ApiSpecificationRouteRequestPolicies.
+
+        :param response_cache_lookup: The response_cache_lookup of this ApiSpecificationRouteRequestPolicies.
+        :type: oci.apigateway.models.ResponseCacheLookupPolicy
+        """
+        self._response_cache_lookup = response_cache_lookup
 
     def __repr__(self):
         return formatted_flat_dict(self)

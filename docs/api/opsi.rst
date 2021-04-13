@@ -18,17 +18,82 @@ Opsi
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.opsi.models.AutonomousDatabaseInsight
+    oci.opsi.models.AutonomousDatabaseInsightSummary
+    oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
+    oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
+    oci.opsi.models.ChangeHostInsightCompartmentDetails
+    oci.opsi.models.ConnectionDetails
+    oci.opsi.models.CreateDatabaseInsightDetails
+    oci.opsi.models.CreateEmManagedExternalDatabaseInsightDetails
+    oci.opsi.models.CreateEnterpriseManagerBridgeDetails
+    oci.opsi.models.CreateHostInsightDetails
+    oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.CredentialDetails
+    oci.opsi.models.CredentialsBySource
+    oci.opsi.models.DBExternalInstance
+    oci.opsi.models.DBExternalProperties
+    oci.opsi.models.DBOSConfigInstance
+    oci.opsi.models.DatabaseConfigurationMetricGroup
     oci.opsi.models.DatabaseDetails
+    oci.opsi.models.DatabaseInsight
     oci.opsi.models.DatabaseInsightSummary
     oci.opsi.models.DatabaseInsights
     oci.opsi.models.DatabaseInsightsCollection
+    oci.opsi.models.EmManagedExternalDatabaseInsight
+    oci.opsi.models.EmManagedExternalDatabaseInsightSummary
+    oci.opsi.models.EnableDatabaseInsightDetails
+    oci.opsi.models.EnableEmManagedExternalDatabaseInsightDetails
+    oci.opsi.models.EnableHostInsightDetails
+    oci.opsi.models.EnableMacsManagedExternalHostInsightDetails
+    oci.opsi.models.EnterpriseManagerBridge
+    oci.opsi.models.EnterpriseManagerBridgeCollection
+    oci.opsi.models.EnterpriseManagerBridgeSummary
+    oci.opsi.models.EnterpriseManagerBridges
     oci.opsi.models.HistoricalDataItem
+    oci.opsi.models.HostConfigurationMetricGroup
+    oci.opsi.models.HostCpuHardwareConfiguration
+    oci.opsi.models.HostCpuStatistics
+    oci.opsi.models.HostCpuUsage
+    oci.opsi.models.HostDetails
+    oci.opsi.models.HostEntities
+    oci.opsi.models.HostHardwareConfiguration
+    oci.opsi.models.HostInsight
+    oci.opsi.models.HostInsightResourceStatisticsAggregation
+    oci.opsi.models.HostInsightSummary
+    oci.opsi.models.HostInsightSummaryCollection
+    oci.opsi.models.HostInsights
+    oci.opsi.models.HostInstanceMap
+    oci.opsi.models.HostMemoryConfiguration
+    oci.opsi.models.HostMemoryStatistics
+    oci.opsi.models.HostMemoryUsage
+    oci.opsi.models.HostNetworkActivitySummary
+    oci.opsi.models.HostNetworkConfiguration
+    oci.opsi.models.HostPerformanceMetricGroup
+    oci.opsi.models.HostProduct
+    oci.opsi.models.HostResourceAllocation
+    oci.opsi.models.HostResourceCapacityTrendAggregation
+    oci.opsi.models.HostResourceStatistics
+    oci.opsi.models.HostedEntityCollection
+    oci.opsi.models.HostedEntitySummary
+    oci.opsi.models.ImportableEnterpriseManagerEntity
+    oci.opsi.models.ImportableEnterpriseManagerEntityCollection
+    oci.opsi.models.IngestDatabaseConfigurationDetails
+    oci.opsi.models.IngestDatabaseConfigurationResponseDetails
+    oci.opsi.models.IngestHostConfigurationDetails
+    oci.opsi.models.IngestHostConfigurationResponseDetails
+    oci.opsi.models.IngestHostMetricsDetails
+    oci.opsi.models.IngestHostMetricsResponseDetails
     oci.opsi.models.IngestSqlBucketDetails
     oci.opsi.models.IngestSqlBucketResponseDetails
     oci.opsi.models.IngestSqlPlanLinesDetails
     oci.opsi.models.IngestSqlPlanLinesResponseDetails
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
+    oci.opsi.models.MacsManagedExternalDatabaseInsight
+    oci.opsi.models.MacsManagedExternalDatabaseInsightSummary
+    oci.opsi.models.MacsManagedExternalHostInsight
+    oci.opsi.models.MacsManagedExternalHostInsightSummary
     oci.opsi.models.ProjectedDataItem
     oci.opsi.models.ResourceCapacityTrendAggregation
     oci.opsi.models.ResourceInsightCurrentUtilization
@@ -69,3 +134,28 @@ Opsi
     oci.opsi.models.SummarizeDatabaseInsightResourceUsageAggregation
     oci.opsi.models.SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
     oci.opsi.models.SummarizeDatabaseInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
+    oci.opsi.models.SummarizeHostInsightResourceCapacityTrendAggregationCollection
+    oci.opsi.models.SummarizeHostInsightResourceForecastTrendAggregation
+    oci.opsi.models.SummarizeHostInsightResourceStatisticsAggregationCollection
+    oci.opsi.models.SummarizeHostInsightResourceUsageAggregation
+    oci.opsi.models.SummarizeHostInsightResourceUsageTrendAggregationCollection
+    oci.opsi.models.SummarizeHostInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummaryStatistics
+    oci.opsi.models.TablespaceUsageTrend
+    oci.opsi.models.TablespaceUsageTrendAggregation
+    oci.opsi.models.UpdateAutonomousDatabaseInsightDetails
+    oci.opsi.models.UpdateDatabaseInsightDetails
+    oci.opsi.models.UpdateEmManagedExternalDatabaseInsightDetails
+    oci.opsi.models.UpdateEnterpriseManagerBridgeDetails
+    oci.opsi.models.UpdateHostInsightDetails
+    oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
+    oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.WorkRequest
+    oci.opsi.models.WorkRequestCollection
+    oci.opsi.models.WorkRequestError
+    oci.opsi.models.WorkRequestErrorCollection
+    oci.opsi.models.WorkRequestLogEntry
+    oci.opsi.models.WorkRequestLogEntryCollection
+    oci.opsi.models.WorkRequestResource
+    oci.opsi.models.WorkRequests
