@@ -16,12 +16,12 @@
 
 ^tests/[^/]*\.py$
 ^tests/configuration/config.sample$
+^tests/autogentest/test_model.py$
 ^tests/integ/__init__.py$
 ^tests/integ/test_launch_instance_tutorial.py$
 ^tests/integ/util.py$
 ^tests/unit/__init__.py$
 ^tests/unit/test_basic_api_calls.py$
-^tests/unit/test_model.py$
 ^tests/unit/test_response.py$
 ^tests/unit/test_waiters.py$
 
