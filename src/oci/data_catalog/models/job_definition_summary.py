@@ -216,6 +216,10 @@ class JobDefinitionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type schedule_type: str
 
+        :param data_asset_key:
+            The value to assign to the data_asset_key property of this JobDefinitionSummary.
+        :type data_asset_key: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -231,7 +235,8 @@ class JobDefinitionSummary(object):
             'time_latest_execution_started': 'datetime',
             'time_latest_execution_ended': 'datetime',
             'job_execution_state': 'str',
-            'schedule_type': 'str'
+            'schedule_type': 'str',
+            'data_asset_key': 'str'
         }
 
         self.attribute_map = {
@@ -248,7 +253,8 @@ class JobDefinitionSummary(object):
             'time_latest_execution_started': 'timeLatestExecutionStarted',
             'time_latest_execution_ended': 'timeLatestExecutionEnded',
             'job_execution_state': 'jobExecutionState',
-            'schedule_type': 'scheduleType'
+            'schedule_type': 'scheduleType',
+            'data_asset_key': 'dataAssetKey'
         }
 
         self._key = None
@@ -265,6 +271,7 @@ class JobDefinitionSummary(object):
         self._time_latest_execution_ended = None
         self._job_execution_state = None
         self._schedule_type = None
+        self._data_asset_key = None
 
     @property
     def key(self):
@@ -643,6 +650,30 @@ class JobDefinitionSummary(object):
         if not value_allowed_none_or_none_sentinel(schedule_type, allowed_values):
             schedule_type = 'UNKNOWN_ENUM_VALUE'
         self._schedule_type = schedule_type
+
+    @property
+    def data_asset_key(self):
+        """
+        Gets the data_asset_key of this JobDefinitionSummary.
+        Unique key of the data asset to which this job applies, if the job involves a data asset.
+
+
+        :return: The data_asset_key of this JobDefinitionSummary.
+        :rtype: str
+        """
+        return self._data_asset_key
+
+    @data_asset_key.setter
+    def data_asset_key(self, data_asset_key):
+        """
+        Sets the data_asset_key of this JobDefinitionSummary.
+        Unique key of the data asset to which this job applies, if the job involves a data asset.
+
+
+        :param data_asset_key: The data_asset_key of this JobDefinitionSummary.
+        :type: str
+        """
+        self._data_asset_key = data_asset_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

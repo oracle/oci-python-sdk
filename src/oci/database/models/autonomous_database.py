@@ -480,6 +480,10 @@ class AutonomousDatabase(object):
             The value to assign to the key_store_wallet_name property of this AutonomousDatabase.
         :type key_store_wallet_name: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this AutonomousDatabase.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -542,7 +546,8 @@ class AutonomousDatabase(object):
             'role': 'str',
             'available_upgrade_versions': 'list[str]',
             'key_store_id': 'str',
-            'key_store_wallet_name': 'str'
+            'key_store_wallet_name': 'str',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -606,7 +611,8 @@ class AutonomousDatabase(object):
             'role': 'role',
             'available_upgrade_versions': 'availableUpgradeVersions',
             'key_store_id': 'keyStoreId',
-            'key_store_wallet_name': 'keyStoreWalletName'
+            'key_store_wallet_name': 'keyStoreWalletName',
+            'customer_contacts': 'customerContacts'
         }
 
         self._id = None
@@ -670,6 +676,7 @@ class AutonomousDatabase(object):
         self._available_upgrade_versions = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._customer_contacts = None
 
     @property
     def id(self):
@@ -2247,7 +2254,7 @@ class AutonomousDatabase(object):
     def role(self):
         """
         Gets the role of this AutonomousDatabase.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -2262,7 +2269,7 @@ class AutonomousDatabase(object):
     def role(self, role):
         """
         Sets the role of this AutonomousDatabase.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousDatabase.
@@ -2348,6 +2355,30 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this AutonomousDatabase.
+        Customer Contacts.
+
+
+        :return: The customer_contacts of this AutonomousDatabase.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this AutonomousDatabase.
+        Customer Contacts.
+
+
+        :param customer_contacts: The customer_contacts of this AutonomousDatabase.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)

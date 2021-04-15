@@ -122,6 +122,10 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
         :type source: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CreateAutonomousDatabaseDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -148,7 +152,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
-            'source': 'str'
+            'source': 'str',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -176,7 +181,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
-            'source': 'source'
+            'source': 'source',
+            'customer_contacts': 'customerContacts'
         }
 
         self._compartment_id = None
@@ -204,6 +210,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._defined_tags = None
         self._db_version = None
         self._source = None
+        self._customer_contacts = None
         self._source = 'NONE'
 
     def __repr__(self):

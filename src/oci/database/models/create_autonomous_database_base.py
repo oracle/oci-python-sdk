@@ -175,6 +175,10 @@ class CreateAutonomousDatabaseBase(object):
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
         :type source: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CreateAutonomousDatabaseBase.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -201,7 +205,8 @@ class CreateAutonomousDatabaseBase(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
-            'source': 'str'
+            'source': 'str',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -229,7 +234,8 @@ class CreateAutonomousDatabaseBase(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
-            'source': 'source'
+            'source': 'source',
+            'customer_contacts': 'customerContacts'
         }
 
         self._compartment_id = None
@@ -257,6 +263,7 @@ class CreateAutonomousDatabaseBase(object):
         self._defined_tags = None
         self._db_version = None
         self._source = None
+        self._customer_contacts = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -1062,6 +1069,30 @@ class CreateAutonomousDatabaseBase(object):
                 .format(allowed_values)
             )
         self._source = source
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this CreateAutonomousDatabaseBase.
+        Customer Contacts.
+
+
+        :return: The customer_contacts of this CreateAutonomousDatabaseBase.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this CreateAutonomousDatabaseBase.
+        Customer Contacts.
+
+
+        :param customer_contacts: The customer_contacts of this CreateAutonomousDatabaseBase.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)

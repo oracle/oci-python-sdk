@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LaunchInstanceAvailabilityConfigDetails(object):
     """
-    Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
+    Options for defining the availability of a VM instance after a maintenance event that impacts the underlying
+    hardware, including whether to live migrate supported VM instances when possible.
     """
 
     #: A constant which can be used with the recovery_action property of a LaunchInstanceAvailabilityConfigDetails.
@@ -26,6 +27,10 @@ class LaunchInstanceAvailabilityConfigDetails(object):
         Initializes a new LaunchInstanceAvailabilityConfigDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param is_live_migration_preferred:
+            The value to assign to the is_live_migration_preferred property of this LaunchInstanceAvailabilityConfigDetails.
+        :type is_live_migration_preferred: bool
+
         :param recovery_action:
             The value to assign to the recovery_action property of this LaunchInstanceAvailabilityConfigDetails.
             Allowed values for this property are: "RESTORE_INSTANCE", "STOP_INSTANCE"
@@ -33,14 +38,45 @@ class LaunchInstanceAvailabilityConfigDetails(object):
 
         """
         self.swagger_types = {
+            'is_live_migration_preferred': 'bool',
             'recovery_action': 'str'
         }
 
         self.attribute_map = {
+            'is_live_migration_preferred': 'isLiveMigrationPreferred',
             'recovery_action': 'recoveryAction'
         }
 
+        self._is_live_migration_preferred = None
         self._recovery_action = None
+
+    @property
+    def is_live_migration_preferred(self):
+        """
+        Gets the is_live_migration_preferred of this LaunchInstanceAvailabilityConfigDetails.
+        Whether to live migrate supported VM instances to a healthy physical VM host without
+        disrupting running instances during infrastructure maintenance events. If null, Oracle
+        chooses the best option for migrating the VM during infrastructure maintenance events.
+
+
+        :return: The is_live_migration_preferred of this LaunchInstanceAvailabilityConfigDetails.
+        :rtype: bool
+        """
+        return self._is_live_migration_preferred
+
+    @is_live_migration_preferred.setter
+    def is_live_migration_preferred(self, is_live_migration_preferred):
+        """
+        Sets the is_live_migration_preferred of this LaunchInstanceAvailabilityConfigDetails.
+        Whether to live migrate supported VM instances to a healthy physical VM host without
+        disrupting running instances during infrastructure maintenance events. If null, Oracle
+        chooses the best option for migrating the VM during infrastructure maintenance events.
+
+
+        :param is_live_migration_preferred: The is_live_migration_preferred of this LaunchInstanceAvailabilityConfigDetails.
+        :type: bool
+        """
+        self._is_live_migration_preferred = is_live_migration_preferred
 
     @property
     def recovery_action(self):

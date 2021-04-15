@@ -71,6 +71,10 @@ class Attribute(object):
             The value to assign to the display_name property of this Attribute.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this Attribute.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this Attribute.
         :type description: str
@@ -187,6 +191,7 @@ class Attribute(object):
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'entity_key': 'str',
             'lifecycle_state': 'str',
@@ -219,6 +224,7 @@ class Attribute(object):
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'entity_key': 'entityKey',
             'lifecycle_state': 'lifecycleState',
@@ -250,6 +256,7 @@ class Attribute(object):
 
         self._key = None
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._entity_key = None
         self._lifecycle_state = None
@@ -327,6 +334,30 @@ class Attribute(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this Attribute.
+        Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this Attribute.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this Attribute.
+        Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this Attribute.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):

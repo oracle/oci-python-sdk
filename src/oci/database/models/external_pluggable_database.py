@@ -70,6 +70,10 @@ class ExternalPluggableDatabase(object):
             The value to assign to the external_container_database_id property of this ExternalPluggableDatabase.
         :type external_container_database_id: str
 
+        :param operations_insights_config:
+            The value to assign to the operations_insights_config property of this ExternalPluggableDatabase.
+        :type operations_insights_config: oci.database.models.OperationsInsightsConfig
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ExternalPluggableDatabase.
         :type compartment_id: str
@@ -146,6 +150,7 @@ class ExternalPluggableDatabase(object):
         self.swagger_types = {
             'source_id': 'str',
             'external_container_database_id': 'str',
+            'operations_insights_config': 'OperationsInsightsConfig',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -168,6 +173,7 @@ class ExternalPluggableDatabase(object):
         self.attribute_map = {
             'source_id': 'sourceId',
             'external_container_database_id': 'externalContainerDatabaseId',
+            'operations_insights_config': 'operationsInsightsConfig',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -189,6 +195,7 @@ class ExternalPluggableDatabase(object):
 
         self._source_id = None
         self._external_container_database_id = None
+        self._operations_insights_config = None
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -268,6 +275,26 @@ class ExternalPluggableDatabase(object):
         :type: str
         """
         self._external_container_database_id = external_container_database_id
+
+    @property
+    def operations_insights_config(self):
+        """
+        Gets the operations_insights_config of this ExternalPluggableDatabase.
+
+        :return: The operations_insights_config of this ExternalPluggableDatabase.
+        :rtype: oci.database.models.OperationsInsightsConfig
+        """
+        return self._operations_insights_config
+
+    @operations_insights_config.setter
+    def operations_insights_config(self, operations_insights_config):
+        """
+        Sets the operations_insights_config of this ExternalPluggableDatabase.
+
+        :param operations_insights_config: The operations_insights_config of this ExternalPluggableDatabase.
+        :type: oci.database.models.OperationsInsightsConfig
+        """
+        self._operations_insights_config = operations_insights_config
 
     @property
     def compartment_id(self):

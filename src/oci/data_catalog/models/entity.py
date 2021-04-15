@@ -76,6 +76,10 @@ class Entity(object):
             The value to assign to the display_name property of this Entity.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this Entity.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this Entity.
         :type description: str
@@ -176,6 +180,7 @@ class Entity(object):
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -204,6 +209,7 @@ class Entity(object):
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -231,6 +237,7 @@ class Entity(object):
 
         self._key = None
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._time_created = None
         self._time_updated = None
@@ -304,6 +311,30 @@ class Entity(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this Entity.
+        Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this Entity.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this Entity.
+        Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this Entity.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):

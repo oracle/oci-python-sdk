@@ -130,6 +130,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
         :type source: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         :param source_id:
             The value to assign to the source_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type source_id: str
@@ -166,6 +170,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
             'source': 'str',
+            'customer_contacts': 'list[CustomerContact]',
             'source_id': 'str',
             'refreshable_mode': 'str'
         }
@@ -196,6 +201,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
             'source': 'source',
+            'customer_contacts': 'customerContacts',
             'source_id': 'sourceId',
             'refreshable_mode': 'refreshableMode'
         }
@@ -225,6 +231,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._defined_tags = None
         self._db_version = None
         self._source = None
+        self._customer_contacts = None
         self._source_id = None
         self._refreshable_mode = None
         self._source = 'CLONE_TO_REFRESHABLE'

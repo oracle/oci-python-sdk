@@ -80,6 +80,10 @@ class CustomPropertyGetUsage(object):
             The value to assign to the is_editable property of this CustomPropertyGetUsage.
         :type is_editable: bool
 
+        :param is_shown_in_list:
+            The value to assign to the is_shown_in_list property of this CustomPropertyGetUsage.
+        :type is_shown_in_list: bool
+
         :param is_list_type:
             The value to assign to the is_list_type property of this CustomPropertyGetUsage.
         :type is_list_type: bool
@@ -100,6 +104,7 @@ class CustomPropertyGetUsage(object):
             'is_multi_valued': 'bool',
             'is_hidden': 'bool',
             'is_editable': 'bool',
+            'is_shown_in_list': 'bool',
             'is_list_type': 'bool',
             'allowed_values': 'list[str]'
         }
@@ -115,6 +120,7 @@ class CustomPropertyGetUsage(object):
             'is_multi_valued': 'isMultiValued',
             'is_hidden': 'isHidden',
             'is_editable': 'isEditable',
+            'is_shown_in_list': 'isShownInList',
             'is_list_type': 'isListType',
             'allowed_values': 'allowedValues'
         }
@@ -129,6 +135,7 @@ class CustomPropertyGetUsage(object):
         self._is_multi_valued = None
         self._is_hidden = None
         self._is_editable = None
+        self._is_shown_in_list = None
         self._is_list_type = None
         self._allowed_values = None
 
@@ -377,6 +384,30 @@ class CustomPropertyGetUsage(object):
         :type: bool
         """
         self._is_editable = is_editable
+
+    @property
+    def is_shown_in_list(self):
+        """
+        Gets the is_shown_in_list of this CustomPropertyGetUsage.
+        If this field is displayed in a list view of applicable objects.
+
+
+        :return: The is_shown_in_list of this CustomPropertyGetUsage.
+        :rtype: bool
+        """
+        return self._is_shown_in_list
+
+    @is_shown_in_list.setter
+    def is_shown_in_list(self, is_shown_in_list):
+        """
+        Sets the is_shown_in_list of this CustomPropertyGetUsage.
+        If this field is displayed in a list view of applicable objects.
+
+
+        :param is_shown_in_list: The is_shown_in_list of this CustomPropertyGetUsage.
+        :type: bool
+        """
+        self._is_shown_in_list = is_shown_in_list
 
     @property
     def is_list_type(self):

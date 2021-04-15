@@ -130,6 +130,10 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
         :type source: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         :param autonomous_database_id:
             The value to assign to the autonomous_database_id property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type autonomous_database_id: str
@@ -170,6 +174,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
             'source': 'str',
+            'customer_contacts': 'list[CustomerContact]',
             'autonomous_database_id': 'str',
             'timestamp': 'datetime',
             'clone_type': 'str'
@@ -201,6 +206,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
             'source': 'source',
+            'customer_contacts': 'customerContacts',
             'autonomous_database_id': 'autonomousDatabaseId',
             'timestamp': 'timestamp',
             'clone_type': 'cloneType'
@@ -231,6 +237,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._defined_tags = None
         self._db_version = None
         self._source = None
+        self._customer_contacts = None
         self._autonomous_database_id = None
         self._timestamp = None
         self._clone_type = None
