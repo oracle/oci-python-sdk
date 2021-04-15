@@ -552,6 +552,8 @@ class ShowOCIData(object):
                          'route_table': routestr,
                          'vcn_id': lpg['vcn_id'],
                          'peering_status': lpg['peering_status'],
+                         'peer_id': lpg['peer_id'],
+                         'peer_name': self.__get_core_network_local_peering(lpg['peer_id']),
                          'peer_advertised_cidr': lpg['peer_advertised_cidr'],
                          'peer_advertised_cidr_details': lpg['peer_advertised_cidr_details'],
                          'is_cross_tenancy_peering': lpg['is_cross_tenancy_peering']
@@ -932,8 +934,6 @@ class ShowOCIData(object):
                                  'display_name': vcn['display_name'],
                                  'cidr_block': vcn['cidr_block'],
                                  'cidr_blocks': vcn['cidr_blocks'],
-                                 'ipv6_cidr_block': vcn['ipv6_cidr_block'],
-                                 'ipv6_public_cidr_block': vcn['ipv6_public_cidr_block'],
                                  'compartment_name': str(compartment['name']),
                                  'compartment_id': str(compartment['id']),
                                  'data': val})
