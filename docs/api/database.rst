@@ -117,6 +117,7 @@ Database
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
     oci.database.models.CreateVmClusterDetails
+    oci.database.models.CustomerContact
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
@@ -151,8 +152,11 @@ Database
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalDatabaseManagementDetailsBase
+    oci.database.models.EnableExternalDatabaseOperationsInsightsDetailsBase
     oci.database.models.EnableExternalNonContainerDatabaseDatabaseManagementDetails
+    oci.database.models.EnableExternalNonContainerDatabaseOperationsInsightsDetails
     oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails
+    oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary
     oci.database.models.ExadataInfrastructure
@@ -198,6 +202,7 @@ Database
     oci.database.models.MountTypeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
+    oci.database.models.OperationsInsightsConfig
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry

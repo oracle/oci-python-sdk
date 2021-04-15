@@ -169,6 +169,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the nsg_ids property of this UpdateAutonomousDatabaseDetails.
         :type nsg_ids: list[str]
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this UpdateAutonomousDatabaseDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -194,7 +198,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'permission_level': 'str',
             'subnet_id': 'str',
             'private_endpoint_label': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -221,7 +226,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'permission_level': 'permissionLevel',
             'subnet_id': 'subnetId',
             'private_endpoint_label': 'privateEndpointLabel',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'customer_contacts': 'customerContacts'
         }
 
         self._cpu_core_count = None
@@ -248,6 +254,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._subnet_id = None
         self._private_endpoint_label = None
         self._nsg_ids = None
+        self._customer_contacts = None
 
     @property
     def cpu_core_count(self):
@@ -1004,6 +1011,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this UpdateAutonomousDatabaseDetails.
+        Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle Autonomous Database.
+
+
+        :return: The customer_contacts of this UpdateAutonomousDatabaseDetails.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this UpdateAutonomousDatabaseDetails.
+        Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle Autonomous Database.
+
+
+        :param customer_contacts: The customer_contacts of this UpdateAutonomousDatabaseDetails.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)

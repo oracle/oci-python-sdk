@@ -103,6 +103,7 @@ from .create_new_database_details import CreateNewDatabaseDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
+from .customer_contact import CustomerContact
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
@@ -137,8 +138,11 @@ from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
 from .enable_external_database_management_details_base import EnableExternalDatabaseManagementDetailsBase
+from .enable_external_database_operations_insights_details_base import EnableExternalDatabaseOperationsInsightsDetailsBase
 from .enable_external_non_container_database_database_management_details import EnableExternalNonContainerDatabaseDatabaseManagementDetails
+from .enable_external_non_container_database_operations_insights_details import EnableExternalNonContainerDatabaseOperationsInsightsDetails
 from .enable_external_pluggable_database_database_management_details import EnableExternalPluggableDatabaseDatabaseManagementDetails
+from .enable_external_pluggable_database_operations_insights_details import EnableExternalPluggableDatabaseOperationsInsightsDetails
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
 from .exadata_infrastructure import ExadataInfrastructure
@@ -184,6 +188,7 @@ from .month import Month
 from .mount_type_details import MountTypeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
+from .operations_insights_config import OperationsInsightsConfig
 from .patch import Patch
 from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
@@ -335,6 +340,7 @@ database_type_mapping = {
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
+    "CustomerContact": CustomerContact,
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
@@ -369,8 +375,11 @@ database_type_mapping = {
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
     "EnableExternalDatabaseManagementDetailsBase": EnableExternalDatabaseManagementDetailsBase,
+    "EnableExternalDatabaseOperationsInsightsDetailsBase": EnableExternalDatabaseOperationsInsightsDetailsBase,
     "EnableExternalNonContainerDatabaseDatabaseManagementDetails": EnableExternalNonContainerDatabaseDatabaseManagementDetails,
+    "EnableExternalNonContainerDatabaseOperationsInsightsDetails": EnableExternalNonContainerDatabaseOperationsInsightsDetails,
     "EnableExternalPluggableDatabaseDatabaseManagementDetails": EnableExternalPluggableDatabaseDatabaseManagementDetails,
+    "EnableExternalPluggableDatabaseOperationsInsightsDetails": EnableExternalPluggableDatabaseOperationsInsightsDetails,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,
     "ExadataInfrastructure": ExadataInfrastructure,
@@ -416,6 +425,7 @@ database_type_mapping = {
     "MountTypeDetails": MountTypeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
+    "OperationsInsightsConfig": OperationsInsightsConfig,
     "Patch": Patch,
     "PatchDetails": PatchDetails,
     "PatchHistoryEntry": PatchHistoryEntry,

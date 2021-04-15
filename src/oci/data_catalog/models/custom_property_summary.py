@@ -112,6 +112,10 @@ class CustomPropertySummary(object):
             The value to assign to the is_editable property of this CustomPropertySummary.
         :type is_editable: bool
 
+        :param is_shown_in_list:
+            The value to assign to the is_shown_in_list property of this CustomPropertySummary.
+        :type is_shown_in_list: bool
+
         :param is_service_defined:
             The value to assign to the is_service_defined property of this CustomPropertySummary.
         :type is_service_defined: bool
@@ -154,6 +158,7 @@ class CustomPropertySummary(object):
             'is_multi_valued': 'bool',
             'is_hidden': 'bool',
             'is_editable': 'bool',
+            'is_shown_in_list': 'bool',
             'is_service_defined': 'bool',
             'is_hidden_in_search': 'bool',
             'time_created': 'datetime',
@@ -174,6 +179,7 @@ class CustomPropertySummary(object):
             'is_multi_valued': 'isMultiValued',
             'is_hidden': 'isHidden',
             'is_editable': 'isEditable',
+            'is_shown_in_list': 'isShownInList',
             'is_service_defined': 'isServiceDefined',
             'is_hidden_in_search': 'isHiddenInSearch',
             'time_created': 'timeCreated',
@@ -193,6 +199,7 @@ class CustomPropertySummary(object):
         self._is_multi_valued = None
         self._is_hidden = None
         self._is_editable = None
+        self._is_shown_in_list = None
         self._is_service_defined = None
         self._is_hidden_in_search = None
         self._time_created = None
@@ -446,6 +453,30 @@ class CustomPropertySummary(object):
         :type: bool
         """
         self._is_editable = is_editable
+
+    @property
+    def is_shown_in_list(self):
+        """
+        Gets the is_shown_in_list of this CustomPropertySummary.
+        If this field is displayed in a list view of applicable objects.
+
+
+        :return: The is_shown_in_list of this CustomPropertySummary.
+        :rtype: bool
+        """
+        return self._is_shown_in_list
+
+    @is_shown_in_list.setter
+    def is_shown_in_list(self, is_shown_in_list):
+        """
+        Sets the is_shown_in_list of this CustomPropertySummary.
+        If this field is displayed in a list view of applicable objects.
+
+
+        :param is_shown_in_list: The is_shown_in_list of this CustomPropertySummary.
+        :type: bool
+        """
+        self._is_shown_in_list = is_shown_in_list
 
     @property
     def is_service_defined(self):

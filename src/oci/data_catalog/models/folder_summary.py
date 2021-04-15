@@ -62,6 +62,10 @@ class FolderSummary(object):
             The value to assign to the display_name property of this FolderSummary.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this FolderSummary.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this FolderSummary.
         :type description: str
@@ -104,6 +108,7 @@ class FolderSummary(object):
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'data_asset_key': 'str',
             'parent_folder_key': 'str',
@@ -118,6 +123,7 @@ class FolderSummary(object):
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'data_asset_key': 'dataAssetKey',
             'parent_folder_key': 'parentFolderKey',
@@ -131,6 +137,7 @@ class FolderSummary(object):
 
         self._key = None
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._data_asset_key = None
         self._parent_folder_key = None
@@ -190,6 +197,30 @@ class FolderSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this FolderSummary.
+        Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this FolderSummary.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this FolderSummary.
+        Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this FolderSummary.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):

@@ -434,7 +434,7 @@ class Database(object):
     def pdb_name(self):
         """
         Gets the pdb_name of this Database.
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 
 
         :return: The pdb_name of this Database.
@@ -446,7 +446,7 @@ class Database(object):
     def pdb_name(self, pdb_name):
         """
         Sets the pdb_name of this Database.
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 
 
         :param pdb_name: The pdb_name of this Database.

@@ -5292,6 +5292,47 @@ def test_search_criteria(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_suggest_matches(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'SuggestMatches'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'SuggestMatches')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='SuggestMatches')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.suggest_matches(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                input_text=request.pop(util.camelize('inputText')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'SuggestMatches',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'suggestResults',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_test_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'TestConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

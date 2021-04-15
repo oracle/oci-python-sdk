@@ -38,6 +38,10 @@ class CreateFolderDetails(object):
             The value to assign to the display_name property of this CreateFolderDetails.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this CreateFolderDetails.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this CreateFolderDetails.
         :type description: str
@@ -70,6 +74,7 @@ class CreateFolderDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))',
@@ -81,6 +86,7 @@ class CreateFolderDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
@@ -91,6 +97,7 @@ class CreateFolderDetails(object):
         }
 
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._custom_property_members = None
         self._properties = None
@@ -124,6 +131,30 @@ class CreateFolderDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this CreateFolderDetails.
+        Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this CreateFolderDetails.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this CreateFolderDetails.
+        Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this CreateFolderDetails.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):

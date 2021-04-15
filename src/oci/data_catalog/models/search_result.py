@@ -15,6 +15,38 @@ class SearchResult(object):
     for each object along with other contextual information like the data asset root, folder, or entity parents.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchResult.
+    #: This constant has a value of "MOVING"
+    LIFECYCLE_STATE_MOVING = "MOVING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SearchResult object with values from keyword arguments.
@@ -124,6 +156,16 @@ class SearchResult(object):
             The value to assign to the path property of this SearchResult.
         :type path: str
 
+        :param business_name:
+            The value to assign to the business_name property of this SearchResult.
+        :type business_name: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this SearchResult.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
         :param expression:
             The value to assign to the expression property of this SearchResult.
         :type expression: str
@@ -160,6 +202,8 @@ class SearchResult(object):
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'path': 'str',
+            'business_name': 'str',
+            'lifecycle_state': 'str',
             'expression': 'str',
             'custom_properties': 'list[FacetedSearchCustomProperty]'
         }
@@ -191,6 +235,8 @@ class SearchResult(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'path': 'path',
+            'business_name': 'businessName',
+            'lifecycle_state': 'lifecycleState',
             'expression': 'expression',
             'custom_properties': 'customProperties'
         }
@@ -221,6 +267,8 @@ class SearchResult(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._path = None
+        self._business_name = None
+        self._lifecycle_state = None
         self._expression = None
         self._custom_properties = None
 
@@ -859,6 +907,60 @@ class SearchResult(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this SearchResult.
+        Optional user friendly business name of the data object. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this SearchResult.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this SearchResult.
+        Optional user friendly business name of the data object. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this SearchResult.
+        :type: str
+        """
+        self._business_name = business_name
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this SearchResult.
+        The current state of the data object.
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this SearchResult.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this SearchResult.
+        The current state of the data object.
+
+
+        :param lifecycle_state: The lifecycle_state of this SearchResult.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     @property
     def expression(self):

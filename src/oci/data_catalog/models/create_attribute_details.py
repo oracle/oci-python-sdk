@@ -22,6 +22,10 @@ class CreateAttributeDetails(object):
             The value to assign to the display_name property of this CreateAttributeDetails.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this CreateAttributeDetails.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this CreateAttributeDetails.
         :type description: str
@@ -85,6 +89,7 @@ class CreateAttributeDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'external_data_type': 'str',
             'is_incremental_data': 'bool',
@@ -104,6 +109,7 @@ class CreateAttributeDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'external_data_type': 'externalDataType',
             'is_incremental_data': 'isIncrementalData',
@@ -122,6 +128,7 @@ class CreateAttributeDetails(object):
         }
 
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._external_data_type = None
         self._is_incremental_data = None
@@ -163,6 +170,30 @@ class CreateAttributeDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this CreateAttributeDetails.
+        Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this CreateAttributeDetails.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this CreateAttributeDetails.
+        Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this CreateAttributeDetails.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):

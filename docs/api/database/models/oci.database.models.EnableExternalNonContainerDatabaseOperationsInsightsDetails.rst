@@ -1,0 +1,11 @@
+EnableExternalNonContainerDatabaseOperationsInsightsDetails
+===========================================================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: EnableExternalNonContainerDatabaseOperationsInsightsDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
