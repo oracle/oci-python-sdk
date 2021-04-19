@@ -4,12 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.36.1 - TBD
+2.37.0 - 2020-04-20
 ====================
 
 Added
 -----
-* TBD
+* Support for opting in/out of live migration on instances in the Compute service
+* Support for enabling/disabling Operations Insights on external non-container and external pluggable databases in the Database service
+* Support for a GraphStudio URL as a connection URL on databases in the Database service
+* Support for adding customer contacts on autonomous databases in the Database service
+* Support for name annotations on harvested objects in the Data Catalog service
+
+Changed
+-------
+* If retries are enabled, the SDK will now retry on status 409/IncorrectState. It will not retry on status 501.
+
+Breaking
+--------
+* Bumped cryptography version to 3.3.2 to address security vulnerability https://github.com/oracle/oci-python-sdk/pull/322
 
 ====================
 2.36.0 - 2020-04-13
