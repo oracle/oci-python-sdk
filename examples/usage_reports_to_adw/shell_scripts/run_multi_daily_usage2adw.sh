@@ -16,8 +16,8 @@
 
 # Env Variables based on yum instant client
 export CLIENT_HOME=/usr/lib/oracle/current/client64
-export LD_LIBRARY_PATH=$CLIENT_HOME/lib
-export PATH=$PATH:$CLIENT_HOME/bin
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$CLIENT_HOME/lib:$CLIENT_HOME
+export PATH=$PATH:$CLIENT_HOME/bin:$CLIENT_HOME
 
 # App dir
 export TNS_ADMIN=$HOME/ADWCUSG
@@ -43,16 +43,28 @@ mkdir -p ${REPORT_DIR}
 run_report()
 {
     NAME=$1
+    export TENANT="-t $NAME"
     if [ -z "$NAME" ]
     then
         exit 1
+    fi
+
+    if [ "${1}" = "local" ]; then
+        export TENANT="-ip"
+    fi
+
+    if [ -z "${2}" ]
+    then
+        TAG=$TAG_SPECIAL
+    else
+        TAG=$2
     fi
 
     DIR=${REPORT_DIR}/$NAME
     OUTPUT_FILE=${DIR}/${DATE}_${NAME}.txt
     mkdir -p $DIR
     echo "Running $NAME... to $OUTPUT_FILE "
-    python3 $APPDIR/usage2adw.py -t $NAME -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG_SPECIAL}" > $OUTPUT_FILE
+    python3 $APPDIR/usage2adw.py $TENANT -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG}" |tee -a $OUTPUT_FILE
     grep -i "Error" $OUTPUT_FILE
 
     ERROR=""
@@ -70,7 +82,8 @@ run_report()
 ##################################
 echo "Start running at `date`..."
 
-run_report tenant_name_1 
+run_report local 
+run_report tenant_name_1 tagspacial
 run_report tenant_name_2 
 
 echo "Completed at `date`.."
