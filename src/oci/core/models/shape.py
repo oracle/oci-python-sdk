@@ -89,6 +89,10 @@ class Shape(object):
             The value to assign to the local_disk_description property of this Shape.
         :type local_disk_description: str
 
+        :param is_live_migration_supported:
+            The value to assign to the is_live_migration_supported property of this Shape.
+        :type is_live_migration_supported: bool
+
         :param ocpu_options:
             The value to assign to the ocpu_options property of this Shape.
         :type ocpu_options: oci.core.models.ShapeOcpuOptions
@@ -120,6 +124,7 @@ class Shape(object):
             'local_disks': 'int',
             'local_disks_total_size_in_gbs': 'float',
             'local_disk_description': 'str',
+            'is_live_migration_supported': 'bool',
             'ocpu_options': 'ShapeOcpuOptions',
             'memory_options': 'ShapeMemoryOptions',
             'networking_bandwidth_options': 'ShapeNetworkingBandwidthOptions',
@@ -140,6 +145,7 @@ class Shape(object):
             'local_disks': 'localDisks',
             'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs',
             'local_disk_description': 'localDiskDescription',
+            'is_live_migration_supported': 'isLiveMigrationSupported',
             'ocpu_options': 'ocpuOptions',
             'memory_options': 'memoryOptions',
             'networking_bandwidth_options': 'networkingBandwidthOptions',
@@ -159,6 +165,7 @@ class Shape(object):
         self._local_disks = None
         self._local_disks_total_size_in_gbs = None
         self._local_disk_description = None
+        self._is_live_migration_supported = None
         self._ocpu_options = None
         self._memory_options = None
         self._networking_bandwidth_options = None
@@ -497,6 +504,30 @@ class Shape(object):
         :type: str
         """
         self._local_disk_description = local_disk_description
+
+    @property
+    def is_live_migration_supported(self):
+        """
+        Gets the is_live_migration_supported of this Shape.
+        Whether live migration is supported for this shape.
+
+
+        :return: The is_live_migration_supported of this Shape.
+        :rtype: bool
+        """
+        return self._is_live_migration_supported
+
+    @is_live_migration_supported.setter
+    def is_live_migration_supported(self, is_live_migration_supported):
+        """
+        Sets the is_live_migration_supported of this Shape.
+        Whether live migration is supported for this shape.
+
+
+        :param is_live_migration_supported: The is_live_migration_supported of this Shape.
+        :type: bool
+        """
+        self._is_live_migration_supported = is_live_migration_supported
 
     @property
     def ocpu_options(self):

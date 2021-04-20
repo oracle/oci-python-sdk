@@ -60,6 +60,10 @@ class EntitySummary(object):
             The value to assign to the display_name property of this EntitySummary.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this EntitySummary.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this EntitySummary.
         :type description: str
@@ -83,6 +87,10 @@ class EntitySummary(object):
         :param pattern_key:
             The value to assign to the pattern_key property of this EntitySummary.
         :type pattern_key: str
+
+        :param type_key:
+            The value to assign to the type_key property of this EntitySummary.
+        :type type_key: str
 
         :param realized_expression:
             The value to assign to the realized_expression property of this EntitySummary.
@@ -118,12 +126,14 @@ class EntitySummary(object):
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'data_asset_key': 'str',
             'folder_key': 'str',
             'folder_name': 'str',
             'external_key': 'str',
             'pattern_key': 'str',
+            'type_key': 'str',
             'realized_expression': 'str',
             'path': 'str',
             'time_created': 'datetime',
@@ -136,12 +146,14 @@ class EntitySummary(object):
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'data_asset_key': 'dataAssetKey',
             'folder_key': 'folderKey',
             'folder_name': 'folderName',
             'external_key': 'externalKey',
             'pattern_key': 'patternKey',
+            'type_key': 'typeKey',
             'realized_expression': 'realizedExpression',
             'path': 'path',
             'time_created': 'timeCreated',
@@ -153,12 +165,14 @@ class EntitySummary(object):
 
         self._key = None
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._data_asset_key = None
         self._folder_key = None
         self._folder_name = None
         self._external_key = None
         self._pattern_key = None
+        self._type_key = None
         self._realized_expression = None
         self._path = None
         self._time_created = None
@@ -216,6 +230,30 @@ class EntitySummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this EntitySummary.
+        Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this EntitySummary.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this EntitySummary.
+        Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this EntitySummary.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):
@@ -360,6 +398,30 @@ class EntitySummary(object):
         :type: str
         """
         self._pattern_key = pattern_key
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this EntitySummary.
+        The type of data entity object. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this EntitySummary.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this EntitySummary.
+        The type of data entity object. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this EntitySummary.
+        :type: str
+        """
+        self._type_key = type_key
 
     @property
     def realized_expression(self):

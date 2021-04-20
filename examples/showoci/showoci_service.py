@@ -134,7 +134,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.34.0"
+    oci_compatible_version = "2.36.0"
 
     ##########################################################################
     # Global Constants
@@ -1953,8 +1953,6 @@ class ShowOCIService(object):
                            'display_name': str(vcn.display_name),
                            'cidr_block': str(vcn.cidr_block),
                            'cidr_blocks': vcn.cidr_blocks,
-                           'ipv6_cidr_block': str(vcn.ipv6_cidr_block),
-                           'ipv6_public_cidr_block': str(vcn.ipv6_public_cidr_block),
                            'time_created': str(vcn.time_created),
                            'vcn_domain_name': str(vcn.vcn_domain_name),
                            'compartment_name': str(compartment['name']),
@@ -2151,6 +2149,8 @@ class ShowOCIService(object):
                            'is_cross_tenancy_peering': str(lpg.is_cross_tenancy_peering),
                            'peer_advertised_cidr_details': lpg.peer_advertised_cidr_details,
                            'route_table_id': str(lpg.route_table_id),
+                           'peer_id': str(lpg.peer_id),
+                           'peering_status_details': str(lpg.peering_status_details),
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if lpg.defined_tags is None else lpg.defined_tags,

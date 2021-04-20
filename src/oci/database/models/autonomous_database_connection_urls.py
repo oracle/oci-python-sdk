@@ -34,22 +34,29 @@ class AutonomousDatabaseConnectionUrls(object):
             The value to assign to the machine_learning_user_management_url property of this AutonomousDatabaseConnectionUrls.
         :type machine_learning_user_management_url: str
 
+        :param graph_studio_url:
+            The value to assign to the graph_studio_url property of this AutonomousDatabaseConnectionUrls.
+        :type graph_studio_url: str
+
         """
         self.swagger_types = {
             'sql_dev_web_url': 'str',
             'apex_url': 'str',
-            'machine_learning_user_management_url': 'str'
+            'machine_learning_user_management_url': 'str',
+            'graph_studio_url': 'str'
         }
 
         self.attribute_map = {
             'sql_dev_web_url': 'sqlDevWebUrl',
             'apex_url': 'apexUrl',
-            'machine_learning_user_management_url': 'machineLearningUserManagementUrl'
+            'machine_learning_user_management_url': 'machineLearningUserManagementUrl',
+            'graph_studio_url': 'graphStudioUrl'
         }
 
         self._sql_dev_web_url = None
         self._apex_url = None
         self._machine_learning_user_management_url = None
+        self._graph_studio_url = None
 
     @property
     def sql_dev_web_url(self):
@@ -122,6 +129,30 @@ class AutonomousDatabaseConnectionUrls(object):
         :type: str
         """
         self._machine_learning_user_management_url = machine_learning_user_management_url
+
+    @property
+    def graph_studio_url(self):
+        """
+        Gets the graph_studio_url of this AutonomousDatabaseConnectionUrls.
+        The URL of the Graph Studio for the Autonomous Database.
+
+
+        :return: The graph_studio_url of this AutonomousDatabaseConnectionUrls.
+        :rtype: str
+        """
+        return self._graph_studio_url
+
+    @graph_studio_url.setter
+    def graph_studio_url(self, graph_studio_url):
+        """
+        Sets the graph_studio_url of this AutonomousDatabaseConnectionUrls.
+        The URL of the Graph Studio for the Autonomous Database.
+
+
+        :param graph_studio_url: The graph_studio_url of this AutonomousDatabaseConnectionUrls.
+        :type: str
+        """
+        self._graph_studio_url = graph_studio_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

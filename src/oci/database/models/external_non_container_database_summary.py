@@ -63,6 +63,10 @@ class ExternalNonContainerDatabaseSummary(object):
         Initializes a new ExternalNonContainerDatabaseSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param operations_insights_config:
+            The value to assign to the operations_insights_config property of this ExternalNonContainerDatabaseSummary.
+        :type operations_insights_config: oci.database.models.OperationsInsightsConfig
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ExternalNonContainerDatabaseSummary.
         :type compartment_id: str
@@ -137,6 +141,7 @@ class ExternalNonContainerDatabaseSummary(object):
 
         """
         self.swagger_types = {
+            'operations_insights_config': 'OperationsInsightsConfig',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -157,6 +162,7 @@ class ExternalNonContainerDatabaseSummary(object):
         }
 
         self.attribute_map = {
+            'operations_insights_config': 'operationsInsightsConfig',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -176,6 +182,7 @@ class ExternalNonContainerDatabaseSummary(object):
             'database_management_config': 'databaseManagementConfig'
         }
 
+        self._operations_insights_config = None
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -193,6 +200,26 @@ class ExternalNonContainerDatabaseSummary(object):
         self._ncharacter_set = None
         self._db_packs = None
         self._database_management_config = None
+
+    @property
+    def operations_insights_config(self):
+        """
+        Gets the operations_insights_config of this ExternalNonContainerDatabaseSummary.
+
+        :return: The operations_insights_config of this ExternalNonContainerDatabaseSummary.
+        :rtype: oci.database.models.OperationsInsightsConfig
+        """
+        return self._operations_insights_config
+
+    @operations_insights_config.setter
+    def operations_insights_config(self, operations_insights_config):
+        """
+        Sets the operations_insights_config of this ExternalNonContainerDatabaseSummary.
+
+        :param operations_insights_config: The operations_insights_config of this ExternalNonContainerDatabaseSummary.
+        :type: oci.database.models.OperationsInsightsConfig
+        """
+        self._operations_insights_config = operations_insights_config
 
     @property
     def compartment_id(self):

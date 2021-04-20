@@ -40,5 +40,6 @@ The default retry strategy vended by the SDK has the following attributes:
 * Retries on the following exception types:
 
     * Timeouts and connection errors
+    * HTTP 409 (IncorrectState)
     * HTTP 429s (throttles)
-    * HTTP 5xx (server errors)
+    * HTTP 5xx (server errors), except 501

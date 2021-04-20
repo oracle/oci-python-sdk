@@ -38,6 +38,10 @@ class CreateEntityDetails(object):
             The value to assign to the display_name property of this CreateEntityDetails.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this CreateEntityDetails.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this CreateEntityDetails.
         :type description: str
@@ -86,6 +90,7 @@ class CreateEntityDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'time_external': 'datetime',
             'is_logical': 'bool',
@@ -101,6 +106,7 @@ class CreateEntityDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'time_external': 'timeExternal',
             'is_logical': 'isLogical',
@@ -115,6 +121,7 @@ class CreateEntityDetails(object):
         }
 
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._time_external = None
         self._is_logical = None
@@ -152,6 +159,30 @@ class CreateEntityDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this CreateEntityDetails.
+        Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this CreateEntityDetails.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this CreateEntityDetails.
+        Optional user friendly business name of the data entity. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this CreateEntityDetails.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):

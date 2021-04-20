@@ -71,6 +71,10 @@ class CreateCustomPropertyDetails(object):
             The value to assign to the is_editable property of this CreateCustomPropertyDetails.
         :type is_editable: bool
 
+        :param is_shown_in_list:
+            The value to assign to the is_shown_in_list property of this CreateCustomPropertyDetails.
+        :type is_shown_in_list: bool
+
         :param is_hidden_in_search:
             The value to assign to the is_hidden_in_search property of this CreateCustomPropertyDetails.
         :type is_hidden_in_search: bool
@@ -93,6 +97,7 @@ class CreateCustomPropertyDetails(object):
             'is_multi_valued': 'bool',
             'is_hidden': 'bool',
             'is_editable': 'bool',
+            'is_shown_in_list': 'bool',
             'is_hidden_in_search': 'bool',
             'allowed_values': 'list[str]',
             'properties': 'dict(str, dict(str, str))'
@@ -107,6 +112,7 @@ class CreateCustomPropertyDetails(object):
             'is_multi_valued': 'isMultiValued',
             'is_hidden': 'isHidden',
             'is_editable': 'isEditable',
+            'is_shown_in_list': 'isShownInList',
             'is_hidden_in_search': 'isHiddenInSearch',
             'allowed_values': 'allowedValues',
             'properties': 'properties'
@@ -120,6 +126,7 @@ class CreateCustomPropertyDetails(object):
         self._is_multi_valued = None
         self._is_hidden = None
         self._is_editable = None
+        self._is_shown_in_list = None
         self._is_hidden_in_search = None
         self._allowed_values = None
         self._properties = None
@@ -325,6 +332,30 @@ class CreateCustomPropertyDetails(object):
         :type: bool
         """
         self._is_editable = is_editable
+
+    @property
+    def is_shown_in_list(self):
+        """
+        Gets the is_shown_in_list of this CreateCustomPropertyDetails.
+        If this field is displayed in a list view of applicable objects.
+
+
+        :return: The is_shown_in_list of this CreateCustomPropertyDetails.
+        :rtype: bool
+        """
+        return self._is_shown_in_list
+
+    @is_shown_in_list.setter
+    def is_shown_in_list(self, is_shown_in_list):
+        """
+        Sets the is_shown_in_list of this CreateCustomPropertyDetails.
+        If this field is displayed in a list view of applicable objects.
+
+
+        :param is_shown_in_list: The is_shown_in_list of this CreateCustomPropertyDetails.
+        :type: bool
+        """
+        self._is_shown_in_list = is_shown_in_list
 
     @property
     def is_hidden_in_search(self):

@@ -7474,6 +7474,14 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str business_name: (optional)
+            A filter to return only resources that match the entire business name given. The match is not case sensitive.
+
+        :param str display_or_business_name_contains: (optional)
+            A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+            For Example : /folders?displayOrBusinessNameContains=Cu.*
+            The above would match all folders with display name or business name that starts with \"Cu\".
+
         :param str display_name_contains: (optional)
             A filter to return only resources that match display name pattern given. The match is not case sensitive.
             For Example : /folders?displayNameContains=Cu.*
@@ -7572,6 +7580,8 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "business_name",
+            "display_or_business_name_contains",
             "display_name_contains",
             "lifecycle_state",
             "time_created",
@@ -7642,6 +7652,8 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "businessName": kwargs.get("business_name", missing),
+            "displayOrBusinessNameContains": kwargs.get("display_or_business_name_contains", missing),
             "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
@@ -8908,6 +8920,17 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str business_name: (optional)
+            A filter to return only resources that match the entire business name given. The match is not case sensitive.
+
+        :param str display_or_business_name_contains: (optional)
+            A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+            For Example : /folders?displayOrBusinessNameContains=Cu.*
+            The above would match all folders with display name or business name that starts with \"Cu\".
+
+        :param str type_key: (optional)
+            The key of the object type.
+
         :param str display_name_contains: (optional)
             A filter to return only resources that match display name pattern given. The match is not case sensitive.
             For Example : /folders?displayNameContains=Cu.*
@@ -9013,6 +9036,9 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "business_name",
+            "display_or_business_name_contains",
+            "type_key",
             "display_name_contains",
             "lifecycle_state",
             "time_created",
@@ -9090,6 +9116,9 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "businessName": kwargs.get("business_name", missing),
+            "displayOrBusinessNameContains": kwargs.get("display_or_business_name_contains", missing),
+            "typeKey": kwargs.get("type_key", missing),
             "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
@@ -9523,6 +9552,14 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str business_name: (optional)
+            A filter to return only resources that match the entire business name given. The match is not case sensitive.
+
+        :param str display_or_business_name_contains: (optional)
+            A filter to return only resources that match display name or business name pattern given. The match is not case sensitive.
+            For Example : /folders?displayOrBusinessNameContains=Cu.*
+            The above would match all folders with display name or business name that starts with \"Cu\".
+
         :param str display_name_contains: (optional)
             A filter to return only resources that match display name pattern given. The match is not case sensitive.
             For Example : /folders?displayNameContains=Cu.*
@@ -9611,6 +9648,8 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "business_name",
+            "display_or_business_name_contains",
             "display_name_contains",
             "lifecycle_state",
             "parent_folder_key",
@@ -9683,6 +9722,8 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "businessName": kwargs.get("business_name", missing),
+            "displayOrBusinessNameContains": kwargs.get("display_or_business_name_contains", missing),
             "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "parentFolderKey": kwargs.get("parent_folder_key", missing),
@@ -10834,6 +10875,9 @@ class DataCatalogClient(object):
         :param str job_definition_key: (optional)
             Unique job definition key.
 
+        :param str data_asset_key: (optional)
+            Unique data asset key.
+
         :param str schedule_cron_expression: (optional)
             Schedule specified in the cron expression format that has seven fields for second, minute, hour, day-of-month, month, day-of-week, year.
             It can also include special characters like * for all and ? for any. There are also pre-defined schedules that can be specified using
@@ -10919,6 +10963,7 @@ class DataCatalogClient(object):
             "updated_by_id",
             "job_type",
             "job_definition_key",
+            "data_asset_key",
             "schedule_cron_expression",
             "time_schedule_begin",
             "time_schedule_end",
@@ -11001,6 +11046,7 @@ class DataCatalogClient(object):
             "updatedById": kwargs.get("updated_by_id", missing),
             "jobType": kwargs.get("job_type", missing),
             "jobDefinitionKey": kwargs.get("job_definition_key", missing),
+            "dataAssetKey": kwargs.get("data_asset_key", missing),
             "scheduleCronExpression": kwargs.get("schedule_cron_expression", missing),
             "timeScheduleBegin": kwargs.get("time_schedule_begin", missing),
             "timeScheduleEnd": kwargs.get("time_schedule_end", missing),
@@ -13355,6 +13401,103 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=kwargs.get('search_criteria_details'),
                 response_type="SearchResultCollection")
+
+    def suggest_matches(self, catalog_id, input_text, **kwargs):
+        """
+        Returns a list of potential string matches for a given input string.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str input_text: (required)
+            Text input string used for computing potential matching suggestions.
+
+        :param str timeout: (optional)
+            A search timeout string (for example, timeout=4000ms), bounding the search request to be executed within the
+            specified time value and bail with the hits accumulated up to that point when expired.
+            Defaults to no timeout.
+
+        :param int limit: (optional)
+            Limit for the list of potential matches returned from the Suggest API. If not specified, will default to 10.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.SuggestResults`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/suggest_matches.py.html>`__ to see an example of how to use suggest_matches API.
+        """
+        resource_path = "/catalogs/{catalogId}/actions/suggest"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "timeout",
+            "limit",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "suggest_matches got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "timeout": kwargs.get("timeout", missing),
+            "inputText": input_text,
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SuggestResults")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SuggestResults")
 
     def test_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """

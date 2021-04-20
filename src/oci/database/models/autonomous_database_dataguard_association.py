@@ -287,7 +287,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def role(self):
         """
         **[Required]** Gets the role of this AutonomousDatabaseDataguardAssociation.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -302,7 +302,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def role(self, role):
         """
         Sets the role of this AutonomousDatabaseDataguardAssociation.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousDatabaseDataguardAssociation.
@@ -371,7 +371,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_role(self):
         """
         **[Required]** Gets the peer_role of this AutonomousDatabaseDataguardAssociation.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -386,7 +386,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_role(self, peer_role):
         """
         Sets the peer_role of this AutonomousDatabaseDataguardAssociation.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
 
 
         :param peer_role: The peer_role of this AutonomousDatabaseDataguardAssociation.

@@ -393,7 +393,7 @@ class ShowOCIOutput(object):
         return val
 
     ##########################################################################
-    # Print Network VCN Local Peering
+    # Print Network VCN subnets
     ##########################################################################
 
     def __print_core_network_vcn_subnet(self, subnets, vcn_compartment):
@@ -542,7 +542,7 @@ class ShowOCIOutput(object):
 
                 if 'local_peering' in vcn['data']:
                     for lpeer in vcn['data']['local_peering']:
-                        print(self.tabs + "Local Peer  : " + lpeer['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, lpeer['compartment_name']))
+                        print(self.tabs + "Local Peer  : " + lpeer['name'] + " ---> " + lpeer['peer_name'] + self.__print_core_network_vcn_compartment(vcn_compartment, lpeer['compartment_name']))
 
                 if 'subnets' in vcn['data']:
                     self.__print_core_network_vcn_subnet(vcn['data']['subnets'], vcn_compartment)

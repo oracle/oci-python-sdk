@@ -188,6 +188,10 @@ class Job(object):
             The value to assign to the job_definition_name property of this Job.
         :type job_definition_name: str
 
+        :param data_asset_key:
+            The value to assign to the data_asset_key property of this Job.
+        :type data_asset_key: str
+
         :param error_code:
             The value to assign to the error_code property of this Job.
         :type error_code: str
@@ -222,6 +226,7 @@ class Job(object):
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'job_definition_name': 'str',
+            'data_asset_key': 'str',
             'error_code': 'str',
             'error_message': 'str',
             'uri': 'str'
@@ -248,6 +253,7 @@ class Job(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'job_definition_name': 'jobDefinitionName',
+            'data_asset_key': 'dataAssetKey',
             'error_code': 'errorCode',
             'error_message': 'errorMessage',
             'uri': 'uri'
@@ -273,6 +279,7 @@ class Job(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._job_definition_name = None
+        self._data_asset_key = None
         self._error_code = None
         self._error_message = None
         self._uri = None
@@ -806,6 +813,30 @@ class Job(object):
         :type: str
         """
         self._job_definition_name = job_definition_name
+
+    @property
+    def data_asset_key(self):
+        """
+        Gets the data_asset_key of this Job.
+        Unique key of the data asset to which this job applies, if the job involves a data asset.
+
+
+        :return: The data_asset_key of this Job.
+        :rtype: str
+        """
+        return self._data_asset_key
+
+    @data_asset_key.setter
+    def data_asset_key(self, data_asset_key):
+        """
+        Sets the data_asset_key of this Job.
+        Unique key of the data asset to which this job applies, if the job involves a data asset.
+
+
+        :param data_asset_key: The data_asset_key of this Job.
+        :type: str
+        """
+        self._data_asset_key = data_asset_key
 
     @property
     def error_code(self):

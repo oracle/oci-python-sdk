@@ -170,6 +170,10 @@ class JobSummary(object):
             The value to assign to the job_definition_name property of this JobSummary.
         :type job_definition_name: str
 
+        :param data_asset_key:
+            The value to assign to the data_asset_key property of this JobSummary.
+        :type data_asset_key: str
+
         :param error_code:
             The value to assign to the error_code property of this JobSummary.
         :type error_code: str
@@ -202,6 +206,7 @@ class JobSummary(object):
             'execution_count': 'int',
             'time_of_latest_execution': 'datetime',
             'job_definition_name': 'str',
+            'data_asset_key': 'str',
             'error_code': 'str',
             'error_message': 'str',
             'executions': 'list[JobExecutionSummary]'
@@ -226,6 +231,7 @@ class JobSummary(object):
             'execution_count': 'executionCount',
             'time_of_latest_execution': 'timeOfLatestExecution',
             'job_definition_name': 'jobDefinitionName',
+            'data_asset_key': 'dataAssetKey',
             'error_code': 'errorCode',
             'error_message': 'errorMessage',
             'executions': 'executions'
@@ -249,6 +255,7 @@ class JobSummary(object):
         self._execution_count = None
         self._time_of_latest_execution = None
         self._job_definition_name = None
+        self._data_asset_key = None
         self._error_code = None
         self._error_message = None
         self._executions = None
@@ -722,6 +729,30 @@ class JobSummary(object):
         :type: str
         """
         self._job_definition_name = job_definition_name
+
+    @property
+    def data_asset_key(self):
+        """
+        Gets the data_asset_key of this JobSummary.
+        Unique key of the data asset to which this job applies, if the job involves a data asset.
+
+
+        :return: The data_asset_key of this JobSummary.
+        :rtype: str
+        """
+        return self._data_asset_key
+
+    @data_asset_key.setter
+    def data_asset_key(self, data_asset_key):
+        """
+        Sets the data_asset_key of this JobSummary.
+        Unique key of the data asset to which this job applies, if the job involves a data asset.
+
+
+        :param data_asset_key: The data_asset_key of this JobSummary.
+        :type: str
+        """
+        self._data_asset_key = data_asset_key
 
     @property
     def error_code(self):

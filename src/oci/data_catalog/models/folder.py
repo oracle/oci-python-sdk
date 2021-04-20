@@ -77,6 +77,10 @@ class Folder(object):
             The value to assign to the display_name property of this Folder.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this Folder.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this Folder.
         :type description: str
@@ -149,6 +153,7 @@ class Folder(object):
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'parent_folder_key': 'str',
             'path': 'str',
@@ -170,6 +175,7 @@ class Folder(object):
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'parent_folder_key': 'parentFolderKey',
             'path': 'path',
@@ -190,6 +196,7 @@ class Folder(object):
 
         self._key = None
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._parent_folder_key = None
         self._path = None
@@ -256,6 +263,30 @@ class Folder(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this Folder.
+        Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this Folder.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this Folder.
+        Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this Folder.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):
