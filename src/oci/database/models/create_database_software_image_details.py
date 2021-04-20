@@ -151,7 +151,7 @@ class CreateDatabaseSoftwareImageDetails(object):
     @property
     def database_version(self):
         """
-        **[Required]** Gets the database_version of this CreateDatabaseSoftwareImageDetails.
+        Gets the database_version of this CreateDatabaseSoftwareImageDetails.
         The database version with which the database software image is to be built.
 
 
@@ -263,7 +263,7 @@ class CreateDatabaseSoftwareImageDetails(object):
     @property
     def patch_set(self):
         """
-        **[Required]** Gets the patch_set of this CreateDatabaseSoftwareImageDetails.
+        Gets the patch_set of this CreateDatabaseSoftwareImageDetails.
         The PSU or PBP or Release Updates. To get a list of supported versions, use the :func:`list_db_versions` operation.
 
 

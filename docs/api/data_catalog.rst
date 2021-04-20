@@ -133,6 +133,8 @@ Data Catalog
     oci.data_catalog.models.SearchResultCollection
     oci.data_catalog.models.SearchTagSummary
     oci.data_catalog.models.SearchTermSummary
+    oci.data_catalog.models.SuggestListItem
+    oci.data_catalog.models.SuggestResults
     oci.data_catalog.models.Term
     oci.data_catalog.models.TermAssociatedObject
     oci.data_catalog.models.TermCollection

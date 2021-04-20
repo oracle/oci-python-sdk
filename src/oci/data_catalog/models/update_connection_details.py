@@ -191,7 +191,7 @@ class UpdateConnectionDetails(object):
         To determine the set of optional and required properties for a connection type, a query can be done
         on '/types?type=connection' that returns a collection of all connection types. The appropriate connection
         type, which will include definitions of all of it's properties, can be identified from this collection.
-        Example: `{\"encProperties\": { \"default\": { \"password\": \"pwd\"}}}`
+        Example: `{\"encProperties\": { \"default\": { \"password\": \"example-password\"}}}`
 
 
         :return: The enc_properties of this UpdateConnectionDetails.
@@ -210,7 +210,7 @@ class UpdateConnectionDetails(object):
         To determine the set of optional and required properties for a connection type, a query can be done
         on '/types?type=connection' that returns a collection of all connection types. The appropriate connection
         type, which will include definitions of all of it's properties, can be identified from this collection.
-        Example: `{\"encProperties\": { \"default\": { \"password\": \"pwd\"}}}`
+        Example: `{\"encProperties\": { \"default\": { \"password\": \"example-password\"}}}`
 
 
         :param enc_properties: The enc_properties of this UpdateConnectionDetails.

@@ -70,6 +70,10 @@ class AttributeSummary(object):
             The value to assign to the display_name property of this AttributeSummary.
         :type display_name: str
 
+        :param business_name:
+            The value to assign to the business_name property of this AttributeSummary.
+        :type business_name: str
+
         :param description:
             The value to assign to the description property of this AttributeSummary.
         :type description: str
@@ -144,6 +148,10 @@ class AttributeSummary(object):
             The value to assign to the path property of this AttributeSummary.
         :type path: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this AttributeSummary.
+        :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
+
         :param associated_rule_types:
             The value to assign to the associated_rule_types property of this AttributeSummary.
             Allowed values for items in this list are: "PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY", 'UNKNOWN_ENUM_VALUE'.
@@ -154,6 +162,7 @@ class AttributeSummary(object):
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
+            'business_name': 'str',
             'description': 'str',
             'entity_key': 'str',
             'external_key': 'str',
@@ -172,12 +181,14 @@ class AttributeSummary(object):
             'parent_attribute_key': 'str',
             'external_parent_attribute_key': 'str',
             'path': 'str',
+            'custom_property_members': 'list[CustomPropertyGetUsage]',
             'associated_rule_types': 'list[str]'
         }
 
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
+            'business_name': 'businessName',
             'description': 'description',
             'entity_key': 'entityKey',
             'external_key': 'externalKey',
@@ -196,11 +207,13 @@ class AttributeSummary(object):
             'parent_attribute_key': 'parentAttributeKey',
             'external_parent_attribute_key': 'externalParentAttributeKey',
             'path': 'path',
+            'custom_property_members': 'customPropertyMembers',
             'associated_rule_types': 'associatedRuleTypes'
         }
 
         self._key = None
         self._display_name = None
+        self._business_name = None
         self._description = None
         self._entity_key = None
         self._external_key = None
@@ -219,6 +232,7 @@ class AttributeSummary(object):
         self._parent_attribute_key = None
         self._external_parent_attribute_key = None
         self._path = None
+        self._custom_property_members = None
         self._associated_rule_types = None
 
     @property
@@ -270,6 +284,30 @@ class AttributeSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def business_name(self):
+        """
+        Gets the business_name of this AttributeSummary.
+        Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+
+
+        :return: The business_name of this AttributeSummary.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """
+        Sets the business_name of this AttributeSummary.
+        Optional user friendly business name of the attribute. If set, this supplements the harvested display name of the object.
+
+
+        :param business_name: The business_name of this AttributeSummary.
+        :type: str
+        """
+        self._business_name = business_name
 
     @property
     def description(self):
@@ -718,6 +756,30 @@ class AttributeSummary(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this AttributeSummary.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this AttributeSummary.
+        :rtype: list[oci.data_catalog.models.CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this AttributeSummary.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this AttributeSummary.
+        :type: list[oci.data_catalog.models.CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def associated_rule_types(self):

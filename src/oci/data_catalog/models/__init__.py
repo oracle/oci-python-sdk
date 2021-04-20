@@ -119,6 +119,8 @@ from .search_result import SearchResult
 from .search_result_collection import SearchResultCollection
 from .search_tag_summary import SearchTagSummary
 from .search_term_summary import SearchTermSummary
+from .suggest_list_item import SuggestListItem
+from .suggest_results import SuggestResults
 from .term import Term
 from .term_associated_object import TermAssociatedObject
 from .term_collection import TermCollection
@@ -272,6 +274,8 @@ data_catalog_type_mapping = {
     "SearchResultCollection": SearchResultCollection,
     "SearchTagSummary": SearchTagSummary,
     "SearchTermSummary": SearchTermSummary,
+    "SuggestListItem": SuggestListItem,
+    "SuggestResults": SuggestResults,
     "Term": Term,
     "TermAssociatedObject": TermAssociatedObject,
     "TermCollection": TermCollection,

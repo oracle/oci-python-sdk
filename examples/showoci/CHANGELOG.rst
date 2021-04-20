@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.04.20 - 21.04.20
+=====================
+* Remove ipv6 from vcn (Breaking)
+* Added peername to LPG
+
+=====================
 21.03.30 - 21.03.30
 =====================
 * Added Network load Balancer
