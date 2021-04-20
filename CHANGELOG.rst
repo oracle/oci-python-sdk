@@ -12,7 +12,7 @@ Added
 * TBD
 
 ====================
-2.37.0 - 2020-04-20
+2.37.0 - 2021-04-20
 ====================
 
 Added
@@ -32,7 +32,7 @@ Breaking
 * Bumped cryptography version to 3.3.2 to address security vulnerability https://github.com/oracle/oci-python-sdk/pull/322
 
 ====================
-2.36.0 - 2020-04-13
+2.36.0 - 2021-04-13
 ====================
 
 Added
@@ -82,7 +82,7 @@ Breaking changes
 * Value of attribute `model_type` in model `ConnectionDetails` in Data Integration service defaults to UNKNOWN_ENUM_VALUE when it receives an invalid value. In the earlier versions, this raises a ValueError
 
 ====================
-2.35.1 - 2020-04-06
+2.35.1 - 2021-04-06
 ====================
 
 Added
@@ -101,7 +101,7 @@ Added
 * Support for calculating content length of a non-resettable stream for binary uploads. A non-resettable stream will be buffered into memory to calculate the content length. A buffer_limit may be passed into the request to provide a buffer limit. The default buffer limit is 100 MiB. More documentation can be found here: https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/index.html
 
 ====================
-2.35.0 - 2020-03-30
+2.35.0 - 2021-03-30
 ====================
 
 Added
@@ -143,7 +143,7 @@ Breaking
 * Value of Enum attribute `operator` in Usage API service defaults to `UNKNOWN_ENUM_VALUE` when it receives an invalid value. In the earlier versions, this raises a `ValueError`
 
 ====================
-2.33.0 - 2020-03-16
+2.33.0 - 2021-03-16
 ====================
 
 Added
@@ -158,7 +158,7 @@ Breaking
 * Retries are now enabled on all operations performing binary data upload, except upload manager. The SDK used to explicitly override retry configuration on binary upload operations because of potential data corruption issue (https://github.com/oracle/oci-python-sdk/issues/203).
 
 ====================
-2.32.1 - 2020-03-09
+2.32.1 - 2021-03-09
 ====================
 
 Added
