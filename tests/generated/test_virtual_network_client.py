@@ -7903,7 +7903,6 @@ def test_list_vlans(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_vlans(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7912,7 +7911,6 @@ def test_list_vlans(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_vlans(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -7923,7 +7921,6 @@ def test_list_vlans(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_vlans(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

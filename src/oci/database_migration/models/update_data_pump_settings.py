@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataPumpSettings(object):
     """
-    Optional settings for Datapump Export and Import jobs
+    Optional settings for Data Pump Export and Import jobs
     """
 
     #: A constant which can be used with the job_mode property of a UpdateDataPumpSettings.
@@ -86,8 +86,10 @@ class UpdateDataPumpSettings(object):
     def job_mode(self):
         """
         Gets the job_mode of this UpdateDataPumpSettings.
-        DataPump job mode.
-        Refer to docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-92C2CB46-8BC9-414D-B62E-79CD788C1E62__BABBDEHD
+        Data Pump job mode.
+        Refer to `Data Pump Export Modes `__
+
+        __ https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4
 
         Allowed values for this property are: "FULL", "SCHEMA", "TABLE", "TABLESPACE", "TRANSPORTABLE"
 
@@ -101,8 +103,10 @@ class UpdateDataPumpSettings(object):
     def job_mode(self, job_mode):
         """
         Sets the job_mode of this UpdateDataPumpSettings.
-        DataPump job mode.
-        Refer to docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-92C2CB46-8BC9-414D-B62E-79CD788C1E62__BABBDEHD
+        Data Pump job mode.
+        Refer to `Data Pump Export Modes `__
+
+        __ https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4
 
 
         :param job_mode: The job_mode of this UpdateDataPumpSettings.
@@ -140,9 +144,11 @@ class UpdateDataPumpSettings(object):
     def metadata_remaps(self):
         """
         Gets the metadata_remaps of this UpdateDataPumpSettings.
-        Defines remapping to be applied to objects as they are processed.
-        Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D.
+        Defines remappings to be applied to objects as they are processed.
+        Refer to `METADATA_REMAP Procedure `__
         If specified, the list will be replaced entirely. Empty list will remove stored Metadata Remap details.
+
+        __ https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D
 
 
         :return: The metadata_remaps of this UpdateDataPumpSettings.
@@ -154,9 +160,11 @@ class UpdateDataPumpSettings(object):
     def metadata_remaps(self, metadata_remaps):
         """
         Sets the metadata_remaps of this UpdateDataPumpSettings.
-        Defines remapping to be applied to objects as they are processed.
-        Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D.
+        Defines remappings to be applied to objects as they are processed.
+        Refer to `METADATA_REMAP Procedure `__
         If specified, the list will be replaced entirely. Empty list will remove stored Metadata Remap details.
+
+        __ https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D
 
 
         :param metadata_remaps: The metadata_remaps of this UpdateDataPumpSettings.

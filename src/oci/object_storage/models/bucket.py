@@ -54,6 +54,14 @@ class Bucket(object):
     #: This constant has a value of "Disabled"
     VERSIONING_DISABLED = "Disabled"
 
+    #: A constant which can be used with the auto_tiering property of a Bucket.
+    #: This constant has a value of "Disabled"
+    AUTO_TIERING_DISABLED = "Disabled"
+
+    #: A constant which can be used with the auto_tiering property of a Bucket.
+    #: This constant has a value of "InfrequentAccess"
+    AUTO_TIERING_INFREQUENT_ACCESS = "InfrequentAccess"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Bucket object with values from keyword arguments.
@@ -145,6 +153,12 @@ class Bucket(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type versioning: str
 
+        :param auto_tiering:
+            The value to assign to the auto_tiering property of this Bucket.
+            Allowed values for this property are: "Disabled", "InfrequentAccess", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type auto_tiering: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -166,7 +180,8 @@ class Bucket(object):
             'replication_enabled': 'bool',
             'is_read_only': 'bool',
             'id': 'str',
-            'versioning': 'str'
+            'versioning': 'str',
+            'auto_tiering': 'str'
         }
 
         self.attribute_map = {
@@ -189,7 +204,8 @@ class Bucket(object):
             'replication_enabled': 'replicationEnabled',
             'is_read_only': 'isReadOnly',
             'id': 'id',
-            'versioning': 'versioning'
+            'versioning': 'versioning',
+            'auto_tiering': 'autoTiering'
         }
 
         self._namespace = None
@@ -212,6 +228,7 @@ class Bucket(object):
         self._is_read_only = None
         self._id = None
         self._versioning = None
+        self._auto_tiering = None
 
     @property
     def namespace(self):
@@ -778,6 +795,40 @@ class Bucket(object):
         if not value_allowed_none_or_none_sentinel(versioning, allowed_values):
             versioning = 'UNKNOWN_ENUM_VALUE'
         self._versioning = versioning
+
+    @property
+    def auto_tiering(self):
+        """
+        Gets the auto_tiering of this Bucket.
+        The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default.
+        For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard'
+        and 'InfrequentAccess' tiers based on the access pattern of the objects.
+
+        Allowed values for this property are: "Disabled", "InfrequentAccess", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The auto_tiering of this Bucket.
+        :rtype: str
+        """
+        return self._auto_tiering
+
+    @auto_tiering.setter
+    def auto_tiering(self, auto_tiering):
+        """
+        Sets the auto_tiering of this Bucket.
+        The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default.
+        For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard'
+        and 'InfrequentAccess' tiers based on the access pattern of the objects.
+
+
+        :param auto_tiering: The auto_tiering of this Bucket.
+        :type: str
+        """
+        allowed_values = ["Disabled", "InfrequentAccess"]
+        if not value_allowed_none_or_none_sentinel(auto_tiering, allowed_values):
+            auto_tiering = 'UNKNOWN_ENUM_VALUE'
+        self._auto_tiering = auto_tiering
 
     def __repr__(self):
         return formatted_flat_dict(self)

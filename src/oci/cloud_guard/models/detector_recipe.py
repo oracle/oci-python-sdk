@@ -365,7 +365,7 @@ class DetectorRecipe(object):
     def detector_rules(self):
         """
         Gets the detector_rules of this DetectorRecipe.
-        List of detetor rules for the detector type for recipe
+        List of detector rules for the detector type for recipe - user input
 
 
         :return: The detector_rules of this DetectorRecipe.
@@ -377,7 +377,7 @@ class DetectorRecipe(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this DetectorRecipe.
-        List of detetor rules for the detector type for recipe
+        List of detector rules for the detector type for recipe - user input
 
 
         :param detector_rules: The detector_rules of this DetectorRecipe.
@@ -389,7 +389,7 @@ class DetectorRecipe(object):
     def effective_detector_rules(self):
         """
         Gets the effective_detector_rules of this DetectorRecipe.
-        List of detetor rules for the detector type for recipe
+        List of effective detector rules for the detector type for recipe after applying defaults
 
 
         :return: The effective_detector_rules of this DetectorRecipe.
@@ -401,7 +401,7 @@ class DetectorRecipe(object):
     def effective_detector_rules(self, effective_detector_rules):
         """
         Sets the effective_detector_rules of this DetectorRecipe.
-        List of detetor rules for the detector type for recipe
+        List of effective detector rules for the detector type for recipe after applying defaults
 
 
         :param effective_detector_rules: The effective_detector_rules of this DetectorRecipe.

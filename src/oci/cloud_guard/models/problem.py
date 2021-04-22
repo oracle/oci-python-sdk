@@ -138,6 +138,18 @@ class Problem(object):
             The value to assign to the target_id property of this Problem.
         :type target_id: str
 
+        :param additional_details:
+            The value to assign to the additional_details property of this Problem.
+        :type additional_details: dict(str, str)
+
+        :param description:
+            The value to assign to the description property of this Problem.
+        :type description: str
+
+        :param recommendation:
+            The value to assign to the recommendation property of this Problem.
+        :type recommendation: str
+
         :param comment:
             The value to assign to the comment property of this Problem.
         :type comment: str
@@ -160,6 +172,9 @@ class Problem(object):
             'lifecycle_detail': 'str',
             'detector_id': 'str',
             'target_id': 'str',
+            'additional_details': 'dict(str, str)',
+            'description': 'str',
+            'recommendation': 'str',
             'comment': 'str'
         }
 
@@ -180,6 +195,9 @@ class Problem(object):
             'lifecycle_detail': 'lifecycleDetail',
             'detector_id': 'detectorId',
             'target_id': 'targetId',
+            'additional_details': 'additionalDetails',
+            'description': 'description',
+            'recommendation': 'recommendation',
             'comment': 'comment'
         }
 
@@ -199,6 +217,9 @@ class Problem(object):
         self._lifecycle_detail = None
         self._detector_id = None
         self._target_id = None
+        self._additional_details = None
+        self._description = None
+        self._recommendation = None
         self._comment = None
 
     @property
@@ -608,6 +629,78 @@ class Problem(object):
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def additional_details(self):
+        """
+        Gets the additional_details of this Problem.
+        The additional details of the Problem
+
+
+        :return: The additional_details of this Problem.
+        :rtype: dict(str, str)
+        """
+        return self._additional_details
+
+    @additional_details.setter
+    def additional_details(self, additional_details):
+        """
+        Sets the additional_details of this Problem.
+        The additional details of the Problem
+
+
+        :param additional_details: The additional_details of this Problem.
+        :type: dict(str, str)
+        """
+        self._additional_details = additional_details
+
+    @property
+    def description(self):
+        """
+        Gets the description of this Problem.
+        Description of the problem
+
+
+        :return: The description of this Problem.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this Problem.
+        Description of the problem
+
+
+        :param description: The description of this Problem.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def recommendation(self):
+        """
+        Gets the recommendation of this Problem.
+        Recommendation for the problem
+
+
+        :return: The recommendation of this Problem.
+        :rtype: str
+        """
+        return self._recommendation
+
+    @recommendation.setter
+    def recommendation(self, recommendation):
+        """
+        Sets the recommendation of this Problem.
+        Recommendation for the problem
+
+
+        :param recommendation: The recommendation of this Problem.
+        :type: str
+        """
+        self._recommendation = recommendation
 
     @property
     def comment(self):

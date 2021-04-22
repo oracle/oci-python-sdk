@@ -84,6 +84,10 @@ class UpdateBucketDetails(object):
             Allowed values for this property are: "Enabled", "Suspended"
         :type versioning: str
 
+        :param auto_tiering:
+            The value to assign to the auto_tiering property of this UpdateBucketDetails.
+        :type auto_tiering: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -95,7 +99,8 @@ class UpdateBucketDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
-            'versioning': 'str'
+            'versioning': 'str',
+            'auto_tiering': 'str'
         }
 
         self.attribute_map = {
@@ -108,7 +113,8 @@ class UpdateBucketDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
-            'versioning': 'versioning'
+            'versioning': 'versioning',
+            'auto_tiering': 'autoTiering'
         }
 
         self._namespace = None
@@ -121,6 +127,7 @@ class UpdateBucketDetails(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._versioning = None
+        self._auto_tiering = None
 
     @property
     def namespace(self):
@@ -425,6 +432,34 @@ class UpdateBucketDetails(object):
                 .format(allowed_values)
             )
         self._versioning = versioning
+
+    @property
+    def auto_tiering(self):
+        """
+        Gets the auto_tiering of this UpdateBucketDetails.
+        The auto tiering status on the bucket. If in state `InfrequentAccess`, objects are transitioned
+        automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+        When auto tiering is `Disabled`, there will be no automatic transitions between storage tiers.
+
+
+        :return: The auto_tiering of this UpdateBucketDetails.
+        :rtype: str
+        """
+        return self._auto_tiering
+
+    @auto_tiering.setter
+    def auto_tiering(self, auto_tiering):
+        """
+        Sets the auto_tiering of this UpdateBucketDetails.
+        The auto tiering status on the bucket. If in state `InfrequentAccess`, objects are transitioned
+        automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
+        When auto tiering is `Disabled`, there will be no automatic transitions between storage tiers.
+
+
+        :param auto_tiering: The auto_tiering of this UpdateBucketDetails.
+        :type: str
+        """
+        self._auto_tiering = auto_tiering
 
     def __repr__(self):
         return formatted_flat_dict(self)

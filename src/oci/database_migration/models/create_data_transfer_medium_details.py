@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateDataTransferMediumDetails(object):
     """
     Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type
-    of medium details can be specified.
+    of data transfer medium can be specified.
     """
 
     def __init__(self, **kwargs):

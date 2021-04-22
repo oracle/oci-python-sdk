@@ -365,6 +365,7 @@ Core Services
     oci.core.models.UpdateBootVolumeKmsKeyDetails
     oci.core.models.UpdateByoipRangeDetails
     oci.core.models.UpdateClusterNetworkDetails
+    oci.core.models.UpdateClusterNetworkInstancePoolDetails
     oci.core.models.UpdateComputeCapacityReservationDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExtract(object):
     """
-    Parameters for Extract processes.
+    Parameters for GoldenGate Extract processes.
     """
 
     #: A constant which can be used with the performance_profile property of a CreateExtract.

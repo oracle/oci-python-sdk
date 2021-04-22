@@ -11,7 +11,9 @@ from oci.decorators import init_model_state_from_kwargs
 class MetadataRemap(object):
     """
     Defines remapping to be applied to objects as they are processed.
-    Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D.
+    Refer to `METADATA_REMAP Procedure `__
+
+    __ https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D
     """
 
     #: A constant which can be used with the type property of a MetadataRemap.
@@ -70,7 +72,9 @@ class MetadataRemap(object):
     def type(self):
         """
         **[Required]** Gets the type of this MetadataRemap.
-        Type of remap. Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D__BABDJGDI
+        Type of remap. Refer to `METADATA_REMAP Procedure `__
+
+        __ https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D
 
         Allowed values for this property are: "SCHEMA", "TABLESPACE", "DATAFILE", "TABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -85,7 +89,9 @@ class MetadataRemap(object):
     def type(self, type):
         """
         Sets the type of this MetadataRemap.
-        Type of remap. Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D__BABDJGDI
+        Type of remap. Refer to `METADATA_REMAP Procedure `__
+
+        __ https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D
 
 
         :param type: The type of this MetadataRemap.

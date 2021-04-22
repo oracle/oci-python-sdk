@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class DatabaseMigrationClient(object):
     """
-    Provides users the ability to perform Zero Downtime migration operations
+    Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration operations.
     """
 
     def __init__(self, config, **kwargs):
@@ -183,7 +183,7 @@ class DatabaseMigrationClient(object):
 
     def change_agent_compartment(self, agent_id, change_agent_compartment_details, **kwargs):
         """
-        Used to configure a ODMS Agent Compartment Id.
+        Used to configure an ODMS Agent Compartment ID.
 
 
         :param str agent_id: (required)
@@ -282,11 +282,11 @@ class DatabaseMigrationClient(object):
 
     def change_connection_compartment(self, connection_id, change_connection_compartment_details, **kwargs):
         """
-        Used to change the Databasee Connection compartment.
+        Used to change the Database Connection compartment.
 
 
         :param str connection_id: (required)
-            The OCID of the job
+            The OCID of the database connection
 
         :param oci.database_migration.models.ChangeConnectionCompartmentDetails change_connection_compartment_details: (required)
             Details to change the compartment.
@@ -385,7 +385,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param oci.database_migration.models.ChangeMigrationCompartmentDetails change_migration_compartment_details: (required)
             Details to change the compartment.
@@ -484,7 +484,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param oci.database_migration.models.CloneMigrationDetails clone_migration_details: (required)
             Clone Migration properties.
@@ -660,7 +660,7 @@ class DatabaseMigrationClient(object):
     def create_migration(self, create_migration_details, **kwargs):
         """
         Create a Migration resource that contains all the details to perform the
-        database migration operation like source and destination database
+        database migration operation, such as source and destination database
         details, credentials, etc.
 
 
@@ -738,7 +738,7 @@ class DatabaseMigrationClient(object):
 
     def delete_agent(self, agent_id, **kwargs):
         """
-        Delete the ODMS Agent represented by the given ODMS Agent id.
+        Delete the ODMS Agent represented by the specified ODMS Agent ID.
 
 
         :param str agent_id: (required)
@@ -825,7 +825,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str connection_id: (required)
-            The OCID of the job
+            The OCID of the database connection
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -991,7 +991,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1074,7 +1074,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1246,7 +1246,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str connection_id: (required)
-            The OCID of the job
+            The OCID of the database connection
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1474,7 +1474,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2825,7 +2825,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2901,7 +2901,7 @@ class DatabaseMigrationClient(object):
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2999,7 +2999,7 @@ class DatabaseMigrationClient(object):
 
     def update_agent(self, agent_id, update_agent_details, **kwargs):
         """
-        Modifies the ODMS Agent represented by the given ODMS agent Id.
+        Modifies the ODMS Agent represented by the given ODMS Agent ID.
 
 
         :param str agent_id: (required)
@@ -3100,11 +3100,11 @@ class DatabaseMigrationClient(object):
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
-        Update a Database Connection resource details.
+        Update Database Connection resource details.
 
 
         :param str connection_id: (required)
-            The OCID of the job
+            The OCID of the database connection
 
         :param oci.database_migration.models.UpdateConnectionDetails update_connection_details: (required)
             Database Connection properties.
@@ -3188,7 +3188,7 @@ class DatabaseMigrationClient(object):
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
-        Update a Migration Job resource details.
+        Update Migration Job resource details.
 
 
         :param str job_id: (required)
@@ -3278,11 +3278,11 @@ class DatabaseMigrationClient(object):
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
-        Update a Migration resource details.
+        Update Migration resource details.
 
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param oci.database_migration.models.UpdateMigrationDetails update_migration_details: (required)
             Migration properties.

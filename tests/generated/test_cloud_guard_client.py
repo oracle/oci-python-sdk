@@ -33,7 +33,7 @@ def vcr_fixture(request):
             yield
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_change_detector_recipe_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ChangeDetectorRecipeCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -74,7 +74,7 @@ def test_change_detector_recipe_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_change_managed_list_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ChangeManagedListCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -115,7 +115,7 @@ def test_change_managed_list_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_change_responder_recipe_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ChangeResponderRecipeCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -156,7 +156,47 @@ def test_change_responder_recipe_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_create_data_mask_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'CreateDataMaskRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'CreateDataMaskRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='CreateDataMaskRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.create_data_mask_rule(
+                create_data_mask_rule_details=request.pop(util.camelize('CreateDataMaskRuleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'CreateDataMaskRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataMaskRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -196,7 +236,7 @@ def test_create_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_managed_list(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateManagedList'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -236,7 +276,7 @@ def test_create_managed_list(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -276,7 +316,7 @@ def test_create_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_target(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -316,7 +356,7 @@ def test_create_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_target_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateTargetDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -357,7 +397,7 @@ def test_create_target_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_target_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateTargetResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -398,7 +438,47 @@ def test_create_target_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_delete_data_mask_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteDataMaskRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'DeleteDataMaskRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='DeleteDataMaskRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.delete_data_mask_rule(
+                data_mask_rule_id=request.pop(util.camelize('dataMaskRuleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'DeleteDataMaskRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_data_mask_rule',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -438,7 +518,7 @@ def test_delete_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_managed_list(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteManagedList'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -478,7 +558,7 @@ def test_delete_managed_list(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -518,7 +598,7 @@ def test_delete_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_target(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -558,7 +638,7 @@ def test_delete_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_target_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteTargetDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -599,7 +679,7 @@ def test_delete_target_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_target_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteTargetResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -640,7 +720,7 @@ def test_delete_target_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_execute_responder_execution(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ExecuteResponderExecution'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -681,7 +761,7 @@ def test_execute_responder_execution(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_condition_metadata_type(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetConditionMetadataType'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -721,7 +801,7 @@ def test_get_condition_metadata_type(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -761,7 +841,47 @@ def test_get_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_get_data_mask_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'GetDataMaskRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'GetDataMaskRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='GetDataMaskRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.get_data_mask_rule(
+                data_mask_rule_id=request.pop(util.camelize('dataMaskRuleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'GetDataMaskRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataMaskRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_detector(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetDetector'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -801,7 +921,7 @@ def test_get_detector(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -841,7 +961,7 @@ def test_get_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_detector_recipe_detector_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetDetectorRecipeDetectorRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -882,7 +1002,7 @@ def test_get_detector_recipe_detector_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_detector_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetDetectorRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -923,7 +1043,7 @@ def test_get_detector_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_managed_list(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetManagedList'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -963,7 +1083,7 @@ def test_get_managed_list(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_problem(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetProblem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1003,7 +1123,7 @@ def test_get_problem(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_responder_execution(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetResponderExecution'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1043,7 +1163,7 @@ def test_get_responder_execution(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1083,7 +1203,7 @@ def test_get_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_responder_recipe_responder_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetResponderRecipeResponderRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1124,7 +1244,7 @@ def test_get_responder_recipe_responder_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_responder_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetResponderRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1164,7 +1284,7 @@ def test_get_responder_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_target(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1204,7 +1324,7 @@ def test_get_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_target_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetTargetDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1245,7 +1365,7 @@ def test_get_target_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_target_detector_recipe_detector_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetTargetDetectorRecipeDetectorRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1287,7 +1407,7 @@ def test_get_target_detector_recipe_detector_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_target_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetTargetResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1328,7 +1448,7 @@ def test_get_target_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_get_target_responder_recipe_responder_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'GetTargetResponderRecipeResponderRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1370,7 +1490,7 @@ def test_get_target_responder_recipe_responder_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_condition_metadata_types(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListConditionMetadataTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1430,7 +1550,67 @@ def test_list_condition_metadata_types(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_data_mask_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListDataMaskRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListDataMaskRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListDataMaskRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_data_mask_rules(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_data_mask_rules(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_data_mask_rules(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListDataMaskRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataMaskRuleCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_detector_recipe_detector_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListDetectorRecipeDetectorRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1493,7 +1673,7 @@ def test_list_detector_recipe_detector_rules(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_detector_recipes(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListDetectorRecipes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1553,7 +1733,7 @@ def test_list_detector_recipes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_detector_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListDetectorRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1616,7 +1796,7 @@ def test_list_detector_rules(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_detectors(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListDetectors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1676,7 +1856,7 @@ def test_list_detectors(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_impacted_resources(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListImpactedResources'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1736,7 +1916,7 @@ def test_list_impacted_resources(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_managed_list_types(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListManagedListTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1796,7 +1976,7 @@ def test_list_managed_list_types(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_managed_lists(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListManagedLists'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1856,7 +2036,67 @@ def test_list_managed_lists(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_policies(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_policies(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_policies(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'policyCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_problem_histories(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListProblemHistories'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1919,7 +2159,7 @@ def test_list_problem_histories(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_problems(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListProblems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1979,7 +2219,7 @@ def test_list_problems(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_recommendations(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListRecommendations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2039,7 +2279,7 @@ def test_list_recommendations(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_resource_types(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListResourceTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2099,7 +2339,7 @@ def test_list_resource_types(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_responder_activities(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListResponderActivities'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2159,7 +2399,7 @@ def test_list_responder_activities(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_responder_executions(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListResponderExecutions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2219,7 +2459,7 @@ def test_list_responder_executions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_responder_recipe_responder_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListResponderRecipeResponderRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2282,7 +2522,7 @@ def test_list_responder_recipe_responder_rules(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_responder_recipes(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListResponderRecipes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2342,7 +2582,7 @@ def test_list_responder_recipes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_responder_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListResponderRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2402,7 +2642,7 @@ def test_list_responder_rules(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_target_detector_recipe_detector_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListTargetDetectorRecipeDetectorRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2468,7 +2708,7 @@ def test_list_target_detector_recipe_detector_rules(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_target_detector_recipes(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListTargetDetectorRecipes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2531,7 +2771,7 @@ def test_list_target_detector_recipes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_target_responder_recipe_responder_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListTargetResponderRecipeResponderRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2597,7 +2837,7 @@ def test_list_target_responder_recipe_responder_rules(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_target_responder_recipes(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListTargetResponderRecipes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2660,7 +2900,7 @@ def test_list_target_responder_recipes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_targets(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListTargets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2720,7 +2960,7 @@ def test_list_targets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_risk_scores(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestRiskScores'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2780,7 +3020,7 @@ def test_request_risk_scores(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_security_score_summarized_trend(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSecurityScoreSummarizedTrend'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2840,7 +3080,7 @@ def test_request_security_score_summarized_trend(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_security_scores(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSecurityScores'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2900,7 +3140,7 @@ def test_request_security_scores(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_activity_problems(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedActivityProblems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2960,7 +3200,7 @@ def test_request_summarized_activity_problems(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_problems(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedProblems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3023,7 +3263,7 @@ def test_request_summarized_problems(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_responder_executions(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedResponderExecutions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3086,7 +3326,7 @@ def test_request_summarized_responder_executions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_risk_scores(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedRiskScores'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3146,7 +3386,7 @@ def test_request_summarized_risk_scores(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_security_scores(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedSecurityScores'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3206,7 +3446,7 @@ def test_request_summarized_security_scores(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_trend_problems(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedTrendProblems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3266,7 +3506,7 @@ def test_request_summarized_trend_problems(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_trend_responder_executions(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedTrendResponderExecutions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3326,7 +3566,7 @@ def test_request_summarized_trend_responder_executions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_request_summarized_trend_security_scores(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RequestSummarizedTrendSecurityScores'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3386,7 +3626,7 @@ def test_request_summarized_trend_security_scores(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_skip_bulk_responder_execution(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'SkipBulkResponderExecution'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3426,7 +3666,7 @@ def test_skip_bulk_responder_execution(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_skip_responder_execution(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'SkipResponderExecution'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3467,7 +3707,7 @@ def test_skip_responder_execution(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_trigger_responder(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'TriggerResponder'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3508,7 +3748,7 @@ def test_trigger_responder(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_bulk_problem_status(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateBulkProblemStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3548,7 +3788,7 @@ def test_update_bulk_problem_status(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3589,7 +3829,48 @@ def test_update_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_update_data_mask_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateDataMaskRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'UpdateDataMaskRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='UpdateDataMaskRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.update_data_mask_rule(
+                data_mask_rule_id=request.pop(util.camelize('dataMaskRuleId')),
+                update_data_mask_rule_details=request.pop(util.camelize('UpdateDataMaskRuleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'UpdateDataMaskRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataMaskRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3630,7 +3911,7 @@ def test_update_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_detector_recipe_detector_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateDetectorRecipeDetectorRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3672,7 +3953,7 @@ def test_update_detector_recipe_detector_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_managed_list(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateManagedList'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3713,7 +3994,7 @@ def test_update_managed_list(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_problem_status(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateProblemStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3754,7 +4035,7 @@ def test_update_problem_status(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3795,7 +4076,7 @@ def test_update_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_responder_recipe_responder_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateResponderRecipeResponderRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3837,7 +4118,7 @@ def test_update_responder_recipe_responder_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_target(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3878,7 +4159,7 @@ def test_update_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_target_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateTargetDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3920,7 +4201,7 @@ def test_update_target_detector_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_target_detector_recipe_detector_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateTargetDetectorRecipeDetectorRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3963,7 +4244,7 @@ def test_update_target_detector_recipe_detector_rule(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_target_responder_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateTargetResponderRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4005,7 +4286,7 @@ def test_update_target_responder_recipe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCEN-OPS"
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_update_target_responder_recipe_responder_rule(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateTargetResponderRecipeResponderRule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -271,7 +271,7 @@ class Job(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Job.
-        The time the DB Migration Job was created. An RFC3339 formatted datetime string
+        The time the Migration Job was created. An RFC3339 formatted datetime string
 
 
         :return: The time_created of this Job.
@@ -283,7 +283,7 @@ class Job(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Job.
-        The time the DB Migration Job was created. An RFC3339 formatted datetime string
+        The time the Migration Job was created. An RFC3339 formatted datetime string
 
 
         :param time_created: The time_created of this Job.
@@ -295,7 +295,7 @@ class Job(object):
     def time_updated(self):
         """
         Gets the time_updated of this Job.
-        The time the DB Migration Job was last updated. An RFC3339 formatted datetime string
+        The time the Migration Job was last updated. An RFC3339 formatted datetime string
 
 
         :return: The time_updated of this Job.
@@ -307,7 +307,7 @@ class Job(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Job.
-        The time the DB Migration Job was last updated. An RFC3339 formatted datetime string
+        The time the Migration Job was last updated. An RFC3339 formatted datetime string
 
 
         :param time_updated: The time_updated of this Job.

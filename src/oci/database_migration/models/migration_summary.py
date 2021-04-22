@@ -424,7 +424,7 @@ class MigrationSummary(object):
     def agent_id(self):
         """
         Gets the agent_id of this MigrationSummary.
-        The OCID of the registered On-Prem ODMS Agent. Required for Offline Migrations.
+        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
 
 
         :return: The agent_id of this MigrationSummary.
@@ -436,7 +436,7 @@ class MigrationSummary(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this MigrationSummary.
-        The OCID of the registered On-Prem ODMS Agent. Required for Offline Migrations.
+        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
 
 
         :param agent_id: The agent_id of this MigrationSummary.

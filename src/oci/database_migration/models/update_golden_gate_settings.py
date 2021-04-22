@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateGoldenGateSettings(object):
     """
     Optional settings for Oracle GoldenGate processes
-    If an empty object is specified, the stored Golden Gate Settings details will be removed.
+    If an empty object is specified, the stored GoldenGate Settings details will be removed.
     """
 
     def __init__(self, **kwargs):

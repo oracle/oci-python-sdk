@@ -30,22 +30,29 @@ class UpdateClusterNetworkDetails(object):
             The value to assign to the freeform_tags property of this UpdateClusterNetworkDetails.
         :type freeform_tags: dict(str, str)
 
+        :param instance_pools:
+            The value to assign to the instance_pools property of this UpdateClusterNetworkDetails.
+        :type instance_pools: list[oci.core.models.UpdateClusterNetworkInstancePoolDetails]
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'instance_pools': 'list[UpdateClusterNetworkInstancePoolDetails]'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'instance_pools': 'instancePools'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._instance_pools = None
 
     @property
     def defined_tags(self):
@@ -140,6 +147,30 @@ class UpdateClusterNetworkDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def instance_pools(self):
+        """
+        Gets the instance_pools of this UpdateClusterNetworkDetails.
+        The instance pools in the cluster network to update.
+
+
+        :return: The instance_pools of this UpdateClusterNetworkDetails.
+        :rtype: list[oci.core.models.UpdateClusterNetworkInstancePoolDetails]
+        """
+        return self._instance_pools
+
+    @instance_pools.setter
+    def instance_pools(self, instance_pools):
+        """
+        Sets the instance_pools of this UpdateClusterNetworkDetails.
+        The instance pools in the cluster network to update.
+
+
+        :param instance_pools: The instance_pools of this UpdateClusterNetworkDetails.
+        :type: list[oci.core.models.UpdateClusterNetworkInstancePoolDetails]
+        """
+        self._instance_pools = instance_pools
 
     def __repr__(self):
         return formatted_flat_dict(self)

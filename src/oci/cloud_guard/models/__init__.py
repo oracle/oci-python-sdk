@@ -6,6 +6,7 @@ from __future__ import absolute_import
 
 from .activity_problem_aggregation import ActivityProblemAggregation
 from .activity_problem_aggregation_collection import ActivityProblemAggregationCollection
+from .all_targets_selected import AllTargetsSelected
 from .attach_target_detector_recipe_details import AttachTargetDetectorRecipeDetails
 from .attach_target_responder_recipe_details import AttachTargetResponderRecipeDetails
 from .candidate_responder_rule import CandidateResponderRule
@@ -21,12 +22,16 @@ from .condition_metadata_type_summary import ConditionMetadataTypeSummary
 from .condition_operator import ConditionOperator
 from .config_value import ConfigValue
 from .configuration import Configuration
+from .create_data_mask_rule_details import CreateDataMaskRuleDetails
 from .create_detector_recipe_details import CreateDetectorRecipeDetails
 from .create_managed_list_details import CreateManagedListDetails
 from .create_responder_recipe_details import CreateResponderRecipeDetails
 from .create_target_details import CreateTargetDetails
 from .create_target_detector_recipe_details import CreateTargetDetectorRecipeDetails
 from .create_target_responder_recipe_details import CreateTargetResponderRecipeDetails
+from .data_mask_rule import DataMaskRule
+from .data_mask_rule_collection import DataMaskRuleCollection
+from .data_mask_rule_summary import DataMaskRuleSummary
 from .detector import Detector
 from .detector_collection import DetectorCollection
 from .detector_configuration import DetectorConfiguration
@@ -51,6 +56,8 @@ from .managed_list_summary import ManagedListSummary
 from .managed_list_type_collection import ManagedListTypeCollection
 from .managed_list_type_summary import ManagedListTypeSummary
 from .operator_summary import OperatorSummary
+from .policy_collection import PolicyCollection
+from .policy_summary import PolicySummary
 from .political_location import PoliticalLocation
 from .problem import Problem
 from .problem_aggregation import ProblemAggregation
@@ -105,16 +112,20 @@ from .target_detector_recipe_detector_rule import TargetDetectorRecipeDetectorRu
 from .target_detector_recipe_detector_rule_collection import TargetDetectorRecipeDetectorRuleCollection
 from .target_detector_recipe_detector_rule_summary import TargetDetectorRecipeDetectorRuleSummary
 from .target_detector_recipe_summary import TargetDetectorRecipeSummary
+from .target_ids_selected import TargetIdsSelected
+from .target_resource_types_selected import TargetResourceTypesSelected
 from .target_responder_recipe import TargetResponderRecipe
 from .target_responder_recipe_collection import TargetResponderRecipeCollection
 from .target_responder_recipe_responder_rule import TargetResponderRecipeResponderRule
 from .target_responder_recipe_responder_rule_collection import TargetResponderRecipeResponderRuleCollection
 from .target_responder_recipe_responder_rule_summary import TargetResponderRecipeResponderRuleSummary
 from .target_responder_recipe_summary import TargetResponderRecipeSummary
+from .target_selected import TargetSelected
 from .target_summary import TargetSummary
 from .trigger_responder_details import TriggerResponderDetails
 from .update_bulk_problem_status_details import UpdateBulkProblemStatusDetails
 from .update_configuration_details import UpdateConfigurationDetails
+from .update_data_mask_rule_details import UpdateDataMaskRuleDetails
 from .update_detector_recipe_details import UpdateDetectorRecipeDetails
 from .update_detector_recipe_detector_rule import UpdateDetectorRecipeDetectorRule
 from .update_detector_recipe_detector_rule_details import UpdateDetectorRecipeDetectorRuleDetails
@@ -141,6 +152,7 @@ from .update_target_responder_rule_details import UpdateTargetResponderRuleDetai
 cloud_guard_type_mapping = {
     "ActivityProblemAggregation": ActivityProblemAggregation,
     "ActivityProblemAggregationCollection": ActivityProblemAggregationCollection,
+    "AllTargetsSelected": AllTargetsSelected,
     "AttachTargetDetectorRecipeDetails": AttachTargetDetectorRecipeDetails,
     "AttachTargetResponderRecipeDetails": AttachTargetResponderRecipeDetails,
     "CandidateResponderRule": CandidateResponderRule,
@@ -156,12 +168,16 @@ cloud_guard_type_mapping = {
     "ConditionOperator": ConditionOperator,
     "ConfigValue": ConfigValue,
     "Configuration": Configuration,
+    "CreateDataMaskRuleDetails": CreateDataMaskRuleDetails,
     "CreateDetectorRecipeDetails": CreateDetectorRecipeDetails,
     "CreateManagedListDetails": CreateManagedListDetails,
     "CreateResponderRecipeDetails": CreateResponderRecipeDetails,
     "CreateTargetDetails": CreateTargetDetails,
     "CreateTargetDetectorRecipeDetails": CreateTargetDetectorRecipeDetails,
     "CreateTargetResponderRecipeDetails": CreateTargetResponderRecipeDetails,
+    "DataMaskRule": DataMaskRule,
+    "DataMaskRuleCollection": DataMaskRuleCollection,
+    "DataMaskRuleSummary": DataMaskRuleSummary,
     "Detector": Detector,
     "DetectorCollection": DetectorCollection,
     "DetectorConfiguration": DetectorConfiguration,
@@ -186,6 +202,8 @@ cloud_guard_type_mapping = {
     "ManagedListTypeCollection": ManagedListTypeCollection,
     "ManagedListTypeSummary": ManagedListTypeSummary,
     "OperatorSummary": OperatorSummary,
+    "PolicyCollection": PolicyCollection,
+    "PolicySummary": PolicySummary,
     "PoliticalLocation": PoliticalLocation,
     "Problem": Problem,
     "ProblemAggregation": ProblemAggregation,
@@ -240,16 +258,20 @@ cloud_guard_type_mapping = {
     "TargetDetectorRecipeDetectorRuleCollection": TargetDetectorRecipeDetectorRuleCollection,
     "TargetDetectorRecipeDetectorRuleSummary": TargetDetectorRecipeDetectorRuleSummary,
     "TargetDetectorRecipeSummary": TargetDetectorRecipeSummary,
+    "TargetIdsSelected": TargetIdsSelected,
+    "TargetResourceTypesSelected": TargetResourceTypesSelected,
     "TargetResponderRecipe": TargetResponderRecipe,
     "TargetResponderRecipeCollection": TargetResponderRecipeCollection,
     "TargetResponderRecipeResponderRule": TargetResponderRecipeResponderRule,
     "TargetResponderRecipeResponderRuleCollection": TargetResponderRecipeResponderRuleCollection,
     "TargetResponderRecipeResponderRuleSummary": TargetResponderRecipeResponderRuleSummary,
     "TargetResponderRecipeSummary": TargetResponderRecipeSummary,
+    "TargetSelected": TargetSelected,
     "TargetSummary": TargetSummary,
     "TriggerResponderDetails": TriggerResponderDetails,
     "UpdateBulkProblemStatusDetails": UpdateBulkProblemStatusDetails,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,
+    "UpdateDataMaskRuleDetails": UpdateDataMaskRuleDetails,
     "UpdateDetectorRecipeDetails": UpdateDetectorRecipeDetails,
     "UpdateDetectorRecipeDetectorRule": UpdateDetectorRecipeDetectorRule,
     "UpdateDetectorRecipeDetectorRuleDetails": UpdateDetectorRecipeDetectorRuleDetails,
