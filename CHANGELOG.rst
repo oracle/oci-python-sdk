@@ -4,12 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.37.1 - TBD
+2.38.0 - 2021-04-27
 ====================
 
 Added
 -----
-* TBD
+* Support for RACs (real application clusters) for external container, non-container, and pluggable databases in the Database service
+* Support for data masking in the Cloud Guard service
+* Support for opting out of DNS records during instance launch, as well as attaching secondary VNICs, in the Compute service
+* Support for mutable sizes on cluster networks in the Autoscaling service
+* Support for auto-tiering on buckets in the Object Storage service
+
+Breaking
+--------
+* VCN id parameters were moved from being required to being optional on all list operations in the Networking service
 
 ====================
 2.37.0 - 2021-04-20
