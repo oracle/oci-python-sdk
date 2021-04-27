@@ -166,7 +166,7 @@ class CreateGoldenGateHub(object):
     def url(self):
         """
         **[Required]** Gets the url of this CreateGoldenGateHub.
-        Oracle GoldenGate hub's REST endpoint.
+        Oracle GoldenGate Microservices hub's REST endpoint.
         Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
 
 
@@ -179,7 +179,7 @@ class CreateGoldenGateHub(object):
     def url(self, url):
         """
         Sets the url of this CreateGoldenGateHub.
-        Oracle GoldenGate hub's REST endpoint.
+        Oracle GoldenGate Microservices hub's REST endpoint.
         Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
 
 
@@ -192,7 +192,7 @@ class CreateGoldenGateHub(object):
     def source_microservices_deployment_name(self):
         """
         **[Required]** Gets the source_microservices_deployment_name of this CreateGoldenGateHub.
-        Name of Microservices deployment to operate on source DB
+        Name of GoldenGate Microservices deployment to operate on source database
 
 
         :return: The source_microservices_deployment_name of this CreateGoldenGateHub.
@@ -204,7 +204,7 @@ class CreateGoldenGateHub(object):
     def source_microservices_deployment_name(self, source_microservices_deployment_name):
         """
         Sets the source_microservices_deployment_name of this CreateGoldenGateHub.
-        Name of Microservices deployment to operate on source DB
+        Name of GoldenGate Microservices deployment to operate on source database
 
 
         :param source_microservices_deployment_name: The source_microservices_deployment_name of this CreateGoldenGateHub.
@@ -216,7 +216,7 @@ class CreateGoldenGateHub(object):
     def target_microservices_deployment_name(self):
         """
         **[Required]** Gets the target_microservices_deployment_name of this CreateGoldenGateHub.
-        Name of Microservices deployment to operate on target DB
+        Name of GoldenGate Microservices deployment to operate on target database
 
 
         :return: The target_microservices_deployment_name of this CreateGoldenGateHub.
@@ -228,7 +228,7 @@ class CreateGoldenGateHub(object):
     def target_microservices_deployment_name(self, target_microservices_deployment_name):
         """
         Sets the target_microservices_deployment_name of this CreateGoldenGateHub.
-        Name of Microservices deployment to operate on target DB
+        Name of GoldenGate Microservices deployment to operate on target database
 
 
         :param target_microservices_deployment_name: The target_microservices_deployment_name of this CreateGoldenGateHub.
@@ -240,7 +240,7 @@ class CreateGoldenGateHub(object):
     def compute_id(self):
         """
         Gets the compute_id of this CreateGoldenGateHub.
-        OCID of Golden Gate compute instance.
+        OCID of GoldenGate Microservices compute instance.
 
 
         :return: The compute_id of this CreateGoldenGateHub.
@@ -252,7 +252,7 @@ class CreateGoldenGateHub(object):
     def compute_id(self, compute_id):
         """
         Sets the compute_id of this CreateGoldenGateHub.
-        OCID of Golden Gate compute instance.
+        OCID of GoldenGate Microservices compute instance.
 
 
         :param compute_id: The compute_id of this CreateGoldenGateHub.

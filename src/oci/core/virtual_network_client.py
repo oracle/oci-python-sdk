@@ -16259,18 +16259,13 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[VirtualCircuit]")
 
-    def list_vlans(self, compartment_id, vcn_id, **kwargs):
+    def list_vlans(self, compartment_id, **kwargs):
         """
         Lists the VLANs in the specified VCN and the specified compartment.
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-        :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -16289,6 +16284,11 @@ class VirtualNetworkClient(object):
             `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -16343,6 +16343,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "vcn_id",
             "display_name",
             "sort_by",
             "sort_order",
@@ -16379,7 +16380,7 @@ class VirtualNetworkClient(object):
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "vcnId": vcn_id,
+            "vcnId": kwargs.get("vcn_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),

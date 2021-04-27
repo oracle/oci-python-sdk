@@ -93,6 +93,10 @@ class CreateBucketDetails(object):
             Allowed values for this property are: "Enabled", "Disabled"
         :type versioning: str
 
+        :param auto_tiering:
+            The value to assign to the auto_tiering property of this CreateBucketDetails.
+        :type auto_tiering: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -104,7 +108,8 @@ class CreateBucketDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
-            'versioning': 'str'
+            'versioning': 'str',
+            'auto_tiering': 'str'
         }
 
         self.attribute_map = {
@@ -117,7 +122,8 @@ class CreateBucketDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
-            'versioning': 'versioning'
+            'versioning': 'versioning',
+            'auto_tiering': 'autoTiering'
         }
 
         self._name = None
@@ -130,6 +136,7 @@ class CreateBucketDetails(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._versioning = None
+        self._auto_tiering = None
 
     @property
     def name(self):
@@ -442,6 +449,36 @@ class CreateBucketDetails(object):
                 .format(allowed_values)
             )
         self._versioning = versioning
+
+    @property
+    def auto_tiering(self):
+        """
+        Gets the auto_tiering of this CreateBucketDetails.
+        Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`.
+        Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to
+        `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess'
+        tiers based on the access pattern of the objects.
+
+
+        :return: The auto_tiering of this CreateBucketDetails.
+        :rtype: str
+        """
+        return self._auto_tiering
+
+    @auto_tiering.setter
+    def auto_tiering(self, auto_tiering):
+        """
+        Sets the auto_tiering of this CreateBucketDetails.
+        Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`.
+        Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to
+        `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess'
+        tiers based on the access pattern of the objects.
+
+
+        :param auto_tiering: The auto_tiering of this CreateBucketDetails.
+        :type: str
+        """
+        self._auto_tiering = auto_tiering
 
     def __repr__(self):
         return formatted_flat_dict(self)

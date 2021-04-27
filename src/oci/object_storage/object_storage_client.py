@@ -1517,10 +1517,11 @@ class ObjectStorageClient(object):
 
         :param list[str] fields: (optional)
             Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-            and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects) and 'approximateSize'
-            (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'.
+            and 'etag' fields. This parameter can also include 'approximateCount' (approximate number of objects), 'approximateSize'
+            (total approximate size in bytes of all objects) and 'autoTiering' (state of auto tiering on the bucket).
+            For example 'approximateCount,approximateSize,autoTiering'.
 
-            Allowed values are: "approximateCount", "approximateSize"
+            Allowed values are: "approximateCount", "approximateSize", "autoTiering"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1564,7 +1565,7 @@ class ObjectStorageClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["approximateCount", "approximateSize"]
+            fields_allowed_values = ["approximateCount", "approximateSize", "autoTiering"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(

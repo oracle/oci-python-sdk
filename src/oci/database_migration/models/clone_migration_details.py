@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloneMigrationDetails(object):
     """
-    Details to specify that will override an existing Migration configuration that will be cloned.
+    Details that will override an existing Migration configuration that will be cloned.
     """
 
     def __init__(self, **kwargs):
@@ -148,7 +148,7 @@ class CloneMigrationDetails(object):
     def agent_id(self):
         """
         Gets the agent_id of this CloneMigrationDetails.
-        The OCID of the registered On-Prem ODMS Agent. Required for OFFLINE Migrations.
+        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Logical Migrations.
 
 
         :return: The agent_id of this CloneMigrationDetails.
@@ -160,7 +160,7 @@ class CloneMigrationDetails(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this CloneMigrationDetails.
-        The OCID of the registered On-Prem ODMS Agent. Required for OFFLINE Migrations.
+        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Logical Migrations.
 
 
         :param agent_id: The agent_id of this CloneMigrationDetails.
@@ -196,7 +196,7 @@ class CloneMigrationDetails(object):
     def source_container_database_connection_id(self):
         """
         Gets the source_container_database_connection_id of this CloneMigrationDetails.
-        The OCID of the Source Container Database Connection. Only used for ONLINE migrations.
+        The OCID of the Source Container Database Connection. Only used for Online migrations.
         Only Connections of type Non-Autonomous can be used as source container databases.
 
 
@@ -209,7 +209,7 @@ class CloneMigrationDetails(object):
     def source_container_database_connection_id(self, source_container_database_connection_id):
         """
         Sets the source_container_database_connection_id of this CloneMigrationDetails.
-        The OCID of the Source Container Database Connection. Only used for ONLINE migrations.
+        The OCID of the Source Container Database Connection. Only used for Online migrations.
         Only Connections of type Non-Autonomous can be used as source container databases.
 
 

@@ -75,7 +75,7 @@ class Replicat(object):
     def min_apply_parallelism(self):
         """
         Gets the min_apply_parallelism of this Replicat.
-        Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 
 
         :return: The min_apply_parallelism of this Replicat.
@@ -87,7 +87,7 @@ class Replicat(object):
     def min_apply_parallelism(self, min_apply_parallelism):
         """
         Sets the min_apply_parallelism of this Replicat.
-        Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 
 
         :param min_apply_parallelism: The min_apply_parallelism of this Replicat.
@@ -99,7 +99,7 @@ class Replicat(object):
     def max_apply_parallelism(self):
         """
         Gets the max_apply_parallelism of this Replicat.
-        Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 
 
         :return: The max_apply_parallelism of this Replicat.
@@ -111,7 +111,7 @@ class Replicat(object):
     def max_apply_parallelism(self, max_apply_parallelism):
         """
         Sets the max_apply_parallelism of this Replicat.
-        Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
+        Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 
 
         :param max_apply_parallelism: The max_apply_parallelism of this Replicat.

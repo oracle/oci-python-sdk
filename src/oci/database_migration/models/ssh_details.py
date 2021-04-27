@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SshDetails(object):
     """
-    Details of the ssh key that will be used.
+    Details of the SSH key that will be used.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class SshDetails(object):
     def host(self):
         """
         **[Required]** Gets the host of this SshDetails.
-        Name of the host the sshkey is valid for.
+        Name of the host the SSH key is valid for.
 
 
         :return: The host of this SshDetails.
@@ -63,7 +63,7 @@ class SshDetails(object):
     def host(self, host):
         """
         Sets the host of this SshDetails.
-        Name of the host the sshkey is valid for.
+        Name of the host the SSH key is valid for.
 
 
         :param host: The host of this SshDetails.

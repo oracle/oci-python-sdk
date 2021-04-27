@@ -192,7 +192,7 @@ class UpdateGoldenGateHub(object):
     def source_microservices_deployment_name(self):
         """
         Gets the source_microservices_deployment_name of this UpdateGoldenGateHub.
-        Name of Microservices deployment to operate on source DB
+        Name of GoldenGate deployment to operate on source database
 
 
         :return: The source_microservices_deployment_name of this UpdateGoldenGateHub.
@@ -204,7 +204,7 @@ class UpdateGoldenGateHub(object):
     def source_microservices_deployment_name(self, source_microservices_deployment_name):
         """
         Sets the source_microservices_deployment_name of this UpdateGoldenGateHub.
-        Name of Microservices deployment to operate on source DB
+        Name of GoldenGate deployment to operate on source database
 
 
         :param source_microservices_deployment_name: The source_microservices_deployment_name of this UpdateGoldenGateHub.
@@ -216,7 +216,7 @@ class UpdateGoldenGateHub(object):
     def target_microservices_deployment_name(self):
         """
         Gets the target_microservices_deployment_name of this UpdateGoldenGateHub.
-        Name of Microservices deployment to operate on target DB
+        Name of GoldenGate deployment to operate on target database
 
 
         :return: The target_microservices_deployment_name of this UpdateGoldenGateHub.
@@ -228,7 +228,7 @@ class UpdateGoldenGateHub(object):
     def target_microservices_deployment_name(self, target_microservices_deployment_name):
         """
         Sets the target_microservices_deployment_name of this UpdateGoldenGateHub.
-        Name of Microservices deployment to operate on target DB
+        Name of GoldenGate deployment to operate on target database
 
 
         :param target_microservices_deployment_name: The target_microservices_deployment_name of this UpdateGoldenGateHub.
@@ -240,7 +240,7 @@ class UpdateGoldenGateHub(object):
     def compute_id(self):
         """
         Gets the compute_id of this UpdateGoldenGateHub.
-        OCID of Golden Gate compute instance. An empty value will remove the stored computeId.
+        OCID of GoldenGate compute instance. An empty value will remove the stored computeId.
 
 
         :return: The compute_id of this UpdateGoldenGateHub.
@@ -252,7 +252,7 @@ class UpdateGoldenGateHub(object):
     def compute_id(self, compute_id):
         """
         Sets the compute_id of this UpdateGoldenGateHub.
-        OCID of Golden Gate compute instance. An empty value will remove the stored computeId.
+        OCID of GoldenGate compute instance. An empty value will remove the stored computeId.
 
 
         :param compute_id: The compute_id of this UpdateGoldenGateHub.

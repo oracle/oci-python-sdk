@@ -11,12 +11,12 @@
 #############################################################################################################################
 # Env Variables based on yum instant client
 export CLIENT_HOME=/usr/lib/oracle/current/client64
-export LD_LIBRARY_PATH=$CLIENT_HOME/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$CLIENT_HOME/lib
 export PATH=$PATH:$CLIENT_HOME/bin
 
 # App dir
 export TNS_ADMIN=$HOME/ADWCUSG
-export APPDIR=$HOME/oci-python-sdk/examples/usage_reports_to_adw
+export APPDIR=$HOME/usage_reports_to_adw
 export CREDFILE=$APPDIR/config.user
 cd $APPDIR
 
@@ -63,16 +63,16 @@ prompt     <tr><td colspan=16 class=tabheader>Cost Usage Daily Report - $DATE_PR
 select
     '<tr>'||
         '<th width=150 nowrap class=th1>Tenant Name</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-10),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-9),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-8),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-7),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-6),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-5),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-4),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-3),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-2),'DD-MON-YYYY')||'</th>'||
-        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-1),'DD-MON-YYYY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-10),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-9),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-8),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-7),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-6),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-5),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-4),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-3),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-2),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-1),'DD-MON-YYYY DY')||'</th>'||
         '<th width=80  nowrap class=th1>Month 31 Prediction</th>'||
         '<th width=80  nowrap class=th1>Year Prediction</th>'||
         '<th width=80  nowrap class=th1>Sub Tenants</th>'||
@@ -290,4 +290,5 @@ Subject: $MAIL_SUBJECT
 Content-Type: text/html
 `cat $OUTPUT_FILE`
 eomail
+
 

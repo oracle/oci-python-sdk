@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AgentCollection(object):
     """
-    Results of a Agent search. Contains AgentSummary items.
+    Results of an Agent search. Contains AgentSummary items.
     """
 
     def __init__(self, **kwargs):

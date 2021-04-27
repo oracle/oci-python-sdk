@@ -29,6 +29,10 @@ class SecurityScoreTrendAggregation(object):
     #: This constant has a value of "POOR"
     SECURITY_RATING_POOR = "POOR"
 
+    #: A constant which can be used with the security_rating property of a SecurityScoreTrendAggregation.
+    #: This constant has a value of "NA"
+    SECURITY_RATING_NA = "NA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SecurityScoreTrendAggregation object with values from keyword arguments.
@@ -48,7 +52,7 @@ class SecurityScoreTrendAggregation(object):
 
         :param security_rating:
             The value to assign to the security_rating property of this SecurityScoreTrendAggregation.
-            Allowed values for this property are: "EXCELLENT", "GOOD", "FAIR", "POOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXCELLENT", "GOOD", "FAIR", "POOR", "NA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type security_rating: str
 
@@ -157,7 +161,7 @@ class SecurityScoreTrendAggregation(object):
         **[Required]** Gets the security_rating of this SecurityScoreTrendAggregation.
         The security rating with given dimensions and time range
 
-        Allowed values for this property are: "EXCELLENT", "GOOD", "FAIR", "POOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXCELLENT", "GOOD", "FAIR", "POOR", "NA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -176,7 +180,7 @@ class SecurityScoreTrendAggregation(object):
         :param security_rating: The security_rating of this SecurityScoreTrendAggregation.
         :type: str
         """
-        allowed_values = ["EXCELLENT", "GOOD", "FAIR", "POOR"]
+        allowed_values = ["EXCELLENT", "GOOD", "FAIR", "POOR", "NA"]
         if not value_allowed_none_or_none_sentinel(security_rating, allowed_values):
             security_rating = 'UNKNOWN_ENUM_VALUE'
         self._security_rating = security_rating

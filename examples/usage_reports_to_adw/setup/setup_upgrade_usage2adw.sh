@@ -78,12 +78,18 @@ else
    printf "   Please Enter Database Name     : "; read DATABASE_NAME
    printf "   Please Enter ADB Admin Password: "; read DATABASE_ADMIN
    printf "   Please Enter ADB App  Password : "; read DATABASE_PASS
+   printf "   Please Enter Tag Key to extract as Special Tag (Oracle-Tags.CreatedBy): "; read TAG_SPECIAL
+
+   if [ -z "$TAG_SPECIAL" ]; then
+       TAG_SPECIAL="Oracle-Tags.CreatedBy"
+   fi
 
    echo "DATABASE_USER=USAGE" > $CREDFILE   
    echo "DATABASE_NAME=${DATABASE_NAME}_low" >> $CREDFILE
    echo "DATABASE_PASS=${DATABASE_PASS}" >> $CREDFILE 
    echo "DATABASE_ADMIN=${DATABASE_ADMIN}" >> $CREDFILE
-   echo "EXTRACT_DATE=2020-08" >> $CREDFILE
+   echo "EXTRACT_DATE=2021-04" >> $CREDFILE
+   echo "TAG_SPECIAL=${TAG_SPECIAL}" >> $CREDFILE
    echo "File Created." | tee -a $LOG
 fi
 
@@ -163,7 +169,6 @@ echo "##################################################" | tee -a $LOG
 echo "# Upgrade Completed at `date`" | tee -a $LOG
 echo "##################################################" | tee -a $LOG
 echo "Please run the application to upgrade schema:" | tee -a $LOG
-echo "cd $APPDIR" | tee -a $LOG
-echo "python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name}" | tee -a $LOG
+echo "/home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh" | tee -a $LOG
 echo ""
 

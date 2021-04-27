@@ -57,6 +57,10 @@ class CreateManagedListDetails(object):
     #: This constant has a value of "TAGS"
     LIST_TYPE_TAGS = "TAGS"
 
+    #: A constant which can be used with the list_type property of a CreateManagedListDetails.
+    #: This constant has a value of "GENERIC"
+    LIST_TYPE_GENERIC = "GENERIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateManagedListDetails object with values from keyword arguments.
@@ -80,7 +84,7 @@ class CreateManagedListDetails(object):
 
         :param list_type:
             The value to assign to the list_type property of this CreateManagedListDetails.
-            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS"
+            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"
         :type list_type: str
 
         :param list_items:
@@ -229,7 +233,7 @@ class CreateManagedListDetails(object):
         Gets the list_type of this CreateManagedListDetails.
         type of the list
 
-        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS"
+        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"
 
 
         :return: The list_type of this CreateManagedListDetails.
@@ -247,7 +251,7 @@ class CreateManagedListDetails(object):
         :param list_type: The list_type of this CreateManagedListDetails.
         :type: str
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"]
         if not value_allowed_none_or_none_sentinel(list_type, allowed_values):
             raise ValueError(
                 "Invalid value for `list_type`, must be None or one of {0}"

@@ -70,7 +70,7 @@ import requests
 import time
 
 
-version = "21.04.04"
+version = "21.04.27"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -265,7 +265,8 @@ def check_database_table_structure_usage(connection):
             sql += "    USG_CONSUMED_UNITS      VARCHAR2(100),"
             sql += "    USG_CONSUMED_MEASURE    VARCHAR2(100),"
             sql += "    IS_CORRECTION           VARCHAR2(10),"
-            sql += "    TAGS_DATA               VARCHAR2(4000)"
+            sql += "    TAGS_DATA               VARCHAR2(4000),"
+            sql += "    TAG_SPECIAL             VARCHAR2(4000)"
             sql += ") COMPRESS"
             cursor.execute(sql)
             print("   Table OCI_USAGE created")
@@ -780,7 +781,7 @@ def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
 ##########################################################################
 # Check Table Structure Cost
 ##########################################################################
-def check_database_table_structure_cost(connection):
+def check_database_table_structure_cost(connection, tag_special_key, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -820,7 +821,8 @@ def check_database_table_structure_cost(connection):
             sql += "    COST_BILLING_UNIT       VARCHAR2(1000),"
             sql += "    COST_OVERAGE_FLAG       VARCHAR2(10),"
             sql += "    IS_CORRECTION           VARCHAR2(10),"
-            sql += "    TAGS_DATA               VARCHAR2(4000)"
+            sql += "    TAGS_DATA               VARCHAR2(4000),"
+            sql += "    TAG_SPECIAL             VARCHAR2(4000)"
             sql += ") COMPRESS"
             cursor.execute(sql)
             print("   Table OCI_COST created")
@@ -921,7 +923,7 @@ def check_database_table_structure_cost(connection):
             cursor.execute(sql)
             print("   Table OCI_COST_REFERENCE created")
 
-            update_cost_reference(connection)
+            update_cost_reference(connection, tag_special_key, tenant_name)
         else:
             print("   Table OCI_COST_REFERENCE exist")
 
@@ -1556,7 +1558,7 @@ def main_process():
         # Check tables structure
         print("\nChecking Database Structure...")
         check_database_table_structure_usage(connection)
-        check_database_table_structure_cost(connection)
+        check_database_table_structure_cost(connection, cmd.tagspecial, tenancy.name)
         check_database_table_structure_price_list(connection, tenancy.name)
 
         ###############################

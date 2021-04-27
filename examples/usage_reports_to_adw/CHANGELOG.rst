@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.04.27 - 2021-04-27
+=====================
+* Added gather stats crontab weekly with script run_gather_stats.sh
+* Fixed bug calling reference update
+
+=====================
 21.04.04 - 2021-04-04
 =====================
 * Added option to specify one Tag Key to extract the data to TAG_SPECIAL column , use -ts
