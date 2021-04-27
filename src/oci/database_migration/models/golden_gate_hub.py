@@ -192,7 +192,7 @@ class GoldenGateHub(object):
     def source_microservices_deployment_name(self):
         """
         **[Required]** Gets the source_microservices_deployment_name of this GoldenGateHub.
-        Name of Microservices deployment to operate on source DB
+        Name of GoldenGate deployment to operate on source database
 
 
         :return: The source_microservices_deployment_name of this GoldenGateHub.
@@ -204,7 +204,7 @@ class GoldenGateHub(object):
     def source_microservices_deployment_name(self, source_microservices_deployment_name):
         """
         Sets the source_microservices_deployment_name of this GoldenGateHub.
-        Name of Microservices deployment to operate on source DB
+        Name of GoldenGate deployment to operate on source database
 
 
         :param source_microservices_deployment_name: The source_microservices_deployment_name of this GoldenGateHub.
@@ -216,7 +216,7 @@ class GoldenGateHub(object):
     def target_microservices_deployment_name(self):
         """
         **[Required]** Gets the target_microservices_deployment_name of this GoldenGateHub.
-        Name of Microservices deployment to operate on target DB
+        Name of GoldenGate deployment to operate on target database
 
 
         :return: The target_microservices_deployment_name of this GoldenGateHub.
@@ -228,7 +228,7 @@ class GoldenGateHub(object):
     def target_microservices_deployment_name(self, target_microservices_deployment_name):
         """
         Sets the target_microservices_deployment_name of this GoldenGateHub.
-        Name of Microservices deployment to operate on target DB
+        Name of GoldenGate deployment to operate on target database
 
 
         :param target_microservices_deployment_name: The target_microservices_deployment_name of this GoldenGateHub.
@@ -240,7 +240,7 @@ class GoldenGateHub(object):
     def compute_id(self):
         """
         Gets the compute_id of this GoldenGateHub.
-        OCID of Golden Gate compute instance.
+        OCID of GoldenGate compute instance.
 
 
         :return: The compute_id of this GoldenGateHub.
@@ -252,7 +252,7 @@ class GoldenGateHub(object):
     def compute_id(self, compute_id):
         """
         Sets the compute_id of this GoldenGateHub.
-        OCID of Golden Gate compute instance.
+        OCID of GoldenGate compute instance.
 
 
         :param compute_id: The compute_id of this GoldenGateHub.

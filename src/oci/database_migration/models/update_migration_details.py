@@ -234,9 +234,9 @@ class UpdateMigrationDetails(object):
     def source_container_database_connection_id(self):
         """
         Gets the source_container_database_connection_id of this UpdateMigrationDetails.
-        The OCID of the Source Container Database Connection. Only used for ONLINE migrations.
+        The OCID of the Source Container Database Connection. Only used for Online migrations.
         Only Connections of type Non-Autonomous can be used as source container databases.
-        An empty value would remove the stored Connection Id.
+        An empty value would remove the stored Connection ID.
 
 
         :return: The source_container_database_connection_id of this UpdateMigrationDetails.
@@ -248,9 +248,9 @@ class UpdateMigrationDetails(object):
     def source_container_database_connection_id(self, source_container_database_connection_id):
         """
         Sets the source_container_database_connection_id of this UpdateMigrationDetails.
-        The OCID of the Source Container Database Connection. Only used for ONLINE migrations.
+        The OCID of the Source Container Database Connection. Only used for Online migrations.
         Only Connections of type Non-Autonomous can be used as source container databases.
-        An empty value would remove the stored Connection Id.
+        An empty value would remove the stored Connection ID.
 
 
         :param source_container_database_connection_id: The source_container_database_connection_id of this UpdateMigrationDetails.

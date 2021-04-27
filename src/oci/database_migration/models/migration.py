@@ -468,7 +468,7 @@ class Migration(object):
     def agent_id(self):
         """
         Gets the agent_id of this Migration.
-        The OCID of the registered On-Prem ODMS Agent. Required for Offline Migrations.
+        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
 
 
         :return: The agent_id of this Migration.
@@ -480,7 +480,7 @@ class Migration(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this Migration.
-        The OCID of the registered On-Prem ODMS Agent. Required for Offline Migrations.
+        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
 
 
         :param agent_id: The agent_id of this Migration.
@@ -492,7 +492,7 @@ class Migration(object):
     def credentials_secret_id(self):
         """
         Gets the credentials_secret_id of this Migration.
-        OCID of the Secret in the OCI vault containing the Migration credentials. Used to store Golden Gate admin user credentials.
+        OCID of the Secret in the OCI vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 
 
         :return: The credentials_secret_id of this Migration.
@@ -504,7 +504,7 @@ class Migration(object):
     def credentials_secret_id(self, credentials_secret_id):
         """
         Sets the credentials_secret_id of this Migration.
-        OCID of the Secret in the OCI vault containing the Migration credentials. Used to store Golden Gate admin user credentials.
+        OCID of the Secret in the OCI vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 
 
         :param credentials_secret_id: The credentials_secret_id of this Migration.
@@ -788,7 +788,7 @@ class Migration(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Migration.
-        The current state of the Migration Resource.
+        The current state of the Migration resource.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -803,7 +803,7 @@ class Migration(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Migration.
-        The current state of the Migration Resource.
+        The current state of the Migration resource.
 
 
         :param lifecycle_state: The lifecycle_state of this Migration.

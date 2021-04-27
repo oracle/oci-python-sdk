@@ -65,6 +65,10 @@ class TargetDetectorRecipeDetectorRule(object):
     #: This constant has a value of "TAGS"
     MANAGED_LIST_TYPES_TAGS = "TAGS"
 
+    #: A constant which can be used with the managed_list_types property of a TargetDetectorRecipeDetectorRule.
+    #: This constant has a value of "GENERIC"
+    MANAGED_LIST_TYPES_GENERIC = "GENERIC"
+
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipeDetectorRule.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -134,7 +138,7 @@ class TargetDetectorRecipeDetectorRule(object):
 
         :param managed_list_types:
             The value to assign to the managed_list_types property of this TargetDetectorRecipeDetectorRule.
-            Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type managed_list_types: list[str]
 
@@ -403,7 +407,7 @@ class TargetDetectorRecipeDetectorRule(object):
         Gets the managed_list_types of this TargetDetectorRecipeDetectorRule.
         List of cloudguard managed list types related to this rule
 
-        Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -422,7 +426,7 @@ class TargetDetectorRecipeDetectorRule(object):
         :param managed_list_types: The managed_list_types of this TargetDetectorRecipeDetectorRule.
         :type: list[str]
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"]
         if managed_list_types:
             managed_list_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in managed_list_types]
         self._managed_list_types = managed_list_types

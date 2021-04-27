@@ -39,19 +39,26 @@ class UpdateBulkProblemStatusDetails(object):
             The value to assign to the problem_ids property of this UpdateBulkProblemStatusDetails.
         :type problem_ids: list[str]
 
+        :param comment:
+            The value to assign to the comment property of this UpdateBulkProblemStatusDetails.
+        :type comment: str
+
         """
         self.swagger_types = {
             'status': 'str',
-            'problem_ids': 'list[str]'
+            'problem_ids': 'list[str]',
+            'comment': 'str'
         }
 
         self.attribute_map = {
             'status': 'status',
-            'problem_ids': 'problemIds'
+            'problem_ids': 'problemIds',
+            'comment': 'comment'
         }
 
         self._status = None
         self._problem_ids = None
+        self._comment = None
 
     @property
     def status(self):
@@ -108,6 +115,30 @@ class UpdateBulkProblemStatusDetails(object):
         :type: list[str]
         """
         self._problem_ids = problem_ids
+
+    @property
+    def comment(self):
+        """
+        Gets the comment of this UpdateBulkProblemStatusDetails.
+        User defined comment to be passed in to update the problem.
+
+
+        :return: The comment of this UpdateBulkProblemStatusDetails.
+        :rtype: str
+        """
+        return self._comment
+
+    @comment.setter
+    def comment(self, comment):
+        """
+        Sets the comment of this UpdateBulkProblemStatusDetails.
+        User defined comment to be passed in to update the problem.
+
+
+        :param comment: The comment of this UpdateBulkProblemStatusDetails.
+        :type: str
+        """
+        self._comment = comment
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -25,6 +25,10 @@ class InstanceConfigurationCreateVnicDetails(object):
             The value to assign to the assign_public_ip property of this InstanceConfigurationCreateVnicDetails.
         :type assign_public_ip: bool
 
+        :param assign_private_dns_record:
+            The value to assign to the assign_private_dns_record property of this InstanceConfigurationCreateVnicDetails.
+        :type assign_private_dns_record: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this InstanceConfigurationCreateVnicDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -60,6 +64,7 @@ class InstanceConfigurationCreateVnicDetails(object):
         """
         self.swagger_types = {
             'assign_public_ip': 'bool',
+            'assign_private_dns_record': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -72,6 +77,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         self.attribute_map = {
             'assign_public_ip': 'assignPublicIp',
+            'assign_private_dns_record': 'assignPrivateDnsRecord',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -83,6 +89,7 @@ class InstanceConfigurationCreateVnicDetails(object):
         }
 
         self._assign_public_ip = None
+        self._assign_private_dns_record = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -117,6 +124,32 @@ class InstanceConfigurationCreateVnicDetails(object):
         :type: bool
         """
         self._assign_public_ip = assign_public_ip
+
+    @property
+    def assign_private_dns_record(self):
+        """
+        Gets the assign_private_dns_record of this InstanceConfigurationCreateVnicDetails.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of :class:`CreateVnicDetails`
+        for more information.
+
+
+        :return: The assign_private_dns_record of this InstanceConfigurationCreateVnicDetails.
+        :rtype: bool
+        """
+        return self._assign_private_dns_record
+
+    @assign_private_dns_record.setter
+    def assign_private_dns_record(self, assign_private_dns_record):
+        """
+        Sets the assign_private_dns_record of this InstanceConfigurationCreateVnicDetails.
+        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of :class:`CreateVnicDetails`
+        for more information.
+
+
+        :param assign_private_dns_record: The assign_private_dns_record of this InstanceConfigurationCreateVnicDetails.
+        :type: bool
+        """
+        self._assign_private_dns_record = assign_private_dns_record
 
     @property
     def defined_tags(self):

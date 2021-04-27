@@ -67,7 +67,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param oci.database_migration.models.CloneMigrationDetails clone_migration_details: (required)
             Clone Migration properties.
@@ -230,7 +230,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str connection_id: (required)
-            The OCID of the job
+            The OCID of the database connection
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_migration.models.WorkRequest.status`
@@ -323,7 +323,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_migration.models.WorkRequest.status`
@@ -369,7 +369,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_migration.models.WorkRequest.status`
@@ -445,7 +445,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_migration.models.WorkRequest.status`
@@ -524,7 +524,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str connection_id: (required)
-            The OCID of the job
+            The OCID of the database connection
 
         :param oci.database_migration.models.UpdateConnectionDetails update_connection_details: (required)
             Database Connection properties.
@@ -606,7 +606,7 @@ class DatabaseMigrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str migration_id: (required)
-            The OCID of the job
+            The OCID of the migration
 
         :param oci.database_migration.models.UpdateMigrationDetails update_migration_details: (required)
             Migration properties.

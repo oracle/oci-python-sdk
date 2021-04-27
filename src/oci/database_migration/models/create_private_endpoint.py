@@ -53,7 +53,7 @@ class CreatePrivateEndpoint(object):
         """
         **[Required]** Gets the compartment_id of this CreatePrivateEndpoint.
         The `OCID`__ of the compartment to contain the
-        private endpoint. Required if the id was not specified.
+        private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -68,7 +68,7 @@ class CreatePrivateEndpoint(object):
         """
         Sets the compartment_id of this CreatePrivateEndpoint.
         The `OCID`__ of the compartment to contain the
-        private endpoint. Required if the id was not specified.
+        private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -83,7 +83,6 @@ class CreatePrivateEndpoint(object):
         """
         **[Required]** Gets the vcn_id of this CreatePrivateEndpoint.
         The `OCID`__ of the VCN where the Private Endpoint will be bound to.
-        Required if the id was not specified.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -98,7 +97,6 @@ class CreatePrivateEndpoint(object):
         """
         Sets the vcn_id of this CreatePrivateEndpoint.
         The `OCID`__ of the VCN where the Private Endpoint will be bound to.
-        Required if the id was not specified.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -113,7 +111,7 @@ class CreatePrivateEndpoint(object):
         """
         **[Required]** Gets the subnet_id of this CreatePrivateEndpoint.
         The `OCID`__ of the customer's subnet where the private endpoint VNIC
-        will reside.  Required if the id was not specified.
+        will reside.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -128,7 +126,7 @@ class CreatePrivateEndpoint(object):
         """
         Sets the subnet_id of this CreatePrivateEndpoint.
         The `OCID`__ of the customer's subnet where the private endpoint VNIC
-        will reside.  Required if the id was not specified.
+        will reside.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateGoldenGateSettings(object):
     """
-    Optional settings for Oracle GoldenGate processes
+    Optional settings for GoldenGate Microservices processes
     """
 
     def __init__(self, **kwargs):

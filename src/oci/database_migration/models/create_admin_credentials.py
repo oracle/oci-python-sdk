@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAdminCredentials(object):
     """
-    Database Admin Credentials details.
+    Database Administrator Credentials details.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class CreateAdminCredentials(object):
     def username(self):
         """
         **[Required]** Gets the username of this CreateAdminCredentials.
-        Admin username
+        Administrator username
 
 
         :return: The username of this CreateAdminCredentials.
@@ -56,7 +56,7 @@ class CreateAdminCredentials(object):
     def username(self, username):
         """
         Sets the username of this CreateAdminCredentials.
-        Admin username
+        Administrator username
 
 
         :param username: The username of this CreateAdminCredentials.
@@ -68,7 +68,7 @@ class CreateAdminCredentials(object):
     def password(self):
         """
         **[Required]** Gets the password of this CreateAdminCredentials.
-        Admin password
+        Administrator password
 
 
         :return: The password of this CreateAdminCredentials.
@@ -80,7 +80,7 @@ class CreateAdminCredentials(object):
     def password(self, password):
         """
         Sets the password of this CreateAdminCredentials.
-        Admin password
+        Administrator password
 
 
         :param password: The password of this CreateAdminCredentials.

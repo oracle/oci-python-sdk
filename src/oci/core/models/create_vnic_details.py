@@ -27,6 +27,10 @@ class CreateVnicDetails(object):
             The value to assign to the assign_public_ip property of this CreateVnicDetails.
         :type assign_public_ip: bool
 
+        :param assign_private_dns_record:
+            The value to assign to the assign_private_dns_record property of this CreateVnicDetails.
+        :type assign_private_dns_record: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateVnicDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -66,6 +70,7 @@ class CreateVnicDetails(object):
         """
         self.swagger_types = {
             'assign_public_ip': 'bool',
+            'assign_private_dns_record': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -79,6 +84,7 @@ class CreateVnicDetails(object):
 
         self.attribute_map = {
             'assign_public_ip': 'assignPublicIp',
+            'assign_private_dns_record': 'assignPrivateDnsRecord',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -91,6 +97,7 @@ class CreateVnicDetails(object):
         }
 
         self._assign_public_ip = None
+        self._assign_private_dns_record = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -174,6 +181,38 @@ class CreateVnicDetails(object):
         :type: bool
         """
         self._assign_public_ip = assign_public_ip
+
+    @property
+    def assign_private_dns_record(self):
+        """
+        Gets the assign_private_dns_record of this CreateVnicDetails.
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+        registration for the VNIC. If set to true, the DNS record will be registered. The default
+        value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
+
+
+        :return: The assign_private_dns_record of this CreateVnicDetails.
+        :rtype: bool
+        """
+        return self._assign_private_dns_record
+
+    @assign_private_dns_record.setter
+    def assign_private_dns_record(self, assign_private_dns_record):
+        """
+        Sets the assign_private_dns_record of this CreateVnicDetails.
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+        registration for the VNIC. If set to true, the DNS record will be registered. The default
+        value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
+
+
+        :param assign_private_dns_record: The assign_private_dns_record of this CreateVnicDetails.
+        :type: bool
+        """
+        self._assign_private_dns_record = assign_private_dns_record
 
     @property
     def defined_tags(self):

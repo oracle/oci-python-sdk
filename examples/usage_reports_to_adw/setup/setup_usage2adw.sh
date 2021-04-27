@@ -153,7 +153,7 @@ fi
 # Setup Crontab
 ###########################################
 echo "" | tee -a $LOG
-echo "7. Setup Crontab to run every 6 hours" | tee -a $LOG
+echo "7. Setup Crontab to run every 3 hours and gather stats every week" | tee -a $LOG
 echo "Executed: crontab $APPDIR/setup/setup.crontab.txt" | tee -a $LOG
 crontab $APPDIR/setup/setup.crontab.txt
 

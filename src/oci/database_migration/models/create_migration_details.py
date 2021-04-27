@@ -217,7 +217,7 @@ class CreateMigrationDetails(object):
     def agent_id(self):
         """
         Gets the agent_id of this CreateMigrationDetails.
-        The OCID of the registered ODMS Agent. Required for OFFLINE Migrations.
+        The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 
 
         :return: The agent_id of this CreateMigrationDetails.
@@ -229,7 +229,7 @@ class CreateMigrationDetails(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this CreateMigrationDetails.
-        The OCID of the registered ODMS Agent. Required for OFFLINE Migrations.
+        The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 
 
         :param agent_id: The agent_id of this CreateMigrationDetails.
@@ -265,7 +265,7 @@ class CreateMigrationDetails(object):
     def source_container_database_connection_id(self):
         """
         Gets the source_container_database_connection_id of this CreateMigrationDetails.
-        The OCID of the Source Container Database Connection. Only used for ONLINE migrations.
+        The OCID of the Source Container Database Connection. Only used for Online migrations.
         Only Connections of type Non-Autonomous can be used as source container databases.
 
 
@@ -278,7 +278,7 @@ class CreateMigrationDetails(object):
     def source_container_database_connection_id(self, source_container_database_connection_id):
         """
         Sets the source_container_database_connection_id of this CreateMigrationDetails.
-        The OCID of the Source Container Database Connection. Only used for ONLINE migrations.
+        The OCID of the Source Container Database Connection. Only used for Online migrations.
         Only Connections of type Non-Autonomous can be used as source container databases.
 
 

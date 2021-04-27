@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAdminCredentials(object):
     """
-    Database Admin Credentials details. An empty object would result in the removal of the stored details.
+    Database Administrator Credentials details. An empty object would result in the removal of the stored details.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class UpdateAdminCredentials(object):
     def username(self):
         """
         Gets the username of this UpdateAdminCredentials.
-        Admin username
+        Administrator username
 
 
         :return: The username of this UpdateAdminCredentials.
@@ -56,7 +56,7 @@ class UpdateAdminCredentials(object):
     def username(self, username):
         """
         Sets the username of this UpdateAdminCredentials.
-        Admin username
+        Administrator username
 
 
         :param username: The username of this UpdateAdminCredentials.
@@ -68,7 +68,7 @@ class UpdateAdminCredentials(object):
     def password(self):
         """
         Gets the password of this UpdateAdminCredentials.
-        Admin password
+        Administrator password
 
 
         :return: The password of this UpdateAdminCredentials.
@@ -80,7 +80,7 @@ class UpdateAdminCredentials(object):
     def password(self, password):
         """
         Sets the password of this UpdateAdminCredentials.
-        Admin password
+        Administrator password
 
 
         :param password: The password of this UpdateAdminCredentials.

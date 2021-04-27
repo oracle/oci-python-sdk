@@ -57,6 +57,14 @@ class ExternalDatabaseBase(object):
     #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
+    #: A constant which can be used with the database_configuration property of a ExternalDatabaseBase.
+    #: This constant has a value of "RAC"
+    DATABASE_CONFIGURATION_RAC = "RAC"
+
+    #: A constant which can be used with the database_configuration property of a ExternalDatabaseBase.
+    #: This constant has a value of "SINGLE_INSTANCE"
+    DATABASE_CONFIGURATION_SINGLE_INSTANCE = "SINGLE_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExternalDatabaseBase object with values from keyword arguments.
@@ -128,6 +136,11 @@ class ExternalDatabaseBase(object):
             The value to assign to the db_packs property of this ExternalDatabaseBase.
         :type db_packs: str
 
+        :param database_configuration:
+            The value to assign to the database_configuration property of this ExternalDatabaseBase.
+            Allowed values for this property are: "RAC", "SINGLE_INSTANCE"
+        :type database_configuration: str
+
         :param database_management_config:
             The value to assign to the database_management_config property of this ExternalDatabaseBase.
         :type database_management_config: oci.database.models.DatabaseManagementConfig
@@ -150,6 +163,7 @@ class ExternalDatabaseBase(object):
             'character_set': 'str',
             'ncharacter_set': 'str',
             'db_packs': 'str',
+            'database_configuration': 'str',
             'database_management_config': 'DatabaseManagementConfig'
         }
 
@@ -170,6 +184,7 @@ class ExternalDatabaseBase(object):
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
             'db_packs': 'dbPacks',
+            'database_configuration': 'databaseConfiguration',
             'database_management_config': 'databaseManagementConfig'
         }
 
@@ -189,6 +204,7 @@ class ExternalDatabaseBase(object):
         self._character_set = None
         self._ncharacter_set = None
         self._db_packs = None
+        self._database_configuration = None
         self._database_management_config = None
 
     @property
@@ -618,6 +634,38 @@ class ExternalDatabaseBase(object):
         :type: str
         """
         self._db_packs = db_packs
+
+    @property
+    def database_configuration(self):
+        """
+        Gets the database_configuration of this ExternalDatabaseBase.
+        The Oracle Database configuration
+
+        Allowed values for this property are: "RAC", "SINGLE_INSTANCE"
+
+
+        :return: The database_configuration of this ExternalDatabaseBase.
+        :rtype: str
+        """
+        return self._database_configuration
+
+    @database_configuration.setter
+    def database_configuration(self, database_configuration):
+        """
+        Sets the database_configuration of this ExternalDatabaseBase.
+        The Oracle Database configuration
+
+
+        :param database_configuration: The database_configuration of this ExternalDatabaseBase.
+        :type: str
+        """
+        allowed_values = ["RAC", "SINGLE_INSTANCE"]
+        if not value_allowed_none_or_none_sentinel(database_configuration, allowed_values):
+            raise ValueError(
+                "Invalid value for `database_configuration`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._database_configuration = database_configuration
 
     @property
     def database_management_config(self):

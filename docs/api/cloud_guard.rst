@@ -20,6 +20,7 @@ Cloud Guard
 
     oci.cloud_guard.models.ActivityProblemAggregation
     oci.cloud_guard.models.ActivityProblemAggregationCollection
+    oci.cloud_guard.models.AllTargetsSelected
     oci.cloud_guard.models.AttachTargetDetectorRecipeDetails
     oci.cloud_guard.models.AttachTargetResponderRecipeDetails
     oci.cloud_guard.models.CandidateResponderRule
@@ -35,12 +36,16 @@ Cloud Guard
     oci.cloud_guard.models.ConditionOperator
     oci.cloud_guard.models.ConfigValue
     oci.cloud_guard.models.Configuration
+    oci.cloud_guard.models.CreateDataMaskRuleDetails
     oci.cloud_guard.models.CreateDetectorRecipeDetails
     oci.cloud_guard.models.CreateManagedListDetails
     oci.cloud_guard.models.CreateResponderRecipeDetails
     oci.cloud_guard.models.CreateTargetDetails
     oci.cloud_guard.models.CreateTargetDetectorRecipeDetails
     oci.cloud_guard.models.CreateTargetResponderRecipeDetails
+    oci.cloud_guard.models.DataMaskRule
+    oci.cloud_guard.models.DataMaskRuleCollection
+    oci.cloud_guard.models.DataMaskRuleSummary
     oci.cloud_guard.models.Detector
     oci.cloud_guard.models.DetectorCollection
     oci.cloud_guard.models.DetectorConfiguration
@@ -65,6 +70,8 @@ Cloud Guard
     oci.cloud_guard.models.ManagedListTypeCollection
     oci.cloud_guard.models.ManagedListTypeSummary
     oci.cloud_guard.models.OperatorSummary
+    oci.cloud_guard.models.PolicyCollection
+    oci.cloud_guard.models.PolicySummary
     oci.cloud_guard.models.PoliticalLocation
     oci.cloud_guard.models.Problem
     oci.cloud_guard.models.ProblemAggregation
@@ -119,16 +126,20 @@ Cloud Guard
     oci.cloud_guard.models.TargetDetectorRecipeDetectorRuleCollection
     oci.cloud_guard.models.TargetDetectorRecipeDetectorRuleSummary
     oci.cloud_guard.models.TargetDetectorRecipeSummary
+    oci.cloud_guard.models.TargetIdsSelected
+    oci.cloud_guard.models.TargetResourceTypesSelected
     oci.cloud_guard.models.TargetResponderRecipe
     oci.cloud_guard.models.TargetResponderRecipeCollection
     oci.cloud_guard.models.TargetResponderRecipeResponderRule
     oci.cloud_guard.models.TargetResponderRecipeResponderRuleCollection
     oci.cloud_guard.models.TargetResponderRecipeResponderRuleSummary
     oci.cloud_guard.models.TargetResponderRecipeSummary
+    oci.cloud_guard.models.TargetSelected
     oci.cloud_guard.models.TargetSummary
     oci.cloud_guard.models.TriggerResponderDetails
     oci.cloud_guard.models.UpdateBulkProblemStatusDetails
     oci.cloud_guard.models.UpdateConfigurationDetails
+    oci.cloud_guard.models.UpdateDataMaskRuleDetails
     oci.cloud_guard.models.UpdateDetectorRecipeDetails
     oci.cloud_guard.models.UpdateDetectorRecipeDetectorRule
     oci.cloud_guard.models.UpdateDetectorRecipeDetectorRuleDetails

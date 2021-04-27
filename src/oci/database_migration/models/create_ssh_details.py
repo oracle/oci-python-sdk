@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSshDetails(object):
     """
-    Details of the ssh key that will be used. Required for source database Manual and UserManagerOci connection types.
+    Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types.
     Not required for source container database connections.
     """
 
@@ -59,7 +59,7 @@ class CreateSshDetails(object):
     def host(self):
         """
         **[Required]** Gets the host of this CreateSshDetails.
-        Name of the host the sshkey is valid for.
+        Name of the host the SSH key is valid for.
 
 
         :return: The host of this CreateSshDetails.
@@ -71,7 +71,7 @@ class CreateSshDetails(object):
     def host(self, host):
         """
         Sets the host of this CreateSshDetails.
-        Name of the host the sshkey is valid for.
+        Name of the host the SSH key is valid for.
 
 
         :param host: The host of this CreateSshDetails.
@@ -83,7 +83,7 @@ class CreateSshDetails(object):
     def sshkey(self):
         """
         **[Required]** Gets the sshkey of this CreateSshDetails.
-        Private ssh key string.
+        Private SSH key string.
 
 
         :return: The sshkey of this CreateSshDetails.
@@ -95,7 +95,7 @@ class CreateSshDetails(object):
     def sshkey(self, sshkey):
         """
         Sets the sshkey of this CreateSshDetails.
-        Private ssh key string.
+        Private SSH key string.
 
 
         :param sshkey: The sshkey of this CreateSshDetails.

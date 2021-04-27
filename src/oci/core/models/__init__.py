@@ -345,6 +345,7 @@ from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
 from .update_byoip_range_details import UpdateByoipRangeDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
+from .update_cluster_network_instance_pool_details import UpdateClusterNetworkInstancePoolDetails
 from .update_compute_capacity_reservation_details import UpdateComputeCapacityReservationDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
@@ -778,6 +779,7 @@ core_type_mapping = {
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
     "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
+    "UpdateClusterNetworkInstancePoolDetails": UpdateClusterNetworkInstancePoolDetails,
     "UpdateComputeCapacityReservationDetails": UpdateComputeCapacityReservationDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateReplicat(object):
     """
-    Parameters for Replicat processes.
+    Parameters for GoldenGate Replicat processes.
     """
 
     def __init__(self, **kwargs):

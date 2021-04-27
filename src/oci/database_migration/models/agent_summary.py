@@ -312,7 +312,7 @@ class AgentSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AgentSummary.
-        The current state of the ODMS On Prem Agent.
+        The current state of the ODMS on-premises Agent.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -327,7 +327,7 @@ class AgentSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AgentSummary.
-        The current state of the ODMS On Prem Agent.
+        The current state of the ODMS on-premises Agent.
 
 
         :param lifecycle_state: The lifecycle_state of this AgentSummary.

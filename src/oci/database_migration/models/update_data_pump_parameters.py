@@ -10,8 +10,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataPumpParameters(object):
     """
-    Optional parameters for Datapump Export and Import. Refer to https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/ODMS_DATAPUMP.html#GUID-62324358-2F26-4A94-B69F-1075D53FA96D__BABDECJE
+    Optional parameters for Data Pump Export and Import. Refer to `Configuring Optional Initial Load Advanced Settings`__
     If an empty object is specified, the stored Data Pump Parameter details will be removed.
+
+    __ https://docs-uat.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED
     """
 
     #: A constant which can be used with the estimate property of a UpdateDataPumpParameters.
@@ -99,7 +101,7 @@ class UpdateDataPumpParameters(object):
     def is_cluster(self):
         """
         Gets the is_cluster of this UpdateDataPumpParameters.
-        False to force datapump worker process to run on one instance.
+        Set to false to force Data Pump worker processes to run on one instance.
 
 
         :return: The is_cluster of this UpdateDataPumpParameters.
@@ -111,7 +113,7 @@ class UpdateDataPumpParameters(object):
     def is_cluster(self, is_cluster):
         """
         Sets the is_cluster of this UpdateDataPumpParameters.
-        False to force datapump worker process to run on one instance.
+        Set to false to force Data Pump worker processes to run on one instance.
 
 
         :param is_cluster: The is_cluster of this UpdateDataPumpParameters.
@@ -187,7 +189,7 @@ class UpdateDataPumpParameters(object):
     def exclude_parameters(self):
         """
         Gets the exclude_parameters of this UpdateDataPumpParameters.
-        Exclude paratemers for export and import. If specified, the stored list will be replaced.
+        Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
 
 
         :return: The exclude_parameters of this UpdateDataPumpParameters.
@@ -199,7 +201,7 @@ class UpdateDataPumpParameters(object):
     def exclude_parameters(self, exclude_parameters):
         """
         Sets the exclude_parameters of this UpdateDataPumpParameters.
-        Exclude paratemers for export and import. If specified, the stored list will be replaced.
+        Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
 
 
         :param exclude_parameters: The exclude_parameters of this UpdateDataPumpParameters.
@@ -211,7 +213,7 @@ class UpdateDataPumpParameters(object):
     def import_parallelism_degree(self):
         """
         Gets the import_parallelism_degree of this UpdateDataPumpParameters.
-        Maximum number of worker processes that can be used for a Datapump Import job.
+        Maximum number of worker processes that can be used for a Data Pump Import job.
         For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
 
 
@@ -224,7 +226,7 @@ class UpdateDataPumpParameters(object):
     def import_parallelism_degree(self, import_parallelism_degree):
         """
         Sets the import_parallelism_degree of this UpdateDataPumpParameters.
-        Maximum number of worker processes that can be used for a Datapump Import job.
+        Maximum number of worker processes that can be used for a Data Pump Import job.
         For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
 
 
@@ -237,7 +239,7 @@ class UpdateDataPumpParameters(object):
     def export_parallelism_degree(self):
         """
         Gets the export_parallelism_degree of this UpdateDataPumpParameters.
-        Maximum number of worker processes that can be used for a Datapump Export job.
+        Maximum number of worker processes that can be used for a Data Pump Export job.
 
 
         :return: The export_parallelism_degree of this UpdateDataPumpParameters.
@@ -249,7 +251,7 @@ class UpdateDataPumpParameters(object):
     def export_parallelism_degree(self, export_parallelism_degree):
         """
         Sets the export_parallelism_degree of this UpdateDataPumpParameters.
-        Maximum number of worker processes that can be used for a Datapump Export job.
+        Maximum number of worker processes that can be used for a Data Pump Export job.
 
 
         :param export_parallelism_degree: The export_parallelism_degree of this UpdateDataPumpParameters.
