@@ -31,7 +31,7 @@ This is the Python SDK for Oracle Cloud Infrastructure. Python 3.6+ are supporte
 
 The project is open source and maintained by Oracle Corp. The home page for the project is `here`__.
 
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html
+__ https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html
 
 ============
 Installation
@@ -45,7 +45,7 @@ __ https://packaging.python.org/guides/installing-using-pip-and-virtualenv/
 
 See `the installation guide`__ for installation troubleshooting and alternative install methods.
 
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html
+__ https://docs.oracle.com/en-us/iaas/tools/python/latest/installation.html
 
 Once your virtual environment is active, oci can be installed using pip.
 
@@ -78,8 +78,8 @@ Full documentation, including prerequisites and installation and configuration i
 
 API reference can be found `here`__.
 
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/landing.html
+__ https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html
+__ https://docs.oracle.com/en-us/iaas/tools/python/latest/api/landing.html
 
 A downloadable version of the documentation is include with in the release zip, which can be found `here`__.
 
@@ -91,7 +91,7 @@ Help
 
 See the “Questions or Feedback” section `here`__.
 
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/feedback.html
+__ https://docs.oracle.com/en-us/iaas/tools/python/latest/feedback.html
 
 =======
 Changes

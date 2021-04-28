@@ -40,7 +40,7 @@ requires = [
 
 setup(
     name="oci",
-    url="https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html",
+    url="https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html",
     version=version,
     description="Oracle Cloud Infrastructure Python SDK",
     long_description=readme,

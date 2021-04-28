@@ -3,7 +3,7 @@
 
 # python version
 python:
-    version: 3.5
+    version: 3.7
     setup_py_install: true
    
 # Just the HTML and indexing
