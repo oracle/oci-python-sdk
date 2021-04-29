@@ -3,6 +3,7 @@ API Reference
 
 .. rubric:: Service Clients
 
+* :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Announcements Preferences <announcements_service/client/oci.announcements_service.AnnouncementsPreferencesClient>`
@@ -86,6 +87,10 @@ API Reference
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
+* :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
+* :doc:`Operator Actions <operator_access_control/client/oci.operator_access_control.OperatorActionsClient>`
+* :doc:`Operator Control Assignment <operator_access_control/client/oci.operator_access_control.OperatorControlAssignmentClient>`
+* :doc:`Operator Control <operator_access_control/client/oci.operator_access_control.OperatorControlClient>`
 * :doc:`Operations Insights <opsi/client/oci.opsi.OperationsInsightsClient>`
 * :doc:`Optimizer <optimizer/client/oci.optimizer.OptimizerClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
@@ -96,6 +101,7 @@ API Reference
 * :doc:`Rover Node <rover/client/oci.rover.RoverNodeClient>`
 * :doc:`Service Connector <sch/client/oci.sch.ServiceConnectorClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
+* :doc:`Service Catalog <service_catalog/client/oci.service_catalog.ServiceCatalogClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
@@ -128,6 +134,7 @@ API Reference
     :hidden:
     :maxdepth: 5
 
+    ai_language
     analytics
     announcements_service
     apigateway
@@ -183,6 +190,7 @@ API Reference
     ocvp
     oda
     ons
+    operator_access_control
     opsi
     optimizer
     os_management
@@ -191,6 +199,7 @@ API Reference
     rover
     sch
     secrets
+    service_catalog
     streaming
     tenant_manager_control_plane
     usage_api

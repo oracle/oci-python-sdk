@@ -43,6 +43,9 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/operator_access_control/pom.xml</module>
+    <module>poms/ai_language/pom.xml</module>
+    <module>poms/service_catalog/pom.xml</module>
     <module>poms/database_migration/pom.xml</module>
     <module>poms/vulnerability_scanning/pom.xml</module>
     <module>poms/network_load_balancer/pom.xml</module>

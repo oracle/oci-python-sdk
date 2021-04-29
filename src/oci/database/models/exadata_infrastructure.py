@@ -190,6 +190,14 @@ class ExadataInfrastructure(object):
             The value to assign to the maintenance_window property of this ExadataInfrastructure.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param last_maintenance_run_id:
+            The value to assign to the last_maintenance_run_id property of this ExadataInfrastructure.
+        :type last_maintenance_run_id: str
+
+        :param next_maintenance_run_id:
+            The value to assign to the next_maintenance_run_id property of this ExadataInfrastructure.
+        :type next_maintenance_run_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructure.
         :type freeform_tags: dict(str, str)
@@ -229,6 +237,8 @@ class ExadataInfrastructure(object):
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_slo_status': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'last_maintenance_run_id': 'str',
+            'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -263,6 +273,8 @@ class ExadataInfrastructure(object):
             'contacts': 'contacts',
             'maintenance_slo_status': 'maintenanceSLOStatus',
             'maintenance_window': 'maintenanceWindow',
+            'last_maintenance_run_id': 'lastMaintenanceRunId',
+            'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -296,6 +308,8 @@ class ExadataInfrastructure(object):
         self._contacts = None
         self._maintenance_slo_status = None
         self._maintenance_window = None
+        self._last_maintenance_run_id = None
+        self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1014,6 +1028,62 @@ class ExadataInfrastructure(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def last_maintenance_run_id(self):
+        """
+        Gets the last_maintenance_run_id of this ExadataInfrastructure.
+        The `OCID`__ of the last maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The last_maintenance_run_id of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._last_maintenance_run_id
+
+    @last_maintenance_run_id.setter
+    def last_maintenance_run_id(self, last_maintenance_run_id):
+        """
+        Sets the last_maintenance_run_id of this ExadataInfrastructure.
+        The `OCID`__ of the last maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param last_maintenance_run_id: The last_maintenance_run_id of this ExadataInfrastructure.
+        :type: str
+        """
+        self._last_maintenance_run_id = last_maintenance_run_id
+
+    @property
+    def next_maintenance_run_id(self):
+        """
+        Gets the next_maintenance_run_id of this ExadataInfrastructure.
+        The `OCID`__ of the next maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The next_maintenance_run_id of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._next_maintenance_run_id
+
+    @next_maintenance_run_id.setter
+    def next_maintenance_run_id(self, next_maintenance_run_id):
+        """
+        Sets the next_maintenance_run_id of this ExadataInfrastructure.
+        The `OCID`__ of the next maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param next_maintenance_run_id: The next_maintenance_run_id of this ExadataInfrastructure.
+        :type: str
+        """
+        self._next_maintenance_run_id = next_maintenance_run_id
 
     @property
     def freeform_tags(self):
