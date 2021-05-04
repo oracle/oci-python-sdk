@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.38.1 - 2021-05-04
+====================
+
+Added
+-----
+* Support for the Operator Access Control service
+* Support for the Service Catalog service
+* Support for the AI Language service
+* Support for autonomous database on Exadata Cloud at Customer infrastructure patching in the Database service
+
+====================
 2.38.0 - 2021-04-27
 ====================
 
