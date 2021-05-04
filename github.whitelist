@@ -40,6 +40,7 @@
 ^tox\.ini$
 ^wercker\.yml$
 ^NOTICE\.txt$
+^.readthedocs.yml
 
 ^src/oci/announcements_service/.*\.py$
 ^src/oci/autoscaling/.*\.py$
