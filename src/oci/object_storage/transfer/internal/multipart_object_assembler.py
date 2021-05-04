@@ -47,7 +47,7 @@ class MultipartObjectAssembler:
         PLEASE NOTE that for oci versions < 2.23.2 and >= 2.18.0, the timeout for the object storage client is overwritten to `None` for all operations which
         call object storage. For this reason, the operations are NOT thread-safe, and you should provide the
         MultipartObjectAssembler class with its own Object Storage client that isn't used elsewhere.
-        For more information please see `Known Issues <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html>`_
+        For more information please see `Known Issues <https://docs.oracle.com/en-us/iaas/tools/python/latest/known-issues.html>`_
 
         :param ObjectStorageClient object_storage_client:
             A configured Object Storage client.

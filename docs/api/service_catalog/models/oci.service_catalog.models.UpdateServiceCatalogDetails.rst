@@ -1,0 +1,11 @@
+UpdateServiceCatalogDetails
+===========================
+
+.. currentmodule:: oci.service_catalog.models
+
+.. autoclass:: UpdateServiceCatalogDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
