@@ -87,6 +87,8 @@ def test_default_timeout(identity, config):
     assert client.timeout == (20.0, 70.0)
     client = oci.BaseClient('identity', config, identity.base_client.signer, {}, timeout=20)
     assert client.timeout == 20
+    client = oci.BaseClient('identity', config, identity.base_client.signer, {}, timeout=None)
+    assert client.timeout is None
 
 
 def test_default_timeout_service_client(config):

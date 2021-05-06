@@ -75,11 +75,12 @@ class StreamClient(object):
         base_client_init_kwargs = {
             'regional_client': False,
             'service_endpoint': service_endpoint,
-            'timeout': kwargs.get('timeout'),
             'base_path': '/20180418',
             'service_endpoint_template': 'https://streaming.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
+        if 'timeout' in kwargs:
+            base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         self.base_client = BaseClient("stream", config, signer, streaming_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
