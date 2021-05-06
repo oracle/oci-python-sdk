@@ -77,11 +77,12 @@ class ServiceCatalogClient(object):
         base_client_init_kwargs = {
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
-            'timeout': kwargs.get('timeout'),
             'base_path': '/20210527',
             'service_endpoint_template': 'https://service-catalog.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
+        if 'timeout' in kwargs:
+            base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         self.base_client = BaseClient("service_catalog", config, signer, service_catalog_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
