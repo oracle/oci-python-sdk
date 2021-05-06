@@ -105,6 +105,14 @@ class MaintenanceRunSummary(object):
     #: This constant has a value of "ONEOFF"
     MAINTENANCE_SUBTYPE_ONEOFF = "ONEOFF"
 
+    #: A constant which can be used with the patching_mode property of a MaintenanceRunSummary.
+    #: This constant has a value of "ROLLING"
+    PATCHING_MODE_ROLLING = "ROLLING"
+
+    #: A constant which can be used with the patching_mode property of a MaintenanceRunSummary.
+    #: This constant has a value of "NONROLLING"
+    PATCHING_MODE_NONROLLING = "NONROLLING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaintenanceRunSummary object with values from keyword arguments.
@@ -178,6 +186,16 @@ class MaintenanceRunSummary(object):
             The value to assign to the peer_maintenance_run_id property of this MaintenanceRunSummary.
         :type peer_maintenance_run_id: str
 
+        :param patching_mode:
+            The value to assign to the patching_mode property of this MaintenanceRunSummary.
+            Allowed values for this property are: "ROLLING", "NONROLLING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type patching_mode: str
+
+        :param patch_failure_count:
+            The value to assign to the patch_failure_count property of this MaintenanceRunSummary.
+        :type patch_failure_count: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -194,7 +212,9 @@ class MaintenanceRunSummary(object):
             'maintenance_type': 'str',
             'patch_id': 'str',
             'maintenance_subtype': 'str',
-            'peer_maintenance_run_id': 'str'
+            'peer_maintenance_run_id': 'str',
+            'patching_mode': 'str',
+            'patch_failure_count': 'int'
         }
 
         self.attribute_map = {
@@ -212,7 +232,9 @@ class MaintenanceRunSummary(object):
             'maintenance_type': 'maintenanceType',
             'patch_id': 'patchId',
             'maintenance_subtype': 'maintenanceSubtype',
-            'peer_maintenance_run_id': 'peerMaintenanceRunId'
+            'peer_maintenance_run_id': 'peerMaintenanceRunId',
+            'patching_mode': 'patchingMode',
+            'patch_failure_count': 'patchFailureCount'
         }
 
         self._id = None
@@ -230,6 +252,8 @@ class MaintenanceRunSummary(object):
         self._patch_id = None
         self._maintenance_subtype = None
         self._peer_maintenance_run_id = None
+        self._patching_mode = None
+        self._patch_failure_count = None
 
     @property
     def id(self):
@@ -618,6 +642,60 @@ class MaintenanceRunSummary(object):
         :type: str
         """
         self._peer_maintenance_run_id = peer_maintenance_run_id
+
+    @property
+    def patching_mode(self):
+        """
+        Gets the patching_mode of this MaintenanceRunSummary.
+        Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+        Allowed values for this property are: "ROLLING", "NONROLLING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The patching_mode of this MaintenanceRunSummary.
+        :rtype: str
+        """
+        return self._patching_mode
+
+    @patching_mode.setter
+    def patching_mode(self, patching_mode):
+        """
+        Sets the patching_mode of this MaintenanceRunSummary.
+        Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+
+        :param patching_mode: The patching_mode of this MaintenanceRunSummary.
+        :type: str
+        """
+        allowed_values = ["ROLLING", "NONROLLING"]
+        if not value_allowed_none_or_none_sentinel(patching_mode, allowed_values):
+            patching_mode = 'UNKNOWN_ENUM_VALUE'
+        self._patching_mode = patching_mode
+
+    @property
+    def patch_failure_count(self):
+        """
+        Gets the patch_failure_count of this MaintenanceRunSummary.
+        Contain the patch failure count.
+
+
+        :return: The patch_failure_count of this MaintenanceRunSummary.
+        :rtype: int
+        """
+        return self._patch_failure_count
+
+    @patch_failure_count.setter
+    def patch_failure_count(self, patch_failure_count):
+        """
+        Sets the patch_failure_count of this MaintenanceRunSummary.
+        Contain the patch failure count.
+
+
+        :param patch_failure_count: The patch_failure_count of this MaintenanceRunSummary.
+        :type: int
+        """
+        self._patch_failure_count = patch_failure_count
 
     def __repr__(self):
         return formatted_flat_dict(self)
