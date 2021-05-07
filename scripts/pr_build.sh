@@ -24,6 +24,7 @@ echo "Setup python environment"
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 export PYTHON_3_VERSION=3.8.6
 pyenv install $PYTHON_3_VERSION -s

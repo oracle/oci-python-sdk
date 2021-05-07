@@ -9,6 +9,7 @@ set -x
 
 # Enable pyenv shell integration
 eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 # TODO: Update the requirements and setup.py so we can use pyOpenSSL > 17.4.0
 #       That version is no longer available in the artifactory.
