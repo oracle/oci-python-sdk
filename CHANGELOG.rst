@@ -4,12 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.38.2 - TBD
+2.38.2 - 2021-05-11
 ====================
 
 Added
 -----
-* TBD
+* Support for creating notebook sessions with larger block volumes in the Data Science service
+* Support for database maintenance run patch modes in the Database service
+
+Fixed
+-----
+* Fixed a bug where `timeout=None` was not respected when passed to clients. The older versions of the SDK still use the default connection timeout(10s) and read timeout(60s) when initialized with `timeout=None`
+
+Changed
+-------
+* Improvement in the performance of Upload Manager for parallel uploads. This is achieved by overriding the default read size of Python HTTP client from 8192 bytes to 64 kb.
 
 ====================
 2.38.1 - 2021-05-04
