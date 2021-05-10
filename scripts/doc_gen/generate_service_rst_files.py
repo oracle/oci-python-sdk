@@ -74,6 +74,12 @@ def get_rst_header(header_content, header_char):
     return header_char * len(header_content)
 
 
+def extract_service_name_from_path(path):
+    split_by_fslash = path.split('/')
+    split_by_period = split_by_fslash[-1].split('.')
+    return split_by_period[-1]
+
+
 def camelize(source_string):
     split_by_underscore = source_string.split('_')
     full_string = ''
@@ -119,8 +125,8 @@ def landing_page_linkify(service_name):
 
 def generate_rst(module_name, service_root_header, target_file_name, service_names, jinja_environment):
     target_file = os.path.join(API_DOC_DIRECTORY, '{}.rst'.format(target_file_name))
-    service_client_classes = ['oci.{}.{}Client'.format(module_name, camelize(s)) for s in service_names]
-    service_client_classes.extend(['oci.{}.{}ClientCompositeOperations'.format(module_name, camelize(s)) for s in service_names])
+    service_client_classes = ['oci.{}.{}'.format(module_name, extract_service_name_from_path(services.services_name_to_path[s])) for s in service_names]
+    service_client_classes.extend(['oci.{}.{}CompositeOperations'.format(module_name, extract_service_name_from_path(services.services_name_to_path[s])) for s in service_names])
 
     models = []
     for model_info in inspect.getmembers(sys.modules['oci.{}.models'.format(module_name)], inspect.isclass):
