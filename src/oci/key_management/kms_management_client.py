@@ -77,11 +77,12 @@ class KmsManagementClient(object):
         base_client_init_kwargs = {
             'regional_client': False,
             'service_endpoint': service_endpoint,
-            'timeout': kwargs.get('timeout'),
             'base_path': '/',
             'service_endpoint_template': 'https://kms.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
+        if 'timeout' in kwargs:
+            base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         self.base_client = BaseClient("kms_management", config, signer, key_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 

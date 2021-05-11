@@ -77,11 +77,12 @@ class DatabaseMigrationClient(object):
         base_client_init_kwargs = {
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
-            'timeout': kwargs.get('timeout'),
             'base_path': '/20200720',
             'service_endpoint_template': 'https://odms.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
+        if 'timeout' in kwargs:
+            base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         self.base_client = BaseClient("database_migration", config, signer, database_migration_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 

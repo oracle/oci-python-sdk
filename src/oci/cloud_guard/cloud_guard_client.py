@@ -77,11 +77,12 @@ class CloudGuardClient(object):
         base_client_init_kwargs = {
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
-            'timeout': kwargs.get('timeout'),
             'base_path': '/20200131',
             'service_endpoint_template': 'https://cloudguard-cp-api.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
+        if 'timeout' in kwargs:
+            base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         self.base_client = BaseClient("cloud_guard", config, signer, cloud_guard_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 

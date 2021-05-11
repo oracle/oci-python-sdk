@@ -64,3 +64,13 @@ Potential data corruption with Python SDK on binary upload (versions 2.8.0 and b
 Default timeout not getting set in the clients (versions 2.17.2 and below)
 ==========================================================================
 The default timeout values (connect timeout = 10 secs and read timeout = 60 secs) we not getting set in the clients and remained None (infinite timeout). This has been fixed in v2.18.0.
+
+Some BlockStorage composite operations throw a 404/NotAuthorizedOrNotFound for Cross Region operations
+======================================================================================================
+**Details:** The copy_boot_volume_backup_and_wait_for_state() and copy_volume_backup_and_wait_for_state() from the BlockStorage Client Composite operations throw a 404/NotAuthorizedOrNotFound when copying a backup from one region to another even though the operation succeeds eventually.
+
+**Impacted Versions:** All
+
+**Workaround:** Instead of using the composite operations, use two different clients for this operation; one client in the Source Region to send the request for copying the backup from Region A to Region B, and a second client in Destination region to wait for the backup to become available. See `this <https://github.com/oracle/oci-python-sdk/blob/master/examples/copy_volume_backup_example.py>`_ for an example.
+
+**Direct link to this issue:** `Some BlockStorage composite operations throw a 404/NotAuthorizedOrNotFound for Cross Region operations <https://github.com/oracle/oci-python-sdk/issues/344>`_
