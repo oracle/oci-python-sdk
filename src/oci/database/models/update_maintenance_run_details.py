@@ -13,6 +13,14 @@ class UpdateMaintenanceRunDetails(object):
     Describes the modification parameters for the maintenance run.
     """
 
+    #: A constant which can be used with the patching_mode property of a UpdateMaintenanceRunDetails.
+    #: This constant has a value of "ROLLING"
+    PATCHING_MODE_ROLLING = "ROLLING"
+
+    #: A constant which can be used with the patching_mode property of a UpdateMaintenanceRunDetails.
+    #: This constant has a value of "NONROLLING"
+    PATCHING_MODE_NONROLLING = "NONROLLING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateMaintenanceRunDetails object with values from keyword arguments.
@@ -34,25 +42,33 @@ class UpdateMaintenanceRunDetails(object):
             The value to assign to the patch_id property of this UpdateMaintenanceRunDetails.
         :type patch_id: str
 
+        :param patching_mode:
+            The value to assign to the patching_mode property of this UpdateMaintenanceRunDetails.
+            Allowed values for this property are: "ROLLING", "NONROLLING"
+        :type patching_mode: str
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
             'time_scheduled': 'datetime',
             'is_patch_now_enabled': 'bool',
-            'patch_id': 'str'
+            'patch_id': 'str',
+            'patching_mode': 'str'
         }
 
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'time_scheduled': 'timeScheduled',
             'is_patch_now_enabled': 'isPatchNowEnabled',
-            'patch_id': 'patchId'
+            'patch_id': 'patchId',
+            'patching_mode': 'patchingMode'
         }
 
         self._is_enabled = None
         self._time_scheduled = None
         self._is_patch_now_enabled = None
         self._patch_id = None
+        self._patching_mode = None
 
     @property
     def is_enabled(self):
@@ -153,6 +169,38 @@ class UpdateMaintenanceRunDetails(object):
         :type: str
         """
         self._patch_id = patch_id
+
+    @property
+    def patching_mode(self):
+        """
+        Gets the patching_mode of this UpdateMaintenanceRunDetails.
+        Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+        Allowed values for this property are: "ROLLING", "NONROLLING"
+
+
+        :return: The patching_mode of this UpdateMaintenanceRunDetails.
+        :rtype: str
+        """
+        return self._patching_mode
+
+    @patching_mode.setter
+    def patching_mode(self, patching_mode):
+        """
+        Sets the patching_mode of this UpdateMaintenanceRunDetails.
+        Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+
+        :param patching_mode: The patching_mode of this UpdateMaintenanceRunDetails.
+        :type: str
+        """
+        allowed_values = ["ROLLING", "NONROLLING"]
+        if not value_allowed_none_or_none_sentinel(patching_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `patching_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._patching_mode = patching_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)
