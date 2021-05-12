@@ -356,6 +356,13 @@ class BaseClient(object):
 
         """
 
+        # By default we will add Expect header for all PUT/POST operations
+        if enable_expect_header and (method == 'PUT' or method == 'POST'):
+            if header_params is None:
+                header_params = {'expect': '100-continue'}
+            elif "expect" not in header_params:
+                header_params['expect'] = '100-continue'
+
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
 
