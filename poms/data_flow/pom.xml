@@ -166,7 +166,7 @@
       <dependency>
         <groupId>oracle.dfcs.server</groupId>
         <artifactId>service_api_spec</artifactId>
-        <version>1.0.207-RELEASEPREVIEW</version>
+        <version>1.0.245-RELEASEPREVIEW</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

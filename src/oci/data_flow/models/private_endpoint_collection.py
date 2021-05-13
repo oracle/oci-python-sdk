@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrivateEndpointCollection(object):
     """
-    Results of a query for a list of private endpoints. Contains PrivateEndpointSummary items.
+    The results of a query for a list of private endpoints. It contains PrivateEndpointSummary items.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class PrivateEndpointCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this PrivateEndpointCollection.
-        A list of private endpoints
+        A list of private endpoints.
 
 
         :return: The items of this PrivateEndpointCollection.
@@ -49,7 +49,7 @@ class PrivateEndpointCollection(object):
     def items(self, items):
         """
         Sets the items of this PrivateEndpointCollection.
-        A list of private endpoints
+        A list of private endpoints.
 
 
         :param items: The items of this PrivateEndpointCollection.

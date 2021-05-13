@@ -41,6 +41,7 @@ Resource Manager
     oci.resource_manager.models.CreateImportTfStateJobOperationDetails
     oci.resource_manager.models.CreateJobDetails
     oci.resource_manager.models.CreateJobOperationDetails
+    oci.resource_manager.models.CreateObjectStorageConfigSourceDetails
     oci.resource_manager.models.CreatePlanJobOperationDetails
     oci.resource_manager.models.CreateStackDetails
     oci.resource_manager.models.CreateStackTemplateConfigSourceDetails
@@ -65,6 +66,8 @@ Resource Manager
     oci.resource_manager.models.JobOperationDetailsSummary
     oci.resource_manager.models.JobSummary
     oci.resource_manager.models.LogEntry
+    oci.resource_manager.models.ObjectStorageConfigSource
+    oci.resource_manager.models.ObjectStorageConfigSourceRecord
     oci.resource_manager.models.PlanJobOperationDetails
     oci.resource_manager.models.PlanJobOperationDetailsSummary
     oci.resource_manager.models.ResourceDiscoveryServiceCollection
@@ -88,6 +91,7 @@ Resource Manager
     oci.resource_manager.models.UpdateGithubAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateJobDetails
+    oci.resource_manager.models.UpdateObjectStorageConfigSourceDetails
     oci.resource_manager.models.UpdateStackDetails
     oci.resource_manager.models.UpdateTemplateConfigSourceDetails
     oci.resource_manager.models.UpdateTemplateDetails
