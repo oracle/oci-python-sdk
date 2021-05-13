@@ -135,3 +135,14 @@ create table OCI_PRICE_LIST (
     RATE_UPDATE_DATE        DATE,
     CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU)
 );
+
+-------------------------------
+-- OCI_INTERNAL_COST
+-------------------------------
+create table OCI_INTERNAL_COST (
+    RESOURCE_NAME       varchar2(100) NOT NULL,
+    SERVICE_NAME        varchar2(100),
+    BILLED_USAGE_UNIT   varchar2(100),
+    UNIT_COST           NUMBER,
+    CONSTRAINT OCI_INTERNAL_COST_PK PRIMARY KEY (RESOURCE_NAME) USING INDEX ENABLE
+);
