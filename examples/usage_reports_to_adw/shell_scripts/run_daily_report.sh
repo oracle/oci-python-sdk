@@ -221,8 +221,262 @@ from
     )
 );
 prompt </table>
-
 prompt <br><br>
+
+prompt <table border=1 cellpadding=3 cellspacing=0 width=1024 >
+prompt     <tr><td colspan=15 class=tabheader>Usage OCPU Daily Report - $DATE_PRINT </td></tr>
+
+with data as
+(
+    select tenant_name,
+        trunc(USAGE_INTERVAL_START) as USAGE_INTERVAL_START,
+		USG_CONSUMED_MEASURE,
+        max(USG_BILLED_QUANTITY) as USG_BILLED_QUANTITY
+    from
+    (
+        select 
+            tenant_name,
+            USAGE_INTERVAL_START,
+            USG_CONSUMED_MEASURE,
+            sum(USG_BILLED_QUANTITY) USG_BILLED_QUANTITY
+        from
+        (
+            select /*+ parallel(l,d) full(d) */
+                USAGE_INTERVAL_START,
+                tenant_name,
+                USG_CONSUMED_MEASURE,
+                case
+                        when USG_CONSUMED_UNITS like '%MS%' then USG_BILLED_QUANTITY/((USAGE_INTERVAL_END-USAGE_INTERVAL_START)*24*60*60)/1000
+                    else USG_BILLED_QUANTITY
+                end as USG_BILLED_QUANTITY
+            from
+                oci_usage d
+            where
+                USAGE_INTERVAL_START > trunc(sysdate-15) and
+                prd_service not in ('ORACLE_NOTIFICATION_SERVICE') and
+                prd_resource not in ('PIC_STANDARD_PERFORMANCE','PIC_COMPUTE_OUTBOUND_DATA_TRANSFER') and
+                USG_CONSUMED_MEASURE in ('OCPUS')
+            )
+        group by
+            tenant_name,
+			USAGE_INTERVAL_START,
+            USG_CONSUMED_MEASURE
+    )
+    group by tenant_name, USG_CONSUMED_MEASURE, trunc(USAGE_INTERVAL_START)
+)
+select
+    '<tr>'||
+        '<th width=150 nowrap class=th1>Tenant Name</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-14),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-13),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-12),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-11),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-10),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-9),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-8),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-7),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-6),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-5),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-4),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-3),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-2),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-1),'DD-MON-YYYY DY')||'</th>'||
+    '</tr>'
+    as line
+from dual
+union all
+select
+    '<tr>'||
+        '<td nowrap class=dc1> '||tenant_name||'</td> '||
+        '<td nowrap class='||day14_class||'> '||to_char(day14,'999,999')||'</td>'||
+        '<td nowrap class='||day13_class||'> '||to_char(day13,'999,999')||'</td>'||
+        '<td nowrap class='||day12_class||'> '||to_char(day12,'999,999')||'</td>'||
+        '<td nowrap class='||day11_class||'> '||to_char(day11,'999,999')||'</td>'||
+        '<td nowrap class='||day10_class||'> '||to_char(day10,'999,999')||'</td>'||
+        '<td nowrap class='||day9_class||'> '||to_char(day9,'999,999')||'</td>'||
+        '<td nowrap class='||day8_class||'> '||to_char(day8,'999,999')||'</td>'||
+        '<td nowrap class='||day7_class||'> '||to_char(day7,'999,999')||'</td>'||
+        '<td nowrap class='||day6_class||'> '||to_char(day6,'999,999')||'</td>'||
+        '<td nowrap class='||day5_class||'> '||to_char(day5,'999,999')||'</td>'||
+        '<td nowrap class='||day4_class||'> '||to_char(day4,'999,999')||'</td>'||
+        '<td nowrap class='||day3_class||'> '||to_char(day3,'999,999')||'</td>'||
+        '<td nowrap class='||day2_class||'> '||to_char(day2,'999,999')||'</td>'||
+        '<td nowrap class='||day1_class||'> '||to_char(day1,'999,999')||'</td>'||
+    '</tr>' as line
+from
+(
+    select
+        tenant_name,day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day1) then 'dcbold' else 'dcr' END as day1_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day2) then 'dcbold' else 'dcr' END as day2_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day3) then 'dcbold' else 'dcr' END as day3_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day4) then 'dcbold' else 'dcr' END as day4_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day5) then 'dcbold' else 'dcr' END as day5_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day6) then 'dcbold' else 'dcr' END as day6_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day7) then 'dcbold' else 'dcr' END as day7_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day8) then 'dcbold' else 'dcr' END as day8_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day9) then 'dcbold' else 'dcr' END as day9_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day10) then 'dcbold' else 'dcr' END as day10_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day11) then 'dcbold' else 'dcr' END as day11_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day12) then 'dcbold' else 'dcr' END as day12_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day13) then 'dcbold' else 'dcr' END as day13_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day14) then 'dcbold' else 'dcr' END as day14_class
+    from
+    (
+        select
+            tenant_name,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-14) then USG_BILLED_QUANTITY else 0 end) DAY14,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-13) then USG_BILLED_QUANTITY else 0 end) DAY13,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-12) then USG_BILLED_QUANTITY else 0 end) DAY12,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-11) then USG_BILLED_QUANTITY else 0 end) DAY11,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-10) then USG_BILLED_QUANTITY else 0 end) DAY10,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-9 ) then USG_BILLED_QUANTITY else 0 end) DAY9,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-8 ) then USG_BILLED_QUANTITY else 0 end) DAY8,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-7 ) then USG_BILLED_QUANTITY else 0 end) DAY7,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-6 ) then USG_BILLED_QUANTITY else 0 end) DAY6,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-5 ) then USG_BILLED_QUANTITY else 0 end) DAY5,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-4 ) then USG_BILLED_QUANTITY else 0 end) DAY4,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-3 ) then USG_BILLED_QUANTITY else 0 end) DAY3,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-2 ) then USG_BILLED_QUANTITY else 0 end) DAY2,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-1 ) then USG_BILLED_QUANTITY else 0 end) DAY1
+        from data s
+        where
+			USG_CONSUMED_MEASURE = 'OCPUS'
+        group by tenant_name
+        order by 1
+    )
+);
+prompt </table>
+prompt <br><br>
+
+prompt <table border=1 cellpadding=3 cellspacing=0 width=1024 >
+prompt     <tr><td colspan=15 class=tabheader>Usage Storage (TB) Daily Report - $DATE_PRINT </td></tr>
+
+with data as
+(
+    select tenant_name,
+        trunc(USAGE_INTERVAL_START) as USAGE_INTERVAL_START,
+		USG_CONSUMED_MEASURE,
+        max(USG_BILLED_QUANTITY) as USG_BILLED_QUANTITY
+    from
+    (
+        select 
+            tenant_name,
+            USAGE_INTERVAL_START,
+            USG_CONSUMED_MEASURE,
+            sum(USG_BILLED_QUANTITY) USG_BILLED_QUANTITY
+        from
+        (
+            select /*+ parallel(l,d) full(d) */
+                USAGE_INTERVAL_START,
+                tenant_name,
+                USG_CONSUMED_MEASURE,
+                case
+                        when USG_CONSUMED_UNITS like '%TB_MS%' then USG_BILLED_QUANTITY/((USAGE_INTERVAL_END-USAGE_INTERVAL_START)*24*60*60)/1000*1024/1000
+                        when USG_CONSUMED_UNITS like '%BYTE_MS%' then USG_BILLED_QUANTITY/((USAGE_INTERVAL_END-USAGE_INTERVAL_START)*24*60*60)/1000/1000/1000/1000/1000
+                        when USG_CONSUMED_UNITS like '%MS%' then USG_BILLED_QUANTITY/((USAGE_INTERVAL_END-USAGE_INTERVAL_START)*24*60*60)/1000/1000
+                    else USG_BILLED_QUANTITY/1000
+                end as USG_BILLED_QUANTITY
+            from
+                oci_usage d
+            where
+                USAGE_INTERVAL_START > trunc(sysdate-15) and
+                prd_service not in ('ORACLE_NOTIFICATION_SERVICE') and
+                prd_resource not in ('PIC_STANDARD_PERFORMANCE','PIC_COMPUTE_OUTBOUND_DATA_TRANSFER') and
+                USG_CONSUMED_MEASURE in ('STORAGE_SIZE')
+            )
+        group by
+            tenant_name,
+			USAGE_INTERVAL_START,
+            USG_CONSUMED_MEASURE
+    )
+    group by tenant_name, USG_CONSUMED_MEASURE, trunc(USAGE_INTERVAL_START)
+)
+select
+    '<tr>'||
+        '<th width=150 nowrap class=th1>Tenant Name</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-14),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-13),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-12),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-11),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-10),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-9),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-8),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-7),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-6),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-5),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-4),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-3),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-2),'DD-MON-YYYY DY')||'</th>'||
+        '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-1),'DD-MON-YYYY DY')||'</th>'||
+    '</tr>'
+    as line
+from dual
+union all
+select
+    '<tr>'||
+        '<td nowrap class=dc1> '||tenant_name||'</td> '||
+        '<td nowrap class='||day14_class||'> '||to_char(day14,'999,999')||'</td>'||
+        '<td nowrap class='||day13_class||'> '||to_char(day13,'999,999')||'</td>'||
+        '<td nowrap class='||day12_class||'> '||to_char(day12,'999,999')||'</td>'||
+        '<td nowrap class='||day11_class||'> '||to_char(day11,'999,999')||'</td>'||
+        '<td nowrap class='||day10_class||'> '||to_char(day10,'999,999')||'</td>'||
+        '<td nowrap class='||day9_class||'> '||to_char(day9,'999,999')||'</td>'||
+        '<td nowrap class='||day8_class||'> '||to_char(day8,'999,999')||'</td>'||
+        '<td nowrap class='||day7_class||'> '||to_char(day7,'999,999')||'</td>'||
+        '<td nowrap class='||day6_class||'> '||to_char(day6,'999,999')||'</td>'||
+        '<td nowrap class='||day5_class||'> '||to_char(day5,'999,999')||'</td>'||
+        '<td nowrap class='||day4_class||'> '||to_char(day4,'999,999')||'</td>'||
+        '<td nowrap class='||day3_class||'> '||to_char(day3,'999,999')||'</td>'||
+        '<td nowrap class='||day2_class||'> '||to_char(day2,'999,999')||'</td>'||
+        '<td nowrap class='||day1_class||'> '||to_char(day1,'999,999')||'</td>'||
+    '</tr>' as line
+from
+(
+    select
+        tenant_name,day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day1) then 'dcbold' else 'dcr' END as day1_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day2) then 'dcbold' else 'dcr' END as day2_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day3) then 'dcbold' else 'dcr' END as day3_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day4) then 'dcbold' else 'dcr' END as day4_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day5) then 'dcbold' else 'dcr' END as day5_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day6) then 'dcbold' else 'dcr' END as day6_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day7) then 'dcbold' else 'dcr' END as day7_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day8) then 'dcbold' else 'dcr' END as day8_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day9) then 'dcbold' else 'dcr' END as day9_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day10) then 'dcbold' else 'dcr' END as day10_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day11) then 'dcbold' else 'dcr' END as day11_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day12) then 'dcbold' else 'dcr' END as day12_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day13) then 'dcbold' else 'dcr' END as day13_class,
+        case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,day11,day12,day13,day14)) = trunc(day14) then 'dcbold' else 'dcr' END as day14_class
+    from
+    (
+        select
+            tenant_name,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-14) then USG_BILLED_QUANTITY else 0 end) DAY14,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-13) then USG_BILLED_QUANTITY else 0 end) DAY13,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-12) then USG_BILLED_QUANTITY else 0 end) DAY12,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-11) then USG_BILLED_QUANTITY else 0 end) DAY11,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-10) then USG_BILLED_QUANTITY else 0 end) DAY10,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-9 ) then USG_BILLED_QUANTITY else 0 end) DAY9,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-8 ) then USG_BILLED_QUANTITY else 0 end) DAY8,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-7 ) then USG_BILLED_QUANTITY else 0 end) DAY7,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-6 ) then USG_BILLED_QUANTITY else 0 end) DAY6,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-5 ) then USG_BILLED_QUANTITY else 0 end) DAY5,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-4 ) then USG_BILLED_QUANTITY else 0 end) DAY4,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-3 ) then USG_BILLED_QUANTITY else 0 end) DAY3,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-2 ) then USG_BILLED_QUANTITY else 0 end) DAY2,
+            sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-1 ) then USG_BILLED_QUANTITY else 0 end) DAY1
+        from data s
+        where
+			USG_CONSUMED_MEASURE = 'STORAGE_SIZE'
+        group by tenant_name
+        order by 1
+    )
+);
+prompt </table>
+prompt <br><br>
+
 
 prompt <table border=1 cellpadding=4 cellspacing=0 width=300 >
 prompt     <tr><td colspan=2 class=tabheader>Storage Statistics</td></tr>
