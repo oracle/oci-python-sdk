@@ -1235,13 +1235,13 @@ class ShowOCIOutput(object):
             self.__print_error("__print_database_db_system", e)
 
     ##########################################################################
-    # print database db system
+    # print database Autonomous Shared
     ##########################################################################
 
     def __print_database_db_autonomous(self, dbs):
         try:
             for db in dbs:
-                print(self.taba + "ADB        : " + db['name'])
+                print(self.taba + "ADB-S      : " + db['name'])
                 if 'cpu_core_count' in db:
                     print(self.tabs + "Size       : " + str(db['cpu_core_count']) + " OCPUs, " + str(db['data_storage_size_in_tbs']) + "TB Storage")
                 if 'time_created' in db:
@@ -1270,6 +1270,72 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_database_db_autonomous", e)
+
+    ##########################################################################
+    # ADB-D
+    ##########################################################################
+    def __print_database_db_autonomous_dedicated(self, list_exadata):
+
+        try:
+            for dbs in list_exadata:
+                print("")
+
+                print(self.taba + "ADB-D    : " + dbs['name'])
+                print(self.tabs + "Created  : " + dbs['time_created'][0:16])
+                print(self.tabs + "AD       : " + dbs['availability_domain'])
+                print(self.tabs + "Hostname : " + dbs['hostname'])
+                print(self.tabs + "Domain   : " + dbs['domain'])
+                print(self.tabs + "ScanDNS  : " + dbs['scan_dns_name'])
+
+                if 'subnet_name' in dbs:
+                    if dbs['subnet_name'] != "None" and dbs['subnet_name']:
+                        print(self.tabs + "Subnet   : " + str(dbs['subnet_name']))
+
+                if 'maintenance_window' in dbs:
+                    if dbs['maintenance_window']:
+                        print(self.tabs + "Maint    : Window : " + dbs['maintenance_window']['display'])
+
+                if 'last_maintenance_run' in dbs:
+                    if dbs['last_maintenance_run']:
+                        print(self.tabs + "Maint    : Last   : " + dbs['last_maintenance_run']['description'])
+                        print(self.tabs + "                 : " + dbs['last_maintenance_run']['maintenance_display'])
+
+                if 'next_maintenance_run' in dbs:
+                    if dbs['next_maintenance_run']:
+                        print(self.tabs + "Maint    : Next   : " + dbs['next_maintenance_run']['description'])
+                        print(self.tabs + "                 : " + dbs['next_maintenance_run']['maintenance_display'])
+                        if dbs['next_maintenance_run']['maintenance_alert']:
+                            print(self.tabs + "           Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
+
+                print("")
+
+                # containers
+                for vm in dbs['containers']:
+
+                    print(self.tabs + "Container: " + vm['name'])
+
+                    # databases
+                    for db in vm['databases']:
+                        print(self.tabs + self.taba + "ADB-S      : " + db['name'])
+                        if 'cpu_core_count' in db:
+                            print(self.tabs + self.tabs + "Size       : " + str(db['cpu_core_count']) + " OCPUs, " + str(db['data_storage_size_in_tbs']) + "TB Storage")
+                        if 'time_created' in db:
+                            print(self.tabs + self.tabs + "Created    : " + db['time_created'])
+                        if 'data_safe_status' in db:
+                            print(self.tabs + self.tabs + "DataSafe   : " + db['data_safe_status'])
+                        if 'time_maintenance_begin' in db:
+                            print(self.tabs + self.tabs + "Maintenance: " + db['time_maintenance_begin'][0:16] + " - " + db['time_maintenance_end'][0:16])
+                        if db['is_data_guard_enabled']:
+                            print(self.tabs + self.tabs + "Data Guard : Lag In Second: " + db['standby_lag_time_in_seconds'] + ", lifecycle: " + db['standby_lifecycle_state'] + ",  Last Switch: " + db['time_of_last_switchover'][0:16] + ",  Last Failover: " + db['time_of_last_switchover'][0:16])
+
+                        # print backups
+                        if db['backups']:
+                            for backup in db['backups']:
+                                print(self.tabs + self.tabs + "         " + backup['name'] + " - " + backup['time'])
+                        print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_db_exadata_infra", e)
 
     ##########################################################################
     # print database nosql
@@ -1368,6 +1434,11 @@ class ShowOCIOutput(object):
             if 'db_system' in list_databases:
                 self.print_header("databases DB Systems", 2)
                 self.__print_database_db_system(list_databases['db_system'])
+                print("")
+
+            if 'autonomous_dedicated' in list_databases:
+                self.print_header("Autonomous Dedicated", 2)
+                self.__print_database_db_autonomous_dedicated(list_databases['autonomous_dedicated'])
                 print("")
 
             if 'autonomous' in list_databases:
@@ -2468,6 +2539,38 @@ class ShowOCISummary(object):
             self.__print_error("__summary_database_db_autonomous", e)
 
     ##########################################################################
+    # print database autonumous
+    ##########################################################################
+
+    def __summary_database_db_autonomous_dedicated(self, list_exa):
+
+        try:
+            for dbs in list_exa:
+
+                # add db to summary
+                if dbs['lifecycle_state'] == 'STOPPED':
+                    self.summary_global_list.append({'type': 'Stopped ' + dbs['sum_info'], 'size': 1})
+                else:
+                    self.summary_global_list.append({'type': dbs['sum_info'], 'size': 1})
+
+                # containers
+                for ct in dbs['containers']:
+                    for db in ct['databases']:
+                        if 'sum_info' in db and 'sum_count' in db:
+                            self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
+                            if float(db['sum_count']) == 0:
+                                self.summary_global_list.append({'type': db['sum_info_stopped'], 'size': 1})
+                            else:
+                                self.summary_global_list.append({'type': db['sum_info_count'], 'size': 1})
+                                self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
+
+                        if 'sum_info_storage' in db and 'sum_size_tb' in db:
+                            self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
+
+        except Exception as e:
+            self.__print_error("__summary_database_db_autonomous_dedicated", e)
+
+    ##########################################################################
     # print nosql + mysql
     ##########################################################################
 
@@ -2500,6 +2603,9 @@ class ShowOCISummary(object):
 
             if 'autonomous' in list_databases:
                 self.__summary_database_db_autonomous(list_databases['autonomous'])
+
+            if 'autonomous_dedicated' in list_databases:
+                self.__summary_database_db_autonomous_dedicated(list_databases['autonomous_dedicated'])
 
             if 'nosql' in list_databases:
                 self.__summary_database_nosql(list_databases['nosql'])
