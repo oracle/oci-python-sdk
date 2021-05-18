@@ -108,7 +108,7 @@ class DataFlowClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.data_flow.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
-            Details to create a private endpoint.
+            The parameters required to create a private endpoint.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_flow.models.WorkRequest.status`

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.05.11 - 21.05.11
+=====================
+* Added DNS Resolver, endpoints and rules to VCNs
+* Added Flex OCPUS to summary Shapes
+* Fixed Stopped OCPUs for VM/BM DB if node is stopped
+* Added Windows OCPUs to the summary
+* Remove vcn_id requirement from list_vlans
+* Added Security Scores under -sec
+
+=====================
 21.04.20 - 21.04.20
 =====================
 * Remove ipv6 from vcn (Breaking)

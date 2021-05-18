@@ -21,7 +21,7 @@ class ZipUploadConfigSourceRecord(ConfigSourceRecord):
 
         :param config_source_record_type:
             The value to assign to the config_source_record_type property of this ZipUploadConfigSourceRecord.
-            Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE"
+            Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE"
         :type config_source_record_type: str
 
         """

@@ -27,6 +27,7 @@ from .create_gitlab_access_token_configuration_source_provider_details import Cr
 from .create_import_tf_state_job_operation_details import CreateImportTfStateJobOperationDetails
 from .create_job_details import CreateJobDetails
 from .create_job_operation_details import CreateJobOperationDetails
+from .create_object_storage_config_source_details import CreateObjectStorageConfigSourceDetails
 from .create_plan_job_operation_details import CreatePlanJobOperationDetails
 from .create_stack_details import CreateStackDetails
 from .create_stack_template_config_source_details import CreateStackTemplateConfigSourceDetails
@@ -51,6 +52,8 @@ from .job_operation_details import JobOperationDetails
 from .job_operation_details_summary import JobOperationDetailsSummary
 from .job_summary import JobSummary
 from .log_entry import LogEntry
+from .object_storage_config_source import ObjectStorageConfigSource
+from .object_storage_config_source_record import ObjectStorageConfigSourceRecord
 from .plan_job_operation_details import PlanJobOperationDetails
 from .plan_job_operation_details_summary import PlanJobOperationDetailsSummary
 from .resource_discovery_service_collection import ResourceDiscoveryServiceCollection
@@ -74,6 +77,7 @@ from .update_git_config_source_details import UpdateGitConfigSourceDetails
 from .update_github_access_token_configuration_source_provider_details import UpdateGithubAccessTokenConfigurationSourceProviderDetails
 from .update_gitlab_access_token_configuration_source_provider_details import UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 from .update_job_details import UpdateJobDetails
+from .update_object_storage_config_source_details import UpdateObjectStorageConfigSourceDetails
 from .update_stack_details import UpdateStackDetails
 from .update_template_config_source_details import UpdateTemplateConfigSourceDetails
 from .update_template_details import UpdateTemplateDetails
@@ -112,6 +116,7 @@ resource_manager_type_mapping = {
     "CreateImportTfStateJobOperationDetails": CreateImportTfStateJobOperationDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobOperationDetails": CreateJobOperationDetails,
+    "CreateObjectStorageConfigSourceDetails": CreateObjectStorageConfigSourceDetails,
     "CreatePlanJobOperationDetails": CreatePlanJobOperationDetails,
     "CreateStackDetails": CreateStackDetails,
     "CreateStackTemplateConfigSourceDetails": CreateStackTemplateConfigSourceDetails,
@@ -136,6 +141,8 @@ resource_manager_type_mapping = {
     "JobOperationDetailsSummary": JobOperationDetailsSummary,
     "JobSummary": JobSummary,
     "LogEntry": LogEntry,
+    "ObjectStorageConfigSource": ObjectStorageConfigSource,
+    "ObjectStorageConfigSourceRecord": ObjectStorageConfigSourceRecord,
     "PlanJobOperationDetails": PlanJobOperationDetails,
     "PlanJobOperationDetailsSummary": PlanJobOperationDetailsSummary,
     "ResourceDiscoveryServiceCollection": ResourceDiscoveryServiceCollection,
@@ -159,6 +166,7 @@ resource_manager_type_mapping = {
     "UpdateGithubAccessTokenConfigurationSourceProviderDetails": UpdateGithubAccessTokenConfigurationSourceProviderDetails,
     "UpdateGitlabAccessTokenConfigurationSourceProviderDetails": UpdateGitlabAccessTokenConfigurationSourceProviderDetails,
     "UpdateJobDetails": UpdateJobDetails,
+    "UpdateObjectStorageConfigSourceDetails": UpdateObjectStorageConfigSourceDetails,
     "UpdateStackDetails": UpdateStackDetails,
     "UpdateTemplateConfigSourceDetails": UpdateTemplateConfigSourceDetails,
     "UpdateTemplateDetails": UpdateTemplateDetails,

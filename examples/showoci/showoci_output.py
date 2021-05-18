@@ -39,7 +39,7 @@ class ShowOCIOutput(object):
     # Print header centered
     ##########################################################################
     def print_header(self, name, category, topBorder=True, bottomBorder=True, printText=True):
-        options = {0: 90, 1: 60, 2: 30, 3: 75}
+        options = {0: 95, 1: 60, 2: 40, 3: 85}
         chars = int(options[category])
         if topBorder:
             print("")
@@ -72,6 +72,10 @@ class ShowOCIOutput(object):
 
                     elif d['type'] == "announcement":
                         self.__print_announcement_main(d['data'])
+                        has_data = True
+
+                    elif d['type'] == "security_scores":
+                        self.__print_security_scores_main(d['data'])
                         has_data = True
 
                     elif d['type'] == "region":
@@ -562,6 +566,9 @@ class ShowOCIOutput(object):
                 if 'dhcp_options' in vcn['data']:
                     self.__print_core_network_vcn_dhcp_options(vcn['data']['dhcp_options'], vcn_compartment)
 
+                if 'dns_resolvers' in vcn['data']:
+                    self.__print_core_network_dns_resolver(vcn['data']['dns_resolvers'])
+
                 print("")
 
         except BaseException as e:
@@ -636,6 +643,35 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_core_network_cpe", e)
+
+    ##########################################################################
+    # print network dns resolvers
+    ##########################################################################
+    def __print_core_network_dns_resolver(self, resolvers):
+
+        try:
+            if len(resolvers) == 0:
+                return
+
+            for rs in resolvers:
+                if not rs['endpoints']:
+                    continue
+                print("")
+                print(self.tabs + "DNS Resolver : " + rs['display_name'] + (" ( Protected )" if rs['is_protected'] else ""))
+
+                # get end points
+                for t in rs['endpoints']:
+                    print(self.tabs + self.tabs + "Endpoint : " + t['endpoint_type'] + " - " + t['name'] + ", " + ("Forwarding: " + t['forwarding_address'] if t['is_forwarding'] else "Listening: " + t['listening_address']))
+
+                # get rules
+                for t in rs['rules']:
+                    print(self.tabs + self.tabs + "Rule     : " + t['action'] + ": " + t['source_endpoint_name'] +
+                          (": Domains: " + t['qname_cover_conditions'] if t['qname_cover_conditions'] else "") +
+                          (": IPs: " + t['client_address_conditions'] if t['client_address_conditions'] else "") +
+                          ", Dest = " + t['destination_addresses'])
+
+        except Exception as e:
+            self.__print_error("__print_core_network_dns_resolver", e)
 
     ##########################################################################
     # print network ipsec
@@ -1507,6 +1543,27 @@ class ShowOCIOutput(object):
             self.__print_error("__print_announcement_main", e)
 
     ##########################################################################
+    # __print_security_scores_main
+    ##########################################################################
+    def __print_security_scores_main(self, security_scores):
+
+        try:
+            if not security_scores:
+                return
+
+            self.print_header("Cloud Guard Security Scores", 2)
+
+            if 'cloud_guard_security_scores' in security_scores:
+                for arr in security_scores['cloud_guard_security_scores']:
+                    print(self.taba + "Security Score: " + str(arr['security_score']) + " ( " + arr['security_rating'] + ")")
+                for arr in security_scores['cloud_guard_risk_scores']:
+                    print(self.taba + "Risk     Score: " + str(arr['risk_score']))
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_security_scores_main", e)
+
+    ##########################################################################
     # Monitoring
     ##########################################################################
     def __print_monitoring_main(self, monitorings):
@@ -2274,7 +2331,7 @@ class ShowOCISummary(object):
     # Print header centered
     ##########################################################################
     def __summary_print_header(self, name, category):
-        options = {0: 90, 1: 60, 2: 30, 3: 75}
+        options = {0: 95, 1: 60, 2: 30, 3: 85}
         chars = int(options[category])
         print("")
         print('#' * chars)
@@ -2472,10 +2529,12 @@ class ShowOCISummary(object):
 
                     # add ocpus for DB
                     if 'cpu_core_count' in dbs:
-                        if dbs['lifecycle_state'] == 'STOPPED':
-                            self.summary_global_list.append({'type': 'Total Stopped OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
-                        else:
-                            self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
+                        if 'db_nodes' in dbs:
+                            for dbnode in dbs['db_nodes']:
+                                if dbnode['lifecycle_state'] == 'STOPPED':
+                                    self.summary_global_list.append({'type': 'Total Stopped OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
+                                else:
+                                    self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
 
                 # if Exa add Exadata CPUs
                 else:
@@ -2536,7 +2595,7 @@ class ShowOCISummary(object):
             for mysql in mysqls:
 
                 # add db to summary
-                if mysql['lifecycle_state'] == 'STOPPED':
+                if mysql['lifecycle_state'] == 'STOPPED' or mysql['lifecycle_state'] == 'INACTIVE':
                     self.summary_global_list.append({'type': 'Stopped ' + mysql['sum_info'], 'size': 1})
                 else:
                     self.summary_global_list.append({'type': mysql['sum_info'], 'size': 1})
@@ -2559,7 +2618,7 @@ class ShowOCISummary(object):
                 for gg in goldengates['gg_deployments']:
 
                     # add db to summary
-                    if gg['lifecycle_state'] == 'STOPPED':
+                    if gg['lifecycle_state'] == 'STOPPED' or gg['lifecycle_state'] == "INACTIVE":
                         self.summary_global_list.append({'type': 'Stopped ' + gg['sum_info'] + " (Count)", 'size': 1})
                     else:
                         self.summary_global_list.append({'type': 'Total OCPUs - Goldengate', 'size': float(gg['cpu_core_count'])})
@@ -2582,11 +2641,17 @@ class ShowOCISummary(object):
                 if instance['lifecycle_state'] == "STOPPED":
                     self.summary_global_list.append({'type': ("Stopped " + instance['sum_info'] + " - " + instance['sum_shape']), 'size': float(1)})
                     if 'shape_ocpu' in instance:
-                        self.summary_global_list.append({'type': 'Total Stopped OCPUs - Compute', 'size': float(instance['shape_ocpu'])})
+                        self.summary_global_list.append({'type': 'Total Stopped OCPUs - Compute - All', 'size': float(instance['shape_ocpu'])})
+                    if 'image_os' in instance:
+                        if instance['image_os'] == "Windows":
+                            self.summary_global_list.append({'type': 'Total Stopped OCPUs - Compute - Windows', 'size': float(instance['shape_ocpu'])})
                 else:
                     self.summary_global_list.append({'type': (instance['sum_info'] + " - " + instance['sum_shape']), 'size': float(1)})
                     if 'shape_ocpu' in instance:
-                        self.summary_global_list.append({'type': 'Total OCPUs - Compute', 'size': float(instance['shape_ocpu'])})
+                        self.summary_global_list.append({'type': 'Total OCPUs - Compute - All', 'size': float(instance['shape_ocpu'])})
+                    if 'image_os' in instance:
+                        if instance['image_os'] == "Windows":
+                            self.summary_global_list.append({'type': 'Total OCPUs - Compute - Windows', 'size': float(instance['shape_ocpu'])})
 
                 if 'boot_volume' in instance:
                     self.__summary_core_size(instance['boot_volume'])
@@ -2801,7 +2866,7 @@ class ShowOCISummary(object):
 
                 # sort and print
                 for d in sorted(data, key=lambda i: i['type']):
-                    print(d['type'].ljust(65, '.')[0:64] + str(round(d['size'])).rjust(10, '.'))
+                    print(d['type'].ljust(75, '.')[0:74] + str(round(d['size'])).rjust(10, '.'))
 
         except Exception as e:
             self.__print_error("__summary_print_results", e)

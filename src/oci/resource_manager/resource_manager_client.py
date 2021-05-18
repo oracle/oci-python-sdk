@@ -643,6 +643,7 @@ class ResourceManagerClient(object):
         You can create a stack from a Terraform configuration.
         The Terraform configuration can be directly uploaded or referenced from a source code control system.
         You can also create a stack from an existing compartment.
+        You can also upload the Terraform configuration from an Object Storage bucket.
         For more information, see
         `To create a stack`__.
 

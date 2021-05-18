@@ -19,6 +19,7 @@ class UpdateConfigSourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.UpdateGitConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.UpdateObjectStorageConfigSourceDetails`
         * :class:`~oci.resource_manager.models.UpdateZipUploadConfigSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -55,6 +56,9 @@ class UpdateConfigSourceDetails(object):
 
         if type == 'GIT_CONFIG_SOURCE':
             return 'UpdateGitConfigSourceDetails'
+
+        if type == 'OBJECT_STORAGE_CONFIG_SOURCE':
+            return 'UpdateObjectStorageConfigSourceDetails'
 
         if type == 'ZIP_UPLOAD':
             return 'UpdateZipUploadConfigSourceDetails'

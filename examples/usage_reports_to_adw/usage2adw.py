@@ -70,7 +70,7 @@ import requests
 import time
 
 
-version = "21.04.27"
+version = "21.05.18"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -532,9 +532,12 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
         # open cursor
         cursor = connection.cursor()
 
-        print("\nMerging statistics into OCI_COST_REFERENCE...")
+        print("\nMerging statistics into OCI_COST_REFERENCE ...")
+        print("   Merging statistics from OCI_COST...")
 
+        #######################################################
         # run merge to OCI_COST_REFERENCE
+        #######################################################
         sql = "merge into OCI_COST_REFERENCE a "
         sql += "using "
         sql += "( "
@@ -560,6 +563,43 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
         sql += "        union all "
         sql += "        select distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  "
         sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
+        sql += "    ) where ref_name is not null "
+        sql += ") b "
+        sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
+        sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+        sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+        cursor.execute(sql)
+        connection.commit()
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
+        print("   Merging statistics from OCI_USAGE...")
+
+        #######################################################
+        # run merge to OCI_COST_REFERENCE from OCI_USAGE
+        #######################################################
+        sql = "merge into OCI_COST_REFERENCE a "
+        sql += "using "
+        sql += "( "
+        sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
+        sql += "    from "
+        sql += "    ( "
+        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,  "
+        sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
+        sql += "            else prd_compartment_path end as REF_NAME  "
+        sql += "            from OCI_USAGE "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null"
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE "
         sql += "    ) where ref_name is not null "
         sql += ") b "
         sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
@@ -927,6 +967,26 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         else:
             print("   Table OCI_COST_REFERENCE exist")
 
+        # check if OCI_INTERNAL_COST table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_INTERNAL_COST'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("   Table OCI_INTERNAL_COST was not exist, creating")
+            sql = "CREATE TABLE OCI_INTERNAL_COST ("
+            sql += "    RESOURCE_NAME       varchar2(100) NOT NULL,"
+            sql += "    SERVICE_NAME        varchar2(100),"
+            sql += "    BILLED_USAGE_UNIT   varchar2(100),"
+            sql += "    UNIT_COST           NUMBER,"
+            sql += "    CONSTRAINT OCI_INTERNAL_COST_PK PRIMARY KEY (RESOURCE_NAME) USING INDEX ENABLE"
+            sql += ")"
+            cursor.execute(sql)
+            print("   Table OCI_INTERNAL_COST created")
+        else:
+            print("   Table OCI_INTERNAL_COST exist")
+
         # close cursor
         cursor.close()
 
@@ -1126,6 +1186,8 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                             if keyadj == cmd.tagspecial:
                                 if len(valueadj) < 4000:
                                     tag_special = valueadj
+                                    # remove oracle idcs from the e-mail
+                                    tag_special = tag_special.replace("oracleidentitycloudservice/", "")
 
                         # check if length < 4000 to avoid overflow database column
                         if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
@@ -1384,6 +1446,8 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                             if keyadj == cmd.tagspecial:
                                 if len(valueadj) < 4000:
                                     tag_special = valueadj
+                                    # remove oracle idcs from the e-mail
+                                    tag_special = tag_special.replace("oracleidentitycloudservice/", "")
 
                         # check if length < 3500 to avoid overflow database column
                         if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 3500:
