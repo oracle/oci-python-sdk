@@ -12,17 +12,33 @@ class CreateRunDetails(object):
     """
     The create run details. The following properties are optional and override the default values
     set in the associated application:
+    - applicationId
+    - archiveUri
     - arguments
     - configuration
     - definedTags
+    - displayName
     - driverShape
+    - execute
     - executorShape
     - freeformTags
     - logsBucketUri
     - numExecutors
     - parameters
+    - sparkVersion
     - warehouseBucketUri
-    If the optional properties are not specified, they are copied over from the parent application.
+    It is expected that either the applicationId or the execute parameter is specified; but not both.
+    If both or none are set, a Bad Request (HTTP 400) status will be sent as the response.
+    If an appicationId is not specified, then a value for the execute parameter is expected.
+    Using data parsed from the value, a new application will be created and assicated with the new run.
+    See information on the execute parameter for details on the format of this parameter.
+
+    The optional parameter spark version can only be specified when using the execute parameter.  If it
+    is not specified when using the execute parameter, the latest version will be used as default.
+    If the execute parameter is not used, the spark version will be taken from the associated application.
+
+    If displayName is not specified, it will be derived from the displayName of associated application or
+    set by API using fileUri's application file name.
     Once a run is created, its properties (except for definedTags and freeformTags) cannot be changed.
     If the parent application's properties (including definedTags and freeformTags) are updated,
     the corresponding properties of the run will not update.
@@ -36,6 +52,10 @@ class CreateRunDetails(object):
         :param application_id:
             The value to assign to the application_id property of this CreateRunDetails.
         :type application_id: str
+
+        :param archive_uri:
+            The value to assign to the archive_uri property of this CreateRunDetails.
+        :type archive_uri: str
 
         :param arguments:
             The value to assign to the arguments property of this CreateRunDetails.
@@ -61,6 +81,10 @@ class CreateRunDetails(object):
             The value to assign to the driver_shape property of this CreateRunDetails.
         :type driver_shape: str
 
+        :param execute:
+            The value to assign to the execute property of this CreateRunDetails.
+        :type execute: str
+
         :param executor_shape:
             The value to assign to the executor_shape property of this CreateRunDetails.
         :type executor_shape: str
@@ -81,6 +105,10 @@ class CreateRunDetails(object):
             The value to assign to the parameters property of this CreateRunDetails.
         :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
+        :param spark_version:
+            The value to assign to the spark_version property of this CreateRunDetails.
+        :type spark_version: str
+
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this CreateRunDetails.
         :type warehouse_bucket_uri: str
@@ -88,55 +116,64 @@ class CreateRunDetails(object):
         """
         self.swagger_types = {
             'application_id': 'str',
+            'archive_uri': 'str',
             'arguments': 'list[str]',
             'compartment_id': 'str',
             'configuration': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'driver_shape': 'str',
+            'execute': 'str',
             'executor_shape': 'str',
             'freeform_tags': 'dict(str, str)',
             'logs_bucket_uri': 'str',
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
+            'spark_version': 'str',
             'warehouse_bucket_uri': 'str'
         }
 
         self.attribute_map = {
             'application_id': 'applicationId',
+            'archive_uri': 'archiveUri',
             'arguments': 'arguments',
             'compartment_id': 'compartmentId',
             'configuration': 'configuration',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'driver_shape': 'driverShape',
+            'execute': 'execute',
             'executor_shape': 'executorShape',
             'freeform_tags': 'freeformTags',
             'logs_bucket_uri': 'logsBucketUri',
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
+            'spark_version': 'sparkVersion',
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
         self._application_id = None
+        self._archive_uri = None
         self._arguments = None
         self._compartment_id = None
         self._configuration = None
         self._defined_tags = None
         self._display_name = None
         self._driver_shape = None
+        self._execute = None
         self._executor_shape = None
         self._freeform_tags = None
         self._logs_bucket_uri = None
         self._num_executors = None
         self._parameters = None
+        self._spark_version = None
         self._warehouse_bucket_uri = None
 
     @property
     def application_id(self):
         """
-        **[Required]** Gets the application_id of this CreateRunDetails.
-        The application ID.
+        Gets the application_id of this CreateRunDetails.
+        The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
 
 
         :return: The application_id of this CreateRunDetails.
@@ -148,13 +185,39 @@ class CreateRunDetails(object):
     def application_id(self, application_id):
         """
         Sets the application_id of this CreateRunDetails.
-        The application ID.
+        The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
 
 
         :param application_id: The application_id of this CreateRunDetails.
         :type: str
         """
         self._application_id = application_id
+
+    @property
+    def archive_uri(self):
+        """
+        Gets the archive_uri of this CreateRunDetails.
+        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+
+
+        :return: The archive_uri of this CreateRunDetails.
+        :rtype: str
+        """
+        return self._archive_uri
+
+    @archive_uri.setter
+    def archive_uri(self, archive_uri):
+        """
+        Sets the archive_uri of this CreateRunDetails.
+        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+
+
+        :param archive_uri: The archive_uri of this CreateRunDetails.
+        :type: str
+        """
+        self._archive_uri = archive_uri
 
     @property
     def arguments(self):
@@ -283,8 +346,8 @@ class CreateRunDetails(object):
     @property
     def display_name(self):
         """
-        **[Required]** Gets the display_name of this CreateRunDetails.
-        A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+        Gets the display_name of this CreateRunDetails.
+        A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
 
 
         :return: The display_name of this CreateRunDetails.
@@ -296,7 +359,7 @@ class CreateRunDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateRunDetails.
-        A user-friendly name. It does not have to be unique. Avoid entering confidential information.
+        A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
 
 
         :param display_name: The display_name of this CreateRunDetails.
@@ -327,6 +390,38 @@ class CreateRunDetails(object):
         :type: str
         """
         self._driver_shape = driver_shape
+
+    @property
+    def execute(self):
+        """
+        Gets the execute of this CreateRunDetails.
+        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+        Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments.
+        Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10``
+        Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+        Data Flow service will use derived information from execute input only.
+
+
+        :return: The execute of this CreateRunDetails.
+        :rtype: str
+        """
+        return self._execute
+
+    @execute.setter
+    def execute(self, execute):
+        """
+        Sets the execute of this CreateRunDetails.
+        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+        Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments.
+        Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10``
+        Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+        Data Flow service will use derived information from execute input only.
+
+
+        :param execute: The execute of this CreateRunDetails.
+        :type: str
+        """
+        self._execute = execute
 
     @property
     def executor_shape(self):
@@ -463,6 +558,30 @@ class CreateRunDetails(object):
         :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
+
+    @property
+    def spark_version(self):
+        """
+        Gets the spark_version of this CreateRunDetails.
+        The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
+
+
+        :return: The spark_version of this CreateRunDetails.
+        :rtype: str
+        """
+        return self._spark_version
+
+    @spark_version.setter
+    def spark_version(self, spark_version):
+        """
+        Sets the spark_version of this CreateRunDetails.
+        The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
+
+
+        :param spark_version: The spark_version of this CreateRunDetails.
+        :type: str
+        """
+        self._spark_version = spark_version
 
     @property
     def warehouse_bucket_uri(self):

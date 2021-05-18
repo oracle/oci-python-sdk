@@ -6,8 +6,8 @@ Ai Language
     :nosignatures:
     :template: autosummary/service_client.rst
 
-    oci.ai_language.AiServiceLanguageClient
-    oci.ai_language.AiServiceLanguageClientCompositeOperations
+    oci.ai_language.AIServiceLanguageClient
+    oci.ai_language.AIServiceLanguageClientCompositeOperations
 
 --------
  Models

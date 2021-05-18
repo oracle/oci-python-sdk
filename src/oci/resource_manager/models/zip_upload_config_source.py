@@ -21,7 +21,7 @@ class ZipUploadConfigSource(ConfigSource):
 
         :param config_source_type:
             The value to assign to the config_source_type property of this ZipUploadConfigSource.
-            Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE"
+            Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE"
         :type config_source_type: str
 
         :param working_directory:

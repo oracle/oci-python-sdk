@@ -82,6 +82,10 @@ class Application(object):
             The value to assign to the driver_shape property of this Application.
         :type driver_shape: str
 
+        :param execute:
+            The value to assign to the execute property of this Application.
+        :type execute: str
+
         :param executor_shape:
             The value to assign to the executor_shape property of this Application.
         :type executor_shape: str
@@ -161,6 +165,7 @@ class Application(object):
             'description': 'str',
             'display_name': 'str',
             'driver_shape': 'str',
+            'execute': 'str',
             'executor_shape': 'str',
             'file_uri': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -189,6 +194,7 @@ class Application(object):
             'description': 'description',
             'display_name': 'displayName',
             'driver_shape': 'driverShape',
+            'execute': 'execute',
             'executor_shape': 'executorShape',
             'file_uri': 'fileUri',
             'freeform_tags': 'freeformTags',
@@ -216,6 +222,7 @@ class Application(object):
         self._description = None
         self._display_name = None
         self._driver_shape = None
+        self._execute = None
         self._executor_shape = None
         self._file_uri = None
         self._freeform_tags = None
@@ -478,6 +485,38 @@ class Application(object):
         :type: str
         """
         self._driver_shape = driver_shape
+
+    @property
+    def execute(self):
+        """
+        Gets the execute of this Application.
+        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+        Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments.
+        Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10``
+        Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+        Data Flow service will use derived information from execute input only.
+
+
+        :return: The execute of this Application.
+        :rtype: str
+        """
+        return self._execute
+
+    @execute.setter
+    def execute(self, execute):
+        """
+        Sets the execute of this Application.
+        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+        Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments.
+        Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10``
+        Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
+        Data Flow service will use derived information from execute input only.
+
+
+        :param execute: The execute of this Application.
+        :type: str
+        """
+        self._execute = execute
 
     @property
     def executor_shape(self):

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.05.18 - 2021-05-18
+=====================
+* Remove Oracle IDCS prefix from the tag special if exist
+* Added OCI_INTERNAL_COST for internal usage
+
+=====================
+21.05.04 - 2021-05-04
+=====================
+* Added OCPU and Storage report to the daily shell script
+
+=====================
 21.04.27 - 2021-04-27
 =====================
 * Added gather stats crontab weekly with script run_gather_stats.sh

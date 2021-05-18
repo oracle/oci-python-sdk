@@ -20,6 +20,7 @@ class CreateConfigSourceDetails(object):
 
         * :class:`~oci.resource_manager.models.CreateZipUploadConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateGitConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.CreateObjectStorageConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateCompartmentConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateStackTemplateConfigSourceDetails`
 
@@ -60,6 +61,9 @@ class CreateConfigSourceDetails(object):
 
         if type == 'GIT_CONFIG_SOURCE':
             return 'CreateGitConfigSourceDetails'
+
+        if type == 'OBJECT_STORAGE_CONFIG_SOURCE':
+            return 'CreateObjectStorageConfigSourceDetails'
 
         if type == 'COMPARTMENT_CONFIG_SOURCE':
             return 'CreateCompartmentConfigSourceDetails'
