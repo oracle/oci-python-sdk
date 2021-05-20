@@ -358,6 +358,89 @@ def test_delete_managed_database_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_awr_db_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetAwrDbReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetAwrDbReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetAwrDbReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_awr_db_report(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetAwrDbReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbReport',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_awr_db_sql_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetAwrDbSqlReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetAwrDbSqlReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetAwrDbSqlReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_awr_db_sql_report(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                sql_id=request.pop(util.camelize('sqlId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetAwrDbSqlReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbSqlReport',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_get_cluster_cache_metric(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'GetClusterCacheMetric'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -679,6 +762,129 @@ def test_get_managed_database_group(testing_service_client):
             'managedDatabaseGroup',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_awr_db_snapshots(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListAwrDbSnapshots'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListAwrDbSnapshots')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListAwrDbSnapshots')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_awr_db_snapshots(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_awr_db_snapshots(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_awr_db_snapshots(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListAwrDbSnapshots',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbSnapshotCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_awr_dbs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListAwrDbs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListAwrDbs')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListAwrDbs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_awr_dbs(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_awr_dbs(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_awr_dbs(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListAwrDbs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbCollection',
+            False,
+            True
         )
 
 
@@ -1161,6 +1367,560 @@ def test_reset_database_parameters(testing_service_client):
             'updateDatabaseParametersResult',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_cpu_usages(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbCpuUsages'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbCpuUsages')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbCpuUsages')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_cpu_usages(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_cpu_usages(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_cpu_usages(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbCpuUsages',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbCpuUsageCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_metrics(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_metrics(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_metrics(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbMetricCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_parameter_changes(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbParameterChanges'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbParameterChanges')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbParameterChanges')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_parameter_changes(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_parameter_changes(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_parameter_changes(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbParameterChanges',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbParameterChangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_parameters(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbParameters'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbParameters')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbParameters')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_parameters(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_parameters(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_parameters(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbParameters',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbParameterCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_snapshot_ranges(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbSnapshotRanges'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbSnapshotRanges')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbSnapshotRanges')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_snapshot_ranges(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_snapshot_ranges(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_snapshot_ranges(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbSnapshotRanges',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbSnapshotRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_sysstats(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbSysstats'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbSysstats')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbSysstats')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_sysstats(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_sysstats(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_sysstats(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbSysstats',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbSysstatCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_top_wait_events(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbTopWaitEvents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbTopWaitEvents')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbTopWaitEvents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_top_wait_events(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbTopWaitEvents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbTopWaitEventCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_wait_event_buckets(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbWaitEventBuckets'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbWaitEventBuckets')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbWaitEventBuckets')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_wait_event_buckets(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_wait_event_buckets(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_wait_event_buckets(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbWaitEventBuckets',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbWaitEventBucketCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_awr_db_wait_events(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeAwrDbWaitEvents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeAwrDbWaitEvents')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeAwrDbWaitEvents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_db_wait_events(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                awr_db_id=request.pop(util.camelize('awrDbId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_db_wait_events(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    awr_db_id=request.pop(util.camelize('awrDbId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_db_wait_events(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        awr_db_id=request.pop(util.camelize('awrDbId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeAwrDbWaitEvents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDbWaitEventCollection',
+            False,
+            True
         )
 
 

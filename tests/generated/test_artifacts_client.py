@@ -75,6 +75,47 @@ def test_change_container_repository_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_change_repository_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'ChangeRepositoryCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'ChangeRepositoryCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='ChangeRepositoryCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.change_repository_compartment(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                change_repository_compartment_details=request.pop(util.camelize('ChangeRepositoryCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'ChangeRepositoryCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_repository_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
 def test_create_container_image_signature(testing_service_client):
     if not testing_service_client.is_api_enabled('artifacts', 'CreateContainerImageSignature'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -149,6 +190,46 @@ def test_create_container_repository(testing_service_client):
             result,
             service_error,
             'containerRepository',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_create_repository(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'CreateRepository'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'CreateRepository')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='CreateRepository')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.create_repository(
+                create_repository_details=request.pop(util.camelize('CreateRepositoryDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'CreateRepository',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'repository',
             False,
             False
         )
@@ -269,6 +350,128 @@ def test_delete_container_repository(testing_service_client):
             result,
             service_error,
             'delete_container_repository',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_delete_generic_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'DeleteGenericArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'DeleteGenericArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='DeleteGenericArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_generic_artifact(
+                artifact_id=request.pop(util.camelize('artifactId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'DeleteGenericArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_generic_artifact',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_delete_generic_artifact_by_path(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'DeleteGenericArtifactByPath'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'DeleteGenericArtifactByPath')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='DeleteGenericArtifactByPath')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_generic_artifact_by_path(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                artifact_path=request.pop(util.camelize('artifactPath')),
+                version=request.pop(util.camelize('version')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'DeleteGenericArtifactByPath',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_generic_artifact_by_path',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_delete_repository(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'DeleteRepository'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'DeleteRepository')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='DeleteRepository')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_repository(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'DeleteRepository',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_repository',
             True,
             False
         )
@@ -429,6 +632,128 @@ def test_get_container_repository(testing_service_client):
             result,
             service_error,
             'containerRepository',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_get_generic_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'GetGenericArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'GetGenericArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='GetGenericArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.get_generic_artifact(
+                artifact_id=request.pop(util.camelize('artifactId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'GetGenericArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'genericArtifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_get_generic_artifact_by_path(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'GetGenericArtifactByPath'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'GetGenericArtifactByPath')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='GetGenericArtifactByPath')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.get_generic_artifact_by_path(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                artifact_path=request.pop(util.camelize('artifactPath')),
+                version=request.pop(util.camelize('version')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'GetGenericArtifactByPath',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'genericArtifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_get_repository(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'GetRepository'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'GetRepository')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='GetRepository')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.get_repository(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'GetRepository',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'repository',
             False,
             False
         )
@@ -615,6 +940,129 @@ def test_list_container_repositories(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_list_generic_artifacts(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'ListGenericArtifacts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'ListGenericArtifacts')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='ListGenericArtifacts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.list_generic_artifacts(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                repository_id=request.pop(util.camelize('repositoryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_generic_artifacts(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    repository_id=request.pop(util.camelize('repositoryId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_generic_artifacts(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        repository_id=request.pop(util.camelize('repositoryId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'ListGenericArtifacts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'genericArtifactCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_list_repositories(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'ListRepositories'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'ListRepositories')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='ListRepositories')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.list_repositories(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_repositories(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_repositories(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'ListRepositories',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'repositoryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
 def test_remove_container_version(testing_service_client):
     if not testing_service_client.is_api_enabled('artifacts', 'RemoveContainerVersion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -773,6 +1221,131 @@ def test_update_container_repository(testing_service_client):
             result,
             service_error,
             'containerRepository',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_update_generic_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'UpdateGenericArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'UpdateGenericArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='UpdateGenericArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.update_generic_artifact(
+                artifact_id=request.pop(util.camelize('artifactId')),
+                update_generic_artifact_details=request.pop(util.camelize('UpdateGenericArtifactDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'UpdateGenericArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'genericArtifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_update_generic_artifact_by_path(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'UpdateGenericArtifactByPath'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'UpdateGenericArtifactByPath')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='UpdateGenericArtifactByPath')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.update_generic_artifact_by_path(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                artifact_path=request.pop(util.camelize('artifactPath')),
+                version=request.pop(util.camelize('version')),
+                update_generic_artifact_by_path_details=request.pop(util.camelize('UpdateGenericArtifactByPathDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'UpdateGenericArtifactByPath',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'genericArtifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_update_repository(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'UpdateRepository'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'UpdateRepository')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='UpdateRepository')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.update_repository(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                update_repository_details=request.pop(util.camelize('UpdateRepositoryDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'UpdateRepository',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'repository',
             False,
             False
         )

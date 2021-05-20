@@ -116,3 +116,5 @@
 ^src/oci/service_catalog/.*\.py$
 ^src/oci/ai_language/.*\.py$
 ^src/oci/operator_access_control/.*\.py$
+^src/oci/bastion/.*\.py$
+^src/oci/generic_artifacts_content/.*\.py$

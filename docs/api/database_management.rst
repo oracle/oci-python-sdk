@@ -21,6 +21,31 @@ Database Management
     oci.database_management.models.ActivityTimeSeriesMetrics
     oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails
     oci.database_management.models.AllowedParameterValue
+    oci.database_management.models.AwrDbCollection
+    oci.database_management.models.AwrDbCpuUsageCollection
+    oci.database_management.models.AwrDbCpuUsageSummary
+    oci.database_management.models.AwrDbMetricCollection
+    oci.database_management.models.AwrDbMetricSummary
+    oci.database_management.models.AwrDbParameterChangeCollection
+    oci.database_management.models.AwrDbParameterChangeSummary
+    oci.database_management.models.AwrDbParameterCollection
+    oci.database_management.models.AwrDbParameterSummary
+    oci.database_management.models.AwrDbReport
+    oci.database_management.models.AwrDbSnapshotCollection
+    oci.database_management.models.AwrDbSnapshotRangeCollection
+    oci.database_management.models.AwrDbSnapshotRangeSummary
+    oci.database_management.models.AwrDbSnapshotSummary
+    oci.database_management.models.AwrDbSqlReport
+    oci.database_management.models.AwrDbSummary
+    oci.database_management.models.AwrDbSysstatCollection
+    oci.database_management.models.AwrDbSysstatSummary
+    oci.database_management.models.AwrDbTopWaitEventCollection
+    oci.database_management.models.AwrDbTopWaitEventSummary
+    oci.database_management.models.AwrDbWaitEventBucketCollection
+    oci.database_management.models.AwrDbWaitEventBucketSummary
+    oci.database_management.models.AwrDbWaitEventCollection
+    oci.database_management.models.AwrDbWaitEventSummary
+    oci.database_management.models.AwrQueryResult
     oci.database_management.models.ChangeDatabaseParameterDetails
     oci.database_management.models.ChangeDatabaseParametersDetails
     oci.database_management.models.ChangeJobCompartmentDetails

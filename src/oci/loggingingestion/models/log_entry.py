@@ -102,7 +102,7 @@ class LogEntry(object):
     def time(self):
         """
         Gets the time of this LogEntry.
-        Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string.
+        Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string with milliseconds precision.
         If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
 
 
@@ -115,7 +115,7 @@ class LogEntry(object):
     def time(self, time):
         """
         Sets the time of this LogEntry.
-        Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string.
+        Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string with milliseconds precision.
         If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
 
 

@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.hydra.pika.frontend</groupId>
         <artifactId>hydra-pika-frontend-public-api-spec</artifactId>
-        <version>0.0.1418</version>
+        <version>0.0.1603</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

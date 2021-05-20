@@ -812,6 +812,316 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def get_awr_db_report(self, managed_database_id, awr_db_id, **kwargs):
+        """
+        Gets the AWR report for the specified Managed Database.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param list[int] inst_nums: (optional)
+            The optional multiple value query parameter to filter the database instance numbers.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param str report_type: (optional)
+            The query parameter to filter the AWR report types.
+
+            Allowed values are: "AWR", "ASH"
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str report_format: (optional)
+            The format of the AWR report.
+
+            Allowed values are: "HTML", "TEXT"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbReport`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_awr_db_report.py.html>`__ to see an example of how to use get_awr_db_report API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_nums",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "report_type",
+            "container_id",
+            "report_format",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_awr_db_report got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'report_type' in kwargs:
+            report_type_allowed_values = ["AWR", "ASH"]
+            if kwargs['report_type'] not in report_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `report_type`, must be one of {0}".format(report_type_allowed_values)
+                )
+
+        if 'report_format' in kwargs:
+            report_format_allowed_values = ["HTML", "TEXT"]
+            if kwargs['report_format'] not in report_format_allowed_values:
+                raise ValueError(
+                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                )
+
+        query_params = {
+            "instNums": self.base_client.generate_collection_format_param(kwargs.get("inst_nums", missing), 'csv'),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "reportType": kwargs.get("report_type", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "reportFormat": kwargs.get("report_format", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbReport")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbReport")
+
+    def get_awr_db_sql_report(self, managed_database_id, awr_db_id, sql_id, **kwargs):
+        """
+        Get a AWR SQL report for one SQL.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str sql_id: (required)
+            The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param str report_format: (optional)
+            The format of the AWR report.
+
+            Allowed values are: "HTML", "TEXT"
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbSqlReport`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_awr_db_sql_report.py.html>`__ to see an example of how to use get_awr_db_sql_report API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSqlReport"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "report_format",
+            "container_id",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_awr_db_sql_report got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'report_format' in kwargs:
+            report_format_allowed_values = ["HTML", "TEXT"]
+            if kwargs['report_format'] not in report_format_allowed_values:
+                raise ValueError(
+                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "sqlId": sql_id,
+            "reportFormat": kwargs.get("report_format", missing),
+            "containerId": kwargs.get("container_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSqlReport")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSqlReport")
+
     def get_cluster_cache_metric(self, managed_database_id, start_time, end_time, **kwargs):
         """
         Gets the metrics related to cluster cache for the Oracle
@@ -1486,6 +1796,325 @@ class DbManagementClient(object):
                 header_params=header_params,
                 response_type="ManagedDatabaseGroup")
 
+    def list_awr_db_snapshots(self, managed_database_id, awr_db_id, **kwargs):
+        """
+        Lists AWR snapshots for the specified database in the AWR.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR snapshot summary data.
+
+            Allowed values are: "TIME_BEGIN", "SNAPSHOT_ID"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbSnapshotCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_awr_db_snapshots.py.html>`__ to see an example of how to use list_awr_db_snapshots API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_awr_db_snapshots got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_BEGIN", "SNAPSHOT_ID"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSnapshotCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSnapshotCollection")
+
+    def list_awr_dbs(self, managed_database_id, **kwargs):
+        """
+        Gets the list of databases and their snapshot summary details available in the AWR of the specified Managed Database.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (optional)
+            The optional single value query parameter to filter the entity name.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR summary data.
+
+            Allowed values are: "END_INTERVAL_TIME", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_awr_dbs.py.html>`__ to see an example of how to use list_awr_dbs API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "name",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_awr_dbs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["END_INTERVAL_TIME", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbCollection")
+
     def list_database_parameters(self, managed_database_id, **kwargs):
         """
         Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
@@ -1520,7 +2149,7 @@ class DbManagementClient(object):
             Allowed values are: "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1678,7 +2307,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1828,7 +2457,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1977,7 +2606,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2121,7 +2750,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2255,7 +2884,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2368,7 +2997,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2659,6 +3288,1658 @@ class DbManagementClient(object):
                 header_params=header_params,
                 body=reset_database_parameters_details,
                 response_type="UpdateDatabaseParametersResult")
+
+    def summarize_awr_db_cpu_usages(self, managed_database_id, awr_db_id, **kwargs):
+        """
+        Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param str session_type: (optional)
+            The optional query parameter to filter ASH activities by FOREGROUND or BACKGROUND.
+
+            Allowed values are: "FOREGROUND", "BACKGROUND", "ALL"
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR CPU usage summary data.
+
+            Allowed values are: "TIME_SAMPLED", "AVG_VALUE"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbCpuUsageCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_cpu_usages.py.html>`__ to see an example of how to use summarize_awr_db_cpu_usages API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbCpuUsages"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "session_type",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_cpu_usages got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'session_type' in kwargs:
+            session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
+            if kwargs['session_type'] not in session_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_SAMPLED", "AVG_VALUE"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "sessionType": kwargs.get("session_type", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbCpuUsageCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbCpuUsageCollection")
+
+    def summarize_awr_db_metrics(self, managed_database_id, awr_db_id, name, **kwargs):
+        """
+        Summarizes the metric samples for the specified database in the AWR. The metric samples are summarized based on the Time dimension for each metric.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param oci.database_management.models.list[str] name: (required)
+            The required multiple value query parameter to filter the entity name.
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR time series summary data.
+
+            Allowed values are: "TIMESTAMP", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbMetricCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_metrics.py.html>`__ to see an example of how to use summarize_awr_db_metrics API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbMetrics"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMESTAMP", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "name": self.base_client.generate_collection_format_param(name, 'multi'),
+            "containerId": kwargs.get("container_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbMetricCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbMetricCollection")
+
+    def summarize_awr_db_parameter_changes(self, managed_database_id, awr_db_id, name, **kwargs):
+        """
+        Summarizes the AWR database parameter change history for one database parameter of the specified Managed Database. One change history record contains
+        the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
+        Note that this API only returns information on change history details for one database parameter.
+        To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
+        /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameters
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str name: (required)
+            The required single value query parameter to filter the entity name.
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR database parameter change history data.
+
+            Allowed values are: "IS_CHANGED", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbParameterChangeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_parameter_changes.py.html>`__ to see an example of how to use summarize_awr_db_parameter_changes API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_parameter_changes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["IS_CHANGED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "name": name,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbParameterChangeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbParameterChangeCollection")
+
+    def summarize_awr_db_parameters(self, managed_database_id, awr_db_id, **kwargs):
+        """
+        Summarizes the AWR database parameter history for the specified Managed Database. This includes the list of database
+        parameters, with information on whether the parameter values were modified within the query time range. Note that
+        each database parameter is only listed once. The returned summary gets all the database parameters, which include:
+         -Each parameter whose value was changed during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"Y\")
+         -Each parameter whose value was unchanged during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"N\")
+         -Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\").
+         -Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+        Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
+        /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param list[str] name: (optional)
+            The optional multiple value query parameter to filter the entity name.
+
+        :param str name_contains: (optional)
+            The optional contains query parameter to filter the entity name by any part of the name.
+
+        :param str value_changed: (optional)
+            The optional query parameter to filter database parameters whose values were changed.
+
+            Allowed values are: "Y", "N"
+
+        :param str value_default: (optional)
+            The optional query parameter to filter the database parameters that had the default value in the last snapshot.
+
+            Allowed values are: "TRUE", "FALSE"
+
+        :param str value_modified: (optional)
+            The optional query parameter to filter the database parameters that had a modified value in the last snapshot.
+
+            Allowed values are: "MODIFIED", "SYSTEM_MOD", "FALSE"
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR database parameter change history data.
+
+            Allowed values are: "IS_CHANGED", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbParameterCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_parameters.py.html>`__ to see an example of how to use summarize_awr_db_parameters API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameters"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "container_id",
+            "name",
+            "name_contains",
+            "value_changed",
+            "value_default",
+            "value_modified",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'value_changed' in kwargs:
+            value_changed_allowed_values = ["Y", "N"]
+            if kwargs['value_changed'] not in value_changed_allowed_values:
+                raise ValueError(
+                    "Invalid value for `value_changed`, must be one of {0}".format(value_changed_allowed_values)
+                )
+
+        if 'value_default' in kwargs:
+            value_default_allowed_values = ["TRUE", "FALSE"]
+            if kwargs['value_default'] not in value_default_allowed_values:
+                raise ValueError(
+                    "Invalid value for `value_default`, must be one of {0}".format(value_default_allowed_values)
+                )
+
+        if 'value_modified' in kwargs:
+            value_modified_allowed_values = ["MODIFIED", "SYSTEM_MOD", "FALSE"]
+            if kwargs['value_modified'] not in value_modified_allowed_values:
+                raise ValueError(
+                    "Invalid value for `value_modified`, must be one of {0}".format(value_modified_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["IS_CHANGED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
+            "nameContains": kwargs.get("name_contains", missing),
+            "valueChanged": kwargs.get("value_changed", missing),
+            "valueDefault": kwargs.get("value_default", missing),
+            "valueModified": kwargs.get("value_modified", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbParameterCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbParameterCollection")
+
+    def summarize_awr_db_snapshot_ranges(self, managed_database_id, **kwargs):
+        """
+        Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified Managed Database.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (optional)
+            The optional single value query parameter to filter the entity name.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR summary data.
+
+            Allowed values are: "END_INTERVAL_TIME", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbSnapshotRangeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_snapshot_ranges.py.html>`__ to see an example of how to use summarize_awr_db_snapshot_ranges API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "name",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_snapshot_ranges got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["END_INTERVAL_TIME", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSnapshotRangeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSnapshotRangeCollection")
+
+    def summarize_awr_db_sysstats(self, managed_database_id, awr_db_id, name, **kwargs):
+        """
+        Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical data is summarized based on the Time dimension for each statistic.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param oci.database_management.models.list[str] name: (required)
+            The required multiple value query parameter to filter the entity name.
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the data within a time period.
+
+            Allowed values are: "TIME_BEGIN", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbSysstatCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_sysstats.py.html>`__ to see an example of how to use summarize_awr_db_sysstats API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSysstats"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_sysstats got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_BEGIN", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "name": self.base_client.generate_collection_format_param(name, 'multi'),
+            "containerId": kwargs.get("container_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSysstatCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbSysstatCollection")
+
+    def summarize_awr_db_top_wait_events(self, managed_database_id, awr_db_id, **kwargs):
+        """
+        Summarizes the AWR top wait events.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param str session_type: (optional)
+            The optional query parameter to filter ASH activities by FOREGROUND or BACKGROUND.
+
+            Allowed values are: "FOREGROUND", "BACKGROUND", "ALL"
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param int top_n: (optional)
+            The optional query parameter to filter the number of top categories to be returned.
+
+        :param str sort_by: (optional)
+            The option to sort the AWR top event summary data.
+
+            Allowed values are: "WAITS_PERSEC", "AVG_WAIT_TIME_PERSEC"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbTopWaitEventCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_top_wait_events.py.html>`__ to see an example of how to use summarize_awr_db_top_wait_events API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbTopWaitEvents"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "session_type",
+            "container_id",
+            "top_n",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_top_wait_events got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'session_type' in kwargs:
+            session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
+            if kwargs['session_type'] not in session_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["WAITS_PERSEC", "AVG_WAIT_TIME_PERSEC"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "sessionType": kwargs.get("session_type", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "topN": kwargs.get("top_n", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbTopWaitEventCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbTopWaitEventCollection")
+
+    def summarize_awr_db_wait_event_buckets(self, managed_database_id, awr_db_id, name, **kwargs):
+        """
+        Summarizes AWR wait event data into value buckets and frequency, for the specified database in the AWR.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str name: (required)
+            The required single value query parameter to filter the entity name.
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param int num_bucket: (optional)
+            The number of buckets within the histogram.
+
+        :param float min_value: (optional)
+            The minimum value of the histogram.
+
+        :param float max_value: (optional)
+            The maximum value of the histogram.
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort distribution data.
+
+            Allowed values are: "CATEGORY", "PERCENTAGE"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbWaitEventBucketCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_wait_event_buckets.py.html>`__ to see an example of how to use summarize_awr_db_wait_event_buckets API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbWaitEventBuckets"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "num_bucket",
+            "min_value",
+            "max_value",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_wait_event_buckets got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["CATEGORY", "PERCENTAGE"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "name": name,
+            "numBucket": kwargs.get("num_bucket", missing),
+            "minValue": kwargs.get("min_value", missing),
+            "maxValue": kwargs.get("max_value", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbWaitEventBucketCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbWaitEventBucketCollection")
+
+    def summarize_awr_db_wait_events(self, managed_database_id, awr_db_id, **kwargs):
+        """
+        Summarizes the AWR wait event sample data for the specified database in the AWR. The event data is summarized based on the Time dimension for each event.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str awr_db_id: (required)
+            The parameter to filter the database by internal ID.
+            Note that the internal ID of the database can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbs:
+
+        :param str inst_num: (optional)
+            The optional single value query parameter to filter the database instance number.
+
+        :param int begin_sn_id_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to filter on the snapshot ID.
+
+        :param int end_sn_id_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the snapshot ID.
+
+        :param datetime time_greater_than_or_equal_to: (optional)
+            The optional greater than or equal to query parameter to filter the timestamp.
+
+        :param datetime time_less_than_or_equal_to: (optional)
+            The optional less than or equal to query parameter to filter the timestamp.
+
+        :param list[str] name: (optional)
+            The optional multiple value query parameter to filter the entity name.
+
+        :param str session_type: (optional)
+            The optional query parameter to filter ASH activities by FOREGROUND or BACKGROUND.
+
+            Allowed values are: "FOREGROUND", "BACKGROUND", "ALL"
+
+        :param int container_id: (optional)
+            The optional query parameter to filter the database container by an exact ID value.
+            Note that the database container ID can be retrieved from the following endpoint:
+            /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in large paginated response.
+
+        :param str sort_by: (optional)
+            The option to sort the data within a time period.
+
+            Allowed values are: "TIME_BEGIN", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AwrDbWaitEventCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_awr_db_wait_events.py.html>`__ to see an example of how to use summarize_awr_db_wait_events API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbWaitEvents"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "inst_num",
+            "begin_sn_id_greater_than_or_equal_to",
+            "end_sn_id_less_than_or_equal_to",
+            "time_greater_than_or_equal_to",
+            "time_less_than_or_equal_to",
+            "name",
+            "session_type",
+            "container_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_awr_db_wait_events got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "awrDbId": awr_db_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'session_type' in kwargs:
+            session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
+            if kwargs['session_type'] not in session_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_BEGIN", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "instNum": kwargs.get("inst_num", missing),
+            "beginSnIdGreaterThanOrEqualTo": kwargs.get("begin_sn_id_greater_than_or_equal_to", missing),
+            "endSnIdLessThanOrEqualTo": kwargs.get("end_sn_id_less_than_or_equal_to", missing),
+            "timeGreaterThanOrEqualTo": kwargs.get("time_greater_than_or_equal_to", missing),
+            "timeLessThanOrEqualTo": kwargs.get("time_less_than_or_equal_to", missing),
+            "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
+            "sessionType": kwargs.get("session_type", missing),
+            "containerId": kwargs.get("container_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbWaitEventCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AwrDbWaitEventCollection")
 
     def update_managed_database_group(self, managed_database_group_id, update_managed_database_group_details, **kwargs):
         """

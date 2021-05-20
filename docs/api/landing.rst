@@ -19,6 +19,7 @@ API Reference
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
+* :doc:`Bastion <bastion/client/oci.bastion.BastionClient>`
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
 * :doc:`Blockchain Platform <blockchain/client/oci.blockchain.BlockchainPlatformClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
@@ -54,6 +55,7 @@ API Reference
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
+* :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
@@ -145,6 +147,7 @@ API Reference
     artifacts
     audit
     autoscaling
+    bastion
     bds
     blockchain
     budget
@@ -167,6 +170,7 @@ API Reference
     events
     file_storage
     functions
+    generic_artifacts_content
     golden_gate
     healthchecks
     identity

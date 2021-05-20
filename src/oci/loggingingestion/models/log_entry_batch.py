@@ -171,8 +171,8 @@ class LogEntryBatch(object):
         **[Required]** Gets the defaultlogentrytime of this LogEntryBatch.
         The timestamp for all log entries in this batch. This can be
         considered as the default timestamp for each entry, unless it is
-        overwritten by the entry time. An RFC3339-formatted date-time
-        string.
+        overwritten by the entry time. An RFC3339-formatted date-time string
+        with milliseconds precision.
 
 
         :return: The defaultlogentrytime of this LogEntryBatch.
@@ -186,8 +186,8 @@ class LogEntryBatch(object):
         Sets the defaultlogentrytime of this LogEntryBatch.
         The timestamp for all log entries in this batch. This can be
         considered as the default timestamp for each entry, unless it is
-        overwritten by the entry time. An RFC3339-formatted date-time
-        string.
+        overwritten by the entry time. An RFC3339-formatted date-time string
+        with milliseconds precision.
 
 
         :param defaultlogentrytime: The defaultlogentrytime of this LogEntryBatch.

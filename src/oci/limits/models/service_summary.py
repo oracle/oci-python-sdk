@@ -44,7 +44,7 @@ class ServiceSummary(object):
     def name(self):
         """
         Gets the name of this ServiceSummary.
-        The service name. Use this when calling the other APIs.
+        The service name. Use this when calling other APIs.
 
 
         :return: The name of this ServiceSummary.
@@ -56,7 +56,7 @@ class ServiceSummary(object):
     def name(self, name):
         """
         Sets the name of this ServiceSummary.
-        The service name. Use this when calling the other APIs.
+        The service name. Use this when calling other APIs.
 
 
         :param name: The name of this ServiceSummary.

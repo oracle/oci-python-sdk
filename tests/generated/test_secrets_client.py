@@ -74,6 +74,47 @@ def test_get_secret_bundle(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_vault_us_grp@oracle.com" jiraProject="SECSVC" opsJiraProject="SI"
+def test_get_secret_bundle_by_name(testing_service_client):
+    if not testing_service_client.is_api_enabled('secrets', 'GetSecretBundleByName'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('secrets', util.camelize('secrets'), 'GetSecretBundleByName')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='secrets', api_name='GetSecretBundleByName')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.secrets.SecretsClient(config, service_endpoint=service_endpoint)
+            response = client.get_secret_bundle_by_name(
+                secret_name=request.pop(util.camelize('secretName')),
+                vault_id=request.pop(util.camelize('vaultId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'secrets',
+            'GetSecretBundleByName',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'secretBundle',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_vault_us_grp@oracle.com" jiraProject="SECSVC" opsJiraProject="SI"
 def test_list_secret_bundle_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('secrets', 'ListSecretBundleVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

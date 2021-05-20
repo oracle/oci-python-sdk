@@ -19,6 +19,7 @@ Artifacts
     :template: autosummary/model_class.rst
 
     oci.artifacts.models.ChangeContainerRepositoryCompartmentDetails
+    oci.artifacts.models.ChangeRepositoryCompartmentDetails
     oci.artifacts.models.ContainerConfiguration
     oci.artifacts.models.ContainerImage
     oci.artifacts.models.ContainerImageCollection
@@ -34,7 +35,21 @@ Artifacts
     oci.artifacts.models.ContainerVersion
     oci.artifacts.models.CreateContainerImageSignatureDetails
     oci.artifacts.models.CreateContainerRepositoryDetails
+    oci.artifacts.models.CreateGenericRepositoryDetails
+    oci.artifacts.models.CreateRepositoryDetails
+    oci.artifacts.models.GenericArtifact
+    oci.artifacts.models.GenericArtifactCollection
+    oci.artifacts.models.GenericArtifactSummary
+    oci.artifacts.models.GenericRepository
+    oci.artifacts.models.GenericRepositorySummary
     oci.artifacts.models.RemoveContainerVersionDetails
+    oci.artifacts.models.Repository
+    oci.artifacts.models.RepositoryCollection
+    oci.artifacts.models.RepositorySummary
     oci.artifacts.models.RestoreContainerImageDetails
     oci.artifacts.models.UpdateContainerConfigurationDetails
     oci.artifacts.models.UpdateContainerRepositoryDetails
+    oci.artifacts.models.UpdateGenericArtifactByPathDetails
+    oci.artifacts.models.UpdateGenericArtifactDetails
+    oci.artifacts.models.UpdateGenericRepositoryDetails
+    oci.artifacts.models.UpdateRepositoryDetails

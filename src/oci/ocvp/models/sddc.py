@@ -214,6 +214,26 @@ class Sddc(object):
             The value to assign to the hcx_on_prem_key property of this Sddc.
         :type hcx_on_prem_key: str
 
+        :param is_hcx_enterprise_enabled:
+            The value to assign to the is_hcx_enterprise_enabled property of this Sddc.
+        :type is_hcx_enterprise_enabled: bool
+
+        :param is_hcx_pending_downgrade:
+            The value to assign to the is_hcx_pending_downgrade property of this Sddc.
+        :type is_hcx_pending_downgrade: bool
+
+        :param hcx_on_prem_licenses:
+            The value to assign to the hcx_on_prem_licenses property of this Sddc.
+        :type hcx_on_prem_licenses: list[oci.ocvp.models.HcxLicenseSummary]
+
+        :param time_hcx_billing_cycle_end:
+            The value to assign to the time_hcx_billing_cycle_end property of this Sddc.
+        :type time_hcx_billing_cycle_end: datetime
+
+        :param time_hcx_license_status_updated:
+            The value to assign to the time_hcx_license_status_updated property of this Sddc.
+        :type time_hcx_license_status_updated: datetime
+
         :param time_created:
             The value to assign to the time_created property of this Sddc.
         :type time_created: datetime
@@ -274,6 +294,11 @@ class Sddc(object):
             'hcx_vlan_id': 'str',
             'is_hcx_enabled': 'bool',
             'hcx_on_prem_key': 'str',
+            'is_hcx_enterprise_enabled': 'bool',
+            'is_hcx_pending_downgrade': 'bool',
+            'hcx_on_prem_licenses': 'list[HcxLicenseSummary]',
+            'time_hcx_billing_cycle_end': 'datetime',
+            'time_hcx_license_status_updated': 'datetime',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -318,6 +343,11 @@ class Sddc(object):
             'hcx_vlan_id': 'hcxVlanId',
             'is_hcx_enabled': 'isHcxEnabled',
             'hcx_on_prem_key': 'hcxOnPremKey',
+            'is_hcx_enterprise_enabled': 'isHcxEnterpriseEnabled',
+            'is_hcx_pending_downgrade': 'isHcxPendingDowngrade',
+            'hcx_on_prem_licenses': 'hcxOnPremLicenses',
+            'time_hcx_billing_cycle_end': 'timeHcxBillingCycleEnd',
+            'time_hcx_license_status_updated': 'timeHcxLicenseStatusUpdated',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -361,6 +391,11 @@ class Sddc(object):
         self._hcx_vlan_id = None
         self._is_hcx_enabled = None
         self._hcx_on_prem_key = None
+        self._is_hcx_enterprise_enabled = None
+        self._is_hcx_pending_downgrade = None
+        self._hcx_on_prem_licenses = None
+        self._time_hcx_billing_cycle_end = None
+        self._time_hcx_license_status_updated = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -590,8 +625,10 @@ class Sddc(object):
     @property
     def initial_sku(self):
         """
-        **[Required]** Gets the initial_sku of this Sddc.
-        Billing option selected during SDDC creation
+        Gets the initial_sku of this Sddc.
+        Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
@@ -607,7 +644,9 @@ class Sddc(object):
     def initial_sku(self, initial_sku):
         """
         Sets the initial_sku of this Sddc.
-        Billing option selected during SDDC creation
+        Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
 
@@ -1618,6 +1657,144 @@ class Sddc(object):
         :type: str
         """
         self._hcx_on_prem_key = hcx_on_prem_key
+
+    @property
+    def is_hcx_enterprise_enabled(self):
+        """
+        Gets the is_hcx_enterprise_enabled of this Sddc.
+        Indicates whether HCX Enterprise is enabled for this SDDC.
+
+
+        :return: The is_hcx_enterprise_enabled of this Sddc.
+        :rtype: bool
+        """
+        return self._is_hcx_enterprise_enabled
+
+    @is_hcx_enterprise_enabled.setter
+    def is_hcx_enterprise_enabled(self, is_hcx_enterprise_enabled):
+        """
+        Sets the is_hcx_enterprise_enabled of this Sddc.
+        Indicates whether HCX Enterprise is enabled for this SDDC.
+
+
+        :param is_hcx_enterprise_enabled: The is_hcx_enterprise_enabled of this Sddc.
+        :type: bool
+        """
+        self._is_hcx_enterprise_enabled = is_hcx_enterprise_enabled
+
+    @property
+    def is_hcx_pending_downgrade(self):
+        """
+        Gets the is_hcx_pending_downgrade of this Sddc.
+        Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
+
+
+        :return: The is_hcx_pending_downgrade of this Sddc.
+        :rtype: bool
+        """
+        return self._is_hcx_pending_downgrade
+
+    @is_hcx_pending_downgrade.setter
+    def is_hcx_pending_downgrade(self, is_hcx_pending_downgrade):
+        """
+        Sets the is_hcx_pending_downgrade of this Sddc.
+        Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
+
+
+        :param is_hcx_pending_downgrade: The is_hcx_pending_downgrade of this Sddc.
+        :type: bool
+        """
+        self._is_hcx_pending_downgrade = is_hcx_pending_downgrade
+
+    @property
+    def hcx_on_prem_licenses(self):
+        """
+        Gets the hcx_on_prem_licenses of this Sddc.
+        The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+
+
+        :return: The hcx_on_prem_licenses of this Sddc.
+        :rtype: list[oci.ocvp.models.HcxLicenseSummary]
+        """
+        return self._hcx_on_prem_licenses
+
+    @hcx_on_prem_licenses.setter
+    def hcx_on_prem_licenses(self, hcx_on_prem_licenses):
+        """
+        Sets the hcx_on_prem_licenses of this Sddc.
+        The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
+
+
+        :param hcx_on_prem_licenses: The hcx_on_prem_licenses of this Sddc.
+        :type: list[oci.ocvp.models.HcxLicenseSummary]
+        """
+        self._hcx_on_prem_licenses = hcx_on_prem_licenses
+
+    @property
+    def time_hcx_billing_cycle_end(self):
+        """
+        Gets the time_hcx_billing_cycle_end of this Sddc.
+        The date and time current HCX Enterprise billing cycle ends, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_hcx_billing_cycle_end of this Sddc.
+        :rtype: datetime
+        """
+        return self._time_hcx_billing_cycle_end
+
+    @time_hcx_billing_cycle_end.setter
+    def time_hcx_billing_cycle_end(self, time_hcx_billing_cycle_end):
+        """
+        Sets the time_hcx_billing_cycle_end of this Sddc.
+        The date and time current HCX Enterprise billing cycle ends, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_hcx_billing_cycle_end: The time_hcx_billing_cycle_end of this Sddc.
+        :type: datetime
+        """
+        self._time_hcx_billing_cycle_end = time_hcx_billing_cycle_end
+
+    @property
+    def time_hcx_license_status_updated(self):
+        """
+        Gets the time_hcx_license_status_updated of this Sddc.
+        The date and time the SDDC's HCX on-premise license status was updated, in the format defined by
+        `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_hcx_license_status_updated of this Sddc.
+        :rtype: datetime
+        """
+        return self._time_hcx_license_status_updated
+
+    @time_hcx_license_status_updated.setter
+    def time_hcx_license_status_updated(self, time_hcx_license_status_updated):
+        """
+        Sets the time_hcx_license_status_updated of this Sddc.
+        The date and time the SDDC's HCX on-premise license status was updated, in the format defined by
+        `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_hcx_license_status_updated: The time_hcx_license_status_updated of this Sddc.
+        :type: datetime
+        """
+        self._time_hcx_license_status_updated = time_hcx_license_status_updated
 
     @property
     def time_created(self):

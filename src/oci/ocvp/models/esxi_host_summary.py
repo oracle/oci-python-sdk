@@ -424,6 +424,8 @@ class EsxiHostSummary(object):
         """
         **[Required]** Gets the current_sku of this EsxiHostSummary.
         Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
@@ -440,6 +442,8 @@ class EsxiHostSummary(object):
         """
         Sets the current_sku of this EsxiHostSummary.
         Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
 

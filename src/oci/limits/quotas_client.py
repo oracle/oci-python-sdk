@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class QuotasClient(object):
     """
-    APIs that interact with the resource limits of a specific resource type
+    APIs that interact with the resource limits of a specific resource type.
     """
 
     def __init__(self, config, **kwargs):
@@ -100,10 +100,10 @@ class QuotasClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
+            can be rejected).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -178,7 +178,7 @@ class QuotasClient(object):
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -322,7 +322,7 @@ class QuotasClient(object):
 
     def list_quotas(self, compartment_id, **kwargs):
         """
-        Lists all quotas on resources from the given compartment
+        Lists all quotas on resources from the given compartment.
 
 
         :param str compartment_id: (required)
@@ -338,17 +338,17 @@ class QuotasClient(object):
             name
 
         :param str lifecycle_state: (optional)
-            Filters returned quotas based on whether the given state.
+            Filters returned quotas based on the given state.
 
             Allowed values are: "ACTIVE"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+            The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
+            The field to sort by. Only one sort order can be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
 
             Allowed values are: "NAME", "TIMECREATED"
 
@@ -466,7 +466,7 @@ class QuotasClient(object):
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

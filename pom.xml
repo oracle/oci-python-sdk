@@ -43,6 +43,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/generic_artifacts_content/pom.xml</module>
+    <module>poms/bastion/pom.xml</module>
     <module>poms/operator_access_control/pom.xml</module>
     <module>poms/ai_language/pom.xml</module>
     <module>poms/service_catalog/pom.xml</module>

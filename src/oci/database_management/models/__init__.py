@@ -7,6 +7,31 @@ from __future__ import absolute_import
 from .activity_time_series_metrics import ActivityTimeSeriesMetrics
 from .add_managed_database_to_managed_database_group_details import AddManagedDatabaseToManagedDatabaseGroupDetails
 from .allowed_parameter_value import AllowedParameterValue
+from .awr_db_collection import AwrDbCollection
+from .awr_db_cpu_usage_collection import AwrDbCpuUsageCollection
+from .awr_db_cpu_usage_summary import AwrDbCpuUsageSummary
+from .awr_db_metric_collection import AwrDbMetricCollection
+from .awr_db_metric_summary import AwrDbMetricSummary
+from .awr_db_parameter_change_collection import AwrDbParameterChangeCollection
+from .awr_db_parameter_change_summary import AwrDbParameterChangeSummary
+from .awr_db_parameter_collection import AwrDbParameterCollection
+from .awr_db_parameter_summary import AwrDbParameterSummary
+from .awr_db_report import AwrDbReport
+from .awr_db_snapshot_collection import AwrDbSnapshotCollection
+from .awr_db_snapshot_range_collection import AwrDbSnapshotRangeCollection
+from .awr_db_snapshot_range_summary import AwrDbSnapshotRangeSummary
+from .awr_db_snapshot_summary import AwrDbSnapshotSummary
+from .awr_db_sql_report import AwrDbSqlReport
+from .awr_db_summary import AwrDbSummary
+from .awr_db_sysstat_collection import AwrDbSysstatCollection
+from .awr_db_sysstat_summary import AwrDbSysstatSummary
+from .awr_db_top_wait_event_collection import AwrDbTopWaitEventCollection
+from .awr_db_top_wait_event_summary import AwrDbTopWaitEventSummary
+from .awr_db_wait_event_bucket_collection import AwrDbWaitEventBucketCollection
+from .awr_db_wait_event_bucket_summary import AwrDbWaitEventBucketSummary
+from .awr_db_wait_event_collection import AwrDbWaitEventCollection
+from .awr_db_wait_event_summary import AwrDbWaitEventSummary
+from .awr_query_result import AwrQueryResult
 from .change_database_parameter_details import ChangeDatabaseParameterDetails
 from .change_database_parameters_details import ChangeDatabaseParametersDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
@@ -75,6 +100,31 @@ database_management_type_mapping = {
     "ActivityTimeSeriesMetrics": ActivityTimeSeriesMetrics,
     "AddManagedDatabaseToManagedDatabaseGroupDetails": AddManagedDatabaseToManagedDatabaseGroupDetails,
     "AllowedParameterValue": AllowedParameterValue,
+    "AwrDbCollection": AwrDbCollection,
+    "AwrDbCpuUsageCollection": AwrDbCpuUsageCollection,
+    "AwrDbCpuUsageSummary": AwrDbCpuUsageSummary,
+    "AwrDbMetricCollection": AwrDbMetricCollection,
+    "AwrDbMetricSummary": AwrDbMetricSummary,
+    "AwrDbParameterChangeCollection": AwrDbParameterChangeCollection,
+    "AwrDbParameterChangeSummary": AwrDbParameterChangeSummary,
+    "AwrDbParameterCollection": AwrDbParameterCollection,
+    "AwrDbParameterSummary": AwrDbParameterSummary,
+    "AwrDbReport": AwrDbReport,
+    "AwrDbSnapshotCollection": AwrDbSnapshotCollection,
+    "AwrDbSnapshotRangeCollection": AwrDbSnapshotRangeCollection,
+    "AwrDbSnapshotRangeSummary": AwrDbSnapshotRangeSummary,
+    "AwrDbSnapshotSummary": AwrDbSnapshotSummary,
+    "AwrDbSqlReport": AwrDbSqlReport,
+    "AwrDbSummary": AwrDbSummary,
+    "AwrDbSysstatCollection": AwrDbSysstatCollection,
+    "AwrDbSysstatSummary": AwrDbSysstatSummary,
+    "AwrDbTopWaitEventCollection": AwrDbTopWaitEventCollection,
+    "AwrDbTopWaitEventSummary": AwrDbTopWaitEventSummary,
+    "AwrDbWaitEventBucketCollection": AwrDbWaitEventBucketCollection,
+    "AwrDbWaitEventBucketSummary": AwrDbWaitEventBucketSummary,
+    "AwrDbWaitEventCollection": AwrDbWaitEventCollection,
+    "AwrDbWaitEventSummary": AwrDbWaitEventSummary,
+    "AwrQueryResult": AwrQueryResult,
     "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
     "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,

@@ -41,6 +41,7 @@ Data Science
     oci.data_science.models.ModelSummary
     oci.data_science.models.NotebookSession
     oci.data_science.models.NotebookSessionConfigurationDetails
+    oci.data_science.models.NotebookSessionShapeConfigDetails
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary
     oci.data_science.models.Project

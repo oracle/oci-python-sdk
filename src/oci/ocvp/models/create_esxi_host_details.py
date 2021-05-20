@@ -175,8 +175,10 @@ class CreateEsxiHostDetails(object):
     @property
     def current_sku(self):
         """
-        **[Required]** Gets the current_sku of this CreateEsxiHostDetails.
+        Gets the current_sku of this CreateEsxiHostDetails.
         Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
@@ -192,6 +194,8 @@ class CreateEsxiHostDetails(object):
         """
         Sets the current_sku of this CreateEsxiHostDetails.
         Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
 

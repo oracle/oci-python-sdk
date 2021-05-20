@@ -34,6 +34,46 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="sic_ocvp_us_grp@oracle.com" jiraProject="OCVP" opsJiraProject="OCVP"
+def test_cancel_downgrade_hcx(testing_service_client):
+    if not testing_service_client.is_api_enabled('ocvp', 'CancelDowngradeHcx'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ocvp', util.camelize('sddc'), 'CancelDowngradeHcx')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ocvp', api_name='CancelDowngradeHcx')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_downgrade_hcx(
+                sddc_id=request.pop(util.camelize('sddcId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ocvp',
+            'CancelDowngradeHcx',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_downgrade_hcx',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ocvp_us_grp@oracle.com" jiraProject="OCVP" opsJiraProject="OCVP"
 def test_change_sddc_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('ocvp', 'ChangeSddcCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -150,6 +190,47 @@ def test_delete_sddc(testing_service_client):
             service_error,
             'delete_sddc',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ocvp_us_grp@oracle.com" jiraProject="OCVP" opsJiraProject="OCVP"
+def test_downgrade_hcx(testing_service_client):
+    if not testing_service_client.is_api_enabled('ocvp', 'DowngradeHcx'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ocvp', util.camelize('sddc'), 'DowngradeHcx')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ocvp', api_name='DowngradeHcx')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
+            response = client.downgrade_hcx(
+                downgrade_hcx_details=request.pop(util.camelize('DowngradeHcxDetails')),
+                sddc_id=request.pop(util.camelize('sddcId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ocvp',
+            'DowngradeHcx',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'downgrade_hcx',
+            False,
             False
         )
 
@@ -375,6 +456,46 @@ def test_list_supported_vmware_software_versions(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ocvp_us_grp@oracle.com" jiraProject="OCVP" opsJiraProject="OCVP"
+def test_refresh_hcx_license_status(testing_service_client):
+    if not testing_service_client.is_api_enabled('ocvp', 'RefreshHcxLicenseStatus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ocvp', util.camelize('sddc'), 'RefreshHcxLicenseStatus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ocvp', api_name='RefreshHcxLicenseStatus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
+            response = client.refresh_hcx_license_status(
+                sddc_id=request.pop(util.camelize('sddcId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ocvp',
+            'RefreshHcxLicenseStatus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'refresh_hcx_license_status',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ocvp_us_grp@oracle.com" jiraProject="OCVP" opsJiraProject="OCVP"
 def test_update_sddc(testing_service_client):
     if not testing_service_client.is_api_enabled('ocvp', 'UpdateSddc'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -410,6 +531,46 @@ def test_update_sddc(testing_service_client):
             result,
             service_error,
             'sddc',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ocvp_us_grp@oracle.com" jiraProject="OCVP" opsJiraProject="OCVP"
+def test_upgrade_hcx(testing_service_client):
+    if not testing_service_client.is_api_enabled('ocvp', 'UpgradeHcx'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ocvp', util.camelize('sddc'), 'UpgradeHcx')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ocvp', api_name='UpgradeHcx')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
+            response = client.upgrade_hcx(
+                sddc_id=request.pop(util.camelize('sddcId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ocvp',
+            'UpgradeHcx',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upgrade_hcx',
             False,
             False
         )
