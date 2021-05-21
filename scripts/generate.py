@@ -10,21 +10,26 @@ import os
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
 SOURCE_LOCATION = "poms"
 
-ROOT_INIT_FILE_TEMPLATE = """from . import {spec_names}
-from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips
+ROOT_INIT_FILE_TEMPLATE = """from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips
 from .base_client import BaseClient
 from .request import Request
 from .response import Response
 from .signer import Signer
 from .version import __version__  # noqa
 from .waiter import wait_until
+import os
 
 fips.enable_fips_mode()
 
-__all__ = [
-    "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips",
-    {quoted_spec_names}
-]
+if "OCI_PYTHON_SDK_NO_SERVICE_IMPORTS" in os.environ:
+    pass
+else:
+    from . import {spec_names}
+
+    __all__ = [
+        "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips",
+        {quoted_spec_names}
+    ]
 """
 
 
