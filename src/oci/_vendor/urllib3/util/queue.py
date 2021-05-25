@@ -4,6 +4,7 @@
 # Copyright 2008-2016 Andrey Petrov and contributors
 
 import collections
+
 from ..packages import six
 from ..packages.six.moves import queue
 

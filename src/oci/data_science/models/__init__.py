@@ -27,6 +27,7 @@ from .model_provenance import ModelProvenance
 from .model_summary import ModelSummary
 from .notebook_session import NotebookSession
 from .notebook_session_configuration_details import NotebookSessionConfigurationDetails
+from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
 from .project import Project
@@ -73,6 +74,7 @@ data_science_type_mapping = {
     "ModelSummary": ModelSummary,
     "NotebookSession": NotebookSession,
     "NotebookSessionConfigurationDetails": NotebookSessionConfigurationDetails,
+    "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
     "Project": Project,

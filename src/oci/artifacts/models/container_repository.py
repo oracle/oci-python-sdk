@@ -84,6 +84,10 @@ class ContainerRepository(object):
             The value to assign to the time_last_pushed property of this ContainerRepository.
         :type time_last_pushed: datetime
 
+        :param billable_size_in_gbs:
+            The value to assign to the billable_size_in_gbs property of this ContainerRepository.
+        :type billable_size_in_gbs: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -98,7 +102,8 @@ class ContainerRepository(object):
             'lifecycle_state': 'str',
             'readme': 'ContainerRepositoryReadme',
             'time_created': 'datetime',
-            'time_last_pushed': 'datetime'
+            'time_last_pushed': 'datetime',
+            'billable_size_in_gbs': 'int'
         }
 
         self.attribute_map = {
@@ -114,7 +119,8 @@ class ContainerRepository(object):
             'lifecycle_state': 'lifecycleState',
             'readme': 'readme',
             'time_created': 'timeCreated',
-            'time_last_pushed': 'timeLastPushed'
+            'time_last_pushed': 'timeLastPushed',
+            'billable_size_in_gbs': 'billableSizeInGBs'
         }
 
         self._compartment_id = None
@@ -130,6 +136,7 @@ class ContainerRepository(object):
         self._readme = None
         self._time_created = None
         self._time_last_pushed = None
+        self._billable_size_in_gbs = None
 
     @property
     def compartment_id(self):
@@ -452,6 +459,30 @@ class ContainerRepository(object):
         :type: datetime
         """
         self._time_last_pushed = time_last_pushed
+
+    @property
+    def billable_size_in_gbs(self):
+        """
+        **[Required]** Gets the billable_size_in_gbs of this ContainerRepository.
+        Total storage size in GBs that will be charged.
+
+
+        :return: The billable_size_in_gbs of this ContainerRepository.
+        :rtype: int
+        """
+        return self._billable_size_in_gbs
+
+    @billable_size_in_gbs.setter
+    def billable_size_in_gbs(self, billable_size_in_gbs):
+        """
+        Sets the billable_size_in_gbs of this ContainerRepository.
+        Total storage size in GBs that will be charged.
+
+
+        :param billable_size_in_gbs: The billable_size_in_gbs of this ContainerRepository.
+        :type: int
+        """
+        self._billable_size_in_gbs = billable_size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

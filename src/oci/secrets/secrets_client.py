@@ -88,7 +88,7 @@ class SecretsClient(object):
 
     def get_secret_bundle(self, secret_id, **kwargs):
         """
-        Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
+        Gets a secret bundle that matches either the specified `stage`, `secretVersionName`, or `versionNumber` parameter.
         If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
 
 
@@ -188,6 +188,105 @@ class SecretsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecretBundle")
+
+    def get_secret_bundle_by_name(self, secret_name, vault_id, **kwargs):
+        """
+        Gets a secret bundle by secret name and vault ID, and secret version that matches either the specified `stage`, `secretVersionName`, or `versionNumber` parameter.
+        If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` is returned.
+
+
+        :param str secret_name: (required)
+            A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+
+        :param str vault_id: (required)
+            The OCID of the vault that contains the secret.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param int version_number: (optional)
+            The version number of the secret.
+
+        :param str secret_version_name: (optional)
+            The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+
+        :param str stage: (optional)
+            The rotation state of the secret version.
+
+            Allowed values are: "CURRENT", "PENDING", "LATEST", "PREVIOUS", "DEPRECATED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.secrets.models.SecretBundle`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/secrets/get_secret_bundle_by_name.py.html>`__ to see an example of how to use get_secret_bundle_by_name API.
+        """
+        resource_path = "/secretbundles/actions/getByName"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "version_number",
+            "secret_version_name",
+            "stage"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_secret_bundle_by_name got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'stage' in kwargs:
+            stage_allowed_values = ["CURRENT", "PENDING", "LATEST", "PREVIOUS", "DEPRECATED"]
+            if kwargs['stage'] not in stage_allowed_values:
+                raise ValueError(
+                    "Invalid value for `stage`, must be one of {0}".format(stage_allowed_values)
+                )
+
+        query_params = {
+            "secretName": secret_name,
+            "vaultId": vault_id,
+            "versionNumber": kwargs.get("version_number", missing),
+            "secretVersionName": kwargs.get("secret_version_name", missing),
+            "stage": kwargs.get("stage", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecretBundle")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SecretBundle")

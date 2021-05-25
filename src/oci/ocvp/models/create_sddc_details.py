@@ -71,6 +71,10 @@ class CreateSddcDetails(object):
             The value to assign to the hcx_vlan_id property of this CreateSddcDetails.
         :type hcx_vlan_id: str
 
+        :param is_hcx_enterprise_enabled:
+            The value to assign to the is_hcx_enterprise_enabled property of this CreateSddcDetails.
+        :type is_hcx_enterprise_enabled: bool
+
         :param ssh_authorized_keys:
             The value to assign to the ssh_authorized_keys property of this CreateSddcDetails.
         :type ssh_authorized_keys: str
@@ -138,6 +142,7 @@ class CreateSddcDetails(object):
             'initial_sku': 'str',
             'is_hcx_enabled': 'bool',
             'hcx_vlan_id': 'str',
+            'is_hcx_enterprise_enabled': 'bool',
             'ssh_authorized_keys': 'str',
             'workload_network_cidr': 'str',
             'provisioning_subnet_id': 'str',
@@ -164,6 +169,7 @@ class CreateSddcDetails(object):
             'initial_sku': 'initialSku',
             'is_hcx_enabled': 'isHcxEnabled',
             'hcx_vlan_id': 'hcxVlanId',
+            'is_hcx_enterprise_enabled': 'isHcxEnterpriseEnabled',
             'ssh_authorized_keys': 'sshAuthorizedKeys',
             'workload_network_cidr': 'workloadNetworkCidr',
             'provisioning_subnet_id': 'provisioningSubnetId',
@@ -189,6 +195,7 @@ class CreateSddcDetails(object):
         self._initial_sku = None
         self._is_hcx_enabled = None
         self._hcx_vlan_id = None
+        self._is_hcx_enterprise_enabled = None
         self._ssh_authorized_keys = None
         self._workload_network_cidr = None
         self._provisioning_subnet_id = None
@@ -383,8 +390,10 @@ class CreateSddcDetails(object):
     @property
     def initial_sku(self):
         """
-        **[Required]** Gets the initial_sku of this CreateSddcDetails.
-        Billing option selected during SDDC creation
+        Gets the initial_sku of this CreateSddcDetails.
+        Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
@@ -399,7 +408,9 @@ class CreateSddcDetails(object):
     def initial_sku(self, initial_sku):
         """
         Sets the initial_sku of this CreateSddcDetails.
-        Billing option selected during SDDC creation
+        Billing option selected during SDDC creation.
+        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
+        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
         :func:`list_supported_skus`.
 
 
@@ -467,6 +478,30 @@ class CreateSddcDetails(object):
         :type: str
         """
         self._hcx_vlan_id = hcx_vlan_id
+
+    @property
+    def is_hcx_enterprise_enabled(self):
+        """
+        Gets the is_hcx_enterprise_enabled of this CreateSddcDetails.
+        Indicates whether to enable HCX Enterprise for this SDDC.
+
+
+        :return: The is_hcx_enterprise_enabled of this CreateSddcDetails.
+        :rtype: bool
+        """
+        return self._is_hcx_enterprise_enabled
+
+    @is_hcx_enterprise_enabled.setter
+    def is_hcx_enterprise_enabled(self, is_hcx_enterprise_enabled):
+        """
+        Sets the is_hcx_enterprise_enabled of this CreateSddcDetails.
+        Indicates whether to enable HCX Enterprise for this SDDC.
+
+
+        :param is_hcx_enterprise_enabled: The is_hcx_enterprise_enabled of this CreateSddcDetails.
+        :type: bool
+        """
+        self._is_hcx_enterprise_enabled = is_hcx_enterprise_enabled
 
     @property
     def ssh_authorized_keys(self):

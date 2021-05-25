@@ -25,9 +25,11 @@ Ocvp
     oci.ocvp.models.ChangeSddcCompartmentDetails
     oci.ocvp.models.CreateEsxiHostDetails
     oci.ocvp.models.CreateSddcDetails
+    oci.ocvp.models.DowngradeHcxDetails
     oci.ocvp.models.EsxiHost
     oci.ocvp.models.EsxiHostCollection
     oci.ocvp.models.EsxiHostSummary
+    oci.ocvp.models.HcxLicenseSummary
     oci.ocvp.models.Sddc
     oci.ocvp.models.SddcCollection
     oci.ocvp.models.SddcSummary

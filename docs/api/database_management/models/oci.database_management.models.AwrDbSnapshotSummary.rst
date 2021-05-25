@@ -1,0 +1,11 @@
+AwrDbSnapshotSummary
+====================
+
+.. currentmodule:: oci.database_management.models
+
+.. autoclass:: AwrDbSnapshotSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

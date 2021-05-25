@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class LimitsClient(object):
     """
-    APIs that interact with the resource limits of a specific resource type
+    APIs that interact with the resource limits of a specific resource type.
     """
 
     def __init__(self, config, **kwargs):
@@ -89,9 +89,9 @@ class LimitsClient(object):
     def get_resource_availability(self, service_name, limit_name, compartment_id, **kwargs):
         """
         For a given compartmentId, resource limit name, and scope, returns the following:
-          - the number of available resources associated with the given limit
-          - the usage in the selected compartment for the given limit
-          Note: not all resource limits support this API. If the value is not available, the API will return 404.
+          * The number of available resources associated with the given limit.
+          * The usage in the selected compartment for the given limit.
+          Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 
 
         :param str service_name: (required)
@@ -106,7 +106,7 @@ class LimitsClient(object):
         :param str availability_domain: (optional)
             This field is mandatory if the scopeType of the target resource limit is AD.
             Otherwise, this field should be omitted.
-            If the above requirements are not met, the API will return a 400 - InvalidParameter response.
+            If the above requirements are not met, the API returns a 400 - InvalidParameter response.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -208,7 +208,7 @@ class LimitsClient(object):
             Allowed values are: "name", "description"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+            The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
 
             Allowed values are: "ASC", "DESC"
 
@@ -316,7 +316,7 @@ class LimitsClient(object):
             The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
         :param str service_name: (required)
-            The target service name
+            The target service name.
 
         :param str scope_type: (optional)
             Filter entries by scope type.
@@ -324,18 +324,18 @@ class LimitsClient(object):
             Allowed values are: "GLOBAL", "REGION", "AD"
 
         :param str availability_domain: (optional)
-            Filter entries by availability domain. This implies that only AD-specific values will be returned.
+            Filter entries by availability domain. This implies that only AD-specific values are returned.
 
         :param str name: (optional)
             Optional field, can be used to see a specific resource limit value.
 
         :param str sort_by: (optional)
-            The field to sort by. We will be implicitly sorting by availabilityDomain, as a second level field, if available.
+            The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.
 
             Allowed values are: "name"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+            The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
 
             Allowed values are: "ASC", "DESC"
 
@@ -447,7 +447,7 @@ class LimitsClient(object):
     def list_services(self, compartment_id, **kwargs):
         """
         Returns the list of supported services.
-        This will include the programmatic service name, along with the friendly service name.
+        This includes the programmatic service name, along with the friendly service name.
 
 
         :param str compartment_id: (required)
@@ -459,7 +459,7 @@ class LimitsClient(object):
             Allowed values are: "name", "description"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+            The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
 
             Allowed values are: "ASC", "DESC"
 

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.05.25 - 2021-05-25
+=====================
+* Added table view in APEX Application for current usage
+* Redesign the usage over time on APEX Application
+
+=====================
 21.05.18 - 2021-05-18
 =====================
 * Remove Oracle IDCS prefix from the tag special if exist
