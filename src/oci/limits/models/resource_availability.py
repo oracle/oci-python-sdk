@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceAvailability(object):
     """
-    The availability of a given resource limit, based on the usage, tenant service limits and quotas set for the tenancy.
-    Note: We cannot guarantee this data for all the limits. In those cases, these fields will be empty.
+    The availability of a given resource limit, based on the usage, tenant service limits, and quotas set for the tenancy.
+    Note: We cannot guarantee this data for all the limits. In such cases, these fields will be empty.
     """
 
     def __init__(self, **kwargs):
@@ -66,8 +66,8 @@ class ResourceAvailability(object):
     def used(self):
         """
         Gets the used of this ResourceAvailability.
-        The current usage in the given compartment. Because we have introduced resources with fractional counts,
-        the field will round up to the nearest integer.
+        The current usage in the given compartment. To support resources with fractional counts,
+        the field rounds up to the nearest integer.
 
 
         :return: The used of this ResourceAvailability.
@@ -79,8 +79,8 @@ class ResourceAvailability(object):
     def used(self, used):
         """
         Sets the used of this ResourceAvailability.
-        The current usage in the given compartment. Because we have introduced resources with fractional counts,
-        the field will round up to the nearest integer.
+        The current usage in the given compartment. To support resources with fractional counts,
+        the field rounds up to the nearest integer.
 
 
         :param used: The used of this ResourceAvailability.
@@ -92,8 +92,8 @@ class ResourceAvailability(object):
     def available(self):
         """
         Gets the available of this ResourceAvailability.
-        The count of available resources. Because we have introduced resources with fractional counts,
-        the field will round down to the nearest integer.
+        The count of available resources. To support resources with fractional counts,
+        the field rounds down to the nearest integer.
 
 
         :return: The available of this ResourceAvailability.
@@ -105,8 +105,8 @@ class ResourceAvailability(object):
     def available(self, available):
         """
         Sets the available of this ResourceAvailability.
-        The count of available resources. Because we have introduced resources with fractional counts,
-        the field will round down to the nearest integer.
+        The count of available resources. To support resources with fractional counts,
+        the field rounds down to the nearest integer.
 
 
         :param available: The available of this ResourceAvailability.
@@ -166,7 +166,7 @@ class ResourceAvailability(object):
     def effective_quota_value(self):
         """
         Gets the effective_quota_value of this ResourceAvailability.
-        The effective quota value for given compartment. This field is only present if there is a
+        The effective quota value for the given compartment. This field is only present if there is a
         current quota policy affecting the current resource in the target region or availability domain.
 
 
@@ -179,7 +179,7 @@ class ResourceAvailability(object):
     def effective_quota_value(self, effective_quota_value):
         """
         Sets the effective_quota_value of this ResourceAvailability.
-        The effective quota value for given compartment. This field is only present if there is a
+        The effective quota value for the given compartment. This field is only present if there is a
         current quota policy affecting the current resource in the target region or availability domain.
 
 

@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .change_container_repository_compartment_details import ChangeContainerRepositoryCompartmentDetails
+from .change_repository_compartment_details import ChangeRepositoryCompartmentDetails
 from .container_configuration import ContainerConfiguration
 from .container_image import ContainerImage
 from .container_image_collection import ContainerImageCollection
@@ -20,14 +21,29 @@ from .container_repository_summary import ContainerRepositorySummary
 from .container_version import ContainerVersion
 from .create_container_image_signature_details import CreateContainerImageSignatureDetails
 from .create_container_repository_details import CreateContainerRepositoryDetails
+from .create_generic_repository_details import CreateGenericRepositoryDetails
+from .create_repository_details import CreateRepositoryDetails
+from .generic_artifact import GenericArtifact
+from .generic_artifact_collection import GenericArtifactCollection
+from .generic_artifact_summary import GenericArtifactSummary
+from .generic_repository import GenericRepository
+from .generic_repository_summary import GenericRepositorySummary
 from .remove_container_version_details import RemoveContainerVersionDetails
+from .repository import Repository
+from .repository_collection import RepositoryCollection
+from .repository_summary import RepositorySummary
 from .restore_container_image_details import RestoreContainerImageDetails
 from .update_container_configuration_details import UpdateContainerConfigurationDetails
 from .update_container_repository_details import UpdateContainerRepositoryDetails
+from .update_generic_artifact_by_path_details import UpdateGenericArtifactByPathDetails
+from .update_generic_artifact_details import UpdateGenericArtifactDetails
+from .update_generic_repository_details import UpdateGenericRepositoryDetails
+from .update_repository_details import UpdateRepositoryDetails
 
 # Maps type names to classes for artifacts services.
 artifacts_type_mapping = {
     "ChangeContainerRepositoryCompartmentDetails": ChangeContainerRepositoryCompartmentDetails,
+    "ChangeRepositoryCompartmentDetails": ChangeRepositoryCompartmentDetails,
     "ContainerConfiguration": ContainerConfiguration,
     "ContainerImage": ContainerImage,
     "ContainerImageCollection": ContainerImageCollection,
@@ -43,8 +59,22 @@ artifacts_type_mapping = {
     "ContainerVersion": ContainerVersion,
     "CreateContainerImageSignatureDetails": CreateContainerImageSignatureDetails,
     "CreateContainerRepositoryDetails": CreateContainerRepositoryDetails,
+    "CreateGenericRepositoryDetails": CreateGenericRepositoryDetails,
+    "CreateRepositoryDetails": CreateRepositoryDetails,
+    "GenericArtifact": GenericArtifact,
+    "GenericArtifactCollection": GenericArtifactCollection,
+    "GenericArtifactSummary": GenericArtifactSummary,
+    "GenericRepository": GenericRepository,
+    "GenericRepositorySummary": GenericRepositorySummary,
     "RemoveContainerVersionDetails": RemoveContainerVersionDetails,
+    "Repository": Repository,
+    "RepositoryCollection": RepositoryCollection,
+    "RepositorySummary": RepositorySummary,
     "RestoreContainerImageDetails": RestoreContainerImageDetails,
     "UpdateContainerConfigurationDetails": UpdateContainerConfigurationDetails,
-    "UpdateContainerRepositoryDetails": UpdateContainerRepositoryDetails
+    "UpdateContainerRepositoryDetails": UpdateContainerRepositoryDetails,
+    "UpdateGenericArtifactByPathDetails": UpdateGenericArtifactByPathDetails,
+    "UpdateGenericArtifactDetails": UpdateGenericArtifactDetails,
+    "UpdateGenericRepositoryDetails": UpdateGenericRepositoryDetails,
+    "UpdateRepositoryDetails": UpdateRepositoryDetails
 }

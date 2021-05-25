@@ -2100,7 +2100,7 @@ class ShowOCIData(object):
                         'defined_tags': vm['defined_tags'],
                         'freeform_tags': vm['freeform_tags'],
                         'region_name': vm['region_name'],
-                        'sum_info': 'Database XP - ' + dbs['shape'],
+                        'sum_info': 'Database XP - ' + dbs['shape'] + " - " + vm['license_model'],
                         'sum_info_storage': 'Database - Storage (GB)',
                         'sum_size_gb': vm['storage_size_in_gbs'],
                         'patches': self.__get_database_db_patches(vm['patches']),
@@ -2191,7 +2191,7 @@ class ShowOCIData(object):
     ##########################################################################
     # print database db backups
     ##########################################################################
-    def __get_database_autonomous_backups(self, backups):
+    def __get_database_adb_databases_backups(self, backups):
 
         data = []
         try:
@@ -2208,75 +2208,171 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # Autonomous db info
+    ##########################################################################
+    def __get_database_adb_database_info(self, dbs):
+
+        try:
+            freemsg = ",  FreeTier" if dbs['is_free_tier'] else ""
+            freesum = "Free " if dbs['is_free_tier'] else ""
+            value = {
+                'id': str(dbs['id']),
+                'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type'] + freemsg),
+                'display_name': dbs['display_name'],
+                'license_model': dbs['license_model'],
+                'lifecycle_state': dbs['lifecycle_state'],
+                'cpu_core_count': str(dbs['cpu_core_count']),
+                'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
+                'db_name': str(dbs['db_name']),
+                'compartment_name': str(dbs['compartment_name']),
+                'compartment_id': str(dbs['compartment_id']),
+                'service_console_url': str(dbs['service_console_url']),
+                'time_created': str(dbs['time_created'])[0:16],
+                'connection_strings': str(dbs['connection_strings']),
+                'sum_info': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
+                'sum_info_stopped': "Stopped Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
+                'sum_info_count': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
+                'sum_count': str(dbs['sum_count']),
+                'sum_info_storage': "Autonomous Database " + freesum + "(TB)",
+                'sum_size_tb': str(dbs['data_storage_size_in_tbs']),
+                'backups': self.__get_database_adb_databases_backups(dbs['backups']),
+                'whitelisted_ips': dbs['whitelisted_ips'],
+                'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
+                'db_workload': dbs['db_workload'],
+                'is_dedicated': dbs['is_dedicated'],
+                'db_version': dbs['db_version'],
+                'subnet_id': dbs['subnet_id'],
+                'subnet_name': "",
+                'data_safe_status': dbs['data_safe_status'],
+                'time_maintenance_begin': dbs['time_maintenance_begin'],
+                'time_maintenance_end': dbs['time_maintenance_end'],
+                'nsg_ids': dbs['nsg_ids'],
+                'nsg_names': [],
+                'private_endpoint': dbs['private_endpoint'],
+                'private_endpoint_label': dbs['private_endpoint_label'],
+                'defined_tags': dbs['defined_tags'],
+                'freeform_tags': dbs['freeform_tags'],
+                'is_free_tier': dbs['is_free_tier'],
+                'is_preview': dbs['is_preview'],
+                'infrastructure_type': dbs['infrastructure_type'],
+                'time_deletion_of_free_autonomous_database': dbs['time_deletion_of_free_autonomous_database'],
+                'time_reclamation_of_free_autonomous_database': dbs['time_reclamation_of_free_autonomous_database'],
+                'system_tags': dbs['system_tags'],
+                'time_of_last_switchover': dbs['time_of_last_switchover'],
+                'time_of_last_failover': dbs['time_of_last_failover'],
+                'failed_data_recovery_in_seconds': dbs['failed_data_recovery_in_seconds'],
+                'available_upgrade_versions': dbs['available_upgrade_versions'],
+                'standby_lag_time_in_seconds': dbs['standby_lag_time_in_seconds'],
+                'standby_lifecycle_state': dbs['standby_lifecycle_state'],
+                'autonomous_container_database_id': dbs['autonomous_container_database_id'],
+                'is_data_guard_enabled': dbs['is_data_guard_enabled']
+            }
+
+            # subnet
+            if dbs['subnet_id'] != 'None':
+                value['subnet_name'] = self.__get_core_network_subnet_name(dbs['subnet_id'])
+
+            # get the nsg names
+            if dbs['nsg_ids']:
+                for nsg in dbs['nsg_ids']:
+                    nsg_obj = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', nsg)
+                    if nsg_obj:
+                        value['nsg_names'].append(nsg_obj['name'])
+
+            return value
+
+        except Exception as e:
+            self.__print_error("__get_database_adb_database_info", e)
+            return {}
+
+    ##########################################################################
     # Autonomous
     ##########################################################################
-    def __get_database_autonomous_databases(self, region_name, compartment):
+    def __get_database_adb_databases(self, region_name, compartment):
 
         data = []
         try:
-            list_autos = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_AUTONOMOUS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            list_autos = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_DATABASE, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_autos:
-                freemsg = ",  FreeTier" if dbs['is_free_tier'] else ""
-                freesum = "Free " if dbs['is_free_tier'] else ""
-                value = {'id': str(dbs['id']),
-                         'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type'] + freemsg),
-                         'display_name': dbs['display_name'],
-                         'license_model': dbs['license_model'],
-                         'lifecycle_state': dbs['lifecycle_state'],
-                         'cpu_core_count': str(dbs['cpu_core_count']),
-                         'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
-                         'db_name': str(dbs['db_name']),
-                         'compartment_name': str(dbs['compartment_name']),
-                         'compartment_id': str(dbs['compartment_id']),
-                         'service_console_url': str(dbs['service_console_url']),
-                         'time_created': str(dbs['time_created'])[0:16],
-                         'connection_strings': str(dbs['connection_strings']),
-                         'sum_info': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
-                         'sum_info_stopped': "Stopped Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
-                         'sum_info_count': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
-                         'sum_count': str(dbs['sum_count']),
-                         'sum_info_storage': "Autonomous Database " + freesum + "(TB)",
-                         'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
-                         'whitelisted_ips': dbs['whitelisted_ips'],
-                         'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
-                         'db_workload': dbs['db_workload'],
-                         'is_dedicated': dbs['is_dedicated'],
-                         'db_version': dbs['db_version'],
-                         'subnet_id': dbs['subnet_id'],
-                         'subnet_name': "",
-                         'data_safe_status': dbs['data_safe_status'],
-                         'time_maintenance_begin': dbs['time_maintenance_begin'],
-                         'time_maintenance_end': dbs['time_maintenance_end'],
-                         'nsg_ids': dbs['nsg_ids'],
-                         'nsg_names': [],
-                         'private_endpoint': dbs['private_endpoint'],
-                         'private_endpoint_label': dbs['private_endpoint_label'],
-                         'defined_tags': dbs['defined_tags'],
-                         'freeform_tags': dbs['freeform_tags'],
-                         'is_free_tier': dbs['is_free_tier'],
-                         'is_preview': dbs['is_preview'],
-                         'infrastructure_type': dbs['infrastructure_type'],
-                         'time_deletion_of_free_autonomous_database': dbs['time_deletion_of_free_autonomous_database'],
-                         'time_reclamation_of_free_autonomous_database': dbs['time_reclamation_of_free_autonomous_database'],
-                         'system_tags': dbs['system_tags'],
-                         'time_of_last_switchover': dbs['time_of_last_switchover'],
-                         'time_of_last_failover': dbs['time_of_last_failover'],
-                         'failed_data_recovery_in_seconds': dbs['failed_data_recovery_in_seconds'],
-                         'available_upgrade_versions': dbs['available_upgrade_versions'],
-                         'standby_lag_time_in_seconds': dbs['standby_lag_time_in_seconds'],
-                         'standby_lifecycle_state': dbs['standby_lifecycle_state'],
-                         'autonomous_container_database_id': dbs['autonomous_container_database_id'],
-                         'is_data_guard_enabled': dbs['is_data_guard_enabled']
+
+                # if dedicated skip, it will be under containers
+                if dbs['is_dedicated']:
+                    continue
+
+                data.append(self.__get_database_adb_database_info(dbs))
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_autonomous_databases", e)
+            return data
+
+    ##########################################################################
+    # Autonomous Dedicated Infra
+    ##########################################################################
+    def __get_database_adb_dedicated(self, region_name, compartment):
+
+        data = []
+        try:
+            infrastructures = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_INFRA, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for infra in infrastructures:
+                value = {'id': str(infra['id']),
+                         'name': str(infra['display_name']) + " - " + str(infra['license_model']) + " - " + infra['shape'] + " - " + str(infra['lifecycle_state']),
+                         'availability_domain': infra['availability_domain'],
+                         'subnet_id': infra['subnet_id'],
+                         'subnet_name': infra['subnet_name'],
+                         'nsg_ids': infra['nsg_ids'],
+                         'shape': infra['shape'],
+                         'shape_ocpu': infra['shape_ocpu'],
+                         'shape_memory_gb': infra['shape_memory_gb'],
+                         'shape_storage_tb': infra['shape_storage_tb'],
+                         'hostname': infra['hostname'],
+                         'domain': str(infra['domain']),
+                         'lifecycle_state': str(infra['lifecycle_state']),
+                         'lifecycle_details': str(infra['lifecycle_details']),
+                         'license_model': str(infra['license_model']),
+                         'time_created': str(infra['time_created']),
+                         'scan_dns_name': str(infra['scan_dns_name']),
+                         'zone_id': infra['zone_id'],
+                         'maintenance_window': infra['maintenance_window'],
+                         'last_maintenance_run': infra['last_maintenance_run'],
+                         'next_maintenance_run': infra['next_maintenance_run'],
+                         'defined_tags': infra['defined_tags'],
+                         'freeform_tags': infra['freeform_tags'],
+                         'compartment_name': infra['compartment_name'],
+                         'compartment_id': infra['compartment_id'],
+                         'region_name': infra['region_name'],
+                         'containers': [],
+                         'sum_info': "Autonomous Dedicated " + infra['shape'] + " - " + infra['license_model'],
+                         'sum_info_stopped': "Stopped Autonomous Dedicated " + infra['shape'] + " - " + infra['license_model'],
+                         'sum_info_count': "Autonomous Dedicated " + infra['shape'] + " - " + infra['license_model'],
+                         'sum_count': 1,
+                         'sum_info_storage': "",
+                         'sum_size_tb': ""
                          }
 
-                # subnet
-                if dbs['subnet_id'] != 'None':
-                    value['subnet_name'] = self.__get_core_network_subnet_name(dbs['subnet_id'])
+                for ct in infra['containers']:
+                    ct['name'] = ct['display_name'] + " (" + ct['lifecycle_state'] + "), " + ct['db_version'] + ", Patch Model : " + ct['patch_model']
+                    ct['databases'] = []
+
+                    # Add Databases
+                    databases = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_DATABASE, 'autonomous_container_database_id', ct['id'])
+                    for arr in databases:
+                        db = self.__get_database_adb_database_info(arr)
+                        db['name'] = str(db['db_name'] + " (" + db['display_name'] + ") - " + infra['license_model'] + " - " + db['lifecycle_state'] + " (" + str(db['sum_count']) + " OCPUs" + (" AutoScale" if db['is_auto_scaling_enabled'] else "") + ") - " + db['db_workload'])
+                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (OCPUs) - " + infra['license_model']
+                        db['sum_info_stopped'] = "Stopped Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + infra['license_model']
+                        db['sum_info_count'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + infra['license_model']
+                        db['sum_info_storage'] = "Autonomous Database Dedicated (TB)"
+                        ct['databases'].append(db)
+
+                    # Add containers
+                    value['containers'].append(ct)
 
                 # get the nsg names
-                if dbs['nsg_ids']:
-                    for nsg in dbs['nsg_ids']:
+                if infra['nsg_ids']:
+                    for nsg in infra['nsg_ids']:
                         nsg_obj = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', nsg)
                         if nsg_obj:
                             value['nsg_names'].append(nsg_obj['name'])
@@ -2285,7 +2381,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_autonomous_databases", e)
+            self.__print_error("__get_database_adb_d_infrastructure", e)
             return data
 
     ##########################################################################
@@ -2410,7 +2506,12 @@ class ShowOCIData(object):
                 if len(data) > 0:
                     return_data['exadata_infrustructure'] = data
 
-            data = self.__get_database_autonomous_databases(region_name, compartment)
+            data = self.__get_database_adb_dedicated(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['autonomous_dedicated'] = data
+
+            data = self.__get_database_adb_databases(region_name, compartment)
             if data:
                 if len(data) > 0:
                     return_data['autonomous'] = data

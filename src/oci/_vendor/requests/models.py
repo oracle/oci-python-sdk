@@ -17,7 +17,7 @@ import sys
 
 # Import encoding now, to avoid implicit import later.
 # Implicit import within threads may cause LookupError when standard library is in a ZIP,
-# such as in Embedded Python. See https://github.com/requests/requests/issues/3578.
+# such as in Embedded Python. See https://github.com/psf/requests/issues/3578.
 import encodings.idna
 
 from oci._vendor.urllib3.fields import RequestField
@@ -278,13 +278,16 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
     """The fully mutable :class:`PreparedRequest <PreparedRequest>` object,
     containing the exact bytes that will be sent to the server.
 
-    Generated from either a :class:`Request <Request>` object or manually.
+    Instances are generated from a :class:`Request <Request>` object, and
+    should not be instantiated manually; doing so may produce undesirable
+    effects.
 
     Usage::
 
       >>> import requests
       >>> req = requests.Request('GET', 'https://httpbin.org/get')
       >>> r = req.prepare()
+      >>> r
       <PreparedRequest [GET]>
 
       >>> s = requests.Session()
@@ -363,7 +366,7 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
         #: We're unable to blindly call unicode/str functions
         #: as this will include the bytestring indicator (b'')
         #: on python 3.x.
-        #: https://github.com/requests/requests/pull/2238
+        #: https://github.com/psf/requests/pull/2238
         if isinstance(url, bytes):
             url = url.decode('utf8')
         else:
@@ -477,12 +480,12 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
             not isinstance(data, (basestring, list, tuple, Mapping))
         ])
 
-        try:
-            length = super_len(data)
-        except (TypeError, AttributeError, UnsupportedOperation):
-            length = None
-
         if is_stream:
+            try:
+                length = super_len(data)
+            except (TypeError, AttributeError, UnsupportedOperation):
+                length = None
+
             body = data
 
             if getattr(body, 'tell', None) is not None:
@@ -613,7 +616,7 @@ class Response(object):
 
         #: File-like object representation of response (for advanced usage).
         #: Use of ``raw`` requires that ``stream=True`` be set on the request.
-        # This requirement does not apply for use internally to Requests.
+        #: This requirement does not apply for use internally to Requests.
         self.raw = None
 
         #: Final URL location of Response.
@@ -920,7 +923,7 @@ class Response(object):
         return l
 
     def raise_for_status(self):
-        """Raises stored :class:`HTTPError`, if one occurred."""
+        """Raises :class:`HTTPError`, if one occurred."""
 
         http_error_msg = ''
         if isinstance(self.reason, bytes):

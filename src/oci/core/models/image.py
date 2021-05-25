@@ -143,6 +143,10 @@ class Image(object):
             The value to assign to the size_in_mbs property of this Image.
         :type size_in_mbs: int
 
+        :param billable_size_in_gbs:
+            The value to assign to the billable_size_in_gbs property of this Image.
+        :type billable_size_in_gbs: int
+
         :param time_created:
             The value to assign to the time_created property of this Image.
         :type time_created: datetime
@@ -164,6 +168,7 @@ class Image(object):
             'agent_features': 'InstanceAgentFeatures',
             'listing_type': 'str',
             'size_in_mbs': 'int',
+            'billable_size_in_gbs': 'int',
             'time_created': 'datetime'
         }
 
@@ -183,6 +188,7 @@ class Image(object):
             'agent_features': 'agentFeatures',
             'listing_type': 'listingType',
             'size_in_mbs': 'sizeInMBs',
+            'billable_size_in_gbs': 'billableSizeInGBs',
             'time_created': 'timeCreated'
         }
 
@@ -201,6 +207,7 @@ class Image(object):
         self._agent_features = None
         self._listing_type = None
         self._size_in_mbs = None
+        self._billable_size_in_gbs = None
         self._time_created = None
 
     @property
@@ -626,6 +633,34 @@ class Image(object):
         :type: int
         """
         self._size_in_mbs = size_in_mbs
+
+    @property
+    def billable_size_in_gbs(self):
+        """
+        Gets the billable_size_in_gbs of this Image.
+        The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).
+
+        Example: `100`
+
+
+        :return: The billable_size_in_gbs of this Image.
+        :rtype: int
+        """
+        return self._billable_size_in_gbs
+
+    @billable_size_in_gbs.setter
+    def billable_size_in_gbs(self, billable_size_in_gbs):
+        """
+        Sets the billable_size_in_gbs of this Image.
+        The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).
+
+        Example: `100`
+
+
+        :param billable_size_in_gbs: The billable_size_in_gbs of this Image.
+        :type: int
+        """
+        self._billable_size_in_gbs = billable_size_in_gbs
 
     @property
     def time_created(self):

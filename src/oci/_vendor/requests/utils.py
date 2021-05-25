@@ -24,6 +24,7 @@ import sys
 import tempfile
 import warnings
 import zipfile
+from collections import OrderedDict
 
 from .__version__ import __version__
 from . import certs
@@ -31,7 +32,7 @@ from . import certs
 from ._internal_utils import to_native_string
 from .compat import parse_http_list as _parse_list_header
 from .compat import (
-    quote, urlparse, bytes, str, OrderedDict, unquote, getproxies,
+    quote, urlparse, bytes, str, unquote, getproxies,
     proxy_bypass, urlunparse, basestring, integer_types, is_py3,
     proxy_bypass_environment, getproxies_environment, Mapping)
 from .cookies import cookiejar_from_dict
@@ -173,18 +174,24 @@ def super_len(o):
 def get_netrc_auth(url, raise_errors=False):
     """Returns the Requests tuple auth for a given url from netrc."""
 
+    netrc_file = os.environ.get('NETRC')
+    if netrc_file is not None:
+        netrc_locations = (netrc_file,)
+    else:
+        netrc_locations = ('~/{}'.format(f) for f in NETRC_FILES)
+
     try:
         from netrc import netrc, NetrcParseError
 
         netrc_path = None
 
-        for f in NETRC_FILES:
+        for f in netrc_locations:
             try:
-                loc = os.path.expanduser('~/{}'.format(f))
+                loc = os.path.expanduser(f)
             except KeyError:
                 # os.path.expanduser can fail when $HOME is undefined and
                 # getpwuid fails. See https://bugs.python.org/issue20164 &
-                # https://github.com/requests/requests/issues/1846
+                # https://github.com/psf/requests/issues/1846
                 return
 
             if os.path.exists(loc):
@@ -216,7 +223,7 @@ def get_netrc_auth(url, raise_errors=False):
             if raise_errors:
                 raise
 
-    # AppEngine hackiness.
+    # App Engine hackiness.
     except (ImportError, AttributeError):
         pass
 
@@ -271,6 +278,8 @@ def from_key_val_list(value):
         >>> from_key_val_list([('key', 'val')])
         OrderedDict([('key', 'val')])
         >>> from_key_val_list('string')
+        Traceback (most recent call last):
+        ...
         ValueError: cannot encode objects that are not 2-tuples
         >>> from_key_val_list({'key': 'val'})
         OrderedDict([('key', 'val')])
@@ -297,7 +306,9 @@ def to_key_val_list(value):
         >>> to_key_val_list({'key': 'val'})
         [('key', 'val')]
         >>> to_key_val_list('string')
-        ValueError: cannot encode objects that are not 2-tuples.
+        Traceback (most recent call last):
+        ...
+        ValueError: cannot encode objects that are not 2-tuples
 
     :rtype: list
     """
@@ -496,6 +507,10 @@ def get_encoding_from_headers(headers):
 
     if 'text' in content_type:
         return 'ISO-8859-1'
+
+    if 'application/json' in content_type:
+        # Assume UTF-8 based on RFC 4627: https://www.ietf.org/rfc/rfc4627.txt since the charset was unset
+        return 'utf-8'
 
 
 def stream_decode_response_unicode(iterator, r):

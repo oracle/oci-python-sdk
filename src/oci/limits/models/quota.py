@@ -11,11 +11,11 @@ from oci.decorators import init_model_state_from_kwargs
 class Quota(object):
     """
     Quotas are applied on top of the service limits and inherited through the nested compartment hierarchy.
-    They allow compartment admins to limit resource consumption and set boundaries around acceptable resource use.
-    The word \"quota\" is used by people in different ways:
-    * An individual statement written in the declarative language
-    * A collection of statements in a single, named \"quota\" object (which has an Oracle Cloud ID (OCID) assigned to it)
-    * The overall body of quotas your organization uses to control access to resources
+    Quotas allow compartment admins to limit resource consumption and set boundaries around acceptable resource use.
+    The term \"quota\" can be interpreted as the following:
+    * An individual statement written in the declarative language.
+    * A collection of statements in a single, named \"quota\" object (which has an Oracle Cloud ID (OCID) assigned to it).
+    * The overall body of quotas your organization uses to control access to resources.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Quota.
@@ -226,7 +226,7 @@ class Quota(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Quota.
-        Date and time the quota was created, in the format defined by RFC3339.
+        Date and time the quota was created, in the format defined by RFC 3339.
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -239,7 +239,7 @@ class Quota(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Quota.
-        Date and time the quota was created, in the format defined by RFC3339.
+        Date and time the quota was created, in the format defined by RFC 3339.
         Example: `2016-08-25T21:10:29.600Z`
 
 

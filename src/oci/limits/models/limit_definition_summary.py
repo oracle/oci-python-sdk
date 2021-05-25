@@ -64,6 +64,10 @@ class LimitDefinitionSummary(object):
             The value to assign to the is_eligible_for_limit_increase property of this LimitDefinitionSummary.
         :type is_eligible_for_limit_increase: bool
 
+        :param is_dynamic:
+            The value to assign to the is_dynamic property of this LimitDefinitionSummary.
+        :type is_dynamic: bool
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -73,7 +77,8 @@ class LimitDefinitionSummary(object):
             'are_quotas_supported': 'bool',
             'is_resource_availability_supported': 'bool',
             'is_deprecated': 'bool',
-            'is_eligible_for_limit_increase': 'bool'
+            'is_eligible_for_limit_increase': 'bool',
+            'is_dynamic': 'bool'
         }
 
         self.attribute_map = {
@@ -84,7 +89,8 @@ class LimitDefinitionSummary(object):
             'are_quotas_supported': 'areQuotasSupported',
             'is_resource_availability_supported': 'isResourceAvailabilitySupported',
             'is_deprecated': 'isDeprecated',
-            'is_eligible_for_limit_increase': 'isEligibleForLimitIncrease'
+            'is_eligible_for_limit_increase': 'isEligibleForLimitIncrease',
+            'is_dynamic': 'isDynamic'
         }
 
         self._name = None
@@ -95,6 +101,7 @@ class LimitDefinitionSummary(object):
         self._is_resource_availability_supported = None
         self._is_deprecated = None
         self._is_eligible_for_limit_increase = None
+        self._is_dynamic = None
 
     @property
     def name(self):
@@ -172,7 +179,7 @@ class LimitDefinitionSummary(object):
     def scope_type(self):
         """
         Gets the scope_type of this LimitDefinitionSummary.
-        Reflects the scope of the resource limit: which can be Global (across all regions), regional or ad specific.
+        Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
 
         Allowed values for this property are: "GLOBAL", "REGION", "AD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -187,7 +194,7 @@ class LimitDefinitionSummary(object):
     def scope_type(self, scope_type):
         """
         Sets the scope_type of this LimitDefinitionSummary.
-        Reflects the scope of the resource limit: which can be Global (across all regions), regional or ad specific.
+        Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
 
 
         :param scope_type: The scope_type of this LimitDefinitionSummary.
@@ -226,8 +233,8 @@ class LimitDefinitionSummary(object):
     def is_resource_availability_supported(self):
         """
         Gets the is_resource_availability_supported of this LimitDefinitionSummary.
-        Reflects if the GetResourceAvailability API is supported for this limit or not.
-        If not, the API will return an empty JSON response.
+        Reflects whether or not the GetResourceAvailability API is supported for this limit.
+        If not, the API returns an empty JSON response.
 
 
         :return: The is_resource_availability_supported of this LimitDefinitionSummary.
@@ -239,8 +246,8 @@ class LimitDefinitionSummary(object):
     def is_resource_availability_supported(self, is_resource_availability_supported):
         """
         Sets the is_resource_availability_supported of this LimitDefinitionSummary.
-        Reflects if the GetResourceAvailability API is supported for this limit or not.
-        If not, the API will return an empty JSON response.
+        Reflects whether or not the GetResourceAvailability API is supported for this limit.
+        If not, the API returns an empty JSON response.
 
 
         :param is_resource_availability_supported: The is_resource_availability_supported of this LimitDefinitionSummary.
@@ -295,6 +302,30 @@ class LimitDefinitionSummary(object):
         :type: bool
         """
         self._is_eligible_for_limit_increase = is_eligible_for_limit_increase
+
+    @property
+    def is_dynamic(self):
+        """
+        Gets the is_dynamic of this LimitDefinitionSummary.
+        The limit for this resource has a dynamic value that is based on consumption across all OCI services.
+
+
+        :return: The is_dynamic of this LimitDefinitionSummary.
+        :rtype: bool
+        """
+        return self._is_dynamic
+
+    @is_dynamic.setter
+    def is_dynamic(self, is_dynamic):
+        """
+        Sets the is_dynamic of this LimitDefinitionSummary.
+        The limit for this resource has a dynamic value that is based on consumption across all OCI services.
+
+
+        :param is_dynamic: The is_dynamic of this LimitDefinitionSummary.
+        :type: bool
+        """
+        self._is_dynamic = is_dynamic
 
     def __repr__(self):
         return formatted_flat_dict(self)

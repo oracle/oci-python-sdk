@@ -30,22 +30,29 @@ class NotebookSessionConfigurationDetails(object):
             The value to assign to the subnet_id property of this NotebookSessionConfigurationDetails.
         :type subnet_id: str
 
+        :param notebook_session_shape_config_details:
+            The value to assign to the notebook_session_shape_config_details property of this NotebookSessionConfigurationDetails.
+        :type notebook_session_shape_config_details: oci.data_science.models.NotebookSessionShapeConfigDetails
+
         """
         self.swagger_types = {
             'shape': 'str',
             'block_storage_size_in_gbs': 'int',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'notebook_session_shape_config_details': 'NotebookSessionShapeConfigDetails'
         }
 
         self.attribute_map = {
             'shape': 'shape',
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'notebook_session_shape_config_details': 'notebookSessionShapeConfigDetails'
         }
 
         self._shape = None
         self._block_storage_size_in_gbs = None
         self._subnet_id = None
+        self._notebook_session_shape_config_details = None
 
     @property
     def shape(self):
@@ -122,6 +129,26 @@ class NotebookSessionConfigurationDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def notebook_session_shape_config_details(self):
+        """
+        Gets the notebook_session_shape_config_details of this NotebookSessionConfigurationDetails.
+
+        :return: The notebook_session_shape_config_details of this NotebookSessionConfigurationDetails.
+        :rtype: oci.data_science.models.NotebookSessionShapeConfigDetails
+        """
+        return self._notebook_session_shape_config_details
+
+    @notebook_session_shape_config_details.setter
+    def notebook_session_shape_config_details(self, notebook_session_shape_config_details):
+        """
+        Sets the notebook_session_shape_config_details of this NotebookSessionConfigurationDetails.
+
+        :param notebook_session_shape_config_details: The notebook_session_shape_config_details of this NotebookSessionConfigurationDetails.
+        :type: oci.data_science.models.NotebookSessionShapeConfigDetails
+        """
+        self._notebook_session_shape_config_details = notebook_session_shape_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

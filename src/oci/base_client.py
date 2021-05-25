@@ -17,10 +17,12 @@ import uuid
 import _strptime  # noqa: F401
 from datetime import date, datetime
 from timeit import default_timer as timer
-
-from oci._vendor import requests, six
+from ._vendor import requests, six, urllib3
 from dateutil.parser import parse
 from dateutil import tz
+
+import functools
+from six.moves.http_client import HTTPResponse
 
 from . import constants, exceptions, regions
 from .auth import signers
@@ -36,6 +38,10 @@ USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
 DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')  # noqa: W605
 LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')  # noqa: W605
+enable_expect_header = True
+expect_header_env_var = os.environ.get('OCI_PYSDK_USING_EXPECT_HEADER')
+if expect_header_env_var == "FALSE":
+    enable_expect_header = False
 
 
 def merge_type_mappings(*dictionaries):
@@ -100,6 +106,140 @@ VALID_COLLECTION_FORMAT_TYPES = {
     'ssv': ' ',
     'pipes': '|'
 }
+
+
+def _read_all_headers(fp):
+    current = None
+    while current != b'\r\n':
+        current = fp.readline()
+
+
+def _to_bytes(input_buffer):
+    bytes_buffer = []
+    for chunk in input_buffer:
+        if isinstance(chunk, six.text_type):
+            bytes_buffer.append(chunk.encode('utf-8'))
+        else:
+            bytes_buffer.append(chunk)
+    msg = b"\r\n".join(bytes_buffer)
+    return msg
+
+
+def _is_100_continue(line):
+    parts = line.split(None, 2)
+    return (
+        len(parts) >= 3 and parts[0].startswith(b'HTTP/') and
+        parts[1] == b'100')
+
+
+class OCIHTTPResponse(HTTPResponse):
+
+    def __init__(self, *args, **kwargs):
+        self._status_tuple = kwargs.pop('status_tuple')
+        HTTPResponse.__init__(self, *args, **kwargs)
+
+    def _read_status(self):
+        if self._status_tuple is not None:
+            status_tuple = self._status_tuple
+            self._status_tuple = None
+            return status_tuple
+        else:
+            return HTTPResponse._read_status(self)
+
+
+class OCIConnection(urllib3.connection.VerifiedHTTPSConnection):
+    """ HTTPConnection with 100 Continue support. """
+
+    def __init__(self, *args, **kwargs):
+        super(OCIConnection, self).__init__(*args, **kwargs)
+        self._original_response_cls = self.response_class
+        self._response_received = False
+        self._using_expect_header = False
+        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+
+    def _send_request(self, method, url, body, headers, *args, **kwargs):
+        self._response_received = False
+        if headers.get('expect', '') == '100-continue':
+            if self.debuglevel > 0:
+                print('Using Expect header...')
+            self._using_expect_header = True
+        else:
+            if self.debuglevel > 0:
+                print('Not using Expect header...')
+            self._using_expect_header = False
+            self.response_class = self._original_response_cls
+        rval = super(OCIConnection, self)._send_request(
+            method, url, body, headers, *args, **kwargs)
+        self._expect_header_set = False
+        return rval
+
+    def _send_output(self, message_body=None, *args, **kwargs):
+        self._buffer.extend((b"", b""))
+        msg = _to_bytes(self._buffer)
+        del self._buffer[:]
+
+        if not self._using_expect_header:
+            if isinstance(message_body, bytes):
+                msg += message_body
+                message_body = None
+
+        self.send(msg)
+
+        if self._using_expect_header:
+            if self.debuglevel > 0:
+                print('Waiting 3 seconds for 100-continue response...')
+            if urllib3.util.wait_for_read(self.sock, 3):
+                self._handle_expect_response(message_body)
+                return
+
+        if message_body is not None:
+            if self.debuglevel > 0:
+                print('Timeout waiting for 100-continue response, sending message body...')
+            self.send(message_body)
+
+    def _handle_expect_response(self, message_body):
+        fp = self.sock.makefile('rb', 0)
+        try:
+            line = fp.readline()
+            parts = line.split(None, 2)
+            if self.debuglevel > 0:
+                print(line)
+            if _is_100_continue(line):
+                if self.debuglevel > 0:
+                    print('Received 100-continue response, sending message body...')
+                _read_all_headers(fp)
+                self._send_message_body(message_body)
+            elif len(parts) == 3 and parts[0].startswith(b'HTTP/'):
+                if self.debuglevel > 0:
+                    print('Received non-100-continue response, abort request...')
+                status_tuple = (parts[0].decode('ascii'),
+                                int(parts[1]), parts[2].decode('ascii'))
+                response_class = functools.partial(
+                    OCIHTTPResponse, status_tuple=status_tuple)
+                self.response_class = response_class
+                self._response_received = True
+        finally:
+            fp.close()
+
+    def _send_message_body(self, message_body):
+        if message_body is not None:
+            self.send(message_body)
+
+    def send(self, str):
+        if self._response_received:
+            return
+        return super(OCIConnection, self).send(str)
+
+
+class OCIConnectionPool(urllib3.HTTPSConnectionPool):
+    ConnectionCls = OCIConnection
+    """ HTTPConnectionPool with 100 Continue support. """
+
+
+# Replace the HTTPS connection pool with OCIConnectionPool once the env var `OCI_PYSDK_USING_EXPECT_HEADER` is not set
+# to "FALSE"
+if enable_expect_header:
+    urllib3.poolmanager.pool_classes_by_scheme["https"] = OCIConnectionPool
 
 
 class BaseClient(object):
@@ -215,6 +355,13 @@ class BaseClient(object):
         :return: A Response object, or throw in the case of an error.
 
         """
+
+        # By default we will add Expect header for all PUT/POST operations
+        if enable_expect_header and (method == 'PUT' or method == 'POST'):
+            if header_params is None:
+                header_params = {'expect': '100-continue'}
+            elif "expect" not in header_params:
+                header_params['expect'] = '100-continue'
 
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)

@@ -231,7 +231,8 @@ class ShowOCIService(object):
     C_DATABASE = "database"
     C_DATABASE_DBSYSTEMS = "dbsystems"
     C_DATABASE_EXADATA = "exadata"
-    C_DATABASE_AUTONOMOUS = "autonomous"
+    C_DATABASE_ADB_DATABASE = "autonomous"
+    C_DATABASE_ADB_D_INFRA = "autonomous_dedicated_infrastructure"
     C_DATABASE_NOSQL = "nosql"
     C_DATABASE_MYSQL = "mysql"
     C_DATABASE_SOFTWARE_IMAGES = "database_software_images"
@@ -6283,7 +6284,7 @@ class ShowOCIService(object):
             print("Database...")
 
             # LoadBalancerClient
-            database_client = oci.database.DatabaseClient(self.config, signer=self.signer, timeout=1)
+            database_client = oci.database.DatabaseClient(self.config, signer=self.signer, timeout=5)
             if self.flags.proxy:
                 database_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -6309,7 +6310,8 @@ class ShowOCIService(object):
             # add the key if not exists
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_DBSYSTEMS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXADATA)
-            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_AUTONOMOUS)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_ADB_DATABASE)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_ADB_D_INFRA)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_MYSQL)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_SOFTWARE_IMAGES)
@@ -6322,7 +6324,8 @@ class ShowOCIService(object):
             # append the data
             db[self.C_DATABASE_EXADATA] += self.__load_database_exadata_infrastructure(database_client, virtual_network, compartments)
             db[self.C_DATABASE_DBSYSTEMS] += self.__load_database_dbsystems(database_client, virtual_network, compartments)
-            db[self.C_DATABASE_AUTONOMOUS] += self.__load_database_autonomouns(database_client, compartments)
+            db[self.C_DATABASE_ADB_D_INFRA] += self.__load_database_adb_d_infrastructure(database_client, compartments)
+            db[self.C_DATABASE_ADB_DATABASE] += self.__load_database_adb_database(database_client, compartments)
             db[self.C_DATABASE_NOSQL] += self.__load_database_nosql(nosql_client, compartments)
             db[self.C_DATABASE_MYSQL] += self.__load_database_mysql(mysql_client, compartments)
             db[self.C_DATABASE_SOFTWARE_IMAGES] += self.__load_database_software_images(database_client, compartments)
@@ -6536,7 +6539,7 @@ class ShowOCIService(object):
                     'data_subnet': self.get_network_subnet(str(arr.subnet_id), True),
                     'backup_subnet_id': str(arr.backup_subnet_id),
                     'backup_subnet': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id), True),
-                    'nsg_ids': str(arr.nsg_ids),
+                    'nsg_ids': arr.nsg_ids,
                     'backup_network_nsg_ids': str(arr.backup_network_nsg_ids),
                     'last_update_history_entry_id': str(arr.last_update_history_entry_id),
                     'shape': str(arr.shape),
@@ -7166,9 +7169,182 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_database_autonomous_exadata_infrastructure
+    ##########################################################################
+    def __load_database_adb_d_infrastructure(self, database_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Autonomous Dedicated")
+
+            # loop on all compartments
+            for compartment in compartments:
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                # list_autonomous_exadata_infrastructures
+                list_exa = []
+                try:
+                    list_exa = oci.pagination.list_call_get_all_results(
+                        database_client.list_autonomous_exadata_infrastructures,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning("a", False)
+                        continue
+                    else:
+                        raise
+
+                # loop on the Exadata infrastructure
+                # dbs = oci.database.models.AutonomousExadataInfrastructureSummary
+                for dbs in list_exa:
+                    if (dbs.lifecycle_state == oci.database.models.AutonomousExadataInfrastructureSummary.LIFECYCLE_STATE_TERMINATED or
+                            dbs.lifecycle_state == oci.database.models.AutonomousExadataInfrastructureSummary.LIFECYCLE_STATE_TERMINATING):
+                        continue
+
+                    value = {'id': str(dbs.id),
+                             'display_name': str(dbs.display_name),
+                             'availability_domain': str(dbs.availability_domain),
+                             'subnet_id': str(dbs.subnet_id),
+                             'subnet_name': self.get_network_subnet(str(dbs.subnet_id), True),
+                             'nsg_ids': dbs.nsg_ids,
+                             'shape': str(dbs.shape),
+                             'shape_ocpu': 0,
+                             'shape_memory_gb': 0,
+                             'shape_storage_tb': 0,
+                             'hostname': str(dbs.hostname),
+                             'domain': str(dbs.domain),
+                             'lifecycle_state': str(dbs.lifecycle_state),
+                             'lifecycle_details': str(dbs.lifecycle_details),
+                             'license_model': str(dbs.license_model),
+                             'time_created': str(dbs.time_created),
+                             'scan_dns_name': str(dbs.scan_dns_name),
+                             'zone_id': str(dbs.zone_id),
+                             'maintenance_window': self.__load_database_maintatance_windows(dbs.maintenance_window),
+                             'last_maintenance_run': self.__load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                             'next_maintenance_run': self.__load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                             'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                             'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'region_name': str(self.config['region']),
+                             'containers': self.__load_database_adb_d_containers(database_client, dbs.id, compartment)
+                             }
+
+                    # license model
+                    if dbs.license_model == oci.database.models.AutonomousExadataInfrastructureSummary.LICENSE_MODEL_LICENSE_INCLUDED:
+                        value['license_model'] = "INCL"
+                    elif dbs.license_model == oci.database.models.AutonomousExadataInfrastructureSummary.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
+                        value['license_model'] = "BYOL"
+                    else:
+                        value['license_model'] = str(dbs.license_model)
+
+                    # get shape
+                    if dbs.shape:
+                        shape_sizes = self.get_shape_details(str(dbs.shape))
+                        if shape_sizes:
+                            value['shape_ocpu'] = shape_sizes['cpu']
+                            value['shape_memory_gb'] = shape_sizes['memory']
+                            value['shape_storage_tb'] = shape_sizes['storage']
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_autonomous_exadata_infrastructure", e)
+            return data
+
+    ##########################################################################
+    # __load_database_autonomous_exadata_infrastructure
+    ##########################################################################
+    def __load_database_adb_d_containers(self, database_client, exa_id, compartment):
+
+        data = []
+        try:
+            vms = database_client.list_autonomous_container_databases(
+                compartment['id'],
+                autonomous_exadata_infrastructure_id=exa_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # arr = oci.database.models.AutonomousContainerDatabaseSummary
+            for arr in vms:
+                if (arr.lifecycle_state == oci.database.models.AutonomousContainerDatabaseSummary.LIFECYCLE_STATE_TERMINATED or
+                        arr.lifecycle_state == oci.database.models.AutonomousContainerDatabaseSummary.LIFECYCLE_STATE_TERMINATING):
+                    continue
+
+                value = {
+                    'id': str(arr.id),
+                    'display_name': str(arr.display_name),
+                    'db_unique_name': str(arr.db_unique_name),
+                    'service_level_agreement_type': str(arr.service_level_agreement_type),
+                    'autonomous_exadata_infrastructure_id': str(arr.autonomous_exadata_infrastructure_id),
+                    'autonomous_vm_cluster_id': str(arr.autonomous_vm_cluster_id),
+                    'infrastructure_type': str(arr.infrastructure_type),
+                    'kms_key_id': str(arr.kms_key_id),
+                    'vault_id': str(arr.vault_id),
+                    'lifecycle_state': str(arr.lifecycle_state),
+                    'lifecycle_details': str(arr.lifecycle_details),
+                    'time_created': str(arr.time_created),
+                    'patch_model': str(arr.patch_model),
+                    'patch_id': str(arr.patch_id),
+                    'maintenance_window': self.__load_database_maintatance_windows(arr.maintenance_window),
+                    'last_maintenance_run': self.__load_database_maintatance(database_client, arr.last_maintenance_run_id, str(arr.display_name)),
+                    'next_maintenance_run': self.__load_database_maintatance(database_client, arr.next_maintenance_run_id, str(arr.display_name)),
+                    'standby_maintenance_buffer_in_days': str(arr.standby_maintenance_buffer_in_days),
+                    'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                    'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                    'role': str(arr.role),
+                    'availability_domain': str(arr.availability_domain),
+                    'db_version': str(arr.db_version),
+                    'key_store_id': str(arr.key_store_id),
+                    'key_store_wallet_name': str(arr.key_store_wallet_name),
+                    'region_name': str(self.config['region'])
+                }
+
+                # add to main data
+                data.append(value)
+
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+                return data
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_adb_d_containers", e)
+            return data
+
+    ##########################################################################
     # __load_database_autonomouns
     ##########################################################################
-    def __load_database_autonomouns(self, database_client, compartments):
+    def __load_database_adb_database(self, database_client, compartments):
 
         data = []
         cnt = 0
