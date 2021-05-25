@@ -70,6 +70,7 @@ else
   # skip the long running integration tests
   cd .python-sdk-bitbucket/
   source internal_resources/test_setup.sh
+  export OCI_PYSDK_USING_EXPECT_HEADER=FALSE
   py.test --vcr-record-mode=none \
           --ignore=tests/integ/test_large_file_transfer.py \
           --ignore=tests/integ/test_object_storage.py \
