@@ -29,6 +29,10 @@ class CronSchedule(Schedule):
             Allowed values for this property are: "RETRY_ONCE", "RETRY_INDEFINITELY", "SKIP"
         :type misfire_policy: str
 
+        :param time_of_first_execution:
+            The value to assign to the time_of_first_execution property of this CronSchedule.
+        :type time_of_first_execution: datetime
+
         :param expression:
             The value to assign to the expression property of this CronSchedule.
         :type expression: str
@@ -41,6 +45,7 @@ class CronSchedule(Schedule):
         self.swagger_types = {
             'type': 'str',
             'misfire_policy': 'str',
+            'time_of_first_execution': 'datetime',
             'expression': 'str',
             'time_zone': 'str'
         }
@@ -48,12 +53,14 @@ class CronSchedule(Schedule):
         self.attribute_map = {
             'type': 'type',
             'misfire_policy': 'misfirePolicy',
+            'time_of_first_execution': 'timeOfFirstExecution',
             'expression': 'expression',
             'time_zone': 'timeZone'
         }
 
         self._type = None
         self._misfire_policy = None
+        self._time_of_first_execution = None
         self._expression = None
         self._time_zone = None
         self._type = 'CRON'

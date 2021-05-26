@@ -97,6 +97,14 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the is_free_tier property of this CreateAutonomousDatabaseBase.
         :type is_free_tier: bool
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateAutonomousDatabaseBase.
+        :type kms_key_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this CreateAutonomousDatabaseBase.
+        :type vault_id: str
+
         :param admin_password:
             The value to assign to the admin_password property of this CreateAutonomousDatabaseBase.
         :type admin_password: str
@@ -187,6 +195,8 @@ class CreateAutonomousDatabaseBase(object):
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
             'is_free_tier': 'bool',
+            'kms_key_id': 'str',
+            'vault_id': 'str',
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
@@ -216,6 +226,8 @@ class CreateAutonomousDatabaseBase(object):
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'is_free_tier': 'isFreeTier',
+            'kms_key_id': 'kmsKeyId',
+            'vault_id': 'vaultId',
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
@@ -244,6 +256,8 @@ class CreateAutonomousDatabaseBase(object):
         self._db_workload = None
         self._data_storage_size_in_tbs = None
         self._is_free_tier = None
+        self._kms_key_id = None
+        self._vault_id = None
         self._admin_password = None
         self._display_name = None
         self._license_model = None
@@ -455,6 +469,60 @@ class CreateAutonomousDatabaseBase(object):
         :type: bool
         """
         self._is_free_tier = is_free_tier
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateAutonomousDatabaseBase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateAutonomousDatabaseBase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this CreateAutonomousDatabaseBase.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this CreateAutonomousDatabaseBase.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._vault_id = vault_id
 
     @property
     def admin_password(self):

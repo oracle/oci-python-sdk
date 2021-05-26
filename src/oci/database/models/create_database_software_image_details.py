@@ -82,6 +82,10 @@ class CreateDatabaseSoftwareImageDetails(object):
             The value to assign to the defined_tags property of this CreateDatabaseSoftwareImageDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param source_db_home_id:
+            The value to assign to the source_db_home_id property of this CreateDatabaseSoftwareImageDetails.
+        :type source_db_home_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -93,7 +97,8 @@ class CreateDatabaseSoftwareImageDetails(object):
             'database_software_image_one_off_patches': 'list[str]',
             'ls_inventory': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'source_db_home_id': 'str'
         }
 
         self.attribute_map = {
@@ -106,7 +111,8 @@ class CreateDatabaseSoftwareImageDetails(object):
             'database_software_image_one_off_patches': 'databaseSoftwareImageOneOffPatches',
             'ls_inventory': 'lsInventory',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'source_db_home_id': 'sourceDbHomeId'
         }
 
         self._compartment_id = None
@@ -119,6 +125,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         self._ls_inventory = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._source_db_home_id = None
 
     @property
     def compartment_id(self):
@@ -395,6 +402,34 @@ class CreateDatabaseSoftwareImageDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def source_db_home_id(self):
+        """
+        Gets the source_db_home_id of this CreateDatabaseSoftwareImageDetails.
+        The `OCID`__ of the Database Home.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The source_db_home_id of this CreateDatabaseSoftwareImageDetails.
+        :rtype: str
+        """
+        return self._source_db_home_id
+
+    @source_db_home_id.setter
+    def source_db_home_id(self, source_db_home_id):
+        """
+        Sets the source_db_home_id of this CreateDatabaseSoftwareImageDetails.
+        The `OCID`__ of the Database Home.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param source_db_home_id: The source_db_home_id of this CreateDatabaseSoftwareImageDetails.
+        :type: str
+        """
+        self._source_db_home_id = source_db_home_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

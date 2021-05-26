@@ -90,6 +90,10 @@ class ScheduledTaskSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_status: str
 
+        :param pause_reason:
+            The value to assign to the pause_reason property of this ScheduledTaskSummary.
+        :type pause_reason: str
+
         :param work_request_id:
             The value to assign to the work_request_id property of this ScheduledTaskSummary.
         :type work_request_id: str
@@ -125,6 +129,7 @@ class ScheduledTaskSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'task_status': 'str',
+            'pause_reason': 'str',
             'work_request_id': 'str',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -141,6 +146,7 @@ class ScheduledTaskSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'task_status': 'taskStatus',
+            'pause_reason': 'pauseReason',
             'work_request_id': 'workRequestId',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -156,6 +162,7 @@ class ScheduledTaskSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._task_status = None
+        self._pause_reason = None
         self._work_request_id = None
         self._display_name = None
         self._freeform_tags = None
@@ -350,6 +357,30 @@ class ScheduledTaskSummary(object):
         if not value_allowed_none_or_none_sentinel(task_status, allowed_values):
             task_status = 'UNKNOWN_ENUM_VALUE'
         self._task_status = task_status
+
+    @property
+    def pause_reason(self):
+        """
+        Gets the pause_reason of this ScheduledTaskSummary.
+        reason for taskStatus PAUSED.
+
+
+        :return: The pause_reason of this ScheduledTaskSummary.
+        :rtype: str
+        """
+        return self._pause_reason
+
+    @pause_reason.setter
+    def pause_reason(self, pause_reason):
+        """
+        Sets the pause_reason of this ScheduledTaskSummary.
+        reason for taskStatus PAUSED.
+
+
+        :param pause_reason: The pause_reason of this ScheduledTaskSummary.
+        :type: str
+        """
+        self._pause_reason = pause_reason
 
     @property
     def work_request_id(self):

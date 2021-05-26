@@ -41,6 +41,7 @@ from .column import Column
 from .column_name import ColumnName
 from .column_name_collection import ColumnNameCollection
 from .command_descriptor import CommandDescriptor
+from .compare_command_descriptor import CompareCommandDescriptor
 from .create_acceleration_task_details import CreateAccelerationTaskDetails
 from .create_log_analytics_em_bridge_details import CreateLogAnalyticsEmBridgeDetails
 from .create_log_analytics_entity_details import CreateLogAnalyticsEntityDetails
@@ -338,6 +339,7 @@ log_analytics_type_mapping = {
     "ColumnName": ColumnName,
     "ColumnNameCollection": ColumnNameCollection,
     "CommandDescriptor": CommandDescriptor,
+    "CompareCommandDescriptor": CompareCommandDescriptor,
     "CreateAccelerationTaskDetails": CreateAccelerationTaskDetails,
     "CreateLogAnalyticsEmBridgeDetails": CreateLogAnalyticsEmBridgeDetails,
     "CreateLogAnalyticsEntityDetails": CreateLogAnalyticsEntityDetails,

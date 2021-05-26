@@ -61,6 +61,12 @@ class StandardTask(ScheduledTask):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_status: str
 
+        :param pause_reason:
+            The value to assign to the pause_reason property of this StandardTask.
+            Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type pause_reason: str
+
         :param work_request_id:
             The value to assign to the work_request_id property of this StandardTask.
         :type work_request_id: str
@@ -80,6 +86,10 @@ class StandardTask(ScheduledTask):
         :param time_updated:
             The value to assign to the time_updated property of this StandardTask.
         :type time_updated: datetime
+
+        :param time_of_next_execution:
+            The value to assign to the time_of_next_execution property of this StandardTask.
+        :type time_of_next_execution: datetime
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this StandardTask.
@@ -114,11 +124,13 @@ class StandardTask(ScheduledTask):
             'schedules': 'list[Schedule]',
             'action': 'Action',
             'task_status': 'str',
+            'pause_reason': 'str',
             'work_request_id': 'str',
             'num_occurrences': 'int',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'time_of_next_execution': 'datetime',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -134,11 +146,13 @@ class StandardTask(ScheduledTask):
             'schedules': 'schedules',
             'action': 'action',
             'task_status': 'taskStatus',
+            'pause_reason': 'pauseReason',
             'work_request_id': 'workRequestId',
             'num_occurrences': 'numOccurrences',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'time_of_next_execution': 'timeOfNextExecution',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -153,11 +167,13 @@ class StandardTask(ScheduledTask):
         self._schedules = None
         self._action = None
         self._task_status = None
+        self._pause_reason = None
         self._work_request_id = None
         self._num_occurrences = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
+        self._time_of_next_execution = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None

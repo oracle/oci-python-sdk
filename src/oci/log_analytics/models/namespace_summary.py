@@ -34,25 +34,32 @@ class NamespaceSummary(object):
             The value to assign to the is_log_set_enabled property of this NamespaceSummary.
         :type is_log_set_enabled: bool
 
+        :param is_data_ever_ingested:
+            The value to assign to the is_data_ever_ingested property of this NamespaceSummary.
+        :type is_data_ever_ingested: bool
+
         """
         self.swagger_types = {
             'namespace_name': 'str',
             'compartment_id': 'str',
             'is_onboarded': 'bool',
-            'is_log_set_enabled': 'bool'
+            'is_log_set_enabled': 'bool',
+            'is_data_ever_ingested': 'bool'
         }
 
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'compartment_id': 'compartmentId',
             'is_onboarded': 'isOnboarded',
-            'is_log_set_enabled': 'isLogSetEnabled'
+            'is_log_set_enabled': 'isLogSetEnabled',
+            'is_data_ever_ingested': 'isDataEverIngested'
         }
 
         self._namespace_name = None
         self._compartment_id = None
         self._is_onboarded = None
         self._is_log_set_enabled = None
+        self._is_data_ever_ingested = None
 
     @property
     def namespace_name(self):
@@ -149,6 +156,30 @@ class NamespaceSummary(object):
         :type: bool
         """
         self._is_log_set_enabled = is_log_set_enabled
+
+    @property
+    def is_data_ever_ingested(self):
+        """
+        Gets the is_data_ever_ingested of this NamespaceSummary.
+        This indicates if data has ever been ingested for the tenancy in Logging Analytics
+
+
+        :return: The is_data_ever_ingested of this NamespaceSummary.
+        :rtype: bool
+        """
+        return self._is_data_ever_ingested
+
+    @is_data_ever_ingested.setter
+    def is_data_ever_ingested(self, is_data_ever_ingested):
+        """
+        Sets the is_data_ever_ingested of this NamespaceSummary.
+        This indicates if data has ever been ingested for the tenancy in Logging Analytics
+
+
+        :param is_data_ever_ingested: The is_data_ever_ingested of this NamespaceSummary.
+        :type: bool
+        """
+        self._is_data_ever_ingested = is_data_ever_ingested
 
     def __repr__(self):
         return formatted_flat_dict(self)

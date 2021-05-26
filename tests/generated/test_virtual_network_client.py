@@ -7085,7 +7085,6 @@ def test_list_network_security_groups(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_network_security_groups(
-                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7093,7 +7092,6 @@ def test_list_network_security_groups(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_network_security_groups(
-                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -7103,7 +7101,6 @@ def test_list_network_security_groups(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_network_security_groups(
-                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

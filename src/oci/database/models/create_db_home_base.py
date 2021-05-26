@@ -77,6 +77,10 @@ class CreateDbHomeBase(object):
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_BACKUP", "VM_CLUSTER_NEW"
         :type source: str
 
+        :param is_desupported_version:
+            The value to assign to the is_desupported_version property of this CreateDbHomeBase.
+        :type is_desupported_version: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -85,7 +89,8 @@ class CreateDbHomeBase(object):
             'database_software_image_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'source': 'str'
+            'source': 'str',
+            'is_desupported_version': 'bool'
         }
 
         self.attribute_map = {
@@ -95,7 +100,8 @@ class CreateDbHomeBase(object):
             'database_software_image_id': 'databaseSoftwareImageId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'source': 'source'
+            'source': 'source',
+            'is_desupported_version': 'isDesupportedVersion'
         }
 
         self._display_name = None
@@ -105,6 +111,7 @@ class CreateDbHomeBase(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
+        self._is_desupported_version = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -326,6 +333,30 @@ class CreateDbHomeBase(object):
                 .format(allowed_values)
             )
         self._source = source
+
+    @property
+    def is_desupported_version(self):
+        """
+        Gets the is_desupported_version of this CreateDbHomeBase.
+        If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+
+
+        :return: The is_desupported_version of this CreateDbHomeBase.
+        :rtype: bool
+        """
+        return self._is_desupported_version
+
+    @is_desupported_version.setter
+    def is_desupported_version(self, is_desupported_version):
+        """
+        Sets the is_desupported_version of this CreateDbHomeBase.
+        If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+
+
+        :param is_desupported_version: The is_desupported_version of this CreateDbHomeBase.
+        :type: bool
+        """
+        self._is_desupported_version = is_desupported_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

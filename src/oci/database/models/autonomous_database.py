@@ -89,6 +89,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "UPGRADING"
     LIFECYCLE_STATE_UPGRADING = "UPGRADING"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabase.
+    #: This constant has a value of "INACCESSIBLE"
+    LIFECYCLE_STATE_INACCESSIBLE = "INACCESSIBLE"
+
     #: A constant which can be used with the infrastructure_type property of a AutonomousDatabase.
     #: This constant has a value of "CLOUD"
     INFRASTRUCTURE_TYPE_CLOUD = "CLOUD"
@@ -224,13 +228,25 @@ class AutonomousDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabase.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this AutonomousDatabase.
         :type lifecycle_details: str
+
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this AutonomousDatabase.
+        :type kms_key_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this AutonomousDatabase.
+        :type vault_id: str
+
+        :param kms_key_lifecycle_details:
+            The value to assign to the kms_key_lifecycle_details property of this AutonomousDatabase.
+        :type kms_key_lifecycle_details: str
 
         :param db_name:
             The value to assign to the db_name property of this AutonomousDatabase.
@@ -255,6 +271,10 @@ class AutonomousDatabase(object):
         :param backup_config:
             The value to assign to the backup_config property of this AutonomousDatabase.
         :type backup_config: oci.database.models.AutonomousDatabaseBackupConfig
+
+        :param key_history_entry:
+            The value to assign to the key_history_entry property of this AutonomousDatabase.
+        :type key_history_entry: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this AutonomousDatabase.
@@ -490,12 +510,16 @@ class AutonomousDatabase(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'kms_key_id': 'str',
+            'vault_id': 'str',
+            'kms_key_lifecycle_details': 'str',
             'db_name': 'str',
             'is_free_tier': 'bool',
             'system_tags': 'dict(str, dict(str, object))',
             'time_reclamation_of_free_autonomous_database': 'datetime',
             'time_deletion_of_free_autonomous_database': 'datetime',
             'backup_config': 'AutonomousDatabaseBackupConfig',
+            'key_history_entry': 'list[AutonomousDatabaseKeyHistoryEntry]',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
             'data_storage_size_in_gbs': 'int',
@@ -555,12 +579,16 @@ class AutonomousDatabase(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'kms_key_id': 'kmsKeyId',
+            'vault_id': 'vaultId',
+            'kms_key_lifecycle_details': 'kmsKeyLifecycleDetails',
             'db_name': 'dbName',
             'is_free_tier': 'isFreeTier',
             'system_tags': 'systemTags',
             'time_reclamation_of_free_autonomous_database': 'timeReclamationOfFreeAutonomousDatabase',
             'time_deletion_of_free_autonomous_database': 'timeDeletionOfFreeAutonomousDatabase',
             'backup_config': 'backupConfig',
+            'key_history_entry': 'keyHistoryEntry',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
@@ -619,12 +647,16 @@ class AutonomousDatabase(object):
         self._compartment_id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._kms_key_id = None
+        self._vault_id = None
+        self._kms_key_lifecycle_details = None
         self._db_name = None
         self._is_free_tier = None
         self._system_tags = None
         self._time_reclamation_of_free_autonomous_database = None
         self._time_deletion_of_free_autonomous_database = None
         self._backup_config = None
+        self._key_history_entry = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
         self._data_storage_size_in_gbs = None
@@ -740,7 +772,7 @@ class AutonomousDatabase(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabase.
         The current state of the Autonomous Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -759,7 +791,7 @@ class AutonomousDatabase(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -787,6 +819,84 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this AutonomousDatabase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this AutonomousDatabase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this AutonomousDatabase.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this AutonomousDatabase.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this AutonomousDatabase.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this AutonomousDatabase.
+        :type: str
+        """
+        self._vault_id = vault_id
+
+    @property
+    def kms_key_lifecycle_details(self):
+        """
+        Gets the kms_key_lifecycle_details of this AutonomousDatabase.
+        KMS key lifecycle details.
+
+
+        :return: The kms_key_lifecycle_details of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._kms_key_lifecycle_details
+
+    @kms_key_lifecycle_details.setter
+    def kms_key_lifecycle_details(self, kms_key_lifecycle_details):
+        """
+        Sets the kms_key_lifecycle_details of this AutonomousDatabase.
+        KMS key lifecycle details.
+
+
+        :param kms_key_lifecycle_details: The kms_key_lifecycle_details of this AutonomousDatabase.
+        :type: str
+        """
+        self._kms_key_lifecycle_details = kms_key_lifecycle_details
 
     @property
     def db_name(self):
@@ -933,6 +1043,30 @@ class AutonomousDatabase(object):
         :type: oci.database.models.AutonomousDatabaseBackupConfig
         """
         self._backup_config = backup_config
+
+    @property
+    def key_history_entry(self):
+        """
+        Gets the key_history_entry of this AutonomousDatabase.
+        Key History Entry.
+
+
+        :return: The key_history_entry of this AutonomousDatabase.
+        :rtype: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
+        """
+        return self._key_history_entry
+
+    @key_history_entry.setter
+    def key_history_entry(self, key_history_entry):
+        """
+        Sets the key_history_entry of this AutonomousDatabase.
+        Key History Entry.
+
+
+        :param key_history_entry: The key_history_entry of this AutonomousDatabase.
+        :type: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
+        """
+        self._key_history_entry = key_history_entry
 
     @property
     def cpu_core_count(self):

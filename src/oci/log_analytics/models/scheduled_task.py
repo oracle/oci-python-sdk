@@ -53,6 +53,30 @@ class ScheduledTask(object):
     #: This constant has a value of "BLOCKED"
     TASK_STATUS_BLOCKED = "BLOCKED"
 
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "METRIC_EXTRACTION_NOT_VALID"
+    PAUSE_REASON_METRIC_EXTRACTION_NOT_VALID = "METRIC_EXTRACTION_NOT_VALID"
+
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "SAVED_SEARCH_NOT_VALID"
+    PAUSE_REASON_SAVED_SEARCH_NOT_VALID = "SAVED_SEARCH_NOT_VALID"
+
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "SAVED_SEARCH_NOT_FOUND"
+    PAUSE_REASON_SAVED_SEARCH_NOT_FOUND = "SAVED_SEARCH_NOT_FOUND"
+
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "QUERY_STRING_NOT_VALID"
+    PAUSE_REASON_QUERY_STRING_NOT_VALID = "QUERY_STRING_NOT_VALID"
+
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "USER_ACTION"
+    PAUSE_REASON_USER_ACTION = "USER_ACTION"
+
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "TENANCY_LIFECYCLE"
+    PAUSE_REASON_TENANCY_LIFECYCLE = "TENANCY_LIFECYCLE"
+
     #: A constant which can be used with the lifecycle_state property of a ScheduledTask.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -104,6 +128,12 @@ class ScheduledTask(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_status: str
 
+        :param pause_reason:
+            The value to assign to the pause_reason property of this ScheduledTask.
+            Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type pause_reason: str
+
         :param work_request_id:
             The value to assign to the work_request_id property of this ScheduledTask.
         :type work_request_id: str
@@ -123,6 +153,10 @@ class ScheduledTask(object):
         :param time_updated:
             The value to assign to the time_updated property of this ScheduledTask.
         :type time_updated: datetime
+
+        :param time_of_next_execution:
+            The value to assign to the time_of_next_execution property of this ScheduledTask.
+        :type time_of_next_execution: datetime
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ScheduledTask.
@@ -147,11 +181,13 @@ class ScheduledTask(object):
             'schedules': 'list[Schedule]',
             'action': 'Action',
             'task_status': 'str',
+            'pause_reason': 'str',
             'work_request_id': 'str',
             'num_occurrences': 'int',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'time_of_next_execution': 'datetime',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -165,11 +201,13 @@ class ScheduledTask(object):
             'schedules': 'schedules',
             'action': 'action',
             'task_status': 'taskStatus',
+            'pause_reason': 'pauseReason',
             'work_request_id': 'workRequestId',
             'num_occurrences': 'numOccurrences',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'time_of_next_execution': 'timeOfNextExecution',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -182,11 +220,13 @@ class ScheduledTask(object):
         self._schedules = None
         self._action = None
         self._task_status = None
+        self._pause_reason = None
         self._work_request_id = None
         self._num_occurrences = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
+        self._time_of_next_execution = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -397,6 +437,36 @@ class ScheduledTask(object):
         self._task_status = task_status
 
     @property
+    def pause_reason(self):
+        """
+        Gets the pause_reason of this ScheduledTask.
+        reason for taskStatus PAUSED.
+
+        Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The pause_reason of this ScheduledTask.
+        :rtype: str
+        """
+        return self._pause_reason
+
+    @pause_reason.setter
+    def pause_reason(self, pause_reason):
+        """
+        Sets the pause_reason of this ScheduledTask.
+        reason for taskStatus PAUSED.
+
+
+        :param pause_reason: The pause_reason of this ScheduledTask.
+        :type: str
+        """
+        allowed_values = ["METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE"]
+        if not value_allowed_none_or_none_sentinel(pause_reason, allowed_values):
+            pause_reason = 'UNKNOWN_ENUM_VALUE'
+        self._pause_reason = pause_reason
+
+    @property
     def work_request_id(self):
         """
         Gets the work_request_id of this ScheduledTask.
@@ -523,6 +593,32 @@ class ScheduledTask(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def time_of_next_execution(self):
+        """
+        Gets the time_of_next_execution of this ScheduledTask.
+        The date and time the scheduled task will execute next,
+        in the format defined by RFC3339.
+
+
+        :return: The time_of_next_execution of this ScheduledTask.
+        :rtype: datetime
+        """
+        return self._time_of_next_execution
+
+    @time_of_next_execution.setter
+    def time_of_next_execution(self, time_of_next_execution):
+        """
+        Sets the time_of_next_execution of this ScheduledTask.
+        The date and time the scheduled task will execute next,
+        in the format defined by RFC3339.
+
+
+        :param time_of_next_execution: The time_of_next_execution of this ScheduledTask.
+        :type: datetime
+        """
+        self._time_of_next_execution = time_of_next_execution
 
     @property
     def lifecycle_state(self):
