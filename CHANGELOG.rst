@@ -4,12 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.38.5 - TBD
+2.39.0 - 2021-06-01
 ====================
 
 Added
 -----
-* TBD
+* Support for configuration of autonomous database KMS keys in the Database service
+* Support for creating database software images with any supported RUs in the Database service
+* Support for creating database software images from an existing database home in the Database service
+* Support for listing all NSGs associated with a given VLAN in the Networking service
+* Support for a duration windows, task failure reasons, and next execution times on scheduled tasks in the Logging Analytics service
+* Support for calling Oracle Cloud Infrastructure services in the sa-vinhedo-1 region
+
+Breaking
+-----
+* `compartment_id` is now optional in operation `list_network_security_groups` in the Networking service
 
 ====================
 2.38.4 - 2021-05-25
