@@ -134,6 +134,88 @@ def test_put_object_with_retry_file(object_storage, namespace, bucket):
     object_storage.delete_object(namespace, bucket, object_name)
 
 
+def empty_progess_callback(bytes_read):
+    pass
+
+
+def test_put_object_with_retry_multipart_disabled_with_callback(object_storage, namespace, bucket):
+    test_retry = TestRetry()
+    large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
+    util.create_large_file(large_file_path, 10)  # Make a 10 MiB file
+    object_name = 'large_file'
+    # The object storage client has retries enabled already
+
+    # Add event hook to the session to raise ConnectTimeout and force retries
+    object_storage.base_client.session.hooks['response'].append(test_retry.hack_response)
+    part_size = 2 * MEBIBYTE  # part size (in bytes)
+    upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=False)
+    upload_manager.upload_file(
+        namespace, bucket, object_name, large_file_path, part_size=part_size, progress_callback=empty_progess_callback)
+
+    # Disable the hook
+    object_storage.base_client.session.hooks['response'] = []
+
+    # Check that the request was actually retried
+    assert test_retry.attempts > 1
+
+    # Download the file and compare
+    response = object_storage.get_object(
+        namespace_name=namespace,
+        bucket_name=bucket,
+        object_name=object_name
+    )
+    downloaded_large_file_path = os.path.join('tests', 'resources', 'downloaded_large_file.bin')
+    with open(downloaded_large_file_path, 'wb') as file:
+        for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+            file.write(chunk)
+
+    assert filecmp.cmp(large_file_path, downloaded_large_file_path, shallow=False)
+
+    # Clean up
+    os.remove(downloaded_large_file_path)
+    os.remove(large_file_path)
+    object_storage.delete_object(namespace, bucket, object_name)
+
+
+def test_put_object_with_retry_multipart_disabled_without_callback(object_storage, namespace, bucket):
+    test_retry = TestRetry()
+    large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
+    util.create_large_file(large_file_path, 10)  # Make a 10 MiB file
+    object_name = 'large_file'
+    # The object storage client has retries enabled already
+
+    # Add event hook to the session to raise ConnectTimeout and force retries
+    object_storage.base_client.session.hooks['response'].append(test_retry.hack_response)
+    part_size = 2 * MEBIBYTE  # part size (in bytes)
+    upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=False)
+    upload_manager.upload_file(
+        namespace, bucket, object_name, large_file_path, part_size=part_size)
+
+    # Disable the hook
+    object_storage.base_client.session.hooks['response'] = []
+
+    # Check that the request was actually retried
+    assert test_retry.attempts > 1
+
+    # Download the file and compare
+    response = object_storage.get_object(
+        namespace_name=namespace,
+        bucket_name=bucket,
+        object_name=object_name
+    )
+    downloaded_large_file_path = os.path.join('tests', 'resources', 'downloaded_large_file.bin')
+    with open(downloaded_large_file_path, 'wb') as file:
+        for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+            file.write(chunk)
+
+    assert filecmp.cmp(large_file_path, downloaded_large_file_path, shallow=False)
+
+    # Clean up
+    os.remove(downloaded_large_file_path)
+    os.remove(large_file_path)
+    object_storage.delete_object(namespace, bucket, object_name)
+
+
 def test_put_object_with_retry_multipart(object_storage, namespace, bucket):
     test_retry = TestRetry()
     large_file_path = os.path.join('tests', 'resources', 'large_file.bin')
