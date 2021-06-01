@@ -69,6 +69,8 @@
 # - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
 # - oci.golden_gate.GoldenGateClient
 # - oci.network_load_balancer.NetworkLoadBalancerClient
+# - oci.management_agent.ManagementAgentClient
+# - oci.database_management.DbManagementClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
@@ -93,7 +95,7 @@ import sys
 import argparse
 import datetime
 
-version = "21.05.25"
+version = "21.06.02"
 
 ##########################################################################
 # check OCI version
@@ -287,7 +289,7 @@ def set_parser_arguments():
     parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract')
     parser.add_argument('-l', action='store_true', default=False, dest='load', help='Print Load Balancer')
     parser.add_argument('-lq', action='store_true', default=False, dest='limits', help='Print Limits and Quotas')
-    parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring, Notifications and Events')
+    parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring, Notifications, Events, Agents')
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
     parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE OCVS')

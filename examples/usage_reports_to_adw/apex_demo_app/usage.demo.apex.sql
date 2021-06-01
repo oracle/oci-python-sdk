@@ -28,7 +28,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   11:15 Friday May 14, 2021
+--   Date and Time:   15:43 Tuesday May 25, 2021
 --   Exported By:     ADIZOHAR
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -106,7 +106,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 21.05.25'
+,p_flow_version=>'Release 21.06.02'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -121,7 +121,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210514111407'
+,p_last_upd_yyyymmddhh24miss=>'20210525154259'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -13155,7 +13155,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210514111407'
+,p_last_upd_yyyymmddhh24miss=>'20210525154120'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(9908591071740536)
@@ -13271,8 +13271,6 @@ wwv_flow_api.create_jet_chart_series(
 '    (',
 '        :P3_FRAME=''Hour'' ',
 '        or ',
-'        :P3_FRAME=''Day'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START)',
-'        or',
 '        :P3_FRAME=''2 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),2) = 0',
 '        or',
 '        :P3_FRAME=''3 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),3) = 0',
@@ -13280,6 +13278,16 @@ wwv_flow_api.create_jet_chart_series(
 '        :P3_FRAME=''6 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),6) = 0',
 '        or',
 '        :P3_FRAME=''12 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),12) = 0',
+'        or',
+'        :P3_FRAME=''Day'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START)',
+'        or',
+'        :P3_FRAME=''2 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),2) = 0',
+'        or',
+'        :P3_FRAME=''3 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),3) = 0',
+'        or',
+'        :P3_FRAME=''5 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),5) = 0',
+'        or',
+'        :P3_FRAME=''7 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),7) = 0',
 '    ) and',
 '    USG_BILLED_QUANTITY>0 and',
 '    USG_CONSUMED_MEASURE=''OCPUS''',
@@ -13440,8 +13448,6 @@ wwv_flow_api.create_jet_chart_series(
 '        (',
 '            :P3_FRAME=''Hour'' ',
 '            or ',
-'            :P3_FRAME=''Day'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START)',
-'            or',
 '            :P3_FRAME=''2 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),2) = 0',
 '            or',
 '            :P3_FRAME=''3 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),3) = 0',
@@ -13449,6 +13455,16 @@ wwv_flow_api.create_jet_chart_series(
 '            :P3_FRAME=''6 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),6) = 0',
 '            or',
 '            :P3_FRAME=''12 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),12) = 0',
+'            or',
+'            :P3_FRAME=''Day'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START)',
+'            or',
+'            :P3_FRAME=''2 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),2) = 0',
+'            or',
+'            :P3_FRAME=''3 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),3) = 0',
+'            or',
+'            :P3_FRAME=''5 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),5) = 0',
+'            or',
+'            :P3_FRAME=''7 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),7) = 0',
 '        ) and',
 '        USG_BILLED_QUANTITY>0 and',
 '        USG_CONSUMED_MEASURE=''STORAGE_SIZE''',
@@ -13565,8 +13581,6 @@ wwv_flow_api.create_page_item(
 '    and (',
 '        :P3_FRAME=''Hour'' ',
 '        or ',
-'        :P3_FRAME=''Day'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START)',
-'        or',
 '        :P3_FRAME=''2 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),2) = 0',
 '        or',
 '        :P3_FRAME=''3 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),3) = 0',
@@ -13574,6 +13588,16 @@ wwv_flow_api.create_page_item(
 '        :P3_FRAME=''6 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),6) = 0',
 '        or',
 '        :P3_FRAME=''12 Hours'' and mod(to_number(to_char(USAGE_INTERVAL_START,''HH24'')),12) = 0',
+'        or',
+'        :P3_FRAME=''Day'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START)',
+'        or',
+'        :P3_FRAME=''2 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),2) = 0',
+'        or',
+'        :P3_FRAME=''3 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),3) = 0',
+'        or',
+'        :P3_FRAME=''5 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),5) = 0',
+'        or',
+'        :P3_FRAME=''7 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),7) = 0',
 '    )'))
 ,p_source_type=>'QUERY'
 ,p_display_as=>'NATIVE_HIDDEN'
@@ -13879,7 +13903,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(19880437765659984)
 ,p_prompt=>'Time Frame'
 ,p_display_as=>'NATIVE_SELECT_LIST'
-,p_lov=>'STATIC2:Hour;Hour,2 Hours;2 Hours,3 Hours;3 Hours,6 Hours;6 Hours,12 Hours;12 Hours,Day;Day'
+,p_lov=>'STATIC2:Hour;Hour,2 Hours;2 Hours,3 Hours;3 Hours,6 Hours;6 Hours,12 Hours;12 Hours,Day;Day,2 Days;2 Days,3 Days;3 Days,5 Days;5 Days,7 Days;7 Days'
 ,p_cHeight=>1
 ,p_tag_attributes=>'style="background-color:#e0f0f0"'
 ,p_begin_on_new_line=>'N'
@@ -13927,7 +13951,8 @@ wwv_flow_api.create_page_item(
 ,p_use_cache_before_default=>'NO'
 ,p_prompt=>'Quick Time'
 ,p_display_as=>'NATIVE_SELECT_LIST'
-,p_lov=>'STATIC2:Last 2 Days (Hourly);Last 2 Days,Last 3 Days (2 Hourly);Last 3 Days,Last 14 Days (Daily);Last 14 Days,Last Month;Last Month,Last 2 Months;Last 2 Months'
+,p_lov=>'STATIC2:Last 2 Days (Hourly);Last 2 Days,Last 3 Days (2 Hourly);Last 3 Days,Last 14 Days (Daily);Last 14 Days,Last Month;Last Month,Last 2 Months;Last 2 Months,Last 4 Months;Last 4 Months,Last 6 Months;Last 6 Months,Last 12 Months;Last 12 Months,Last'
+||' 24 Months;Last 24 Months'
 ,p_lov_display_null=>'YES'
 ,p_lov_null_text=>'Please Choose'
 ,p_cHeight=>1
@@ -14029,6 +14054,9 @@ wwv_flow_api.create_page_computation(
 ,p_compute_when=>'P3_FRAME'
 ,p_compute_when_type=>'ITEM_IS_NULL'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(11981112993439243)
 ,p_name=>'DA_QUICK_TIME'
@@ -14058,6 +14086,10 @@ wwv_flow_api.create_page_da_action(
 '	    when :P3_QUICKTIME = ''Last 14 Days'' then TO_CHAR(TRUNC(SYSDATE)-14,''DD-MON-YYYY'')',
 '	    when :P3_QUICKTIME = ''Last Month'' then TO_CHAR(TRUNC(SYSDATE)-31,''DD-MON-YYYY'')',
 '	    when :P3_QUICKTIME = ''Last 2 Months'' then TO_CHAR(TRUNC(SYSDATE)-62,''DD-MON-YYYY'')',
+'	    when :P3_QUICKTIME = ''Last 4 Months'' then TO_CHAR(TRUNC(SYSDATE)-122,''DD-MON-YYYY'')',
+'	    when :P3_QUICKTIME = ''Last 6 Months'' then TO_CHAR(TRUNC(SYSDATE)-183,''DD-MON-YYYY'')',
+'	    when :P3_QUICKTIME = ''Last 12 Months'' then TO_CHAR(TRUNC(SYSDATE)-356,''DD-MON-YYYY'')',
+'	    when :P3_QUICKTIME = ''Last 24 Months'' then TO_CHAR(TRUNC(SYSDATE)-712,''DD-MON-YYYY'')',
 '	end P3_DATE_FROM,',
 '	TO_CHAR(TRUNC(SYSDATE)+1,''DD-MON-YYYY'') P3_DATE_TO,',
 '	case ',
@@ -14066,6 +14098,10 @@ wwv_flow_api.create_page_da_action(
 '	    when :P3_QUICKTIME = ''Last 14 Days'' then ''Day''',
 '	    when :P3_QUICKTIME = ''Last Month'' then ''Day'' ',
 '	    when :P3_QUICKTIME = ''Last 2 Months'' then ''Day'' ',
+'	    when :P3_QUICKTIME = ''Last 4 Months'' then ''2 Days'' ',
+'	    when :P3_QUICKTIME = ''Last 6 Months'' then ''3 Days'' ',
+'	    when :P3_QUICKTIME = ''Last 12 Months'' then ''5 Days'' ',
+'	    when :P3_QUICKTIME = ''Last 24 Months'' then ''7 Days'' ',
 '	end P3_FRAME',
 'from dual'))
 ,p_attribute_07=>'P3_QUICKTIME'

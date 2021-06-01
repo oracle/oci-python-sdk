@@ -238,6 +238,9 @@ class ShowOCIService(object):
     C_DATABASE_SOFTWARE_IMAGES = "database_software_images"
     C_DATABASE_GG_DEPLOYMENTS = "gg_deployments"
     C_DATABASE_GG_DB_REGISTRATION = "gg_db_registration"
+    C_DATABASE_EXTERNAL_CDB = "external_cdb"
+    C_DATABASE_EXTERNAL_PDB = "external_pdb"
+    C_DATABASE_EXTERNAL_NONPDB = "external_nonpdb"
 
     # container
     C_CONTAINER = "container"
@@ -256,6 +259,8 @@ class ShowOCIService(object):
     C_MONITORING = "monitoring"
     C_MONITORING_ALARMS = "alarms"
     C_MONITORING_EVENTS = "events"
+    C_MONITORING_AGENTS = "agents"
+    C_MONITORING_DB_MANAGEMENT = "db_management"
 
     # notifications
     C_NOTIFICATIONS = "notifications"
@@ -2849,7 +2854,7 @@ class ShowOCIService(object):
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_network_security_groups,
-                        compartment['id'],
+                        compartment_id=compartment['id'],
                         lifecycle_state=oci.core.models.NetworkSecurityGroup.LIFECYCLE_STATE_AVAILABLE,
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
@@ -3163,14 +3168,20 @@ class ShowOCIService(object):
                 # arr = oci.core.models.DrgAttachment
                 for arr in arrs:
                     if arr.lifecycle_state == oci.core.models.DrgAttachment.LIFECYCLE_STATE_ATTACHED:
-                        val = {'id': str(arr.id),
-                               'vcn_id': str(arr.vcn_id),
-                               'drg_id': str(arr.drg_id),
-                               'time_created': str(arr.time_created),
-                               'route_table_id': "" if str(arr.route_table_id) == "None" else str(arr.route_table_id),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_id': str(compartment['id']),
-                               'region_name': str(self.config['region'])}
+                        val = {
+                            'id': str(arr.id),
+                            'vcn_id': str(arr.vcn_id),
+                            'drg_id': str(arr.drg_id),
+                            'time_created': str(arr.time_created),
+                            'display_name': str(arr.display_name),
+                            'is_cross_tenancy': str(arr.is_cross_tenancy),
+                            'export_drg_route_distribution_id': str(arr.export_drg_route_distribution_id),
+                            'drg_route_table_id': str(arr.drg_route_table_id),
+                            'route_table_id': "" if str(arr.route_table_id) == "None" else str(arr.route_table_id),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
                         data.append(val)
                         cnt += 1
 
@@ -6284,23 +6295,23 @@ class ShowOCIService(object):
             print("Database...")
 
             # LoadBalancerClient
-            database_client = oci.database.DatabaseClient(self.config, signer=self.signer, timeout=5)
+            database_client = oci.database.DatabaseClient(self.config, signer=self.signer, timeout=30)
             if self.flags.proxy:
                 database_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=1)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=2)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
-            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer, timeout=1)
+            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer, timeout=2)
             if self.flags.proxy:
                 nosql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer, timeout=1)
+            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer, timeout=2)
             if self.flags.proxy:
                 mysql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer, timeout=1)
+            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer, timeout=2)
             if self.flags.proxy:
                 gg_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -6317,6 +6328,9 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_SOFTWARE_IMAGES)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_GG_DB_REGISTRATION)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_GG_DEPLOYMENTS)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_CDB)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_PDB)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_NONPDB)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -6331,6 +6345,9 @@ class ShowOCIService(object):
             db[self.C_DATABASE_SOFTWARE_IMAGES] += self.__load_database_software_images(database_client, compartments)
             db[self.C_DATABASE_GG_DEPLOYMENTS] += self.__load_database_gg_deployments(gg_client, compartments)
             db[self.C_DATABASE_GG_DB_REGISTRATION] += self.__load_database_gg_db_registration(gg_client, compartments)
+            db[self.C_DATABASE_EXTERNAL_CDB] += self.__load_database_external_cdb(database_client, compartments)
+            db[self.C_DATABASE_EXTERNAL_PDB] += self.__load_database_external_pdb(database_client, compartments)
+            db[self.C_DATABASE_EXTERNAL_NONPDB] += self.__load_database_external_nonpdb(database_client, compartments)
 
             print("")
 
@@ -7465,6 +7482,292 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_database_external_cdb
+    ##########################################################################
+    def __load_database_external_cdb(self, database_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("External CDB Databases")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                list_externals = []
+                try:
+                    list_externals = oci.pagination.list_call_get_all_results(
+                        database_client.list_external_container_databases,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        raise
+
+                # dbs = oci.database.models.ExternalContainerDatabaseSummary
+                for dbs in list_externals:
+                    value = {}
+                    if dbs.lifecycle_state == "TERMINATING" or dbs.lifecycle_state == "TERMINATED":
+                        continue
+
+                    # management license
+                    manage_license = ""
+                    if dbs.database_management_config:
+                        if dbs.database_management_config.license_model:
+                            if "BRING" in dbs.database_management_config.license_model:
+                                manage_license = "BYOL"
+                            else:
+                                manage_license = "INCL"
+
+                    value = {'id': str(dbs.id),
+                             'display_name': str(dbs.display_name),
+                             'lifecycle_state': str(dbs.lifecycle_state),
+                             'lifecycle_details': str(dbs.lifecycle_details),
+                             'time_created': str(dbs.time_created),
+                             'db_unique_name': str(dbs.db_unique_name),
+                             'db_id': str(dbs.db_id),
+                             'database_version': str(dbs.database_version),
+                             'database_edition': str(dbs.database_edition),
+                             'sum_info': "Database External CDB " + ("Managed " + manage_license if manage_license else "Not Managed") + " (Count)",
+                             'sum_size_gb': str("1"),
+                             'time_zone': str(dbs.time_zone),
+                             'character_set': str(dbs.character_set),
+                             'ncharacter_set': str(dbs.ncharacter_set),
+                             'db_packs': str(dbs.db_packs),
+                             'database_configuration': str(dbs.database_configuration),
+                             'database_management_status': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_status),
+                             'database_management_connection_id': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_connection_id),
+                             'database_management_license_model': "" if dbs.database_management_config is None else str(dbs.database_management_config.license_model),
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                             'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_external_cdb", e)
+            return data
+
+    ##########################################################################
+    # __load_database_external_pdb
+    ##########################################################################
+    def __load_database_external_pdb(self, database_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("External PDB Databases")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                list_externals = []
+                try:
+                    list_externals = oci.pagination.list_call_get_all_results(
+                        database_client.list_external_pluggable_databases,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        raise
+
+                # dbs = oci.database.models.ExternalPluggableDatabaseSummary
+                for dbs in list_externals:
+                    value = {}
+                    if dbs.lifecycle_state == "TERMINATING" or dbs.lifecycle_state == "TERMINATED":
+                        continue
+
+                    # management license
+                    manage_license = ""
+                    if dbs.database_management_config:
+                        if dbs.database_management_config.license_model:
+                            if "BRING" in dbs.database_management_config.license_model:
+                                manage_license = "BYOL"
+                            else:
+                                manage_license = "INCL"
+
+                    value = {'id': str(dbs.id),
+                             'source_id': str(dbs.source_id),
+                             'external_container_database_id': str(dbs.external_container_database_id),
+                             'display_name': str(dbs.display_name),
+                             'lifecycle_state': str(dbs.lifecycle_state),
+                             'lifecycle_details': str(dbs.lifecycle_details),
+                             'time_created': str(dbs.time_created),
+                             'db_unique_name': str(dbs.db_unique_name),
+                             'db_id': str(dbs.db_id),
+                             'database_version': str(dbs.database_version),
+                             'database_edition': str(dbs.database_edition),
+                             'sum_info': "Database External PDB " + ("Managed " + manage_license if manage_license else "Not Managed") + " (Count)",
+                             'sum_size_gb': str("1"),
+                             'time_zone': str(dbs.time_zone),
+                             'character_set': str(dbs.character_set),
+                             'ncharacter_set': str(dbs.ncharacter_set),
+                             'db_packs': str(dbs.db_packs),
+                             'database_configuration': str(dbs.database_configuration),
+                             'database_management_status': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_status),
+                             'database_management_connection_id': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_connection_id),
+                             'database_management_license_model': manage_license,
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                             'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_external_pdb", e)
+            return data
+
+    ##########################################################################
+    # __load_database_external_nonpdb
+    ##########################################################################
+    def __load_database_external_nonpdb(self, database_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("External NonPDB Databases")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                list_externals = []
+                try:
+                    list_externals = oci.pagination.list_call_get_all_results(
+                        database_client.list_external_non_container_databases,
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        raise
+
+                # dbs = oci.database.models.ExternalNonContainerDatabaseSummary
+                for dbs in list_externals:
+                    value = {}
+                    if dbs.lifecycle_state == "TERMINATING" or dbs.lifecycle_state == "TERMINATED":
+                        continue
+
+                    # management license
+                    manage_license = ""
+                    if dbs.database_management_config:
+                        if dbs.database_management_config.license_model:
+                            if "BRING" in dbs.database_management_config.license_model:
+                                manage_license = "BYOL"
+                            else:
+                                manage_license = "INCL"
+
+                    value = {'id': str(dbs.id),
+                             'display_name': str(dbs.display_name),
+                             'lifecycle_state': str(dbs.lifecycle_state),
+                             'lifecycle_details': str(dbs.lifecycle_details),
+                             'time_created': str(dbs.time_created),
+                             'db_unique_name': str(dbs.db_unique_name),
+                             'db_id': str(dbs.db_id),
+                             'database_version': str(dbs.database_version),
+                             'database_edition': str(dbs.database_edition),
+                             'sum_info': "Database External NonPDB " + ("Managed " + manage_license if manage_license else "Not Managed") + " (Count)",
+                             'sum_size_gb': str("1"),
+                             'time_zone': str(dbs.time_zone),
+                             'character_set': str(dbs.character_set),
+                             'ncharacter_set': str(dbs.ncharacter_set),
+                             'db_packs': str(dbs.db_packs),
+                             'database_configuration': str(dbs.database_configuration),
+                             'database_management_status': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_status),
+                             'database_management_connection_id': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_connection_id),
+                             'database_management_license_model': "" if dbs.database_management_config is None else str(dbs.database_management_config.license_model),
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                             'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_external_nonpdb", e)
+            return data
+
+    ##########################################################################
     # __load_database_nosql
     ##########################################################################
     def __load_database_nosql(self, nosql_client, compartments):
@@ -8244,7 +8547,7 @@ class ShowOCIService(object):
             print("API Gateways...")
 
             # GatewayClient
-            api_gw_client = oci.apigateway.GatewayClient(self.config, signer=self.signer, timeout=1)
+            api_gw_client = oci.apigateway.GatewayClient(self.config, signer=self.signer, timeout=2)
             if self.flags.proxy:
                 api_gw_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -8353,7 +8656,7 @@ class ShowOCIService(object):
             print("Functions...")
 
             # StreamAdminClient
-            function_client = oci.functions.FunctionsManagementClient(self.config, signer=self.signer, timeout=1)
+            function_client = oci.functions.FunctionsManagementClient(self.config, signer=self.signer, timeout=2)
             if self.flags.proxy:
                 function_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -8560,6 +8863,8 @@ class ShowOCIService(object):
     # class oci.ons.NotificationControlPlaneClient(config, **kwargs)
     # class oci.ons.NotificationDataPlaneClient(config, **kwargs)
     # class oci.events.EventsClient(config, **kwargs)
+    # class oci.management_agent.ManagementAgentClient(config, **kwargs)
+    # class oci.database_management.DbManagementClient(config, **kwargs)
     #
     ##########################################################################
     def __load_monitor_notification_main(self):
@@ -8587,12 +8892,24 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 event_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # oci.management_agent.ManagementAgentClient
+            management_agent_client = oci.management_agent.ManagementAgentClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                event_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # oci.database_management.DbManagementClient
+            db_management_client = oci.database_management.DbManagementClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                db_management_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key if not exists
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ALARMS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_EVENTS)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_AGENTS)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_DB_MANAGEMENT)
             self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_TOPICS)
             self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_SUBSCRIPTIONS)
 
@@ -8600,6 +8917,8 @@ class ShowOCIService(object):
             monitor = self.data[self.C_MONITORING]
             monitor[self.C_MONITORING_ALARMS] += self.__load_monitoring_alarms(monitor_client, compartments)
             monitor[self.C_MONITORING_EVENTS] += self.__load_monitoring_events(event_client, compartments)
+            monitor[self.C_MONITORING_AGENTS] += self.__load_monitoring_agents(management_agent_client, compartments)
+            monitor[self.C_MONITORING_DB_MANAGEMENT] += self.__load_monitoring_database_management(db_management_client, compartments)
 
             # append the data for notifications
             notifications = self.data[self.C_NOTIFICATIONS]
@@ -8681,6 +9000,153 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_monitoring_events", e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_agents
+    ##########################################################################
+    def __load_monitoring_agents(self, management_agent_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Management Agents")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                agents = []
+                try:
+                    agents = oci.pagination.list_call_get_all_results(
+                        management_agent_client.list_management_agents,
+                        compartment['id'],
+                        sort_by="displayName",
+                        lifecycle_state="ACTIVE",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # event = oci.management_agent.models.ManagementAgentSummary
+                for agent in agents:
+                    val = {'id': str(agent.id),
+                           'install_key_id': str(agent.install_key_id),
+                           'display_name': str(agent.display_name),
+                           'platform_type': str(agent.platform_type),
+                           'platform_name': str(agent.platform_name),
+                           'platform_version': str(agent.platform_version),
+                           'version': str(agent.version),
+                           'is_agent_auto_upgradable': str(agent.is_agent_auto_upgradable),
+                           'time_created': str(agent.time_created),
+                           'host': str(agent.host),
+                           'plugin_list': str(', '.join(str(x.plugin_name) for x in agent.plugin_list)),
+                           'time_last_heartbeat': str(agent.time_last_heartbeat),
+                           'availability_status': str(agent.availability_status),
+                           'lifecycle_state': str(agent.lifecycle_state),
+                           'lifecycle_details': str(agent.lifecycle_details),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if agent.defined_tags is None else agent.defined_tags,
+                           'freeform_tags': [] if agent.freeform_tags is None else agent.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_monitoring_agents", e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_dbmanagement
+    ##########################################################################
+    def __load_monitoring_database_management(self, db_management_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("DB Managements")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                db_managements = []
+                try:
+                    db_managements = oci.pagination.list_call_get_all_results(
+                        db_management_client.list_managed_databases,
+                        compartment['id'],
+                        sort_by="NAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # event = oci.database_management.models.ManagedDatabase
+                for agent in db_managements:
+                    val = {'id': str(agent.id),
+                           'name': str(agent.name),
+                           'database_type': str(agent.database_type),
+                           'database_sub_type': str(agent.database_sub_type),
+                           'is_cluster': str(agent.is_cluster),
+                           'parent_container_id': str(agent.parent_container_id),
+                           'time_created': str(agent.time_created),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_monitoring_database_management", e)
             return data
 
     ##########################################################################
@@ -9464,11 +9930,11 @@ class ShowOCIService(object):
             print("Data and AI Services...")
 
             # clients
-            ds_client = oci.data_science.DataScienceClient(self.config, signer=self.signer, timeout=1)
-            dc_client = oci.data_catalog.DataCatalogClient(self.config, signer=self.signer, timeout=1)
-            df_client = oci.data_flow.DataFlowClient(self.config, signer=self.signer, timeout=1)
-            oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=1)
-            bds_client = oci.bds.BdsClient(self.config, signer=self.signer, timeout=1)
+            ds_client = oci.data_science.DataScienceClient(self.config, signer=self.signer, timeout=2)
+            dc_client = oci.data_catalog.DataCatalogClient(self.config, signer=self.signer, timeout=2)
+            df_client = oci.data_flow.DataFlowClient(self.config, signer=self.signer, timeout=2)
+            oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=2)
+            bds_client = oci.bds.BdsClient(self.config, signer=self.signer, timeout=2)
 
             if self.flags.proxy:
                 ds_client.base_client.session.proxies = {'https': self.flags.proxy}
@@ -9896,11 +10362,11 @@ class ShowOCIService(object):
             print("PaaS Native Services...")
 
             # clients
-            oic_client = oci.integration.IntegrationInstanceClient(self.config, signer=self.signer, timeout=1)
-            oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=(1, 1))
-            oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=(1, 1))
-            ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(1, 1))
-            esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(1, 1))
+            oic_client = oci.integration.IntegrationInstanceClient(self.config, signer=self.signer, timeout=2)
+            oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=(2, 2))
+            oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=(2, 2))
+            ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(3, 3))
+            esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(3, 3))
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
 
             if self.flags.proxy:
@@ -10679,8 +11145,8 @@ class ShowOCIService(object):
             print("Security and Logging Services...")
 
             # clients
-            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=1)
-            log_client = oci.logging.LoggingManagementClient(self.config, signer=self.signer, timeout=1)
+            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=2)
+            log_client = oci.logging.LoggingManagementClient(self.config, signer=self.signer, timeout=2)
 
             if self.flags.proxy:
                 cg_client.base_client.session.proxies = {'https': self.flags.proxy}
@@ -10723,7 +11189,7 @@ class ShowOCIService(object):
             print("Cloud Guard Scores...")
 
             # clients
-            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=1)
+            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=2)
 
             if self.flags.proxy:
                 cg_client.base_client.session.proxies = {'https': self.flags.proxy}

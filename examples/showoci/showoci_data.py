@@ -518,9 +518,11 @@ class ShowOCIData(object):
                 val, display_name, route_table = self.__get_core_network_vcn_drg_details(da)
                 value = {'id': da['id'],
                          'drg_id': da['drg_id'],
+                         'display_name': da['display_name'],
                          'route_table_id': da['route_table_id'],
                          'route_table': route_table,
-                         'display_name': display_name,
+                         'drg_route_table_id': da['drg_route_table_id'],
+                         'export_drg_route_distribution_id': da['export_drg_route_distribution_id'],
                          'name': val,
                          'compartment_name': da['compartment_name'],
                          'compartment_id': da['compartment_id'],
@@ -2496,6 +2498,7 @@ class ShowOCIData(object):
         return_data = {}
         try:
 
+            # DB System
             data = self.__get_database_db_systems(region_name, compartment)
             if data:
                 if len(data) > 0:
@@ -2535,6 +2538,24 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['goldengate'] = data
+
+            # external CDB
+            data = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXTERNAL_CDB, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if data:
+                if len(data) > 0:
+                    return_data['db_external_cdb'] = data
+
+            # external PDB
+            data = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXTERNAL_PDB, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if data:
+                if len(data) > 0:
+                    return_data['db_external_pdb'] = data
+
+            # external Non-PDB
+            data = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXTERNAL_NONPDB, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if data:
+                if len(data) > 0:
+                    return_data['db_external_nonpdb'] = data
 
             return return_data
 
@@ -3137,11 +3158,21 @@ class ShowOCIData(object):
         try:
             alarms = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ALARMS, 'region_name', region_name, 'compartment_id', compartment['id'])
             events = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_EVENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            agents = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_AGENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            db_managements = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_DB_MANAGEMENT, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
             # if events add it
             if events:
                 data['events'] = events
+
+            # if agents add it
+            if agents:
+                data['agents'] = agents
+
+            # if db_managements add it
+            if db_managements:
+                data['db_managements'] = db_managements
 
             # if events add it
             if alarms:
