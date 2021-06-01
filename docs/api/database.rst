@@ -37,6 +37,7 @@ Database
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
     oci.database.models.AutonomousDatabaseDataguardAssociation
+    oci.database.models.AutonomousDatabaseKeyHistoryEntry
     oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabaseStandbySummary
     oci.database.models.AutonomousDatabaseSummary
@@ -67,6 +68,7 @@ Database
     oci.database.models.CloudVmCluster
     oci.database.models.CloudVmClusterSummary
     oci.database.models.CompleteExternalBackupJobDetails
+    oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
     oci.database.models.CreateAutonomousContainerDatabaseDetails

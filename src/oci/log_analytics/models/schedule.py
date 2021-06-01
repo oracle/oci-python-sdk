@@ -55,19 +55,26 @@ class Schedule(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type misfire_policy: str
 
+        :param time_of_first_execution:
+            The value to assign to the time_of_first_execution property of this Schedule.
+        :type time_of_first_execution: datetime
+
         """
         self.swagger_types = {
             'type': 'str',
-            'misfire_policy': 'str'
+            'misfire_policy': 'str',
+            'time_of_first_execution': 'datetime'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'misfire_policy': 'misfirePolicy'
+            'misfire_policy': 'misfirePolicy',
+            'time_of_first_execution': 'timeOfFirstExecution'
         }
 
         self._type = None
         self._misfire_policy = None
+        self._time_of_first_execution = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -144,6 +151,32 @@ class Schedule(object):
         if not value_allowed_none_or_none_sentinel(misfire_policy, allowed_values):
             misfire_policy = 'UNKNOWN_ENUM_VALUE'
         self._misfire_policy = misfire_policy
+
+    @property
+    def time_of_first_execution(self):
+        """
+        Gets the time_of_first_execution of this Schedule.
+        The date and time the scheduled task should execute first time after create or update;
+        thereafter the task will execute as specified in the schedule.
+
+
+        :return: The time_of_first_execution of this Schedule.
+        :rtype: datetime
+        """
+        return self._time_of_first_execution
+
+    @time_of_first_execution.setter
+    def time_of_first_execution(self, time_of_first_execution):
+        """
+        Sets the time_of_first_execution of this Schedule.
+        The date and time the scheduled task should execute first time after create or update;
+        thereafter the task will execute as specified in the schedule.
+
+
+        :param time_of_first_execution: The time_of_first_execution of this Schedule.
+        :type: datetime
+        """
+        self._time_of_first_execution = time_of_first_execution
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -40,7 +40,8 @@ REGIONS_SHORT_NAMES = {
     'yny': 'ap-chuncheon-1',
     'brs': 'uk-gov-cardiff-1',
     'nja': 'ap-chiyoda-1',
-    'dxb': 'me-dubai-1'
+    'dxb': 'me-dubai-1',
+    'vcp': 'sa-vinhedo-1'
 }
 REGION_REALMS = {
     'ap-melbourne-1': 'oc1',
@@ -65,6 +66,7 @@ REGION_REALMS = {
     'sa-saopaulo-1': 'oc1',
     'sa-santiago-1': 'oc1',
     'ca-montreal-1': 'oc1',
+    'sa-vinhedo-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -115,7 +117,8 @@ REGIONS = [
     "us-gov-phoenix-1",
     "sa-saopaulo-1",
     "sa-santiago-1",
-    "uk-gov-london-1"
+    "uk-gov-london-1",
+    "sa-vinhedo-1"
 ]
 SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'

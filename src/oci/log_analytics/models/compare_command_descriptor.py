@@ -8,40 +8,40 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class EvalCommandDescriptor(AbstractCommandDescriptor):
+class CompareCommandDescriptor(AbstractCommandDescriptor):
     """
-    Command descriptor for querylanguage EVAL command.
+    Command descriptor for querylanguage COMPARE command.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new EvalCommandDescriptor object with values from keyword arguments. The default value of the :py:attr:`~oci.log_analytics.models.EvalCommandDescriptor.name` attribute
-        of this class is ``EVAL`` and it should not be changed.
+        Initializes a new CompareCommandDescriptor object with values from keyword arguments. The default value of the :py:attr:`~oci.log_analytics.models.CompareCommandDescriptor.name` attribute
+        of this class is ``COMPARE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param name:
-            The value to assign to the name property of this EvalCommandDescriptor.
+            The value to assign to the name property of this CompareCommandDescriptor.
             Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"
         :type name: str
 
         :param display_query_string:
-            The value to assign to the display_query_string property of this EvalCommandDescriptor.
+            The value to assign to the display_query_string property of this CompareCommandDescriptor.
         :type display_query_string: str
 
         :param internal_query_string:
-            The value to assign to the internal_query_string property of this EvalCommandDescriptor.
+            The value to assign to the internal_query_string property of this CompareCommandDescriptor.
         :type internal_query_string: str
 
         :param category:
-            The value to assign to the category property of this EvalCommandDescriptor.
+            The value to assign to the category property of this CompareCommandDescriptor.
         :type category: str
 
         :param referenced_fields:
-            The value to assign to the referenced_fields property of this EvalCommandDescriptor.
+            The value to assign to the referenced_fields property of this CompareCommandDescriptor.
         :type referenced_fields: list[oci.log_analytics.models.AbstractField]
 
         :param declared_fields:
-            The value to assign to the declared_fields property of this EvalCommandDescriptor.
+            The value to assign to the declared_fields property of this CompareCommandDescriptor.
         :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
         """
@@ -69,7 +69,7 @@ class EvalCommandDescriptor(AbstractCommandDescriptor):
         self._category = None
         self._referenced_fields = None
         self._declared_fields = None
-        self._name = 'EVAL'
+        self._name = 'COMPARE'
 
     def __repr__(self):
         return formatted_flat_dict(self)

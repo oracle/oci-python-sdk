@@ -48,6 +48,10 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_BACKUP", "VM_CLUSTER_NEW"
         :type source: str
 
+        :param is_desupported_version:
+            The value to assign to the is_desupported_version property of this CreateDbHomeWithVmClusterIdFromBackupDetails.
+        :type is_desupported_version: bool
+
         :param vm_cluster_id:
             The value to assign to the vm_cluster_id property of this CreateDbHomeWithVmClusterIdFromBackupDetails.
         :type vm_cluster_id: str
@@ -65,6 +69,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
+            'is_desupported_version': 'bool',
             'vm_cluster_id': 'str',
             'database': 'CreateDatabaseFromBackupDetails'
         }
@@ -77,6 +82,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
+            'is_desupported_version': 'isDesupportedVersion',
             'vm_cluster_id': 'vmClusterId',
             'database': 'database'
         }
@@ -88,6 +94,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
+        self._is_desupported_version = None
         self._vm_cluster_id = None
         self._database = None
         self._source = 'VM_CLUSTER_BACKUP'

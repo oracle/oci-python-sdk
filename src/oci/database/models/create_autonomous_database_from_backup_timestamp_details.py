@@ -52,6 +52,14 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             The value to assign to the is_free_tier property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type is_free_tier: bool
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type kms_key_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type vault_id: str
+
         :param admin_password:
             The value to assign to the admin_password property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type admin_password: str
@@ -155,6 +163,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
             'is_free_tier': 'bool',
+            'kms_key_id': 'str',
+            'vault_id': 'str',
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
@@ -187,6 +197,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'is_free_tier': 'isFreeTier',
+            'kms_key_id': 'kmsKeyId',
+            'vault_id': 'vaultId',
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
@@ -218,6 +230,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._db_workload = None
         self._data_storage_size_in_tbs = None
         self._is_free_tier = None
+        self._kms_key_id = None
+        self._vault_id = None
         self._admin_password = None
         self._display_name = None
         self._license_model = None
