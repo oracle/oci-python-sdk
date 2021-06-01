@@ -23,6 +23,7 @@ from .autonomous_database_connection_strings import AutonomousDatabaseConnection
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
 from .autonomous_database_dataguard_association import AutonomousDatabaseDataguardAssociation
+from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
 from .autonomous_database_standby_summary import AutonomousDatabaseStandbySummary
 from .autonomous_database_summary import AutonomousDatabaseSummary
@@ -53,6 +54,7 @@ from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSumm
 from .cloud_vm_cluster import CloudVmCluster
 from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
+from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
@@ -260,6 +262,7 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
     "AutonomousDatabaseDataguardAssociation": AutonomousDatabaseDataguardAssociation,
+    "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
     "AutonomousDatabaseStandbySummary": AutonomousDatabaseStandbySummary,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
@@ -290,6 +293,7 @@ database_type_mapping = {
     "CloudVmCluster": CloudVmCluster,
     "CloudVmClusterSummary": CloudVmClusterSummary,
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
+    "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,

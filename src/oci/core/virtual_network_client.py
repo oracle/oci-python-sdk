@@ -14462,13 +14462,19 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[NetworkSecurityGroupVnic]")
 
-    def list_network_security_groups(self, compartment_id, **kwargs):
+    def list_network_security_groups(self, **kwargs):
         """
-        Lists the network security groups in the specified compartment.
+        Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
+        You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
 
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str vlan_id: (optional)
+            The `OCID`__ of the VLAN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -14540,6 +14546,8 @@ class VirtualNetworkClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "compartment_id",
+            "vlan_id",
             "vcn_id",
             "limit",
             "page",
@@ -14575,7 +14583,8 @@ class VirtualNetworkClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "vlanId": kwargs.get("vlan_id", missing),
             "vcnId": kwargs.get("vcn_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),

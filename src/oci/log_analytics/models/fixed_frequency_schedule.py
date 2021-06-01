@@ -29,6 +29,10 @@ class FixedFrequencySchedule(Schedule):
             Allowed values for this property are: "RETRY_ONCE", "RETRY_INDEFINITELY", "SKIP"
         :type misfire_policy: str
 
+        :param time_of_first_execution:
+            The value to assign to the time_of_first_execution property of this FixedFrequencySchedule.
+        :type time_of_first_execution: datetime
+
         :param recurring_interval:
             The value to assign to the recurring_interval property of this FixedFrequencySchedule.
         :type recurring_interval: str
@@ -41,6 +45,7 @@ class FixedFrequencySchedule(Schedule):
         self.swagger_types = {
             'type': 'str',
             'misfire_policy': 'str',
+            'time_of_first_execution': 'datetime',
             'recurring_interval': 'str',
             'repeat_count': 'int'
         }
@@ -48,12 +53,14 @@ class FixedFrequencySchedule(Schedule):
         self.attribute_map = {
             'type': 'type',
             'misfire_policy': 'misfirePolicy',
+            'time_of_first_execution': 'timeOfFirstExecution',
             'recurring_interval': 'recurringInterval',
             'repeat_count': 'repeatCount'
         }
 
         self._type = None
         self._misfire_policy = None
+        self._time_of_first_execution = None
         self._recurring_interval = None
         self._repeat_count = None
         self._type = 'FIXED_FREQUENCY'

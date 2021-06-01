@@ -48,6 +48,10 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_BACKUP", "VM_CLUSTER_NEW"
         :type source: str
 
+        :param is_desupported_version:
+            The value to assign to the is_desupported_version property of this CreateDbHomeWithDbSystemIdDetails.
+        :type is_desupported_version: bool
+
         :param db_system_id:
             The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdDetails.
         :type db_system_id: str
@@ -69,6 +73,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
+            'is_desupported_version': 'bool',
             'db_system_id': 'str',
             'db_version': 'str',
             'database': 'CreateDatabaseDetails'
@@ -82,6 +87,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
+            'is_desupported_version': 'isDesupportedVersion',
             'db_system_id': 'dbSystemId',
             'db_version': 'dbVersion',
             'database': 'database'
@@ -94,6 +100,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
+        self._is_desupported_version = None
         self._db_system_id = None
         self._db_version = None
         self._database = None

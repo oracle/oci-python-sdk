@@ -111,6 +111,14 @@ class AutonomousDatabaseBackupSummary(object):
             The value to assign to the key_store_wallet_name property of this AutonomousDatabaseBackupSummary.
         :type key_store_wallet_name: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this AutonomousDatabaseBackupSummary.
+        :type kms_key_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this AutonomousDatabaseBackupSummary.
+        :type vault_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -126,7 +134,9 @@ class AutonomousDatabaseBackupSummary(object):
             'lifecycle_state': 'str',
             'is_restorable': 'bool',
             'key_store_id': 'str',
-            'key_store_wallet_name': 'str'
+            'key_store_wallet_name': 'str',
+            'kms_key_id': 'str',
+            'vault_id': 'str'
         }
 
         self.attribute_map = {
@@ -143,7 +153,9 @@ class AutonomousDatabaseBackupSummary(object):
             'lifecycle_state': 'lifecycleState',
             'is_restorable': 'isRestorable',
             'key_store_id': 'keyStoreId',
-            'key_store_wallet_name': 'keyStoreWalletName'
+            'key_store_wallet_name': 'keyStoreWalletName',
+            'kms_key_id': 'kmsKeyId',
+            'vault_id': 'vaultId'
         }
 
         self._id = None
@@ -160,6 +172,8 @@ class AutonomousDatabaseBackupSummary(object):
         self._is_restorable = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._kms_key_id = None
+        self._vault_id = None
 
     @property
     def id(self):
@@ -524,6 +538,60 @@ class AutonomousDatabaseBackupSummary(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this AutonomousDatabaseBackupSummary.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this AutonomousDatabaseBackupSummary.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this AutonomousDatabaseBackupSummary.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this AutonomousDatabaseBackupSummary.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this AutonomousDatabaseBackupSummary.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this AutonomousDatabaseBackupSummary.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this AutonomousDatabaseBackupSummary.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this AutonomousDatabaseBackupSummary.
+        :type: str
+        """
+        self._vault_id = vault_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

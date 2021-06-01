@@ -55,6 +55,7 @@ Log Analytics
     oci.log_analytics.models.ColumnName
     oci.log_analytics.models.ColumnNameCollection
     oci.log_analytics.models.CommandDescriptor
+    oci.log_analytics.models.CompareCommandDescriptor
     oci.log_analytics.models.CreateAccelerationTaskDetails
     oci.log_analytics.models.CreateLogAnalyticsEmBridgeDetails
     oci.log_analytics.models.CreateLogAnalyticsEntityDetails
