@@ -60,6 +60,7 @@ API Reference
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
+* :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
@@ -175,6 +176,7 @@ API Reference
     healthchecks
     identity
     integration
+    jms
     key_management
     limits
     load_balancer

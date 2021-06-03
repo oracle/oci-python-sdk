@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.oci.opsi.api</groupId>
         <artifactId>opsi-api-spec</artifactId>
-        <version>3.0.14</version>
+        <version>3.0.25</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

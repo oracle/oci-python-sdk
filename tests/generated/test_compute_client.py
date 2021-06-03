@@ -3670,3 +3670,44 @@ def test_update_instance_console_connection(testing_service_client):
             False,
             False
         )
+
+
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_update_volume_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateVolumeAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'UpdateVolumeAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolumeAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.update_volume_attachment(
+                volume_attachment_id=request.pop(util.camelize('volumeAttachmentId')),
+                update_volume_attachment_details=request.pop(util.camelize('UpdateVolumeAttachmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateVolumeAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'volumeAttachment',
+            False,
+            False
+        )

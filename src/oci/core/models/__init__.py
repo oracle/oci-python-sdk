@@ -292,6 +292,7 @@ from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
 from .modify_vcn_cidr_details import ModifyVcnCidrDetails
+from .multipath_device import MultipathDevice
 from .nat_gateway import NatGateway
 from .network_security_group import NetworkSecurityGroup
 from .network_security_group_vnic import NetworkSecurityGroupVnic
@@ -397,6 +398,7 @@ from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
 from .update_vlan_details import UpdateVlanDetails
 from .update_vnic_details import UpdateVnicDetails
+from .update_volume_attachment_details import UpdateVolumeAttachmentDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_backup_policy_details import UpdateVolumeBackupPolicyDetails
 from .update_volume_details import UpdateVolumeDetails
@@ -726,6 +728,7 @@ core_type_mapping = {
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
     "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
+    "MultipathDevice": MultipathDevice,
     "NatGateway": NatGateway,
     "NetworkSecurityGroup": NetworkSecurityGroup,
     "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
@@ -831,6 +834,7 @@ core_type_mapping = {
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
     "UpdateVlanDetails": UpdateVlanDetails,
     "UpdateVnicDetails": UpdateVnicDetails,
+    "UpdateVolumeAttachmentDetails": UpdateVolumeAttachmentDetails,
     "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
     "UpdateVolumeBackupPolicyDetails": UpdateVolumeBackupPolicyDetails,
     "UpdateVolumeDetails": UpdateVolumeDetails,

@@ -118,3 +118,4 @@
 ^src/oci/operator_access_control/.*\.py$
 ^src/oci/bastion/.*\.py$
 ^src/oci/generic_artifacts_content/.*\.py$
+^src/oci/jms/.*\.py$

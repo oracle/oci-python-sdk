@@ -37,11 +37,16 @@ class SourceDetails(object):
     #: This constant has a value of "OCIC_IDCS"
     TYPE_OCIC_IDCS = "OCIC_IDCS"
 
+    #: A constant which can be used with the type property of a SourceDetails.
+    #: This constant has a value of "IMPORT"
+    TYPE_IMPORT = "IMPORT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.application_migration.models.ImportSourceDetails`
         * :class:`~oci.application_migration.models.OccSourceDetails`
         * :class:`~oci.application_migration.models.InternalSourceDetails`
         * :class:`~oci.application_migration.models.OcicSourceDetails`
@@ -50,7 +55,7 @@ class SourceDetails(object):
 
         :param type:
             The value to assign to the type property of this SourceDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -73,6 +78,9 @@ class SourceDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'IMPORT':
+            return 'ImportSourceDetails'
+
         if type == 'OCC':
             return 'OccSourceDetails'
 
@@ -90,7 +98,7 @@ class SourceDetails(object):
         **[Required]** Gets the type of this SourceDetails.
         The type of source environment.
 
-        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -109,7 +117,7 @@ class SourceDetails(object):
         :param type: The type of this SourceDetails.
         :type: str
         """
-        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"]
+        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

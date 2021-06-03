@@ -113,8 +113,8 @@ class CreateBootVolumeDetails(object):
     @property
     def availability_domain(self):
         """
-        **[Required]** Gets the availability_domain of this CreateBootVolumeDetails.
-        The availability domain of the boot volume.
+        Gets the availability_domain of this CreateBootVolumeDetails.
+        The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -128,7 +128,7 @@ class CreateBootVolumeDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateBootVolumeDetails.
-        The availability domain of the boot volume.
+        The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.
 
         Example: `Uocm:PHX-AD-1`
 

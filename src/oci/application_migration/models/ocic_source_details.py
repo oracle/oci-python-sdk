@@ -21,7 +21,7 @@ class OcicSourceDetails(SourceDetails):
 
         :param type:
             The value to assign to the type property of this OcicSourceDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT"
         :type type: str
 
         :param region:

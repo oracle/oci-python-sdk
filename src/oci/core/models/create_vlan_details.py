@@ -131,8 +131,8 @@ class CreateVlanDetails(object):
         The range of IPv4 addresses that will be used for layer 3 communication with
         hosts outside the VLAN. The CIDR must maintain the following rules -
 
-        a. The CIDR block is valid and correctly formatted.
-        b. The new range is within one of the parent VCN ranges.
+        1. The CIDR block is valid and correctly formatted.
+        2. The new range is within one of the parent VCN ranges.
 
         Example: `192.0.2.0/24`
 
@@ -149,8 +149,8 @@ class CreateVlanDetails(object):
         The range of IPv4 addresses that will be used for layer 3 communication with
         hosts outside the VLAN. The CIDR must maintain the following rules -
 
-        a. The CIDR block is valid and correctly formatted.
-        b. The new range is within one of the parent VCN ranges.
+        1. The CIDR block is valid and correctly formatted.
+        2. The new range is within one of the parent VCN ranges.
 
         Example: `192.0.2.0/24`
 
