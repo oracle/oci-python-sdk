@@ -4,12 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.39.1 - TBD
+2.39.1 - 2021-06-08
 ====================
 
 Added
 -----
-* TBD
+* Support for Java Management service
+* Support for resource principals for the Enterprise Manager bridge resource in Operations Insights service
+* Support for encryptionInTransitType in BootVolumeAttachment and IScsiVolumeAttachment in Core service
+* Support for updating iscsiLoginState for VolumeAttachment in Core service
+* Support for a new type of Source called Import for use with the Export tool in Application Migration service
+
+Fixed
+-----
+* Fixed a bug where requests were not retried for a specific case of Upload Manager uploading a file with multipart disabled and callback provided
 
 ====================
 2.39.0 - 2021-06-01
