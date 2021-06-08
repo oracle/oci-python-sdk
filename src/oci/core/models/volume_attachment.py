@@ -39,6 +39,34 @@ class VolumeAttachment(object):
     #: This constant has a value of "DETACHED"
     LIFECYCLE_STATE_DETACHED = "DETACHED"
 
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "UNKNOWN"
+    ISCSI_LOGIN_STATE_UNKNOWN = "UNKNOWN"
+
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "LOGGING_IN"
+    ISCSI_LOGIN_STATE_LOGGING_IN = "LOGGING_IN"
+
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "LOGIN_SUCCEEDED"
+    ISCSI_LOGIN_STATE_LOGIN_SUCCEEDED = "LOGIN_SUCCEEDED"
+
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "LOGIN_FAILED"
+    ISCSI_LOGIN_STATE_LOGIN_FAILED = "LOGIN_FAILED"
+
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "LOGGING_OUT"
+    ISCSI_LOGIN_STATE_LOGGING_OUT = "LOGGING_OUT"
+
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "LOGOUT_SUCCEEDED"
+    ISCSI_LOGIN_STATE_LOGOUT_SUCCEEDED = "LOGOUT_SUCCEEDED"
+
+    #: A constant which can be used with the iscsi_login_state property of a VolumeAttachment.
+    #: This constant has a value of "LOGOUT_FAILED"
+    ISCSI_LOGIN_STATE_LOGOUT_FAILED = "LOGOUT_FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VolumeAttachment object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -104,6 +132,16 @@ class VolumeAttachment(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this VolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param is_multipath:
+            The value to assign to the is_multipath property of this VolumeAttachment.
+        :type is_multipath: bool
+
+        :param iscsi_login_state:
+            The value to assign to the iscsi_login_state property of this VolumeAttachment.
+            Allowed values for this property are: "UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type iscsi_login_state: str
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -118,7 +156,9 @@ class VolumeAttachment(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
-            'is_pv_encryption_in_transit_enabled': 'bool'
+            'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_multipath': 'bool',
+            'iscsi_login_state': 'str'
         }
 
         self.attribute_map = {
@@ -134,7 +174,9 @@ class VolumeAttachment(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
-            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_multipath': 'isMultipath',
+            'iscsi_login_state': 'iscsiLoginState'
         }
 
         self._attachment_type = None
@@ -150,6 +192,8 @@ class VolumeAttachment(object):
         self._time_created = None
         self._volume_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_multipath = None
+        self._iscsi_login_state = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -511,6 +555,62 @@ class VolumeAttachment(object):
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def is_multipath(self):
+        """
+        Gets the is_multipath of this VolumeAttachment.
+        Whether the attachment is multipath or not.
+
+
+        :return: The is_multipath of this VolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_multipath
+
+    @is_multipath.setter
+    def is_multipath(self, is_multipath):
+        """
+        Sets the is_multipath of this VolumeAttachment.
+        Whether the attachment is multipath or not.
+
+
+        :param is_multipath: The is_multipath of this VolumeAttachment.
+        :type: bool
+        """
+        self._is_multipath = is_multipath
+
+    @property
+    def iscsi_login_state(self):
+        """
+        Gets the iscsi_login_state of this VolumeAttachment.
+        The iscsi login state of the volume attachment. For a multipath volume attachment,
+        all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+
+        Allowed values for this property are: "UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The iscsi_login_state of this VolumeAttachment.
+        :rtype: str
+        """
+        return self._iscsi_login_state
+
+    @iscsi_login_state.setter
+    def iscsi_login_state(self, iscsi_login_state):
+        """
+        Sets the iscsi_login_state of this VolumeAttachment.
+        The iscsi login state of the volume attachment. For a multipath volume attachment,
+        all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
+
+
+        :param iscsi_login_state: The iscsi_login_state of this VolumeAttachment.
+        :type: str
+        """
+        allowed_values = ["UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED"]
+        if not value_allowed_none_or_none_sentinel(iscsi_login_state, allowed_values):
+            iscsi_login_state = 'UNKNOWN_ENUM_VALUE'
+        self._iscsi_login_state = iscsi_login_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

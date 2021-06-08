@@ -1244,7 +1244,7 @@ class BlockstorageClient(object):
         """
         Creates a new volume group in the specified compartment.
         A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
-        volume group, or by restoring a volume group backup. A volume group can contain up to 64 volumes.
+        volume group, or by restoring a volume group backup.
         You may optionally specify a *display name* for the volume group, which is simply a friendly name or
         description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 

@@ -1,0 +1,11 @@
+AutonomousDatabaseConfigurationSummary
+======================================
+
+.. currentmodule:: oci.opsi.models
+
+.. autoclass:: AutonomousDatabaseConfigurationSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

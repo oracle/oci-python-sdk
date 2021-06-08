@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .autonomous_database_configuration_summary import AutonomousDatabaseConfigurationSummary
 from .autonomous_database_insight import AutonomousDatabaseInsight
 from .autonomous_database_insight_summary import AutonomousDatabaseInsightSummary
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
@@ -20,12 +21,15 @@ from .credentials_by_source import CredentialsBySource
 from .db_external_instance import DBExternalInstance
 from .db_external_properties import DBExternalProperties
 from .dbos_config_instance import DBOSConfigInstance
+from .database_configuration_collection import DatabaseConfigurationCollection
 from .database_configuration_metric_group import DatabaseConfigurationMetricGroup
+from .database_configuration_summary import DatabaseConfigurationSummary
 from .database_details import DatabaseDetails
 from .database_insight import DatabaseInsight
 from .database_insight_summary import DatabaseInsightSummary
 from .database_insights import DatabaseInsights
 from .database_insights_collection import DatabaseInsightsCollection
+from .em_managed_external_database_configuration_summary import EmManagedExternalDatabaseConfigurationSummary
 from .em_managed_external_database_insight import EmManagedExternalDatabaseInsight
 from .em_managed_external_database_insight_summary import EmManagedExternalDatabaseInsightSummary
 from .enable_database_insight_details import EnableDatabaseInsightDetails
@@ -76,6 +80,7 @@ from .ingest_sql_plan_lines_details import IngestSqlPlanLinesDetails
 from .ingest_sql_plan_lines_response_details import IngestSqlPlanLinesResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
+from .macs_managed_external_database_configuration_summary import MacsManagedExternalDatabaseConfigurationSummary
 from .macs_managed_external_database_insight import MacsManagedExternalDatabaseInsight
 from .macs_managed_external_database_insight_summary import MacsManagedExternalDatabaseInsightSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
@@ -148,6 +153,7 @@ from .work_requests import WorkRequests
 
 # Maps type names to classes for opsi services.
 opsi_type_mapping = {
+    "AutonomousDatabaseConfigurationSummary": AutonomousDatabaseConfigurationSummary,
     "AutonomousDatabaseInsight": AutonomousDatabaseInsight,
     "AutonomousDatabaseInsightSummary": AutonomousDatabaseInsightSummary,
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
@@ -164,12 +170,15 @@ opsi_type_mapping = {
     "DBExternalInstance": DBExternalInstance,
     "DBExternalProperties": DBExternalProperties,
     "DBOSConfigInstance": DBOSConfigInstance,
+    "DatabaseConfigurationCollection": DatabaseConfigurationCollection,
     "DatabaseConfigurationMetricGroup": DatabaseConfigurationMetricGroup,
+    "DatabaseConfigurationSummary": DatabaseConfigurationSummary,
     "DatabaseDetails": DatabaseDetails,
     "DatabaseInsight": DatabaseInsight,
     "DatabaseInsightSummary": DatabaseInsightSummary,
     "DatabaseInsights": DatabaseInsights,
     "DatabaseInsightsCollection": DatabaseInsightsCollection,
+    "EmManagedExternalDatabaseConfigurationSummary": EmManagedExternalDatabaseConfigurationSummary,
     "EmManagedExternalDatabaseInsight": EmManagedExternalDatabaseInsight,
     "EmManagedExternalDatabaseInsightSummary": EmManagedExternalDatabaseInsightSummary,
     "EnableDatabaseInsightDetails": EnableDatabaseInsightDetails,
@@ -220,6 +229,7 @@ opsi_type_mapping = {
     "IngestSqlPlanLinesResponseDetails": IngestSqlPlanLinesResponseDetails,
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
+    "MacsManagedExternalDatabaseConfigurationSummary": MacsManagedExternalDatabaseConfigurationSummary,
     "MacsManagedExternalDatabaseInsight": MacsManagedExternalDatabaseInsight,
     "MacsManagedExternalDatabaseInsightSummary": MacsManagedExternalDatabaseInsightSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,

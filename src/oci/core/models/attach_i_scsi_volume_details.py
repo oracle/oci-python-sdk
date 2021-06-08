@@ -13,6 +13,14 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
     AttachIScsiVolumeDetails model.
     """
 
+    #: A constant which can be used with the encryption_in_transit_type property of a AttachIScsiVolumeDetails.
+    #: This constant has a value of "NONE"
+    ENCRYPTION_IN_TRANSIT_TYPE_NONE = "NONE"
+
+    #: A constant which can be used with the encryption_in_transit_type property of a AttachIScsiVolumeDetails.
+    #: This constant has a value of "BM_ENCRYPTION_IN_TRANSIT"
+    ENCRYPTION_IN_TRANSIT_TYPE_BM_ENCRYPTION_IN_TRANSIT = "BM_ENCRYPTION_IN_TRANSIT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AttachIScsiVolumeDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.AttachIScsiVolumeDetails.type` attribute
@@ -51,6 +59,11 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             The value to assign to the use_chap property of this AttachIScsiVolumeDetails.
         :type use_chap: bool
 
+        :param encryption_in_transit_type:
+            The value to assign to the encryption_in_transit_type property of this AttachIScsiVolumeDetails.
+            Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT"
+        :type encryption_in_transit_type: str
+
         """
         self.swagger_types = {
             'device': 'str',
@@ -60,7 +73,8 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'is_shareable': 'bool',
             'type': 'str',
             'volume_id': 'str',
-            'use_chap': 'bool'
+            'use_chap': 'bool',
+            'encryption_in_transit_type': 'str'
         }
 
         self.attribute_map = {
@@ -71,7 +85,8 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'is_shareable': 'isShareable',
             'type': 'type',
             'volume_id': 'volumeId',
-            'use_chap': 'useChap'
+            'use_chap': 'useChap',
+            'encryption_in_transit_type': 'encryptionInTransitType'
         }
 
         self._device = None
@@ -82,6 +97,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self._type = None
         self._volume_id = None
         self._use_chap = None
+        self._encryption_in_transit_type = None
         self._type = 'iscsi'
 
     @property
@@ -107,6 +123,40 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         :type: bool
         """
         self._use_chap = use_chap
+
+    @property
+    def encryption_in_transit_type(self):
+        """
+        Gets the encryption_in_transit_type of this AttachIScsiVolumeDetails.
+        Refer the top-level definition of encryptionInTransitType.
+        The default value is NONE.
+
+        Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT"
+
+
+        :return: The encryption_in_transit_type of this AttachIScsiVolumeDetails.
+        :rtype: str
+        """
+        return self._encryption_in_transit_type
+
+    @encryption_in_transit_type.setter
+    def encryption_in_transit_type(self, encryption_in_transit_type):
+        """
+        Sets the encryption_in_transit_type of this AttachIScsiVolumeDetails.
+        Refer the top-level definition of encryptionInTransitType.
+        The default value is NONE.
+
+
+        :param encryption_in_transit_type: The encryption_in_transit_type of this AttachIScsiVolumeDetails.
+        :type: str
+        """
+        allowed_values = ["NONE", "BM_ENCRYPTION_IN_TRANSIT"]
+        if not value_allowed_none_or_none_sentinel(encryption_in_transit_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `encryption_in_transit_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._encryption_in_transit_type = encryption_in_transit_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

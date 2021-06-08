@@ -116,6 +116,10 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type pattern: str
 
+        :param tablespace_name:
+            The value to assign to the tablespace_name property of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        :type tablespace_name: str
+
         :param historical_data:
             The value to assign to the historical_data property of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
         :type historical_data: list[oci.opsi.models.HistoricalDataItem]
@@ -131,6 +135,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             'resource_metric': 'str',
             'usage_unit': 'str',
             'pattern': 'str',
+            'tablespace_name': 'str',
             'historical_data': 'list[HistoricalDataItem]',
             'projected_data': 'list[ProjectedDataItem]'
         }
@@ -141,6 +146,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             'resource_metric': 'resourceMetric',
             'usage_unit': 'usageUnit',
             'pattern': 'pattern',
+            'tablespace_name': 'tablespaceName',
             'historical_data': 'historicalData',
             'projected_data': 'projectedData'
         }
@@ -150,6 +156,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
         self._resource_metric = None
         self._usage_unit = None
         self._pattern = None
+        self._tablespace_name = None
         self._historical_data = None
         self._projected_data = None
 
@@ -290,6 +297,30 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
         if not value_allowed_none_or_none_sentinel(pattern, allowed_values):
             pattern = 'UNKNOWN_ENUM_VALUE'
         self._pattern = pattern
+
+    @property
+    def tablespace_name(self):
+        """
+        **[Required]** Gets the tablespace_name of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        The name of tablespace.
+
+
+        :return: The tablespace_name of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        :rtype: str
+        """
+        return self._tablespace_name
+
+    @tablespace_name.setter
+    def tablespace_name(self, tablespace_name):
+        """
+        Sets the tablespace_name of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        The name of tablespace.
+
+
+        :param tablespace_name: The tablespace_name of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        :type: str
+        """
+        self._tablespace_name = tablespace_name
 
     @property
     def historical_data(self):

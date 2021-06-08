@@ -1,0 +1,11 @@
+FleetCollection
+===============
+
+.. currentmodule:: oci.jms.models
+
+.. autoclass:: FleetCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -44,7 +44,7 @@ class InstanceAgentFeatures(object):
     def is_monitoring_supported(self):
         """
         Gets the is_monitoring_supported of this InstanceAgentFeatures.
-        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance.
+        This attribute is not used.
 
 
         :return: The is_monitoring_supported of this InstanceAgentFeatures.
@@ -56,7 +56,7 @@ class InstanceAgentFeatures(object):
     def is_monitoring_supported(self, is_monitoring_supported):
         """
         Sets the is_monitoring_supported of this InstanceAgentFeatures.
-        Whether Oracle Cloud Agent can gather performance metrics and monitor the instance.
+        This attribute is not used.
 
 
         :param is_monitoring_supported: The is_monitoring_supported of this InstanceAgentFeatures.
@@ -68,7 +68,7 @@ class InstanceAgentFeatures(object):
     def is_management_supported(self):
         """
         Gets the is_management_supported of this InstanceAgentFeatures.
-        Whether Oracle Cloud Agent can run all the available management plugins.
+        This attribute is not used.
 
 
         :return: The is_management_supported of this InstanceAgentFeatures.
@@ -80,7 +80,7 @@ class InstanceAgentFeatures(object):
     def is_management_supported(self, is_management_supported):
         """
         Sets the is_management_supported of this InstanceAgentFeatures.
-        Whether Oracle Cloud Agent can run all the available management plugins.
+        This attribute is not used.
 
 
         :param is_management_supported: The is_management_supported of this InstanceAgentFeatures.

@@ -18,6 +18,7 @@ Opsi
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.opsi.models.AutonomousDatabaseConfigurationSummary
     oci.opsi.models.AutonomousDatabaseInsight
     oci.opsi.models.AutonomousDatabaseInsightSummary
     oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
@@ -34,12 +35,15 @@ Opsi
     oci.opsi.models.DBExternalInstance
     oci.opsi.models.DBExternalProperties
     oci.opsi.models.DBOSConfigInstance
+    oci.opsi.models.DatabaseConfigurationCollection
     oci.opsi.models.DatabaseConfigurationMetricGroup
+    oci.opsi.models.DatabaseConfigurationSummary
     oci.opsi.models.DatabaseDetails
     oci.opsi.models.DatabaseInsight
     oci.opsi.models.DatabaseInsightSummary
     oci.opsi.models.DatabaseInsights
     oci.opsi.models.DatabaseInsightsCollection
+    oci.opsi.models.EmManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.EmManagedExternalDatabaseInsight
     oci.opsi.models.EmManagedExternalDatabaseInsightSummary
     oci.opsi.models.EnableDatabaseInsightDetails
@@ -90,6 +94,7 @@ Opsi
     oci.opsi.models.IngestSqlPlanLinesResponseDetails
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
+    oci.opsi.models.MacsManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.MacsManagedExternalDatabaseInsight
     oci.opsi.models.MacsManagedExternalDatabaseInsightSummary
     oci.opsi.models.MacsManagedExternalHostInsight

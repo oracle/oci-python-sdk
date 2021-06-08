@@ -30,6 +30,10 @@ class AuthorizationDetails(object):
     #: This constant has a value of "OCIC_IDCS"
     TYPE_OCIC_IDCS = "OCIC_IDCS"
 
+    #: A constant which can be used with the type property of a AuthorizationDetails.
+    #: This constant has a value of "IMPORT"
+    TYPE_IMPORT = "IMPORT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuthorizationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -44,7 +48,7 @@ class AuthorizationDetails(object):
 
         :param type:
             The value to assign to the type property of this AuthorizationDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT"
         :type type: str
 
         """
@@ -86,7 +90,7 @@ class AuthorizationDetails(object):
         **[Required]** Gets the type of this AuthorizationDetails.
         Type of the source environment from which you are migrating applications to Oracle Cloud Infrastructure.
 
-        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
+        Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT"
 
 
         :return: The type of this AuthorizationDetails.
@@ -104,7 +108,7 @@ class AuthorizationDetails(object):
         :param type: The type of this AuthorizationDetails.
         :type: str
         """
-        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"]
+        allowed_values = ["OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

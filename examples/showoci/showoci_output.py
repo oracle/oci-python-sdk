@@ -586,14 +586,14 @@ class ShowOCIOutput(object):
             self.print_header("DRGs", 2)
             for drg in drgs:
                 print(self.taba + "DRG   Name   : " + drg['name'] + ", Redundant: " + drg['redundancy'])
-                if drg['ip_sec_connections']:
-                    print(self.tabs + "      IPSECs : " + str(', '.join(x['name'] + " (" + x['tunnels_status'] + ")" for x in drg['ip_sec_connections'])))
-                if drg['virtual_circuits']:
-                    print(self.tabs + "      VCs    : " + str(', '.join(x['name'] + " (" + x['bgp_session_state'] + ")" for x in drg['virtual_circuits'])))
-                if drg['remote_peerings']:
-                    print(self.tabs + "      RPCs   : " + str(', '.join(x['name'] + " (" + x['peering_status'] + ")" for x in drg['remote_peerings'])))
-                if drg['vcns']:
-                    print(self.tabs + "      VCNs   : " + str(', '.join(x['name'] for x in drg['vcns'])))
+                for index, arr in enumerate(drg['ip_sec_connections'], start=1):
+                    print(self.tabs + "      IPSEC " + str(index) + ": " + arr['name'] + " (" + arr['tunnels_status'] + ")")
+                for index, arr in enumerate(drg['virtual_circuits'], start=1):
+                    print(self.tabs + "      VC " + str(index) + "    : " + arr['name'] + " (" + arr['bgp_session_state'] + ")")
+                for index, arr in enumerate(drg['remote_peerings'], start=1):
+                    print(self.tabs + "      RPC " + str(index) + "  : " + arr['name'] + " (" + arr['peering_status'] + ")")
+                for index, arr in enumerate(drg['vcns'], start=1):
+                    print(self.tabs + "      VCN " + str(index) + "  : " + arr['name'])
                 print("")
 
         except Exception as e:
@@ -1352,6 +1352,21 @@ class ShowOCIOutput(object):
             self.__print_error("__print_database_software_images", e)
 
     ##########################################################################
+    # print database external cdb
+    ##########################################################################
+    def __print_database_external(self, dbs):
+        try:
+            for db in dbs:
+                print(self.taba + "Name      : " + db['display_name'] + " - " + db['db_unique_name'] + " - " + db['database_configuration'])
+                print(self.tabs + "Created   : " + db['time_created'][0:16] + " (" + db['lifecycle_state'] + ")")
+                print(self.tabs + "DB Manage : " + db['database_management_status'] + ", " + db['database_management_license_model'])
+                print(self.tabs + "DB Version: " + db['database_version'] + ", " + db['database_edition'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_external", e)
+
+    ##########################################################################
     # print database nosql
     ##########################################################################
 
@@ -1464,6 +1479,18 @@ class ShowOCIOutput(object):
             if 'software_images' in list_databases:
                 self.print_header("Database Software Images", 2)
                 self.__print_database_software_images(list_databases['software_images'])
+
+            if 'db_external_cdb' in list_databases:
+                self.print_header("Database External CDB", 2)
+                self.__print_database_external(list_databases['db_external_cdb'])
+
+            if 'db_external_pdb' in list_databases:
+                self.print_header("Database External PDB", 2)
+                self.__print_database_external(list_databases['db_external_pdb'])
+
+            if 'db_external_nonpdb' in list_databases:
+                self.print_header("Database External NON-PDB", 2)
+                self.__print_database_external(list_databases['db_external_nonpdb'])
 
         except Exception as e:
             self.__print_error("__print_database_main", e)
@@ -1666,6 +1693,29 @@ class ShowOCIOutput(object):
                         print(self.taba + event['display_name'] + " (" + event['description'] + "), Enabled = " + str(event['is_enabled']))
                         print(self.tabs + "Condition : " + event['condition'])
                         print("")
+
+            # if agents
+            if 'agents' in monitorings:
+                if monitorings['agents']:
+                    agents = monitorings['agents']
+                    self.print_header("Management Agents", 2)
+
+                    for event in agents:
+                        print(self.taba + event['display_name'] + " (" + event['platform_name'] + "), Version = " + str(event['version']) + ", Status = " + event['availability_status'])
+                        print(self.tabs + "Auto Upgradable : " + event['is_agent_auto_upgradable'])
+                        print(self.tabs + "Plugin List     : " + event['plugin_list'])
+                        print(self.tabs + "Created         : " + event['time_created'][0:16] + ", Last Beat: " + event['time_last_heartbeat'][0:16])
+                        print(self.tabs + "Host            : " + event['host'])
+                        print("")
+
+            # if db_managements
+            if 'db_managements' in monitorings:
+                if monitorings['db_managements']:
+                    agents = monitorings['db_managements']
+                    self.print_header("DB Managements", 2)
+
+                    for event in agents:
+                        print(self.taba + event['name'] + ", " + event['database_type'] + ", " + str(event['database_sub_type']) + ", is_cluster = " + event['is_cluster'] + ", Created : " + event['time_created'][0:16])
 
         except Exception as e:
             self.__print_error("__print_monitoring_main", e)
@@ -2585,6 +2635,20 @@ class ShowOCISummary(object):
             self.__print_error("__summary_database_nosql", e)
 
     ##########################################################################
+    # print external
+    ##########################################################################
+
+    def __summary_database_external(self, dbs):
+
+        try:
+            for db in dbs:
+                if 'sum_info' in db:
+                    self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_size_gb'])})
+
+        except Exception as e:
+            self.__print_error("__summary_database_external", e)
+
+    ##########################################################################
     # Database
     ##########################################################################
 
@@ -2615,6 +2679,15 @@ class ShowOCISummary(object):
 
             if 'goldengate' in list_databases:
                 self.__summary_database_goldengate(list_databases['goldengate'])
+
+            if 'db_external_cdb' in list_databases:
+                self.__summary_database_external(list_databases['db_external_cdb'])
+
+            if 'db_external_pdb' in list_databases:
+                self.__summary_database_external(list_databases['db_external_pdb'])
+
+            if 'db_external_nonpdb' in list_databases:
+                self.__summary_database_external(list_databases['db_external_nonpdb'])
 
         except Exception as e:
             self.__print_error("__summary_database_main", e)

@@ -2172,6 +2172,168 @@ class OperationsInsightsClient(object):
                 body=ingest_sql_text_details,
                 response_type="IngestSqlTextResponseDetails")
 
+    def list_database_configurations(self, **kwargs):
+        """
+        Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
+
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str enterprise_manager_bridge_id: (optional)
+            Unique Enterprise Manager bridge identifier
+
+        :param list[str] id: (optional)
+            Optional list of database insight resource `OCIDs`__ of the database insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] database_id: (optional)
+            Optional list of database `OCIDs`__ of the associated DBaaS entity.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] database_type: (optional)
+            Filter by one or more database type.
+            Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Database configuration list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified.
+
+            Allowed values are: "databaseName", "databaseDisplayName", "databaseType"
+
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.DatabaseConfigurationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_database_configurations.py.html>`__ to see an example of how to use list_database_configurations API.
+        """
+        resource_path = "/databaseInsights/databaseConfigurations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "enterprise_manager_bridge_id",
+            "id",
+            "database_id",
+            "database_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "host_name",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_database_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'database_type' in kwargs:
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            for database_type_item in kwargs['database_type']:
+                if database_type_item not in database_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["databaseName", "databaseDisplayName", "databaseType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
+            "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
+            "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DatabaseConfigurationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DatabaseConfigurationCollection")
+
     def list_database_insights(self, **kwargs):
         """
         Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
@@ -3671,6 +3833,11 @@ class OperationsInsightsClient(object):
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
 
+        :param bool is_database_instance_level_metrics: (optional)
+            Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+            When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+            whole database which contains an instance on this host.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -3707,6 +3874,7 @@ class OperationsInsightsClient(object):
             "sort_by",
             "tablespace_name",
             "host_name",
+            "is_database_instance_level_metrics",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3757,7 +3925,8 @@ class OperationsInsightsClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "tablespaceName": kwargs.get("tablespace_name", missing),
-            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi')
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3883,6 +4052,11 @@ class OperationsInsightsClient(object):
         :param str tablespace_name: (optional)
             Tablespace name for a database
 
+        :param bool is_database_instance_level_metrics: (optional)
+            Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+            When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+            whole database which contains an instance on this host.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -3921,6 +4095,7 @@ class OperationsInsightsClient(object):
             "page",
             "host_name",
             "tablespace_name",
+            "is_database_instance_level_metrics",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3973,7 +4148,8 @@ class OperationsInsightsClient(object):
             "confidence": kwargs.get("confidence", missing),
             "page": kwargs.get("page", missing),
             "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
-            "tablespaceName": kwargs.get("tablespace_name", missing)
+            "tablespaceName": kwargs.get("tablespace_name", missing),
+            "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4093,6 +4269,11 @@ class OperationsInsightsClient(object):
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
 
+        :param bool is_database_instance_level_metrics: (optional)
+            Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+            When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+            whole database which contains an instance on this host.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -4131,6 +4312,7 @@ class OperationsInsightsClient(object):
             "sort_order",
             "sort_by",
             "host_name",
+            "is_database_instance_level_metrics",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4176,7 +4358,8 @@ class OperationsInsightsClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi')
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4258,6 +4441,14 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
+        :param bool is_database_instance_level_metrics: (optional)
+            Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+            When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+            whole database which contains an instance on this host.
+
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
@@ -4298,6 +4489,8 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "host_name",
+            "is_database_instance_level_metrics",
             "page",
             "percentile",
             "opc_request_id"
@@ -4324,6 +4517,8 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing),
             "page": kwargs.get("page", missing),
             "percentile": kwargs.get("percentile", missing)
         }
@@ -4423,6 +4618,14 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "endTimestamp", "usage", "capacity"
 
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
+        :param bool is_database_instance_level_metrics: (optional)
+            Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+            When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+            whole database which contains an instance on this host.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -4456,6 +4659,8 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "host_name",
+            "is_database_instance_level_metrics",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4496,7 +4701,9 @@ class OperationsInsightsClient(object):
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4579,6 +4786,14 @@ class OperationsInsightsClient(object):
         :param int forecast_days: (optional)
             Number of days used for utilization forecast analysis.
 
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
+        :param bool is_database_instance_level_metrics: (optional)
+            Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied.
+            When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the
+            whole database which contains an instance on this host.
+
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
@@ -4617,6 +4832,8 @@ class OperationsInsightsClient(object):
             "database_id",
             "id",
             "forecast_days",
+            "host_name",
+            "is_database_instance_level_metrics",
             "page",
             "opc_request_id"
         ]
@@ -4643,6 +4860,8 @@ class OperationsInsightsClient(object):
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
             "forecastDays": kwargs.get("forecast_days", missing),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing),
             "page": kwargs.get("page", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -5853,6 +6072,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
         :param float database_time_pct_greater_than: (optional)
             Filter sqls by percentage of db time.
 
@@ -5909,6 +6131,7 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "host_name",
             "database_time_pct_greater_than",
             "analysis_time_interval",
             "time_interval_start",
@@ -5934,6 +6157,7 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "databaseTimePctGreaterThan": kwargs.get("database_time_pct_greater_than", missing),
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
             "timeIntervalStart": kwargs.get("time_interval_start", missing),
@@ -6249,6 +6473,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
         :param float database_time_pct_greater_than: (optional)
             Filter sqls by percentage of db time.
 
@@ -6334,6 +6561,7 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "host_name",
             "database_time_pct_greater_than",
             "sql_identifier",
             "analysis_time_interval",
@@ -6386,6 +6614,7 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "databaseTimePctGreaterThan": kwargs.get("database_time_pct_greater_than", missing),
             "sqlIdentifier": self.base_client.generate_collection_format_param(kwargs.get("sql_identifier", missing), 'multi'),
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
@@ -6450,6 +6679,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] host_name: (optional)
+            Filter by one or more hostname.
+
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
             Default is last 30 days represented by P30D.
@@ -6502,6 +6734,7 @@ class OperationsInsightsClient(object):
             "retry_strategy",
             "database_id",
             "id",
+            "host_name",
             "analysis_time_interval",
             "time_interval_start",
             "time_interval_end",
@@ -6517,6 +6750,7 @@ class OperationsInsightsClient(object):
             "compartmentId": compartment_id,
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "sqlIdentifier": sql_identifier,
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
             "timeIntervalStart": kwargs.get("time_interval_start", missing),
