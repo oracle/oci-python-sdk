@@ -72,6 +72,15 @@ class EmulatedVolumeAttachment(VolumeAttachment):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this EmulatedVolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param is_multipath:
+            The value to assign to the is_multipath property of this EmulatedVolumeAttachment.
+        :type is_multipath: bool
+
+        :param iscsi_login_state:
+            The value to assign to the iscsi_login_state property of this EmulatedVolumeAttachment.
+            Allowed values for this property are: "UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED"
+        :type iscsi_login_state: str
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -86,7 +95,9 @@ class EmulatedVolumeAttachment(VolumeAttachment):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
-            'is_pv_encryption_in_transit_enabled': 'bool'
+            'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_multipath': 'bool',
+            'iscsi_login_state': 'str'
         }
 
         self.attribute_map = {
@@ -102,7 +113,9 @@ class EmulatedVolumeAttachment(VolumeAttachment):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
-            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_multipath': 'isMultipath',
+            'iscsi_login_state': 'iscsiLoginState'
         }
 
         self._attachment_type = None
@@ -118,6 +131,8 @@ class EmulatedVolumeAttachment(VolumeAttachment):
         self._time_created = None
         self._volume_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_multipath = None
+        self._iscsi_login_state = None
         self._attachment_type = 'emulated'
 
     def __repr__(self):

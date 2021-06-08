@@ -32,6 +32,14 @@ class BootVolumeAttachment(object):
     #: This constant has a value of "DETACHED"
     LIFECYCLE_STATE_DETACHED = "DETACHED"
 
+    #: A constant which can be used with the encryption_in_transit_type property of a BootVolumeAttachment.
+    #: This constant has a value of "NONE"
+    ENCRYPTION_IN_TRANSIT_TYPE_NONE = "NONE"
+
+    #: A constant which can be used with the encryption_in_transit_type property of a BootVolumeAttachment.
+    #: This constant has a value of "BM_ENCRYPTION_IN_TRANSIT"
+    ENCRYPTION_IN_TRANSIT_TYPE_BM_ENCRYPTION_IN_TRANSIT = "BM_ENCRYPTION_IN_TRANSIT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BootVolumeAttachment object with values from keyword arguments.
@@ -75,6 +83,12 @@ class BootVolumeAttachment(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this BootVolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param encryption_in_transit_type:
+            The value to assign to the encryption_in_transit_type property of this BootVolumeAttachment.
+            Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type encryption_in_transit_type: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -85,7 +99,8 @@ class BootVolumeAttachment(object):
             'instance_id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'is_pv_encryption_in_transit_enabled': 'bool'
+            'is_pv_encryption_in_transit_enabled': 'bool',
+            'encryption_in_transit_type': 'str'
         }
 
         self.attribute_map = {
@@ -97,7 +112,8 @@ class BootVolumeAttachment(object):
             'instance_id': 'instanceId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'encryption_in_transit_type': 'encryptionInTransitType'
         }
 
         self._availability_domain = None
@@ -109,6 +125,7 @@ class BootVolumeAttachment(object):
         self._lifecycle_state = None
         self._time_created = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._encryption_in_transit_type = None
 
     @property
     def availability_domain(self):
@@ -349,6 +366,38 @@ class BootVolumeAttachment(object):
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def encryption_in_transit_type(self):
+        """
+        Gets the encryption_in_transit_type of this BootVolumeAttachment.
+        Refer the top-level definition of encryptionInTransitType.
+        The default value is NONE.
+
+        Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The encryption_in_transit_type of this BootVolumeAttachment.
+        :rtype: str
+        """
+        return self._encryption_in_transit_type
+
+    @encryption_in_transit_type.setter
+    def encryption_in_transit_type(self, encryption_in_transit_type):
+        """
+        Sets the encryption_in_transit_type of this BootVolumeAttachment.
+        Refer the top-level definition of encryptionInTransitType.
+        The default value is NONE.
+
+
+        :param encryption_in_transit_type: The encryption_in_transit_type of this BootVolumeAttachment.
+        :type: str
+        """
+        allowed_values = ["NONE", "BM_ENCRYPTION_IN_TRANSIT"]
+        if not value_allowed_none_or_none_sentinel(encryption_in_transit_type, allowed_values):
+            encryption_in_transit_type = 'UNKNOWN_ENUM_VALUE'
+        self._encryption_in_transit_type = encryption_in_transit_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

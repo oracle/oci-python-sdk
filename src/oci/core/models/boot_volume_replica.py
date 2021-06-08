@@ -12,7 +12,7 @@ class BootVolumeReplica(object):
     """
     An asynchronous replica of a boot volume that can then be used to create
     a new boot volume or recover a boot volume. For more information, see `Overview
-    of Block Volume Replicas`__
+    of Cross-Region Volume Replication`__
     To use any of the API operations, you must be authorized in an IAM policy.
     If you're not authorized, talk to an administrator. If you're an administrator
     who needs to write policies to give users access, see `Getting Started with
@@ -21,7 +21,7 @@ class BootVolumeReplica(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumereplicas.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumereplication.htm
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 

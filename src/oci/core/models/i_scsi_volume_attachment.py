@@ -13,6 +13,14 @@ class IScsiVolumeAttachment(VolumeAttachment):
     An ISCSI volume attachment.
     """
 
+    #: A constant which can be used with the encryption_in_transit_type property of a IScsiVolumeAttachment.
+    #: This constant has a value of "NONE"
+    ENCRYPTION_IN_TRANSIT_TYPE_NONE = "NONE"
+
+    #: A constant which can be used with the encryption_in_transit_type property of a IScsiVolumeAttachment.
+    #: This constant has a value of "BM_ENCRYPTION_IN_TRANSIT"
+    ENCRYPTION_IN_TRANSIT_TYPE_BM_ENCRYPTION_IN_TRANSIT = "BM_ENCRYPTION_IN_TRANSIT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IScsiVolumeAttachment object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.IScsiVolumeAttachment.attachment_type` attribute
@@ -57,7 +65,8 @@ class IScsiVolumeAttachment(VolumeAttachment):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this IScsiVolumeAttachment.
-            Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED"
+            Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param time_created:
@@ -71,6 +80,16 @@ class IScsiVolumeAttachment(VolumeAttachment):
         :param is_pv_encryption_in_transit_enabled:
             The value to assign to the is_pv_encryption_in_transit_enabled property of this IScsiVolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
+
+        :param is_multipath:
+            The value to assign to the is_multipath property of this IScsiVolumeAttachment.
+        :type is_multipath: bool
+
+        :param iscsi_login_state:
+            The value to assign to the iscsi_login_state property of this IScsiVolumeAttachment.
+            Allowed values for this property are: "UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type iscsi_login_state: str
 
         :param chap_secret:
             The value to assign to the chap_secret property of this IScsiVolumeAttachment.
@@ -92,6 +111,16 @@ class IScsiVolumeAttachment(VolumeAttachment):
             The value to assign to the port property of this IScsiVolumeAttachment.
         :type port: int
 
+        :param multipath_devices:
+            The value to assign to the multipath_devices property of this IScsiVolumeAttachment.
+        :type multipath_devices: list[oci.core.models.MultipathDevice]
+
+        :param encryption_in_transit_type:
+            The value to assign to the encryption_in_transit_type property of this IScsiVolumeAttachment.
+            Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type encryption_in_transit_type: str
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -107,11 +136,15 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'time_created': 'datetime',
             'volume_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_multipath': 'bool',
+            'iscsi_login_state': 'str',
             'chap_secret': 'str',
             'chap_username': 'str',
             'ipv4': 'str',
             'iqn': 'str',
-            'port': 'int'
+            'port': 'int',
+            'multipath_devices': 'list[MultipathDevice]',
+            'encryption_in_transit_type': 'str'
         }
 
         self.attribute_map = {
@@ -128,11 +161,15 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_multipath': 'isMultipath',
+            'iscsi_login_state': 'iscsiLoginState',
             'chap_secret': 'chapSecret',
             'chap_username': 'chapUsername',
             'ipv4': 'ipv4',
             'iqn': 'iqn',
-            'port': 'port'
+            'port': 'port',
+            'multipath_devices': 'multipathDevices',
+            'encryption_in_transit_type': 'encryptionInTransitType'
         }
 
         self._attachment_type = None
@@ -148,11 +185,15 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._time_created = None
         self._volume_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_multipath = None
+        self._iscsi_login_state = None
         self._chap_secret = None
         self._chap_username = None
         self._ipv4 = None
         self._iqn = None
         self._port = None
+        self._multipath_devices = None
+        self._encryption_in_transit_type = None
         self._attachment_type = 'iscsi'
 
     @property
@@ -306,6 +347,62 @@ class IScsiVolumeAttachment(VolumeAttachment):
         :type: int
         """
         self._port = port
+
+    @property
+    def multipath_devices(self):
+        """
+        Gets the multipath_devices of this IScsiVolumeAttachment.
+        A list of secondary multipath devices
+
+
+        :return: The multipath_devices of this IScsiVolumeAttachment.
+        :rtype: list[oci.core.models.MultipathDevice]
+        """
+        return self._multipath_devices
+
+    @multipath_devices.setter
+    def multipath_devices(self, multipath_devices):
+        """
+        Sets the multipath_devices of this IScsiVolumeAttachment.
+        A list of secondary multipath devices
+
+
+        :param multipath_devices: The multipath_devices of this IScsiVolumeAttachment.
+        :type: list[oci.core.models.MultipathDevice]
+        """
+        self._multipath_devices = multipath_devices
+
+    @property
+    def encryption_in_transit_type(self):
+        """
+        Gets the encryption_in_transit_type of this IScsiVolumeAttachment.
+        Refer the top-level definition of encryptionInTransitType.
+        The default value is NONE.
+
+        Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The encryption_in_transit_type of this IScsiVolumeAttachment.
+        :rtype: str
+        """
+        return self._encryption_in_transit_type
+
+    @encryption_in_transit_type.setter
+    def encryption_in_transit_type(self, encryption_in_transit_type):
+        """
+        Sets the encryption_in_transit_type of this IScsiVolumeAttachment.
+        Refer the top-level definition of encryptionInTransitType.
+        The default value is NONE.
+
+
+        :param encryption_in_transit_type: The encryption_in_transit_type of this IScsiVolumeAttachment.
+        :type: str
+        """
+        allowed_values = ["NONE", "BM_ENCRYPTION_IN_TRANSIT"]
+        if not value_allowed_none_or_none_sentinel(encryption_in_transit_type, allowed_values):
+            encryption_in_transit_type = 'UNKNOWN_ENUM_VALUE'
+        self._encryption_in_transit_type = encryption_in_transit_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

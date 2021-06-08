@@ -25,6 +25,8 @@ Application Migration
     oci.application_migration.models.CreateSourceDetails
     oci.application_migration.models.DiscoveryDetails
     oci.application_migration.models.IcsDiscoveryDetails
+    oci.application_migration.models.ImportManifest
+    oci.application_migration.models.ImportSourceDetails
     oci.application_migration.models.InternalAuthorizationDetails
     oci.application_migration.models.InternalSourceDetails
     oci.application_migration.models.JcsDiscoveryDetails

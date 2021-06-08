@@ -312,6 +312,7 @@ Core Services
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
     oci.core.models.ModifyVcnCidrDetails
+    oci.core.models.MultipathDevice
     oci.core.models.NatGateway
     oci.core.models.NetworkSecurityGroup
     oci.core.models.NetworkSecurityGroupVnic
@@ -417,6 +418,7 @@ Core Services
     oci.core.models.UpdateVirtualCircuitDetails
     oci.core.models.UpdateVlanDetails
     oci.core.models.UpdateVnicDetails
+    oci.core.models.UpdateVolumeAttachmentDetails
     oci.core.models.UpdateVolumeBackupDetails
     oci.core.models.UpdateVolumeBackupPolicyDetails
     oci.core.models.UpdateVolumeDetails

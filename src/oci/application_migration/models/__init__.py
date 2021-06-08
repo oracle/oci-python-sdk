@@ -11,6 +11,8 @@ from .create_migration_details import CreateMigrationDetails
 from .create_source_details import CreateSourceDetails
 from .discovery_details import DiscoveryDetails
 from .ics_discovery_details import IcsDiscoveryDetails
+from .import_manifest import ImportManifest
+from .import_source_details import ImportSourceDetails
 from .internal_authorization_details import InternalAuthorizationDetails
 from .internal_source_details import InternalSourceDetails
 from .jcs_discovery_details import JcsDiscoveryDetails
@@ -48,6 +50,8 @@ application_migration_type_mapping = {
     "CreateSourceDetails": CreateSourceDetails,
     "DiscoveryDetails": DiscoveryDetails,
     "IcsDiscoveryDetails": IcsDiscoveryDetails,
+    "ImportManifest": ImportManifest,
+    "ImportSourceDetails": ImportSourceDetails,
     "InternalAuthorizationDetails": InternalAuthorizationDetails,
     "InternalSourceDetails": InternalSourceDetails,
     "JcsDiscoveryDetails": JcsDiscoveryDetails,

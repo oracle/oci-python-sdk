@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateInstanceAvailabilityConfigDetails(object):
     """
     Options for defining the availability of a VM instance after a maintenance event that impacts the underlying
-    hardware, including whether to live migrate supported VM instances when possible.
+    hardware, including whether to live migrate supported VM instances when possible without sending a prior customer notification.
     """
 
     #: A constant which can be used with the recovery_action property of a UpdateInstanceAvailabilityConfigDetails.

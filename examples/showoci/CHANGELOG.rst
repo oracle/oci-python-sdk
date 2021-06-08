@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.06.02 - 21.06.02
+=====================
+* Support for New DRG
+* Added Management Agent
+* Added Database Management
+* Added External Databases - CDB/PDB and NonPDB
+
+=====================
 21.05.25 - 21.05.25
 =====================
 * Added Autonomous Dedicated

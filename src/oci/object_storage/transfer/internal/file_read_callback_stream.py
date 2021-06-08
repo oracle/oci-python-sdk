@@ -16,3 +16,6 @@ class FileReadCallbackStream:
     def read(self, n):
         self.progress_callback(n)
         return self.file.read(n)
+
+    def __getattr__(self, attr):
+        return getattr(self.file, attr)

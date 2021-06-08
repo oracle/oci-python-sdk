@@ -51,7 +51,7 @@ class TablespaceUsageTrendAggregation(object):
     def tablespace_name(self):
         """
         **[Required]** Gets the tablespace_name of this TablespaceUsageTrendAggregation.
-        Name of tablespace
+        The name of tablespace.
 
 
         :return: The tablespace_name of this TablespaceUsageTrendAggregation.
@@ -63,7 +63,7 @@ class TablespaceUsageTrendAggregation(object):
     def tablespace_name(self, tablespace_name):
         """
         Sets the tablespace_name of this TablespaceUsageTrendAggregation.
-        Name of tablespace
+        The name of tablespace.
 
 
         :param tablespace_name: The tablespace_name of this TablespaceUsageTrendAggregation.

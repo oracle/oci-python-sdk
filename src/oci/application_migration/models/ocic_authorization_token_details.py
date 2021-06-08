@@ -21,7 +21,7 @@ class OcicAuthorizationTokenDetails(AuthorizationDetails):
 
         :param type:
             The value to assign to the type property of this OcicAuthorizationTokenDetails.
-            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS"
+            Allowed values for this property are: "OCIC", "INTERNAL_COMPUTE", "OCC", "OCIC_IDCS", "IMPORT"
         :type type: str
 
         :param client_app_url:
