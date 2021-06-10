@@ -118,6 +118,10 @@ class ManagementSavedSearchSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param parameters_config:
+            The value to assign to the parameters_config property of this ManagementSavedSearchSummary.
+        :type parameters_config: list[object]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementSavedSearchSummary.
         :type freeform_tags: dict(str, str)
@@ -147,6 +151,7 @@ class ManagementSavedSearchSummary(object):
             'widget_template': 'str',
             'widget_vm': 'str',
             'lifecycle_state': 'str',
+            'parameters_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -171,6 +176,7 @@ class ManagementSavedSearchSummary(object):
             'widget_template': 'widgetTemplate',
             'widget_vm': 'widgetVM',
             'lifecycle_state': 'lifecycleState',
+            'parameters_config': 'parametersConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -194,6 +200,7 @@ class ManagementSavedSearchSummary(object):
         self._widget_template = None
         self._widget_vm = None
         self._lifecycle_state = None
+        self._parameters_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -664,6 +671,30 @@ class ManagementSavedSearchSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def parameters_config(self):
+        """
+        Gets the parameters_config of this ManagementSavedSearchSummary.
+        Defines parameters for the saved search.
+
+
+        :return: The parameters_config of this ManagementSavedSearchSummary.
+        :rtype: list[object]
+        """
+        return self._parameters_config
+
+    @parameters_config.setter
+    def parameters_config(self, parameters_config):
+        """
+        Sets the parameters_config of this ManagementSavedSearchSummary.
+        Defines parameters for the saved search.
+
+
+        :param parameters_config: The parameters_config of this ManagementSavedSearchSummary.
+        :type: list[object]
+        """
+        self._parameters_config = parameters_config
 
     @property
     def freeform_tags(self):

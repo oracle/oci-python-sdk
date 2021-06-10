@@ -77,6 +77,10 @@ class ManagementDashboardTileDetails(object):
             The value to assign to the drilldown_config property of this ManagementDashboardTileDetails.
         :type drilldown_config: object
 
+        :param parameters_map:
+            The value to assign to the parameters_map property of this ManagementDashboardTileDetails.
+        :type parameters_map: object
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -89,7 +93,8 @@ class ManagementDashboardTileDetails(object):
             'ui_config': 'object',
             'data_config': 'list[object]',
             'state': 'str',
-            'drilldown_config': 'object'
+            'drilldown_config': 'object',
+            'parameters_map': 'object'
         }
 
         self.attribute_map = {
@@ -103,7 +108,8 @@ class ManagementDashboardTileDetails(object):
             'ui_config': 'uiConfig',
             'data_config': 'dataConfig',
             'state': 'state',
-            'drilldown_config': 'drilldownConfig'
+            'drilldown_config': 'drilldownConfig',
+            'parameters_map': 'parametersMap'
         }
 
         self._display_name = None
@@ -117,6 +123,7 @@ class ManagementDashboardTileDetails(object):
         self._data_config = None
         self._state = None
         self._drilldown_config = None
+        self._parameters_map = None
 
     @property
     def display_name(self):
@@ -387,6 +394,30 @@ class ManagementDashboardTileDetails(object):
         :type: object
         """
         self._drilldown_config = drilldown_config
+
+    @property
+    def parameters_map(self):
+        """
+        Gets the parameters_map of this ManagementDashboardTileDetails.
+        Specifies the saved search parameters values
+
+
+        :return: The parameters_map of this ManagementDashboardTileDetails.
+        :rtype: object
+        """
+        return self._parameters_map
+
+    @parameters_map.setter
+    def parameters_map(self, parameters_map):
+        """
+        Sets the parameters_map of this ManagementDashboardTileDetails.
+        Specifies the saved search parameters values
+
+
+        :param parameters_map: The parameters_map of this ManagementDashboardTileDetails.
+        :type: object
+        """
+        self._parameters_map = parameters_map
 
     def __repr__(self):
         return formatted_flat_dict(self)

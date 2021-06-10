@@ -129,6 +129,22 @@ class ExadataInfrastructureSummary(object):
             The value to assign to the max_data_storage_in_t_bs property of this ExadataInfrastructureSummary.
         :type max_data_storage_in_t_bs: float
 
+        :param storage_count:
+            The value to assign to the storage_count property of this ExadataInfrastructureSummary.
+        :type storage_count: int
+
+        :param additional_storage_count:
+            The value to assign to the additional_storage_count property of this ExadataInfrastructureSummary.
+        :type additional_storage_count: int
+
+        :param activated_storage_count:
+            The value to assign to the activated_storage_count property of this ExadataInfrastructureSummary.
+        :type activated_storage_count: int
+
+        :param compute_count:
+            The value to assign to the compute_count property of this ExadataInfrastructureSummary.
+        :type compute_count: int
+
         :param cloud_control_plane_server1:
             The value to assign to the cloud_control_plane_server1 property of this ExadataInfrastructureSummary.
         :type cloud_control_plane_server1: str
@@ -223,6 +239,10 @@ class ExadataInfrastructureSummary(object):
             'max_db_node_storage_in_g_bs': 'int',
             'data_storage_size_in_tbs': 'float',
             'max_data_storage_in_t_bs': 'float',
+            'storage_count': 'int',
+            'additional_storage_count': 'int',
+            'activated_storage_count': 'int',
+            'compute_count': 'int',
             'cloud_control_plane_server1': 'str',
             'cloud_control_plane_server2': 'str',
             'netmask': 'str',
@@ -259,6 +279,10 @@ class ExadataInfrastructureSummary(object):
             'max_db_node_storage_in_g_bs': 'maxDbNodeStorageInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'max_data_storage_in_t_bs': 'maxDataStorageInTBs',
+            'storage_count': 'storageCount',
+            'additional_storage_count': 'additionalStorageCount',
+            'activated_storage_count': 'activatedStorageCount',
+            'compute_count': 'computeCount',
             'cloud_control_plane_server1': 'cloudControlPlaneServer1',
             'cloud_control_plane_server2': 'cloudControlPlaneServer2',
             'netmask': 'netmask',
@@ -294,6 +318,10 @@ class ExadataInfrastructureSummary(object):
         self._max_db_node_storage_in_g_bs = None
         self._data_storage_size_in_tbs = None
         self._max_data_storage_in_t_bs = None
+        self._storage_count = None
+        self._additional_storage_count = None
+        self._activated_storage_count = None
+        self._compute_count = None
         self._cloud_control_plane_server1 = None
         self._cloud_control_plane_server2 = None
         self._netmask = None
@@ -667,6 +695,102 @@ class ExadataInfrastructureSummary(object):
         :type: float
         """
         self._max_data_storage_in_t_bs = max_data_storage_in_t_bs
+
+    @property
+    def storage_count(self):
+        """
+        Gets the storage_count of this ExadataInfrastructureSummary.
+        The number of Exadata storage servers for the Exadata infrastructure.
+
+
+        :return: The storage_count of this ExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._storage_count
+
+    @storage_count.setter
+    def storage_count(self, storage_count):
+        """
+        Sets the storage_count of this ExadataInfrastructureSummary.
+        The number of Exadata storage servers for the Exadata infrastructure.
+
+
+        :param storage_count: The storage_count of this ExadataInfrastructureSummary.
+        :type: int
+        """
+        self._storage_count = storage_count
+
+    @property
+    def additional_storage_count(self):
+        """
+        Gets the additional_storage_count of this ExadataInfrastructureSummary.
+        The requested number of additional storage servers for the Exadata infrastructure.
+
+
+        :return: The additional_storage_count of this ExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._additional_storage_count
+
+    @additional_storage_count.setter
+    def additional_storage_count(self, additional_storage_count):
+        """
+        Sets the additional_storage_count of this ExadataInfrastructureSummary.
+        The requested number of additional storage servers for the Exadata infrastructure.
+
+
+        :param additional_storage_count: The additional_storage_count of this ExadataInfrastructureSummary.
+        :type: int
+        """
+        self._additional_storage_count = additional_storage_count
+
+    @property
+    def activated_storage_count(self):
+        """
+        Gets the activated_storage_count of this ExadataInfrastructureSummary.
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+
+
+        :return: The activated_storage_count of this ExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._activated_storage_count
+
+    @activated_storage_count.setter
+    def activated_storage_count(self, activated_storage_count):
+        """
+        Sets the activated_storage_count of this ExadataInfrastructureSummary.
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+
+
+        :param activated_storage_count: The activated_storage_count of this ExadataInfrastructureSummary.
+        :type: int
+        """
+        self._activated_storage_count = activated_storage_count
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this ExadataInfrastructureSummary.
+        The number of compute servers for the Exadata infrastructure.
+
+
+        :return: The compute_count of this ExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this ExadataInfrastructureSummary.
+        The number of compute servers for the Exadata infrastructure.
+
+
+        :param compute_count: The compute_count of this ExadataInfrastructureSummary.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     @property
     def cloud_control_plane_server1(self):

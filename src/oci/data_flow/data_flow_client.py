@@ -1262,6 +1262,9 @@ class DataFlowClient(object):
         :param str display_name_starts_with: (optional)
             The displayName prefix.
 
+        :param str spark_version: (optional)
+            The Spark version utilized to run the application.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1289,7 +1292,8 @@ class DataFlowClient(object):
             "sort_order",
             "display_name",
             "owner_principal_id",
-            "display_name_starts_with"
+            "display_name_starts_with",
+            "spark_version"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1318,7 +1322,8 @@ class DataFlowClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "displayName": kwargs.get("display_name", missing),
             "ownerPrincipalId": kwargs.get("owner_principal_id", missing),
-            "displayNameStartsWith": kwargs.get("display_name_starts_with", missing)
+            "displayNameStartsWith": kwargs.get("display_name_starts_with", missing),
+            "sparkVersion": kwargs.get("spark_version", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

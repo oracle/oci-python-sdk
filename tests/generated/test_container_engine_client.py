@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_cluster_migrate_to_native_vcn(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ClusterMigrateToNativeVcn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ClusterMigrateToNativeVcn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ClusterMigrateToNativeVcn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.cluster_migrate_to_native_vcn(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                cluster_migrate_to_native_vcn_details=request.pop(util.camelize('ClusterMigrateToNativeVcnDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ClusterMigrateToNativeVcn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cluster_migrate_to_native_vcn',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_create_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -308,6 +349,46 @@ def test_get_cluster(testing_service_client):
             result,
             service_error,
             'cluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_get_cluster_migrate_to_native_vcn_status(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'GetClusterMigrateToNativeVcnStatus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetClusterMigrateToNativeVcnStatus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetClusterMigrateToNativeVcnStatus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.get_cluster_migrate_to_native_vcn_status(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'GetClusterMigrateToNativeVcnStatus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'clusterMigrateToNativeVcnStatus',
             False,
             False
         )

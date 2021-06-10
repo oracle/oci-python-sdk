@@ -74,6 +74,46 @@ def test_activate_exadata_infrastructure(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_add_storage_capacity_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'AddStorageCapacityExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'AddStorageCapacityExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='AddStorageCapacityExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.add_storage_capacity_exadata_infrastructure(
+                exadata_infrastructure_id=request.pop(util.camelize('exadataInfrastructureId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'AddStorageCapacityExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataInfrastructure',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_autonomous_database_manual_refresh(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AutonomousDatabaseManualRefresh'):

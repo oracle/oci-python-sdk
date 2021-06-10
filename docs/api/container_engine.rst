@@ -25,6 +25,8 @@ Container Engine
     oci.container_engine.models.ClusterEndpointConfig
     oci.container_engine.models.ClusterEndpoints
     oci.container_engine.models.ClusterMetadata
+    oci.container_engine.models.ClusterMigrateToNativeVcnDetails
+    oci.container_engine.models.ClusterMigrateToNativeVcnStatus
     oci.container_engine.models.ClusterOptions
     oci.container_engine.models.ClusterSummary
     oci.container_engine.models.CreateClusterDetails

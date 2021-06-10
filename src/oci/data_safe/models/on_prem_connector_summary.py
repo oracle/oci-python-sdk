@@ -84,6 +84,10 @@ class OnPremConnectorSummary(object):
             The value to assign to the defined_tags property of this OnPremConnectorSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this OnPremConnectorSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param created_version:
             The value to assign to the created_version property of this OnPremConnectorSummary.
         :type created_version: str
@@ -99,6 +103,7 @@ class OnPremConnectorSummary(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'created_version': 'str'
         }
 
@@ -112,6 +117,7 @@ class OnPremConnectorSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'created_version': 'createdVersion'
         }
 
@@ -124,6 +130,7 @@ class OnPremConnectorSummary(object):
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._created_version = None
 
     @property
@@ -367,6 +374,32 @@ class OnPremConnectorSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this OnPremConnectorSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this OnPremConnectorSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this OnPremConnectorSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this OnPremConnectorSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def created_version(self):

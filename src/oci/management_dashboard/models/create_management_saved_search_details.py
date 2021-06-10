@@ -99,6 +99,10 @@ class CreateManagementSavedSearchDetails(object):
             The value to assign to the widget_vm property of this CreateManagementSavedSearchDetails.
         :type widget_vm: str
 
+        :param parameters_config:
+            The value to assign to the parameters_config property of this CreateManagementSavedSearchDetails.
+        :type parameters_config: list[object]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateManagementSavedSearchDetails.
         :type freeform_tags: dict(str, str)
@@ -125,6 +129,7 @@ class CreateManagementSavedSearchDetails(object):
             'metadata_version': 'str',
             'widget_template': 'str',
             'widget_vm': 'str',
+            'parameters_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -146,6 +151,7 @@ class CreateManagementSavedSearchDetails(object):
             'metadata_version': 'metadataVersion',
             'widget_template': 'widgetTemplate',
             'widget_vm': 'widgetVM',
+            'parameters_config': 'parametersConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -166,6 +172,7 @@ class CreateManagementSavedSearchDetails(object):
         self._metadata_version = None
         self._widget_template = None
         self._widget_vm = None
+        self._parameters_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -560,6 +567,30 @@ class CreateManagementSavedSearchDetails(object):
         :type: str
         """
         self._widget_vm = widget_vm
+
+    @property
+    def parameters_config(self):
+        """
+        Gets the parameters_config of this CreateManagementSavedSearchDetails.
+        Defines parameters for the saved search.
+
+
+        :return: The parameters_config of this CreateManagementSavedSearchDetails.
+        :rtype: list[object]
+        """
+        return self._parameters_config
+
+    @parameters_config.setter
+    def parameters_config(self, parameters_config):
+        """
+        Sets the parameters_config of this CreateManagementSavedSearchDetails.
+        Defines parameters for the saved search.
+
+
+        :param parameters_config: The parameters_config of this CreateManagementSavedSearchDetails.
+        :type: list[object]
+        """
+        self._parameters_config = parameters_config
 
     @property
     def freeform_tags(self):

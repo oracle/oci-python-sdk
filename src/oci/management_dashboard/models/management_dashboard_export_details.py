@@ -22,30 +22,16 @@ class ManagementDashboardExportDetails(object):
             The value to assign to the dashboards property of this ManagementDashboardExportDetails.
         :type dashboards: list[oci.management_dashboard.models.ManagementDashboardForImportExportDetails]
 
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this ManagementDashboardExportDetails.
-        :type freeform_tags: dict(str, str)
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this ManagementDashboardExportDetails.
-        :type defined_tags: dict(str, dict(str, object))
-
         """
         self.swagger_types = {
-            'dashboards': 'list[ManagementDashboardForImportExportDetails]',
-            'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'dashboards': 'list[ManagementDashboardForImportExportDetails]'
         }
 
         self.attribute_map = {
-            'dashboards': 'dashboards',
-            'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'dashboards': 'dashboards'
         }
 
         self._dashboards = None
-        self._freeform_tags = None
-        self._defined_tags = None
 
     @property
     def dashboards(self):
@@ -70,58 +56,6 @@ class ManagementDashboardExportDetails(object):
         :type: list[oci.management_dashboard.models.ManagementDashboardForImportExportDetails]
         """
         self._dashboards = dashboards
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this ManagementDashboardExportDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
-
-
-        :return: The freeform_tags of this ManagementDashboardExportDetails.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this ManagementDashboardExportDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
-
-
-        :param freeform_tags: The freeform_tags of this ManagementDashboardExportDetails.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this ManagementDashboardExportDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-
-
-        :return: The defined_tags of this ManagementDashboardExportDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this ManagementDashboardExportDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-
-
-        :param defined_tags: The defined_tags of this ManagementDashboardExportDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)
