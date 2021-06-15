@@ -94,6 +94,10 @@ class ManagementDashboardForImportExportDetails(object):
             The value to assign to the saved_searches property of this ManagementDashboardForImportExportDetails.
         :type saved_searches: list[oci.management_dashboard.models.ManagementSavedSearchForImportDetails]
 
+        :param parameters_config:
+            The value to assign to the parameters_config property of this ManagementDashboardForImportExportDetails.
+        :type parameters_config: list[object]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboardForImportExportDetails.
         :type freeform_tags: dict(str, str)
@@ -123,6 +127,7 @@ class ManagementDashboardForImportExportDetails(object):
             'type': 'str',
             'is_favorite': 'bool',
             'saved_searches': 'list[ManagementSavedSearchForImportDetails]',
+            'parameters_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -147,6 +152,7 @@ class ManagementDashboardForImportExportDetails(object):
             'type': 'type',
             'is_favorite': 'isFavorite',
             'saved_searches': 'savedSearches',
+            'parameters_config': 'parametersConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -170,6 +176,7 @@ class ManagementDashboardForImportExportDetails(object):
         self._type = None
         self._is_favorite = None
         self._saved_searches = None
+        self._parameters_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -628,6 +635,30 @@ class ManagementDashboardForImportExportDetails(object):
         :type: list[oci.management_dashboard.models.ManagementSavedSearchForImportDetails]
         """
         self._saved_searches = saved_searches
+
+    @property
+    def parameters_config(self):
+        """
+        Gets the parameters_config of this ManagementDashboardForImportExportDetails.
+        Defines parameters for the dashboard.
+
+
+        :return: The parameters_config of this ManagementDashboardForImportExportDetails.
+        :rtype: list[object]
+        """
+        return self._parameters_config
+
+    @parameters_config.setter
+    def parameters_config(self, parameters_config):
+        """
+        Sets the parameters_config of this ManagementDashboardForImportExportDetails.
+        Defines parameters for the dashboard.
+
+
+        :param parameters_config: The parameters_config of this ManagementDashboardForImportExportDetails.
+        :type: list[object]
+        """
+        self._parameters_config = parameters_config
 
     @property
     def freeform_tags(self):

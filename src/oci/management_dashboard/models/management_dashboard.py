@@ -13,6 +13,10 @@ class ManagementDashboard(object):
     Properties of a dashboard, including dashboard ID.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a ManagementDashboard.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementDashboard object with values from keyword arguments.
@@ -21,6 +25,10 @@ class ManagementDashboard(object):
         :param dashboard_id:
             The value to assign to the dashboard_id property of this ManagementDashboard.
         :type dashboard_id: str
+
+        :param id:
+            The value to assign to the id property of this ManagementDashboard.
+        :type id: str
 
         :param provider_id:
             The value to assign to the provider_id property of this ManagementDashboard.
@@ -110,6 +118,16 @@ class ManagementDashboard(object):
             The value to assign to the saved_searches property of this ManagementDashboard.
         :type saved_searches: list[oci.management_dashboard.models.ManagementSavedSearch]
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this ManagementDashboard.
+            Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param parameters_config:
+            The value to assign to the parameters_config property of this ManagementDashboard.
+        :type parameters_config: list[object]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboard.
         :type freeform_tags: dict(str, str)
@@ -121,6 +139,7 @@ class ManagementDashboard(object):
         """
         self.swagger_types = {
             'dashboard_id': 'str',
+            'id': 'str',
             'provider_id': 'str',
             'provider_name': 'str',
             'provider_version': 'str',
@@ -143,12 +162,15 @@ class ManagementDashboard(object):
             'type': 'str',
             'is_favorite': 'bool',
             'saved_searches': 'list[ManagementSavedSearch]',
+            'lifecycle_state': 'str',
+            'parameters_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'dashboard_id': 'dashboardId',
+            'id': 'id',
             'provider_id': 'providerId',
             'provider_name': 'providerName',
             'provider_version': 'providerVersion',
@@ -171,11 +193,14 @@ class ManagementDashboard(object):
             'type': 'type',
             'is_favorite': 'isFavorite',
             'saved_searches': 'savedSearches',
+            'lifecycle_state': 'lifecycleState',
+            'parameters_config': 'parametersConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._dashboard_id = None
+        self._id = None
         self._provider_id = None
         self._provider_name = None
         self._provider_version = None
@@ -198,6 +223,8 @@ class ManagementDashboard(object):
         self._type = None
         self._is_favorite = None
         self._saved_searches = None
+        self._lifecycle_state = None
+        self._parameters_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -205,7 +232,7 @@ class ManagementDashboard(object):
     def dashboard_id(self):
         """
         **[Required]** Gets the dashboard_id of this ManagementDashboard.
-        ID of the dashboard.
+        ID of the dashboard.  Same as id.
 
 
         :return: The dashboard_id of this ManagementDashboard.
@@ -217,13 +244,37 @@ class ManagementDashboard(object):
     def dashboard_id(self, dashboard_id):
         """
         Sets the dashboard_id of this ManagementDashboard.
-        ID of the dashboard.
+        ID of the dashboard.  Same as id.
 
 
         :param dashboard_id: The dashboard_id of this ManagementDashboard.
         :type: str
         """
         self._dashboard_id = dashboard_id
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this ManagementDashboard.
+        ID of the dashboard.  Same as dashboardId.
+
+
+        :return: The id of this ManagementDashboard.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this ManagementDashboard.
+        ID of the dashboard.  Same as dashboardId.
+
+
+        :param id: The id of this ManagementDashboard.
+        :type: str
+        """
+        self._id = id
 
     @property
     def provider_id(self):
@@ -752,6 +803,60 @@ class ManagementDashboard(object):
         :type: list[oci.management_dashboard.models.ManagementSavedSearch]
         """
         self._saved_searches = saved_searches
+
+    @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this ManagementDashboard.
+        State of dashboard.
+
+        Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this ManagementDashboard.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this ManagementDashboard.
+        State of dashboard.
+
+
+        :param lifecycle_state: The lifecycle_state of this ManagementDashboard.
+        :type: str
+        """
+        allowed_values = ["ACTIVE"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def parameters_config(self):
+        """
+        Gets the parameters_config of this ManagementDashboard.
+        Defines parameters for the dashboard.
+
+
+        :return: The parameters_config of this ManagementDashboard.
+        :rtype: list[object]
+        """
+        return self._parameters_config
+
+    @parameters_config.setter
+    def parameters_config(self, parameters_config):
+        """
+        Sets the parameters_config of this ManagementDashboard.
+        Defines parameters for the dashboard.
+
+
+        :param parameters_config: The parameters_config of this ManagementDashboard.
+        :type: list[object]
+        """
+        self._parameters_config = parameters_config
 
     @property
     def freeform_tags(self):

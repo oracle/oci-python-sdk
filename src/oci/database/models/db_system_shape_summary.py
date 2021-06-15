@@ -48,6 +48,26 @@ class DbSystemShapeSummary(object):
             The value to assign to the core_count_increment property of this DbSystemShapeSummary.
         :type core_count_increment: int
 
+        :param min_storage_count:
+            The value to assign to the min_storage_count property of this DbSystemShapeSummary.
+        :type min_storage_count: int
+
+        :param max_storage_count:
+            The value to assign to the max_storage_count property of this DbSystemShapeSummary.
+        :type max_storage_count: int
+
+        :param available_data_storage_per_server_in_tbs:
+            The value to assign to the available_data_storage_per_server_in_tbs property of this DbSystemShapeSummary.
+        :type available_data_storage_per_server_in_tbs: float
+
+        :param available_memory_per_node_in_gbs:
+            The value to assign to the available_memory_per_node_in_gbs property of this DbSystemShapeSummary.
+        :type available_memory_per_node_in_gbs: int
+
+        :param available_db_node_per_node_in_gbs:
+            The value to assign to the available_db_node_per_node_in_gbs property of this DbSystemShapeSummary.
+        :type available_db_node_per_node_in_gbs: int
+
         :param min_core_count_per_node:
             The value to assign to the min_core_count_per_node property of this DbSystemShapeSummary.
         :type min_core_count_per_node: int
@@ -96,6 +116,11 @@ class DbSystemShapeSummary(object):
             'available_core_count': 'int',
             'minimum_core_count': 'int',
             'core_count_increment': 'int',
+            'min_storage_count': 'int',
+            'max_storage_count': 'int',
+            'available_data_storage_per_server_in_tbs': 'float',
+            'available_memory_per_node_in_gbs': 'int',
+            'available_db_node_per_node_in_gbs': 'int',
             'min_core_count_per_node': 'int',
             'available_memory_in_gbs': 'int',
             'min_memory_per_node_in_g_bs': 'int',
@@ -115,6 +140,11 @@ class DbSystemShapeSummary(object):
             'available_core_count': 'availableCoreCount',
             'minimum_core_count': 'minimumCoreCount',
             'core_count_increment': 'coreCountIncrement',
+            'min_storage_count': 'minStorageCount',
+            'max_storage_count': 'maxStorageCount',
+            'available_data_storage_per_server_in_tbs': 'availableDataStoragePerServerInTBs',
+            'available_memory_per_node_in_gbs': 'availableMemoryPerNodeInGBs',
+            'available_db_node_per_node_in_gbs': 'availableDbNodePerNodeInGBs',
             'min_core_count_per_node': 'minCoreCountPerNode',
             'available_memory_in_gbs': 'availableMemoryInGBs',
             'min_memory_per_node_in_g_bs': 'minMemoryPerNodeInGBs',
@@ -133,6 +163,11 @@ class DbSystemShapeSummary(object):
         self._available_core_count = None
         self._minimum_core_count = None
         self._core_count_increment = None
+        self._min_storage_count = None
+        self._max_storage_count = None
+        self._available_data_storage_per_server_in_tbs = None
+        self._available_memory_per_node_in_gbs = None
+        self._available_db_node_per_node_in_gbs = None
         self._min_core_count_per_node = None
         self._available_memory_in_gbs = None
         self._min_memory_per_node_in_g_bs = None
@@ -287,6 +322,126 @@ class DbSystemShapeSummary(object):
         :type: int
         """
         self._core_count_increment = core_count_increment
+
+    @property
+    def min_storage_count(self):
+        """
+        Gets the min_storage_count of this DbSystemShapeSummary.
+        The minimum number of Exadata storage servers available for the Exadata infrastructure.
+
+
+        :return: The min_storage_count of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._min_storage_count
+
+    @min_storage_count.setter
+    def min_storage_count(self, min_storage_count):
+        """
+        Sets the min_storage_count of this DbSystemShapeSummary.
+        The minimum number of Exadata storage servers available for the Exadata infrastructure.
+
+
+        :param min_storage_count: The min_storage_count of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._min_storage_count = min_storage_count
+
+    @property
+    def max_storage_count(self):
+        """
+        Gets the max_storage_count of this DbSystemShapeSummary.
+        The maximum number of Exadata storage servers available for the Exadata infrastructure.
+
+
+        :return: The max_storage_count of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._max_storage_count
+
+    @max_storage_count.setter
+    def max_storage_count(self, max_storage_count):
+        """
+        Sets the max_storage_count of this DbSystemShapeSummary.
+        The maximum number of Exadata storage servers available for the Exadata infrastructure.
+
+
+        :param max_storage_count: The max_storage_count of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._max_storage_count = max_storage_count
+
+    @property
+    def available_data_storage_per_server_in_tbs(self):
+        """
+        Gets the available_data_storage_per_server_in_tbs of this DbSystemShapeSummary.
+        The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+
+
+        :return: The available_data_storage_per_server_in_tbs of this DbSystemShapeSummary.
+        :rtype: float
+        """
+        return self._available_data_storage_per_server_in_tbs
+
+    @available_data_storage_per_server_in_tbs.setter
+    def available_data_storage_per_server_in_tbs(self, available_data_storage_per_server_in_tbs):
+        """
+        Sets the available_data_storage_per_server_in_tbs of this DbSystemShapeSummary.
+        The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
+
+
+        :param available_data_storage_per_server_in_tbs: The available_data_storage_per_server_in_tbs of this DbSystemShapeSummary.
+        :type: float
+        """
+        self._available_data_storage_per_server_in_tbs = available_data_storage_per_server_in_tbs
+
+    @property
+    def available_memory_per_node_in_gbs(self):
+        """
+        Gets the available_memory_per_node_in_gbs of this DbSystemShapeSummary.
+        The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+
+
+        :return: The available_memory_per_node_in_gbs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._available_memory_per_node_in_gbs
+
+    @available_memory_per_node_in_gbs.setter
+    def available_memory_per_node_in_gbs(self, available_memory_per_node_in_gbs):
+        """
+        Sets the available_memory_per_node_in_gbs of this DbSystemShapeSummary.
+        The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+
+
+        :param available_memory_per_node_in_gbs: The available_memory_per_node_in_gbs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._available_memory_per_node_in_gbs = available_memory_per_node_in_gbs
+
+    @property
+    def available_db_node_per_node_in_gbs(self):
+        """
+        Gets the available_db_node_per_node_in_gbs of this DbSystemShapeSummary.
+        The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+
+
+        :return: The available_db_node_per_node_in_gbs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._available_db_node_per_node_in_gbs
+
+    @available_db_node_per_node_in_gbs.setter
+    def available_db_node_per_node_in_gbs(self, available_db_node_per_node_in_gbs):
+        """
+        Sets the available_db_node_per_node_in_gbs of this DbSystemShapeSummary.
+        The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
+
+
+        :param available_db_node_per_node_in_gbs: The available_db_node_per_node_in_gbs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._available_db_node_per_node_in_gbs = available_db_node_per_node_in_gbs
 
     @property
     def min_core_count_per_node(self):
@@ -508,7 +663,7 @@ class DbSystemShapeSummary(object):
     def available_core_count_per_node(self):
         """
         Gets the available_core_count_per_node of this DbSystemShapeSummary.
-        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape. Does not apply to X6, X7, and X8 fixed-shape systems.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
 
 
         :return: The available_core_count_per_node of this DbSystemShapeSummary.
@@ -520,7 +675,7 @@ class DbSystemShapeSummary(object):
     def available_core_count_per_node(self, available_core_count_per_node):
         """
         Sets the available_core_count_per_node of this DbSystemShapeSummary.
-        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape. Does not apply to X6, X7, and X8 fixed-shape systems.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
 
 
         :param available_core_count_per_node: The available_core_count_per_node of this DbSystemShapeSummary.

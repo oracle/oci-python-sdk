@@ -11,6 +11,8 @@ from .cluster_create_options import ClusterCreateOptions
 from .cluster_endpoint_config import ClusterEndpointConfig
 from .cluster_endpoints import ClusterEndpoints
 from .cluster_metadata import ClusterMetadata
+from .cluster_migrate_to_native_vcn_details import ClusterMigrateToNativeVcnDetails
+from .cluster_migrate_to_native_vcn_status import ClusterMigrateToNativeVcnStatus
 from .cluster_options import ClusterOptions
 from .cluster_summary import ClusterSummary
 from .create_cluster_details import CreateClusterDetails
@@ -58,6 +60,8 @@ container_engine_type_mapping = {
     "ClusterEndpointConfig": ClusterEndpointConfig,
     "ClusterEndpoints": ClusterEndpoints,
     "ClusterMetadata": ClusterMetadata,
+    "ClusterMigrateToNativeVcnDetails": ClusterMigrateToNativeVcnDetails,
+    "ClusterMigrateToNativeVcnStatus": ClusterMigrateToNativeVcnStatus,
     "ClusterOptions": ClusterOptions,
     "ClusterSummary": ClusterSummary,
     "CreateClusterDetails": CreateClusterDetails,
