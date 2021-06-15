@@ -284,7 +284,11 @@ class DashxApisClient(object):
 
     def create_management_dashboard(self, create_management_dashboard_details, **kwargs):
         """
-        Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20.
+        Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20. To get an example of what needs to be passed to CREATE, one can use GET API.
+        oci management-dashboard dashboard get --management-dashboard-id  \"ocid1.managementdashboard.oc1..dashboardId1\" --query data > Create.json
+
+        Modify the Create.json by removing \"id\" attribute and other desired changes, then do
+        oci management-dashboard dashboard create  --from-json file://Create.json
 
 
         :param oci.management_dashboard.models.CreateManagementDashboardDetails create_management_dashboard_details: (required)
@@ -360,7 +364,11 @@ class DashxApisClient(object):
 
     def create_management_saved_search(self, create_management_saved_search_details, **kwargs):
         """
-        Creates a new saved search.
+        Creates a new saved search. To get an example of what needs to be passed to CREATE, one can use GET API.
+        oci management-dashboard saved-search get --management-saved-search-id ocid1.managementsavedsearch.oc1..savedsearchId1 --query data > Create.json
+
+        Modify the Create.json by removing \"id\" attribute and other desired changes, then do
+        oci management-dashboard saved-search create  --from-json file://Create.json
 
 
         :param oci.management_dashboard.models.CreateManagementSavedSearchDetails create_management_saved_search_details: (required)
@@ -600,11 +608,11 @@ class DashxApisClient(object):
 
     def export_dashboard(self, export_dashboard_id, **kwargs):
         """
-        Exports an array of dashboards and their saved searches.
+        Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. An example using OCI CLI is $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json $oci management-dashboard dashboard import --from-json file://dashboards.json
 
 
         :param str export_dashboard_id: (required)
-            {\"dashboardIds\":[\"dashboardId1\", \"dashboardId2\", ...]}
+            List of dashboardIds in plain text. The syntaxt is '{\"dashboardIds\":[\"dashboardId1\", \"dashboardId2\", ...]}'. Escaping is needed when using in OCI CLI. For example, \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\" .
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -858,7 +866,9 @@ class DashxApisClient(object):
 
     def import_dashboard(self, management_dashboard_import_details, **kwargs):
         """
-        Imports an array of dashboards and their saved searches.
+        Imports an array of dashboards and their saved searches. Import is designed to work with exportDashboard. An example using OCI CLI is
+            $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json
+            $oci management-dashboard dashboard import --from-json file://dashboards.json
 
 
         :param oci.management_dashboard.models.ManagementDashboardImportDetails management_dashboard_import_details: (required)
@@ -941,7 +951,7 @@ class DashxApisClient(object):
 
     def list_management_dashboards(self, compartment_id, **kwargs):
         """
-        Gets the list of dashboards and their saved searches in a compartment with pagination.  Returned properties are the summary.
+        Gets the list of dashboards in a compartment with pagination.  Returned properties are the summary.
 
 
         :param str compartment_id: (required)

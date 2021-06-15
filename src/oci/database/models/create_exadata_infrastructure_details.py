@@ -71,6 +71,14 @@ class CreateExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window property of this CreateExadataInfrastructureDetails.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param storage_count:
+            The value to assign to the storage_count property of this CreateExadataInfrastructureDetails.
+        :type storage_count: int
+
+        :param compute_count:
+            The value to assign to the compute_count property of this CreateExadataInfrastructureDetails.
+        :type compute_count: int
+
         :param dns_server:
             The value to assign to the dns_server property of this CreateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -102,6 +110,8 @@ class CreateExadataInfrastructureDetails(object):
             'corporate_proxy': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_window': 'MaintenanceWindow',
+            'storage_count': 'int',
+            'compute_count': 'int',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -122,6 +132,8 @@ class CreateExadataInfrastructureDetails(object):
             'corporate_proxy': 'corporateProxy',
             'contacts': 'contacts',
             'maintenance_window': 'maintenanceWindow',
+            'storage_count': 'storageCount',
+            'compute_count': 'computeCount',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'freeform_tags': 'freeformTags',
@@ -141,6 +153,8 @@ class CreateExadataInfrastructureDetails(object):
         self._corporate_proxy = None
         self._contacts = None
         self._maintenance_window = None
+        self._storage_count = None
+        self._compute_count = None
         self._dns_server = None
         self._ntp_server = None
         self._freeform_tags = None
@@ -463,6 +477,54 @@ class CreateExadataInfrastructureDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def storage_count(self):
+        """
+        Gets the storage_count of this CreateExadataInfrastructureDetails.
+        The number of storage servers for the Exadata infrastructure.
+
+
+        :return: The storage_count of this CreateExadataInfrastructureDetails.
+        :rtype: int
+        """
+        return self._storage_count
+
+    @storage_count.setter
+    def storage_count(self, storage_count):
+        """
+        Sets the storage_count of this CreateExadataInfrastructureDetails.
+        The number of storage servers for the Exadata infrastructure.
+
+
+        :param storage_count: The storage_count of this CreateExadataInfrastructureDetails.
+        :type: int
+        """
+        self._storage_count = storage_count
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this CreateExadataInfrastructureDetails.
+        The number of compute servers for the Exadata infrastructure.
+
+
+        :return: The compute_count of this CreateExadataInfrastructureDetails.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this CreateExadataInfrastructureDetails.
+        The number of compute servers for the Exadata infrastructure.
+
+
+        :param compute_count: The compute_count of this CreateExadataInfrastructureDetails.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     @property
     def dns_server(self):

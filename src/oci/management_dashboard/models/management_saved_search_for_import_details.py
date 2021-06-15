@@ -108,6 +108,10 @@ class ManagementSavedSearchForImportDetails(object):
             The value to assign to the defined_tags property of this ManagementSavedSearchForImportDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param parameters_config:
+            The value to assign to the parameters_config property of this ManagementSavedSearchForImportDetails.
+        :type parameters_config: list[object]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -127,7 +131,8 @@ class ManagementSavedSearchForImportDetails(object):
             'widget_template': 'str',
             'widget_vm': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'parameters_config': 'list[object]'
         }
 
         self.attribute_map = {
@@ -148,7 +153,8 @@ class ManagementSavedSearchForImportDetails(object):
             'widget_template': 'widgetTemplate',
             'widget_vm': 'widgetVM',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'parameters_config': 'parametersConfig'
         }
 
         self._id = None
@@ -169,6 +175,7 @@ class ManagementSavedSearchForImportDetails(object):
         self._widget_vm = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._parameters_config = None
 
     @property
     def id(self):
@@ -611,6 +618,30 @@ class ManagementSavedSearchForImportDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def parameters_config(self):
+        """
+        Gets the parameters_config of this ManagementSavedSearchForImportDetails.
+        Defines parameters for the saved search.
+
+
+        :return: The parameters_config of this ManagementSavedSearchForImportDetails.
+        :rtype: list[object]
+        """
+        return self._parameters_config
+
+    @parameters_config.setter
+    def parameters_config(self, parameters_config):
+        """
+        Sets the parameters_config of this ManagementSavedSearchForImportDetails.
+        Defines parameters for the saved search.
+
+
+        :param parameters_config: The parameters_config of this ManagementSavedSearchForImportDetails.
+        :type: list[object]
+        """
+        self._parameters_config = parameters_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

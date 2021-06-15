@@ -29,6 +29,10 @@ class ManagementSavedSearch(object):
     #: This constant has a value of "WIDGET_DONT_SHOW_IN_DASHBOARD"
     TYPE_WIDGET_DONT_SHOW_IN_DASHBOARD = "WIDGET_DONT_SHOW_IN_DASHBOARD"
 
+    #: A constant which can be used with the lifecycle_state property of a ManagementSavedSearch.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementSavedSearch object with values from keyword arguments.
@@ -116,6 +120,16 @@ class ManagementSavedSearch(object):
             The value to assign to the widget_vm property of this ManagementSavedSearch.
         :type widget_vm: str
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this ManagementSavedSearch.
+            Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param parameters_config:
+            The value to assign to the parameters_config property of this ManagementSavedSearch.
+        :type parameters_config: list[object]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementSavedSearch.
         :type freeform_tags: dict(str, str)
@@ -146,6 +160,8 @@ class ManagementSavedSearch(object):
             'metadata_version': 'str',
             'widget_template': 'str',
             'widget_vm': 'str',
+            'lifecycle_state': 'str',
+            'parameters_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -171,6 +187,8 @@ class ManagementSavedSearch(object):
             'metadata_version': 'metadataVersion',
             'widget_template': 'widgetTemplate',
             'widget_vm': 'widgetVM',
+            'lifecycle_state': 'lifecycleState',
+            'parameters_config': 'parametersConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -195,6 +213,8 @@ class ManagementSavedSearch(object):
         self._metadata_version = None
         self._widget_template = None
         self._widget_vm = None
+        self._lifecycle_state = None
+        self._parameters_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -683,6 +703,60 @@ class ManagementSavedSearch(object):
         :type: str
         """
         self._widget_vm = widget_vm
+
+    @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this ManagementSavedSearch.
+        State of dashboard.
+
+        Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this ManagementSavedSearch.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this ManagementSavedSearch.
+        State of dashboard.
+
+
+        :param lifecycle_state: The lifecycle_state of this ManagementSavedSearch.
+        :type: str
+        """
+        allowed_values = ["ACTIVE"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def parameters_config(self):
+        """
+        Gets the parameters_config of this ManagementSavedSearch.
+        Defines parameters for the saved search.
+
+
+        :return: The parameters_config of this ManagementSavedSearch.
+        :rtype: list[object]
+        """
+        return self._parameters_config
+
+    @parameters_config.setter
+    def parameters_config(self, parameters_config):
+        """
+        Sets the parameters_config of this ManagementSavedSearch.
+        Defines parameters for the saved search.
+
+
+        :param parameters_config: The parameters_config of this ManagementSavedSearch.
+        :type: list[object]
+        """
+        self._parameters_config = parameters_config
 
     @property
     def freeform_tags(self):

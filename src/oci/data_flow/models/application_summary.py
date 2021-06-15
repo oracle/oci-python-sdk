@@ -86,6 +86,10 @@ class ApplicationSummary(object):
             The value to assign to the owner_user_name property of this ApplicationSummary.
         :type owner_user_name: str
 
+        :param spark_version:
+            The value to assign to the spark_version property of this ApplicationSummary.
+        :type spark_version: str
+
         :param time_created:
             The value to assign to the time_created property of this ApplicationSummary.
         :type time_created: datetime
@@ -105,6 +109,7 @@ class ApplicationSummary(object):
             'lifecycle_state': 'str',
             'owner_principal_id': 'str',
             'owner_user_name': 'str',
+            'spark_version': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
@@ -119,6 +124,7 @@ class ApplicationSummary(object):
             'lifecycle_state': 'lifecycleState',
             'owner_principal_id': 'ownerPrincipalId',
             'owner_user_name': 'ownerUserName',
+            'spark_version': 'sparkVersion',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
@@ -132,6 +138,7 @@ class ApplicationSummary(object):
         self._lifecycle_state = None
         self._owner_principal_id = None
         self._owner_user_name = None
+        self._spark_version = None
         self._time_created = None
         self._time_updated = None
 
@@ -378,6 +385,30 @@ class ApplicationSummary(object):
         :type: str
         """
         self._owner_user_name = owner_user_name
+
+    @property
+    def spark_version(self):
+        """
+        **[Required]** Gets the spark_version of this ApplicationSummary.
+        The Spark version utilized to run the application.
+
+
+        :return: The spark_version of this ApplicationSummary.
+        :rtype: str
+        """
+        return self._spark_version
+
+    @spark_version.setter
+    def spark_version(self, spark_version):
+        """
+        Sets the spark_version of this ApplicationSummary.
+        The Spark version utilized to run the application.
+
+
+        :param spark_version: The spark_version of this ApplicationSummary.
+        :type: str
+        """
+        self._spark_version = spark_version
 
     @property
     def time_created(self):

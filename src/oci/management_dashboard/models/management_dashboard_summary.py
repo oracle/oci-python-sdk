@@ -26,6 +26,10 @@ class ManagementDashboardSummary(object):
             The value to assign to the dashboard_id property of this ManagementDashboardSummary.
         :type dashboard_id: str
 
+        :param id:
+            The value to assign to the id property of this ManagementDashboardSummary.
+        :type id: str
+
         :param display_name:
             The value to assign to the display_name property of this ManagementDashboardSummary.
         :type display_name: str
@@ -91,6 +95,7 @@ class ManagementDashboardSummary(object):
         """
         self.swagger_types = {
             'dashboard_id': 'str',
+            'id': 'str',
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
@@ -110,6 +115,7 @@ class ManagementDashboardSummary(object):
 
         self.attribute_map = {
             'dashboard_id': 'dashboardId',
+            'id': 'id',
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
@@ -128,6 +134,7 @@ class ManagementDashboardSummary(object):
         }
 
         self._dashboard_id = None
+        self._id = None
         self._display_name = None
         self._description = None
         self._compartment_id = None
@@ -148,7 +155,7 @@ class ManagementDashboardSummary(object):
     def dashboard_id(self):
         """
         **[Required]** Gets the dashboard_id of this ManagementDashboardSummary.
-        ID of the dashboard.
+        ID of the dashboard.  Same as id.
 
 
         :return: The dashboard_id of this ManagementDashboardSummary.
@@ -160,13 +167,37 @@ class ManagementDashboardSummary(object):
     def dashboard_id(self, dashboard_id):
         """
         Sets the dashboard_id of this ManagementDashboardSummary.
-        ID of the dashboard.
+        ID of the dashboard.  Same as id.
 
 
         :param dashboard_id: The dashboard_id of this ManagementDashboardSummary.
         :type: str
         """
         self._dashboard_id = dashboard_id
+
+    @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this ManagementDashboardSummary.
+        ID of the dashboard.  Same as dashboardId.
+
+
+        :return: The id of this ManagementDashboardSummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this ManagementDashboardSummary.
+        ID of the dashboard.  Same as dashboardId.
+
+
+        :param id: The id of this ManagementDashboardSummary.
+        :type: str
+        """
+        self._id = id
 
     @property
     def display_name(self):

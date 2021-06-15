@@ -55,6 +55,10 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window property of this UpdateExadataInfrastructureDetails.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param additional_storage_count:
+            The value to assign to the additional_storage_count property of this UpdateExadataInfrastructureDetails.
+        :type additional_storage_count: int
+
         :param dns_server:
             The value to assign to the dns_server property of this UpdateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -86,6 +90,7 @@ class UpdateExadataInfrastructureDetails(object):
             'corporate_proxy': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_window': 'MaintenanceWindow',
+            'additional_storage_count': 'int',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'time_zone': 'str',
@@ -103,6 +108,7 @@ class UpdateExadataInfrastructureDetails(object):
             'corporate_proxy': 'corporateProxy',
             'contacts': 'contacts',
             'maintenance_window': 'maintenanceWindow',
+            'additional_storage_count': 'additionalStorageCount',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'time_zone': 'timeZone',
@@ -119,6 +125,7 @@ class UpdateExadataInfrastructureDetails(object):
         self._corporate_proxy = None
         self._contacts = None
         self._maintenance_window = None
+        self._additional_storage_count = None
         self._dns_server = None
         self._ntp_server = None
         self._time_zone = None
@@ -336,6 +343,30 @@ class UpdateExadataInfrastructureDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def additional_storage_count(self):
+        """
+        Gets the additional_storage_count of this UpdateExadataInfrastructureDetails.
+        The requested number of additional storage servers for the Exadata infrastructure.
+
+
+        :return: The additional_storage_count of this UpdateExadataInfrastructureDetails.
+        :rtype: int
+        """
+        return self._additional_storage_count
+
+    @additional_storage_count.setter
+    def additional_storage_count(self, additional_storage_count):
+        """
+        Sets the additional_storage_count of this UpdateExadataInfrastructureDetails.
+        The requested number of additional storage servers for the Exadata infrastructure.
+
+
+        :param additional_storage_count: The additional_storage_count of this UpdateExadataInfrastructureDetails.
+        :type: int
+        """
+        self._additional_storage_count = additional_storage_count
 
     @property
     def dns_server(self):
