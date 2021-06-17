@@ -102,6 +102,7 @@ from .create_external_pluggable_database_details import CreateExternalPluggableD
 from .create_key_store_details import CreateKeyStoreDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
+from .create_pluggable_database_details import CreatePluggableDatabaseDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
@@ -182,6 +183,7 @@ from .launch_db_system_details import LaunchDbSystemDetails
 from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetails
 from .launch_db_system_from_database_details import LaunchDbSystemFromDatabaseDetails
 from .launch_db_system_from_db_system_details import LaunchDbSystemFromDbSystemDetails
+from .local_clone_pluggable_database_details import LocalClonePluggableDatabaseDetails
 from .maintenance_run import MaintenanceRun
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
@@ -197,8 +199,12 @@ from .patch_history_entry import PatchHistoryEntry
 from .patch_history_entry_summary import PatchHistoryEntrySummary
 from .patch_summary import PatchSummary
 from .peer_autonomous_container_database_backup_config import PeerAutonomousContainerDatabaseBackupConfig
+from .pluggable_database import PluggableDatabase
+from .pluggable_database_connection_strings import PluggableDatabaseConnectionStrings
+from .pluggable_database_summary import PluggableDatabaseSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
+from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
@@ -229,6 +235,7 @@ from .update_history_entry import UpdateHistoryEntry
 from .update_history_entry_summary import UpdateHistoryEntrySummary
 from .update_key_store_details import UpdateKeyStoreDetails
 from .update_maintenance_run_details import UpdateMaintenanceRunDetails
+from .update_pluggable_database_details import UpdatePluggableDatabaseDetails
 from .update_summary import UpdateSummary
 from .update_vm_cluster_details import UpdateVmClusterDetails
 from .update_vm_cluster_network_details import UpdateVmClusterNetworkDetails
@@ -341,6 +348,7 @@ database_type_mapping = {
     "CreateKeyStoreDetails": CreateKeyStoreDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
+    "CreatePluggableDatabaseDetails": CreatePluggableDatabaseDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
@@ -421,6 +429,7 @@ database_type_mapping = {
     "LaunchDbSystemFromBackupDetails": LaunchDbSystemFromBackupDetails,
     "LaunchDbSystemFromDatabaseDetails": LaunchDbSystemFromDatabaseDetails,
     "LaunchDbSystemFromDbSystemDetails": LaunchDbSystemFromDbSystemDetails,
+    "LocalClonePluggableDatabaseDetails": LocalClonePluggableDatabaseDetails,
     "MaintenanceRun": MaintenanceRun,
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,
@@ -436,8 +445,12 @@ database_type_mapping = {
     "PatchHistoryEntrySummary": PatchHistoryEntrySummary,
     "PatchSummary": PatchSummary,
     "PeerAutonomousContainerDatabaseBackupConfig": PeerAutonomousContainerDatabaseBackupConfig,
+    "PluggableDatabase": PluggableDatabase,
+    "PluggableDatabaseConnectionStrings": PluggableDatabaseConnectionStrings,
+    "PluggableDatabaseSummary": PluggableDatabaseSummary,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
+    "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "ScanDetails": ScanDetails,
@@ -468,6 +481,7 @@ database_type_mapping = {
     "UpdateHistoryEntrySummary": UpdateHistoryEntrySummary,
     "UpdateKeyStoreDetails": UpdateKeyStoreDetails,
     "UpdateMaintenanceRunDetails": UpdateMaintenanceRunDetails,
+    "UpdatePluggableDatabaseDetails": UpdatePluggableDatabaseDetails,
     "UpdateSummary": UpdateSummary,
     "UpdateVmClusterDetails": UpdateVmClusterDetails,
     "UpdateVmClusterNetworkDetails": UpdateVmClusterNetworkDetails,

@@ -1694,6 +1694,46 @@ def test_create_key_store(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreatePluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreatePluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreatePluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_pluggable_database(
+                create_pluggable_database_details=request.pop(util.camelize('CreatePluggableDatabaseDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreatePluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateVmCluster'):
@@ -2452,6 +2492,46 @@ def test_delete_key_store(testing_service_client):
             result,
             service_error,
             'delete_key_store',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeletePluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeletePluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeletePluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pluggable_database(
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeletePluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pluggable_database',
             True,
             False
         )
@@ -4914,6 +4994,46 @@ def test_get_maintenance_run(testing_service_client):
             result,
             service_error,
             'maintenanceRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetPluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetPluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetPluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_pluggable_database(
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetPluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
             False,
             False
         )
@@ -7608,6 +7728,63 @@ def test_list_maintenance_runs(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_pluggable_databases(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListPluggableDatabases'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListPluggableDatabases')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListPluggableDatabases')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_pluggable_databases(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pluggable_databases(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pluggable_databases(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListPluggableDatabases',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabaseSummary',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_vm_cluster_networks(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusterNetworks'):
@@ -7852,6 +8029,47 @@ def test_list_vm_clusters(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_local_clone_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'LocalClonePluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'LocalClonePluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='LocalClonePluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.local_clone_pluggable_database(
+                local_clone_pluggable_database_details=request.pop(util.camelize('LocalClonePluggableDatabaseDetails')),
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'LocalClonePluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_migrate_exadata_db_system_resource_model(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'MigrateExadataDbSystemResourceModel'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8050,6 +8268,47 @@ def test_reinstate_data_guard_association(testing_service_client):
             result,
             service_error,
             'dataGuardAssociation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_remote_clone_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RemoteClonePluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RemoteClonePluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RemoteClonePluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.remote_clone_pluggable_database(
+                remote_clone_pluggable_database_details=request.pop(util.camelize('RemoteClonePluggableDatabaseDetails')),
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RemoteClonePluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
             False,
             False
         )
@@ -8498,6 +8757,46 @@ def test_start_autonomous_database(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_start_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'StartPluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'StartPluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='StartPluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.start_pluggable_database(
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'StartPluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_stop_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StopAutonomousDatabase'):
@@ -8533,6 +8832,46 @@ def test_stop_autonomous_database(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_stop_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'StopPluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'StopPluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='StopPluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.stop_pluggable_database(
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'StopPluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
             False,
             False
         )
@@ -9677,6 +10016,47 @@ def test_update_maintenance_run(testing_service_client):
             result,
             service_error,
             'maintenanceRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_pluggable_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdatePluggableDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdatePluggableDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdatePluggableDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_pluggable_database(
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                update_pluggable_database_details=request.pop(util.camelize('UpdatePluggableDatabaseDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdatePluggableDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pluggableDatabase',
             False,
             False
         )

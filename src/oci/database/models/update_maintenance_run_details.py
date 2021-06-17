@@ -174,7 +174,11 @@ class UpdateMaintenanceRunDetails(object):
     def patching_mode(self):
         """
         Gets the patching_mode of this UpdateMaintenanceRunDetails.
-        Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+        Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
         Allowed values for this property are: "ROLLING", "NONROLLING"
 
@@ -188,7 +192,11 @@ class UpdateMaintenanceRunDetails(object):
     def patching_mode(self, patching_mode):
         """
         Sets the patching_mode of this UpdateMaintenanceRunDetails.
-        Maintenance method, it will be either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+        Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
 
         :param patching_mode: The patching_mode of this UpdateMaintenanceRunDetails.
