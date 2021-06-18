@@ -5,7 +5,7 @@ Oracle Cloud Infrastructure Python SDK
 About
 =====
 
-This is the Python SDK for Oracle Cloud Infrastructure. Python 3.6+ are supported.
+This is the Python SDK for Oracle Cloud Infrastructure. Python 3.6, 3.7, 3.8 and 3.9 are supported.
 
 .. code-block:: pycon
 
