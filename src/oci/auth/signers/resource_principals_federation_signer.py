@@ -18,7 +18,8 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
     METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 
     def __init__(self, resource_principal_token_endpoint=None, resource_principal_session_token_endpoint=None,
-                 resource_principal_token_path_provider=None, retry_strategy=None, log_requests=None):
+                 resource_principal_token_path_provider=None, retry_strategy=None, log_requests=None,
+                 generic_headers=None, **kwargs):
         """
         :param resource_principal_token_endpoint: The endpoint that can provide the resource principal token.  This is
                                                   a service endpoint.
@@ -73,7 +74,10 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
 
         # Get the Resource Principal Session Token and use it to set up the signer
         self.rpst = self.get_security_token()
-        super(ResourcePrincipalsFederationSigner, self).__init__(self.rpst, self.session_key_supplier.get_key_pair()['private'])
+        if generic_headers:
+            super(ResourcePrincipalsFederationSigner, self).__init__(self.rpst, self.session_key_supplier.get_key_pair()['private'], generic_headers=generic_headers)
+        else:
+            super(ResourcePrincipalsFederationSigner, self).__init__(self.rpst, self.session_key_supplier.get_key_pair()['private'])
 
     def get_security_token(self):
         """
