@@ -1902,6 +1902,7 @@ class ShowOCIData(object):
                                   str(db['db_workload']) + " - " +
                                   str(db['character_set']) + " - " + str(db['lifecycle_state']) + backupstr),
                          'backups': self.__get_database_db_backups(db['backups']) if 'backups' in db else [],
+                         'auto_backup_enabled': db['auto_backup_enabled'],
                          'time_created': db['time_created'],
                          'defined_tags': db['defined_tags'],
                          'dataguard': self.__get_database_db_dataguard(db['dataguard']),
@@ -1910,6 +1911,7 @@ class ShowOCIData(object):
                          'pdb_name': pdb_name,
                          'db_workload': db['db_workload'],
                          'character_set': db['character_set'],
+                         'ncharacter_set': db['ncharacter_set'],
                          'db_unique_name': db['db_unique_name'],
                          'lifecycle_state': db['lifecycle_state'],
                          'id': db['id']
