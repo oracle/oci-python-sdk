@@ -4,12 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.40.1 - TBD
+2.40.1 - 2021-06-22
 ====================
 
 Added
 -----
-* TBD
+* Support for virtual machine and bare metal pluggable databases in the Database service
+
+Changed
+-------
+* Changed allowed versions of cryptography package to a range, starting from from 3.2.1 up to 3.4.7
 
 ====================
 2.40.0 - 2021-06-15
