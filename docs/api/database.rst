@@ -116,6 +116,7 @@ Database
     oci.database.models.CreateKeyStoreDetails
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
+    oci.database.models.CreatePluggableDatabaseDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
     oci.database.models.CreateVmClusterDetails
@@ -196,6 +197,7 @@ Database
     oci.database.models.LaunchDbSystemFromBackupDetails
     oci.database.models.LaunchDbSystemFromDatabaseDetails
     oci.database.models.LaunchDbSystemFromDbSystemDetails
+    oci.database.models.LocalClonePluggableDatabaseDetails
     oci.database.models.MaintenanceRun
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow
@@ -211,8 +213,12 @@ Database
     oci.database.models.PatchHistoryEntrySummary
     oci.database.models.PatchSummary
     oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
+    oci.database.models.PluggableDatabase
+    oci.database.models.PluggableDatabaseConnectionStrings
+    oci.database.models.PluggableDatabaseSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
+    oci.database.models.RemoteClonePluggableDatabaseDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.ScanDetails
@@ -243,6 +249,7 @@ Database
     oci.database.models.UpdateHistoryEntrySummary
     oci.database.models.UpdateKeyStoreDetails
     oci.database.models.UpdateMaintenanceRunDetails
+    oci.database.models.UpdatePluggableDatabaseDetails
     oci.database.models.UpdateSummary
     oci.database.models.UpdateVmClusterDetails
     oci.database.models.UpdateVmClusterNetworkDetails
