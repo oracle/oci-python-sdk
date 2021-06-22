@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExternalMacsConnectorDetails(UpdateExternalDatabaseConnectorDetails):
     """
-    Details for updating an external `Management Agent cloud service (MACS)`__ database connection.
+    Details for updating an external `Management Agent cloud service (MACS)`__
+    database connection.
 
     __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
     """
