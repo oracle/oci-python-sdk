@@ -166,6 +166,10 @@ class SearchResult(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param attribute_type:
+            The value to assign to the attribute_type property of this SearchResult.
+        :type attribute_type: str
+
         :param expression:
             The value to assign to the expression property of this SearchResult.
         :type expression: str
@@ -204,6 +208,7 @@ class SearchResult(object):
             'path': 'str',
             'business_name': 'str',
             'lifecycle_state': 'str',
+            'attribute_type': 'str',
             'expression': 'str',
             'custom_properties': 'list[FacetedSearchCustomProperty]'
         }
@@ -237,6 +242,7 @@ class SearchResult(object):
             'path': 'path',
             'business_name': 'businessName',
             'lifecycle_state': 'lifecycleState',
+            'attribute_type': 'attributeType',
             'expression': 'expression',
             'custom_properties': 'customProperties'
         }
@@ -269,6 +275,7 @@ class SearchResult(object):
         self._path = None
         self._business_name = None
         self._lifecycle_state = None
+        self._attribute_type = None
         self._expression = None
         self._custom_properties = None
 
@@ -961,6 +968,30 @@ class SearchResult(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def attribute_type(self):
+        """
+        Gets the attribute_type of this SearchResult.
+        Type name of the attribute. For example - complex, primitive, or array.
+
+
+        :return: The attribute_type of this SearchResult.
+        :rtype: str
+        """
+        return self._attribute_type
+
+    @attribute_type.setter
+    def attribute_type(self, attribute_type):
+        """
+        Sets the attribute_type of this SearchResult.
+        Type name of the attribute. For example - complex, primitive, or array.
+
+
+        :param attribute_type: The attribute_type of this SearchResult.
+        :type: str
+        """
+        self._attribute_type = attribute_type
 
     @property
     def expression(self):

@@ -79,6 +79,10 @@ class CreateJobDefinitionDetails(object):
     #: This constant has a value of "ASYNC_DELETE"
     JOB_TYPE_ASYNC_DELETE = "ASYNC_DELETE"
 
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "IMPORT_DATA_ASSET"
+    JOB_TYPE_IMPORT_DATA_ASSET = "IMPORT_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateJobDefinitionDetails object with values from keyword arguments.
@@ -94,7 +98,7 @@ class CreateJobDefinitionDetails(object):
 
         :param job_type:
             The value to assign to the job_type property of this CreateJobDefinitionDetails.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
         :type job_type: str
 
         :param is_incremental:
@@ -212,7 +216,7 @@ class CreateJobDefinitionDetails(object):
         **[Required]** Gets the job_type of this CreateJobDefinitionDetails.
         Type of the job definition.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
 
 
         :return: The job_type of this CreateJobDefinitionDetails.
@@ -230,7 +234,7 @@ class CreateJobDefinitionDetails(object):
         :param job_type: The job_type of this CreateJobDefinitionDetails.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             raise ValueError(
                 "Invalid value for `job_type`, must be None or one of {0}"

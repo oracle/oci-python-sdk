@@ -90,7 +90,7 @@ class SuppressionSummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this SuppressionSummary.
+        **[Required]** Gets the compartment_id of this SuppressionSummary.
         The OCID for the compartment.
 
 
@@ -114,7 +114,7 @@ class SuppressionSummary(object):
     @property
     def email_address(self):
         """
-        Gets the email_address of this SuppressionSummary.
+        **[Required]** Gets the email_address of this SuppressionSummary.
         The email address of the suppression.
 
 
@@ -138,7 +138,7 @@ class SuppressionSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this SuppressionSummary.
+        **[Required]** Gets the id of this SuppressionSummary.
         The unique OCID of the suppression.
 
 

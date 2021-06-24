@@ -1,0 +1,11 @@
+CreateOkeClusterDeployEnvironmentDetails
+========================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: CreateOkeClusterDeployEnvironmentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

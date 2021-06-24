@@ -241,6 +241,47 @@ def test_change_catalog_private_endpoint_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_change_metastore_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ChangeMetastoreCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ChangeMetastoreCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ChangeMetastoreCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.change_metastore_compartment(
+                change_metastore_compartment_details=request.pop(util.camelize('ChangeMetastoreCompartmentDetails')),
+                metastore_id=request.pop(util.camelize('metastoreId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ChangeMetastoreCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_metastore_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_create_attribute(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'CreateAttribute'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -904,6 +945,46 @@ def test_create_job_execution(testing_service_client):
             result,
             service_error,
             'jobExecution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_create_metastore(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'CreateMetastore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'CreateMetastore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='CreateMetastore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.create_metastore(
+                create_metastore_details=request.pop(util.camelize('CreateMetastoreDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'CreateMetastore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_metastore',
             False,
             False
         )
@@ -1698,6 +1779,46 @@ def test_delete_job_definition(testing_service_client):
             result,
             service_error,
             'delete_job_definition',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_delete_metastore(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'DeleteMetastore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'DeleteMetastore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='DeleteMetastore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.delete_metastore(
+                metastore_id=request.pop(util.camelize('metastoreId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'DeleteMetastore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_metastore',
             True,
             False
         )
@@ -2791,6 +2912,46 @@ def test_get_job_metrics(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_get_metastore(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'GetMetastore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'GetMetastore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='GetMetastore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.get_metastore(
+                metastore_id=request.pop(util.camelize('metastoreId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'GetMetastore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metastore',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_get_namespace(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'GetNamespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3075,6 +3236,49 @@ def test_import_connection(testing_service_client):
             result,
             service_error,
             'connection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_import_data_asset(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ImportDataAsset'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ImportDataAsset')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ImportDataAsset')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.import_data_asset(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                import_data_asset_details=request.pop(util.camelize('ImportDataAssetDetails')),
+                import_type=request.pop(util.camelize('importType')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ImportDataAsset',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'importDataAssetJobResult',
             False,
             False
         )
@@ -4389,6 +4593,66 @@ def test_list_jobs(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_metastores(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListMetastores'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListMetastores')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListMetastores')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_metastores(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_metastores(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_metastores(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListMetastores',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metastoreSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_list_namespaces(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'ListNamespaces'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5333,6 +5597,49 @@ def test_suggest_matches(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_synchronous_export_data_asset(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'SynchronousExportDataAsset'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'SynchronousExportDataAsset')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='SynchronousExportDataAsset')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.synchronous_export_data_asset(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                synchronous_export_data_asset_details=request.pop(util.camelize('SynchronousExportDataAssetDetails')),
+                export_type=request.pop(util.camelize('exportType')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'SynchronousExportDataAsset',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_test_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'TestConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5835,6 +6142,47 @@ def test_update_job_definition(testing_service_client):
             result,
             service_error,
             'jobDefinition',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_update_metastore(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'UpdateMetastore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'UpdateMetastore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='UpdateMetastore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.update_metastore(
+                metastore_id=request.pop(util.camelize('metastoreId')),
+                update_metastore_details=request.pop(util.camelize('UpdateMetastoreDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'UpdateMetastore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metastore',
             False,
             False
         )

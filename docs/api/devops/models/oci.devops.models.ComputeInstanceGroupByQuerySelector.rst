@@ -1,0 +1,11 @@
+ComputeInstanceGroupByQuerySelector
+===================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: ComputeInstanceGroupByQuerySelector
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

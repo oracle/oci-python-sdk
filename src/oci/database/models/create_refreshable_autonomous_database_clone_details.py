@@ -39,6 +39,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the cpu_core_count property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type cpu_core_count: int
 
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type ocpu_count: float
+
         :param db_workload:
             The value to assign to the db_workload property of this CreateRefreshableAutonomousDatabaseCloneDetails.
             Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
@@ -47,6 +51,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type data_storage_size_in_tbs: int
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type data_storage_size_in_gbs: int
 
         :param is_free_tier:
             The value to assign to the is_free_tier property of this CreateRefreshableAutonomousDatabaseCloneDetails.
@@ -156,8 +164,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'compartment_id': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
+            'ocpu_count': 'float',
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
+            'data_storage_size_in_gbs': 'int',
             'is_free_tier': 'bool',
             'kms_key_id': 'str',
             'vault_id': 'str',
@@ -189,8 +199,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'compartment_id': 'compartmentId',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
+            'ocpu_count': 'ocpuCount',
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'is_free_tier': 'isFreeTier',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
@@ -221,8 +233,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._compartment_id = None
         self._db_name = None
         self._cpu_core_count = None
+        self._ocpu_count = None
         self._db_workload = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._is_free_tier = None
         self._kms_key_id = None
         self._vault_id = None

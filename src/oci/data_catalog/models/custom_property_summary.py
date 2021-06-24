@@ -146,6 +146,22 @@ class CustomPropertySummary(object):
             The value to assign to the allowed_values property of this CustomPropertySummary.
         :type allowed_values: list[str]
 
+        :param time_updated:
+            The value to assign to the time_updated property of this CustomPropertySummary.
+        :type time_updated: datetime
+
+        :param created_by_id:
+            The value to assign to the created_by_id property of this CustomPropertySummary.
+        :type created_by_id: str
+
+        :param updated_by_id:
+            The value to assign to the updated_by_id property of this CustomPropertySummary.
+        :type updated_by_id: str
+
+        :param is_event_enabled:
+            The value to assign to the is_event_enabled property of this CustomPropertySummary.
+        :type is_event_enabled: bool
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -165,7 +181,11 @@ class CustomPropertySummary(object):
             'lifecycle_state': 'str',
             'usage_count': 'int',
             'scope': 'list[CustomPropertyTypeUsage]',
-            'allowed_values': 'list[str]'
+            'allowed_values': 'list[str]',
+            'time_updated': 'datetime',
+            'created_by_id': 'str',
+            'updated_by_id': 'str',
+            'is_event_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -186,7 +206,11 @@ class CustomPropertySummary(object):
             'lifecycle_state': 'lifecycleState',
             'usage_count': 'usageCount',
             'scope': 'scope',
-            'allowed_values': 'allowedValues'
+            'allowed_values': 'allowedValues',
+            'time_updated': 'timeUpdated',
+            'created_by_id': 'createdById',
+            'updated_by_id': 'updatedById',
+            'is_event_enabled': 'isEventEnabled'
         }
 
         self._key = None
@@ -207,6 +231,10 @@ class CustomPropertySummary(object):
         self._usage_count = None
         self._scope = None
         self._allowed_values = None
+        self._time_updated = None
+        self._created_by_id = None
+        self._updated_by_id = None
+        self._is_event_enabled = None
 
     @property
     def key(self):
@@ -657,6 +685,106 @@ class CustomPropertySummary(object):
         :type: list[str]
         """
         self._allowed_values = allowed_values
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this CustomPropertySummary.
+        The last time that any change was made to the custom property. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_updated of this CustomPropertySummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this CustomPropertySummary.
+        The last time that any change was made to the custom property. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_updated: The time_updated of this CustomPropertySummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
+    def created_by_id(self):
+        """
+        Gets the created_by_id of this CustomPropertySummary.
+        OCID of the user who created the custom property.
+
+
+        :return: The created_by_id of this CustomPropertySummary.
+        :rtype: str
+        """
+        return self._created_by_id
+
+    @created_by_id.setter
+    def created_by_id(self, created_by_id):
+        """
+        Sets the created_by_id of this CustomPropertySummary.
+        OCID of the user who created the custom property.
+
+
+        :param created_by_id: The created_by_id of this CustomPropertySummary.
+        :type: str
+        """
+        self._created_by_id = created_by_id
+
+    @property
+    def updated_by_id(self):
+        """
+        Gets the updated_by_id of this CustomPropertySummary.
+        OCID of the user who last modified the custom property.
+
+
+        :return: The updated_by_id of this CustomPropertySummary.
+        :rtype: str
+        """
+        return self._updated_by_id
+
+    @updated_by_id.setter
+    def updated_by_id(self, updated_by_id):
+        """
+        Sets the updated_by_id of this CustomPropertySummary.
+        OCID of the user who last modified the custom property.
+
+
+        :param updated_by_id: The updated_by_id of this CustomPropertySummary.
+        :type: str
+        """
+        self._updated_by_id = updated_by_id
+
+    @property
+    def is_event_enabled(self):
+        """
+        Gets the is_event_enabled of this CustomPropertySummary.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :return: The is_event_enabled of this CustomPropertySummary.
+        :rtype: bool
+        """
+        return self._is_event_enabled
+
+    @is_event_enabled.setter
+    def is_event_enabled(self, is_event_enabled):
+        """
+        Sets the is_event_enabled of this CustomPropertySummary.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :param is_event_enabled: The is_event_enabled of this CustomPropertySummary.
+        :type: bool
+        """
+        self._is_event_enabled = is_event_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

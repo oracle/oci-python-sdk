@@ -122,6 +122,14 @@ class Entity(object):
             The value to assign to the time_external property of this Entity.
         :type time_external: datetime
 
+        :param time_harvested:
+            The value to assign to the time_harvested property of this Entity.
+        :type time_harvested: datetime
+
+        :param object_relationships:
+            The value to assign to the object_relationships property of this Entity.
+        :type object_relationships: list[oci.data_catalog.models.ObjectRelationship]
+
         :param time_status_updated:
             The value to assign to the time_status_updated property of this Entity.
         :type time_status_updated: datetime
@@ -191,6 +199,8 @@ class Entity(object):
             'pattern_key': 'str',
             'realized_expression': 'str',
             'time_external': 'datetime',
+            'time_harvested': 'datetime',
+            'object_relationships': 'list[ObjectRelationship]',
             'time_status_updated': 'datetime',
             'is_logical': 'bool',
             'is_partition': 'bool',
@@ -220,6 +230,8 @@ class Entity(object):
             'pattern_key': 'patternKey',
             'realized_expression': 'realizedExpression',
             'time_external': 'timeExternal',
+            'time_harvested': 'timeHarvested',
+            'object_relationships': 'objectRelationships',
             'time_status_updated': 'timeStatusUpdated',
             'is_logical': 'isLogical',
             'is_partition': 'isPartition',
@@ -248,6 +260,8 @@ class Entity(object):
         self._pattern_key = None
         self._realized_expression = None
         self._time_external = None
+        self._time_harvested = None
+        self._object_relationships = None
         self._time_status_updated = None
         self._is_logical = None
         self._is_partition = None
@@ -591,6 +605,58 @@ class Entity(object):
         :type: datetime
         """
         self._time_external = time_external
+
+    @property
+    def time_harvested(self):
+        """
+        Gets the time_harvested of this Entity.
+        The date and time the entity was harvested, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_harvested of this Entity.
+        :rtype: datetime
+        """
+        return self._time_harvested
+
+    @time_harvested.setter
+    def time_harvested(self, time_harvested):
+        """
+        Sets the time_harvested of this Entity.
+        The date and time the entity was harvested, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_harvested: The time_harvested of this Entity.
+        :type: datetime
+        """
+        self._time_harvested = time_harvested
+
+    @property
+    def object_relationships(self):
+        """
+        Gets the object_relationships of this Entity.
+        List of objects and their relationships to this entity.
+
+
+        :return: The object_relationships of this Entity.
+        :rtype: list[oci.data_catalog.models.ObjectRelationship]
+        """
+        return self._object_relationships
+
+    @object_relationships.setter
+    def object_relationships(self, object_relationships):
+        """
+        Sets the object_relationships of this Entity.
+        List of objects and their relationships to this entity.
+
+
+        :param object_relationships: The object_relationships of this Entity.
+        :type: list[oci.data_catalog.models.ObjectRelationship]
+        """
+        self._object_relationships = object_relationships
 
     @property
     def time_status_updated(self):

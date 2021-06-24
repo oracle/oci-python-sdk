@@ -54,6 +54,10 @@ class UpdateCustomPropertyDetails(object):
             The value to assign to the is_hidden_in_search property of this UpdateCustomPropertyDetails.
         :type is_hidden_in_search: bool
 
+        :param is_event_enabled:
+            The value to assign to the is_event_enabled property of this UpdateCustomPropertyDetails.
+        :type is_event_enabled: bool
+
         :param allowed_values:
             The value to assign to the allowed_values property of this UpdateCustomPropertyDetails.
         :type allowed_values: list[str]
@@ -73,6 +77,7 @@ class UpdateCustomPropertyDetails(object):
             'is_editable': 'bool',
             'is_shown_in_list': 'bool',
             'is_hidden_in_search': 'bool',
+            'is_event_enabled': 'bool',
             'allowed_values': 'list[str]',
             'properties': 'dict(str, dict(str, str))'
         }
@@ -87,6 +92,7 @@ class UpdateCustomPropertyDetails(object):
             'is_editable': 'isEditable',
             'is_shown_in_list': 'isShownInList',
             'is_hidden_in_search': 'isHiddenInSearch',
+            'is_event_enabled': 'isEventEnabled',
             'allowed_values': 'allowedValues',
             'properties': 'properties'
         }
@@ -100,6 +106,7 @@ class UpdateCustomPropertyDetails(object):
         self._is_editable = None
         self._is_shown_in_list = None
         self._is_hidden_in_search = None
+        self._is_event_enabled = None
         self._allowed_values = None
         self._properties = None
 
@@ -320,6 +327,30 @@ class UpdateCustomPropertyDetails(object):
         :type: bool
         """
         self._is_hidden_in_search = is_hidden_in_search
+
+    @property
+    def is_event_enabled(self):
+        """
+        Gets the is_event_enabled of this UpdateCustomPropertyDetails.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :return: The is_event_enabled of this UpdateCustomPropertyDetails.
+        :rtype: bool
+        """
+        return self._is_event_enabled
+
+    @is_event_enabled.setter
+    def is_event_enabled(self, is_event_enabled):
+        """
+        Sets the is_event_enabled of this UpdateCustomPropertyDetails.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :param is_event_enabled: The is_event_enabled of this UpdateCustomPropertyDetails.
+        :type: bool
+        """
+        self._is_event_enabled = is_event_enabled
 
     @property
     def allowed_values(self):

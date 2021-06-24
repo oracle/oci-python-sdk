@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/devops/pom.xml</module>
     <module>poms/jms/pom.xml</module>
     <module>poms/generic_artifacts_content/pom.xml</module>
     <module>poms/bastion/pom.xml</module>

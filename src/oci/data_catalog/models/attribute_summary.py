@@ -158,6 +158,14 @@ class AttributeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type associated_rule_types: list[str]
 
+        :param is_derived_attribute:
+            The value to assign to the is_derived_attribute property of this AttributeSummary.
+        :type is_derived_attribute: bool
+
+        :param time_updated:
+            The value to assign to the time_updated property of this AttributeSummary.
+        :type time_updated: datetime
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -182,7 +190,9 @@ class AttributeSummary(object):
             'external_parent_attribute_key': 'str',
             'path': 'str',
             'custom_property_members': 'list[CustomPropertyGetUsage]',
-            'associated_rule_types': 'list[str]'
+            'associated_rule_types': 'list[str]',
+            'is_derived_attribute': 'bool',
+            'time_updated': 'datetime'
         }
 
         self.attribute_map = {
@@ -208,7 +218,9 @@ class AttributeSummary(object):
             'external_parent_attribute_key': 'externalParentAttributeKey',
             'path': 'path',
             'custom_property_members': 'customPropertyMembers',
-            'associated_rule_types': 'associatedRuleTypes'
+            'associated_rule_types': 'associatedRuleTypes',
+            'is_derived_attribute': 'isDerivedAttribute',
+            'time_updated': 'timeUpdated'
         }
 
         self._key = None
@@ -234,6 +246,8 @@ class AttributeSummary(object):
         self._path = None
         self._custom_property_members = None
         self._associated_rule_types = None
+        self._is_derived_attribute = None
+        self._time_updated = None
 
     @property
     def key(self):
@@ -810,6 +824,58 @@ class AttributeSummary(object):
         if associated_rule_types:
             associated_rule_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in associated_rule_types]
         self._associated_rule_types = associated_rule_types
+
+    @property
+    def is_derived_attribute(self):
+        """
+        Gets the is_derived_attribute of this AttributeSummary.
+        Whether a column is derived or not.
+
+
+        :return: The is_derived_attribute of this AttributeSummary.
+        :rtype: bool
+        """
+        return self._is_derived_attribute
+
+    @is_derived_attribute.setter
+    def is_derived_attribute(self, is_derived_attribute):
+        """
+        Sets the is_derived_attribute of this AttributeSummary.
+        Whether a column is derived or not.
+
+
+        :param is_derived_attribute: The is_derived_attribute of this AttributeSummary.
+        :type: bool
+        """
+        self._is_derived_attribute = is_derived_attribute
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this AttributeSummary.
+        The last time that any change was made to the attribute. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_updated of this AttributeSummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this AttributeSummary.
+        The last time that any change was made to the attribute. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_updated: The time_updated of this AttributeSummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
 
     def __repr__(self):
         return formatted_flat_dict(self)

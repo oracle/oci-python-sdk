@@ -1,0 +1,11 @@
+CreateFunctionDeployStageDetails
+================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: CreateFunctionDeployStageDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
