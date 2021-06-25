@@ -585,19 +585,34 @@ class ShowOCIOutput(object):
 
             self.print_header("DRGs", 2)
             for drg in drgs:
-                print(self.taba + "DRG   Name   : " + drg['name'] + ", Redundant: " + drg['redundancy'])
+                print(self.taba + "DRG   Name      : " + drg['name'] + ", Redundant: " + drg['redundancy'])
+
                 for index, arr in enumerate(drg['ip_sec_connections'], start=1):
-                    print(self.tabs + "      IPSEC " + str(index) + ": " + arr['name'] + " (" + arr['tunnels_status'] + ")")
+                    drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
+                    print(self.tabs + "      IPSEC " + str(index) + "   : " + arr['name'] + " (" + arr['tunnels_status'] + ")" + drg_route_table)
+
                 for index, arr in enumerate(drg['virtual_circuits'], start=1):
-                    print(self.tabs + "      VC " + str(index) + "    : " + arr['name'] + " (" + arr['bgp_session_state'] + ")")
+                    drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
+                    print(self.tabs + "      VC " + str(index) + "      : " + arr['name'] + " (" + arr['bgp_session_state'] + ")" + drg_route_table)
+
                 for index, arr in enumerate(drg['remote_peerings'], start=1):
-                    print(self.tabs + "      RPC " + str(index) + "  : " + arr['name'] + " (" + arr['peering_status'] + ")")
+                    drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
+                    print(self.tabs + "      RPC " + str(index) + "     : " + arr['name'] + " (" + arr['peering_status'] + ")" + drg_route_table)
+
                 for index, arr in enumerate(drg['vcns'], start=1):
-                    print(self.tabs + "      VCN " + str(index) + "  : " + arr['name'])
+                    drg_route_table = ", DRG Route: " + arr['drg_route_table'] if arr['drg_route_table'] else ""
+                    route_table = ", Route Table: " + arr['route_table'] if arr['route_table'] else ""
+                    print(self.tabs + "      VCN " + str(index) + "     : " + arr['name'] + drg_route_table + route_table)
+
+                for rt in drg['drg_route_tables']:
+                    print("")
+                    print(self.tabs + "      DRG Route : " + rt['display_name'] + ", is_ecmp_enabled: " + rt['is_ecmp_enabled'])
+                    for index, arr in enumerate(rt['route_rules'], start=1):
+                        print(self.tabs + "         Rule " + str(index) + " : " + arr['name'])
                 print("")
 
         except Exception as e:
-            self.__print_error("__print_core_network_vcn", e)
+            self.__print_error("__print_core_network_drg", e)
 
     ##########################################################################
     # print network remote peering
@@ -1909,7 +1924,7 @@ class ShowOCIOutput(object):
                     num = 0
                     for esx in val['esxihosts']:
                         num += 1
-                        print(self.tabs + "ESXi " + str(num) + "   : " + esx['display_name'] + ", Created: " + esx['time_created'][0:16] + " (" + esx['lifecycle_state'] + ")")
+                        print(self.tabs + "ESXi " + str(num) + "   : " + esx['display_name'] + ", Created: " + esx['time_created'][0:16] + " (" + esx['lifecycle_state'] + "),  Billing End Date: " + esx['billing_contract_end_date'][0:16] + ", Curr SKU: " + esx['current_sku'] + ", Next SKU: " + esx['next_sku'])
 
                     print("")
 

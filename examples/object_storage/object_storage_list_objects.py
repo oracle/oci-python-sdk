@@ -43,7 +43,7 @@ parser.add_argument('-t', default="", dest='config_profile', help='Config file s
 parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
 parser.add_argument('-ip', action='store_true', default=False, dest='is_instance_principals', help='Use Instance Principals for Authentication')
 parser.add_argument('-dt', action='store_true', default=False, dest='is_delegation_token', help='Use Delegation Token for Authentication')
-parser.add_argument('-c', type=argparse.FileType('r'), dest='config_file', help="Config File (default=~/.oci/config)")
+parser.add_argument('-c', default="", dest='config_file', help="Config File (default=~/.oci/config)")
 parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket Name')
 parser.add_argument('-sp', default="", dest='source_prefix', help='Source Prefix Include')
 parser.add_argument('-se', default="", dest='source_prefix_exclude', help='Source Prefix Exclude')

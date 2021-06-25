@@ -134,7 +134,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.38.0"
+    oci_compatible_version = "2.39.1"
 
     ##########################################################################
     # Global Constants
@@ -151,8 +151,9 @@ class ShowOCIService(object):
     C_NETWORK_VLAN = 'vlan'
     C_NETWORK_NAT = 'nat'
     C_NETWORK_DRG = 'drg'
-    C_NETWORK_DRG_AT = 'drg_attached'
     C_NETWORK_CPE = 'cpe'
+    C_NETWORK_DRG_AT = 'drg_attached'
+    C_NETWORK_DRG_RT = 'drg_route_tables'
     C_NETWORK_RPC = 'rpc'
     C_NETWORK_IGW = 'igw'
     C_NETWORK_LPG = 'lpg'
@@ -622,6 +623,20 @@ class ShowOCIService(object):
 
         except Exception as e:
             self.__print_error("get_network_vcn", e)
+
+    ##########################################################################
+    # get_network_drg_route_table
+    ##########################################################################
+    def get_network_drg_route_table(self, drg_route_table_id):
+        try:
+            route = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_DRG_RT, 'id', drg_route_table_id)
+            if route:
+                if 'display_name' in route:
+                    return route['display_name']
+            return ""
+
+        except Exception as e:
+            self.__print_error("get_network_drg_route_table", e)
 
     ##########################################################################
     # return identity data
@@ -1907,6 +1922,7 @@ class ShowOCIService(object):
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_NAT)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DRG)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DRG_AT)
+                self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DRG_RT)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_CPE)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_IPS)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_RPC)
@@ -1945,8 +1961,8 @@ class ShowOCIService(object):
                     network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments)
                     network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
                     network[self.C_NETWORK_NAT] += self.__load_core_network_nat(virtual_network, compartments)
-                    network[self.C_NETWORK_DRG] += self.__load_core_network_drg(virtual_network, compartments)
                     network[self.C_NETWORK_DRG_AT] += self.__load_core_network_dra(virtual_network, compartments)
+                    network[self.C_NETWORK_DRG] += self.__load_core_network_drg(virtual_network, compartments)
                     network[self.C_NETWORK_CPE] += self.__load_core_network_cpe(virtual_network, compartments)
                     network[self.C_NETWORK_IPS] += self.__load_core_network_ips(virtual_network, compartments)
                     network[self.C_NETWORK_RPC] += self.__load_core_network_rpc(virtual_network, compartments)
@@ -2266,7 +2282,17 @@ class ShowOCIService(object):
                            'is_cross_tenancy_peering': str(rpc.is_cross_tenancy_peering),
                            'peer_region_name': str(rpc.peer_region_name), 'peer_tenancy_id': str(rpc.peer_tenancy_id),
                            'peering_status': str(rpc.peering_status), 'compartment_name': str(compartment['name']),
-                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region']),
+                           'drg_route_table_id': "",
+                           'drg_route_table': ""
+                           }
+
+                    # find Attachment for the RPC
+                    drg_attachment = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_DRG_AT, 'rpc_id', rpc.id)
+                    if drg_attachment:
+                        val['drg_route_table_id'] = drg_attachment['drg_route_table_id']
+                        val['drg_route_table'] = self.get_network_drg_route_table(drg_attachment['drg_route_table_id'])
+
                     data.append(val)
                     cnt += 1
             self.__load_print_cnt(cnt, start_time)
@@ -3153,6 +3179,7 @@ class ShowOCIService(object):
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_drg_attachments,
                         compartment['id'],
+                        attachment_type="ALL",
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
@@ -3180,8 +3207,26 @@ class ShowOCIService(object):
                             'route_table_id': "" if str(arr.route_table_id) == "None" else str(arr.route_table_id),
                             'compartment_name': str(compartment['name']),
                             'compartment_id': str(compartment['id']),
-                            'region_name': str(self.config['region'])
+                            'region_name': str(self.config['region']),
+                            'ipsec_id': "",
+                            'ipsec_connection_id': "",
+                            'virtual_cirtcuit_id': "",
+                            'rpc_id': ""
                         }
+
+                        # Get attachment id
+                        if arr.network_details:
+                            if arr.network_details.type == "IPSEC_TUNNEL":
+                                val['ipsec_id'] = arr.network_details.id
+                                val['ipsec_connection_id'] = arr.network_details.ipsec_connection_id
+                            if arr.network_details.type == "VCN":
+                                val['vcn_id'] = arr.network_details.id
+                                val['route_table_id'] = arr.network_details.route_table_id
+                            if arr.network_details.type == "REMOTE_PEERING_CONNECTION":
+                                val['rpc_id'] = arr.network_details.id
+                            if arr.network_details.type == "VIRTUAL_CIRCUIT":
+                                val['virtual_cirtcuit_id'] = arr.network_details.id
+
                         data.append(val)
                         cnt += 1
 
@@ -3238,6 +3283,7 @@ class ShowOCIService(object):
                                'name': str(arr.display_name),
                                'time_created': str(arr.time_created),
                                'redundancy': "",
+                               'drg_route_tables': [],
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -3254,7 +3300,37 @@ class ShowOCIService(object):
                         except oci.exceptions.ServiceError as e:
                             if self.__check_service_error(e.code):
                                 self.__load_print_auth_warning()
-                                continue
+
+                        # DRG Route Tables
+                        try:
+                            # oci.core.models.DrgRedundancyStatus
+                            route_tables = virtual_network.list_drg_route_tables(
+                                arr.id,
+                                lifecycle_state="AVAILABLE",
+                                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                            ).data
+
+                            for rt in route_tables:
+                                rta = {
+                                    'id': str(rt.id),
+                                    'drg_id': str(arr.id),
+                                    'display_name': str(rt.display_name),
+                                    'time_created': str(rt.time_created),
+                                    'route_rules': self.__load_core_network_drg_route_rules(virtual_network, rt.id),
+                                    'import_drg_route_distribution_id': str(rt.import_drg_route_distribution_id),
+                                    'is_ecmp_enabled': str(rt.is_ecmp_enabled),
+                                    'defined_tags': [] if rt.defined_tags is None else rt.defined_tags,
+                                    'freeform_tags': [] if rt.freeform_tags is None else rt.freeform_tags
+                                }
+                                val['drg_route_tables'].append(rta)
+                                network = self.data[self.C_NETWORK]
+                                network[self.C_NETWORK_DRG_RT].append(rta)
+
+                        except oci.exceptions.ServiceError as e:
+                            if e.code == 'NotAuthorizedOrNotFound':
+                                pass
+                            if self.__check_service_error(e.code):
+                                pass
 
                         data.append(val)
                         cnt += 1
@@ -3270,6 +3346,58 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_core_network_drg", e)
+            return data
+
+    ##########################################################################
+    # data network read cpes
+    ##########################################################################
+    def __load_core_network_drg_route_rules(self, virtual_network, drg_route_id):
+
+        data = []
+        try:
+
+            arrs = []
+            try:
+                arrs = oci.pagination.list_call_get_all_results(
+                    virtual_network.list_drg_route_rules,
+                    drg_route_id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
+            except oci.exceptions.ServiceError:
+                return data
+
+            # loop on array
+            # arr = oci.core.models.DrgRouteRule
+            for arr in arrs:
+                val = {
+                    'name': str(arr.route_type) + " - " + str(arr.destination_type) + " : " + str(arr.destination).ljust(18, ' ') + " -> " + str(arr.route_provenance),
+                    'drg_route_id': drg_route_id,
+                    'destination': str(arr.destination),
+                    'destination_type': str(arr.destination_type),
+                    'next_hop_drg_attachment_id': str(arr.next_hop_drg_attachment_id),
+                    'route_type': str(arr.route_type),
+                    'is_conflict': str(arr.is_conflict),
+                    'is_blackhole': str(arr.is_blackhole),
+                    'id': str(arr.id),
+                    'route_provenance': str(arr.route_provenance)
+                }
+
+                # Get vcn name if VCN as destination
+                if arr.route_provenance == "VCN":
+                    drgatt = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_DRG_AT, 'id', arr.next_hop_drg_attachment_id)
+                    if drgatt:
+                        vcn_name = self.get_network_vcn(drgatt['vcn_id'])
+                        val['name'] += " (" + vcn_name + ")"
+                data.append(val)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_drg_route_rules", e)
             return data
 
     ##########################################################################
@@ -3502,7 +3630,17 @@ class ShowOCIService(object):
                            'service_type': str(arr.service_type), 'cross_connect_mappings': data_cc,
                            'type': str(arr.type), 'time_created': str(arr.time_created),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
-                           'region_name': str(self.config['region'])}
+                           'region_name': str(self.config['region']),
+                           'drg_route_table_id': "",
+                           'drg_route_table': ""
+                           }
+
+                    # find Attachment for the VC
+                    drg_attachment = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_DRG_AT, 'virtual_cirtcuit_id', arr.id)
+                    if drg_attachment:
+                        val['drg_route_table_id'] = drg_attachment['drg_route_table_id']
+                        val['drg_route_table'] = self.get_network_drg_route_table(drg_attachment['drg_route_table_id'])
+
                     data.append(val)
                     cnt += 1
 
@@ -3571,7 +3709,8 @@ class ShowOCIService(object):
                                            'routing': str(tunnel.routing),
                                            'cpe_ip': str(tunnel.cpe_ip),
                                            'vpn_ip': str(tunnel.vpn_ip),
-                                           'bgp_info': ""}
+                                           'bgp_info': ""
+                                           }
                                 if tunnels_status:
                                     tunnels_status += " "
                                 tunnels_status += str(tunnel.status)
@@ -3593,7 +3732,17 @@ class ShowOCIService(object):
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                                'region_name': str(self.config['region']),
-                               'static_routes': [str(es) for es in arr.static_routes], 'tunnels': data_tun}
+                               'static_routes': [str(es) for es in arr.static_routes], 'tunnels': data_tun,
+                               'drg_route_table_id': "",
+                               'drg_route_table': ""
+                               }
+
+                        # find Attachment for the IPSEC
+                        drg_attachment = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_DRG_AT, 'ipsec_connection_id', arr.id)
+                        if drg_attachment:
+                            val['drg_route_table_id'] = drg_attachment['drg_route_table_id']
+                            val['drg_route_table'] = self.get_network_drg_route_table(drg_attachment['drg_route_table_id'])
+
                         data.append(val)
                         cnt += 1
 
@@ -6299,19 +6448,19 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 database_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=2)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=15)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
-            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer, timeout=2)
+            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer, timeout=15)
             if self.flags.proxy:
                 nosql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer, timeout=2)
+            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer, timeout=15)
             if self.flags.proxy:
                 mysql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer, timeout=2)
+            gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer, timeout=15)
             if self.flags.proxy:
                 gg_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -6989,11 +7138,20 @@ class ShowOCIService(object):
                          'defined_tags': [] if db.defined_tags is None else db.defined_tags,
                          'freeform_tags': [] if db.freeform_tags is None else db.freeform_tags,
                          'time_created': str(db.time_created),
+                         'last_backup_timestamp': str(db.last_backup_timestamp),
+                         'kms_key_id': str(db.kms_key_id),
+                         'source_database_point_in_time_recovery_timestamp': str(db.source_database_point_in_time_recovery_timestamp),
+                         'database_software_image_id': str(db.database_software_image_id),
+                         'connection_strings_cdb': "",
                          'auto_backup_enabled': False}
 
                 if db.db_backup_config is not None:
                     if db.db_backup_config.auto_backup_enabled:
                         value['auto_backup_enabled'] = True
+
+                if db.connection_strings is not None:
+                    if db.connection_strings.cdb_default:
+                        value['connection_strings_cdb'] = db.connection_strings.cdb_default
 
                 if not self.flags.skip_backups:
                     value['backups'] = self.__load_database_dbsystems_db_backups(database_client, db.id)
@@ -10590,6 +10748,7 @@ class ShowOCIService(object):
                             esxis = esxi_client.list_esxi_hosts(
                                 sddc_id=vmware.id,
                                 sort_by="displayName",
+                                lifecycle_state="ACTIVE",
                                 retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                             ).data
 
@@ -10606,6 +10765,9 @@ class ShowOCIService(object):
                                         'id': str(esxi.id),
                                         'display_name': str(esxi.display_name),
                                         'compute_instance_id': str(esxi.compute_instance_id),
+                                        'billing_contract_end_date': str(esxi.billing_contract_end_date),
+                                        'current_sku': str(esxi.current_sku),
+                                        'next_sku': str(esxi.next_sku),
                                         'time_created': str(esxi.time_created),
                                         'time_updated': str(esxi.time_updated),
                                         'lifecycle_state': str(esxi.lifecycle_state),
