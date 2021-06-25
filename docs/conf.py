@@ -15,7 +15,8 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
-    "autodocsumm"
+    "autodocsumm",
+    "sphinx.ext.autosectionlabel"
 ]
 
 # Automatically generate stub pages for the .. autosummary:: directive when combined with :toctree:

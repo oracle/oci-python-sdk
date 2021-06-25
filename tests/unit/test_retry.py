@@ -17,8 +17,7 @@ import time
 
 from oci.exceptions import ServiceError
 from oci.retry import RetryStrategyBuilder
-from oci.retry.retry_utils import should_record_body_position_for_retry, record_body_position_for_retry, \
-    rewind_body_for_retry
+from oci.util import should_record_body_position_for_retry, record_body_position_for_rewind, rewind_body
 import tests.util
 
 
@@ -345,30 +344,30 @@ def test_should_record_body_position_for_retry():
 
 def test_record_body_position_for_retry():
     # Happy case, the body supports tell and there is no error
-    is_body_retryable, body_position = record_body_position_for_retry(body=FileLikeBody())
+    is_body_retryable, body_position = record_body_position_for_rewind(body=FileLikeBody())
     assert is_body_retryable
     assert body_position == 5
 
     # Case when the body does not support tell, we should not retry
-    is_body_retryable, body_position = record_body_position_for_retry(body=FileLikeBody(no_tell=True))
+    is_body_retryable, body_position = record_body_position_for_rewind(body=FileLikeBody(no_tell=True))
     assert not is_body_retryable
     assert not body_position
 
     # Case when tell raises error, we should not retry
-    is_body_retryable, body_position = record_body_position_for_retry(body=FileLikeBody(bad_tell=True))
+    is_body_retryable, body_position = record_body_position_for_rewind(body=FileLikeBody(bad_tell=True))
     assert not is_body_retryable
     assert not body_position
 
 
 def test_rewind_body_for_retry():
     # Happy case, the body supports seek and there is no error
-    should_retry = rewind_body_for_retry(body=FileLikeBody(), body_position=5)
+    should_retry = rewind_body(body=FileLikeBody(), body_position=5)
     assert should_retry
 
     # Case when the body does not support seek, we should not retry
-    should_retry = rewind_body_for_retry(body=FileLikeBody(no_seek=True), body_position=5)
+    should_retry = rewind_body(body=FileLikeBody(no_seek=True), body_position=5)
     assert not should_retry
 
     # Case when seek raises error, we should not retry
-    should_retry = rewind_body_for_retry(body=FileLikeBody(bad_seek=True), body_position=5)
+    should_retry = rewind_body(body=FileLikeBody(bad_seek=True), body_position=5)
     assert not should_retry

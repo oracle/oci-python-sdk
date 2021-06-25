@@ -12,12 +12,29 @@ from oci._vendor.requests import Request
 from oci.exceptions import InvalidConfig, InvalidPrivateKey, MissingPrivateKeyPassphrase
 from oci.signer import load_private_key, load_private_key_from_file, inject_missing_headers, Signer
 from .utils import generate_key, serialize_key, verify_signature
+import io
+import subprocess
+import sys
+from tests.integ.util import create_large_file
+from oci.util import DEFAULT_PART_SIZE
 
 
 def as_bytes(value):
     value = value or ""
     if isinstance(value, six.text_type):
         value = value.encode("utf-8")
+    elif hasattr(value, "buffer") or hasattr(value, "read"):
+        content = b''
+        chunk = ""
+        while True:
+            if hasattr(value, "read"):
+                chunk = value.read(DEFAULT_PART_SIZE)
+            elif hasattr(value, "buffer"):
+                chunk = value.buffer.read(DEFAULT_PART_SIZE)
+            if len(chunk) == 0 or chunk == b'':
+                break
+            content += chunk
+        value = content
     return value
 
 
@@ -36,6 +53,15 @@ def request_body(request):
 @pytest.fixture
 def prepared_request(request_body):
     return Request(url="")
+
+
+@pytest.fixture(scope='function')
+def content_input_file():
+    filename = 'tests/resources/content_input.txt'
+    create_large_file(filename, 3)
+    yield filename
+    if os.path.exists(filename):
+        os.remove(filename)
 
 
 @pytest.fixture(scope="module")
@@ -160,6 +186,69 @@ def test_inject_headers(request_body, sign_body, enforce_content_headers, existi
 
     for header, expected_value in six.iteritems(expected):
         assert request.headers[header] == expected_value
+
+
+def test_inject_headers_for_body_as_file(content_input_file):
+    with open(content_input_file, "rb") as test_file:
+        request = Request(url="http://some.domain.com?query=string", data=test_file).prepare()
+        inject_missing_headers(request, sign_body=True, enforce_content_headers=True)
+        expected = {
+            "host": "some.domain.com",
+            "content-type": "application/octet-stream",
+            "content-length": str(os.stat(content_input_file).st_size),
+            "x-content-sha256": base64_sha256(test_file)
+        }
+        for header, expected_value in six.iteritems(expected):
+            assert request.headers[header] == expected_value
+
+
+def test_inject_headers_for_body_as_io_bytes():
+    binary_data = b'0123456789abcdefg'
+    data = io.BytesIO(binary_data)
+    request = Request(url="http://some.domain.com?query=string", data=data).prepare()
+    inject_missing_headers(request, sign_body=True, enforce_content_headers=True)
+    expected = {
+        "host": "some.domain.com",
+        "content-type": "application/octet-stream",
+        "content-length": str(len(binary_data)),
+        "x-content-sha256": base64_sha256(data)
+    }
+    for header, expected_value in six.iteritems(expected):
+        assert request.headers[header] == expected_value
+
+
+def test_inject_headers_for_zero_length_stream():
+    zero_content_file_path = os.path.join('tests', 'resources', 'zero_length_file.bin')
+    with open(zero_content_file_path, 'wb'):
+        pass
+    with open(zero_content_file_path, "rb") as test_file:
+        request = Request(url="http://some.domain.com?query=string", data=test_file).prepare()
+        inject_missing_headers(request, sign_body=True, enforce_content_headers=True)
+        expected = {
+            "host": "some.domain.com",
+            "content-type": "application/octet-stream",
+            "content-length": str(os.stat(zero_content_file_path).st_size),
+            "x-content-sha256": base64_sha256(test_file)
+        }
+        for header, expected_value in six.iteritems(expected):
+            assert request.headers[header] == expected_value
+    if os.path.exists(zero_content_file_path):
+        os.remove(zero_content_file_path)
+
+
+def test_inject_headers_from_stdin():
+    if sys.platform == 'win32':
+        pytest.skip("Stream piping tests don't run on Windows")
+    small_file_path = os.path.join('tests', 'resources', 'small_file.bin')
+    create_large_file(small_file_path, 5)  # Make a 5 MiB file
+    print('cat-ing file and piping to script')
+    cat_small_file = subprocess.Popen(['cat', small_file_path], stdout=subprocess.PIPE)
+    call_return = subprocess.call(['python', 'tests/scripts/sign_from_stdin.py', str(os.stat(small_file_path).st_size)],
+                                  stdin=cat_small_file.stdout)
+    cat_small_file.wait()
+    if os.path.exists(small_file_path):
+        os.remove(small_file_path)
+    assert call_return == 0
 
 
 def test_from_file_expands_user(monkeypatch, private_key, pass_phrase, private_key_file):

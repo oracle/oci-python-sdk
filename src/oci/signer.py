@@ -12,6 +12,7 @@ import functools
 import os
 
 from oci._vendor import six
+from oci.util import record_body_position_for_rewind, rewind_body, back_up_body_calculate_stream_content_length, read_stream_for_signing
 
 from ._vendor import httpsig_cffi, requests
 from .exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
@@ -19,7 +20,9 @@ from .exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
 from cryptography.exceptions import UnsupportedAlgorithm
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
+import logging
 
+logger = logging.getLogger(__name__)
 SIGNATURE_VERSION = "1"
 
 
@@ -91,22 +94,47 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
     request.headers.setdefault(
         "host", six.moves.urllib.parse.urlparse(request.url).netloc)
 
-    if enforce_content_headers:
-        request.headers.setdefault("content-type", "application/json")
+    if hasattr(request.body, "buffer") or hasattr(request.body, "read"):
+        request.headers.setdefault("content-type", "application/octet-stream")
+    request.headers.setdefault("content-type", "application/json")
 
+    if enforce_content_headers:
         # Requests with a body need to send content-type,
         # content-length, and x-content-sha256
-        if sign_body:
-            # TODO: does not handle streaming bodies (files, stdin)
+        if "x-content-sha256" not in request.headers and sign_body:
             body = request.body or ""
+            m = hashlib.sha256()
+            # Handle String types
             if isinstance(body, six.string_types):
                 body = body.encode("utf-8")
-            if "x-content-sha256" not in request.headers:
-                m = hashlib.sha256(body)
+                request.headers.setdefault("content-length", str(len(body)))
+                m.update(body)
+            # Handle bytes
+            elif isinstance(body, (bytes, bytearray)):
+                m.update(body)
+            # Handling signing for Files/stdin
+            elif hasattr(body, "buffer") or hasattr(body, "read"):
+                is_body_rewindable, original_position = record_body_position_for_rewind(body)
+                if is_body_rewindable:
+                    content_length = read_stream_for_signing(m, body)
+                    if content_length == -1:
+                        raise IOError("Unable to read stream for signing! Please sign the stream yourself by using the custom header x-content-sha256")
+                    request.headers.setdefault("content-length", str(content_length))
+                    is_rewind_success = rewind_body(body, original_position)
+                    if not is_rewind_success:
+                        raise IOError("Unable to rewind request body while signing!")
+                else:
+                    logger.warning("Stream cannot be rewound, trying to backup and sign the body!")
+                    stream = back_up_body_calculate_stream_content_length(body)
+                    # Updating request body as it cannot be rewound
+                    request.body = stream.get("byte_content")
+                    m.update(stream.get("byte_content"))
+                    request.headers.setdefault("content-length", str(stream.get("content_length")))
+            # Update sha256 header
+            if m:
                 base64digest = base64.b64encode(m.digest())
                 base64string = base64digest.decode("utf-8")
                 request.headers["x-content-sha256"] = base64string
-            request.headers.setdefault("content-length", str(len(body)))
 
 
 # HeaderSigner doesn't support private keys with passwords.
