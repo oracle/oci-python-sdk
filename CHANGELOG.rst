@@ -21,6 +21,9 @@ Breaking
 --------
 * The property `cpu_core_count` was made optional in model CreateAutonomousDatabaseBase in the Database service
 * `DISPLAYNAME` was removed as allowed value for the SortBy property in method `list_job_executions` under the Data Catalog service
+* Util function `should_record_body_position_for_retry` was moved from src/oci/retry/retry_utils.py to src/oci/util.py
+* Util function `record_body_position_for_retry` was renamed to `record_body_position_for_rewind` and was moved from src/oci/retry/retry_utils.py to src/oci/util.py
+* Util function `rewind_body_for_retry` was renamed to `rewind_body` and was moved from src/oci/retry/retry_utils.py to src/oci/util.py
 
 ====================
 2.40.1 - 2021-06-22
