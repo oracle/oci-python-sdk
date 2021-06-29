@@ -9,6 +9,7 @@ This section describes SDK-specific behaviors:
 * :doc:`Passing explicit null/None values </pass-explicit-null>`
 * :doc:`Retries </sdk_behaviors/retries>`
 * :doc:`Calculating stream content length </sdk_behaviors/calculate_content_length>`
+* :doc:`Signing bodies </sdk_behaviors/signing_bodies>`
 
 .. toctree::
     :hidden:
@@ -19,3 +20,4 @@ This section describes SDK-specific behaviors:
     /pass-explicit-null
     retries
     calculate_content_length
+    signing_bodies

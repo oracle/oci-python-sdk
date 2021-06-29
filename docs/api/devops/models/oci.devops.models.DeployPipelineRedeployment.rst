@@ -1,0 +1,11 @@
+DeployPipelineRedeployment
+==========================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: DeployPipelineRedeployment
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

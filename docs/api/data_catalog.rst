@@ -35,6 +35,7 @@ Data Catalog
     oci.data_catalog.models.CatalogSummary
     oci.data_catalog.models.ChangeCatalogCompartmentDetails
     oci.data_catalog.models.ChangeCatalogPrivateEndpointCompartmentDetails
+    oci.data_catalog.models.ChangeMetastoreCompartmentDetails
     oci.data_catalog.models.Connection
     oci.data_catalog.models.ConnectionAliasSummary
     oci.data_catalog.models.ConnectionCollection
@@ -51,6 +52,7 @@ Data Catalog
     oci.data_catalog.models.CreateJobDefinitionDetails
     oci.data_catalog.models.CreateJobDetails
     oci.data_catalog.models.CreateJobExecutionDetails
+    oci.data_catalog.models.CreateMetastoreDetails
     oci.data_catalog.models.CreateNamespaceDetails
     oci.data_catalog.models.CreatePatternDetails
     oci.data_catalog.models.CreateTagDetails
@@ -64,6 +66,7 @@ Data Catalog
     oci.data_catalog.models.CustomPropertyTypeUsage
     oci.data_catalog.models.DataAsset
     oci.data_catalog.models.DataAssetCollection
+    oci.data_catalog.models.DataAssetExportScope
     oci.data_catalog.models.DataAssetPermissionsSummary
     oci.data_catalog.models.DataAssetSummary
     oci.data_catalog.models.DataAssetTag
@@ -78,6 +81,7 @@ Data Catalog
     oci.data_catalog.models.EntityTag
     oci.data_catalog.models.EntityTagCollection
     oci.data_catalog.models.EntityTagSummary
+    oci.data_catalog.models.ExportDataAssetDetails
     oci.data_catalog.models.FacetedSearchAggregation
     oci.data_catalog.models.FacetedSearchCustomProperty
     oci.data_catalog.models.FacetedSearchDateFilterRequest
@@ -96,6 +100,8 @@ Data Catalog
     oci.data_catalog.models.GlossarySummary
     oci.data_catalog.models.GlossaryTreeElement
     oci.data_catalog.models.ImportConnectionDetails
+    oci.data_catalog.models.ImportDataAssetDetails
+    oci.data_catalog.models.ImportDataAssetJobResult
     oci.data_catalog.models.ImportGlossaryDetails
     oci.data_catalog.models.Job
     oci.data_catalog.models.JobCollection
@@ -114,9 +120,12 @@ Data Catalog
     oci.data_catalog.models.JobMetricCollection
     oci.data_catalog.models.JobMetricSummary
     oci.data_catalog.models.JobSummary
+    oci.data_catalog.models.Metastore
+    oci.data_catalog.models.MetastoreSummary
     oci.data_catalog.models.Namespace
     oci.data_catalog.models.NamespaceCollection
     oci.data_catalog.models.NamespaceSummary
+    oci.data_catalog.models.ObjectRelationship
     oci.data_catalog.models.ParseConnectionDetails
     oci.data_catalog.models.Pattern
     oci.data_catalog.models.PatternCollection
@@ -157,6 +166,7 @@ Data Catalog
     oci.data_catalog.models.UpdateGlossaryDetails
     oci.data_catalog.models.UpdateJobDefinitionDetails
     oci.data_catalog.models.UpdateJobDetails
+    oci.data_catalog.models.UpdateMetastoreDetails
     oci.data_catalog.models.UpdateNamespaceDetails
     oci.data_catalog.models.UpdatePatternDetails
     oci.data_catalog.models.UpdateTermDetails

@@ -21,6 +21,7 @@ from .catalog_private_endpoint_summary import CatalogPrivateEndpointSummary
 from .catalog_summary import CatalogSummary
 from .change_catalog_compartment_details import ChangeCatalogCompartmentDetails
 from .change_catalog_private_endpoint_compartment_details import ChangeCatalogPrivateEndpointCompartmentDetails
+from .change_metastore_compartment_details import ChangeMetastoreCompartmentDetails
 from .connection import Connection
 from .connection_alias_summary import ConnectionAliasSummary
 from .connection_collection import ConnectionCollection
@@ -37,6 +38,7 @@ from .create_glossary_details import CreateGlossaryDetails
 from .create_job_definition_details import CreateJobDefinitionDetails
 from .create_job_details import CreateJobDetails
 from .create_job_execution_details import CreateJobExecutionDetails
+from .create_metastore_details import CreateMetastoreDetails
 from .create_namespace_details import CreateNamespaceDetails
 from .create_pattern_details import CreatePatternDetails
 from .create_tag_details import CreateTagDetails
@@ -50,6 +52,7 @@ from .custom_property_summary import CustomPropertySummary
 from .custom_property_type_usage import CustomPropertyTypeUsage
 from .data_asset import DataAsset
 from .data_asset_collection import DataAssetCollection
+from .data_asset_export_scope import DataAssetExportScope
 from .data_asset_permissions_summary import DataAssetPermissionsSummary
 from .data_asset_summary import DataAssetSummary
 from .data_asset_tag import DataAssetTag
@@ -64,6 +67,7 @@ from .entity_summary import EntitySummary
 from .entity_tag import EntityTag
 from .entity_tag_collection import EntityTagCollection
 from .entity_tag_summary import EntityTagSummary
+from .export_data_asset_details import ExportDataAssetDetails
 from .faceted_search_aggregation import FacetedSearchAggregation
 from .faceted_search_custom_property import FacetedSearchCustomProperty
 from .faceted_search_date_filter_request import FacetedSearchDateFilterRequest
@@ -82,6 +86,8 @@ from .glossary_permissions_summary import GlossaryPermissionsSummary
 from .glossary_summary import GlossarySummary
 from .glossary_tree_element import GlossaryTreeElement
 from .import_connection_details import ImportConnectionDetails
+from .import_data_asset_details import ImportDataAssetDetails
+from .import_data_asset_job_result import ImportDataAssetJobResult
 from .import_glossary_details import ImportGlossaryDetails
 from .job import Job
 from .job_collection import JobCollection
@@ -100,9 +106,12 @@ from .job_metric import JobMetric
 from .job_metric_collection import JobMetricCollection
 from .job_metric_summary import JobMetricSummary
 from .job_summary import JobSummary
+from .metastore import Metastore
+from .metastore_summary import MetastoreSummary
 from .namespace import Namespace
 from .namespace_collection import NamespaceCollection
 from .namespace_summary import NamespaceSummary
+from .object_relationship import ObjectRelationship
 from .parse_connection_details import ParseConnectionDetails
 from .pattern import Pattern
 from .pattern_collection import PatternCollection
@@ -143,6 +152,7 @@ from .update_folder_details import UpdateFolderDetails
 from .update_glossary_details import UpdateGlossaryDetails
 from .update_job_definition_details import UpdateJobDefinitionDetails
 from .update_job_details import UpdateJobDetails
+from .update_metastore_details import UpdateMetastoreDetails
 from .update_namespace_details import UpdateNamespaceDetails
 from .update_pattern_details import UpdatePatternDetails
 from .update_term_details import UpdateTermDetails
@@ -176,6 +186,7 @@ data_catalog_type_mapping = {
     "CatalogSummary": CatalogSummary,
     "ChangeCatalogCompartmentDetails": ChangeCatalogCompartmentDetails,
     "ChangeCatalogPrivateEndpointCompartmentDetails": ChangeCatalogPrivateEndpointCompartmentDetails,
+    "ChangeMetastoreCompartmentDetails": ChangeMetastoreCompartmentDetails,
     "Connection": Connection,
     "ConnectionAliasSummary": ConnectionAliasSummary,
     "ConnectionCollection": ConnectionCollection,
@@ -192,6 +203,7 @@ data_catalog_type_mapping = {
     "CreateJobDefinitionDetails": CreateJobDefinitionDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobExecutionDetails": CreateJobExecutionDetails,
+    "CreateMetastoreDetails": CreateMetastoreDetails,
     "CreateNamespaceDetails": CreateNamespaceDetails,
     "CreatePatternDetails": CreatePatternDetails,
     "CreateTagDetails": CreateTagDetails,
@@ -205,6 +217,7 @@ data_catalog_type_mapping = {
     "CustomPropertyTypeUsage": CustomPropertyTypeUsage,
     "DataAsset": DataAsset,
     "DataAssetCollection": DataAssetCollection,
+    "DataAssetExportScope": DataAssetExportScope,
     "DataAssetPermissionsSummary": DataAssetPermissionsSummary,
     "DataAssetSummary": DataAssetSummary,
     "DataAssetTag": DataAssetTag,
@@ -219,6 +232,7 @@ data_catalog_type_mapping = {
     "EntityTag": EntityTag,
     "EntityTagCollection": EntityTagCollection,
     "EntityTagSummary": EntityTagSummary,
+    "ExportDataAssetDetails": ExportDataAssetDetails,
     "FacetedSearchAggregation": FacetedSearchAggregation,
     "FacetedSearchCustomProperty": FacetedSearchCustomProperty,
     "FacetedSearchDateFilterRequest": FacetedSearchDateFilterRequest,
@@ -237,6 +251,8 @@ data_catalog_type_mapping = {
     "GlossarySummary": GlossarySummary,
     "GlossaryTreeElement": GlossaryTreeElement,
     "ImportConnectionDetails": ImportConnectionDetails,
+    "ImportDataAssetDetails": ImportDataAssetDetails,
+    "ImportDataAssetJobResult": ImportDataAssetJobResult,
     "ImportGlossaryDetails": ImportGlossaryDetails,
     "Job": Job,
     "JobCollection": JobCollection,
@@ -255,9 +271,12 @@ data_catalog_type_mapping = {
     "JobMetricCollection": JobMetricCollection,
     "JobMetricSummary": JobMetricSummary,
     "JobSummary": JobSummary,
+    "Metastore": Metastore,
+    "MetastoreSummary": MetastoreSummary,
     "Namespace": Namespace,
     "NamespaceCollection": NamespaceCollection,
     "NamespaceSummary": NamespaceSummary,
+    "ObjectRelationship": ObjectRelationship,
     "ParseConnectionDetails": ParseConnectionDetails,
     "Pattern": Pattern,
     "PatternCollection": PatternCollection,
@@ -298,6 +317,7 @@ data_catalog_type_mapping = {
     "UpdateGlossaryDetails": UpdateGlossaryDetails,
     "UpdateJobDefinitionDetails": UpdateJobDefinitionDetails,
     "UpdateJobDetails": UpdateJobDetails,
+    "UpdateMetastoreDetails": UpdateMetastoreDetails,
     "UpdateNamespaceDetails": UpdateNamespaceDetails,
     "UpdatePatternDetails": UpdatePatternDetails,
     "UpdateTermDetails": UpdateTermDetails,

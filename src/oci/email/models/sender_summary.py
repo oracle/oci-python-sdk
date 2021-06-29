@@ -96,7 +96,7 @@ class SenderSummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this SenderSummary.
+        **[Required]** Gets the compartment_id of this SenderSummary.
         The OCID for the compartment.
 
 
@@ -120,7 +120,7 @@ class SenderSummary(object):
     @property
     def email_address(self):
         """
-        Gets the email_address of this SenderSummary.
+        **[Required]** Gets the email_address of this SenderSummary.
         The email address of the sender.
 
 
@@ -144,7 +144,7 @@ class SenderSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this SenderSummary.
+        **[Required]** Gets the id of this SenderSummary.
         The unique ID of the sender.
 
 
@@ -227,6 +227,7 @@ class SenderSummary(object):
         Gets the freeform_tags of this SenderSummary.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -243,6 +244,7 @@ class SenderSummary(object):
         Sets the freeform_tags of this SenderSummary.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -259,6 +261,7 @@ class SenderSummary(object):
         Gets the defined_tags of this SenderSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -275,6 +278,7 @@ class SenderSummary(object):
         Sets the defined_tags of this SenderSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm

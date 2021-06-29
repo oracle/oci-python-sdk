@@ -11,6 +11,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateAutonomousDatabaseBase(object):
     """
     Details to create an Oracle Autonomous Database.
+    Choose either Fractional ocpuCount or cpuCoreCount.
+    Choose either dataStorageSizeInGBs or dataStorageSizeInTBs
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -84,6 +86,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the cpu_core_count property of this CreateAutonomousDatabaseBase.
         :type cpu_core_count: int
 
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this CreateAutonomousDatabaseBase.
+        :type ocpu_count: float
+
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseBase.
             Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
@@ -92,6 +98,10 @@ class CreateAutonomousDatabaseBase(object):
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseBase.
         :type data_storage_size_in_tbs: int
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this CreateAutonomousDatabaseBase.
+        :type data_storage_size_in_gbs: int
 
         :param is_free_tier:
             The value to assign to the is_free_tier property of this CreateAutonomousDatabaseBase.
@@ -192,8 +202,10 @@ class CreateAutonomousDatabaseBase(object):
             'compartment_id': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
+            'ocpu_count': 'float',
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
+            'data_storage_size_in_gbs': 'int',
             'is_free_tier': 'bool',
             'kms_key_id': 'str',
             'vault_id': 'str',
@@ -223,8 +235,10 @@ class CreateAutonomousDatabaseBase(object):
             'compartment_id': 'compartmentId',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
+            'ocpu_count': 'ocpuCount',
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'is_free_tier': 'isFreeTier',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
@@ -253,8 +267,10 @@ class CreateAutonomousDatabaseBase(object):
         self._compartment_id = None
         self._db_name = None
         self._cpu_core_count = None
+        self._ocpu_count = None
         self._db_workload = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._is_free_tier = None
         self._kms_key_id = None
         self._vault_id = None
@@ -359,7 +375,7 @@ class CreateAutonomousDatabaseBase(object):
     @property
     def cpu_core_count(self):
         """
-        **[Required]** Gets the cpu_core_count of this CreateAutonomousDatabaseBase.
+        Gets the cpu_core_count of this CreateAutonomousDatabaseBase.
         The number of OCPU cores to be made available to the database.
 
 
@@ -379,6 +395,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def ocpu_count(self):
+        """
+        Gets the ocpu_count of this CreateAutonomousDatabaseBase.
+        The number of Fractional OCPU cores to be made available to the database.
+
+
+        :return: The ocpu_count of this CreateAutonomousDatabaseBase.
+        :rtype: float
+        """
+        return self._ocpu_count
+
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
+        """
+        Sets the ocpu_count of this CreateAutonomousDatabaseBase.
+        The number of Fractional OCPU cores to be made available to the database.
+
+
+        :param ocpu_count: The ocpu_count of this CreateAutonomousDatabaseBase.
+        :type: float
+        """
+        self._ocpu_count = ocpu_count
 
     @property
     def db_workload(self):
@@ -445,6 +485,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: int
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def data_storage_size_in_gbs(self):
+        """
+        Gets the data_storage_size_in_gbs of this CreateAutonomousDatabaseBase.
+        The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
+
+
+        :return: The data_storage_size_in_gbs of this CreateAutonomousDatabaseBase.
+        :rtype: int
+        """
+        return self._data_storage_size_in_gbs
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+        """
+        Sets the data_storage_size_in_gbs of this CreateAutonomousDatabaseBase.
+        The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
+
+
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this CreateAutonomousDatabaseBase.
+        :type: int
+        """
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def is_free_tier(self):

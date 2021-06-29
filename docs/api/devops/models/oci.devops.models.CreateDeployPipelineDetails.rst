@@ -1,0 +1,11 @@
+CreateDeployPipelineDetails
+===========================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: CreateDeployPipelineDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

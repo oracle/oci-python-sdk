@@ -522,6 +522,7 @@ class ShowOCIData(object):
                          'route_table_id': da['route_table_id'],
                          'route_table': route_table,
                          'drg_route_table_id': da['drg_route_table_id'],
+                         'drg_route_table': self.__get_core_network_drg_route(da['drg_route_table_id']),
                          'export_drg_route_distribution_id': da['export_drg_route_distribution_id'],
                          'name': val,
                          'compartment_name': da['compartment_name'],
@@ -535,7 +536,7 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # Print Network VCN Local Peering
+    # __get_core_network_vcn_local_peering
     ##########################################################################
     def __get_core_network_vcn_local_peering(self, vcn_id):
         data = []
@@ -944,14 +945,29 @@ class ShowOCIData(object):
                        'dhcp_options': self.__get_core_network_vcn_dhcp_options(vcn['id'])}
 
                 # assign the data to the vcn
-                vcn_data.append({'id': vcn['id'],
-                                 'name': vcn['name'],
-                                 'display_name': vcn['display_name'],
-                                 'cidr_block': vcn['cidr_block'],
-                                 'cidr_blocks': vcn['cidr_blocks'],
-                                 'compartment_name': str(compartment['name']),
-                                 'compartment_id': str(compartment['id']),
-                                 'data': val})
+                main_data = {
+                    'id': vcn['id'],
+                    'name': vcn['name'],
+                    'display_name': vcn['display_name'],
+                    'cidr_block': vcn['cidr_block'],
+                    'cidr_blocks': vcn['cidr_blocks'],
+                    'compartment_name': str(compartment['name']),
+                    'compartment_id': str(compartment['id']),
+                    'drg_route_table_id': "",
+                    'drg_route_name': "",
+                    'route_table_id': "",
+                    'route_table': "",
+                    'data': val
+                }
+
+                if val['drg_attached']:
+                    da = val['drg_attached'][0]
+                    main_data['drg_route_table_id'] = da['drg_route_table_id']
+                    main_data['drg_route_name'] = da['drg_route_table']
+                    main_data['route_table_id'] = da['route_table_id']
+                    main_data['route_table'] = da['route_table']
+
+                vcn_data.append(main_data)
             return vcn_data
 
         except BaseException as e:
@@ -981,31 +997,56 @@ class ShowOCIData(object):
             drgs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG, 'region_name', region_name, 'compartment_id', compartment['id'])
             for drg in drgs:
                 drg_id = drg['id']
-                val = {'id': drg['id'],
-                       'name': drg['name'],
-                       'time_created': drg['time_created'],
-                       'redundancy': drg['redundancy'],
-                       'compartment_name': drg['compartment_name'],
-                       'compartment_id': drg['compartment_id'],
-                       'defined_tags': drg['defined_tags'],
-                       'freeform_tags': drg['freeform_tags'],
-                       'region_name': drg['region_name'],
-                       'ip_sec_connections': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_IPS, 'drg_id', drg_id),
-                       'virtual_circuits': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_VC, 'drg_id', drg_id),
-                       'remote_peerings': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'drg_id', drg_id),
-                       'vcns': []
-                       }
+                val = {
+                    'id': drg['id'],
+                    'name': drg['name'],
+                    'time_created': drg['time_created'],
+                    'redundancy': drg['redundancy'],
+                    'compartment_name': drg['compartment_name'],
+                    'compartment_id': drg['compartment_id'],
+                    'defined_tags': drg['defined_tags'],
+                    'freeform_tags': drg['freeform_tags'],
+                    'region_name': drg['region_name'],
+                    'drg_route_tables': drg['drg_route_tables'],
+                    'ip_sec_connections': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_IPS, 'drg_id', drg_id),
+                    'virtual_circuits': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_VC, 'drg_id', drg_id),
+                    'remote_peerings': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'drg_id', drg_id),
+                    'vcns': []
+                }
 
                 # Add VCNs
                 drg_attachments = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'drg_id', drg_id)
                 for da in drg_attachments:
-                    val['vcns'].append(self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_VCN, 'id', da['vcn_id']))
+                    if da['vcn_id']:
+                        vcn = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_VCN, 'id', da['vcn_id'])
+                        if vcn:
+                            vcn['drg_route_table_id'] = da['drg_route_table_id']
+                            vcn['drg_route_table'] = self.__get_core_network_drg_route(da['drg_route_table_id'])
+                            vcn['route_table_id'] = da['route_table_id']
+                            vcn['route_table'] = self.__get_core_network_route(da['route_table_id'])
+                            val['vcns'].append(vcn)
+
                 data.append(val)
+
             return data
 
         except Exception as e:
             self.__print_error("__get_core_network_drg", e)
             return data
+
+    ##########################################################################
+    # get drg route
+    ##########################################################################
+    def __get_core_network_drg_route(self, drg_route_table_id):
+        try:
+            route = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_DRG_RT, 'id', drg_route_table_id)
+            if route:
+                if 'display_name' in route:
+                    return route['display_name']
+            return ""
+
+        except Exception as e:
+            self.__print_error("__get_core_network_drg_route", e)
 
     ##########################################################################
     # get dRG details
@@ -1089,7 +1130,7 @@ class ShowOCIData(object):
             rpcs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'region_name', region_name, 'compartment_id', compartment['id'])
             for rpc in rpcs:
                 drg_name = self.__get_core_network_drg_name(rpc['drg_id'])
-                data.append({
+                main_data = {
                     'id': str(rpc['id']),
                     'peer_id': str(rpc['peer_id']),
                     'name': str(rpc['name']),
@@ -1102,8 +1143,12 @@ class ShowOCIData(object):
                     'peering_status': rpc['peering_status'],
                     'compartment_id': rpc['compartment_id'],
                     'compartment_name': rpc['compartment_name'],
-                    'region_name': rpc['region_name']
-                })
+                    'region_name': rpc['region_name'],
+                    'drg_route_table_id': rpc['drg_route_table_id'],
+                    'drg_route_table': rpc['drg_route_table']
+                }
+
+                data.append(main_data)
             return data
 
         except Exception as e:
@@ -1122,7 +1167,7 @@ class ShowOCIData(object):
             for ips in list_ip_sec_connections:
                 drg = self.__get_core_network_drg_name(ips['drg_id'])
                 cpe = self.__get_core_network_cpe_name(ips['cpe_id'])
-                data.append({
+                main_data = {
                     'id': ips['id'],
                     'name': ips['name'],
                     'drg': drg,
@@ -1136,8 +1181,13 @@ class ShowOCIData(object):
                     'freeform_tags': ips['freeform_tags'],
                     'compartment_id': ips['compartment_id'],
                     'compartment_name': ips['compartment_name'],
-                    'region_name': ips['region_name']
-                })
+                    'region_name': ips['region_name'],
+                    'drg_route_table_id': ips['drg_route_table_id'],
+                    'drg_route_table': ips['drg_route_table']
+                }
+
+                data.append(main_data)
+
             return data
 
         except Exception as e:
@@ -1155,7 +1205,7 @@ class ShowOCIData(object):
 
             for vc in list_virtual_circuits:
                 drg = self.__get_core_network_drg_name(vc['drg_id'])
-                data.append({
+                main_data = {
                     'id': str(vc['id']),
                     'name': str(vc['name']),
                     'bandwidth_shape_name': str(vc['bandwidth_shape_name']),
@@ -1176,8 +1226,18 @@ class ShowOCIData(object):
                     'type': str(vc['type']),
                     'compartment_id': vc['compartment_id'],
                     'compartment_name': vc['compartment_name'],
-                    'region_name': vc['region_name']
-                })
+                    'region_name': vc['region_name'],
+                    'drg_route_table_id': vc['drg_route_table_id'],
+                    'drg_route_table': vc['drg_route_table']
+                }
+
+                # find Attachment for the Virtual Circuit
+                drg_attachment = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'virtual_cirtcuit_id', vc['id'])
+                if drg_attachment:
+                    main_data['drg_route_table_id'] = drg_attachment['drg_route_table_id']
+                    main_data['drg_route_table'] = self.__get_core_network_drg_route(drg_attachment['drg_route_table_id'])
+
+                data.append(main_data)
             return data
 
         except Exception as e:
@@ -1200,9 +1260,8 @@ class ShowOCIData(object):
             self.__print_error("__get_core_network_local_peering", e)
 
     ##########################################################################
-    # get Network Subnet
+    # get Network route
     ##########################################################################
-
     def __get_core_network_route(self, route_table_id):
         try:
             route = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_ROUTE, 'id', route_table_id)
@@ -1897,12 +1956,14 @@ class ShowOCIData(object):
             for db in dbs:
 
                 backupstr = (" - AutoBck=N" if db['auto_backup_enabled'] else " - AutoBck=Y")
-                pdb_name = "" if db['pdb_name'] else db['pdb_name'] + " - "
-                value = {'name': (str(db['db_name']) + " - " + str(db['db_unique_name']) + " - " + pdb_name +
+                pdb_name = db['pdb_name'] + " - " if db['pdb_name'] else ""
+                value = {'name': (str(db['db_name']) + " - " + str(db['db_unique_name']) + " - " +
+                                  pdb_name +
                                   str(db['db_workload']) + " - " +
-                                  str(db['character_set']) + " - " + str(db['lifecycle_state']) + backupstr),
+                                  str(db['character_set']) + " - " +
+                                  str(db['ncharacter_set']) + " - " +
+                                  str(db['lifecycle_state']) + backupstr),
                          'backups': self.__get_database_db_backups(db['backups']) if 'backups' in db else [],
-                         'auto_backup_enabled': db['auto_backup_enabled'],
                          'time_created': db['time_created'],
                          'defined_tags': db['defined_tags'],
                          'dataguard': self.__get_database_db_dataguard(db['dataguard']),
@@ -1914,6 +1975,11 @@ class ShowOCIData(object):
                          'ncharacter_set': db['ncharacter_set'],
                          'db_unique_name': db['db_unique_name'],
                          'lifecycle_state': db['lifecycle_state'],
+                         'auto_backup_enabled': db['auto_backup_enabled'],
+                         'connection_strings_cdb': db['connection_strings_cdb'],
+                         'source_database_point_in_time_recovery_timestamp': db['source_database_point_in_time_recovery_timestamp'],
+                         'kms_key_id': db['kms_key_id'],
+                         'last_backup_timestamp': db['last_backup_timestamp'],
                          'id': db['id']
                          }
 
@@ -2132,7 +2198,8 @@ class ShowOCIData(object):
             list_db_systems = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_DBSYSTEMS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_db_systems:
-                value = {'id': dbs['id'], 'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
+                value = {'id': dbs['id'],
+                         'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
                          'shape': dbs['shape'],
                          'shape_ocpu': dbs['shape_ocpu'],
                          'shape_memory_gb': dbs['shape_memory_gb'],
@@ -2149,7 +2216,7 @@ class ShowOCIData(object):
                          'availability_domain': dbs['availability_domain'],
                          'cpu_core_count': dbs['cpu_core_count'],
                          'node_count': dbs['node_count'],
-                         'version': dbs['version'] + " - " + dbs['database_edition'] + " - " + dbs['license_model'],
+                         'version': (dbs['version'] + " - ") if dbs['version'] != "None" else "" + ((dbs['database_edition'] + " - ") if dbs['database_edition'] != "None" else "") + dbs['license_model'],
                          'host': dbs['hostname'],
                          'domain': dbs['domain'],
                          'data_subnet': dbs['data_subnet'],
