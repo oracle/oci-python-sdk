@@ -89,6 +89,18 @@ class Folder(object):
             The value to assign to the parent_folder_key property of this Folder.
         :type parent_folder_key: str
 
+        :param type_key:
+            The value to assign to the type_key property of this Folder.
+        :type type_key: str
+
+        :param time_harvested:
+            The value to assign to the time_harvested property of this Folder.
+        :type time_harvested: datetime
+
+        :param object_relationships:
+            The value to assign to the object_relationships property of this Folder.
+        :type object_relationships: list[oci.data_catalog.models.ObjectRelationship]
+
         :param path:
             The value to assign to the path property of this Folder.
         :type path: str
@@ -156,6 +168,9 @@ class Folder(object):
             'business_name': 'str',
             'description': 'str',
             'parent_folder_key': 'str',
+            'type_key': 'str',
+            'time_harvested': 'datetime',
+            'object_relationships': 'list[ObjectRelationship]',
             'path': 'str',
             'data_asset_key': 'str',
             'custom_property_members': 'list[CustomPropertyGetUsage]',
@@ -178,6 +193,9 @@ class Folder(object):
             'business_name': 'businessName',
             'description': 'description',
             'parent_folder_key': 'parentFolderKey',
+            'type_key': 'typeKey',
+            'time_harvested': 'timeHarvested',
+            'object_relationships': 'objectRelationships',
             'path': 'path',
             'data_asset_key': 'dataAssetKey',
             'custom_property_members': 'customPropertyMembers',
@@ -199,6 +217,9 @@ class Folder(object):
         self._business_name = None
         self._description = None
         self._parent_folder_key = None
+        self._type_key = None
+        self._time_harvested = None
+        self._object_relationships = None
         self._path = None
         self._data_asset_key = None
         self._custom_property_members = None
@@ -335,6 +356,82 @@ class Folder(object):
         :type: str
         """
         self._parent_folder_key = parent_folder_key
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this Folder.
+        The type of folder object. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this Folder.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this Folder.
+        The type of folder object. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this Folder.
+        :type: str
+        """
+        self._type_key = type_key
+
+    @property
+    def time_harvested(self):
+        """
+        Gets the time_harvested of this Folder.
+        The date and time the folder was harvested, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_harvested of this Folder.
+        :rtype: datetime
+        """
+        return self._time_harvested
+
+    @time_harvested.setter
+    def time_harvested(self, time_harvested):
+        """
+        Sets the time_harvested of this Folder.
+        The date and time the folder was harvested, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_harvested: The time_harvested of this Folder.
+        :type: datetime
+        """
+        self._time_harvested = time_harvested
+
+    @property
+    def object_relationships(self):
+        """
+        Gets the object_relationships of this Folder.
+        List of objects and their relationships to this folder.
+
+
+        :return: The object_relationships of this Folder.
+        :rtype: list[oci.data_catalog.models.ObjectRelationship]
+        """
+        return self._object_relationships
+
+    @object_relationships.setter
+    def object_relationships(self, object_relationships):
+        """
+        Sets the object_relationships of this Folder.
+        List of objects and their relationships to this folder.
+
+
+        :param object_relationships: The object_relationships of this Folder.
+        :type: list[oci.data_catalog.models.ObjectRelationship]
+        """
+        self._object_relationships = object_relationships
 
     @property
     def path(self):

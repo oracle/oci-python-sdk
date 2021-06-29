@@ -154,6 +154,10 @@ class CustomProperty(object):
             The value to assign to the usage_count property of this CustomProperty.
         :type usage_count: int
 
+        :param is_event_enabled:
+            The value to assign to the is_event_enabled property of this CustomProperty.
+        :type is_event_enabled: bool
+
         :param scope:
             The value to assign to the scope property of this CustomProperty.
         :type scope: list[oci.data_catalog.models.CustomPropertyTypeUsage]
@@ -188,6 +192,7 @@ class CustomProperty(object):
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'usage_count': 'int',
+            'is_event_enabled': 'bool',
             'scope': 'list[CustomPropertyTypeUsage]',
             'allowed_values': 'list[str]',
             'properties': 'dict(str, dict(str, str))'
@@ -214,6 +219,7 @@ class CustomProperty(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'usage_count': 'usageCount',
+            'is_event_enabled': 'isEventEnabled',
             'scope': 'scope',
             'allowed_values': 'allowedValues',
             'properties': 'properties'
@@ -239,6 +245,7 @@ class CustomProperty(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._usage_count = None
+        self._is_event_enabled = None
         self._scope = None
         self._allowed_values = None
         self._properties = None
@@ -744,6 +751,30 @@ class CustomProperty(object):
         :type: int
         """
         self._usage_count = usage_count
+
+    @property
+    def is_event_enabled(self):
+        """
+        Gets the is_event_enabled of this CustomProperty.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :return: The is_event_enabled of this CustomProperty.
+        :rtype: bool
+        """
+        return self._is_event_enabled
+
+    @is_event_enabled.setter
+    def is_event_enabled(self, is_event_enabled):
+        """
+        Sets the is_event_enabled of this CustomProperty.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :param is_event_enabled: The is_event_enabled of this CustomProperty.
+        :type: bool
+        """
+        self._is_event_enabled = is_event_enabled
 
     @property
     def scope(self):

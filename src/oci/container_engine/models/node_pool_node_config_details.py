@@ -22,6 +22,10 @@ class NodePoolNodeConfigDetails(object):
             The value to assign to the size property of this NodePoolNodeConfigDetails.
         :type size: int
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this NodePoolNodeConfigDetails.
+        :type nsg_ids: list[str]
+
         :param placement_configs:
             The value to assign to the placement_configs property of this NodePoolNodeConfigDetails.
         :type placement_configs: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
@@ -29,15 +33,18 @@ class NodePoolNodeConfigDetails(object):
         """
         self.swagger_types = {
             'size': 'int',
+            'nsg_ids': 'list[str]',
             'placement_configs': 'list[NodePoolPlacementConfigDetails]'
         }
 
         self.attribute_map = {
             'size': 'size',
+            'nsg_ids': 'nsgIds',
             'placement_configs': 'placementConfigs'
         }
 
         self._size = None
+        self._nsg_ids = None
         self._placement_configs = None
 
     @property
@@ -63,6 +70,30 @@ class NodePoolNodeConfigDetails(object):
         :type: int
         """
         self._size = size
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this NodePoolNodeConfigDetails.
+        The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see :class:`NetworkSecurityGroup`.
+
+
+        :return: The nsg_ids of this NodePoolNodeConfigDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this NodePoolNodeConfigDetails.
+        The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see :class:`NetworkSecurityGroup`.
+
+
+        :param nsg_ids: The nsg_ids of this NodePoolNodeConfigDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def placement_configs(self):

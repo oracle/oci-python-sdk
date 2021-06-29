@@ -60,6 +60,10 @@ class Sender(object):
             The value to assign to the time_created property of this Sender.
         :type time_created: datetime
 
+        :param email_domain_id:
+            The value to assign to the email_domain_id property of this Sender.
+        :type email_domain_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Sender.
         :type freeform_tags: dict(str, str)
@@ -76,6 +80,7 @@ class Sender(object):
             'is_spf': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
+            'email_domain_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -87,6 +92,7 @@ class Sender(object):
             'is_spf': 'isSpf',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
+            'email_domain_id': 'emailDomainId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -97,13 +103,14 @@ class Sender(object):
         self._is_spf = None
         self._lifecycle_state = None
         self._time_created = None
+        self._email_domain_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Sender.
+        **[Required]** Gets the compartment_id of this Sender.
         The OCID for the compartment.
 
 
@@ -127,7 +134,7 @@ class Sender(object):
     @property
     def email_address(self):
         """
-        Gets the email_address of this Sender.
+        **[Required]** Gets the email_address of this Sender.
         Email address of the sender.
 
 
@@ -151,7 +158,7 @@ class Sender(object):
     @property
     def id(self):
         """
-        Gets the id of this Sender.
+        **[Required]** Gets the id of this Sender.
         The unique OCID of the sender.
 
 
@@ -259,11 +266,36 @@ class Sender(object):
         self._time_created = time_created
 
     @property
+    def email_domain_id(self):
+        """
+        Gets the email_domain_id of this Sender.
+        The email domain used to assert responsibility for emails sent from this sender.
+
+
+        :return: The email_domain_id of this Sender.
+        :rtype: str
+        """
+        return self._email_domain_id
+
+    @email_domain_id.setter
+    def email_domain_id(self, email_domain_id):
+        """
+        Sets the email_domain_id of this Sender.
+        The email domain used to assert responsibility for emails sent from this sender.
+
+
+        :param email_domain_id: The email_domain_id of this Sender.
+        :type: str
+        """
+        self._email_domain_id = email_domain_id
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Sender.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -280,6 +312,7 @@ class Sender(object):
         Sets the freeform_tags of this Sender.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -296,6 +329,7 @@ class Sender(object):
         Gets the defined_tags of this Sender.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -312,6 +346,7 @@ class Sender(object):
         Sets the defined_tags of this Sender.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm

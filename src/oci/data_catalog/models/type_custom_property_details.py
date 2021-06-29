@@ -22,16 +22,23 @@ class TypeCustomPropertyDetails(object):
             The value to assign to the custom_property_ids property of this TypeCustomPropertyDetails.
         :type custom_property_ids: list[str]
 
+        :param is_event_enabled:
+            The value to assign to the is_event_enabled property of this TypeCustomPropertyDetails.
+        :type is_event_enabled: bool
+
         """
         self.swagger_types = {
-            'custom_property_ids': 'list[str]'
+            'custom_property_ids': 'list[str]',
+            'is_event_enabled': 'bool'
         }
 
         self.attribute_map = {
-            'custom_property_ids': 'customPropertyIds'
+            'custom_property_ids': 'customPropertyIds',
+            'is_event_enabled': 'isEventEnabled'
         }
 
         self._custom_property_ids = None
+        self._is_event_enabled = None
 
     @property
     def custom_property_ids(self):
@@ -56,6 +63,30 @@ class TypeCustomPropertyDetails(object):
         :type: list[str]
         """
         self._custom_property_ids = custom_property_ids
+
+    @property
+    def is_event_enabled(self):
+        """
+        Gets the is_event_enabled of this TypeCustomPropertyDetails.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :return: The is_event_enabled of this TypeCustomPropertyDetails.
+        :rtype: bool
+        """
+        return self._is_event_enabled
+
+    @is_event_enabled.setter
+    def is_event_enabled(self, is_event_enabled):
+        """
+        Sets the is_event_enabled of this TypeCustomPropertyDetails.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :param is_event_enabled: The is_event_enabled of this TypeCustomPropertyDetails.
+        :type: bool
+        """
+        self._is_event_enabled = is_event_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

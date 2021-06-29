@@ -64,13 +64,33 @@ class Suppression(object):
             The value to assign to the time_created property of this Suppression.
         :type time_created: datetime
 
+        :param time_last_suppressed:
+            The value to assign to the time_last_suppressed property of this Suppression.
+        :type time_last_suppressed: datetime
+
+        :param message_id:
+            The value to assign to the message_id property of this Suppression.
+        :type message_id: str
+
+        :param error_detail:
+            The value to assign to the error_detail property of this Suppression.
+        :type error_detail: str
+
+        :param error_source:
+            The value to assign to the error_source property of this Suppression.
+        :type error_source: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'email_address': 'str',
             'id': 'str',
             'reason': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'time_last_suppressed': 'datetime',
+            'message_id': 'str',
+            'error_detail': 'str',
+            'error_source': 'str'
         }
 
         self.attribute_map = {
@@ -78,7 +98,11 @@ class Suppression(object):
             'email_address': 'emailAddress',
             'id': 'id',
             'reason': 'reason',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'time_last_suppressed': 'timeLastSuppressed',
+            'message_id': 'messageId',
+            'error_detail': 'errorDetail',
+            'error_source': 'errorSource'
         }
 
         self._compartment_id = None
@@ -86,11 +110,15 @@ class Suppression(object):
         self._id = None
         self._reason = None
         self._time_created = None
+        self._time_last_suppressed = None
+        self._message_id = None
+        self._error_detail = None
+        self._error_source = None
 
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Suppression.
+        **[Required]** Gets the compartment_id of this Suppression.
         The OCID of the compartment to contain the suppression. Since
         suppressions are at the customer level, this must be the tenancy
         OCID.
@@ -118,7 +146,7 @@ class Suppression(object):
     @property
     def email_address(self):
         """
-        Gets the email_address of this Suppression.
+        **[Required]** Gets the email_address of this Suppression.
         Email address of the suppression.
 
 
@@ -142,7 +170,7 @@ class Suppression(object):
     @property
     def id(self):
         """
-        Gets the id of this Suppression.
+        **[Required]** Gets the id of this Suppression.
         The unique ID of the suppression.
 
 
@@ -222,6 +250,122 @@ class Suppression(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_last_suppressed(self):
+        """
+        Gets the time_last_suppressed of this Suppression.
+        The last date and time the suppression prevented submission
+        in \"YYYY-MM-ddThh:mmZ\"
+        format with a Z offset, as defined by RFC 3339.
+
+
+        :return: The time_last_suppressed of this Suppression.
+        :rtype: datetime
+        """
+        return self._time_last_suppressed
+
+    @time_last_suppressed.setter
+    def time_last_suppressed(self, time_last_suppressed):
+        """
+        Sets the time_last_suppressed of this Suppression.
+        The last date and time the suppression prevented submission
+        in \"YYYY-MM-ddThh:mmZ\"
+        format with a Z offset, as defined by RFC 3339.
+
+
+        :param time_last_suppressed: The time_last_suppressed of this Suppression.
+        :type: datetime
+        """
+        self._time_last_suppressed = time_last_suppressed
+
+    @property
+    def message_id(self):
+        """
+        Gets the message_id of this Suppression.
+        The value of the Message-ID header from the email that triggered a suppression.
+        This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+        Not provided for all types of suppressions.
+
+
+        :return: The message_id of this Suppression.
+        :rtype: str
+        """
+        return self._message_id
+
+    @message_id.setter
+    def message_id(self, message_id):
+        """
+        Sets the message_id of this Suppression.
+        The value of the Message-ID header from the email that triggered a suppression.
+        This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets.
+        Not provided for all types of suppressions.
+
+
+        :param message_id: The message_id of this Suppression.
+        :type: str
+        """
+        self._message_id = message_id
+
+    @property
+    def error_detail(self):
+        """
+        Gets the error_detail of this Suppression.
+        The specific error message returned by a system that resulted in the suppression.
+        This message is usually an SMTP error code with additional descriptive text.
+        Not provided for all types of suppressions.
+
+
+        :return: The error_detail of this Suppression.
+        :rtype: str
+        """
+        return self._error_detail
+
+    @error_detail.setter
+    def error_detail(self, error_detail):
+        """
+        Sets the error_detail of this Suppression.
+        The specific error message returned by a system that resulted in the suppression.
+        This message is usually an SMTP error code with additional descriptive text.
+        Not provided for all types of suppressions.
+
+
+        :param error_detail: The error_detail of this Suppression.
+        :type: str
+        """
+        self._error_detail = error_detail
+
+    @property
+    def error_source(self):
+        """
+        Gets the error_source of this Suppression.
+        DNS name of the source of the error that caused the suppression.
+        Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+        Not provided for all types of suppressions, and not always known.
+
+        Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
+
+
+        :return: The error_source of this Suppression.
+        :rtype: str
+        """
+        return self._error_source
+
+    @error_source.setter
+    def error_source(self, error_source):
+        """
+        Sets the error_source of this Suppression.
+        DNS name of the source of the error that caused the suppression.
+        Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available.
+        Not provided for all types of suppressions, and not always known.
+
+        Note: Most SMTP errors that cause suppressions come from software run by email receiving systems rather than from OCI email delivery itself.
+
+
+        :param error_source: The error_source of this Suppression.
+        :type: str
+        """
+        self._error_source = error_source
 
     def __repr__(self):
         return formatted_flat_dict(self)

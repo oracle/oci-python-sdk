@@ -30,22 +30,29 @@ class CustomPropertyTypeUsage(object):
             The value to assign to the count property of this CustomPropertyTypeUsage.
         :type count: int
 
+        :param is_event_enabled:
+            The value to assign to the is_event_enabled property of this CustomPropertyTypeUsage.
+        :type is_event_enabled: bool
+
         """
         self.swagger_types = {
             'type_id': 'str',
             'type_name': 'str',
-            'count': 'int'
+            'count': 'int',
+            'is_event_enabled': 'bool'
         }
 
         self.attribute_map = {
             'type_id': 'typeId',
             'type_name': 'typeName',
-            'count': 'count'
+            'count': 'count',
+            'is_event_enabled': 'isEventEnabled'
         }
 
         self._type_id = None
         self._type_name = None
         self._count = None
+        self._is_event_enabled = None
 
     @property
     def type_id(self):
@@ -118,6 +125,30 @@ class CustomPropertyTypeUsage(object):
         :type: int
         """
         self._count = count
+
+    @property
+    def is_event_enabled(self):
+        """
+        Gets the is_event_enabled of this CustomPropertyTypeUsage.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :return: The is_event_enabled of this CustomPropertyTypeUsage.
+        :rtype: bool
+        """
+        return self._is_event_enabled
+
+    @is_event_enabled.setter
+    def is_event_enabled(self, is_event_enabled):
+        """
+        Sets the is_event_enabled of this CustomPropertyTypeUsage.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :param is_event_enabled: The is_event_enabled of this CustomPropertyTypeUsage.
+        :type: bool
+        """
+        self._is_event_enabled = is_event_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

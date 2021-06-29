@@ -90,6 +90,10 @@ class DataAsset(object):
             The value to assign to the time_updated property of this DataAsset.
         :type time_updated: datetime
 
+        :param time_harvested:
+            The value to assign to the time_harvested property of this DataAsset.
+        :type time_harvested: datetime
+
         :param created_by_id:
             The value to assign to the created_by_id property of this DataAsset.
         :type created_by_id: str
@@ -125,6 +129,7 @@ class DataAsset(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'time_harvested': 'datetime',
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'uri': 'str',
@@ -143,6 +148,7 @@ class DataAsset(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'time_harvested': 'timeHarvested',
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'uri': 'uri',
@@ -160,6 +166,7 @@ class DataAsset(object):
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
+        self._time_harvested = None
         self._created_by_id = None
         self._updated_by_id = None
         self._uri = None
@@ -400,6 +407,34 @@ class DataAsset(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def time_harvested(self):
+        """
+        Gets the time_harvested of this DataAsset.
+        The last time that a harvest was performed on the data asset. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_harvested of this DataAsset.
+        :rtype: datetime
+        """
+        return self._time_harvested
+
+    @time_harvested.setter
+    def time_harvested(self, time_harvested):
+        """
+        Sets the time_harvested of this DataAsset.
+        The last time that a harvest was performed on the data asset. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_harvested: The time_harvested of this DataAsset.
+        :type: datetime
+        """
+        self._time_harvested = time_harvested
 
     @property
     def created_by_id(self):

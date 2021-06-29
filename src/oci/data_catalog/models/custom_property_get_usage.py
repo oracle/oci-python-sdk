@@ -84,6 +84,10 @@ class CustomPropertyGetUsage(object):
             The value to assign to the is_shown_in_list property of this CustomPropertyGetUsage.
         :type is_shown_in_list: bool
 
+        :param is_event_enabled:
+            The value to assign to the is_event_enabled property of this CustomPropertyGetUsage.
+        :type is_event_enabled: bool
+
         :param is_list_type:
             The value to assign to the is_list_type property of this CustomPropertyGetUsage.
         :type is_list_type: bool
@@ -105,6 +109,7 @@ class CustomPropertyGetUsage(object):
             'is_hidden': 'bool',
             'is_editable': 'bool',
             'is_shown_in_list': 'bool',
+            'is_event_enabled': 'bool',
             'is_list_type': 'bool',
             'allowed_values': 'list[str]'
         }
@@ -121,6 +126,7 @@ class CustomPropertyGetUsage(object):
             'is_hidden': 'isHidden',
             'is_editable': 'isEditable',
             'is_shown_in_list': 'isShownInList',
+            'is_event_enabled': 'isEventEnabled',
             'is_list_type': 'isListType',
             'allowed_values': 'allowedValues'
         }
@@ -136,6 +142,7 @@ class CustomPropertyGetUsage(object):
         self._is_hidden = None
         self._is_editable = None
         self._is_shown_in_list = None
+        self._is_event_enabled = None
         self._is_list_type = None
         self._allowed_values = None
 
@@ -408,6 +415,30 @@ class CustomPropertyGetUsage(object):
         :type: bool
         """
         self._is_shown_in_list = is_shown_in_list
+
+    @property
+    def is_event_enabled(self):
+        """
+        Gets the is_event_enabled of this CustomPropertyGetUsage.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :return: The is_event_enabled of this CustomPropertyGetUsage.
+        :rtype: bool
+        """
+        return self._is_event_enabled
+
+    @is_event_enabled.setter
+    def is_event_enabled(self, is_event_enabled):
+        """
+        Sets the is_event_enabled of this CustomPropertyGetUsage.
+        If an OCI Event will be emitted when the custom property is modified.
+
+
+        :param is_event_enabled: The is_event_enabled of this CustomPropertyGetUsage.
+        :type: bool
+        """
+        self._is_event_enabled = is_event_enabled
 
     @property
     def is_list_type(self):

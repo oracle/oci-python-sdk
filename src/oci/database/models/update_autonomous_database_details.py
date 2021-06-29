@@ -72,9 +72,17 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the cpu_core_count property of this UpdateAutonomousDatabaseDetails.
         :type cpu_core_count: int
 
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this UpdateAutonomousDatabaseDetails.
+        :type ocpu_count: float
+
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this UpdateAutonomousDatabaseDetails.
         :type data_storage_size_in_tbs: int
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this UpdateAutonomousDatabaseDetails.
+        :type data_storage_size_in_gbs: int
 
         :param display_name:
             The value to assign to the display_name property of this UpdateAutonomousDatabaseDetails.
@@ -176,7 +184,9 @@ class UpdateAutonomousDatabaseDetails(object):
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
+            'ocpu_count': 'float',
             'data_storage_size_in_tbs': 'int',
+            'data_storage_size_in_gbs': 'int',
             'display_name': 'str',
             'is_free_tier': 'bool',
             'admin_password': 'str',
@@ -204,7 +214,9 @@ class UpdateAutonomousDatabaseDetails(object):
 
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
+            'ocpu_count': 'ocpuCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'display_name': 'displayName',
             'is_free_tier': 'isFreeTier',
             'admin_password': 'adminPassword',
@@ -231,7 +243,9 @@ class UpdateAutonomousDatabaseDetails(object):
         }
 
         self._cpu_core_count = None
+        self._ocpu_count = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._display_name = None
         self._is_free_tier = None
         self._admin_password = None
@@ -281,6 +295,30 @@ class UpdateAutonomousDatabaseDetails(object):
         self._cpu_core_count = cpu_core_count
 
     @property
+    def ocpu_count(self):
+        """
+        Gets the ocpu_count of this UpdateAutonomousDatabaseDetails.
+        The number of Fractional OCPU cores to be made available to the database.
+
+
+        :return: The ocpu_count of this UpdateAutonomousDatabaseDetails.
+        :rtype: float
+        """
+        return self._ocpu_count
+
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
+        """
+        Sets the ocpu_count of this UpdateAutonomousDatabaseDetails.
+        The number of Fractional OCPU cores to be made available to the database.
+
+
+        :param ocpu_count: The ocpu_count of this UpdateAutonomousDatabaseDetails.
+        :type: float
+        """
+        self._ocpu_count = ocpu_count
+
+    @property
     def data_storage_size_in_tbs(self):
         """
         Gets the data_storage_size_in_tbs of this UpdateAutonomousDatabaseDetails.
@@ -303,6 +341,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: int
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def data_storage_size_in_gbs(self):
+        """
+        Gets the data_storage_size_in_gbs of this UpdateAutonomousDatabaseDetails.
+        The size, in gigabytes, of the data volume that will be attached to the database.
+
+
+        :return: The data_storage_size_in_gbs of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._data_storage_size_in_gbs
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+        """
+        Sets the data_storage_size_in_gbs of this UpdateAutonomousDatabaseDetails.
+        The size, in gigabytes, of the data volume that will be attached to the database.
+
+
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def display_name(self):

@@ -3,20 +3,27 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
+
 import base64
 import datetime
 import json
-import logging
-import os.path
-import pytz
-from oci._vendor import six
 import os
+import os.path
+
+import pytz
+
+from oci._vendor import six
 from oci.exceptions import InvalidConfig
+
 try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
 
+from io import SEEK_SET
+import logging
+
+logger = logging.getLogger(__name__)
 logger = logging.getLogger(__name__)
 INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE_NAME = 'instance_principal'
 DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE = 'delegation_token_with_instance_principal'
@@ -207,24 +214,10 @@ def get_authentication_type_from_config(config):
         raise InvalidConfig("The authentication type {} is not supported".format(auth_type))
 
 
-def extract_service_endpoint(endpoint_with_base_path):
-    """
-    Takes a Service Endpoint with base-path embedded and extracts the Service Endpoint from it.
-
-    :param str endpoint_with_base_path:
-    Service Endpoint with base-path embedded
-
-    :return: The Service Endpoint without base-path.
-    :rtype: str
-    """
-    parsed_endpoint = urlparse(endpoint_with_base_path)
-    return parsed_endpoint.scheme + r'://' + parsed_endpoint.netloc
-
-
 def back_up_body_calculate_stream_content_length(stream, buffer_limit=DEFAULT_BUFFER_SIZE):
     # Note: Need to read in chunks, older version of Python will fail to read more than 2GB at once.
     # We pull data in chunks (128MB at a time) from the stream until there is no more
-    logger.warning("Reading stream to calculate content-length. Process may freeze for very big streams. Consider passing in content length for big objects")
+    logger.warning("Reading the stream to calculate its content-length. Process may freeze for very big streams. Consider passing in content length for big objects")
     try:
         keep_reading = True
         part_size = DEFAULT_PART_SIZE
@@ -255,3 +248,81 @@ def is_content_length_calculable_by_req_util(o):
         return True
     logger.warning("Request did not contain content-length and stream object does not contain fileno or tell property. Stream object will be read to calculate content-length")
     return False
+
+
+def extract_service_endpoint(endpoint_with_base_path):
+    """
+    Takes a Service Endpoint with base-path embedded and extracts the Service Endpoint from it.
+
+    :param str endpoint_with_base_path:
+    Service Endpoint with base-path embedded
+
+    :return: The Service Endpoint without base-path.
+    :rtype: str
+    """
+    parsed_endpoint = urlparse(endpoint_with_base_path)
+    return parsed_endpoint.scheme + r'://' + parsed_endpoint.netloc
+
+
+def should_record_body_position_for_retry(func_ref, **func_kwargs):
+    func_name = func_ref.__name__
+    # TODO: remove Python 2 requirements, use qualname
+    if func_name == 'call_api':
+        body = func_kwargs.get('body')
+        # A file-like object body should be treated differently for retry
+        if body and hasattr(body, 'read'):
+            return True
+        return False
+    return False
+
+
+def record_body_position_for_rewind(body):
+    is_body_rewindable = True
+    if getattr(body, 'tell', None) is not None:
+        try:
+            # Attempt to record current body position
+            body_position = body.tell()
+        except (IOError, OSError):
+            # If we cannot record the current body position for a file-like body, then we should not retry
+            is_body_rewindable = False
+            body_position = None
+            logger.warning("Unable to record body position for rewinding. This request will not be retried/rewound")
+    else:
+        # If the body does not support tell, then don't retry
+        is_body_rewindable = False
+        body_position = None
+        logger.warning("Unable to record body position for rewinding. This request will not be retried/rewound")
+    return is_body_rewindable, body_position
+
+
+def rewind_body(body, body_position):
+    if getattr(body, 'seek', None) is not None:
+        try:
+            body.seek(body_position, SEEK_SET)
+        except (IOError, OSError):
+            # If we're unable to reset the body position, then we should not retry
+            logger.warning("Unable to reset body position for rewinding. This request will not be retried/rewound")
+            return False
+        return True
+    # if the body does not support seek, then we should not retry
+    logger.warning("Unable to reset body position for rewinding. This request will not be retried/rewound")
+    return False
+
+
+def read_stream_for_signing(signing_algorithm, body):
+    bytes_read = 0
+    try:
+        while True:
+            chunk = ""
+            if hasattr(body, "read"):
+                chunk = body.read(DEFAULT_PART_SIZE)
+            elif hasattr(body, "buffer"):
+                chunk = body.buffer.read(DEFAULT_PART_SIZE)
+            if len(chunk) == 0:
+                break
+            bytes_read += len(chunk)
+            signing_algorithm.update(chunk)
+    except(IOError, OSError):
+        logger.warning("Unable to read stream body for signing")
+        bytes_read = -1
+    return bytes_read

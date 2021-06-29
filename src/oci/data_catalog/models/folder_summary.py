@@ -78,6 +78,10 @@ class FolderSummary(object):
             The value to assign to the parent_folder_key property of this FolderSummary.
         :type parent_folder_key: str
 
+        :param type_key:
+            The value to assign to the type_key property of this FolderSummary.
+        :type type_key: str
+
         :param path:
             The value to assign to the path property of this FolderSummary.
         :type path: str
@@ -112,6 +116,7 @@ class FolderSummary(object):
             'description': 'str',
             'data_asset_key': 'str',
             'parent_folder_key': 'str',
+            'type_key': 'str',
             'path': 'str',
             'external_key': 'str',
             'time_external': 'datetime',
@@ -127,6 +132,7 @@ class FolderSummary(object):
             'description': 'description',
             'data_asset_key': 'dataAssetKey',
             'parent_folder_key': 'parentFolderKey',
+            'type_key': 'typeKey',
             'path': 'path',
             'external_key': 'externalKey',
             'time_external': 'timeExternal',
@@ -141,6 +147,7 @@ class FolderSummary(object):
         self._description = None
         self._data_asset_key = None
         self._parent_folder_key = None
+        self._type_key = None
         self._path = None
         self._external_key = None
         self._time_external = None
@@ -293,6 +300,30 @@ class FolderSummary(object):
         :type: str
         """
         self._parent_folder_key = parent_folder_key
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this FolderSummary.
+        The type of folder object. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this FolderSummary.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this FolderSummary.
+        The type of folder object. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this FolderSummary.
+        :type: str
+        """
+        self._type_key = type_key
 
     @property
     def path(self):

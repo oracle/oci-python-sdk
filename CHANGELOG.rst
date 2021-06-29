@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.41.0 - 2021-06-29
+====================
+
+Added
+-----
+* Support for the DevOps service
+* Support for configuring network security groups for node pools in the Container Engine for Kubernetes service
+* Support for optionally specifying CPU core count and data storage size when creating autonomous databases in the Database service
+* Support for metastore and initial data asset import/export in the Data Catalog service
+* Support for associating domain names to emails and managing email domain names / DKIM in the Email Delivery service
+* Support for email domain names on senders and suppressions in the Email Delivery service
+* Support for signing request bodies for PUT/POST/PATCH requests where it is expected by the service. For more information, please see https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/index.html
+
+Breaking
+--------
+* The property `cpu_core_count` was made optional in model CreateAutonomousDatabaseBase in the Database service
+* `DISPLAYNAME` was removed as allowed value for the SortBy property in method `list_job_executions` under the Data Catalog service
+* Util function `should_record_body_position_for_retry` was moved from src/oci/retry/retry_utils.py to src/oci/util.py
+* Util function `record_body_position_for_retry` was renamed to `record_body_position_for_rewind` and was moved from src/oci/retry/retry_utils.py to src/oci/util.py
+* Util function `rewind_body_for_retry` was renamed to `rewind_body` and was moved from src/oci/retry/retry_utils.py to src/oci/util.py
+
+====================
 2.40.1 - 2021-06-22
 ====================
 

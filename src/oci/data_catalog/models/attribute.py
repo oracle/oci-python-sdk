@@ -165,6 +165,18 @@ class Attribute(object):
             The value to assign to the time_external property of this Attribute.
         :type time_external: datetime
 
+        :param time_harvested:
+            The value to assign to the time_harvested property of this Attribute.
+        :type time_harvested: datetime
+
+        :param object_relationships:
+            The value to assign to the object_relationships property of this Attribute.
+        :type object_relationships: list[oci.data_catalog.models.ObjectRelationship]
+
+        :param is_derived_attribute:
+            The value to assign to the is_derived_attribute property of this Attribute.
+        :type is_derived_attribute: bool
+
         :param uri:
             The value to assign to the uri property of this Attribute.
         :type uri: str
@@ -214,6 +226,9 @@ class Attribute(object):
             'precision': 'int',
             'scale': 'int',
             'time_external': 'datetime',
+            'time_harvested': 'datetime',
+            'object_relationships': 'list[ObjectRelationship]',
+            'is_derived_attribute': 'bool',
             'uri': 'str',
             'path': 'str',
             'custom_property_members': 'list[CustomPropertyGetUsage]',
@@ -247,6 +262,9 @@ class Attribute(object):
             'precision': 'precision',
             'scale': 'scale',
             'time_external': 'timeExternal',
+            'time_harvested': 'timeHarvested',
+            'object_relationships': 'objectRelationships',
+            'is_derived_attribute': 'isDerivedAttribute',
             'uri': 'uri',
             'path': 'path',
             'custom_property_members': 'customPropertyMembers',
@@ -279,6 +297,9 @@ class Attribute(object):
         self._precision = None
         self._scale = None
         self._time_external = None
+        self._time_harvested = None
+        self._object_relationships = None
+        self._is_derived_attribute = None
         self._uri = None
         self._path = None
         self._custom_property_members = None
@@ -912,6 +933,82 @@ class Attribute(object):
         :type: datetime
         """
         self._time_external = time_external
+
+    @property
+    def time_harvested(self):
+        """
+        Gets the time_harvested of this Attribute.
+        The date and time the attribute was harvested, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_harvested of this Attribute.
+        :rtype: datetime
+        """
+        return self._time_harvested
+
+    @time_harvested.setter
+    def time_harvested(self, time_harvested):
+        """
+        Sets the time_harvested of this Attribute.
+        The date and time the attribute was harvested, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_harvested: The time_harvested of this Attribute.
+        :type: datetime
+        """
+        self._time_harvested = time_harvested
+
+    @property
+    def object_relationships(self):
+        """
+        Gets the object_relationships of this Attribute.
+        List of objects and their relationships to this attribute.
+
+
+        :return: The object_relationships of this Attribute.
+        :rtype: list[oci.data_catalog.models.ObjectRelationship]
+        """
+        return self._object_relationships
+
+    @object_relationships.setter
+    def object_relationships(self, object_relationships):
+        """
+        Sets the object_relationships of this Attribute.
+        List of objects and their relationships to this attribute.
+
+
+        :param object_relationships: The object_relationships of this Attribute.
+        :type: list[oci.data_catalog.models.ObjectRelationship]
+        """
+        self._object_relationships = object_relationships
+
+    @property
+    def is_derived_attribute(self):
+        """
+        Gets the is_derived_attribute of this Attribute.
+        Whether a column is derived or not.
+
+
+        :return: The is_derived_attribute of this Attribute.
+        :rtype: bool
+        """
+        return self._is_derived_attribute
+
+    @is_derived_attribute.setter
+    def is_derived_attribute(self, is_derived_attribute):
+        """
+        Sets the is_derived_attribute of this Attribute.
+        Whether a column is derived or not.
+
+
+        :param is_derived_attribute: The is_derived_attribute of this Attribute.
+        :type: bool
+        """
+        self._is_derived_attribute = is_derived_attribute
 
     @property
     def uri(self):

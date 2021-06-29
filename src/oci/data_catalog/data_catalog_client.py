@@ -566,6 +566,93 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_catalog_private_endpoint_compartment_details)
 
+    def change_metastore_compartment(self, change_metastore_compartment_details, metastore_id, **kwargs):
+        """
+        Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+
+
+        :param oci.data_catalog.models.ChangeMetastoreCompartmentDetails change_metastore_compartment_details: (required)
+            Information about a change in metastore compartment.
+
+        :param str metastore_id: (required)
+            The metastore's OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/change_metastore_compartment.py.html>`__ to see an example of how to use change_metastore_compartment API.
+        """
+        resource_path = "/metastores/{metastoreId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_metastore_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "metastoreId": metastore_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_metastore_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_metastore_compartment_details)
+
     def create_attribute(self, catalog_id, data_asset_key, entity_key, create_attribute_details, **kwargs):
         """
         Creates a new entity attribute.
@@ -2048,6 +2135,80 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_job_execution_details,
                 response_type="JobExecution")
+
+    def create_metastore(self, create_metastore_details, **kwargs):
+        """
+        Creates a new metastore.
+
+
+        :param oci.data_catalog.models.CreateMetastoreDetails create_metastore_details: (required)
+            Information about a new metastore to be created.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_metastore.py.html>`__ to see an example of how to use create_metastore API.
+        """
+        resource_path = "/metastores"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_metastore_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_metastore_details)
 
     def create_namespace(self, catalog_id, create_namespace_details, **kwargs):
         """
@@ -3763,6 +3924,88 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_metastore(self, metastore_id, **kwargs):
+        """
+        Deletes a metastore resource by identifier.
+
+
+        :param str metastore_id: (required)
+            The metastore's OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_metastore.py.html>`__ to see an example of how to use delete_metastore API.
+        """
+        resource_path = "/metastores/{metastoreId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "metastoreId": metastore_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_namespace(self, catalog_id, namespace_id, **kwargs):
         """
         Deletes a specific Namespace identified by it's key.
@@ -4518,6 +4761,9 @@ class DataCatalogClient(object):
         :param str attribute_key: (required)
             Unique attribute key.
 
+        :param bool is_include_object_relationships: (optional)
+            Indicates whether the list of objects and their relationships to this object will be provided in the response.
+
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity attribute response.
 
@@ -4546,6 +4792,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "is_include_object_relationships",
             "fields",
             "opc_request_id"
         ]
@@ -4576,6 +4823,7 @@ class DataCatalogClient(object):
                     )
 
         query_params = {
+            "isIncludeObjectRelationships": kwargs.get("is_include_object_relationships", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -5297,6 +5545,9 @@ class DataCatalogClient(object):
         :param str entity_key: (required)
             Unique entity key.
 
+        :param bool is_include_object_relationships: (optional)
+            Indicates whether the list of objects and their relationships to this object will be provided in the response.
+
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity response.
 
@@ -5325,6 +5576,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "is_include_object_relationships",
             "fields",
             "opc_request_id"
         ]
@@ -5354,6 +5606,7 @@ class DataCatalogClient(object):
                     )
 
         query_params = {
+            "isIncludeObjectRelationships": kwargs.get("is_include_object_relationships", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -5509,6 +5762,9 @@ class DataCatalogClient(object):
         :param str folder_key: (required)
             Unique folder key.
 
+        :param bool is_include_object_relationships: (optional)
+            Indicates whether the list of objects and their relationships to this object will be provided in the response.
+
         :param list[str] fields: (optional)
             Specifies the fields to return in a folder response.
 
@@ -5537,6 +5793,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "is_include_object_relationships",
             "fields",
             "opc_request_id"
         ]
@@ -5566,6 +5823,7 @@ class DataCatalogClient(object):
                     )
 
         query_params = {
+            "isIncludeObjectRelationships": kwargs.get("is_include_object_relationships", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -6327,6 +6585,81 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobMetric")
 
+    def get_metastore(self, metastore_id, **kwargs):
+        """
+        Gets a metastore by identifier.
+
+
+        :param str metastore_id: (required)
+            The metastore's OCID.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_metastore.py.html>`__ to see an example of how to use get_metastore API.
+        """
+        resource_path = "/metastores/{metastoreId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "metastoreId": metastore_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Metastore")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Metastore")
+
     def get_namespace(self, catalog_id, namespace_id, **kwargs):
         """
         Gets a specific namespace for the given key within a data catalog.
@@ -7017,6 +7350,125 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=import_connection_details,
                 response_type="Connection")
+
+    def import_data_asset(self, catalog_id, data_asset_key, import_data_asset_details, import_type, **kwargs):
+        """
+        Import technical objects to a Data Asset
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param oci.data_catalog.models.ImportDataAssetDetails import_data_asset_details: (required)
+            The file contents to be imported.
+
+        :param oci.data_catalog.models.list[str] import_type: (required)
+            Type of import.
+
+            Allowed values are: "CUSTOM_PROPERTY_VALUES", "ALL"
+
+        :param bool is_missing_value_ignored: (optional)
+            Specify whether to ignore the missing values in the import file.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ImportDataAssetJobResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/import_data_asset.py.html>`__ to see an example of how to use import_data_asset API.
+        """
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/import"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "is_missing_value_ignored",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "import_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        import_type_allowed_values = ["CUSTOM_PROPERTY_VALUES", "ALL"]
+        for import_type_item in import_type:
+            if import_type_item not in import_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `import_type`, must be one of {0}".format(import_type_allowed_values)
+                )
+
+        query_params = {
+            "importType": self.base_client.generate_collection_format_param(import_type, 'multi'),
+            "isMissingValueIgnored": kwargs.get("is_missing_value_ignored", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=import_data_asset_details,
+                response_type="ImportDataAssetJobResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=import_data_asset_details,
+                response_type="ImportDataAssetJobResult")
 
     def import_glossary(self, catalog_id, glossary_key, import_glossary_details, **kwargs):
         """
@@ -8193,7 +8645,7 @@ class DataCatalogClient(object):
         :param list[str] type_name: (optional)
             A filter to return only resources that match the entire type name given. The match is not case sensitive
 
-            Allowed values are: "DATA_ASSET", "AUTONOMOUS_DATA_WAREHOUSE", "HIVE", "KAFKA", "MYSQL", "ORACLE_OBJECT_STORAGE", "AUTONOMOUS_TRANSACTION_PROCESSING", "ORACLE", "POSTGRESQL", "MICROSOFT_AZURE_SQL_DATABASE", "MICROSOFT_SQL_SERVER", "IBM_DB2", "DATA_ENTITY", "LOGICAL_ENTITY", "TABLE", "VIEW", "ATTRIBUTE", "FOLDER", "CONNECTION", "GLOSSARY", "TERM", "CATEGORY", "FILE", "BUCKET", "MESSAGE", "UNRECOGNIZED_FILE"
+            Allowed values are: "DATA_ASSET", "AUTONOMOUS_DATA_WAREHOUSE", "HIVE", "KAFKA", "MYSQL", "ORACLE_OBJECT_STORAGE", "AUTONOMOUS_TRANSACTION_PROCESSING", "ORACLE", "POSTGRESQL", "MICROSOFT_AZURE_SQL_DATABASE", "MICROSOFT_SQL_SERVER", "IBM_DB2", "DATA_ENTITY", "LOGICAL_ENTITY", "TABLE", "VIEW", "ATTRIBUTE", "FOLDER", "ORACLE_ANALYTICS_SERVER", "ORACLE_ANALYTICS_CLOUD", "ORACLE_ANALYTICS_SUBJECT_AREA", "ORACLE_ANALYTICS_DASHBOARD", "ORACLE_ANALYTICS_BUSINESS_MODEL", "ORACLE_ANALYTICS_PHYSICAL_DATABASE", "ORACLE_ANALYTICS_PHYSICAL_SCHEMA", "ORACLE_ANALYTICS_PRESENTATION_TABLE", "ORACLE_ANALYTICS_LOGICAL_TABLE", "ORACLE_ANALYTICS_PHYSICAL_TABLE", "ORACLE_ANALYTICS_ANALYSIS", "DATABASE_SCHEMA", "TOPIC", "CONNECTION", "GLOSSARY", "TERM", "CATEGORY", "FILE", "BUCKET", "MESSAGE", "UNRECOGNIZED_FILE"
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -8301,7 +8753,7 @@ class DataCatalogClient(object):
                     )
 
         if 'type_name' in kwargs:
-            type_name_allowed_values = ["DATA_ASSET", "AUTONOMOUS_DATA_WAREHOUSE", "HIVE", "KAFKA", "MYSQL", "ORACLE_OBJECT_STORAGE", "AUTONOMOUS_TRANSACTION_PROCESSING", "ORACLE", "POSTGRESQL", "MICROSOFT_AZURE_SQL_DATABASE", "MICROSOFT_SQL_SERVER", "IBM_DB2", "DATA_ENTITY", "LOGICAL_ENTITY", "TABLE", "VIEW", "ATTRIBUTE", "FOLDER", "CONNECTION", "GLOSSARY", "TERM", "CATEGORY", "FILE", "BUCKET", "MESSAGE", "UNRECOGNIZED_FILE"]
+            type_name_allowed_values = ["DATA_ASSET", "AUTONOMOUS_DATA_WAREHOUSE", "HIVE", "KAFKA", "MYSQL", "ORACLE_OBJECT_STORAGE", "AUTONOMOUS_TRANSACTION_PROCESSING", "ORACLE", "POSTGRESQL", "MICROSOFT_AZURE_SQL_DATABASE", "MICROSOFT_SQL_SERVER", "IBM_DB2", "DATA_ENTITY", "LOGICAL_ENTITY", "TABLE", "VIEW", "ATTRIBUTE", "FOLDER", "ORACLE_ANALYTICS_SERVER", "ORACLE_ANALYTICS_CLOUD", "ORACLE_ANALYTICS_SUBJECT_AREA", "ORACLE_ANALYTICS_DASHBOARD", "ORACLE_ANALYTICS_BUSINESS_MODEL", "ORACLE_ANALYTICS_PHYSICAL_DATABASE", "ORACLE_ANALYTICS_PHYSICAL_SCHEMA", "ORACLE_ANALYTICS_PRESENTATION_TABLE", "ORACLE_ANALYTICS_LOGICAL_TABLE", "ORACLE_ANALYTICS_PHYSICAL_TABLE", "ORACLE_ANALYTICS_ANALYSIS", "DATABASE_SCHEMA", "TOPIC", "CONNECTION", "GLOSSARY", "TERM", "CATEGORY", "FILE", "BUCKET", "MESSAGE", "UNRECOGNIZED_FILE"]
             for type_name_item in kwargs['type_name']:
                 if type_name_item not in type_name_allowed_values:
                     raise ValueError(
@@ -9986,7 +10438,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
 
         :param bool is_incremental: (optional)
             Whether job definition is an incremental harvest (true) or a full harvest (false).
@@ -10110,7 +10562,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -10224,7 +10676,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
 
         :param str sub_type: (optional)
             Sub-type of this job execution.
@@ -10268,9 +10720,9 @@ class DataCatalogClient(object):
             Allowed values are: "key", "jobKey", "jobType", "parentKey", "scheduleInstanceKey", "lifecycleState", "timeCreated", "timeStarted", "timeEnded", "uri"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+            The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
 
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+            Allowed values are: "TIMECREATED"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -10353,7 +10805,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -10368,7 +10820,7 @@ class DataCatalogClient(object):
                     )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10871,7 +11323,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
 
         :param str job_definition_key: (optional)
             Unique job definition key.
@@ -11002,7 +11454,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -11091,6 +11543,133 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="JobCollection")
+
+    def list_metastores(self, compartment_id, **kwargs):
+        """
+        Returns a list of all metastores in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment where you want to list resources.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.MetastoreSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_metastores.py.html>`__ to see an example of how to use list_metastores API.
+        """
+        resource_path = "/metastores"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "limit",
+            "page",
+            "lifecycle_state",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_metastores got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MetastoreSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[MetastoreSummary]")
 
     def list_namespaces(self, catalog_id, **kwargs):
         """
@@ -13500,6 +14079,120 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="SuggestResults")
 
+    def synchronous_export_data_asset(self, catalog_id, data_asset_key, synchronous_export_data_asset_details, export_type, **kwargs):
+        """
+        Export technical objects from a Data Asset
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param oci.data_catalog.models.ExportDataAssetDetails synchronous_export_data_asset_details: (required)
+            The details of what needs to be exported.
+
+        :param oci.data_catalog.models.list[str] export_type: (required)
+            Type of export.
+
+            Allowed values are: "CUSTOM_PROPERTY_VALUES", "ALL"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/synchronous_export_data_asset.py.html>`__ to see an example of how to use synchronous_export_data_asset API.
+        """
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/synchronousExport"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "synchronous_export_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        export_type_allowed_values = ["CUSTOM_PROPERTY_VALUES", "ALL"]
+        for export_type_item in export_type:
+            if export_type_item not in export_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `export_type`, must be one of {0}".format(export_type_allowed_values)
+                )
+
+        query_params = {
+            "exportType": self.base_client.generate_collection_format_param(export_type, 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=synchronous_export_data_asset_details,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=synchronous_export_data_asset_details,
+                response_type="stream")
+
     def test_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
         Test the connection by connecting to the data asset using credentials in the metadata.
@@ -14630,6 +15323,95 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=update_job_definition_details,
                 response_type="JobDefinition")
+
+    def update_metastore(self, metastore_id, update_metastore_details, **kwargs):
+        """
+        Updates a metastore resource by identifier.
+
+
+        :param str metastore_id: (required)
+            The metastore's OCID.
+
+        :param oci.data_catalog.models.UpdateMetastoreDetails update_metastore_details: (required)
+            The metastore information to be updated.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_metastore.py.html>`__ to see an example of how to use update_metastore API.
+        """
+        resource_path = "/metastores/{metastoreId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "metastoreId": metastore_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_metastore_details,
+                response_type="Metastore")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_metastore_details,
+                response_type="Metastore")
 
     def update_namespace(self, catalog_id, namespace_id, update_namespace_details, **kwargs):
         """
