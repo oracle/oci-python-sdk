@@ -25,6 +25,22 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CANCEL_SENDER_INVITATION"
     OPERATION_TYPE_CANCEL_SENDER_INVITATION = "CANCEL_SENDER_INVITATION"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "ACTIVATE_ORDER_EXISTING_TENANCY"
+    OPERATION_TYPE_ACTIVATE_ORDER_EXISTING_TENANCY = "ACTIVATE_ORDER_EXISTING_TENANCY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "REGISTER_DOMAIN"
+    OPERATION_TYPE_REGISTER_DOMAIN = "REGISTER_DOMAIN"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "RELEASE_DOMAIN"
+    OPERATION_TYPE_RELEASE_DOMAIN = "RELEASE_DOMAIN"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_CHILD_TENANCY"
+    OPERATION_TYPE_CREATE_CHILD_TENANCY = "CREATE_CHILD_TENANCY"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -56,7 +72,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -135,7 +151,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request.
 
-        Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -154,7 +170,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION"]
+        allowed_values = ["CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

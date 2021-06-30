@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .activate_order_details import ActivateOrderDetails
 from .create_domain_details import CreateDomainDetails
 from .create_domain_governance_details import CreateDomainGovernanceDetails
 from .create_sender_invitation_details import CreateSenderInvitationDetails
@@ -16,12 +17,15 @@ from .domain_summary import DomainSummary
 from .link import Link
 from .link_collection import LinkCollection
 from .link_summary import LinkSummary
+from .order import Order
 from .recipient_invitation import RecipientInvitation
 from .recipient_invitation_collection import RecipientInvitationCollection
 from .recipient_invitation_summary import RecipientInvitationSummary
 from .sender_invitation import SenderInvitation
 from .sender_invitation_collection import SenderInvitationCollection
 from .sender_invitation_summary import SenderInvitationSummary
+from .sku import Sku
+from .subscription_info import SubscriptionInfo
 from .update_domain_details import UpdateDomainDetails
 from .update_domain_governance_details import UpdateDomainGovernanceDetails
 from .update_recipient_invitation_details import UpdateRecipientInvitationDetails
@@ -37,6 +41,7 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for tenant_manager_control_plane services.
 tenant_manager_control_plane_type_mapping = {
+    "ActivateOrderDetails": ActivateOrderDetails,
     "CreateDomainDetails": CreateDomainDetails,
     "CreateDomainGovernanceDetails": CreateDomainGovernanceDetails,
     "CreateSenderInvitationDetails": CreateSenderInvitationDetails,
@@ -49,12 +54,15 @@ tenant_manager_control_plane_type_mapping = {
     "Link": Link,
     "LinkCollection": LinkCollection,
     "LinkSummary": LinkSummary,
+    "Order": Order,
     "RecipientInvitation": RecipientInvitation,
     "RecipientInvitationCollection": RecipientInvitationCollection,
     "RecipientInvitationSummary": RecipientInvitationSummary,
     "SenderInvitation": SenderInvitation,
     "SenderInvitationCollection": SenderInvitationCollection,
     "SenderInvitationSummary": SenderInvitationSummary,
+    "Sku": Sku,
+    "SubscriptionInfo": SubscriptionInfo,
     "UpdateDomainDetails": UpdateDomainDetails,
     "UpdateDomainGovernanceDetails": UpdateDomainGovernanceDetails,
     "UpdateRecipientInvitationDetails": UpdateRecipientInvitationDetails,

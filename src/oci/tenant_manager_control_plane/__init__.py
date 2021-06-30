@@ -11,6 +11,8 @@ from .domain_governance_client import DomainGovernanceClient
 from .domain_governance_client_composite_operations import DomainGovernanceClientCompositeOperations
 from .link_client import LinkClient
 from .link_client_composite_operations import LinkClientCompositeOperations
+from .orders_client import OrdersClient
+from .orders_client_composite_operations import OrdersClientCompositeOperations
 from .recipient_invitation_client import RecipientInvitationClient
 from .recipient_invitation_client_composite_operations import RecipientInvitationClientCompositeOperations
 from .sender_invitation_client import SenderInvitationClient
@@ -19,4 +21,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["DomainClient", "DomainClientCompositeOperations", "DomainGovernanceClient", "DomainGovernanceClientCompositeOperations", "LinkClient", "LinkClientCompositeOperations", "RecipientInvitationClient", "RecipientInvitationClientCompositeOperations", "SenderInvitationClient", "SenderInvitationClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["DomainClient", "DomainClientCompositeOperations", "DomainGovernanceClient", "DomainGovernanceClientCompositeOperations", "LinkClient", "LinkClientCompositeOperations", "OrdersClient", "OrdersClientCompositeOperations", "RecipientInvitationClient", "RecipientInvitationClientCompositeOperations", "SenderInvitationClient", "SenderInvitationClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

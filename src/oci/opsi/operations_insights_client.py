@@ -2360,7 +2360,7 @@ class OperationsInsightsClient(object):
         :param list[str] lifecycle_state: (optional)
             Lifecycle states
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
         :param list[str] database_type: (optional)
             Filter by one or more database type.
@@ -2456,7 +2456,7 @@ class OperationsInsightsClient(object):
                     )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
@@ -2555,7 +2555,7 @@ class OperationsInsightsClient(object):
         :param list[str] lifecycle_state: (optional)
             Lifecycle states
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -2623,7 +2623,7 @@ class OperationsInsightsClient(object):
                 "list_enterprise_manager_bridges got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
@@ -2706,7 +2706,7 @@ class OperationsInsightsClient(object):
         :param list[str] lifecycle_state: (optional)
             Lifecycle states
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
         :param list[str] host_type: (optional)
             Filter by one or more host types.
@@ -2794,7 +2794,7 @@ class OperationsInsightsClient(object):
                     )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
