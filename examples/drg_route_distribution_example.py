@@ -19,6 +19,7 @@
 import oci
 import sys
 
+
 def create_vcn(vcn_name, virtual_network_client_composite_operations, compartment_id, cidr_block, vcn_dns_label):
     vcn = virtual_network_client_composite_operations.create_vcn_and_wait_for_state(
         oci.core.models.CreateVcnDetails(
@@ -34,6 +35,7 @@ def create_vcn(vcn_name, virtual_network_client_composite_operations, compartmen
     print(vcn)
     print('\n')
     return vcn
+
 
 def create_drg(virtual_network_client, compartment_id):
     result = virtual_network_client.create_drg(
