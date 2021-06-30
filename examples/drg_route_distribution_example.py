@@ -168,7 +168,7 @@ try:
         }
     )
 
-    print("Create a new route table pointing to the route distribution.")
+    print("Create a new DRG route table pointing to the route distribution.")
     drg_route_table = virtual_network_client.create_drg_route_table(
         oci.core.models.CreateDrgRouteTableDetails(
             drg_id=drg.id,
@@ -189,7 +189,7 @@ try:
     print("List route distribution statements in the route distribution.")
     statements = list_route_distribution_statements(import_route_distribution, virtual_network_client)
 
-    print("List dynamic route rules in the route table.")
+    print("List dynamic route rules in the DRG route table.")
     list_dynamic_route_rules(drg_route_table, virtual_network_client)
 
     print("Update route distribution statement.")
@@ -210,7 +210,7 @@ try:
     print("List route distribution statements in the route distribution.")
     list_route_distribution_statements(import_route_distribution, virtual_network_client)
 
-    print("List dynamic route rules in the route table.")
+    print("List dynamic route rules in the DRG route table.")
     list_dynamic_route_rules(drg_route_table, virtual_network_client)
 
     print("Remove route distribution statement.")
@@ -224,7 +224,7 @@ try:
     print("List route distribution statements in the route distribution.")
     list_route_distribution_statements(import_route_distribution, virtual_network_client)
 
-    print("List dynamic route rules in the route table.")
+    print("List dynamic route rules in the DRG route table.")
     list_dynamic_route_rules(drg_route_table, virtual_network_client)
 
 finally:

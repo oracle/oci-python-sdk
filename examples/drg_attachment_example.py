@@ -118,7 +118,7 @@ try:
     print("Creating DRG Attachment 2.")
     drg_attachment_2 = create_drg_attachment(virtual_network_client, vcn_2, drg)
 
-    print("Creating a new route table.")
+    print("Creating a new DRG route table.")
     drg_route_table_1 = virtual_network_client.create_drg_route_table(
         oci.core.models.CreateDrgRouteTableDetails(
             drg_id=drg.id
