@@ -127,7 +127,7 @@ try:
     print(drg_route_table_1)
     print('\n')
 
-    print("Assign the newly created route table to drg attachment 1 (with VCN1).")
+    print("Assign the newly created DRG route table to drg attachment 1 (with VCN1).")
     virtual_network_client.update_drg_attachment(
         drg_attachment_id=drg_attachment_1.id,
         update_drg_attachment_details=oci.core.models.UpdateDrgAttachmentDetails(

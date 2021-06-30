@@ -156,6 +156,18 @@ try:
         }
     )
 
+    print("Add a statement to the route distribution to import from attachments of all types by specifying match all matchCriteria")
+    virtual_network_client.add_drg_route_distribution_statements(
+        drg_route_distribution_id=import_route_distribution.id,
+        add_drg_route_distribution_statements_details={
+            "statements": [{
+                "action": "ACCEPT",
+                "priority": 10,
+                "matchCriteria": []
+            }]
+        }
+    )
+
     print("Create a new route table pointing to the route distribution.")
     drg_route_table = virtual_network_client.create_drg_route_table(
         oci.core.models.CreateDrgRouteTableDetails(
@@ -166,7 +178,7 @@ try:
     print(drg_route_table)
     print('\n')
 
-    print("Assign the newly created route table to drg attachment 1 (with VCN1).")
+    print("Assign the newly created DRG route table to drg attachment 1 (with VCN1).")
     virtual_network_client.update_drg_attachment(
         drg_attachment_id=drg_attachment_1.id,
         update_drg_attachment_details=oci.core.models.UpdateDrgAttachmentDetails(
