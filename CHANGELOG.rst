@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.41.1 - TBD
+2.41.1 - 2021-07-06
 ====================
 
 Added
 -----
-* TBD
+* Support for order activation in the Organizations service
+* Support for resource principal authorization on Enterprise Manager bridge resources in the Operations Insights service
+* Support for the starter edition license type in the Content and Experience service
+* Support for the Generic Artifacts service's new domain name
 
 ====================
 2.41.0 - 2021-06-29
