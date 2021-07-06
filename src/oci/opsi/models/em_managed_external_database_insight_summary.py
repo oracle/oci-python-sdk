@@ -87,7 +87,7 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this EmManagedExternalDatabaseInsightSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
         :type lifecycle_state: str
 
         :param lifecycle_details:

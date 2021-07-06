@@ -80,7 +80,7 @@ class GenericArtifactsContentClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
-            'service_endpoint_template': 'https://generic.{region}.ocir.io',
+            'service_endpoint_template': 'https://generic.artifacts.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         if 'timeout' in kwargs:

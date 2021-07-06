@@ -167,7 +167,7 @@ class CreateEnterpriseManagerBridgeDetails(object):
     @property
     def freeform_tags(self):
         """
-        **[Required]** Gets the freeform_tags of this CreateEnterpriseManagerBridgeDetails.
+        Gets the freeform_tags of this CreateEnterpriseManagerBridgeDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
@@ -193,7 +193,7 @@ class CreateEnterpriseManagerBridgeDetails(object):
     @property
     def defined_tags(self):
         """
-        **[Required]** Gets the defined_tags of this CreateEnterpriseManagerBridgeDetails.
+        Gets the defined_tags of this CreateEnterpriseManagerBridgeDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
