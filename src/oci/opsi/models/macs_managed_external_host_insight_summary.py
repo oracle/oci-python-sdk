@@ -81,7 +81,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MacsManagedExternalHostInsightSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 

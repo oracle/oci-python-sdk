@@ -498,6 +498,9 @@ class OceInstanceClient(object):
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
+        :param str tenancy_id: (optional)
+            The ID of the tenancy in which to list resources.
+
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
 
@@ -547,6 +550,7 @@ class OceInstanceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "tenancy_id",
             "display_name",
             "limit",
             "page",
@@ -582,6 +586,7 @@ class OceInstanceClient(object):
                 )
 
         query_params = {
+            "tenancyId": kwargs.get("tenancy_id", missing),
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
             "limit": kwargs.get("limit", missing),

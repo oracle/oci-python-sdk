@@ -37,6 +37,14 @@ class OceInstanceSummary(object):
     #: This constant has a value of "BYOL"
     INSTANCE_LICENSE_TYPE_BYOL = "BYOL"
 
+    #: A constant which can be used with the instance_license_type property of a OceInstanceSummary.
+    #: This constant has a value of "PREMIUM"
+    INSTANCE_LICENSE_TYPE_PREMIUM = "PREMIUM"
+
+    #: A constant which can be used with the instance_license_type property of a OceInstanceSummary.
+    #: This constant has a value of "STARTER"
+    INSTANCE_LICENSE_TYPE_STARTER = "STARTER"
+
     #: A constant which can be used with the lifecycle_state property of a OceInstanceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -128,7 +136,7 @@ class OceInstanceSummary(object):
 
         :param instance_license_type:
             The value to assign to the instance_license_type property of this OceInstanceSummary.
-            Allowed values for this property are: "NEW", "BYOL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NEW", "BYOL", "PREMIUM", "STARTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type instance_license_type: str
 
@@ -162,6 +170,10 @@ class OceInstanceSummary(object):
             The value to assign to the defined_tags property of this OceInstanceSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this OceInstanceSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -185,7 +197,8 @@ class OceInstanceSummary(object):
             'state_message': 'str',
             'service': 'dict(str, object)',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -210,7 +223,8 @@ class OceInstanceSummary(object):
             'state_message': 'stateMessage',
             'service': 'service',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -235,6 +249,7 @@ class OceInstanceSummary(object):
         self._service = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -592,7 +607,7 @@ class OceInstanceSummary(object):
         Gets the instance_license_type of this OceInstanceSummary.
         Flag indicating whether the instance license is new cloud or bring your own license
 
-        Allowed values for this property are: "NEW", "BYOL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NEW", "BYOL", "PREMIUM", "STARTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -611,7 +626,7 @@ class OceInstanceSummary(object):
         :param instance_license_type: The instance_license_type of this OceInstanceSummary.
         :type: str
         """
-        allowed_values = ["NEW", "BYOL"]
+        allowed_values = ["NEW", "BYOL", "PREMIUM", "STARTER"]
         if not value_allowed_none_or_none_sentinel(instance_license_type, allowed_values):
             instance_license_type = 'UNKNOWN_ENUM_VALUE'
         self._instance_license_type = instance_license_type
@@ -795,6 +810,32 @@ class OceInstanceSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this OceInstanceSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this OceInstanceSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this OceInstanceSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this OceInstanceSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

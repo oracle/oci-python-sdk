@@ -37,6 +37,10 @@ class EnterpriseManagerBridge(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a EnterpriseManagerBridge.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EnterpriseManagerBridge object with values from keyword arguments.
@@ -66,6 +70,10 @@ class EnterpriseManagerBridge(object):
             The value to assign to the object_storage_bucket_name property of this EnterpriseManagerBridge.
         :type object_storage_bucket_name: str
 
+        :param object_storage_bucket_status_details:
+            The value to assign to the object_storage_bucket_status_details property of this EnterpriseManagerBridge.
+        :type object_storage_bucket_status_details: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EnterpriseManagerBridge.
         :type freeform_tags: dict(str, str)
@@ -88,7 +96,7 @@ class EnterpriseManagerBridge(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this EnterpriseManagerBridge.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -104,6 +112,7 @@ class EnterpriseManagerBridge(object):
             'description': 'str',
             'object_storage_namespace_name': 'str',
             'object_storage_bucket_name': 'str',
+            'object_storage_bucket_status_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -120,6 +129,7 @@ class EnterpriseManagerBridge(object):
             'description': 'description',
             'object_storage_namespace_name': 'objectStorageNamespaceName',
             'object_storage_bucket_name': 'objectStorageBucketName',
+            'object_storage_bucket_status_details': 'objectStorageBucketStatusDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -135,6 +145,7 @@ class EnterpriseManagerBridge(object):
         self._description = None
         self._object_storage_namespace_name = None
         self._object_storage_bucket_name = None
+        self._object_storage_bucket_status_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -288,6 +299,30 @@ class EnterpriseManagerBridge(object):
         self._object_storage_bucket_name = object_storage_bucket_name
 
     @property
+    def object_storage_bucket_status_details(self):
+        """
+        Gets the object_storage_bucket_status_details of this EnterpriseManagerBridge.
+        A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
+
+
+        :return: The object_storage_bucket_status_details of this EnterpriseManagerBridge.
+        :rtype: str
+        """
+        return self._object_storage_bucket_status_details
+
+    @object_storage_bucket_status_details.setter
+    def object_storage_bucket_status_details(self, object_storage_bucket_status_details):
+        """
+        Sets the object_storage_bucket_status_details of this EnterpriseManagerBridge.
+        A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
+
+
+        :param object_storage_bucket_status_details: The object_storage_bucket_status_details of this EnterpriseManagerBridge.
+        :type: str
+        """
+        self._object_storage_bucket_status_details = object_storage_bucket_status_details
+
+    @property
     def freeform_tags(self):
         """
         **[Required]** Gets the freeform_tags of this EnterpriseManagerBridge.
@@ -419,7 +454,7 @@ class EnterpriseManagerBridge(object):
         **[Required]** Gets the lifecycle_state of this EnterpriseManagerBridge.
         The current state of the Enterprise Manager bridge.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -438,7 +473,7 @@ class EnterpriseManagerBridge(object):
         :param lifecycle_state: The lifecycle_state of this EnterpriseManagerBridge.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

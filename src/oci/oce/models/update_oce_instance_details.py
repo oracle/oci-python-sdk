@@ -21,6 +21,14 @@ class UpdateOceInstanceDetails(object):
     #: This constant has a value of "BYOL"
     INSTANCE_LICENSE_TYPE_BYOL = "BYOL"
 
+    #: A constant which can be used with the instance_license_type property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "PREMIUM"
+    INSTANCE_LICENSE_TYPE_PREMIUM = "PREMIUM"
+
+    #: A constant which can be used with the instance_license_type property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "STARTER"
+    INSTANCE_LICENSE_TYPE_STARTER = "STARTER"
+
     #: A constant which can be used with the instance_usage_type property of a UpdateOceInstanceDetails.
     #: This constant has a value of "PRIMARY"
     INSTANCE_USAGE_TYPE_PRIMARY = "PRIMARY"
@@ -44,7 +52,7 @@ class UpdateOceInstanceDetails(object):
 
         :param instance_license_type:
             The value to assign to the instance_license_type property of this UpdateOceInstanceDetails.
-            Allowed values for this property are: "NEW", "BYOL"
+            Allowed values for this property are: "NEW", "BYOL", "PREMIUM", "STARTER"
         :type instance_license_type: str
 
         :param instance_usage_type:
@@ -140,7 +148,7 @@ class UpdateOceInstanceDetails(object):
         Gets the instance_license_type of this UpdateOceInstanceDetails.
         Flag indicating whether the instance license is new cloud or bring your own license
 
-        Allowed values for this property are: "NEW", "BYOL"
+        Allowed values for this property are: "NEW", "BYOL", "PREMIUM", "STARTER"
 
 
         :return: The instance_license_type of this UpdateOceInstanceDetails.
@@ -158,7 +166,7 @@ class UpdateOceInstanceDetails(object):
         :param instance_license_type: The instance_license_type of this UpdateOceInstanceDetails.
         :type: str
         """
-        allowed_values = ["NEW", "BYOL"]
+        allowed_values = ["NEW", "BYOL", "PREMIUM", "STARTER"]
         if not value_allowed_none_or_none_sentinel(instance_license_type, allowed_values):
             raise ValueError(
                 "Invalid value for `instance_license_type`, must be None or one of {0}"

@@ -111,6 +111,7 @@ API Reference
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
+* :doc:`Orders <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrdersClient>`
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
