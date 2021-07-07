@@ -458,15 +458,15 @@ class BaseClient(object):
             #   {
             #       "stuff": "things",
             #       "collectionFormat": ["val1", "val2", "val3"]
-            #       "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] },
-            #       "definedTagsExists": { "tag3": True, "tag4": True }
+            #       "dictTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] },
+            #       "dictTagsExists": { "tag3": True, "tag4": True }
             #   }
             #
             # And we can categorize the params as:
             #
             #   Simple: "stuff":"things"
             #   List: "collectionFormat": ["val1", "val2", "val3"]
-            #   Dict: "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "definedTagsExists": { "tag3": True, "tag4": True }
+            #   Dict: "dictTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "dictTagsExists": { "tag3": True, "tag4": True }
             if isinstance(v, bool):
                 # Python capitalizes boolean values in the query parameters.
                 processed_query_params[k] = 'true' if v else 'false'
@@ -484,19 +484,19 @@ class BaseClient(object):
                 #      natively (http://docs.python-requests.org/en/master/api/#requests.Session.params) so we just have to
                 #      manipulate things into the right key. In the case of something like:
                 #
-                #           "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }
+                #           "dictTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }
                 #
                 #      What we want is to end up with:
                 #
-                #           "definedTags.tag1": ["val1", "val2", "val3"], "definedTags.tag2": ["val1"]
+                #           "dictTags.tag1": ["val1", "val2", "val3"], "dictTags.tag2": ["val1"]
                 #
                 #   2) a dict where the value is not an array and in this case we just explode out the content. For example if we have:
                 #
-                #           "definedTagsExists": { "tag3": True, "tag4": True }
+                #           "dictTagsExists": { "tag3": True, "tag4": True }
                 #
                 #       What we'll end up with is:
                 #
-                #           "definedTagsExists.tag3": True, "definedTagsExists.tag4": True
+                #           "dictTagsExists.tag3": True, "dictTagsExists.tag4": True
                 for inner_key, inner_val in v.items():
                     processed_query_params['{}.{}'.format(k, inner_key)] = inner_val
 
