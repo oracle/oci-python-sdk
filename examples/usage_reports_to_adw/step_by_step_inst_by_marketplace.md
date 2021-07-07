@@ -107,7 +107,7 @@ It is generally the location that you have access to build the compute node and 
      If you choose Free Tier and the Stack failed, please edit the stack, remove the free tier and Apply it again
 
    * Passwords - Must be a minimum 12 characters, contain at least one uppercase letter, 
-                 one lowercase letter, one number, no special characters allowed.
+                 one lowercase letter, one number, and one Hash allowed.
 
 ```
 

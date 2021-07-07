@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##########################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # usage2adw.py
@@ -70,7 +70,7 @@ import requests
 import time
 
 
-version = "21.05.18"
+version = "21.07.13"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -233,7 +233,7 @@ def set_parser_arguments():
 ##########################################################################
 # Check Table Structure for usage
 ##########################################################################
-def check_database_table_structure_usage(connection):
+def check_database_table_structure_usage(connection, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -342,7 +342,7 @@ def check_database_table_structure_usage(connection):
             cursor.execute(sql)
             print("   Table OCI_USAGE_STATS created")
 
-            update_usage_stats(connection)
+            update_usage_stats(connection, tenant_name)
         else:
             print("   Table OCI_USAGE_STATS exist")
 
@@ -424,7 +424,7 @@ def check_database_index_structure_cost(connection):
 ##########################################################################
 # update_cost_stats
 ##########################################################################
-def update_cost_stats(connection):
+def update_cost_stats(connection, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -435,7 +435,7 @@ def update_cost_stats(connection):
         sql = "merge into OCI_COST_STATS a "
         sql += "using "
         sql += "( "
-        sql += "    select  "
+        sql += "    select /*+ parallel(oci_cost,4) full(oci_cost) */  "
         sql += "        tenant_name, "
         sql += "        file_id, "
         sql += "        USAGE_INTERVAL_START, "
@@ -445,6 +445,8 @@ def update_cost_stats(connection):
         sql += "        count(*) NUM_ROWS "
         sql += "    from  "
         sql += "        oci_cost "
+        sql += "    where "
+        sql += "        tenant_name = :tenant_name "
         sql += "    group by  "
         sql += "        tenant_name, "
         sql += "        file_id, "
@@ -457,7 +459,7 @@ def update_cost_stats(connection):
         sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,COST_MY_COST,UPDATE_DATE,AGENT_VERSION,COST_MY_COST_OVERAGE,COST_CURRENCY_CODE)  "
         sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,b.COST_MY_COST,sysdate,:version,b.COST_MY_COST_OVERAGE,b.COST_CURRENCY_CODE) "
 
-        cursor.execute(sql, {"version": version})
+        cursor.execute(sql, {"version": version, "tenant_name": tenant_name})
         connection.commit()
         print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
         cursor.close()
@@ -473,7 +475,7 @@ def update_cost_stats(connection):
 ##########################################################################
 # update_price_list
 ##########################################################################
-def update_price_list(connection):
+def update_price_list(connection, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -493,7 +495,7 @@ def update_price_list(connection):
         sql += "        COST_UNIT_PRICE "
         sql += "    FROM "
         sql += "    ( "
-        sql += "        SELECT  "
+        sql += "        SELECT  /*+ parallel(a,4) full(a) */ "
         sql += "            TENANT_NAME, "
         sql += "            TENANT_ID, "
         sql += "            COST_PRODUCT_SKU, "
@@ -501,7 +503,7 @@ def update_price_list(connection):
         sql += "            COST_CURRENCY_CODE, "
         sql += "            COST_UNIT_PRICE, "
         sql += "            ROW_NUMBER() OVER (PARTITION BY TENANT_NAME, TENANT_ID, COST_PRODUCT_SKU ORDER BY USAGE_INTERVAL_START DESC, COST_UNIT_PRICE DESC) RN "
-        sql += "        FROM OCI_COST A where tenant_id is not null "
+        sql += "        FROM OCI_COST A where tenant_id is not null and tenant_name=:tenant_name "
         sql += "    )     "
         sql += "    WHERE RN = 1 "
         sql += "    ORDER BY 1,2 "
@@ -511,7 +513,7 @@ def update_price_list(connection):
         sql += "WHEN NOT MATCHED THEN INSERT (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU,PRD_DESCRIPTION,COST_CURRENCY_CODE,COST_UNIT_PRICE,COST_LAST_UPDATE)  "
         sql += "  VALUES (B.TENANT_NAME,B.TENANT_ID, B.COST_PRODUCT_SKU,B.PRD_DESCRIPTION,B.COST_CURRENCY_CODE,B.COST_UNIT_PRICE,SYSDATE)"
 
-        cursor.execute(sql)
+        cursor.execute(sql, {"tenant_name": tenant_name})
         connection.commit()
         print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
         cursor.close()
@@ -544,24 +546,24 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
         sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
         sql += "    from "
         sql += "    ( "
-        sql += "        select distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,  "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,  "
         sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
         sql += "            else prd_compartment_path end as REF_NAME  "
-        sql += "            from OCI_COST "
+        sql += "            from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null"
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null and :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME  "
         sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
         sql += "    ) where ref_name is not null "
         sql += ") b "
@@ -569,44 +571,7 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
         sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
         sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
 
-        cursor.execute(sql)
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
-
-        print("   Merging statistics from OCI_USAGE...")
-
-        #######################################################
-        # run merge to OCI_COST_REFERENCE from OCI_USAGE
-        #######################################################
-        sql = "merge into OCI_COST_REFERENCE a "
-        sql += "using "
-        sql += "( "
-        sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
-        sql += "    from "
-        sql += "    ( "
-        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE "
-        sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,  "
-        sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
-        sql += "            else prd_compartment_path end as REF_NAME  "
-        sql += "            from OCI_USAGE "
-        sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null"
-        sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE "
-        sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE "
-        sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE "
-        sql += "        union all "
-        sql += "        select distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE "
-        sql += "    ) where ref_name is not null "
-        sql += ") b "
-        sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
-        sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-        sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
-
-        cursor.execute(sql)
+        cursor.execute(sql, {"tenant_name": tenant_name})
         connection.commit()
         print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
 
@@ -637,6 +602,81 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
 
     except Exception as e:
         raise Exception("\nError manipulating database at update_cost_reference() - " + str(e))
+
+
+##########################################################################
+# update_usage_reference
+##########################################################################
+def update_usage_reference(connection, tag_special_key, tenant_name):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        print("\nMerging statistics into OCI_COST_REFERENCE ...")
+        print("   Merging statistics from OCI_USAGE...")
+
+        #######################################################
+        # run merge to OCI_COST_REFERENCE from OCI_USAGE
+        #######################################################
+        sql = "merge into OCI_COST_REFERENCE a "
+        sql += "using "
+        sql += "( "
+        sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
+        sql += "    from "
+        sql += "    ( "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE where :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,  "
+        sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
+        sql += "            else prd_compartment_path end as REF_NAME  "
+        sql += "            from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null and :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "    ) where ref_name is not null "
+        sql += ") b "
+        sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
+        sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+        sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+        cursor.execute(sql, {"tenant_name": tenant_name})
+        connection.commit()
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
+        if tag_special_key:
+
+            # run merge to OCI_COST_REFERENCE for the tag special key
+            print("   Handling Tag Special Key '" + tag_special_key + "'")
+
+            sql = "merge into OCI_COST_REFERENCE a "
+            sql += "using "
+            sql += "( "
+            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY' as REF_TYPE, :tag_special_key as ref_name from DUAL "
+            sql += ") b "
+            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
+            sql += "when matched then update set a.ref_name = b.ref_name  "
+            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at update_usage_reference() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at update_usage_reference() - " + str(e))
 
 
 ##########################################################################
@@ -732,7 +772,7 @@ def update_public_rates(connection, tenant_name):
 ##########################################################################
 # update_usage_stats
 ##########################################################################
-def update_usage_stats(connection):
+def update_usage_stats(connection, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -743,13 +783,15 @@ def update_usage_stats(connection):
         sql = "merge into OCI_USAGE_STATS a "
         sql += "using "
         sql += "( "
-        sql += "    select  "
+        sql += "    select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */  "
         sql += "        tenant_name, "
         sql += "        file_id, "
         sql += "        USAGE_INTERVAL_START, "
         sql += "        count(*) NUM_ROWS "
         sql += "    from  "
         sql += "        oci_usage "
+        sql += "    where "
+        sql += "        tenant_name = :tenant_name "
         sql += "    group by  "
         sql += "        tenant_name, "
         sql += "        file_id, "
@@ -761,7 +803,7 @@ def update_usage_stats(connection):
         sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,UPDATE_DATE,AGENT_VERSION)  "
         sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,sysdate,:version) "
 
-        cursor.execute(sql, {"version": version})
+        cursor.execute(sql, {"version": version, "tenant_name": tenant_name})
         connection.commit()
         print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
         cursor.close()
@@ -930,7 +972,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
             cursor.execute(sql)
             print("   Table OCI_COST_STATS created")
 
-            update_cost_stats(connection)
+            update_cost_stats(connection, tenant_name)
         else:
             print("   Table OCI_COST_STATS exist")
 
@@ -944,7 +986,6 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
             print("   Column COST_MY_COST_OVERAGE does not exist in the table OCI_COST_STATS, adding...")
             sql = "alter table OCI_COST_STATS add (COST_MY_COST_OVERAGE NUMBER, COST_CURRENCY_CODE VARCHAR2(10))"
             cursor.execute(sql)
-            update_cost_stats(connection)
 
         # check if OCI_COST_REFERENCE table exist, if not create
         sql = "select count(*) from user_tables where table_name = 'OCI_COST_REFERENCE'"
@@ -1030,7 +1071,7 @@ def check_database_table_structure_price_list(connection, tenant_name):
             sql += ") "
             cursor.execute(sql)
             print("   Table OCI_PRICE_LIST created")
-            update_price_list(connection)
+            update_price_list(connection, tenant_name)
             update_public_rates(connection, tenant_name)
         else:
             print("   Table OCI_PRICE_LIST exist")
@@ -1621,7 +1662,7 @@ def main_process():
 
         # Check tables structure
         print("\nChecking Database Structure...")
-        check_database_table_structure_usage(connection)
+        check_database_table_structure_usage(connection, tenancy.name)
         check_database_table_structure_cost(connection, cmd.tagspecial, tenancy.name)
         check_database_table_structure_price_list(connection, tenancy.name)
 
@@ -1696,10 +1737,12 @@ def main_process():
 
         # Update oci_usage_stats and oci_cost_stats if there were files
         if usage_num > 0:
-            update_usage_stats(connection)
+            update_usage_stats(connection, tenancy.name)
+            update_usage_reference(connection, cmd.tagspecial, tenancy.name)
+
         if cost_num > 0:
-            update_cost_stats(connection)
-            update_price_list(connection)
+            update_cost_stats(connection, tenancy.name)
+            update_price_list(connection, tenancy.name)
             update_cost_reference(connection, cmd.tagspecial, tenancy.name)
             if not cmd.skip_rate:
                 update_public_rates(connection, tenancy.name)
