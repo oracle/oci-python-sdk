@@ -120,3 +120,4 @@
 ^src/oci/generic_artifacts_content/.*\.py$
 ^src/oci/jms/.*\.py$
 ^src/oci/devops/.*\.py$
+^src/oci/ai_anomaly_detection/.*\.py$

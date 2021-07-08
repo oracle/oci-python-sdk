@@ -29,7 +29,7 @@ class MarketplaceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.marketplace.models.CreatePublicationDetails create_publication_details: (required)
-            Details of Publication to be created including optional default package.
+            The details for creating the publication.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.marketplace.models.Publication.lifecycle_state`
@@ -67,7 +67,7 @@ class MarketplaceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.marketplace.models.Publication.lifecycle_state`
@@ -114,10 +114,10 @@ class MarketplaceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param oci.marketplace.models.UpdatePublicationDetails update_publication_details: (required)
-            Details of the Publication which needs to be updated
+            The details for updating the publication.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.marketplace.models.Publication.lifecycle_state`

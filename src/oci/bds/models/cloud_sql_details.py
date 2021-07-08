@@ -115,7 +115,7 @@ class CloudSqlDetails(object):
     def is_kerberos_mapped_to_database_users(self):
         """
         Gets the is_kerberos_mapped_to_database_users of this CloudSqlDetails.
-        Boolean flag specifying whether or not are Kerberos principals mapped
+        Boolean flag specifying whether or not Kerberos principals are mapped
         to database users.
 
 
@@ -128,7 +128,7 @@ class CloudSqlDetails(object):
     def is_kerberos_mapped_to_database_users(self, is_kerberos_mapped_to_database_users):
         """
         Sets the is_kerberos_mapped_to_database_users of this CloudSqlDetails.
-        Boolean flag specifying whether or not are Kerberos principals mapped
+        Boolean flag specifying whether or not Kerberos principals are mapped
         to database users.
 
 
@@ -141,7 +141,7 @@ class CloudSqlDetails(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this CloudSqlDetails.
-        IP address of the Cloud SQL node
+        IP address of the Cloud SQL node.
 
 
         :return: The ip_address of this CloudSqlDetails.
@@ -153,7 +153,7 @@ class CloudSqlDetails(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this CloudSqlDetails.
-        IP address of the Cloud SQL node
+        IP address of the Cloud SQL node.
 
 
         :param ip_address: The ip_address of this CloudSqlDetails.
@@ -165,7 +165,7 @@ class CloudSqlDetails(object):
     def kerberos_details(self):
         """
         Gets the kerberos_details of this CloudSqlDetails.
-        Details about Kerberos principals
+        Details about the Kerberos principals.
 
 
         :return: The kerberos_details of this CloudSqlDetails.
@@ -177,7 +177,7 @@ class CloudSqlDetails(object):
     def kerberos_details(self, kerberos_details):
         """
         Sets the kerberos_details of this CloudSqlDetails.
-        Details about Kerberos principals
+        Details about the Kerberos principals.
 
 
         :param kerberos_details: The kerberos_details of this CloudSqlDetails.

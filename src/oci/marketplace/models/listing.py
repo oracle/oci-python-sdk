@@ -899,7 +899,7 @@ class Listing(object):
     def listing_type(self):
         """
         Gets the listing_type of this Listing.
-        In which catalog the listing should exist.
+        The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
 
         Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -914,7 +914,7 @@ class Listing(object):
     def listing_type(self, listing_type):
         """
         Sets the listing_type of this Listing.
-        In which catalog the listing should exist.
+        The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
 
 
         :param listing_type: The listing_type of this Listing.
@@ -929,7 +929,7 @@ class Listing(object):
     def supported_operating_systems(self):
         """
         Gets the supported_operating_systems of this Listing.
-        List of operating systems supported.
+        List of operating systems supported by the listing.
 
 
         :return: The supported_operating_systems of this Listing.
@@ -941,7 +941,7 @@ class Listing(object):
     def supported_operating_systems(self, supported_operating_systems):
         """
         Sets the supported_operating_systems of this Listing.
-        List of operating systems supported.
+        List of operating systems supported by the listing.
 
 
         :param supported_operating_systems: The supported_operating_systems of this Listing.

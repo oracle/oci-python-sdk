@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OperatingSystem(object):
     """
-    OS used by the listing.
+    The operating system used by the listing.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class OperatingSystem(object):
     def name(self):
         """
         Gets the name of this OperatingSystem.
-        name of the operating system
+        The name of the operating system.
 
 
         :return: The name of this OperatingSystem.
@@ -49,7 +49,7 @@ class OperatingSystem(object):
     def name(self, name):
         """
         Sets the name of this OperatingSystem.
-        name of the operating system
+        The name of the operating system.
 
 
         :param name: The name of this OperatingSystem.

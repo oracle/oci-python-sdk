@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TextBasedEula(Eula):
     """
-    An EULA that is provided as text
+    An end user license agreement that is provided as text.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class TextBasedEula(Eula):
     def license_text(self):
         """
         Gets the license_text of this TextBasedEula.
-        text of the eula
+        The text of the end user license agreement.
 
 
         :return: The license_text of this TextBasedEula.
@@ -59,7 +59,7 @@ class TextBasedEula(Eula):
     def license_text(self, license_text):
         """
         Sets the license_text of this TextBasedEula.
-        text of the eula
+        The text of the end user license agreement.
 
 
         :param license_text: The license_text of this TextBasedEula.

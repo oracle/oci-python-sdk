@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalePolicyMetricRule(object):
     """
-    Metric and threshold details for triggering an autoscaling action
+    Metric and threshold details for triggering an autoscale action.
     """
 
     #: A constant which can be used with the metric_type property of a AutoScalePolicyMetricRule.
@@ -50,7 +50,7 @@ class AutoScalePolicyMetricRule(object):
     def metric_type(self):
         """
         **[Required]** Gets the metric_type of this AutoScalePolicyMetricRule.
-        Allowed value is CPU_UTILIZATION currently
+        Allowed value is CPU_UTILIZATION.
 
         Allowed values for this property are: "CPU_UTILIZATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -65,7 +65,7 @@ class AutoScalePolicyMetricRule(object):
     def metric_type(self, metric_type):
         """
         Sets the metric_type of this AutoScalePolicyMetricRule.
-        Allowed value is CPU_UTILIZATION currently
+        Allowed value is CPU_UTILIZATION.
 
 
         :param metric_type: The metric_type of this AutoScalePolicyMetricRule.

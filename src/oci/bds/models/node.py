@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Node(object):
     """
-    Specific info about a node
+    Details about a node.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Node.
@@ -191,7 +191,7 @@ class Node(object):
     def instance_id(self):
         """
         **[Required]** Gets the instance_id of this Node.
-        The OCID of the underlying compute instance
+        The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
 
 
         :return: The instance_id of this Node.
@@ -203,7 +203,7 @@ class Node(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this Node.
-        The OCID of the underlying compute instance
+        The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
 
 
         :param instance_id: The instance_id of this Node.
@@ -215,7 +215,7 @@ class Node(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Node.
-        The name of the node
+        The name of the node.
 
 
         :return: The display_name of this Node.
@@ -227,7 +227,7 @@ class Node(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Node.
-        The name of the node
+        The name of the node.
 
 
         :param display_name: The display_name of this Node.
@@ -239,7 +239,7 @@ class Node(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Node.
-        The state of the node
+        The state of the node.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -254,7 +254,7 @@ class Node(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Node.
-        The state of the node
+        The state of the node.
 
 
         :param lifecycle_state: The lifecycle_state of this Node.
@@ -269,7 +269,7 @@ class Node(object):
     def node_type(self):
         """
         **[Required]** Gets the node_type of this Node.
-        BDS instance node type
+        Cluster node type.
 
         Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -284,7 +284,7 @@ class Node(object):
     def node_type(self, node_type):
         """
         Sets the node_type of this Node.
-        BDS instance node type
+        Cluster node type.
 
 
         :param node_type: The node_type of this Node.
@@ -299,7 +299,7 @@ class Node(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this Node.
-        Shape of the node
+        Shape of the node.
 
 
         :return: The shape of this Node.
@@ -311,7 +311,7 @@ class Node(object):
     def shape(self, shape):
         """
         Sets the shape of this Node.
-        Shape of the node
+        Shape of the node.
 
 
         :param shape: The shape of this Node.
@@ -347,7 +347,7 @@ class Node(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this Node.
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node is to be created.
 
 
         :return: The subnet_id of this Node.
@@ -359,7 +359,7 @@ class Node(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this Node.
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node is to be created.
 
 
         :param subnet_id: The subnet_id of this Node.
@@ -371,7 +371,7 @@ class Node(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this Node.
-        IP address of the node
+        IP address of the node.
 
 
         :return: The ip_address of this Node.
@@ -383,7 +383,7 @@ class Node(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this Node.
-        IP address of the node
+        IP address of the node.
 
 
         :param ip_address: The ip_address of this Node.
@@ -395,7 +395,7 @@ class Node(object):
     def hostname(self):
         """
         Gets the hostname of this Node.
-        The fully-qualified hostname (FQDN) of the node
+        The fully-qualified hostname (FQDN) of the node.
 
 
         :return: The hostname of this Node.
@@ -407,7 +407,7 @@ class Node(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this Node.
-        The fully-qualified hostname (FQDN) of the node
+        The fully-qualified hostname (FQDN) of the node.
 
 
         :param hostname: The hostname of this Node.
@@ -419,7 +419,7 @@ class Node(object):
     def image_id(self):
         """
         Gets the image_id of this Node.
-        The OCID of the image from which the node was created
+        The OCID of the image from which the node was created.
 
 
         :return: The image_id of this Node.
@@ -431,7 +431,7 @@ class Node(object):
     def image_id(self, image_id):
         """
         Sets the image_id of this Node.
-        The OCID of the image from which the node was created
+        The OCID of the image from which the node was created.
 
 
         :param image_id: The image_id of this Node.
@@ -443,7 +443,7 @@ class Node(object):
     def ssh_fingerprint(self):
         """
         **[Required]** Gets the ssh_fingerprint of this Node.
-        The fingerprint of the SSH key used for node access
+        The fingerprint of the SSH key used for node access.
 
 
         :return: The ssh_fingerprint of this Node.
@@ -455,7 +455,7 @@ class Node(object):
     def ssh_fingerprint(self, ssh_fingerprint):
         """
         Sets the ssh_fingerprint of this Node.
-        The fingerprint of the SSH key used for node access
+        The fingerprint of the SSH key used for node access.
 
 
         :param ssh_fingerprint: The ssh_fingerprint of this Node.
@@ -467,7 +467,7 @@ class Node(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this Node.
-        The name of the availability domain the node is running in
+        The name of the availability domain in which the node is running.
 
 
         :return: The availability_domain of this Node.
@@ -479,7 +479,7 @@ class Node(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Node.
-        The name of the availability domain the node is running in
+        The name of the availability domain in which the node is running.
 
 
         :param availability_domain: The availability_domain of this Node.
@@ -491,7 +491,7 @@ class Node(object):
     def fault_domain(self):
         """
         **[Required]** Gets the fault_domain of this Node.
-        The name of the fault domain the node is running in
+        The name of the fault domain in which the node is running.
 
 
         :return: The fault_domain of this Node.
@@ -503,7 +503,7 @@ class Node(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this Node.
-        The name of the fault domain the node is running in
+        The name of the fault domain in which the node is running.
 
 
         :param fault_domain: The fault_domain of this Node.
@@ -515,7 +515,7 @@ class Node(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Node.
-        The time the node was created. An RFC3339 formatted datetime string
+        The time the node was created, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_created of this Node.
@@ -527,7 +527,7 @@ class Node(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Node.
-        The time the node was created. An RFC3339 formatted datetime string
+        The time the node was created, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_created: The time_created of this Node.
@@ -539,7 +539,7 @@ class Node(object):
     def time_updated(self):
         """
         Gets the time_updated of this Node.
-        The time the BDS instance was updated. An RFC3339 formatted datetime string
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_updated of this Node.
@@ -551,7 +551,7 @@ class Node(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Node.
-        The time the BDS instance was updated. An RFC3339 formatted datetime string
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this Node.

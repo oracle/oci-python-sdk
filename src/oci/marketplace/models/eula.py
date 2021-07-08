@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Eula(object):
     """
-    A base object for all types of End User Licenses
+    A base object for all types of end user license agreements.
     """
 
     #: A constant which can be used with the eula_type property of a Eula.
@@ -59,7 +59,7 @@ class Eula(object):
     def eula_type(self):
         """
         **[Required]** Gets the eula_type of this Eula.
-        the specified eula's type
+        The end user license agreement's type.
 
         Allowed values for this property are: "TEXT"
 
@@ -73,7 +73,7 @@ class Eula(object):
     def eula_type(self, eula_type):
         """
         Sets the eula_type of this Eula.
-        the specified eula's type
+        The end user license agreement's type.
 
 
         :param eula_type: The eula_type of this Eula.

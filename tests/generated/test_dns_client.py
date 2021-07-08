@@ -1214,6 +1214,46 @@ def test_get_zone(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_get_zone_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'GetZoneContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetZoneContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetZoneContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.get_zone_content(
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetZoneContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_get_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1628,6 +1668,66 @@ def test_list_views(testing_service_client):
             result,
             service_error,
             'viewSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_list_zone_transfer_servers(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ListZoneTransferServers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListZoneTransferServers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListZoneTransferServers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.list_zone_transfer_servers(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_zone_transfer_servers(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_zone_transfer_servers(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListZoneTransferServers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'zoneTransferServer',
             False,
             True
         )

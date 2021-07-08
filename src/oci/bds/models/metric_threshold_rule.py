@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MetricThresholdRule(object):
     """
-    An autoscaling action is triggered when a performance metric meets or exceeds a threshold
+    An autoscale action is triggered when a performance metric meets or exceeds a threshold.
     """
 
     #: A constant which can be used with the operator property of a MetricThresholdRule.
@@ -61,7 +61,7 @@ class MetricThresholdRule(object):
     def duration_in_minutes(self):
         """
         **[Required]** Gets the duration_in_minutes of this MetricThresholdRule.
-        This value is the minimum period of time metric value meets or exceeds threshold value before action is trigger. The value is in minutes.
+        This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
 
 
         :return: The duration_in_minutes of this MetricThresholdRule.
@@ -73,7 +73,7 @@ class MetricThresholdRule(object):
     def duration_in_minutes(self, duration_in_minutes):
         """
         Sets the duration_in_minutes of this MetricThresholdRule.
-        This value is the minimum period of time metric value meets or exceeds threshold value before action is trigger. The value is in minutes.
+        This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
 
 
         :param duration_in_minutes: The duration_in_minutes of this MetricThresholdRule.
@@ -85,7 +85,7 @@ class MetricThresholdRule(object):
     def operator(self):
         """
         **[Required]** Gets the operator of this MetricThresholdRule.
-        The comparison operator to use. Options are greater than (GT), less than (LT).
+        The comparison operator to use. Options are greater than (GT) or less than (LT).
 
         Allowed values for this property are: "GT", "LT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -100,7 +100,7 @@ class MetricThresholdRule(object):
     def operator(self, operator):
         """
         Sets the operator of this MetricThresholdRule.
-        The comparison operator to use. Options are greater than (GT), less than (LT).
+        The comparison operator to use. Options are greater than (GT) or less than (LT).
 
 
         :param operator: The operator of this MetricThresholdRule.
@@ -115,7 +115,7 @@ class MetricThresholdRule(object):
     def value(self):
         """
         **[Required]** Gets the value of this MetricThresholdRule.
-        integer non negative value. 0 < value < 100
+        Integer non-negative value. 0 < value < 100
 
 
         :return: The value of this MetricThresholdRule.
@@ -127,7 +127,7 @@ class MetricThresholdRule(object):
     def value(self, value):
         """
         Sets the value of this MetricThresholdRule.
-        integer non negative value. 0 < value < 100
+        Integer non-negative value. 0 < value < 100
 
 
         :param value: The value of this MetricThresholdRule.

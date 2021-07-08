@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImagePublicationPackage(PublicationPackage):
     """
-    A package for image publications.
+    A publication package for image publications.
     """
 
     def __init__(self, **kwargs):
@@ -131,7 +131,7 @@ class ImagePublicationPackage(PublicationPackage):
     def app_catalog_listing_resource_version(self):
         """
         Gets the app_catalog_listing_resource_version of this ImagePublicationPackage.
-        The resource version of the listing resource associated with this listing package.
+        The resource version of the listing resource associated with this publication package.
 
 
         :return: The app_catalog_listing_resource_version of this ImagePublicationPackage.
@@ -143,7 +143,7 @@ class ImagePublicationPackage(PublicationPackage):
     def app_catalog_listing_resource_version(self, app_catalog_listing_resource_version):
         """
         Sets the app_catalog_listing_resource_version of this ImagePublicationPackage.
-        The resource version of the listing resource associated with this listing package.
+        The resource version of the listing resource associated with this publication package.
 
 
         :param app_catalog_listing_resource_version: The app_catalog_listing_resource_version of this ImagePublicationPackage.
@@ -155,7 +155,7 @@ class ImagePublicationPackage(PublicationPackage):
     def image_id(self):
         """
         Gets the image_id of this ImagePublicationPackage.
-        The ID of the image corresponding to the package.
+        The ID of the image that corresponds to the package.
 
 
         :return: The image_id of this ImagePublicationPackage.
@@ -167,7 +167,7 @@ class ImagePublicationPackage(PublicationPackage):
     def image_id(self, image_id):
         """
         Sets the image_id of this ImagePublicationPackage.
-        The ID of the image corresponding to the package.
+        The ID of the image that corresponds to the package.
 
 
         :param image_id: The image_id of this ImagePublicationPackage.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReportQuery(object):
     """
-    the request of generated cost analysis report.
+    The request of the generated Cost Analysis report.
     """
 
     #: A constant which can be used with the granularity property of a ReportQuery.
@@ -36,6 +36,18 @@ class ReportQuery(object):
     #: A constant which can be used with the query_type property of a ReportQuery.
     #: This constant has a value of "COST"
     QUERY_TYPE_COST = "COST"
+
+    #: A constant which can be used with the query_type property of a ReportQuery.
+    #: This constant has a value of "CREDIT"
+    QUERY_TYPE_CREDIT = "CREDIT"
+
+    #: A constant which can be used with the query_type property of a ReportQuery.
+    #: This constant has a value of "EXPIREDCREDIT"
+    QUERY_TYPE_EXPIREDCREDIT = "EXPIREDCREDIT"
+
+    #: A constant which can be used with the query_type property of a ReportQuery.
+    #: This constant has a value of "ALLCREDIT"
+    QUERY_TYPE_ALLCREDIT = "ALLCREDIT"
 
     #: A constant which can be used with the date_range_name property of a ReportQuery.
     #: This constant has a value of "LAST_SEVEN_DAYS"
@@ -110,7 +122,7 @@ class ReportQuery(object):
 
         :param query_type:
             The value to assign to the query_type property of this ReportQuery.
-            Allowed values for this property are: "USAGE", "COST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type query_type: str
 
@@ -184,7 +196,7 @@ class ReportQuery(object):
     def tenant_id(self):
         """
         **[Required]** Gets the tenant_id of this ReportQuery.
-        Tenant ID
+        Tenant ID.
 
 
         :return: The tenant_id of this ReportQuery.
@@ -196,7 +208,7 @@ class ReportQuery(object):
     def tenant_id(self, tenant_id):
         """
         Sets the tenant_id of this ReportQuery.
-        Tenant ID
+        Tenant ID.
 
 
         :param tenant_id: The tenant_id of this ReportQuery.
@@ -294,7 +306,7 @@ class ReportQuery(object):
     def is_aggregate_by_time(self):
         """
         Gets the is_aggregate_by_time of this ReportQuery.
-        is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period
+        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
 
 
         :return: The is_aggregate_by_time of this ReportQuery.
@@ -306,7 +318,7 @@ class ReportQuery(object):
     def is_aggregate_by_time(self, is_aggregate_by_time):
         """
         Sets the is_aggregate_by_time of this ReportQuery.
-        is aggregated by time. true isAggregateByTime will add up all usage/cost over query time period
+        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
 
 
         :param is_aggregate_by_time: The is_aggregate_by_time of this ReportQuery.
@@ -338,11 +350,14 @@ class ReportQuery(object):
     def query_type(self):
         """
         Gets the query_type of this ReportQuery.
-        The query usage type. COST by default if it is missing
+        The query usage type. COST by default if it is missing.
         Usage - Query the usage data.
         Cost - Query the cost/billing data.
+        Credit - Query the credit adjustments data.
+        ExpiredCredit - Query the expired credits data
+        AllCredit - Query the credit adjustments and expired credit
 
-        Allowed values for this property are: "USAGE", "COST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -355,15 +370,18 @@ class ReportQuery(object):
     def query_type(self, query_type):
         """
         Sets the query_type of this ReportQuery.
-        The query usage type. COST by default if it is missing
+        The query usage type. COST by default if it is missing.
         Usage - Query the usage data.
         Cost - Query the cost/billing data.
+        Credit - Query the credit adjustments data.
+        ExpiredCredit - Query the expired credits data
+        AllCredit - Query the credit adjustments and expired credit
 
 
         :param query_type: The query_type of this ReportQuery.
         :type: str
         """
-        allowed_values = ["USAGE", "COST"]
+        allowed_values = ["USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT"]
         if not value_allowed_none_or_none_sentinel(query_type, allowed_values):
             query_type = 'UNKNOWN_ENUM_VALUE'
         self._query_type = query_type
@@ -476,7 +494,7 @@ class ReportQuery(object):
     def date_range_name(self):
         """
         Gets the date_range_name of this ReportQuery.
-        the date range for ui, eg LAST_THREE_MONTHS. It is conflict with timeUsageStarted and timeUsageEnded
+        The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 
         Allowed values for this property are: "LAST_SEVEN_DAYS", "LAST_TEN_DAYS", "MTD", "LAST_TWO_MONTHS", "LAST_THREE_MONTHS", "ALL", "LAST_SIX_MONTHS", "LAST_ONE_YEAR", "YTD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -491,7 +509,7 @@ class ReportQuery(object):
     def date_range_name(self, date_range_name):
         """
         Sets the date_range_name of this ReportQuery.
-        the date range for ui, eg LAST_THREE_MONTHS. It is conflict with timeUsageStarted and timeUsageEnded
+        The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 
 
         :param date_range_name: The date_range_name of this ReportQuery.

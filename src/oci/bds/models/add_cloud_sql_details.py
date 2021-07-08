@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddCloudSqlDetails(object):
     """
-    The information about added Cloud SQL capability
+    The information about the added Cloud SQL.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class AddCloudSqlDetails(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this AddCloudSqlDetails.
-        Shape of the node
+        Shape of the node.
 
 
         :return: The shape of this AddCloudSqlDetails.
@@ -63,7 +63,7 @@ class AddCloudSqlDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this AddCloudSqlDetails.
-        Shape of the node
+        Shape of the node.
 
 
         :param shape: The shape of this AddCloudSqlDetails.
@@ -75,8 +75,7 @@ class AddCloudSqlDetails(object):
     def block_volume_size_in_gbs(self):
         """
         Gets the block_volume_size_in_gbs of this AddCloudSqlDetails.
-        The size of block volume in GB that needs to be attached to a given node.
-        All the necessary details needed for attachment are managed by service itself.
+        The size of block volume in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
 
 
         :return: The block_volume_size_in_gbs of this AddCloudSqlDetails.
@@ -88,8 +87,7 @@ class AddCloudSqlDetails(object):
     def block_volume_size_in_gbs(self, block_volume_size_in_gbs):
         """
         Sets the block_volume_size_in_gbs of this AddCloudSqlDetails.
-        The size of block volume in GB that needs to be attached to a given node.
-        All the necessary details needed for attachment are managed by service itself.
+        The size of block volume in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
 
 
         :param block_volume_size_in_gbs: The block_volume_size_in_gbs of this AddCloudSqlDetails.
@@ -101,7 +99,7 @@ class AddCloudSqlDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this AddCloudSqlDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this AddCloudSqlDetails.
@@ -113,7 +111,7 @@ class AddCloudSqlDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this AddCloudSqlDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this AddCloudSqlDetails.

@@ -51,6 +51,10 @@ class ZoneSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ZoneSummary object with values from keyword arguments.
@@ -110,7 +114,7 @@ class ZoneSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ZoneSummary.
-            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -512,7 +516,7 @@ class ZoneSummary(object):
         **[Required]** Gets the lifecycle_state of this ZoneSummary.
         The current state of the zone resource.
 
-        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -531,7 +535,7 @@ class ZoneSummary(object):
         :param lifecycle_state: The lifecycle_state of this ZoneSummary.
         :type: str
         """
-        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"]
+        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

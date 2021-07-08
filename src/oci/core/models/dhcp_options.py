@@ -47,6 +47,18 @@ class DhcpOptions(object):
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
+    #: A constant which can be used with the domain_name_type property of a DhcpOptions.
+    #: This constant has a value of "SUBNET_DOMAIN"
+    DOMAIN_NAME_TYPE_SUBNET_DOMAIN = "SUBNET_DOMAIN"
+
+    #: A constant which can be used with the domain_name_type property of a DhcpOptions.
+    #: This constant has a value of "VCN_DOMAIN"
+    DOMAIN_NAME_TYPE_VCN_DOMAIN = "VCN_DOMAIN"
+
+    #: A constant which can be used with the domain_name_type property of a DhcpOptions.
+    #: This constant has a value of "CUSTOM_DOMAIN"
+    DOMAIN_NAME_TYPE_CUSTOM_DOMAIN = "CUSTOM_DOMAIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DhcpOptions object with values from keyword arguments.
@@ -90,6 +102,12 @@ class DhcpOptions(object):
             The value to assign to the vcn_id property of this DhcpOptions.
         :type vcn_id: str
 
+        :param domain_name_type:
+            The value to assign to the domain_name_type property of this DhcpOptions.
+            Allowed values for this property are: "SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type domain_name_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -100,7 +118,8 @@ class DhcpOptions(object):
             'lifecycle_state': 'str',
             'options': 'list[DhcpOption]',
             'time_created': 'datetime',
-            'vcn_id': 'str'
+            'vcn_id': 'str',
+            'domain_name_type': 'str'
         }
 
         self.attribute_map = {
@@ -112,7 +131,8 @@ class DhcpOptions(object):
             'lifecycle_state': 'lifecycleState',
             'options': 'options',
             'time_created': 'timeCreated',
-            'vcn_id': 'vcnId'
+            'vcn_id': 'vcnId',
+            'domain_name_type': 'domainNameType'
         }
 
         self._compartment_id = None
@@ -124,6 +144,7 @@ class DhcpOptions(object):
         self._options = None
         self._time_created = None
         self._vcn_id = None
+        self._domain_name_type = None
 
     @property
     def compartment_id(self):
@@ -376,6 +397,36 @@ class DhcpOptions(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def domain_name_type(self):
+        """
+        Gets the domain_name_type of this DhcpOptions.
+        The search domain name type of DHCP options
+
+        Allowed values for this property are: "SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The domain_name_type of this DhcpOptions.
+        :rtype: str
+        """
+        return self._domain_name_type
+
+    @domain_name_type.setter
+    def domain_name_type(self, domain_name_type):
+        """
+        Sets the domain_name_type of this DhcpOptions.
+        The search domain name type of DHCP options
+
+
+        :param domain_name_type: The domain_name_type of this DhcpOptions.
+        :type: str
+        """
+        allowed_values = ["SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"]
+        if not value_allowed_none_or_none_sentinel(domain_name_type, allowed_values):
+            domain_name_type = 'UNKNOWN_ENUM_VALUE'
+        self._domain_name_type = domain_name_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

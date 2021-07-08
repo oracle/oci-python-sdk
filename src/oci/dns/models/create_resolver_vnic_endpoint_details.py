@@ -10,10 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
     """
-    The body for defining a new resolver VNIC endpoint. Either isForwarding or isListening must be true but not both.
-    If a listeningAddress is not provided then one will be chosen automatically. If isForwarding is true then a
-    forwardingAddress may be provided. If one is not then one will be chosen automatically. A listeningAddress will
-    be consumed regardless of if the resolver is configured for listening or not.
+    The body for defining a new resolver VNIC endpoint. Either isForwarding or isListening must be true, but not both.
+    If isListening is true, a listeningAddress may be provided. If isForwarding is true, a forwardingAddress
+    may be provided. When not provided, an address will be chosen automatically.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -118,7 +117,8 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this CreateResolverVnicEndpointDetails.
-        An array of NSG OCIDs for the resolver endpoint.
+        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+        resolver endpoint is a part of.
 
 
         :return: The nsg_ids of this CreateResolverVnicEndpointDetails.
@@ -130,7 +130,8 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this CreateResolverVnicEndpointDetails.
-        An array of NSG OCIDs for the resolver endpoint.
+        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+        resolver endpoint is a part of.
 
 
         :param nsg_ids: The nsg_ids of this CreateResolverVnicEndpointDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePublicationPackage(object):
     """
-    A base object for the properties of the package
+    A base object for creating a publication package.
     """
 
     #: A constant which can be used with the package_type property of a CreatePublicationPackage.
@@ -84,7 +84,7 @@ class CreatePublicationPackage(object):
     def package_version(self):
         """
         **[Required]** Gets the package_version of this CreatePublicationPackage.
-        The version of the package
+        The package version.
 
 
         :return: The package_version of this CreatePublicationPackage.
@@ -96,7 +96,7 @@ class CreatePublicationPackage(object):
     def package_version(self, package_version):
         """
         Sets the package_version of this CreatePublicationPackage.
-        The version of the package
+        The package version.
 
 
         :param package_version: The package_version of this CreatePublicationPackage.
@@ -108,7 +108,7 @@ class CreatePublicationPackage(object):
     def package_type(self):
         """
         **[Required]** Gets the package_type of this CreatePublicationPackage.
-        Type of the artifact of the listing
+        The package's type.
 
         Allowed values for this property are: "ORCHESTRATION", "IMAGE"
 
@@ -122,7 +122,7 @@ class CreatePublicationPackage(object):
     def package_type(self, package_type):
         """
         Sets the package_type of this CreatePublicationPackage.
-        Type of the artifact of the listing
+        The package's type.
 
 
         :param package_type: The package_type of this CreatePublicationPackage.
@@ -160,7 +160,7 @@ class CreatePublicationPackage(object):
     def eula(self):
         """
         **[Required]** Gets the eula of this CreatePublicationPackage.
-        End User License Agreeement that a consumer of this listing has to accept
+        The end user license agreeement (EULA) that consumers of this listing must accept.
 
 
         :return: The eula of this CreatePublicationPackage.
@@ -172,7 +172,7 @@ class CreatePublicationPackage(object):
     def eula(self, eula):
         """
         Sets the eula of this CreatePublicationPackage.
-        End User License Agreeement that a consumer of this listing has to accept
+        The end user license agreeement (EULA) that consumers of this listing must accept.
 
 
         :param eula: The eula of this CreatePublicationPackage.

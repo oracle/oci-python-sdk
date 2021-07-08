@@ -18,9 +18,7 @@ missing = Sentinel("Missing")
 
 class BdsClient(object):
     """
-    API for the Big Data Service. Use this API to build, deploy, and manage fully elastic Big Data Service
-    build on Hadoop, Spark and Data Science distribution, which can be fully integrated with existing enterprise
-    data in Oracle Database and Oracle Applications..
+    REST API for Oracle Big Data Service. Use this API to build, deploy, and manage fully elastic Big Data Service clusters. Build on Hadoop, Spark and Data Science distributions, which can be fully integrated with existing enterprise data in Oracle Database and Oracle applications.
     """
 
     def __init__(self, config, **kwargs):
@@ -90,14 +88,14 @@ class BdsClient(object):
 
     def add_auto_scaling_configuration(self, bds_instance_id, add_auto_scaling_configuration_details, **kwargs):
         """
-        Add autoscaling configuration.
+        Add an autoscale configuration to the cluster.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddAutoScalingConfigurationDetails add_auto_scaling_configuration_details: (required)
-            Details for create an autoscaling configuration.
+            Details for creating an autoscale configuration.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -111,8 +109,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -188,15 +186,14 @@ class BdsClient(object):
 
     def add_block_storage(self, bds_instance_id, add_block_storage_details, **kwargs):
         """
-        Adds storage to existing worker nodes. The same amount of storage will be added to all workers.
-        No change will be made to already attached storage. Block Storage once added cannot be removed.
+        Adds block storage to existing worker nodes. The same amount of  storage will be added to all worker nodes. No change will be made  to storage that is already attached. Block storage cannot be removed.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddBlockStorageDetails add_block_storage_details: (required)
-            Details for the newly added block storage
+            Details for the added block storage.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -210,8 +207,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -287,12 +284,11 @@ class BdsClient(object):
 
     def add_cloud_sql(self, bds_instance_id, add_cloud_sql_details, **kwargs):
         """
-        Adds Cloud SQL to your cluster. This will add a query server node to the cluster
-        and create cell servers on all your worker nodes.
+        Adds Cloud SQL to your cluster. You can use Cloud SQL to query against non-relational data stored in multiple big data sources, including Apache Hive, HDFS, Oracle NoSQL Database, and Apache HBase. Adding Cloud SQL adds a query server node to the cluster and creates cell servers on all the worker nodes in the cluster.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddCloudSqlDetails add_cloud_sql_details: (required)
             Details for the Cloud SQL capability
@@ -309,8 +305,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -386,15 +382,14 @@ class BdsClient(object):
 
     def add_worker_nodes(self, bds_instance_id, add_worker_nodes_details, **kwargs):
         """
-        Add worker nodes to an existing cluster. The worker nodes added will be based on an identical shape
-        and have the same amount of attached block storage as other worker nodes in the cluster.
+        Increases the size (scales out) a cluster by adding worker nodes. The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddWorkerNodesDetails add_worker_nodes_details: (required)
-            Details for the newly added nodes
+            Details for the newly added nodes.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -408,8 +403,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -485,11 +480,11 @@ class BdsClient(object):
 
     def change_bds_instance_compartment(self, bds_instance_id, change_bds_instance_compartment_details, **kwargs):
         """
-        Moves a BDS instance into a different compartment.
+        Moves a Big Data Service cluster into a different compartment.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.ChangeBdsInstanceCompartmentDetails change_bds_instance_compartment_details: (required)
             Details for the comparment change.
@@ -506,8 +501,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -583,16 +578,14 @@ class BdsClient(object):
 
     def change_shape(self, bds_instance_id, change_shape_details, **kwargs):
         """
-        Scale-up/down individial nodes (per role type) in the cluster. Customer can choose
-        arbitrarty VM_STANDARD shape to scale-up/down the instance. Only VM_STANDARD nodes
-        can be re-shaped.
+        Changes the size of a cluster by scaling up or scaling down the nodes. Nodes are scaled up or down by changing the shapes of all the nodes of the same type to the next larger or smaller shape. The node types are master, utility, worker, and Cloud SQL. Only nodes with VM-STANDARD shapes can be scaled.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.ChangeShapeDetails change_shape_details: (required)
-            Individual change shape settings per node group. You can change the shape of master, worker, utility and cloudsql nodes.
+            Individual change shape settings per node type. You can change the shape of master, worker, utility and Cloud SQL nodes.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -606,8 +599,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -683,19 +676,19 @@ class BdsClient(object):
 
     def create_bds_instance(self, create_bds_instance_details, **kwargs):
         """
-        Creates a new BDS instance.
+        Creates a Big Data Service cluster.
 
 
         :param oci.bds.models.CreateBdsInstanceDetails create_bds_instance_details: (required)
-            Details for the new BDS instace.
+            Details for the new cluster.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -757,11 +750,11 @@ class BdsClient(object):
 
     def delete_bds_instance(self, bds_instance_id, **kwargs):
         """
-        Deletes a BDS instance by identifier
+        Deletes the cluster identified by the given ID.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -839,14 +832,14 @@ class BdsClient(object):
 
     def get_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, **kwargs):
         """
-        Gets information about the specified autoscaling configuration.
+        Returns details of the autoscale configuration identified by the given ID.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str auto_scaling_configuration_id: (required)
-            Unique Oracle-assigned identifier of the autoscaling configuration.
+            Unique Oracle-assigned identifier of the autoscale configuration.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -918,11 +911,11 @@ class BdsClient(object):
 
     def get_bds_instance(self, bds_instance_id, **kwargs):
         """
-        Gets a BDS instance by identifier
+        Returns information about the Big Data Service cluster identified by the given ID.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -993,7 +986,7 @@ class BdsClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets the status of the work request with the given ID.
+        Returns the status of the work request identified by the given ID.
 
 
         :param str work_request_id: (required)
@@ -1068,14 +1061,14 @@ class BdsClient(object):
 
     def list_auto_scaling_configurations(self, compartment_id, bds_instance_id, **kwargs):
         """
-        Gets information about the  autoscaling configuration.
+        Returns information about the autoscaling configurations for a cluster.
 
 
         :param str compartment_id: (required)
             The OCID of the compartment.
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -1097,7 +1090,7 @@ class BdsClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The state of the autoscaling configuration.
+            The state of the autoscale configuration.
 
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
 
@@ -1210,14 +1203,14 @@ class BdsClient(object):
 
     def list_bds_instances(self, compartment_id, **kwargs):
         """
-        Returns a list of BDS instances.
+        Returns a list of all Big Data Service clusters in a compartment.
 
 
         :param str compartment_id: (required)
             The OCID of the compartment.
 
         :param str lifecycle_state: (optional)
-            The state of the BDS instance.
+            The state of the cluster.
 
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED"
 
@@ -1337,7 +1330,7 @@ class BdsClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Returns a paginated list of errors for a work request identified by the given ID.
 
 
         :param str work_request_id: (required)
@@ -1456,7 +1449,7 @@ class BdsClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Returns a paginated list of logs for a given work request.
 
 
         :param str work_request_id: (required)
@@ -1688,17 +1681,17 @@ class BdsClient(object):
 
     def remove_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, remove_auto_scaling_configuration_details, **kwargs):
         """
-        Remove autoscaling configuration.
+        Deletes an autoscale configuration.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str auto_scaling_configuration_id: (required)
-            Unique Oracle-assigned identifier of the autoscaling configuration.
+            Unique Oracle-assigned identifier of the autoscale configuration.
 
         :param oci.bds.models.RemoveAutoScalingConfigurationDetails remove_auto_scaling_configuration_details: (required)
-            Details for the Auto Scaling Configuration
+            Details for the autoscale configuration
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1712,8 +1705,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -1790,11 +1783,11 @@ class BdsClient(object):
 
     def remove_cloud_sql(self, bds_instance_id, remove_cloud_sql_details, **kwargs):
         """
-        Remove Cloud SQL capability.
+        Removes Cloud SQL from the cluster.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.RemoveCloudSqlDetails remove_cloud_sql_details: (required)
             Details for the Cloud SQL capability
@@ -1811,8 +1804,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -1888,11 +1881,11 @@ class BdsClient(object):
 
     def restart_node(self, bds_instance_id, restart_node_details, **kwargs):
         """
-        Restarts a single node of a BDS instance.
+        Restarts a single node of a Big Data Service cluster
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.RestartNodeDetails restart_node_details: (required)
             Details for restarting the node.
@@ -1909,8 +1902,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -1986,14 +1979,14 @@ class BdsClient(object):
 
     def update_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
-        Updates certain fields on the specified autoscaling configuration, such as the name, the threshold value, and whether the autoscaling configuration is enabled.
+        Updates fields on an autoscale configuration, including the name, the threshold value, and whether the autoscale configuration is enabled.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str auto_scaling_configuration_id: (required)
-            Unique Oracle-assigned identifier of the autoscaling configuration.
+            Unique Oracle-assigned identifier of the autoscale configuration.
 
         :param oci.bds.models.UpdateAutoScalingConfigurationDetails update_auto_scaling_configuration_details: (required)
             Details for update an autoscaling configuration.
@@ -2010,8 +2003,8 @@ class BdsClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -2088,14 +2081,14 @@ class BdsClient(object):
 
     def update_bds_instance(self, bds_instance_id, update_bds_instance_details, **kwargs):
         """
-        Update the BDS instance identified by the id
+        Updates the Big Data Service cluster identified by the given ID.
 
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.UpdateBdsInstanceDetails update_bds_instance_details: (required)
-            Details for the to-be-updated BDS instace.
+            Details for the cluster to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

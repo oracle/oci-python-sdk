@@ -58,7 +58,7 @@ class CostAnalysisUI(object):
     def graph(self):
         """
         Gets the graph of this CostAnalysisUI.
-        the type of graph mode.
+        The graph type.
 
         Allowed values for this property are: "BARS", "LINES", "STACKED_LINES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -73,7 +73,7 @@ class CostAnalysisUI(object):
     def graph(self, graph):
         """
         Sets the graph of this CostAnalysisUI.
-        the type of graph mode.
+        The graph type.
 
 
         :param graph: The graph of this CostAnalysisUI.
@@ -88,7 +88,7 @@ class CostAnalysisUI(object):
     def is_cumulative_graph(self):
         """
         Gets the is_cumulative_graph of this CostAnalysisUI.
-        is cumulative graph.
+        A cumulative graph.
 
 
         :return: The is_cumulative_graph of this CostAnalysisUI.
@@ -100,7 +100,7 @@ class CostAnalysisUI(object):
     def is_cumulative_graph(self, is_cumulative_graph):
         """
         Sets the is_cumulative_graph of this CostAnalysisUI.
-        is cumulative graph.
+        A cumulative graph.
 
 
         :param is_cumulative_graph: The is_cumulative_graph of this CostAnalysisUI.

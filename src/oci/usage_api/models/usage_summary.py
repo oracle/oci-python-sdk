@@ -881,7 +881,7 @@ class UsageSummary(object):
     def is_forecast(self):
         """
         Gets the is_forecast of this UsageSummary.
-        is forecasted data
+        The forecasted data.
 
 
         :return: The is_forecast of this UsageSummary.
@@ -893,7 +893,7 @@ class UsageSummary(object):
     def is_forecast(self, is_forecast):
         """
         Sets the is_forecast of this UsageSummary.
-        is forecasted data
+        The forecasted data.
 
 
         :param is_forecast: The is_forecast of this UsageSummary.

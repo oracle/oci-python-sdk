@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OrchestrationPublicationPackage(PublicationPackage):
     """
-    A publication package for orchestration.
+    A publication package for stack publications.
     """
 
     def __init__(self, **kwargs):
@@ -96,7 +96,7 @@ class OrchestrationPublicationPackage(PublicationPackage):
     def resource_link(self):
         """
         Gets the resource_link of this OrchestrationPublicationPackage.
-        Link to the orchestration resource.
+        A link to the stack resource.
 
 
         :return: The resource_link of this OrchestrationPublicationPackage.
@@ -108,7 +108,7 @@ class OrchestrationPublicationPackage(PublicationPackage):
     def resource_link(self, resource_link):
         """
         Sets the resource_link of this OrchestrationPublicationPackage.
-        Link to the orchestration resource.
+        A link to the stack resource.
 
 
         :param resource_link: The resource_link of this OrchestrationPublicationPackage.
@@ -120,7 +120,7 @@ class OrchestrationPublicationPackage(PublicationPackage):
     def variables(self):
         """
         Gets the variables of this OrchestrationPublicationPackage.
-        List of variables for the orchestration resource.
+        A list of variables for the stack resource.
 
 
         :return: The variables of this OrchestrationPublicationPackage.
@@ -132,7 +132,7 @@ class OrchestrationPublicationPackage(PublicationPackage):
     def variables(self, variables):
         """
         Sets the variables of this OrchestrationPublicationPackage.
-        List of variables for the orchestration resource.
+        A list of variables for the stack resource.
 
 
         :param variables: The variables of this OrchestrationPublicationPackage.

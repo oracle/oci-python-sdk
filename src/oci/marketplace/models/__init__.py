@@ -17,9 +17,11 @@ from .create_publication_package import CreatePublicationPackage
 from .documentation_link import DocumentationLink
 from .error_entity import ErrorEntity
 from .eula import Eula
+from .free_text_search_details import FreeTextSearchDetails
 from .image_listing_package import ImageListingPackage
 from .image_publication_package import ImagePublicationPackage
 from .item import Item
+from .launch_eligibility import LaunchEligibility
 from .link import Link
 from .listing import Listing
 from .listing_package import ListingPackage
@@ -43,9 +45,12 @@ from .report_summary import ReportSummary
 from .report_type_collection import ReportTypeCollection
 from .report_type_summary import ReportTypeSummary
 from .screenshot import Screenshot
+from .search_listings_details import SearchListingsDetails
+from .structured_search_details import StructuredSearchDetails
 from .support_contact import SupportContact
 from .tax_summary import TaxSummary
 from .text_based_eula import TextBasedEula
+from .third_party_paid_listing_eligibility import ThirdPartyPaidListingEligibility
 from .update_accepted_agreement_details import UpdateAcceptedAgreementDetails
 from .update_publication_details import UpdatePublicationDetails
 from .upload_data import UploadData
@@ -65,9 +70,11 @@ marketplace_type_mapping = {
     "DocumentationLink": DocumentationLink,
     "ErrorEntity": ErrorEntity,
     "Eula": Eula,
+    "FreeTextSearchDetails": FreeTextSearchDetails,
     "ImageListingPackage": ImageListingPackage,
     "ImagePublicationPackage": ImagePublicationPackage,
     "Item": Item,
+    "LaunchEligibility": LaunchEligibility,
     "Link": Link,
     "Listing": Listing,
     "ListingPackage": ListingPackage,
@@ -91,9 +98,12 @@ marketplace_type_mapping = {
     "ReportTypeCollection": ReportTypeCollection,
     "ReportTypeSummary": ReportTypeSummary,
     "Screenshot": Screenshot,
+    "SearchListingsDetails": SearchListingsDetails,
+    "StructuredSearchDetails": StructuredSearchDetails,
     "SupportContact": SupportContact,
     "TaxSummary": TaxSummary,
     "TextBasedEula": TextBasedEula,
+    "ThirdPartyPaidListingEligibility": ThirdPartyPaidListingEligibility,
     "UpdateAcceptedAgreementDetails": UpdateAcceptedAgreementDetails,
     "UpdatePublicationDetails": UpdatePublicationDetails,
     "UploadData": UploadData

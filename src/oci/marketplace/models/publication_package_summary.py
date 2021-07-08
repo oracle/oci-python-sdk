@@ -177,7 +177,7 @@ class PublicationPackageSummary(object):
     def time_created(self):
         """
         Gets the time_created of this PublicationPackageSummary.
-        The date and time this listing package was created, expressed in `RFC 3339`__
+        The date and time the publication package was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -194,7 +194,7 @@ class PublicationPackageSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PublicationPackageSummary.
-        The date and time this listing package was created, expressed in `RFC 3339`__
+        The date and time the publication package was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`

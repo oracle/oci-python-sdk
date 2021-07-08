@@ -92,8 +92,8 @@ class ResolverForwardRuleDetails(ResolverRuleDetails):
     def source_endpoint_name(self):
         """
         **[Required]** Gets the source_endpoint_name of this ResolverForwardRuleDetails.
-        Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The
-        endpoint must have isForwarding set to true.
+        Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+        interface. The endpoint must have isForwarding set to true.
 
 
         :return: The source_endpoint_name of this ResolverForwardRuleDetails.
@@ -105,8 +105,8 @@ class ResolverForwardRuleDetails(ResolverRuleDetails):
     def source_endpoint_name(self, source_endpoint_name):
         """
         Sets the source_endpoint_name of this ResolverForwardRuleDetails.
-        Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The
-        endpoint must have isForwarding set to true.
+        Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+        interface. The endpoint must have isForwarding set to true.
 
 
         :param source_endpoint_name: The source_endpoint_name of this ResolverForwardRuleDetails.

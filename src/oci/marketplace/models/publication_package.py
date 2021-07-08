@@ -110,7 +110,7 @@ class PublicationPackage(object):
     def description(self):
         """
         Gets the description of this PublicationPackage.
-        Description of this package.
+        A description of the package.
 
 
         :return: The description of this PublicationPackage.
@@ -122,7 +122,7 @@ class PublicationPackage(object):
     def description(self, description):
         """
         Sets the description of this PublicationPackage.
-        Description of this package.
+        A description of the package.
 
 
         :param description: The description of this PublicationPackage.
@@ -134,7 +134,7 @@ class PublicationPackage(object):
     def listing_id(self):
         """
         **[Required]** Gets the listing_id of this PublicationPackage.
-        The ID of the listing this package belongs to.
+        The ID of the listing that the specified package belongs to.
 
 
         :return: The listing_id of this PublicationPackage.
@@ -146,7 +146,7 @@ class PublicationPackage(object):
     def listing_id(self, listing_id):
         """
         Sets the listing_id of this PublicationPackage.
-        The ID of the listing this package belongs to.
+        The ID of the listing that the specified package belongs to.
 
 
         :param listing_id: The listing_id of this PublicationPackage.
@@ -236,7 +236,7 @@ class PublicationPackage(object):
     def time_created(self):
         """
         Gets the time_created of this PublicationPackage.
-        The date and time this listing package was created, expressed in `RFC 3339`__
+        The date and time the publication package was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -253,7 +253,7 @@ class PublicationPackage(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PublicationPackage.
-        The date and time this listing package was created, expressed in `RFC 3339`__
+        The date and time the publication package was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`

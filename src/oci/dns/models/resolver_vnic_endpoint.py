@@ -151,7 +151,8 @@ class ResolverVnicEndpoint(ResolverEndpoint):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this ResolverVnicEndpoint.
-        An array of NSG OCIDs for the resolver endpoint.
+        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+        resolver endpoint is a part of.
 
 
         :return: The nsg_ids of this ResolverVnicEndpoint.
@@ -163,7 +164,8 @@ class ResolverVnicEndpoint(ResolverEndpoint):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this ResolverVnicEndpoint.
-        An array of NSG OCIDs for the resolver endpoint.
+        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
+        resolver endpoint is a part of.
 
 
         :param nsg_ids: The nsg_ids of this ResolverVnicEndpoint.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BdsInstance(object):
     """
-    Description of the BDS instance
+    Description of the cluster.
     """
 
     #: A constant which can be used with the lifecycle_state property of a BdsInstance.
@@ -57,6 +57,10 @@ class BdsInstance(object):
     #: This constant has a value of "CDH6"
     CLUSTER_VERSION_CDH6 = "CDH6"
 
+    #: A constant which can be used with the cluster_version property of a BdsInstance.
+    #: This constant has a value of "ODH1"
+    CLUSTER_VERSION_ODH1 = "ODH1"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BdsInstance object with values from keyword arguments.
@@ -82,7 +86,7 @@ class BdsInstance(object):
 
         :param cluster_version:
             The value to assign to the cluster_version property of this BdsInstance.
-            Allowed values for this property are: "CDH5", "CDH6", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDH5", "CDH6", "ODH1", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cluster_version: str
 
@@ -204,7 +208,7 @@ class BdsInstance(object):
     def id(self):
         """
         **[Required]** Gets the id of this BdsInstance.
-        The OCID of the BDS resource
+        The OCID of the Big Data Service resource.
 
 
         :return: The id of this BdsInstance.
@@ -216,7 +220,7 @@ class BdsInstance(object):
     def id(self, id):
         """
         Sets the id of this BdsInstance.
-        The OCID of the BDS resource
+        The OCID of the Big Data Service resource.
 
 
         :param id: The id of this BdsInstance.
@@ -228,7 +232,7 @@ class BdsInstance(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BdsInstance.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this BdsInstance.
@@ -240,7 +244,7 @@ class BdsInstance(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BdsInstance.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this BdsInstance.
@@ -252,7 +256,7 @@ class BdsInstance(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this BdsInstance.
-        Name of the BDS instance
+        The name of the cluster.
 
 
         :return: The display_name of this BdsInstance.
@@ -264,7 +268,7 @@ class BdsInstance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BdsInstance.
-        Name of the BDS instance
+        The name of the cluster.
 
 
         :param display_name: The display_name of this BdsInstance.
@@ -276,7 +280,7 @@ class BdsInstance(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this BdsInstance.
-        The state of the BDS instance
+        The state of the cluster.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -291,7 +295,7 @@ class BdsInstance(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BdsInstance.
-        The state of the BDS instance
+        The state of the cluster.
 
 
         :param lifecycle_state: The lifecycle_state of this BdsInstance.
@@ -306,9 +310,9 @@ class BdsInstance(object):
     def cluster_version(self):
         """
         Gets the cluster_version of this BdsInstance.
-        Version of the Hadoop distribution
+        Version of the Hadoop distribution.
 
-        Allowed values for this property are: "CDH5", "CDH6", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDH5", "CDH6", "ODH1", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -321,13 +325,13 @@ class BdsInstance(object):
     def cluster_version(self, cluster_version):
         """
         Sets the cluster_version of this BdsInstance.
-        Version of the Hadoop distribution
+        Version of the Hadoop distribution.
 
 
         :param cluster_version: The cluster_version of this BdsInstance.
         :type: str
         """
-        allowed_values = ["CDH5", "CDH6"]
+        allowed_values = ["CDH5", "CDH6", "ODH1"]
         if not value_allowed_none_or_none_sentinel(cluster_version, allowed_values):
             cluster_version = 'UNKNOWN_ENUM_VALUE'
         self._cluster_version = cluster_version
@@ -336,7 +340,7 @@ class BdsInstance(object):
     def is_high_availability(self):
         """
         **[Required]** Gets the is_high_availability of this BdsInstance.
-        Boolean flag specifying whether or not the cluster is HA
+        Boolean flag specifying whether or not the cluster is highly available (HA)
 
 
         :return: The is_high_availability of this BdsInstance.
@@ -348,7 +352,7 @@ class BdsInstance(object):
     def is_high_availability(self, is_high_availability):
         """
         Sets the is_high_availability of this BdsInstance.
-        Boolean flag specifying whether or not the cluster is HA
+        Boolean flag specifying whether or not the cluster is highly available (HA)
 
 
         :param is_high_availability: The is_high_availability of this BdsInstance.
@@ -360,7 +364,7 @@ class BdsInstance(object):
     def is_secure(self):
         """
         **[Required]** Gets the is_secure of this BdsInstance.
-        Boolean flag specifying whether or not the cluster should be setup as secure.
+        Boolean flag specifying whether or not the cluster should be set up as secure.
 
 
         :return: The is_secure of this BdsInstance.
@@ -372,7 +376,7 @@ class BdsInstance(object):
     def is_secure(self, is_secure):
         """
         Sets the is_secure of this BdsInstance.
-        Boolean flag specifying whether or not the cluster should be setup as secure.
+        Boolean flag specifying whether or not the cluster should be set up as secure.
 
 
         :param is_secure: The is_secure of this BdsInstance.
@@ -384,7 +388,7 @@ class BdsInstance(object):
     def is_cloud_sql_configured(self):
         """
         **[Required]** Gets the is_cloud_sql_configured of this BdsInstance.
-        Boolean flag specifying whether we configure Cloud SQL or not
+        Boolean flag specifying whether or not Cloud SQL should be configured.
 
 
         :return: The is_cloud_sql_configured of this BdsInstance.
@@ -396,7 +400,7 @@ class BdsInstance(object):
     def is_cloud_sql_configured(self, is_cloud_sql_configured):
         """
         Sets the is_cloud_sql_configured of this BdsInstance.
-        Boolean flag specifying whether we configure Cloud SQL or not
+        Boolean flag specifying whether or not Cloud SQL should be configured.
 
 
         :param is_cloud_sql_configured: The is_cloud_sql_configured of this BdsInstance.
@@ -448,7 +452,7 @@ class BdsInstance(object):
     def nodes(self):
         """
         **[Required]** Gets the nodes of this BdsInstance.
-        The list of nodes in the BDS instance
+        The list of nodes in the cluster.
 
 
         :return: The nodes of this BdsInstance.
@@ -460,7 +464,7 @@ class BdsInstance(object):
     def nodes(self, nodes):
         """
         Sets the nodes of this BdsInstance.
-        The list of nodes in the BDS instance
+        The list of nodes in the cluster.
 
 
         :param nodes: The nodes of this BdsInstance.
@@ -492,7 +496,7 @@ class BdsInstance(object):
     def created_by(self):
         """
         Gets the created_by of this BdsInstance.
-        The user who created the BDS instance.
+        The user who created the cluster.
 
 
         :return: The created_by of this BdsInstance.
@@ -504,7 +508,7 @@ class BdsInstance(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this BdsInstance.
-        The user who created the BDS instance.
+        The user who created the cluster.
 
 
         :param created_by: The created_by of this BdsInstance.
@@ -516,7 +520,7 @@ class BdsInstance(object):
     def time_created(self):
         """
         Gets the time_created of this BdsInstance.
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_created of this BdsInstance.
@@ -528,7 +532,7 @@ class BdsInstance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BdsInstance.
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_created: The time_created of this BdsInstance.
@@ -540,7 +544,7 @@ class BdsInstance(object):
     def time_updated(self):
         """
         Gets the time_updated of this BdsInstance.
-        The time the BDS instance was updated. An RFC3339 formatted datetime string
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_updated of this BdsInstance.
@@ -552,7 +556,7 @@ class BdsInstance(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BdsInstance.
-        The time the BDS instance was updated. An RFC3339 formatted datetime string
+        The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this BdsInstance.
@@ -588,8 +592,8 @@ class BdsInstance(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this BdsInstance.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this BdsInstance.
@@ -601,8 +605,8 @@ class BdsInstance(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this BdsInstance.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this BdsInstance.
@@ -615,7 +619,7 @@ class BdsInstance(object):
         """
         Gets the defined_tags of this BdsInstance.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this BdsInstance.
@@ -628,7 +632,7 @@ class BdsInstance(object):
         """
         Sets the defined_tags of this BdsInstance.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this BdsInstance.

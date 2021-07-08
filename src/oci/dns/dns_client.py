@@ -79,7 +79,7 @@ class DnsClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180115',
-            'service_endpoint_template': 'https://dns.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://dns.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         if 'timeout' in kwargs:
@@ -90,7 +90,7 @@ class DnsClient(object):
     def change_resolver_compartment(self, resolver_id, change_resolver_compartment_details, **kwargs):
         """
         Moves a resolver into a different compartment along with its protected default view and any endpoints.
-        Zones in the default view are not moved.
+        Zones in the default view are not moved. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -454,7 +454,8 @@ class DnsClient(object):
 
     def change_view_compartment(self, view_id, change_view_compartment_details, **kwargs):
         """
-        Moves a view into a different compartment. Protected views cannot have their compartment changed.
+        Moves a view into a different compartment. Protected views cannot have their compartment changed. Requires a
+        `PRIVATE` scope query parameter.
 
 
         :param str view_id: (required)
@@ -575,7 +576,9 @@ class DnsClient(object):
 
     def change_zone_compartment(self, zone_id, change_zone_compartment_details, **kwargs):
         """
-        Moves a zone into a different compartment. Protected zones cannot have their compartment changed.
+        Moves a zone into a different compartment. Protected zones cannot have their compartment changed. For private
+        zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is provided as a
+        path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
 
         **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
 
@@ -698,7 +701,7 @@ class DnsClient(object):
 
     def create_resolver_endpoint(self, resolver_id, create_resolver_endpoint_details, **kwargs):
         """
-        Creates a new resolver endpoint.
+        Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -1106,7 +1109,7 @@ class DnsClient(object):
 
     def create_view(self, create_view_details, **kwargs):
         """
-        Creates a new view in the specified compartment.
+        Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
 
 
         :param oci.dns.models.CreateViewDetails create_view_details: (required)
@@ -1205,9 +1208,11 @@ class DnsClient(object):
 
     def create_zone(self, create_zone_details, **kwargs):
         """
-        Creates a new zone in the specified compartment. If the `Content-Type` header for the request is `text/dns`, the
-        `compartmentId` query parameter is required. Additionally, for `text/dns`, the `scope` and `viewId` query
-        parameters are required to create a private zone.
+        Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+        is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+        not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+        private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+        `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
 
 
         :param oci.dns.models.CreateZoneBaseDetails create_zone_details: (required)
@@ -1304,7 +1309,9 @@ class DnsClient(object):
 
     def delete_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
-        Deletes all records at the specified zone and domain.
+        Deletes all records at the specified zone and domain. For private zones, the scope query parameter is
+        required with a value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used
+        for the scope query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -1432,8 +1439,9 @@ class DnsClient(object):
     def delete_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
         Deletes the specified resolver endpoint. Note that attempting to delete a resolver endpoint in the
-        DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
-        Resolver endpoints may not be deleted if they are referenced by a resolver rule.
+        DELETED lifecycle state will result in a `404` response to be consistent with other operations of the API.
+        Resolver endpoints may not be deleted if they are referenced by a resolver rule. Requires a `PRIVATE` scope
+        query parameter.
 
 
         :param str resolver_id: (required)
@@ -1550,7 +1558,9 @@ class DnsClient(object):
 
     def delete_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
-        Deletes all records in the specified RRSet.
+        Deletes all records in the specified RRSet. For private zones, the scope query parameter is required with a
+        value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+        query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -2025,10 +2035,10 @@ class DnsClient(object):
     def delete_view(self, view_id, **kwargs):
         """
         Deletes the specified view. Note that attempting to delete a
-        view in the DELETED lifecycleState will result in a 404 to be
-        consistent with other operations of the API. Views can not be
+        view in the DELETED lifecycleState will result in a `404` response to be
+        consistent with other operations of the API. Views cannot be
         deleted if they are referenced by non-deleted zones or resolvers.
-        Protected views cannot be deleted.
+        Protected views cannot be deleted. Requires a `PRIVATE` scope query parameter.
 
 
         :param str view_id: (required)
@@ -2141,9 +2151,10 @@ class DnsClient(object):
 
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
-        Deletes the specified zone and all its steering policy attachments.
-        A `204` response indicates that the zone has been successfully deleted.
-        Protected zones cannot be deleted.
+        Deletes the specified zone and all its steering policy attachments. A `204` response indicates that the zone has
+        been successfully deleted. Protected zones cannot be deleted. For private zones, the scope query parameter is
+        required with a value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used
+        for the scope query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -2266,9 +2277,11 @@ class DnsClient(object):
 
     def get_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
-        Gets a list of all records at the specified zone and domain.
-        The results are sorted by `rtype` in alphabetical order by default. You
-        can optionally filter and/or sort the results using the listed parameters.
+        Gets a list of all records at the specified zone and domain. The results are sorted by `rtype` in
+        alphabetical order by default. You can optionally filter and/or sort the results using the listed parameters.
+        For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+        parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -2446,9 +2459,9 @@ class DnsClient(object):
 
     def get_resolver(self, resolver_id, **kwargs):
         """
-        Get information about a specific resolver. Note that attempting to get a
-        resolver in the DELETED lifecycleState will result in a 404 to be
-        consistent with other operations of the API.
+        Gets information about a specific resolver. Note that attempting to get a
+        resolver in the DELETED lifecycleState will result in a `404` response to be
+        consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -2561,8 +2574,9 @@ class DnsClient(object):
 
     def get_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
-        Get information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-        in the DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+        Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
+        in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
+        API. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -2679,8 +2693,10 @@ class DnsClient(object):
 
     def get_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
-        Gets a list of all records in the specified RRSet. The results are
-        sorted by `recordHash` by default.
+        Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
+        private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+        parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -3165,9 +3181,9 @@ class DnsClient(object):
 
     def get_view(self, view_id, **kwargs):
         """
-        Get information about a specific view. Note that attempting to get a
-        view in the DELETED lifecycleState will result in a 404 to be
-        consistent with other operations of the API.
+        Gets information about a specific view. Note that attempting to get a
+        view in the DELETED lifecycleState will result in a `404` response to be
+        consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
 
 
         :param str view_id: (required)
@@ -3280,8 +3296,9 @@ class DnsClient(object):
 
     def get_zone(self, zone_name_or_id, **kwargs):
         """
-        Gets information about the specified zone, including its creation date,
-        zone type, and serial.
+        Gets information about the specified zone, including its creation date, zone type, and serial. For private
+        zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is provided as a
+        path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -3402,11 +3419,131 @@ class DnsClient(object):
                 header_params=header_params,
                 response_type="Zone")
 
+    def get_zone_content(self, zone_name_or_id, **kwargs):
+        """
+        Gets the requested zone's zone file.
+
+
+        :param str zone_name_or_id: (required)
+            The name or OCID of the target zone.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_zone_content.py.html>`__ to see an example of how to use get_zone_content API.
+        """
+        resource_path = "/zones/{zoneNameOrId}/content"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_none_match",
+            "if_modified_since",
+            "opc_request_id",
+            "scope",
+            "view_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_zone_content got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "zoneNameOrId": zone_name_or_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "text/dns",
+            "content-type": "application/json",
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="stream")
+
     def get_zone_records(self, zone_name_or_id, **kwargs):
         """
-        Gets all records in the specified zone. The results are
-        sorted by `domain` in alphabetical order by default. For more
-        information about records, see `Resource Record (RR) TYPEs`__.
+        Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
+        For more information about records, see `Resource Record (RR) TYPEs`__.
+        For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+        parameter is required.
 
         __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 
@@ -3596,8 +3733,8 @@ class DnsClient(object):
         """
         Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
         It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
-        query parameter is provided that the collection does not include resolver endpoints in the DELETED
-        lifecycle state to be consistent with other operations of the API.
+        query parameter is provided, the collection does not include resolver endpoints in the DELETED
+        lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -3754,9 +3891,9 @@ class DnsClient(object):
         Gets a list of all resolvers within a compartment. The collection can
         be filtered by display name, id, or lifecycle state. It can be sorted
         on creation time or displayName both in ASC or DESC order. Note that
-        when no lifecycleState query parameter is provided that the collection
+        when no lifecycleState query parameter is provided, the collection
         does not include resolvers in the DELETED lifecycleState to be consistent
-        with other operations of the API.
+        with other operations of the API. Requires a `PRIVATE` scope query parameter.
 
 
         :param str compartment_id: (required)
@@ -4300,7 +4437,7 @@ class DnsClient(object):
         :param str lifecycle_state: (optional)
             The state of a resource.
 
-            Allowed values are: "ACTIVE", "CREATING"
+            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"
 
         :param str sort_by: (optional)
             The field by which to sort TSIG keys. If unspecified, defaults to `timeCreated`.
@@ -4353,7 +4490,7 @@ class DnsClient(object):
                 "list_tsig_keys got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACTIVE", "CREATING"]
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -4425,9 +4562,9 @@ class DnsClient(object):
         Gets a list of all views within a compartment. The collection can
         be filtered by display name, id, or lifecycle state. It can be sorted
         on creation time or displayName both in ASC or DESC order. Note that
-        when no lifecycleState query parameter is provided that the collection
+        when no lifecycleState query parameter is provided, the collection
         does not include views in the DELETED lifecycleState to be consistent
-        with other operations of the API.
+        with other operations of the API. Requires a `PRIVATE` scope query parameter.
 
 
         :param str compartment_id: (required)
@@ -4573,10 +4710,103 @@ class DnsClient(object):
                 header_params=header_params,
                 response_type="list[ViewSummary]")
 
+    def list_zone_transfer_servers(self, compartment_id, **kwargs):
+        """
+        Gets a list of IP addresses of OCI nameservers for inbound and outbound transfer of zones in the specified
+        compartment (which must be the root compartment of a tenancy) that transfer zone data with external master or
+        downstream nameservers.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.ZoneTransferServer`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_zone_transfer_servers.py.html>`__ to see an example of how to use list_zone_transfer_servers API.
+        """
+        resource_path = "/zoneTransferServers"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "scope",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_zone_transfer_servers got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "scope": kwargs.get("scope", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ZoneTransferServer]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ZoneTransferServer]")
+
     def list_zones(self, compartment_id, **kwargs):
         """
-        Gets a list of all zones in the specified compartment. The collection
-        can be filtered by name, time created, scope, associated view, and zone type.
+        Gets a list of all zones in the specified compartment. The collection can be filtered by name, time created,
+        scope, associated view, and zone type. Filtering by view is only supported for private zones.
 
 
         :param str compartment_id: (required)
@@ -4622,7 +4852,7 @@ class DnsClient(object):
         :param str lifecycle_state: (optional)
             The state of a resource.
 
-            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"
+            Allowed values are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"
 
         :param str sort_by: (optional)
             The field by which to sort zones.
@@ -4641,6 +4871,9 @@ class DnsClient(object):
 
         :param str view_id: (optional)
             The OCID of the view the resource is associated with.
+
+        :param str tsig_key_id: (optional)
+            Search for zones that are associated with a TSIG key.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4674,7 +4907,8 @@ class DnsClient(object):
             "sort_by",
             "sort_order",
             "scope",
-            "view_id"
+            "view_id",
+            "tsig_key_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4689,7 +4923,7 @@ class DnsClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"]
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -4729,7 +4963,8 @@ class DnsClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "scope": kwargs.get("scope", missing),
-            "viewId": kwargs.get("view_id", missing)
+            "viewId": kwargs.get("view_id", missing),
+            "tsigKeyId": kwargs.get("tsig_key_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4762,10 +4997,11 @@ class DnsClient(object):
 
     def patch_domain_records(self, zone_name_or_id, domain, patch_domain_records_details, **kwargs):
         """
-        Updates records in the specified zone at a domain. You can update
-        one record or all records for the specified zone depending on the changes
-        provided in the request body. You can also add or remove records using this
-        function.
+        Updates records in the specified zone at a domain. You can update one record or all records for the specified
+        zone depending on the changes provided in the request body. You can also add or remove records using this
+        function. For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone
+        name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
+        query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -4899,7 +5135,9 @@ class DnsClient(object):
 
     def patch_rr_set(self, zone_name_or_id, domain, rtype, patch_rr_set_details, **kwargs):
         """
-        Updates records in the specified RRSet.
+        Updates records in the specified RRSet. For private zones, the scope query parameter is required with a value
+        of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+        parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -5037,10 +5275,11 @@ class DnsClient(object):
 
     def patch_zone_records(self, zone_name_or_id, patch_zone_records_details, **kwargs):
         """
-        Updates a collection of records in the specified zone. You can update
-        one record or all records for the specified zone depending on the
-        changes provided in the request body. You can also add or remove records
-        using this function.
+        Updates a collection of records in the specified zone. You can update one record or all records for the
+        specified zone depending on the changes provided in the request body. You can also add or remove records
+        using this function. For private zones, the scope query parameter is required with a value of `PRIVATE`. When
+        the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the
+        viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -5170,12 +5409,12 @@ class DnsClient(object):
 
     def update_domain_records(self, zone_name_or_id, domain, update_domain_records_details, **kwargs):
         """
-        Replaces records in the specified zone at a domain with the records
-        specified in the request body. If a specified record does not exist,
-        it will be created. If the record exists, then it will be updated to
-        represent the record in the body of the request. If a record in the zone
-        does not exist in the request body, the record will be removed from the
-        zone.
+        Replaces records in the specified zone at a domain with the records specified in the request body. If a
+        specified record does not exist, it will be created. If the record exists, then it will be updated to
+        represent the record in the body of the request. If a record in the zone does not exist in the request body,
+        the record will be removed from the zone. For private zones, the scope query parameter is required with a
+        value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+        query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -5309,7 +5548,7 @@ class DnsClient(object):
 
     def update_resolver(self, resolver_id, update_resolver_details, **kwargs):
         """
-        Updates the specified resolver with your new information.
+        Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -5429,7 +5668,7 @@ class DnsClient(object):
 
     def update_resolver_endpoint(self, resolver_id, resolver_endpoint_name, update_resolver_endpoint_details, **kwargs):
         """
-        Updates the specified resolver endpoint with your new information.
+        Updates the specified resolver endpoint with your new information. Requires a `PRIVATE` scope query parameter.
 
 
         :param str resolver_id: (required)
@@ -5553,7 +5792,9 @@ class DnsClient(object):
 
     def update_rr_set(self, zone_name_or_id, domain, rtype, update_rr_set_details, **kwargs):
         """
-        Replaces records in the specified RRSet.
+        Replaces records in the specified RRSet. For private zones, the scope query parameter is required with a
+        value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+        query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -6051,7 +6292,7 @@ class DnsClient(object):
 
     def update_view(self, view_id, update_view_details, **kwargs):
         """
-        Updates the specified view with your new information.
+        Updates the specified view with your new information. Requires a `PRIVATE` scope query parameter.
 
 
         :param str view_id: (required)
@@ -6171,9 +6412,11 @@ class DnsClient(object):
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
-        Updates the specified secondary zone with your new external master
-        server information. For more information about secondary zone, see
-        `Manage DNS Service Zone`__.
+        Updates the zone with the specified information. Global secondary zones may have their external masters updated.
+        For more information about secondary zone, see `Manage DNS Service Zone`__.
+        For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+        parameter is required.
 
         __ https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm
 
@@ -6305,11 +6548,12 @@ class DnsClient(object):
 
     def update_zone_records(self, zone_name_or_id, update_zone_records_details, **kwargs):
         """
-        Replaces records in the specified zone with the records specified in the
-        request body. If a specified record does not exist, it will be created.
-        If the record exists, then it will be updated to represent the record in
-        the body of the request. If a record in the zone does not exist in the
-        request body, the record will be removed from the zone.
+        Replaces records in the specified zone with the records specified in the request body. If a specified record
+        does not exist, it will be created. If the record exists, then it will be updated to represent the record in
+        the body of the request. If a record in the zone does not exist in the request body, the record will be
+        removed from the zone. For private zones, the scope query parameter is required with a value of `PRIVATE`.
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+        the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)

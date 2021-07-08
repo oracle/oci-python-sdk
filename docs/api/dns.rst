@@ -75,7 +75,6 @@ DNS
     oci.dns.models.SteeringPolicyWeightedAnswerData
     oci.dns.models.SteeringPolicyWeightedRule
     oci.dns.models.SteeringPolicyWeightedRuleCase
-    oci.dns.models.TSIG
     oci.dns.models.TsigKey
     oci.dns.models.TsigKeySummary
     oci.dns.models.UpdateDomainRecordsDetails
@@ -93,3 +92,4 @@ DNS
     oci.dns.models.ViewSummary
     oci.dns.models.Zone
     oci.dns.models.ZoneSummary
+    oci.dns.models.ZoneTransferServer

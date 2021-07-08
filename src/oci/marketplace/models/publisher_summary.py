@@ -51,7 +51,7 @@ class PublisherSummary(object):
     def id(self):
         """
         Gets the id of this PublisherSummary.
-        Unique identifier for the publisher.
+        The unique identifier for the publisher.
 
 
         :return: The id of this PublisherSummary.
@@ -63,7 +63,7 @@ class PublisherSummary(object):
     def id(self, id):
         """
         Sets the id of this PublisherSummary.
-        Unique identifier for the publisher.
+        The unique identifier for the publisher.
 
 
         :param id: The id of this PublisherSummary.

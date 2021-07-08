@@ -6,7 +6,9 @@ Marketplace
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.marketplace.AccountClient
     oci.marketplace.MarketplaceClient
+    oci.marketplace.AccountClientCompositeOperations
     oci.marketplace.MarketplaceClientCompositeOperations
 
 --------
@@ -31,9 +33,11 @@ Marketplace
     oci.marketplace.models.DocumentationLink
     oci.marketplace.models.ErrorEntity
     oci.marketplace.models.Eula
+    oci.marketplace.models.FreeTextSearchDetails
     oci.marketplace.models.ImageListingPackage
     oci.marketplace.models.ImagePublicationPackage
     oci.marketplace.models.Item
+    oci.marketplace.models.LaunchEligibility
     oci.marketplace.models.Link
     oci.marketplace.models.Listing
     oci.marketplace.models.ListingPackage
@@ -57,9 +61,12 @@ Marketplace
     oci.marketplace.models.ReportTypeCollection
     oci.marketplace.models.ReportTypeSummary
     oci.marketplace.models.Screenshot
+    oci.marketplace.models.SearchListingsDetails
+    oci.marketplace.models.StructuredSearchDetails
     oci.marketplace.models.SupportContact
     oci.marketplace.models.TaxSummary
     oci.marketplace.models.TextBasedEula
+    oci.marketplace.models.ThirdPartyPaidListingEligibility
     oci.marketplace.models.UpdateAcceptedAgreementDetails
     oci.marketplace.models.UpdatePublicationDetails
     oci.marketplace.models.UploadData

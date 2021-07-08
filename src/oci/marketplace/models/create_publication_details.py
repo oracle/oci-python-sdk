@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePublicationDetails(object):
     """
-    Publication Creation Details
+    The model for the parameters needed to create a publication.
     """
 
     #: A constant which can be used with the listing_type property of a CreatePublicationDetails.
@@ -113,7 +113,7 @@ class CreatePublicationDetails(object):
     def listing_type(self):
         """
         **[Required]** Gets the listing_type of this CreatePublicationDetails.
-        In which catalog the listing should exist.
+        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 
         Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE"
 
@@ -127,7 +127,7 @@ class CreatePublicationDetails(object):
     def listing_type(self, listing_type):
         """
         Sets the listing_type of this CreatePublicationDetails.
-        In which catalog the listing should exist.
+        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 
 
         :param listing_type: The listing_type of this CreatePublicationDetails.
@@ -145,7 +145,7 @@ class CreatePublicationDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreatePublicationDetails.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :return: The name of this CreatePublicationDetails.
@@ -157,7 +157,7 @@ class CreatePublicationDetails(object):
     def name(self, name):
         """
         Sets the name of this CreatePublicationDetails.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :param name: The name of this CreatePublicationDetails.
@@ -169,7 +169,7 @@ class CreatePublicationDetails(object):
     def short_description(self):
         """
         **[Required]** Gets the short_description of this CreatePublicationDetails.
-        short description of the catalog listing
+        A short description of the publication to use in the listing.
 
 
         :return: The short_description of this CreatePublicationDetails.
@@ -181,7 +181,7 @@ class CreatePublicationDetails(object):
     def short_description(self, short_description):
         """
         Sets the short_description of this CreatePublicationDetails.
-        short description of the catalog listing
+        A short description of the publication to use in the listing.
 
 
         :param short_description: The short_description of this CreatePublicationDetails.
@@ -193,7 +193,7 @@ class CreatePublicationDetails(object):
     def long_description(self):
         """
         Gets the long_description of this CreatePublicationDetails.
-        short description of the catalog listing
+        A long description of the publication to use in the listing.
 
 
         :return: The long_description of this CreatePublicationDetails.
@@ -205,7 +205,7 @@ class CreatePublicationDetails(object):
     def long_description(self, long_description):
         """
         Sets the long_description of this CreatePublicationDetails.
-        short description of the catalog listing
+        A long description of the publication to use in the listing.
 
 
         :param long_description: The long_description of this CreatePublicationDetails.
@@ -217,7 +217,7 @@ class CreatePublicationDetails(object):
     def support_contacts(self):
         """
         **[Required]** Gets the support_contacts of this CreatePublicationDetails.
-        Contact information to use to get support from the publisher for the listing.
+        Contact information for getting support from the publisher for the listing.
 
 
         :return: The support_contacts of this CreatePublicationDetails.
@@ -229,7 +229,7 @@ class CreatePublicationDetails(object):
     def support_contacts(self, support_contacts):
         """
         Sets the support_contacts of this CreatePublicationDetails.
-        Contact information to use to get support from the publisher for the listing.
+        Contact information for getting support from the publisher for the listing.
 
 
         :param support_contacts: The support_contacts of this CreatePublicationDetails.
@@ -241,7 +241,9 @@ class CreatePublicationDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreatePublicationDetails.
-        The OCID of the compartment to create the resource within.
+        The `OCID`__ of the compartment where you want to create the publication.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePublicationDetails.
@@ -253,7 +255,9 @@ class CreatePublicationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreatePublicationDetails.
-        The OCID of the compartment to create the resource within.
+        The `OCID`__ of the compartment where you want to create the publication.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePublicationDetails.
@@ -285,7 +289,7 @@ class CreatePublicationDetails(object):
     def is_agreement_acknowledged(self):
         """
         **[Required]** Gets the is_agreement_acknowledged of this CreatePublicationDetails.
-        Acknowledgement that invoker has the right and authority to share this Community Image in accordance with their agreement with Oracle applicable to the Services and the related Service Specifications
+        Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
 
 
         :return: The is_agreement_acknowledged of this CreatePublicationDetails.
@@ -297,7 +301,7 @@ class CreatePublicationDetails(object):
     def is_agreement_acknowledged(self, is_agreement_acknowledged):
         """
         Sets the is_agreement_acknowledged of this CreatePublicationDetails.
-        Acknowledgement that invoker has the right and authority to share this Community Image in accordance with their agreement with Oracle applicable to the Services and the related Service Specifications
+        Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
 
 
         :param is_agreement_acknowledged: The is_agreement_acknowledged of this CreatePublicationDetails.

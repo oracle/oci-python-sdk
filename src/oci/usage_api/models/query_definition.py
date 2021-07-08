@@ -122,7 +122,7 @@ class QueryDefinition(object):
     def version(self):
         """
         **[Required]** Gets the version of this QueryDefinition.
-        the version of saved query.
+        The saved query version.
 
 
         :return: The version of this QueryDefinition.
@@ -134,7 +134,7 @@ class QueryDefinition(object):
     def version(self, version):
         """
         Sets the version of this QueryDefinition.
-        the version of saved query.
+        The saved query version.
 
 
         :param version: The version of this QueryDefinition.

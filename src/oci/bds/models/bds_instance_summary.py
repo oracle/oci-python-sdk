@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BdsInstanceSummary(object):
     """
-    Summary of the BDS instance
+    Summary details of the Big Data Service cluster.
     """
 
     def __init__(self, **kwargs):
@@ -114,7 +114,7 @@ class BdsInstanceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this BdsInstanceSummary.
-        The OCID of the BDS resource
+        The OCID of the Big Data Service resource.
 
 
         :return: The id of this BdsInstanceSummary.
@@ -126,7 +126,7 @@ class BdsInstanceSummary(object):
     def id(self, id):
         """
         Sets the id of this BdsInstanceSummary.
-        The OCID of the BDS resource
+        The OCID of the Big Data Service resource.
 
 
         :param id: The id of this BdsInstanceSummary.
@@ -138,7 +138,7 @@ class BdsInstanceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BdsInstanceSummary.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this BdsInstanceSummary.
@@ -150,7 +150,7 @@ class BdsInstanceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BdsInstanceSummary.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this BdsInstanceSummary.
@@ -162,7 +162,7 @@ class BdsInstanceSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this BdsInstanceSummary.
-        Name of the BDS instance
+        The name of the cluster.
 
 
         :return: The display_name of this BdsInstanceSummary.
@@ -174,7 +174,7 @@ class BdsInstanceSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BdsInstanceSummary.
-        Name of the BDS instance
+        The name of the cluster.
 
 
         :param display_name: The display_name of this BdsInstanceSummary.
@@ -186,7 +186,7 @@ class BdsInstanceSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this BdsInstanceSummary.
-        The state of the BDS instance
+        The state of the cluster.
 
 
         :return: The lifecycle_state of this BdsInstanceSummary.
@@ -198,7 +198,7 @@ class BdsInstanceSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BdsInstanceSummary.
-        The state of the BDS instance
+        The state of the cluster.
 
 
         :param lifecycle_state: The lifecycle_state of this BdsInstanceSummary.
@@ -210,7 +210,7 @@ class BdsInstanceSummary(object):
     def number_of_nodes(self):
         """
         **[Required]** Gets the number_of_nodes of this BdsInstanceSummary.
-        Number of nodes that forming the cluster
+        The number of nodes that form the cluster.
 
 
         :return: The number_of_nodes of this BdsInstanceSummary.
@@ -222,7 +222,7 @@ class BdsInstanceSummary(object):
     def number_of_nodes(self, number_of_nodes):
         """
         Sets the number_of_nodes of this BdsInstanceSummary.
-        Number of nodes that forming the cluster
+        The number of nodes that form the cluster.
 
 
         :param number_of_nodes: The number_of_nodes of this BdsInstanceSummary.
@@ -234,7 +234,7 @@ class BdsInstanceSummary(object):
     def cluster_version(self):
         """
         Gets the cluster_version of this BdsInstanceSummary.
-        Version of the Hadoop distribution
+        Version of the Hadoop distribution.
 
 
         :return: The cluster_version of this BdsInstanceSummary.
@@ -246,7 +246,7 @@ class BdsInstanceSummary(object):
     def cluster_version(self, cluster_version):
         """
         Sets the cluster_version of this BdsInstanceSummary.
-        Version of the Hadoop distribution
+        Version of the Hadoop distribution.
 
 
         :param cluster_version: The cluster_version of this BdsInstanceSummary.
@@ -258,7 +258,7 @@ class BdsInstanceSummary(object):
     def is_high_availability(self):
         """
         **[Required]** Gets the is_high_availability of this BdsInstanceSummary.
-        Boolean flag specifying whether or not the cluster is HA
+        Boolean flag specifying whether or not the cluster is highly available(HA).
 
 
         :return: The is_high_availability of this BdsInstanceSummary.
@@ -270,7 +270,7 @@ class BdsInstanceSummary(object):
     def is_high_availability(self, is_high_availability):
         """
         Sets the is_high_availability of this BdsInstanceSummary.
-        Boolean flag specifying whether or not the cluster is HA
+        Boolean flag specifying whether or not the cluster is highly available(HA).
 
 
         :param is_high_availability: The is_high_availability of this BdsInstanceSummary.
@@ -282,7 +282,7 @@ class BdsInstanceSummary(object):
     def is_secure(self):
         """
         **[Required]** Gets the is_secure of this BdsInstanceSummary.
-        Boolean flag specifying whether or not the cluster should be setup as secure.
+        Boolean flag specifying whether or not the cluster should be set up as secure.
 
 
         :return: The is_secure of this BdsInstanceSummary.
@@ -294,7 +294,7 @@ class BdsInstanceSummary(object):
     def is_secure(self, is_secure):
         """
         Sets the is_secure of this BdsInstanceSummary.
-        Boolean flag specifying whether or not the cluster should be setup as secure.
+        Boolean flag specifying whether or not the cluster should be set up as secure.
 
 
         :param is_secure: The is_secure of this BdsInstanceSummary.
@@ -306,7 +306,7 @@ class BdsInstanceSummary(object):
     def is_cloud_sql_configured(self):
         """
         **[Required]** Gets the is_cloud_sql_configured of this BdsInstanceSummary.
-        Boolean flag specifying whether we configure Cloud SQL or not
+        Boolean flag specifying whether Cloud SQL is configured or not.
 
 
         :return: The is_cloud_sql_configured of this BdsInstanceSummary.
@@ -318,7 +318,7 @@ class BdsInstanceSummary(object):
     def is_cloud_sql_configured(self, is_cloud_sql_configured):
         """
         Sets the is_cloud_sql_configured of this BdsInstanceSummary.
-        Boolean flag specifying whether we configure Cloud SQL or not
+        Boolean flag specifying whether Cloud SQL is configured or not.
 
 
         :param is_cloud_sql_configured: The is_cloud_sql_configured of this BdsInstanceSummary.
@@ -330,7 +330,7 @@ class BdsInstanceSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this BdsInstanceSummary.
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_created of this BdsInstanceSummary.
@@ -342,7 +342,7 @@ class BdsInstanceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BdsInstanceSummary.
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_created: The time_created of this BdsInstanceSummary.
@@ -354,8 +354,8 @@ class BdsInstanceSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this BdsInstanceSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this BdsInstanceSummary.
@@ -367,8 +367,8 @@ class BdsInstanceSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this BdsInstanceSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this BdsInstanceSummary.
@@ -381,7 +381,7 @@ class BdsInstanceSummary(object):
         """
         Gets the defined_tags of this BdsInstanceSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this BdsInstanceSummary.
@@ -394,7 +394,7 @@ class BdsInstanceSummary(object):
         """
         Sets the defined_tags of this BdsInstanceSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this BdsInstanceSummary.
