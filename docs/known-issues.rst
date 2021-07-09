@@ -4,6 +4,28 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~
 These are the current known issues for the Python SDK.
 
+Performance regression in oci v2.38.4 and above
+===============================================
+In OCI Python SDK version 2.38.4 and later versions, you may encounter performance regressions when using the SDK with some OCI services. The regression surfaces itself as a 3-second increase in latency in SDK operations made to some OCI services. This issue has been confirmed to impact the OCI Streaming service, and likely impacts the following services:
+
+* Email Delivery
+* Health Checks
+* NoSQL Database Cloud
+* Registry
+* Generic Artifacts
+* Web Application Acceleration
+* Security service
+
+This list is not comprehensive – it is possible you may encounter the issue against other OCI services as well. The issue has been confirmed to NOT affect the OCI Object Storage and Functions services.
+
+We are actively working on fixing this issue, but in the mean time, if you are experiencing this issue there are some workarounds you can do:
+
+* Recommended: Disable support for the OCI Python SDK's Expect: 100-Continue feature by adding the following environment variable `OCI_PYSDK_USING_EXPECT_HEADER` to `FALSE`. For example, in Bash, `export OCI_PYSDK_USING_EXPECT_HEADER=FALSE`
+* Or, use OCI Python SDK version 2.38.3 or earlier
+* Or, use the OCI Python SDK's `raw request signer <https://docs.oracle.com/en-us/iaas/tools/python/latest/raw-requests.html>`_ to make requests to OCI services for any requests where you are experiencing performance degradation. An example on how to use the raw request signer is `here <https://github.com/oracle/oci-python-sdk/blob/master/examples/raw_request.py>`_.
+
+If you have any questions, please feel free to comment on `this GitHub issue <https://github.com/oracle/oci-python-sdk/issues/367>`_ and we will be happy to help.
+
 create_job_and_wait_for_state() fails with KeyError for ResourceManagerClientCompositeOperations (versions 2.20.0 and above)
 ============================================================================================================================
 `ResourceManagerClientCompositeOperations.create_job_and_wait_for_state() <https://docs.cloud.oracle.com/en-us/iaas/tools/python/latest/api/resource_manager/client/oci.resource_manager.ResourceManagerClientCompositeOperations.html#oci.resource_manager.ResourceManagerClientCompositeOperations.create_stack_and_wait_for_state>`_ fails with KeyError: 'opc-work-request-id'.
