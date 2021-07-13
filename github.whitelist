@@ -37,6 +37,7 @@
 ^setup\.cfg$
 ^setup\.py$
 ^THIRD_PARTY_LICENSES\.txt$
+^THIRD_PARTY_LICENSES_DEV\.txt$
 ^tox\.ini$
 ^wercker\.yml$
 ^NOTICE\.txt$
