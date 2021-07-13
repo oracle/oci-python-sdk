@@ -44,7 +44,7 @@ class ChangeShapeDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this ChangeShapeDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this ChangeShapeDetails.
@@ -56,7 +56,7 @@ class ChangeShapeDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this ChangeShapeDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this ChangeShapeDetails.

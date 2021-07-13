@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Publication(object):
     """
-    The model for an Oracle Cloud Infrastructure Marketplace Publication
+    The model for an Oracle Cloud Infrastructure Marketplace publication.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Publication.
@@ -174,7 +174,7 @@ class Publication(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Publication.
-        The state of the listing in its lifecycle
+        The lifecycle state of the publication.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -189,7 +189,7 @@ class Publication(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Publication.
-        The state of the listing in its lifecycle
+        The lifecycle state of the publication.
 
 
         :param lifecycle_state: The lifecycle_state of this Publication.
@@ -204,7 +204,9 @@ class Publication(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Publication.
-        The Compartment id where the listings exists
+        The `OCID`__ of the compartment where the publication exists.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Publication.
@@ -216,7 +218,9 @@ class Publication(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Publication.
-        The Compartment id where the listings exists
+        The `OCID`__ of the compartment where the publication exists.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Publication.
@@ -228,7 +232,7 @@ class Publication(object):
     def id(self):
         """
         **[Required]** Gets the id of this Publication.
-        The unique identifier for the listing in Marketplace.
+        The unique identifier for the publication in Marketplace.
 
 
         :return: The id of this Publication.
@@ -240,7 +244,7 @@ class Publication(object):
     def id(self, id):
         """
         Sets the id of this Publication.
-        The unique identifier for the listing in Marketplace.
+        The unique identifier for the publication in Marketplace.
 
 
         :param id: The id of this Publication.
@@ -252,7 +256,7 @@ class Publication(object):
     def name(self):
         """
         **[Required]** Gets the name of this Publication.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :return: The name of this Publication.
@@ -264,7 +268,7 @@ class Publication(object):
     def name(self, name):
         """
         Sets the name of this Publication.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :param name: The name of this Publication.
@@ -276,7 +280,7 @@ class Publication(object):
     def short_description(self):
         """
         Gets the short_description of this Publication.
-        A short description of the listing.
+        A short description of the publication to use in the listing.
 
 
         :return: The short_description of this Publication.
@@ -288,7 +292,7 @@ class Publication(object):
     def short_description(self, short_description):
         """
         Sets the short_description of this Publication.
-        A short description of the listing.
+        A short description of the publication to use in the listing.
 
 
         :param short_description: The short_description of this Publication.
@@ -300,7 +304,7 @@ class Publication(object):
     def long_description(self):
         """
         Gets the long_description of this Publication.
-        A long description of the listing.
+        A long description of the publication to use in the listing.
 
 
         :return: The long_description of this Publication.
@@ -312,7 +316,7 @@ class Publication(object):
     def long_description(self, long_description):
         """
         Sets the long_description of this Publication.
-        A long description of the listing.
+        A long description of the publication to use in the listing.
 
 
         :param long_description: The long_description of this Publication.
@@ -324,7 +328,7 @@ class Publication(object):
     def support_contacts(self):
         """
         Gets the support_contacts of this Publication.
-        Contact information to use to get support from the publisher for the listing.
+        Contact information for getting support from the publisher for the listing.
 
 
         :return: The support_contacts of this Publication.
@@ -336,7 +340,7 @@ class Publication(object):
     def support_contacts(self, support_contacts):
         """
         Sets the support_contacts of this Publication.
-        Contact information to use to get support from the publisher for the listing.
+        Contact information for getting support from the publisher for the listing.
 
 
         :param support_contacts: The support_contacts of this Publication.
@@ -398,7 +402,7 @@ class Publication(object):
     def listing_type(self):
         """
         **[Required]** Gets the listing_type of this Publication.
-        In which catalog the listing should exist.
+        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 
         Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -413,7 +417,7 @@ class Publication(object):
     def listing_type(self, listing_type):
         """
         Sets the listing_type of this Publication.
-        In which catalog the listing should exist.
+        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 
 
         :param listing_type: The listing_type of this Publication.
@@ -428,7 +432,7 @@ class Publication(object):
     def supported_operating_systems(self):
         """
         Gets the supported_operating_systems of this Publication.
-        List of operating systems supprted.
+        The list of operating systems supprted by the listing.
 
 
         :return: The supported_operating_systems of this Publication.
@@ -440,7 +444,7 @@ class Publication(object):
     def supported_operating_systems(self, supported_operating_systems):
         """
         Sets the supported_operating_systems of this Publication.
-        List of operating systems supprted.
+        The list of operating systems supprted by the listing.
 
 
         :param supported_operating_systems: The supported_operating_systems of this Publication.
@@ -452,7 +456,7 @@ class Publication(object):
     def time_created(self):
         """
         Gets the time_created of this Publication.
-        The date and time this publication was created, expressed in `RFC 3339`__
+        The date and time the publication was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -469,7 +473,7 @@ class Publication(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Publication.
-        The date and time this publication was created, expressed in `RFC 3339`__
+        The date and time the publication was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`

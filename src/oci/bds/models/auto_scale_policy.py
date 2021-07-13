@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalePolicy(object):
     """
-    Policy definitions for the autoscaling configuration
+    Policy definitions for the autoscale configuration.
     """
 
     #: A constant which can be used with the policy_type property of a AutoScalePolicy.
@@ -54,7 +54,7 @@ class AutoScalePolicy(object):
     def policy_type(self):
         """
         **[Required]** Gets the policy_type of this AutoScalePolicy.
-        Types of autoscaling policies. SCHEDULE-BASED or  THRESHOLD-BASED, current only supported THRESHOLD-BASED.
+        Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 
         Allowed values for this property are: "THRESHOLD_BASED", "SCHEDULE_BASED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -69,7 +69,7 @@ class AutoScalePolicy(object):
     def policy_type(self, policy_type):
         """
         Sets the policy_type of this AutoScalePolicy.
-        Types of autoscaling policies. SCHEDULE-BASED or  THRESHOLD-BASED, current only supported THRESHOLD-BASED.
+        Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 
 
         :param policy_type: The policy_type of this AutoScalePolicy.
@@ -84,7 +84,7 @@ class AutoScalePolicy(object):
     def rules(self):
         """
         **[Required]** Gets the rules of this AutoScalePolicy.
-        The list of rules for autoscaling. If an action have multiple rules, last rule in the array will be applied.
+        The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 
 
         :return: The rules of this AutoScalePolicy.
@@ -96,7 +96,7 @@ class AutoScalePolicy(object):
     def rules(self, rules):
         """
         Sets the rules of this AutoScalePolicy.
-        The list of rules for autoscaling. If an action have multiple rules, last rule in the array will be applied.
+        The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 
 
         :param rules: The rules of this AutoScalePolicy.

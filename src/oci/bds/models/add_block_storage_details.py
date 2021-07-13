@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddBlockStorageDetails(object):
     """
-    The information about additionally added block volumes
+    The information about added block volumes.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class AddBlockStorageDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this AddBlockStorageDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this AddBlockStorageDetails.
@@ -56,7 +56,7 @@ class AddBlockStorageDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this AddBlockStorageDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this AddBlockStorageDetails.
@@ -68,8 +68,8 @@ class AddBlockStorageDetails(object):
     def block_volume_size_in_gbs(self):
         """
         **[Required]** Gets the block_volume_size_in_gbs of this AddBlockStorageDetails.
-        The size of block volume in GB that needs to be added to each worker node.
-        All the necessary details needed for attachment are managed by service itself.
+        The size of block volume in GB to be added to each worker node. All the
+        details needed for attaching the block volume are managed by service itself.
 
 
         :return: The block_volume_size_in_gbs of this AddBlockStorageDetails.
@@ -81,8 +81,8 @@ class AddBlockStorageDetails(object):
     def block_volume_size_in_gbs(self, block_volume_size_in_gbs):
         """
         Sets the block_volume_size_in_gbs of this AddBlockStorageDetails.
-        The size of block volume in GB that needs to be added to each worker node.
-        All the necessary details needed for attachment are managed by service itself.
+        The size of block volume in GB to be added to each worker node. All the
+        details needed for attaching the block volume are managed by service itself.
 
 
         :param block_volume_size_in_gbs: The block_volume_size_in_gbs of this AddBlockStorageDetails.

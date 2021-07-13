@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateBdsInstanceDetails(object):
     """
-    The information about to-be-updated BDS instance
+    The information about to-be-updated Big Data Service cluster.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class UpdateBdsInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateBdsInstanceDetails.
-        Name of the BDS instance
+        Name of the cluster.
 
 
         :return: The display_name of this UpdateBdsInstanceDetails.
@@ -63,7 +63,7 @@ class UpdateBdsInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateBdsInstanceDetails.
-        Name of the BDS instance
+        Name of the cluster.
 
 
         :param display_name: The display_name of this UpdateBdsInstanceDetails.
@@ -75,8 +75,8 @@ class UpdateBdsInstanceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateBdsInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this UpdateBdsInstanceDetails.
@@ -88,8 +88,8 @@ class UpdateBdsInstanceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateBdsInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this UpdateBdsInstanceDetails.
@@ -102,7 +102,7 @@ class UpdateBdsInstanceDetails(object):
         """
         Gets the defined_tags of this UpdateBdsInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this UpdateBdsInstanceDetails.
@@ -115,7 +115,7 @@ class UpdateBdsInstanceDetails(object):
         """
         Sets the defined_tags of this UpdateBdsInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this UpdateBdsInstanceDetails.

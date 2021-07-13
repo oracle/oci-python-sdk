@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PublicationSummary(object):
     """
-    The model for a summary of an Oracle Cloud Infrastructure publication
+    The model for a summary of an Oracle Cloud Infrastructure publication.
     """
 
     #: A constant which can be used with the package_type property of a PublicationSummary.
@@ -124,7 +124,7 @@ class PublicationSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this PublicationSummary.
-        the lifecycleState of the listing
+        The lifecycle state of the publication.
 
 
         :return: The lifecycle_state of this PublicationSummary.
@@ -136,7 +136,7 @@ class PublicationSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this PublicationSummary.
-        the lifecycleState of the listing
+        The lifecycle state of the publication.
 
 
         :param lifecycle_state: The lifecycle_state of this PublicationSummary.
@@ -148,7 +148,9 @@ class PublicationSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this PublicationSummary.
-        The Compartment id where the listings exists
+        The `OCID`__ of the compartment where the publication exists.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicationSummary.
@@ -160,7 +162,9 @@ class PublicationSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PublicationSummary.
-        The Compartment id where the listings exists
+        The `OCID`__ of the compartment where the publication exists.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicationSummary.
@@ -172,7 +176,7 @@ class PublicationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this PublicationSummary.
-        The unique identifier for the listing in Marketplace.
+        The unique identifier for the publication in Marketplace.
 
 
         :return: The id of this PublicationSummary.
@@ -184,7 +188,7 @@ class PublicationSummary(object):
     def id(self, id):
         """
         Sets the id of this PublicationSummary.
-        The unique identifier for the listing in Marketplace.
+        The unique identifier for the publication in Marketplace.
 
 
         :param id: The id of this PublicationSummary.
@@ -196,7 +200,7 @@ class PublicationSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this PublicationSummary.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :return: The name of this PublicationSummary.
@@ -208,7 +212,7 @@ class PublicationSummary(object):
     def name(self, name):
         """
         Sets the name of this PublicationSummary.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :param name: The name of this PublicationSummary.
@@ -220,7 +224,7 @@ class PublicationSummary(object):
     def short_description(self):
         """
         Gets the short_description of this PublicationSummary.
-        A short description of the listing.
+        A short description of the publication to use in the listing.
 
 
         :return: The short_description of this PublicationSummary.
@@ -232,7 +236,7 @@ class PublicationSummary(object):
     def short_description(self, short_description):
         """
         Sets the short_description of this PublicationSummary.
-        A short description of the listing.
+        A short description of the publication to use in the listing.
 
 
         :param short_description: The short_description of this PublicationSummary.
@@ -294,7 +298,7 @@ class PublicationSummary(object):
     def supported_operating_systems(self):
         """
         Gets the supported_operating_systems of this PublicationSummary.
-        List of operating systems supprted.
+        The list of operating systems supported by the listing.
 
 
         :return: The supported_operating_systems of this PublicationSummary.
@@ -306,7 +310,7 @@ class PublicationSummary(object):
     def supported_operating_systems(self, supported_operating_systems):
         """
         Sets the supported_operating_systems of this PublicationSummary.
-        List of operating systems supprted.
+        The list of operating systems supported by the listing.
 
 
         :param supported_operating_systems: The supported_operating_systems of this PublicationSummary.
@@ -318,7 +322,7 @@ class PublicationSummary(object):
     def listing_type(self):
         """
         **[Required]** Gets the listing_type of this PublicationSummary.
-        In which catalog the listing should exist.
+        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 
         Allowed values for this property are: "COMMUNITY", "PARTNER", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -333,7 +337,7 @@ class PublicationSummary(object):
     def listing_type(self, listing_type):
         """
         Sets the listing_type of this PublicationSummary.
-        In which catalog the listing should exist.
+        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 
 
         :param listing_type: The listing_type of this PublicationSummary.
@@ -348,7 +352,7 @@ class PublicationSummary(object):
     def time_created(self):
         """
         Gets the time_created of this PublicationSummary.
-        The date and time this publication was created, expressed in `RFC 3339`__
+        The date and time the publication was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`
@@ -365,7 +369,7 @@ class PublicationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PublicationSummary.
-        The date and time this publication was created, expressed in `RFC 3339`__
+        The date and time the publication was created, expressed in `RFC 3339`__
         timestamp format.
 
         Example: `2016-08-25T21:10:29.600Z`

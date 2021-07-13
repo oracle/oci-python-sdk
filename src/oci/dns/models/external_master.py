@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class ExternalMaster(object):
     """
     An external master name server used as the source of zone data.
-    May either have a zone-embedded TSIG or reference a TSIG key by OCID,
-    but not both.
     """
 
     def __init__(self, **kwargs):
@@ -28,10 +26,6 @@ class ExternalMaster(object):
             The value to assign to the port property of this ExternalMaster.
         :type port: int
 
-        :param tsig:
-            The value to assign to the tsig property of this ExternalMaster.
-        :type tsig: oci.dns.models.TSIG
-
         :param tsig_key_id:
             The value to assign to the tsig_key_id property of this ExternalMaster.
         :type tsig_key_id: str
@@ -40,20 +34,17 @@ class ExternalMaster(object):
         self.swagger_types = {
             'address': 'str',
             'port': 'int',
-            'tsig': 'TSIG',
             'tsig_key_id': 'str'
         }
 
         self.attribute_map = {
             'address': 'address',
             'port': 'port',
-            'tsig': 'tsig',
             'tsig_key_id': 'tsigKeyId'
         }
 
         self._address = None
         self._port = None
-        self._tsig = None
         self._tsig_key_id = None
 
     @property
@@ -105,26 +96,6 @@ class ExternalMaster(object):
         :type: int
         """
         self._port = port
-
-    @property
-    def tsig(self):
-        """
-        Gets the tsig of this ExternalMaster.
-
-        :return: The tsig of this ExternalMaster.
-        :rtype: oci.dns.models.TSIG
-        """
-        return self._tsig
-
-    @tsig.setter
-    def tsig(self, tsig):
-        """
-        Sets the tsig of this ExternalMaster.
-
-        :param tsig: The tsig of this ExternalMaster.
-        :type: oci.dns.models.TSIG
-        """
-        self._tsig = tsig
 
     @property
     def tsig_key_id(self):

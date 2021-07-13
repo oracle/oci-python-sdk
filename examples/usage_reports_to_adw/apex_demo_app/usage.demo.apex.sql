@@ -28,7 +28,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   15:43 Tuesday May 25, 2021
+--   Date and Time:   12:08 Sunday July 4, 2021
 --   Exported By:     ADIZOHAR
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -68,7 +68,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 --       Globalization:
 --       Reports:
 --       E-Mail:
---     Supporting Objects:  Included
+--     Supporting Objects:  Excluded
 --   Version:         20.2.0.00.20
 --   Instance ID:     9710412995014033
 --
@@ -106,12 +106,17 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 21.06.02'
+,p_flow_version=>'Release 21.07.13'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
 ,p_browser_cache=>'N'
 ,p_browser_frame=>'D'
+,p_vpd=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin',
+'execute immediate q''[ALTER SESSION SET OPTIMIZER_IGNORE_HINTS=FALSE]'';',
+'execute immediate q''[ALTER SESSION SET OPTIMIZER_IGNORE_PARALLEL_HINTS=FALSE]'';',
+'end;'))
 ,p_runtime_api_usage=>'T'
 ,p_security_scheme=>'MUST_NOT_BE_PUBLIC_USER'
 ,p_rejoin_existing_sessions=>'N'
@@ -121,7 +126,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210525154259'
+,p_last_upd_yyyymmddhh24miss=>'20210704120707'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -10260,7 +10265,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210329021046'
+,p_last_upd_yyyymmddhh24miss=>'20210704004426'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(9856082202688393)
@@ -10303,7 +10308,7 @@ wwv_flow_api.create_page_item(
 '',
 '     htp.p(''<H4>Welcome <FONT COLOR="RED">''||:USER||''</FONT> ...<br><br>''||',
 '     ''Usage and Cost Reports to Autonomous database''||',
-'     ''<br><br>Created by <b>Adi Zohar</b>, Feb 2020-Apr 2021<br><br>''||',
+'     ''<br><br>Created by <b>Adi Zohar</b>, Feb 2020-Jul 2021<br><br>''||',
 '     ''Application github link = <a target=_new href="https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw">usage_reports_to_adw</a><br><br>''||',
 '     ''Please check as well <a target=_new href="https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci">showoci</a> application<br><br>''||',
 unistr('     ''<H6><b>DISCLAIMER \2013 This is not an official Oracle application<b></H6>'''),
@@ -10727,8 +10732,10 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'insideBarEdge'
+,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_style=>'normal'
 ,p_items_label_font_size=>'8'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(9906780581740518)
@@ -10896,9 +10903,11 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'insideBarEdge'
+,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_family=>'Arial'
 ,p_items_label_font_style=>'normal'
 ,p_items_label_font_size=>'8'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(9907262849740523)
@@ -11039,7 +11048,9 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'auto'
+,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_size=>'10'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(9909811381740549)
@@ -11110,7 +11121,9 @@ wwv_flow_api.create_jet_chart(
 ,p_hide_and_show_behavior=>'none'
 ,p_hover_behavior=>'none'
 ,p_stack=>'off'
+,p_stack_label=>'off'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -11118,8 +11131,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'bottom'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(9923297286716104)
@@ -11166,6 +11191,8 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'auto'
+,p_items_label_display_as=>'PERCENT'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(9923304855716105)
@@ -11237,7 +11264,9 @@ wwv_flow_api.create_jet_chart(
 ,p_hide_and_show_behavior=>'none'
 ,p_hover_behavior=>'none'
 ,p_stack=>'off'
+,p_stack_label=>'off'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -11245,9 +11274,24 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'bottom'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
+end;
+/
+begin
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(9923743722716109)
 ,p_chart_id=>wwv_flow_api.id(9923640328716108)
@@ -11314,10 +11358,9 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'auto'
+,p_items_label_display_as=>'PERCENT'
+,p_threshold_display=>'onIndicator'
 );
-end;
-/
-begin
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(9923915405716111)
 ,p_chart_id=>wwv_flow_api.id(9923640328716108)
@@ -11478,7 +11521,9 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'auto'
+,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_size=>'10'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(10813796398165709)
@@ -11551,6 +11596,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'value-desc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -11558,8 +11604,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'bottom'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(11789415051177227)
@@ -11608,8 +11666,10 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'insideBarEdge'
+,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_style=>'normal'
 ,p_items_label_font_size=>'8'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(11789569471177228)
@@ -11623,6 +11683,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_major_tick_rendered=>'on'
 ,p_minor_tick_rendered=>'off'
 ,p_tick_label_rendered=>'on'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(11789694843177229)
@@ -11637,6 +11705,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_tick_label_rendered=>'on'
 ,p_tick_label_rotation=>'auto'
 ,p_tick_label_position=>'outside'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11789788701177230)
@@ -11667,6 +11743,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'value-desc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -11674,8 +11751,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'bottom'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(11789946205177232)
@@ -11749,9 +11838,11 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'insideBarEdge'
+,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_family=>'Arial'
 ,p_items_label_font_style=>'normal'
 ,p_items_label_font_size=>'8'
+,p_threshold_display=>'onIndicator'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(11790068420177233)
@@ -11765,6 +11856,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_major_tick_rendered=>'on'
 ,p_minor_tick_rendered=>'off'
 ,p_tick_label_rendered=>'on'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(11790159375177234)
@@ -11779,6 +11878,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_tick_label_rendered=>'on'
 ,p_tick_label_rotation=>'auto'
 ,p_tick_label_position=>'outside'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(32237802331815817)
@@ -12074,6 +12181,9 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_label=>' Resource'
 ,p_column_type=>'STRING'
 );
+end;
+/
+begin
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(32237019013815809)
 ,p_db_column_name=>'USG_BILLED_QUANTITY'
@@ -12197,9 +12307,6 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_is_default=>'Y'
 ,p_report_columns=>'PRD_RESOURCE:USG_BILLED_QUANTITY:'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(32237909169815818)
 ,p_plug_name=>'OCPUs Per Compartment'
@@ -12966,6 +13073,9 @@ wwv_flow_api.create_page_item(
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(11931232277191605)
 ,p_name=>'P2_TAG_KEY'
@@ -13099,9 +13209,6 @@ wwv_flow_api.create_page_item(
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_computation(
  p_id=>wwv_flow_api.id(12278115700302648)
 ,p_computation_sequence=>10
@@ -13155,7 +13262,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210525154120'
+,p_last_upd_yyyymmddhh24miss=>'20210704120707'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(9908591071740536)
@@ -13244,7 +13351,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'OCPUs per Service'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_usage,8) full(oci_usage) */ ',
 '    case when :P3_FRAME like ''%Hour%'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24:MI'') else to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') end USAGE_INTERVAL_START,',
 '    prd_service, ',
 '    sum(',
@@ -13288,6 +13395,10 @@ wwv_flow_api.create_jet_chart_series(
 '        :P3_FRAME=''5 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),5) = 0',
 '        or',
 '        :P3_FRAME=''7 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),7) = 0',
+'        or',
+'        :P3_FRAME=''14 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),14) = 0',
+'        or',
+'        :P3_FRAME=''30 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),30) = 0',
 '    ) and',
 '    USG_BILLED_QUANTITY>0 and',
 '    USG_CONSUMED_MEASURE=''OCPUS''',
@@ -13418,7 +13529,7 @@ wwv_flow_api.create_jet_chart_series(
 '    ),2) as USG_BILLED_QUANTITY',
 'from ',
 '(',
-'    select ',
+'    select /*+ parallel(oci_usage,8) full(oci_usage) */ ',
 '    case when :P3_FRAME like ''%Hour%'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24:MI'') else to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') end USAGE_INTERVAL_START,        prd_service, ',
 '        sum(',
 '            case when USG_CONSUMED_UNITS like ''%MS%'' ',
@@ -13465,6 +13576,10 @@ wwv_flow_api.create_jet_chart_series(
 '            :P3_FRAME=''5 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),5) = 0',
 '            or',
 '            :P3_FRAME=''7 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),7) = 0',
+'            or',
+'            :P3_FRAME=''14 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),14) = 0',
+'            or',
+'            :P3_FRAME=''30 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),30) = 0',
 '        ) and',
 '        USG_BILLED_QUANTITY>0 and',
 '        USG_CONSUMED_MEASURE=''STORAGE_SIZE''',
@@ -13562,7 +13677,7 @@ wwv_flow_api.create_page_item(
 ,p_use_cache_before_default=>'NO'
 ,p_format_mask=>'999G999G999G999G999G999G990'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_usage,8) full(oci_usage) */',
 '    count(*) cnt',
 'from oci_usage',
 'where ',
@@ -13598,6 +13713,10 @@ wwv_flow_api.create_page_item(
 '        :P3_FRAME=''5 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),5) = 0',
 '        or',
 '        :P3_FRAME=''7 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),7) = 0',
+'        or',
+'        :P3_FRAME=''14 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),14) = 0',
+'        or',
+'        :P3_FRAME=''30 Days'' and USAGE_INTERVAL_START=trunc(USAGE_INTERVAL_START) and mod(to_number(to_char(USAGE_INTERVAL_START,''DDD'')),30) = 0',
 '    )'))
 ,p_source_type=>'QUERY'
 ,p_display_as=>'NATIVE_HIDDEN'
@@ -13903,7 +14022,7 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(19880437765659984)
 ,p_prompt=>'Time Frame'
 ,p_display_as=>'NATIVE_SELECT_LIST'
-,p_lov=>'STATIC2:Hour;Hour,2 Hours;2 Hours,3 Hours;3 Hours,6 Hours;6 Hours,12 Hours;12 Hours,Day;Day,2 Days;2 Days,3 Days;3 Days,5 Days;5 Days,7 Days;7 Days'
+,p_lov=>'STATIC2:Hour;Hour,2 Hours;2 Hours,3 Hours;3 Hours,6 Hours;6 Hours,12 Hours;12 Hours,Day;Day,2 Days;2 Days,3 Days;3 Days,5 Days;5 Days,7 Days;7 Days,14 Days;14 Days,30 Days;30 Days'
 ,p_cHeight=>1
 ,p_tag_attributes=>'style="background-color:#e0f0f0"'
 ,p_begin_on_new_line=>'N'
@@ -13952,7 +14071,7 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Quick Time'
 ,p_display_as=>'NATIVE_SELECT_LIST'
 ,p_lov=>'STATIC2:Last 2 Days (Hourly);Last 2 Days,Last 3 Days (2 Hourly);Last 3 Days,Last 14 Days (Daily);Last 14 Days,Last Month;Last Month,Last 2 Months;Last 2 Months,Last 4 Months;Last 4 Months,Last 6 Months;Last 6 Months,Last 12 Months;Last 12 Months,Last'
-||' 24 Months;Last 24 Months'
+||' 24 Months (7 days);Last 24 Months (7 days),Last 24 Months (14 days);Last 24 Months (14 days)'
 ,p_lov_display_null=>'YES'
 ,p_lov_null_text=>'Please Choose'
 ,p_cHeight=>1
@@ -14024,6 +14143,9 @@ wwv_flow_api.create_page_computation(
 ,p_compute_when=>'P3_TENANT_NAME'
 ,p_compute_when_type=>'ITEM_IS_NULL'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_computation(
  p_id=>wwv_flow_api.id(11980198899439233)
 ,p_computation_sequence=>10
@@ -14054,9 +14176,6 @@ wwv_flow_api.create_page_computation(
 ,p_compute_when=>'P3_FRAME'
 ,p_compute_when_type=>'ITEM_IS_NULL'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(11981112993439243)
 ,p_name=>'DA_QUICK_TIME'
@@ -14089,7 +14208,8 @@ wwv_flow_api.create_page_da_action(
 '	    when :P3_QUICKTIME = ''Last 4 Months'' then TO_CHAR(TRUNC(SYSDATE)-122,''DD-MON-YYYY'')',
 '	    when :P3_QUICKTIME = ''Last 6 Months'' then TO_CHAR(TRUNC(SYSDATE)-183,''DD-MON-YYYY'')',
 '	    when :P3_QUICKTIME = ''Last 12 Months'' then TO_CHAR(TRUNC(SYSDATE)-356,''DD-MON-YYYY'')',
-'	    when :P3_QUICKTIME = ''Last 24 Months'' then TO_CHAR(TRUNC(SYSDATE)-712,''DD-MON-YYYY'')',
+'	    when :P3_QUICKTIME = ''Last 24 Months (7 days)'' then TO_CHAR(TRUNC(SYSDATE)-712,''DD-MON-YYYY'')',
+'	    when :P3_QUICKTIME = ''Last 24 Months (14 days)'' then TO_CHAR(TRUNC(SYSDATE)-712,''DD-MON-YYYY'')',
 '	end P3_DATE_FROM,',
 '	TO_CHAR(TRUNC(SYSDATE)+1,''DD-MON-YYYY'') P3_DATE_TO,',
 '	case ',
@@ -14101,7 +14221,8 @@ wwv_flow_api.create_page_da_action(
 '	    when :P3_QUICKTIME = ''Last 4 Months'' then ''2 Days'' ',
 '	    when :P3_QUICKTIME = ''Last 6 Months'' then ''3 Days'' ',
 '	    when :P3_QUICKTIME = ''Last 12 Months'' then ''5 Days'' ',
-'	    when :P3_QUICKTIME = ''Last 24 Months'' then ''7 Days'' ',
+'	    when :P3_QUICKTIME = ''Last 24 Months (7 days)'' then ''7 Days'' ',
+'	    when :P3_QUICKTIME = ''Last 24 Months (14 days)'' then ''14 Days'' ',
 '	end P3_FRAME',
 'from dual'))
 ,p_attribute_07=>'P3_QUICKTIME'
@@ -14165,7 +14286,7 @@ wwv_flow_api.create_page(
 ''))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210329152107'
+,p_last_upd_yyyymmddhh24miss=>'20210704003725'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(10816553122165737)
@@ -14273,7 +14394,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost Per Product SKU'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    COST_PRODUCT_SKU||'' ''||min(prd_description) as COST_PRODUCT_SKU,',
 '    min(prd_description || '' - ''||prd_resource) as prd_description, ',
 '    sum(COST_MY_COST) as COST_MY_COST',
@@ -14367,7 +14488,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost per Top Compartment'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case',
 '        when prd_compartment_path is null then ''No Compartment''',
 '        when prd_compartment_path like ''%/%'' then nvl(substr(prd_compartment_path,1,instr(prd_compartment_path,'' /'')-1),''(root)'') ',
@@ -14512,7 +14633,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost Per Day'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') as USAGE_DAY, ',
 '    sum(COST_MY_COST) as COST_MY_COST',
 'from oci_cost',
@@ -14672,7 +14793,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost Per Service'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    replace(nvl(prd_service,COST_PRODUCT_SKU),''_'','' '') prd_service,',
 '    sum(COST_MY_COST) as COST_MY_COST',
 'from oci_cost',
@@ -14735,6 +14856,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'value-desc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -14742,7 +14864,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'off'
+,p_legend_position=>'auto'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(11979065634439222)
@@ -14751,7 +14886,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost per Special Tag'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    nvl(tag_special,''No Tag'') as prd_compartment_name,',
 '    sum(COST_MY_COST) as COST_MY_COST',
 'from oci_cost',
@@ -14797,6 +14932,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_tick_label_rendered=>'on'
 ,p_tick_label_rotation=>'auto'
 ,p_tick_label_position=>'outside'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(11979240048439224)
@@ -14812,6 +14955,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_major_tick_rendered=>'on'
 ,p_minor_tick_rendered=>'off'
 ,p_tick_label_rendered=>'on'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(12303794643574209)
@@ -14827,7 +14978,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'with data as',
 '(',
-'    select ',
+'    select /*+ parallel(a,8) full(a) */ ',
 '        a.tenant_name,',
 '        a.USG_RESOURCE_ID as RESOURCE_ID,',
 '        min(a.COST_PRODUCT_SKU || '' '' || replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '','''')) as PRODUCT,',
@@ -14951,6 +15102,9 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_label=>'Resource Id'
 ,p_column_type=>'STRING'
 );
+end;
+/
+begin
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(12303914004574211)
 ,p_db_column_name=>'PRODUCT'
@@ -14979,9 +15133,6 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 ,p_format_mask=>'999G999G999G999G990D000'
 );
-end;
-/
-begin
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(12304936216574221)
 ,p_db_column_name=>'CURRENCY'
@@ -15073,7 +15224,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    TENANT_ID,',
 '    USAGE_INTERVAL_START    ,',
 '    USAGE_INTERVAL_END      ,',
@@ -15496,7 +15647,7 @@ wwv_flow_api.create_jet_chart_series(
 '    sum(cost_my_cost) over (partition by null order by usage_day) cost_accumulated',
 'from',
 '(',
-'    select ',
+'    select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '        to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') as USAGE_DAY, ',
 '        sum(COST_MY_COST) as COST_MY_COST',
 '    from oci_cost',
@@ -15612,7 +15763,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'with data as',
 '(',
-'    select ',
+'    select /*+ parallel(a,8) full(a) */ ',
 '        a.tenant_name,',
 '        a.COST_PRODUCT_SKU || '' '' || replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '','''') as PRODUCT,',
 '        a.COST_PRODUCT_SKU,',
@@ -15823,6 +15974,9 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 ,p_format_mask=>'999G999G999G999G990D0'
 );
+end;
+/
+begin
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(11935139954191644)
 ,p_db_column_name=>'OVERAGE_COST'
@@ -15854,9 +16008,6 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_alignment=>'RIGHT'
 ,p_format_mask=>'999G999G999G999G990D00'
 );
-end;
-/
-begin
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(11935491613191647)
 ,p_db_column_name=>'ESTIMATE_YEAR'
@@ -15918,6 +16069,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'value-desc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -15925,7 +16077,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'off'
+,p_legend_position=>'auto'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(11711871269773205)
@@ -15934,7 +16099,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost per Single Compartment'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    nvl(prd_compartment_name,''No Compartment'') as prd_compartment_name,',
 '    sum(COST_MY_COST) as COST_MY_COST',
 'from oci_cost',
@@ -16076,7 +16241,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Cost Per Region'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    prd_region, ',
 '    sum(COST_MY_COST) as COST_MY_COST',
 'from oci_cost',
@@ -16668,7 +16833,7 @@ wwv_flow_api.create_page_process(
 '        :P4_ROWS_DISPLAY',
 '    from',
 '    (',
-'        select ',
+'        select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '            sum(COST_MY_COST) COST_MY_COST,',
 '            sum(COST_MY_COST)*(24 * 365 / count(distinct USAGE_INTERVAL_START)) COST_YEAR,',
 '            min(COST_CURRENCY_CODE) COST_CURRENCY_CODE,',
@@ -16741,7 +16906,7 @@ wwv_flow_api.create_page(
 ''))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210329152118'
+,p_last_upd_yyyymmddhh24miss=>'20210704004118'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(22846551592241693)
@@ -16797,7 +16962,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT ',
+'SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	case ',
 '		when :P5_REPORT_GROUP = ''Product'' or :P5_REPORT_GROUP is null then COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'')',
 '		when :P5_REPORT_GROUP = ''Region'' then prd_region',
@@ -17124,7 +17289,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT ',
+'SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	case ',
 '		when :P5_REPORT_GROUP = ''Product'' or :P5_REPORT_GROUP is null then COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'')',
 '		when :P5_REPORT_GROUP = ''Region'' then prd_region',
@@ -17757,7 +17922,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-' SELECT ',
+' SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	case ',
 '		when :P5_REPORT_GROUP = ''Product'' or :P5_REPORT_GROUP is null then COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'')',
 '		when :P5_REPORT_GROUP = ''Region'' then prd_region',
@@ -18622,7 +18787,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-' SELECT ',
+' SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	product_name,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''DD'') = ''01'' then SINGLE_QUANTITY else null end) D01,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''DD'') = ''02'' then SINGLE_QUANTITY else null end) D02,',
@@ -19218,6 +19383,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'off'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -19225,8 +19391,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'bottom'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(13976866910041445)
@@ -19235,7 +19413,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -19382,6 +19560,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -19389,8 +19568,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'end'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(14186672156270007)
@@ -19399,7 +19590,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -19521,6 +19712,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -19528,8 +19720,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'end'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(15051132224989903)
@@ -19538,7 +19742,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -19657,6 +19861,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -19664,8 +19869,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'end'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(15051945799989911)
@@ -19674,7 +19891,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -19793,6 +20010,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -19800,8 +20018,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'end'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(15052776181989919)
@@ -19810,7 +20040,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -19911,7 +20141,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-' SELECT ',
+' SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	product_name,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''DD'') = ''01'' then USG_BILLED_QUANTITY else null end) D01,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''DD'') = ''02'' then USG_BILLED_QUANTITY else null end) D02,',
@@ -20239,6 +20469,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15055014112989942)
 ,p_query_column_id=>17
@@ -20267,9 +20500,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15055299314989944)
 ,p_query_column_id=>19
@@ -20479,7 +20709,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-' SELECT ',
+' SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'') as product_name,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''WW'') = ''01'' then USG_BILLED_QUANTITY else null end) W01,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''WW'') = ''02'' then USG_BILLED_QUANTITY else null end) W02,',
@@ -21185,6 +21415,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15101775120532005)
 ,p_query_column_id=>43
@@ -21213,9 +21446,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15101918299532007)
 ,p_query_column_id=>45
@@ -21355,7 +21585,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT ',
+'SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'') as product_name,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''MM'') = ''01'' then USG_BILLED_QUANTITY else null end) Jan,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''MM'') = ''02'' then USG_BILLED_QUANTITY else null end) Feb,',
@@ -21648,6 +21878,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -21655,8 +21886,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'end'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(16360174750490326)
@@ -21665,7 +21908,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -21720,6 +21963,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_major_tick_rendered=>'on'
 ,p_minor_tick_rendered=>'off'
 ,p_tick_label_rendered=>'on'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(16360351214490328)
@@ -21736,6 +21987,14 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_tick_label_rendered=>'on'
 ,p_tick_label_rotation=>'auto'
 ,p_tick_label_position=>'outside'
+,p_zoom_order_seconds=>false
+,p_zoom_order_minutes=>false
+,p_zoom_order_hours=>false
+,p_zoom_order_days=>false
+,p_zoom_order_weeks=>false
+,p_zoom_order_months=>false
+,p_zoom_order_quarters=>false
+,p_zoom_order_years=>false
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(16361917406490344)
@@ -21750,7 +22009,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'SELECT ',
+'SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	case ',
 '		when :P5_REPORT_GROUP = ''Product'' or :P5_REPORT_GROUP is null then COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'')',
 '		when :P5_REPORT_GROUP = ''Region'' then prd_region',
@@ -22012,6 +22271,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(16771441103841250)
 ,p_query_column_id=>12
@@ -22077,9 +22339,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(16827224833029005)
 ,p_query_column_id=>17
@@ -22223,7 +22482,7 @@ wwv_flow_api.create_report_region(
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-' SELECT ',
+' SELECT /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '	product_name,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''HH24'') = ''00'' then USG_BILLED_QUANTITY else null end) D00,',
 '    sum(case when to_char(USAGE_INTERVAL_START,''HH24'') = ''01'' then USG_BILLED_QUANTITY else null end) D01,',
@@ -22676,6 +22935,7 @@ wwv_flow_api.create_jet_chart(
 ,p_stack=>'on'
 ,p_stack_label=>'off'
 ,p_connect_nulls=>'Y'
+,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -22683,8 +22943,20 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
+,p_show_label=>true
+,p_show_row=>true
+,p_show_start=>true
+,p_show_end=>true
+,p_show_progress=>true
+,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'bottom'
+,p_overview_rendered=>'off'
+,p_horizontal_grid=>'auto'
+,p_vertical_grid=>'auto'
+,p_gauge_orientation=>'circular'
+,p_gauge_plot_area=>'on'
+,p_show_gauge_value=>true
 );
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(12038129542075985)
@@ -22693,7 +22965,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Usage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -22769,7 +23041,7 @@ wwv_flow_api.create_jet_chart_series(
 ,p_name=>'Overage'
 ,p_data_source_type=>'SQL'
 ,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ',
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '    case ',
 '        when :P5_PERIOD=''Hourly'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD HH24'') ',
 '        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
@@ -22861,6 +23133,9 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_zoom_order_quarters=>false
 ,p_zoom_order_years=>false
 );
+end;
+/
+begin
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(12036986078075984)
 ,p_chart_id=>wwv_flow_api.id(12036462660075984)
@@ -22915,9 +23190,6 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(12048960742076060)
 ,p_button_sequence=>120
@@ -23635,7 +23907,7 @@ wwv_flow_api.create_page_process(
 '    :P5_ROWS',
 'from ',
 '(',
-'    select ',
+'    select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
 '        sum(COST_MY_COST) COST_MY_COST, ',
 '        min(COST_CURRENCY_CODE) COST_CURRENCY_CODE,',
 '        sum(COST_MY_COST)*(24 * 365 / count(distinct USAGE_INTERVAL_START)) ESTIMATE_YEAR,',
@@ -23692,7 +23964,7 @@ wwv_flow_api.create_page(
 '}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20210514010444'
+,p_last_upd_yyyymmddhh24miss=>'20210704004337'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11208064619636616)
@@ -23744,6 +24016,7 @@ wwv_flow_api.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_show_search_bar=>'N'
+,p_report_list_mode=>'TABS'
 ,p_show_detail_link=>'N'
 ,p_owner=>'ADIZOHAR'
 ,p_internal_uid=>11208874726636624
@@ -23913,7 +24186,7 @@ wwv_flow_api.create_page_plug(
 '            sum(USG_BILLED_QUANTITY) USG_BILLED_QUANTITY',
 '        from',
 '        (',
-'            select /*+ parallel(l,4) full(d) */',
+'            select /*+ parallel(d,8) full(d) */',
 '                USAGE_INTERVAL_START,',
 '                tenant_name,',
 '                USG_CONSUMED_MEASURE,',
@@ -24207,7 +24480,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select /*+ parallel(oci_usage,4) */ ',
+'select /*+ parallel(oci_usage_stats,8) full(oci_usage_stats) */ ',
 '    tenant_name,',
 '    to_char(min(USAGE_INTERVAL_START),''MM/DD/YYYY HH24:MI'') MIN_FILE_TIME, ',
 '    to_char(max(USAGE_INTERVAL_START),''MM/DD/YYYY HH24:MI'') MAX_FILE_TIME, ',
@@ -24259,7 +24532,6 @@ wwv_flow_api.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_show_search_bar=>'N'
-,p_report_list_mode=>'TABS'
 ,p_show_detail_link=>'N'
 ,p_owner=>'ADI.ZOHAR@ORACLE.COM'
 ,p_internal_uid=>13352241944239119
@@ -24490,6 +24762,7 @@ wwv_flow_api.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_show_search_bar=>'N'
+,p_report_list_mode=>'TABS'
 ,p_show_detail_link=>'N'
 ,p_owner=>'ADI.ZOHAR@ORACLE.COM'
 ,p_internal_uid=>13350953403239106
@@ -24719,6 +24992,7 @@ wwv_flow_api.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_show_search_bar=>'N'
+,p_report_list_mode=>'TABS'
 ,p_show_detail_link=>'N'
 ,p_owner=>'ADIZOHAR'
 ,p_internal_uid=>14188875057270029
@@ -24938,6 +25212,7 @@ wwv_flow_api.create_worksheet(
 ,p_max_row_count=>'1000000'
 ,p_show_nulls_as=>'-'
 ,p_show_search_bar=>'N'
+,p_report_list_mode=>'TABS'
 ,p_show_detail_link=>'N'
 ,p_owner=>'ADIZOHAR'
 ,p_internal_uid=>16674695736602125
@@ -25736,21 +26011,6 @@ wwv_flow_api.create_page_process(
 ':P9999_REMEMBER := case when :P9999_USERNAME is not null then ''Y'' end;'))
 ,p_process_clob_language=>'PLSQL'
 );
-end;
-/
-prompt --application/deployment/definition
-begin
-null;
-end;
-/
-prompt --application/deployment/checks
-begin
-null;
-end;
-/
-prompt --application/deployment/buildoptions
-begin
-null;
 end;
 /
 prompt --application/end_environment

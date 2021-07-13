@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddAutoScalingConfigurationDetails(object):
     """
-    The information about auto scale configuration capability
+    The information about the autoscale configuration.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class AddAutoScalingConfigurationDetails(object):
     def display_name(self):
         """
         Gets the display_name of this AddAutoScalingConfigurationDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 
 
         :return: The display_name of this AddAutoScalingConfigurationDetails.
@@ -77,7 +77,7 @@ class AddAutoScalingConfigurationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AddAutoScalingConfigurationDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AddAutoScalingConfigurationDetails.
@@ -89,7 +89,7 @@ class AddAutoScalingConfigurationDetails(object):
     def node_type(self):
         """
         **[Required]** Gets the node_type of this AddAutoScalingConfigurationDetails.
-        A node type that is managed by an autoscaling configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
 
 
         :return: The node_type of this AddAutoScalingConfigurationDetails.
@@ -101,7 +101,7 @@ class AddAutoScalingConfigurationDetails(object):
     def node_type(self, node_type):
         """
         Sets the node_type of this AddAutoScalingConfigurationDetails.
-        A node type that is managed by an autoscaling configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
 
 
         :param node_type: The node_type of this AddAutoScalingConfigurationDetails.
@@ -113,7 +113,7 @@ class AddAutoScalingConfigurationDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this AddAutoScalingConfigurationDetails.
-        Whether the autoscaling configuration is enabled.
+        Whether the autoscale configuration is enabled.
 
 
         :return: The is_enabled of this AddAutoScalingConfigurationDetails.
@@ -125,7 +125,7 @@ class AddAutoScalingConfigurationDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AddAutoScalingConfigurationDetails.
-        Whether the autoscaling configuration is enabled.
+        Whether the autoscale configuration is enabled.
 
 
         :param is_enabled: The is_enabled of this AddAutoScalingConfigurationDetails.
@@ -137,7 +137,7 @@ class AddAutoScalingConfigurationDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this AddAutoScalingConfigurationDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this AddAutoScalingConfigurationDetails.
@@ -149,7 +149,7 @@ class AddAutoScalingConfigurationDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this AddAutoScalingConfigurationDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this AddAutoScalingConfigurationDetails.

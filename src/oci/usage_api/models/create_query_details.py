@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateQueryDetails(object):
     """
-    New query detail with savedRequestSummarizedUsagesDetails, savedCostAnalysisUI and displayName.
+    New query detail with savedRequestSummarizedUsagesDetails, savedCostAnalysisUI, and displayName.
     """
 
     def __init__(self, **kwargs):

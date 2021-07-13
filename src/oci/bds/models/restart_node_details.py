@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RestartNodeDetails(object):
     """
-    The information about restarted node
+    The information about restarted node.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RestartNodeDetails(object):
     def node_id(self):
         """
         **[Required]** Gets the node_id of this RestartNodeDetails.
-        OCID of the BDS node which should be restarted
+        OCID of the node to be restarted.
 
 
         :return: The node_id of this RestartNodeDetails.
@@ -49,7 +49,7 @@ class RestartNodeDetails(object):
     def node_id(self, node_id):
         """
         Sets the node_id of this RestartNodeDetails.
-        OCID of the BDS node which should be restarted
+        OCID of the node to be restarted.
 
 
         :param node_id: The node_id of this RestartNodeDetails.

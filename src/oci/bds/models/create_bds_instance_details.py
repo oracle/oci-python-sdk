@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBdsInstanceDetails(object):
     """
-    The information about new BDS instance
+    The information about the new cluster.
     """
 
     def __init__(self, **kwargs):
@@ -107,7 +107,7 @@ class CreateBdsInstanceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateBdsInstanceDetails.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this CreateBdsInstanceDetails.
@@ -119,7 +119,7 @@ class CreateBdsInstanceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateBdsInstanceDetails.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this CreateBdsInstanceDetails.
@@ -131,7 +131,7 @@ class CreateBdsInstanceDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateBdsInstanceDetails.
-        Name of the BDS instance
+        Name of the Big Data Service cluster.
 
 
         :return: The display_name of this CreateBdsInstanceDetails.
@@ -143,7 +143,7 @@ class CreateBdsInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBdsInstanceDetails.
-        Name of the BDS instance
+        Name of the Big Data Service cluster.
 
 
         :param display_name: The display_name of this CreateBdsInstanceDetails.
@@ -155,7 +155,7 @@ class CreateBdsInstanceDetails(object):
     def cluster_version(self):
         """
         **[Required]** Gets the cluster_version of this CreateBdsInstanceDetails.
-        Version of the Hadoop distribution
+        Version of the Hadoop distribution.
 
 
         :return: The cluster_version of this CreateBdsInstanceDetails.
@@ -167,7 +167,7 @@ class CreateBdsInstanceDetails(object):
     def cluster_version(self, cluster_version):
         """
         Sets the cluster_version of this CreateBdsInstanceDetails.
-        Version of the Hadoop distribution
+        Version of the Hadoop distribution.
 
 
         :param cluster_version: The cluster_version of this CreateBdsInstanceDetails.
@@ -203,7 +203,7 @@ class CreateBdsInstanceDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this CreateBdsInstanceDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this CreateBdsInstanceDetails.
@@ -215,7 +215,7 @@ class CreateBdsInstanceDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this CreateBdsInstanceDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this CreateBdsInstanceDetails.
@@ -227,7 +227,7 @@ class CreateBdsInstanceDetails(object):
     def is_high_availability(self):
         """
         **[Required]** Gets the is_high_availability of this CreateBdsInstanceDetails.
-        Boolean flag specifying whether or not the cluster is HA
+        Boolean flag specifying whether or not the cluster is highly available (HA).
 
 
         :return: The is_high_availability of this CreateBdsInstanceDetails.
@@ -239,7 +239,7 @@ class CreateBdsInstanceDetails(object):
     def is_high_availability(self, is_high_availability):
         """
         Sets the is_high_availability of this CreateBdsInstanceDetails.
-        Boolean flag specifying whether or not the cluster is HA
+        Boolean flag specifying whether or not the cluster is highly available (HA).
 
 
         :param is_high_availability: The is_high_availability of this CreateBdsInstanceDetails.
@@ -251,7 +251,7 @@ class CreateBdsInstanceDetails(object):
     def is_secure(self):
         """
         **[Required]** Gets the is_secure of this CreateBdsInstanceDetails.
-        Boolean flag specifying whether or not the cluster should be setup as secure.
+        Boolean flag specifying whether or not the cluster should be set up as secure.
 
 
         :return: The is_secure of this CreateBdsInstanceDetails.
@@ -263,7 +263,7 @@ class CreateBdsInstanceDetails(object):
     def is_secure(self, is_secure):
         """
         Sets the is_secure of this CreateBdsInstanceDetails.
-        Boolean flag specifying whether or not the cluster should be setup as secure.
+        Boolean flag specifying whether or not the cluster should be set up as secure.
 
 
         :param is_secure: The is_secure of this CreateBdsInstanceDetails.
@@ -295,7 +295,7 @@ class CreateBdsInstanceDetails(object):
     def nodes(self):
         """
         **[Required]** Gets the nodes of this CreateBdsInstanceDetails.
-        The list of nodes in the BDS instance
+        The list of nodes in the Big Data Service cluster.
 
 
         :return: The nodes of this CreateBdsInstanceDetails.
@@ -307,7 +307,7 @@ class CreateBdsInstanceDetails(object):
     def nodes(self, nodes):
         """
         Sets the nodes of this CreateBdsInstanceDetails.
-        The list of nodes in the BDS instance
+        The list of nodes in the Big Data Service cluster.
 
 
         :param nodes: The nodes of this CreateBdsInstanceDetails.
@@ -319,8 +319,8 @@ class CreateBdsInstanceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateBdsInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this CreateBdsInstanceDetails.
@@ -332,8 +332,8 @@ class CreateBdsInstanceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateBdsInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope.
+        Exists for cross-compatibility only. For example, `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this CreateBdsInstanceDetails.
@@ -346,7 +346,7 @@ class CreateBdsInstanceDetails(object):
         """
         Gets the defined_tags of this CreateBdsInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this CreateBdsInstanceDetails.
@@ -359,7 +359,7 @@ class CreateBdsInstanceDetails(object):
         """
         Sets the defined_tags of this CreateBdsInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example, `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this CreateBdsInstanceDetails.

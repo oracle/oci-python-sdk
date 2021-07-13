@@ -96,7 +96,7 @@ class CreateResolverEndpointDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateResolverEndpointDetails.
-        The name of the resolver endpoint. Must be unique within the resolver.
+        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 
 
         :return: The name of this CreateResolverEndpointDetails.
@@ -108,7 +108,7 @@ class CreateResolverEndpointDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateResolverEndpointDetails.
-        The name of the resolver endpoint. Must be unique within the resolver.
+        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 
 
         :param name: The name of this CreateResolverEndpointDetails.
@@ -227,7 +227,7 @@ class CreateResolverEndpointDetails(object):
         """
         Gets the listening_address of this CreateResolverEndpointDetails.
         An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
-        subnet and will be assigned by the system if unspecified.
+        subnet and will be assigned by the system if unspecified when isListening is true.
 
 
         :return: The listening_address of this CreateResolverEndpointDetails.
@@ -240,7 +240,7 @@ class CreateResolverEndpointDetails(object):
         """
         Sets the listening_address of this CreateResolverEndpointDetails.
         An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
-        subnet and will be assigned by the system if unspecified.
+        subnet and will be assigned by the system if unspecified when isListening is true.
 
 
         :param listening_address: The listening_address of this CreateResolverEndpointDetails.

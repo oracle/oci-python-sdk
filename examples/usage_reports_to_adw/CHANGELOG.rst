@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.07.13 - 2021-07-13
+=====================
+* Added Parallel queries to better performance for both APEX and usage2adw.py
+
+=====================
 21.05.25 - 2021-05-25
 =====================
 * Added table view in APEX Application for current usage

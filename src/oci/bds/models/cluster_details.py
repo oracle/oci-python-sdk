@@ -58,6 +58,10 @@ class ClusterDetails(object):
             The value to assign to the cloudera_manager_url property of this ClusterDetails.
         :type cloudera_manager_url: str
 
+        :param ambari_url:
+            The value to assign to the ambari_url property of this ClusterDetails.
+        :type ambari_url: str
+
         :param big_data_manager_url:
             The value to assign to the big_data_manager_url property of this ClusterDetails.
         :type big_data_manager_url: str
@@ -78,6 +82,7 @@ class ClusterDetails(object):
             'time_created': 'datetime',
             'time_refreshed': 'datetime',
             'cloudera_manager_url': 'str',
+            'ambari_url': 'str',
             'big_data_manager_url': 'str',
             'hue_server_url': 'str'
         }
@@ -93,6 +98,7 @@ class ClusterDetails(object):
             'time_created': 'timeCreated',
             'time_refreshed': 'timeRefreshed',
             'cloudera_manager_url': 'clouderaManagerUrl',
+            'ambari_url': 'ambariUrl',
             'big_data_manager_url': 'bigDataManagerUrl',
             'hue_server_url': 'hueServerUrl'
         }
@@ -107,6 +113,7 @@ class ClusterDetails(object):
         self._time_created = None
         self._time_refreshed = None
         self._cloudera_manager_url = None
+        self._ambari_url = None
         self._big_data_manager_url = None
         self._hue_server_url = None
 
@@ -138,7 +145,7 @@ class ClusterDetails(object):
     def bdm_version(self):
         """
         Gets the bdm_version of this ClusterDetails.
-        Big Data Manager version installed in the cluster
+        Big Data Manager version installed in the cluster.
 
 
         :return: The bdm_version of this ClusterDetails.
@@ -150,7 +157,7 @@ class ClusterDetails(object):
     def bdm_version(self, bdm_version):
         """
         Sets the bdm_version of this ClusterDetails.
-        Big Data Manager version installed in the cluster
+        Big Data Manager version installed in the cluster.
 
 
         :param bdm_version: The bdm_version of this ClusterDetails.
@@ -162,7 +169,7 @@ class ClusterDetails(object):
     def bds_version(self):
         """
         Gets the bds_version of this ClusterDetails.
-        Big Data Service version installed in the cluster
+        Big Data Service version installed in the cluster.
 
 
         :return: The bds_version of this ClusterDetails.
@@ -174,7 +181,7 @@ class ClusterDetails(object):
     def bds_version(self, bds_version):
         """
         Sets the bds_version of this ClusterDetails.
-        Big Data Service version installed in the cluster
+        Big Data Service version installed in the cluster.
 
 
         :param bds_version: The bds_version of this ClusterDetails.
@@ -186,7 +193,7 @@ class ClusterDetails(object):
     def os_version(self):
         """
         Gets the os_version of this ClusterDetails.
-        Oracle Linux version installed in the cluster
+        Oracle Linux version installed in the cluster.
 
 
         :return: The os_version of this ClusterDetails.
@@ -198,7 +205,7 @@ class ClusterDetails(object):
     def os_version(self, os_version):
         """
         Sets the os_version of this ClusterDetails.
-        Oracle Linux version installed in the cluster
+        Oracle Linux version installed in the cluster.
 
 
         :param os_version: The os_version of this ClusterDetails.
@@ -210,7 +217,7 @@ class ClusterDetails(object):
     def db_version(self):
         """
         Gets the db_version of this ClusterDetails.
-        Query Server Database version
+        Cloud SQL query server database version.
 
 
         :return: The db_version of this ClusterDetails.
@@ -222,7 +229,7 @@ class ClusterDetails(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this ClusterDetails.
-        Query Server Database version
+        Cloud SQL query server database version.
 
 
         :param db_version: The db_version of this ClusterDetails.
@@ -234,7 +241,7 @@ class ClusterDetails(object):
     def bd_cell_version(self):
         """
         Gets the bd_cell_version of this ClusterDetails.
-        Cloud SQL cell version
+        Cloud SQL cell version.
 
 
         :return: The bd_cell_version of this ClusterDetails.
@@ -246,7 +253,7 @@ class ClusterDetails(object):
     def bd_cell_version(self, bd_cell_version):
         """
         Sets the bd_cell_version of this ClusterDetails.
-        Cloud SQL cell version
+        Cloud SQL cell version.
 
 
         :param bd_cell_version: The bd_cell_version of this ClusterDetails.
@@ -258,7 +265,7 @@ class ClusterDetails(object):
     def csql_cell_version(self):
         """
         Gets the csql_cell_version of this ClusterDetails.
-        Big Data SQL version
+        Big Data SQL version.
 
 
         :return: The csql_cell_version of this ClusterDetails.
@@ -270,7 +277,7 @@ class ClusterDetails(object):
     def csql_cell_version(self, csql_cell_version):
         """
         Sets the csql_cell_version of this ClusterDetails.
-        Big Data SQL version
+        Big Data SQL version.
 
 
         :param csql_cell_version: The csql_cell_version of this ClusterDetails.
@@ -282,7 +289,7 @@ class ClusterDetails(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ClusterDetails.
-        The time the cluster was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_created of this ClusterDetails.
@@ -294,7 +301,7 @@ class ClusterDetails(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ClusterDetails.
-        The time the cluster was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_created: The time_created of this ClusterDetails.
@@ -306,8 +313,7 @@ class ClusterDetails(object):
     def time_refreshed(self):
         """
         Gets the time_refreshed of this ClusterDetails.
-        The time the BDS instance was automatically, or manually refreshed.
-        An RFC3339 formatted datetime string
+        The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_refreshed of this ClusterDetails.
@@ -319,8 +325,7 @@ class ClusterDetails(object):
     def time_refreshed(self, time_refreshed):
         """
         Sets the time_refreshed of this ClusterDetails.
-        The time the BDS instance was automatically, or manually refreshed.
-        An RFC3339 formatted datetime string
+        The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_refreshed: The time_refreshed of this ClusterDetails.
@@ -332,7 +337,7 @@ class ClusterDetails(object):
     def cloudera_manager_url(self):
         """
         Gets the cloudera_manager_url of this ClusterDetails.
-        The URL of a Cloudera Manager
+        The URL of Cloudera Manager
 
 
         :return: The cloudera_manager_url of this ClusterDetails.
@@ -344,7 +349,7 @@ class ClusterDetails(object):
     def cloudera_manager_url(self, cloudera_manager_url):
         """
         Sets the cloudera_manager_url of this ClusterDetails.
-        The URL of a Cloudera Manager
+        The URL of Cloudera Manager
 
 
         :param cloudera_manager_url: The cloudera_manager_url of this ClusterDetails.
@@ -353,10 +358,34 @@ class ClusterDetails(object):
         self._cloudera_manager_url = cloudera_manager_url
 
     @property
+    def ambari_url(self):
+        """
+        Gets the ambari_url of this ClusterDetails.
+        The URL of Ambari
+
+
+        :return: The ambari_url of this ClusterDetails.
+        :rtype: str
+        """
+        return self._ambari_url
+
+    @ambari_url.setter
+    def ambari_url(self, ambari_url):
+        """
+        Sets the ambari_url of this ClusterDetails.
+        The URL of Ambari
+
+
+        :param ambari_url: The ambari_url of this ClusterDetails.
+        :type: str
+        """
+        self._ambari_url = ambari_url
+
+    @property
     def big_data_manager_url(self):
         """
         Gets the big_data_manager_url of this ClusterDetails.
-        The URL of a Big Data Manager
+        The URL of Big Data Manager.
 
 
         :return: The big_data_manager_url of this ClusterDetails.
@@ -368,7 +397,7 @@ class ClusterDetails(object):
     def big_data_manager_url(self, big_data_manager_url):
         """
         Sets the big_data_manager_url of this ClusterDetails.
-        The URL of a Big Data Manager
+        The URL of Big Data Manager.
 
 
         :param big_data_manager_url: The big_data_manager_url of this ClusterDetails.
@@ -380,7 +409,7 @@ class ClusterDetails(object):
     def hue_server_url(self):
         """
         Gets the hue_server_url of this ClusterDetails.
-        The URL of a Hue Server
+        The URL of the Hue server.
 
 
         :return: The hue_server_url of this ClusterDetails.
@@ -392,7 +421,7 @@ class ClusterDetails(object):
     def hue_server_url(self, hue_server_url):
         """
         Sets the hue_server_url of this ClusterDetails.
-        The URL of a Hue Server
+        The URL of the Hue server.
 
 
         :param hue_server_url: The hue_server_url of this ClusterDetails.

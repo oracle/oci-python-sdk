@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KerberosDetails(object):
     """
-    Details about Kerberos principals
+    Details about the Kerberos principals.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class KerberosDetails(object):
     def principal_name(self):
         """
         **[Required]** Gets the principal_name of this KerberosDetails.
-        Name of the Kerberos principal
+        Name of the Kerberos principal.
 
 
         :return: The principal_name of this KerberosDetails.
@@ -56,7 +56,7 @@ class KerberosDetails(object):
     def principal_name(self, principal_name):
         """
         Sets the principal_name of this KerberosDetails.
-        Name of the Kerberos principal
+        Name of the Kerberos principal.
 
 
         :param principal_name: The principal_name of this KerberosDetails.

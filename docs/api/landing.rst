@@ -3,6 +3,7 @@ API Reference
 
 .. rubric:: Service Clients
 
+* :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
@@ -74,6 +75,7 @@ API Reference
 * :doc:`Log Search <loggingsearch/client/oci.loggingsearch.LogSearchClient>`
 * :doc:`Management Agent <management_agent/client/oci.management_agent.ManagementAgentClient>`
 * :doc:`Dashx Apis <management_dashboard/client/oci.management_dashboard.DashxApisClient>`
+* :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
@@ -139,6 +141,7 @@ API Reference
     :hidden:
     :maxdepth: 5
 
+    ai_anomaly_detection
     ai_language
     analytics
     announcements_service

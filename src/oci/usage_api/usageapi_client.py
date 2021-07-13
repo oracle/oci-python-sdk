@@ -92,7 +92,7 @@ class UsageapiClient(object):
 
 
         :param oci.usage_api.models.CreateQueryDetails create_query_details: (required)
-            New query details. It is up to 10 saved query.
+            New query details. Up to ten saved queries.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

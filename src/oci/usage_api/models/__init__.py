@@ -7,12 +7,7 @@ from __future__ import absolute_import
 from .configuration import Configuration
 from .configuration_aggregation import ConfigurationAggregation
 from .cost_analysis_ui import CostAnalysisUI
-from .create_custom_table_details import CreateCustomTableDetails
 from .create_query_details import CreateQueryDetails
-from .create_schedule_report_details import CreateScheduleReportDetails
-from .custom_table import CustomTable
-from .custom_table_collection import CustomTableCollection
-from .custom_table_summary import CustomTableSummary
 from .dimension import Dimension
 from .filter import Filter
 from .forecast import Forecast
@@ -23,14 +18,8 @@ from .query_summary import QuerySummary
 from .report_query import ReportQuery
 from .request_summarized_usages_details import RequestSummarizedUsagesDetails
 from .saved_custom_table import SavedCustomTable
-from .saved_schedule_report import SavedScheduleReport
-from .schedule_report import ScheduleReport
-from .schedule_report_collection import ScheduleReportCollection
-from .schedule_report_summary import ScheduleReportSummary
 from .tag import Tag
-from .update_custom_table_details import UpdateCustomTableDetails
 from .update_query_details import UpdateQueryDetails
-from .update_schedule_report_details import UpdateScheduleReportDetails
 from .usage_aggregation import UsageAggregation
 from .usage_summary import UsageSummary
 
@@ -39,12 +28,7 @@ usage_api_type_mapping = {
     "Configuration": Configuration,
     "ConfigurationAggregation": ConfigurationAggregation,
     "CostAnalysisUI": CostAnalysisUI,
-    "CreateCustomTableDetails": CreateCustomTableDetails,
     "CreateQueryDetails": CreateQueryDetails,
-    "CreateScheduleReportDetails": CreateScheduleReportDetails,
-    "CustomTable": CustomTable,
-    "CustomTableCollection": CustomTableCollection,
-    "CustomTableSummary": CustomTableSummary,
     "Dimension": Dimension,
     "Filter": Filter,
     "Forecast": Forecast,
@@ -55,14 +39,8 @@ usage_api_type_mapping = {
     "ReportQuery": ReportQuery,
     "RequestSummarizedUsagesDetails": RequestSummarizedUsagesDetails,
     "SavedCustomTable": SavedCustomTable,
-    "SavedScheduleReport": SavedScheduleReport,
-    "ScheduleReport": ScheduleReport,
-    "ScheduleReportCollection": ScheduleReportCollection,
-    "ScheduleReportSummary": ScheduleReportSummary,
     "Tag": Tag,
-    "UpdateCustomTableDetails": UpdateCustomTableDetails,
     "UpdateQueryDetails": UpdateQueryDetails,
-    "UpdateScheduleReportDetails": UpdateScheduleReportDetails,
     "UsageAggregation": UsageAggregation,
     "UsageSummary": UsageSummary
 }

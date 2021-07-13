@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveCloudSqlDetails(object):
     """
-    The information about removed Cloud SQL capability
+    The information about the Cloud SQL installation that was removed.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RemoveCloudSqlDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this RemoveCloudSqlDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this RemoveCloudSqlDetails.
@@ -49,7 +49,7 @@ class RemoveCloudSqlDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this RemoveCloudSqlDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this RemoveCloudSqlDetails.
