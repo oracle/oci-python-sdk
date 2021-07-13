@@ -88,14 +88,14 @@ class MarketplaceClient(object):
 
     def change_publication_compartment(self, publication_id, change_publication_compartment_details, **kwargs):
         """
-        Changes the compartment of the Publication
+        Moves the specified publication from one compartment to another.
 
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param oci.marketplace.models.ChangePublicationCompartmentDetails change_publication_compartment_details: (required)
-            Request to change the compartment of a given Publication.
+            The details of the request to change the compartment of a given publication.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -261,11 +261,11 @@ class MarketplaceClient(object):
 
     def create_publication(self, create_publication_details, **kwargs):
         """
-        Creates a publication of the given type with an optional default package
+        Creates a publication of the specified listing type with an optional default package.
 
 
         :param oci.marketplace.models.CreatePublicationDetails create_publication_details: (required)
-            Details of Publication to be created including optional default package.
+            The details for creating the publication.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -338,7 +338,7 @@ class MarketplaceClient(object):
     def delete_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
         Removes a previously accepted terms of use agreement from the list of agreements that Marketplace checks
-        before initiating a deployment. Listings in the Marketplace that require acceptance of the specified terms
+        before initiating a deployment. Listings in Marketplace that require acceptance of the specified terms
         of use can no longer be deployed, but existing deployments aren't affected.
 
 
@@ -431,11 +431,11 @@ class MarketplaceClient(object):
 
     def delete_publication(self, publication_id, **kwargs):
         """
-        Deletes a Publication. This will also remove the associated Listing from Marketplace.
+        Deletes a publication, which also removes the associated listing from anywhere it was published, such as Marketplace or Compute.
 
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to
@@ -901,11 +901,11 @@ class MarketplaceClient(object):
 
     def get_publication(self, publication_id, **kwargs):
         """
-        Get details of a publication
+        Gets the details of the specified publication.
 
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -977,11 +977,11 @@ class MarketplaceClient(object):
 
     def get_publication_package(self, publication_id, package_version, **kwargs):
         """
-        Gets the details of a specific package within a given Publication
+        Gets the details of a specific package version within a given publication.
 
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param str package_version: (required)
             The version of the package. Package versions are unique within a listing.
@@ -1444,12 +1444,12 @@ class MarketplaceClient(object):
             Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
 
         :param list[str] listing_types: (optional)
-            The type of the listing
+            The type of the listing.
 
             Allowed values are: "COMMUNITY", "PARTNER", "PRIVATE"
 
         :param list[str] operating_systems: (optional)
-            OS of the listing.
+            The operating system of the listing.
 
         :param str compartment_id: (optional)
             The unique identifier for the compartment.
@@ -1728,11 +1728,11 @@ class MarketplaceClient(object):
 
     def list_publication_packages(self, publication_id, **kwargs):
         """
-        Lists the packages in the given Publication
+        Lists the packages in the specified publication.
 
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param str package_version: (optional)
             The version of the package. Package versions are unique within a listing.
@@ -1860,25 +1860,25 @@ class MarketplaceClient(object):
 
     def list_publications(self, compartment_id, listing_type, **kwargs):
         """
-        Lists the publications in the given compartment
+        Lists the publications in the specified compartment.
 
 
         :param str compartment_id: (required)
             The unique identifier for the compartment.
 
         :param str listing_type: (required)
-            The type of the listing
+            The type of the listing.
 
             Allowed values are: "COMMUNITY", "PARTNER", "PRIVATE"
 
         :param list[str] name: (optional)
-            The name of the listing.
+            The name of the publication.
 
         :param str publication_id: (optional)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param list[str] operating_systems: (optional)
-            OS of the listing.
+            The operating system of the listing.
 
         :param str sort_by: (optional)
             The field to use to sort listed results. You can only specify one field to sort by.
@@ -2330,6 +2330,89 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 response_type="list[TaxSummary]")
 
+    def search_listings(self, search_listings_details, **kwargs):
+        """
+        Find listings that match the specified criteria. The search query could be free text
+        or structured.
+
+
+        :param oci.marketplace.models.SearchListingsDetails search_listings_details: (required)
+            Details related to the search query
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.marketplace.models.ListingSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/search_listings.py.html>`__ to see an example of how to use search_listings API.
+        """
+        resource_path = "/searchListings"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_listings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=search_listings_details,
+                response_type="list[ListingSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=search_listings_details,
+                response_type="list[ListingSummary]")
+
     def update_accepted_agreement(self, accepted_agreement_id, update_accepted_agreement_details, **kwargs):
         """
         Updates the display name or tags associated with a listing's previously accepted terms of use agreement.
@@ -2430,14 +2513,14 @@ class MarketplaceClient(object):
 
     def update_publication(self, publication_id, update_publication_details, **kwargs):
         """
-        Updates details of an existing Publication
+        Updates the details of an existing publication.
 
 
         :param str publication_id: (required)
-            The unique identifier for the listing.
+            The unique identifier for the publication.
 
         :param oci.marketplace.models.UpdatePublicationDetails update_publication_details: (required)
-            Details of the Publication which needs to be updated
+            The details for updating the publication.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,

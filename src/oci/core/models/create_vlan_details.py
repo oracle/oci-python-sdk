@@ -99,8 +99,16 @@ class CreateVlanDetails(object):
     @property
     def availability_domain(self):
         """
-        **[Required]** Gets the availability_domain of this CreateVlanDetails.
-        The availability domain of the VLAN.
+        Gets the availability_domain of this CreateVlanDetails.
+        Controls whether the VLAN is regional or specific to an availability domain.
+        A regional VLAN has the flexibility to implement failover across availability domains.
+        Previously, all VLANs were AD-specific.
+
+        To create a regional VLAN, omit this attribute. Resources created subsequently in this
+        VLAN (such as a Compute instance) can be created in any availability domain in the region.
+
+        To create an AD-specific VLAN, use this attribute to specify the availability domain.
+        Resources created in this VLAN must be in that availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -114,7 +122,15 @@ class CreateVlanDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateVlanDetails.
-        The availability domain of the VLAN.
+        Controls whether the VLAN is regional or specific to an availability domain.
+        A regional VLAN has the flexibility to implement failover across availability domains.
+        Previously, all VLANs were AD-specific.
+
+        To create a regional VLAN, omit this attribute. Resources created subsequently in this
+        VLAN (such as a Compute instance) can be created in any availability domain in the region.
+
+        To create an AD-specific VLAN, use this attribute to specify the availability domain.
+        Resources created in this VLAN must be in that availability domain.
 
         Example: `Uocm:PHX-AD-1`
 

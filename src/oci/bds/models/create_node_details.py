@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateNodeDetails(object):
     """
-    The information about new node
+    The information about the new node.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class CreateNodeDetails(object):
     def node_type(self):
         """
         **[Required]** Gets the node_type of this CreateNodeDetails.
-        BDS instance node type
+        The Big Data Service cluster node type.
 
 
         :return: The node_type of this CreateNodeDetails.
@@ -70,7 +70,7 @@ class CreateNodeDetails(object):
     def node_type(self, node_type):
         """
         Sets the node_type of this CreateNodeDetails.
-        BDS instance node type
+        The Big Data Service cluster node type.
 
 
         :param node_type: The node_type of this CreateNodeDetails.
@@ -82,7 +82,7 @@ class CreateNodeDetails(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this CreateNodeDetails.
-        Shape of the node
+        Shape of the node.
 
 
         :return: The shape of this CreateNodeDetails.
@@ -94,7 +94,7 @@ class CreateNodeDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this CreateNodeDetails.
-        Shape of the node
+        Shape of the node.
 
 
         :param shape: The shape of this CreateNodeDetails.
@@ -106,8 +106,8 @@ class CreateNodeDetails(object):
     def block_volume_size_in_gbs(self):
         """
         **[Required]** Gets the block_volume_size_in_gbs of this CreateNodeDetails.
-        The size of block volume in GB that needs to be attached to a given node.
-        All the necessary details needed for attachment are managed by service itself.
+        The size of block volume in GB to be attached to a given node. All the
+        details needed for attaching the block volume are managed by service itself.
 
 
         :return: The block_volume_size_in_gbs of this CreateNodeDetails.
@@ -119,8 +119,8 @@ class CreateNodeDetails(object):
     def block_volume_size_in_gbs(self, block_volume_size_in_gbs):
         """
         Sets the block_volume_size_in_gbs of this CreateNodeDetails.
-        The size of block volume in GB that needs to be attached to a given node.
-        All the necessary details needed for attachment are managed by service itself.
+        The size of block volume in GB to be attached to a given node. All the
+        details needed for attaching the block volume are managed by service itself.
 
 
         :param block_volume_size_in_gbs: The block_volume_size_in_gbs of this CreateNodeDetails.
@@ -132,7 +132,7 @@ class CreateNodeDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreateNodeDetails.
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node will be created.
 
 
         :return: The subnet_id of this CreateNodeDetails.
@@ -144,7 +144,7 @@ class CreateNodeDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateNodeDetails.
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node will be created.
 
 
         :param subnet_id: The subnet_id of this CreateNodeDetails.

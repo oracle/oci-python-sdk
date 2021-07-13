@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateImagePublicationPackage(CreatePublicationPackage):
     """
-    An object for creating image package
+    An object for creating an image publication package.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class CreateImagePublicationPackage(CreatePublicationPackage):
     def image_id(self):
         """
         Gets the image_id of this CreateImagePublicationPackage.
-        base image id of the listing
+        The unique identifier for the base image of the publication.
 
 
         :return: The image_id of this CreateImagePublicationPackage.
@@ -80,7 +80,7 @@ class CreateImagePublicationPackage(CreatePublicationPackage):
     def image_id(self, image_id):
         """
         Sets the image_id of this CreateImagePublicationPackage.
-        base image id of the listing
+        The unique identifier for the base image of the publication.
 
 
         :param image_id: The image_id of this CreateImagePublicationPackage.

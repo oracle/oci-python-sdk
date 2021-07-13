@@ -61,7 +61,6 @@ from .steering_policy_summary import SteeringPolicySummary
 from .steering_policy_weighted_answer_data import SteeringPolicyWeightedAnswerData
 from .steering_policy_weighted_rule import SteeringPolicyWeightedRule
 from .steering_policy_weighted_rule_case import SteeringPolicyWeightedRuleCase
-from .tsig import TSIG
 from .tsig_key import TsigKey
 from .tsig_key_summary import TsigKeySummary
 from .update_domain_records_details import UpdateDomainRecordsDetails
@@ -79,6 +78,7 @@ from .view import View
 from .view_summary import ViewSummary
 from .zone import Zone
 from .zone_summary import ZoneSummary
+from .zone_transfer_server import ZoneTransferServer
 
 # Maps type names to classes for dns services.
 dns_type_mapping = {
@@ -139,7 +139,6 @@ dns_type_mapping = {
     "SteeringPolicyWeightedAnswerData": SteeringPolicyWeightedAnswerData,
     "SteeringPolicyWeightedRule": SteeringPolicyWeightedRule,
     "SteeringPolicyWeightedRuleCase": SteeringPolicyWeightedRuleCase,
-    "TSIG": TSIG,
     "TsigKey": TsigKey,
     "TsigKeySummary": TsigKeySummary,
     "UpdateDomainRecordsDetails": UpdateDomainRecordsDetails,
@@ -156,5 +155,6 @@ dns_type_mapping = {
     "View": View,
     "ViewSummary": ViewSummary,
     "Zone": Zone,
-    "ZoneSummary": ZoneSummary
+    "ZoneSummary": ZoneSummary,
+    "ZoneTransferServer": ZoneTransferServer
 }

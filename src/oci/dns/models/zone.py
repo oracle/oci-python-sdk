@@ -51,6 +51,10 @@ class Zone(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a Zone.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Zone object with values from keyword arguments.
@@ -114,7 +118,7 @@ class Zone(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Zone.
-            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -125,6 +129,10 @@ class Zone(object):
         :param nameservers:
             The value to assign to the nameservers property of this Zone.
         :type nameservers: list[oci.dns.models.Nameserver]
+
+        :param zone_transfer_servers:
+            The value to assign to the zone_transfer_servers property of this Zone.
+        :type zone_transfer_servers: list[oci.dns.models.ZoneTransferServer]
 
         """
         self.swagger_types = {
@@ -143,7 +151,8 @@ class Zone(object):
             'serial': 'int',
             'lifecycle_state': 'str',
             'is_protected': 'bool',
-            'nameservers': 'list[Nameserver]'
+            'nameservers': 'list[Nameserver]',
+            'zone_transfer_servers': 'list[ZoneTransferServer]'
         }
 
         self.attribute_map = {
@@ -162,7 +171,8 @@ class Zone(object):
             'serial': 'serial',
             'lifecycle_state': 'lifecycleState',
             'is_protected': 'isProtected',
-            'nameservers': 'nameservers'
+            'nameservers': 'nameservers',
+            'zone_transfer_servers': 'zoneTransferServers'
         }
 
         self._name = None
@@ -181,6 +191,7 @@ class Zone(object):
         self._lifecycle_state = None
         self._is_protected = None
         self._nameservers = None
+        self._zone_transfer_servers = None
 
     @property
     def name(self):
@@ -552,7 +563,7 @@ class Zone(object):
         **[Required]** Gets the lifecycle_state of this Zone.
         The current state of the zone resource.
 
-        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -571,7 +582,7 @@ class Zone(object):
         :param lifecycle_state: The lifecycle_state of this Zone.
         :type: str
         """
-        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED"]
+        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -623,6 +634,30 @@ class Zone(object):
         :type: list[oci.dns.models.Nameserver]
         """
         self._nameservers = nameservers
+
+    @property
+    def zone_transfer_servers(self):
+        """
+        Gets the zone_transfer_servers of this Zone.
+        The OCI nameservers that transfer the zone data with external nameservers.
+
+
+        :return: The zone_transfer_servers of this Zone.
+        :rtype: list[oci.dns.models.ZoneTransferServer]
+        """
+        return self._zone_transfer_servers
+
+    @zone_transfer_servers.setter
+    def zone_transfer_servers(self, zone_transfer_servers):
+        """
+        Sets the zone_transfer_servers of this Zone.
+        The OCI nameservers that transfer the zone data with external nameservers.
+
+
+        :param zone_transfer_servers: The zone_transfer_servers of this Zone.
+        :type: list[oci.dns.models.ZoneTransferServer]
+        """
+        self._zone_transfer_servers = zone_transfer_servers
 
     def __repr__(self):
         return formatted_flat_dict(self)

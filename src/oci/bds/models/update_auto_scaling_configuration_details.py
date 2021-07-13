@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAutoScalingConfigurationDetails(object):
     """
-    The information about auto scale configuration capability
+    The information about the autoscale configuration.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAutoScalingConfigurationDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateAutoScalingConfigurationDetails.
@@ -70,7 +70,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAutoScalingConfigurationDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateAutoScalingConfigurationDetails.
@@ -82,7 +82,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this UpdateAutoScalingConfigurationDetails.
-        Whether the autoscaling configuration is enabled.
+        Whether the autoscale configuration is enabled.
 
 
         :return: The is_enabled of this UpdateAutoScalingConfigurationDetails.
@@ -94,7 +94,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this UpdateAutoScalingConfigurationDetails.
-        Whether the autoscaling configuration is enabled.
+        Whether the autoscale configuration is enabled.
 
 
         :param is_enabled: The is_enabled of this UpdateAutoScalingConfigurationDetails.
@@ -106,7 +106,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def cluster_admin_password(self):
         """
         Gets the cluster_admin_password of this UpdateAutoScalingConfigurationDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this UpdateAutoScalingConfigurationDetails.
@@ -118,7 +118,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this UpdateAutoScalingConfigurationDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this UpdateAutoScalingConfigurationDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalingConfigurationSummary(object):
     """
-    The information about auto scale configuration.
+    The information about the autoscale configuration.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +79,7 @@ class AutoScalingConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutoScalingConfigurationSummary.
-        The OCID of the autoscaling configuration.
+        The OCID of the autoscale configuration.
 
 
         :return: The id of this AutoScalingConfigurationSummary.
@@ -91,7 +91,7 @@ class AutoScalingConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this AutoScalingConfigurationSummary.
-        The OCID of the autoscaling configuration.
+        The OCID of the autoscale configuration.
 
 
         :param id: The id of this AutoScalingConfigurationSummary.
@@ -103,7 +103,7 @@ class AutoScalingConfigurationSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AutoScalingConfigurationSummary.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 
 
         :return: The display_name of this AutoScalingConfigurationSummary.
@@ -115,7 +115,7 @@ class AutoScalingConfigurationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutoScalingConfigurationSummary.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AutoScalingConfigurationSummary.
@@ -127,7 +127,7 @@ class AutoScalingConfigurationSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AutoScalingConfigurationSummary.
-        The state of the autoscaling configuration
+        The state of the autoscale configuration.
 
 
         :return: The lifecycle_state of this AutoScalingConfigurationSummary.
@@ -139,7 +139,7 @@ class AutoScalingConfigurationSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutoScalingConfigurationSummary.
-        The state of the autoscaling configuration
+        The state of the autoscale configuration.
 
 
         :param lifecycle_state: The lifecycle_state of this AutoScalingConfigurationSummary.
@@ -151,7 +151,7 @@ class AutoScalingConfigurationSummary(object):
     def node_type(self):
         """
         **[Required]** Gets the node_type of this AutoScalingConfigurationSummary.
-        A node type that is managed by an autoscaling configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
 
 
         :return: The node_type of this AutoScalingConfigurationSummary.
@@ -163,7 +163,7 @@ class AutoScalingConfigurationSummary(object):
     def node_type(self, node_type):
         """
         Sets the node_type of this AutoScalingConfigurationSummary.
-        A node type that is managed by an autoscaling configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
 
 
         :param node_type: The node_type of this AutoScalingConfigurationSummary.
@@ -175,7 +175,7 @@ class AutoScalingConfigurationSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AutoScalingConfigurationSummary.
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_created of this AutoScalingConfigurationSummary.
@@ -187,7 +187,7 @@ class AutoScalingConfigurationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutoScalingConfigurationSummary.
-        The time the BDS instance was created. An RFC3339 formatted datetime string
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_created: The time_created of this AutoScalingConfigurationSummary.
@@ -199,8 +199,7 @@ class AutoScalingConfigurationSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this AutoScalingConfigurationSummary.
-        The time the autoscale configuration was updated.
-        An RFC3339 formatted datetime string
+        The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
 
 
         :return: The time_updated of this AutoScalingConfigurationSummary.
@@ -212,8 +211,7 @@ class AutoScalingConfigurationSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this AutoScalingConfigurationSummary.
-        The time the autoscale configuration was updated.
-        An RFC3339 formatted datetime string
+        The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this AutoScalingConfigurationSummary.

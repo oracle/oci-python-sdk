@@ -40,6 +40,10 @@ class ListingPackageSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
+        :param pricing:
+            The value to assign to the pricing property of this ListingPackageSummary.
+        :type pricing: oci.marketplace.models.PricingModel
+
         :param regions:
             The value to assign to the regions property of this ListingPackageSummary.
         :type regions: list[oci.marketplace.models.Region]
@@ -57,6 +61,7 @@ class ListingPackageSummary(object):
             'listing_id': 'str',
             'package_version': 'str',
             'package_type': 'str',
+            'pricing': 'PricingModel',
             'regions': 'list[Region]',
             'resource_id': 'str',
             'time_created': 'datetime'
@@ -66,6 +71,7 @@ class ListingPackageSummary(object):
             'listing_id': 'listingId',
             'package_version': 'packageVersion',
             'package_type': 'packageType',
+            'pricing': 'pricing',
             'regions': 'regions',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated'
@@ -74,6 +80,7 @@ class ListingPackageSummary(object):
         self._listing_id = None
         self._package_version = None
         self._package_type = None
+        self._pricing = None
         self._regions = None
         self._resource_id = None
         self._time_created = None
@@ -155,6 +162,26 @@ class ListingPackageSummary(object):
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type
+
+    @property
+    def pricing(self):
+        """
+        Gets the pricing of this ListingPackageSummary.
+
+        :return: The pricing of this ListingPackageSummary.
+        :rtype: oci.marketplace.models.PricingModel
+        """
+        return self._pricing
+
+    @pricing.setter
+    def pricing(self, pricing):
+        """
+        Sets the pricing of this ListingPackageSummary.
+
+        :param pricing: The pricing of this ListingPackageSummary.
+        :type: oci.marketplace.models.PricingModel
+        """
+        self._pricing = pricing
 
     @property
     def regions(self):

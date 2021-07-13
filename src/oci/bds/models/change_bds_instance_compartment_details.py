@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeBdsInstanceCompartmentDetails(object):
     """
-    Moves a BDS instance into a different compartment.
+    Move a Cluster to a Different Compartment
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeBdsInstanceCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeBdsInstanceCompartmentDetails.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this ChangeBdsInstanceCompartmentDetails.
@@ -49,7 +49,7 @@ class ChangeBdsInstanceCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeBdsInstanceCompartmentDetails.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this ChangeBdsInstanceCompartmentDetails.

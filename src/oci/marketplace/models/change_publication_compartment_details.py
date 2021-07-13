@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangePublicationCompartmentDetails(object):
     """
-    Contains details indicating to which compartment the Publication should be moved
+    The model for the parameters needed move a publication from one compartment to another.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,9 @@ class ChangePublicationCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangePublicationCompartmentDetails.
-        The unique identifier for the compartment to which the Publication should be moved.
+        The `OCID`__ of the compartment where you want to move the publication.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangePublicationCompartmentDetails.
@@ -49,7 +51,9 @@ class ChangePublicationCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangePublicationCompartmentDetails.
-        The unique identifier for the compartment to which the Publication should be moved.
+        The `OCID`__ of the compartment where you want to move the publication.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangePublicationCompartmentDetails.

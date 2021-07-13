@@ -72,7 +72,7 @@ class SavedCustomTable(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this SavedCustomTable.
-        the name of custom table.
+        The name of the custom table.
 
 
         :return: The display_name of this SavedCustomTable.
@@ -84,7 +84,7 @@ class SavedCustomTable(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SavedCustomTable.
-        the name of custom table.
+        The name of the custom table.
 
 
         :param display_name: The display_name of this SavedCustomTable.
@@ -96,7 +96,7 @@ class SavedCustomTable(object):
     def row_group_by(self):
         """
         Gets the row_group_by of this SavedCustomTable.
-        row groupBy key list.
+        The row groupBy key list.
         example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
@@ -112,7 +112,7 @@ class SavedCustomTable(object):
     def row_group_by(self, row_group_by):
         """
         Sets the row_group_by of this SavedCustomTable.
-        row groupBy key list.
+        The row groupBy key list.
         example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
@@ -128,7 +128,7 @@ class SavedCustomTable(object):
     def column_group_by(self):
         """
         Gets the column_group_by of this SavedCustomTable.
-        column groupBy key list.
+        The column groupBy key list.
         example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
@@ -144,7 +144,7 @@ class SavedCustomTable(object):
     def column_group_by(self, column_group_by):
         """
         Sets the column_group_by of this SavedCustomTable.
-        column groupBy key list.
+        The column groupBy key list.
         example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
@@ -160,8 +160,8 @@ class SavedCustomTable(object):
     def group_by_tag(self):
         """
         Gets the group_by_tag of this SavedCustomTable.
-        GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
-        example:
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported.
+        For example:
           `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
 
 
@@ -174,8 +174,8 @@ class SavedCustomTable(object):
     def group_by_tag(self, group_by_tag):
         """
         Sets the group_by_tag of this SavedCustomTable.
-        GroupBy a specific tagKey. Provide tagNamespace and tagKey in tag object. Only support one tag in the list
-        example:
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported.
+        For example:
           `[{\"namespace\":\"oracle\", \"key\":\"createdBy\"]`
 
 
@@ -212,7 +212,7 @@ class SavedCustomTable(object):
     def version(self):
         """
         Gets the version of this SavedCustomTable.
-        the version of custom table.
+        The version of the custom table.
 
 
         :return: The version of this SavedCustomTable.
@@ -224,7 +224,7 @@ class SavedCustomTable(object):
     def version(self, version):
         """
         Sets the version of this SavedCustomTable.
-        the version of custom table.
+        The version of the custom table.
 
 
         :param version: The version of this SavedCustomTable.

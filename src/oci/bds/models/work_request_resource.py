@@ -104,10 +104,7 @@ class WorkRequestResource(object):
     def action_type(self):
         """
         **[Required]** Gets the action_type of this WorkRequestResource.
-        The way in which this resource is affected by the work tracked in the work request.
-        A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-        work is complete for that resource at which point it will transition to CREATED, UPDATED,
-        or DELETED, respectively.
+        The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
 
         Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -122,10 +119,7 @@ class WorkRequestResource(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this WorkRequestResource.
-        The way in which this resource is affected by the work tracked in the work request.
-        A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-        work is complete for that resource at which point it will transition to CREATED, UPDATED,
-        or DELETED, respectively.
+        The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
 
 
         :param action_type: The action_type of this WorkRequestResource.
@@ -164,7 +158,7 @@ class WorkRequestResource(object):
     def entity_uri(self):
         """
         Gets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that the user can do a GET on to access the resource metadata.
 
 
         :return: The entity_uri of this WorkRequestResource.
@@ -176,7 +170,7 @@ class WorkRequestResource(object):
     def entity_uri(self, entity_uri):
         """
         Sets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that the user can do a GET on to access the resource metadata.
 
 
         :param entity_uri: The entity_uri of this WorkRequestResource.

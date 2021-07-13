@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveAutoScalingConfigurationDetails(object):
     """
-    The information about removed Auto Scaling Configuration
+    The information about the removed autoscale configuration.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RemoveAutoScalingConfigurationDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this RemoveAutoScalingConfigurationDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this RemoveAutoScalingConfigurationDetails.
@@ -49,7 +49,7 @@ class RemoveAutoScalingConfigurationDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this RemoveAutoScalingConfigurationDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this RemoveAutoScalingConfigurationDetails.

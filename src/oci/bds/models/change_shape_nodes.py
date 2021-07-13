@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeShapeNodes(object):
     """
-    Inidividual worker nodes groups details
+    Individual worker nodes groups details.
     """
 
     def __init__(self, **kwargs):
@@ -130,7 +130,7 @@ class ChangeShapeNodes(object):
     def cloudsql(self):
         """
         Gets the cloudsql of this ChangeShapeNodes.
-        Change shape of cloudsql node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+        Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :return: The cloudsql of this ChangeShapeNodes.
@@ -142,7 +142,7 @@ class ChangeShapeNodes(object):
     def cloudsql(self, cloudsql):
         """
         Sets the cloudsql of this ChangeShapeNodes.
-        Change shape of cloudsql node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+        Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
 
 
         :param cloudsql: The cloudsql of this ChangeShapeNodes.

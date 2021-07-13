@@ -1,9 +1,12 @@
 ## showoci - Oracle Cloud Infrastructure Reporting Tool
 
 SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant. 
-It covers most of OCI components, 
-Authentication by User or Compute using instance principals, 
+It covers most of OCI components,  Authentication by User or Compute using instance principals, 
 Output can be printer friendly, CSV files or JSON file.
+
+**DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes, and rather OCI's official 
+[cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
+and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
 **Developed by Adi Zohar, 2018-2021**
 
@@ -55,8 +58,6 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.management_agent.ManagementAgentClient
 - oci.database_management.DbManagementClient
 
-
-** DISCLAIMER – This is not an official Oracle application
 
 ## Executing using Cloud Shell:
 ```
@@ -117,10 +118,10 @@ Allow Group ReadOnlyUsers to read resource-availability in tenancy
 ```
 
 ## Installation of Python 3 incase you don't have Python3 installed:
-Please follow Python Documentation - https://docs.python.org/3/using/index.html
+Please follow [Python Documentation](https://docs.python.org/3/using/index.html)
 
 ## Install oci SDK Packages:
-Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-python-sdk
+Please follow [Oracle Python SDK Documentation](https://github.com/oracle/oci-python-sdk)
 
 ## Setup connectivity using Instance Principals
 
@@ -148,7 +149,7 @@ Download the showoci*.py from this project
 Execute  
 
 ```
-$ ./showoci.py  
+$ python3 showoci.py  
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m] [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec]
                   [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID]

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatePublicationDetails(object):
     """
-    The updated details of the resource
+    The model for the parameters needed to update a publication.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class UpdatePublicationDetails(object):
     def name(self):
         """
         Gets the name of this UpdatePublicationDetails.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :return: The name of this UpdatePublicationDetails.
@@ -84,7 +84,7 @@ class UpdatePublicationDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdatePublicationDetails.
-        The name of the listing.
+        The name of the publication, which is also used in the listing.
 
 
         :param name: The name of this UpdatePublicationDetails.
@@ -96,7 +96,7 @@ class UpdatePublicationDetails(object):
     def short_description(self):
         """
         Gets the short_description of this UpdatePublicationDetails.
-        short description of the catalog listing
+        A short description of the publication to use in the listing.
 
 
         :return: The short_description of this UpdatePublicationDetails.
@@ -108,7 +108,7 @@ class UpdatePublicationDetails(object):
     def short_description(self, short_description):
         """
         Sets the short_description of this UpdatePublicationDetails.
-        short description of the catalog listing
+        A short description of the publication to use in the listing.
 
 
         :param short_description: The short_description of this UpdatePublicationDetails.
@@ -120,7 +120,7 @@ class UpdatePublicationDetails(object):
     def long_description(self):
         """
         Gets the long_description of this UpdatePublicationDetails.
-        short description of the catalog listing
+        A long description of the publication to use in the listing.
 
 
         :return: The long_description of this UpdatePublicationDetails.
@@ -132,7 +132,7 @@ class UpdatePublicationDetails(object):
     def long_description(self, long_description):
         """
         Sets the long_description of this UpdatePublicationDetails.
-        short description of the catalog listing
+        A long description of the publication to use in the listing.
 
 
         :param long_description: The long_description of this UpdatePublicationDetails.
@@ -144,7 +144,7 @@ class UpdatePublicationDetails(object):
     def support_contacts(self):
         """
         Gets the support_contacts of this UpdatePublicationDetails.
-        Contact information to use to get support from the publisher for the listing.
+        Contact information for getting support from the publisher for the listing.
 
 
         :return: The support_contacts of this UpdatePublicationDetails.
@@ -156,7 +156,7 @@ class UpdatePublicationDetails(object):
     def support_contacts(self, support_contacts):
         """
         Sets the support_contacts of this UpdatePublicationDetails.
-        Contact information to use to get support from the publisher for the listing.
+        Contact information for getting support from the publisher for the listing.
 
 
         :param support_contacts: The support_contacts of this UpdatePublicationDetails.

@@ -29,10 +29,10 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddAutoScalingConfigurationDetails add_auto_scaling_configuration_details: (required)
-            Details for create an autoscaling configuration.
+            Details for creating an autoscale configuration.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -70,10 +70,10 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddBlockStorageDetails add_block_storage_details: (required)
-            Details for the newly added block storage
+            Details for the added block storage.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -111,7 +111,7 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddCloudSqlDetails add_cloud_sql_details: (required)
             Details for the Cloud SQL capability
@@ -152,10 +152,10 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.AddWorkerNodesDetails add_worker_nodes_details: (required)
-            Details for the newly added nodes
+            Details for the newly added nodes.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -193,7 +193,7 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.ChangeBdsInstanceCompartmentDetails change_bds_instance_compartment_details: (required)
             Details for the comparment change.
@@ -234,10 +234,10 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.ChangeShapeDetails change_shape_details: (required)
-            Individual change shape settings per node group. You can change the shape of master, worker, utility and cloudsql nodes.
+            Individual change shape settings per node type. You can change the shape of master, worker, utility and Cloud SQL nodes.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -275,7 +275,7 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.bds.models.CreateBdsInstanceDetails create_bds_instance_details: (required)
-            Details for the new BDS instace.
+            Details for the new cluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -313,7 +313,7 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -359,13 +359,13 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str auto_scaling_configuration_id: (required)
-            Unique Oracle-assigned identifier of the autoscaling configuration.
+            Unique Oracle-assigned identifier of the autoscale configuration.
 
         :param oci.bds.models.RemoveAutoScalingConfigurationDetails remove_auto_scaling_configuration_details: (required)
-            Details for the Auto Scaling Configuration
+            Details for the autoscale configuration
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
@@ -403,7 +403,7 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.RemoveCloudSqlDetails remove_cloud_sql_details: (required)
             Details for the Cloud SQL capability
@@ -444,7 +444,7 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.RestartNodeDetails restart_node_details: (required)
             Details for restarting the node.
@@ -485,10 +485,10 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param str auto_scaling_configuration_id: (required)
-            Unique Oracle-assigned identifier of the autoscaling configuration.
+            Unique Oracle-assigned identifier of the autoscale configuration.
 
         :param oci.bds.models.UpdateAutoScalingConfigurationDetails update_auto_scaling_configuration_details: (required)
             Details for update an autoscaling configuration.
@@ -529,10 +529,10 @@ class BdsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str bds_instance_id: (required)
-            The OCID of the BDS instance
+            The OCID of the cluster.
 
         :param oci.bds.models.UpdateBdsInstanceDetails update_bds_instance_details: (required)
-            Details for the to-be-updated BDS instace.
+            Details for the cluster to be updated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`

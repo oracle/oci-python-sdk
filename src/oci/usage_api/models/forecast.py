@@ -57,7 +57,7 @@ class Forecast(object):
     def forecast_type(self):
         """
         Gets the forecast_type of this Forecast.
-        BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
+        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
 
         Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -72,7 +72,7 @@ class Forecast(object):
     def forecast_type(self, forecast_type):
         """
         Sets the forecast_type of this Forecast.
-        BASIC uses ETS to project future usage/cost based on history data. The basis for projections will be a rolling set of equivalent historical days for which projection is being made.
+        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
 
 
         :param forecast_type: The forecast_type of this Forecast.
@@ -87,7 +87,7 @@ class Forecast(object):
     def time_forecast_started(self):
         """
         Gets the time_forecast_started of this Forecast.
-        forecast start time. Will default to UTC-1 if not specified
+        The forecast start time. Defaults to UTC-1 if not specified.
 
 
         :return: The time_forecast_started of this Forecast.
@@ -99,7 +99,7 @@ class Forecast(object):
     def time_forecast_started(self, time_forecast_started):
         """
         Sets the time_forecast_started of this Forecast.
-        forecast start time. Will default to UTC-1 if not specified
+        The forecast start time. Defaults to UTC-1 if not specified.
 
 
         :param time_forecast_started: The time_forecast_started of this Forecast.
@@ -111,7 +111,7 @@ class Forecast(object):
     def time_forecast_ended(self):
         """
         **[Required]** Gets the time_forecast_ended of this Forecast.
-        forecast end time.
+        The forecast end time.
 
 
         :return: The time_forecast_ended of this Forecast.
@@ -123,7 +123,7 @@ class Forecast(object):
     def time_forecast_ended(self, time_forecast_ended):
         """
         Sets the time_forecast_ended of this Forecast.
-        forecast end time.
+        The forecast end time.
 
 
         :param time_forecast_ended: The time_forecast_ended of this Forecast.

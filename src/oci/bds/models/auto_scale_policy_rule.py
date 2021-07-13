@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalePolicyRule(object):
     """
-    A rule that defines a specific autoscaling action to take and the metric that triggers that action.
+    A rule that defines a specific autoscale action to take and the metric that triggers that action.
     """
 
     #: A constant which can be used with the action property of a AutoScalePolicyRule.
@@ -54,7 +54,7 @@ class AutoScalePolicyRule(object):
     def action(self):
         """
         **[Required]** Gets the action of this AutoScalePolicyRule.
-        The valid value are - CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN
+        The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
 
         Allowed values for this property are: "CHANGE_SHAPE_SCALE_UP", "CHANGE_SHAPE_SCALE_DOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -69,7 +69,7 @@ class AutoScalePolicyRule(object):
     def action(self, action):
         """
         Sets the action of this AutoScalePolicyRule.
-        The valid value are - CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN
+        The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
 
 
         :param action: The action of this AutoScalePolicyRule.

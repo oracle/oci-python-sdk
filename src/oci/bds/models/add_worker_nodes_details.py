@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddWorkerNodesDetails(object):
     """
-    The information about additionaly added nodes
+    The information about added nodes.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class AddWorkerNodesDetails(object):
     def cluster_admin_password(self):
         """
         **[Required]** Gets the cluster_admin_password of this AddWorkerNodesDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :return: The cluster_admin_password of this AddWorkerNodesDetails.
@@ -56,7 +56,7 @@ class AddWorkerNodesDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this AddWorkerNodesDetails.
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
         :param cluster_admin_password: The cluster_admin_password of this AddWorkerNodesDetails.
@@ -68,7 +68,7 @@ class AddWorkerNodesDetails(object):
     def number_of_worker_nodes(self):
         """
         **[Required]** Gets the number_of_worker_nodes of this AddWorkerNodesDetails.
-        Number of additional worker nodes for the BDS instance
+        Number of additional worker nodes for the cluster.
 
 
         :return: The number_of_worker_nodes of this AddWorkerNodesDetails.
@@ -80,7 +80,7 @@ class AddWorkerNodesDetails(object):
     def number_of_worker_nodes(self, number_of_worker_nodes):
         """
         Sets the number_of_worker_nodes of this AddWorkerNodesDetails.
-        Number of additional worker nodes for the BDS instance
+        Number of additional worker nodes for the cluster.
 
 
         :param number_of_worker_nodes: The number_of_worker_nodes of this AddWorkerNodesDetails.

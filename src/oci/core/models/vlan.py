@@ -152,7 +152,8 @@ class Vlan(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this Vlan.
-        The availability domain of the VLAN.
+        The VLAN's availability domain. This attribute will be null if this is a regional VLAN
+        rather than an AD-specific VLAN.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -166,7 +167,8 @@ class Vlan(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Vlan.
-        The availability domain of the VLAN.
+        The VLAN's availability domain. This attribute will be null if this is a regional VLAN
+        rather than an AD-specific VLAN.
 
         Example: `Uocm:PHX-AD-1`
 
