@@ -2939,6 +2939,47 @@ def test_download_exadata_infrastructure_config_file(testing_service_client):
 
 
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_download_validation_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DownloadValidationReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DownloadValidationReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DownloadValidationReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.download_validation_report(
+                exadata_infrastructure_id=request.pop(util.camelize('exadataInfrastructureId')),
+                vm_cluster_network_id=request.pop(util.camelize('vmClusterNetworkId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DownloadValidationReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_download_vm_cluster_network_config_file(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DownloadVmClusterNetworkConfigFile'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5197,6 +5238,88 @@ def test_get_vm_cluster_patch_history_entry(testing_service_client):
             result,
             service_error,
             'patchHistoryEntry',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_vm_cluster_update(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetVmClusterUpdate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetVmClusterUpdate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetVmClusterUpdate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_vm_cluster_update(
+                vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                update_id=request.pop(util.camelize('updateId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetVmClusterUpdate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vmClusterUpdate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_vm_cluster_update_history_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetVmClusterUpdateHistoryEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetVmClusterUpdateHistoryEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetVmClusterUpdateHistoryEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_vm_cluster_update_history_entry(
+                vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                update_history_entry_id=request.pop(util.camelize('updateHistoryEntryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetVmClusterUpdateHistoryEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vmClusterUpdateHistoryEntry',
             False,
             False
         )
@@ -7968,6 +8091,126 @@ def test_list_vm_cluster_patches(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_vm_cluster_update_history_entries(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListVmClusterUpdateHistoryEntries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListVmClusterUpdateHistoryEntries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListVmClusterUpdateHistoryEntries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_vm_cluster_update_history_entries(
+                vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_vm_cluster_update_history_entries(
+                    vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_vm_cluster_update_history_entries(
+                        vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListVmClusterUpdateHistoryEntries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vmClusterUpdateHistoryEntrySummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_vm_cluster_updates(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListVmClusterUpdates'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListVmClusterUpdates')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListVmClusterUpdates')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_vm_cluster_updates(
+                vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_vm_cluster_updates(
+                    vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_vm_cluster_updates(
+                        vm_cluster_id=request.pop(util.camelize('vmClusterId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListVmClusterUpdates',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vmClusterUpdateSummary',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_vm_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusters'):
@@ -9524,6 +9767,48 @@ def test_update_cloud_vm_cluster_iorm_config(testing_service_client):
             result,
             service_error,
             'exadataIormConfig',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_data_guard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateDataGuardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateDataGuardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateDataGuardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_data_guard_association(
+                database_id=request.pop(util.camelize('databaseId')),
+                data_guard_association_id=request.pop(util.camelize('dataGuardAssociationId')),
+                update_data_guard_association_details=request.pop(util.camelize('UpdateDataGuardAssociationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateDataGuardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataGuardAssociation',
             False,
             False
         )

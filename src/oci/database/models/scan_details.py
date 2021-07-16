@@ -75,7 +75,7 @@ class ScanDetails(object):
     def port(self):
         """
         **[Required]** Gets the port of this ScanDetails.
-        The SCAN port. Default is 1521.
+        The SCAN TCPIP port. Default is 1521.
 
 
         :return: The port of this ScanDetails.
@@ -87,7 +87,7 @@ class ScanDetails(object):
     def port(self, port):
         """
         Sets the port of this ScanDetails.
-        The SCAN port. Default is 1521.
+        The SCAN TCPIP port. Default is 1521.
 
 
         :param port: The port of this ScanDetails.

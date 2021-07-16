@@ -21,7 +21,7 @@ class OracleReadAttribute(AbstractReadAttribute):
 
         :param model_type:
             The value to assign to the model_type property of this OracleReadAttribute.
-            Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE"
+            Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE"
         :type model_type: str
 
         :param fetch_size:

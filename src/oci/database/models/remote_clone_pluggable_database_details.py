@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoteClonePluggableDatabaseDetails(object):
     """
-    Parameters for cloning a pluggable database on a remote (different) CDB.
+    Parameters for cloning a pluggable database (PDB) in a remote database (CDB). A remote CDB is one that does not contain the source PDB.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -119,7 +119,7 @@ class RemoteClonePluggableDatabaseDetails(object):
     def cloned_pdb_name(self):
         """
         **[Required]** Gets the cloned_pdb_name of this RemoteClonePluggableDatabaseDetails.
-        The name for the pluggable database. The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        The name for the pluggable database (PDB). The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 
 
         :return: The cloned_pdb_name of this RemoteClonePluggableDatabaseDetails.
@@ -131,7 +131,7 @@ class RemoteClonePluggableDatabaseDetails(object):
     def cloned_pdb_name(self, cloned_pdb_name):
         """
         Sets the cloned_pdb_name of this RemoteClonePluggableDatabaseDetails.
-        The name for the pluggable database. The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        The name for the pluggable database (PDB). The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 
 
         :param cloned_pdb_name: The cloned_pdb_name of this RemoteClonePluggableDatabaseDetails.

@@ -654,6 +654,48 @@ def test_create_project(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                create_schedule_details=request.pop(util.camelize('CreateScheduleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_create_task(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'CreateTask'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -731,6 +773,48 @@ def test_create_task_run(testing_service_client):
             result,
             service_error,
             'taskRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_task_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateTaskSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateTaskSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateTaskSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_task_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                create_task_schedule_details=request.pop(util.camelize('CreateTaskScheduleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateTaskSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taskSchedule',
             False,
             False
         )
@@ -1354,6 +1438,48 @@ def test_delete_project(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                schedule_key=request.pop(util.camelize('scheduleKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_schedule',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_delete_task(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'DeleteTask'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1431,6 +1557,48 @@ def test_delete_task_run(testing_service_client):
             result,
             service_error,
             'delete_task_run',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_task_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteTaskSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteTaskSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteTaskSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_task_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                task_schedule_key=request.pop(util.camelize('taskScheduleKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteTaskSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_task_schedule',
             True,
             False
         )
@@ -2264,6 +2432,48 @@ def test_get_reference(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                schedule_key=request.pop(util.camelize('scheduleKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_get_schema(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'GetSchema'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2383,6 +2593,48 @@ def test_get_task_run(testing_service_client):
             result,
             service_error,
             'taskRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_task_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetTaskSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetTaskSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetTaskSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_task_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                task_schedule_key=request.pop(util.camelize('taskScheduleKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetTaskSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taskSchedule',
             False,
             False
         )
@@ -3620,6 +3872,69 @@ def test_list_references(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_schedules(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListSchedules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListSchedules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListSchedules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_schedules(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_schedules(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    application_key=request.pop(util.camelize('applicationKey')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_schedules(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        application_key=request.pop(util.camelize('applicationKey')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListSchedules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'scheduleSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_list_schemas(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'ListSchemas'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3809,6 +4124,69 @@ def test_list_task_runs(testing_service_client):
             result,
             service_error,
             'taskRunSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_task_schedules(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListTaskSchedules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListTaskSchedules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListTaskSchedules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_task_schedules(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_task_schedules(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    application_key=request.pop(util.camelize('applicationKey')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_task_schedules(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        application_key=request.pop(util.camelize('applicationKey')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListTaskSchedules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taskScheduleSummaryCollection',
             False,
             True
         )
@@ -4635,6 +5013,49 @@ def test_update_reference(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdateSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdateSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdateSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                schedule_key=request.pop(util.camelize('scheduleKey')),
+                update_schedule_details=request.pop(util.camelize('UpdateScheduleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdateSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_update_task(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'UpdateTask'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4714,6 +5135,49 @@ def test_update_task_run(testing_service_client):
             result,
             service_error,
             'taskRunDetails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_task_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdateTaskSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdateTaskSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdateTaskSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_task_schedule(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                task_schedule_key=request.pop(util.camelize('taskScheduleKey')),
+                update_task_schedule_details=request.pop(util.camelize('UpdateTaskScheduleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdateTaskSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taskSchedule',
             False,
             False
         )

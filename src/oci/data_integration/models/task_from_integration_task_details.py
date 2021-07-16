@@ -21,7 +21,7 @@ class TaskFromIntegrationTaskDetails(Task):
 
         :param model_type:
             The value to assign to the model_type property of this TaskFromIntegrationTaskDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"
         :type model_type: str
 
         :param key:
@@ -84,6 +84,10 @@ class TaskFromIntegrationTaskDetails(Task):
             The value to assign to the key_map property of this TaskFromIntegrationTaskDetails.
         :type key_map: dict(str, str)
 
+        :param registry_metadata:
+            The value to assign to the registry_metadata property of this TaskFromIntegrationTaskDetails.
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
+
         :param data_flow:
             The value to assign to the data_flow property of this TaskFromIntegrationTaskDetails.
         :type data_flow: oci.data_integration.models.DataFlow
@@ -106,6 +110,7 @@ class TaskFromIntegrationTaskDetails(Task):
             'config_provider_delegate': 'ConfigProvider',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
+            'registry_metadata': 'RegistryMetadata',
             'data_flow': 'DataFlow'
         }
 
@@ -126,6 +131,7 @@ class TaskFromIntegrationTaskDetails(Task):
             'config_provider_delegate': 'configProviderDelegate',
             'metadata': 'metadata',
             'key_map': 'keyMap',
+            'registry_metadata': 'registryMetadata',
             'data_flow': 'dataFlow'
         }
 
@@ -145,6 +151,7 @@ class TaskFromIntegrationTaskDetails(Task):
         self._config_provider_delegate = None
         self._metadata = None
         self._key_map = None
+        self._registry_metadata = None
         self._data_flow = None
         self._model_type = 'INTEGRATION_TASK'
 

@@ -57,6 +57,18 @@ class TaskRun(object):
     #: This constant has a value of "DAYS"
     EXPECTED_DURATION_UNIT_DAYS = "DAYS"
 
+    #: A constant which can be used with the auth_mode property of a TaskRun.
+    #: This constant has a value of "OBO"
+    AUTH_MODE_OBO = "OBO"
+
+    #: A constant which can be used with the auth_mode property of a TaskRun.
+    #: This constant has a value of "RESOURCE_PRINCIPAL"
+    AUTH_MODE_RESOURCE_PRINCIPAL = "RESOURCE_PRINCIPAL"
+
+    #: A constant which can be used with the auth_mode property of a TaskRun.
+    #: This constant has a value of "USER_CERTIFICATE"
+    AUTH_MODE_USER_CERTIFICATE = "USER_CERTIFICATE"
+
     #: A constant which can be used with the task_type property of a TaskRun.
     #: This constant has a value of "INTEGRATION_TASK"
     TASK_TYPE_INTEGRATION_TASK = "INTEGRATION_TASK"
@@ -68,6 +80,18 @@ class TaskRun(object):
     #: A constant which can be used with the task_type property of a TaskRun.
     #: This constant has a value of "PIPELINE_TASK"
     TASK_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
+    #: A constant which can be used with the task_type property of a TaskRun.
+    #: This constant has a value of "SQL_TASK"
+    TASK_TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the task_type property of a TaskRun.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    TASK_TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the task_type property of a TaskRun.
+    #: This constant has a value of "REST_TASK"
+    TASK_TYPE_REST_TASK = "REST_TASK"
 
     def __init__(self, **kwargs):
         """
@@ -150,6 +174,10 @@ class TaskRun(object):
             The value to assign to the task_key property of this TaskRun.
         :type task_key: str
 
+        :param external_id:
+            The value to assign to the external_id property of this TaskRun.
+        :type external_id: str
+
         :param retry_attempt:
             The value to assign to the retry_attempt property of this TaskRun.
         :type retry_attempt: int
@@ -162,6 +190,10 @@ class TaskRun(object):
             The value to assign to the metrics property of this TaskRun.
         :type metrics: dict(str, float)
 
+        :param outputs:
+            The value to assign to the outputs property of this TaskRun.
+        :type outputs: dict(str, ParameterValue)
+
         :param execution_errors:
             The value to assign to the execution_errors property of this TaskRun.
         :type execution_errors: list[str]
@@ -169,6 +201,12 @@ class TaskRun(object):
         :param termination_errors:
             The value to assign to the termination_errors property of this TaskRun.
         :type termination_errors: list[str]
+
+        :param auth_mode:
+            The value to assign to the auth_mode property of this TaskRun.
+            Allowed values for this property are: "OBO", "RESOURCE_PRINCIPAL", "USER_CERTIFICATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type auth_mode: str
 
         :param opc_request_id:
             The value to assign to the opc_request_id property of this TaskRun.
@@ -180,7 +218,7 @@ class TaskRun(object):
 
         :param task_type:
             The value to assign to the task_type property of this TaskRun.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
@@ -216,11 +254,14 @@ class TaskRun(object):
             'expected_duration': 'float',
             'expected_duration_unit': 'str',
             'task_key': 'str',
+            'external_id': 'str',
             'retry_attempt': 'int',
             'task_schedule': 'TaskSchedule',
             'metrics': 'dict(str, float)',
+            'outputs': 'dict(str, ParameterValue)',
             'execution_errors': 'list[str]',
             'termination_errors': 'list[str]',
+            'auth_mode': 'str',
             'opc_request_id': 'str',
             'object_status': 'int',
             'task_type': 'str',
@@ -248,11 +289,14 @@ class TaskRun(object):
             'expected_duration': 'expectedDuration',
             'expected_duration_unit': 'expectedDurationUnit',
             'task_key': 'taskKey',
+            'external_id': 'externalId',
             'retry_attempt': 'retryAttempt',
             'task_schedule': 'taskSchedule',
             'metrics': 'metrics',
+            'outputs': 'outputs',
             'execution_errors': 'executionErrors',
             'termination_errors': 'terminationErrors',
+            'auth_mode': 'authMode',
             'opc_request_id': 'opcRequestId',
             'object_status': 'objectStatus',
             'task_type': 'taskType',
@@ -279,11 +323,14 @@ class TaskRun(object):
         self._expected_duration = None
         self._expected_duration_unit = None
         self._task_key = None
+        self._external_id = None
         self._retry_attempt = None
         self._task_schedule = None
         self._metrics = None
+        self._outputs = None
         self._execution_errors = None
         self._termination_errors = None
+        self._auth_mode = None
         self._opc_request_id = None
         self._object_status = None
         self._task_type = None
@@ -728,6 +775,30 @@ class TaskRun(object):
         self._task_key = task_key
 
     @property
+    def external_id(self):
+        """
+        Gets the external_id of this TaskRun.
+        The external identifier for the task run.
+
+
+        :return: The external_id of this TaskRun.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this TaskRun.
+        The external identifier for the task run.
+
+
+        :param external_id: The external_id of this TaskRun.
+        :type: str
+        """
+        self._external_id = external_id
+
+    @property
     def retry_attempt(self):
         """
         Gets the retry_attempt of this TaskRun.
@@ -796,6 +867,30 @@ class TaskRun(object):
         self._metrics = metrics
 
     @property
+    def outputs(self):
+        """
+        Gets the outputs of this TaskRun.
+        A map of the outputs of the run.
+
+
+        :return: The outputs of this TaskRun.
+        :rtype: dict(str, ParameterValue)
+        """
+        return self._outputs
+
+    @outputs.setter
+    def outputs(self, outputs):
+        """
+        Sets the outputs of this TaskRun.
+        A map of the outputs of the run.
+
+
+        :param outputs: The outputs of this TaskRun.
+        :type: dict(str, ParameterValue)
+        """
+        self._outputs = outputs
+
+    @property
     def execution_errors(self):
         """
         Gets the execution_errors of this TaskRun.
@@ -842,6 +937,36 @@ class TaskRun(object):
         :type: list[str]
         """
         self._termination_errors = termination_errors
+
+    @property
+    def auth_mode(self):
+        """
+        Gets the auth_mode of this TaskRun.
+        The autorization mode for when the task was executed.
+
+        Allowed values for this property are: "OBO", "RESOURCE_PRINCIPAL", "USER_CERTIFICATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The auth_mode of this TaskRun.
+        :rtype: str
+        """
+        return self._auth_mode
+
+    @auth_mode.setter
+    def auth_mode(self, auth_mode):
+        """
+        Sets the auth_mode of this TaskRun.
+        The autorization mode for when the task was executed.
+
+
+        :param auth_mode: The auth_mode of this TaskRun.
+        :type: str
+        """
+        allowed_values = ["OBO", "RESOURCE_PRINCIPAL", "USER_CERTIFICATE"]
+        if not value_allowed_none_or_none_sentinel(auth_mode, allowed_values):
+            auth_mode = 'UNKNOWN_ENUM_VALUE'
+        self._auth_mode = auth_mode
 
     @property
     def opc_request_id(self):
@@ -897,7 +1022,7 @@ class TaskRun(object):
         Gets the task_type of this TaskRun.
         The type of task run.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -916,7 +1041,7 @@ class TaskRun(object):
         :param task_type: The task_type of this TaskRun.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type

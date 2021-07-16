@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class PluggableDatabaseSummary(object):
     """
     A pluggable database (PDB) is portable collection of schemas, schema objects, and non-schema objects that appears to an Oracle client as a non-container database. To use a PDB, it needs to be plugged into a CDB.
-    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
+    To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to a tenancy administrator. If you are an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
@@ -219,7 +219,7 @@ class PluggableDatabaseSummary(object):
     def pdb_name(self):
         """
         **[Required]** Gets the pdb_name of this PluggableDatabaseSummary.
-        The name for the pluggable database. The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        The name for the pluggable database (PDB). The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 
 
         :return: The pdb_name of this PluggableDatabaseSummary.
@@ -231,7 +231,7 @@ class PluggableDatabaseSummary(object):
     def pdb_name(self, pdb_name):
         """
         Sets the pdb_name of this PluggableDatabaseSummary.
-        The name for the pluggable database. The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        The name for the pluggable database (PDB). The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 
 
         :param pdb_name: The pdb_name of this PluggableDatabaseSummary.
@@ -297,7 +297,7 @@ class PluggableDatabaseSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this PluggableDatabaseSummary.
-        The date and time the pluggable database was created
+        The date and time the pluggable database was created.
 
 
         :return: The time_created of this PluggableDatabaseSummary.
@@ -309,7 +309,7 @@ class PluggableDatabaseSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PluggableDatabaseSummary.
-        The date and time the pluggable database was created
+        The date and time the pluggable database was created.
 
 
         :param time_created: The time_created of this PluggableDatabaseSummary.
@@ -341,7 +341,7 @@ class PluggableDatabaseSummary(object):
     def open_mode(self):
         """
         **[Required]** Gets the open_mode of this PluggableDatabaseSummary.
-        The mode that pluggableDatabase is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend.
+        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
 
         Allowed values for this property are: "READ_ONLY", "READ_WRITE", "MOUNTED", "MIGRATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -356,7 +356,7 @@ class PluggableDatabaseSummary(object):
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this PluggableDatabaseSummary.
-        The mode that pluggableDatabase is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend.
+        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
 
 
         :param open_mode: The open_mode of this PluggableDatabaseSummary.
@@ -371,8 +371,8 @@ class PluggableDatabaseSummary(object):
     def is_restricted(self):
         """
         Gets the is_restricted of this PluggableDatabaseSummary.
-        The restricted mode of pluggableDatabase. If a pluggableDatabase is opened in restricted mode,
-        the user needs both Create a session and restricted session privileges to connect to it.
+        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
+        the user needs both create a session and have restricted session privileges to connect to it.
 
 
         :return: The is_restricted of this PluggableDatabaseSummary.
@@ -384,8 +384,8 @@ class PluggableDatabaseSummary(object):
     def is_restricted(self, is_restricted):
         """
         Sets the is_restricted of this PluggableDatabaseSummary.
-        The restricted mode of pluggableDatabase. If a pluggableDatabase is opened in restricted mode,
-        the user needs both Create a session and restricted session privileges to connect to it.
+        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode,
+        the user needs both create a session and have restricted session privileges to connect to it.
 
 
         :param is_restricted: The is_restricted of this PluggableDatabaseSummary.

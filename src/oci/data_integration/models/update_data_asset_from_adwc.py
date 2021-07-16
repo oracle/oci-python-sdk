@@ -21,7 +21,7 @@ class UpdateDataAssetFromAdwc(UpdateDataAssetDetails):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateDataAssetFromAdwc.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -84,6 +84,22 @@ class UpdateDataAssetFromAdwc(UpdateDataAssetDetails):
             The value to assign to the wallet_password_secret property of this UpdateDataAssetFromAdwc.
         :type wallet_password_secret: oci.data_integration.models.SensitiveAttribute
 
+        :param region_id:
+            The value to assign to the region_id property of this UpdateDataAssetFromAdwc.
+        :type region_id: str
+
+        :param tenancy_id:
+            The value to assign to the tenancy_id property of this UpdateDataAssetFromAdwc.
+        :type tenancy_id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this UpdateDataAssetFromAdwc.
+        :type compartment_id: str
+
+        :param autonomous_db_id:
+            The value to assign to the autonomous_db_id property of this UpdateDataAssetFromAdwc.
+        :type autonomous_db_id: str
+
         :param default_connection:
             The value to assign to the default_connection property of this UpdateDataAssetFromAdwc.
         :type default_connection: oci.data_integration.models.UpdateConnectionFromAdwc
@@ -106,6 +122,10 @@ class UpdateDataAssetFromAdwc(UpdateDataAssetDetails):
             'credential_file_content': 'str',
             'wallet_secret': 'SensitiveAttribute',
             'wallet_password_secret': 'SensitiveAttribute',
+            'region_id': 'str',
+            'tenancy_id': 'str',
+            'compartment_id': 'str',
+            'autonomous_db_id': 'str',
             'default_connection': 'UpdateConnectionFromAdwc'
         }
 
@@ -126,6 +146,10 @@ class UpdateDataAssetFromAdwc(UpdateDataAssetDetails):
             'credential_file_content': 'credentialFileContent',
             'wallet_secret': 'walletSecret',
             'wallet_password_secret': 'walletPasswordSecret',
+            'region_id': 'regionId',
+            'tenancy_id': 'tenancyId',
+            'compartment_id': 'compartmentId',
+            'autonomous_db_id': 'autonomousDbId',
             'default_connection': 'defaultConnection'
         }
 
@@ -145,6 +169,10 @@ class UpdateDataAssetFromAdwc(UpdateDataAssetDetails):
         self._credential_file_content = None
         self._wallet_secret = None
         self._wallet_password_secret = None
+        self._region_id = None
+        self._tenancy_id = None
+        self._compartment_id = None
+        self._autonomous_db_id = None
         self._default_connection = None
         self._model_type = 'ORACLE_ADWC_DATA_ASSET'
 
@@ -259,6 +287,102 @@ class UpdateDataAssetFromAdwc(UpdateDataAssetDetails):
         :type: oci.data_integration.models.SensitiveAttribute
         """
         self._wallet_password_secret = wallet_password_secret
+
+    @property
+    def region_id(self):
+        """
+        Gets the region_id of this UpdateDataAssetFromAdwc.
+        The Autonomous Data Warehouse instance region Id.
+
+
+        :return: The region_id of this UpdateDataAssetFromAdwc.
+        :rtype: str
+        """
+        return self._region_id
+
+    @region_id.setter
+    def region_id(self, region_id):
+        """
+        Sets the region_id of this UpdateDataAssetFromAdwc.
+        The Autonomous Data Warehouse instance region Id.
+
+
+        :param region_id: The region_id of this UpdateDataAssetFromAdwc.
+        :type: str
+        """
+        self._region_id = region_id
+
+    @property
+    def tenancy_id(self):
+        """
+        Gets the tenancy_id of this UpdateDataAssetFromAdwc.
+        The Autonomous Data Warehouse instance tenancy Id.
+
+
+        :return: The tenancy_id of this UpdateDataAssetFromAdwc.
+        :rtype: str
+        """
+        return self._tenancy_id
+
+    @tenancy_id.setter
+    def tenancy_id(self, tenancy_id):
+        """
+        Sets the tenancy_id of this UpdateDataAssetFromAdwc.
+        The Autonomous Data Warehouse instance tenancy Id.
+
+
+        :param tenancy_id: The tenancy_id of this UpdateDataAssetFromAdwc.
+        :type: str
+        """
+        self._tenancy_id = tenancy_id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this UpdateDataAssetFromAdwc.
+        The Autonomous Data Warehouse instance compartment Id.
+
+
+        :return: The compartment_id of this UpdateDataAssetFromAdwc.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this UpdateDataAssetFromAdwc.
+        The Autonomous Data Warehouse instance compartment Id.
+
+
+        :param compartment_id: The compartment_id of this UpdateDataAssetFromAdwc.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def autonomous_db_id(self):
+        """
+        Gets the autonomous_db_id of this UpdateDataAssetFromAdwc.
+        Tha Autonomous Database Id
+
+
+        :return: The autonomous_db_id of this UpdateDataAssetFromAdwc.
+        :rtype: str
+        """
+        return self._autonomous_db_id
+
+    @autonomous_db_id.setter
+    def autonomous_db_id(self, autonomous_db_id):
+        """
+        Sets the autonomous_db_id of this UpdateDataAssetFromAdwc.
+        Tha Autonomous Database Id
+
+
+        :param autonomous_db_id: The autonomous_db_id of this UpdateDataAssetFromAdwc.
+        :type: str
+        """
+        self._autonomous_db_id = autonomous_db_id
 
     @property
     def default_connection(self):

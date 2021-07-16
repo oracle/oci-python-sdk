@@ -46,6 +46,10 @@ class CreateTaskRunDetails(object):
             The value to assign to the identifier property of this CreateTaskRunDetails.
         :type identifier: str
 
+        :param task_schedule_key:
+            The value to assign to the task_schedule_key property of this CreateTaskRunDetails.
+        :type task_schedule_key: str
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskRunDetails.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -59,6 +63,7 @@ class CreateTaskRunDetails(object):
             'description': 'str',
             'config_provider': 'CreateConfigProvider',
             'identifier': 'str',
+            'task_schedule_key': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
 
@@ -70,6 +75,7 @@ class CreateTaskRunDetails(object):
             'description': 'description',
             'config_provider': 'configProvider',
             'identifier': 'identifier',
+            'task_schedule_key': 'taskScheduleKey',
             'registry_metadata': 'registryMetadata'
         }
 
@@ -80,6 +86,7 @@ class CreateTaskRunDetails(object):
         self._description = None
         self._config_provider = None
         self._identifier = None
+        self._task_schedule_key = None
         self._registry_metadata = None
 
     @property
@@ -245,6 +252,30 @@ class CreateTaskRunDetails(object):
         :type: str
         """
         self._identifier = identifier
+
+    @property
+    def task_schedule_key(self):
+        """
+        Gets the task_schedule_key of this CreateTaskRunDetails.
+        Optional task schedule key reference.
+
+
+        :return: The task_schedule_key of this CreateTaskRunDetails.
+        :rtype: str
+        """
+        return self._task_schedule_key
+
+    @task_schedule_key.setter
+    def task_schedule_key(self, task_schedule_key):
+        """
+        Sets the task_schedule_key of this CreateTaskRunDetails.
+        Optional task schedule key reference.
+
+
+        :param task_schedule_key: The task_schedule_key of this CreateTaskRunDetails.
+        :type: str
+        """
+        self._task_schedule_key = task_schedule_key
 
     @property
     def registry_metadata(self):

@@ -28,7 +28,7 @@ class NativeShapeField(object):
 
         :param type:
             The value to assign to the type property of this NativeShapeField.
-        :type type: str
+        :type type: object
 
         :param config_values:
             The value to assign to the config_values property of this NativeShapeField.
@@ -50,7 +50,7 @@ class NativeShapeField(object):
         self.swagger_types = {
             'name': 'str',
             'model_type': 'str',
-            'type': 'str',
+            'type': 'object',
             'config_values': 'ConfigValues',
             'position': 'int',
             'default_value_string': 'str',
@@ -131,7 +131,7 @@ class NativeShapeField(object):
 
 
         :return: The type of this NativeShapeField.
-        :rtype: str
+        :rtype: object
         """
         return self._type
 
@@ -143,7 +143,7 @@ class NativeShapeField(object):
 
 
         :param type: The type of this NativeShapeField.
-        :type: str
+        :type: object
         """
         self._type = type
 

@@ -37,13 +37,23 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "GENERIC_JDBC_CONNECTION"
     MODEL_TYPE_GENERIC_JDBC_CONNECTION = "GENERIC_JDBC_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "BICC_CONNECTION"
+    MODEL_TYPE_BICC_CONNECTION = "BICC_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "AMAZON_S3_CONNECTION"
+    MODEL_TYPE_AMAZON_S3_CONNECTION = "AMAZON_S3_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_integration.models.CreateConnectionFromMySQL`
+        * :class:`~oci.data_integration.models.CreateConnectionFromAmazonS3`
         * :class:`~oci.data_integration.models.CreateConnectionFromJdbc`
+        * :class:`~oci.data_integration.models.CreateConnectionFromBICC`
         * :class:`~oci.data_integration.models.CreateConnectionFromAtp`
         * :class:`~oci.data_integration.models.CreateConnectionFromAdwc`
         * :class:`~oci.data_integration.models.CreateConnectionFromOracle`
@@ -53,7 +63,7 @@ class CreateConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -141,8 +151,14 @@ class CreateConnectionDetails(object):
         if type == 'MYSQL_CONNECTION':
             return 'CreateConnectionFromMySQL'
 
+        if type == 'AMAZON_S3_CONNECTION':
+            return 'CreateConnectionFromAmazonS3'
+
         if type == 'GENERIC_JDBC_CONNECTION':
             return 'CreateConnectionFromJdbc'
+
+        if type == 'BICC_CONNECTION':
+            return 'CreateConnectionFromBICC'
 
         if type == 'ORACLE_ATP_CONNECTION':
             return 'CreateConnectionFromAtp'
@@ -164,7 +180,7 @@ class CreateConnectionDetails(object):
         Gets the model_type of this CreateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"
 
 
         :return: The model_type of this CreateConnectionDetails.
@@ -182,7 +198,7 @@ class CreateConnectionDetails(object):
         :param model_type: The model_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

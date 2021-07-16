@@ -24,6 +24,10 @@ class JsonFormatAttribute(AbstractFormatAttribute):
             Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT"
         :type model_type: str
 
+        :param is_file_pattern:
+            The value to assign to the is_file_pattern property of this JsonFormatAttribute.
+        :type is_file_pattern: bool
+
         :param encoding:
             The value to assign to the encoding property of this JsonFormatAttribute.
         :type encoding: str
@@ -31,15 +35,18 @@ class JsonFormatAttribute(AbstractFormatAttribute):
         """
         self.swagger_types = {
             'model_type': 'str',
+            'is_file_pattern': 'bool',
             'encoding': 'str'
         }
 
         self.attribute_map = {
             'model_type': 'modelType',
+            'is_file_pattern': 'isFilePattern',
             'encoding': 'encoding'
         }
 
         self._model_type = None
+        self._is_file_pattern = None
         self._encoding = None
         self._model_type = 'JSON_FORMAT'
 

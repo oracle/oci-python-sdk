@@ -25,6 +25,18 @@ class CreateTaskDetails(object):
     #: This constant has a value of "PIPELINE_TASK"
     MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
 
+    #: A constant which can be used with the model_type property of a CreateTaskDetails.
+    #: This constant has a value of "SQL_TASK"
+    MODEL_TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the model_type property of a CreateTaskDetails.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    MODEL_TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the model_type property of a CreateTaskDetails.
+    #: This constant has a value of "REST_TASK"
+    MODEL_TYPE_REST_TASK = "REST_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -33,12 +45,15 @@ class CreateTaskDetails(object):
         * :class:`~oci.data_integration.models.CreateTaskFromIntegrationTask`
         * :class:`~oci.data_integration.models.CreateTaskFromDataLoaderTask`
         * :class:`~oci.data_integration.models.CreateTaskFromPipelineTask`
+        * :class:`~oci.data_integration.models.CreateTaskFromOCIDataflowTask`
+        * :class:`~oci.data_integration.models.CreateTaskFromSQLTask`
+        * :class:`~oci.data_integration.models.CreateTaskFromRestTask`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this CreateTaskDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"
         :type model_type: str
 
         :param key:
@@ -159,6 +174,15 @@ class CreateTaskDetails(object):
 
         if type == 'PIPELINE_TASK':
             return 'CreateTaskFromPipelineTask'
+
+        if type == 'OCI_DATAFLOW_TASK':
+            return 'CreateTaskFromOCIDataflowTask'
+
+        if type == 'SQL_TASK':
+            return 'CreateTaskFromSQLTask'
+
+        if type == 'REST_TASK':
+            return 'CreateTaskFromRestTask'
         else:
             return 'CreateTaskDetails'
 
@@ -168,7 +192,7 @@ class CreateTaskDetails(object):
         **[Required]** Gets the model_type of this CreateTaskDetails.
         The type of the task.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"
 
 
         :return: The model_type of this CreateTaskDetails.
@@ -186,7 +210,7 @@ class CreateTaskDetails(object):
         :param model_type: The model_type of this CreateTaskDetails.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

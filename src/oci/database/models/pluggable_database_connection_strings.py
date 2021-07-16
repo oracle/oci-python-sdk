@@ -51,7 +51,7 @@ class PluggableDatabaseConnectionStrings(object):
     def pdb_default(self):
         """
         Gets the pdb_default of this PluggableDatabaseConnectionStrings.
-        Host name based PDB Connection String.
+        A host name-based PDB connection string.
 
 
         :return: The pdb_default of this PluggableDatabaseConnectionStrings.
@@ -63,7 +63,7 @@ class PluggableDatabaseConnectionStrings(object):
     def pdb_default(self, pdb_default):
         """
         Sets the pdb_default of this PluggableDatabaseConnectionStrings.
-        Host name based PDB Connection String.
+        A host name-based PDB connection string.
 
 
         :param pdb_default: The pdb_default of this PluggableDatabaseConnectionStrings.
@@ -75,7 +75,7 @@ class PluggableDatabaseConnectionStrings(object):
     def pdb_ip_default(self):
         """
         Gets the pdb_ip_default of this PluggableDatabaseConnectionStrings.
-        IP based PDB Connection String.
+        An IP-based PDB connection string.
 
 
         :return: The pdb_ip_default of this PluggableDatabaseConnectionStrings.
@@ -87,7 +87,7 @@ class PluggableDatabaseConnectionStrings(object):
     def pdb_ip_default(self, pdb_ip_default):
         """
         Sets the pdb_ip_default of this PluggableDatabaseConnectionStrings.
-        IP based PDB Connection String.
+        An IP-based PDB connection string.
 
 
         :param pdb_ip_default: The pdb_ip_default of this PluggableDatabaseConnectionStrings.
@@ -99,7 +99,7 @@ class PluggableDatabaseConnectionStrings(object):
     def all_connection_strings(self):
         """
         Gets the all_connection_strings of this PluggableDatabaseConnectionStrings.
-        All connection strings to use to connect to the Pluggable Database.
+        All connection strings to use to connect to the pluggable database.
 
 
         :return: The all_connection_strings of this PluggableDatabaseConnectionStrings.
@@ -111,7 +111,7 @@ class PluggableDatabaseConnectionStrings(object):
     def all_connection_strings(self, all_connection_strings):
         """
         Sets the all_connection_strings of this PluggableDatabaseConnectionStrings.
-        All connection strings to use to connect to the Pluggable Database.
+        All connection strings to use to connect to the pluggable database.
 
 
         :param all_connection_strings: The all_connection_strings of this PluggableDatabaseConnectionStrings.

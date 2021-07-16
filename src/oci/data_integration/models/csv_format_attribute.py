@@ -24,6 +24,10 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT"
         :type model_type: str
 
+        :param is_file_pattern:
+            The value to assign to the is_file_pattern property of this CsvFormatAttribute.
+        :type is_file_pattern: bool
+
         :param encoding:
             The value to assign to the encoding property of this CsvFormatAttribute.
         :type encoding: str
@@ -44,10 +48,6 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             The value to assign to the has_header property of this CsvFormatAttribute.
         :type has_header: bool
 
-        :param is_file_pattern:
-            The value to assign to the is_file_pattern property of this CsvFormatAttribute.
-        :type is_file_pattern: bool
-
         :param timestamp_format:
             The value to assign to the timestamp_format property of this CsvFormatAttribute.
         :type timestamp_format: str
@@ -55,33 +55,33 @@ class CsvFormatAttribute(AbstractFormatAttribute):
         """
         self.swagger_types = {
             'model_type': 'str',
+            'is_file_pattern': 'bool',
             'encoding': 'str',
             'escape_character': 'str',
             'delimiter': 'str',
             'quote_character': 'str',
             'has_header': 'bool',
-            'is_file_pattern': 'bool',
             'timestamp_format': 'str'
         }
 
         self.attribute_map = {
             'model_type': 'modelType',
+            'is_file_pattern': 'isFilePattern',
             'encoding': 'encoding',
             'escape_character': 'escapeCharacter',
             'delimiter': 'delimiter',
             'quote_character': 'quoteCharacter',
             'has_header': 'hasHeader',
-            'is_file_pattern': 'isFilePattern',
             'timestamp_format': 'timestampFormat'
         }
 
         self._model_type = None
+        self._is_file_pattern = None
         self._encoding = None
         self._escape_character = None
         self._delimiter = None
         self._quote_character = None
         self._has_header = None
-        self._is_file_pattern = None
         self._timestamp_format = None
         self._model_type = 'CSV_FORMAT'
 
@@ -204,30 +204,6 @@ class CsvFormatAttribute(AbstractFormatAttribute):
         :type: bool
         """
         self._has_header = has_header
-
-    @property
-    def is_file_pattern(self):
-        """
-        Gets the is_file_pattern of this CsvFormatAttribute.
-        Defines whether a file pattern is supported.
-
-
-        :return: The is_file_pattern of this CsvFormatAttribute.
-        :rtype: bool
-        """
-        return self._is_file_pattern
-
-    @is_file_pattern.setter
-    def is_file_pattern(self, is_file_pattern):
-        """
-        Sets the is_file_pattern of this CsvFormatAttribute.
-        Defines whether a file pattern is supported.
-
-
-        :param is_file_pattern: The is_file_pattern of this CsvFormatAttribute.
-        :type: bool
-        """
-        self._is_file_pattern = is_file_pattern
 
     @property
     def timestamp_format(self):

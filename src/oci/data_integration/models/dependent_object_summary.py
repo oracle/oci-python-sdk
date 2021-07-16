@@ -70,6 +70,10 @@ class DependentObjectSummary(object):
             The value to assign to the is_favorite property of this DependentObjectSummary.
         :type is_favorite: bool
 
+        :param count_statistics:
+            The value to assign to the count_statistics property of this DependentObjectSummary.
+        :type count_statistics: oci.data_integration.models.CountStatistic
+
         """
         self.swagger_types = {
             'created_by': 'str',
@@ -84,7 +88,8 @@ class DependentObjectSummary(object):
             'info_fields': 'dict(str, str)',
             'registry_version': 'int',
             'labels': 'list[str]',
-            'is_favorite': 'bool'
+            'is_favorite': 'bool',
+            'count_statistics': 'CountStatistic'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class DependentObjectSummary(object):
             'info_fields': 'infoFields',
             'registry_version': 'registryVersion',
             'labels': 'labels',
-            'is_favorite': 'isFavorite'
+            'is_favorite': 'isFavorite',
+            'count_statistics': 'countStatistics'
         }
 
         self._created_by = None
@@ -116,6 +122,7 @@ class DependentObjectSummary(object):
         self._registry_version = None
         self._labels = None
         self._is_favorite = None
+        self._count_statistics = None
 
     @property
     def created_by(self):
@@ -424,6 +431,26 @@ class DependentObjectSummary(object):
         :type: bool
         """
         self._is_favorite = is_favorite
+
+    @property
+    def count_statistics(self):
+        """
+        Gets the count_statistics of this DependentObjectSummary.
+
+        :return: The count_statistics of this DependentObjectSummary.
+        :rtype: oci.data_integration.models.CountStatistic
+        """
+        return self._count_statistics
+
+    @count_statistics.setter
+    def count_statistics(self, count_statistics):
+        """
+        Sets the count_statistics of this DependentObjectSummary.
+
+        :param count_statistics: The count_statistics of this DependentObjectSummary.
+        :type: oci.data_integration.models.CountStatistic
+        """
+        self._count_statistics = count_statistics
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -128,6 +128,10 @@ class VmCluster(object):
             The value to assign to the gi_version property of this VmCluster.
         :type gi_version: str
 
+        :param system_version:
+            The value to assign to the system_version property of this VmCluster.
+        :type system_version: str
+
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this VmCluster.
         :type ssh_public_keys: list[str]
@@ -166,6 +170,7 @@ class VmCluster(object):
             'data_storage_size_in_tbs': 'float',
             'shape': 'str',
             'gi_version': 'str',
+            'system_version': 'str',
             'ssh_public_keys': 'list[str]',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -191,6 +196,7 @@ class VmCluster(object):
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'shape': 'shape',
             'gi_version': 'giVersion',
+            'system_version': 'systemVersion',
             'ssh_public_keys': 'sshPublicKeys',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
@@ -215,6 +221,7 @@ class VmCluster(object):
         self._data_storage_size_in_tbs = None
         self._shape = None
         self._gi_version = None
+        self._system_version = None
         self._ssh_public_keys = None
         self._license_model = None
         self._freeform_tags = None
@@ -681,6 +688,30 @@ class VmCluster(object):
         :type: str
         """
         self._gi_version = gi_version
+
+    @property
+    def system_version(self):
+        """
+        Gets the system_version of this VmCluster.
+        Operating system version of the image.
+
+
+        :return: The system_version of this VmCluster.
+        :rtype: str
+        """
+        return self._system_version
+
+    @system_version.setter
+    def system_version(self, system_version):
+        """
+        Sets the system_version of this VmCluster.
+        Operating system version of the image.
+
+
+        :param system_version: The system_version of this VmCluster.
+        :type: str
+        """
+        self._system_version = system_version
 
     @property
     def ssh_public_keys(self):

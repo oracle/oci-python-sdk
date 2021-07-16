@@ -128,6 +128,7 @@ from .database_upgrade_with_db_version_details import DatabaseUpgradeWithDbVersi
 from .day_of_week import DayOfWeek
 from .db_backup_config import DbBackupConfig
 from .db_home import DbHome
+from .db_home_from_agent_resource_id import DbHomeFromAgentResourceId
 from .db_home_summary import DbHomeSummary
 from .db_iorm_config import DbIormConfig
 from .db_iorm_config_update_detail import DbIormConfigUpdateDetail
@@ -219,6 +220,7 @@ from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetai
 from .update_backup_destination_details import UpdateBackupDestinationDetails
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
+from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
 from .update_database_details import UpdateDatabaseDetails
 from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
 from .update_db_home_details import UpdateDbHomeDetails
@@ -245,6 +247,11 @@ from .vm_cluster_network import VmClusterNetwork
 from .vm_cluster_network_details import VmClusterNetworkDetails
 from .vm_cluster_network_summary import VmClusterNetworkSummary
 from .vm_cluster_summary import VmClusterSummary
+from .vm_cluster_update import VmClusterUpdate
+from .vm_cluster_update_details import VmClusterUpdateDetails
+from .vm_cluster_update_history_entry import VmClusterUpdateHistoryEntry
+from .vm_cluster_update_history_entry_summary import VmClusterUpdateHistoryEntrySummary
+from .vm_cluster_update_summary import VmClusterUpdateSummary
 from .vm_network_details import VmNetworkDetails
 from .workload_type import WorkloadType
 
@@ -374,6 +381,7 @@ database_type_mapping = {
     "DayOfWeek": DayOfWeek,
     "DbBackupConfig": DbBackupConfig,
     "DbHome": DbHome,
+    "DbHomeFromAgentResourceId": DbHomeFromAgentResourceId,
     "DbHomeSummary": DbHomeSummary,
     "DbIormConfig": DbIormConfig,
     "DbIormConfigUpdateDetail": DbIormConfigUpdateDetail,
@@ -465,6 +473,7 @@ database_type_mapping = {
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,
+    "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
     "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,
     "UpdateDbHomeDetails": UpdateDbHomeDetails,
@@ -491,6 +500,11 @@ database_type_mapping = {
     "VmClusterNetworkDetails": VmClusterNetworkDetails,
     "VmClusterNetworkSummary": VmClusterNetworkSummary,
     "VmClusterSummary": VmClusterSummary,
+    "VmClusterUpdate": VmClusterUpdate,
+    "VmClusterUpdateDetails": VmClusterUpdateDetails,
+    "VmClusterUpdateHistoryEntry": VmClusterUpdateHistoryEntry,
+    "VmClusterUpdateHistoryEntrySummary": VmClusterUpdateHistoryEntrySummary,
+    "VmClusterUpdateSummary": VmClusterUpdateSummary,
     "VmNetworkDetails": VmNetworkDetails,
     "WorkloadType": WorkloadType
 }
