@@ -25,12 +25,27 @@ class UpdateTaskDetails(object):
     #: This constant has a value of "PIPELINE_TASK"
     MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
 
+    #: A constant which can be used with the model_type property of a UpdateTaskDetails.
+    #: This constant has a value of "SQL_TASK"
+    MODEL_TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the model_type property of a UpdateTaskDetails.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    MODEL_TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the model_type property of a UpdateTaskDetails.
+    #: This constant has a value of "REST_TASK"
+    MODEL_TYPE_REST_TASK = "REST_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateTaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.UpdateTaskFromRestTask`
         * :class:`~oci.data_integration.models.UpdateTaskFromPipelineTask`
+        * :class:`~oci.data_integration.models.UpdateTaskFromOCIDataflowTask`
+        * :class:`~oci.data_integration.models.UpdateTaskFromSQLTask`
         * :class:`~oci.data_integration.models.UpdateTaskFromDataLoaderTask`
         * :class:`~oci.data_integration.models.UpdateTaskFromIntegrationTask`
 
@@ -38,7 +53,7 @@ class UpdateTaskDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateTaskDetails.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"
         :type model_type: str
 
         :param key:
@@ -158,8 +173,17 @@ class UpdateTaskDetails(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'REST_TASK':
+            return 'UpdateTaskFromRestTask'
+
         if type == 'PIPELINE_TASK':
             return 'UpdateTaskFromPipelineTask'
+
+        if type == 'OCI_DATAFLOW_TASK':
+            return 'UpdateTaskFromOCIDataflowTask'
+
+        if type == 'SQL_TASK':
+            return 'UpdateTaskFromSQLTask'
 
         if type == 'DATA_LOADER_TASK':
             return 'UpdateTaskFromDataLoaderTask'
@@ -175,7 +199,7 @@ class UpdateTaskDetails(object):
         **[Required]** Gets the model_type of this UpdateTaskDetails.
         The type of the task.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"
 
 
         :return: The model_type of this UpdateTaskDetails.
@@ -193,7 +217,7 @@ class UpdateTaskDetails(object):
         :param model_type: The model_type of this UpdateTaskDetails.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

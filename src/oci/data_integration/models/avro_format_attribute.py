@@ -24,6 +24,10 @@ class AvroFormatAttribute(AbstractFormatAttribute):
             Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT"
         :type model_type: str
 
+        :param is_file_pattern:
+            The value to assign to the is_file_pattern property of this AvroFormatAttribute.
+        :type is_file_pattern: bool
+
         :param compression:
             The value to assign to the compression property of this AvroFormatAttribute.
         :type compression: str
@@ -31,15 +35,18 @@ class AvroFormatAttribute(AbstractFormatAttribute):
         """
         self.swagger_types = {
             'model_type': 'str',
+            'is_file_pattern': 'bool',
             'compression': 'str'
         }
 
         self.attribute_map = {
             'model_type': 'modelType',
+            'is_file_pattern': 'isFilePattern',
             'compression': 'compression'
         }
 
         self._model_type = None
+        self._is_file_pattern = None
         self._compression = None
         self._model_type = 'AVRO_FORMAT'
 

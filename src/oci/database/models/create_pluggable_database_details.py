@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePluggableDatabaseDetails(object):
     """
-    Parameters for creating a pluggable database in a specified container database.
+    Parameters for creating a pluggable database in a specified container database (CDB).
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -74,7 +74,7 @@ class CreatePluggableDatabaseDetails(object):
     def pdb_name(self):
         """
         **[Required]** Gets the pdb_name of this CreatePluggableDatabaseDetails.
-        The name for the pluggable database. The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        The name for the pluggable database (PDB). The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 
 
         :return: The pdb_name of this CreatePluggableDatabaseDetails.
@@ -86,7 +86,7 @@ class CreatePluggableDatabaseDetails(object):
     def pdb_name(self, pdb_name):
         """
         Sets the pdb_name of this CreatePluggableDatabaseDetails.
-        The name for the pluggable database. The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
+        The name for the pluggable database (PDB). The name is unique in the context of a :class:`Database`. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 
 
         :param pdb_name: The pdb_name of this CreatePluggableDatabaseDetails.

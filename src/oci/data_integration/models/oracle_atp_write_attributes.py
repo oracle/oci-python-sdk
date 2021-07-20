@@ -2,25 +2,31 @@
 # Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
-
+from .abstract_write_attribute import AbstractWriteAttribute
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class OracleAtpWriteAttributes(object):
+class OracleAtpWriteAttributes(AbstractWriteAttribute):
     """
     Properties to configure when writing to Oracle Autonomous Data Warehouse Cloud.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new OracleAtpWriteAttributes object with values from keyword arguments.
+        Initializes a new OracleAtpWriteAttributes object with values from keyword arguments. The default value of the :py:attr:`~oci.data_integration.models.OracleAtpWriteAttributes.model_type` attribute
+        of this class is ``ORACLE_ATP_WRITE_ATTRIBUTE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param bucket_name:
-            The value to assign to the bucket_name property of this OracleAtpWriteAttributes.
-        :type bucket_name: str
+        :param model_type:
+            The value to assign to the model_type property of this OracleAtpWriteAttributes.
+            Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", "OBJECTSTORAGEWRITEATTRIBUTE", "ORACLE_WRITE_ATTRIBUTE", "ORACLE_ATP_WRITE_ATTRIBUTE", "ORACLE_ADWC_WRITE_ATTRIBUTE", "OBJECT_STORAGE_WRITE_ATTRIBUTE"
+        :type model_type: str
+
+        :param bucket_schema:
+            The value to assign to the bucket_schema property of this OracleAtpWriteAttributes.
+        :type bucket_schema: oci.data_integration.models.Schema
 
         :param staging_file_name:
             The value to assign to the staging_file_name property of this OracleAtpWriteAttributes.
@@ -36,47 +42,47 @@ class OracleAtpWriteAttributes(object):
 
         """
         self.swagger_types = {
-            'bucket_name': 'str',
+            'model_type': 'str',
+            'bucket_schema': 'Schema',
             'staging_file_name': 'str',
             'staging_data_asset': 'DataAsset',
             'staging_connection': 'Connection'
         }
 
         self.attribute_map = {
-            'bucket_name': 'bucketName',
+            'model_type': 'modelType',
+            'bucket_schema': 'bucketSchema',
             'staging_file_name': 'stagingFileName',
             'staging_data_asset': 'stagingDataAsset',
             'staging_connection': 'stagingConnection'
         }
 
-        self._bucket_name = None
+        self._model_type = None
+        self._bucket_schema = None
         self._staging_file_name = None
         self._staging_data_asset = None
         self._staging_connection = None
+        self._model_type = 'ORACLE_ATP_WRITE_ATTRIBUTE'
 
     @property
-    def bucket_name(self):
+    def bucket_schema(self):
         """
-        Gets the bucket_name of this OracleAtpWriteAttributes.
-        The bucket name for the attribute.
+        Gets the bucket_schema of this OracleAtpWriteAttributes.
 
-
-        :return: The bucket_name of this OracleAtpWriteAttributes.
-        :rtype: str
+        :return: The bucket_schema of this OracleAtpWriteAttributes.
+        :rtype: oci.data_integration.models.Schema
         """
-        return self._bucket_name
+        return self._bucket_schema
 
-    @bucket_name.setter
-    def bucket_name(self, bucket_name):
+    @bucket_schema.setter
+    def bucket_schema(self, bucket_schema):
         """
-        Sets the bucket_name of this OracleAtpWriteAttributes.
-        The bucket name for the attribute.
+        Sets the bucket_schema of this OracleAtpWriteAttributes.
 
-
-        :param bucket_name: The bucket_name of this OracleAtpWriteAttributes.
-        :type: str
+        :param bucket_schema: The bucket_schema of this OracleAtpWriteAttributes.
+        :type: oci.data_integration.models.Schema
         """
-        self._bucket_name = bucket_name
+        self._bucket_schema = bucket_schema
 
     @property
     def staging_file_name(self):

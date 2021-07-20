@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatePluggableDatabaseDetails(object):
     """
-    Details for updating a pluggable database.
+    Details for updating a pluggable database (PDB).
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """

@@ -21,7 +21,7 @@ class UpdateTaskFromPipelineTask(UpdateTaskDetails):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateTaskFromPipelineTask.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"
         :type model_type: str
 
         :param key:

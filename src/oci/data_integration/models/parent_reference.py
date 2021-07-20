@@ -22,16 +22,23 @@ class ParentReference(object):
             The value to assign to the parent property of this ParentReference.
         :type parent: str
 
+        :param root_doc_id:
+            The value to assign to the root_doc_id property of this ParentReference.
+        :type root_doc_id: str
+
         """
         self.swagger_types = {
-            'parent': 'str'
+            'parent': 'str',
+            'root_doc_id': 'str'
         }
 
         self.attribute_map = {
-            'parent': 'parent'
+            'parent': 'parent',
+            'root_doc_id': 'rootDocId'
         }
 
         self._parent = None
+        self._root_doc_id = None
 
     @property
     def parent(self):
@@ -56,6 +63,30 @@ class ParentReference(object):
         :type: str
         """
         self._parent = parent
+
+    @property
+    def root_doc_id(self):
+        """
+        Gets the root_doc_id of this ParentReference.
+        Key of the root document object.
+
+
+        :return: The root_doc_id of this ParentReference.
+        :rtype: str
+        """
+        return self._root_doc_id
+
+    @root_doc_id.setter
+    def root_doc_id(self, root_doc_id):
+        """
+        Sets the root_doc_id of this ParentReference.
+        Key of the root document object.
+
+
+        :param root_doc_id: The root_doc_id of this ParentReference.
+        :type: str
+        """
+        self._root_doc_id = root_doc_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

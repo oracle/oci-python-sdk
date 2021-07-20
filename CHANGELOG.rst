@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.43.0 - 2021-07-20
+====================
+
+Added
+-----
+* Support for schedules, schedule tasks, REST tasks, operators, S3, and Fusion Apps in the Data Integration service
+* Support for getting available updates and update histories for VM clusters in the Database service
+* Support for downloading network validation reports for Exadata network resources in the Database service
+* Support for patch and upgrade of Grid Infrastructure (GI), and update of DomU OS software for VM clusters in the Database service
+* Support for updating data guard associations in the Database service
+
+Changed
+-------
+* Changed Expect HTTP header to support only Object Storage and Log Analytics services, to mitigate performance degradation issues in the OCI Python SDK v2.38.4 and above. For more information, please see https://github.com/oracle/oci-python-sdk/issues/367
+
+Breaking
+--------
+* Data Type for param `type` changed from `str` to `object` in model `ShapeField` in the Data Integration Service
+* Data Type for param `type` changed from `oci.data_integration.models.BaseType` to `object` in model `Parameter` in the Data Integration Service
+* Data Type for param `type` changed from `str` to `object` in model `NativeShapeField` in the Data Integration Service
+* Base class for model `OracleWriteAttributes` changed from `object` to `oci.data_integration.models.AbstractWriteAttribute` in the Data Integration Service
+* Base class for model `OracleReadAttributes` changed from `object` to `oci.data_integration.models.AbstractReadAttribute` in the Data Integration Service
+* Base class for model `OracleAdwcWriteAttributes` changed from `object` to `oci.data_integration.models.AbstractWriteAttribute` in the Data Integration Service
+* Base class for model `OracleAtpWriteAttributes` changed from `object` to `oci.data_integration.models.AbstractWriteAttribute` in the Data Integration Service
+* Param `bucket_name` was removed from model `OracleAtpWriteAttributes` in the Data Integration Service
+* Param `bucket_name` was removed from model `OracleAdwcWriteAttributes` in the Data Integration Service
+* Param `bucket_name` was removed from model `OracleAdwcWriteAttributes` in the Data Integration Service
+* Param `is_file_pattern` was removed from model `CsvFormatAttribute` in the Data Integration Service
+* Constant `MODEL_TYPE_REST_OPERATOR` was removed from model `Operator` in the Data Integration Service
+
+====================
 2.42.0 - 2021-07-13
 ====================
 

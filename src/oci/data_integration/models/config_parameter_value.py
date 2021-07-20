@@ -38,13 +38,18 @@ class ConfigParameterValue(object):
             The value to assign to the parameter_value property of this ConfigParameterValue.
         :type parameter_value: str
 
+        :param root_object_value:
+            The value to assign to the root_object_value property of this ConfigParameterValue.
+        :type root_object_value: object
+
         """
         self.swagger_types = {
             'string_value': 'str',
             'int_value': 'int',
             'object_value': 'object',
             'ref_value': 'object',
-            'parameter_value': 'str'
+            'parameter_value': 'str',
+            'root_object_value': 'object'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class ConfigParameterValue(object):
             'int_value': 'intValue',
             'object_value': 'objectValue',
             'ref_value': 'refValue',
-            'parameter_value': 'parameterValue'
+            'parameter_value': 'parameterValue',
+            'root_object_value': 'rootObjectValue'
         }
 
         self._string_value = None
@@ -60,6 +66,7 @@ class ConfigParameterValue(object):
         self._object_value = None
         self._ref_value = None
         self._parameter_value = None
+        self._root_object_value = None
 
     @property
     def string_value(self):
@@ -180,6 +187,30 @@ class ConfigParameterValue(object):
         :type: str
         """
         self._parameter_value = parameter_value
+
+    @property
+    def root_object_value(self):
+        """
+        Gets the root_object_value of this ConfigParameterValue.
+        The root object value, used in custom parameters.
+
+
+        :return: The root_object_value of this ConfigParameterValue.
+        :rtype: object
+        """
+        return self._root_object_value
+
+    @root_object_value.setter
+    def root_object_value(self, root_object_value):
+        """
+        Sets the root_object_value of this ConfigParameterValue.
+        The root object value, used in custom parameters.
+
+
+        :param root_object_value: The root_object_value of this ConfigParameterValue.
+        :type: object
+        """
+        self._root_object_value = root_object_value
 
     def __repr__(self):
         return formatted_flat_dict(self)

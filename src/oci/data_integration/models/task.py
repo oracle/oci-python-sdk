@@ -25,6 +25,18 @@ class Task(object):
     #: This constant has a value of "PIPELINE_TASK"
     MODEL_TYPE_PIPELINE_TASK = "PIPELINE_TASK"
 
+    #: A constant which can be used with the model_type property of a Task.
+    #: This constant has a value of "SQL_TASK"
+    MODEL_TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the model_type property of a Task.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    MODEL_TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the model_type property of a Task.
+    #: This constant has a value of "REST_TASK"
+    MODEL_TYPE_REST_TASK = "REST_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Task object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -32,13 +44,16 @@ class Task(object):
 
         * :class:`~oci.data_integration.models.TaskFromPipelineTaskDetails`
         * :class:`~oci.data_integration.models.TaskFromIntegrationTaskDetails`
+        * :class:`~oci.data_integration.models.TaskFromSQLTaskDetails`
+        * :class:`~oci.data_integration.models.TaskFromRestTaskDetails`
+        * :class:`~oci.data_integration.models.TaskFromOCIDataflowTaskDetails`
         * :class:`~oci.data_integration.models.TaskFromDataLoaderTaskDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this Task.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -102,6 +117,10 @@ class Task(object):
             The value to assign to the key_map property of this Task.
         :type key_map: dict(str, str)
 
+        :param registry_metadata:
+            The value to assign to the registry_metadata property of this Task.
+        :type registry_metadata: oci.data_integration.models.RegistryMetadata
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -119,7 +138,8 @@ class Task(object):
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
             'metadata': 'ObjectMetadata',
-            'key_map': 'dict(str, str)'
+            'key_map': 'dict(str, str)',
+            'registry_metadata': 'RegistryMetadata'
         }
 
         self.attribute_map = {
@@ -138,7 +158,8 @@ class Task(object):
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
             'metadata': 'metadata',
-            'key_map': 'keyMap'
+            'key_map': 'keyMap',
+            'registry_metadata': 'registryMetadata'
         }
 
         self._model_type = None
@@ -157,6 +178,7 @@ class Task(object):
         self._config_provider_delegate = None
         self._metadata = None
         self._key_map = None
+        self._registry_metadata = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -172,6 +194,15 @@ class Task(object):
         if type == 'INTEGRATION_TASK':
             return 'TaskFromIntegrationTaskDetails'
 
+        if type == 'SQL_TASK':
+            return 'TaskFromSQLTaskDetails'
+
+        if type == 'REST_TASK':
+            return 'TaskFromRestTaskDetails'
+
+        if type == 'OCI_DATAFLOW_TASK':
+            return 'TaskFromOCIDataflowTaskDetails'
+
         if type == 'DATA_LOADER_TASK':
             return 'TaskFromDataLoaderTaskDetails'
         else:
@@ -183,7 +214,7 @@ class Task(object):
         Gets the model_type of this Task.
         The type of the task.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -202,7 +233,7 @@ class Task(object):
         :param model_type: The model_type of this Task.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -550,6 +581,26 @@ class Task(object):
         :type: dict(str, str)
         """
         self._key_map = key_map
+
+    @property
+    def registry_metadata(self):
+        """
+        Gets the registry_metadata of this Task.
+
+        :return: The registry_metadata of this Task.
+        :rtype: oci.data_integration.models.RegistryMetadata
+        """
+        return self._registry_metadata
+
+    @registry_metadata.setter
+    def registry_metadata(self, registry_metadata):
+        """
+        Sets the registry_metadata of this Task.
+
+        :param registry_metadata: The registry_metadata of this Task.
+        :type: oci.data_integration.models.RegistryMetadata
+        """
+        self._registry_metadata = registry_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)
