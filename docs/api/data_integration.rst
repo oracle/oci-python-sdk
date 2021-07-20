@@ -30,8 +30,10 @@ Data Integration
     oci.data_integration.models.ApplicationDetails
     oci.data_integration.models.ApplicationSummary
     oci.data_integration.models.ApplicationSummaryCollection
+    oci.data_integration.models.AuthDetails
     oci.data_integration.models.AvroFormatAttribute
     oci.data_integration.models.BaseType
+    oci.data_integration.models.BiccReadAttributes
     oci.data_integration.models.ChangeCompartmentDetails
     oci.data_integration.models.ChildReference
     oci.data_integration.models.ChildReferenceDetail
@@ -50,8 +52,12 @@ Data Integration
     oci.data_integration.models.ConnectionDetails
     oci.data_integration.models.ConnectionFromAdwc
     oci.data_integration.models.ConnectionFromAdwcDetails
+    oci.data_integration.models.ConnectionFromAmazonS3
+    oci.data_integration.models.ConnectionFromAmazonS3Details
     oci.data_integration.models.ConnectionFromAtp
     oci.data_integration.models.ConnectionFromAtpDetails
+    oci.data_integration.models.ConnectionFromBICC
+    oci.data_integration.models.ConnectionFromBICCDetails
     oci.data_integration.models.ConnectionFromJdbc
     oci.data_integration.models.ConnectionFromJdbcDetails
     oci.data_integration.models.ConnectionFromMySQL
@@ -64,7 +70,9 @@ Data Integration
     oci.data_integration.models.ConnectionSummary
     oci.data_integration.models.ConnectionSummaryCollection
     oci.data_integration.models.ConnectionSummaryFromAdwc
+    oci.data_integration.models.ConnectionSummaryFromAmazonS3
     oci.data_integration.models.ConnectionSummaryFromAtp
+    oci.data_integration.models.ConnectionSummaryFromBICC
     oci.data_integration.models.ConnectionSummaryFromJdbc
     oci.data_integration.models.ConnectionSummaryFromMySQL
     oci.data_integration.models.ConnectionSummaryFromObjectStorage
@@ -72,13 +80,16 @@ Data Integration
     oci.data_integration.models.ConnectionValidation
     oci.data_integration.models.ConnectionValidationSummary
     oci.data_integration.models.ConnectionValidationSummaryCollection
+    oci.data_integration.models.ConnectorAttribute
     oci.data_integration.models.CountStatistic
     oci.data_integration.models.CountStatisticSummary
     oci.data_integration.models.CreateApplicationDetails
     oci.data_integration.models.CreateConfigProvider
     oci.data_integration.models.CreateConnectionDetails
     oci.data_integration.models.CreateConnectionFromAdwc
+    oci.data_integration.models.CreateConnectionFromAmazonS3
     oci.data_integration.models.CreateConnectionFromAtp
+    oci.data_integration.models.CreateConnectionFromBICC
     oci.data_integration.models.CreateConnectionFromJdbc
     oci.data_integration.models.CreateConnectionFromMySQL
     oci.data_integration.models.CreateConnectionFromObjectStorage
@@ -86,7 +97,9 @@ Data Integration
     oci.data_integration.models.CreateConnectionValidationDetails
     oci.data_integration.models.CreateDataAssetDetails
     oci.data_integration.models.CreateDataAssetFromAdwc
+    oci.data_integration.models.CreateDataAssetFromAmazonS3
     oci.data_integration.models.CreateDataAssetFromAtp
+    oci.data_integration.models.CreateDataAssetFromFusionApp
     oci.data_integration.models.CreateDataAssetFromJdbc
     oci.data_integration.models.CreateDataAssetFromMySQL
     oci.data_integration.models.CreateDataAssetFromObjectStorage
@@ -102,12 +115,17 @@ Data Integration
     oci.data_integration.models.CreatePipelineDetails
     oci.data_integration.models.CreatePipelineValidationDetails
     oci.data_integration.models.CreateProjectDetails
+    oci.data_integration.models.CreateScheduleDetails
     oci.data_integration.models.CreateSourceApplicationInfo
     oci.data_integration.models.CreateTaskDetails
     oci.data_integration.models.CreateTaskFromDataLoaderTask
     oci.data_integration.models.CreateTaskFromIntegrationTask
+    oci.data_integration.models.CreateTaskFromOCIDataflowTask
     oci.data_integration.models.CreateTaskFromPipelineTask
+    oci.data_integration.models.CreateTaskFromRestTask
+    oci.data_integration.models.CreateTaskFromSQLTask
     oci.data_integration.models.CreateTaskRunDetails
+    oci.data_integration.models.CreateTaskScheduleDetails
     oci.data_integration.models.CreateTaskValidationDetails
     oci.data_integration.models.CreateTaskValidationFromDataLoaderTask
     oci.data_integration.models.CreateTaskValidationFromIntegrationTask
@@ -117,7 +135,9 @@ Data Integration
     oci.data_integration.models.DailyFrequencyDetails
     oci.data_integration.models.DataAsset
     oci.data_integration.models.DataAssetFromAdwcDetails
+    oci.data_integration.models.DataAssetFromAmazonS3
     oci.data_integration.models.DataAssetFromAtpDetails
+    oci.data_integration.models.DataAssetFromFusionApp
     oci.data_integration.models.DataAssetFromJdbc
     oci.data_integration.models.DataAssetFromMySQL
     oci.data_integration.models.DataAssetFromObjectStorageDetails
@@ -125,13 +145,17 @@ Data Integration
     oci.data_integration.models.DataAssetSummary
     oci.data_integration.models.DataAssetSummaryCollection
     oci.data_integration.models.DataAssetSummaryFromAdwc
+    oci.data_integration.models.DataAssetSummaryFromAmazonS3
     oci.data_integration.models.DataAssetSummaryFromAtp
+    oci.data_integration.models.DataAssetSummaryFromFusionApp
     oci.data_integration.models.DataAssetSummaryFromJdbc
     oci.data_integration.models.DataAssetSummaryFromMySQL
     oci.data_integration.models.DataAssetSummaryFromObjectStorage
     oci.data_integration.models.DataAssetSummaryFromOracle
     oci.data_integration.models.DataEntity
     oci.data_integration.models.DataEntityDetails
+    oci.data_integration.models.DataEntityFromDataStore
+    oci.data_integration.models.DataEntityFromDataStoreEntityDetails
     oci.data_integration.models.DataEntityFromFile
     oci.data_integration.models.DataEntityFromFileEntityDetails
     oci.data_integration.models.DataEntityFromTable
@@ -140,6 +164,7 @@ Data Integration
     oci.data_integration.models.DataEntityFromViewEntityDetails
     oci.data_integration.models.DataEntitySummary
     oci.data_integration.models.DataEntitySummaryCollection
+    oci.data_integration.models.DataEntitySummaryFromDataStore
     oci.data_integration.models.DataEntitySummaryFromFile
     oci.data_integration.models.DataEntitySummaryFromTable
     oci.data_integration.models.DataEntitySummaryFromView
@@ -152,6 +177,7 @@ Data Integration
     oci.data_integration.models.DataFlowValidationSummaryCollection
     oci.data_integration.models.DataFormat
     oci.data_integration.models.DataType
+    oci.data_integration.models.DataflowApplication
     oci.data_integration.models.DependentObject
     oci.data_integration.models.DependentObjectSummary
     oci.data_integration.models.DependentObjectSummaryCollection
@@ -170,12 +196,14 @@ Data Integration
     oci.data_integration.models.EntityShapeFromFile
     oci.data_integration.models.ErrorDetails
     oci.data_integration.models.Expression
+    oci.data_integration.models.ExpressionOperator
     oci.data_integration.models.ExternalPublication
     oci.data_integration.models.ExternalPublicationSummary
     oci.data_integration.models.ExternalPublicationSummaryCollection
     oci.data_integration.models.ExternalPublicationValidation
     oci.data_integration.models.ExternalPublicationValidationSummary
     oci.data_integration.models.ExternalPublicationValidationSummaryCollection
+    oci.data_integration.models.ExternalStorage
     oci.data_integration.models.FieldMap
     oci.data_integration.models.Filter
     oci.data_integration.models.FilterPush
@@ -201,6 +229,7 @@ Data Integration
     oci.data_integration.models.KeyRange
     oci.data_integration.models.KeyRangePartitionConfig
     oci.data_integration.models.LastRunDetails
+    oci.data_integration.models.Lookup
     oci.data_integration.models.MacroField
     oci.data_integration.models.MergeOperator
     oci.data_integration.models.Message
@@ -210,6 +239,8 @@ Data Integration
     oci.data_integration.models.NamePatternRule
     oci.data_integration.models.NativeShapeField
     oci.data_integration.models.ObjectMetadata
+    oci.data_integration.models.ObjectStorageWriteAttribute
+    oci.data_integration.models.ObjectStorageWriteAttributes
     oci.data_integration.models.OciVaultSecretConfig
     oci.data_integration.models.Operator
     oci.data_integration.models.OracleAdwcWriteAttribute
@@ -226,6 +257,7 @@ Data Integration
     oci.data_integration.models.Parameter
     oci.data_integration.models.ParameterValue
     oci.data_integration.models.ParentReference
+    oci.data_integration.models.ParquetFormatAttribute
     oci.data_integration.models.PartitionConfig
     oci.data_integration.models.Patch
     oci.data_integration.models.PatchChangeSummary
@@ -270,10 +302,13 @@ Data Integration
     oci.data_integration.models.RuleBasedFieldMap
     oci.data_integration.models.RuleTypeConfig
     oci.data_integration.models.Schedule
+    oci.data_integration.models.ScheduleSummary
+    oci.data_integration.models.ScheduleSummaryCollection
     oci.data_integration.models.Schema
     oci.data_integration.models.SchemaDriftConfig
     oci.data_integration.models.SchemaSummary
     oci.data_integration.models.SchemaSummaryCollection
+    oci.data_integration.models.Script
     oci.data_integration.models.SecretConfig
     oci.data_integration.models.Select
     oci.data_integration.models.SensitiveAttribute
@@ -292,7 +327,10 @@ Data Integration
     oci.data_integration.models.Task
     oci.data_integration.models.TaskFromDataLoaderTaskDetails
     oci.data_integration.models.TaskFromIntegrationTaskDetails
+    oci.data_integration.models.TaskFromOCIDataflowTaskDetails
     oci.data_integration.models.TaskFromPipelineTaskDetails
+    oci.data_integration.models.TaskFromRestTaskDetails
+    oci.data_integration.models.TaskFromSQLTaskDetails
     oci.data_integration.models.TaskOperator
     oci.data_integration.models.TaskRun
     oci.data_integration.models.TaskRunDetails
@@ -300,11 +338,16 @@ Data Integration
     oci.data_integration.models.TaskRunSummary
     oci.data_integration.models.TaskRunSummaryCollection
     oci.data_integration.models.TaskSchedule
+    oci.data_integration.models.TaskScheduleSummary
+    oci.data_integration.models.TaskScheduleSummaryCollection
     oci.data_integration.models.TaskSummary
     oci.data_integration.models.TaskSummaryCollection
     oci.data_integration.models.TaskSummaryFromDataLoaderTask
     oci.data_integration.models.TaskSummaryFromIntegrationTask
+    oci.data_integration.models.TaskSummaryFromOCIDataflowTask
     oci.data_integration.models.TaskSummaryFromPipelineTask
+    oci.data_integration.models.TaskSummaryFromRestTask
+    oci.data_integration.models.TaskSummaryFromSQLTask
     oci.data_integration.models.TaskValidation
     oci.data_integration.models.TaskValidationSummary
     oci.data_integration.models.TaskValidationSummaryCollection
@@ -320,14 +363,18 @@ Data Integration
     oci.data_integration.models.UpdateApplicationDetails
     oci.data_integration.models.UpdateConnectionDetails
     oci.data_integration.models.UpdateConnectionFromAdwc
+    oci.data_integration.models.UpdateConnectionFromAmazonS3
     oci.data_integration.models.UpdateConnectionFromAtp
+    oci.data_integration.models.UpdateConnectionFromBICC
     oci.data_integration.models.UpdateConnectionFromJdbc
     oci.data_integration.models.UpdateConnectionFromMySQL
     oci.data_integration.models.UpdateConnectionFromObjectStorage
     oci.data_integration.models.UpdateConnectionFromOracle
     oci.data_integration.models.UpdateDataAssetDetails
     oci.data_integration.models.UpdateDataAssetFromAdwc
+    oci.data_integration.models.UpdateDataAssetFromAmazonS3
     oci.data_integration.models.UpdateDataAssetFromAtp
+    oci.data_integration.models.UpdateDataAssetFromFusionApp
     oci.data_integration.models.UpdateDataAssetFromJdbc
     oci.data_integration.models.UpdateDataAssetFromMySQL
     oci.data_integration.models.UpdateDataAssetFromObjectStorage
@@ -338,11 +385,16 @@ Data Integration
     oci.data_integration.models.UpdatePipelineDetails
     oci.data_integration.models.UpdateProjectDetails
     oci.data_integration.models.UpdateReferenceDetails
+    oci.data_integration.models.UpdateScheduleDetails
     oci.data_integration.models.UpdateTaskDetails
     oci.data_integration.models.UpdateTaskFromDataLoaderTask
     oci.data_integration.models.UpdateTaskFromIntegrationTask
+    oci.data_integration.models.UpdateTaskFromOCIDataflowTask
     oci.data_integration.models.UpdateTaskFromPipelineTask
+    oci.data_integration.models.UpdateTaskFromRestTask
+    oci.data_integration.models.UpdateTaskFromSQLTask
     oci.data_integration.models.UpdateTaskRunDetails
+    oci.data_integration.models.UpdateTaskScheduleDetails
     oci.data_integration.models.UpdateWorkspaceDetails
     oci.data_integration.models.ValidationMessage
     oci.data_integration.models.Variable

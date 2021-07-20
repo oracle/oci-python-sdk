@@ -37,6 +37,14 @@ class DataAsset(object):
     #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
     MODEL_TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a DataAsset.
+    #: This constant has a value of "FUSION_APP_DATA_ASSET"
+    MODEL_TYPE_FUSION_APP_DATA_ASSET = "FUSION_APP_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a DataAsset.
+    #: This constant has a value of "AMAZON_S3_DATA_ASSET"
+    MODEL_TYPE_AMAZON_S3_DATA_ASSET = "AMAZON_S3_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataAsset object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -45,7 +53,9 @@ class DataAsset(object):
         * :class:`~oci.data_integration.models.DataAssetFromJdbc`
         * :class:`~oci.data_integration.models.DataAssetFromOracleDetails`
         * :class:`~oci.data_integration.models.DataAssetFromAdwcDetails`
+        * :class:`~oci.data_integration.models.DataAssetFromAmazonS3`
         * :class:`~oci.data_integration.models.DataAssetFromObjectStorageDetails`
+        * :class:`~oci.data_integration.models.DataAssetFromFusionApp`
         * :class:`~oci.data_integration.models.DataAssetFromAtpDetails`
         * :class:`~oci.data_integration.models.DataAssetFromMySQL`
 
@@ -53,7 +63,7 @@ class DataAsset(object):
 
         :param model_type:
             The value to assign to the model_type property of this DataAsset.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -176,8 +186,14 @@ class DataAsset(object):
         if type == 'ORACLE_ADWC_DATA_ASSET':
             return 'DataAssetFromAdwcDetails'
 
+        if type == 'AMAZON_S3_DATA_ASSET':
+            return 'DataAssetFromAmazonS3'
+
         if type == 'ORACLE_OBJECT_STORAGE_DATA_ASSET':
             return 'DataAssetFromObjectStorageDetails'
+
+        if type == 'FUSION_APP_DATA_ASSET':
+            return 'DataAssetFromFusionApp'
 
         if type == 'ORACLE_ATP_DATA_ASSET':
             return 'DataAssetFromAtpDetails'
@@ -193,7 +209,7 @@ class DataAsset(object):
         Gets the model_type of this DataAsset.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -212,7 +228,7 @@ class DataAsset(object):
         :param model_type: The model_type of this DataAsset.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

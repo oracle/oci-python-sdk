@@ -57,6 +57,18 @@ class TaskOperator(Operator):
     #: This constant has a value of "DATA_LOADER_TASK"
     TASK_TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
 
+    #: A constant which can be used with the task_type property of a TaskOperator.
+    #: This constant has a value of "SQL_TASK"
+    TASK_TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the task_type property of a TaskOperator.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    TASK_TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the task_type property of a TaskOperator.
+    #: This constant has a value of "REST_TASK"
+    TASK_TYPE_REST_TASK = "REST_TASK"
+
     #: A constant which can be used with the trigger_rule property of a TaskOperator.
     #: This constant has a value of "ALL_SUCCESS"
     TRIGGER_RULE_ALL_SUCCESS = "ALL_SUCCESS"
@@ -77,7 +89,7 @@ class TaskOperator(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this TaskOperator.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "REST_OPERATOR", "TASK_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -155,7 +167,7 @@ class TaskOperator(Operator):
 
         :param task_type:
             The value to assign to the task_type property of this TaskOperator.
-            Allowed values for this property are: "PIPELINE_TASK", "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PIPELINE_TASK", "INTEGRATION_TASK", "DATA_LOADER_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
@@ -386,7 +398,7 @@ class TaskOperator(Operator):
         Gets the task_type of this TaskOperator.
         The type of the task referenced in the task property.
 
-        Allowed values for this property are: "PIPELINE_TASK", "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PIPELINE_TASK", "INTEGRATION_TASK", "DATA_LOADER_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -405,7 +417,7 @@ class TaskOperator(Operator):
         :param task_type: The task_type of this TaskOperator.
         :type: str
         """
-        allowed_values = ["PIPELINE_TASK", "INTEGRATION_TASK", "DATA_LOADER_TASK"]
+        allowed_values = ["PIPELINE_TASK", "INTEGRATION_TASK", "DATA_LOADER_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type

@@ -71,7 +71,7 @@ class Parameter(TypedObject):
 
         :param type:
             The value to assign to the type property of this Parameter.
-        :type type: oci.data_integration.models.BaseType
+        :type type: object
 
         :param default_value:
             The value to assign to the default_value property of this Parameter.
@@ -109,7 +109,7 @@ class Parameter(TypedObject):
             'object_status': 'int',
             'name': 'str',
             'description': 'str',
-            'type': 'BaseType',
+            'type': 'object',
             'default_value': 'object',
             'root_object_default_value': 'object',
             'is_input': 'bool',
@@ -157,9 +157,11 @@ class Parameter(TypedObject):
     def type(self):
         """
         Gets the type of this Parameter.
+        This can either be a string value referencing the type or a BaseType object.
+
 
         :return: The type of this Parameter.
-        :rtype: oci.data_integration.models.BaseType
+        :rtype: object
         """
         return self._type
 
@@ -167,9 +169,11 @@ class Parameter(TypedObject):
     def type(self, type):
         """
         Sets the type of this Parameter.
+        This can either be a string value referencing the type or a BaseType object.
+
 
         :param type: The type of this Parameter.
-        :type: oci.data_integration.models.BaseType
+        :type: object
         """
         self._type = type
 

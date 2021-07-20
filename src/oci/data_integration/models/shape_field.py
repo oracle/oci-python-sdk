@@ -54,7 +54,7 @@ class ShapeField(TypedObject):
 
         :param type:
             The value to assign to the type property of this ShapeField.
-        :type type: str
+        :type type: object
 
         :param labels:
             The value to assign to the labels property of this ShapeField.
@@ -74,7 +74,7 @@ class ShapeField(TypedObject):
             'object_status': 'int',
             'name': 'str',
             'description': 'str',
-            'type': 'str',
+            'type': 'object',
             'labels': 'list[str]',
             'native_shape_field': 'NativeShapeField'
         }
@@ -114,7 +114,7 @@ class ShapeField(TypedObject):
 
 
         :return: The type of this ShapeField.
-        :rtype: str
+        :rtype: object
         """
         return self._type
 
@@ -126,7 +126,7 @@ class ShapeField(TypedObject):
 
 
         :param type: The type of this ShapeField.
-        :type: str
+        :type: object
         """
         self._type = type
 

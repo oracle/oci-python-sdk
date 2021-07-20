@@ -25,6 +25,18 @@ class PatchObjectMetadata(object):
     #: This constant has a value of "PIPELINE_TASK"
     TYPE_PIPELINE_TASK = "PIPELINE_TASK"
 
+    #: A constant which can be used with the type property of a PatchObjectMetadata.
+    #: This constant has a value of "SQL_TASK"
+    TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the type property of a PatchObjectMetadata.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the type property of a PatchObjectMetadata.
+    #: This constant has a value of "REST_TASK"
+    TYPE_REST_TASK = "REST_TASK"
+
     #: A constant which can be used with the action property of a PatchObjectMetadata.
     #: This constant has a value of "CREATED"
     ACTION_CREATED = "CREATED"
@@ -56,7 +68,7 @@ class PatchObjectMetadata(object):
 
         :param type:
             The value to assign to the type property of this PatchObjectMetadata.
-            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -181,7 +193,7 @@ class PatchObjectMetadata(object):
         Gets the type of this PatchObjectMetadata.
         The type of the object in patch.
 
-        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -200,7 +212,7 @@ class PatchObjectMetadata(object):
         :param type: The type of this PatchObjectMetadata.
         :type: str
         """
-        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK"]
+        allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

@@ -26,19 +26,33 @@ class EnrichedEntity(object):
             The value to assign to the data_format property of this EnrichedEntity.
         :type data_format: oci.data_integration.models.DataFormat
 
+        :param model_type:
+            The value to assign to the model_type property of this EnrichedEntity.
+        :type model_type: str
+
+        :param parent_ref:
+            The value to assign to the parent_ref property of this EnrichedEntity.
+        :type parent_ref: oci.data_integration.models.ParentReference
+
         """
         self.swagger_types = {
             'entity': 'DataEntity',
-            'data_format': 'DataFormat'
+            'data_format': 'DataFormat',
+            'model_type': 'str',
+            'parent_ref': 'ParentReference'
         }
 
         self.attribute_map = {
             'entity': 'entity',
-            'data_format': 'dataFormat'
+            'data_format': 'dataFormat',
+            'model_type': 'modelType',
+            'parent_ref': 'parentRef'
         }
 
         self._entity = None
         self._data_format = None
+        self._model_type = None
+        self._parent_ref = None
 
     @property
     def entity(self):
@@ -79,6 +93,50 @@ class EnrichedEntity(object):
         :type: oci.data_integration.models.DataFormat
         """
         self._data_format = data_format
+
+    @property
+    def model_type(self):
+        """
+        Gets the model_type of this EnrichedEntity.
+        The model type for the entity which is referenced.
+
+
+        :return: The model_type of this EnrichedEntity.
+        :rtype: str
+        """
+        return self._model_type
+
+    @model_type.setter
+    def model_type(self, model_type):
+        """
+        Sets the model_type of this EnrichedEntity.
+        The model type for the entity which is referenced.
+
+
+        :param model_type: The model_type of this EnrichedEntity.
+        :type: str
+        """
+        self._model_type = model_type
+
+    @property
+    def parent_ref(self):
+        """
+        Gets the parent_ref of this EnrichedEntity.
+
+        :return: The parent_ref of this EnrichedEntity.
+        :rtype: oci.data_integration.models.ParentReference
+        """
+        return self._parent_ref
+
+    @parent_ref.setter
+    def parent_ref(self, parent_ref):
+        """
+        Sets the parent_ref of this EnrichedEntity.
+
+        :param parent_ref: The parent_ref of this EnrichedEntity.
+        :type: oci.data_integration.models.ParentReference
+        """
+        self._parent_ref = parent_ref
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -142,6 +142,7 @@ Database
     oci.database.models.DayOfWeek
     oci.database.models.DbBackupConfig
     oci.database.models.DbHome
+    oci.database.models.DbHomeFromAgentResourceId
     oci.database.models.DbHomeSummary
     oci.database.models.DbIormConfig
     oci.database.models.DbIormConfigUpdateDetail
@@ -233,6 +234,7 @@ Database
     oci.database.models.UpdateBackupDestinationDetails
     oci.database.models.UpdateCloudExadataInfrastructureDetails
     oci.database.models.UpdateCloudVmClusterDetails
+    oci.database.models.UpdateDataGuardAssociationDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails
     oci.database.models.UpdateDbHomeDetails
@@ -259,5 +261,10 @@ Database
     oci.database.models.VmClusterNetworkDetails
     oci.database.models.VmClusterNetworkSummary
     oci.database.models.VmClusterSummary
+    oci.database.models.VmClusterUpdate
+    oci.database.models.VmClusterUpdateDetails
+    oci.database.models.VmClusterUpdateHistoryEntry
+    oci.database.models.VmClusterUpdateHistoryEntrySummary
+    oci.database.models.VmClusterUpdateSummary
     oci.database.models.VmNetworkDetails
     oci.database.models.WorkloadType

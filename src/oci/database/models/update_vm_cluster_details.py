@@ -56,6 +56,10 @@ class UpdateVmClusterDetails(object):
             The value to assign to the version property of this UpdateVmClusterDetails.
         :type version: oci.database.models.PatchDetails
 
+        :param update_details:
+            The value to assign to the update_details property of this UpdateVmClusterDetails.
+        :type update_details: oci.database.models.VmClusterUpdateDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateVmClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -73,6 +77,7 @@ class UpdateVmClusterDetails(object):
             'license_model': 'str',
             'ssh_public_keys': 'list[str]',
             'version': 'PatchDetails',
+            'update_details': 'VmClusterUpdateDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -85,6 +90,7 @@ class UpdateVmClusterDetails(object):
             'license_model': 'licenseModel',
             'ssh_public_keys': 'sshPublicKeys',
             'version': 'version',
+            'update_details': 'updateDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -96,6 +102,7 @@ class UpdateVmClusterDetails(object):
         self._license_model = None
         self._ssh_public_keys = None
         self._version = None
+        self._update_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -270,6 +277,26 @@ class UpdateVmClusterDetails(object):
         :type: oci.database.models.PatchDetails
         """
         self._version = version
+
+    @property
+    def update_details(self):
+        """
+        Gets the update_details of this UpdateVmClusterDetails.
+
+        :return: The update_details of this UpdateVmClusterDetails.
+        :rtype: oci.database.models.VmClusterUpdateDetails
+        """
+        return self._update_details
+
+    @update_details.setter
+    def update_details(self, update_details):
+        """
+        Sets the update_details of this UpdateVmClusterDetails.
+
+        :param update_details: The update_details of this UpdateVmClusterDetails.
+        :type: oci.database.models.VmClusterUpdateDetails
+        """
+        self._update_details = update_details
 
     @property
     def freeform_tags(self):

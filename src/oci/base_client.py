@@ -38,10 +38,13 @@ USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
 DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')  # noqa: W605
 LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')  # noqa: W605
-enable_expect_header = True
-expect_header_env_var = os.environ.get('OCI_PYSDK_USING_EXPECT_HEADER')
+
+SERVICES_SUPPORTING_EXPECT_HEADER = ["object_storage", "log_analytics"]
+
+
+expect_header_env_var = os.environ.get('OCI_PYSDK_USING_EXPECT_HEADER', True)
 if expect_header_env_var == "FALSE":
-    enable_expect_header = False
+    expect_header_env_var = False
 
 
 def merge_type_mappings(*dictionaries):
@@ -238,7 +241,7 @@ class OCIConnectionPool(urllib3.HTTPSConnectionPool):
 
 # Replace the HTTPS connection pool with OCIConnectionPool once the env var `OCI_PYSDK_USING_EXPECT_HEADER` is not set
 # to "FALSE"
-if enable_expect_header:
+if expect_header_env_var:
     urllib3.poolmanager.pool_classes_by_scheme["https"] = OCIConnectionPool
 
 
@@ -308,6 +311,9 @@ class BaseClient(object):
 
         self.skip_deserialization = kwargs.get('skip_deserialization')
 
+        # Enable expect 100 for select services
+        self.enable_expect_header = self.service in SERVICES_SUPPORTING_EXPECT_HEADER if expect_header_env_var else False
+
     @property
     def endpoint(self):
         return self._endpoint
@@ -356,8 +362,8 @@ class BaseClient(object):
 
         """
 
-        # By default we will add Expect header for all PUT/POST operations
-        if enable_expect_header and (method == 'PUT' or method == 'POST'):
+        # By default we will add Expect header for all PUT/POST operations, for services which support it
+        if self.enable_expect_header and (method == 'PUT' or method == 'POST'):
             if header_params is None:
                 header_params = {'expect': '100-continue'}
             elif "expect" not in header_params:
@@ -458,15 +464,15 @@ class BaseClient(object):
             #   {
             #       "stuff": "things",
             #       "collectionFormat": ["val1", "val2", "val3"]
-            #       "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] },
-            #       "definedTagsExists": { "tag3": True, "tag4": True }
+            #       "dictTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] },
+            #       "dictTagsExists": { "tag3": True, "tag4": True }
             #   }
             #
             # And we can categorize the params as:
             #
             #   Simple: "stuff":"things"
             #   List: "collectionFormat": ["val1", "val2", "val3"]
-            #   Dict: "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "definedTagsExists": { "tag3": True, "tag4": True }
+            #   Dict: "dictTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }, "dictTagsExists": { "tag3": True, "tag4": True }
             if isinstance(v, bool):
                 # Python capitalizes boolean values in the query parameters.
                 processed_query_params[k] = 'true' if v else 'false'
@@ -484,19 +490,19 @@ class BaseClient(object):
                 #      natively (http://docs.python-requests.org/en/master/api/#requests.Session.params) so we just have to
                 #      manipulate things into the right key. In the case of something like:
                 #
-                #           "definedTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }
+                #           "dictTags": { "tag1": ["val1", "val2", "val3"], "tag2": ["val1"] }
                 #
                 #      What we want is to end up with:
                 #
-                #           "definedTags.tag1": ["val1", "val2", "val3"], "definedTags.tag2": ["val1"]
+                #           "dictTags.tag1": ["val1", "val2", "val3"], "dictTags.tag2": ["val1"]
                 #
                 #   2) a dict where the value is not an array and in this case we just explode out the content. For example if we have:
                 #
-                #           "definedTagsExists": { "tag3": True, "tag4": True }
+                #           "dictTagsExists": { "tag3": True, "tag4": True }
                 #
                 #       What we'll end up with is:
                 #
-                #           "definedTagsExists.tag3": True, "definedTagsExists.tag4": True
+                #           "dictTagsExists.tag3": True, "dictTagsExists.tag4": True
                 for inner_key, inner_val in v.items():
                     processed_query_params['{}.{}'.format(k, inner_key)] = inner_val
 

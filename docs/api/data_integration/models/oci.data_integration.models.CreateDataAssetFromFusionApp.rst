@@ -1,0 +1,11 @@
+CreateDataAssetFromFusionApp
+============================
+
+.. currentmodule:: oci.data_integration.models
+
+.. autoclass:: CreateDataAssetFromFusionApp
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

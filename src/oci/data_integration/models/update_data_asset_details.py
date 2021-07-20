@@ -37,6 +37,14 @@ class UpdateDataAssetDetails(object):
     #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
     MODEL_TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a UpdateDataAssetDetails.
+    #: This constant has a value of "FUSION_APP_DATA_ASSET"
+    MODEL_TYPE_FUSION_APP_DATA_ASSET = "FUSION_APP_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a UpdateDataAssetDetails.
+    #: This constant has a value of "AMAZON_S3_DATA_ASSET"
+    MODEL_TYPE_AMAZON_S3_DATA_ASSET = "AMAZON_S3_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDataAssetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -46,6 +54,8 @@ class UpdateDataAssetDetails(object):
         * :class:`~oci.data_integration.models.UpdateDataAssetFromAdwc`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromJdbc`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromObjectStorage`
+        * :class:`~oci.data_integration.models.UpdateDataAssetFromAmazonS3`
+        * :class:`~oci.data_integration.models.UpdateDataAssetFromFusionApp`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromMySQL`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromOracle`
 
@@ -53,7 +63,7 @@ class UpdateDataAssetDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateDataAssetDetails.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -157,6 +167,12 @@ class UpdateDataAssetDetails(object):
         if type == 'ORACLE_OBJECT_STORAGE_DATA_ASSET':
             return 'UpdateDataAssetFromObjectStorage'
 
+        if type == 'AMAZON_S3_DATA_ASSET':
+            return 'UpdateDataAssetFromAmazonS3'
+
+        if type == 'FUSION_APP_DATA_ASSET':
+            return 'UpdateDataAssetFromFusionApp'
+
         if type == 'MYSQL_DATA_ASSET':
             return 'UpdateDataAssetFromMySQL'
 
@@ -171,7 +187,7 @@ class UpdateDataAssetDetails(object):
         **[Required]** Gets the model_type of this UpdateDataAssetDetails.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"
 
 
         :return: The model_type of this UpdateDataAssetDetails.
@@ -189,7 +205,7 @@ class UpdateDataAssetDetails(object):
         :param model_type: The model_type of this UpdateDataAssetDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

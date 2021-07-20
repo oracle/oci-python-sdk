@@ -51,6 +51,10 @@ class UpdateTaskRunDetails(object):
             The value to assign to the object_version property of this UpdateTaskRunDetails.
         :type object_version: int
 
+        :param task_schedule_key:
+            The value to assign to the task_schedule_key property of this UpdateTaskRunDetails.
+        :type task_schedule_key: str
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateTaskRunDetails.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -64,6 +68,7 @@ class UpdateTaskRunDetails(object):
             'name': 'str',
             'description': 'str',
             'object_version': 'int',
+            'task_schedule_key': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
 
@@ -75,6 +80,7 @@ class UpdateTaskRunDetails(object):
             'name': 'name',
             'description': 'description',
             'object_version': 'objectVersion',
+            'task_schedule_key': 'taskScheduleKey',
             'registry_metadata': 'registryMetadata'
         }
 
@@ -85,6 +91,7 @@ class UpdateTaskRunDetails(object):
         self._name = None
         self._description = None
         self._object_version = None
+        self._task_schedule_key = None
         self._registry_metadata = None
 
     @property
@@ -262,6 +269,30 @@ class UpdateTaskRunDetails(object):
         :type: int
         """
         self._object_version = object_version
+
+    @property
+    def task_schedule_key(self):
+        """
+        Gets the task_schedule_key of this UpdateTaskRunDetails.
+        Optional task schedule key reference.
+
+
+        :return: The task_schedule_key of this UpdateTaskRunDetails.
+        :rtype: str
+        """
+        return self._task_schedule_key
+
+    @task_schedule_key.setter
+    def task_schedule_key(self, task_schedule_key):
+        """
+        Sets the task_schedule_key of this UpdateTaskRunDetails.
+        Optional task schedule key reference.
+
+
+        :param task_schedule_key: The task_schedule_key of this UpdateTaskRunDetails.
+        :type: str
+        """
+        self._task_schedule_key = task_schedule_key
 
     @property
     def registry_metadata(self):

@@ -33,6 +33,7 @@ class AbstractFormatAttribute(object):
         * :class:`~oci.data_integration.models.AvroFormatAttribute`
         * :class:`~oci.data_integration.models.JsonFormatAttribute`
         * :class:`~oci.data_integration.models.CsvFormatAttribute`
+        * :class:`~oci.data_integration.models.ParquetFormatAttribute`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -42,16 +43,23 @@ class AbstractFormatAttribute(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
+        :param is_file_pattern:
+            The value to assign to the is_file_pattern property of this AbstractFormatAttribute.
+        :type is_file_pattern: bool
+
         """
         self.swagger_types = {
-            'model_type': 'str'
+            'model_type': 'str',
+            'is_file_pattern': 'bool'
         }
 
         self.attribute_map = {
-            'model_type': 'modelType'
+            'model_type': 'modelType',
+            'is_file_pattern': 'isFilePattern'
         }
 
         self._model_type = None
+        self._is_file_pattern = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -69,6 +77,9 @@ class AbstractFormatAttribute(object):
 
         if type == 'CSV_FORMAT':
             return 'CsvFormatAttribute'
+
+        if type == 'PARQUET_FORMAT':
+            return 'ParquetFormatAttribute'
         else:
             return 'AbstractFormatAttribute'
 
@@ -101,6 +112,30 @@ class AbstractFormatAttribute(object):
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
+
+    @property
+    def is_file_pattern(self):
+        """
+        Gets the is_file_pattern of this AbstractFormatAttribute.
+        Defines whether a file pattern is supported.
+
+
+        :return: The is_file_pattern of this AbstractFormatAttribute.
+        :rtype: bool
+        """
+        return self._is_file_pattern
+
+    @is_file_pattern.setter
+    def is_file_pattern(self, is_file_pattern):
+        """
+        Sets the is_file_pattern of this AbstractFormatAttribute.
+        Defines whether a file pattern is supported.
+
+
+        :param is_file_pattern: The is_file_pattern of this AbstractFormatAttribute.
+        :type: bool
+        """
+        self._is_file_pattern = is_file_pattern
 
     def __repr__(self):
         return formatted_flat_dict(self)
