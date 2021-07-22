@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateMacsManagedExternalHostInsightDetails(CreateHostInsightDetails):
     """
-    The information about host to be analyzed.
+    The information about the MACS-managed external host to be analyzed.
     """
 
     def __init__(self, **kwargs):

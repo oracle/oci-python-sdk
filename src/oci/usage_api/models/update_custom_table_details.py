@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateCustomTableDetails(object):
     """
-    Details for updating custom table.
+    Details for updating the custom table.
     """
 
     def __init__(self, **kwargs):

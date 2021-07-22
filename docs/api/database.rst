@@ -84,6 +84,7 @@ Database
     oci.database.models.CreateCloudExadataInfrastructureDetails
     oci.database.models.CreateCloudVmClusterDetails
     oci.database.models.CreateConsoleConnectionDetails
+    oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
     oci.database.models.CreateDataGuardAssociationToExistingVmClusterDetails

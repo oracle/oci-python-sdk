@@ -7187,7 +7187,9 @@ class DatabaseClient(object):
 
     def fail_over_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Initiates a failover the specified Autonomous Database to a standby.
+        Initiates a failover the specified Autonomous Database to a standby. To perform a failover to a standby located in a remote region, specify the `OCID`__ of the remote standby using the `peerDbId` parameter.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str autonomous_database_id: (required)
@@ -7209,6 +7211,11 @@ class DatabaseClient(object):
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
+
+        :param str peer_db_id: (optional)
+            The database `OCID`__ of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7232,7 +7239,8 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "peer_db_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7248,6 +7256,11 @@ class DatabaseClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "peerDbId": kwargs.get("peer_db_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -7270,6 +7283,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase")
         else:
@@ -7277,6 +7291,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase")
 
@@ -18922,7 +18937,9 @@ class DatabaseClient(object):
 
     def switchover_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled.
+        Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled. To perform a switchover to a standby located in a remote region, specify the `OCID`__ of the remote standby using the `peerDbId` parameter.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str autonomous_database_id: (required)
@@ -18944,6 +18961,11 @@ class DatabaseClient(object):
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
+
+        :param str peer_db_id: (optional)
+            The database `OCID`__ of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -18967,7 +18989,8 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "peer_db_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18983,6 +19006,11 @@ class DatabaseClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "peerDbId": kwargs.get("peer_db_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -19005,6 +19033,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase")
         else:
@@ -19012,6 +19041,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase")
 

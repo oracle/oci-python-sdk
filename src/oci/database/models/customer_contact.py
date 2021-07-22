@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomerContact(object):
     """
-    The object holds customer email contact for Oracle Autonomous Databases.
+    Customer contact information that will be used by Oracle to provide notifications needed by database and infrastructure administrators.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CustomerContact(object):
     def email(self):
         """
         Gets the email of this CustomerContact.
-        The email address of an Oracle Autonomous Database contact.
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
 
 
         :return: The email of this CustomerContact.
@@ -49,7 +49,7 @@ class CustomerContact(object):
     def email(self, email):
         """
         Sets the email of this CustomerContact.
-        The email address of an Oracle Autonomous Database contact.
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
 
 
         :param email: The email of this CustomerContact.

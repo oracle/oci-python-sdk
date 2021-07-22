@@ -34,6 +34,46 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_create_custom_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'CreateCustomTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'CreateCustomTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='CreateCustomTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.create_custom_table(
+                create_custom_table_details=request.pop(util.camelize('CreateCustomTableDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'CreateCustomTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customTable',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
 def test_create_query(testing_service_client):
     if not testing_service_client.is_api_enabled('usage_api', 'CreateQuery'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,6 +109,46 @@ def test_create_query(testing_service_client):
             service_error,
             'query',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_delete_custom_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'DeleteCustomTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'DeleteCustomTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='DeleteCustomTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.delete_custom_table(
+                custom_table_id=request.pop(util.camelize('customTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'DeleteCustomTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_custom_table',
+            True,
             False
         )
 
@@ -114,6 +194,46 @@ def test_delete_query(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_get_custom_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'GetCustomTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'GetCustomTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='GetCustomTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.get_custom_table(
+                custom_table_id=request.pop(util.camelize('customTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'GetCustomTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customTable',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
 def test_get_query(testing_service_client):
     if not testing_service_client.is_api_enabled('usage_api', 'GetQuery'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -150,6 +270,69 @@ def test_get_query(testing_service_client):
             'query',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_list_custom_tables(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'ListCustomTables'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'ListCustomTables')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='ListCustomTables')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.list_custom_tables(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                saved_report_id=request.pop(util.camelize('savedReportId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_custom_tables(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    saved_report_id=request.pop(util.camelize('savedReportId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_custom_tables(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        saved_report_id=request.pop(util.camelize('savedReportId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'ListCustomTables',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customTableCollection',
+            False,
+            True
         )
 
 
@@ -310,6 +493,47 @@ def test_request_summarized_usages(testing_service_client):
             'usageAggregation',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_update_custom_table(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'UpdateCustomTable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'UpdateCustomTable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='UpdateCustomTable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.update_custom_table(
+                update_custom_table_details=request.pop(util.camelize('UpdateCustomTableDetails')),
+                custom_table_id=request.pop(util.camelize('customTableId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'UpdateCustomTable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customTable',
+            False,
+            False
         )
 
 

@@ -42,6 +42,10 @@ class UpdateCloudExadataInfrastructureDetails(object):
             The value to assign to the defined_tags property of this UpdateCloudExadataInfrastructureDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this UpdateCloudExadataInfrastructureDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -49,7 +53,8 @@ class UpdateCloudExadataInfrastructureDetails(object):
             'compute_count': 'int',
             'storage_count': 'int',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class UpdateCloudExadataInfrastructureDetails(object):
             'compute_count': 'computeCount',
             'storage_count': 'storageCount',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'customer_contacts': 'customerContacts'
         }
 
         self._display_name = None
@@ -67,6 +73,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
         self._storage_count = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._customer_contacts = None
 
     @property
     def display_name(self):
@@ -223,6 +230,30 @@ class UpdateCloudExadataInfrastructureDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this UpdateCloudExadataInfrastructureDetails.
+        Customer contacts. Setting this to an empty list removes all customer contact information (email addresses) for the specified OCI Database service resource.
+
+
+        :return: The customer_contacts of this UpdateCloudExadataInfrastructureDetails.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this UpdateCloudExadataInfrastructureDetails.
+        Customer contacts. Setting this to an empty list removes all customer contact information (email addresses) for the specified OCI Database service resource.
+
+
+        :param customer_contacts: The customer_contacts of this UpdateCloudExadataInfrastructureDetails.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)
