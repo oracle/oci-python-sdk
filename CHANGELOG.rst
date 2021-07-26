@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.43.1 - TBD
+2.43.1 - 2021-07-27
 ====================
 
 Added
 -----
-* TBD
+* Support for filtering by tag on capacity planning and SQL warehouse list operations in the Operations Insights service
+* Support for creating cross-region autonomous data guards in the Database service
+* Support for the customer contacts feature on cloud exadata infrastructure in the Database service
+* Support for cost analysis custom tables in the Usage service
 
 ====================
 2.43.0 - 2021-07-20
