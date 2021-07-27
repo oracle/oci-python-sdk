@@ -215,6 +215,14 @@ class AutonomousDatabaseSummary(object):
     #: This constant has a value of "DISABLED_STANDBY"
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the dataguard_region_type property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "PRIMARY_DG_REGION"
+    DATAGUARD_REGION_TYPE_PRIMARY_DG_REGION = "PRIMARY_DG_REGION"
+
+    #: A constant which can be used with the dataguard_region_type property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "REMOTE_STANDBY_DG_REGION"
+    DATAGUARD_REGION_TYPE_REMOTE_STANDBY_DG_REGION = "REMOTE_STANDBY_DG_REGION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabaseSummary object with values from keyword arguments.
@@ -506,9 +514,31 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the key_store_wallet_name property of this AutonomousDatabaseSummary.
         :type key_store_wallet_name: str
 
+        :param supported_regions_to_clone_to:
+            The value to assign to the supported_regions_to_clone_to property of this AutonomousDatabaseSummary.
+        :type supported_regions_to_clone_to: list[str]
+
         :param customer_contacts:
             The value to assign to the customer_contacts property of this AutonomousDatabaseSummary.
         :type customer_contacts: list[oci.database.models.CustomerContact]
+
+        :param time_local_data_guard_enabled:
+            The value to assign to the time_local_data_guard_enabled property of this AutonomousDatabaseSummary.
+        :type time_local_data_guard_enabled: datetime
+
+        :param dataguard_region_type:
+            The value to assign to the dataguard_region_type property of this AutonomousDatabaseSummary.
+            Allowed values for this property are: "PRIMARY_DG_REGION", "REMOTE_STANDBY_DG_REGION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dataguard_region_type: str
+
+        :param time_data_guard_role_changed:
+            The value to assign to the time_data_guard_role_changed property of this AutonomousDatabaseSummary.
+        :type time_data_guard_role_changed: datetime
+
+        :param peer_db_ids:
+            The value to assign to the peer_db_ids property of this AutonomousDatabaseSummary.
+        :type peer_db_ids: list[str]
 
         """
         self.swagger_types = {
@@ -578,7 +608,12 @@ class AutonomousDatabaseSummary(object):
             'available_upgrade_versions': 'list[str]',
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
-            'customer_contacts': 'list[CustomerContact]'
+            'supported_regions_to_clone_to': 'list[str]',
+            'customer_contacts': 'list[CustomerContact]',
+            'time_local_data_guard_enabled': 'datetime',
+            'dataguard_region_type': 'str',
+            'time_data_guard_role_changed': 'datetime',
+            'peer_db_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -648,7 +683,12 @@ class AutonomousDatabaseSummary(object):
             'available_upgrade_versions': 'availableUpgradeVersions',
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
-            'customer_contacts': 'customerContacts'
+            'supported_regions_to_clone_to': 'supportedRegionsToCloneTo',
+            'customer_contacts': 'customerContacts',
+            'time_local_data_guard_enabled': 'timeLocalDataGuardEnabled',
+            'dataguard_region_type': 'dataguardRegionType',
+            'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
+            'peer_db_ids': 'peerDbIds'
         }
 
         self._id = None
@@ -717,7 +757,12 @@ class AutonomousDatabaseSummary(object):
         self._available_upgrade_versions = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._supported_regions_to_clone_to = None
         self._customer_contacts = None
+        self._time_local_data_guard_enabled = None
+        self._dataguard_region_type = None
+        self._time_data_guard_role_changed = None
+        self._peer_db_ids = None
 
     @property
     def id(self):
@@ -2449,7 +2494,7 @@ class AutonomousDatabaseSummary(object):
     def role(self):
         """
         Gets the role of this AutonomousDatabaseSummary.
-        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -2464,7 +2509,7 @@ class AutonomousDatabaseSummary(object):
     def role(self, role):
         """
         Sets the role of this AutonomousDatabaseSummary.
-        The Data Guard role of the Autonomous Container Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousDatabaseSummary.
@@ -2552,6 +2597,30 @@ class AutonomousDatabaseSummary(object):
         self._key_store_wallet_name = key_store_wallet_name
 
     @property
+    def supported_regions_to_clone_to(self):
+        """
+        Gets the supported_regions_to_clone_to of this AutonomousDatabaseSummary.
+        The list of regions that support the creation of Autonomous Data Guard standby database.
+
+
+        :return: The supported_regions_to_clone_to of this AutonomousDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._supported_regions_to_clone_to
+
+    @supported_regions_to_clone_to.setter
+    def supported_regions_to_clone_to(self, supported_regions_to_clone_to):
+        """
+        Sets the supported_regions_to_clone_to of this AutonomousDatabaseSummary.
+        The list of regions that support the creation of Autonomous Data Guard standby database.
+
+
+        :param supported_regions_to_clone_to: The supported_regions_to_clone_to of this AutonomousDatabaseSummary.
+        :type: list[str]
+        """
+        self._supported_regions_to_clone_to = supported_regions_to_clone_to
+
+    @property
     def customer_contacts(self):
         """
         Gets the customer_contacts of this AutonomousDatabaseSummary.
@@ -2574,6 +2643,112 @@ class AutonomousDatabaseSummary(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def time_local_data_guard_enabled(self):
+        """
+        Gets the time_local_data_guard_enabled of this AutonomousDatabaseSummary.
+        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+
+
+        :return: The time_local_data_guard_enabled of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_local_data_guard_enabled
+
+    @time_local_data_guard_enabled.setter
+    def time_local_data_guard_enabled(self, time_local_data_guard_enabled):
+        """
+        Sets the time_local_data_guard_enabled of this AutonomousDatabaseSummary.
+        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+
+
+        :param time_local_data_guard_enabled: The time_local_data_guard_enabled of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_local_data_guard_enabled = time_local_data_guard_enabled
+
+    @property
+    def dataguard_region_type(self):
+        """
+        Gets the dataguard_region_type of this AutonomousDatabaseSummary.
+        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the \"primary\" role is operating in a remote Data Guard standby region.```
+
+        Allowed values for this property are: "PRIMARY_DG_REGION", "REMOTE_STANDBY_DG_REGION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dataguard_region_type of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._dataguard_region_type
+
+    @dataguard_region_type.setter
+    def dataguard_region_type(self, dataguard_region_type):
+        """
+        Sets the dataguard_region_type of this AutonomousDatabaseSummary.
+        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the \"primary\" role is operating in a remote Data Guard standby region.```
+
+
+        :param dataguard_region_type: The dataguard_region_type of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        allowed_values = ["PRIMARY_DG_REGION", "REMOTE_STANDBY_DG_REGION"]
+        if not value_allowed_none_or_none_sentinel(dataguard_region_type, allowed_values):
+            dataguard_region_type = 'UNKNOWN_ENUM_VALUE'
+        self._dataguard_region_type = dataguard_region_type
+
+    @property
+    def time_data_guard_role_changed(self):
+        """
+        Gets the time_data_guard_role_changed of this AutonomousDatabaseSummary.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the \"primary\" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+
+
+        :return: The time_data_guard_role_changed of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_data_guard_role_changed
+
+    @time_data_guard_role_changed.setter
+    def time_data_guard_role_changed(self, time_data_guard_role_changed):
+        """
+        Sets the time_data_guard_role_changed of this AutonomousDatabaseSummary.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the \"primary\" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+
+
+        :param time_data_guard_role_changed: The time_data_guard_role_changed of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_data_guard_role_changed = time_data_guard_role_changed
+
+    @property
+    def peer_db_ids(self):
+        """
+        Gets the peer_db_ids of this AutonomousDatabaseSummary.
+        The list of `OCIDs`__ of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_db_ids of this AutonomousDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._peer_db_ids
+
+    @peer_db_ids.setter
+    def peer_db_ids(self, peer_db_ids):
+        """
+        Sets the peer_db_ids of this AutonomousDatabaseSummary.
+        The list of `OCIDs`__ of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_db_ids: The peer_db_ids of this AutonomousDatabaseSummary.
+        :type: list[str]
+        """
+        self._peer_db_ids = peer_db_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

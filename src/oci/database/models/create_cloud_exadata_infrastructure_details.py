@@ -54,6 +54,10 @@ class CreateCloudExadataInfrastructureDetails(object):
             The value to assign to the defined_tags property of this CreateCloudExadataInfrastructureDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CreateCloudExadataInfrastructureDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -64,7 +68,8 @@ class CreateCloudExadataInfrastructureDetails(object):
             'storage_count': 'int',
             'maintenance_window': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -76,7 +81,8 @@ class CreateCloudExadataInfrastructureDetails(object):
             'storage_count': 'storageCount',
             'maintenance_window': 'maintenanceWindow',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'customer_contacts': 'customerContacts'
         }
 
         self._availability_domain = None
@@ -88,6 +94,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         self._maintenance_window = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._customer_contacts = None
 
     @property
     def availability_domain(self):
@@ -320,6 +327,30 @@ class CreateCloudExadataInfrastructureDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this CreateCloudExadataInfrastructureDetails.
+        Customer contacts.
+
+
+        :return: The customer_contacts of this CreateCloudExadataInfrastructureDetails.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this CreateCloudExadataInfrastructureDetails.
+        Customer contacts.
+
+
+        :param customer_contacts: The customer_contacts of this CreateCloudExadataInfrastructureDetails.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)

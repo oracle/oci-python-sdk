@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MacsManagedExternalHostInsight(HostInsight):
     """
-    Host insight resource.
+    MACS-managed external host insight resource.
     """
 
     #: A constant which can be used with the platform_type property of a MacsManagedExternalHostInsight.

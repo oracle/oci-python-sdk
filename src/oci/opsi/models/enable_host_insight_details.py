@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EnableHostInsightDetails(object):
     """
-    The information about host to be analyzed.
+    The information about the host to be analyzed.
     """
 
     #: A constant which can be used with the entity_source property of a EnableHostInsightDetails.

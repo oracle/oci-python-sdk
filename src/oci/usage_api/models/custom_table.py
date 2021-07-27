@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomTable(object):
     """
-    saved custom table.
+    The saved custom table.
     """
 
     def __init__(self, **kwargs):
@@ -22,9 +22,9 @@ class CustomTable(object):
             The value to assign to the id property of this CustomTable.
         :type id: str
 
-        :param user_id:
-            The value to assign to the user_id property of this CustomTable.
-        :type user_id: str
+        :param saved_report_id:
+            The value to assign to the saved_report_id property of this CustomTable.
+        :type saved_report_id: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CustomTable.
@@ -37,20 +37,20 @@ class CustomTable(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'user_id': 'str',
+            'saved_report_id': 'str',
             'compartment_id': 'str',
             'saved_custom_table': 'SavedCustomTable'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'user_id': 'userId',
+            'saved_report_id': 'savedReportId',
             'compartment_id': 'compartmentId',
             'saved_custom_table': 'savedCustomTable'
         }
 
         self._id = None
-        self._user_id = None
+        self._saved_report_id = None
         self._compartment_id = None
         self._saved_custom_table = None
 
@@ -58,7 +58,7 @@ class CustomTable(object):
     def id(self):
         """
         **[Required]** Gets the id of this CustomTable.
-        The ocid of custom table.
+        The custom table OCID.
 
 
         :return: The id of this CustomTable.
@@ -70,7 +70,7 @@ class CustomTable(object):
     def id(self, id):
         """
         Sets the id of this CustomTable.
-        The ocid of custom table.
+        The custom table OCID.
 
 
         :param id: The id of this CustomTable.
@@ -79,34 +79,34 @@ class CustomTable(object):
         self._id = id
 
     @property
-    def user_id(self):
+    def saved_report_id(self):
         """
-        Gets the user_id of this CustomTable.
-        The user ocid of custom table.
+        Gets the saved_report_id of this CustomTable.
+        The custom table associated saved report OCID.
 
 
-        :return: The user_id of this CustomTable.
+        :return: The saved_report_id of this CustomTable.
         :rtype: str
         """
-        return self._user_id
+        return self._saved_report_id
 
-    @user_id.setter
-    def user_id(self, user_id):
+    @saved_report_id.setter
+    def saved_report_id(self, saved_report_id):
         """
-        Sets the user_id of this CustomTable.
-        The user ocid of custom table.
+        Sets the saved_report_id of this CustomTable.
+        The custom table associated saved report OCID.
 
 
-        :param user_id: The user_id of this CustomTable.
+        :param saved_report_id: The saved_report_id of this CustomTable.
         :type: str
         """
-        self._user_id = user_id
+        self._saved_report_id = saved_report_id
 
     @property
     def compartment_id(self):
         """
         Gets the compartment_id of this CustomTable.
-        The compartment ocid of custom table.
+        The custom table compartment OCID.
 
 
         :return: The compartment_id of this CustomTable.
@@ -118,7 +118,7 @@ class CustomTable(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CustomTable.
-        The compartment ocid of custom table.
+        The custom table compartment OCID.
 
 
         :param compartment_id: The compartment_id of this CustomTable.

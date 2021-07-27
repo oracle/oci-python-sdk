@@ -8,156 +8,143 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
+class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Oracle Autonomous Database by cloning an existing Autonomous Database.
+    Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
     """
-
-    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseCloneDetails.
-    #: This constant has a value of "FULL"
-    CLONE_TYPE_FULL = "FULL"
-
-    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseCloneDetails.
-    #: This constant has a value of "METADATA"
-    CLONE_TYPE_METADATA = "METADATA"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateAutonomousDatabaseCloneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseCloneDetails.source` attribute
-        of this class is ``DATABASE`` and it should not be changed.
+        Initializes a new CreateCrossRegionAutonomousDatabaseDataGuardDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails.source` attribute
+        of this class is ``CROSS_REGION_DATAGUARD`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
-            The value to assign to the compartment_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the compartment_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type compartment_id: str
 
         :param db_name:
-            The value to assign to the db_name property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the db_name property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type db_name: str
 
         :param cpu_core_count:
-            The value to assign to the cpu_core_count property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the cpu_core_count property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type cpu_core_count: int
 
         :param ocpu_count:
-            The value to assign to the ocpu_count property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the ocpu_count property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type ocpu_count: float
 
         :param db_workload:
-            The value to assign to the db_workload property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the db_workload property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
             Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
-            The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the data_storage_size_in_tbs property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type data_storage_size_in_tbs: int
 
         :param data_storage_size_in_gbs:
-            The value to assign to the data_storage_size_in_gbs property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the data_storage_size_in_gbs property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type data_storage_size_in_gbs: int
 
         :param is_free_tier:
-            The value to assign to the is_free_tier property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_free_tier property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_free_tier: bool
 
         :param kms_key_id:
-            The value to assign to the kms_key_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the kms_key_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type kms_key_id: str
 
         :param vault_id:
-            The value to assign to the vault_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the vault_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type vault_id: str
 
         :param admin_password:
-            The value to assign to the admin_password property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the admin_password property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type admin_password: str
 
         :param display_name:
-            The value to assign to the display_name property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the display_name property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type display_name: str
 
         :param license_model:
-            The value to assign to the license_model property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the license_model property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
         :param is_preview_version_with_service_terms_accepted:
-            The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_preview_version_with_service_terms_accepted: bool
 
         :param is_auto_scaling_enabled:
-            The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_auto_scaling_enabled property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_auto_scaling_enabled: bool
 
         :param is_dedicated:
-            The value to assign to the is_dedicated property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_dedicated property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_dedicated: bool
 
         :param autonomous_container_database_id:
-            The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the autonomous_container_database_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type autonomous_container_database_id: str
 
         :param is_access_control_enabled:
-            The value to assign to the is_access_control_enabled property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_access_control_enabled property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_access_control_enabled: bool
 
         :param whitelisted_ips:
-            The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the whitelisted_ips property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type whitelisted_ips: list[str]
 
         :param are_primary_whitelisted_ips_used:
-            The value to assign to the are_primary_whitelisted_ips_used property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the are_primary_whitelisted_ips_used property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type are_primary_whitelisted_ips_used: bool
 
         :param standby_whitelisted_ips:
-            The value to assign to the standby_whitelisted_ips property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the standby_whitelisted_ips property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type standby_whitelisted_ips: list[str]
 
         :param is_data_guard_enabled:
-            The value to assign to the is_data_guard_enabled property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_data_guard_enabled property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_data_guard_enabled: bool
 
         :param subnet_id:
-            The value to assign to the subnet_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the subnet_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type subnet_id: str
 
         :param nsg_ids:
-            The value to assign to the nsg_ids property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the nsg_ids property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type nsg_ids: list[str]
 
         :param private_endpoint_label:
-            The value to assign to the private_endpoint_label property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the private_endpoint_label property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type private_endpoint_label: str
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the freeform_tags property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the defined_tags property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         :param db_version:
-            The value to assign to the db_version property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the db_version property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type db_version: str
 
         :param source:
-            The value to assign to the source property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the source property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"
         :type source: str
 
         :param customer_contacts:
-            The value to assign to the customer_contacts property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the customer_contacts property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
         :param source_id:
-            The value to assign to the source_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the source_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type source_id: str
-
-        :param clone_type:
-            The value to assign to the clone_type property of this CreateAutonomousDatabaseCloneDetails.
-            Allowed values for this property are: "FULL", "METADATA"
-        :type clone_type: str
 
         """
         self.swagger_types = {
@@ -191,8 +178,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'db_version': 'str',
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
-            'source_id': 'str',
-            'clone_type': 'str'
+            'source_id': 'str'
         }
 
         self.attribute_map = {
@@ -226,8 +212,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'db_version': 'dbVersion',
             'source': 'source',
             'customer_contacts': 'customerContacts',
-            'source_id': 'sourceId',
-            'clone_type': 'cloneType'
+            'source_id': 'sourceId'
         }
 
         self._compartment_id = None
@@ -261,19 +246,18 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._source = None
         self._customer_contacts = None
         self._source_id = None
-        self._clone_type = None
-        self._source = 'DATABASE'
+        self._source = 'CROSS_REGION_DATAGUARD'
 
     @property
     def source_id(self):
         """
-        **[Required]** Gets the source_id of this CreateAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        **[Required]** Gets the source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        The `OCID`__ of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The source_id of this CreateAutonomousDatabaseCloneDetails.
+        :return: The source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :rtype: str
         """
         return self._source_id
@@ -281,48 +265,16 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     @source_id.setter
     def source_id(self, source_id):
         """
-        Sets the source_id of this CreateAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        Sets the source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        The `OCID`__ of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param source_id: The source_id of this CreateAutonomousDatabaseCloneDetails.
+        :param source_id: The source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type: str
         """
         self._source_id = source_id
-
-    @property
-    def clone_type(self):
-        """
-        **[Required]** Gets the clone_type of this CreateAutonomousDatabaseCloneDetails.
-        The Autonomous Database clone type.
-
-        Allowed values for this property are: "FULL", "METADATA"
-
-
-        :return: The clone_type of this CreateAutonomousDatabaseCloneDetails.
-        :rtype: str
-        """
-        return self._clone_type
-
-    @clone_type.setter
-    def clone_type(self, clone_type):
-        """
-        Sets the clone_type of this CreateAutonomousDatabaseCloneDetails.
-        The Autonomous Database clone type.
-
-
-        :param clone_type: The clone_type of this CreateAutonomousDatabaseCloneDetails.
-        :type: str
-        """
-        allowed_values = ["FULL", "METADATA"]
-        if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `clone_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._clone_type = clone_type
 
     def __repr__(self):
         return formatted_flat_dict(self)
