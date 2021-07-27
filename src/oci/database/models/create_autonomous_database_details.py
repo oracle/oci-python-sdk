@@ -135,7 +135,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseDetails.
-            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"
         :type source: str
 
         :param customer_contacts:

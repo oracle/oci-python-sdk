@@ -22,9 +22,9 @@ class CreateCustomTableDetails(object):
             The value to assign to the compartment_id property of this CreateCustomTableDetails.
         :type compartment_id: str
 
-        :param user_id:
-            The value to assign to the user_id property of this CreateCustomTableDetails.
-        :type user_id: str
+        :param saved_report_id:
+            The value to assign to the saved_report_id property of this CreateCustomTableDetails.
+        :type saved_report_id: str
 
         :param saved_custom_table:
             The value to assign to the saved_custom_table property of this CreateCustomTableDetails.
@@ -33,18 +33,18 @@ class CreateCustomTableDetails(object):
         """
         self.swagger_types = {
             'compartment_id': 'str',
-            'user_id': 'str',
+            'saved_report_id': 'str',
             'saved_custom_table': 'SavedCustomTable'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
-            'user_id': 'userId',
+            'saved_report_id': 'savedReportId',
             'saved_custom_table': 'savedCustomTable'
         }
 
         self._compartment_id = None
-        self._user_id = None
+        self._saved_report_id = None
         self._saved_custom_table = None
 
     @property
@@ -72,28 +72,28 @@ class CreateCustomTableDetails(object):
         self._compartment_id = compartment_id
 
     @property
-    def user_id(self):
+    def saved_report_id(self):
         """
-        **[Required]** Gets the user_id of this CreateCustomTableDetails.
-        The user OCID.
+        **[Required]** Gets the saved_report_id of this CreateCustomTableDetails.
+        The associated saved report OCID.
 
 
-        :return: The user_id of this CreateCustomTableDetails.
+        :return: The saved_report_id of this CreateCustomTableDetails.
         :rtype: str
         """
-        return self._user_id
+        return self._saved_report_id
 
-    @user_id.setter
-    def user_id(self, user_id):
+    @saved_report_id.setter
+    def saved_report_id(self, saved_report_id):
         """
-        Sets the user_id of this CreateCustomTableDetails.
-        The user OCID.
+        Sets the saved_report_id of this CreateCustomTableDetails.
+        The associated saved report OCID.
 
 
-        :param user_id: The user_id of this CreateCustomTableDetails.
+        :param saved_report_id: The saved_report_id of this CreateCustomTableDetails.
         :type: str
         """
-        self._user_id = user_id
+        self._saved_report_id = saved_report_id
 
     @property
     def saved_custom_table(self):

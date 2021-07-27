@@ -1,5 +1,4 @@
-OCI toolkit for Python Third Party License File
-
+            Third Party Attributions for Development Code
 
 ------------------------ Third Party Components ------------------------
 ------------------------------- Licenses -------------------------------
@@ -12,9 +11,43 @@ OCI toolkit for Python Third Party License File
 -------------------------------- Notices -------------------------------
 Requests
 Copyright 2019 Kenneth Reitz
+
+Coverage
+Copyright 2001 Gareth Rees.  All rights reserved.
+Copyright 2004-2021 Ned Batchelder.  All rights reserved.
+
+Except where noted otherwise, this software is licensed under the Apache
+License, Version 2.0 (the "License"); you may not use this work except in
+compliance with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ------------------------------------------------------------------------
 
 ======================== Third Party Components ========================
+autodocsumm
+* Copyright
+* License: Apache License 2.0
+* Source code: https://github.com/Chilipp/autodocsumm
+* Project home: https://github.com/Chilipp/autodocsumm
+
+sphinx
+* Copyright (c) 2007-2021 by the Sphinx team All rights reserved
+* License: BSD 2-Clause "Simplified" License
+* Source code: https://github.com/sphinx-doc/sphinx
+* Project home: https://sphinx-doc.org
+
+sphinx_rtd_theme
+* Copyright (c) 2013-2018 Dave Snider, Read the Docs, Inc. & contributors
+* License: The MIT License (MIT)
+* Source code: https://github.com/readthedocs/sphinx_rtd_theme
+* Project home: https://github.com/readthedocs/sphinx_rtd_theme
+
 certifi
 * Copyright
 * License: Mozilla Public License 2.0 (MPL 2.0)
@@ -27,17 +60,47 @@ configparser
 * Source code: https://github.com/jaraco/configparser
 * Project home: https://github.com/jaraco/configparser
 
+coverage
+* Copyright 2001 Gareth Rees 2004-2021 Ned Batchelder.  All rights reserved.
+* License: Apache License 2.0
+* Source code: https://github.com/nedbat/coveragepy
+* Project home: https://github.com/nedbat/coveragepy
+
 cryptography
 * Copyright
 * License: Apache License and BSD license
 * Source code: https://github.com/pyca/cryptography
 * Project home: https://github.com/pyca/cryptography
 
+flake8
+* Copyright (C) 2011-2013 Tarek Ziade <tarek@ziade.org> 2012-2016 Ian Cordasco <graffatcolmingov@gmail.com>
+* License: The MIT License (MIT)
+* Source code: https://github.com/PyCQA/flake8
+* Project home: https://gitlab.com/pycqa/flake8
+
+mock
+* Copyright (c) 2003-2013, Michael Foord & the mock team All rights reserved.
+* License: BSD 2-Clause "Simplified" License
+* Source code: https://github.com/testing-cabal/mock
+* Project home: https://mock.readthedocs.io/
+
 pyOpenSSL
 * Copyright
 * License: Apache License 2.0
 * Source code: https://github.com/pyca/pyopenssl
 * Project home: https://www.pyopenssl.org/
+
+pytest
+* Copyright (c) 2004-2021 Holger Krekel and others
+* License: The MIT License (MIT)
+* Source code: https://github.com/pytest-dev/pytest
+* Project home: https://docs.pytest.org
+
+pytest-cov
+* Copyright (c) 2010 Meme Dough
+* License: The MIT License (MIT)
+* Source code: https://github.com/pytest-dev/pytest-cov
+* Project home: https://github.com/pytest-dev/pytest-cov
 
 attrs
 * Copyright (c) 2015 Hynek Schlawack
@@ -57,11 +120,29 @@ pytz
 * Source code: https://github.com/stub42/pytz
 * Project home: https://pythonhosted.org/pytz
 
+tox
+* Copyright
+* License: The MIT License (MIT)
+* Source code: https://github.com/tox-dev/tox
+* Project home: https://tox.readthedocs.io/en/latest/
+
+vcrpy
+* Copyright (c) 2012-2015 Kevin McCarthy
+* License: The MIT License (MIT)
+* Source code: https://github.com/kevin1024/vcrpy
+* Project home: https://github.com/kevin1024/vcrpy
+
 click
 * Copyright 2014 Pallets
 * License: BSD 3-Clause "New" or "Revised" License
 * Source code: https://github.com/pallets/click
 * Project home: https://palletsprojects.com/p/click
+
+PyYAML
+* Copyright (c) 2017-2021 Ingy döt Net 2006-2016 Kirill Simonov
+* License: The MIT License (MIT)
+* Source code: https://github.com/yaml/pyyaml
+* Project home: https://pyyaml.org/
 
 six
 * Copyright (c) 2010-2020 Benjamin Peterson
@@ -118,11 +199,23 @@ urllib3
 ------------------------------ MIT License -----------------------------
 Copyright Jason R. Coombs
 
+Copyright (C) 2011-2013 Tarek Ziade <tarek@ziade.org> 2012-2016 Ian Cordasco <graffatcolmingov@gmail.com>
+
+Copyright (c) 2004-2021 Holger Krekel and others
+
+Copyright (c) 2010 Meme Dough
+
 Copyright (c) 2015 Hynek Schlawack
 
 Copyright (c) 2003-2019 Stuart Bishop <stuart@stuartbishop.net>
 
+Copyright (c) 2012-2015 Kevin McCarthy
+
+Copyright (c) 2017-2021 Ingy döt Net 2006-2016 Kirill Simonov
+
 Copyright (c) 2010-2020 Benjamin Peterson
+
+Copyright (c) 2013-2018 Dave Snider, Read the Docs, Inc. & contributors
 
 Copyright (c) 2014 Adam Knight 2012 Adam T. Lindsay (original author)
 
@@ -148,6 +241,8 @@ IN THE SOFTWARE.
 ------------------------------------------------------------------------
 
 -------------------------- Apache License 2.0 --------------------------
+Copyright 2001 Gareth Rees.  All rights reserved. 2004-2021 Ned Batchelder.  All rights reserved.
+
 Copyright 2017- Paul Ganssle <paul@ganssle.io> 2017- dateutil contributors (see AUTHORS file)
 
                                 Apache License
@@ -329,7 +424,11 @@ Copyright 2017- Paul Ganssle <paul@ganssle.io> 2017- dateutil contributors (see 
 ------------------------------------------------------------------------
 
 --------------------- BSD 2-Clause "Simplified" License ----------------
+Copyright: (c) 2003-2013, Michael Foord & the mock team All rights reserved.
+
 Copyright (c) 2015, Michael Williamson All rights reserved
+
+Copyright (c) 2007-2021 by the Sphinx team All rights reserved
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -1202,4 +1301,3 @@ necessary.  Here is a sample; alter the names:
 
 That's all there is to it!
 ------------------------------------------------------------------------
-

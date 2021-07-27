@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomTableSummary(object):
     """
-    Custom table in list request.
+    Custom table in the list request.
     """
 
     def __init__(self, **kwargs):

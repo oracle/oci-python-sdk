@@ -116,6 +116,10 @@ class CloudExadataInfrastructure(object):
             The value to assign to the defined_tags property of this CloudExadataInfrastructure.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CloudExadataInfrastructure.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -134,7 +138,8 @@ class CloudExadataInfrastructure(object):
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -154,7 +159,8 @@ class CloudExadataInfrastructure(object):
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'customer_contacts': 'customerContacts'
         }
 
         self._id = None
@@ -174,6 +180,7 @@ class CloudExadataInfrastructure(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._customer_contacts = None
 
     @property
     def id(self):
@@ -616,6 +623,34 @@ class CloudExadataInfrastructure(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this CloudExadataInfrastructure.
+        The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
+        Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+        Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+
+
+        :return: The customer_contacts of this CloudExadataInfrastructure.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this CloudExadataInfrastructure.
+        The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
+        Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+        Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+
+
+        :param customer_contacts: The customer_contacts of this CloudExadataInfrastructure.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)

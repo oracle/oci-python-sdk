@@ -155,6 +155,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_data_guard_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_data_guard_enabled: bool
 
+        :param peer_db_id:
+            The value to assign to the peer_db_id property of this UpdateAutonomousDatabaseDetails.
+        :type peer_db_id: str
+
         :param db_version:
             The value to assign to the db_version property of this UpdateAutonomousDatabaseDetails.
         :type db_version: str
@@ -207,6 +211,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_refreshable_clone': 'bool',
             'refreshable_mode': 'str',
             'is_data_guard_enabled': 'bool',
+            'peer_db_id': 'str',
             'db_version': 'str',
             'open_mode': 'str',
             'permission_level': 'str',
@@ -237,6 +242,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_refreshable_clone': 'isRefreshableClone',
             'refreshable_mode': 'refreshableMode',
             'is_data_guard_enabled': 'isDataGuardEnabled',
+            'peer_db_id': 'peerDbId',
             'db_version': 'dbVersion',
             'open_mode': 'openMode',
             'permission_level': 'permissionLevel',
@@ -266,6 +272,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._is_refreshable_clone = None
         self._refreshable_mode = None
         self._is_data_guard_enabled = None
+        self._peer_db_id = None
         self._db_version = None
         self._open_mode = None
         self._permission_level = None
@@ -898,7 +905,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database has Data Guard enabled.
+        If set to `FALSE` and `peerDbId` is specified, the specified remote region peer database is terminated. If set to `FALSE` and `peerDbId` is not specified, the peer database in the region of the source primary database terminated.
 
 
         :return: The is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
@@ -910,13 +917,41 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database has Data Guard enabled.
+        If set to `FALSE` and `peerDbId` is specified, the specified remote region peer database is terminated. If set to `FALSE` and `peerDbId` is not specified, the peer database in the region of the source primary database terminated.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
         :type: bool
         """
         self._is_data_guard_enabled = is_data_guard_enabled
+
+    @property
+    def peer_db_id(self):
+        """
+        Gets the peer_db_id of this UpdateAutonomousDatabaseDetails.
+        The `OCID`__ of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_db_id of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_db_id
+
+    @peer_db_id.setter
+    def peer_db_id(self, peer_db_id):
+        """
+        Sets the peer_db_id of this UpdateAutonomousDatabaseDetails.
+        The `OCID`__ of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_db_id: The peer_db_id of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._peer_db_id = peer_db_id
 
     @property
     def db_version(self):
