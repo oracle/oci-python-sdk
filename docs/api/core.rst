@@ -130,6 +130,7 @@ Core Services
     oci.core.models.ConsoleHistory
     oci.core.models.CopyBootVolumeBackupDetails
     oci.core.models.CopyVolumeBackupDetails
+    oci.core.models.CopyVolumeGroupBackupDetails
     oci.core.models.Cpe
     oci.core.models.CpeDeviceConfigAnswer
     oci.core.models.CpeDeviceConfigQuestion

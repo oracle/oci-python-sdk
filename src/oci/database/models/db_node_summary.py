@@ -80,6 +80,22 @@ class DbNodeSummary(object):
             The value to assign to the backup_vnic_id property of this DbNodeSummary.
         :type backup_vnic_id: str
 
+        :param host_ip_id:
+            The value to assign to the host_ip_id property of this DbNodeSummary.
+        :type host_ip_id: str
+
+        :param backup_ip_id:
+            The value to assign to the backup_ip_id property of this DbNodeSummary.
+        :type backup_ip_id: str
+
+        :param vnic2_id:
+            The value to assign to the vnic2_id property of this DbNodeSummary.
+        :type vnic2_id: str
+
+        :param backup_vnic2_id:
+            The value to assign to the backup_vnic2_id property of this DbNodeSummary.
+        :type backup_vnic2_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbNodeSummary.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -126,6 +142,10 @@ class DbNodeSummary(object):
             'db_system_id': 'str',
             'vnic_id': 'str',
             'backup_vnic_id': 'str',
+            'host_ip_id': 'str',
+            'backup_ip_id': 'str',
+            'vnic2_id': 'str',
+            'backup_vnic2_id': 'str',
             'lifecycle_state': 'str',
             'hostname': 'str',
             'fault_domain': 'str',
@@ -142,6 +162,10 @@ class DbNodeSummary(object):
             'db_system_id': 'dbSystemId',
             'vnic_id': 'vnicId',
             'backup_vnic_id': 'backupVnicId',
+            'host_ip_id': 'hostIpId',
+            'backup_ip_id': 'backupIpId',
+            'vnic2_id': 'vnic2Id',
+            'backup_vnic2_id': 'backupVnic2Id',
             'lifecycle_state': 'lifecycleState',
             'hostname': 'hostname',
             'fault_domain': 'faultDomain',
@@ -157,6 +181,10 @@ class DbNodeSummary(object):
         self._db_system_id = None
         self._vnic_id = None
         self._backup_vnic_id = None
+        self._host_ip_id = None
+        self._backup_ip_id = None
+        self._vnic2_id = None
+        self._backup_vnic2_id = None
         self._lifecycle_state = None
         self._hostname = None
         self._fault_domain = None
@@ -278,6 +306,134 @@ class DbNodeSummary(object):
         :type: str
         """
         self._backup_vnic_id = backup_vnic_id
+
+    @property
+    def host_ip_id(self):
+        """
+        Gets the host_ip_id of this DbNodeSummary.
+        The `OCID`__ of the host IP address associated with the database node.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The host_ip_id of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._host_ip_id
+
+    @host_ip_id.setter
+    def host_ip_id(self, host_ip_id):
+        """
+        Sets the host_ip_id of this DbNodeSummary.
+        The `OCID`__ of the host IP address associated with the database node.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param host_ip_id: The host_ip_id of this DbNodeSummary.
+        :type: str
+        """
+        self._host_ip_id = host_ip_id
+
+    @property
+    def backup_ip_id(self):
+        """
+        Gets the backup_ip_id of this DbNodeSummary.
+        The `OCID`__ of the backup IP address associated with the database node.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The backup_ip_id of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._backup_ip_id
+
+    @backup_ip_id.setter
+    def backup_ip_id(self, backup_ip_id):
+        """
+        Sets the backup_ip_id of this DbNodeSummary.
+        The `OCID`__ of the backup IP address associated with the database node.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param backup_ip_id: The backup_ip_id of this DbNodeSummary.
+        :type: str
+        """
+        self._backup_ip_id = backup_ip_id
+
+    @property
+    def vnic2_id(self):
+        """
+        Gets the vnic2_id of this DbNodeSummary.
+        The `OCID`__ of the second VNIC.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vnic2_id of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._vnic2_id
+
+    @vnic2_id.setter
+    def vnic2_id(self, vnic2_id):
+        """
+        Sets the vnic2_id of this DbNodeSummary.
+        The `OCID`__ of the second VNIC.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vnic2_id: The vnic2_id of this DbNodeSummary.
+        :type: str
+        """
+        self._vnic2_id = vnic2_id
+
+    @property
+    def backup_vnic2_id(self):
+        """
+        Gets the backup_vnic2_id of this DbNodeSummary.
+        The `OCID`__ of the second backup VNIC.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The backup_vnic2_id of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._backup_vnic2_id
+
+    @backup_vnic2_id.setter
+    def backup_vnic2_id(self, backup_vnic2_id):
+        """
+        Sets the backup_vnic2_id of this DbNodeSummary.
+        The `OCID`__ of the second backup VNIC.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param backup_vnic2_id: The backup_vnic2_id of this DbNodeSummary.
+        :type: str
+        """
+        self._backup_vnic2_id = backup_vnic2_id
 
     @property
     def lifecycle_state(self):

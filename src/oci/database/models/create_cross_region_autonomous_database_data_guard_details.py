@@ -142,6 +142,11 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             The value to assign to the customer_contacts property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param autonomous_maintenance_schedule_type:
+            The value to assign to the autonomous_maintenance_schedule_type property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+            Allowed values for this property are: "EARLY", "REGULAR"
+        :type autonomous_maintenance_schedule_type: str
+
         :param source_id:
             The value to assign to the source_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type source_id: str
@@ -178,6 +183,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'db_version': 'str',
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
+            'autonomous_maintenance_schedule_type': 'str',
             'source_id': 'str'
         }
 
@@ -212,6 +218,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'db_version': 'dbVersion',
             'source': 'source',
             'customer_contacts': 'customerContacts',
+            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'source_id': 'sourceId'
         }
 
@@ -245,6 +252,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         self._db_version = None
         self._source = None
         self._customer_contacts = None
+        self._autonomous_maintenance_schedule_type = None
         self._source_id = None
         self._source = 'CROSS_REGION_DATAGUARD'
 

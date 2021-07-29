@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
+def test_change_backup_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('mysql', 'ChangeBackupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('mysql', util.camelize('db_backups'), 'ChangeBackupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='mysql', api_name='ChangeBackupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.mysql.DbBackupsClient(config, service_endpoint=service_endpoint)
+            response = client.change_backup_compartment(
+                backup_id=request.pop(util.camelize('backupId')),
+                change_backup_compartment_details=request.pop(util.camelize('ChangeBackupCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'mysql',
+            'ChangeBackupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_backup_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="mysql-cloud-dev_ww_grp@oracle.com" jiraProject="MY" opsJiraProject="MYOPS"
 def test_create_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('mysql', 'CreateBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

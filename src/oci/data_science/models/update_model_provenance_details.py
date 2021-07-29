@@ -38,13 +38,18 @@ class UpdateModelProvenanceDetails(object):
             The value to assign to the training_script property of this UpdateModelProvenanceDetails.
         :type training_script: str
 
+        :param training_id:
+            The value to assign to the training_id property of this UpdateModelProvenanceDetails.
+        :type training_id: str
+
         """
         self.swagger_types = {
             'repository_url': 'str',
             'git_branch': 'str',
             'git_commit': 'str',
             'script_dir': 'str',
-            'training_script': 'str'
+            'training_script': 'str',
+            'training_id': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class UpdateModelProvenanceDetails(object):
             'git_branch': 'gitBranch',
             'git_commit': 'gitCommit',
             'script_dir': 'scriptDir',
-            'training_script': 'trainingScript'
+            'training_script': 'trainingScript',
+            'training_id': 'trainingId'
         }
 
         self._repository_url = None
@@ -60,6 +66,7 @@ class UpdateModelProvenanceDetails(object):
         self._git_commit = None
         self._script_dir = None
         self._training_script = None
+        self._training_id = None
 
     @property
     def repository_url(self):
@@ -180,6 +187,34 @@ class UpdateModelProvenanceDetails(object):
         :type: str
         """
         self._training_script = training_script
+
+    @property
+    def training_id(self):
+        """
+        Gets the training_id of this UpdateModelProvenanceDetails.
+        The `OCID`__ of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The training_id of this UpdateModelProvenanceDetails.
+        :rtype: str
+        """
+        return self._training_id
+
+    @training_id.setter
+    def training_id(self, training_id):
+        """
+        Sets the training_id of this UpdateModelProvenanceDetails.
+        The `OCID`__ of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param training_id: The training_id of this UpdateModelProvenanceDetails.
+        :type: str
+        """
+        self._training_id = training_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

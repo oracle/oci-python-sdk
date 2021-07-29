@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModelDeployment(object):
     """
-    Model deployments are interactive coding environments for data scientists.
+    Model deployments are used by data scientists to perform predictions from the model hosted on an HTTP server.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ModelDeployment.

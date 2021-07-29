@@ -16,6 +16,7 @@ from .backup import Backup
 from .backup_policy import BackupPolicy
 from .backup_summary import BackupSummary
 from .ca_certificate import CaCertificate
+from .change_backup_compartment_details import ChangeBackupCompartmentDetails
 from .channel import Channel
 from .channel_source import ChannelSource
 from .channel_source_mysql import ChannelSourceMysql
@@ -93,6 +94,7 @@ mysql_type_mapping = {
     "BackupPolicy": BackupPolicy,
     "BackupSummary": BackupSummary,
     "CaCertificate": CaCertificate,
+    "ChangeBackupCompartmentDetails": ChangeBackupCompartmentDetails,
     "Channel": Channel,
     "ChannelSource": ChannelSource,
     "ChannelSourceMysql": ChannelSourceMysql,
