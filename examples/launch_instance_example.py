@@ -400,6 +400,20 @@ def launch_instance(compute_client_composite_operations, launch_instance_details
     return instance
 
 
+def launch_instance_and_wait_for_work_request(compute_client_composite_operations, launch_instance_details):
+    work_request_response = compute_client_composite_operations.launch_instance_and_wait_for_work_request(
+        launch_instance_details
+    )
+    work_request = work_request_response.data
+
+    # Now retrieve the instance details from the information in the work request resources
+    instance_id = work_request.resources[0].identifier
+    get_instance_response = compute_client_composite_operations.client.get_instance(instance_id)
+    instance = get_instance_response.data
+
+    return instance, work_request.id
+
+
 def terminate_instance(compute_client_composite_operations, instance):
     print('Terminating Instance: {}'.format(instance.id))
     compute_client_composite_operations.terminate_instance_and_wait_for_state(
@@ -436,6 +450,38 @@ def print_instance_details(compute_client, virtual_network_client, instance):
     print()
 
 
+def print_work_request_details(work_request_client, work_request_id):
+    get_work_request_response = work_request_client.get_work_request(work_request_id)
+    work_request_details = get_work_request_response.data
+
+    list_errors_response = work_request_client.list_work_request_errors(work_request_id)
+    work_request_errors = list_errors_response.data
+
+    print('Work Request Details')
+    print('====================')
+    print('{}'.format(work_request_details))
+    print()
+
+    print('Work Request Errors')
+    print('===================')
+    if len(work_request_errors) > 0:
+        print('{}'.format(work_request_errors))
+    else:
+        print('No errors occurred.')
+    print()
+
+    print('Work Request Logs')
+    print('=================')
+
+    # Limit to 20 log entries
+    log_limit = 20
+    page_size = 5
+    resp = oci.pagination.list_call_get_up_to_limit(work_request_client.list_work_request_logs, log_limit, page_size, work_request_id)
+    for work_request_log in resp.data:
+        print('{}'.format(work_request_log))
+    print()
+
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         raise RuntimeError('Invalid number of arguments provided to the script. '
@@ -453,6 +499,7 @@ if __name__ == "__main__":
     compute_client_composite_operations = oci.core.ComputeClientCompositeOperations(compute_client)
     virtual_network_client = oci.core.VirtualNetworkClient(config)
     virtual_network_composite_operations = oci.core.VirtualNetworkClientCompositeOperations(virtual_network_client)
+    work_request_client = oci.work_requests.WorkRequestClient(config)
 
     availability_domain = get_availability_domain(identity_client, compartment_id)
     shape = get_shape(compute_client, compartment_id, availability_domain)
@@ -463,6 +510,7 @@ if __name__ == "__main__":
     internet_gateway = None
     network_security_group = None
     instance = None
+    instance_via_work_requests = None
     instance_with_network_security_group = None
 
     try:
@@ -482,6 +530,16 @@ if __name__ == "__main__":
         instance = launch_instance(compute_client_composite_operations, launch_instance_details)
         print_instance_details(compute_client, virtual_network_client, instance)
 
+        print('Launching Instance and waiting on work request ...')
+        launch_instance_details = get_launch_instance_details(
+            compartment_id, availability_domain, shape, image, subnet, ssh_public_key
+        )
+        instance_via_work_requests, work_request_id = launch_instance_and_wait_for_work_request(
+                compute_client_composite_operations, launch_instance_details
+        )
+        print_work_request_details(work_request_client, work_request_id)
+        print_instance_details(compute_client, virtual_network_client, instance_via_work_requests)
+
         print('Launching Instance with Network Security Group ...')
         launch_instance_details.create_vnic_details.nsg_ids = [network_security_group.id]
         instance_with_network_security_group = launch_instance(
@@ -492,6 +550,8 @@ if __name__ == "__main__":
     finally:
         if instance_with_network_security_group:
             terminate_instance(compute_client_composite_operations, instance_with_network_security_group)
+        if instance_via_work_requests:
+            terminate_instance(compute_client_composite_operations, instance_via_work_requests)
         if instance:
             terminate_instance(compute_client_composite_operations, instance)
 
