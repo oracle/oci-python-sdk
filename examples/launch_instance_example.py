@@ -535,7 +535,7 @@ if __name__ == "__main__":
             compartment_id, availability_domain, shape, image, subnet, ssh_public_key
         )
         instance_via_work_requests, work_request_id = launch_instance_and_wait_for_work_request(
-                compute_client_composite_operations, launch_instance_details
+            compute_client_composite_operations, launch_instance_details
         )
         print_work_request_details(work_request_client, work_request_id)
         print_instance_details(compute_client, virtual_network_client, instance_via_work_requests)
