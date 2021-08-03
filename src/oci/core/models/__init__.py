@@ -110,6 +110,7 @@ from .connect_remote_peering_connections_details import ConnectRemotePeeringConn
 from .console_history import ConsoleHistory
 from .copy_boot_volume_backup_details import CopyBootVolumeBackupDetails
 from .copy_volume_backup_details import CopyVolumeBackupDetails
+from .copy_volume_group_backup_details import CopyVolumeGroupBackupDetails
 from .cpe import Cpe
 from .cpe_device_config_answer import CpeDeviceConfigAnswer
 from .cpe_device_config_question import CpeDeviceConfigQuestion
@@ -546,6 +547,7 @@ core_type_mapping = {
     "ConsoleHistory": ConsoleHistory,
     "CopyBootVolumeBackupDetails": CopyBootVolumeBackupDetails,
     "CopyVolumeBackupDetails": CopyVolumeBackupDetails,
+    "CopyVolumeGroupBackupDetails": CopyVolumeGroupBackupDetails,
     "Cpe": Cpe,
     "CpeDeviceConfigAnswer": CpeDeviceConfigAnswer,
     "CpeDeviceConfigQuestion": CpeDeviceConfigQuestion,

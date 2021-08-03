@@ -95,6 +95,10 @@ class UpdateApplicationDetails(object):
             The value to assign to the logs_bucket_uri property of this UpdateApplicationDetails.
         :type logs_bucket_uri: str
 
+        :param metastore_id:
+            The value to assign to the metastore_id property of this UpdateApplicationDetails.
+        :type metastore_id: str
+
         :param num_executors:
             The value to assign to the num_executors property of this UpdateApplicationDetails.
         :type num_executors: int
@@ -128,6 +132,7 @@ class UpdateApplicationDetails(object):
             'executor_shape': 'str',
             'freeform_tags': 'dict(str, str)',
             'logs_bucket_uri': 'str',
+            'metastore_id': 'str',
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
             'private_endpoint_id': 'str',
@@ -150,6 +155,7 @@ class UpdateApplicationDetails(object):
             'executor_shape': 'executorShape',
             'freeform_tags': 'freeformTags',
             'logs_bucket_uri': 'logsBucketUri',
+            'metastore_id': 'metastoreId',
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
             'private_endpoint_id': 'privateEndpointId',
@@ -171,6 +177,7 @@ class UpdateApplicationDetails(object):
         self._executor_shape = None
         self._freeform_tags = None
         self._logs_bucket_uri = None
+        self._metastore_id = None
         self._num_executors = None
         self._parameters = None
         self._private_endpoint_id = None
@@ -593,6 +600,30 @@ class UpdateApplicationDetails(object):
         :type: str
         """
         self._logs_bucket_uri = logs_bucket_uri
+
+    @property
+    def metastore_id(self):
+        """
+        Gets the metastore_id of this UpdateApplicationDetails.
+        The OCID of OCI Hive Metastore.
+
+
+        :return: The metastore_id of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._metastore_id
+
+    @metastore_id.setter
+    def metastore_id(self, metastore_id):
+        """
+        Sets the metastore_id of this UpdateApplicationDetails.
+        The OCID of OCI Hive Metastore.
+
+
+        :param metastore_id: The metastore_id of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._metastore_id = metastore_id
 
     @property
     def num_executors(self):

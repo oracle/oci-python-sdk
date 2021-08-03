@@ -31,6 +31,7 @@ Data Science
     oci.data_science.models.FixedSizeScalingPolicy
     oci.data_science.models.InstanceConfiguration
     oci.data_science.models.LogDetails
+    oci.data_science.models.Metadata
     oci.data_science.models.Model
     oci.data_science.models.ModelConfigurationDetails
     oci.data_science.models.ModelDeployment

@@ -221,6 +221,14 @@ class AutonomousDatabase(object):
     #: This constant has a value of "REMOTE_STANDBY_DG_REGION"
     DATAGUARD_REGION_TYPE_REMOTE_STANDBY_DG_REGION = "REMOTE_STANDBY_DG_REGION"
 
+    #: A constant which can be used with the autonomous_maintenance_schedule_type property of a AutonomousDatabase.
+    #: This constant has a value of "EARLY"
+    AUTONOMOUS_MAINTENANCE_SCHEDULE_TYPE_EARLY = "EARLY"
+
+    #: A constant which can be used with the autonomous_maintenance_schedule_type property of a AutonomousDatabase.
+    #: This constant has a value of "REGULAR"
+    AUTONOMOUS_MAINTENANCE_SCHEDULE_TYPE_REGULAR = "REGULAR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -538,6 +546,12 @@ class AutonomousDatabase(object):
             The value to assign to the peer_db_ids property of this AutonomousDatabase.
         :type peer_db_ids: list[str]
 
+        :param autonomous_maintenance_schedule_type:
+            The value to assign to the autonomous_maintenance_schedule_type property of this AutonomousDatabase.
+            Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type autonomous_maintenance_schedule_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -611,7 +625,8 @@ class AutonomousDatabase(object):
             'time_local_data_guard_enabled': 'datetime',
             'dataguard_region_type': 'str',
             'time_data_guard_role_changed': 'datetime',
-            'peer_db_ids': 'list[str]'
+            'peer_db_ids': 'list[str]',
+            'autonomous_maintenance_schedule_type': 'str'
         }
 
         self.attribute_map = {
@@ -686,7 +701,8 @@ class AutonomousDatabase(object):
             'time_local_data_guard_enabled': 'timeLocalDataGuardEnabled',
             'dataguard_region_type': 'dataguardRegionType',
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
-            'peer_db_ids': 'peerDbIds'
+            'peer_db_ids': 'peerDbIds',
+            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType'
         }
 
         self._id = None
@@ -761,6 +777,7 @@ class AutonomousDatabase(object):
         self._dataguard_region_type = None
         self._time_data_guard_role_changed = None
         self._peer_db_ids = None
+        self._autonomous_maintenance_schedule_type = None
 
     @property
     def id(self):
@@ -2747,6 +2764,38 @@ class AutonomousDatabase(object):
         :type: list[str]
         """
         self._peer_db_ids = peer_db_ids
+
+    @property
+    def autonomous_maintenance_schedule_type(self):
+        """
+        Gets the autonomous_maintenance_schedule_type of this AutonomousDatabase.
+        The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+        follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+
+        Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The autonomous_maintenance_schedule_type of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._autonomous_maintenance_schedule_type
+
+    @autonomous_maintenance_schedule_type.setter
+    def autonomous_maintenance_schedule_type(self, autonomous_maintenance_schedule_type):
+        """
+        Sets the autonomous_maintenance_schedule_type of this AutonomousDatabase.
+        The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+        follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+
+
+        :param autonomous_maintenance_schedule_type: The autonomous_maintenance_schedule_type of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["EARLY", "REGULAR"]
+        if not value_allowed_none_or_none_sentinel(autonomous_maintenance_schedule_type, allowed_values):
+            autonomous_maintenance_schedule_type = 'UNKNOWN_ENUM_VALUE'
+        self._autonomous_maintenance_schedule_type = autonomous_maintenance_schedule_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

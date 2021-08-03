@@ -76,6 +76,22 @@ class Model(object):
             The value to assign to the defined_tags property of this Model.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param custom_metadata_list:
+            The value to assign to the custom_metadata_list property of this Model.
+        :type custom_metadata_list: list[oci.data_science.models.Metadata]
+
+        :param defined_metadata_list:
+            The value to assign to the defined_metadata_list property of this Model.
+        :type defined_metadata_list: list[oci.data_science.models.Metadata]
+
+        :param input_schema:
+            The value to assign to the input_schema property of this Model.
+        :type input_schema: str
+
+        :param output_schema:
+            The value to assign to the output_schema property of this Model.
+        :type output_schema: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -87,7 +103,11 @@ class Model(object):
             'time_created': 'datetime',
             'created_by': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'custom_metadata_list': 'list[Metadata]',
+            'defined_metadata_list': 'list[Metadata]',
+            'input_schema': 'str',
+            'output_schema': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +120,11 @@ class Model(object):
             'time_created': 'timeCreated',
             'created_by': 'createdBy',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'custom_metadata_list': 'customMetadataList',
+            'defined_metadata_list': 'definedMetadataList',
+            'input_schema': 'inputSchema',
+            'output_schema': 'outputSchema'
         }
 
         self._id = None
@@ -113,6 +137,10 @@ class Model(object):
         self._created_by = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._custom_metadata_list = None
+        self._defined_metadata_list = None
+        self._input_schema = None
+        self._output_schema = None
 
     @property
     def id(self):
@@ -393,6 +421,102 @@ class Model(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def custom_metadata_list(self):
+        """
+        Gets the custom_metadata_list of this Model.
+        An array of custom metadata details for the model.
+
+
+        :return: The custom_metadata_list of this Model.
+        :rtype: list[oci.data_science.models.Metadata]
+        """
+        return self._custom_metadata_list
+
+    @custom_metadata_list.setter
+    def custom_metadata_list(self, custom_metadata_list):
+        """
+        Sets the custom_metadata_list of this Model.
+        An array of custom metadata details for the model.
+
+
+        :param custom_metadata_list: The custom_metadata_list of this Model.
+        :type: list[oci.data_science.models.Metadata]
+        """
+        self._custom_metadata_list = custom_metadata_list
+
+    @property
+    def defined_metadata_list(self):
+        """
+        Gets the defined_metadata_list of this Model.
+        An array of defined metadata details for the model.
+
+
+        :return: The defined_metadata_list of this Model.
+        :rtype: list[oci.data_science.models.Metadata]
+        """
+        return self._defined_metadata_list
+
+    @defined_metadata_list.setter
+    def defined_metadata_list(self, defined_metadata_list):
+        """
+        Sets the defined_metadata_list of this Model.
+        An array of defined metadata details for the model.
+
+
+        :param defined_metadata_list: The defined_metadata_list of this Model.
+        :type: list[oci.data_science.models.Metadata]
+        """
+        self._defined_metadata_list = defined_metadata_list
+
+    @property
+    def input_schema(self):
+        """
+        Gets the input_schema of this Model.
+        Input schema file content in String format
+
+
+        :return: The input_schema of this Model.
+        :rtype: str
+        """
+        return self._input_schema
+
+    @input_schema.setter
+    def input_schema(self, input_schema):
+        """
+        Sets the input_schema of this Model.
+        Input schema file content in String format
+
+
+        :param input_schema: The input_schema of this Model.
+        :type: str
+        """
+        self._input_schema = input_schema
+
+    @property
+    def output_schema(self):
+        """
+        Gets the output_schema of this Model.
+        Output schema file content in String format
+
+
+        :return: The output_schema of this Model.
+        :rtype: str
+        """
+        return self._output_schema
+
+    @output_schema.setter
+    def output_schema(self, output_schema):
+        """
+        Sets the output_schema of this Model.
+        Output schema file content in String format
+
+
+        :param output_schema: The output_schema of this Model.
+        :type: str
+        """
+        self._output_schema = output_schema
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -34,25 +34,39 @@ class UpdateModelDetails(object):
             The value to assign to the defined_tags property of this UpdateModelDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param custom_metadata_list:
+            The value to assign to the custom_metadata_list property of this UpdateModelDetails.
+        :type custom_metadata_list: list[oci.data_science.models.Metadata]
+
+        :param defined_metadata_list:
+            The value to assign to the defined_metadata_list property of this UpdateModelDetails.
+        :type defined_metadata_list: list[oci.data_science.models.Metadata]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'custom_metadata_list': 'list[Metadata]',
+            'defined_metadata_list': 'list[Metadata]'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'custom_metadata_list': 'customMetadataList',
+            'defined_metadata_list': 'definedMetadataList'
         }
 
         self._display_name = None
         self._description = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._custom_metadata_list = None
+        self._defined_metadata_list = None
 
     @property
     def display_name(self):
@@ -163,6 +177,54 @@ class UpdateModelDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def custom_metadata_list(self):
+        """
+        Gets the custom_metadata_list of this UpdateModelDetails.
+        An array of custom metadata details for the model.
+
+
+        :return: The custom_metadata_list of this UpdateModelDetails.
+        :rtype: list[oci.data_science.models.Metadata]
+        """
+        return self._custom_metadata_list
+
+    @custom_metadata_list.setter
+    def custom_metadata_list(self, custom_metadata_list):
+        """
+        Sets the custom_metadata_list of this UpdateModelDetails.
+        An array of custom metadata details for the model.
+
+
+        :param custom_metadata_list: The custom_metadata_list of this UpdateModelDetails.
+        :type: list[oci.data_science.models.Metadata]
+        """
+        self._custom_metadata_list = custom_metadata_list
+
+    @property
+    def defined_metadata_list(self):
+        """
+        Gets the defined_metadata_list of this UpdateModelDetails.
+        An array of defined metadata details for the model.
+
+
+        :return: The defined_metadata_list of this UpdateModelDetails.
+        :rtype: list[oci.data_science.models.Metadata]
+        """
+        return self._defined_metadata_list
+
+    @defined_metadata_list.setter
+    def defined_metadata_list(self, defined_metadata_list):
+        """
+        Sets the defined_metadata_list of this UpdateModelDetails.
+        An array of defined metadata details for the model.
+
+
+        :param defined_metadata_list: The defined_metadata_list of this UpdateModelDetails.
+        :type: list[oci.data_science.models.Metadata]
+        """
+        self._defined_metadata_list = defined_metadata_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

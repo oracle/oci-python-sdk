@@ -38,6 +38,7 @@ Mysql
     oci.mysql.models.BackupPolicy
     oci.mysql.models.BackupSummary
     oci.mysql.models.CaCertificate
+    oci.mysql.models.ChangeBackupCompartmentDetails
     oci.mysql.models.Channel
     oci.mysql.models.ChannelSource
     oci.mysql.models.ChannelSourceMysql

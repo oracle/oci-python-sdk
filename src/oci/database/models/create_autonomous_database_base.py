@@ -68,6 +68,14 @@ class CreateAutonomousDatabaseBase(object):
     #: This constant has a value of "CROSS_REGION_DATAGUARD"
     SOURCE_CROSS_REGION_DATAGUARD = "CROSS_REGION_DATAGUARD"
 
+    #: A constant which can be used with the autonomous_maintenance_schedule_type property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "EARLY"
+    AUTONOMOUS_MAINTENANCE_SCHEDULE_TYPE_EARLY = "EARLY"
+
+    #: A constant which can be used with the autonomous_maintenance_schedule_type property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "REGULAR"
+    AUTONOMOUS_MAINTENANCE_SCHEDULE_TYPE_REGULAR = "REGULAR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -205,6 +213,11 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the customer_contacts property of this CreateAutonomousDatabaseBase.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param autonomous_maintenance_schedule_type:
+            The value to assign to the autonomous_maintenance_schedule_type property of this CreateAutonomousDatabaseBase.
+            Allowed values for this property are: "EARLY", "REGULAR"
+        :type autonomous_maintenance_schedule_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -236,7 +249,8 @@ class CreateAutonomousDatabaseBase(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
             'source': 'str',
-            'customer_contacts': 'list[CustomerContact]'
+            'customer_contacts': 'list[CustomerContact]',
+            'autonomous_maintenance_schedule_type': 'str'
         }
 
         self.attribute_map = {
@@ -269,7 +283,8 @@ class CreateAutonomousDatabaseBase(object):
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
             'source': 'source',
-            'customer_contacts': 'customerContacts'
+            'customer_contacts': 'customerContacts',
+            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType'
         }
 
         self._compartment_id = None
@@ -302,6 +317,7 @@ class CreateAutonomousDatabaseBase(object):
         self._db_version = None
         self._source = None
         self._customer_contacts = None
+        self._autonomous_maintenance_schedule_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -1284,6 +1300,40 @@ class CreateAutonomousDatabaseBase(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def autonomous_maintenance_schedule_type(self):
+        """
+        Gets the autonomous_maintenance_schedule_type of this CreateAutonomousDatabaseBase.
+        The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+        follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+
+        Allowed values for this property are: "EARLY", "REGULAR"
+
+
+        :return: The autonomous_maintenance_schedule_type of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._autonomous_maintenance_schedule_type
+
+    @autonomous_maintenance_schedule_type.setter
+    def autonomous_maintenance_schedule_type(self, autonomous_maintenance_schedule_type):
+        """
+        Sets the autonomous_maintenance_schedule_type of this CreateAutonomousDatabaseBase.
+        The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
+        follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+
+
+        :param autonomous_maintenance_schedule_type: The autonomous_maintenance_schedule_type of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        allowed_values = ["EARLY", "REGULAR"]
+        if not value_allowed_none_or_none_sentinel(autonomous_maintenance_schedule_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `autonomous_maintenance_schedule_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._autonomous_maintenance_schedule_type = autonomous_maintenance_schedule_type
 
     def __repr__(self):
         return formatted_flat_dict(self)
