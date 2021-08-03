@@ -904,7 +904,13 @@ class DataScienceClient(object):
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
 
         :param str content_disposition: (optional)
-            The content disposition of the body.
+            This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
+            while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
+            name when downloading.
+            Example: `{\"Content-Disposition\": \"attachment\"
+                       \"filename\"=\"model.tar.gz\"
+                       \"Content-Length\": \"2347\"
+                       \"Content-Type\": \"application/gzip\"}`
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3773,10 +3779,10 @@ class DataScienceClient(object):
 
     def update_model_deployment(self, model_deployment_id, update_model_deployment_details, **kwargs):
         """
-        Updates the properties of a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time when
-        the model deployment's lifecycle state is ACTIVE i.e `instanceShapeName` can be updated along with `modelId`, similarly `logId` can be updated along with `logGroupId`. But
-        `instanceShapeName` or `modelId` cannot be updated along with `logId` or `logGroupId`. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state.
-        Changes will take effect the next time the model deployment is activated.
+        Updates the properties of a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time
+        when the model deployment\u2019s lifecycle state is ACTIVE or NEEDS_ATTENTION i.e `instanceShapeName`, `instanceCount` and `modelId`, separately `loadBalancerShape` or `CategoryLogDetails`
+        can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next time the model
+        deployment is activated.
 
 
         :param str model_deployment_id: (required)
@@ -3785,10 +3791,10 @@ class DataScienceClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelDeploymentDetails update_model_deployment_details: (required)
-            Details for updating a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time when
-            the model deployment's lifecycle state is ACTIVE i.e `instanceShapeName` can be updated along with `modelId`, similarly `logId` can be updated along with `logGroupId`. But
-            `instanceShapeName` or `modelId` cannot be updated along with `logId` or `logGroupId`. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state.
-            Changes will take effect the next time the model deployment is activated.
+            Details for updating a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time
+            when the model deployment\u2019s lifecycle state is ACTIVE or NEEDS_ATTENTION i.e `instanceShapeName`, `instanceCount` and `modelId`, separately `loadBalancerShape` or
+            `CategoryLogDetails` can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next
+            time the model deployment is activated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

@@ -17,6 +17,7 @@ from .create_project_details import CreateProjectDetails
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .instance_configuration import InstanceConfiguration
 from .log_details import LogDetails
+from .metadata import Metadata
 from .model import Model
 from .model_configuration_details import ModelConfigurationDetails
 from .model_deployment import ModelDeployment
@@ -64,6 +65,7 @@ data_science_type_mapping = {
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
     "InstanceConfiguration": InstanceConfiguration,
     "LogDetails": LogDetails,
+    "Metadata": Metadata,
     "Model": Model,
     "ModelConfigurationDetails": ModelConfigurationDetails,
     "ModelDeployment": ModelDeployment,

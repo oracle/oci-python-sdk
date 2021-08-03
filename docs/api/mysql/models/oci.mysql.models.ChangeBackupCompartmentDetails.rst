@@ -1,0 +1,11 @@
+ChangeBackupCompartmentDetails
+==============================
+
+.. currentmodule:: oci.mysql.models
+
+.. autoclass:: ChangeBackupCompartmentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

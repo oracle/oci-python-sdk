@@ -142,6 +142,10 @@ class Run(object):
             The value to assign to the logs_bucket_uri property of this Run.
         :type logs_bucket_uri: str
 
+        :param metastore_id:
+            The value to assign to the metastore_id property of this Run.
+        :type metastore_id: str
+
         :param num_executors:
             The value to assign to the num_executors property of this Run.
         :type num_executors: int
@@ -228,6 +232,7 @@ class Run(object):
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'logs_bucket_uri': 'str',
+            'metastore_id': 'str',
             'num_executors': 'int',
             'opc_request_id': 'str',
             'owner_principal_id': 'str',
@@ -267,6 +272,7 @@ class Run(object):
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'logs_bucket_uri': 'logsBucketUri',
+            'metastore_id': 'metastoreId',
             'num_executors': 'numExecutors',
             'opc_request_id': 'opcRequestId',
             'owner_principal_id': 'ownerPrincipalId',
@@ -305,6 +311,7 @@ class Run(object):
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._logs_bucket_uri = None
+        self._metastore_id = None
         self._num_executors = None
         self._opc_request_id = None
         self._owner_principal_id = None
@@ -863,6 +870,30 @@ class Run(object):
         :type: str
         """
         self._logs_bucket_uri = logs_bucket_uri
+
+    @property
+    def metastore_id(self):
+        """
+        Gets the metastore_id of this Run.
+        The OCID of OCI Hive Metastore.
+
+
+        :return: The metastore_id of this Run.
+        :rtype: str
+        """
+        return self._metastore_id
+
+    @metastore_id.setter
+    def metastore_id(self, metastore_id):
+        """
+        Sets the metastore_id of this Run.
+        The OCID of OCI Hive Metastore.
+
+
+        :param metastore_id: The metastore_id of this Run.
+        :type: str
+        """
+        self._metastore_id = metastore_id
 
     @property
     def num_executors(self):
