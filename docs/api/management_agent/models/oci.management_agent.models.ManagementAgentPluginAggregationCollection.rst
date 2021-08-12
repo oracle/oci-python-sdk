@@ -1,9 +1,9 @@
-WorkSubmissionKey
-=================
+ManagementAgentPluginAggregationCollection
+==========================================
 
 .. currentmodule:: oci.management_agent.models
 
-.. autoclass:: WorkSubmissionKey
+.. autoclass:: ManagementAgentPluginAggregationCollection
     :show-inheritance:
     :special-members: __init__
     :members:

@@ -48,6 +48,7 @@ from .host_cpu_usage import HostCpuUsage
 from .host_details import HostDetails
 from .host_entities import HostEntities
 from .host_hardware_configuration import HostHardwareConfiguration
+from .host_importable_agent_entity_summary import HostImportableAgentEntitySummary
 from .host_insight import HostInsight
 from .host_insight_resource_statistics_aggregation import HostInsightResourceStatisticsAggregation
 from .host_insight_summary import HostInsightSummary
@@ -66,6 +67,8 @@ from .host_resource_capacity_trend_aggregation import HostResourceCapacityTrendA
 from .host_resource_statistics import HostResourceStatistics
 from .hosted_entity_collection import HostedEntityCollection
 from .hosted_entity_summary import HostedEntitySummary
+from .importable_agent_entity_summary import ImportableAgentEntitySummary
+from .importable_agent_entity_summary_collection import ImportableAgentEntitySummaryCollection
 from .importable_enterprise_manager_entity import ImportableEnterpriseManagerEntity
 from .importable_enterprise_manager_entity_collection import ImportableEnterpriseManagerEntityCollection
 from .ingest_database_configuration_details import IngestDatabaseConfigurationDetails
@@ -197,6 +200,7 @@ opsi_type_mapping = {
     "HostDetails": HostDetails,
     "HostEntities": HostEntities,
     "HostHardwareConfiguration": HostHardwareConfiguration,
+    "HostImportableAgentEntitySummary": HostImportableAgentEntitySummary,
     "HostInsight": HostInsight,
     "HostInsightResourceStatisticsAggregation": HostInsightResourceStatisticsAggregation,
     "HostInsightSummary": HostInsightSummary,
@@ -215,6 +219,8 @@ opsi_type_mapping = {
     "HostResourceStatistics": HostResourceStatistics,
     "HostedEntityCollection": HostedEntityCollection,
     "HostedEntitySummary": HostedEntitySummary,
+    "ImportableAgentEntitySummary": ImportableAgentEntitySummary,
+    "ImportableAgentEntitySummaryCollection": ImportableAgentEntitySummaryCollection,
     "ImportableEnterpriseManagerEntity": ImportableEnterpriseManagerEntity,
     "ImportableEnterpriseManagerEntityCollection": ImportableEnterpriseManagerEntityCollection,
     "IngestDatabaseConfigurationDetails": IngestDatabaseConfigurationDetails,

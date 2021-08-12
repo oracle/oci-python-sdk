@@ -874,6 +874,132 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_mgmtagent_macs_ww_grp@oracle.com" jiraProject="MGMTAGENT" opsJiraProject="MGMTAGENT"
+def test_summarize_management_agent_counts(testing_service_client):
+    if not testing_service_client.is_api_enabled('management_agent', 'SummarizeManagementAgentCounts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('management_agent', util.camelize('management_agent'), 'SummarizeManagementAgentCounts')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='management_agent', api_name='SummarizeManagementAgentCounts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_management_agent_counts(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                group_by=request.pop(util.camelize('groupBy')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_management_agent_counts(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    group_by=request.pop(util.camelize('groupBy')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_management_agent_counts(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        group_by=request.pop(util.camelize('groupBy')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'management_agent',
+            'SummarizeManagementAgentCounts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'managementAgentAggregationCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_mgmtagent_macs_ww_grp@oracle.com" jiraProject="MGMTAGENT" opsJiraProject="MGMTAGENT"
+def test_summarize_management_agent_plugin_counts(testing_service_client):
+    if not testing_service_client.is_api_enabled('management_agent', 'SummarizeManagementAgentPluginCounts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('management_agent', util.camelize('management_agent'), 'SummarizeManagementAgentPluginCounts')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='management_agent', api_name='SummarizeManagementAgentPluginCounts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_management_agent_plugin_counts(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                group_by=request.pop(util.camelize('groupBy')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_management_agent_plugin_counts(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    group_by=request.pop(util.camelize('groupBy')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_management_agent_plugin_counts(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        group_by=request.pop(util.camelize('groupBy')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'management_agent',
+            'SummarizeManagementAgentPluginCounts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'managementAgentPluginAggregationCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_mgmtagent_macs_ww_grp@oracle.com" jiraProject="MGMTAGENT" opsJiraProject="MGMTAGENT"
 def test_update_management_agent(testing_service_client):
     if not testing_service_client.is_api_enabled('management_agent', 'UpdateManagementAgent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

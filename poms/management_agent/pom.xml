@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.macs</groupId>
         <artifactId>mgmtagent-cloud-services-spec</artifactId>
-        <version>1.0.106</version>
+        <version>1.1.183</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
